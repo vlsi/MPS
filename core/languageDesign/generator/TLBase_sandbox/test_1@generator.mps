@@ -279,7 +279,6 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216753715946" />
         </node>
       </node>
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence" id="1226534878362">
@@ -289,9 +288,30 @@
       </node>
     </node>
     <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1226534843655">
+      <link role="applicableConcept" targetNodeId="1.1080120340718" resolveInfo="AndExpression" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.RuleConsequence" id="1226534843656" />
       <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1226534843657">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226534843658" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226534843658">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227226021640">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227226021641">
+              <property name="name" value="node" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227226021642">
+                <link role="concept" targetNodeId="1.1107796713796" resolveInfo="Interface" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1227226038566">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227226043193">
+              <link role="variableDeclaration" targetNodeId="1227226021641" resolveInfo="node" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1227226545969">
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.RuleConsequence" id="1227226545970" />
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1227226545971">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227226545972" />
       </node>
     </node>
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1207694002149">
@@ -661,6 +681,10 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227219853408" />
     </node>
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1227219853409" />
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1227226555553">
+    <property name="name" value="weave_" />
+    <node role="contentNode" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1227226555554" />
   </node>
 </model>
 
