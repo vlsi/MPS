@@ -27,8 +27,8 @@ import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileNode;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
-import jetbrains.mps.ide.projectPane.fileSystem.actions.FilePaneCopyProvider;
-import jetbrains.mps.ide.projectPane.fileSystem.actions.FilePanePasteProvider;
+import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePaneCopyProvider;
+import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePanePasteProvider;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -52,7 +52,6 @@ import java.awt.event.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Collection;
-import java.util.ArrayList;
 
 public abstract class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
   private static final Logger LOG = Logger.getLogger(FileViewProjectPane.class);

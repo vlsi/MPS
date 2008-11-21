@@ -1,22 +1,16 @@
-package jetbrains.mps.ide.projectPane.fileSystem.actions;
-
-import com.intellij.openapi.vfs.VirtualFile;
+package jetbrains.mps.ide.projectPane.fileSystem.actions.providers;
 
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
-import java.io.File;
-import java.util.LinkedList;
-
-import jetbrains.mps.vfs.VFileSystem;
 
 class VirtualFileTransferable implements Transferable {
   public static final DataFlavor VIRTUAL_FILE_DATA_FLAVOR = new DataFlavor(String[].class, "String Array");
-  private VirtualFile[] myFiles;
+  private final CopyPasteFilesData myData;
 
-  VirtualFileTransferable(VirtualFile[] files) {
-    myFiles = files;
+  VirtualFileTransferable(CopyPasteFilesData data) {
+    myData = data;
   }
 
   public DataFlavor[] getTransferDataFlavors() {
@@ -29,11 +23,7 @@ class VirtualFileTransferable implements Transferable {
 
   public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
     if (VIRTUAL_FILE_DATA_FLAVOR.equals(flavor)) {
-      String[] files = new String[myFiles.length];
-      for (int i = 0; i < myFiles.length; i++){
-        files[i] = myFiles[i].getUrl();
-      }
-      return files;
+      return myData.getPresentation();
     }
     throw new UnsupportedFlavorException(flavor);
   }

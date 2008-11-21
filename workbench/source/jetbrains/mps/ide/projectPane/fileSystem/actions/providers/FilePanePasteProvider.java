@@ -1,10 +1,9 @@
-package jetbrains.mps.ide.projectPane.fileSystem.actions;
+package jetbrains.mps.ide.projectPane.fileSystem.actions.providers;
 
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 
 import java.awt.datatransfer.Clipboard;
@@ -13,11 +12,7 @@ import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.Toolkit;
 import java.io.IOException;
 
-import jetbrains.mps.datatransfer.PasteNodeData;
-import jetbrains.mps.datatransfer.SModelDataFlavor;
-import jetbrains.mps.datatransfer.SNodeTransferable;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vcs.ExcludedFileIndexApplicationComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -25,24 +20,28 @@ public class FilePanePasteProvider implements PasteProvider {
   private final static Logger LOG = Logger.getLogger(FilePanePasteProvider.class);
 
   public void performPaste(DataContext dataContext) {
-    VirtualFile[] files = getFiles(dataContext);
-    if (files != null) {
-      paste(files, getDir(dataContext));
+    CopyPasteFilesData data = getData(dataContext);
+    if (data != null) {
+      paste(data, getDir(dataContext));
     }
   }
 
   @Nullable
-  private VirtualFile[] getFiles(DataContext dataContext) {
+  private CopyPasteFilesData getData(DataContext dataContext) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     if (cb == null) return null;
 
     Transferable content = cb.getContents(null);
     if (content == null) return null;
 
-    VirtualFile[] files = null;
+    CopyPasteFilesData files = null;
     if (content.isDataFlavorSupported(VirtualFileTransferable.VIRTUAL_FILE_DATA_FLAVOR)) {
       try {
-        files = getFiles((String[]) content.getTransferData(VirtualFileTransferable.VIRTUAL_FILE_DATA_FLAVOR));
+        files = getData((String[]) content.getTransferData(VirtualFileTransferable.VIRTUAL_FILE_DATA_FLAVOR));
+
+        if (files == null || !files.hasAnythingToDo()) {
+          return null;
+        }
 
       } catch (UnsupportedFlavorException e) {
         LOG.error("Exception", e);
@@ -56,12 +55,9 @@ public class FilePanePasteProvider implements PasteProvider {
     return files;
   }
 
-  private VirtualFile[] getFiles(String[] strings) {
-    VirtualFile[] files = new VirtualFile[strings.length];
-    for (int i = 0; i < files.length; i++) {
-      files[i] = VirtualFileManager.getInstance().findFileByUrl(strings[i]);
-    }
-    return files;
+  private CopyPasteFilesData getData(String[] strings) {
+    if (strings == null) return null;
+    return new CopyPasteFilesData(strings);
   }
 
   private VirtualFile getDir(DataContext dataContext) {
@@ -70,11 +66,13 @@ public class FilePanePasteProvider implements PasteProvider {
     return file;
   }
 
-  private void paste(@NotNull VirtualFile[] files, @NotNull VirtualFile basedir) {
-    for (VirtualFile f : files) {
+  private void paste(@NotNull CopyPasteFilesData data, @NotNull VirtualFile basedir) {
+    for (VirtualFile f : data.getFiles()) {
       try {
         if (!FileTypeManager.getInstance().isFileIgnored(f.getName())) {
-          f.copy(this, basedir, f.getName());
+          if (!data.isCut()) {
+            f.copy(this, basedir, f.getName());
+          }
         }
       } catch (IOException e) {
         LOG.error("Error while pasting " + f + "\n", e);
@@ -83,10 +81,10 @@ public class FilePanePasteProvider implements PasteProvider {
   }
 
   public boolean isPastePossible(DataContext dataContext) {
-    return (getDir(dataContext) != null) && (getFiles(dataContext) != null);
+    return (getDir(dataContext) != null) && (getData(dataContext) != null);
   }
 
   public boolean isPasteEnabled(DataContext dataContext) {
-    return (getDir(dataContext) != null) && (getFiles(dataContext) != null);
+    return (getDir(dataContext) != null) && (getData(dataContext) != null);
   }
 }
