@@ -83,10 +83,25 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
               }
             } else
             {
+              SNode nodeWithError = equationInfo.getNodeWithError();
+              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+                SNode methodCall = SNodeOperations.getParent(nodeWithError);
+                SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+                {
+                  BaseIntentionProvider intentionProvider = null;
+                  intentionProvider = new BaseIntentionProvider("r:efd0132d-3606-4af9-8d14-f032e0060e4e(jetbrains.mps.baseLanguage.typesystem@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+                  intentionProvider.putArgument("methodCall", methodCall);
+                  intentionProvider.putArgument("classifier", classifier);
+                  IErrorTarget errorTarget = new NodeErrorTarget();
+                  typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", intentionProvider, errorTarget);
+                }
+              } else
               {
-                BaseIntentionProvider intentionProvider = null;
-                IErrorTarget errorTarget = new NodeErrorTarget();
-                typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357915", intentionProvider, errorTarget);
+                {
+                  BaseIntentionProvider intentionProvider = null;
+                  IErrorTarget errorTarget = new NodeErrorTarget();
+                  typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357915", intentionProvider, errorTarget);
+                }
               }
             }
           }
@@ -139,7 +154,15 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
           }
         } else
         {
-          result_14532009 = false;
+          SNode nodeWithError = equationInfo.getNodeWithError();
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+            SNode methodCall = SNodeOperations.getParent(nodeWithError);
+            SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+            result_14532009 = false;
+          } else
+          {
+            result_14532009 = false;
+          }
         }
       }
     }
