@@ -6,11 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.commons.lang.StringUtils;
 import java.io.File;
 import java.util.List;
@@ -29,6 +29,9 @@ public class MPSLayout_Behavior {
     MapSequence.fromMap(vars).put("/", "file.separator");
     MapSequence.fromMap(vars).put(":", "path.separator");
     MapSequence.fromMap(vars).put("date", "DSTAMP");
+    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).isEmpty()) {
+      SLinkOperations.addChild(thisNode, "configuration", SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Configuration", null));
+    }
     SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).first(), "name", "default");
     for(String s : Sequence.fromIterable(MapSequence.fromMap(vars).keySet())) {
       SNode var = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Variable", null);
