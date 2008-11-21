@@ -292,7 +292,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1087833241328">
     <property name="name" value="PropertyMacro" />
     <property name="package" value="macro" />
-    <link role="extends" targetNodeId="2.1133920641626" />
+    <link role="extends" targetNodeId="1227303129915" resolveInfo="AbstractMacto" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1167756362303">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="propertyValueFunction" />
@@ -306,7 +306,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1087833466690">
     <property name="name" value="NodeMacro" />
     <property name="package" value="macro" />
-    <link role="extends" targetNodeId="2.1133920641626" />
+    <link role="extends" targetNodeId="1227303129915" resolveInfo="AbstractMacto" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1200912223215">
       <property name="role" value="mappingLabel" />
       <link role="target" targetNodeId="1200911316486" resolveInfo="MappingLabelDeclaration" />
@@ -316,7 +316,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1131073130984">
-      <property name="value" value="node macro" />
+      <property name="value" value="abstract node macro" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1185229020384">
@@ -334,7 +334,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1088761943574">
     <property name="name" value="ReferenceMacro" />
     <property name="package" value="macro" />
-    <link role="extends" targetNodeId="2.1133920641626" />
+    <link role="extends" targetNodeId="1227303129915" resolveInfo="AbstractMacto" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1167770376702">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="referentFunction" />
@@ -1694,6 +1694,14 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225228973255">
       <property name="value" value="post-process output node" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227303129915">
+    <property name="package" value="macro" />
+    <property name="name" value="AbstractMacro" />
+    <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1227303144588">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
 </model>
