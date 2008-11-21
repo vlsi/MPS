@@ -70,7 +70,7 @@ public class QueriesUtil {
     if (node == null) {
       return null;
     }
-    List<SNode> attributes = node.getAllAttributes();
+    List<SNode> attributes = SNodeOperations.getAllAttributes(node);
     SNode prevMacro = null;
     for(SNode attribute : Sequence.fromIterable(attributes)) {
       if (attribute == currMacroNode) {

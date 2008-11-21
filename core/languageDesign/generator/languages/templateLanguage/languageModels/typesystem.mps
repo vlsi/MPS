@@ -723,14 +723,12 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178667158265">
             <property name="name" value="attributes" />
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1178667166192" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204753471282">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1178667139226">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178667130053">
-                  <link role="variableDeclaration" targetNodeId="1178667020595" resolveInfo="node" />
-                </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227293332443">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178667130053">
+                <link role="variableDeclaration" targetNodeId="1178667020595" resolveInfo="node" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204753471283">
-                <link role="baseMethodDeclaration" targetNodeId="6.~SNode.getAllAttributes():java.util.List" resolveInfo="getAllAttributes" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1227293335088">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.AllAttributesQualifier" id="1227293350106" />
               </node>
             </node>
           </node>
