@@ -6632,8 +6632,8 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224865758907" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224865758908" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1227266291342" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877436333">
       <property name="name" value="getPresentation" />

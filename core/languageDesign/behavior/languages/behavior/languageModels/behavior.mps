@@ -703,12 +703,12 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225194243573">
-        <link role="classifier" targetNodeId="7.1221578571953" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
-      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225194243574">
         <property name="name" value="nodesToExtract" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1225194243575" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1221668414344" />
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227265946333">
+        <link role="classifier" targetNodeId="7.1223471722196" resolveInfo="IExtractMethodRefactoringProcessor" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1225194243576">
