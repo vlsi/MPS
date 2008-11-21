@@ -15,7 +15,7 @@ public class MeetType_Behavior {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    StringBuilder sb = new StringBuilder("MEET(");
+    StringBuilder sb = new StringBuilder("meet(");
     List<SNode> nodes = SLinkOperations.getTargets(thisNode, "argument", true);
     for(SNode arg : nodes) {
       sb.append(BaseConcept_Behavior.call_getPresentation_1213877396640(arg));

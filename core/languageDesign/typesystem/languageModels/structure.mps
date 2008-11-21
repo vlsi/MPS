@@ -1124,6 +1124,10 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1.1133920641626" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227261052980">
+      <property name="value" value="meet" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1188811367543">
     <property name="name" value="ComparisonRule" />

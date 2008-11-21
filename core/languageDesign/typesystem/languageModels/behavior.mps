@@ -367,7 +367,7 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888382407">
                 <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877428174">
-                  <property name="value" value="MEET(" />
+                  <property name="value" value="meet(" />
                 </node>
               </node>
             </node>
@@ -519,7 +519,7 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888373023">
                 <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877496041">
-                  <property name="value" value="JOIN(" />
+                  <property name="value" value="join(" />
                 </node>
               </node>
             </node>
