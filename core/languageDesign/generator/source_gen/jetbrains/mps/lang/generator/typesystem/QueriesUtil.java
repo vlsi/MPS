@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink;
 
 public class QueriesUtil {
 
@@ -253,7 +252,7 @@ __switch__:
       return SLinkOperations.getTarget(ancestor, "applicableConcept", false);
     }
     // ============
-    SNode rootAnnotation = SNodeOperations.getContainingRoot(node).getAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION);
+    SNode rootAnnotation = SLinkOperations.getTarget(SNodeOperations.getContainingRoot(node), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true);
     return SLinkOperations.getTarget(rootAnnotation, "applicableConcept", false);
   }
 

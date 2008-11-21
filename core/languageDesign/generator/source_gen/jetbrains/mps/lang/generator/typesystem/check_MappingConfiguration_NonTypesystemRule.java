@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_MappingConfiguration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -21,14 +23,16 @@ public class check_MappingConfiguration_NonTypesystemRule extends AbstractNonTyp
     for(SNode scriptReference : Sequence.fromIterable(SLinkOperations.getTargets(mc, "preMappingScript", true))) {
       if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(scriptReference, "mappingScript", false), "scriptKind", "pre_processing", "post_processing"))) {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(scriptReference, "pre-processing script kind is expected", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1195601255636", intentionProvider);
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportTypeError(scriptReference, "pre-processing script kind is expected", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1195601255636", intentionProvider, errorTarget);
       }
     }
     // --
     for(SNode scriptReference : Sequence.fromIterable(SLinkOperations.getTargets(mc, "postMappingScript", true))) {
       if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(scriptReference, "mappingScript", false), "scriptKind", "post_processing", "post_processing"))) {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(scriptReference, "post-processing script kind is expected", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1195601346473", intentionProvider);
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportTypeError(scriptReference, "post-processing script kind is expected", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1195601346473", intentionProvider, errorTarget);
       }
     }
   }

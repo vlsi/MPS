@@ -42,7 +42,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="22" />
+  <maxImportIndex value="23" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
@@ -55,6 +55,7 @@
   <import index="20" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <import index="21" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.workbench.editors(jetbrains.mps.workbench.editors@java_stub)" version="-1" />
+  <import index="23" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1203775431223">
     <property name="name" value="ConvertInlineTemplateToTemplateFragment" />
     <property name="package" value="migrations" />
@@ -3642,6 +3643,43 @@
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227221178802" />
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227221178803">
               <link role="variableDeclaration" targetNodeId="1227221178772" resolveInfo="usage" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1227291795686">
+    <property name="name" value="AttachMappingLabel" />
+    <link role="forConcept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1227291795687">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227291795688">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1227291900820">
+          <property name="value" value=" attach new or exiting label to node in template." />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1227291948151">
+          <property name="value" value=" if node is annotated with macro or template fragment, then label is added to macro or TF," />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1227292055746">
+          <property name="value" value=" otherwise new labeled COPY_SRC macro is created." />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227292098608">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227292098609">
+            <property name="value" value="Attach mapping label" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1227291795689">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227291795690" />
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1227292124203">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227292124204">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227292166659">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227292166817">
+            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1227292166660" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1227292170789">
+              <link role="baseMethodDeclaration" targetNodeId="23.1213877396627" resolveInfo="isInTemplates" />
             </node>
           </node>
         </node>

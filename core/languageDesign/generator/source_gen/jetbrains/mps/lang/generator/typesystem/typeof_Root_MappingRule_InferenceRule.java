@@ -11,6 +11,8 @@ import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationL
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -30,7 +32,8 @@ public class typeof_Root_MappingRule_InferenceRule extends AbstractInferenceRule
           if (!(SConceptOperations.isSubConceptOf(ruleApplicableConcept, NameUtil.nodeFQName(templateApplicableConcept)))) {
             {
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.reportTypeError(rule, "template is not applicable to the rule concept '" + SPropertyOperations.getString(ruleApplicableConcept, "name") + "'", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1183153521354", intentionProvider);
+              IErrorTarget errorTarget = new NodeErrorTarget();
+              typeCheckingContext.reportTypeError(rule, "template is not applicable to the rule concept '" + SPropertyOperations.getString(ruleApplicableConcept, "name") + "'", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1183153521354", intentionProvider, errorTarget);
             }
           }
         }

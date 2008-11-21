@@ -1573,20 +1573,16 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178670506572">
             <property name="name" value="rootAnnotation" />
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1178670513604" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204753471402">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1178670407833">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227905149">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178670386461">
-                    <link role="variableDeclaration" targetNodeId="1178670218097" resolveInfo="node" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" id="1178670392116" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227292903875">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227905149">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178670386461">
+                  <link role="variableDeclaration" targetNodeId="1178670218097" resolveInfo="node" />
                 </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" id="1178670392116" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204753471403">
-                <link role="baseMethodDeclaration" targetNodeId="6.~SNode.getAttribute(java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getAttribute" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178670470383">
-                  <link role="classifier" targetNodeId="25.~RootTemplateAnnotation_AnnotationLink" resolveInfo="RootTemplateAnnotation_AnnotationLink" />
-                  <link role="variableDeclaration" targetNodeId="25.~RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION" resolveInfo="ROOT_TEMPLATE_ANNOTATION" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1227292904769">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="1227292911723">
+                  <link role="annotationLink" targetNodeId="3.1168619445822" resolveInfo="rootTemplateAnnotation" />
                 </node>
               </node>
             </node>
