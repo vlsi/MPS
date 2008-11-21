@@ -22,6 +22,9 @@ public class AbstractEquationStatement_DataFlow extends DataFlowBuilder {
     if ((SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true) != null)) {
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true));
     }
+    if ((SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null)) {
+      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true));
+    }
   }
 
 }

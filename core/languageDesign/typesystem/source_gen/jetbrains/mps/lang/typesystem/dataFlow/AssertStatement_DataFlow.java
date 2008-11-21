@@ -18,6 +18,12 @@ public class AssertStatement_DataFlow extends DataFlowBuilder {
     _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "errorString", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "nodeToReport", true));
+    if ((SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null)) {
+      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "messageTarget", true));
+    }
+    if ((SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null)) {
+      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true));
+    }
   }
 
 }
