@@ -6,7 +6,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.mpsLayoutLanguage#1203014923802" uuid="ab777ef3-cd35-47a2-8db1-108b4d67986f">
+    <generator generatorUID="jetbrains.mps.build.packaging###1203014923802" uuid="ab777ef3-cd35-47a2-8db1-108b4d67986f">
       <models>
         <modelRoot path="${language_descriptor}\generator\buildlanguage\template" namespacePrefix="jetbrains.mps.build.packaging.generator.buildlanguage.template" />
       </models>
