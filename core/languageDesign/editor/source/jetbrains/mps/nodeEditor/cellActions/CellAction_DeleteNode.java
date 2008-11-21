@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.lang.core.structure.IWrapper;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
@@ -34,7 +35,8 @@ public class CellAction_DeleteNode extends EditorCellAction {
   }
 
   public boolean canExecute(EditorContext context) {
-    return !mySemanticNode.isRoot();
+    EditorCell cell = context.getNodeEditorComponent().findNodeCell(mySemanticNode);
+    return cell.getParent() != null;
   }
 
   public void execute(EditorContext context) {
