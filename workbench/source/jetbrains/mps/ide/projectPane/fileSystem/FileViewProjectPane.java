@@ -267,6 +267,8 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       return new FilePaneCopyProvider();
     } else if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) {
       return new FilePanePasteProvider();
+    } else if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) {
+      return new FilePaneCopyProvider();
     }
     return super.getData(dataId);
   }

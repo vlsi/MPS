@@ -72,6 +72,8 @@ public class FilePanePasteProvider implements PasteProvider {
         if (!FileTypeManager.getInstance().isFileIgnored(f.getName())) {
           if (!data.isCut()) {
             f.copy(this, basedir, f.getName());
+          } else {
+            f.move(this, basedir);
           }
         }
       } catch (IOException e) {
