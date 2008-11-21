@@ -7273,7 +7273,7 @@
                       </node>
                       <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201023446698">
                         <property name="fieldName" value="__CP__" />
-                        <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201023446699" />
+                        <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270690961" />
                         <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201536572301" />
                       </node>
                     </node>
@@ -7327,7 +7327,7 @@
                   </node>
                   <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201094822871">
                     <property name="fieldName" value="__CP__" />
-                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201094822872" />
+                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270693062" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201536575689" />
                   </node>
                 </node>
@@ -7444,7 +7444,7 @@
                   </node>
                   <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201023446759">
                     <property name="fieldName" value="__CP__" />
-                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201023446760" />
+                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270695640" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201536580399" />
                   </node>
                 </node>
@@ -7559,7 +7559,7 @@
                   </node>
                   <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201025995333">
                     <property name="fieldName" value="__CP__" />
-                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201025995334" />
+                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270744712" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201536642538" />
                   </node>
                 </node>
@@ -7726,7 +7726,7 @@
               </node>
               <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201190933099">
                 <property name="fieldName" value="__CP__" />
-                <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201190933100" />
+                <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270725386" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201536613618" />
               </node>
             </node>
@@ -8741,7 +8741,7 @@
                   </node>
                   <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201275443517">
                     <property name="fieldName" value="__CP__" />
-                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201275443518" />
+                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270714245" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201536594095" />
                   </node>
                 </node>
@@ -8894,7 +8894,7 @@
                     </node>
                     <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1209330086354">
                       <property name="fieldName" value="__CP__" />
-                      <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1209330086355" />
+                      <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270717818" />
                       <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1209330086356" />
                     </node>
                   </node>
@@ -8981,7 +8981,7 @@
               </node>
               <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201275469030">
                 <property name="fieldName" value="__CP__" />
-                <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201275469031" />
+                <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270720437" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201536598286" />
               </node>
             </node>
@@ -9129,27 +9129,21 @@
                       </node>
                     </node>
                   </node>
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209071984593">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201291343955" />
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1209071984594">
-                      <link role="fieldDeclaration" targetNodeId="1201291308401" resolveInfo="__CP__" />
-                    </node>
-                  </node>
                   <node role="defaultBlock" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201291340431">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1201291347465">
                       <property name="label" value="__loop__" />
                     </node>
                   </node>
                   <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1201291353876" />
+                  <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1227270614386">
+                    <property name="fieldName" value="__CP__" />
+                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270618333" />
+                    <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1227270614388" />
+                  </node>
                 </node>
               </node>
             </node>
           </node>
-        </node>
-        <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1201291308401">
-          <property name="name" value="__CP__" />
-          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1201291308402" />
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1201291311392" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201291306750" />
       </node>
@@ -9257,7 +9251,7 @@
                       </node>
                       <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201291955126">
                         <property name="fieldName" value="__CP__" />
-                        <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201291955127" />
+                        <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270735598" />
                         <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201536629838" />
                       </node>
                     </node>
@@ -9327,7 +9321,7 @@
                   </node>
                   <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201291955157">
                     <property name="fieldName" value="__CP__" />
-                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201291955158" />
+                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270737717" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201536633280" />
                   </node>
                 </node>
@@ -9444,7 +9438,7 @@
                       </node>
                       <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201292912770">
                         <property name="fieldName" value="__CP__" />
-                        <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201292912771" />
+                        <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270668315" />
                         <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201536556648" />
                       </node>
                     </node>
@@ -9514,7 +9508,7 @@
                   </node>
                   <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201292912809">
                     <property name="fieldName" value="__CP__" />
-                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201292912810" />
+                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270670410" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201536560841" />
                   </node>
                 </node>
@@ -9789,7 +9783,7 @@
                       </node>
                       <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201358206258">
                         <property name="fieldName" value="__CP__" />
-                        <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201358206259" />
+                        <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270707438" />
                         <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201358807405" />
                       </node>
                     </node>
@@ -9918,7 +9912,7 @@
                   </node>
                   <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201358206289">
                     <property name="fieldName" value="__CP__" />
-                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201358206290" />
+                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270709678" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201358813613" />
                   </node>
                 </node>
@@ -10039,7 +10033,7 @@
                         </node>
                         <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201382561146">
                           <property name="fieldName" value="__CP__" />
-                          <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201382561147" />
+                          <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270653990" />
                           <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201382664173" />
                         </node>
                       </node>
@@ -10147,7 +10141,7 @@
                       </node>
                       <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1201382704178">
                         <property name="fieldName" value="__CP__" />
-                        <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201382704179" />
+                        <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227270662751" />
                         <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201382704180" />
                       </node>
                     </node>
