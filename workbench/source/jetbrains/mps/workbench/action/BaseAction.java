@@ -72,11 +72,11 @@ public abstract class BaseAction extends AnAction {
     super.update(e);
     ActionPlace place = MPSDataKeys.PLACE.getData(DataManager.getInstance().getDataContext());
     Set<ActionPlace> places = getPlaces();
-    if (place==null){
-      disable(e.getPresentation());
-      return;
-    }
     if (places!=null){
+      if (place==null){
+        disable(e.getPresentation());
+        return;
+      }
       if (!places.contains(place)){
         disable(e.getPresentation());
         return;
