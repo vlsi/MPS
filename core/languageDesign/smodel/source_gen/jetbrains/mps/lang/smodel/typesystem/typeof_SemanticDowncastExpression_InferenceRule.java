@@ -83,7 +83,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
             }
           }
 
-        }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061035207");
+        }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061035207", false);
       }
     }
   }

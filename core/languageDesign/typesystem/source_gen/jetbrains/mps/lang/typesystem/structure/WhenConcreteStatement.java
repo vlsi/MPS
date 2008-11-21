@@ -16,6 +16,7 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_SHALLOW = "isShallow";
   public static final String BODY = "body";
   public static final String ARGUMENT = "argument";
   public static final String ARGUMENT_REPRESENTATOR = "argumentRepresentator";
@@ -46,6 +47,14 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
 
   public void setVirtualPackage(String value) {
     this.setProperty(WhenConcreteStatement.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getIsShallow() {
+    return this.getBooleanProperty(WhenConcreteStatement.IS_SHALLOW);
+  }
+
+  public void setIsShallow(boolean value) {
+    this.setBooleanProperty(WhenConcreteStatement.IS_SHALLOW, value);
   }
 
   public StatementList getBody() {

@@ -77,6 +77,7 @@
         <property name="value" value=" this when concrete has a sense of overloading" />
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="1186061660362">
+        <property name="isShallow" value="true" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186061660363">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1186061696724">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186061696725">
@@ -3310,6 +3311,7 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="1208202100447">
+          <property name="isShallow" value="true" />
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208202100448">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208202100449">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208202100450">

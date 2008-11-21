@@ -48,7 +48,7 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInfe
           }
         }
 
-      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442246000");
+      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442246000", false);
     }
   }
 

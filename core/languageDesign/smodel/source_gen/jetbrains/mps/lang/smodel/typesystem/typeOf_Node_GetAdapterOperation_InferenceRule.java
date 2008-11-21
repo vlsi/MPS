@@ -31,7 +31,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInfer
           }
         }
 
-      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057669142");
+      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057669142", false);
     }
     {
       SNode _nodeToCheck_1029348928467 = node;

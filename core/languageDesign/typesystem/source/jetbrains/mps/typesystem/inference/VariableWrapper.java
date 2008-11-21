@@ -68,6 +68,13 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
     if (varConditionWrapper != null) {
       equationManager.addWhenConcreteEntity(representator, varConditionWrapper);
     }
+
+    WhenConcreteEntity varShallowConditionWrapper = equationManager.getShallowWhenConcreteEntity(this);
+    equationManager.clearShallowWhenConcreteEntity(this);
+    if (varShallowConditionWrapper != null) {
+      equationManager.addShallowWhenConcreteEntity(representator, varShallowConditionWrapper);
+    }
+
     if (!myIsShallowConcrete && representator.isConcrete()) {
       //checking concrete
       myIsShallowConcrete = true;

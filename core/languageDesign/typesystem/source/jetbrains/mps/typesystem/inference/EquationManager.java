@@ -42,13 +42,14 @@ public class EquationManager {
 
   private Map<IWrapper, IWrapper> myEquations = new HashMap<IWrapper, IWrapper>(64, 0.4f);
   private Map<IWrapper, WhenConcreteEntity> myWhenConcreteEntities = new HashMap<IWrapper, WhenConcreteEntity>();
+  private Map<IWrapper, WhenConcreteEntity> myShallowWhenConcreteEntities = new HashMap<IWrapper, WhenConcreteEntity>();
+
   private Map<IWrapper, Set<SNodePointer>> myNonConcreteVars = new HashMap<IWrapper, Set<SNodePointer>>();
 
   private Map<IWrapper, Set<IWrapperListener>> myWrapperListeners = new HashMap<IWrapper, Set<IWrapperListener>>(64, 0.4f);
-
   private boolean myCollectConcretes = false;
-  private Set<WhenConcreteEntity> myCollectedWhenConcreteEntities = new HashSet<WhenConcreteEntity>();
 
+  private Set<WhenConcreteEntity> myCollectedWhenConcreteEntities = new HashSet<WhenConcreteEntity>();
   private TypeCheckingContext myTypeCheckingContext;
 
   public EquationManager(TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
@@ -319,13 +320,34 @@ public class EquationManager {
     return myWhenConcreteEntities.get(wrapper);
   }
 
+  public WhenConcreteEntity getShallowWhenConcreteEntity(IWrapper wrapper) {
+    return myShallowWhenConcreteEntities.get(wrapper);
+  }
+
   public void clearWhenConcreteEntity(IWrapper wrapper) {
     myWhenConcreteEntities.remove(wrapper);
+  }
+
+   public void clearShallowWhenConcreteEntity(IWrapper wrapper) {
+    myShallowWhenConcreteEntities.remove(wrapper);
   }
 
   public void addNewWhenConcreteEntity(IWrapper wrapper, WhenConcreteEntity entity) {
     addWhenConcreteEntity(wrapper, entity);
     checkConcrete(wrapper);
+  }
+
+  public void addNewWhenConcreteEntity(IWrapper wrapper, WhenConcreteEntity entity, boolean isShallow) {
+    if (!isShallow) {
+      addWhenConcreteEntity(wrapper, entity);
+      checkConcrete(wrapper);
+    } else {
+      if (!wrapper.isVariable()) {
+        entity.run();
+      } else {
+        addShallowWhenConcreteEntity(wrapper, entity);
+      }
+    }
   }
 
   /*package*/ void addWhenConcreteEntity(IWrapper wrapper, final WhenConcreteEntity entity) {
@@ -347,13 +369,37 @@ public class EquationManager {
     myWhenConcreteEntities.put(representator, entityToPut);
   }
 
-  private List<SNode> getChildVariables(SNode node) {
+  /*package*/ void addShallowWhenConcreteEntity(IWrapper wrapper, final WhenConcreteEntity entity) {
+    IWrapper representator = getRepresentatorWrapper(wrapper);
+    final WhenConcreteEntity oldEntity = myShallowWhenConcreteEntities.remove(representator);
+    WhenConcreteEntity entityToPut = entity;
+    if (oldEntity != null) {
+      entityToPut = new WhenConcreteEntity(
+        new Runnable() {
+          public void run() {
+            oldEntity.run();
+            entity.run();
+          }
+        },
+        oldEntity.getNodeModel(),
+        oldEntity.getNodeId());
+    }
+
+    myShallowWhenConcreteEntities.put(representator, entityToPut);
+  }
+
+  private List<SNode> getChildAndReferentVariables(SNode node) {
     if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
       return CollectionUtil.asList(node);
     }
     List<SNode> result = new ArrayList<SNode>();
+    for (SNode referent : node.getReferents()) {
+      if (referent != null && referent.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+        result.add(referent);
+      }
+    }
     for (SNode child : node.getChildren(false)) {
-      result.addAll(getChildVariables(child));
+      result.addAll(getChildAndReferentVariables(child));
     }
     return result;
   }
@@ -365,7 +411,7 @@ public class EquationManager {
       return false;
     }
     if (!myNonConcreteVars.containsKey(wrapper)) {
-      for (SNode var : getChildVariables(wrapper.getNode())) {
+      for (SNode var : getChildAndReferentVariables(wrapper.getNode())) {
         addNonConcreteVariable(wrapper, new SNodePointer(var));
       }
     }
@@ -382,7 +428,7 @@ public class EquationManager {
           getRepresentatorWrapper(NodeWrapper.createWrapperFromNode(var.getNode(), this));
         if (varRepresentatorWrapper.isConcrete()) {
           variables.remove(var);
-          for (SNode varChild : getChildVariables(varRepresentatorWrapper.getNode())) {
+          for (SNode varChild : getChildAndReferentVariables(varRepresentatorWrapper.getNode())) {
             variables.add(new SNodePointer(varChild));
           }
         }
@@ -1159,6 +1205,17 @@ public class EquationManager {
         }
       }
       representator.fireBecomesDeeplyConcrete(this);
+    }
+    if (!representator.isVariable()) {
+      WhenConcreteEntity whenConcreteEntity = getShallowWhenConcreteEntity(representator);
+      if (whenConcreteEntity != null) {
+        clearShallowWhenConcreteEntity(representator);
+        if (myCollectConcretes) {
+          myCollectedWhenConcreteEntities.add(whenConcreteEntity);
+        } else {
+          whenConcreteEntity.run();
+        }
+      }
     }
   }
 

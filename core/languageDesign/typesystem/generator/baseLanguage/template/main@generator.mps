@@ -9109,7 +9109,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205769698949">
-              <link role="baseMethodDeclaration" targetNodeId="6.~TypeCheckingContext.whenConcrete(jetbrains.mps.smodel.SNode,java.lang.Runnable,java.lang.String,java.lang.String):void" resolveInfo="whenConcrete" />
+              <link role="baseMethodDeclaration" targetNodeId="6.~TypeCheckingContext.whenConcrete(jetbrains.mps.smodel.SNode,java.lang.Runnable,java.lang.String,java.lang.String,boolean):void" resolveInfo="whenConcrete" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205764655119">
                 <link role="variableDeclaration" targetNodeId="1205764611218" resolveInfo="representator" />
               </node>
@@ -9169,6 +9169,23 @@
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1205764543411" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1221233678299">
                             <link role="property" targetNodeId="1.1221225753306" resolveInfo="nodeId" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1227280097771">
+                <property name="value" value="false" />
+                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1227280101335">
+                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1227280101336">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227280101337">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227280110603">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227280110699">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227280110604" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227280112218">
+                            <link role="property" targetNodeId="1.1227279868398" resolveInfo="isShallow" />
                           </node>
                         </node>
                       </node>
@@ -15974,6 +15991,20 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221233459924">
                   <link role="baseMethodDeclaration" targetNodeId="4.~SNode.getId():java.lang.String" resolveInfo="getId" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertyMacro$property_attribute$isShallow" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1227280129719">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1227280129720">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227280129721">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227280132518">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227280132599">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227280132519" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227280134008">
+                  <link role="property" targetNodeId="1.1227279857428" resolveInfo="isShallow" />
                 </node>
               </node>
             </node>

@@ -1745,6 +1745,15 @@
         <link role="styleClass" targetNodeId="27.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227279907533">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227279909644">
+        <property name="text" value="is shallow:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1227279917959">
+        <link role="relationDeclaration" targetNodeId="1.1227279857428" resolveInfo="isShallow" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1188473558532">
     <link role="conceptDeclaration" targetNodeId="1.1188473524530" />
@@ -3088,6 +3097,21 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221229241524">
         <property name="text" value="}" />
         <link role="styleClass" targetNodeId="27.1215091331565" resolveInfo="RightBrace" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227279937588">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1227279937589">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227279937590">
+          <property name="text" value="is shallow:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1227279947265">
+          <link role="relationDeclaration" targetNodeId="1.1227279868398" resolveInfo="isShallow" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1227279937591">
+          <property name="flag" value="false" />
+        </node>
       </node>
     </node>
   </node>
