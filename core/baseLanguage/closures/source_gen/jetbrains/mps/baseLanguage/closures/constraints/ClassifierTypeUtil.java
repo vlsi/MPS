@@ -40,25 +40,32 @@ public class ClassifierTypeUtil {
       }
       return res;
     }
-    SNode ctw = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
-    SNode cts = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SequenceType") && !("Iterable".equals(SPropertyOperations.getString(SLinkOperations.getTarget(cts, "classifier", false), "name")))) {
-      System.err.println("*** Gotcha! *** coerceStrong( " + BaseConcept_Behavior.call_getPresentation_1213877396640(type) + " <: concept = ClassifierType) == " + BaseConcept_Behavior.call_getPresentation_1213877396640(cts) + ", coerce( " + BaseConcept_Behavior.call_getPresentation_1213877396640(type) + " <: concept = ClassifierType) == " + BaseConcept_Behavior.call_getPresentation_1213877396640(ctw));
+    SNode cType = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
+      (SNode)type :
+      null
+    );
+    if ((cType == null)) {
+      SNode ctw = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+      SNode cts = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+      if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SequenceType") && !("Iterable".equals(SPropertyOperations.getString(SLinkOperations.getTarget(cts, "classifier", false), "name")))) {
+        System.err.println("*** Gotcha! *** coerceStrong( " + BaseConcept_Behavior.call_getPresentation_1213877396640(type) + " <: concept = ClassifierType) == " + BaseConcept_Behavior.call_getPresentation_1213877396640(cts) + ", coerce( " + BaseConcept_Behavior.call_getPresentation_1213877396640(type) + " <: concept = ClassifierType) == " + BaseConcept_Behavior.call_getPresentation_1213877396640(ctw));
+      }
+      cType = ((cts != null) ?
+        cts :
+        ctw
+      );
     }
-    if ((cts == null)) {
-      cts = ctw;
-    }
-    if ((cts != null)) {
-      List<SNode> params = SLinkOperations.getTargets(cts, "parameter", true);
+    if ((cType != null)) {
+      List<SNode> params = SLinkOperations.getTargets(cType, "parameter", true);
       if (params != null && params.size() > 0) {
         SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-        SLinkOperations.setTarget(res, "classifier", SLinkOperations.getTarget(cts, "classifier", false), false);
+        SLinkOperations.setTarget(res, "classifier", SLinkOperations.getTarget(cType, "classifier", false), false);
         for(SNode p : params) {
           SLinkOperations.addChild(res, "parameter", SNodeOperations.copyNode(getTypeCoercedToClassifierType(p)));
         }
         return res;
       }
-      return cts;
+      return cType;
     }
     return type;
   }

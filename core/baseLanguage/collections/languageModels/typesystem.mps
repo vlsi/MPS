@@ -3079,7 +3079,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1178725705709">
-    <property name="isWeak" value="true" />
+    <property name="isWeak" value="false" />
     <property name="name" value="supertypesOf_ListType_ClassifierTypeList" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178725705710">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178725705711">
@@ -4165,7 +4165,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1198165935901">
     <property name="package" value="mapType" />
     <property name="name" value="map_extends_java_util_Map" />
-    <property name="isWeak" value="true" />
+    <property name="isWeak" value="false" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198165935902">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198165982252">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1198165984719">
@@ -6610,7 +6610,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1226599215753">
     <property name="name" value="ClassifierType_Set_weakSupertypeOf_set" />
-    <property name="isWeak" value="true" />
+    <property name="isWeak" value="false" />
     <property name="package" value="set" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226599215754">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226599255596">

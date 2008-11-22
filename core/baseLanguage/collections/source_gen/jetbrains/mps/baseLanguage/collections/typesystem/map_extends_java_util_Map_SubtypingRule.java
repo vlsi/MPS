@@ -26,7 +26,7 @@ public class map_extends_java_util_Map_SubtypingRule extends SubtypingRule_Runti
   }
 
   public boolean isWeak() {
-    return true;
+    return false;
   }
 
 }

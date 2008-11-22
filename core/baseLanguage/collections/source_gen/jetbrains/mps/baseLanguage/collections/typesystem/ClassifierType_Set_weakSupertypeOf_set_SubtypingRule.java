@@ -27,7 +27,7 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
   }
 
   public boolean isWeak() {
-    return true;
+    return false;
   }
 
 }
