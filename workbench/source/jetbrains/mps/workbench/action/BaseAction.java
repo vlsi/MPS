@@ -28,6 +28,7 @@ public abstract class BaseAction extends AnAction {
 
   public BaseAction(String text, String description, Icon icon) {
     super(text, description, icon);
+    myPlaces.add(null);
     updateShortcuts();
   }
 
@@ -121,7 +122,12 @@ public abstract class BaseAction extends AnAction {
   }
 
   public void addPlace(ActionPlace place) {
+    myPlaces.remove(null);
     myPlaces.add(place);
+  }
+
+  public Set<ActionPlace> getPlaces() {
+    return myPlaces;
   }
 
   /**

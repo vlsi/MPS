@@ -7164,55 +7164,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration" id="1216659600699">
-    <property name="name" value="RegisterMainMenuShortcuts" />
-    <node role="initBlock" type="jetbrains.mps.lang.plugin.structure.ApplicationPluginInitBlock" id="1216660352428">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216660352429">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216661201789">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216661202468">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216661201790">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1216661201791" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1216661201792">
-                <link role="member" targetNodeId="1216660361450" resolveInfo="myShortcuts" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216661202689">
-              <link role="baseMethodDeclaration" targetNodeId="80.~MainMenuShortcuts.register():void" resolveInfo="register" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="disposeBlock" type="jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock" id="1216660354431">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216660354432">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216661207551">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216661207552">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216661207553">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1216661207554" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1216661207555">
-                <link role="member" targetNodeId="1216660361450" resolveInfo="myShortcuts" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216661207556">
-              <link role="baseMethodDeclaration" targetNodeId="80.~MainMenuShortcuts.unregister():void" resolveInfo="unregister" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="fieldDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1216660361450">
-      <property name="name" value="myShortcuts" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216660361451" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216660319143">
-        <link role="classifier" targetNodeId="80.~MainMenuShortcuts" resolveInfo="MainMenuShortcuts" />
-      </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216660327193">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216660327194">
-          <link role="baseMethodDeclaration" targetNodeId="80.~MainMenuShortcuts.&lt;init&gt;()" resolveInfo="MainMenuShortcuts" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.plugin.structure.ToolDeclaration" id="1216661721916">
     <property name="name" value="ModuleRepository" />
     <property name="caption" value="Module Repository Viewer" />
@@ -8112,7 +8063,7 @@
         <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1226583103423">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226583105128">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1226583109318">
-              <link role="baseMethodDeclaration" targetNodeId="3.~CreateRootNodeGroup.&lt;init&gt;()" resolveInfo="CreateRootNodeGroup" />
+              <link role="baseMethodDeclaration" targetNodeId="3.~CreateRootNodeGroup.&lt;init&gt;(java.lang.String)" resolveInfo="CreateRootNodeGroup" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226583111396">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226583111178">
                   <link role="variableDeclaration" targetNodeId="1226501976718" resolveInfo="node" />

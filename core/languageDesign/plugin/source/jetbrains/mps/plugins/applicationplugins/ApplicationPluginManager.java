@@ -9,9 +9,11 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -129,13 +131,13 @@ public class ApplicationPluginManager implements ApplicationComponent {
     paneGroups.add(ActionUtils.getGroup(ProjectPane.LANGUAGE_NEW_ACTIONS));
     paneGroups.add(ActionUtils.getGroup(ProjectPane.GENERATOR_NEW_ACTIONS));
     for (BaseGroup group:paneGroups){
-      group.addPlace(ActionPlace.LOGICAL_VIEW);
+      group.addPlace(ActionPlace.LOGICAL_VIEW,null);
     }
 
     List<BaseGroup> editorGroups = new ArrayList<BaseGroup>();
     editorGroups.add(ActionUtils.getGroup(EditorComponent.EDITOR_POPUP_MENU_ACTIONS));
     for (BaseGroup group:editorGroups){
-      group.addPlace(ActionPlace.EDITOR);
+      group.addPlace(ActionPlace.EDITOR,null);
     }
 
     List<BaseGroup> mainMenuGroups = new ArrayList<BaseGroup>();
@@ -148,7 +150,13 @@ public class ApplicationPluginManager implements ApplicationComponent {
     }
 
     for (BaseGroup group:mainMenuGroups){
-      group.addPlace(null);
+      for (ActionPlace place:ActionPlace.values()){
+        group.addPlace(place,new Condition<BaseAction>() {
+          public boolean met(BaseAction action) {
+            return action.getPlaces().isEmpty();           
+          }
+        });
+      }
     }
   }
 

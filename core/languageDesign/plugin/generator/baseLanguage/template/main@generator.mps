@@ -10797,7 +10797,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227034104200">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1227034104201" />
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227034104202">
-                    <link role="baseMethodDeclaration" targetNodeId="61.~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction,com.intellij.openapi.actionSystem.ActionManager):void" resolveInfo="add" />
+                    <link role="baseMethodDeclaration" targetNodeId="61.~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolveInfo="add" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227034104203">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227034104204">
                         <link role="baseMethodDeclaration" targetNodeId="63.~ActionFactory.getInstance():jetbrains.mps.workbench.action.ActionFactory" resolveInfo="getInstance" />

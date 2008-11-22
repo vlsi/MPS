@@ -6,9 +6,12 @@ import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.util.Condition;
 
 import javax.swing.Icon;
 import java.util.Set;
+
+import org.jetbrains.annotations.Nullable;
 
 public class BaseGroup extends DefaultActionGroup {
   private String myId = "";
@@ -83,12 +86,15 @@ public class BaseGroup extends DefaultActionGroup {
     add(new LabelledAnchor(id));
   }
 
-  public void addPlace(ActionPlace place){
+  public void addPlace(ActionPlace place,@Nullable Condition<BaseAction> condition){
     for (AnAction child:getChildren(null)){
       if (child instanceof BaseGroup){
-        ((BaseGroup)child).addPlace(place);
+        ((BaseGroup)child).addPlace(place,condition);
       }else if (child instanceof BaseAction){
-        ((BaseAction)child).addPlace(place);
+        BaseAction action = (BaseAction) child;
+        if (condition==null || condition.met(action)) {
+          action.addPlace(place);
+        }
       }
     }
   }
