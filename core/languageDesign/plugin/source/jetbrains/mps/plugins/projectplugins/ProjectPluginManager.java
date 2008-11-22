@@ -17,6 +17,7 @@ import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
+import jetbrains.mps.plugins.PluginSorter;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -25,6 +26,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -42,10 +44,10 @@ import java.util.*;
 )
 public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
   private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
+  private static final String IDE_MODULE_ID = "jetbrains.mps.ide";
 
   private final Object myPluginsLock = new Object();
-
-  private List<BaseProjectPlugin> myPlugins = new ArrayList<BaseProjectPlugin>();
+  private List<BaseProjectPlugin> mySortedPlugins = new ArrayList<BaseProjectPlugin>();
   private PluginsState myState = new PluginsState();
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
@@ -81,7 +83,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   @Nullable
   public <T extends GeneratedTool> T getTool(Class<T> toolClass) {
     synchronized (myPluginsLock) {
-      for (BaseProjectPlugin plugin : myPlugins) {
+      for (BaseProjectPlugin plugin : mySortedPlugins) {
         List<GeneratedTool> tools = ((BaseProjectPlugin) plugin).getTools();
         for (GeneratedTool tool : tools) {
           if (tool.getClass() == toolClass) return (T) tool;
@@ -93,7 +95,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   public <T extends BaseProjectPrefsComponent> T getPrefsComponent(Class<T> componentClass) {
     synchronized (myPluginsLock) {
-      for (BaseProjectPlugin plugin : myPlugins) {
+      for (BaseProjectPlugin plugin : mySortedPlugins) {
         BaseProjectPlugin basePlugin = (BaseProjectPlugin) plugin;
         BaseProjectPrefsComponent component = basePlugin.getPrefsComponent(componentClass);
         if (component != null) return (T) component;
@@ -119,17 +121,17 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         synchronized (myPluginsLock) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              myPlugins = createPlugins(mpsProject);
+              mySortedPlugins = createPlugins(mpsProject);
             }
           });
-          for (BaseProjectPlugin plugin : myPlugins) {
+          for (BaseProjectPlugin plugin : mySortedPlugins) {
             try {
               plugin.init(mpsProject);
             } catch (Throwable t1) {
               LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
             }
           }
-          spreadState(myPlugins);
+          spreadState(mySortedPlugins);
         }
 
         myLoaded = true;
@@ -143,25 +145,25 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         assert !myProject.isDisposed();
         if (!myLoaded) return;
         synchronized (myPluginsLock) {
-          collectState(myPlugins);
+          Collections.reverse(mySortedPlugins);
+          collectState(mySortedPlugins);
 
-          for (BaseProjectPlugin plugin : myPlugins) {
+          for (BaseProjectPlugin plugin : mySortedPlugins) {
             try {
               plugin.dispose();
             } catch (Throwable t) {
               LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
             }
           }
-          myPlugins.clear();
+          mySortedPlugins.clear();
         }
         myLoaded = false;
       }
     });
-
   }
 
-  private List<PluginDescriptor> collectPlugins(MPSProject project) {
-    List<PluginDescriptor> result = new ArrayList<PluginDescriptor>();
+  private List<BaseProjectPlugin> createPlugins(MPSProject project) {
+    final Map<IModule,BaseProjectPlugin> plugins = new HashMap<IModule,BaseProjectPlugin>();
 
     Set<Language> languages = new HashSet<Language>();
     Set<DevKit> devkits = new HashSet<DevKit>();
@@ -183,55 +185,36 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
     for (Language language : languages) {
       if (language.getPluginModelDescriptor() != null) {
-        result.add(new PluginDescriptor(language, language.getGeneratedPluginClassLongName()));
+        BaseProjectPlugin plugin = createPlugin(language, language.getGeneratedPluginClassLongName());
+        if (plugin == null) continue;
+        plugins.put(language, plugin);
       }
     }
 
     for (DevKit dk : devkits) {
       if (dk.getDevKitPluginClass() != null) {
-        result.add(new PluginDescriptor(dk, dk.getDevKitPluginClass()));
+        BaseProjectPlugin plugin = createPlugin(dk, dk.getDevKitPluginClass());
+        if (plugin == null) continue;
+        plugins.put(dk, plugin);
       }
     }
 
-    return result;
+    myIdePlugin = new Ide_ProjectPlugin();
+    IModule ideModule = MPSModuleRepository.getInstance().getModuleByUID(IDE_MODULE_ID);
+    plugins.put(ideModule,myIdePlugin);
+
+    return PluginSorter.sortByDependencies(plugins);
   }
 
-  private List<BaseProjectPlugin> createPlugins(MPSProject project) {
-    final List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
-    List<PluginDescriptor> pluginDescriptors = collectPlugins(project);
-    for (PluginDescriptor descriptor : pluginDescriptors) {
-      BaseProjectPlugin plugin = createPlugin(descriptor);
-      if (plugin == null) continue;
-      plugins.add(plugin);
-    }
-    plugins.add(createIdePlugin());
-    return plugins;
-  }
-
-  private BaseProjectPlugin createPlugin(PluginDescriptor descriptor) {
+  private BaseProjectPlugin createPlugin(IModule module,String className) {
     try {
-      Class pluginClass = descriptor.first.getClass(descriptor.second);
+      Class pluginClass = module.getClass(className);
       if (pluginClass == null) return null;
 
       return (BaseProjectPlugin) pluginClass.newInstance();
     } catch (Throwable t) {
       LOG.error(t);
       return null;
-    }
-  }
-
-  private BaseProjectPlugin createIdePlugin() {
-    myIdePlugin = new Ide_ProjectPlugin();
-    return myIdePlugin;
-  }
-
-  public BaseProjectPlugin getIdePlugin() {
-    return myIdePlugin;
-  }
-
-  private static class PluginDescriptor extends Pair<IModule, String> {
-    private PluginDescriptor(IModule first, String second) {
-      super(first, second);
     }
   }
 
@@ -254,7 +237,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   //----------------STATE STUFF------------------------
 
   public PluginsState getState() {
-    collectState(myPlugins);
+    collectState(mySortedPlugins);
     return myState;
   }
 

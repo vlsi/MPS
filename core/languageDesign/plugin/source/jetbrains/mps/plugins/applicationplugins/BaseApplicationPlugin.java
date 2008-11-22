@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
-public abstract class BaseApplicationPlugin implements IApplicationPlugin {
+public abstract class BaseApplicationPlugin{
   private HashMap<String, BaseGroup> myGroups = new HashMap<String, BaseGroup>();
   private List<String> myAnchorIds = new ArrayList<String>();
   private List<BaseCustomApplicationPlugin> myCustomParts;

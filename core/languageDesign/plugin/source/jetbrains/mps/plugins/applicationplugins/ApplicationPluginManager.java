@@ -4,23 +4,21 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.IdeActions;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.plugins.PluginSorter;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -33,8 +31,10 @@ import java.util.*;
 
 public class ApplicationPluginManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ApplicationPluginManager.class);
+  private static final String IDE_MODULE_ID = "jetbrains.mps.ide";
 
-  private Map<String, IApplicationPlugin> myPlugins = new HashMap<String, IApplicationPlugin>();
+  private List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
+  private BaseApplicationPlugin myIDEPlugin;
 
   private ReloadListener myReloadListener = new ReloadListener() {
     public void onBeforeReload() {
@@ -52,50 +52,9 @@ public class ApplicationPluginManager implements ApplicationComponent {
   //----------------RELOAD STUFF---------------------
 
   private void loadPlugins() {
-    Set<Language> languages = new HashSet<Language>();
-    Set<DevKit> devkits = new HashSet<DevKit>();
+    mySortedPlugins = createPlugins();
 
-    languages.addAll(LibraryManager.getInstance().getGlobalModules(Language.class));
-    devkits.addAll(LibraryManager.getInstance().getGlobalModules(DevKit.class));
-
-    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-      MPSProject mpsProject = p.getComponent(MPSProjectHolder.class).getMPSProject();
-
-      for (Solution s : mpsProject.getProjectSolutions()) {
-        languages.addAll(s.getScope().getVisibleLanguages());
-        devkits.addAll(s.getScope().getVisibleDevkits());
-      }
-
-      for (Language l : mpsProject.getProjectLanguages()) {
-        languages.add(l);
-      }
-
-      for (DevKit dk : mpsProject.getProjectDevKits()) {
-        devkits.add(dk);
-      }
-    }
-
-    for (Language language : languages) {
-      if (language.getPluginModelDescriptor() != null) {
-        Class pluginClass = language.getClass(language.getGeneratedApplicationPluginClassLongName());
-        if (pluginClass != null) {
-          addPlugin(language, language.getGeneratedApplicationPluginClassLongName());
-        }
-      }
-    }
-
-    addIdePlugin();
-
-    //todo: uncomment when plugin model will be added to devkits
-    /*
-    for (DevKit dk : devkits) {
-      if (dk.getDevKitPluginClass() != null) {
-        addPlugin(dk, dk.getDevKitPluginClass());
-      }
-    }
-    */
-
-    for (IApplicationPlugin plugin : myPlugins.values()) {
+    for (BaseApplicationPlugin plugin : mySortedPlugins) {
       try {
         plugin.preInit();
       } catch (Throwable t1) {
@@ -103,7 +62,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
       }
     }
 
-    for (IApplicationPlugin plugin : myPlugins.values()) {
+    for (BaseApplicationPlugin plugin : mySortedPlugins) {
       try {
         plugin.init();
       } catch (Throwable t1) {
@@ -112,6 +71,59 @@ public class ApplicationPluginManager implements ApplicationComponent {
     }
 
     adjustTopLevelGroups();
+  }
+
+  private List<BaseApplicationPlugin> createPlugins() {
+    Map<IModule, BaseApplicationPlugin> plugins = new HashMap<IModule, BaseApplicationPlugin>(100);
+
+    for (Language language : collectLanguages()) {
+      if (language.getPluginModelDescriptor() == null) continue;
+      String pluginClassName = language.getGeneratedApplicationPluginClassLongName();
+      Class pluginClass = language.getClass(pluginClassName);
+      if (pluginClass == null) continue;
+
+      try {
+        BaseApplicationPlugin plugin = (BaseApplicationPlugin) pluginClass.newInstance();
+        plugins.put(language, plugin);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+
+    myIDEPlugin = new Ide_ApplicationPlugin();
+    plugins.put(MPSModuleRepository.getInstance().getModuleByUID(IDE_MODULE_ID),myIDEPlugin);
+
+    return PluginSorter.sortByDependencies(plugins);
+  }
+
+  private void disposePlugins() {
+    Collections.reverse(mySortedPlugins);
+    for (BaseApplicationPlugin plugin : mySortedPlugins) {
+      try {
+        plugin.dispose();
+      } catch (Throwable t) {
+        LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
+      }
+    }
+    mySortedPlugins.clear();
+  }
+
+  private Set<Language> collectLanguages() {
+    Set<Language> languages = new HashSet<Language>(LibraryManager.getInstance().getGlobalModules(Language.class));
+
+    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+      MPSProject mpsProject = p.getComponent(MPSProjectHolder.class).getMPSProject();
+
+      for (Solution s : mpsProject.getProjectSolutions()) {
+        languages.addAll(s.getScope().getVisibleLanguages());
+      }
+
+      for (Language l : mpsProject.getProjectLanguages()) {
+        languages.add(l);
+      }
+    }
+
+    return languages;
   }
 
   private void adjustTopLevelGroups() {
@@ -137,9 +149,8 @@ public class ApplicationPluginManager implements ApplicationComponent {
     }
 
     List<BaseGroup> mainMenuGroups = new ArrayList<BaseGroup>();
-    BaseApplicationPlugin applicationPlugin = ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getIdePlugin();
     DefaultActionGroup mainMenuGroup = ActionUtils.getDefaultGroup(IdeActions.GROUP_MAIN_MENU);
-    for (BaseGroup group : applicationPlugin.getGroups()) {
+    for (BaseGroup group : ((BaseApplicationPlugin)myIDEPlugin).getGroups()) {
       if (contains(mainMenuGroup, group)) {
         mainMenuGroups.add(group);
       }
@@ -164,42 +175,6 @@ public class ApplicationPluginManager implements ApplicationComponent {
       }
     }
     return false;
-  }
-
-  private void addIdePlugin() {
-    myPlugins.put(Ide_ApplicationPlugin.class.getName(), new Ide_ApplicationPlugin());
-  }
-
-  private void addPlugin(IModule contextModule, String pluginClassFqName) {
-    try {
-      Class pluginClass = contextModule.getClass(pluginClassFqName);
-      if (pluginClass == null) {
-        LOG.error("Can't find a class : " + pluginClassFqName);
-        return;
-      }
-
-      if (myPlugins.containsKey(pluginClassFqName)) return;
-
-      IApplicationPlugin plugin = (IApplicationPlugin) pluginClass.newInstance();
-      myPlugins.put(pluginClassFqName, plugin);
-    } catch (Throwable t) {
-      LOG.error(t);
-    }
-  }
-
-  private void disposePlugins() {
-    for (IApplicationPlugin plugin : myPlugins.values()) {
-      try {
-        plugin.dispose();
-      } catch (Throwable t) {
-        LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
-      }
-    }
-    myPlugins.clear();
-  }
-
-  public BaseApplicationPlugin getIdePlugin() {
-    return (BaseApplicationPlugin) myPlugins.get(Ide_ApplicationPlugin.class.getName());
   }
 
   //----------------COMPONENT STUFF---------------------
