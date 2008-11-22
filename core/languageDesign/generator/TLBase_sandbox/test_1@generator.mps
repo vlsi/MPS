@@ -429,6 +429,9 @@
       <link role="applicableConcept" targetNodeId="1.1145552809883" resolveInfo="AbstractCreator" />
       <link role="template" targetNodeId="1216405459907" resolveInfo="map_AbstractCreator" />
     </node>
+    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1227320375385">
+      <property name="name" value="123" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1211366813561">
     <property name="name" value="ABC" />
@@ -617,7 +620,34 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1216321215741">
     <property name="name" value="reduce_AbstractCreator" />
     <link role="applicableConcept" targetNodeId="1.1145552809883" resolveInfo="AbstractCreator" />
-    <node role="contentNode" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1216321215742" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1227320813271">
+      <property name="name" value="aaa" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227320813272" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1227320813273">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227320813274" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227320813275">
+          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" id="1227320400513">
+            <link role="mappingLabel" targetNodeId="1227320375385" resolveInfo="123" />
+          </node>
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227320813276">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1227320077688">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1227320122130">
+              <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1227320122131">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227320122132" />
+              </node>
+            </node>
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1227320153119">
+              <link role="mappingLabel" targetNodeId="1227320375385" resolveInfo="123" />
+              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1227320153120">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227320153121" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1227320818761" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch" id="1216323660196">
     <property name="name" value="switch_aaa" />

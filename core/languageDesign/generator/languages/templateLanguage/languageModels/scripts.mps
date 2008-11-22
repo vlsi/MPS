@@ -9,6 +9,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -824,7 +825,6 @@
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215464043201">
                   <link role="concept" targetNodeId="1.1095416546421" resolveInfo="MappingConfiguration" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215464052803" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215463718690">
@@ -855,25 +855,26 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215464105471">
                           <link role="variableDeclaration" targetNodeId="1215463718691" resolveInfo="localMCs" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1215464113386">
-                          <node role="whereClosure" type="jetbrains.mps.baseLanguage.collections.structure.WhereBlock" id="1215464113387">
-                            <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.collections.structure.DefaultInputElement" id="1215464113388">
-                              <property name="name" value="it" />
-                            </node>
-                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215464113389">
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215464119128">
-                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215464130166">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215464120433">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1215464119129">
-                                      <link role="closureParameter" targetNodeId="1215464113388" resolveInfo="it" />
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227319596338">
+                          <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227319596339">
+                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227319596340">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227319603379">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227319609856">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227319605028">
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227319603380">
+                                      <link role="variableDeclaration" targetNodeId="1227319596341" resolveInfo="it" />
                                     </node>
-                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1215464126003">
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1227319608083">
                                       <link role="link" targetNodeId="1.1200911492601" />
                                     </node>
                                   </node>
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1215464136408" />
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1227319611178" />
                                 </node>
                               </node>
+                            </node>
+                            <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227319596341">
+                              <property name="name" value="it" />
+                              <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1227319596342" />
                             </node>
                           </node>
                         </node>

@@ -12,6 +12,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.IModule;
+import java.util.List;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.lang.generator.structure.MappingConfiguration;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import javax.swing.SwingUtilities;
 
 public class AttachMappingLabel_Intention extends BaseIntention {
 
@@ -68,6 +81,78 @@ public class AttachMappingLabel_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
+    final IOperationContext operationContext = editorContext.getOperationContext();
+    IModule module = operationContext.getModule();
+    List<SNode> mappings;
+    if (module instanceof Generator) {
+      List<MappingConfiguration> ownMappings = ((Generator)module).getOwnMappings();
+      mappings = (List<SNode>)BaseAdapter.toNodes(ownMappings);
+    } else
+    {
+      mappings = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+    }
+    final List<String> existingLabels = ListSequence.fromList(mappings).translate(new ITranslator2 <SNode, String>() {
+
+      public Iterable<String> translate(final SNode it) {
+        return new Iterable <String>() {
+
+          public Iterator<String> iterator() {
+            return new YieldingIterator <String>() {
+
+              private int __CP__ = 0;
+              private SNode _2_label;
+              private Iterator<SNode> _2_label_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_label_it = Sequence.fromIterable(SLinkOperations.getTargets(it, "mappingLabel", true)).iterator();
+                    case 3:
+                      if (!(this._2_label_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_label = this._2_label_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this.__CP__ = 3;
+                      this.yield(SPropertyOperations.getString(this._2_label, "name"));
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }).toListSequence();
+    SwingUtilities.invokeLater(new Runnable() {
+
+      public void run() {
+        AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, operationContext.getMainFrame(), editorContext);
+        dialog.showDialog();
+      }
+
+    });
   }
 
   public String getLocationString() {
