@@ -713,13 +713,13 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public IModule getSelectedModule() {
     TreeNode selectedTreeNode = getSelectedModuleTreeNode();
     if (selectedTreeNode == null) return null;
-    return ((ModuleTreeNode) selectedTreeNode).getModule();
+    return ((ProjectModuleTreeNode) selectedTreeNode).getModule();
   }
 
   private TreeNode getSelectedModuleTreeNode() {
     TreeNode selectedTreeNode = getSelectedTreeNode();
 
-    if (!(selectedTreeNode instanceof ModuleTreeNode)) {
+    if (!(selectedTreeNode instanceof ProjectModuleTreeNode)) {
       return null;
     }
     return selectedTreeNode;
