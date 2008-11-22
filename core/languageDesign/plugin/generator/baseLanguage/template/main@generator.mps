@@ -10997,7 +10997,7 @@
                         <link role="classConcept" targetNodeId="63.~ActionFactory" resolveInfo="ActionFactory" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227034104205">
-                        <link role="baseMethodDeclaration" targetNodeId="63.~ActionFactory.acquireRegisteredAction(java.lang.Class,java.lang.String,jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin,java.lang.Object...):com.intellij.openapi.actionSystem.AnAction" resolveInfo="acquireRegisteredAction" />
+                        <link role="baseMethodDeclaration" targetNodeId="63.~ActionFactory.acquireRegisteredAction(java.lang.Class,java.lang.String,java.lang.Object...):com.intellij.openapi.actionSystem.AnAction" resolveInfo="acquireRegisteredAction" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227034140051">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227034130638">
                             <link role="variableDeclaration" targetNodeId="1227034130633" resolveInfo="language" />
@@ -11241,7 +11241,7 @@
                           <link role="baseMethodDeclaration" targetNodeId="63.~ActionFactory.getInstance():jetbrains.mps.workbench.action.ActionFactory" resolveInfo="getInstance" />
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227050411523">
-                          <link role="baseMethodDeclaration" targetNodeId="63.~ActionFactory.acquireRegisteredAction(java.lang.Class,java.lang.String,jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin,java.lang.Object...):com.intellij.openapi.actionSystem.AnAction" resolveInfo="acquireRegisteredAction" />
+                          <link role="baseMethodDeclaration" targetNodeId="63.~ActionFactory.acquireRegisteredAction(java.lang.Class,java.lang.String,java.lang.Object...):com.intellij.openapi.actionSystem.AnAction" resolveInfo="acquireRegisteredAction" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1227050411524">
                             <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
                             <node role="referenceMacro$link_attribute$classifier" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1227050411525">
