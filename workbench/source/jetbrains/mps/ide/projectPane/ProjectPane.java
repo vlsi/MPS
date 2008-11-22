@@ -21,7 +21,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.baseLanguage.unitTest.plugin.TestStatisticsModel;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -30,6 +29,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.ModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -51,8 +51,8 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.DeleteModelsAction;
 import jetbrains.mps.workbench.actions.nodes.CopyNodeAction;
@@ -413,10 +413,38 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     } else if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGES.getName())) {
       return getSelectedPackages();
     } else if (dataId.equals(MPSDataKeys.PLACE.getName())) {
-      return ActionPlace.LOGICAL_VIEW;
+      return getPlace();
     }
 
     return null;
+  }
+
+  private ActionPlace getPlace() {
+    if (getSelectedSNode() != null) {
+      return ActionPlace.PROJECT_PANE_SNODE;
+    } else if (getSelectedModel() != null) {
+      return ActionPlace.PROJECT_PANE_SMODEL;
+    } else if (getSelectedNode() instanceof ProjectTreeNode) {
+      return ActionPlace.PROJECT_PANE_PROJECT;
+    } else if (getSelectedNode() instanceof GeneratorTreeNode) {
+      return ActionPlace.PROJECT_PANE_GENERATOR;
+    } else if (getSelectedNode() instanceof TransientModelsTreeNode) {
+      return ActionPlace.PROJECT_PANE_TRANSIENT_MODULES;
+    } else if (getSelectedNode() instanceof PackageNode) {
+      return ActionPlace.PROJECT_PANE_PACKAGE;
+    } else if (getSelectedNode() instanceof NamespaceTextNode) {
+      return ActionPlace.PROJECT_PANE_NAMESPACE;
+    } else if (getSelectedModule() != null) {
+      IModule module = getSelectedModule();
+      if (module instanceof Language) {
+        return ActionPlace.PROJECT_PANE_LANGUAGE;
+      } else if (module instanceof DevKit) {
+        return ActionPlace.PROJECT_PANE_DEVKIT;
+      } else if (module instanceof Solution) {
+        return ActionPlace.PROJECT_PANE_SOLUTION;
+      }
+    }
+    return ActionPlace.PROJECT_PANE;
   }
 
   private VirtualFile[] getSelectedFiles() {
@@ -680,6 +708,21 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     TreeNode selectedTreeNode = getSelectedModelTreeNode();
     if (selectedTreeNode == null) return null;
     return ((SModelTreeNode) selectedTreeNode).getSModelDescriptor();
+  }
+
+  public IModule getSelectedModule() {
+    TreeNode selectedTreeNode = getSelectedModuleTreeNode();
+    if (selectedTreeNode == null) return null;
+    return ((ModuleTreeNode) selectedTreeNode).getModule();
+  }
+
+  private TreeNode getSelectedModuleTreeNode() {
+    TreeNode selectedTreeNode = getSelectedTreeNode();
+
+    if (!(selectedTreeNode instanceof ModuleTreeNode)) {
+      return null;
+    }
+    return selectedTreeNode;
   }
 
   public TreeNode getSelectedModelTreeNode() {
