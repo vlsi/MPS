@@ -29,14 +29,14 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
       } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTemplateQueriesAction.class, module.getModuleFqName(), null, true));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTemplateQueriesAction.class, module.getModuleFqName(), true));
       }
       if (BaseGroup.class.isAssignableFrom(GenerateTemplateQueriesAction.class)) {
         this.add(new GenerateTemplateQueriesAction(false));
       } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTemplateQueriesAction.class, module.getModuleFqName(), null, false));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTemplateQueriesAction.class, module.getModuleFqName(), false));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(ShowModuleDependenciesAction.class)) {

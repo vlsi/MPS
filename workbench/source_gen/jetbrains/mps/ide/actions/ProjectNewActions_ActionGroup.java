@@ -29,14 +29,14 @@ public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
       } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(NewSolutionAction.class, module.getModuleFqName(), null, ""));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(NewSolutionAction.class, module.getModuleFqName(), ""));
       }
       if (BaseGroup.class.isAssignableFrom(NewLanguageAction.class)) {
         this.add(new NewLanguageAction(""));
       } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(NewLanguageAction.class, module.getModuleFqName(), null, ""));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(NewLanguageAction.class, module.getModuleFqName(), ""));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));

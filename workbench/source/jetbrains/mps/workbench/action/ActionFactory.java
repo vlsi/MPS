@@ -39,7 +39,7 @@ public class ActionFactory {
   }
 
   @Nullable
-  public AnAction acquireRegisteredAction(Class actionClass, String languageNamespace, BaseApplicationPlugin plugin, Object... params) {
+  public AnAction acquireRegisteredAction(Class actionClass, String languageNamespace, Object... params) {
     Method idMethod = null;
     for (Method m : actionClass.getMethods()) {
       if (m.getName().equals(GeneratedAction.getIdMethodName())) {
@@ -85,7 +85,8 @@ public class ActionFactory {
     }
   }
 
-  public AnAction getRegisteredAction(AnAction action) {
-    return action;
+  @Nullable
+  public AnAction acquireRegisteredGroup(Class groupClass, String languageNamespace, Object... params) {
+    return null;
   }
 }

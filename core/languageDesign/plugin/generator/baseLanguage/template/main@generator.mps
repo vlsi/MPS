@@ -11036,7 +11036,6 @@
                             <link role="baseMethodDeclaration" targetNodeId="35.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                           </node>
                         </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227124339030" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227034104213">
                           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="1227034104214">
                             <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1227034104215">
@@ -11235,7 +11234,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227050411518">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1227050411519" />
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227050411520">
-                      <link role="baseMethodDeclaration" targetNodeId="61.~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction,com.intellij.openapi.actionSystem.ActionManager):void" resolveInfo="add" />
+                      <link role="baseMethodDeclaration" targetNodeId="61.~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolveInfo="add" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227050411521">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227050411522">
                           <link role="classConcept" targetNodeId="63.~ActionFactory" resolveInfo="ActionFactory" />
@@ -11280,7 +11279,6 @@
                               <link role="baseMethodDeclaration" targetNodeId="35.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                             </node>
                           </node>
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227115866134" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227050411538">
                             <property name="value" value="1" />
                             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="1227050411539">

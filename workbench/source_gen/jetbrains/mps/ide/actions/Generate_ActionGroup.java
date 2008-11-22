@@ -38,7 +38,7 @@ public class Generate_ActionGroup extends GeneratedActionGroup {
       } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateAllModelsInModuleAction.class, module.getModuleFqName(), null, false));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateAllModelsInModuleAction.class, module.getModuleFqName(), false));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(GenerateFilesFromCurrentModelAction.class)) {
