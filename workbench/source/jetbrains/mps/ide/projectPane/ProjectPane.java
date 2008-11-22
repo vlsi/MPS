@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.ide.*;
+import com.intellij.ide.util.treeView.AbstractTreeBuilder;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.impl.ProjectViewPane;

@@ -73,9 +73,11 @@ public abstract class BaseAction extends AnAction {
   public final void update(final AnActionEvent e) {
     super.update(e);
     ActionPlace place = MPSDataKeys.PLACE.getData(DataManager.getInstance().getDataContext());
-    if (!myPlaces.contains(place)) {
-      disable(e.getPresentation());
-      return;
+    if (!myPlaces.contains(null)){
+      if (!myPlaces.contains(place)) {
+        disable(e.getPresentation());
+        return;
+      }
     }
 
     ModelAccess.instance().runReadAction(new Runnable() {
