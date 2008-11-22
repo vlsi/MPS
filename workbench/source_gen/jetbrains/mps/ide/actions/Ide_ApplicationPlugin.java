@@ -10,7 +10,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
-import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 
 public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
 
@@ -93,13 +92,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
         gToBase.add(gWhat, constraints);
       }
     }
-  }
-
-  public List<BaseCustomApplicationPlugin> initCustomParts() {
-    List<BaseCustomApplicationPlugin> res = new ArrayList<BaseCustomApplicationPlugin>();
-    {
-    }
-    return res;
   }
 
 }

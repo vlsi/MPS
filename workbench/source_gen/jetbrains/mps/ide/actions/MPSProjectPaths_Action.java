@@ -8,7 +8,6 @@ import javax.swing.Icon;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.projectoptions.ProjectOptionsDialog;
 
@@ -30,19 +29,12 @@ public class MPSProjectPaths_Action extends GeneratedAction {
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
-    if (ActionPlaces.PROJECT_VIEW_POPUP.equals(event.getPlace())) {
-      enable(event.getPresentation());
-    } else {
-      disable(event.getPresentation());
+    try {
+      this.enable(event.getPresentation());
+    } catch (Throwable t) {
+      LOG.error("User's action doUpdate method failed. Action:" + "MPSProjectPaths", t);
+      this.disable(event.getPresentation());
     }
-
-
-//    try {
-//      this.enable(event.getPresentation());
-//    } catch (Throwable t) {
-//      LOG.error("User's action doUpdate method failed. Action:" + "MPSProjectPaths", t);
-//      this.disable(event.getPresentation());
-//    }
   }
 
   @Override()
