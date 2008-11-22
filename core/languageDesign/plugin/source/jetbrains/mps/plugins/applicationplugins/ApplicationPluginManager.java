@@ -3,8 +3,18 @@ package jetbrains.mps.plugins.applicationplugins;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.IdeActions;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.ide.actions.*;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
@@ -17,10 +27,7 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class ApplicationPluginManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ApplicationPluginManager.class);
@@ -101,6 +108,58 @@ public class ApplicationPluginManager implements ApplicationComponent {
         LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
       }
     }
+
+    adjustTopLevelGroups();
+  }
+
+  private void adjustTopLevelGroups() {
+    List<BaseGroup> paneGroups = new ArrayList<BaseGroup>();
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.PROJECT_PANE_LANGUAGE_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.PROJECT_PANE_DEVKIT_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.PROJECT_PANE_PROJECT_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.PROJECT_PANE_SOLUTION_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.PROJECT_PANE_GENERATOR_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.PROJECT_PANE_TRANSIENT_MODULES_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.PROJECT_PANE_PACKAGE_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.PROJECT_PANE_NAMESPACE_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.PROJECT_NEW_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.SOLUTION_NEW_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.LANGUAGE_NEW_ACTIONS));
+    paneGroups.add(ActionUtils.getGroup(ProjectPane.GENERATOR_NEW_ACTIONS));
+    for (BaseGroup group:paneGroups){
+      group.addPlace(ActionPlace.LOGICAL_VIEW);
+    }
+
+    List<BaseGroup> editorGroups = new ArrayList<BaseGroup>();
+    editorGroups.add(ActionUtils.getGroup(EditorComponent.EDITOR_POPUP_MENU_ACTIONS));
+    for (BaseGroup group:editorGroups){
+      group.addPlace(ActionPlace.EDITOR);
+    }
+
+    List<BaseGroup> mainMenuGroups = new ArrayList<BaseGroup>();
+    BaseApplicationPlugin applicationPlugin = ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getIdePlugin();
+    DefaultActionGroup mainMenuGroup = ActionUtils.getDefaultGroup(IdeActions.GROUP_MAIN_MENU);
+    for (BaseGroup group : applicationPlugin.getGroups()) {
+      if (contains(mainMenuGroup, group)) {
+        mainMenuGroups.add(group);
+      }
+    }
+
+    for (BaseGroup group:mainMenuGroups){
+      group.addPlace(null);
+    }
+  }
+
+  private boolean contains(ActionGroup container, ActionGroup what) {
+    if (container == what) return true;
+    for (AnAction child : container.getChildren(null)) {
+      if (child instanceof ActionGroup) {
+        if (contains((ActionGroup) child, what)) return true;
+      }
+    }
+    return false;
   }
 
   private void addIdePlugin() {

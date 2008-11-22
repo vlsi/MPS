@@ -52,6 +52,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.DeleteModelsAction;
 import jetbrains.mps.workbench.actions.nodes.CopyNodeAction;
@@ -91,11 +92,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = NodeActions_ActionGroup.ID;
-  public static final String PROJECT_PANE_NODE_ACTIONS_INTERNAL = NodeActionsInternal_ActionGroup.ID;
   public static final String PROJECT_PANE_MODEL_ACTIONS = ModelActions_ActionGroup.ID;
-  public static final String PROJECT_PANE_MODEL_ACTIONS_INTERNAL = ModelActionsInternal_ActionGroup.ID;
-  public static final String PROJECT_PANE_MODEL_ACTIONS_GENERATE_OBSOLETE_MENU = "project-pane-model-actions-generate-obsolete-menu";
-  public static final String PROJECT_PANE_VCS_ACTIONS = "project-pane-vcs-actions";
   public static final String PROJECT_PANE_LANGUAGE_ACTIONS = LanguageActions_ActionGroup.ID;
   public static final String PROJECT_PANE_DEVKIT_ACTIONS = DevkitActions_ActionGroup.ID;
   public static final String PROJECT_PANE_PROJECT_ACTIONS = ProjectActions_ActionGroup.ID;
@@ -415,6 +412,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       return selectedPackages.get(0);
     } else if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGES.getName())) {
       return getSelectedPackages();
+    } else if (dataId.equals(MPSDataKeys.PLACE.getName())) {
+      return ActionPlace.LOGICAL_VIEW;
     }
 
     return null;

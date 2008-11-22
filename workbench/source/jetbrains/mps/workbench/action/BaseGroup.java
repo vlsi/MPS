@@ -3,9 +3,12 @@ package jetbrains.mps.workbench.action;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.ActionPlace;
 
 import javax.swing.Icon;
+import java.util.Set;
 
 public class BaseGroup extends DefaultActionGroup {
   private String myId = "";
@@ -78,6 +81,16 @@ public class BaseGroup extends DefaultActionGroup {
 
   public void addAnchor(String id) {
     add(new LabelledAnchor(id));
+  }
+
+  public void addPlace(ActionPlace place){
+    for (AnAction child:getChildren(null)){
+      if (child instanceof BaseGroup){
+        ((BaseGroup)child).addPlace(place);
+      }else if (child instanceof BaseAction){
+        ((BaseAction)child).addPlace(place);
+      }
+    }
   }
 
   public void adjust() {

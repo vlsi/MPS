@@ -5,7 +5,7 @@ import com.intellij.ide.CutProvider;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.util.*;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.SystemInfo;
@@ -14,6 +14,8 @@ import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
+import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.logging.Logger;
@@ -36,23 +38,21 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.typesystem.checking.HelginsTypesEditorChecker;
 import jetbrains.mps.typesystem.inference.IErrorReporter;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.NodeTypesComponent;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.typesystem.checking.HelginsTypesEditorChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.*;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.nodes.GoByCurrentReferenceAction;
-import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.intentions.IntentionsManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -84,7 +84,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private Set<BaseAction> myMPSActionsWithShortcuts = new HashSet<BaseAction>();
-    private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
+  private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
 
   private WeakHashMap<SNode, WeakReference<EditorCell>> myNodesToBigCellsMap = new WeakHashMap<SNode, WeakReference<EditorCell>>();
   private WeakHashMap<ReferencedNodeContext, WeakReference<EditorCell>> myRefNodeContextsToBigCellsMap = new WeakHashMap<ReferencedNodeContext, WeakReference<EditorCell>>();
@@ -683,7 +683,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         EditorCell cell = message.getCellForParentNodeInMainEditor(this);
         if (cell != null) {
           cell.addMessage(message);
-        } 
+        }
       }
     }
     getExternalComponent().repaint();
@@ -753,12 +753,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     for (final com.intellij.openapi.util.Pair<Intention, SNode> pair : getAvailableIntentions()) {
       String description = pair.first.getDescription(node, context);
       Icon icon = pair.first.getType().getIcon();
-      result.add(new AnAction(description, "Execute intention", icon) {
-        @Override
-        public void actionPerformed(AnActionEvent e) {
+      BaseAction mpsAction = new BaseAction(description, "Execute intention", icon) {
+        protected void doExecute(AnActionEvent e) {
           executeIntention(pair.first, node, context);
         }
-      });
+      };
+      mpsAction.addPlace(ActionPlace.EDITOR);
+      result.add(mpsAction);
     }
     return result;
   }
@@ -806,9 +807,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             }
 
             protected void doExecute(AnActionEvent e) {
-              myAction.execute(null, editorContext);
+              try {
+                myAction.execute(null, editorContext);
+              } catch (Throwable t) {
+                LOG.error(t);
+              }
             }
           };
+          mpsAction.addPlace(ActionPlace.EDITOR);
           result.add(mpsAction);
         }
       } catch (Throwable t) {
@@ -1508,31 +1514,31 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (selectedCell != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-           final EditorMessage message = getEditorMessageFor(selectedCell);
+          final EditorMessage message = getEditorMessageFor(selectedCell);
           Object info = message.getUserObject(HelginsTypesEditorChecker.ERROR_INFO);
           if (info instanceof IErrorReporter) {
-              final IErrorReporter herror = (IErrorReporter) info;
-              SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                  String s = message.getMessage();
-                  final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "Typesystem " + message.getStatus().getPresentation(), false);
-                  JButton button = new JButton(new AbstractAction("Go To Rule") {
-                    public void actionPerformed(ActionEvent e) {
-                      ModelAccess.instance().runReadAction(new Runnable() {
-                        public void run() {
-                          GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, LOG);
-                          dialog.dispose();
-                        }
-                      });
-                    }
-                  });
-                  dialog.addButton(button);
-                  dialog.initializeUI();
-                  dialog.setVisible(true);
-                }
-              });
-              return;
-            }
+            final IErrorReporter herror = (IErrorReporter) info;
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                String s = message.getMessage();
+                final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "Typesystem " + message.getStatus().getPresentation(), false);
+                JButton button = new JButton(new AbstractAction("Go To Rule") {
+                  public void actionPerformed(ActionEvent e) {
+                    ModelAccess.instance().runReadAction(new Runnable() {
+                      public void run() {
+                        GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, LOG);
+                        dialog.dispose();
+                      }
+                    });
+                  }
+                });
+                dialog.addButton(button);
+                dialog.initializeUI();
+                dialog.setVisible(true);
+              }
+            });
+            return;
+          }
         }
       });
     }
@@ -2246,6 +2252,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return new VirtualFile[]{VFileSystem.getFile(ifile)};
         }
       });
+    } else if (dataId.equals(MPSDataKeys.PLACE.getName())) {
+      return ActionPlace.EDITOR;
     }
 
     return null;

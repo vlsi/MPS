@@ -1,7 +1,7 @@
 package jetbrains.mps.workbench.action;
 
-import com.intellij.openapi.actionSystem.*;
 import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.workbench.ActionPlace;
@@ -16,6 +16,7 @@ public abstract class BaseAction extends AnAction {
   private boolean myIsAlwaysVisible = true;
   private boolean myExecuteOutsideCommand = false;
   private boolean myDisableOnNoProject = true;
+  private Set<ActionPlace> myPlaces = new HashSet<ActionPlace>();
 
   public BaseAction() {
     this(null, null, null);
@@ -71,17 +72,10 @@ public abstract class BaseAction extends AnAction {
   public final void update(final AnActionEvent e) {
     super.update(e);
     ActionPlace place = MPSDataKeys.PLACE.getData(DataManager.getInstance().getDataContext());
-    Set<ActionPlace> places = getPlaces();
-    if (places!=null){
-      if (place==null){
-        disable(e.getPresentation());
-        return;
-      }
-      if (!places.contains(place)){
-        disable(e.getPresentation());
-        return;
-      }
-    }    
+    if (!myPlaces.contains(place)) {
+      disable(e.getPresentation());
+      return;
+    }
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -126,6 +120,10 @@ public abstract class BaseAction extends AnAction {
     else disable(p);
   }
 
+  public void addPlace(ActionPlace place) {
+    myPlaces.add(place);
+  }
+
   /**
    * Collect action parameters HERE
    *
@@ -152,9 +150,6 @@ public abstract class BaseAction extends AnAction {
   }
 
   protected abstract void doExecute(AnActionEvent e);
-  protected Set<ActionPlace> getPlaces(){
-    return null;
-  }
 
   public static String getIdMethodName() {
     return "getActionId";
