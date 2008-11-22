@@ -4,9 +4,17 @@ package jetbrains.mps.lang.script.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import java.util.Set;
+import com.intellij.openapi.util.Pair;
+import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.action.BaseAction;
+import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
@@ -17,6 +25,8 @@ import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
 public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ScriptsForSelection_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.script.plugin.ScriptsForSelection";
+
+  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = new HashSet<Pair<ActionPlace, Condition<BaseAction>>>();
 
   public ScriptsForSelection_ActionGroup() {
     super("Scripts", ID);
@@ -48,6 +58,14 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
+    for(Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
+      super.addPlace(p.first, p.second);
+    }
+  }
+
+  public void addPlace(ActionPlace place, @Nullable() Condition<BaseAction> cond) {
+    SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
+    super.addPlace(place, cond);
   }
 
   public void adjust() {

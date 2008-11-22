@@ -4,6 +4,12 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import java.util.Set;
+import com.intellij.openapi.util.Pair;
+import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.action.BaseAction;
+import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
@@ -11,6 +17,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
@@ -19,6 +27,8 @@ import com.intellij.openapi.actionSystem.Anchor;
 public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NamespaceInternalActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.NamespaceInternalActions";
+
+  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = new HashSet<Pair<ActionPlace, Condition<BaseAction>>>();
 
   public NamespaceInternalActions_ActionGroup() {
     super("", ID);
@@ -41,6 +51,14 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
+    for(Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
+      super.addPlace(p.first, p.second);
+    }
+  }
+
+  public void addPlace(ActionPlace place, @Nullable() Condition<BaseAction> cond) {
+    SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
+    super.addPlace(place, cond);
   }
 
   public void adjust() {

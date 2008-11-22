@@ -423,7 +423,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   private ActionPlace getPlace() {
     if (getSelectedSNode() != null) {
       return ActionPlace.PROJECT_PANE_SNODE;
-    } else if (getSelectedModel() != null) {
+    } else if (getSelectedNode() instanceof SModelTreeNode) {
       return ActionPlace.PROJECT_PANE_SMODEL;
     } else if (getSelectedNode() instanceof ProjectTreeNode) {
       return ActionPlace.PROJECT_PANE_PROJECT;

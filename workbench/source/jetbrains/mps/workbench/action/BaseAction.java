@@ -16,7 +16,7 @@ public abstract class BaseAction extends AnAction {
   private boolean myIsAlwaysVisible = true;
   private boolean myExecuteOutsideCommand = false;
   private boolean myDisableOnNoProject = true;
-  private Set<ActionPlace> myPlaces = new HashSet<ActionPlace>();
+  private Set<ActionPlace> myPlaces = null;
 
   public BaseAction() {
     this(null, null, null);
@@ -28,7 +28,6 @@ public abstract class BaseAction extends AnAction {
 
   public BaseAction(String text, String description, Icon icon) {
     super(text, description, icon);
-    myPlaces.add(null);
     updateShortcuts();
   }
 
@@ -73,8 +72,8 @@ public abstract class BaseAction extends AnAction {
   public final void update(final AnActionEvent e) {
     super.update(e);
     ActionPlace place = MPSDataKeys.PLACE.getData(DataManager.getInstance().getDataContext());
-    if (!myPlaces.contains(null)){
-      if (!myPlaces.contains(place)) {
+    if (!getPlaces().contains(null)){
+      if (!getPlaces().contains(place)) {
         disable(e.getPresentation());
         return;
       }
@@ -124,12 +123,15 @@ public abstract class BaseAction extends AnAction {
   }
 
   public void addPlace(ActionPlace place) {
-    myPlaces.remove(null);
+    if (myPlaces==null) myPlaces = new HashSet<ActionPlace>();
     myPlaces.add(place);
   }
 
   public Set<ActionPlace> getPlaces() {
-    return myPlaces;
+    if (myPlaces!=null) return myPlaces;
+    Set<ActionPlace> result = new HashSet<ActionPlace>();
+    result.add(null);
+    return result;
   }
 
   /**
