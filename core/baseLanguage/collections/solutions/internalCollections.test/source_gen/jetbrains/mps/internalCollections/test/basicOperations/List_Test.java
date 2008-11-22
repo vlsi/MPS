@@ -14,6 +14,7 @@ import java.io.ObjectOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
 import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 
 public class List_Test extends Util_Test {
 
@@ -178,6 +179,18 @@ public class List_Test extends Util_Test {
     String foo = ListSequence.fromList(test).removeLastElement();
     Assert.assertEquals("FOO", foo);
     this.assertIterableEquals(this.inputABC(), test);
+  }
+
+  @Test()
+  public void test_primitiveParameter() throws Exception {
+    List<Integer> test = ListSequence.<Integer>fromArray(1, 2, 3, 4, 5);
+    this.assertIterableEquals(this.input5(), test);
+    List<Integer> TEST = test;
+    test = TEST;
+    int[] arr = ArrayUtils.toIntArray(ListSequence.fromList(test));
+    List<Character> cempty = ListSequence.<Character>fromArray();
+    Assert.assertEquals(0, ListSequence.fromList(cempty).toGenericArray(Character.class).length);
+    List<Byte> bempty = ListSequence.fromList(new LinkedList<Byte>());
   }
 
 }

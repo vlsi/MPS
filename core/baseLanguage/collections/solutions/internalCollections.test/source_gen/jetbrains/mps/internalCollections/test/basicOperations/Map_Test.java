@@ -67,4 +67,14 @@ public class Map_Test extends Util_Test {
     Assert.assertTrue(Sequence.fromIterable(MapSequence.fromMap(map1).keySet()).isEmpty());
   }
 
+  @Test()
+  public void test_primitiveParameter() throws Exception {
+    Map<Integer, Character> ascii = MapSequence.<Integer, Character>fromKeysArray(48, 49, 50).withValues('0', '1', '2');
+    Assert.assertSame('1', MapSequence.fromMap(ascii).get(49));
+    Iterable<Integer> keys = MapSequence.fromMap(ascii).keySet();
+    for(int k : Sequence.fromIterable(keys)) {
+      Assert.assertEquals(Character.valueOf((char)k), MapSequence.fromMap(ascii).get(k));
+    }
+  }
+
 }

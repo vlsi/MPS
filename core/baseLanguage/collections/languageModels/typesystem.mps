@@ -1095,37 +1095,8 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1178725705010">
     <property name="name" value="typeof_ListCreatorWithInit" />
+    <property name="package" value="list" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178725705011">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1178725705012">
-        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1178725705013">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227837098">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227904088">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1178744535233">
-                <link role="applicableNode" targetNodeId="1178725704670" resolveInfo="creator" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1178744535234">
-                <link role="link" targetNodeId="3.1160602447121" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1178744561672">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1178744566280">
-                <link role="conceptDeclaration" targetNodeId="7.1164118113764" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178725705022">
-          <property name="value" value="primitive is not expected" />
-        </node>
-        <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227944683">
-          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1178725705024">
-            <link role="applicableNode" targetNodeId="1178725704670" resolveInfo="creator" />
-          </node>
-          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1178725705025">
-            <link role="link" targetNodeId="3.1160602447121" />
-          </node>
-        </node>
-      </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop" id="1178725705026">
         <node role="loopVariable" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable" id="1178725705027">
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178725704671">
@@ -1210,45 +1181,6 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1178725704670">
       <property name="name" value="creator" />
       <link role="concept" targetNodeId="3.1160600644654" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1178725705051">
-    <property name="name" value="check_ListType" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178725705052">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1178729301097">
-        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1178729301098">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227894434">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227927156">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1178744114817">
-                <link role="applicableNode" targetNodeId="1178725704672" resolveInfo="type" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1178744114818">
-                <link role="link" targetNodeId="3.1151688676805" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1178744139991">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1178744143593">
-                <link role="conceptDeclaration" targetNodeId="7.1164118113764" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178729301107">
-          <property name="value" value="primitive is not expected" />
-        </node>
-        <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227906943">
-          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1178729301109">
-            <link role="applicableNode" targetNodeId="1178725704672" resolveInfo="type" />
-          </node>
-          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1178729301110">
-            <link role="link" targetNodeId="3.1151688676805" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1178725704672">
-      <property name="name" value="type" />
-      <link role="concept" targetNodeId="3.1151688443754" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1178725705067">
@@ -2887,45 +2819,6 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1178725704741">
       <property name="name" value="op" />
       <link role="concept" targetNodeId="3.1173946412755" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1178725705636">
-    <property name="name" value="check_SequenceType" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178725705637">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1178725705638">
-        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1178725705639">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227934665">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227916516">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1178744168336">
-                <link role="applicableNode" targetNodeId="1178725704744" resolveInfo="type" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1178744172268">
-                <link role="link" targetNodeId="3.1151689745422" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1178744168338">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1178744168339">
-                <link role="conceptDeclaration" targetNodeId="7.1164118113764" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178725705648">
-          <property name="value" value="primitive is not expected" />
-        </node>
-        <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227883383">
-          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1178725705650">
-            <link role="applicableNode" targetNodeId="1178725704744" resolveInfo="type" />
-          </node>
-          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1178729460156">
-            <link role="link" targetNodeId="3.1151689745422" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1178725704744">
-      <property name="name" value="type" />
-      <link role="concept" targetNodeId="3.1151689724996" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1178725705652">
@@ -5982,6 +5875,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1225711291806">
     <property name="name" value="typeof_ListElementAccessExpression" />
+    <property name="package" value="list" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225711291807">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" id="1225711334597">
         <property name="name" value="elementType" />
@@ -6218,37 +6112,8 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1226516379298">
     <property name="name" value="typeof_HashSetCreator" />
+    <property name="package" value="set" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226516379299">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1226517016434">
-        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1226517016435">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226517016436">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226517016437">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1226517016438">
-                <link role="applicableNode" targetNodeId="1226516379300" resolveInfo="creator" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226517029555">
-                <link role="link" targetNodeId="3.1226516282445" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1226517016440">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1226517016441">
-                <link role="conceptDeclaration" targetNodeId="7.1164118113764" resolveInfo="PrimitiveType" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226517016442">
-          <property name="value" value="primitive is not expected" />
-        </node>
-        <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226517016443">
-          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1226517016444">
-            <link role="applicableNode" targetNodeId="1226516379300" resolveInfo="creator" />
-          </node>
-          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226517364306">
-            <link role="link" targetNodeId="3.1226516282445" />
-          </node>
-        </node>
-      </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop" id="1226517016446">
         <node role="loopVariable" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable" id="1226517016447">
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226517016448">
@@ -6834,36 +6699,6 @@
     <property name="name" value="typeof_LinkedListCreator" />
     <property name="package" value="list" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227008927100">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1227008928760">
-        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1227008928761">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227008928762">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227008928763">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227008928764">
-                <link role="applicableNode" targetNodeId="1227008927101" resolveInfo="creator" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227008943955">
-                <link role="link" targetNodeId="3.1227008641545" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1227008928766">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1227008928767">
-                <link role="conceptDeclaration" targetNodeId="7.1164118113764" resolveInfo="PrimitiveType" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227008928768">
-          <property name="value" value="primitive is not expected" />
-        </node>
-        <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227008928769">
-          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227008928770">
-            <link role="applicableNode" targetNodeId="1227008927101" resolveInfo="creator" />
-          </node>
-          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227008946289">
-            <link role="link" targetNodeId="3.1227008641545" />
-          </node>
-        </node>
-      </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop" id="1227008928772">
         <node role="loopVariable" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable" id="1227008928773">
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227008928774">

@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 
 public class Sequence_Test extends Util_Test {
 
@@ -340,6 +341,65 @@ __switch__:
     Iterable<Integer> input = Arrays.asList(5, 3, 2, 5, 1, 1, 4, 5);
     this.assertIterableEquals(Arrays.asList(5, 3, 2, 1, 4), ListSequence.fromIterable(input).distinctList());
     this.assertIterableEquals(Sequence.fromIterable(input).distinct(), ListSequence.fromIterable(input).distinctList());
+  }
+
+  @Test()
+  public void test_primitiveParameter() throws Exception {
+    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure <Integer>() {
+
+      public Iterable<Integer> iterable() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 3;
+                      this.yield(1);
+                      return true;
+                    case 3:
+                      this.__CP__ = 4;
+                      this.yield(2);
+                      return true;
+                    case 4:
+                      this.__CP__ = 1;
+                      this.yield(3);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    Assert.assertEquals(3, Sequence.fromIterable(test).count());
+    Iterable<Integer> TEST = test;
+    test = TEST;
+    int[] iarr = ArrayUtils.toIntArray(Sequence.fromIterable(test));
+    int foo = ListSequence.fromIterable(test).toGenericArray(Integer.class)[0];
+    Iterable<Character> empty = Sequence.fromIterable(Collections.<Character>emptyList());
+    char[] carr = ArrayUtils.toCharArray(Sequence.fromIterable(empty));
+    Assert.assertEquals(0, carr.length);
   }
 
 }

@@ -8,6 +8,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 
 public class Set_Test extends Util_Test {
 
@@ -67,6 +68,14 @@ public class Set_Test extends Util_Test {
     Set<String> test = SetSequence.<String>fromArray("A", "B", "C");
     SetSequence.fromSet(test).removeSequence(Sequence.fromIterable(this.inputABC()));
     Assert.assertTrue(SetSequence.fromSet(test).isEmpty());
+  }
+
+  @Test()
+  public void test_primitiveParameter() throws Exception {
+    Set<Integer> test = SetSequence.<Integer>fromArray(1, 2, 3, 4, 5);
+    this.assertIterableEqualsIgnoreOrder(this.input5(), test);
+    int[] array = ArrayUtils.toIntArray(SetSequence.fromSet(test));
+    Assert.assertEquals(5, array.length);
   }
 
 }
