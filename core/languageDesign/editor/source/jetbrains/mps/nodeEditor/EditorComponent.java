@@ -83,7 +83,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private Set<BaseAction> myMPSActionsWithShortcuts = new HashSet<BaseAction>();
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
 
   private WeakHashMap<SNode, WeakReference<EditorCell>> myNodesToBigCellsMap = new WeakHashMap<SNode, WeakReference<EditorCell>>();
@@ -825,8 +824,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private EditorContext createEditorContextForActions() {
-    final EditorContext editorContext = new EditorContext(this, null, getOperationContext());
-    return editorContext;
+    return new EditorContext(this, null, getOperationContext());
   }
 
   private void selectComponentCell(Component component) {
@@ -880,7 +878,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     hideMessageToolTip();
 
     myHighlightManager.dispose();
-    myMPSActionsWithShortcuts.clear();
 
     removeOurListeners();
 
@@ -1802,7 +1799,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     // all other processing should be performed inside command
-    final DataContext dataContext = DataManager.getInstance().getDataContext(this);
     executeCommand(new Runnable() {
       public void run() {
         EditorContext editorContext = getEditorContext();
