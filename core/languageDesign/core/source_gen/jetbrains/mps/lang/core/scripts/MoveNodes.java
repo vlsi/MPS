@@ -148,11 +148,11 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void doRefactor(final RefactoringContext refactoringContext) {
+  public void doRefactor(RefactoringContext refactoringContext) {
     {
       List<SNode> nodes = refactoringContext.getSelectedNodes();
       SModel targetModel = null;
@@ -179,19 +179,19 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
   }
 
-  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
-  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
+  public void updateModel(SModel model, RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
   }
 
-  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(RefactoringContext refactoringContext) {
     {
       ArrayList<SNode> result = new ArrayList<SNode>(1);
       result.add(((SNode)refactoringContext.getParameter("nodeToOpen")));
@@ -203,7 +203,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public IChooseComponent<Object> target_componentCreator(final RefactoringContext refactoringContext) {
+  public IChooseComponent<Object> target_componentCreator(RefactoringContext refactoringContext) {
     return new ChooseNodeOrModelComponent(refactoringContext.getCurrentOperationContext(), null, true, true);
   }
 
