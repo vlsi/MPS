@@ -3,19 +3,17 @@ package jetbrains.mps.workbench.action;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.Shortcut;
-import com.intellij.openapi.keymap.KeymapManager;
-import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.extensions.PluginId;
+import com.intellij.openapi.keymap.Keymap;
+import com.intellij.openapi.keymap.KeymapManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
-import jetbrains.mps.baseLanguage.plugin.CommentStatements_Action;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ActionFactory {
   private static final Logger LOG = Logger.getLogger(ActionFactory.class);
@@ -36,13 +34,12 @@ public class ActionFactory {
     Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
     if (shortcuts.length != 0) {
       Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
-      if (keymap==null){
+      if (keymap == null) {
         LOG.error("default keymap is not found");
-      }else{
-        if (keymap.getShortcuts(id).length == 0) {
-          for (Shortcut s : shortcuts) {
-            keymap.addShortcut(id, s);
-          }
+      } else {
+        keymap.removeAllActionShortcuts(id);
+        for (Shortcut s : shortcuts) {
+          keymap.addShortcut(id, s);
         }
       }
     }
@@ -102,7 +99,7 @@ public class ActionFactory {
   }
 
   public void unregisterActions() {
-    for (String actionId:myActions){
+    for (String actionId : myActions) {
       ActionManager.getInstance().unregisterAction(actionId);
     }
 
