@@ -20,6 +20,8 @@ import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
@@ -80,29 +82,29 @@ public class SafeDelete extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void doRefactor(RefactoringContext refactoringContext) {
+  public void doRefactor(final RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
       SNodeOperations.deleteNode(node);
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
   }
 
-  public List<SModel> getModelsToUpdate(RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
-  public void updateModel(SModel model, RefactoringContext refactoringContext) {
+  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
   }
 
-  public List<SNode> getNodesToOpen(RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 
@@ -111,7 +113,16 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public boolean askForInfo(final RefactoringContext refactoringContext) {
-    return this.isApplicable(refactoringContext);
+    {
+      Boolean result = ModelAccess.instance().runReadAction(new Computable <Boolean>() {
+
+        public Boolean compute() {
+          return SafeDelete.this.isApplicable(refactoringContext);
+        }
+
+      });
+      return result;
+    }
   }
 
 
