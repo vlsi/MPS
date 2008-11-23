@@ -63,14 +63,4 @@ public class AddMissingImports_Action extends GeneratedAction {
     }
   }
 
-
-  @NotNull()
-  public static String getActionId(Object... args) {
-    StringBuilder res = new StringBuilder(500);
-    res.append(AddMissingImports_Action.class.getName());
-    res.append("#");
-    int i = 0;
-    return res.toString();
-  }
-
 }

@@ -64,14 +64,4 @@ public class PrintDFAResult_Action extends GeneratedAction {
     }
   }
 
-
-  @NotNull()
-  public static String getActionId(Object... args) {
-    StringBuilder res = new StringBuilder(500);
-    res.append(PrintDFAResult_Action.class.getName());
-    res.append("#");
-    int i = 0;
-    return res.toString();
-  }
-
 }
