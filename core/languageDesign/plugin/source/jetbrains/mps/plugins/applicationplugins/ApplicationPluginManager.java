@@ -7,6 +7,16 @@ import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.wm.impl.IdeFrameImpl;
+import com.intellij.openapi.wm.ex.WindowManagerEx;
+import com.intellij.openapi.extensions.ExtensionPointName;
+import com.intellij.util.ui.tree.TreeUtil;
+import com.intellij.ide.ui.customization.CustomizationUtil;
+import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
+import com.intellij.ide.ui.customization.CustomActionsSchema;
+import com.intellij.ide.ui.customization.CustomizableActionsPanel;
+import com.intellij.ide.IdeBundle;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.plugins.PluginSorter;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
@@ -28,6 +38,7 @@ import jetbrains.mps.workbench.action.ActionFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.tree.TreePath;
 import java.util.*;
 
 public class ApplicationPluginManager implements ApplicationComponent {
@@ -72,6 +83,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
     }
 
     adjustTopLevelGroups();
+    refreshCustomizations();
   }
 
   private ArrayList<BaseApplicationPlugin> createPlugins() {
@@ -168,6 +180,31 @@ public class ApplicationPluginManager implements ApplicationComponent {
       }
     }
   }
+
+  private void refreshCustomizations() {
+    CustomizableActionsSchemas allSchemasComponent = CustomizableActionsSchemas.getInstance();
+    CustomActionsSchema schema = allSchemasComponent.getActiveSchema();
+    schema.resetMainActionGroups();
+    allSchemasComponent.setActiveSchema(schema);
+    setCustomizationSchemaForCurrentProjects();
+  }
+
+  private static void setCustomizationSchemaForCurrentProjects() {
+    final Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
+    for (Project project : openProjects) {
+      final IdeFrameImpl frame = WindowManagerEx.getInstanceEx().getFrame(project);
+      if (frame != null) {
+        frame.updateToolbar();
+        frame.updateMenuBar();
+      }
+    }
+    final IdeFrameImpl frame = WindowManagerEx.getInstanceEx().getFrame(null);
+    if (frame != null) {
+      frame.updateToolbar();
+      frame.updateMenuBar();
+    }
+  }
+
 
   private boolean contains(ActionGroup container, ActionGroup what) {
     if (container == what) return true;
