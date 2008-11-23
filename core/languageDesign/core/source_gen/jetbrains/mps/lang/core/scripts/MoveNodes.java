@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
@@ -102,7 +103,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).select(new ISelector <SNode, String>() {
 
         public String select(SNode it) {
-          return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(it)));
+          return SModelUtil_new.getGenuineLinkRole((LinkDeclaration)((BaseConcept)SNodeOperations.getAdapter(it)));
         }
 
       });
@@ -148,11 +149,11 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void doRefactor(RefactoringContext refactoringContext) {
+  public void doRefactor(final RefactoringContext refactoringContext) {
     {
       List<SNode> nodes = refactoringContext.getSelectedNodes();
       SModel targetModel = null;
@@ -179,19 +180,19 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
   }
 
-  public List<SModel> getModelsToUpdate(RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
-  public void updateModel(SModel model, RefactoringContext refactoringContext) {
+  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
   }
 
-  public List<SNode> getNodesToOpen(RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
     {
       ArrayList<SNode> result = new ArrayList<SNode>(1);
       result.add(((SNode)refactoringContext.getParameter("nodeToOpen")));
@@ -203,7 +204,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public IChooseComponent<Object> target_componentCreator(RefactoringContext refactoringContext) {
+  public IChooseComponent<Object> target_componentCreator(final RefactoringContext refactoringContext) {
     return new ChooseNodeOrModelComponent(refactoringContext.getCurrentOperationContext(), null, true, true);
   }
 
