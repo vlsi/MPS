@@ -46,7 +46,7 @@ public class ActionConstructorParameterReferenceOperation extends BaseConcept im
   }
 
   public IMember getMember() {
-    return (IMember) this.getReferent(ActionConstructorParameterReferenceOperation.MEMBER);
+    return (IMember)this.getReferent(ActionConstructorParameterReferenceOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -54,7 +54,7 @@ public class ActionConstructorParameterReferenceOperation extends BaseConcept im
   }
 
   public ActionConstructionParameterDeclaration getDeclaration() {
-    return (ActionConstructionParameterDeclaration) this.getMember();
+    return (ActionConstructionParameterDeclaration)this.getMember();
   }
 
   public void setDeclaration(ActionConstructionParameterDeclaration node) {
@@ -63,7 +63,7 @@ public class ActionConstructorParameterReferenceOperation extends BaseConcept im
 
 
   public static ActionConstructorParameterReferenceOperation newInstance(SModel sm, boolean init) {
-    return (ActionConstructorParameterReferenceOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionConstructorParameterReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionConstructorParameterReferenceOperation newInstance(SModel sm) {

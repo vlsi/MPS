@@ -4,13 +4,9 @@ package jetbrains.mps.lang.plugin.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-
 import java.util.Iterator;
-
 import jetbrains.mps.baseLanguage.structure.Expression;
-
 import java.util.List;
-
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -52,7 +48,7 @@ public class ActionInstance extends BaseConcept implements ActionGroupMember {
   }
 
   public ActionDeclaration getAction() {
-    return (ActionDeclaration) this.getReferent(ActionInstance.ACTION);
+    return (ActionDeclaration)this.getReferent(ActionInstance.ACTION);
   }
 
   public void setAction(ActionDeclaration node) {
@@ -81,7 +77,7 @@ public class ActionInstance extends BaseConcept implements ActionGroupMember {
 
 
   public static ActionInstance newInstance(SModel sm, boolean init) {
-    return (ActionInstance) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionInstance", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionInstance", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionInstance newInstance(SModel sm) {

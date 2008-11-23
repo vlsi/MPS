@@ -17,7 +17,7 @@ public class AddStatement extends ExpressionStatement {
   }
 
   public ActionGroupMember getItem() {
-    return (ActionGroupMember) this.getChild(AddStatement.ITEM);
+    return (ActionGroupMember)this.getChild(AddStatement.ITEM);
   }
 
   public void setItem(ActionGroupMember node) {
@@ -26,7 +26,7 @@ public class AddStatement extends ExpressionStatement {
 
 
   public static AddStatement newInstance(SModel sm, boolean init) {
-    return (AddStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AddStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AddStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AddStatement newInstance(SModel sm) {

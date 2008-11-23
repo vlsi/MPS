@@ -54,7 +54,7 @@ public class ActionConstructionParameterDeclaration extends DefaultClassifierFie
   }
 
   public ToStringConceptFunction getToStringFunction() {
-    return (ToStringConceptFunction) this.getChild(ActionConstructionParameterDeclaration.TO_STRING_FUNCTION);
+    return (ToStringConceptFunction)this.getChild(ActionConstructionParameterDeclaration.TO_STRING_FUNCTION);
   }
 
   public void setToStringFunction(ToStringConceptFunction node) {
@@ -63,7 +63,7 @@ public class ActionConstructionParameterDeclaration extends DefaultClassifierFie
 
 
   public static ActionConstructionParameterDeclaration newInstance(SModel sm, boolean init) {
-    return (ActionConstructionParameterDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionConstructionParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionConstructionParameterDeclaration newInstance(SModel sm) {

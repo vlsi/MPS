@@ -8075,12 +8075,9 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1226501976739">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226501976740">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1226501976741">
-              <link role="baseMethodDeclaration" targetNodeId="100.~Separator.&lt;init&gt;()" resolveInfo="Separator" />
-            </node>
-          </node>
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddStatement" id="1227452719629">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1227452719630" />
+          <node role="item" type="jetbrains.mps.lang.plugin.structure.Separator" id="1227452845363" />
         </node>
         <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1226501976742">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226501976743">
@@ -8089,12 +8086,9 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1226501976745">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226501976746">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1226501976747">
-              <link role="baseMethodDeclaration" targetNodeId="100.~Separator.&lt;init&gt;()" resolveInfo="Separator" />
-            </node>
-          </node>
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddStatement" id="1227452852849">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1227452852850" />
+          <node role="item" type="jetbrains.mps.lang.plugin.structure.Separator" id="1227452852851" />
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1226501976748">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226501976749">
