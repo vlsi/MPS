@@ -24,6 +24,7 @@ import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.ActionFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -73,7 +74,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
     adjustTopLevelGroups();
   }
 
-  private List<BaseApplicationPlugin> createPlugins() {
+  private ArrayList<BaseApplicationPlugin> createPlugins() {
     Map<IModule, BaseApplicationPlugin> plugins = new HashMap<IModule, BaseApplicationPlugin>(100);
 
     for (Language language : collectLanguages()) {
@@ -105,6 +106,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
         LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
       }
     }
+    ActionFactory.getInstance().unregisterActions();
     mySortedPlugins.clear();
   }
 

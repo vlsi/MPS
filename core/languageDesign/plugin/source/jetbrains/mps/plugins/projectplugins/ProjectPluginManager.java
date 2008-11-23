@@ -162,7 +162,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     });
   }
 
-  private List<BaseProjectPlugin> createPlugins(MPSProject project) {
+  private ArrayList<BaseProjectPlugin> createPlugins(MPSProject project) {
     final Map<IModule,BaseProjectPlugin> plugins = new HashMap<IModule,BaseProjectPlugin>();
 
     Set<Language> languages = new HashSet<Language>();

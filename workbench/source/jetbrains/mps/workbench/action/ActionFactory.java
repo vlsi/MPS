@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.List;
+import java.util.ArrayList;
 
 public class ActionFactory {
   private static final Logger LOG = Logger.getLogger(ActionFactory.class);
@@ -26,7 +28,10 @@ public class ActionFactory {
   private ActionFactory() {
   }
 
+  private List<String> myActions = new ArrayList<String>();
+
   public void registerAction(AnAction action, String id, String languageNamespace) {
+    myActions.add(id);
     Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
     if (shortcuts.length != 0) {
       if (KeymapManager.getInstance().getActiveKeymap().getShortcuts(id).length == 0) {
@@ -88,5 +93,13 @@ public class ActionFactory {
   @Nullable
   public AnAction acquireRegisteredGroup(Class groupClass, String languageNamespace, Object... params) {
     return null;
+  }
+
+  public void unregisterActions() {
+    for (String actionId:myActions){
+      ActionManager.getInstance().unregisterAction(actionId);
+    }
+
+    myActions.clear();
   }
 }
