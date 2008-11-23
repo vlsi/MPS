@@ -109,20 +109,25 @@
     <!-- Customizations -->
     <applicationConfigurable implementation="com.intellij.ide.ui.customization.CustomizationConfigurable"/>
 
-    <!-- Web Browser -->
+    <!-- Web Browser
     <applicationConfigurable implementation="com.intellij.ide.BrowserSettings"/>
+    -->
 
     <!-- Plugins -->
     <applicationConfigurable implementation="com.intellij.ide.plugins.PluginManagerConfigurable"/>
+
+    <!--
     <applicationConfigurable implementation="com.intellij.util.net.HttpConfigurable"/>
     <applicationConfigurable implementation="com.intellij.openapi.diff.impl.external.DiffOptionsForm"/>
-
+    -->
+    
     <fileTypeFactory implementation="com.intellij.openapi.fileTypes.impl.PlatformFileTypeFactory"/>
     <applicationService serviceInterface="com.intellij.openapi.options.colors.ColorSettingsPages"
                         serviceImplementation="com.intellij.openapi.options.colors.pages.ColorSettingsPagesImpl"/>
 
-    <!-- Scopes -->
+    <!-- Scopes
     <projectConfigurable implementation="com.intellij.ide.util.scopeChooser.ScopeChooserConfigurable"/>
+     -->
 
     <applicationService serviceInterface="com.intellij.psi.search.scope.packageSet.PackageSetFactory"
                         serviceImplementation="com.intellij.psi.search.scope.packageSet.PackageSetFactoryImpl"/>

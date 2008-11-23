@@ -8,7 +8,7 @@ import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import java.util.*;
 
 public class PluginSorter {
-  //todo for now, the ring will be broken in unknown place
+  //todo for now, the cycle will be broken in unknown place
   public static <T> ArrayList<T> sortByDependencies(Map<IModule, T> plugins) {
     List <Item> items = new ArrayList<Item>();
     Map<IModule,Item> module2Item = new HashMap<IModule, Item>();
