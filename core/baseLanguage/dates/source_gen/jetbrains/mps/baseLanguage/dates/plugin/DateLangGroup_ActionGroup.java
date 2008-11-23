@@ -23,7 +23,7 @@ public class DateLangGroup_ActionGroup extends GeneratedActionGroup {
     try {
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage.dates"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.dates.plugin.ConvertDateTimeOperations_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.dates.plugin.ConvertDateTimeOperations_Action"), module.getModuleFqName()));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

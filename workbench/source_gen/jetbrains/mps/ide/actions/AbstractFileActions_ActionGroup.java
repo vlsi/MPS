@@ -4,15 +4,15 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.ide.projectPane.fileSystem.actions.FileCutAction;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
+import jetbrains.mps.ide.projectPane.fileSystem.actions.FileCutAction;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.FileCopyAction;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.FilePasteAction;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.FileDeleteActionFixed;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -27,33 +27,21 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      if (BaseGroup.class.isAssignableFrom(FileCutAction.class)) {
-        this.add(new FileCutAction());
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(FileCutAction.class, module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(FileCutAction.class, module.getModuleFqName()));
       }
-      if (BaseGroup.class.isAssignableFrom(FileCopyAction.class)) {
-        this.add(new FileCopyAction());
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(FileCopyAction.class, module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(FileCopyAction.class, module.getModuleFqName()));
       }
-      if (BaseGroup.class.isAssignableFrom(FilePasteAction.class)) {
-        this.add(new FilePasteAction());
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(FilePasteAction.class, module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(FilePasteAction.class, module.getModuleFqName()));
       }
-      if (BaseGroup.class.isAssignableFrom(FileDeleteActionFixed.class)) {
-        this.add(new FileDeleteActionFixed());
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(FileDeleteActionFixed.class, module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(FileDeleteActionFixed.class, module.getModuleFqName()));
       }
       this.addSeparator();
       this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);

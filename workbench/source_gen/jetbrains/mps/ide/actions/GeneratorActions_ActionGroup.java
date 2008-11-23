@@ -4,12 +4,11 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.actions.language.GenerateTemplateQueriesAction;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
+import jetbrains.mps.workbench.actions.language.GenerateTemplateQueriesAction;
 import jetbrains.mps.workbench.actions.module.ShowModuleDependenciesAction;
 import jetbrains.mps.workbench.actions.language.DeleteGeneratorAction;
 
@@ -24,45 +23,33 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.addAnchor(GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
-      if (BaseGroup.class.isAssignableFrom(GenerateTemplateQueriesAction.class)) {
-        this.add(new GenerateTemplateQueriesAction(true));
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
         this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTemplateQueriesAction.class, module.getModuleFqName(), true));
       }
-      if (BaseGroup.class.isAssignableFrom(GenerateTemplateQueriesAction.class)) {
-        this.add(new GenerateTemplateQueriesAction(false));
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
         this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTemplateQueriesAction.class, module.getModuleFqName(), false));
       }
       this.addSeparator();
-      if (BaseGroup.class.isAssignableFrom(ShowModuleDependenciesAction.class)) {
-        this.add(new ShowModuleDependenciesAction());
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowModuleDependenciesAction.class, module.getModuleFqName(), null));
-      }
-      this.addSeparator();
-      if (BaseGroup.class.isAssignableFrom(DeleteGeneratorAction.class)) {
-        this.add(new DeleteGeneratorAction());
-      } else
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(DeleteGeneratorAction.class, module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowModuleDependenciesAction.class, module.getModuleFqName()));
       }
       this.addSeparator();
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.CheckGenerator_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(DeleteGeneratorAction.class, module.getModuleFqName()));
       }
       this.addSeparator();
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.GeneratorProperties_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.CheckGenerator_Action"), module.getModuleFqName()));
+      }
+      this.addSeparator();
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.GeneratorProperties_Action"), module.getModuleFqName()));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

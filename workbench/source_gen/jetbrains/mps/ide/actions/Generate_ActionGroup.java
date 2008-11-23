@@ -4,17 +4,17 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.actions.generate.SaveTransientModelsAction;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
+import jetbrains.mps.workbench.actions.generate.SaveTransientModelsAction;
 import jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction;
 import jetbrains.mps.workbench.actions.generate.GenerateFilesFromCurrentModelAction;
 import jetbrains.mps.workbench.actions.generate.GenerateTextFromCurrentModelAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseGroup;
 
 public class Generate_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Generate_ActionGroup.class);
@@ -25,35 +25,23 @@ public class Generate_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      if (BaseGroup.class.isAssignableFrom(SaveTransientModelsAction.class)) {
-        this.add(new SaveTransientModelsAction());
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(SaveTransientModelsAction.class, module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(SaveTransientModelsAction.class, module.getModuleFqName()));
       }
       this.addSeparator();
-      if (BaseGroup.class.isAssignableFrom(GenerateAllModelsInModuleAction.class)) {
-        this.add(new GenerateAllModelsInModuleAction(false));
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
         this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateAllModelsInModuleAction.class, module.getModuleFqName(), false));
       }
       this.addSeparator();
-      if (BaseGroup.class.isAssignableFrom(GenerateFilesFromCurrentModelAction.class)) {
-        this.add(new GenerateFilesFromCurrentModelAction());
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateFilesFromCurrentModelAction.class, module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateFilesFromCurrentModelAction.class, module.getModuleFqName()));
       }
-      if (BaseGroup.class.isAssignableFrom(GenerateTextFromCurrentModelAction.class)) {
-        this.add(new GenerateTextFromCurrentModelAction());
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTextFromCurrentModelAction.class, module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTextFromCurrentModelAction.class, module.getModuleFqName()));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

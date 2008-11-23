@@ -4,13 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.actions.project.NewSolutionAction;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
+import jetbrains.mps.workbench.actions.project.NewSolutionAction;
 import jetbrains.mps.workbench.actions.project.NewLanguageAction;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -24,23 +24,17 @@ public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      if (BaseGroup.class.isAssignableFrom(NewSolutionAction.class)) {
-        this.add(new NewSolutionAction(""));
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
         this.add(ActionFactory.getInstance().acquireRegisteredAction(NewSolutionAction.class, module.getModuleFqName(), ""));
       }
-      if (BaseGroup.class.isAssignableFrom(NewLanguageAction.class)) {
-        this.add(new NewLanguageAction(""));
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
         this.add(ActionFactory.getInstance().acquireRegisteredAction(NewLanguageAction.class, module.getModuleFqName(), ""));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.NewDevKit_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.NewDevKit_Action"), module.getModuleFqName()));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

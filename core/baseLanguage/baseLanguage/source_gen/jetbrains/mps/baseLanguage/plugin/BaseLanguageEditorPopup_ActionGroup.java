@@ -23,52 +23,52 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
     try {
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.CommentStatements_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.CommentStatements_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.RunClassConcept_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.RunClassConcept_Action"), module.getModuleFqName()));
       }
       this.addSeparator();
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.InlineMethod_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.InlineMethod_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.InlineLocalVariable_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.InlineLocalVariable_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.IntroduceVariable_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.IntroduceVariable_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.IntroduceField_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.IntroduceField_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.IntroduceConstant_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.IntroduceConstant_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.MoveStaticMethod_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.MoveStaticMethod_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.RenameVariable_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.RenameVariable_Action"), module.getModuleFqName()));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

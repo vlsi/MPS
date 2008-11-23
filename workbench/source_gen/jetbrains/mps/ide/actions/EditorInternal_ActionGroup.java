@@ -8,8 +8,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.nodes.HighlightCellDependenciesAction;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public class EditorInternal_ActionGroup extends GeneratedActionGroup {
@@ -23,27 +23,24 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
     try {
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.TestNodePath_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.TestNodePath_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.CellProperties_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.CellProperties_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowCellInExplorer_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowCellInExplorer_Action"), module.getModuleFqName()));
       }
       this.addSeparator();
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.PrintNodeID_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.PrintNodeID_Action"), module.getModuleFqName()));
       }
-      if (BaseGroup.class.isAssignableFrom(HighlightCellDependenciesAction.class)) {
-        this.add(new HighlightCellDependenciesAction());
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(HighlightCellDependenciesAction.class, module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(HighlightCellDependenciesAction.class, module.getModuleFqName()));
       }
       this.addSeparator();
     } catch (Throwable t) {

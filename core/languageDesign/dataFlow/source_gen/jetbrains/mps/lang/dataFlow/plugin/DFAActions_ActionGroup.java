@@ -23,19 +23,19 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
     try {
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.dataFlow"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.dataFlow.plugin.PrintDFAResult_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.dataFlow.plugin.PrintDFAResult_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.dataFlow"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.dataFlow.plugin.PrintInitializationInformation_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.dataFlow.plugin.PrintInitializationInformation_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.dataFlow"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.dataFlow.plugin.PrintReachingDefinintionsInformation_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.dataFlow.plugin.PrintReachingDefinintionsInformation_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.dataFlow"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.dataFlow.plugin.ShowDFA_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.dataFlow.plugin.ShowDFA_Action"), module.getModuleFqName()));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

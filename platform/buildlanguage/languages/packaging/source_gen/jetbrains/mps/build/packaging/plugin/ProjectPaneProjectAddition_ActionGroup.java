@@ -24,7 +24,7 @@ public class ProjectPaneProjectAddition_ActionGroup extends GeneratedActionGroup
       this.addSeparator();
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.build.packaging"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.build.packaging.plugin.GenerateBuildForProjectAction_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.build.packaging.plugin.GenerateBuildForProjectAction_Action"), module.getModuleFqName()));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

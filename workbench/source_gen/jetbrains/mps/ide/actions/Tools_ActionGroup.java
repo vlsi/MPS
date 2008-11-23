@@ -8,12 +8,12 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.ReloadAllAction;
 import jetbrains.mps.workbench.actions.tools.InstallIDEAPluginAction;
 import jetbrains.mps.smodel.RenameAspectsAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseGroup;
 
 public class Tools_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Tools_ActionGroup.class);
@@ -29,35 +29,26 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
       this.addAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal);
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowModuleRepository_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowModuleRepository_Action"), module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowModelRepository_Action"), module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowModelRepository_Action"), module.getModuleFqName()));
       }
       this.addAnchor(Tools_ActionGroup.LABEL_ID_customTools);
       this.addSeparator();
-      if (BaseGroup.class.isAssignableFrom(ReloadAllAction.class)) {
-        this.add(new ReloadAllAction());
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(ReloadAllAction.class, module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(ReloadAllAction.class, module.getModuleFqName()));
       }
       this.addSeparator();
-      if (BaseGroup.class.isAssignableFrom(InstallIDEAPluginAction.class)) {
-        this.add(new InstallIDEAPluginAction());
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(InstallIDEAPluginAction.class, module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(InstallIDEAPluginAction.class, module.getModuleFqName()));
       }
-      if (BaseGroup.class.isAssignableFrom(RenameAspectsAction.class)) {
-        this.add(new RenameAspectsAction());
-      } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(RenameAspectsAction.class, module.getModuleFqName(), null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(RenameAspectsAction.class, module.getModuleFqName()));
       }
       this.addSeparator();
     } catch (Throwable t) {
