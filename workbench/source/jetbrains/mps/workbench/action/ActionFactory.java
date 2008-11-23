@@ -4,6 +4,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.Shortcut;
 import com.intellij.openapi.keymap.KeymapManager;
+import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
@@ -34,9 +35,14 @@ public class ActionFactory {
     myActions.add(id);
     Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
     if (shortcuts.length != 0) {
-      if (KeymapManager.getInstance().getActiveKeymap().getShortcuts(id).length == 0) {
-        for (Shortcut s : shortcuts) {
-          KeymapManager.getInstance().getActiveKeymap().addShortcut(id, s);
+      Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
+      if (keymap==null){
+        LOG.error("default keymap is not found");
+      }else{
+        if (keymap.getShortcuts(id).length == 0) {
+          for (Shortcut s : shortcuts) {
+            keymap.addShortcut(id, s);
+          }
         }
       }
     }
