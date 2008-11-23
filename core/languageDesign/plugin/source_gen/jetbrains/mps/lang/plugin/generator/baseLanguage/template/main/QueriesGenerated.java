@@ -908,6 +908,10 @@ public class QueriesGenerated {
     return ClassConcept_Behavior.call_isDescendant_1213877355812(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "constructorDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "classifier", false));
   }
 
+  public static boolean ifMacro_Condition_1227461281216(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "constructionParameter", true)).isNotEmpty();
+  }
+
   public static SNode sourceNodeQuery_1204046353137(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }

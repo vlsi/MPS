@@ -1680,6 +1680,23 @@
           </node>
         </node>
       </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1227461281215">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1227461281216">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227461281217">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227461299538">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227461306153">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227461300118">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227461299539" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1227461301886">
+                    <link role="link" targetNodeId="1.1227008813498" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1227461308797" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1227034469900">
       <property name="name" value="stateMethod" />
