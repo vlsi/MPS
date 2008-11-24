@@ -32366,19 +32366,19 @@
     <property name="name" value="IntroduceVariableRefactoring" />
     <property name="abstractClass" value="true" />
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1225103189014">
-      <property name="name" value="name" />
+      <property name="name" value="myName" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190479235" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1225103189016" />
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1225103189017">
-      <property name="name" value="expression" />
+      <property name="name" value="myExpression" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1225103189018" />
       <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225103189019">
         <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
       </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1225103189020">
-      <property name="name" value="expressionType" />
+      <property name="name" value="myExpressionType" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1225103189021" />
       <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225103189022">
         <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
