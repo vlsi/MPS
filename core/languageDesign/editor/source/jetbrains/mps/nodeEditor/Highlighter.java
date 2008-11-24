@@ -127,7 +127,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   public void stopUpdater() {
-    LOG.warning("stopping an updater from a thread " + Thread.currentThread());
     myStopThread = true;
   }
 
