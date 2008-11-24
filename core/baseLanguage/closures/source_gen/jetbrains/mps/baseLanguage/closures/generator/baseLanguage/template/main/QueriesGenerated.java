@@ -1757,12 +1757,6 @@ public class QueriesGenerated {
             if (cc == thisCC) {
               if (SNodeOperations.isInstanceOf(thisCC, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
                 SNode parent = SNodeOperations.getParent(te);
-                if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.FieldReference")) {
-                  SNode ifr = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference");
-                  SLinkOperations.setNewChild(ifr, "instance", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression");
-                  SPropertyOperations.set(ifr, "fieldName", SPropertyOperations.getString(SLinkOperations.getTarget(parent, "variableDeclaration", false), "name"));
-                  SLinkOperations.setTarget(ifr, "fieldType", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(parent, "variableDeclaration", false), "type", true)), true);
-                } else
                 if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
                   SNode op = SLinkOperations.getTarget(parent, "operation", true);
                   if (SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
