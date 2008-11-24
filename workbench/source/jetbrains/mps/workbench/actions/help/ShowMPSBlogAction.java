@@ -7,6 +7,6 @@ public class ShowMPSBlogAction extends ShowSiteAction {
 
 
   protected String getSiteURL() {
-    return "http://www.sergeydmitriev.com/mps/blog";
+    return "http://blogs.jetbrains.com/mps/";
   }
 }
