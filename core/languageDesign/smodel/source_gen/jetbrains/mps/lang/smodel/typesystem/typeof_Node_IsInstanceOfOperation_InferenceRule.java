@@ -23,7 +23,7 @@ public class typeof_Node_IsInstanceOfOperation_InferenceRule extends AbstractInf
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(conceptArg, "expression", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206659963964", false), new _Quotations.QuotationClass_92().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206659963962", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(conceptArg, "expression", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206659963964", false), new _Quotations.QuotationClass_96().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206659963962", false, 0, intentionProvider);
       }
     }
   }

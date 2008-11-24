@@ -5900,22 +5900,6 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206553125923">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206553125924">
-              <property name="name" value="pair" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206553125925">
-                <link role="classifier" targetNodeId="29.~Pair" resolveInfo="Pair" />
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1206553125926" />
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206553125927">
-                  <link role="classifier" targetNodeId="18.~Map" resolveInfo="Map" />
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1206553125928">
-                    <link role="concept" targetNodeId="1.1109279763828" resolveInfo="TypeVariableDeclaration" />
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1206553125929" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1210101337516">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1210101337517">
               <property name="name" value="matchedType" />
