@@ -628,6 +628,15 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227320813275">
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" id="1227320400513">
             <link role="mappingLabel" targetNodeId="1227320375385" resolveInfo="123" />
+            <node role="mapperFunction" type="jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction" id="1227557037388">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227557037389">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227557056962">
+                  <node role="expression" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1227559009211">
+                    <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227557056963" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227320813276">

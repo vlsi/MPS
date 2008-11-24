@@ -1695,35 +1695,6 @@ public class QueriesGenerated {
     }
   }
 
-  public static void mappingScript_CodeBlock_1202836874171(final IOperationContext operationContext, final MappingScriptContext _context) {
-    if (true) {
-      return;
-    }
-    for(SNode te : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ThisExpression")) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(te), "jetbrains.mps.baseLanguage.structure.FieldReference") && (SLinkOperations.getTarget(te, "classConcept", false) == null)) {
-        SNode cl = SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false);
-        SNode thisCC = SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-        if ((cl != null)) {
-          SNodeOperations.getAncestors(cl, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
-          for(SNode cc : SNodeOperations.getAncestors(cl, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)) {
-            if (cc == thisCC) {
-              if (SNodeOperations.isInstanceOf(thisCC, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-                _context.putStepObject("remove_this_" + ((SNode)te).getId(), thisCC);
-              } else
-              {
-                _context.putStepObject("set_this_classconcept_" + ((SNode)te).getId(), thisCC);
-              }
-              break;
-            }
-          }
-        } else
-        if (thisCC == null) {
-          _context.showWarningMessage(te, "Cound not find the class concept");
-        }
-      }
-    }
-  }
-
   public static void mappingScript_CodeBlock_1203003871207(final IOperationContext operationContext, final MappingScriptContext _context) {
     for(SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
       for(SNode vd : ClosureLiteralUtil.collectNonFinalVariableDeclarations(cl)) {
