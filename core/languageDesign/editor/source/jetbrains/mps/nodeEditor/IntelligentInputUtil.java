@@ -103,15 +103,10 @@ public class IntelligentInputUtil {
       editorContext.getNodeEditorComponent().changeSelection(label);
       editorContext.getNodeEditorComponent().relayout();
     } else {
-      if (isInAmbigousPositionOnST(info, smallPattern + tail)) {
+      if (isInOneStepAmbigousPosition(info, smallPattern + tail)) {
         editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(cell, info, false);
-      }
+      }      
     }
-  }
-
-  private static boolean isInAmbigousPositionOnST(NodeSubstituteInfo info, String smallPattern) {
-    return info.getMatchingActions(smallPattern, true).size() > 1 &&
-      info.getMatchingActions(smallPattern, true).size() == info.getMatchingActions(smallPattern, false).size();
   }
 
   private static void processCellAtEnd(EditorCell_Label cell, final EditorContext editorContext, String smallPattern, final String tail) {
@@ -167,7 +162,9 @@ public class IntelligentInputUtil {
       item.substitute(editorContext, smallPattern + tail);
       return;
     } else {
-      if (isInAmbigousPosition(substituteInfo, smallPattern, tail)) {
+      if (isInOneStepAmbigousPosition(substituteInfo, smallPattern + tail)) {
+        editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(cell, substituteInfo, false);
+      } else  if (isInAmbigousPosition(substituteInfo, smallPattern, tail)) {
         cell.setText(smallPattern);
         editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(cell, substituteInfo, false);
       }
@@ -321,6 +318,10 @@ public class IntelligentInputUtil {
 
   private static boolean isInAmbigousPosition(NodeSubstituteInfo info, String smallPattern, String tail) {
     return info.getMatchingActions(smallPattern, true).size() > 1 && info.getMatchingActions(smallPattern + tail, false).isEmpty();
+  }
+
+  private static boolean isInOneStepAmbigousPosition(NodeSubstituteInfo info, String smallPattern) {
+    return info.getMatchingActions(smallPattern, true).size() > 1 && info.getMatchingActions(smallPattern, true).size() == info.getMatchingActions(smallPattern, false).size();
   }
 
   private static EditorCell_Label prepareSTCell(EditorContext context, EditorCell root, String textToSet) {
