@@ -1254,6 +1254,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_11786102128011178610212801(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1178610212801");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    _ClassConcept_Abstract_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Collection_11786168655551178616865555(EditorCell editorCell, SNode node, EditorContext context) {
