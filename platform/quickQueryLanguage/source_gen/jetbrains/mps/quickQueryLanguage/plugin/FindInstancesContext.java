@@ -29,13 +29,14 @@ public class FindInstancesContext extends StandaloneMPSContext {
     return this.myModule;
   }
 
+  @NotNull
   public IScope getScope() {
     return GlobalScope.getInstance();
   }
 
   public  <T>T getComponent(@NotNull() Class<T> c) {
     T component = this.myMPSProject.getComponent(c);
-    if (c != null) {
+    if (component != null) {
       return component;
     }
     return super.getComponent(c);

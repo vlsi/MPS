@@ -32,6 +32,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPSTreeNode> {
   private T myRootNamespace;
   private NamespaceNodeBuilder<T> myBuilder;
@@ -179,6 +181,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
       return myOperationContext.getProject();
     }
 
+    @NotNull
     public IScope getScope() {
       return myOperationContext.getScope();
     }

@@ -66,6 +66,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     return myInvocationContext.getClass(fqName);
   }
 
+  @NotNull
   public IScope getScope() {
     return GlobalScope.getInstance();
   }

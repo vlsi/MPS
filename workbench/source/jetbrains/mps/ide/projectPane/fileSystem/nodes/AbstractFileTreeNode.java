@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.Collection;
 import java.util.List;
@@ -78,36 +79,37 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
   }
 
   private static class MyIOperationContext implements IOperationContext {
-  public MyIOperationContext() {
+    public MyIOperationContext() {
+    }
+
+    @Deprecated
+      public MPSProject getMPSProject() {
+          return null;
+        }
+
+    public Project getProject() {
+      return null;
+    }
+
+    public IModule getModule() {
+      return null;
+    }
+
+    @NotNull
+    public IScope getScope() {
+      return GlobalScope.getInstance();
+    }
+
+    public Frame getMainFrame() {
+      return null;
+    }
+
+    public boolean isTestMode() {
+      return false;
+    }
+
+    public <T> T getComponent(Class<T> clazz) {
+      return null;
+    }
   }
-
-  @Deprecated
-    public MPSProject getMPSProject() {
-        return null;
-      }
-
-  public Project getProject() {
-    return null;
-  }
-
-  public IModule getModule() {
-    return null;
-  }
-
-  public IScope getScope() {
-    return null;
-  }
-
-  public Frame getMainFrame() {
-    return null;
-  }
-
-  public boolean isTestMode() {
-    return false;
-  }
-
-  public <T> T getComponent(Class<T> clazz) {
-        return null;
-      }
-}
 }

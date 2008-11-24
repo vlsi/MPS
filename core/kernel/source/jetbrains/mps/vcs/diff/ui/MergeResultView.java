@@ -17,6 +17,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.GlobalScope;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -40,8 +41,9 @@ class MergeResultView extends JPanel {
             return null;
           }
 
+          @NotNull
           public IScope getScope() {
-            return null;
+            return GlobalScope.getInstance();
           }
         });
     }

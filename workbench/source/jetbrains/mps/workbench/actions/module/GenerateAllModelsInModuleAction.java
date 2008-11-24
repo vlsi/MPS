@@ -177,6 +177,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
       return myOperationContext.getProject();
     }
 
+    @NotNull
     public IScope getScope() {
       return myOperationContext.getScope();
     }

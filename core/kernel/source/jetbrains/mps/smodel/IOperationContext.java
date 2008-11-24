@@ -20,7 +20,7 @@ public interface IOperationContext {
   Project getProject();
 
   IModule getModule();
-  IScope getScope();
+  @NotNull IScope getScope();
   Frame getMainFrame();
   boolean isTestMode();
   <T> T getComponent(Class<T> clazz);

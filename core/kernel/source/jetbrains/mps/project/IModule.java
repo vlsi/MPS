@@ -10,6 +10,8 @@ import java.io.File;
 import java.util.List;
 import java.util.Set;
 
+import org.jetbrains.annotations.NotNull;
+
 public interface IModule extends ModelOwner, MPSModuleOwner {
   @Deprecated
   String getModuleUID();
@@ -58,6 +60,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   IFile getClassesGen();
   File getBundleHome();
 
+  @NotNull
   IScope getScope();
 
   List<String> getSourcePaths();

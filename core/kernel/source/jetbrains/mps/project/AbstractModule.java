@@ -432,6 +432,7 @@ public abstract class AbstractModule implements IModule {
     return myDescriptorFile;
   }
 
+  @NotNull
   public IScope getScope() {
     return myScope;
   }
