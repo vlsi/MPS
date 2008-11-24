@@ -140,14 +140,6 @@ public class QueriesGenerated {
     return PrepStatementUtil.getFlag(_context.getNode(), _context.getGenerator()) == Boolean.TRUE;
   }
 
-  public static boolean baseMappingRule_Condition_1202998342220(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return _context.getStepObject("remove_this_" + ((SNode)SLinkOperations.getTarget(_context.getNode(), "instance", true)).getId()) != null;
-  }
-
-  public static boolean baseMappingRule_Condition_1202998342252(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (SNode)_context.getStepObject("set_this_classconcept_" + ((SNode)SLinkOperations.getTarget(_context.getNode(), "instance", true)).getId()) != null;
-  }
-
   public static boolean baseMappingRule_Condition_1207145700256(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     boolean result = WrappersUtils.getPrepData(_context.getNode(), _context.getGenerator()) != null;
     if (result) {
@@ -566,14 +558,6 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1202817907518(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
     return SPropertyOperations.getString(mds.get(0), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1202998400366(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1202998412426(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1203245282594(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1583,12 +1567,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1226054358909(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return (List<SNode>)_context.getNode().getUserObject("CHUNK_OF_STATEMENTS");
-  }
-
-  public static SNode mapSrcMacro_mapper_1202998342276(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode te = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
-    SLinkOperations.setTarget(te, "classConcept", (SNode)_context.getStepObject("set_this_classconcept_" + ((SNode)SLinkOperations.getTarget(_context.getNode(), "instance", true)).getId()), false);
-    return te;
   }
 
   public static SNode mapSrcMacro_mapper_1207147150424(final IOperationContext operationContext, final MapSrcMacroContext _context) {
