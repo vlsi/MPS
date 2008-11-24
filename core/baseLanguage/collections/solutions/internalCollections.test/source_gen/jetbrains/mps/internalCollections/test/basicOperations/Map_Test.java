@@ -77,4 +77,22 @@ public class Map_Test extends Util_Test {
     }
   }
 
+  @Test()
+  public void test_array() throws Exception {
+    Map<String, String[]> test = MapSequence.<String, String[]>fromKeysArray("foo").withValues(new String[]{"bar","baz"});
+    Iterable<String> seq = MapSequence.fromMap(test).keySet();
+    Assert.assertTrue(Sequence.fromIterable(seq).contains("foo"));
+    String[] array = MapSequence.fromMap(test).get("foo");
+    Assert.assertSame(2, array.length);
+  }
+
+  @Test()
+  public void test_arrayOfString() throws Exception {
+    Map<String, String[]> test = MapSequence.<String, String[]>fromKeysArray("foo").withValues(new String[]{"bar","baz"});
+    Iterable<String> seq = MapSequence.fromMap(test).keySet();
+    Assert.assertTrue(Sequence.fromIterable(seq).contains("foo"));
+    String[] array = MapSequence.fromMap(test).get("foo");
+    Assert.assertSame(2, array.length);
+  }
+
 }

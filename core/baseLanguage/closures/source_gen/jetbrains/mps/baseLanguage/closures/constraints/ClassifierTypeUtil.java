@@ -28,6 +28,11 @@ public class ClassifierTypeUtil {
       SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
       SLinkOperations.setTarget(res, "bound", SNodeOperations.copyNode(getTypeCoercedToClassifierType(SLinkOperations.getTarget(type, "bound", true))), true);
     }
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+      SNode at = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
+      SLinkOperations.setTarget(at, "componentType", getTypeCoercedToClassifierType(SNodeOperations.copyNode(SLinkOperations.getTarget(type, "componentType", true))), true);
+      return at;
+    }
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       SNode res = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
       for(SNode arg : SLinkOperations.getTargets(type, "argument", true)) {
