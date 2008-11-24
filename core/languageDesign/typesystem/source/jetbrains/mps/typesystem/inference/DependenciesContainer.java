@@ -37,6 +37,7 @@ public class DependenciesContainer {
   }
 
   public Set<SNode> getDependencies(SNode node) {
+    if (node == null) return new HashSet<SNode>();
     AbstractConceptDeclaration conceptDeclaration = node.getConceptDeclarationAdapter();
     Set<IDependency_Runtime> dependencies = get(conceptDeclaration);
     Set<SNode> result = new HashSet<SNode>();
