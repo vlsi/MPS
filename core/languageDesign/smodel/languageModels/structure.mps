@@ -2780,7 +2780,7 @@
       <link role="target" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1219353051865">
-      <property name="value" value="node/&lt;name&gt;/" />
+      <property name="value" value="node /&lt;name&gt;/" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1219353067960">
