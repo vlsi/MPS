@@ -40,6 +40,8 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     updateShortcuts();
     setIsAlwaysVisible(false);
     setExecuteOutsideCommand(true);
+
+    addPlace(null);
   }
 
   @NotNull

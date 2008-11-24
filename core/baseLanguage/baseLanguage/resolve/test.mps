@@ -19,6 +19,7 @@
   <import index="234" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1225892451204">
     <property name="name" value="ABC" />
+    <property name="abstractClass" value="false" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225892451205" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1225892451206">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225892451207" />
