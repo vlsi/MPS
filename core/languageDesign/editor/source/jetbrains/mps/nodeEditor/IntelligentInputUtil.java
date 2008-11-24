@@ -39,7 +39,7 @@ public class IntelligentInputUtil {
   }
 
   private static void processSTHintCell(EditorCell_STHint cell, EditorContext editorContext, String pattern) {
-    NodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
+    NodeSubstituteInfo info = cell.getSubstituteInfo();
     String smallPattern = pattern.substring(0, pattern.length() - 1);
     String tail = "" + pattern.charAt(pattern.length() - 1);
     EditorCell nextCell = cell.getNextLeaf();
@@ -47,22 +47,22 @@ public class IntelligentInputUtil {
       nextCell = nextCell.getNextLeaf();      
     }
 
-    if (canCompleteSmallPatternImmediately(substituteInfo, pattern, "") ||
-      canCompleteSmallPatternImmediately(substituteInfo, trimLeft(pattern), "")) {
+    if (canCompleteSmallPatternImmediately(info, pattern, "") ||
+      canCompleteSmallPatternImmediately(info, trimLeft(pattern), "")) {
 
-      if (!canCompleteSmallPatternImmediately(substituteInfo, pattern, "")) {
+      if (!canCompleteSmallPatternImmediately(info, pattern, "")) {
         pattern = trimLeft(pattern);
       }
 
-      substituteInfo.getMatchingActions(pattern, true).get(0).substitute(editorContext, pattern);
-    } else if (pattern.length() > 0 && (canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail) ||
-                canCompleteSmallPatternImmediately(substituteInfo, trimLeft(smallPattern), tail))) {
+      info.getMatchingActions(pattern, true).get(0).substitute(editorContext, pattern);
+    } else if (pattern.length() > 0 && (canCompleteSmallPatternImmediately(info, smallPattern, tail) ||
+                canCompleteSmallPatternImmediately(info, trimLeft(smallPattern), tail))) {
 
-      if (!canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail)) {
+      if (!canCompleteSmallPatternImmediately(info, smallPattern, tail)) {
         smallPattern = trimLeft(smallPattern);
       }
 
-      List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
+      List<INodeSubstituteAction> matchingActions = info.getMatchingActions(smallPattern, true);
       INodeSubstituteAction item = matchingActions.get(0);
       SNode newNode = item.substitute(editorContext, smallPattern);
       editorContext.flushEvents();
@@ -91,8 +91,8 @@ public class IntelligentInputUtil {
           label.end();
         }
       }
-    } else if (substituteInfo.getMatchingActions(pattern, false).isEmpty() &&
-                substituteInfo.getMatchingActions(trimLeft(pattern), false).isEmpty() &&
+    } else if (info.getMatchingActions(pattern, false).isEmpty() &&
+                info.getMatchingActions(trimLeft(pattern), false).isEmpty() &&
                 nextCell != null && nextCell.isErrorState() && nextCell instanceof EditorCell_Label && ((EditorCell_Label) nextCell).isEditable()) {
 
       cell.getSNode().removeRightTransformHint();
@@ -102,7 +102,16 @@ public class IntelligentInputUtil {
       label.end();
       editorContext.getNodeEditorComponent().changeSelection(label);
       editorContext.getNodeEditorComponent().relayout();
+    } else {
+      if (isInAmbigousPositionOnST(info, smallPattern + tail)) {
+        editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(cell, info, false);
+      }
     }
+  }
+
+  private static boolean isInAmbigousPositionOnST(NodeSubstituteInfo info, String smallPattern) {
+    return info.getMatchingActions(smallPattern, true).size() > 1 &&
+      info.getMatchingActions(smallPattern, true).size() == info.getMatchingActions(smallPattern, false).size();
   }
 
   private static void processCellAtEnd(EditorCell_Label cell, final EditorContext editorContext, String smallPattern, final String tail) {
@@ -288,8 +297,6 @@ public class IntelligentInputUtil {
   }
 
   public static String trimLeft(String text) {
-
-    text.trim();
     for (int i = 0; i < text.length(); i++) {
       if (!Character.isWhitespace(text.charAt(i))) {
         return text.substring(i);
