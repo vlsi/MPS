@@ -91,7 +91,7 @@ public class InlineMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      InlineMethodDialog dialog = new InlineMethodDialog(InlineMethod_Action.this.frame, InlineMethod_Action.this.node, InlineMethod_Action.this.project, InlineMethod_Action.this.operationContext);
+      InlineMethodDialog dialog = new InlineMethodDialog(InlineMethod_Action.this.node, InlineMethod_Action.this.project, InlineMethod_Action.this.operationContext);
       dialog.tryToShow();
       dialog.pack();
     } catch (Throwable t) {
