@@ -5,6 +5,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 public class ShowMPSDocumentationSiteAction extends ShowSiteAction {
   public ShowMPSDocumentationSiteAction() {
     super("MPS Documentation");
+
+    getTemplatePresentation().setIcon(Icons.READ_HELP_ICON);
   }
 
   protected String getSiteURL() {
