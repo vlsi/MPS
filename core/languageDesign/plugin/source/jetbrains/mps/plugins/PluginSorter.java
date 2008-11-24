@@ -33,11 +33,13 @@ public class PluginSorter {
 
   private static int init(Item item, Map<IModule, Item> module2Item, int initIndex) {
     item.initIndex = -2;
-    for (IModule dependency : item.module.getAllDependOnModules()) {
-      Item depItem = module2Item.get(dependency);
-      if (depItem != null) {
-        if (depItem.initIndex == -1) {
-          initIndex = init(depItem, module2Item, initIndex);
+    if (item.module != null) {
+      for (IModule dependency : item.module.getAllDependOnModules()) {
+        Item depItem = module2Item.get(dependency);
+        if (depItem != null) {
+          if (depItem.initIndex == -1) {
+            initIndex = init(depItem, module2Item, initIndex);
+          }
         }
       }
     }

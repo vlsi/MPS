@@ -25,6 +25,25 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225892451207" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225892451208" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225892451209">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227529226143">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227529226144">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1227529226145" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1227529226834">
+            <property name="value" value="true" />
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1227529228898">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1227529228899" />
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227529228900" />
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1227529233152">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1227529233153" />
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227529233154" />
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1227529247706">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227529247707" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227516289912">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227516289913">
             <property name="name" value="ijk" />
