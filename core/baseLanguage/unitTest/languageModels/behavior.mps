@@ -206,7 +206,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1216131457914">
-        <link role="elementConcept" targetNodeId="1.1215620452633" resolveInfo="ITestable" />
+        <link role="elementConcept" targetNodeId="1.1216134482493" resolveInfo="ITestMethod" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724142" />
     </node>
@@ -294,7 +294,6 @@
           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
         </node>
       </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215620460295" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723917" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1216045139515">

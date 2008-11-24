@@ -35,7 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="18" />
+  <maxImportIndex value="19" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
   <import index="7" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -44,6 +44,7 @@
   <import index="16" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="19" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1200309609796">
     <property name="name" value="OverridingMethods" />
     <property name="description" value="Overriding Methods" />
@@ -3583,6 +3584,55 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216392123729">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216392123730">
             <property name="value" value="Implemented Interfaces" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1227527031007">
+    <property name="name" value="ExactMethodUsages" />
+    <property name="description" value="Exact Method Usages " />
+    <property name="longDescription" value="Finds ussages of method without overriding methods" />
+    <link role="forConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
+    <node role="findFunction" type="jetbrains.mps.lang.findUsages.structure.FindBlock" id="1227527031008">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227527031009">
+        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1227527192369">
+          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1227527192370">
+            <property name="name" value="nodeUsage" />
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression" id="1227527192371">
+            <link role="finder" targetNodeId="5.1197636141662" resolveInfo="NodeUsages" />
+            <node role="queryNode" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1227527207584" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227527192373">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227527250527">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227527250528">
+                <node role="statement" type="jetbrains.mps.lang.findUsages.structure.ResultStatement" id="1227527322022">
+                  <node role="foundNode" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1227527322023">
+                    <link role="variable" targetNodeId="1227527192370" resolveInfo="nodeUsage" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1227528942893">
+                <node role="rightExpression" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1227528950138" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227528939735">
+                  <link role="baseMethodDeclaration" targetNodeId="19.1227528417926" resolveInfo="getMethodDeclaration" />
+                  <link role="classConcept" targetNodeId="19.1227519212562" resolveInfo="MethodRefactoringUtils" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1227528939736">
+                    <link role="variable" targetNodeId="1227527192370" resolveInfo="nodeUsage" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isVisibleBlock" type="jetbrains.mps.lang.findUsages.structure.IsVisibleBlock" id="1227529855737">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227529855738">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227529858849">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1227529858850">
+            <property name="value" value="false" />
           </node>
         </node>
       </node>
