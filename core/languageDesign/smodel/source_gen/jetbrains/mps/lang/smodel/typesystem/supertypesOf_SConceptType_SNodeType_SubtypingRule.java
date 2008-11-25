@@ -20,7 +20,9 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
       if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
         return new _Quotations.QuotationClass_40().createNode();
       }
-      return new _Quotations.QuotationClass_41().createNode();
+      if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
+        return new _Quotations.QuotationClass_41().createNode();
+      }
     }
     return new _Quotations.QuotationClass_42().createNode();
   }

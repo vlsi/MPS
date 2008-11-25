@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public class SafeDelete extends AbstractLoggableRefactoring {
 
@@ -135,7 +135,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((InterfaceConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.lang.core.structure.BaseConcept")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.lang.core.structure.BaseConcept")) {
       return true;
     } else
     {

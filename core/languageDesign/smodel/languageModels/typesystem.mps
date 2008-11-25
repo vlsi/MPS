@@ -2153,10 +2153,24 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1180545114308">
-            <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196933487511">
-              <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1196933487512">
-                <link role="concept" targetNodeId="3.1169125989551" resolveInfo="InterfaceConceptDeclaration" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227611647413">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227611647414">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1180545114308">
+                <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196933487511">
+                  <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1196933487512">
+                    <link role="concept" targetNodeId="3.1169125989551" resolveInfo="InterfaceConceptDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227611653855">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227611652229">
+                <link role="variableDeclaration" targetNodeId="1180544752194" resolveInfo="concept" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1227611659890">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1227611678142">
+                  <link role="conceptDeclaration" targetNodeId="3.1169125989551" resolveInfo="InterfaceConceptDeclaration" />
+                </node>
               </node>
             </node>
           </node>
