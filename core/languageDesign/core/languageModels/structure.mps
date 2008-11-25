@@ -92,26 +92,26 @@
       <property name="name" value="alias" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1137473914776">
-      <property name="name" value="short_description" />
+      <property name="name" value="shortDescription" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1137473994950">
       <property name="name" value="dontSubstituteByDefault" />
       <property name="inheritable" value="true" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1210365515391">
-      <property name="name" value="deprecated_798" />
+      <property name="name" value="deprecated798" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1215461340299">
-      <property name="name" value="deprecated_944" />
+      <property name="name" value="deprecated944" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1218562853918">
-      <property name="name" value="deprecated_1045" />
+      <property name="name" value="deprecated1045" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1224111255512">
-      <property name="name" value="deprecated_1117" />
+      <property name="name" value="deprecated1117" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1224193728639">
-      <property name="name" value="deprecated_next_after_1117" />
+      <property name="name" value="deprecatedNextAfter1117" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1133922314101">
       <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract" />

@@ -50,14 +50,14 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
       public EditorCell createEditorCell(EditorContext editorContext) {
         EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
         collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Concept function help:"));
-        if (SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "short_description") != null) {
-          collection.addEditorCell(new EditorCell_Constant(editorContext, node, SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "short_description")));
+        if (SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription") != null) {
+          collection.addEditorCell(new EditorCell_Constant(editorContext, node, SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription")));
         }
         collection.addEditorCell(new EditorCell_Constant(editorContext, node, ""));
         collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Parameter help:"));
         for(SNode cfp : ConceptFunction_Behavior.call_getParameters_1213877374450(node)) {
           String alias = SConceptPropertyOperations.getString(cfp, "alias");
-          String description = SConceptPropertyOperations.getString(cfp, "short_description");
+          String description = SConceptPropertyOperations.getString(cfp, "shortDescription");
           if (description == null) {
             description = "<no help. use short_description concept function property to create one>";
           }

@@ -377,14 +377,14 @@ public class QueriesGenerated {
             if (SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.lang.smodel.structure.SPropertyAccess")) {
               SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(leftOperation, "property", false), "dataType", false);
               if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
-                return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_enum_property"));
+                return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToEnumProperty"));
               } else
               {
-                return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_simple_property"));
+                return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToSimpleProperty"));
               }
             }
             if (SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess")) {
-              return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_concept_property"));
+              return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToConceptProperty"));
             }
           }
           // ==========
@@ -392,24 +392,24 @@ public class QueriesGenerated {
           if (linkAccessT != null) {
             if (SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
               // some ops are only applicable to 'link to concept'
-              if (SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_concept") && !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_node"))) {
-                return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_link") && appTypesInfo.myLinkToConcept);
+              if (SConceptPropertyOperations.getBoolean(parameterOp, "applicableToConcept") && !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToNode"))) {
+                return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToLink") && appTypesInfo.myLinkToConcept);
               }
-              return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_link"));
+              return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToLink"));
             }
-            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_linkList"));
+            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToLinkList"));
           }
           // is concept ?
           if (appTypesInfo.myToConcept) {
-            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_concept"));
+            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToConcept"));
           }
           // is node ?
           if (appTypesInfo.myToNode) {
-            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_node"));
+            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToNode"));
           }
           // is smodel ?
           if (appTypesInfo.myToModel) {
-            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_model"));
+            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToModel"));
           }
           return true;
         }

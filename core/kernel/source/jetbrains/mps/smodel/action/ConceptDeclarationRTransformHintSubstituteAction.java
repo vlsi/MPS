@@ -48,7 +48,7 @@ public abstract class ConceptDeclarationRTransformHintSubstituteAction<S extends
 
   public String getDescriptionText(String pattern) {
     if (myDescriptionText == null) {
-      String shortDescription = SModelUtil_new.getStringConceptProperty(myConceptDeclaration, BaseConcept.CPR_Short_description);
+      String shortDescription = SModelUtil_new.getStringConceptProperty(myConceptDeclaration, BaseConcept.CPR_ShortDescription);
       myDescriptionText = shortDescription != null ? shortDescription : super.getMatchingText(pattern);
     }
     return myDescriptionText;

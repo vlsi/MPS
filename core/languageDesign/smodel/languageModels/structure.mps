@@ -996,28 +996,28 @@
       <link role="targetType" targetNodeId="3.1071489090640" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1143235288634">
-      <property name="name" value="applicable_to_model" />
+      <property name="name" value="applicableToModel" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1138763241883">
-      <property name="name" value="applicable_to_node" />
+      <property name="name" value="applicableToNode" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1138763303089">
-      <property name="name" value="applicable_to_simple_property" />
+      <property name="name" value="applicableToSimpleProperty" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1146171845591">
-      <property name="name" value="applicable_to_enum_property" />
+      <property name="name" value="applicableToEnumProperty" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1145994733391">
-      <property name="name" value="applicable_to_concept_property" />
+      <property name="name" value="applicableToConceptProperty" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1138763325919">
-      <property name="name" value="applicable_to_link" />
+      <property name="name" value="applicableToLink" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1138763350436">
-      <property name="name" value="applicable_to_linkList" />
+      <property name="name" value="applicableToLinkList" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1172326539502">
-      <property name="name" value="applicable_to_concept" />
+      <property name="name" value="applicableToConcept" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1138411942177">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />

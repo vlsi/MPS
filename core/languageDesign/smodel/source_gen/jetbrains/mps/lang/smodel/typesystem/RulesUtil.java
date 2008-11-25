@@ -42,35 +42,35 @@ public class RulesUtil {
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     SNode LeftType = TypeChecker.getInstance().getTypeOf(leftExpression);
     boolean isGood = false;
-    if (SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
+    if (SConceptPropertyOperations.getBoolean(op, "applicableToModel")) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, new _Quotations.QuotationClass_44().createNode(typeCheckingContext), false)) {
         isGood = true;
       }
     }
-    if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
+    if (SConceptPropertyOperations.getBoolean(op, "applicableToConcept")) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, new _Quotations.QuotationClass_45().createNode(typeCheckingContext), false)) {
         isGood = true;
       }
     }
-    if (SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
+    if (SConceptPropertyOperations.getBoolean(op, "applicableToNode")) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, new _Quotations.QuotationClass_46().createNode(typeCheckingContext), false)) {
         isGood = true;
       }
     }
     // ===========
-    if (SConceptPropertyOperations.getBoolean(op, "applicable_to_link")) {
+    if (SConceptPropertyOperations.getBoolean(op, "applicableToLink")) {
       SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);
       if (linkAccessT != null) {
         isGood = SPropertyOperations.getBoolean(linkAccessT, "singularCradinality");
         if (isGood) {
           // some of ops applicable to 'link' require left-expr to be a concept
-          if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept") && !(SConceptPropertyOperations.getBoolean(op, "applicable_to_node"))) {
+          if (SConceptPropertyOperations.getBoolean(op, "applicableToConcept") && !(SConceptPropertyOperations.getBoolean(op, "applicableToNode"))) {
             isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, new _Quotations.QuotationClass_47().createNode(typeCheckingContext));
           }
         }
       }
     }
-    if (SConceptPropertyOperations.getBoolean(op, "applicable_to_linkList")) {
+    if (SConceptPropertyOperations.getBoolean(op, "applicableToLinkList")) {
       SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);
       if (linkAccessT != null) {
         isGood = !(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality"));
@@ -78,7 +78,7 @@ public class RulesUtil {
     }
     // ===========
     SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op);
-    if (SConceptPropertyOperations.getBoolean(op, "applicable_to_simple_property")) {
+    if (SConceptPropertyOperations.getBoolean(op, "applicableToSimpleProperty")) {
       if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.lang.smodel.structure.SPropertyAccess")) {
         SNode propertyDecl = SLinkOperations.getTarget(leftOperation, "property", false);
         if (DataTypeDeclaration_Behavior.call_isSimple_1220268671473(SLinkOperations.getTarget(propertyDecl, "dataType", false))) {
@@ -86,7 +86,7 @@ public class RulesUtil {
         }
       }
     }
-    if (SConceptPropertyOperations.getBoolean(op, "applicable_to_enum_property")) {
+    if (SConceptPropertyOperations.getBoolean(op, "applicableToEnumProperty")) {
       if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.lang.smodel.structure.SPropertyAccess")) {
         SNode propertyDecl = SLinkOperations.getTarget(leftOperation, "property", false);
         if (DataTypeDeclaration_Behavior.call_isEnum_1220268692373(SLinkOperations.getTarget(propertyDecl, "dataType", false))) {
@@ -94,7 +94,7 @@ public class RulesUtil {
         }
       }
     }
-    if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept_property")) {
+    if (SConceptPropertyOperations.getBoolean(op, "applicableToConceptProperty")) {
       if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess")) {
         isGood = true;
       }
