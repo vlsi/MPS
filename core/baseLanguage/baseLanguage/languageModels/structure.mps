@@ -531,37 +531,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068581242872">
-    <property name="name" value="NewExpression" />
-    <property name="package" value="method" />
-    <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107217304393">
-      <property name="value" value="new" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1135374467247">
-      <property name="value" value="class instantiation" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1212788593701">
-      <property name="value" value="the NewExpression is replaced with ClassCreator in generic new expression" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1210365515391" resolveInfo="deprecated_next_after_607" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1212789145785">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1135374435992">
-      <property name="role" value="constructorDeclaration" />
-      <link role="target" targetNodeId="1068580123140" resolveInfo="ConstructorDeclaration" />
-      <link role="specializedLink" targetNodeId="1068499141037" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1135374457323">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="typeParameter" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068581242874">
     <property name="name" value="ParameterReference" />
     <property name="package" value="method" />

@@ -39,14 +39,6 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
 
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
     if (SModelUtil_new.isAssignableConcept(targetConcept, ConstructorDeclaration.concept)) {
-      if (referenceNode.getAdapter() instanceof NewExpression) {
-        NewExpression newExpression = (NewExpression) referenceNode.getAdapter();
-        return new ConstructorDeclarationReferenceInfoResolver(
-          newExpression.getActualArguments(),
-          newExpression.getTypeParameters(),
-          getModel(),
-          getScope());
-      }
       if (referenceNode.getAdapter() instanceof ClassCreator) {
         ClassCreator classCreator = (ClassCreator) referenceNode.getAdapter();
         return new ConstructorDeclarationReferenceInfoResolver(
