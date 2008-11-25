@@ -10,6 +10,7 @@ import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.project.ModuleReference;
 
 import java.util.List;
 import java.util.Set;
@@ -50,6 +51,12 @@ public class CellAction_PasteNode extends EditorCellAction {
     SNode selectedNode = selectedCell.getSNode();
 
     PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(selectedNode.getModel());
+
+    Set<ModuleReference> necessaryLanguages = pasteNodeData.getNecessaryLanguages();
+    Set<SModelReference> necessaryImports = pasteNodeData.getNecessaryImports();
+    if (!CopyPasteUtil.addImportsAndLanguagesToModel(selectedNode.getModel(), necessaryLanguages, necessaryImports, context.getOperationContext())) {
+      return;
+    }
 
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
