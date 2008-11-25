@@ -7166,5 +7166,22 @@
       <link role="concept" targetNodeId="3.1227026094155" resolveInfo="RemoveLastElementOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1227627122674">
+    <property name="name" value="typeof_ForEachVariable" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227627122675">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AddDependencyStatement" id="1227627136768">
+        <node role="dependency" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227627143036">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227627141192">
+            <link role="applicableNode" targetNodeId="1227627122676" resolveInfo="variable" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1227627144149" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1227627122676">
+      <property name="name" value="variable" />
+      <link role="concept" targetNodeId="3.1153944193378" resolveInfo="ForEachVariable" />
+    </node>
+  </node>
 </model>
 
