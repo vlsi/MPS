@@ -55,7 +55,7 @@ public class TabbedEditor implements IEditor {
           selectTab(myTabbedPane.getTabs().size() - 1);
         }
       }
-    }, KeyStroke.getKeyStroke("alt shift LEFT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, KeyStroke.getKeyStroke("ctrl alt shift LEFT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -66,7 +66,7 @@ public class TabbedEditor implements IEditor {
           selectTab(0);
         }
       }
-    }, KeyStroke.getKeyStroke("alt shift RIGHT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
