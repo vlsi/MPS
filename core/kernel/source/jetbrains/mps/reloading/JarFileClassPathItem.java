@@ -17,6 +17,8 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 public class JarFileClassPathItem extends AbstractClassPathItem {
+  private static final Logger LOG = Logger.getLogger(JarFileClassPathItem.class);
+
   private static File transformFile(IFile f) throws IOException {
     if (f instanceof FileSystemFile) {
       return ((FileSystemFile) f).getFile();
@@ -45,8 +47,6 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
 
     return tmpFile;
   }
-
-  private static final Logger LOG = Logger.getLogger(JarFileClassPathItem.class);
 
   private ZipFile myZipFile;
   private String myPrefix;
@@ -101,7 +101,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
 
   public URL getResource(String name) {
     try {
-      if (myZipFile.getEntry(myPrefix) == null) return null;
+      if (myZipFile.getEntry(name) == null) return null;
       return new URL(myPrefix + name);
     } catch (MalformedURLException e) {
       return null;
