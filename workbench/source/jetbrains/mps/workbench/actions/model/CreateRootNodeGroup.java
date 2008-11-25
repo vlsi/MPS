@@ -112,7 +112,7 @@ public class CreateRootNodeGroup extends BaseGroup {
     }
 
 
-    Integer selectedItemsCount = MPSDataKeys.SELECTED_ITEMS_NUM.getData(event.getDataContext());
+    Integer selectedItemsCount = MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE.getData(event.getDataContext());
     boolean enabled = selectedItemsCount != null && selectedItemsCount == 1;
 
     setEnabledState(event.getPresentation(), enabled);
