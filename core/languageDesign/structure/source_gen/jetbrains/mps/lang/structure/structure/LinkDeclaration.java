@@ -8,9 +8,12 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LinkDeclaration extends BaseConcept {
+public class LinkDeclaration extends BaseConcept implements IStructureDeprecatable {
   public static final String concept = "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   public static final String ROLE = "role";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String META_CLASS = "metaClass";
   public static final String SOURCE_CARDINALITY = "sourceCardinality";
   public static final String SPECIALIZED_LINK = "specializedLink";
@@ -26,6 +29,30 @@ public class LinkDeclaration extends BaseConcept {
 
   public void setRole(String value) {
     this.setProperty(LinkDeclaration.ROLE, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(LinkDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(LinkDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(LinkDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(LinkDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(LinkDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(LinkDeclaration.VIRTUAL_PACKAGE, value);
   }
 
   public LinkMetaclass getMetaClass() {

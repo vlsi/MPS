@@ -98,11 +98,11 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void doRefactor(RefactoringContext refactoringContext) {
+  public void doRefactor(final RefactoringContext refactoringContext) {
     {
       SNode linkDeclaration = (SNode)refactoringContext.getSelectedNode();
       refactoringContext.moveNodeToNode(linkDeclaration, linkDeclaration.getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
@@ -110,7 +110,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
       SModel model = refactoringContext.getSelectedNode().getModel();
@@ -141,15 +141,15 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     }
   }
 
-  public List<SModel> getModelsToUpdate(RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
-  public void updateModel(SModel model, RefactoringContext refactoringContext) {
+  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
   }
 
-  public List<SNode> getNodesToOpen(RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 
@@ -157,7 +157,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public IChooseComponent<SNode> targetConcept_componentCreator(RefactoringContext refactoringContext) {
+  public IChooseComponent<SNode> targetConcept_componentCreator(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
     SNode abstractConceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     return new HierarchicalChooseNodeComponent(refactoringContext.getCurrentOperationContext(), new ConceptAncestorsProvider(), abstractConceptDeclaration);

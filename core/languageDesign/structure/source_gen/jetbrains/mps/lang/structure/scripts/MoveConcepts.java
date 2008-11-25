@@ -22,8 +22,9 @@ import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -104,11 +105,11 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void doRefactor(RefactoringContext refactoringContext) {
+  public void doRefactor(final RefactoringContext refactoringContext) {
     {
       List<SNode> nodes = (List<SNode>)refactoringContext.getSelectedNodes();
       SModel model = refactoringContext.getSelectedNode().getModel();
@@ -124,7 +125,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       if (editorModelDescriptor != null) {
         for(SNode node : nodes) {
           if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-            ConceptEditorDeclaration conceptEditorDeclaration = SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node)));
+            ConceptEditorDeclaration conceptEditorDeclaration = SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((ConceptDeclaration)SNodeOperations.getAdapter(node)));
             if (conceptEditorDeclaration != null) {
               SNode editor = (SNode)conceptEditorDeclaration.getNode();
               ListSequence.fromList(editors).addElement(editor);
@@ -214,7 +215,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
       Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
@@ -243,15 +244,15 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     }
   }
 
-  public List<SModel> getModelsToUpdate(RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
-  public void updateModel(SModel model, RefactoringContext refactoringContext) {
+  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
   }
 
-  public List<SNode> getNodesToOpen(RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 

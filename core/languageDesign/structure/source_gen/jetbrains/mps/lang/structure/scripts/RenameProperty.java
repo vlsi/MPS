@@ -85,11 +85,11 @@ public class RenameProperty extends AbstractLoggableRefactoring {
     return false;
   }
 
-  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return null;
   }
 
-  public void doRefactor(RefactoringContext refactoringContext) {
+  public void doRefactor(final RefactoringContext refactoringContext) {
     {
       SNode propertyDeclaration = (SNode)refactoringContext.getSelectedNode();
       SNode concept = SNodeOperations.getAncestor(propertyDeclaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
@@ -97,7 +97,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
       SModel model = refactoringContext.getSelectedNode().getModel();
@@ -116,15 +116,15 @@ public class RenameProperty extends AbstractLoggableRefactoring {
     }
   }
 
-  public List<SModel> getModelsToUpdate(RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
-  public void updateModel(SModel model, RefactoringContext refactoringContext) {
+  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
   }
 
-  public List<SNode> getNodesToOpen(RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 
@@ -132,7 +132,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public String newName_initialValue(RefactoringContext refactoringContext) {
+  public String newName_initialValue(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"))) {
       return "";

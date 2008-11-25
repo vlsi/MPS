@@ -91,18 +91,18 @@ public class RenameConcept extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void doRefactor(RefactoringContext refactoringContext) {
+  public void doRefactor(final RefactoringContext refactoringContext) {
     {
       SNode node = (SNode)refactoringContext.getSelectedNode();
       refactoringContext.changeFeatureName(node, SNodeOperations.getModel(node).getSModelFqName() + "." + ((String)refactoringContext.getParameter("newName")), ((String)refactoringContext.getParameter("newName")));
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
       SModel model = refactoringContext.getSelectedNode().getModel();
@@ -121,15 +121,15 @@ public class RenameConcept extends AbstractLoggableRefactoring {
     }
   }
 
-  public List<SModel> getModelsToUpdate(RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
-  public void updateModel(SModel model, RefactoringContext refactoringContext) {
+  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
   }
 
-  public List<SNode> getNodesToOpen(RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 
@@ -137,7 +137,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public String newName_initialValue(RefactoringContext refactoringContext) {
+  public String newName_initialValue(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       return "";

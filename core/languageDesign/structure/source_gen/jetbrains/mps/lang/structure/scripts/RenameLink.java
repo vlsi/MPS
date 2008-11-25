@@ -88,11 +88,11 @@ public class RenameLink extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.LinkExamples_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void doRefactor(RefactoringContext refactoringContext) {
+  public void doRefactor(final RefactoringContext refactoringContext) {
     {
       SNode linkDeclaration = (SNode)refactoringContext.getSelectedNode();
       SNode concept = SNodeOperations.getAncestor(linkDeclaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
@@ -100,7 +100,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
       SModel model = refactoringContext.getSelectedNode().getModel();
@@ -119,15 +119,15 @@ public class RenameLink extends AbstractLoggableRefactoring {
     }
   }
 
-  public List<SModel> getModelsToUpdate(RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
-  public void updateModel(SModel model, RefactoringContext refactoringContext) {
+  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
   }
 
-  public List<SNode> getNodesToOpen(RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 
@@ -135,7 +135,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public String newName_initialValue(RefactoringContext refactoringContext) {
+  public String newName_initialValue(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
       return "";

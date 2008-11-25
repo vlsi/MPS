@@ -28,6 +28,8 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
+import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.util.Computable;
 
 public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   public static final String sourceLanguage = "sourceLanguage";
@@ -86,7 +88,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
+  public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
       SearchResults searchResults = FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
@@ -122,7 +124,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     }
   }
 
-  public void doRefactor(RefactoringContext refactoringContext) {
+  public void doRefactor(final RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
       if (((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")) != null) {
@@ -135,7 +137,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     }
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
       if (((Language)refactoringContext.getParameter("sourceLanguage")) == null) {
@@ -156,14 +158,14 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     }
   }
 
-  public List<SModel> getModelsToUpdate(RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
-  public void updateModel(SModel model, RefactoringContext refactoringContext) {
+  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
   }
 
-  public List<SNode> getNodesToOpen(RefactoringContext refactoringContext) {
+  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
     return new ArrayList<SNode>();
   }
 
@@ -172,7 +174,16 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   }
 
   public boolean askForInfo(final RefactoringContext refactoringContext) {
-    return this.isApplicable(refactoringContext);
+    {
+      Boolean result = ModelAccess.instance().runReadAction(new Computable <Boolean>() {
+
+        public Boolean compute() {
+          return SafeDeleteConcept.this.isApplicable(refactoringContext);
+        }
+
+      });
+      return result;
+    }
   }
 
 

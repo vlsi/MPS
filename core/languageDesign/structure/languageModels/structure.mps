@@ -187,6 +187,9 @@
       <property name="role" value="target" />
       <link role="target" targetNodeId="1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1227629144741">
+      <link role="intfc" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1071489288299">
     <property name="name" value="PropertyDeclaration" />
