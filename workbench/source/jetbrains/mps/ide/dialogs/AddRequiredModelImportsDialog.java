@@ -57,7 +57,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     myModel = model;
 
     myMainComponent = new JPanel(new BorderLayout());
-    JLabel header = new JLabel("Do you want to add imported models or languages to the model " + myModel + " ?", JLabel.LEFT);
+    JLabel header = new JLabel("Do you want to add imported models or languages to the model " + myModel.getSModelFqName() + " ?", JLabel.LEFT);
     myMainComponent.add(header, BorderLayout.NORTH);
 
     JPanel panel = new JPanel(new GridLayout(3, 1, 5, 5));
