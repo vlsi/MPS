@@ -264,15 +264,6 @@
         <link role="template" targetNodeId="7.1143148725345" />
       </node>
     </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1184608465952">
-      <link role="applicableConcept" targetNodeId="11.1152960164975" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.DismissTopMappingRule" id="1212095434280">
-        <node role="generatorMessage" type="jetbrains.mps.lang.generator.structure.GeneratorMessage" id="1212095444922">
-          <property name="messageType" value="error" />
-          <property name="messageText" value="support for this concept has been discontinued" />
-        </node>
-      </node>
-    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1184608482126">
       <link role="applicableConcept" targetNodeId="11.1153138554286" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1198780517413">

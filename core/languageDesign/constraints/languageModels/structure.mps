@@ -4180,25 +4180,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
       <link role="target" targetNodeId="11.1161622878565" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1152960038436">
-      <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
-      <node role="target" type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1152960164975">
-        <property name="name" value="PropertySetter_FunctionParm_node" />
-        <link role="extends" targetNodeId="3.1107135704075" />
-        <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1152960189265">
-          <property name="value" value="!old-node!" />
-          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-        </node>
-        <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1152960189266">
-          <property name="value" value="function parameter" />
-          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
-        </node>
-        <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1212095159459">
-          <property name="value" value="replaced with ConstraintsFunctionParameter_node" />
-          <link role="conceptPropertyDeclaration" targetNodeId="1.1210365515391" resolveInfo="deprecated_next_after_607" />
-        </node>
-      </node>
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1152960028074">
       <property name="value" value="setter" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
