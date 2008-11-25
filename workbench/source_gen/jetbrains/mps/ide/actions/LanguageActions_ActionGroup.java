@@ -98,8 +98,4 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       LOG.error("User group error", t);
     }
   }
-
-  public void adjust() {
-  }
-
 }

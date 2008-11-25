@@ -6,14 +6,15 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.action.ActionFactory;
 
 public class UnitTest_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    groups.add(new JUnitTestRoot_ActionGroup());
-    groups.add(new JUnitTestModel_ActionGroup());
-    groups.add(new JUnitTestModule_ActionGroup());
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(JUnitTestRoot_ActionGroup.class, "jetbrains.mps.baseLanguage.unitTest"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(JUnitTestModel_ActionGroup.class, "jetbrains.mps.baseLanguage.unitTest"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(JUnitTestModule_ActionGroup.class, "jetbrains.mps.baseLanguage.unitTest"));
     return groups;
   }
 

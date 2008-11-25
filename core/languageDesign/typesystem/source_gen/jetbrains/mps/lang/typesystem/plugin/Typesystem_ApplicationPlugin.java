@@ -6,16 +6,17 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    groups.add(new TypesystemActions_ActionGroup());
-    groups.add(new HelginsNodeActions_ActionGroup());
-    groups.add(new HelginsEditorPopupInternal_ActionGroup());
-    groups.add(new HelginsModelActions_ActionGroup());
-    groups.add(new HelginsToolsAddition_ActionGroup());
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(TypesystemActions_ActionGroup.class, "jetbrains.mps.lang.typesystem"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(HelginsNodeActions_ActionGroup.class, "jetbrains.mps.lang.typesystem"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(HelginsEditorPopupInternal_ActionGroup.class, "jetbrains.mps.lang.typesystem"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(HelginsModelActions_ActionGroup.class, "jetbrains.mps.lang.typesystem"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(HelginsToolsAddition_ActionGroup.class, "jetbrains.mps.lang.typesystem"));
     return groups;
   }
 

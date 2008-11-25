@@ -6,17 +6,18 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.action.ActionFactory;
 
 public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    groups.add(new BaseLanguageEditorPopup_ActionGroup());
-    groups.add(new BaseLanguageEditorPopupInternal_ActionGroup());
-    groups.add(new BaseLanguageModelActionsInternal_ActionGroup());
-    groups.add(new BaseLanguageNodeActionsInternal_ActionGroup());
-    groups.add(new BaseLanguageProjectNodePopup_ActionGroup());
-    groups.add(new BaseLanguageToolsAddition_ActionGroup());
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(BaseLanguageEditorPopup_ActionGroup.class, "jetbrains.mps.baseLanguage"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(BaseLanguageEditorPopupInternal_ActionGroup.class, "jetbrains.mps.baseLanguage"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(BaseLanguageModelActionsInternal_ActionGroup.class, "jetbrains.mps.baseLanguage"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(BaseLanguageNodeActionsInternal_ActionGroup.class, "jetbrains.mps.baseLanguage"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(BaseLanguageProjectNodePopup_ActionGroup.class, "jetbrains.mps.baseLanguage"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(BaseLanguageToolsAddition_ActionGroup.class, "jetbrains.mps.baseLanguage"));
     return groups;
   }
 

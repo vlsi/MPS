@@ -6,13 +6,14 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.action.ActionFactory;
 
 public class QuickQueryLanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    groups.add(new FindInstancesByConditionGroup_ActionGroup());
-    groups.add(new FindInstancesByConditionAndNodeGroup_ActionGroup());
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(FindInstancesByConditionGroup_ActionGroup.class, "jetbrains.mps.quickQueryLanguage"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(FindInstancesByConditionAndNodeGroup_ActionGroup.class, "jetbrains.mps.quickQueryLanguage"));
     return groups;
   }
 

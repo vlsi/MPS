@@ -6,13 +6,14 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Buildlanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    groups.add(new ProjectPaneLanguageAddition_ActionGroup());
-    groups.add(new ProjectPaneNodeAddition_ActionGroup());
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(ProjectPaneLanguageAddition_ActionGroup.class, "jetbrains.mps.buildlanguage"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(ProjectPaneNodeAddition_ActionGroup.class, "jetbrains.mps.buildlanguage"));
     return groups;
   }
 

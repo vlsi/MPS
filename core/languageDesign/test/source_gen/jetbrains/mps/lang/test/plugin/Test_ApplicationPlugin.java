@@ -6,12 +6,13 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Test_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    groups.add(new RunTestInMPS_ActionGroup());
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(RunTestInMPS_ActionGroup.class, "jetbrains.mps.lang.test"));
     return groups;
   }
 

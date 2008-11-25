@@ -85,7 +85,7 @@ public class BaseGroup extends DefaultActionGroup {
   public void addAnchor(String id) {
     add(new LabelledAnchor(id));
   }
-
+                                                 
   public void addPlace(ActionPlace place,@Nullable Condition<BaseAction> condition){
     for (AnAction child:getChildren(null)){
       if (child instanceof BaseGroup){

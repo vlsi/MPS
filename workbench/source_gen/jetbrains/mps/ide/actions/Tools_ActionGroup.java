@@ -26,7 +26,6 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal);
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
         this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowModuleRepository_Action"), module.getModuleFqName()));
@@ -51,6 +50,7 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
         this.add(ActionFactory.getInstance().acquireRegisteredAction(RenameAspectsAction.class, module.getModuleFqName()));
       }
       this.addSeparator();
+      this.addAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

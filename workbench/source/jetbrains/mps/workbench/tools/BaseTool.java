@@ -2,6 +2,7 @@ package jetbrains.mps.workbench.tools;
 
 import com.intellij.ide.actions.ActivateToolWindowAction;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
+import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
@@ -11,7 +12,6 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -183,10 +183,13 @@ public abstract class BaseTool {
     myWindowManager = ToolWindowManager.getInstance(myProject);
 
     if (myNumber != -1) {
-      KeymapManager.getInstance().getActiveKeymap().addShortcut(
-        ActivateToolWindowAction.getActionIdForToolWindow(myId),
-        new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null)
-      );
+      Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
+      String actionId = ActivateToolWindowAction.getActionIdForToolWindow(myId);
+      //noinspection ConstantConditions
+      if (keymap.getShortcuts(actionId).length != 0) {
+        KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null);
+        keymap.addShortcut(actionId,shortcut);
+      }
     }
 
     //if we create a new project, tool windows are created for it automatically

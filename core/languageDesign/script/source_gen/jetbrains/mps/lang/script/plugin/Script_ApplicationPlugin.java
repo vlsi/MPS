@@ -6,13 +6,14 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Script_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    groups.add(new ScriptsForSelection_ActionGroup());
-    groups.add(new ScriptsGlobally_ActionGroup());
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(ScriptsForSelection_ActionGroup.class, "jetbrains.mps.lang.script"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(ScriptsGlobally_ActionGroup.class, "jetbrains.mps.lang.script"));
     return groups;
   }
 

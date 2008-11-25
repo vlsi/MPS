@@ -6,12 +6,13 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    groups.add(new EditorActions_ActionGroup());
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(EditorActions_ActionGroup.class, "jetbrains.mps.lang.editor"));
     return groups;
   }
 

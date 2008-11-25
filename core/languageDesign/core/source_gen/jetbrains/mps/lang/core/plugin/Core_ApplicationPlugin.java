@@ -6,14 +6,15 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Core_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    groups.add(new FindModelUsages_ActionGroup());
-    groups.add(new FindLanguageUsages_ActionGroup());
-    groups.add(new CoreActions_ActionGroup());
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(FindModelUsages_ActionGroup.class, "jetbrains.mps.lang.core"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(FindLanguageUsages_ActionGroup.class, "jetbrains.mps.lang.core"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(CoreActions_ActionGroup.class, "jetbrains.mps.lang.core"));
     return groups;
   }
 
