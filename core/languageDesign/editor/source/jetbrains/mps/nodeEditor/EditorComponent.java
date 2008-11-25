@@ -2128,7 +2128,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return getSelectedCell();
     } else if (dataId.equals(MPSDataKeys.SNODES.getName())) {
       return getSelectedNodes();
-    } else if (dataId.equals(MPSDataKeys.MODEL_DESCRIPTOR.getName())) {
+    } else if (dataId.equals(MPSDataKeys.MODEL.getName())) {
       return ModelAccess.instance().runReadAction(new Computable() {
         public Object compute() {
           SNode node = getRootCell().getSNode();

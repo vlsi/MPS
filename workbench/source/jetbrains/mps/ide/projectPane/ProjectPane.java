@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.ide.*;
-import com.intellij.ide.util.treeView.AbstractTreeBuilder;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
@@ -30,7 +29,6 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.ModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -379,7 +377,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       return getSelectedSNode();
     } else if (dataId.equals(MPSDataKeys.SNODES.getName())) {
       return getSelectedNodes();
-    } else if (dataId.equals(MPSDataKeys.MODEL_DESCRIPTOR.getName())) {
+    } else if (dataId.equals(MPSDataKeys.MODEL.getName())) {
       return getSelectedModel();
     } else if (dataId.equals(MPSDataKeys.MODELS.getName())) {
       return getSelectedModels();

@@ -24,8 +24,6 @@ import java.util.List;
 import java.util.Set;
 
 public class MPSDataKeys extends PlatformDataKeys {
-  @Description(description = "current IDEA project")
-  public static final DataKey<Project> PROJECT = DataKey.create(DataConstants.PROJECT);
   @Description(description = "current MPS project")
   public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");
   @Description(description = "current node")
@@ -33,7 +31,7 @@ public class MPSDataKeys extends PlatformDataKeys {
   @Description(description = "selected nodes")
   public static final DataKey<List<SNode>> SNODES = DataKey.create("MPS_SNode_List");
   @Description(description = "current model")
-  public static final DataKey<SModelDescriptor> MODEL_DESCRIPTOR = DataKey.create("MPS_SModelDescriptor");
+  public static final DataKey<SModelDescriptor> MODEL = DataKey.create("MPS_SModelDescriptor");
   @Description(description = "selected models")
   public static final DataKey<List<SModelDescriptor>> MODELS = DataKey.create("MPS_SModelDescriptor_List");
   @Description(description = "current module")

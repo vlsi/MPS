@@ -33,7 +33,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ActionInstance_Editor extends DefaultNodeEditor {
 
-  /* package */ AbstractCellListHandler myListHandler_1227011619665;
+  /* package */AbstractCellListHandler myListHandler_1227011619665;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1206113671258(context, node);
@@ -99,7 +99,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_action1206113671946(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refCell_action_1206113671946((EditorCell_Label) editorCell, node, context);
+      setupLabel_refCell_action_1206113671946((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -119,7 +119,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
 
@@ -194,7 +194,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_property_name1206113671948(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_property_name_1206113671948((EditorCell_Label) editorCell, node, context);
+        setupLabel_property_name_1206113671948((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -214,7 +214,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
-        return cellWithRole;
+      return cellWithRole;
     }
 
 
@@ -225,8 +225,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     private static void setupLabel_property_name_1206113671948(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
-  }
-
+}
   public static class actualParameterListHandler_4799_0 extends RefNodeListHandler {
 
     public actualParameterListHandler_4799_0(SNode ownerNode, String childRole, EditorContext context) {
@@ -274,6 +273,6 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
       }
     }
 
-  }
+}
 
 }

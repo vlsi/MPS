@@ -61,7 +61,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
     if (this.operationContext == null) {
       return false;
     }
-    this.modelDescriptor = event.getData(MPSDataKeys.MODEL_DESCRIPTOR);
+    this.modelDescriptor = event.getData(MPSDataKeys.MODEL);
     if (this.modelDescriptor == null) {
       return false;
     }

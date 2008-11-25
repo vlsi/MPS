@@ -64,7 +64,7 @@ public class CloneModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL_DESCRIPTOR);
+    this.model = event.getData(MPSDataKeys.MODEL);
     if (this.model == null) {
       return false;
     }

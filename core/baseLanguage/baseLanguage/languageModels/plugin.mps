@@ -20188,7 +20188,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1223455114682">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="54.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="68.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1224076150335">
       <property name="name" value="operationContext" />
@@ -20494,7 +20494,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1224252515938">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="54.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="68.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1224252524675">
       <property name="name" value="frame" />
@@ -33724,11 +33724,11 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1225448004945">
       <property name="name" value="descriptor" />
-      <link role="key" targetNodeId="54.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+      <link role="key" targetNodeId="54.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1225455517184">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="54.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="68.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" id="1225447909041">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225447909042">

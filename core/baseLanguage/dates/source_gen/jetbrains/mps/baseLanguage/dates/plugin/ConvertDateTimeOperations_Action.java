@@ -46,10 +46,10 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    if (event.getData(MPSDataKeys.MODEL_DESCRIPTOR) == null) {
+    if (event.getData(MPSDataKeys.MODEL) == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL_DESCRIPTOR).getSModel();
+    this.model = event.getData(MPSDataKeys.MODEL).getSModel();
     if (this.model == null) {
       return false;
     }

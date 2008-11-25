@@ -1177,7 +1177,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420638520">
       <property name="name" value="modelDescriptor" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420647791">
       <property name="name" value="context" />
@@ -1429,7 +1429,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420649153">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1215871905655">
@@ -1571,7 +1571,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420649624">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1215873138429">
@@ -1713,7 +1713,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420649535">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1215873275289">
@@ -1845,11 +1845,11 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420646962">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420647098">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420649484">
       <property name="name" value="operationContext" />
@@ -1978,7 +1978,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420648644">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1215873952433">
@@ -2140,7 +2140,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420647871">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420648058">
       <property name="name" value="context" />
@@ -2328,7 +2328,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420648431">
       <property name="name" value="ideaProject" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420648844">
       <property name="name" value="project" />
@@ -2483,7 +2483,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420646258">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420646895">
       <property name="name" value="context" />
@@ -3522,7 +3522,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420647534">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1215890512584">
@@ -3807,7 +3807,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420648277">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1215903504454">
@@ -4614,7 +4614,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420647516">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1215909759956">
@@ -4795,7 +4795,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420646002">
       <property name="name" value="ideaProject" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420649224">
       <property name="name" value="project" />
@@ -5061,7 +5061,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420649451">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1216122341402">
@@ -5280,7 +5280,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420649191">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1216122844143">
@@ -5406,7 +5406,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420649118">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1216123548857">
@@ -5561,7 +5561,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420648744">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1216123732571">
@@ -5770,7 +5770,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420648548">
       <property name="name" value="ideaProject" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420649587">
       <property name="name" value="project" />
@@ -7887,7 +7887,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1222856407515">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1225990064405">
       <property name="modifiers" value="alt" />

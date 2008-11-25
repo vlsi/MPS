@@ -5,6 +5,8 @@ package jetbrains.mps.lang.plugin.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import java.util.ArrayList;
 
 public class ActionDataParameterDeclaration_Behavior {
 
@@ -13,6 +15,13 @@ public class ActionDataParameterDeclaration_Behavior {
 
   public static SNode call_getType_1217257091542(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "key", false), "type", true), "parameter", true)).first();
+  }
+
+  public static List<SNode> getVariants_1227641865136() {
+    List<SNode> dataKeys = new ArrayList<SNode>();
+    ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), "staticField", true)));
+    ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "classifier", false), "staticField", true)));
+    return dataKeys;
   }
 
 }

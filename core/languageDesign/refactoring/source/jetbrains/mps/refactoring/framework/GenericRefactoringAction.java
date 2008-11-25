@@ -28,7 +28,7 @@ public class GenericRefactoringAction extends BaseAction {
 
     RefactoringContext context = new RefactoringContext(myRefactoring);
     context.setCurrentOperationContext(e.getData(MPSDataKeys.OPERATION_CONTEXT));
-    context.setSelectedModel(e.getData(MPSDataKeys.MODEL_DESCRIPTOR));
+    context.setSelectedModel(e.getData(MPSDataKeys.MODEL));
     context.setSelectedNode(e.getData(MPSDataKeys.SNODE));
     context.setSelectedNodes(e.getData(MPSDataKeys.SNODES));
     context.setSelectedModule(e.getData(MPSDataKeys.MODULE));

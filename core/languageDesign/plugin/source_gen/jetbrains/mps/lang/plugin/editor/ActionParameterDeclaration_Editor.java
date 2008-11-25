@@ -38,7 +38,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode1205679157845(context, node));
     editorCell.addEditorCell(this.createProperty1205679161879(context, node));
-    editorCell.addEditorCell(this.createConstant1205679222181(context, node, ";"));
+    editorCell.addEditorCell(this.createConstant1205679222181(context, node, ""));
     editorCell.addEditorCell(this.createConstant1219069195031(context, node, ""));
     return editorCell;
   }

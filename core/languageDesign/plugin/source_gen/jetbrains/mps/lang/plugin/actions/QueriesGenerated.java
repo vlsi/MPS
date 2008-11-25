@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
@@ -83,7 +84,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return SLinkOperations.getTargets(SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "classifier", false), "staticField", true);
+            return ActionDataParameterDeclaration_Behavior.getVariants_1227641865136();
           }
 
         };
@@ -102,7 +103,7 @@ public class QueriesGenerated {
                 SNode annotation = ListSequence.fromList(SLinkOperations.getTargets((item), "annotation", true)).where(new IWhereFilter <SNode>() {
 
                   public boolean accept(SNode it) {
-                    return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "classifier", false), "name"));
+                    return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "classifier", false), "name"));
                   }
 
                 }).first();

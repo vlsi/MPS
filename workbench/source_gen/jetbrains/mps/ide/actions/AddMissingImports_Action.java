@@ -44,7 +44,7 @@ public class AddMissingImports_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.modelDescriptor = event.getData(MPSDataKeys.MODEL_DESCRIPTOR);
+    this.modelDescriptor = event.getData(MPSDataKeys.MODEL);
     if (this.modelDescriptor == null) {
       return false;
     }

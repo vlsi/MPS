@@ -892,7 +892,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1225570364479">
       <property name="name" value="modelDescriptor" />
-      <link role="key" targetNodeId="33.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+      <link role="key" targetNodeId="33.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1225568233237">
       <property name="name" value="mpsProject" />

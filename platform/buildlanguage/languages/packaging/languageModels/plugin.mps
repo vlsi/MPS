@@ -197,7 +197,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1218726094724">
       <property name="name" value="modelDescriptor" />
-      <link role="key" targetNodeId="11.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+      <link role="key" targetNodeId="11.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
     </node>
     <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" id="1224174040639">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224174040640">
@@ -724,7 +724,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1221149911658">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="11.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="66.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1221149114858">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221149114859">
@@ -11431,11 +11431,11 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1224851217094">
       <property name="name" value="currentModel" />
-      <link role="key" targetNodeId="11.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+      <link role="key" targetNodeId="11.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1224850942354">
       <property name="name" value="project" />
-      <link role="key" targetNodeId="11.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+      <link role="key" targetNodeId="66.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1224866181927">
       <property name="name" value="context" />

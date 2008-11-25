@@ -56,7 +56,7 @@ public class CheckModel_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL_DESCRIPTOR);
+    this.model = event.getData(MPSDataKeys.MODEL);
     if (this.model == null) {
       return false;
     }

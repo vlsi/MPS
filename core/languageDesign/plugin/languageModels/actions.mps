@@ -142,6 +142,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" />
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="1218807098709">
     <property name="name" value="MoveParametersToTopLevel" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1218807115883">
@@ -278,24 +279,10 @@
           </node>
           <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" id="1218808193364">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218808193365">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218808294644">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218808296037">
-                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1218808296038">
-                    <link role="concept" targetNodeId="2.1068390468198" resolveInfo="ClassConcept" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218808296039">
-                      <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1218808296040">
-                        <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218808296041">
-                          <link role="classifier" targetNodeId="5.~MPSDataKeys" resolveInfo="MPSDataKeys" />
-                        </node>
-                      </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1218808296042">
-                        <link role="link" targetNodeId="2.1107535924139" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1218808296043">
-                    <link role="link" targetNodeId="2.1128555889557" />
-                  </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1227642015879">
+                <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1227642018553">
+                  <link role="concept" targetNodeId="1.1217252042208" resolveInfo="ActionDataParameterDeclaration" />
+                  <link role="baseMethodDeclaration" targetNodeId="2v.1227641865136" resolveInfo="getVariants" />
                 </node>
               </node>
             </node>

@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.search.EmptySearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior;
 
 public class ActionDataParameterDeclaration_key_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -45,7 +45,7 @@ public class ActionDataParameterDeclaration_key_ReferentConstraint implements IM
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "classifier", false), "staticField", true);
+    return ActionDataParameterDeclaration_Behavior.getVariants_1227641865136();
   }
 
 }
