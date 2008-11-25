@@ -63,7 +63,7 @@ public abstract class BaseStep extends StepAdapter {
     if (comment != null) {
       final String url = getURL();
       if (url != null) {
-        JLabel aLabel = new JLabel("<html><a href=\"\">Read more</a></html>");
+        JLabel aLabel = new JLabel("<html><a href=\"\">Read&nbsp;more</a></html>");
         aLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         aLabel.addMouseListener(new MouseAdapter() {
           public void mouseClicked(MouseEvent e) {
@@ -72,7 +72,7 @@ public abstract class BaseStep extends StepAdapter {
         });
         aLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         aLabel.setHorizontalTextPosition(SwingConstants.RIGHT);
-        GridBagConstraints cAnchor = new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+        GridBagConstraints cAnchor = new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.NORTHEAST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
         commentPanel.add(aLabel, cAnchor);
       }
     }
