@@ -14,7 +14,7 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
   }
 
   public SNode getSubOrSuperType(SNode stringClassType) {
-    return new _Quotations.QuotationClass_106().createNode();
+    return new _Quotations.QuotationClass_105().createNode();
   }
 
   public String getApplicableConceptFQName() {

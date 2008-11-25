@@ -1434,22 +1434,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1207556499398">
-    <property name="package" value="dotExpression_old" />
-    <link role="conceptDeclaration" targetNodeId="1.1068580123158" resolveInfo="FieldReference" />
-    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1207556499399">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207556499400">
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1207556502419">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207556506032">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1207556505828" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207556507612">
-              <link role="link" targetNodeId="1.1080137532343" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1207556563737">
     <property name="package" value="method" />
     <link role="conceptDeclaration" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />

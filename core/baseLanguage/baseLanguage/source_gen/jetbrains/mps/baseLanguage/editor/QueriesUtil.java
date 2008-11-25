@@ -16,11 +16,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class QueriesUtil {
 
@@ -78,16 +73,6 @@ public class QueriesUtil {
       return newNode;
     }
     throw new RuntimeException("Bad parameter object " + parameterObject);
-  }
-
-  public static List<SNode> replaceNodeMenu_FieldReference_getParameterObjects(SNode node) {
-    SNode instance = SLinkOperations.getTarget(node, "instance", true);
-    SNode instanceType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-    if (instanceType == null) {
-      return new ArrayList<SNode>();
-    }
-    ISearchScope searchScope = new ClassifierVisibleMembersScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), node, IClassifiersSearchScope.INSTANCE_METHOD);
-    return (List<SNode>)searchScope.getNodes();
   }
 
 }

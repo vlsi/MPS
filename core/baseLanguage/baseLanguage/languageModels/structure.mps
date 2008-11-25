@@ -377,41 +377,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123158">
-    <property name="name" value="FieldReference" />
-    <property name="package" value="dotExpression_old" />
-    <link role="extends" targetNodeId="1068498886296" resolveInfo="VariableReference" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107216539974">
-      <property name="value" value=".&lt;field&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107216550555">
-      <property name="value" value="instance field reference" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1146528767789">
-      <link role="conceptPropertyDeclaration" targetNodeId="1146528679895" resolveInfo="lvalue" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1204242095135">
-      <property name="value" value="this concept has been replaced with DotExpression + FieldReferenceOperation (can not remove this concept because it is extended by 'GlobalFactoryParameterReference' in transform lang)" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1193783916915" resolveInfo="deprecated_next_after_470" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1213734004698">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1080137532343">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="instance" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1070568237987">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="fieldDeclaration" />
-      <link role="specializedLink" targetNodeId="1068581517664" />
-      <link role="target" targetNodeId="1068390468200" resolveInfo="FieldDeclaration" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123159">
     <property name="name" value="IfStatement" />
     <property name="package" value="if" />

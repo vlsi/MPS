@@ -1,13 +1,11 @@
 package jetbrains.mps.baseLanguage.generator.java.closures;
 
 import jetbrains.mps.baseLanguage.structure.*;
-import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -97,20 +95,7 @@ public class _QueriesUtil {
       }
     });
 
-    SModel model = generator.getTargetModel();
-    if (enclosingClosureOrContextOwner instanceof Closure) {
-      Closure enclosingClosure = (Closure) enclosingClosureOrContextOwner;
-      SNode closureAdapter_output = generator.findOutputNodeByInputNodeAndMappingName(enclosingClosure.getNode(), ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
-      ClassConcept closureAdapter_output_ = (ClassConcept) closureAdapter_output.getAdapter();
-      FieldDeclaration field = JavaModelUtil_new.findField(closureAdapter_output_, ClosuresMappingId.NAME__CLOSURE_ADAPTER__CLOSURE_CONTEXT_FIELD);
-      if (field != null) {
-        FieldReference fieldRef = FieldReference.newInstance(model);
-        fieldRef.setInstance(ThisExpression.newInstance(model));
-        fieldRef.setFieldDeclaration(field);
-        return BaseAdapter.fromAdapter(fieldRef);
-      }
-    }
-
+    SModel model = generator.getOutputModel();
     if (enclosingClosureOrContextOwner != null &&
             ClosuresUtil.isClosureContextOwner(BaseAdapter.fromAdapter(enclosingClosureOrContextOwner))) {
       SNode varDeclStmt_output = generator.findOutputNodeByInputNodeAndMappingName(enclosingClosureOrContextOwner.getNode(), ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT);
@@ -126,42 +111,4 @@ public class _QueriesUtil {
     // no variable found - return 'null'
     return BaseAdapter.fromAdapter(NullLiteral.newInstance(model));
   }
-
-  /**
-   * method should be invoked in $COPY-SRC$ because use ref on class in 'input model'
-   */
-//  public static SNode create_enclosingClassObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
-//    SNode enclosingClass = SNodeOperations.getAncestor(nodeInsideClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-//    if (enclosingClass != null) {
-//      Class[] classes = new Class[]{BaseMethodDeclaration.class, Closure.class};
-//      INodeAdapter enclosingNode = nodeInsideClosure.getAdapter().findFirstParent(classes);
-//      if (enclosingNode instanceof InstanceMethodDeclaration ||
-//              enclosingNode instanceof ConstructorDeclaration) {
-//        ThisExpression thisExpr = ThisExpression.newInstance(generator.getTargetModel());
-//        thisExpr.setClassConcept((ClassConcept) enclosingClass.getAdapter());
-//        return thisExpr.getNode();
-//      }
-//
-//      if (enclosingNode instanceof Closure) {
-////        SNode closureAdapterClass_output = generator.findOutputNodeByInputNodeAndMappingName(enclosingNode.getNode(), ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
-////        ClassConcept closureAdapterClass_output_ = (ClassConcept) closureAdapterClass_output.getAdapter();
-////        FieldDeclaration field = JavaModelUtil_new.findField(closureAdapterClass_output_, ClosuresMappingId.NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD);
-////        FieldReference fieldRef = FieldReference.newInstance(generator.getTargetModel());
-////        fieldRef.setInstance(ThisExpression.newInstance(generator.getTargetModel()));
-////        fieldRef.setFieldDeclaration(field);
-////        return BaseAdapter.fromAdapter(fieldRef);
-//
-//        InternalPartialFieldReference fieldRef_intern = InternalPartialFieldReference.newInstance(null);
-//        fieldRef_intern.setInstance(ThisExpression.newInstance(null));
-//        fieldRef_intern.setFieldName(ClosuresMappingId.NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD);
-//
-//        // type of field
-//        ClassifierType typeOfField = ClassifierType.newInstance(null);
-//        typeOfField.setClassifier((Classifier) enclosingClass.getAdapter());
-//        fieldRef_intern.setFieldType(typeOfField);
-//        return fieldRef_intern.getNode();
-//      }
-//    }
-//    return NullLiteral.newInstance(generator.getTargetModel()).getNode();
-//  }
 }

@@ -28,7 +28,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new StaticMethodCall_staticMethodDeclaration_ReferentConstraint());
     this.myConstraints.add(new LocalVariableReference_localVariableDeclaration_ReferentConstraint());
     this.myConstraints.add(new ClassCreator_constructorDeclaration_ReferentConstraint());
-    this.myConstraints.add(new FieldReference_fieldDeclaration_ReferentConstraint());
     this.myConstraints.add(new TypeVariableReference_typeVariableDeclaration_ReferentConstraint());
     this.myConstraints.add(new NewExpression_constructorDeclaration_ReferentConstraint());
     this.myConstraints.add(new ThisExpression_classConcept_ReferentConstraint());

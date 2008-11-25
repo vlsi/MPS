@@ -17,7 +17,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
 
   public List<SNode> getSubOrSuperTypes(SNode objectArrayType) {
     // see JLS 3.0
-    return CollectionUtil.asList(new _Quotations.QuotationClass_83().createNode(), new _Quotations.QuotationClass_84().createNode(), new _Quotations.QuotationClass_85().createNode());
+    return CollectionUtil.asList(new _Quotations.QuotationClass_82().createNode(), new _Quotations.QuotationClass_83().createNode(), new _Quotations.QuotationClass_84().createNode());
   }
 
   public String getApplicableConceptFQName() {

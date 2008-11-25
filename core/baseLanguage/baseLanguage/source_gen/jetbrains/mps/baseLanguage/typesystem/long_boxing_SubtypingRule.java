@@ -13,7 +13,7 @@ public class long_boxing_SubtypingRule extends SubtypingRule_Runtime implements 
   }
 
   public SNode getSubOrSuperType(SNode longType) {
-    return new _Quotations.QuotationClass_63().createNode();
+    return new _Quotations.QuotationClass_62().createNode();
   }
 
   public String getApplicableConceptFQName() {
