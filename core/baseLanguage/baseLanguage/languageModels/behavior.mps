@@ -1204,13 +1204,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877287013" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877302554">
-    <property name="package" value="method" />
-    <link role="concept" targetNodeId="1.1068581242872" resolveInfo="NewExpression" />
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877302555">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877302556" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877303489">
     <link role="concept" targetNodeId="1.1172008963197" resolveInfo="LocalStaticFieldReference" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877303490">

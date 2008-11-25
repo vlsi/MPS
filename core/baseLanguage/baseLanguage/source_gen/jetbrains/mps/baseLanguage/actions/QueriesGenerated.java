@@ -24,7 +24,6 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -39,6 +38,7 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
@@ -153,10 +153,6 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_GenericDeclaration_1177506104970(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SLinkOperations.getCount(_context.getSourceNode(), "typeVariableDeclaration") == 0;
-  }
-
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_NewExpression_1177506323526(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SLinkOperations.getCount(_context.getSourceNode(), "typeParameter") == 0;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BreakStatement_1199466283835(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -394,30 +390,6 @@ __switch__:
   public static void nodeFactory_NodeSetup_AssignmentExpression_1193750640252(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
       SLinkOperations.setTarget(_context.getNewNode(), "rValue", _context.getSampleNode(), true);
-    }
-  }
-
-  public static void nodeFactory_NodeSetup_NewExpression_1198098766258(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
-      SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getEnclosingNode(), _context.getSampleNode());
-      if ((originalExpression != null)) {
-        SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
-        if (SNodeOperations.isInstanceOf(expectedType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-          SNode classifierType = expectedType;
-          if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierType, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-            SNode classConcept = SLinkOperations.getTarget(classifierType, "classifier", false);
-            if (!(SPropertyOperations.getBoolean(classConcept, "abstractClass"))) {
-              SNode constructorDeclaration = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "constructor", true)).first();
-              if (constructorDeclaration != null) {
-                SLinkOperations.setTarget(_context.getNewNode(), "baseMethodDeclaration", constructorDeclaration, false);
-                for(SNode type : Sequence.fromIterable(SLinkOperations.getTargets(classifierType, "parameter", true))) {
-                  SLinkOperations.addChild(_context.getNewNode(), "typeParameter", SNodeOperations.copyNode(type));
-                }
-              }
-            }
-          }
-        }
-      }
     }
   }
 
@@ -1852,34 +1824,6 @@ __switch__:
 
         public String getDescriptionText(String pattern) {
           return "add type variable";
-        }
-
-      });
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_NewExpression_1177506323525(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.NewExpression");
-      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
-        public SNode doSubstitute(String pattern) {
-          SLinkOperations.addNewChild(_context.getSourceNode(), "typeParameter", "jetbrains.mps.baseLanguage.structure.Type");
-          return _context.getSourceNode();
-        }
-
-        public String getMatchingText(String pattern) {
-          return "<";
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "add type parameter";
         }
 
       });

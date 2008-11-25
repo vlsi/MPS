@@ -560,25 +560,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104846925">
-    <link role="concept" targetNodeId="1.1068581242872" resolveInfo="NewExpression" />
-    <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1213104846926">
-      <link role="applicableLink" targetNodeId="1.1135374435992" />
-      <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104846927">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846928">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104846929">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104846930">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104846931">
-                <link role="baseMethodDeclaration" targetNodeId="32.~VisibleClassConstructorsScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassConstructorsScope" />
-                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104846932" />
-                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104846933" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104846934">
     <link role="concept" targetNodeId="1.1070475354124" resolveInfo="ThisExpression" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1213104846935">

@@ -14,7 +14,7 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   }
 
   public SNode getSubOrSuperType(SNode longType) {
-    return new _Quotations.QuotationClass_69().createNode();
+    return new _Quotations.QuotationClass_67().createNode();
   }
 
   public String getApplicableConceptFQName() {

@@ -35,12 +35,12 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
     {
       SNode _nodeToCheck_1029348928467 = imco;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new _Quotations.QuotationClass_80().createNode(methodClassifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204065906120", true, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new _Quotations.QuotationClass_78().createNode(methodClassifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204065906120", true, 0, intentionProvider);
     }
     // --- following piece of cake is identical for any method call ---
     {
-      final SNode _representatorVar1 = typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338);
-      typeCheckingContext.whenConcrete(_representatorVar1, new Runnable() {
+      final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338);
+      typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
 
         public void run() {
           Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();

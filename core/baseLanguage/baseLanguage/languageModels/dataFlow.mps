@@ -1649,35 +1649,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1212764384343">
-    <property name="package" value="method" />
-    <link role="conceptDeclaration" targetNodeId="1.1068581242872" resolveInfo="NewExpression" />
-    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1212764384344">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212764384345">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1212764386518">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212764386519">
-            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1212764386520">
-              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212764386521">
-                <link role="variableDeclaration" targetNodeId="1212764386525" resolveInfo="arg" />
-              </node>
-            </node>
-          </node>
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212764386522">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1212764386523" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1212764386524">
-              <link role="link" targetNodeId="1.1068499141038" />
-            </node>
-          </node>
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212764386525">
-            <property name="name" value="arg" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1212764386526">
-              <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1214499184018">
     <property name="package" value="classifier" />
     <link role="conceptDeclaration" targetNodeId="1.1182160077978" resolveInfo="AnonymousClassCreator" />
