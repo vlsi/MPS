@@ -1,5 +1,7 @@
 package jetbrains.mps.plugins.applicationplugins;
 
+import com.intellij.ide.ui.customization.CustomActionsSchema;
+import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -7,38 +9,31 @@ import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.wm.impl.IdeFrameImpl;
 import com.intellij.openapi.wm.ex.WindowManagerEx;
-import com.intellij.openapi.extensions.ExtensionPointName;
-import com.intellij.util.ui.tree.TreeUtil;
-import com.intellij.ide.ui.customization.CustomizationUtil;
-import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
-import com.intellij.ide.ui.customization.CustomActionsSchema;
-import com.intellij.ide.ui.customization.CustomizableActionsPanel;
-import com.intellij.ide.IdeBundle;
+import com.intellij.openapi.wm.impl.IdeFrameImpl;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.plugins.PluginSorter;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.project.*;
+import jetbrains.mps.plugins.PluginSorter;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.tree.TreePath;
 import java.util.*;
 
 public class ApplicationPluginManager implements ApplicationComponent {
@@ -104,7 +99,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
     }
 
     myIDEPlugin = new Ide_ApplicationPlugin();
-    plugins.put(MPSModuleRepository.getInstance().getModuleByUID(IDE_MODULE_ID),myIDEPlugin);
+    plugins.put(MPSModuleRepository.getInstance().getModuleByUID(IDE_MODULE_ID), myIDEPlugin);
 
     return PluginSorter.sortByDependencies(plugins);
   }
@@ -164,20 +159,18 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
     List<BaseGroup> mainMenuGroups = new ArrayList<BaseGroup>();
     DefaultActionGroup mainMenuGroup = ActionUtils.getDefaultGroup(IdeActions.GROUP_MAIN_MENU);
-    for (BaseGroup group : ((BaseApplicationPlugin)myIDEPlugin).getGroups()) {
+    for (BaseGroup group : ((BaseApplicationPlugin) myIDEPlugin).getGroups()) {
       if (contains(mainMenuGroup, group)) {
         mainMenuGroups.add(group);
       }
     }
 
     for (BaseGroup group : mainMenuGroups) {
-      for (ActionPlace place : ActionPlace.values()) {
-        group.addPlace(place, new Condition<BaseAction>() {
-          public boolean met(BaseAction action) {
-            return action.getPlaces().isEmpty();
-          }
-        });
-      }
+      group.addPlace(null, new Condition<BaseAction>() {
+        public boolean met(BaseAction action) {
+          return action.getPlaces().isEmpty();
+        }
+      });
     }
   }
 
