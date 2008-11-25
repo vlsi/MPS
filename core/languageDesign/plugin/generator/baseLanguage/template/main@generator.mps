@@ -6764,7 +6764,7 @@
                       <link role="baseMethodDeclaration" targetNodeId="61.~AnActionEvent.getData(com.intellij.openapi.actionSystem.DataKey):java.lang.Object" resolveInfo="getData" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1220624226883">
                         <link role="classifier" targetNodeId="75.~MPSDataKeys" resolveInfo="MPSDataKeys" />
-                        <link role="variableDeclaration" targetNodeId="75.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+                        <link role="variableDeclaration" targetNodeId="75.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
                       </node>
                     </node>
                   </node>
@@ -6802,7 +6802,7 @@
                         <link role="baseMethodDeclaration" targetNodeId="61.~AnActionEvent.getData(com.intellij.openapi.actionSystem.DataKey):java.lang.Object" resolveInfo="getData" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1217415205496">
                           <link role="classifier" targetNodeId="75.~MPSDataKeys" resolveInfo="MPSDataKeys" />
-                          <link role="variableDeclaration" targetNodeId="75.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+                          <link role="variableDeclaration" targetNodeId="75.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
                         </node>
                       </node>
                     </node>
