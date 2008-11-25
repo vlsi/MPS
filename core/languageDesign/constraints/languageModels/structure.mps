@@ -4074,19 +4074,10 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1148687176410">
     <property name="name" value="NodeReferentConstraint" />
     <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1163536952540">
-      <property name="name" value="searchScopeDescription" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1148687202698">
       <property name="role" value="applicableLink" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1071489288298" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1159205716971">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="searchScopeCanCreate" />
-      <link role="target" targetNodeId="1159205453623" resolveInfo="ConstraintFunction_ReferentSearchScope_CanCreate" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1148687345559">
       <property name="metaClass" value="aggregation" />
@@ -4102,14 +4093,6 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1158954542247">
       <property name="value" value="link {&lt;{applicableLink}&gt;}" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215736522092">
-      <property name="value" value="'searchScopeDescription' property is not used any more" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1215461340299" resolveInfo="deprecated_next_after_798" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215736732672">
-      <property name="value" value="'searchScopeCanCreate' link is not used any more" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1215461340299" resolveInfo="deprecated_next_after_798" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1148934493876">
@@ -4189,31 +4172,9 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1159205453623">
-    <property name="package" value="Functions" />
-    <property name="name" value="ConstraintFunction_ReferentSearchScope_CanCreate" />
-    <link role="extends" targetNodeId="1148934493876" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1159205453624">
-      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1159205523283" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1159205453626">
-      <property name="value" value="search scope precondition" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215724931205">
-      <property name="value" value="'can create' is not used any longer" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1215461340299" resolveInfo="deprecated_next_after_798" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1159285995602">
     <property name="name" value="NodeDefaultSearchScope" />
     <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1159286114226">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="searchScopeCanCreate" />
-      <link role="target" targetNodeId="1159205453623" resolveInfo="ConstraintFunction_ReferentSearchScope_CanCreate" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1159286114227">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="searchScopeFactory" />

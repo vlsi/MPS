@@ -11,22 +11,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeReferentConstraint extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint";
-  public static final String SEARCH_SCOPE_DESCRIPTION = "searchScopeDescription";
   public static final String APPLICABLE_LINK = "applicableLink";
-  public static final String SEARCH_SCOPE_CAN_CREATE = "searchScopeCanCreate";
   public static final String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
   public static final String REFERENT_SET_HANDLER = "referentSetHandler";
 
   public NodeReferentConstraint(SNode node) {
     super(node);
-  }
-
-  public String getSearchScopeDescription() {
-    return this.getProperty(NodeReferentConstraint.SEARCH_SCOPE_DESCRIPTION);
-  }
-
-  public void setSearchScopeDescription(String value) {
-    this.setProperty(NodeReferentConstraint.SEARCH_SCOPE_DESCRIPTION, value);
   }
 
   public LinkDeclaration getApplicableLink() {
@@ -35,14 +25,6 @@ public class NodeReferentConstraint extends BaseConcept {
 
   public void setApplicableLink(LinkDeclaration node) {
     super.setReferent(NodeReferentConstraint.APPLICABLE_LINK, node);
-  }
-
-  public ConstraintFunction_ReferentSearchScope_CanCreate getSearchScopeCanCreate() {
-    return (ConstraintFunction_ReferentSearchScope_CanCreate)this.getChild(NodeReferentConstraint.SEARCH_SCOPE_CAN_CREATE);
-  }
-
-  public void setSearchScopeCanCreate(ConstraintFunction_ReferentSearchScope_CanCreate node) {
-    super.setChild(NodeReferentConstraint.SEARCH_SCOPE_CAN_CREATE, node);
   }
 
   public ConstraintFunction_ReferentSearchScope_Factory getSearchScopeFactory() {

@@ -11,7 +11,6 @@ import jetbrains.mps.project.GlobalScope;
 public class NodeDefaultSearchScope extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope";
   public static final String DESCRIPTION = "description";
-  public static final String SEARCH_SCOPE_CAN_CREATE = "searchScopeCanCreate";
   public static final String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
 
   public NodeDefaultSearchScope(SNode node) {
@@ -24,14 +23,6 @@ public class NodeDefaultSearchScope extends BaseConcept {
 
   public void setDescription(String value) {
     this.setProperty(NodeDefaultSearchScope.DESCRIPTION, value);
-  }
-
-  public ConstraintFunction_ReferentSearchScope_CanCreate getSearchScopeCanCreate() {
-    return (ConstraintFunction_ReferentSearchScope_CanCreate)this.getChild(NodeDefaultSearchScope.SEARCH_SCOPE_CAN_CREATE);
-  }
-
-  public void setSearchScopeCanCreate(ConstraintFunction_ReferentSearchScope_CanCreate node) {
-    super.setChild(NodeDefaultSearchScope.SEARCH_SCOPE_CAN_CREATE, node);
   }
 
   public ConstraintFunction_ReferentSearchScope_Factory getSearchScopeFactory() {
