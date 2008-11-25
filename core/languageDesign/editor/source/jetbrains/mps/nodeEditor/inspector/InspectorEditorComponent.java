@@ -60,23 +60,6 @@ public class InspectorEditorComponent extends EditorComponent {
     });    
   }
 
-  @Nullable
-  public Object getData(@NonNls String dataId) {
-    Object data = super.getData(dataId);
-    if (data != null) return data;
-
-    if (dataId.equals(MPSDataKeys.VIRTUAL_FILE.getName())) {
-      return ModelAccess.instance().runReadAction(new Computable<Object>() {
-        public Object compute() {
-          if (myNodePointer == null || myNodePointer.getNode() == null) return null;
-          SNode node = myNodePointer.getNode();
-          return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
-        }
-      });
-    }
-    return null;
-  }
-
   public JComponent getExternalComponent() {
     return super.getExternalComponent();
   }

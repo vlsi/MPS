@@ -49,6 +49,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -2115,20 +2116,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) {
-      return createEditorContextForActions();
-    } else if (dataId.equals(MPSDataKeys.SNODE.getName())) {
+    //MPSDK
+    if (dataId.equals(MPSDataKeys.SNODE.getName())) {
       EditorCell selectedCell = getSelectedCell();
       if (selectedCell != null) {
         return selectedCell.getSNode();
       } else {
         return getRootCell().getSNode();
       }
-    } else if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) {
-      return getSelectedCell();
-    } else if (dataId.equals(MPSDataKeys.SNODES.getName())) {
-      return getSelectedNodes();
-    } else if (dataId.equals(MPSDataKeys.MODEL.getName())) {
+    }
+    if (dataId.equals(MPSDataKeys.SNODES.getName())) return getSelectedNodes();
+    if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())){
       return ModelAccess.instance().runReadAction(new Computable() {
         public Object compute() {
           SNode node = getRootCell().getSNode();
@@ -2138,34 +2136,29 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return model.getModelDescriptor();
         }
       });
-    } else if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
-      return getOperationContext();
-    } else if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) {
-      return new MyCutProvider();
-    } else if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) {
-      return new MyCopyProvider();
-    } else if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) {
-      return new MyPasteProvider();
-    } else if (dataId.equals(MPSDataKeys.EDITOR_COMPONENT.getName())) {
-      return this;
-    } else if (dataId.equals(MPSDataKeys.MODULES.getName()) && getEditedNode() != null) {
-      return Arrays.asList(getEditedNode().getModel().getModelDescriptor().getModule());
-    } else if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
-      return ModelAccess.instance().runReadAction(new Computable() {
+    }
+    if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) return getRootCell().getSNode().getModel().getModelDescriptor().getModule();
+    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return getOperationContext();
+    if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();
+    if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) return getSelectedCell();
+    if (dataId.equals(MPSDataKeys.EDITOR_COMPONENT.getName())) return this;
+    if (dataId.equals(MPSDataKeys.PLACE.getName())) return ActionPlace.EDITOR;
+
+    //PDK
+    if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) return new MyCutProvider();
+    if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName()))  return new MyCopyProvider();
+    if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) return new MyPasteProvider();
+    if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE.getName())) {
+      return ModelAccess.instance().runReadAction(new Computable<Object>() {
         public Object compute() {
-          SNode node = getRootCell().getSNode();
-          if (node == null) return null;
-          SModel model = node.getModel();
-          if (model == null) return null; //removed model
-          IFile ifile = model.getModelDescriptor().getModelFile();
-          if (ifile == null) return null;
-          return new VirtualFile[]{VFileSystem.getFile(ifile)};
+          if (myNodePointer == null || myNodePointer.getNode() == null) return null;
+          SNode node = myNodePointer.getNode();
+          return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
         }
       });
-    } else if (dataId.equals(MPSDataKeys.PLACE.getName())) {
-      return ActionPlace.EDITOR;
     }
 
+    //not found
     return null;
   }
 

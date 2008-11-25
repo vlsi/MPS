@@ -373,49 +373,61 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSDataKeys.SNODE.getName())) {
-      return getSelectedSNode();
-    } else if (dataId.equals(MPSDataKeys.SNODES.getName())) {
-      return getSelectedNodes();
-    } else if (dataId.equals(MPSDataKeys.MODEL.getName())) {
-      return getSelectedModel();
-    } else if (dataId.equals(MPSDataKeys.MODELS.getName())) {
-      return getSelectedModels();
-    } else if (dataId.equals(MPSDataKeys.MODULES.getName())) {
-      return getSelectedModules();
-    } else if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
-      return getContextForSelection();
-    } else if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) {
-      return new MyCopyProvider();
-    } else if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) {
-      return new MyPasteProvider();
-    } else if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) {
-      return new MyCutProvider();
-    } else if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
-      return getSelectedFiles();
-    } else if (dataId.equals(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE.getName())) {
-      return getSelectionPaths().length;
-    } else if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
-      TreePath[] selection = getTree().getSelectionPaths();
-      if (selection == null) return null;
-      if (selection.length != 1) return null;
-      MPSTreeNode treeNode = (MPSTreeNode) selection[0].getLastPathComponent();
-      while (treeNode != null && !(treeNode instanceof ProjectModuleTreeNode)) {
-        treeNode = (MPSTreeNode) treeNode.getParent();
-      }
-      if (treeNode == null) return null;
-      return ((ProjectModuleTreeNode) treeNode).getModule();
-    } else if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGE.getName())) {
+    //MPSDK
+    if (dataId.equals(MPSDataKeys.SNODE.getName())) return getSelectedSNode();
+    if (dataId.equals(MPSDataKeys.SNODES.getName())) return getSelectedNodes();
+
+    if (dataId.equals(MPSDataKeys.MODEL.getName())) return getSelectedModel();
+    if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())) return getCurrentModel() ;
+    if (dataId.equals(MPSDataKeys.MODELS.getName())) return getSelectedModels();
+
+    if (dataId.equals(MPSDataKeys.MODULE.getName())) return getSelectedModule();
+    if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) return getCurrentModule();
+    if (dataId.equals(MPSDataKeys.MODULES.getName())) return getSelectedModules();
+
+    if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGE.getName())) {
       List<String> selectedPackages = getSelectedPackages();
       if (selectedPackages.size() != 1) return null;
       return selectedPackages.get(0);
-    } else if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGES.getName())) {
-      return getSelectedPackages();
-    } else if (dataId.equals(MPSDataKeys.PLACE.getName())) {
-      return getPlace();
     }
+    if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGES.getName())) return getSelectedPackages();
 
+    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return getContextForSelection();
+    if (dataId.equals(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE.getName())) return getSelectionPaths().length;
+    if (dataId.equals(MPSDataKeys.PLACE.getName())) return getPlace();
+
+    //PDK
+    if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) return new MyCopyProvider();
+    if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) return new MyPasteProvider();
+    if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) return new MyCutProvider();
+    if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) return getSelectedFiles();
+
+    //not found
     return null;
+  }
+
+  private SModelDescriptor getCurrentModel() {
+    TreePath[] selection = getTree().getSelectionPaths();
+    if (selection == null) return null;
+    if (selection.length != 1) return null;
+    MPSTreeNode treeNode = (MPSTreeNode) selection[0].getLastPathComponent();
+    while (treeNode != null && !(treeNode instanceof SModelTreeNode)) {
+      treeNode = (MPSTreeNode) treeNode.getParent();
+    }
+    if (treeNode == null) return null;
+    return ((SModelTreeNode) treeNode).getSModelDescriptor();
+  }
+
+  private IModule getCurrentModule() {
+    TreePath[] selection = getTree().getSelectionPaths();
+    if (selection == null) return null;
+    if (selection.length != 1) return null;
+    MPSTreeNode treeNode = (MPSTreeNode) selection[0].getLastPathComponent();
+    while (treeNode != null && !(treeNode instanceof ProjectModuleTreeNode)) {
+      treeNode = (MPSTreeNode) treeNode.getParent();
+    }
+    if (treeNode == null) return null;
+    return ((ProjectModuleTreeNode) treeNode).getModule();
   }
 
   private ActionPlace getPlace() {
