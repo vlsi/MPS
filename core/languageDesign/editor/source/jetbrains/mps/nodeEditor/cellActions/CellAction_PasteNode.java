@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.project.ModuleReference;
 
+import javax.swing.SwingUtilities;
 import java.util.List;
 import java.util.Set;
 
@@ -46,48 +47,58 @@ public class CellAction_PasteNode extends EditorCellAction {
 
   public void execute(final EditorContext context) {
     LOG.assertInCommand();
-    EditorComponent editorComponent = context.getNodeEditorComponent();
-    EditorCell selectedCell = getCellToPasteTo(editorComponent.getSelectedCell());
-    SNode selectedNode = selectedCell.getSNode();
+    final EditorComponent editorComponent = context.getNodeEditorComponent();
+    final EditorCell selectedCell = getCellToPasteTo(editorComponent.getSelectedCell());
+    final SNode selectedNode = selectedCell.getSNode();
 
-    PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(selectedNode.getModel());
+    final PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(selectedNode.getModel());
 
-    Set<ModuleReference> necessaryLanguages = pasteNodeData.getNecessaryLanguages();
-    Set<SModelReference> necessaryImports = pasteNodeData.getNecessaryImports();
-    if (!CopyPasteUtil.addImportsAndLanguagesToModel(selectedNode.getModel(), necessaryLanguages, necessaryImports, context.getOperationContext())) {
-      return;
-    }
+    final Set<ModuleReference> necessaryLanguages = pasteNodeData.getNecessaryLanguages();
+    final Set<SModelReference> necessaryImports = pasteNodeData.getNecessaryImports();
+    final SModel model = selectedNode.getModel();
 
-    List<SNode> pasteNodes = pasteNodeData.getNodes();
-    Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
-    
-    if (canPasteBefore(selectedCell, pasteNodes)) {
-      new NodePaster(pasteNodes).pasteRelative(selectedNode, PastePlaceHint.BEFORE_ANCHOR);
-    } else {
-      new NodePaster(pasteNodes).paste(selectedCell);
-    }
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        CopyPasteUtil.addImportsAndLanguagesToModel(model, necessaryLanguages, necessaryImports, context.getOperationContext(), new Runnable() {
+          public void run() {
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                List<SNode> pasteNodes = pasteNodeData.getNodes();
+                Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
-    Resolver.resolveReferences(requireResolveReferences, context.getOperationContext());
+                if (canPasteBefore(selectedCell, pasteNodes)) {
+                  new NodePaster(pasteNodes).pasteRelative(selectedNode, PastePlaceHint.BEFORE_ANCHOR);
+                } else {
+                  new NodePaster(pasteNodes).paste(selectedCell);
+                }
 
-    // set selection
-    editorComponent.flushEvents();
-    EditorCell nodeCell = editorComponent.findNodeCell(pasteNodes.get(0));
-    if (nodeCell == null) return; // after 'set reference'?
-    editorComponent.changeSelection(nodeCell);
-    
-    EditorCell_Label labelCell = nodeCell.findChild(CellFinders.byClass(EditorCell_Label.class, true));
+                Resolver.resolveReferences(requireResolveReferences, context.getOperationContext());
 
-    if (labelCell != null) {
-      editorComponent.changeSelection(labelCell);
-      if (pasteNodes.size() == 1) {
-        editorComponent.pushSelection(labelCell);
-        editorComponent.setSelectionDontClearStack(nodeCell, true);
+                // set selection
+                editorComponent.flushEvents();
+                EditorCell nodeCell = editorComponent.findNodeCell(pasteNodes.get(0));
+                if (nodeCell == null) return; // after 'set reference'?
+                editorComponent.changeSelection(nodeCell);
+
+                EditorCell_Label labelCell = nodeCell.findChild(CellFinders.byClass(EditorCell_Label.class, true));
+
+                if (labelCell != null) {
+                  editorComponent.changeSelection(labelCell);
+                  if (pasteNodes.size() == 1) {
+                    editorComponent.pushSelection(labelCell);
+                    editorComponent.setSelectionDontClearStack(nodeCell, true);
+                  }
+                }
+
+                if (pasteNodes.size() > 1) {
+                  editorComponent.getNodeRangeSelection().setRange(pasteNodes.get(0), pasteNodes.get(pasteNodes.size() - 1));
+                }
+              }
+            });
+          }
+        });
       }
-    }
-
-    if (pasteNodes.size() > 1) {
-      editorComponent.getNodeRangeSelection().setRange(pasteNodes.get(0), pasteNodes.get(pasteNodes.size() - 1));
-    }
+    });
   }
 
   private boolean canPasteBefore(EditorCell selectedCell, List<SNode> pasteNodes) {

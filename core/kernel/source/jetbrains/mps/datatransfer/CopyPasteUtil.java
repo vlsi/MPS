@@ -268,7 +268,11 @@ public class CopyPasteUtil {
     return getNodesFromClipboard(model).get(0);
   }
 
-  public static boolean addImportsAndLanguagesToModel(final SModel targetModel, final Set<ModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
+  public static void addImportsAndLanguagesToModel(final SModel targetModel,
+                                                      final Set<ModuleReference> necessaryLanguages,
+                                                      final Set<SModelReference> necessaryImports,
+                                                      final IOperationContext context,
+                                                      Runnable onOk) {
     final List<ModuleReference> additionalLanguages = new ArrayList<ModuleReference>();
     final List<SModelReference> additionalModels = new ArrayList<SModelReference>();
     final Set<ModuleReference> necessaryDevKits = new HashSet<ModuleReference>();
@@ -304,9 +308,13 @@ public class CopyPasteUtil {
       });
 
       dialog.showDialog();
-      return (!dialog.isCanceled());
+      if (!dialog.isCanceled()) {
+        onOk.run();
+        return;
+      }
     }
-    return true;
+
+    onOk.run();
   }
 
 
