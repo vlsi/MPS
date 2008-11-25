@@ -9,11 +9,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -30,7 +29,7 @@ public class ClassifierTypeUtil {
     }
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       SNode at = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
-      SLinkOperations.setTarget(at, "componentType", getTypeCoercedToClassifierType(SNodeOperations.copyNode(SLinkOperations.getTarget(type, "componentType", true))), true);
+      SLinkOperations.setTarget(at, "componentType", coerceToClassifierTypeOrPrimitive(SNodeOperations.copyNode(SLinkOperations.getTarget(type, "componentType", true))), true);
       return at;
     }
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
@@ -45,6 +44,10 @@ public class ClassifierTypeUtil {
       }
       return res;
     }
+    return coerceToClassifierType(type);
+  }
+
+  private static SNode coerceToClassifierType(SNode type) {
     SNode cType = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
       (SNode)type :
       null
@@ -52,9 +55,6 @@ public class ClassifierTypeUtil {
     if ((cType == null)) {
       SNode ctw = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
       SNode cts = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-      if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SequenceType") && !("Iterable".equals(SPropertyOperations.getString(SLinkOperations.getTarget(cts, "classifier", false), "name")))) {
-        System.err.println("*** Gotcha! *** coerceStrong( " + BaseConcept_Behavior.call_getPresentation_1213877396640(type) + " <: concept = ClassifierType) == " + BaseConcept_Behavior.call_getPresentation_1213877396640(cts) + ", coerce( " + BaseConcept_Behavior.call_getPresentation_1213877396640(type) + " <: concept = ClassifierType) == " + BaseConcept_Behavior.call_getPresentation_1213877396640(ctw));
-      }
       cType = ((cts != null) ?
         cts :
         ctw
@@ -67,6 +67,37 @@ public class ClassifierTypeUtil {
         SLinkOperations.setTarget(res, "classifier", SLinkOperations.getTarget(cType, "classifier", false), false);
         for(SNode p : params) {
           SLinkOperations.addChild(res, "parameter", SNodeOperations.copyNode(getTypeCoercedToClassifierType(p)));
+        }
+        return res;
+      }
+      return cType;
+    }
+    return type;
+  }
+
+  private static SNode coerceToClassifierTypeOrPrimitive(SNode type) {
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+      return type;
+    }
+    SNode cType = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
+      (SNode)type :
+      null
+    );
+    if ((cType == null)) {
+      SNode ctw = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+      SNode cts = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+      cType = ((cts != null) ?
+        cts :
+        ctw
+      );
+    }
+    if ((cType != null)) {
+      List<SNode> params = SLinkOperations.getTargets(cType, "parameter", true);
+      if (params != null && params.size() > 0) {
+        SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+        SLinkOperations.setTarget(res, "classifier", SLinkOperations.getTarget(cType, "classifier", false), false);
+        for(SNode p : params) {
+          SLinkOperations.addChild(res, "parameter", SNodeOperations.copyNode(coerceToClassifierTypeOrPrimitive(p)));
         }
         return res;
       }

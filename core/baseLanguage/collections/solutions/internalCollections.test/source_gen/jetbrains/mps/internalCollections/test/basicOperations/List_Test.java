@@ -193,4 +193,11 @@ public class List_Test extends Util_Test {
     List<Byte> bempty = ListSequence.fromList(new LinkedList<Byte>());
   }
 
+  @Test()
+  public void test_array() throws Exception {
+    List<int[]> test = ListSequence.<int[]>fromArray(new int[]{1,2,3}, new int[]{3,2,1});
+    int[] array = ListSequence.fromList(test).getElement(1);
+    Assert.assertSame(3, array.length);
+  }
+
 }
