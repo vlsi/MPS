@@ -74,8 +74,9 @@ public class LanguageStep extends BaseStep {
 
   public String getCommentString() {
     return
-      "Working with MPS consists of creating new languages and using them to write code in solutions. " +
-        "MPS language describes syntax, editor, generator and other aspects of the new language.";
+      "In MPS, you create new languages and then use them to write code " +
+        "in solutions. An MPS language describes the syntax, editor, generator and other aspects of the " +
+        "new language.";
   }
 
   @Nullable

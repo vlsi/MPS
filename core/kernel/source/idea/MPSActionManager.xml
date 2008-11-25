@@ -39,7 +39,7 @@
             <action id="OpenTheComplexNumberLanguageProject"
                     class="jetbrains.mps.workbench.actions.welcomeScreen.OpenComplexLanguageProjectAction"
                     text="Open Complex Numbers Support Language's Project"
-                    description="This language is a simple baseLanguage's extension. You can learn how to extend baseLanguage in order to add first class support for domain specific notions to it"/>
+                    description="Take a look at the simplest possible language with typical aspects of most languages."/>
 
 
             <action
