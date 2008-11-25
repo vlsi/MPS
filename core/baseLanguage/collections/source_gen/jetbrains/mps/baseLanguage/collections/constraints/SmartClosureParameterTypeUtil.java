@@ -62,25 +62,18 @@ public class SmartClosureParameterTypeUtil {
         typeCheckingContext.createEquation(typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(bmc), "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1204110524611", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111787726", intentionProvider);
       }
     } else
-    if (SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.NewExpression")) {
-      {
-        SNode _nodeToCheck_1029348928467 = null;
-        BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(bmc, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1219273747138", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1219273747134", intentionProvider);
-      }
-    } else
     if (SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.ClassCreator")) {
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(bmc, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1219273765216", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1219273765212", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(bmc, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1227649243747", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1227649243743", intentionProvider);
       }
     }
   }
 
   public static boolean hasResolveType(SNode scpd) {
     SNode bmc = SNodeOperations.getAncestorWhereConceptInList(scpd, new String[]{"jetbrains.mps.baseLanguage.structure.IMethodCall"}, false, false);
-    return SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") || SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.NewExpression");
+    return SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
   }
 
 }
