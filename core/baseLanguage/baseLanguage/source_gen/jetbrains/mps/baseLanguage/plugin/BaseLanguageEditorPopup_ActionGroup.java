@@ -8,9 +8,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 
 public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(BaseLanguageEditorPopup_ActionGroup.class);
@@ -74,16 +71,4 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
       LOG.error("User group error", t);
     }
   }
-
-  public void adjust() {
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(EditorPopup_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(BaseLanguageEditorPopup_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      gToBase.add(gWhat);
-    }
-  }
-
 }
