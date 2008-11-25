@@ -421,21 +421,21 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   private ActionPlace getPlace() {
-    if (getSelectedSNode() != null) {
+    if (getSelectedTreeNode() instanceof SNodeTreeNode) {
       return ActionPlace.PROJECT_PANE_SNODE;
-    } else if (getSelectedNode() instanceof SModelTreeNode) {
+    } else if (getSelectedTreeNode() instanceof SModelTreeNode) {
       return ActionPlace.PROJECT_PANE_SMODEL;
-    } else if (getSelectedNode() instanceof ProjectTreeNode) {
+    } else if (getSelectedTreeNode() instanceof ProjectTreeNode) {
       return ActionPlace.PROJECT_PANE_PROJECT;
-    } else if (getSelectedNode() instanceof GeneratorTreeNode) {
+    } else if (getSelectedTreeNode() instanceof GeneratorTreeNode) {
       return ActionPlace.PROJECT_PANE_GENERATOR;
-    } else if (getSelectedNode() instanceof TransientModelsTreeNode) {
+    } else if (getSelectedTreeNode() instanceof TransientModelsTreeNode) {
       return ActionPlace.PROJECT_PANE_TRANSIENT_MODULES;
-    } else if (getSelectedNode() instanceof PackageNode) {
+    } else if (getSelectedTreeNode() instanceof PackageNode) {
       return ActionPlace.PROJECT_PANE_PACKAGE;
-    } else if (getSelectedNode() instanceof NamespaceTextNode) {
+    } else if (getSelectedTreeNode() instanceof NamespaceTextNode) {
       return ActionPlace.PROJECT_PANE_NAMESPACE;
-    } else if (getSelectedModule() != null) {
+    } else if (getSelectedTreeNode() instanceof ProjectModuleTreeNode) {
       IModule module = getSelectedModule();
       if (module instanceof Language) {
         return ActionPlace.PROJECT_PANE_LANGUAGE;
