@@ -8,11 +8,8 @@ import java.util.*;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Jun 2, 2006
- * Time: 12:04:49 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Jun 2, 2006
  */
 public class SubnodesSearchScope extends AbstractSearchScope {
   private SNode myEnclosingNode;
