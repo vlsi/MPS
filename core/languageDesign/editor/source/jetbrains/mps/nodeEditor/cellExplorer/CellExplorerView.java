@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.Icon;
@@ -207,18 +208,17 @@ public class CellExplorerView extends BaseProjectTool {
     }
 
     public ActionGroup getActionGroup() {
-      DefaultActionGroup group = new DefaultActionGroup();
-      group.add(new BaseAction("Select In Editor") {
+      BaseAction selectInEditorAction = new BaseAction("Select In Editor") {
         protected void doExecute(AnActionEvent e) {
           showCell();
         }
-      });
-      group.add(new BaseAction("Properties") {
+      };
+      BaseAction propertiesAction = new BaseAction("Properties") {
         protected void doExecute(AnActionEvent e) {
           new CellPropertiesWindow(myCell, null);
         }
-      });
-      return group;
+      };
+      return ActionUtils.groupFromActions(selectInEditorAction,propertiesAction);
     }
 
     private void showCell() {

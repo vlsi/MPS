@@ -11,6 +11,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -63,8 +64,7 @@ public class DependencyViewer extends BaseProjectTool {
       }
     };
 
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(createCloseAction());
+    DefaultActionGroup group = ActionUtils.groupFromActions(createCloseAction());
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
 
     myExternalComponent = new JPanel(new BorderLayout());

@@ -32,14 +32,12 @@ public class ActionUtils {
     return ((DefaultActionGroup) ActionManager.getInstance().getAction(id));
   }
 
-  public static JPopupMenu createPopup(String place, ActionGroup g) {
-    return ActionManager.getInstance().createActionPopupMenu(place, g).getComponent();
-  }
-
-  public static ActionGroup groupFromActions(AnAction... actions) {
+  public static DefaultActionGroup groupFromActions(AnAction... actions) {
     DefaultActionGroup g = new DefaultActionGroup();
     for (AnAction action : actions) {
-      g.add(action);
+      if (action!=null){
+        g.add(action);
+      }
     }
     return g;
   }

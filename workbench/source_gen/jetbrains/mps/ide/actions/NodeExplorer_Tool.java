@@ -13,6 +13,7 @@ import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.tools.CloseAction;
+import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -34,15 +35,13 @@ public class NodeExplorer_Tool extends GeneratedTool {
     this.myNodeExplorer = new NodeExplorerComponent();
     this.myPanel = new JPanel(new BorderLayout());
     this.myPanel.add(this.myNodeExplorer.getComponent(), BorderLayout.CENTER);
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(new CloseAction(this) {
-
+    CloseAction closeAction = new CloseAction(this) {
       public void doExecute(AnActionEvent e) {
         super.doExecute(e);
         myNodeExplorer.clear();
       }
-
-    });
+    };
+    DefaultActionGroup group = ActionUtils.groupFromActions(closeAction);
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
     this.myPanel.add(toolbar, BorderLayout.WEST);
   }

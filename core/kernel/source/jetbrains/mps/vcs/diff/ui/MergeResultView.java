@@ -14,6 +14,7 @@ import jetbrains.mps.vcs.diff.*;
 import jetbrains.mps.vcs.diff.changes.NewNodeChange;
 import jetbrains.mps.vcs.diff.changes.Change;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
@@ -213,7 +214,6 @@ class MergeResultView extends JPanel {
     public ActionGroup getActionGroup() {
       String text = myMerger.getExcludedChanges().contains(myChange) ? "Include" : "Exclude";
 
-      DefaultActionGroup group = new DefaultActionGroup();
       BaseAction action = new BaseAction(text) {
         protected void doExecute(AnActionEvent e) {
           if (myMerger.getExcludedChanges().contains(myChange)) {
@@ -229,9 +229,8 @@ class MergeResultView extends JPanel {
         }
       };
       action.setDisableOnNoProject(false);
-      group.add(action);
 
-      return group;
+      return ActionUtils.groupFromActions(action);
     }
 
 

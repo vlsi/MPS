@@ -8,6 +8,7 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.AbstractActionWithEmptyIcon;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;
@@ -96,9 +97,7 @@ public class OutputViewTool extends BaseProjectTool {
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        DefaultActionGroup group = new DefaultActionGroup();
-        group.add(createCloseAction());
-
+        DefaultActionGroup group = ActionUtils.groupFromActions(createCloseAction());
         JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
         myComponent.add(toolbar, BorderLayout.WEST);
       }

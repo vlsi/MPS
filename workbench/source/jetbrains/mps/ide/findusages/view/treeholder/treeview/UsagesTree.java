@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.AbstractAction;
@@ -384,23 +385,21 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   protected JPopupMenu createPopupMenu(MPSTreeNode node) {
-    DefaultActionGroup ag = new DefaultActionGroup();
-
-    ag.add(new BaseAction("Include") {
+    BaseAction inculdeAction = new BaseAction("Include") {
       public void doExecute(AnActionEvent e) {
         setCurrentNodesExclusion(false);
         e.getInputEvent().consume();
       }
-    });
-
-    ag.add(new BaseAction("Exclude") {
+    };
+    BaseAction excludeAction = new BaseAction("Exclude") {
       public void doExecute(AnActionEvent e) {
         setCurrentNodesExclusion(true);
         e.getInputEvent().consume();
       }
-    });
+    };
 
-    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, ag).getComponent();
+    DefaultActionGroup group = ActionUtils.groupFromActions(inculdeAction,excludeAction);
+    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
   private void setExcluded(UsagesTreeNode node, boolean isExcluded, boolean useAdjust) {

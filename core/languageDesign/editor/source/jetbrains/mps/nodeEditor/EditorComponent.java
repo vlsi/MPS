@@ -734,13 +734,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     BaseGroup baseGroup = ActionUtils.getGroup(EDITOR_POPUP_MENU_ACTIONS);
     baseGroup.setPopup(false);
 
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(baseGroup);
-    group.addSeparator();
-    group.add(getCellActionsGroup());
-    group.add(getIntentionsGroup());
+    DefaultActionGroup group = ActionUtils.groupFromActions(
+      baseGroup,
+      new Separator(),
+      getCellActionsGroup(),
+      getIntentionsGroup()
+    );
 
-    JPopupMenu popupMenu = ActionUtils.createPopup(ActionPlaces.EDITOR_POPUP, group);
+    JPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, group).getComponent();
     popupMenu.show(EditorComponent.this, x, y);
   }
 

@@ -22,10 +22,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Collections;
 
 /**
  * @author Kostik
@@ -105,7 +102,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     JPopupMenu popupMenu = null;
     ActionGroup actionGroup = getQuickCreateGroup(false);
     if (actionGroup != null) {
-      popupMenu = ActionUtils.createPopup(ActionPlaces.PROJECT_VIEW_POPUP, actionGroup);
+      popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, actionGroup).getComponent();
     }
     return popupMenu;
   }

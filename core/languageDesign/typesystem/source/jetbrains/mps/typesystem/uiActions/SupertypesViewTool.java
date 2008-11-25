@@ -5,6 +5,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JCheckBox;
 
@@ -35,11 +36,7 @@ public class SupertypesViewTool extends AbstractHierarchyView {
       }
     };
 
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(action);
-    group.add(createCloseAction());
-
-    return group;
+    return ActionUtils.groupFromActions(action,createCloseAction());
   }
 
   protected boolean isTreeInfinite() {

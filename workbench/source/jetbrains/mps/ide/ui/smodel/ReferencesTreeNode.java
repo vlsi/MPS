@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class ReferencesTreeNode extends MPSTreeNodeEx {
@@ -54,8 +55,7 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
 
         @Override
         public ActionGroup getActionGroup() {
-          DefaultActionGroup group = new DefaultActionGroup();
-          group.add(new BaseAction("Delete") {
+          BaseAction deleteAction = new BaseAction("Delete") {
             protected void doExecute(AnActionEvent e) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
@@ -63,9 +63,8 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
                 }
               });
             }
-          });
-
-          return group;
+          };
+          return ActionUtils.groupFromActions(deleteAction);
         }
 
         public boolean isLeaf() {

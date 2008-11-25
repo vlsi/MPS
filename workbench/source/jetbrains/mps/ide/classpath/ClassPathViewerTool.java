@@ -15,6 +15,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -37,9 +38,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        DefaultActionGroup group = new DefaultActionGroup();
-        group.add(createCloseAction());
-
+        DefaultActionGroup group = ActionUtils.groupFromActions(createCloseAction());
         JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
         myComponent.add(toolbar, BorderLayout.WEST);
       }

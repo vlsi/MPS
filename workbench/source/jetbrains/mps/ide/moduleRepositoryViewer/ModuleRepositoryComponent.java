@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepositoryListener;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
@@ -65,14 +66,13 @@ public class ModuleRepositoryComponent {
             }
 
             public ActionGroup getActionGroup() {
-              DefaultActionGroup group = new DefaultActionGroup();
-              group.add(new BaseAction("Refresh") {
+              BaseAction refreshAction = new BaseAction("Refresh") {
                 protected void doExecute(AnActionEvent e) {
                   myTree.rebuildNow();
                 }
-              });
+              };
 
-              return group;
+              return ActionUtils.groupFromActions(refreshAction);
             }
 
           };

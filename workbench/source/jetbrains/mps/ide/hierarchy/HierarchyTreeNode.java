@@ -7,6 +7,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 
 public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
@@ -81,15 +82,13 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     if (hierarchyView == null) return null;
 
 
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(new BaseAction("Show Hierarchy For This Node") {
+    BaseAction hierarchyAction = new BaseAction("Show Hierarchy For This Node") {
       protected void doExecute(AnActionEvent e) {
         final SNode node = myNodePointer.getNode();
         hierarchyView.showConceptInHierarchy((T) node.getAdapter(), getOperationContext());
       }
-    });
-
-    return group;
+    };
+    return ActionUtils.groupFromActions(hierarchyAction);
   }
 
   public void doubleClick() {

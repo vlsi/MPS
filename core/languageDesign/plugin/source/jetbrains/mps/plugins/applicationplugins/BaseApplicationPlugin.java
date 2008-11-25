@@ -59,6 +59,14 @@ public abstract class BaseApplicationPlugin{
     }
   }
 
+  public Collection<BaseGroup> getGroups() {
+    return myGroups.values();
+  }
+
+  protected BaseGroup getGroup(String id) {
+    return myGroups.get(id);
+  }
+
   private void register(ActionManager m, AnAction action) {
     if (action instanceof BaseGroup) {
       BaseGroup group = (BaseGroup) action;
@@ -74,14 +82,6 @@ public abstract class BaseApplicationPlugin{
         m.registerAction(id, action);
       }
     }
-  }
-
-  public Collection<BaseGroup> getGroups() {
-    return myGroups.values();
-  }
-
-  protected BaseGroup getGroup(String id) {
-    return myGroups.get(id);
   }
 
   private void unregisterGroup(String groupId) {

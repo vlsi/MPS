@@ -20,6 +20,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;
@@ -89,11 +90,12 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     final JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JPanel(), BorderLayout.CENTER);
 
-    final DefaultActionGroup group = new DefaultActionGroup();
-    group.add(myErrorsAction);
-    group.add(myWarningsAction);
-    group.add(myInfoAction);
-    group.add(myAutoscrollToSourceAction);
+    final DefaultActionGroup group = ActionUtils.groupFromActions(
+      myErrorsAction,
+      myWarningsAction,
+      myInfoAction,
+      myAutoscrollToSourceAction
+    );
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {

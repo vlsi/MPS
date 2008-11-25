@@ -72,15 +72,7 @@ public final class NamespaceTextNode extends TextTreeNode{
   }
 
   public ActionGroup getActionGroup_internal() {
-    DefaultActionGroup group = new DefaultActionGroup();
-
-    DefaultActionGroup newGroup = createNewGroup();
-    if (newGroup != null) {
-      group.add(newGroup);
-      group.addSeparator();
-    }
-
-    group.add(new BaseAction("Generate files", "Generate files from all models under this namespace", IconManager.EMPTY_ICON) {
+    BaseAction generateAction = new BaseAction("Generate files", "Generate files from all models under this namespace", IconManager.EMPTY_ICON) {
       {
         setExecuteOutsideCommand(true);
       }
@@ -101,10 +93,9 @@ public final class NamespaceTextNode extends TextTreeNode{
         }
         manager.generateModelsFromDifferentModules(project.createOperationContext(), models, IGenerationType.FILES);
       }
-    });
+    };
 
-    group.addSeparator();
-    group.add(new BaseAction("Rename") {
+    BaseAction renameAction = new BaseAction("Rename") {
       protected void doExecute(AnActionEvent e) {
         Frame frame = NamespaceTextNode.this.getOperationContext().getMainFrame();
         String newFolder = JOptionPane.showInputDialog(frame, "Enter new Folder", myName);
@@ -123,7 +114,19 @@ public final class NamespaceTextNode extends TextTreeNode{
           data.getMPSProject().getComponent(ProjectPane.class).rebuild();
         }
       }
-    });
+    };
+
+    DefaultActionGroup group = new DefaultActionGroup();
+
+    DefaultActionGroup newGroup = createNewGroup();
+    if (newGroup != null) {
+      group.add(newGroup);
+      group.addSeparator();
+    }
+
+    group.add(generateAction);
+    group.addSeparator();
+    group.add(renameAction);
 
     return group;
   }

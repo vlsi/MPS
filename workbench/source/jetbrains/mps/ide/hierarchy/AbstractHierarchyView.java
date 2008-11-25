@@ -10,6 +10,7 @@ import jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction;
 import jetbrains.mps.ide.hierarchy.toggle.ToggleActionGroup;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
@@ -101,45 +102,40 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
       }
     };
 
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(childrenAction);
-    group.add(parentAction);
-    group.add(thisModelAction);
-    group.add(expandAllAction);
-    group.add(collapseAllAction);
-    group.add(createCloseAction());
-
-    return group;
+    return ActionUtils.groupFromActions(
+      childrenAction,
+      parentAction,
+      thisModelAction,
+      expandAllAction,
+      collapseAllAction,
+      createCloseAction()
+    );
   }
 
 
   protected ActionGroup getHierarchyForFoundConceptActionGroup(final Class<T> aClass) {
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(
-      new BaseAction("Show Hierarchy For Concept") {
-        protected void doExecute(AnActionEvent e) {
-          java.util.List<SNode> nodes = new ArrayList<SNode>();
-          for (SModelDescriptor modelDescriptor : myContext.getScope().getModelDescriptors()) {
-            if (modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
-            for (INodeAdapter node : modelDescriptor.getSModel().getRootsAdapters()) {
-              if (aClass.isInstance(node)) nodes.add(node.getNode());
+    BaseAction action = new BaseAction("Show Hierarchy For Concept") {
+      protected void doExecute(AnActionEvent e) {
+        java.util.List<SNode> nodes = new ArrayList<SNode>();
+        for (SModelDescriptor modelDescriptor : myContext.getScope().getModelDescriptors()) {
+          if (modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
+          for (INodeAdapter node : modelDescriptor.getSModel().getRootsAdapters()) {
+            if (aClass.isInstance(node)) nodes.add(node.getNode());
+          }
+        }
+
+        new ChooseItemWindow(getMPSProject().getComponent(Frame.class), nodes.toArray(new SNode[0]), new GoToNodeComponent(myContext) {
+          public void doChoose(final SNode node) {
+            MPSProject project = getMPSProject();
+            if (project != null) {
+              final IOperationContext operationContext = project.createOperationContext();
+              showConceptInHierarchy((T) node.getAdapter(), operationContext);
             }
           }
-
-          new ChooseItemWindow(getMPSProject().getComponent(Frame.class), nodes.toArray(new SNode[0]), new GoToNodeComponent(myContext) {
-            public void doChoose(final SNode node) {
-              MPSProject project = getMPSProject();
-              if (project != null) {
-                final IOperationContext operationContext = project.createOperationContext();
-                showConceptInHierarchy((T) node.getAdapter(), operationContext);
-              }
-            }
-          });
-        }
+        });
       }
-    );
-
-    return group;
+    };
+    return ActionUtils.groupFromActions(action);
   }
 
   public void showConceptInHierarchy(T node, IOperationContext _context) {
