@@ -34,6 +34,7 @@ import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.SwingUtilities;
 import java.util.*;
 
 public class ApplicationPluginManager implements ApplicationComponent {
@@ -175,11 +176,15 @@ public class ApplicationPluginManager implements ApplicationComponent {
   }
 
   private void refreshCustomizations() {
-    CustomizableActionsSchemas allSchemasComponent = CustomizableActionsSchemas.getInstance();
-    CustomActionsSchema schema = allSchemasComponent.getActiveSchema();
-    schema.resetMainActionGroups();
-    allSchemasComponent.setActiveSchema(schema);
-    setCustomizationSchemaForCurrentProjects();
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        CustomizableActionsSchemas allSchemasComponent = CustomizableActionsSchemas.getInstance();
+        CustomActionsSchema schema = allSchemasComponent.getActiveSchema();
+        schema.resetMainActionGroups();
+        allSchemasComponent.setActiveSchema(schema);
+        setCustomizationSchemaForCurrentProjects();
+      }
+    });
   }
 
   private static void setCustomizationSchemaForCurrentProjects() {
