@@ -29,7 +29,6 @@ public class FindInstancesContext extends StandaloneMPSContext {
     return this.myModule;
   }
 
-  @NotNull
   public IScope getScope() {
     return GlobalScope.getInstance();
   }

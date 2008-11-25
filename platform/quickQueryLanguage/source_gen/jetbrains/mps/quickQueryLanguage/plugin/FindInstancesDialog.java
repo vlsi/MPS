@@ -66,10 +66,10 @@ public class FindInstancesDialog extends BaseDialog {
 
     });
     for(Language extendedLanguage : languageList.value) {
-      this.myEditor.addLanguage(extendedLanguage);
+      this.myEditor.addLanguageStructureModel(extendedLanguage);
     }
     this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.CENTER);
-    this.myEditor.addLanguage(language);
+    this.myEditor.addLanguageStructureModel(language);
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {

@@ -49,7 +49,7 @@ public class ReplaceDialog extends BaseDialog {
       }
 
     });
-    this.myEditor.addLanguage(language);
+    this.myEditor.addLanguageStructureModel(language);
     final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
     ModelAccess.instance().runReadAction(new Runnable() {
 
@@ -59,7 +59,7 @@ public class ReplaceDialog extends BaseDialog {
 
     });
     for(Language extendedLanguage : languageList.value) {
-      this.myEditor.addLanguage(extendedLanguage);
+      this.myEditor.addLanguageStructureModel(extendedLanguage);
     }
     this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.CENTER);
     this.setSize(new Dimension(500, 500));

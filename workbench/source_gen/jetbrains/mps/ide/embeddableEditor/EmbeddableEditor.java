@@ -9,13 +9,9 @@ import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-
 import javax.swing.JComponent;
-
 import jetbrains.mps.generator.GeneratorManager;
-
 import java.util.Arrays;
-
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
@@ -59,11 +55,21 @@ public class EmbeddableEditor {
     return new GenerationResult(this.myNode, this.myContext, this.myModel, type);
   }
 
-  public void addLanguage(final Language language) {
+  public void addLanguageStructureModel(final Language language) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
         EmbeddableEditor.this.myModel.getSModel().addImportedModel(language.getStructureModelDescriptor().getSModelReference());
+      }
+
+    });
+  }
+
+  public void addLanguage(final Language language) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+
+      public void run() {
+        EmbeddableEditor.this.myModel.getSModel().addLanguage(language);
       }
 
     });
