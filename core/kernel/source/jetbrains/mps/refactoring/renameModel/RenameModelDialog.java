@@ -48,7 +48,7 @@ public class RenameModelDialog extends BaseDialog {
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(300, 300, 300, 150);
+    return new DialogDimensions(300, 300, 400, 150);
   }
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
