@@ -124,82 +124,6 @@ public abstract class MPSTree extends DnDAwareTree {
       }
     });
 
-    addKeyListener(new KeyAdapter() {
-      public void keyPressed(final KeyEvent e) {
-        TreePath[] paths = getSelectionPaths();
-        TreePath selPath = getSelectionPath();
-        if (selPath == null) return;
-        final MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
-        if (selNode == null) return;
-        final List<MPSTreeNode> nodes = new ArrayList<MPSTreeNode>();
-        for (TreePath path : paths) {
-          MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-          nodes.add(node);
-          node.keyPressed(e);
-        }
-        final KeyStroke eventKeyStroke = KeyStroke.getKeyStrokeForEvent(e);
-        TreePair pair = new TreePair(eventKeyStroke, selNode.getClass());
-        final BaseAction action = myKeyStrokesToActionsMap.get(pair);
-
-        final DataContext dataContext = DataManager.getInstance().getDataContext();
-
-        if (action != null) {
-          Presentation presentation = new Presentation();
-          AnActionEvent event = new AnActionEvent(e, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
-          action.update(event);
-          if (presentation.isEnabled()) {
-            action.actionPerformed(event);
-            return;
-          }
-        }
-
-        KeyStroke stroke = KeyStroke.getKeyStrokeForEvent(e);
-        if (stroke.getKeyCode() == KeyEvent.VK_CONTROL ||
-          stroke.getKeyCode() == KeyEvent.VK_SHIFT ||
-          stroke.getKeyCode() == KeyEvent.VK_ALT) {
-          return;
-        }
-        stroke.toString();
-
-        for (TreePath p : paths) {
-          final MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
-          ActionGroup actionGroup = lastNode.getActionGroup();
-          if (actionGroup == null) continue;
-          Presentation presentation = new Presentation();
-          AnActionEvent event = new AnActionEvent(e, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
-          ActionUtils.updateGroup(actionGroup, event);
-          final AnAction a = findAction(e, dataContext, actionGroup, eventKeyStroke);
-          if (a == null) continue;
-          a.update(event);
-          if (event.getPresentation().isEnabled()) {
-            a.actionPerformed(event);
-            e.consume();
-            return;
-          }
-        }
-      }
-
-      private AnAction findAction(InputEvent e, DataContext dataContext, ActionGroup actionGroup, KeyStroke eventKeyStroke) {
-        for (final AnAction action : actionGroup.getChildren(null)) {
-          if (action instanceof ActionGroup) {
-            AnAction res = findAction(e, dataContext, (ActionGroup) action, eventKeyStroke);
-            if (res != null) return res;
-          } else {
-            Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
-            for (Shortcut shortcut : shortcuts) {
-              if (eventKeyStroke.equals(((KeyboardShortcut) shortcut).getFirstKeyStroke())) {
-                Presentation presentation = new Presentation();
-                AnActionEvent event = new AnActionEvent(e, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
-                action.update(event);
-                if (presentation.isEnabled()) return action;
-              }
-            }
-          }
-        }
-        return null;
-      }
-    });
-
     AbstractAction openNodeAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         TreePath selPath = getSelectionPath();
@@ -210,7 +134,6 @@ public abstract class MPSTree extends DnDAwareTree {
     };
     registerKeyboardAction(openNodeAction, KeyStroke.getKeyStroke("ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     registerKeyboardAction(openNodeAction, KeyStroke.getKeyStroke("F4"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
 
     AbstractAction refreshTreeAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -308,17 +231,6 @@ public abstract class MPSTree extends DnDAwareTree {
   private static class TreePair extends Pair<KeyStroke, Class<? extends MPSTreeNode>> {
     public TreePair(KeyStroke keyStroke, Class<? extends MPSTreeNode> nodeClass) {
       super(keyStroke, nodeClass);
-    }
-  }
-
-  private HashMap<TreePair, BaseAction> myKeyStrokesToActionsMap = new HashMap<TreePair, BaseAction>();
-
-  public final void registerMPSAction(BaseAction action, Class<? extends MPSTreeNode> nodeClass) {
-    Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
-    for (Shortcut shortcut : shortcuts) {
-      KeyStroke keyStroke = ((KeyboardShortcut) shortcut).getFirstKeyStroke();
-      TreePair pair = new TreePair(keyStroke, nodeClass);
-      myKeyStrokesToActionsMap.put(pair, action);
     }
   }
 

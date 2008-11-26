@@ -943,7 +943,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
       getSelectionModel().setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
       scrollsOnExpand = false;
-      registerActions();
     }
 
     public void editNode(SNode node, IOperationContext context) {
@@ -953,11 +952,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     @Override
     public boolean isAutoOpen() {
       return myProjectView.isAutoscrollToSource(ID);
-    }
-
-    private void registerActions() {
-      registerMPSAction(new DeleteModelsAction(), SModelTreeNode.class);
-      registerMPSAction(new DeleteNodeAction(), SNodeTreeNode.class);
     }
 
     protected MPSTreeNode rebuild() {
