@@ -243,7 +243,7 @@ public class CollectionUtil {
     }
   }
 
-  public static <T> List<T> subtraction(Collection<T> fromCollection, Collection<T> collection) {
+  public static <T> List<T> subtract(Collection<T> fromCollection, Collection<T> collection) {
     ArrayList<T> result = new ArrayList<T>();
     for (T t : fromCollection) {
       if (!collection.contains(t)) {
@@ -253,7 +253,7 @@ public class CollectionUtil {
     return result;
   }
 
-  public static <T> List<T> intersection(Collection<T> collection1, Collection<T> collection2) {
+  public static <T> List<T> intersect(Collection<T> collection1, Collection<T> collection2) {
     ArrayList<T> result = new ArrayList<T>();
     for (T t : collection1) {
       if (collection2.contains(t)) {
@@ -263,7 +263,7 @@ public class CollectionUtil {
     return result;
   }
 
-  public static <T> boolean intersect(Collection<T> collection1, Collection<T> collection2) {
+  public static <T> boolean intersects(Collection<T> collection1, Collection<T> collection2) {
     for (T t : collection1) {
       if (collection2.contains(t)) {
         return true;

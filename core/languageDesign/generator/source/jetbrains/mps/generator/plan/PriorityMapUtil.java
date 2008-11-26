@@ -30,7 +30,7 @@ import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
     for (CoherentSetData coherentSetData : coherentMappings) {
       boolean joined = false;
       for (CoherentSetData resultCoherentSetData : result) {
-        if (CollectionUtil.intersect(coherentSetData.myMappings, resultCoherentSetData.myMappings)) {
+        if (CollectionUtil.intersects(coherentSetData.myMappings, resultCoherentSetData.myMappings)) {
           resultCoherentSetData.myMappings.addAll(coherentSetData.myMappings);
           resultCoherentSetData.myCauseRules.addAll(coherentSetData.myCauseRules);
           joined = true;
@@ -95,7 +95,7 @@ import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
         if (coherentMappingSet.contains(mapping)) continue;
         Map<MappingConfiguration, PriorityData> locks = priorityMap.get(mapping);
         if (locks.isEmpty()) continue;
-        List<MappingConfiguration> lockingCoherentMappings = CollectionUtil.intersection(coherentMappingSet, locks.keySet());
+        List<MappingConfiguration> lockingCoherentMappings = CollectionUtil.intersect(coherentMappingSet, locks.keySet());
         if (lockingCoherentMappings.isEmpty()) continue;
         // if any one locks strictly, then all should lock strictly
         boolean isStrict = false;

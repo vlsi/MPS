@@ -183,7 +183,7 @@ public class GenerationPartitioner {
 //      if (rule.getGreaterPriorityMapping() instanceof MappingConfig_RefAllGlobal) {
 //        greaterPriMappings = CollectionUtil.subtraction(greaterPriMappings, lesserPriMappings);
 //      } else {
-        lesserPriMappings = CollectionUtil.subtraction(lesserPriMappings, greaterPriMappings);
+        lesserPriMappings = CollectionUtil.subtract(lesserPriMappings, greaterPriMappings);
 //      }
 
       for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
