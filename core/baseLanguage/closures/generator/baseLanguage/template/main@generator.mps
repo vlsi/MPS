@@ -2052,7 +2052,7 @@
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216995080035">
                 <link role="baseMethodDeclaration" targetNodeId="13.1202752063473" resolveInfo="getAllAdaptableClassifierTypes" />
                 <link role="classConcept" targetNodeId="13.1201646588418" resolveInfo="FunctionTypeUtil" />
-                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1216995080036" />
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227741166903" />
               </node>
             </node>
           </node>
@@ -10119,7 +10119,7 @@
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215470775713">
                           <link role="variableDeclaration" targetNodeId="1201693549025" resolveInfo="arg" />
                         </node>
-                        <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1215470777508" />
+                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227741029792" />
                       </node>
                     </node>
                   </node>
@@ -10222,7 +10222,7 @@
                     <link role="link" targetNodeId="3.1068498886297" />
                   </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1215470655721" />
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227741023385" />
               </node>
             </node>
           </node>
@@ -10281,7 +10281,7 @@
                     <link role="link" targetNodeId="3.1068431790190" />
                   </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1215470964701" />
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227741056804" />
               </node>
             </node>
           </node>
@@ -11324,7 +11324,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201781792607">
                   <link role="classConcept" targetNodeId="13.1201646588418" resolveInfo="FunctionTypeUtil" />
                   <link role="baseMethodDeclaration" targetNodeId="13.1202752063473" resolveInfo="getAllAdaptableClassifierTypes" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1202752268639" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227741178224" />
                 </node>
               </node>
             </node>
@@ -13034,7 +13034,7 @@
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215470881031">
                               <link role="variableDeclaration" targetNodeId="1204637673225" resolveInfo="arg" />
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1215470882721" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227741042454" />
                           </node>
                         </node>
                       </node>
@@ -15045,7 +15045,7 @@
                                 <link role="link" targetNodeId="3.1068581517676" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1215524527882" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227741048801" />
                           </node>
                         </node>
                       </node>
@@ -15269,7 +15269,7 @@
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219747408196">
                           <link role="variableDeclaration" targetNodeId="1219747408185" resolveInfo="arg" />
                         </node>
-                        <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1219747408197" />
+                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227741035090" />
                       </node>
                     </node>
                   </node>

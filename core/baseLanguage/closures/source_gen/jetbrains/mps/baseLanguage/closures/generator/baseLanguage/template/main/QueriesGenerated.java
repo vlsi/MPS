@@ -38,7 +38,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1216995080029(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    List<SNode> adapters = FunctionTypeUtil.getAllAdaptableClassifierTypes(_context.getGenerator());
+    List<SNode> adapters = FunctionTypeUtil.getAllAdaptableClassifierTypes(_context);
     if (adapters != null && adapters.size() > 0) {
       _context.putStepObject("need_weaving_class_for_ClassifierType_adapter", Boolean.TRUE);
       return true;
@@ -1263,7 +1263,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1201781792604(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return FunctionTypeUtil.getAllAdaptableClassifierTypes(_context.getGenerator());
+    return FunctionTypeUtil.getAllAdaptableClassifierTypes(_context);
   }
 
   public static Iterable sourceNodesQuery_1201781825032(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1652,7 +1652,7 @@ public class QueriesGenerated {
       for(SNode pdecl : pdecls) {
         if (idx < args.size()) {
           SNode arg = args.get(idx);
-          FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(pdecl, "type", true), arg, _context.getGenerator());
+          FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(pdecl, "type", true), arg, _context);
         }
         idx = idx + 1;
       }
@@ -1662,14 +1662,14 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_1201703119163(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> aes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
     for(SNode ae : aes) {
-      FunctionTypeUtil.prepAdaptations(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ae, "lValue", true)), SLinkOperations.getTarget(ae, "rValue", true), _context.getGenerator());
+      FunctionTypeUtil.prepAdaptations(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ae, "lValue", true)), SLinkOperations.getTarget(ae, "rValue", true), _context);
     }
   }
 
   public static void mappingScript_CodeBlock_1201705474278(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> vds = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
     for(SNode vd : vds) {
-      FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(vd, "type", true), SLinkOperations.getTarget(vd, "initializer", true), _context.getGenerator());
+      FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(vd, "type", true), SLinkOperations.getTarget(vd, "initializer", true), _context);
     }
   }
 
@@ -1695,7 +1695,7 @@ public class QueriesGenerated {
           if (idx < args.size()) {
             SNode arg = args.get(idx);
             SNode pdeclType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pdecl, "type", true), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)));
-            FunctionTypeUtil.prepAdaptations(FunctionTypeUtil.unmeet(pdeclType), arg, _context.getGenerator());
+            FunctionTypeUtil.prepAdaptations(FunctionTypeUtil.unmeet(pdeclType), arg, _context);
           }
           idx = idx + 1;
         }
@@ -1770,7 +1770,7 @@ public class QueriesGenerated {
         if (SNodeOperations.isInstanceOf(anc, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
           SNode rt = SLinkOperations.getTarget(anc, "returnType", true);
           if (!((rt != null) && SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-            FunctionTypeUtil.prepAdaptations(rt, SLinkOperations.getTarget(rs, "expression", true), _context.getGenerator());
+            FunctionTypeUtil.prepAdaptations(rt, SLinkOperations.getTarget(rs, "expression", true), _context);
           }
         }
       }
@@ -1789,7 +1789,7 @@ public class QueriesGenerated {
       for(SNode pdecl : pdecls) {
         if (idx < args.size()) {
           SNode arg = args.get(idx);
-          FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(pdecl, "type", true), arg, _context.getGenerator());
+          FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(pdecl, "type", true), arg, _context);
         }
         idx = idx + 1;
       }

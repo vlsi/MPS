@@ -8,9 +8,10 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.generator.JavaNameUtil;
@@ -49,11 +50,11 @@ public class ClosureLiteralUtil {
     return vrefs;
   }
 
-  public static void addAdaptableClosureLiteralTarget(SNode literal, SNode target, ITemplateGenerator generator) {
+  public static void addAdaptableClosureLiteralTarget(SNode literal, SNode target, TemplateQueryContext genContext) {
     SNode trgCopy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(trgCopy, "classifier", SLinkOperations.getTarget(target, "classifier", false), false);
-    matchParameters(target, trgCopy, TypeChecker.getInstance().getTypeOf(literal), literal, generator);
-    generator.getGeneratorSessionContext().putStepObject("literal_target_" + ((SNode)literal).getId(), trgCopy);
+    matchParameters(target, trgCopy, TypeChecker.getInstance().getTypeOf(literal), literal, genContext);
+    genContext.putStepObject("literal_target_" + ((SNode)literal).getId(), trgCopy);
     ((SNode)trgCopy).putUserObject("literal", literal);
   }
 
@@ -61,13 +62,13 @@ public class ClosureLiteralUtil {
     return (SNode)generator.getGeneratorSessionContext().getStepObject("literal_target_" + ((SNode)literal).getId());
   }
 
-  private static void matchParameters(SNode origCT, SNode ctNoParams, SNode ft, SNode literal, ITemplateGenerator generator) {
+  private static void matchParameters(SNode origCT, SNode ctNoParams, SNode ft, SNode literal, TemplateQueryContext genContext) {
     Map<String, SNode> map = null;
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true);
     SNode absRetCT = null;
     if (imds.size() > 0) {
       if (imds.size() != 1) {
-        generator.showWarningMessage(literal, "The adaptation target interface has more than one method");
+        genContext.showWarningMessage(literal, "The adaptation target interface has more than one method");
       }
       SNode method = imds.get(0);
       if ((SLinkOperations.getTarget(method, "returnType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
@@ -83,7 +84,7 @@ public class ClosureLiteralUtil {
       int idx = 0;
       for(SNode pd : SLinkOperations.getTargets(method, "parameter", true)) {
         if (idx >= ptypes.size()) {
-          generator.showErrorMessage(literal, "Closure parameters count doesn't match method '" + SPropertyOperations.getString(method, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(ctNoParams, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(ctNoParams, "classifier", false), "name")));
+          genContext.showErrorMessage(literal, "Closure parameters count doesn't match method '" + SPropertyOperations.getString(method, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(ctNoParams, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(ctNoParams, "classifier", false), "name")));
           return;
         }
         map = matchType(SLinkOperations.getTarget(pd, "type", true), ptypes.get(idx), map);
