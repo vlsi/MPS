@@ -38,8 +38,7 @@ public class MPSLicenseManager extends LicenseManager {
   }
 
   public Date getEvaluationExpirationDate() {
-    GregorianCalendar calendar = new GregorianCalendar(2008, Calendar.DECEMBER, 31);
-    return new Date(calendar.getTimeInMillis());
+    return null;
   }
 
   public boolean shouldCheckForUpdates() {
