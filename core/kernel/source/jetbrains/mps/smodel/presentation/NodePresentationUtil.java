@@ -70,7 +70,7 @@ public class NodePresentationUtil {
 
   public static String descriptionText(INodeAdapter nodeAdapter, boolean referent_presentation) {
     if (nodeAdapter instanceof ConceptDeclaration && !referent_presentation) {
-      String description = nodeAdapter.getConceptProperty("short_description");
+      String description = nodeAdapter.getConceptProperty(BaseConcept.SHORT_DESCRIPTION);
       if (description != null) {
         return description;
       }
