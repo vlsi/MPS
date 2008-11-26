@@ -10,7 +10,6 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.EqualUtil;
 
 import java.awt.event.KeyEvent;
@@ -189,11 +188,11 @@ public class EditorCellKeyMap {
     }
 
     if (keyMap.myDuplicatedActionList != null) {
-      List<EditorCellKeyMapAction> extraActions = CollectionUtil.map(keyMap.myDuplicatedActionList, new Mapper<Pair<ActionKey, EditorCellKeyMapAction>, EditorCellKeyMapAction>() {
-        public EditorCellKeyMapAction map(Pair<ActionKey, EditorCellKeyMapAction> pair) {
-          return pair.o2;
-        }
-      });
+      List<EditorCellKeyMapAction> extraActions = new ArrayList<EditorCellKeyMapAction>();
+      for (Pair<ActionKey, EditorCellKeyMapAction> pair : keyMap.myDuplicatedActionList) {
+        extraActions.add(pair.o2);
+      }
+
       if (extraActions.size() > 0) {
         // only add actions which are different
         for (EditorCellKeyMapAction extraAction : extraActions) {

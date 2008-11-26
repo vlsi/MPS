@@ -2465,11 +2465,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     public List<String> getActionNames() {
-      return CollectionUtil.map(myActions, new Mapper<BaseAction, String>() {
-        public String map(BaseAction baseAction) {
-          return baseAction.getClass().getSimpleName();
-        }
-      });
+      List<String> result = new ArrayList<String>();
+      for (BaseAction baseAction : myActions) {
+        result.add(baseAction.getClass().getSimpleName());
+      }
+      return result;
     }
 
     public List<BaseAction> getActiveActions() {

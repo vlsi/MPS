@@ -57,6 +57,7 @@ public class CellAction_CopyNode extends EditorCellAction {
                     selectedNode.getParent() == parent && AttributesRolesUtil.isAttributeRole(selectedNode.getRole_());
           }
         };
+
         Mapper<EditorCell, SNode> mapper = new Mapper<EditorCell, SNode>() {
           public SNode map(EditorCell editorCell) {
             return editorCell.getSNode();
@@ -68,7 +69,7 @@ public class CellAction_CopyNode extends EditorCellAction {
           selectedAttributes.addAll(CollectionUtil.map(CollectionUtil.filter(selectedCollection.dfsCells(), condition), mapper));
         } else {
           if (condition.met(selectedCell)) {
-            selectedAttributes.add(mapper.map(selectedCell));
+            selectedAttributes.add(selectedCell.getSNode());
           }
         }
         copyNodeList.add(parent);

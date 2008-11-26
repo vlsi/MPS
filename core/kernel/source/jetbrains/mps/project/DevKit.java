@@ -6,7 +6,6 @@ import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -194,11 +193,11 @@ public class DevKit extends AbstractModule {
   }
 
   public List<String> getLanguageNamespaces() {
-    return CollectionUtil.map(getExportedLanguages(), new Mapper<Language, String>() {
-      public String map(Language language) {
-        return language.getNamespace();
-      }
-    });
+    List<String> result = new ArrayList<String>();
+    for (Language l : getExportedLanguages()) {
+      result.add(l.getNamespace());
+    }
+    return result;
   }
 
   @Override
