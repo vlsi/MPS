@@ -15,13 +15,13 @@ import java.util.Set;
 
 public abstract class Macros {
   private static final Logger LOG = Logger.getLogger(Macros.class);
+  public static final char SEPARATOR_CHAR = '/';
 
   public static final String MPS_HOME = "${mps_home}";
   public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
   public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
   public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";
   public static final String PROJECT = "${project}";
-  private static final char SEPARATOR_CHAR = '/';
 
   public static Macros languageDescriptor() {
     return new LanguageDescriptorMacros();
