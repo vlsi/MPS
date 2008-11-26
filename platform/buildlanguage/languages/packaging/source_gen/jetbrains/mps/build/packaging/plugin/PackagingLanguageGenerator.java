@@ -8,10 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.io.File;
-import jetbrains.mps.util.Mapper;
-import jetbrains.mps.util.CollectionUtil;
-import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
 public class PackagingLanguageGenerator {
 
@@ -42,15 +40,11 @@ public class PackagingLanguageGenerator {
     SPropertyOperations.set(SLinkOperations.getTarget(basedirPath, "macro", true), "name", macro);
     String[] pathComponents = path.split(File.separator);
     if (pathComponents.length > 0) {
-      Mapper<String, SNode> mapper = new Mapper <String, SNode>() {
-
-        public SNode map(String pathComponentName) {
-          SNode pathComponent = PackagingLanguageGenerator.createPathComponent(pathComponentName);
-          return pathComponent;
-        }
-
-      };
-      SNode compositePathComponent = createCompositePathComponent(CollectionUtil.map(Arrays.asList(pathComponents), mapper));
+      List<SNode> pathComponentNodes = new ArrayList();
+      for(String pathComponentName : pathComponents) {
+        pathComponentNodes.add(PackagingLanguageGenerator.createPathComponent(pathComponentName));
+      }
+      SNode compositePathComponent = createCompositePathComponent(pathComponentNodes);
       SLinkOperations.setTarget(basedirPath, "compositePathComponent", compositePathComponent, true);
     }
     return basedirPath;

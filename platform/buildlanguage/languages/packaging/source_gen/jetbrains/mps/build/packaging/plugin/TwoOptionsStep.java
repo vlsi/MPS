@@ -17,9 +17,10 @@ import javax.swing.event.CaretListener;
 import javax.swing.event.CaretEvent;
 import javax.swing.ComboBoxModel;
 import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.DefaultComboBoxModel;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 
 public abstract class TwoOptionsStep <M> extends AbstractStep {
 
@@ -149,13 +150,11 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
       return this.mySelectComboBox.getModel();
     }
     this.myVariantsArray = newVariants;
-    return new DefaultComboBoxModel(CollectionUtil.map(Arrays.asList(this.myVariantsArray), new Mapper <M, String>() {
-
-      public String map(final M variant) {
-        return TwoOptionsStep.this.getVariantName(variant);
-      }
-
-    }).toArray());
+    List<String> items = new ArrayList<String>();
+    for(M variant : this.myVariantsArray) {
+      ListSequence.fromList(items).addElement(TwoOptionsStep.this.getVariantName(variant));
+    }
+    return new DefaultComboBoxModel(items.toArray());
   }
 
 }

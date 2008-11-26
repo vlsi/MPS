@@ -131,17 +131,6 @@ public class CollectionUtil {
     return result;
   }
 
-  /**
-   * @deprecated DO NOT use functional programming style in a language that do not support it
-   */
-  public static <R, P> List<R> map(List<P> list, Mapper<P, R> mapper) {
-    List<R> result = new ArrayList<R>();
-    for (P p : list) {
-      result.add(mapper.map(p));
-    }
-    return result;
-  }
-
   public static <T> Iterator<T> concat(final Iterator<? extends T> it1, final Iterator<? extends T> it2) {
     return new Iterator<T>() {
       public boolean myFirstActive = true;
