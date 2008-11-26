@@ -21,7 +21,7 @@ public abstract class Macros {
   public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
   public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";
   public static final String PROJECT = "${project}";
-  private static final char SEPARATOR_CHAR = '\\';
+  private static final char SEPARATOR_CHAR = '/';
 
   public static Macros languageDescriptor() {
     return new LanguageDescriptorMacros();
@@ -72,6 +72,11 @@ public abstract class Macros {
 
   public final String expandPath(String path, IFile anchorFile) {
     if (path == null) return null;
+
+    //todo this is a support for old project files. New format introduced before beta
+    path = path.replace('\\',File.separatorChar);
+    path = path.replace('/',File.separatorChar);
+
     path = path.replace(SEPARATOR_CHAR, File.separatorChar);
     return expandPath_internal(path, anchorFile);
   }
@@ -129,7 +134,7 @@ public abstract class Macros {
         String path = PathMacros.getInstance().getValue(macro);
         if (path == null) continue;
 
-        path = path.replace('/', SEPARATOR_CHAR);
+        path = path.replace(SEPARATOR_CHAR, File.separatorChar);
         if (pathStartsWith(absolutePath, path)) {
           String relationalPath = shrink(absolutePath, path);
           fileName = "${" + macro + "}" + relationalPath;
@@ -145,7 +150,7 @@ public abstract class Macros {
     String result = path.substring(prefix.length());
 
     if (result.length() == 0) {
-      return ""+SEPARATOR_CHAR;
+      return ""+File.separatorChar;
     }
 
     return result;
