@@ -27,28 +27,28 @@ public class MPSDataKeys extends PlatformDataKeys {
   @Description(description = "current MPS project")
   public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");
 
-  @Description(description = "node selected in logical view")
+  @Description(description = "selected node")
   public static final DataKey<SNode> SNODE = DataKey.create("MPS_SNode");
-  @Description(description = "nodes selected in logical view")
+  @Description(description = "selected nodes")
   public static final DataKey<List<SNode>> SNODES = DataKey.create("MPS_SNode_List");
 
-  @Description(description = "model selected in logical view")
+  @Description(description = "selected model")
   public static final DataKey<SModelDescriptor> MODEL = DataKey.create("MPS_SModelDescriptor");
   @Description(description = "context model")
   public static final DataKey<SModelDescriptor> CONTEXT_MODEL = DataKey.create("MPS_SModelDescriptor");
-  @Description(description = "models selected in logical view")
+  @Description(description = "selected models")
   public static final DataKey<List<SModelDescriptor>> MODELS = DataKey.create("MPS_SModelDescriptor_List");
 
-  @Description(description = "module selected in logical view")
+  @Description(description = "selected module")
   public static final DataKey<IModule> MODULE = DataKey.create("MPS_IModule");
   @Description(description = "context module")
   public static final DataKey<IModule> CONTEXT_MODULE = DataKey.create("MPS_Context_IModule");
-  @Description(description = "modules selected in logical view")
+  @Description(description = "selected modules")
   public static final DataKey<List<IModule>> MODULES = DataKey.create("MPS_IModule_List");
 
-  @Description(description = "package selected in logical view")
+  @Description(description = "selected package")
   public static final DataKey<String> VIRTUAL_PACKAGE = DataKey.create("MPS_VirtualPackage");
-  @Description(description = "packages selected in logical view")
+  @Description(description = "selected packages")
   public static final DataKey<List<String>> VIRTUAL_PACKAGES = DataKey.create("MPS_VirtualPackage_List");
 
   @Description(description = "operation context")
