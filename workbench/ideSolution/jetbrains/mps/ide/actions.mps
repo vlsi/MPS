@@ -649,11 +649,6 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1215875185472">
         <link role="action" targetNodeId="1215874930420" resolveInfo="CloneRoot" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1205328943040" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518717274">
-        <link role="constructorDeclaration" targetNodeId="15.~ShowCellKeymapsAction.&lt;init&gt;()" resolveInfo="ShowCellKeymapsAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204981045436" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518716620">
         <link role="constructorDeclaration" targetNodeId="16.~ShowParametersAction.&lt;init&gt;()" resolveInfo="ShowParametersAction" />
       </node>

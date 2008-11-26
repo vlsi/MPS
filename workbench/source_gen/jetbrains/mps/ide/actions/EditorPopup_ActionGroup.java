@@ -21,7 +21,6 @@ import jetbrains.mps.lang.generator.plugin.actions.GoToUsageInMappingConfigActio
 import jetbrains.mps.lang.generator.plugin.debug.actions.ShowGenerationTraceAction;
 import jetbrains.mps.workbench.actions.nodes.FindSpecificNodeUsagesAction;
 import jetbrains.mps.workbench.actions.nodes.FastFindUsagesNodeAction;
-import jetbrains.mps.workbench.actions.cells.ShowCellKeymapsAction;
 import jetbrains.mps.workbench.actions.baseLanguage.ShowParametersAction;
 import jetbrains.mps.workbench.actions.model.ModelPropertiesActionWOShortcuts;
 
@@ -125,12 +124,6 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
         this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.CloneRoot_Action"), module.getModuleFqName()));
       }
-      this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowCellKeymapsAction.class, module.getModuleFqName()));
-      }
-      this.addSeparator();
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
         this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowParametersAction.class, module.getModuleFqName()));
