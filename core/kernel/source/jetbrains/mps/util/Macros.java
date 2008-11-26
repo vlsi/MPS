@@ -21,8 +21,7 @@ public abstract class Macros {
   public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
   public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";
   public static final String PROJECT = "${project}";
-  private static final char SEPARATOR_CHAR = '/';
-  private static final String SEPARATOR_STRING = ""+SEPARATOR_CHAR;
+  private static final char SEPARATOR_CHAR = '\\';
 
   public static Macros languageDescriptor() {
     return new LanguageDescriptorMacros();
@@ -73,12 +72,8 @@ public abstract class Macros {
 
   public final String expandPath(String path, IFile anchorFile) {
     if (path == null) return null;
-
-    path = anyToInternalPathFormat(path);
-    path = expandPath_internal(path, anchorFile);
-    path = internalToSystemPathFormat(path);
-
-    return path;
+    path = path.replace(SEPARATOR_CHAR, File.separatorChar);
+    return expandPath_internal(path, anchorFile);
   }
 
   protected String expandPath_internal(String path, IFile anchorFile) {
@@ -119,9 +114,8 @@ public abstract class Macros {
 
   public final String shrinkPath(String absolutePath, IFile anchorFile) {
     if (absolutePath == null) return null;
-    absolutePath = anyToInternalPathFormat(absolutePath);
-    absolutePath = shrinkPath_internal(absolutePath, anchorFile);
-    return absolutePath;
+    String fileName = shrinkPath_internal(absolutePath, anchorFile);
+    return fileName.replace(File.separatorChar, SEPARATOR_CHAR);
   }
 
   protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
@@ -135,6 +129,7 @@ public abstract class Macros {
         String path = PathMacros.getInstance().getValue(macro);
         if (path == null) continue;
 
+        path = path.replace('/', SEPARATOR_CHAR);
         if (pathStartsWith(absolutePath, path)) {
           String relationalPath = shrink(absolutePath, path);
           fileName = "${" + macro + "}" + relationalPath;
@@ -150,7 +145,7 @@ public abstract class Macros {
     String result = path.substring(prefix.length());
 
     if (result.length() == 0) {
-      return SEPARATOR_STRING;
+      return ""+SEPARATOR_CHAR;
     }
 
     return result;
@@ -158,7 +153,7 @@ public abstract class Macros {
 
   protected String removePrefix(String path, String prefix) {
     String result = path.substring(prefix.length());
-    if (result.startsWith(SEPARATOR_STRING)) result = result.substring(1);
+    if (result.startsWith(File.separator)) result = result.substring(1);
     return result;
   }
 
@@ -167,7 +162,7 @@ public abstract class Macros {
 
     if (path.equals(with)) return true;
 
-    String fullPart = with + (with.endsWith(SEPARATOR_STRING) ? "" : SEPARATOR_STRING);
+    String fullPart = with + (with.endsWith(File.separator) ? "" : File.separator);
     boolean notCroppedPart = path.toLowerCase().startsWith(fullPart.toLowerCase());
 
     if (!notCroppedPart) return false;
@@ -176,19 +171,6 @@ public abstract class Macros {
     boolean sameObjects = path.equals(pathReplaced);
 
     return sameObjects;
-  }
-
-  private String anyToInternalPathFormat(String path){
-    //todo this is a support for old project files. New format was introduced before beta
-    path = path.replace('\\',SEPARATOR_CHAR);
-    path = path.replace('/',SEPARATOR_CHAR);
-
-    path = path.replace(File.separatorChar,SEPARATOR_CHAR);
-    return path;
-  }
-
-  private String internalToSystemPathFormat(String path){
-    return path.replace(SEPARATOR_CHAR,File.separatorChar);
   }
 
   private static class LanguageDescriptorMacros extends Macros {
