@@ -593,8 +593,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private EditorMessage getEditorMessageFor(EditorCell cell) {
     SNode node = cell.getSNode();
-    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
-      createNodeTypesComponent(node.getContainingRoot());
+
+    if (node == null) {
+      return null;
+    }
+
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node.getContainingRoot());
 
     while (cell != null) {
       List<EditorMessage> messages = cell.getMessagesForOwner(nodeTypesComponent);
