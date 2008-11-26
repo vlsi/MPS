@@ -11,7 +11,6 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
@@ -313,20 +312,20 @@ public class SubtypingManager {
   }
 
   public static Set<IWrapper> toWrappers(Set<SNode> nodes, final EquationManager equationManager) {
-    return CollectionUtil.map(nodes, new Mapper<SNode, IWrapper>() {
-      public IWrapper map(SNode sNode) {
-        return NodeWrapper.fromNode(sNode, equationManager);
-      }
-    });
+    Set<IWrapper> result = new HashSet<IWrapper>();
+    for (SNode sNode : nodes) {
+      result.add(NodeWrapper.fromNode(sNode, equationManager));
+
+    }
+    return result;
   }
 
   public static Set<SNode> toNodes(Set<IWrapper> wrappers) {
-    return CollectionUtil.map(wrappers, new Mapper<IWrapper, SNode>() {
-      public SNode map(IWrapper wrapper) {
-        if (wrapper == null) return null;
-        return wrapper.getNode();
-      }
-    });
+    Set<SNode> result = new HashSet<SNode>();
+    for (IWrapper wrapper : wrappers) {
+      result.add(wrapper.getNode());
+    }
+    return result;
   }
 
   public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {

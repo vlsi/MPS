@@ -912,11 +912,11 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public Set<SModelReference> getDependenciesModelUIDs() {
-    return CollectionUtil.map(getDependenciesModels(), new Mapper<SModelDescriptor, SModelReference>() {
-      public SModelReference map(SModelDescriptor sModelDescriptor) {
-        return sModelDescriptor.getSModelReference();
-      }
-    });
+    Set<SModelReference> result = new HashSet<SModelReference>();    
+    for (SModelDescriptor sm : getDependenciesModels()) {
+      result.add(sm.getSModelReference());
+    }
+    return result;
   }
 
   @Nullable

@@ -3,7 +3,6 @@ package jetbrains.mps.refactoring.framework;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 
@@ -26,19 +25,16 @@ public class ConceptAncestorsProvider implements IDescendantsProvider {
       if (parent != null) {
         result.add(parent);
       }
-      result.addAll(CollectionUtil.map(conceptDeclaration.getImplementses(), new Mapper<InterfaceConceptReference, INodeAdapter>() {
-        public INodeAdapter map(InterfaceConceptReference interfaceConceptReference) {
-          return interfaceConceptReference.getIntfc();
-        }
-      }));
+
+      for (InterfaceConceptReference interfaceConceptReference : conceptDeclaration.getImplementses()) {
+        result.add(interfaceConceptReference.getIntfc());
+      }
     }
     if (nodeAdapter instanceof InterfaceConceptDeclaration) {
       InterfaceConceptDeclaration interfaceConceptDeclaration = (InterfaceConceptDeclaration) nodeAdapter;
-      result.addAll(CollectionUtil.map(interfaceConceptDeclaration.getExtendses(), new Mapper<InterfaceConceptReference, INodeAdapter>() {
-        public INodeAdapter map(InterfaceConceptReference interfaceConceptReference) {
-          return interfaceConceptReference.getIntfc();
-        }
-      }));
+      for (InterfaceConceptReference interfaceConceptReference : interfaceConceptDeclaration.getExtendses()) {
+        result.add(interfaceConceptReference.getIntfc());
+      }
     }
     return result;
   }
