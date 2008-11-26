@@ -2,7 +2,6 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystemFile;
@@ -141,7 +140,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   }
 
   private void buildCaches() {
-    Iterable<? extends ZipEntry> entries = CollectionUtil.enumerationAsIterable(myZipFile.entries());
+    Iterable<? extends ZipEntry> entries = CollectionUtil.asIterable(myZipFile.entries());
 
     for (ZipEntry entry : entries) {
       if (entry.isDirectory()) {

@@ -197,7 +197,7 @@ public class GeneratorUtil {
       if (result instanceof List) {
         return (List<SNode>) result;
       }
-      return CollectionUtil.iterableAsList((Iterable<SNode>) result);
+      return CollectionUtil.asList((Iterable<SNode>) result);
 
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");

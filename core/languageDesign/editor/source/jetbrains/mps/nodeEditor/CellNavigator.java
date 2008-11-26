@@ -47,7 +47,7 @@ abstract class CellNavigator {
 
     boolean currentMet = current == null;
     Iterator<EditorCell> iterator = backwards ? parent.reverseCellIterator() : parent.iterator();
-    for (EditorCell cell : CollectionUtil.iteratorAsIterable(iterator)) {
+    for (EditorCell cell : CollectionUtil.asIterable(iterator)) {
       if (currentMet) {
         if (isSuitableCell(cell)) {
           return cell;

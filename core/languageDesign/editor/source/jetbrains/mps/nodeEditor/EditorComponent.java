@@ -6,7 +6,6 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
@@ -45,8 +44,6 @@ import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -1515,7 +1512,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     clearSelectionStack();
     Stack<EditorCell_Collection> foldedParents = new Stack<EditorCell_Collection>();
     if (newSelectedCell != null) {
-      for (EditorCell_Collection collection : CollectionUtil.iteratorAsIterable(newSelectedCell.parents())) {
+      for (EditorCell_Collection collection : CollectionUtil.asIterable(newSelectedCell.parents())) {
         if (collection.isFolded()) {
           foldedParents.push(collection);
         }

@@ -1,7 +1,6 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 
@@ -51,7 +50,7 @@ public class CollectionUtil {
     return result;
   }
 
-  public static <T> List<T> iteratorAsList(Iterator<T> i) {
+  public static <T> List<T> asList(Iterator<T> i) {
     List<T> result = new ArrayList<T>();
     while (i.hasNext()) {
       result.add(i.next());
@@ -59,12 +58,12 @@ public class CollectionUtil {
     return result;
   }
 
-  public static <T> List<T> iterableAsList(Iterable<T> i) {
-    return iteratorAsList(i.iterator());
+  public static <T> List<T> asList(Iterable<T> i) {
+    return asList(i.iterator());
   }
 
 
-  public static <T> Iterable<T> iteratorAsIterable(final Iterator<T> i) {
+  public static <T> Iterable<T> asIterable(final Iterator<T> i) {
     return new Iterable<T>() {
       public Iterator<T> iterator() {
         return i;
@@ -72,7 +71,7 @@ public class CollectionUtil {
     };
   }
 
-  public static <T> Iterable<T> enumerationAsIterable(final Enumeration<T> e) {
+  public static <T> Iterable<T> asIterable(final Enumeration<T> e) {
     return new Iterable<T>() {
       public Iterator<T> iterator() {
         return new Iterator<T>() {
@@ -170,22 +169,6 @@ public class CollectionUtil {
     return null;
   }
 
-  public static <LT extends List> List<String> mapToString(LT list) {
-    List<String> result = new ArrayList<String>();
-    for (Object o : list) {
-      result.add(o.toString());
-    }
-    return result;
-  }
-
-  public static <LT extends Collection> List<String> mapToString(LT collection) {
-    List<String> result = new ArrayList<String>();
-    for (Object o : collection) {
-      result.add(o.toString());
-    }
-    return result;
-  }
-
 
   public static <T> Iterator<T> concat(final Iterator<? extends T> it1, final Iterator<? extends T> it2) {
     return new Iterator<T>() {
@@ -223,19 +206,19 @@ public class CollectionUtil {
     };
   }
 
-  public static <T> List<T> setAsList(Set<T> set) {
+  public static <T> List<T> asList(Set<T> set) {
     List<T> result = new ArrayList<T>();
     result.addAll(set);
     return result;
   }
 
-  public static <T> Set<T> listAsSet(List<T> list) {
+  public static <T> Set<T> asSet(List<T> list) {
     Set<T> result = new LinkedHashSet<T>();
     result.addAll(list);
     return result;
   }
 
-  public static <T> void addAllNotPresent(Collection<T> fromCollection, Collection<T> toCollection) {
+  public static <T> void addMissing(Collection<T> fromCollection, Collection<T> toCollection) {
     for (T t : fromCollection) {
       if (!toCollection.contains(t)) {
         toCollection.add(t);

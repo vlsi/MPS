@@ -40,7 +40,7 @@ public class ClosureParameterReference_closureParameter_ReferentConstraint imple
       return new SimpleSearchScope((List)searchScopeOrListOfNodes);
     }
     if (searchScopeOrListOfNodes instanceof Iterable) {
-      return new SimpleSearchScope(CollectionUtil.iterableAsList((Iterable)searchScopeOrListOfNodes));
+      return new SimpleSearchScope(CollectionUtil.asList((Iterable)searchScopeOrListOfNodes));
     }
     throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
   }

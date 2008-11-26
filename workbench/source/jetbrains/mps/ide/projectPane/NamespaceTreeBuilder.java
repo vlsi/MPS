@@ -1,31 +1,14 @@
 package jetbrains.mps.ide.projectPane;
 
-import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.ide.actions.NewModel_Action;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.actions.project.NewLanguageAction;
-import jetbrains.mps.workbench.actions.project.NewSolutionAction;
 
-import javax.swing.JOptionPane;
-import javax.swing.tree.MutableTreeNode;
 import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -60,7 +43,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     sortTree(myRootNamespace);
     compactNodes(myRootNamespace);
 
-    for (MPSTreeNode node : (List<MPSTreeNode>) CollectionUtil.iterableAsList(CollectionUtil.enumerationAsIterable(myRootNamespace.children()))) {
+    for (MPSTreeNode node : (List<MPSTreeNode>) CollectionUtil.asList(CollectionUtil.asIterable(myRootNamespace.children()))) {
       myRootNamespace.remove(node);
       root.add(node);
     }
@@ -113,7 +96,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
       T child = (T) node.getChildAt(0);
       myBuilder.setName(node, myBuilder.getName(node) + "." + myBuilder.getName(child));
 
-      for (MPSTreeNode c : (List<MPSTreeNode>) CollectionUtil.iterableAsList(CollectionUtil.enumerationAsIterable(child.children()))) {
+      for (MPSTreeNode c : (List<MPSTreeNode>) CollectionUtil.asList(CollectionUtil.asIterable(child.children()))) {
         child.remove(c);
         node.add(c);
       }

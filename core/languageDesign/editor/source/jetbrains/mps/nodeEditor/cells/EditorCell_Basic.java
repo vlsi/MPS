@@ -797,7 +797,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public EditorCell_Collection getFoldedAbove() {
-    for (EditorCell_Collection parent : CollectionUtil.iteratorAsIterable(parents())) {
+    for (EditorCell_Collection parent : CollectionUtil.asIterable(parents())) {
       if (parent.isFolded()) return parent;
     }
     return null;
@@ -807,7 +807,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (this instanceof EditorCell_Collection && condition.met((EditorCell_Collection) this)) {
       return (EditorCell_Collection) this;
     }
-    for (EditorCell_Collection collection : CollectionUtil.iteratorAsIterable(parents())) {
+    for (EditorCell_Collection collection : CollectionUtil.asIterable(parents())) {
       if (condition.met(collection)) {
         return collection;
       }

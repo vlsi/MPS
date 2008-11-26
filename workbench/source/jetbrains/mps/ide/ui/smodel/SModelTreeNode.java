@@ -640,7 +640,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       if (!parent.isInitialized()) continue;
       SNode parentNode = parent.getSNode();
       int indexof = parentNode.getChildren().indexOf(added);
-      for (Object childO : CollectionUtil.enumerationAsIterable(parent.children())) {
+      for (Object childO : CollectionUtil.asIterable(parent.children())) {
         if (childO instanceof SNodeTreeNode) {
           SNodeTreeNode child = (SNodeTreeNode) childO;
           SNode childNode = child.getSNode();

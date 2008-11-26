@@ -67,8 +67,8 @@ public class JarFileData {
     return myEntries.get(path).getSize();
   }
 
-  private void buildCaches() {
-    Iterable<? extends ZipEntry> entries = CollectionUtil.enumerationAsIterable(myZipFile.entries());
+  private void buildCaches() {    
+    Iterable<? extends ZipEntry> entries = CollectionUtil.asIterable(myZipFile.entries());
 
     for (ZipEntry entry : entries) {
       if (entry.isDirectory()) {

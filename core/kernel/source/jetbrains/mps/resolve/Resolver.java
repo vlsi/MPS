@@ -1,8 +1,6 @@
 package jetbrains.mps.resolve;
 
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingMode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.logging.Logger;
@@ -258,7 +256,7 @@ public class Resolver {
           }
         }
         if (cell instanceof EditorCell_Collection) {
-          newFrontier.addAll(CollectionUtil.iteratorAsList(((EditorCell_Collection) cell).cells()));
+          newFrontier.addAll(CollectionUtil.asList(((EditorCell_Collection) cell).cells()));
         }
       }
       frontier = newFrontier;
