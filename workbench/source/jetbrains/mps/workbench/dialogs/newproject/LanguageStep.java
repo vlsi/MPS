@@ -68,7 +68,7 @@ public class LanguageStep extends BaseStep {
 
   @NotNull
   public String getImageText() {
-    return "New language";
+    return "New Language";
   }
 
   public String getCommentString() {

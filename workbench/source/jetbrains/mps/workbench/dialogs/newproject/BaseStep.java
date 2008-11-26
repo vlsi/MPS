@@ -100,11 +100,11 @@ public abstract class BaseStep extends StepAdapter {
       }
       assert bim != null;
       Graphics graphics = bim.getGraphics();
-      graphics.setColor(Color.BLACK);
+      graphics.setColor(new Color(0x7e, 0x7c, 0x7c));
       graphics.setFont(new Font("Helvetica", Font.BOLD, 18));
       int textWidth = graphics.getFontMetrics().charsWidth(imageText.toCharArray(), 0, imageText.length());
       int x = (info.getIconWidth() - textWidth) / 2;
-      int y = info.getIconHeight() * 4 / 5;
+      int y = 288;
       graphics.drawChars(imageText.toCharArray(), 0, imageText.length(), x, y);
 
       imageComponent.setIcon(new ImageIcon(bim));

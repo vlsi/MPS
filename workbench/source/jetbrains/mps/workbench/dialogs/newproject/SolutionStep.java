@@ -67,7 +67,7 @@ public class SolutionStep extends BaseStep {
 
   @NotNull
   public String getImageText() {
-    return "New solution";
+    return "New Solution";
   }
 
   public String getCommentString() {

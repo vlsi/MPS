@@ -62,7 +62,7 @@ public class ProjectStep extends BaseStep {
 
   @NotNull
   public String getImageText() {
-    return "New project";
+    return "New Project";
   }
 
   public String getCommentString() {
