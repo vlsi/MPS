@@ -50,7 +50,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     ourTimestamps.put(model.getSModelReference(), timestamp(modelDescriptor));
     model.addLanguage(BaseLanguage_Language.get());
     return model;
-  }
+  }                                                             
 
   public void updateAfterLoad(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = modelDescriptor.getSModel();

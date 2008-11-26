@@ -82,7 +82,7 @@ public class Icons {
   public static final Icon DEVKIT_ICON = new ImageIcon(Icons.class.getResource("nodes/devkit.png"));
 
   public static final Icon CFG_END_ICON = new ImageIcon(Icons.class.getResource("nodes/cfgEnd.png"));
-  public static final Icon MPS_ICON = new ImageIcon(Icons.class.getResource("nodes/mps2.png"));
+  public static final Icon MPS_ICON = new ImageIcon(Icons.class.getResource("nodes/mps.png"));
 
   public static final Icon MPS_SMALL_ICON = new ImageIcon(Icons.class.getResource("nodes/mps.png"));
 

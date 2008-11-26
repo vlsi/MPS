@@ -1145,14 +1145,14 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217540885219">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217540885220">
                     <link role="baseMethodDeclaration" targetNodeId="10.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1217540919150">
-                      <link role="baseMethodDeclaration" targetNodeId="23.~CollectionUtil.iterableAsList(java.lang.Iterable):java.util.List" resolveInfo="iterableAsList" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227711785565">
+                      <link role="baseMethodDeclaration" targetNodeId="23.~CollectionUtil.asList(java.lang.Iterable):java.util.List" resolveInfo="asList" />
                       <link role="classConcept" targetNodeId="23.~CollectionUtil" resolveInfo="CollectionUtil" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1217540922995">
-                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217540925875">
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227711785566">
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227711785567">
                           <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
                         </node>
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217540932456">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227711785568">
                           <link role="variableDeclaration" targetNodeId="1217540640413" resolveInfo="searchScopeOrListOfNodes" />
                         </node>
                       </node>
