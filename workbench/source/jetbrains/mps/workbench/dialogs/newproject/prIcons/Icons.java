@@ -1,4 +1,4 @@
-package jetbrains.mps.workbench.dialogs.newproject.Icons;
+package jetbrains.mps.workbench.dialogs.newproject.prIcons;
 
 import java.net.URL;
 
