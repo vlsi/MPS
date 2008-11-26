@@ -78,7 +78,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203775431225">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203775470228">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203775470229">
-            <property name="value" value="Convert inline template to template fragment" />
+            <property name="value" value="Convert Inline Template to Template Fragment" />
           </node>
         </node>
       </node>
@@ -485,7 +485,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205436780373">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205436827532">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205436827533">
-            <property name="value" value="Convert to in-line template" />
+            <property name="value" value="Convert to Inline Template" />
           </node>
         </node>
       </node>
@@ -734,7 +734,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207152859260">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207153626673">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207153626674">
-            <property name="value" value="Add node macro" />
+            <property name="value" value="Add Node Macro" />
           </node>
         </node>
       </node>
@@ -825,7 +825,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207154194673">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207154194674">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207154194675">
-            <property name="value" value="Add property macro" />
+            <property name="value" value="Add Property Macro" />
           </node>
         </node>
       </node>
@@ -928,7 +928,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207154220491">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207154220492">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207154220493">
-            <property name="value" value="Add reference macro" />
+            <property name="value" value="Add Reference Macro" />
           </node>
         </node>
       </node>
@@ -1032,7 +1032,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212103271144">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212103467138">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212103467139">
-            <property name="value" value="remove obsolete 'property' link" />
+            <property name="value" value="Remove Obsolete 'property' Link" />
           </node>
         </node>
       </node>
@@ -1174,7 +1174,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216319039421">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216319039422">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216319039423">
-            <property name="value" value="New template" />
+            <property name="value" value="New Template" />
           </node>
         </node>
       </node>
@@ -1487,7 +1487,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216320260190">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216320260191">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216320260192">
-            <property name="value" value="New template" />
+            <property name="value" value="New Template" />
           </node>
         </node>
       </node>
@@ -1877,7 +1877,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216323872538">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216323872539">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216323872540">
-            <property name="value" value="New default template" />
+            <property name="value" value="New Default Template" />
           </node>
         </node>
       </node>
@@ -2042,7 +2042,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216334426559">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216334426560">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216334426561">
-            <property name="value" value="New root template" />
+            <property name="value" value="New Root Template" />
           </node>
         </node>
       </node>
@@ -2327,7 +2327,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216337594119">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216337594120">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216337594121">
-            <property name="value" value="New root template" />
+            <property name="value" value="New Root Template" />
           </node>
         </node>
       </node>
@@ -2573,7 +2573,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216768722262">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216768813858">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216768813859">
-            <property name="value" value="Replace with genctx.get output..." />
+            <property name="value" value="Replace with genctx.get_output..." />
           </node>
         </node>
       </node>
@@ -2695,7 +2695,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216837075096">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216837075097">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216837075098">
-            <property name="value" value="Replace with genctx.get output..." />
+            <property name="value" value="Replace with genctx.get_output..." />
           </node>
         </node>
       </node>
@@ -2870,7 +2870,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227216919495">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227216919496">
-            <property name="value" value="Create conditional root rule" />
+            <property name="value" value="Create Conditional Root Rule" />
           </node>
         </node>
       </node>
@@ -3261,7 +3261,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227221178637">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227221178638">
-            <property name="value" value="Create root mapping rule" />
+            <property name="value" value="Create Root Mapping Rule" />
           </node>
         </node>
       </node>
@@ -3680,7 +3680,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227292098608">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227292098609">
-            <property name="value" value="Attach mapping label" />
+            <property name="value" value="Attach Mapping Label" />
           </node>
         </node>
       </node>

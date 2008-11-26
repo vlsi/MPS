@@ -45,7 +45,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216916605974">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216916627674">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216916627675">
-            <property name="value" value="Surround with vertical collection" />
+            <property name="value" value="Surround with Vertical Collection" />
           </node>
         </node>
       </node>
@@ -172,7 +172,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216916774013">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216916774014">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216916774015">
-            <property name="value" value="Surround with horizontal collection" />
+            <property name="value" value="Surround with Horizontal Collection" />
           </node>
         </node>
       </node>
@@ -577,7 +577,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224529494089">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224529572359">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224529572360">
-            <property name="value" value="split constant cell into words" />
+            <property name="value" value="Split Constant Cell into Words" />
           </node>
         </node>
       </node>
@@ -1083,7 +1083,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224530037894">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224530058088">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224530058089">
-            <property name="value" value="trim constant cell" />
+            <property name="value" value="Trim Constant Cell" />
           </node>
         </node>
       </node>
@@ -1235,10 +1235,10 @@
               </node>
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227110235482">
-              <property name="value" value="Make vertical" />
+              <property name="value" value="Make Vertical" />
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227110613612">
-              <property name="value" value="Make horizontal" />
+              <property name="value" value="Make Horizontal" />
             </node>
           </node>
         </node>
@@ -1282,10 +1282,10 @@
               </node>
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227111516514">
-              <property name="value" value="Make vertical" />
+              <property name="value" value="Make Vertical" />
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227111516515">
-              <property name="value" value="Make horizontal" />
+              <property name="value" value="Make Horizontal" />
             </node>
           </node>
         </node>
@@ -1329,10 +1329,10 @@
               </node>
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227111581295">
-              <property name="value" value="Make vertical" />
+              <property name="value" value="Make Vertical" />
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227111581296">
-              <property name="value" value="Make horizontal" />
+              <property name="value" value="Make Horizontal" />
             </node>
           </node>
         </node>

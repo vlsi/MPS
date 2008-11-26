@@ -49,7 +49,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210673906863">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210673948048">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210673948049">
-            <property name="value" value="Add test label annotation" />
+            <property name="value" value="Add Test Label Annotation" />
           </node>
         </node>
       </node>
@@ -117,7 +117,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215508253866">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215508395400">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215508395401">
-            <property name="value" value="Add node propeties annotation" />
+            <property name="value" value="Add Node Propeties Annotation" />
           </node>
         </node>
       </node>
@@ -185,7 +185,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215604006110">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215604028387">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215604028388">
-            <property name="value" value="Add test operations annotation" />
+            <property name="value" value="Add Test Operations Annotation" />
           </node>
         </node>
       </node>
@@ -253,7 +253,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225963656883">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225963656884">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225963656885">
-            <property name="value" value="Add editor annotation." />
+            <property name="value" value="Add Editor Annotation." />
           </node>
         </node>
       </node>

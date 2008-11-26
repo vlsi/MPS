@@ -36,7 +36,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218968276329">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218968276330">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1218968276331">
-            <property name="value" value="create a reference on outer classifier" />
+            <property name="value" value="Create a Reference on Outer Classifier" />
           </node>
         </node>
       </node>

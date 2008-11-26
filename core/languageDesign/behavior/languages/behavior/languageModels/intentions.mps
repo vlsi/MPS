@@ -51,7 +51,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225201879286">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225201879287">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225201879288">
-                <property name="value" value="make non abstract" />
+                <property name="value" value="Make Non-Abstract" />
               </node>
             </node>
           </node>
@@ -59,7 +59,7 @@
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225201879290">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225201879291">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225201879292">
-                  <property name="value" value="make abstract" />
+                  <property name="value" value="Make Abstract" />
                 </node>
               </node>
             </node>
@@ -143,7 +143,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225201879329">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225201879330">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225201879331">
-                <property name="value" value="make non virtual" />
+                <property name="value" value="Make Non-Virtual" />
               </node>
             </node>
           </node>
@@ -151,7 +151,7 @@
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225201879333">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225201879334">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225201879335">
-                  <property name="value" value="make virtual" />
+                  <property name="value" value="Make Virtual" />
                 </node>
               </node>
             </node>

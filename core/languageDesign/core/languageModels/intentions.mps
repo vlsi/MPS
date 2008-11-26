@@ -44,7 +44,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1209383938673">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1209383953317">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1209383956430">
-                <property name="value" value=" to current module" />
+                <property name="value" value=" to Current Module" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209383946791">
                 <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1209383946445">
@@ -56,7 +56,7 @@
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1209383934312">
-              <property name="value" value="Add language " />
+              <property name="value" value="Add Language " />
             </node>
           </node>
         </node>
@@ -243,7 +243,7 @@
                       </node>
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1209385231294">
-                      <property name="value" value="Add dependency on module " />
+                      <property name="value" value="Add Dependency On Module " />
                     </node>
                   </node>
                 </node>

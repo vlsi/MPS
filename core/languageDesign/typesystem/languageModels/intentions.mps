@@ -46,7 +46,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195222030697">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195222104374">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195222105782">
-            <property name="value" value="convert to TYPEOF" />
+            <property name="value" value="Convert to typeof" />
           </node>
         </node>
       </node>
@@ -263,7 +263,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195490883264">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195491061285">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195491062459">
-            <property name="value" value="convert to non-typesystem rule" />
+            <property name="value" value="Convert to Non-Typesystem Rule" />
           </node>
         </node>
       </node>

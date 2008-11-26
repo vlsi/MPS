@@ -68,7 +68,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193744597904">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193744673079">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193744673080">
-            <property name="value" value="Insert cast variable declaration" />
+            <property name="value" value="Insert Cast Variable Declaration" />
           </node>
         </node>
       </node>
@@ -329,7 +329,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647385839">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195647385840">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195647385841">
-            <property name="value" value="Split string into concatenation" />
+            <property name="value" value="Split String into Concatenation" />
           </node>
         </node>
       </node>
@@ -500,7 +500,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647309379">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195647309380">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195647309381">
-            <property name="value" value="Split into declaration and assignment" />
+            <property name="value" value="Split into Declaration and Assignment" />
           </node>
         </node>
       </node>
@@ -646,7 +646,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647285017">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195647285018">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195647285019">
-            <property name="value" value="Add annotation" />
+            <property name="value" value="Add Annotation" />
           </node>
         </node>
       </node>
@@ -707,7 +707,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647334623">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195647334624">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195647334625">
-            <property name="value" value="Flip binary operation" />
+            <property name="value" value="Flip Binary Operation" />
           </node>
         </node>
       </node>
@@ -798,7 +798,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647359413">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195647359414">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195647359415">
-            <property name="value" value="Invert If condition" />
+            <property name="value" value="Invert If Condition" />
           </node>
         </node>
       </node>
@@ -1470,7 +1470,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199557092809">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199557397965">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199557397966">
-            <property name="value" value="Replace equality with equals" />
+            <property name="value" value="Replace Equality with equals()" />
           </node>
         </node>
       </node>
@@ -1646,7 +1646,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199559711023">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199559711024">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199559711025">
-            <property name="value" value="Replace equals with equality" />
+            <property name="value" value="Replace equals() with Equality" />
           </node>
         </node>
       </node>
@@ -1849,7 +1849,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199561300580">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199561475593">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199561475594">
-            <property name="value" value="Replace conditional with if" />
+            <property name="value" value="Replace Conditional with If" />
           </node>
         </node>
       </node>
@@ -2394,7 +2394,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199621296759">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199621374007">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199621374008">
-            <property name="value" value="Extract while condition to internal if statement" />
+            <property name="value" value="Extract While Condition to Internal If Statement" />
           </node>
         </node>
       </node>
@@ -2591,7 +2591,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199622460252">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199622478492">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199622478493">
-            <property name="value" value="Replace assert with if" />
+            <property name="value" value="Replace Assert with If" />
           </node>
         </node>
       </node>
@@ -2772,7 +2772,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199623693660">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199623718853">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199623718854">
-            <property name="value" value="Replace for with while" />
+            <property name="value" value="Replace For with While" />
           </node>
         </node>
       </node>
@@ -3141,7 +3141,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199627182109">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199628264163">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199628264164">
-            <property name="value" value="Replace for each loop with indexed loop" />
+            <property name="value" value="Replace Foreach Loop with Indexed Loop" />
           </node>
         </node>
       </node>
@@ -3827,7 +3827,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199627245934">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199628253004">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199628253005">
-            <property name="value" value="Expand boolean" />
+            <property name="value" value="Expand Boolean" />
           </node>
         </node>
       </node>
@@ -4309,7 +4309,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199627248519">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199628237455">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199628237456">
-            <property name="value" value="Add runtime exception to method signature" />
+            <property name="value" value="Add Runtime Exception to Method Signature" />
           </node>
         </node>
       </node>
@@ -4602,7 +4602,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199892779476">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199892872226">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199892872227">
-            <property name="value" value="Replace block with its content" />
+            <property name="value" value="Replace Block with Its Content" />
           </node>
         </node>
       </node>
@@ -4912,7 +4912,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201102619709">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201102716449">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201102716450">
-            <property name="value" value="Move initializer to constructor" />
+            <property name="value" value="Move Initializer to Constructor" />
           </node>
         </node>
       </node>
@@ -5169,7 +5169,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202130221459">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202130244647">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1202130244648">
-            <property name="value" value="Merge string concatination" />
+            <property name="value" value="Merge String Concatination" />
           </node>
         </node>
       </node>
@@ -5321,7 +5321,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202861044460">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202861126332">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1202861126333">
-            <property name="value" value="Create set accessor" />
+            <property name="value" value="Create Set Accessor" />
           </node>
         </node>
       </node>
@@ -5376,13 +5376,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1203413213560">
-    <property name="name" value="make_generic" />
+    <property name="name" value="MakeGeneric" />
     <link role="forConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1203413213561">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203413213562">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203413245112">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203413245113">
-            <property name="value" value="Add type variable" />
+            <property name="value" value="Add Type Variable" />
           </node>
         </node>
       </node>
@@ -5433,10 +5433,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203701528632">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1206187269353">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206187271029">
-              <property name="value" value="Remove static modifier" />
+              <property name="value" value="Remove Static Modifier" />
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206187273765">
-              <property name="value" value="Add static modifier" />
+              <property name="value" value="Add Static Modifier" />
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206187260191">
               <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1206187258689" />
@@ -5838,10 +5838,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203703504225">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1203703510996">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203703520296">
-              <property name="value" value="Remove final modifier" />
+              <property name="value" value="Remove Final Modifier" />
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203703534844">
-              <property name="value" value="Add final modifier" />
+              <property name="value" value="Add Final Modifier" />
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203703505289">
               <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1203703504226" />
@@ -5895,7 +5895,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206063267401">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206063377737">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206063377738">
-            <property name="value" value="add elsif clause" />
+            <property name="value" value="Add Elsif Clause" />
           </node>
         </node>
       </node>
@@ -5939,7 +5939,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206065955179">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206066066228">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206066066229">
-            <property name="value" value="elsif transform" />
+            <property name="value" value="Elsif Transform" />
           </node>
         </node>
       </node>
@@ -6149,7 +6149,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206066794085">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206066894202">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206066894203">
-            <property name="value" value="swap this elsif clause with the main clause" />
+            <property name="value" value="Swap Elsif Clause with Main Clause" />
           </node>
         </node>
       </node>
@@ -6327,7 +6327,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214431614910">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214431692936">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1214431692937">
-            <property name="value" value="Convert to anonimous" />
+            <property name="value" value="Convert to Anonimous" />
           </node>
         </node>
       </node>
@@ -6472,7 +6472,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215507513712">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215507591100">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215507593540">
-            <property name="value" value="create a reference on outer class" />
+            <property name="value" value="Create a Reference on Outer Class" />
           </node>
         </node>
       </node>
@@ -6560,7 +6560,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217838039233">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217838118197">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217838118198">
-            <property name="value" value="Convert else block to else if" />
+            <property name="value" value="Convert Else Block to Else If" />
           </node>
         </node>
       </node>
@@ -6820,7 +6820,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223648710438">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223648721564">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1223648726896">
-                <property name="value" value="Remove deprecated java doc" />
+                <property name="value" value="Remove Deprecated javadoc" />
               </node>
             </node>
           </node>
@@ -6828,7 +6828,7 @@
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223648710447">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223648724051">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1223648728475">
-                  <property name="value" value="Add deprecated java doc" />
+                  <property name="value" value="Add Deprecated javadoc" />
                 </node>
               </node>
             </node>
@@ -6892,7 +6892,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224168785805">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224168829449">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224168829450">
-            <property name="value" value="Add field for unused parameter." />
+            <property name="value" value="Add Field For Unused Parameter." />
           </node>
         </node>
       </node>
@@ -7256,7 +7256,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226917954180">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226917971038">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226917971039">
-            <property name="value" value="Convert to array type" />
+            <property name="value" value="Convert to Array Type" />
           </node>
         </node>
       </node>
@@ -7316,7 +7316,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226918395189">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226918404389">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226918404390">
-            <property name="value" value="Remove array type" />
+            <property name="value" value="Remove Array Type" />
           </node>
         </node>
       </node>

@@ -38,10 +38,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210175212718">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1210175229392">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210175233396">
-              <property name="value" value="Hide exception section" />
+              <property name="value" value="Hide Exception Section" />
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210175245765">
-              <property name="value" value="Show exception section" />
+              <property name="value" value="Show Exception Section" />
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210175214523">
               <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1210175212719" />

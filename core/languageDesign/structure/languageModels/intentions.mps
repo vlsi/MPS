@@ -53,14 +53,14 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224245334981">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224245365572">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224245366902">
-                <property name="value" value="Add deprecated annotation" />
+                <property name="value" value="Add Deprecated Annotation" />
               </node>
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224245381358">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224245382423">
-            <property name="value" value="Remove deprecated annotation" />
+            <property name="value" value="Remove Deprecated Annotation" />
           </node>
         </node>
       </node>

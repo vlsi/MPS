@@ -44,10 +44,10 @@
               </node>
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197704422685">
-              <property name="value" value="Make regular" />
+              <property name="value" value="Make Regular" />
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197704430584">
-              <property name="value" value="Make default" />
+              <property name="value" value="Make Default" />
             </node>
           </node>
         </node>
@@ -104,7 +104,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198003127664">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198003152746">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198003152747">
-            <property name="value" value="Remove cast to TreePathAspect" />
+            <property name="value" value="Remove Cast to TreePathAspect" />
           </node>
         </node>
       </node>

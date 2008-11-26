@@ -48,7 +48,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193745200274">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193745250982">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193745250983">
-            <property name="value" value="Insert cast variable declaration" />
+            <property name="value" value="Insert Cast Variable Declaration" />
           </node>
         </node>
       </node>
@@ -526,7 +526,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203704393459">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203705008814">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203705008815">
-            <property name="value" value="Replace concept= with concept list" />
+            <property name="value" value="Replace concept= with Concept List" />
           </node>
         </node>
       </node>
@@ -621,7 +621,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205354609724">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205354609725">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205354609726">
-            <property name="value" value="replace with nlist &lt; &gt;" />
+            <property name="value" value="Replace with nlist &lt; &gt;" />
           </node>
         </node>
       </node>
@@ -666,7 +666,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206998294785">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206998439635">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206998439636">
-            <property name="value" value="add parameter(s)" />
+            <property name="value" value="Add Parameter(s)" />
           </node>
         </node>
       </node>
@@ -788,7 +788,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224687584079">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224687598099">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224687600244">
-            <property name="value" value="Convert to assignment" />
+            <property name="value" value="Convert to Assignment" />
           </node>
         </node>
       </node>
@@ -928,7 +928,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224751635789">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224751681314">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224751681315">
-            <property name="value" value="Convert to assignment" />
+            <property name="value" value="Convert to Assignment" />
           </node>
         </node>
       </node>
