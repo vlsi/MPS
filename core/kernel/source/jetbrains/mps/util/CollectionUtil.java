@@ -24,9 +24,6 @@ public class CollectionUtil {
     return result;
   }
 
-  /**
-   * @deprecated DO NOT use functional programming style in a language that do not support it
-   */
   public static <T> List<T> filter(List<? extends T> ts, Condition<T> f) {
     List<T> result = new ArrayList<T>();
     for (T t : ts) {
@@ -37,9 +34,6 @@ public class CollectionUtil {
     return result;
   }
 
-  /**
-   * @deprecated DO NOT use functional programming style in a language that do not support it
-   */
   public static <T> Set<T> filter(Set<T> ts, Condition<T> f) {
     Set<T> result = new HashSet<T>();
     for (T t : ts) {
