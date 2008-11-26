@@ -5902,7 +5902,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420646778">
       <property name="name" value="modelDescriptor" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420648110">
       <property name="name" value="frame" />
@@ -7992,7 +7992,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226501976706">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226501976707">
                     <link role="classifier" targetNodeId="107.~MPSDataKeys" resolveInfo="MPSDataKeys" />
-                    <link role="variableDeclaration" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+                    <link role="variableDeclaration" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226501976708">
                     <link role="baseMethodDeclaration" targetNodeId="100.~DataKey.getData(com.intellij.openapi.actionSystem.DataContext):java.lang.Object" resolveInfo="getData" />
@@ -8191,7 +8191,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226502135310">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226502135311">
                     <link role="classifier" targetNodeId="107.~MPSDataKeys" resolveInfo="MPSDataKeys" />
-                    <link role="variableDeclaration" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
+                    <link role="variableDeclaration" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226502135312">
                     <link role="baseMethodDeclaration" targetNodeId="100.~DataKey.getData(com.intellij.openapi.actionSystem.DataContext):java.lang.Object" resolveInfo="getData" />
