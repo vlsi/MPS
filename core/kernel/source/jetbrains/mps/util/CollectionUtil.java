@@ -135,17 +135,6 @@ public class CollectionUtil {
   /**
    * @deprecated DO NOT use functional programming style in a language that do not support it
    */
-  public static <R, P> Set<R> map(Set<P> set, Mapper<P, R> mapper) {
-    Set<R> result = new HashSet<R>();
-    for (P p : set) {
-      result.add(mapper.map(p));
-    }
-    return result;
-  }
-
-  /**
-   * @deprecated DO NOT use functional programming style in a language that do not support it
-   */
   public static <R, P> List<R> map(List<P> list, Mapper<P, R> mapper) {
     List<R> result = new ArrayList<R>();
     for (P p : list) {
@@ -166,34 +155,6 @@ public class CollectionUtil {
     return current;
   }
 
-  public static <Node extends INodeAdapter> Node getByName(
-          Class<Node> cls,
-          Iterable<? extends INodeAdapter> collection,
-          String name) {
-    for (INodeAdapter node : collection) {
-      if (name.equals(node.getName())) {
-        if (cls.isInstance(node)) {
-          return (Node) node;
-        }
-      }
-    }
-    return null;
-  }
-
-
-  public static <Node extends SNode> Node getByName(
-          Class<Node> cls,
-          Iterable<? extends SNode> collection,
-          String name) {
-    for (SNode node : collection) {
-      if (name.equals(node.getName())) {
-        if (cls.isInstance(node)) {
-          return (Node) node;
-        }
-      }
-    }
-    return null;
-  }
 
   public static <Node extends INodeAdapter> Node getAdapterByName(
           Class<Node> cls,
@@ -226,7 +187,7 @@ public class CollectionUtil {
   }
 
 
-  public static <T> Iterator<T> concatenate(final Iterator<? extends T> it1, final Iterator<? extends T> it2) {
+  public static <T> Iterator<T> concat(final Iterator<? extends T> it1, final Iterator<? extends T> it2) {
     return new Iterator<T>() {
       public boolean myFirstActive = true;
 
