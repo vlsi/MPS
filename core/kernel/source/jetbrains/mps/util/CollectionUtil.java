@@ -143,17 +143,6 @@ public class CollectionUtil {
   }
 
 
-  /**
-   * @deprecated DO NOT use functional programming style in a language that do not support it
-   */
-  public static <A, B> B fold(Iterable<A> iterable, Folder<A, B> folder, B initial) {
-    B current = initial;
-    for (A element : iterable) {
-      current = folder.foldOnce(current, element);
-    }
-    return current;
-  }
-
 
   public static <Node extends INodeAdapter> Node getAdapterByName(
           Class<Node> cls,

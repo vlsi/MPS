@@ -1,9 +1,6 @@
 package jetbrains.mps.uiLanguage;
 
 
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Folder;
-
 import java.util.*;
 
 public class IterationBenchmark {
@@ -63,15 +60,15 @@ public class IterationBenchmark {
       }
     });
 
-    measure(new Runnable() {
-      public void run() {
-        int sum = CollectionUtil.fold(a, new Folder<Integer, Integer>() {
-          public Integer foldOnce(Integer initial, Integer nextElement) {
-            return initial + nextElement;
-          }
-        }, 0);
-      }
-    });
+//    measure(new Runnable() {
+//      public void run() {
+//        int sum = CollectionUtil.fold(a, new Folder<Integer, Integer>() {
+//          public Integer foldOnce(Integer initial, Integer nextElement) {
+//            return initial + nextElement;
+//          }
+//        }, 0);
+//      }
+//    });
   }
 
   private static void measure(Runnable r) {
