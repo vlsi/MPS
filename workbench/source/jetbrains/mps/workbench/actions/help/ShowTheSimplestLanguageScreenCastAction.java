@@ -6,7 +6,7 @@ public class ShowTheSimplestLanguageScreenCastAction extends ShowSiteAction {
   public ShowTheSimplestLanguageScreenCastAction() {
     super("The Simplest Language ScreenCast");
 
-    getTemplatePresentation().setIcon(Icons.READ_HELP_ICON);
+    getTemplatePresentation().setIcon(Icons.SCREENCAST);
   }
 
   protected String getSiteURL() {
