@@ -28,7 +28,7 @@ public class AddCastStatement_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Insert cast variable declaration";
+    return "Insert Cast Variable Declaration";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

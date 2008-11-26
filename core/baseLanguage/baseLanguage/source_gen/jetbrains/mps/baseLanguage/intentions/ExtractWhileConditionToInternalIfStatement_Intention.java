@@ -24,7 +24,7 @@ public class ExtractWhileConditionToInternalIfStatement_Intention extends BaseIn
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Extract while condition to internal if statement";
+    return "Extract While Condition to Internal If Statement";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

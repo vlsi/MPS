@@ -24,7 +24,7 @@ public class ReplaceAssertWithIf_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Replace assert with if";
+    return "Replace Assert with If";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

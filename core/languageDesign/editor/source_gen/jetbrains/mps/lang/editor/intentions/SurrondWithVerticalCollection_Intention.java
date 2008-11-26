@@ -27,7 +27,7 @@ public class SurrondWithVerticalCollection_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Surround with vertical collection";
+    return "Surround with Vertical Collection";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

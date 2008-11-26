@@ -28,8 +28,8 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") ?
-      "Remove static modifier" :
-      "Add static modifier"
+      "Remove Static Modifier" :
+      "Add Static Modifier"
     );
   }
 

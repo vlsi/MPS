@@ -23,7 +23,7 @@ public class CreateReferenceOnClass_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "create a reference on outer class";
+    return "Create a Reference on Outer Class";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

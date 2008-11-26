@@ -25,7 +25,7 @@ public class ExtractGroup_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Extract group";
+    return "Extract Group";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

@@ -24,7 +24,7 @@ public class MergeStringConcatenation_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Merge string concatination";
+    return "Merge String Concatination";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

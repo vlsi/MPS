@@ -28,7 +28,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add runtime exception to method signature";
+    return "Add Runtime Exception to Method Signature";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

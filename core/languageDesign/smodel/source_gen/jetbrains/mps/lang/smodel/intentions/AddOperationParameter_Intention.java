@@ -26,7 +26,7 @@ public class AddOperationParameter_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "add parameter(s)";
+    return "Add Parameter(s)";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

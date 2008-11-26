@@ -24,7 +24,7 @@ public class ReplaceForLoopWithWhileLoop_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Replace for with while";
+    return "Replace For with While";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

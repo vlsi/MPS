@@ -24,7 +24,7 @@ public class SplitIntoDeclarationAndAssignment_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Split into declaration and assignment";
+    return "Split into Declaration and Assignment";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

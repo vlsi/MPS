@@ -23,7 +23,7 @@ public class FlipBinaryOperation_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Flip binary operation";
+    return "Flip Binary Operation";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

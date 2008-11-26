@@ -5,13 +5,12 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class RemoveArrayType_Intention extends BaseIntention {
+public class MakeGeneric_Intention extends BaseIntention {
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.ArrayType";
+    return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   }
 
   public boolean isErrorIntention() {
@@ -23,11 +22,15 @@ public class RemoveArrayType_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Remove Array Type";
+    return "Add Type Variable";
+  }
+
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    return SLinkOperations.getCount(node, "typeVariableDeclaration") == 0;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNodeOperations.replaceWithAnother(node, SNodeOperations.copyNode(SLinkOperations.getTarget(node, "componentType", true)));
+    SLinkOperations.addNewChild(node, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
   }
 
   public String getLocationString() {

@@ -26,7 +26,7 @@ public class ReplaceEqualsWithEquality_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Replace equals with equality";
+    return "Replace equals() with Equality";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

@@ -29,7 +29,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Replace for each loop with indexed loop";
+    return "Replace Foreach Loop with Indexed Loop";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

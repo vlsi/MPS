@@ -23,7 +23,7 @@ public class AddAnnotation_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add annotation";
+    return "Add Annotation";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

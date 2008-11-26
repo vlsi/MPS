@@ -19,6 +19,10 @@ public class AddMayBeUnreachable_Intention extends BaseIntention {
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Add May Be Unreachable";
   }

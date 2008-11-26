@@ -27,7 +27,7 @@ public class NewTemplateInSwitchDefault_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "New default template";
+    return "New Default Template";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

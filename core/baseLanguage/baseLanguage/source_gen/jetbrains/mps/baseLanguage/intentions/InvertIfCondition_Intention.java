@@ -25,7 +25,7 @@ public class InvertIfCondition_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Invert If condition";
+    return "Invert If Condition";
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

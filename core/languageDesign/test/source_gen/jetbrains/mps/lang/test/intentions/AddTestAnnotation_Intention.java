@@ -25,7 +25,7 @@ public class AddTestAnnotation_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add test label annotation";
+    return "Add Test Label Annotation";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

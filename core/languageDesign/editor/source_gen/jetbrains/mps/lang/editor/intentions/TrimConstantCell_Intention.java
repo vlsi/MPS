@@ -22,7 +22,7 @@ public class TrimConstantCell_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "trim constant cell";
+    return "Trim Constant Cell";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

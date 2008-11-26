@@ -23,7 +23,7 @@ public class CreateReferenceOnClassifier_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "create a reference on outer classifier";
+    return "Create a Reference on Outer Classifier";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

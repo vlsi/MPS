@@ -23,10 +23,10 @@ public class MakeAbstract_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "isAbstract")) {
-      return "make non abstract";
+      return "Make Non-Abstract";
     } else
     {
-      return "make abstract";
+      return "Make Abstract";
     }
   }
 

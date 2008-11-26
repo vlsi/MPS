@@ -26,7 +26,7 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Replace conditional with if";
+    return "Replace Conditional with If";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

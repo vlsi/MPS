@@ -24,7 +24,7 @@ public class ConvertToArrayType_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Convert to array type";
+    return "Convert to Array Type";
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

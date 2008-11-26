@@ -22,7 +22,7 @@ public class CreateInitializer_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "create initializer";
+    return "Create Initializer";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

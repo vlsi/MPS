@@ -23,10 +23,10 @@ public class MakeVirtual_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "isVirtual")) {
-      return "make non virtual";
+      return "Make Non-Virtual";
     } else
     {
-      return "make virtual";
+      return "Make Virtual";
     }
   }
 

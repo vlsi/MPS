@@ -23,7 +23,7 @@ public class CreateSetAccessor_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Create set accessor";
+    return "Create Set Accessor";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

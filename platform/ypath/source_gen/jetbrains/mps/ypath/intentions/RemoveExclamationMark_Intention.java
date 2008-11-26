@@ -18,8 +18,12 @@ public class RemoveExclamationMark_Intention extends BaseIntention {
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Remove cast to TreePathAspect";
+    return "Remove Cast to TreePathAspect";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

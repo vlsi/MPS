@@ -31,7 +31,7 @@ public class AddMissingDependency_Intention extends BaseIntention {
       SModelReference uid = ref.getTargetSModelReference();
       if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
         SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
-        return "Add dependency on module " + sm.getModule();
+        return "Add Dependency On Module " + sm.getModule();
       }
     }
     throw new RuntimeException();

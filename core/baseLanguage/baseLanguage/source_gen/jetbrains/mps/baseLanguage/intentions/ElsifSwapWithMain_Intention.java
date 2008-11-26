@@ -23,7 +23,7 @@ public class ElsifSwapWithMain_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "swap this elsif clause with the main clause";
+    return "Swap Elsif Clause with Main Clause";
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

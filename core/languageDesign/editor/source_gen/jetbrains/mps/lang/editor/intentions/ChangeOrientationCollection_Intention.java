@@ -23,8 +23,8 @@ public class ChangeOrientationCollection_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return (SPropertyOperations.getBoolean(node, "vertical") ?
-      "Make horizontal" :
-      "Make vertical"
+      "Make Horizontal" :
+      "Make Vertical"
     );
   }
 

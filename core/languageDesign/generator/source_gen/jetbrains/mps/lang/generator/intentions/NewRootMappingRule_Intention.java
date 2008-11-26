@@ -34,7 +34,7 @@ public class NewRootMappingRule_Intention extends BaseIntention {
   public String getDescription(final SNode node, final EditorContext editorContext) {
     //  Creates new 'root mapping rule' for a root tamplate
     //  (if such rule is not exist yet)
-    return "Create root mapping rule";
+    return "Create Root Mapping Rule";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

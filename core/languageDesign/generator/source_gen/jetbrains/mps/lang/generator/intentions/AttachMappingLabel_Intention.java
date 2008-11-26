@@ -44,7 +44,7 @@ public class AttachMappingLabel_Intention extends BaseIntention {
     //  attach new or exiting label to node in template.
     //  if node is annotated with macro or template fragment, then label is added to macro or TF,
     //  otherwise new labeled MAP_SRC macro is created.
-    return "Attach mapping label";
+    return "Attach Mapping Label";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

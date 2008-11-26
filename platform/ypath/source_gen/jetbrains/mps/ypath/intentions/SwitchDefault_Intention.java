@@ -17,10 +17,14 @@ public class SwitchDefault_Intention extends BaseIntention {
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return (SPropertyOperations.getBoolean(node, "default") ?
-      "Make regular" :
-      "Make default"
+      "Make Regular" :
+      "Make Default"
     );
   }
 

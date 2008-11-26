@@ -25,7 +25,7 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Move initializer to constructor";
+    return "Move Initializer to Constructor";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

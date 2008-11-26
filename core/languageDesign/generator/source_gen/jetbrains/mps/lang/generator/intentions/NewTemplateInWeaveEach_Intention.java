@@ -29,7 +29,7 @@ public class NewTemplateInWeaveEach_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "New template";
+    return "New Template";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

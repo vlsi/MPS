@@ -24,7 +24,7 @@ public class AddNodeMacro_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add node macro";
+    return "Add Node Macro";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

@@ -28,7 +28,7 @@ public class ExpandBoolean_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Expand boolean";
+    return "Expand Boolean";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

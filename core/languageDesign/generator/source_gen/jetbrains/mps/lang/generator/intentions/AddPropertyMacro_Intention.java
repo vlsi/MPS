@@ -24,7 +24,7 @@ public class AddPropertyMacro_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add property macro";
+    return "Add Property Macro";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

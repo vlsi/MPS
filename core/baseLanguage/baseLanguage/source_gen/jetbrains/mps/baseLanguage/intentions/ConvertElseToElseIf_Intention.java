@@ -23,7 +23,7 @@ public class ConvertElseToElseIf_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Convert else block to else if";
+    return "Convert Else Block to Else If";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

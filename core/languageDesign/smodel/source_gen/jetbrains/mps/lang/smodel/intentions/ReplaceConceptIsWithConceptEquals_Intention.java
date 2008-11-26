@@ -25,7 +25,7 @@ public class ReplaceConceptIsWithConceptEquals_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Replace concept= with concept list";
+    return "Replace concept= with Concept List";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

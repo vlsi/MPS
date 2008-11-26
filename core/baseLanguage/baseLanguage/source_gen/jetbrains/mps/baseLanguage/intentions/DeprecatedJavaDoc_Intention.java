@@ -24,10 +24,10 @@ public class DeprecatedJavaDoc_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(node)) {
-      return "Remove deprecated java doc";
+      return "Remove Deprecated javadoc";
     } else
     {
-      return "Add deprecated java doc";
+      return "Add Deprecated javadoc";
     }
   }
 

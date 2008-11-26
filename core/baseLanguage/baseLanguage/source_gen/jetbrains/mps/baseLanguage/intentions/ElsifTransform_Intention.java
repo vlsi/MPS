@@ -23,7 +23,7 @@ public class ElsifTransform_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "elsif transform";
+    return "Elsif Transform";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

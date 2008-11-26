@@ -25,7 +25,7 @@ public class ConvertLinkSetToAssignment_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Convert to assignment";
+    return "Convert to Assignment";
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

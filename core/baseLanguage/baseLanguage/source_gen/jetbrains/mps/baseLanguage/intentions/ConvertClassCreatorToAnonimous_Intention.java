@@ -24,7 +24,7 @@ public class ConvertClassCreatorToAnonimous_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Convert to anonimous";
+    return "Convert to Anonimous";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

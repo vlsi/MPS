@@ -23,7 +23,7 @@ public class AddElsifClause_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "add elsif clause";
+    return "Add Elsif Clause";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

@@ -25,7 +25,7 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "split constant cell into words";
+    return "Split Constant Cell into Words";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

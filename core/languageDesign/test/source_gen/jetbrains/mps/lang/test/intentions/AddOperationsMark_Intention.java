@@ -25,7 +25,7 @@ public class AddOperationsMark_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add test operations annotation";
+    return "Add Test Operations Annotation";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

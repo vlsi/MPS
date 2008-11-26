@@ -30,7 +30,7 @@ public class ReplaceBlockWithItsContent_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Replace block with its content";
+    return "Replace Block with Its Content";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

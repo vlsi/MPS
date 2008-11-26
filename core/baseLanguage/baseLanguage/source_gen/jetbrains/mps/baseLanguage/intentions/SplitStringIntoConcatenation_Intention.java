@@ -25,7 +25,7 @@ public class SplitStringIntoConcatenation_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Split string into concatenation";
+    return "Split String into Concatenation";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

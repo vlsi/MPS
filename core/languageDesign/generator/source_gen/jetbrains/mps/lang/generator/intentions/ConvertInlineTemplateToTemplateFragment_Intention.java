@@ -25,7 +25,7 @@ public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseInten
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Convert inline template to template fragment";
+    return "Convert Inline Template to Template Fragment";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

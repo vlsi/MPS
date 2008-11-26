@@ -27,7 +27,7 @@ public class SurrondWithHorizontalCollection_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Surround with horizontal collection";
+    return "Surround with Horizontal Collection";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

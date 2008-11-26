@@ -34,7 +34,7 @@ public class NewCreateRootRule_Intention extends BaseIntention {
   public String getDescription(final SNode node, final EditorContext editorContext) {
     //  Creates new 'conditional root rule' for a root tamplate
     //  (if such rule is not exist yet)
-    return "Create conditional root rule";
+    return "Create Conditional Root Rule";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

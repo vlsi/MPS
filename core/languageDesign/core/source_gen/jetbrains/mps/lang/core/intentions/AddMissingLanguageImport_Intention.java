@@ -21,7 +21,7 @@ public class AddMissingLanguageImport_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add language " + node.getLanguageNamespace() + " to current module";
+    return "Add Language " + node.getLanguageNamespace() + " to Current Module";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

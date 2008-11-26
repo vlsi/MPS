@@ -30,7 +30,7 @@ public class NewTemplateInRootMappingRule_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "New root template";
+    return "New Root Template";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
