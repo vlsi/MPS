@@ -30,37 +30,17 @@ public class RenameModelDialog extends BaseDialog {
 
     myMainPanel = new JPanel(new GridBagLayout());
 
-    GridBagConstraints c;
+    GridBagConstraints cLabel = new GridBagConstraints(0,0,1,1,0,0,GridBagConstraints.CENTER,GridBagConstraints.NONE,new Insets(0,0,0,0),0,0 );
+    myMainPanel.add(new JLabel("Model Name:"), cLabel);
 
-    c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 0;
-    c.anchor = GridBagConstraints.FIRST_LINE_START;
-    myMainPanel.add(new JLabel("Model Name:"), c);
-
-
-    c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 1;
-    c.anchor = GridBagConstraints.FIRST_LINE_START;
+    GridBagConstraints cNameField = new GridBagConstraints(1,0,1,1,1,0,GridBagConstraints.CENTER,GridBagConstraints.BOTH,new Insets(0,0,0,0),0,0 );
     myModelNameField = new JTextField(myModelDescriptor.getSModelFqName().toString(), 30);
-    myMainPanel.add(myModelNameField, c);
+    myMainPanel.add(myModelNameField, cNameField);
 
-    c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 2;
-    c.anchor = GridBagConstraints.FIRST_LINE_START;
+    GridBagConstraints cUpdateCheckbox = new GridBagConstraints(0,2,2,1,1,1,GridBagConstraints.NORTHWEST,GridBagConstraints.NONE,new Insets(0,0,0,0),0,0 );
     myUpdateAllReferences = new JCheckBox("Update All References");
     myUpdateAllReferences.getModel().setSelected(true);
-    myMainPanel.add(myUpdateAllReferences, c);
-
-
-    c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 3;
-    c.weighty = 1.0;
-    c.weightx = 1.0;
-    myMainPanel.add(new JPanel(), c);
+    myMainPanel.add(myUpdateAllReferences, cUpdateCheckbox);
   }
 
   protected JComponent getMainComponent() {
@@ -68,7 +48,7 @@ public class RenameModelDialog extends BaseDialog {
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(300, 300, 250, 200);
+    return new DialogDimensions(300, 300, 300, 150);
   }
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
