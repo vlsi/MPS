@@ -142,23 +142,6 @@ public class CollectionUtil {
     return result;
   }
 
-
-
-  public static <Node extends INodeAdapter> Node getAdapterByName(
-          Class<Node> cls,
-          Iterable<? extends INodeAdapter> collection,
-          String name) {
-    for (INodeAdapter node : collection) {
-      if (name.equals(node.getName())) {
-        if (cls.isInstance(node)) {
-          return (Node) node;
-        }
-      }
-    }
-    return null;
-  }
-
-
   public static <T> Iterator<T> concat(final Iterator<? extends T> it1, final Iterator<? extends T> it2) {
     return new Iterator<T>() {
       public boolean myFirstActive = true;
