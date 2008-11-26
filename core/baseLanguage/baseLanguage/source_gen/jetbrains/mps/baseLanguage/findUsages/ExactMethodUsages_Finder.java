@@ -25,7 +25,7 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
   }
 
   public String getLongDescription() {
-    return "Finds ussages of method without overriding methods";
+    return "Usages of exactly this method, not including usages of overriding methods";
   }
 
   public String getConcept() {

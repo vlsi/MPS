@@ -788,9 +788,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1200317943493">
-    <property name="name" value="OverridenAndImplementedMethodUsages" />
-    <property name="description" value="Method Usages" />
+    <property name="name" value="AllMethodUsages" />
+    <property name="description" value="All Method Usages" />
     <property name="isVisible" value="true" />
+    <property name="longDescription" value="Usages of this method, overriding methods and implementing methods" />
     <link role="forConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="isApplicableFunction" type="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock" id="1200317943494">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200317943495">
@@ -1087,15 +1088,6 @@
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206537426857">
             <property name="name" value="methodDeclaration" />
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1206537426858" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="isVisibleBlock" type="jetbrains.mps.lang.findUsages.structure.IsVisibleBlock" id="1227689343885">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227689343886">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227689348504">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1227689348505">
-            <property name="value" value="false" />
           </node>
         </node>
       </node>
@@ -3601,7 +3593,7 @@
   <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1227527031007">
     <property name="name" value="ExactMethodUsages" />
     <property name="description" value="Exact Method Usages " />
-    <property name="longDescription" value="Finds ussages of method without overriding methods" />
+    <property name="longDescription" value="Usages of exactly this method, not including usages of overriding methods" />
     <link role="forConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="findFunction" type="jetbrains.mps.lang.findUsages.structure.FindBlock" id="1227527031008">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227527031009">

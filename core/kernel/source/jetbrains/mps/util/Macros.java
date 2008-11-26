@@ -21,6 +21,7 @@ public abstract class Macros {
   public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
   public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";
   public static final String PROJECT = "${project}";
+  private static final char SEPARATOR_CHAR = '\\';
 
   public static Macros languageDescriptor() {
     return new LanguageDescriptorMacros();
@@ -65,6 +66,16 @@ public abstract class Macros {
     return MPS_HOME;
   }
 
+  public final String expandPath(String path, File anchorFile) {
+    return expandPath(path, FileSystem.getFile(anchorFile));
+  }
+
+  public final String expandPath(String path, IFile anchorFile) {
+    if (path == null) return null;
+    path = path.replace(SEPARATOR_CHAR, File.separatorChar);
+    return expandPath_internal(path, anchorFile);
+  }
+
   protected String expandPath_internal(String path, IFile anchorFile) {
     IFile result = null;
     if (path.startsWith(MPS_HOME)) {
@@ -97,16 +108,6 @@ public abstract class Macros {
     return result.getCanonicalPath();
   }
 
-  public final String expandPath(String path, File anchorFile) {
-    return expandPath(path, FileSystem.getFile(anchorFile));
-  }
-
-  public final String expandPath(String path, IFile anchorFile) {
-    if (path == null) return null;
-    path = path.replace('\\', File.separatorChar);
-    return expandPath_internal(path, anchorFile);
-  }
-
   public final String shrinkPath(String path, File anchor) {
     return shrinkPath(path, FileSystem.getFile(anchor));
   }
@@ -114,7 +115,7 @@ public abstract class Macros {
   public final String shrinkPath(String absolutePath, IFile anchorFile) {
     if (absolutePath == null) return null;
     String fileName = shrinkPath_internal(absolutePath, anchorFile);
-    return fileName.replace(File.separatorChar, '\\');
+    return fileName.replace(File.separatorChar, SEPARATOR_CHAR);
   }
 
   protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
@@ -128,7 +129,7 @@ public abstract class Macros {
         String path = PathMacros.getInstance().getValue(macro);
         if (path == null) continue;
 
-        path = path.replace('/', '\\');
+        path = path.replace('/', SEPARATOR_CHAR);
         if (pathStartsWith(absolutePath, path)) {
           String relationalPath = shrink(absolutePath, path);
           fileName = "${" + macro + "}" + relationalPath;
@@ -144,7 +145,7 @@ public abstract class Macros {
     String result = path.substring(prefix.length());
 
     if (result.length() == 0) {
-      return "\\";
+      return ""+SEPARATOR_CHAR;
     }
 
     return result;
@@ -154,6 +155,22 @@ public abstract class Macros {
     String result = path.substring(prefix.length());
     if (result.startsWith(File.separator)) result = result.substring(1);
     return result;
+  }
+
+  private static boolean pathStartsWith(String path, @NotNull String with) {
+    path = FileUtil.getCanonicalPath(path);
+
+    if (path.equals(with)) return true;
+
+    String fullPart = with + (with.endsWith(File.separator) ? "" : File.separator);
+    boolean notCroppedPart = path.toLowerCase().startsWith(fullPart.toLowerCase());
+
+    if (!notCroppedPart) return false;
+
+    String pathReplaced = FileUtil.getCanonicalPath(with + path.substring(with.length()));
+    boolean sameObjects = path.equals(pathReplaced);
+
+    return sameObjects;
   }
 
   private static class LanguageDescriptorMacros extends Macros {
@@ -248,21 +265,5 @@ public abstract class Macros {
     protected String shrinkPath_internal(String absolutePath, IFile nullFile) {
       return super.shrinkPath_internal(absolutePath, nullFile);
     }
-  }
-
-  private static boolean pathStartsWith(String path, @NotNull String with) {
-    path = FileUtil.getCanonicalPath(path);
-
-    if (path.equals(with)) return true;
-
-    String fullPart = with + (with.endsWith(File.separator) ? "" : File.separator);
-    boolean notCroppedPart = path.toLowerCase().startsWith(fullPart.toLowerCase());
-
-    if (!notCroppedPart) return false;
-
-    String pathReplaced = FileUtil.getCanonicalPath(with + path.substring(with.length()));
-    boolean sameObjects = path.equals(pathReplaced);
-
-    return sameObjects;
   }
 }
