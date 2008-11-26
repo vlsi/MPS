@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.Mapper;
 
 import java.util.*;
 
@@ -58,15 +57,14 @@ public class CellAction_CopyNode extends EditorCellAction {
           }
         };
 
-        Mapper<EditorCell, SNode> mapper = new Mapper<EditorCell, SNode>() {
-          public SNode map(EditorCell editorCell) {
-            return editorCell.getSNode();
-          }
-        };
         Set<SNode> selectedAttributes = new HashSet<SNode>();
         if (selectedCell instanceof EditorCell_Collection) {
           EditorCell_Collection selectedCollection = (EditorCell_Collection) selectedCell;
-          selectedAttributes.addAll(CollectionUtil.map(CollectionUtil.filter(selectedCollection.dfsCells(), condition), mapper));
+          for (EditorCell cell : selectedCollection.dfsCells()) {
+            if (condition.met(cell)) {
+              selectedAttributes.add(cell.getSNode());
+            }
+          }
         } else {
           if (condition.met(selectedCell)) {
             selectedAttributes.add(selectedCell.getSNode());
