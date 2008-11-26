@@ -7576,6 +7576,21 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1196159284896">
     <property name="name" value="check_BaseMethodDeclaration_UnreachableStatements" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196159284897">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227714097122">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227714097123">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1227714118790" />
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1227714098454">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227714101379">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227714100534">
+              <link role="applicableNode" targetNodeId="1196159323758" resolveInfo="nodeToCheck" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1227714117695">
+              <link role="baseMethodDeclaration" targetNodeId="37.1227714048980" resolveInfo="isDataFlowChecked" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1218102054757">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218102054758">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223642935980">

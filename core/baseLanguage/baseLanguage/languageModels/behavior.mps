@@ -3365,6 +3365,19 @@
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877350233">
     <property name="package" value="method" />
     <link role="concept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1227714048980">
+      <property name="name" value="isDataFlowChecked" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1227714072068" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227714048982">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1227714083851">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1227714084603">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227714110022" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877350304">
       <property name="name" value="getParametersPresentation" />
       <property name="isPrivate" value="false" />
