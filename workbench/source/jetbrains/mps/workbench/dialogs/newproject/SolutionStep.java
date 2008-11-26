@@ -4,7 +4,7 @@ import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.workbench.dialogs.newproject.prIcons.Icons;
+import jetbrains.mps.workbench.dialogs.newproject.icons.Icons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

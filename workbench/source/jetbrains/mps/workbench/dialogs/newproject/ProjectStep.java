@@ -3,7 +3,7 @@ package jetbrains.mps.workbench.dialogs.newproject;
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.workbench.dialogs.newproject.prIcons.Icons;
+import jetbrains.mps.workbench.dialogs.newproject.icons.Icons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
