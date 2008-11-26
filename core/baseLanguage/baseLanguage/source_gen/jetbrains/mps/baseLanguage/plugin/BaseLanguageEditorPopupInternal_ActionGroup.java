@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 
 public class BaseLanguageEditorPopupInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(BaseLanguageEditorPopupInternal_ActionGroup.class);
@@ -18,4 +21,16 @@ public class BaseLanguageEditorPopupInternal_ActionGroup extends GeneratedAction
       LOG.error("User group error", t);
     }
   }
+
+  public void adjust() {
+    {
+      BaseGroup gToBase = ActionUtils.getGroup(EditorInternal_ActionGroup.ID);
+      BaseGroup gWhat = ActionUtils.getGroup(BaseLanguageEditorPopupInternal_ActionGroup.ID);
+      if (gToBase == null || gWhat == null) {
+        return;
+      }
+      gToBase.add(gWhat);
+    }
+  }
+
 }

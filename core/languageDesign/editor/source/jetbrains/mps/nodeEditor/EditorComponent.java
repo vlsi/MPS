@@ -69,7 +69,6 @@ import java.lang.reflect.Field;
 import java.util.*;
 import java.util.List;
 
-
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider {
   private static final Logger LOG = Logger.getLogger(EditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;

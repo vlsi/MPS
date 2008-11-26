@@ -44,7 +44,7 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> baseMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder", node, GlobalScope.getInstance(), indicator);
     for(SNode method : Sequence.fromIterable(baseMethods)) {
-      for(SNode usage : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.MethodUsages_Finder", method, scope, indicator))) {
+      for(SNode usage : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridenAndImplementedMethodUsages_Finder", method, scope, indicator))) {
         ListOperations.addElement(_results, usage);
       }
     }
