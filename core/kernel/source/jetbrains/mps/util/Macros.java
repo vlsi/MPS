@@ -65,26 +65,6 @@ public abstract class Macros {
     return MPS_HOME;
   }
 
-  public final String expandPath(String path, File anchorFile) {
-    return expandPath(path, FileSystem.getFile(anchorFile));
-  }
-
-  public final String expandPath(String path, IFile anchorFile) {
-    if (path == null) return null;
-    path = path.replace('\\', File.separatorChar);
-    return expandPath_internal(path, anchorFile);
-  }
-
-  public final String shrinkPath(String path, File anchor) {
-    return shrinkPath(path, FileSystem.getFile(anchor));
-  }
-
-  public final String shrinkPath(String absolutePath, IFile anchorFile) {
-    if (absolutePath == null) return null;
-    String fileName = shrinkPath_internal(absolutePath, anchorFile);
-    return fileName.replace(File.separatorChar, '\\');
-  }
-
   protected String expandPath_internal(String path, IFile anchorFile) {
     IFile result = null;
     if (path.startsWith(MPS_HOME)) {
@@ -117,6 +97,26 @@ public abstract class Macros {
     return result.getCanonicalPath();
   }
 
+  public final String expandPath(String path, File anchorFile) {
+    return expandPath(path, FileSystem.getFile(anchorFile));
+  }
+
+  public final String expandPath(String path, IFile anchorFile) {
+    if (path == null) return null;
+    path = path.replace('\\', File.separatorChar);
+    return expandPath_internal(path, anchorFile);
+  }
+
+  public final String shrinkPath(String path, File anchor) {
+    return shrinkPath(path, FileSystem.getFile(anchor));
+  }
+
+  public final String shrinkPath(String absolutePath, IFile anchorFile) {
+    if (absolutePath == null) return null;
+    String fileName = shrinkPath_internal(absolutePath, anchorFile);
+    return fileName.replace(File.separatorChar, '\\');
+  }
+
   protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
     String fileName;
     if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
@@ -138,6 +138,16 @@ public abstract class Macros {
       fileName = absolutePath;
     }
     return fileName;
+  }
+
+  private static String shrink(String path, String prefix) {
+    String result = path.substring(prefix.length());
+
+    if (result.length() == 0) {
+      return "\\";
+    }
+
+    return result;
   }
 
   protected String removePrefix(String path, String prefix) {
@@ -254,15 +264,5 @@ public abstract class Macros {
     boolean sameObjects = path.equals(pathReplaced);
 
     return sameObjects;
-  }
-
-  private static String shrink(String path, String prefix) {
-    String result = path.substring(prefix.length());
-
-    if (result.length() == 0) {
-      return "\\";
-    }
-
-    return result;
   }
 }
