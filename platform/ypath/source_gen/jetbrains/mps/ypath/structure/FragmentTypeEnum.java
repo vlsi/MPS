@@ -20,7 +20,7 @@ public enum FragmentTypeEnum {
   private String myName;
   private String myValue;
 
-FragmentTypeEnum(String name, String value) {
+  FragmentTypeEnum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

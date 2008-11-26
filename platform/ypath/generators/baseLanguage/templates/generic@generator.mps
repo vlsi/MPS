@@ -3682,7 +3682,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299641561">
                       <property name="value" value="50" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299645345" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742949552" />
                   </node>
                 </node>
               </node>
@@ -4444,7 +4444,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299670078">
                       <property name="value" value="50" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299670079" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742929535" />
                   </node>
                 </node>
               </node>
@@ -4612,7 +4612,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299676658">
                       <property name="value" value="50" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299676659" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742895546" />
                   </node>
                 </node>
               </node>
@@ -5371,7 +5371,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299684783">
                       <property name="value" value="50" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299684784" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742865823" />
                   </node>
                 </node>
               </node>
@@ -5537,7 +5537,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299691250">
                       <property name="value" value="50" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299691251" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742922487" />
                   </node>
                 </node>
               </node>
@@ -5700,7 +5700,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299695796">
                       <property name="value" value="50" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299695797" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742877325" />
                   </node>
                 </node>
               </node>
@@ -5863,7 +5863,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299700965">
                       <property name="value" value="50" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299700966" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742916908" />
                   </node>
                 </node>
               </node>
@@ -6620,7 +6620,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299882436">
                       <property name="value" value="30" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299882437" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742957240" />
                   </node>
                 </node>
               </node>
@@ -7041,7 +7041,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299882627">
                       <property name="value" value="30" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299882628" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742969117" />
                   </node>
                 </node>
               </node>
@@ -7462,7 +7462,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299882819">
                       <property name="value" value="30" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299882820" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742882467" />
                   </node>
                 </node>
               </node>
@@ -7660,7 +7660,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299914324">
                       <property name="value" value="20" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299914325" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742911173" />
                   </node>
                 </node>
               </node>
@@ -7825,7 +7825,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299914399">
                       <property name="value" value="20" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299914400" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742871449" />
                   </node>
                 </node>
               </node>
@@ -8107,7 +8107,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299914530">
                       <property name="value" value="20" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299914531" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742975196" />
                   </node>
                 </node>
               </node>
@@ -8368,7 +8368,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299931049">
                       <property name="value" value="10" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299931050" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742962929" />
                   </node>
                 </node>
               </node>
@@ -9002,7 +9002,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197304288513">
                       <property name="value" value="10" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197304288514" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227742901375" />
                   </node>
                 </node>
               </node>

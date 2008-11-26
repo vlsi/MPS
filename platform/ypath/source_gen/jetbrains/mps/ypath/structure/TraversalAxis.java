@@ -19,7 +19,7 @@ public enum TraversalAxis {
   private String myName;
   private String myValue;
 
-TraversalAxis(String name, String value) {
+  TraversalAxis(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
