@@ -32,7 +32,7 @@ public class AttachMappingLabelDialog extends BaseDialog {
   private String myResultLabelName = "";
 
   public AttachMappingLabelDialog(SNode templateNode, List<String> existingLabels, Frame frame, EditorContext editorContext) {
-    super(frame, "Attach mapping label");
+    super(frame, "Attach Mapping Label");
     this.myExistingLabels = existingLabels;
     this.myEditorContext = editorContext;
     this.myTemplateNode = templateNode;

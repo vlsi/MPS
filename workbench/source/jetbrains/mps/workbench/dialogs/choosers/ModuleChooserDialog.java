@@ -32,12 +32,12 @@ class ModuleChooserDialog<T> extends BaseDialog {
 
   ModuleChooserDialog(Frame owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString) throws HeadlessException {
     super(owner, "Choose "+entityString);
-    doInit(modules, nonProjectModules, entityString);
+    doInit(modules, nonProjectModules, NameUtil.capitalize(entityString));
   }
 
   ModuleChooserDialog(Dialog owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString) throws HeadlessException {
     super(owner, "Choose "+entityString);
-    doInit(modules, nonProjectModules,entityString);
+    doInit(modules, nonProjectModules,NameUtil.capitalize(entityString));
   }
 
   private void doInit(final List<T> options, List<T> nonProjectLanguages, final String entityString) {

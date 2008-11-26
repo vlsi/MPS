@@ -102,7 +102,7 @@ public class MissingDependenciesFixer {
       return modules.get(0);
     }
 
-    ChooseModuleDialog dialog = new ChooseModuleDialog("Choose module to import model " + sm.getSModelReference() + " from", myContext.getMainFrame(), modules);
+    ChooseModuleDialog dialog = new ChooseModuleDialog("Choose Module to Import Model " + sm.getSModelReference() + " from", myContext.getMainFrame(), modules);
     dialog.showDialog();
     return dialog.getResult();
   }

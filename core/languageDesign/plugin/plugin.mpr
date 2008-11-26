@@ -7,7 +7,7 @@
   <component name="MPSProject">
     <projectSolutions />
     <projectLanguages>
-      <languagePath path="${project}\plugin.mpl" />
+      <languagePath path="${project}/plugin.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

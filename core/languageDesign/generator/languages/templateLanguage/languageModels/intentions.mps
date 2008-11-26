@@ -4601,7 +4601,7 @@
             <link role="variableDeclaration" targetNodeId="1227305822914" resolveInfo="frame" />
           </node>
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227306177932">
-            <property name="value" value="Attach mapping label" />
+            <property name="value" value="Attach Mapping Label" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227306331683">

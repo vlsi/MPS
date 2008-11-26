@@ -5445,7 +5445,7 @@
             <link role="variableDeclaration" targetNodeId="1223036986434" resolveInfo="frame" />
           </node>
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220354396584">
-            <property name="value" value="Extract method" />
+            <property name="value" value="Extract Method" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220549507143">
@@ -19001,7 +19001,7 @@
             </node>
           </node>
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1223452805401">
-            <property name="value" value="Inline method" />
+            <property name="value" value="Inline Method" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224072437404">
@@ -30360,7 +30360,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1225114168104">
           <link role="constructorDeclaration" targetNodeId="55.~BaseDialog.&lt;init&gt;(java.awt.Frame,java.lang.String)" resolveInfo="BaseDialog" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225114173607">
-            <property name="value" value="Introduce field" />
+            <property name="value" value="Introduce Dield" />
           </node>
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225382935984">
             <link role="variableDeclaration" targetNodeId="1225114156851" resolveInfo="frame" />
@@ -33228,7 +33228,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1225386343287">
           <link role="constructorDeclaration" targetNodeId="1225382621199" resolveInfo="IntroduceVariableDialog" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225386347351">
-            <property name="value" value="Introduce local variable" />
+            <property name="value" value="Introduce Local Variable" />
           </node>
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225386353181">
             <link role="variableDeclaration" targetNodeId="1225384499265" resolveInfo="frame" />
@@ -33405,7 +33405,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1225386375585">
           <link role="constructorDeclaration" targetNodeId="1225382621199" resolveInfo="IntroduceVariableDialog" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225386378492">
-            <property name="value" value="Introduce constant" />
+            <property name="value" value="Introduce Constant" />
           </node>
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225386383197">
             <link role="variableDeclaration" targetNodeId="1225387140695" resolveInfo="frame" />
@@ -33902,7 +33902,7 @@
             <link role="variableDeclaration" targetNodeId="1225462982731" resolveInfo="frame" />
           </node>
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225463007590">
-            <property name="value" value="Rename varaible" />
+            <property name="value" value="Rename Varaible" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225463713064">

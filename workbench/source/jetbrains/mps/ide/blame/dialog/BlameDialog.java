@@ -24,7 +24,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 public class BlameDialog extends BaseDialog {
-  private static final String CAPTION = "Submit system exception to developers";
+  private static final String CAPTION = "Submit System Exception to Developers";
 
   private boolean myIsCancelled = false;
   private ResponseCallback myCallback = null;
