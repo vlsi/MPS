@@ -63,17 +63,6 @@ public class CollectionUtil {
     return iteratorAsList(i.iterator());
   }
 
-  public static <T> Set<T> iterableAsSet(Iterable<T> i) {
-    return iteratorAsSet(i.iterator());
-  }
-
-  public static <T> Set<T> iteratorAsSet(Iterator<T> i) {
-    Set<T> result = new HashSet<T>();
-    while (i.hasNext()) {
-      result.add(i.next());
-    }
-    return result;
-  }
 
   public static <T> Iterable<T> iteratorAsIterable(final Iterator<T> i) {
     return new Iterable<T>() {

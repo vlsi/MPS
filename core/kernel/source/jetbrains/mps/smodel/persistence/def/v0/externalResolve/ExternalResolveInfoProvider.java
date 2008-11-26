@@ -87,7 +87,7 @@ public class ExternalResolveInfoProvider {
         sb.append("<");
       }
       int i = 0;
-      for (Type parameter : CollectionUtil.iteratorAsIterable(classifierType.parameters())) {
+      for (Type parameter : classifierType.getParameters()) {
         String componentString = toString(parameter);
         if (componentString == null) {
           continue;
