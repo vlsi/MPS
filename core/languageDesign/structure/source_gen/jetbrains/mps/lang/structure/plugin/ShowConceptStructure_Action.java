@@ -24,7 +24,7 @@ public class ShowConceptStructure_Action extends GeneratedAction {
 
   public ShowConceptStructure_Action() {
     super("Show Concept Structure", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
