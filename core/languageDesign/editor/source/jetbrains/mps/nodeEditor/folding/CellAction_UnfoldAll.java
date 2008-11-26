@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.Mapper;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,16 +22,10 @@ public class CellAction_UnfoldAll extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    CollectionUtil.map(
-    CollectionUtil.filter(((EditorCell_Collection)context.getNodeEditorComponent().getRootCell()).dfsCells(), new Condition<EditorCell>() {
-      public boolean met(EditorCell object) {
-        return object.isFolded();
+    for (EditorCell cell : ((EditorCell_Collection)context.getNodeEditorComponent().getRootCell()).dfsCells()) {
+      if (cell.isFolded()) {
+        ((EditorCell_Collection) cell).unfold();
       }
-    }), new Mapper<EditorCell, Void>() {
-      public Void map(EditorCell editorCell) {
-        ((EditorCell_Collection)editorCell).unfold();
-        return null;
-      }
-    });
+    }
   }
 }

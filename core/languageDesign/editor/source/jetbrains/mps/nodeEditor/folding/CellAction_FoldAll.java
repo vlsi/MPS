@@ -5,7 +5,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.Mapper;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,17 +20,11 @@ public class CellAction_FoldAll extends EditorCellAction {
 
   public void execute(EditorContext context) {
     EditorComponent component = context.getNodeEditorComponent();
-    CollectionUtil.map(
-    CollectionUtil.filter(((EditorCell_Collection) component.getRootCell()).dfsCells(), new Condition<EditorCell>() {
-      public boolean met(EditorCell object) {
-        return object.canBePossiblyFolded() && !object.isFolded();
+    for (EditorCell cell : ((EditorCell_Collection) component.getRootCell()).dfsCells()) {
+      if (cell.canBePossiblyFolded() && !cell.isFolded()) {
+        ((EditorCell_Collection) cell).fold();
       }
-    }), new Mapper<EditorCell, Void>() {
-      public Void map(EditorCell editorCell) {
-        ((EditorCell_Collection)editorCell).fold();
-        return null;
-      }
-    });
+    }
     EditorCell selectedCell = component.getSelectedCell();
     if (selectedCell.isUnderFolded()) {
       EditorCell cell = selectedCell;
