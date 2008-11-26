@@ -6,6 +6,7 @@ import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.StatusBar;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.plugin.icons.Icons;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -24,7 +25,7 @@ public class PluginStateMonitor implements ProjectComponent {
   private static final double DELAY_MUL = 2.0;
 
   private Project myProject;
-  private Timer myTimer;
+  private MyTimer myTimer;
   private JLabel myLabel;
   private State myState = State.TRYING_TO_CONNECT;
 
@@ -51,35 +52,44 @@ public class PluginStateMonitor implements ProjectComponent {
       myLabel.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
-          if (myState==State.DISCONNECTED) {
+          if (myState == State.DISCONNECTED) {
             setNewState(State.TRYING_TO_CONNECT);
+            myTimer.setNewDelay(INITIAL_DELAY);
           }
         }
       });
       bar.addCustomIndicationComponent(myLabel);
 
-      myTimer = new Timer(INITIAL_DELAY, new ActionListener() {
+      myTimer = new MyTimer(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          if (myState ==State.CONNECTED){
-            if (isConnected()) return;
-            setNewState(State.TRYING_TO_CONNECT);
-          }
-
-          if (!(myState ==State.TRYING_TO_CONNECT)) return;
-
-          if (isConnected()) {
-            setNewState(State.CONNECTED);
-          } else {
-            int newDelay = (int) (myTimer.getDelay() * DELAY_MUL);
-            if (newDelay <= CRITICAL_DELAY) {
-              myTimer.setDelay(newDelay);
-            } else {
-              setNewState(State.DISCONNECTED);
-            }
-          }
+          tick();
         }
       });
       myTimer.start();
+    }
+  }
+
+  private void tick() {
+    if (myState == State.DISCONNECTED || (myState == State.CONNECTED && isConnected())) return;
+
+    if (myState == State.CONNECTED) {
+      //isConnected = false
+      setNewState(State.TRYING_TO_CONNECT);
+      myTimer.setNewDelay(INITIAL_DELAY);
+    } else {
+      //state = trying_to_connect
+      if (isConnected()) {
+        setNewState(State.CONNECTED);
+        myTimer.setNewDelay(INITIAL_DELAY);
+      } else {
+        int newDelay = (int) (myTimer.getDelay() * DELAY_MUL);
+        if (newDelay <= CRITICAL_DELAY) {
+          myTimer.setNewDelay(newDelay);
+        } else {
+          setNewState(State.DISCONNECTED);
+          myTimer.setNewDelay(INITIAL_DELAY);
+        }
+      }
     }
   }
 
@@ -94,10 +104,9 @@ public class PluginStateMonitor implements ProjectComponent {
   }
 
   private void setNewState(State state) {
-    assert myState!=state;
+    assert myState != state;
 
     myState = state;
-    myTimer.setDelay(INITIAL_DELAY);
     myLabel.setIcon(myState.getIcon());
     myLabel.setToolTipText(myState.getHelpText());
   }
@@ -113,10 +122,10 @@ public class PluginStateMonitor implements ProjectComponent {
     return ideFrame.getStatusBar();
   }
 
-  private enum State{
-    DISCONNECTED(Icons.DISCONNECTED,"Not connected to IDEA. Click to reconnect."),
-    TRYING_TO_CONNECT(Icons.TRYING_TO_CONNECT,"Connecting to IDEA..."),
-    CONNECTED(Icons.CONNECTED,"Connected to IDEA");
+  private enum State {
+    DISCONNECTED(Icons.DISCONNECTED, "Not connected to IDEA. Click to reconnect."),
+    TRYING_TO_CONNECT(Icons.TRYING_TO_CONNECT, "Connecting to IDEA..."),
+    CONNECTED(Icons.CONNECTED, "Connected to IDEA");
 
 
     private Icon myIcon;
@@ -133,6 +142,18 @@ public class PluginStateMonitor implements ProjectComponent {
 
     public String getHelpText() {
       return myHelpText;
+    }
+  }
+
+  private static class MyTimer extends Timer {
+    public MyTimer(ActionListener listener) {
+      super(INITIAL_DELAY, listener);
+    }
+
+    public void setNewDelay(int delay){
+      setDelay(delay);
+      setInitialDelay(delay);
+      restart();
     }
   }
 }
