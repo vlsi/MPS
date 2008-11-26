@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
 
 import javax.swing.*;
@@ -93,11 +92,11 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   protected abstract Pair<SNode, IOperationContext> createLoadableNode(boolean ask);
 
   protected List<SNode> getLoadableNodes() {
-    return CollectionUtil.map(myLoadableNodesList, new Mapper<SNodePointer, SNode>() {
-      public SNode map(SNodePointer sNodePointer) {
-        return sNodePointer.getNode();
-      }
-    });
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNodePointer sNodePointer : myLoadableNodes) {
+      result.add(sNodePointer.getNode());
+    }
+    return result;
   }
 
   protected SNode getBaseNode() {

@@ -135,12 +135,11 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
     protected Set<AbstractConceptDeclaration> getParents(AbstractConceptDeclaration node) {
       Language language = SModelUtil_new.getDeclaringLanguage(node, GlobalScope.getInstance());
       Set<String> parents = language.getParentsNames(NameUtil.nodeFQName(node));
-      return CollectionUtil.map(parents, new Mapper<String, AbstractConceptDeclaration>() {
-        public AbstractConceptDeclaration map(String s) {
-          //todo improve performance
-          return SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance());
-        }
-      });
+      Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
+      for (String s : parents) {
+        result.add(SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance()));
+      }
+      return result;
     }
 
     protected AbstractConceptDeclaration getParent(AbstractConceptDeclaration node) {
@@ -152,12 +151,11 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
     }
 
     protected Set<AbstractConceptDeclaration> getDescendants(AbstractConceptDeclaration conceptDeclaration) {
-      return CollectionUtil.map(getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclaration)), new Mapper<String, AbstractConceptDeclaration>() {
-        public AbstractConceptDeclaration map(String s) {
-          //todo improve performance
-          return SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance());
-        }
-      });
+      Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
+      for (String s : getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclaration))) {
+        result.add(SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance()));
+      }
+      return result;
     }
 
     protected String noNodeString() {

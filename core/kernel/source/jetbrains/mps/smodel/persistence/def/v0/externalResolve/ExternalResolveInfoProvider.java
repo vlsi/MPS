@@ -4,13 +4,9 @@ import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -180,23 +176,19 @@ public class ExternalResolveInfoProvider {
     final String name = baseMethodDeclaration.getName();
     final String conceptName = baseMethodDeclaration.getShortConceptName();
 
-    List<String> list = CollectionUtil.map(baseMethodDeclaration.getParameters(), new Mapper<ParameterDeclaration, String>() {
-      public String map(ParameterDeclaration parameterDeclaration) {
-        Pair<String, String> pair = adaptNode(parameterDeclaration.getType());
-        if (pair == null) return ExternalResolver.NO_MEMBER_TYPE;
-        StringBuilder stringBuilder = StringBuilderSpinAllocator.alloc();
-        try {
-          stringBuilder.append('(');
-          stringBuilder.append(pair.o1);
-          stringBuilder.append('/');
-          stringBuilder.append(pair.o2);
-          stringBuilder.append(')');
-          return stringBuilder.toString();
-        } finally{
-          StringBuilderSpinAllocator.dispose(stringBuilder);
-        }
-      }
-    });
+    List<String> list = new ArrayList<String>();
+    for (ParameterDeclaration parameterDeclaration : baseMethodDeclaration.getParameters()) {
+      Pair<String, String> pair = adaptNode(parameterDeclaration.getType());
+      if (pair == null) return ExternalResolver.NO_MEMBER_TYPE;
+      StringBuilder stringBuilder = StringBuilderSpinAllocator.alloc();
+      stringBuilder.append('(');
+      stringBuilder.append(pair.o1);
+      stringBuilder.append('/');
+      stringBuilder.append(pair.o2);
+      stringBuilder.append(')');
+      list.add(stringBuilder.toString());
+      StringBuilderSpinAllocator.dispose(stringBuilder);
+    }
 
     return getMethodExternalResolveInfo(name, conceptName, list);
   }
