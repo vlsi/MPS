@@ -26,7 +26,7 @@ public class PluginStateMonitor implements ProjectComponent {
   private Project myProject;
   private Timer myTimer;
   private JLabel myLabel;
-  private State myState = new TryingToConnectState();
+  private State myState = State.TRYING_TO_CONNECT;
 
   public PluginStateMonitor(Project project) {
     myProject = project;
@@ -51,8 +51,8 @@ public class PluginStateMonitor implements ProjectComponent {
       myLabel.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
-          if (myState instanceof DisconnectedState) {
-            setNewState(new TryingToConnectState());
+          if (myState==State.DISCONNECTED) {
+            setNewState(State.TRYING_TO_CONNECT);
           }
         }
       });
@@ -60,21 +60,21 @@ public class PluginStateMonitor implements ProjectComponent {
 
       myTimer = new Timer(INITIAL_DELAY, new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          if (myState instanceof ConnectedState){
+          if (myState ==State.CONNECTED){
             if (isConnected()) return;
-            setNewState(new TryingToConnectState());
+            setNewState(State.TRYING_TO_CONNECT);
           }
 
-          if (!(myState instanceof TryingToConnectState)) return;
+          if (!(myState ==State.TRYING_TO_CONNECT)) return;
 
           if (isConnected()) {
-            setNewState(new ConnectedState());
+            setNewState(State.CONNECTED);
           } else {
             int newDelay = (int) (myTimer.getDelay() * DELAY_MUL);
             if (newDelay <= CRITICAL_DELAY) {
               myTimer.setDelay(newDelay);
             } else {
-              setNewState(new DisconnectedState());
+              setNewState(State.DISCONNECTED);
             }
           }
         }
@@ -113,39 +113,26 @@ public class PluginStateMonitor implements ProjectComponent {
     return ideFrame.getStatusBar();
   }
 
-  private abstract class State {
-    public abstract Icon getIcon();
+  private enum State{
+    DISCONNECTED(Icons.DISCONNECTED,"Not connected to IDEA. Click to reconnect."),
+    TRYING_TO_CONNECT(Icons.TRYING_TO_CONNECT,"Connecting to IDEA..."),
+    CONNECTED(Icons.CONNECTED,"Connected to IDEA");
 
-    public abstract String getHelpText();
-  }
 
-  private class ConnectedState extends State {
+    private Icon myIcon;
+    private String myHelpText;
+
+    private State(Icon icon, String helpText) {
+      myIcon = icon;
+      myHelpText = helpText;
+    }
+
     public Icon getIcon() {
-      return Icons.CONNECTED;
+      return myIcon;
     }
 
     public String getHelpText() {
-      return "Connected to IDEA";
-    }
-  }
-
-  private class TryingToConnectState extends State {
-    public Icon getIcon() {
-      return Icons.TRYING_TO_CONNECT;
-    }
-
-    public String getHelpText() {
-      return "Connecting to IDEA...";
-    }
-  }
-
-  private class DisconnectedState extends State {
-    public Icon getIcon() {
-      return Icons.DISCONNECTED;
-    }
-
-    public String getHelpText() {
-      return "Not connected to IDEA. Click to reconnect.";
+      return myHelpText;
     }
   }
 }
