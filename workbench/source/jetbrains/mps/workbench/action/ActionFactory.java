@@ -174,23 +174,23 @@ public class ActionFactory {
     for (String id : manager.getActionIds("")) {
       AnAction action = manager.getAction(id);
       if (action instanceof ActionGroup) {
-        for (ActionGroup group:groups){
-          unregisterAllActionOccurencesInGroup((ActionGroup) action, group);
-        }
+        unregisterAllGroupOccurencesInGroup((ActionGroup) action, groups);
       }
     }
   }
 
-  private static void unregisterAllActionOccurencesInGroup(ActionGroup group, AnAction action) {
+  private static void unregisterAllGroupOccurencesInGroup(ActionGroup group, List<BaseGroup> groups) {
     AnAction[] children = group.getChildren(null);
     for (AnAction child : children) {
       if (child instanceof ActionGroup) {
-        unregisterAllActionOccurencesInGroup((ActionGroup) child, action);
+        unregisterAllGroupOccurencesInGroup((ActionGroup) child, groups);
       }
     }
 
     if (group instanceof DefaultActionGroup) {
-      ((DefaultActionGroup) group).remove(action);
+      for (ActionGroup g : groups){
+        ((DefaultActionGroup) group).remove(g);
+      }
     }
   }
 }
