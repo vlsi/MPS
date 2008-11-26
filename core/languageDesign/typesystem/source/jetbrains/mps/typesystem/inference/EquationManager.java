@@ -890,6 +890,9 @@ public class EquationManager {
           varLessThanType(type, true, priority, minPriority, shallow);
           varLessThanType(type, false, priority, minPriority, shallow);
         } else if ( (shallow && type.isConcrete()) || (!shallow && isConcrete(type)) ) {
+          if (shallow) {
+            hasConcreteTypes = true;
+          }
           hasConcreteTypes = typeLessThanConcrete(type, true, priority, minPriority, shallow) || hasConcreteTypes;
           hasConcreteTypes = typeLessThanConcrete(type, false, priority, minPriority, shallow) || hasConcreteTypes;
           hasConcreteTypes = concreteLessThanType(type, true, priority, minPriority, shallow) || hasConcreteTypes;
