@@ -22,7 +22,7 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
   private SModel model;
 
   public ConvertDateTimeOperations_Action() {
-    super("convert date time operations", "", ICON);
+    super("Convert Date Time Operations", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

@@ -23,7 +23,7 @@ public class InlineLocalVariable_Action extends GeneratedAction {
   public Frame frame;
 
   public InlineLocalVariable_Action() {
-    super("Inline local variable", "", ICON);
+    super("Inline Local Variable", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

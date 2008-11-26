@@ -49,7 +49,7 @@
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1224594241712">
     <property name="name" value="RunTestInMPS" />
-    <property name="caption" value="Run test in MPS process" />
+    <property name="caption" value="Run Test in MPS Process" />
     <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1224595034231">
       <property name="name" value="runTest" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224595034233">

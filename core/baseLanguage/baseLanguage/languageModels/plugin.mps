@@ -20173,7 +20173,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1223452095337">
     <property name="name" value="InlineMethod" />
-    <property name="caption" value="Inline method" />
+    <property name="caption" value="Inline Method" />
     <property name="isAlwaysVisible" value="false" />
     <property name="outsideCommandExecution" value="true" />
     <property name="package" value="refactoring.actions" />
@@ -20412,7 +20412,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1223451996501">
     <property name="name" value="ChangeMethodSignature" />
-    <property name="caption" value="Change method signature" />
+    <property name="caption" value="Change Method Signature" />
     <property name="outsideCommandExecution" value="true" />
     <property name="package" value="refactoring.actions" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1223451996502">
@@ -27568,7 +27568,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1224422652338">
     <property name="package" value="refactoring.actions" />
     <property name="name" value="InlineLocalVariable" />
-    <property name="caption" value="Inline local variable" />
+    <property name="caption" value="Inline Local Variable" />
     <property name="outsideCommandExecution" value="true" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1224422722570">
       <property name="name" value="editorContext" />
@@ -33533,7 +33533,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1225447880158">
     <property name="package" value="refactoring.actions" />
     <property name="name" value="MoveStaticMethod" />
-    <property name="caption" value="Move static method" />
+    <property name="caption" value="Move Static Method" />
     <property name="outsideCommandExecution" value="true" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1225447880159">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225447880160">
@@ -34220,7 +34220,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1225463448250">
     <property name="package" value="refactoring.actions" />
     <property name="name" value="RenameVariable" />
-    <property name="caption" value="Rename variabe" />
+    <property name="caption" value="Rename Variable" />
     <property name="outsideCommandExecution" value="true" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1225463448251">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225463448252">
@@ -34295,7 +34295,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1226576197328">
-    <property name="caption" value="test subtyping helper" />
+    <property name="caption" value="Test Subtyping Helper" />
     <property name="name" value="TestSubtypingHelper" />
     <property name="isAlwaysVisible" value="true" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1226576197329">

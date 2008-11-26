@@ -116,7 +116,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1205605492950">
-    <property name="name" value="bHighlightDependentLeaves" />
+    <property name="name" value="HighlightDependentLeaves" />
     <property name="caption" value="Highlight Dependent Leaves" />
     <property name="package" value="Actions" />
     <property name="isAlwaysVisible" value="true" />

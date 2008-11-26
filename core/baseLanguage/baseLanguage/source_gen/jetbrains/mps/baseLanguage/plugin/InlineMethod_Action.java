@@ -26,7 +26,7 @@ public class InlineMethod_Action extends GeneratedAction {
   public IOperationContext operationContext;
 
   public InlineMethod_Action() {
-    super("Inline method", "", ICON);
+    super("Inline Method", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

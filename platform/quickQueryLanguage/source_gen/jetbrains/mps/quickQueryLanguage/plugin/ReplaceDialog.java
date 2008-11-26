@@ -36,7 +36,7 @@ public class ReplaceDialog extends BaseDialog {
   private JPanel myPanel = new JPanel(new BorderLayout());
 
   public ReplaceDialog(final IOperationContext context, final Language language) {
-    super(context.getMainFrame(), "Modify Instances by Condition");
+    super(context.getMainFrame(), "Modify Instances by condition");
     this.myContext = context;
     ModelAccess.instance().runWriteAction(new Runnable() {
 

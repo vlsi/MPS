@@ -20,7 +20,7 @@ public class RenameVariable_Action extends GeneratedAction {
   public Frame frame;
 
   public RenameVariable_Action() {
-    super("Rename variabe", "", ICON);
+    super("Rename Variable", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

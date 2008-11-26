@@ -30,7 +30,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
   public MPSProject project;
 
   public RunTestInMPS_Action() {
-    super("Run test in MPS process", "", ICON);
+    super("Run Test in MPS Process", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
