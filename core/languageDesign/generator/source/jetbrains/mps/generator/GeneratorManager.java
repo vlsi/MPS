@@ -20,7 +20,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
@@ -157,15 +156,14 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
                                                   final IOperationContext invocationContext,
                                                   final IGenerationType generationType,
                                                   boolean closeOnExit) {
+    List<Pair<SModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
+
+    for (SModelDescriptor model : inputModels) {
+      inputModelPairs.add(new Pair<SModelDescriptor, IOperationContext>(model, invocationContext));
+    }
+
     return generateModelsWithProgressWindow(
-      CollectionUtil.map(
-        inputModels,
-        new Mapper<SModelDescriptor, Pair<SModelDescriptor, IOperationContext>>() {
-          public Pair<SModelDescriptor, IOperationContext> map(SModelDescriptor model) {
-            assert model != null;
-            return new Pair<SModelDescriptor, IOperationContext>(model, invocationContext);
-          }
-        }),
+      inputModelPairs,
       generationType
     );
   }
@@ -243,16 +241,12 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
                                 final IGenerationType generationType,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages) {
-
+    List<Pair<SModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
+    for (SModelDescriptor model : inputModels) {
+      inputModelPairs.add(new Pair<SModelDescriptor, IOperationContext>(model, invocationContext));
+    }
     return generateModels(
-      CollectionUtil.map(
-        inputModels,
-        new Mapper<SModelDescriptor, Pair<SModelDescriptor, IOperationContext>>() {
-          public Pair<SModelDescriptor, IOperationContext> map(SModelDescriptor model) {
-            assert model != null;
-            return new Pair<SModelDescriptor, IOperationContext>(model, invocationContext);
-          }
-        }),
+      inputModelPairs,
       generationType,
       progress,
       messages,
