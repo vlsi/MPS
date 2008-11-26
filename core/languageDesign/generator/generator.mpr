@@ -6,16 +6,16 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\TLBase_sandbox\sandbox.msd" />
-      <solutionPath path="${project}\test\inputModels\inputModels.msd" />
+      <solutionPath path="${project}/TLBase_sandbox/sandbox.msd" />
+      <solutionPath path="${project}/test/inputModels/inputModels.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\languages\templateLanguage\templateLanguage.mpl" />
-      <languagePath path="${project}\languages\generationContext\generationContext.mpl" />
-      <languagePath path="${project}\test\inputLang\inputLang.mpl" />
-      <languagePath path="${project}\test\outputLang\outputLang.mpl" />
-      <languagePath path="${mps_home}\core\languageDesign\plugin\plugin.mpl" />
-      <languagePath path="${mps_home}\core\baseLanguage\unitTest\unitTest.mpl" />
+      <languagePath path="${project}/languages/templateLanguage/templateLanguage.mpl" />
+      <languagePath path="${project}/languages/generationContext/generationContext.mpl" />
+      <languagePath path="${project}/test/inputLang/inputLang.mpl" />
+      <languagePath path="${project}/test/outputLang/outputLang.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
+      <languagePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
