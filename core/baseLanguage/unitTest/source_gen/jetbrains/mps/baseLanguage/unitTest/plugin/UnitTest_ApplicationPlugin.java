@@ -6,15 +6,19 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
 
 public class UnitTest_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(JUnitTestRoot_ActionGroup.class, "jetbrains.mps.baseLanguage.unitTest"));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(JUnitTestModel_ActionGroup.class, "jetbrains.mps.baseLanguage.unitTest"));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(JUnitTestModule_ActionGroup.class, "jetbrains.mps.baseLanguage.unitTest"));
+    IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage.unitTest"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestRoot_ActionGroup"), module.getModuleFqName()));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestModel_ActionGroup"), module.getModuleFqName()));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestModule_ActionGroup"), module.getModuleFqName()));
     return groups;
   }
 

@@ -33658,8 +33658,8 @@
                                       <link role="baseMethodDeclaration" targetNodeId="10.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
                                     </node>
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225455494804">
-                                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227691543950">
-                                        <link role="baseMethodDeclaration" targetNodeId="83.~OverridenAndImplementedMethodUsages_Finder.&lt;init&gt;()" resolveInfo="OverridenAndImplementedMethodUsages_Finder" />
+                                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227707164788">
+                                        <link role="baseMethodDeclaration" targetNodeId="83.~AllMethodUsages_Finder.&lt;init&gt;()" resolveInfo="AllMethodUsages_Finder" />
                                       </node>
                                     </node>
                                   </node>

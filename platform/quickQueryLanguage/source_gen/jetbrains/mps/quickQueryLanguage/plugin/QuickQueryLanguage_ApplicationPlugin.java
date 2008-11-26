@@ -6,14 +6,18 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
 
 public class QuickQueryLanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(FindInstancesByConditionGroup_ActionGroup.class, "jetbrains.mps.quickQueryLanguage"));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(FindInstancesByConditionAndNodeGroup_ActionGroup.class, "jetbrains.mps.quickQueryLanguage"));
+    IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.quickQueryLanguage"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionGroup_ActionGroup"), module.getModuleFqName()));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNodeGroup_ActionGroup"), module.getModuleFqName()));
     return groups;
   }
 

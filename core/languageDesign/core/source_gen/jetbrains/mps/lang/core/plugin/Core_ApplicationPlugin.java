@@ -6,15 +6,19 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Core_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(FindModelUsages_ActionGroup.class, "jetbrains.mps.lang.core"));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(FindLanguageUsages_ActionGroup.class, "jetbrains.mps.lang.core"));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(CoreActions_ActionGroup.class, "jetbrains.mps.lang.core"));
+    IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.core"));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup"), module.getModuleFqName()));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.lang.core.plugin.FindLanguageUsages_ActionGroup"), module.getModuleFqName()));
+    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.lang.core.plugin.CoreActions_ActionGroup"), module.getModuleFqName()));
     return groups;
   }
 
