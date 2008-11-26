@@ -311,7 +311,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public Icon getIcon() {
-    return Icons.MPS_SMALL_ICON;
+    return Icons.CLOSED_FOLDER;
   }
 
   public void updateFromRoot(boolean restoreExpandedPaths) {
