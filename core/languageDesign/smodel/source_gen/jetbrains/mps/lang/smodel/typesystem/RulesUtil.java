@@ -185,35 +185,6 @@ public class RulesUtil {
   @InferenceMethod()
   private static void equate_inputNodeConcept_internal(final TypeCheckingContext typeCheckingContext, final SNode op, final SNode TypeToEquate) {
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
-    /*
-      {
-        final SNode LeftType = typeCheckingContext.typeOf(leftExpression, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1208202100499", false);
-        typeCheckingContext.whenConcrete(LeftType, new Runnable() {
-
-          public void run() {
-            SNode conceptDeclaration = null;
-            if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(LeftType), "jetbrains.mps.lang.smodel.structure._LinkAccessT")) {
-              conceptDeclaration = SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(LeftType), "targetConcept", false);
-            } else
-            if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(LeftType), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-              conceptDeclaration = SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(LeftType), "concept", false);
-            } else
-            if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(LeftType), "jetbrains.mps.lang.smodel.structure.SConceptType")) {
-              conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
-            }
-            if (conceptDeclaration == null) {
-              conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
-            }
-            {
-              SNode _nodeToCheck_1029348928467 = null;
-              BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.createEquation(TypeToEquate, conceptDeclaration, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1208202100494", intentionProvider);
-            }
-          }
-
-        }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1208202100447", true);
-      }
-    */
     {
       SNode _nodeToCheck_1029348928467 = null;
       BaseIntentionProvider intentionProvider = null;
