@@ -1,7 +1,7 @@
 <component>
   <version codename="Yellow Fox" major="8" minor="0M1" eap="true"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
-  <logo url="/jetbrains/mps/workbench/icons/splash3.png" textcolor="002387"/>
+  <logo url="/jetbrains/mps/workbench/icons/splash.png" textcolor="002387"/>
   <about url="/jetbrains/mps/workbench/icons/mpsAbout.png"/>
   <icon size32="/icon.png" size16="/icon.png" size32opaque="/icon.png"/>
   <package code="__PACKAGE_CODE__"/>

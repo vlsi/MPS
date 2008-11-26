@@ -22,11 +22,11 @@ public class MPSLicenseManager extends LicenseManager {
   }
 
   public String licensedToMessage() {
-    return "MPS EAP User";
+    return "";
   }
 
   public String licensedRestrictionsMessage() {
-    return "(C) 2003-2008, JetBrains, s.r.o. All rights reserved.";
+    return "";
   }
 
   public LicenseFactory createLicenseFactory() {
