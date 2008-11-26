@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 public class GenerateTextFromCurrentModelAction extends GenerateCurrentModelAction {
   public GenerateTextFromCurrentModelAction() {
     super("Generate Text From Current Model");
+    addPlace(null);
   }
 
   @NotNull

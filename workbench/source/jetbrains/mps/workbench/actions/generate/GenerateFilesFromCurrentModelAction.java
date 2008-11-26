@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 public class GenerateFilesFromCurrentModelAction extends GenerateCurrentModelAction {
   public GenerateFilesFromCurrentModelAction() {
     super("Generate Files From Current Model");
-    addPlace(ActionPlace.PROJECT_PANE_SNODE);
+    addPlace(null);
   }
 
   @NotNull
