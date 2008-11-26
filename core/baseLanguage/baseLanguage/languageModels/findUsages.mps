@@ -788,7 +788,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1200317943493">
-    <property name="name" value="MethodUsages" />
+    <property name="name" value="OverridenAndImplementedMethodUsages" />
     <property name="description" value="Method Usages" />
     <property name="isVisible" value="true" />
     <link role="forConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
@@ -1003,7 +1003,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206463276864">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206463279492">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206463279806">
-            <property name="value" value="Method usages" />
+            <property name="value" value="Overriden And Implemented methods" />
           </node>
         </node>
       </node>
@@ -1087,6 +1087,15 @@
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206537426857">
             <property name="name" value="methodDeclaration" />
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1206537426858" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isVisibleBlock" type="jetbrains.mps.lang.findUsages.structure.IsVisibleBlock" id="1227689343885">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227689343886">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227689348504">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1227689348505">
+            <property name="value" value="false" />
           </node>
         </node>
       </node>
