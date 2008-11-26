@@ -42,7 +42,7 @@ public final class TBuffer {
 
   public void append(final String text) {
     if (myCanAppend) {
-      if (text.length() == 1) {
+      if (text != null && text.length() == 1) {
         myStringBuilder.append(text.charAt(0));
       } else {
         myStringBuilder.append(text);
