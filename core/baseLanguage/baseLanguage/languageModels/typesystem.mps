@@ -1658,19 +1658,19 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193834940539">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1193834966925">
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332446168">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332445457">
-                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1193834978495">
-                  <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter" id="1193834969834" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445458">
-                  <link role="baseMethodDeclaration" targetNodeId="19.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
-                </node>
-              </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332446169">
                 <link role="baseMethodDeclaration" targetNodeId="4.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193834990285">
-                  <property name="value" value="initializer" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332445457">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1193834978495">
+                    <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter" id="1193834969834" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445458">
+                    <link role="baseMethodDeclaration" targetNodeId="19.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
+                  </node>
                 </node>
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193834990285">
+                <property name="value" value="initializer" />
               </node>
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193834966927">
