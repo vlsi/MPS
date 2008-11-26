@@ -6,8 +6,8 @@ import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -80,7 +80,7 @@ public class ActionFactory {
   public BaseGroup acquireRegisteredGroup(Class groupClass, String languageNamespace, Object... params) {
     String id = null;
     try {
-      id = (String)groupClass.getField("ID").get(null);
+      id = (String) groupClass.getField("ID").get(null);
     } catch (Exception e) {
       id = groupClass.getName();
     }
@@ -146,30 +146,39 @@ public class ActionFactory {
     return null;
   }
 
+  private static void unregisterAnchor(@NotNull String anchorId) {
+
+  }
+
   public void unregisterActions() {
+    unregisterGroups();
+
+    ActionManager manager = ActionManager.getInstance();
     for (String actionId : myActions) {
-      AnAction action = ActionManager.getInstance().getAction(actionId);
-      if (action instanceof BaseGroup){
-        unregisterGroup(actionId);
-      }
-      ActionManager.getInstance().unregisterAction(actionId);
+      manager.unregisterAction(actionId);
     }
-                                              
     myActions.clear();
   }
 
-   private void unregisterGroup(String groupId) {
+  private void unregisterGroups() {
     ActionManager manager = ActionManager.getInstance();
 
-    ActionGroup group = (ActionGroup) manager.getAction(groupId);
-    for (String id : manager.getActionIds("")) {
-      AnAction action = manager.getAction(id);
-      if (action instanceof ActionGroup) {
-        unregisterAllActionOccurencesInGroup((ActionGroup) action, group);
+    List<BaseGroup> groups = new ArrayList<BaseGroup>(1000);
+    for (String actionId : myActions) {
+      AnAction action = ActionManager.getInstance().getAction(actionId);
+      if (action instanceof BaseGroup) {
+        groups.add((BaseGroup) action);
       }
     }
 
-    manager.unregisterAction(groupId);
+    for (String id : manager.getActionIds("")) {
+      AnAction action = manager.getAction(id);
+      if (action instanceof ActionGroup) {
+        for (ActionGroup group:groups){
+          unregisterAllActionOccurencesInGroup((ActionGroup) action, group);
+        }
+      }
+    }
   }
 
   private static void unregisterAllActionOccurencesInGroup(ActionGroup group, AnAction action) {
@@ -183,13 +192,5 @@ public class ActionFactory {
     if (group instanceof DefaultActionGroup) {
       ((DefaultActionGroup) group).remove(action);
     }
-  }
-
-  private static void unregisterAnchor(@NotNull String anchorId) {
-    //anchor is only unregistered, cause the group is guaranteed to be in the same plugin
-    //and though the anchor will be removed with its containing group
-    ActionManager m = ActionManager.getInstance();
-    assert m.getAction(anchorId) != null;
-    m.unregisterAction(anchorId);
   }
 }
