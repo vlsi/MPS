@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.HashSet;

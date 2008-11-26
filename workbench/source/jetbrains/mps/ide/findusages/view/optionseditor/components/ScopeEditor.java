@@ -7,13 +7,13 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.workbench.action.InternalFlag;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.List;
+import java.util.ArrayList;
 
 public class ScopeEditor extends BaseEditor<ScopeOptions> {
   private static final String GLOBAL_SCOPE = "Global scope";
@@ -86,22 +86,24 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     }
 
     List<IModule> moduleList = MPSModuleRepository.getInstance().getAllModules();
-    List<String> moduleNameList = CollectionUtil.map(moduleList, new Mapper<IModule, String>() {
-      public String map(IModule iModule) {
-        return iModule.getModuleUID();
-      }
-    });
+    List<String> moduleNameList = new ArrayList<String>();
+
+    for (IModule iModule : moduleList) {
+      moduleNameList.add(iModule.getModuleUID());
+    }
+
     myModuleNameList = moduleNameList;
     myModuleNameList.add(0, ScopeOptions.DEFAULT_VALUE);
     myModuleField = new DefaultCompletionTextField(moduleNameList);
     myModuleField.setText(ScopeOptions.DEFAULT_VALUE);
 
     List<SModelDescriptor> modelList = SModelRepository.getInstance().getModelDescriptors();
-    myModelNameList = CollectionUtil.map(modelList, new Mapper<SModelDescriptor, String>() {
-      public String map(SModelDescriptor sModelDescriptor) {
-        return sModelDescriptor.getLongName();
-      }
-    });
+    myModelNameList = new ArrayList<String>();
+
+    for (SModelDescriptor sModelDescriptor : modelList) {
+      myModelNameList.add(sModelDescriptor.getLongName());
+    }
+
     myModelNameList.add(0, ScopeOptions.DEFAULT_VALUE);
     myModelField = new DefaultCompletionTextField(myModelNameList);
     myModelField.setText(ScopeOptions.DEFAULT_VALUE);

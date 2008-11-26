@@ -13,9 +13,9 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class LanguageConceptsUsagesFinder extends BaseFinder {
   public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
@@ -35,11 +35,12 @@ public class LanguageConceptsUsagesFinder extends BaseFinder {
     searchResults.getSearchedNodes().addAll(sModel.getRoots());
 
     SearchResults<SModel> modelResults = FindUtils.getSearchResults(indicator, new SearchQuery(sModel, GlobalScope.getInstance()), new ModelUsagesFinder());
-    List<SModelDescriptor> models = CollectionUtil.map(modelResults.getSearchResults(),new Mapper<SearchResult<SModel>, SModelDescriptor>() {
-      public SModelDescriptor map(SearchResult<SModel> sModelSearchResult) {
-        return sModelSearchResult.getObject().getModelDescriptor();
-      }
-    });
+    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+
+    for (SearchResult<SModel> sModelSearchResult : modelResults.getSearchResults()) {
+      models.add(sModelSearchResult.getObject().getModelDescriptor());
+    }
+
     IScope scope = new ModelsScope(models.toArray(new SModelDescriptor[models.size()]));
 
     SearchResults results = FindUtils.getSearchResults(indicator, sModel.getRoots(), scope, new NodeUsages_Finder());
