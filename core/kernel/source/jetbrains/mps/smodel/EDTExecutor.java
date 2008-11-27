@@ -21,7 +21,7 @@ class EDTExecutor {
   public EDTExecutor() {
     myExecutor = new Executor();
     myExecutor.setDaemon(true);
-    myExecutor.start();
+//    myExecutor.start();
   }
 
 

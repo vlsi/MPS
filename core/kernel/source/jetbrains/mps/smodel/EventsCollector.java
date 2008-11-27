@@ -21,10 +21,13 @@ public class EventsCollector {
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
   private CommandListener myCommandListener;
   private CommandProcessor myCommandProcessor;
+
   private Runnable myCurrentCommand;
 
-  public EventsCollector() {
+  public EventsCollector() {    
     myCommandProcessor = CommandProcessor.getInstance();
+    myCurrentCommand = myCommandProcessor.getCurrentCommand();
+    
     ourListenersSupport.addCommandListener(myCommandListener = new CommandAdapter() {
       public void commandStarted(CommandEvent event) {
         myEvents.clear();
