@@ -12889,10 +12889,6 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221233921715">
       <property name="name" value="getMethodType" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227631794495">
-        <property name="name" value="a" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227631794496" />
-      </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221233921718">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221233934692">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221234504379">
@@ -12914,6 +12910,7 @@
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227631794494">
         <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1227784315166" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221233830881">
       <property name="name" value="addCallExpression" />
@@ -13154,10 +13151,6 @@
     <property name="name" value="ExtractMethodWithReturn" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221236679389">
       <property name="name" value="getMethodType" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227631827904">
-        <property name="name" value="a" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227631827905" />
-      </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221236679392">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221236774164">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221667139078">
@@ -13181,6 +13174,7 @@
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227631827903">
         <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1227784056178" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221238447654">
       <property name="name" value="addCallExpression" />

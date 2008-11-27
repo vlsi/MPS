@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,6 +17,9 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
+    if (!(BaseMethodDeclaration_Behavior.call_isDataFlowChecked_1227714048980(nodeToCheck))) {
+      return;
+    }
     if ((SLinkOperations.getTarget(nodeToCheck, "body", true) != null)) {
       DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodeToCheck, "body", true));
     }
