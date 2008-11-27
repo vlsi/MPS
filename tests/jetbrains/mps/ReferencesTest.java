@@ -22,7 +22,7 @@ public class ReferencesTest extends BaseMPSTest {
     final List<String> fatals = new ArrayList<String>();
 
     ILoggingHandler handler = new ILoggingHandler() {
-      public void info(LogEntry e) {
+      public void  info(LogEntry e) {
       }
 
       public void warning(LogEntry e) {        
