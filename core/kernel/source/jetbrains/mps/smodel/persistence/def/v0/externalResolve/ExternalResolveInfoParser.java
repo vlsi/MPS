@@ -19,7 +19,7 @@ import java.util.Set;
 public class ExternalResolveInfoParser {
   private static final Logger LOG = Logger.getLogger(ExternalResolveInfoParser.class);
 
-  private static final Set<Character> NAME_FINISHING_CHARS = CollectionUtil.asSet(' ', ':', ')', '(', ',', '.', '[', ']');
+  private static final Set<Character> NAME_FINISHING_CHARS = CollectionUtil.set(' ', ':', ')', '(', ',', '.', '[', ']');
 
   static String getHumanFriendlyString(String resolveInfo) {
     boolean isMember = false;

@@ -23,7 +23,7 @@ public class Queries {
 
   public static SNode getBinaryOperationType(SNode leftType, SNode rightType, boolean mayBeString) {
     SModel runtimeTypesModel = TypeChecker.getInstance().getRuntimeTypesModel();
-    Set<SNode> types = CollectionUtil.asSet(leftType, rightType);
+    Set<SNode> types = CollectionUtil.set(leftType, rightType);
     Set<SNode> leastCommonSupertypes = TypeChecker.getInstance().getSubtypingManager().leastCommonSupertypes(types, true);
 
     if (mayBeString) {

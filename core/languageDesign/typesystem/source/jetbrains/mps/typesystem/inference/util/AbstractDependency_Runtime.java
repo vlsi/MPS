@@ -23,6 +23,6 @@ public abstract class AbstractDependency_Runtime implements IDependency_Runtime 
     if (node == null) {
       return new HashSet<SNode>();
     }
-    return CollectionUtil.asSet(node);
+    return CollectionUtil.set(node);
   }
 }

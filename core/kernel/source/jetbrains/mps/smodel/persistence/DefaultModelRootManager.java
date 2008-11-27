@@ -159,7 +159,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   }
 
   public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
-    return containsSomeString(modelDescriptor, CollectionUtil.asSet(string));
+    return containsSomeString(modelDescriptor, CollectionUtil.set(string));
   }
 
 

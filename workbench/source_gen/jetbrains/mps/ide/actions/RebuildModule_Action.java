@@ -77,8 +77,8 @@ public class RebuildModule_Action extends GeneratedAction {
           ModelAccess.instance().runReadAction(new Runnable() {
 
             public void run() {
-              maker.clean(CollectionUtil.asSet(module), indicator);
-              maker.make(CollectionUtil.asSet(module), indicator);
+              maker.clean(CollectionUtil.set(module), indicator);
+              maker.make(CollectionUtil.set(module), indicator);
               ClassLoaderManager.getInstance().reloadAll(indicator);
             }
 

@@ -101,19 +101,19 @@ public class CollectionUtil {
     return result;
   }
 
- public static <T> Set<T> asSet(T... ts) {
+ public static <T> Set<T> set(T... ts) {
     Set<T> result = new HashSet<T>();
     result.addAll(Arrays.asList(ts));
     return result;
   }
 
-  public static <T> Set<T> asStableSet(T... ts) {
+  public static <T> Set<T> stableSet(T... ts) {
     Set<T> result = new LinkedHashSet<T>();
     result.addAll(Arrays.asList(ts));
     return result;
   }
 
-  public static <T> List<T> asList(T... ts) {
+  public static <T> List<T> list(T... ts) {
     List<T> result = new ArrayList<T>();
     result.addAll(Arrays.asList(ts));
     return result;

@@ -6,7 +6,6 @@ import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.misc.hash.*;
 import jetbrains.mps.vcs.diff.changes.*;
 
 import java.util.*;
@@ -221,7 +220,7 @@ public class Merger {
     for (MoveNodeChange mnc : getChanges(MoveNodeChange.class)) {
       String newRole = mnc.getNewRole();
 
-      for (SNode newParent : CollectionUtil.asSet(getMyne(mySourceModels).getNodeById(mnc.getNewParent()),
+      for (SNode newParent : CollectionUtil.set(getMyne(mySourceModels).getNodeById(mnc.getNewParent()),
         getMyne(mySourceModels).getNodeById(mnc.getNewParent()))) {
         while (newParent != null) {
           if (changes.containsKey(new Pair(newParent.getId(), newRole))) {

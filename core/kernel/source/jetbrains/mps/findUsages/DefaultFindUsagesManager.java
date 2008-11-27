@@ -1,6 +1,5 @@
 package jetbrains.mps.findUsages;
 
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -81,7 +80,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
    */
   public Set<SReference> findUsages(SNode node, IScope scope, IAdaptiveProgressMonitor progress) {
     LOG.assertCanRead();
-    return findUsages(CollectionUtil.asSet(node), scope, progress,true);
+    return findUsages(CollectionUtil.set(node), scope, progress,true);
   }
 
   public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {

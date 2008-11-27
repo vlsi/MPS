@@ -295,7 +295,7 @@ public class GenerationController {
           String info = "compiling in JetBrains MPS...";
           setText2(info, totalJob, startJobTime);
           info(info);
-          compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new EmptyProgressIndicator());
+          compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressIndicator());
           taskProgressHelper.finishTask();
         }
         if (compilationResult == null || compilationResult.getErrors() > 0) {

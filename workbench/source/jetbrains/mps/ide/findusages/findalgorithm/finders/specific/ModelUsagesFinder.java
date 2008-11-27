@@ -25,7 +25,7 @@ public class ModelUsagesFinder extends BaseFinder {
       if (!SModelStereotype.isUserModel(modelDescriptor)) {
         continue;
       }
-      if (modelDescriptor.hasUsages(CollectionUtil.asSet(modelReference))) {
+      if (modelDescriptor.hasUsages(CollectionUtil.set(modelReference))) {
         searchResults.getSearchResults().add(new SearchResult<SModel>(modelDescriptor.getSModel(), "usages in imports"));
       }
     }

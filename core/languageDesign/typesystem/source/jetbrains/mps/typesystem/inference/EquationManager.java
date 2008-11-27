@@ -390,7 +390,7 @@ public class EquationManager {
 
   private List<SNode> getChildAndReferentVariables(SNode node) {
     if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
-      return CollectionUtil.asList(node);
+      return CollectionUtil.list(node);
     }
     List<SNode> result = new ArrayList<SNode>();
     for (SNode referent : node.getReferents()) {

@@ -28,7 +28,7 @@ public class ExternalResolver {
   public static final String ENUM_CONST = "enum const ";
   public static final String CLASSIFIER = "classifier ";
   public static final String NO_MEMBER_TYPE = "none ";
-  public static final Set<String> MEMBER_TYPES = CollectionUtil.asSet(FIELD, STATIC_FIELD, METHOD, STATIC_METHOD, ENUM_CONST);
+  public static final Set<String> MEMBER_TYPES = CollectionUtil.set(FIELD, STATIC_FIELD, METHOD, STATIC_METHOD, ENUM_CONST);
 
 //  public static String createExternalResolveInfo(SReference reference) {
 //    if (!isEmptyExtResolveInfo(reference.getExtResolveInfo())) return reference.getExtResolveInfo();

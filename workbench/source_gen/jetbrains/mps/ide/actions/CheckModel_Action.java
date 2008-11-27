@@ -78,7 +78,7 @@ public class CheckModel_Action extends GeneratedAction {
           ModelAccess.instance().runReadAction(new Runnable() {
 
             public void run() {
-              ModelCheckerUtil.checkModels(context, CollectionUtil.asSet(model), new NullAdaptiveProgressMonitor());
+              ModelCheckerUtil.checkModels(context, CollectionUtil.set(model), new NullAdaptiveProgressMonitor());
             }
 
           });

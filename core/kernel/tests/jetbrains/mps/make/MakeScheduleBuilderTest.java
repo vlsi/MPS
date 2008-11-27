@@ -1,6 +1,5 @@
 package jetbrains.mps.make;
 
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
@@ -17,12 +16,12 @@ public class MakeScheduleBuilderTest {
     Module a = new Module("a");
     Module b = new Module("b");
 
-    List<Set<Module>> schedule = new MyMakeScheduleBuilder().buildSchedule(CollectionUtil.asStableSet(a, b));
+    List<Set<Module>> schedule = new MyMakeScheduleBuilder().buildSchedule(CollectionUtil.stableSet(a, b));
 
     Assert.assertEquals(
-      CollectionUtil.asList(
-        CollectionUtil.asSet(a),
-        CollectionUtil.asSet(b)
+      CollectionUtil.list(
+        CollectionUtil.set(a),
+        CollectionUtil.set(b)
       ),
       schedule
     );
@@ -35,12 +34,12 @@ public class MakeScheduleBuilderTest {
 
     b.addDependency(a);
 
-    List<Set<Module>> schedule = new MyMakeScheduleBuilder().buildSchedule(CollectionUtil.asStableSet(a, b));
+    List<Set<Module>> schedule = new MyMakeScheduleBuilder().buildSchedule(CollectionUtil.stableSet(a, b));
 
     Assert.assertEquals(
-      CollectionUtil.asList(
-        CollectionUtil.asSet(a),
-        CollectionUtil.asSet(b)
+      CollectionUtil.list(
+        CollectionUtil.set(a),
+        CollectionUtil.set(b)
       ),
       schedule
     );
@@ -54,11 +53,11 @@ public class MakeScheduleBuilderTest {
     a.addDependency(b);
     b.addDependency(a);
 
-    List<Set<Module>> schedule = new MyMakeScheduleBuilder().buildSchedule(CollectionUtil.asStableSet(a, b));
+    List<Set<Module>> schedule = new MyMakeScheduleBuilder().buildSchedule(CollectionUtil.stableSet(a, b));
 
     Assert.assertEquals(
-      CollectionUtil.asList(
-        CollectionUtil.asSet(a, b)
+      CollectionUtil.list(
+        CollectionUtil.set(a, b)
       ),
       schedule
     );
@@ -73,13 +72,13 @@ public class MakeScheduleBuilderTest {
     b.addDependency(a);
     c.addDependency(a);
 
-    List<Set<Module>> schedule = new MyMakeScheduleBuilder().buildSchedule(CollectionUtil.asStableSet(a, b, c));
+    List<Set<Module>> schedule = new MyMakeScheduleBuilder().buildSchedule(CollectionUtil.stableSet(a, b, c));
 
     Assert.assertEquals(
-      CollectionUtil.asList(
-        CollectionUtil.asSet(a),
-        CollectionUtil.asSet(b),
-        CollectionUtil.asSet(c)
+      CollectionUtil.list(
+        CollectionUtil.set(a),
+        CollectionUtil.set(b),
+        CollectionUtil.set(c)
       ),
       schedule
     );
@@ -97,11 +96,11 @@ public class MakeScheduleBuilderTest {
     c.addDependency(b);
     b.addDependency(a);
 
-    List<Set<Module>> schedule = new MyMakeScheduleBuilder().buildSchedule(CollectionUtil.asStableSet(a, b, c));
+    List<Set<Module>> schedule = new MyMakeScheduleBuilder().buildSchedule(CollectionUtil.stableSet(a, b, c));
 
     Assert.assertEquals(
-      CollectionUtil.asList(
-        CollectionUtil.asStableSet(a, b, c)
+      CollectionUtil.list(
+        CollectionUtil.stableSet(a, b, c)
       ),
       schedule
     );

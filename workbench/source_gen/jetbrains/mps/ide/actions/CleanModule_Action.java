@@ -79,7 +79,7 @@ public class CleanModule_Action extends GeneratedAction {
 
             public void run() {
               ModuleMaker maker = new ModuleMaker();
-              maker.clean(CollectionUtil.asSet(m), indicator);
+              maker.clean(CollectionUtil.set(m), indicator);
             }
 
           });

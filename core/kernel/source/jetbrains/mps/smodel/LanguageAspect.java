@@ -217,7 +217,7 @@ public enum LanguageAspect {
   public abstract ModuleReference getMainLanguage();
 
   protected List<String> getModelsToImport(Language l) {
-    return CollectionUtil.asList(
+    return CollectionUtil.list(
       l.getStructureModelDescriptor().getSModelReference().toString()
     );
   }

@@ -27,7 +27,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
         SNode concept = structureModelDescriptor.getSModel().getRootByName(conceptName);
         refactoringContext.setSelectedMPSProject(project);
         refactoringContext.setSelectedNode(concept);
-        refactoringContext.setSelectedNodes(CollectionUtil.asList(concept));
+        refactoringContext.setSelectedNodes(CollectionUtil.list(concept));
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter(MoveConcepts.targetModel, targetStructureModelDescriptor[0]);
       }

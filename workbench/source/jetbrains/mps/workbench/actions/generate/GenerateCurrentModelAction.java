@@ -25,7 +25,7 @@ public abstract class GenerateCurrentModelAction extends BaseAction {
 
   public void doExecute(AnActionEvent e) {
     myGenManager.generateModelsWithProgressWindow(
-      CollectionUtil.asList(myModel),
+      CollectionUtil.list(myModel),
       myContext,
       getGenerationType(),
       true

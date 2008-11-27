@@ -77,7 +77,7 @@ public class MakeModule_Action extends GeneratedAction {
 
             public void run() {
               ModuleMaker maker = new ModuleMaker();
-              maker.make(CollectionUtil.asSet(m), indicator);
+              maker.make(CollectionUtil.set(m), indicator);
               ClassLoaderManager.getInstance().reloadAll(indicator);
             }
 

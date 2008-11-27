@@ -387,7 +387,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public Set<SReference> findUsages(SNode node) {
-    return findUsages(CollectionUtil.asSet(node));
+    return findUsages(CollectionUtil.set(node));
   }
 
   public boolean hasUsages(Set<SModelReference> models) {

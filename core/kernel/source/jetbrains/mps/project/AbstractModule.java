@@ -602,7 +602,7 @@ public abstract class AbstractModule implements IModule {
 
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
-    return getDependenciesClasspath(CollectionUtil.asSet((IModule) this), false, false);
+    return getDependenciesClasspath(CollectionUtil.set((IModule) this), false, false);
   }
 
   public BytecodeLocator getBytecodeLocator() {
