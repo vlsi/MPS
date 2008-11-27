@@ -5120,35 +5120,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1200923951919">
-    <link role="conceptDeclaration" targetNodeId="1.1200923907774" resolveInfo="ConditionalRootExpression" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1200923955171">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1216769249218">
-        <property name="text" value="!deprecated" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1216769275578">
-          <property name="color" value="red" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1200923962003">
-        <link role="relationDeclaration" targetNodeId="1.1200923917743" />
-        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1219349244773">
-          <link role="conceptDeclaration" targetNodeId="1.1200911316486" resolveInfo="MappingLabelDeclaration" />
-          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1219349264603">
-            <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
-            <link role="styleClass" targetNodeId="1216755869996" resolveInfo="mappingLableReference" />
-          </node>
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1200923965367">
-        <property name="text" value="in" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1200923967182">
-        <link role="relationDeclaration" targetNodeId="1.1200923934902" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1202780999264">
     <property name="package" value="rule.consequence" />
     <link role="conceptDeclaration" targetNodeId="1.1202776937179" resolveInfo="AbandonInput_RuleConsequence" />

@@ -74,10 +74,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1200924580714(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1219959436950(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return TemplateFunctionMethodName.dropRootRule_Condition(_context.getNode());
   }
@@ -141,10 +137,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1200915812769(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
-  }
-
-  public static SNode sourceNodeQuery_1200924590431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "templateGenerator", true);
   }
 
   public static SNode sourceNodeQuery_1203537118966(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

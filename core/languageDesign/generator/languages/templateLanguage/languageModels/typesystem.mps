@@ -1957,45 +1957,6 @@
       <link role="concept" targetNodeId="3.1167087469898" resolveInfo="CreateRootRule" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1200923993013">
-    <property name="name" value="typeof_ConditionalRootExpression" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200923993014">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1200923995907">
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1200923998066">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1200923998067">
-            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1200923998866">
-              <link role="applicableNode" targetNodeId="1200923993015" resolveInfo="nodeToCheck" />
-            </node>
-          </node>
-        </node>
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1200924001430">
-          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1200924001431">
-            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1200924003339">
-              <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1200924003653">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227926154">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227879792">
-                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1200924004748">
-                      <link role="applicableNode" targetNodeId="1200923993015" resolveInfo="nodeToCheck" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1200924005768">
-                      <link role="link" targetNodeId="3.1200923917743" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1200924007163">
-                    <link role="link" targetNodeId="3.1200913004646" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1200923993015">
-      <property name="name" value="nodeToCheck" />
-      <link role="concept" targetNodeId="3.1200923907774" resolveInfo="ConditionalRootExpression" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1221153432505">
     <property name="name" value="typeof_TemplateFunctionParameter_outputNode" />
     <property name="package" value="functionParameter" />
