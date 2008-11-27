@@ -1796,10 +1796,10 @@
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215873275333">
                                     <link role="variableDeclaration" targetNodeId="1215873275303" resolveInfo="context" />
                                   </node>
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215873473126">
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227782744020">
+                                    <link role="baseMethodDeclaration" targetNodeId="76.~CollectionUtil.set(java.lang.Object...):java.util.Set" resolveInfo="set" />
                                     <link role="classConcept" targetNodeId="76.~CollectionUtil" resolveInfo="CollectionUtil" />
-                                    <link role="baseMethodDeclaration" targetNodeId="76.~CollectionUtil.asSet(java.lang.Object...):java.util.Set" resolveInfo="asSet" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215873477879">
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227782744021">
                                       <link role="variableDeclaration" targetNodeId="1215873334650" resolveInfo="model" />
                                     </node>
                                   </node>
@@ -2051,10 +2051,10 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215874456780">
                                     <link role="baseMethodDeclaration" targetNodeId="77.~ModuleMaker.clean(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):void" resolveInfo="clean" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215874456781">
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227782759069">
+                                      <link role="baseMethodDeclaration" targetNodeId="76.~CollectionUtil.set(java.lang.Object...):java.util.Set" resolveInfo="set" />
                                       <link role="classConcept" targetNodeId="76.~CollectionUtil" resolveInfo="CollectionUtil" />
-                                      <link role="baseMethodDeclaration" targetNodeId="76.~CollectionUtil.asSet(java.lang.Object...):java.util.Set" resolveInfo="asSet" />
-                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215874456782">
+                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227782759070">
                                         <link role="variableDeclaration" targetNodeId="1215874149288" resolveInfo="m" />
                                       </node>
                                     </node>
@@ -3705,10 +3705,10 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215903323698">
                                     <link role="baseMethodDeclaration" targetNodeId="77.~ModuleMaker.make(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):jetbrains.mps.plugin.CompilationResult" resolveInfo="make" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215903334073">
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227782763654">
+                                      <link role="baseMethodDeclaration" targetNodeId="76.~CollectionUtil.set(java.lang.Object...):java.util.Set" resolveInfo="set" />
                                       <link role="classConcept" targetNodeId="76.~CollectionUtil" resolveInfo="CollectionUtil" />
-                                      <link role="baseMethodDeclaration" targetNodeId="76.~CollectionUtil.asSet(java.lang.Object...):java.util.Set" resolveInfo="asSet" />
-                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215903338628">
+                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227782763655">
                                         <link role="variableDeclaration" targetNodeId="1215903098533" resolveInfo="m" />
                                       </node>
                                     </node>
@@ -4492,10 +4492,10 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215909058605">
                                     <link role="baseMethodDeclaration" targetNodeId="77.~ModuleMaker.clean(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):void" resolveInfo="clean" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215909069733">
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227782768537">
+                                      <link role="baseMethodDeclaration" targetNodeId="76.~CollectionUtil.set(java.lang.Object...):java.util.Set" resolveInfo="set" />
                                       <link role="classConcept" targetNodeId="76.~CollectionUtil" resolveInfo="CollectionUtil" />
-                                      <link role="baseMethodDeclaration" targetNodeId="76.~CollectionUtil.asSet(java.lang.Object...):java.util.Set" resolveInfo="asSet" />
-                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215909073421">
+                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227782768538">
                                         <link role="variableDeclaration" targetNodeId="1215908935250" resolveInfo="module" />
                                       </node>
                                     </node>
@@ -4512,10 +4512,10 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215909100872">
                                     <link role="baseMethodDeclaration" targetNodeId="77.~ModuleMaker.make(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):jetbrains.mps.plugin.CompilationResult" resolveInfo="make" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215909109573">
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227782772792">
+                                      <link role="baseMethodDeclaration" targetNodeId="76.~CollectionUtil.set(java.lang.Object...):java.util.Set" resolveInfo="set" />
                                       <link role="classConcept" targetNodeId="76.~CollectionUtil" resolveInfo="CollectionUtil" />
-                                      <link role="baseMethodDeclaration" targetNodeId="76.~CollectionUtil.asSet(java.lang.Object...):java.util.Set" resolveInfo="asSet" />
-                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215909112575">
+                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227782772793">
                                         <link role="variableDeclaration" targetNodeId="1215908935250" resolveInfo="module" />
                                       </node>
                                     </node>

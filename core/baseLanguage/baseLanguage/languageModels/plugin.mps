@@ -11340,22 +11340,22 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220256094396">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220256094400">
                 <link role="baseMethodDeclaration" targetNodeId="58.~SubtypingManager.mostSpecificType(java.util.Set):jetbrains.mps.smodel.SNode" resolveInfo="mostSpecificType" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220256214563">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227782656078">
+                  <link role="baseMethodDeclaration" targetNodeId="61.~CollectionUtil.set(java.lang.Object...):java.util.Set" resolveInfo="set" />
                   <link role="classConcept" targetNodeId="61.~CollectionUtil" resolveInfo="CollectionUtil" />
-                  <link role="baseMethodDeclaration" targetNodeId="61.~CollectionUtil.asSet(java.lang.Object...):java.util.Set" resolveInfo="asSet" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1220256126031">
-                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190453006" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1227782656079">
+                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1227782656080" />
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1220256133471">
-                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220256155927">
+                  <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1227782656081">
+                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227782656082">
                       <link role="classifier" targetNodeId="9.~Object" resolveInfo="Object" />
                     </node>
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1220256489789">
-                    <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1220256496213" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1227782656083">
+                    <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227782656084" />
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1220256722570">
-                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1220256773385" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1227782656085">
+                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1227782656086" />
                   </node>
                 </node>
               </node>
