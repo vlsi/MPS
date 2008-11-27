@@ -281,6 +281,7 @@
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1175519336188">
+        <property name="checkOnly" value="true" />
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185790951906">
           <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1175519338112">
             <node role="term" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1175519343161">
