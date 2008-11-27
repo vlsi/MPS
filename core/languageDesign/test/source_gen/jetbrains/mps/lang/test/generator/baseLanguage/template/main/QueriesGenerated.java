@@ -65,7 +65,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1221570038142(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IOperationContext invocationContext = _context.getGenerator().getGeneratorSessionContext().getInvocationContext();
+    IOperationContext invocationContext = _context.getInvocationContext();
     String url = invocationContext.getProject().getPresentableUrl();
     if (url != null) {
       String path = url.replaceAll("/", "\\\\");
