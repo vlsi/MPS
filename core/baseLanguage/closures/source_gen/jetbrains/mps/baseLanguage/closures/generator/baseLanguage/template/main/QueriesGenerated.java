@@ -1097,7 +1097,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1216995176860(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    FunctionTypeUtil.putPostData(_context.getNode(), "done", _context.getGenerator());
+    FunctionTypeUtil.putPostData(_context.getNode(), "done", _context);
     return _context.getNode();
   }
 

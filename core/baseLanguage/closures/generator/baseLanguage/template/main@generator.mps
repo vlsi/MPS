@@ -2328,7 +2328,7 @@
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216995176865">
                               <property name="value" value="done" />
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1216995176866" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227744315672" />
                           </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216995176867">

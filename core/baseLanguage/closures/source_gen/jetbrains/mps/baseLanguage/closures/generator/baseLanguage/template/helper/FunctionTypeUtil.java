@@ -218,8 +218,8 @@ public class FunctionTypeUtil {
     return generator.getGeneratorSessionContext().getStepObject("classifierType_prepdata_" + ((SNode)sn).getId());
   }
 
-  public static void putPostData(SNode sn, Object data, ITemplateGenerator generator) {
-    generator.getGeneratorSessionContext().putStepObject("classifierType_postData_" + ((SNode)sn).getId(), data);
+  public static void putPostData(SNode sn, Object data, TemplateQueryContext genContext) {
+    genContext.putStepObject("classifierType_postData_" + ((SNode)sn).getId(), data);
   }
 
   public static Object getPostData(SNode sn, ITemplateGenerator generator) {
