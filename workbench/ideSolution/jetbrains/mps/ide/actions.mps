@@ -610,10 +610,10 @@
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204980917260" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518715820">
-        <link role="constructorDeclaration" targetNodeId="14.~GenerateFilesFromCurrentModelAction.&lt;init&gt;()" resolveInfo="GenerateFilesFromCurrentModelAction" />
+        <link role="constructorDeclaration" targetNodeId="14.~GenerateFilesFromModelsAction.&lt;init&gt;()" resolveInfo="GenerateFilesFromModelsAction" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518715931">
-        <link role="constructorDeclaration" targetNodeId="14.~GenerateTextFromCurrentModelAction.&lt;init&gt;()" resolveInfo="GenerateTextFromCurrentModelAction" />
+        <link role="constructorDeclaration" targetNodeId="14.~GenerateTextFromModelsAction.&lt;init&gt;()" resolveInfo="GenerateTextFromModelsAction" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1227147966966">
         <link role="constructorDeclaration" targetNodeId="131.~GoToUsageInMappingConfigAction.&lt;init&gt;()" resolveInfo="GoToUsageInMappingConfigAction" />
@@ -747,10 +747,10 @@
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1215003470096" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518717866">
-        <link role="constructorDeclaration" targetNodeId="14.~GenerateFilesFromCurrentModelAction.&lt;init&gt;()" resolveInfo="GenerateFilesFromCurrentModelAction" />
+        <link role="constructorDeclaration" targetNodeId="14.~GenerateFilesFromModelsAction.&lt;init&gt;()" resolveInfo="GenerateFilesFromModelsAction" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518716815">
-        <link role="constructorDeclaration" targetNodeId="14.~GenerateTextFromCurrentModelAction.&lt;init&gt;()" resolveInfo="GenerateTextFromCurrentModelAction" />
+        <link role="constructorDeclaration" targetNodeId="14.~GenerateTextFromModelsAction.&lt;init&gt;()" resolveInfo="GenerateTextFromModelsAction" />
       </node>
     </node>
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1215012731529">
