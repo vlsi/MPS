@@ -4,6 +4,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.project.IModule;

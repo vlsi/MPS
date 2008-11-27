@@ -31,7 +31,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
   }
 
   public AbstractFileTreeNode(Project project,@NotNull VirtualFile file, boolean showFullPath) {
-    super(null);
+    super(new MyIOperationContext());
     myFile = file;
     myProvider = project.getComponent(VcsFileStatusProvider.class);
     myProject = project;
@@ -76,5 +76,40 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
         children.add((FileNode) getChildAt(i));
       }
     return children;
+  }
+
+  private static class MyIOperationContext implements IOperationContext {
+    public MyIOperationContext() {
+    }
+
+    @Deprecated
+      public MPSProject getMPSProject() {
+          return null;
+        }
+
+    public Project getProject() {
+      return null;
+    }
+
+    public IModule getModule() {
+      return null;
+    }
+
+    @NotNull
+    public IScope getScope() {
+      return GlobalScope.getInstance();
+    }
+
+    public Frame getMainFrame() {
+      return null;
+    }
+
+    public boolean isTestMode() {
+      return false;
+    }
+
+    public <T> T getComponent(Class<T> clazz) {
+      return null;
+    }
   }
 }
