@@ -29,6 +29,7 @@ import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.structure.FragmentTypeEnum;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -101,7 +102,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1194616749686(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new _Quotations.QuotationClass_0().createNode(), false, false);
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new _Quotations.QuotationClass_0().createNode(), false);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013650814(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -351,7 +352,7 @@ public class QueriesGenerated {
         public Object calculate() {
           List<SNode> res = ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper"));
           if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
-            for(SNode foo : SLinkOperations.getTargets(_context.getParentNode(), "functions", true)) {
+            for(SNode foo : Sequence.fromIterable(SLinkOperations.getTargets(_context.getParentNode(), "functions", true))) {
               if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureReplaceFun")) {
                 ListSequence.fromList(res).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"));
               } else
@@ -384,7 +385,7 @@ public class QueriesGenerated {
           public Object calculate() {
             List<FragmentTypeEnum> types = ListSequence.<FragmentTypeEnum>fromArray(FragmentTypeEnum.replace_single, FragmentTypeEnum.replace_selection, FragmentTypeEnum.replace_all, FragmentTypeEnum.remove_single, FragmentTypeEnum.remove_selection, FragmentTypeEnum.remove_all, FragmentTypeEnum.insert_at_start, FragmentTypeEnum.insert_at_end, FragmentTypeEnum.insert_before, FragmentTypeEnum.insert_after);
             if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
-              for(SNode foo : SLinkOperations.getTargets(_context.getParentNode(), "functions", true)) {
+              for(SNode foo : Sequence.fromIterable(SLinkOperations.getTargets(_context.getParentNode(), "functions", true))) {
                 if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment")) {
                   ListSequence.fromList(types).removeElement(FragmentTypeEnum.parseValue(SPropertyOperations.getString_def(foo, "fragmentType", "REPLACE_SINGLE")));
                 } else
@@ -730,7 +731,7 @@ public class QueriesGenerated {
           List<Pair> res = ListSequence.<Pair>fromArray();
           final SNode srcNode = _context.getSourceNode();
           final boolean isGeneric = SNodeOperations.isInstanceOf(srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
-          for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(srcNode), "features", true)).where(new IWhereFilter <SNode>() {
+          for(SNode fe : Sequence.fromIterable(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(srcNode), "features", true)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
               return it != srcNode && ((isGeneric ?
@@ -739,7 +740,7 @@ public class QueriesGenerated {
               ));
             }
 
-          })) {
+          }))) {
             ListSequence.fromList(res).addElement(new Pair(fe, Boolean.TRUE));
             ListSequence.fromList(res).addElement(new Pair(fe, Boolean.FALSE));
           }
@@ -804,15 +805,15 @@ public class QueriesGenerated {
             return res;
           }
           SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "nodeType", true);
-          for(TraversalAxis axis : TraversalAxis.getConstants()) {
+          for(TraversalAxis axis : Sequence.fromIterable(TraversalAxis.getConstants())) {
             ListSequence.fromList(res).addElement(new Triplet(axis, null, null));
-            for(SNode feat : TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType)) {
+            for(SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType))) {
               if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
                 if (SPropertyOperations.getBoolean(feat, "default")) {
                   ListSequence.fromList(res).addElement(new Triplet(axis, feat, null));
                 } else
                 if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-                  for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1213877340242(feat, nodeType)) {
+                  for(SNode pw : Sequence.fromIterable(IParamFeature_Behavior.call_getParameterObjects_1213877340242(feat, nodeType))) {
                     ListSequence.fromList(res).addElement(new Triplet(axis, feat, pw));
                   }
                 } else
@@ -1088,16 +1089,16 @@ public class QueriesGenerated {
         public Object calculate() {
           List<Quadruplet> res = ListSequence.<Quadruplet>fromArray();
           SNode nodeType = (SNode)TypeChecker.getInstance().getTypeOf(_context.getSourceNode());
-          for(SNode aspect : TreePathAspectUtil.getTreePathAspects(_context.getSourceNode(), operationContext.getScope())) {
-            for(TraversalAxis axis : TraversalAxis.getConstants()) {
+          for(SNode aspect : Sequence.fromIterable(TreePathAspectUtil.getTreePathAspects(_context.getSourceNode(), operationContext.getScope()))) {
+            for(TraversalAxis axis : Sequence.fromIterable(TraversalAxis.getConstants())) {
               ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, null, null));
-              for(SNode feat : TreePath_Behavior.call_getFeature_1213877481312(aspect, nodeType)) {
+              for(SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(aspect, nodeType))) {
                 if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
                   if (SPropertyOperations.getBoolean(feat, "default")) {
                     ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, feat, null));
                   } else
                   if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-                    for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1213877340242(feat, nodeType)) {
+                    for(SNode pw : Sequence.fromIterable(IParamFeature_Behavior.call_getParameterObjects_1213877340242(feat, nodeType))) {
                       ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, feat, pw));
                     }
                   } else

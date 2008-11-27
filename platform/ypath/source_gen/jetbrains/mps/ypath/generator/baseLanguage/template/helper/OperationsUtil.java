@@ -13,11 +13,10 @@ import jetbrains.mps.ypath.runtime.TraversalAxis;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -41,10 +40,10 @@ public class OperationsUtil {
       }).toListSequence() :
       ListSequence.<SNode>fromArray(SLinkOperations.getTarget(wildCardOp, "usedFeature", false))
     );
-    return ListSequence.fromList(features).translate(new ITranslator <SNode, SNode>() {
+    return ListSequence.fromList(features).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode it) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
             return new YieldingIterator <SNode>() {
@@ -64,7 +63,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 6:
-                      this._6_po_it = IParamFeature_Behavior.call_getParameterObjects_1213877340242(it, nodeType).iterator();
+                      this._6_po_it = Sequence.fromIterable(IParamFeature_Behavior.call_getParameterObjects_1213877340242(it, nodeType)).iterator();
                     case 7:
                       if (!(this._6_po_it.hasNext())) {
                         this.__CP__ = 3;
@@ -111,8 +110,8 @@ __switch__:
                     case 8:
                       this._10_io = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.IterateOperation", null);
                       SLinkOperations.setTarget(this._10_io, "usedFeature", it, false);
-                      SPropertyOperations.set(this._10_io, "axis", "" + (axis.getValue()));
-                      SLinkOperations.setTarget(this._10_io, "paramObject", this._6_po, false);
+                      SPropertyOperations.set(this._10_io, "axis", axis.getValue());
+                      SLinkOperations.setTarget(this._10_io, "paramObject", this._6_po, true);
                       this.__CP__ = 11;
                       break;
                     case 12:
@@ -124,7 +123,7 @@ __switch__:
                     case 16:
                       this._18_io = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.IterateOperation", null);
                       SLinkOperations.setTarget(this._18_io, "usedFeature", it, false);
-                      SPropertyOperations.set(this._18_io, "axis", "" + (axis.getValue()));
+                      SPropertyOperations.set(this._18_io, "axis", axis.getValue());
                       this.__CP__ = 19;
                       break;
                     case 15:

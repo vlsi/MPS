@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.PrepStatementUtil;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.WrappersUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -59,35 +60,35 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1201017688485(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201017719800(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201018816706(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201026182242(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201026184426(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201093930999(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false) != null) && PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), _context.getGenerator()) != null;
+    return (SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false) != null) && PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201193354452(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201194112613(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201204773236(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -95,31 +96,31 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1201288202981(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201293003300(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201293028247(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201359295364(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201389225625(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201390750887(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201390755365(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201782893971(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -137,13 +138,13 @@ public class QueriesGenerated {
     if (true) {
       return false;
     }
-    return PrepStatementUtil.getFlag(_context.getNode(), _context.getGenerator()) == Boolean.TRUE;
+    return PrepStatementUtil.getFlag(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) == Boolean.TRUE;
   }
 
   public static boolean baseMappingRule_Condition_1207145700256(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean result = WrappersUtils.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    boolean result = WrappersUtils.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
     if (result) {
-      WrappersUtils.putPrepData(_context.getNode(), null, _context.getGenerator());
+      WrappersUtils.putPrepData(_context.getNode(), null, ((TemplateQueryContext)_context).getGenerator());
     }
     return result;
   }
@@ -221,11 +222,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1207146877066(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return WrappersUtils.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return WrappersUtils.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1209567952369(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    return PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1215452055499(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -257,21 +258,21 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1216995176832(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode trg = FunctionTypeUtil.getAdaptableTarget(_context.getNode(), _context.getGenerator());
+    SNode trg = FunctionTypeUtil.getAdaptableTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     SNode adaptable = (SNode)((SNode)trg).getUserObject("adaptable");
     return (adaptable != null);
   }
 
   public static boolean baseMappingRule_Condition_1216995176904(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean hasPrep = FunctionTypeUtil.getPrepData(_context.getNode(), _context.getGenerator()) != null;
-    boolean hasPost = FunctionTypeUtil.getPostData(_context.getNode(), _context.getGenerator()) != null;
+    boolean hasPrep = FunctionTypeUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
+    boolean hasPost = FunctionTypeUtil.getPostData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
     return hasPrep && !(hasPost);
   }
 
   public static boolean baseMappingRule_Condition_1219916476737(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean result = WrappersUtils.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    boolean result = WrappersUtils.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
     if (result) {
-      WrappersUtils.putPrepData(_context.getNode(), null, _context.getGenerator());
+      WrappersUtils.putPrepData(_context.getNode(), null, ((TemplateQueryContext)_context).getGenerator());
     }
     return result;
   }
@@ -317,7 +318,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1219934617805(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    Object declData = WrappersUtils.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), _context.getGenerator());
+    Object declData = WrappersUtils.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), ((TemplateQueryContext)_context).getGenerator());
     return declData != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassCreator") && INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getParent(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false))).startsWith("jetbrains.mps.baseLanguage.closures.runtime.Wrappers"));
   }
 
@@ -326,41 +327,41 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1201019320624(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (String)PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    return (String)PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static Object propertyMacro_GetPropertyValue_1201023446586(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201023446649(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[3];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201023446682(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[4];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201023446713(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[1];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201023446743(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[3];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201024123512(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201025995317(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[1];
   }
 
@@ -378,49 +379,49 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1201093772964(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (String)PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variable", true), _context.getGenerator());
+    return (String)PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variable", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static Object propertyMacro_GetPropertyValue_1201093988343(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (String)PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), _context.getGenerator());
+    return (String)PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static Object propertyMacro_GetPropertyValue_1201094822855(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[2];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201095804027(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201190969333(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[1];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201191004478(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201204858049(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (String)PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    return (String)PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static Object propertyMacro_GetPropertyValue_1201275380390(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201275443501(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[1];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201275469014(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[(labels[2] != -1 ?
       2 :
       3
@@ -428,101 +429,101 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1201291955078(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201291955110(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[2];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201291955141(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[3];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201292912731(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[1];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201292912754(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201292912793(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[2];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201358206156(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201358206210(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[1];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201358206242(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[3];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201358206273(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[2];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201358877325(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String varName = (String)PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variable", true), _context.getGenerator());
+    String varName = (String)PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variable", true), ((TemplateQueryContext)_context).getGenerator());
     return varName + "_it";
   }
 
   public static Object propertyMacro_GetPropertyValue_1201359082835(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String varName = (String)PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variable", true), _context.getGenerator());
+    String varName = (String)PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variable", true), ((TemplateQueryContext)_context).getGenerator());
     return varName + "_it";
   }
 
   public static Object propertyMacro_GetPropertyValue_1201359122203(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (String)PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variable", true), _context.getGenerator());
+    return (String)PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variable", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static Object propertyMacro_GetPropertyValue_1201359158800(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String varName = (String)PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variable", true), _context.getGenerator());
+    String varName = (String)PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variable", true), ((TemplateQueryContext)_context).getGenerator());
     return varName + "_it";
   }
 
   public static Object propertyMacro_GetPropertyValue_1201359405039(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String varName = (String)PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    String varName = (String)PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return varName + "_it";
   }
 
   public static Object propertyMacro_GetPropertyValue_1201382497207(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201382561130(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "body", true), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "body", true), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201382704160(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "defaultBlock", true), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "defaultBlock", true), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201390868590(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201390896232(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
@@ -561,7 +562,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1203245282594(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct == null) {
       ct = ClassifierTypeUtil.getDeclarationClassifierType(TypeChecker.getInstance().getTypeOf(_context.getNode()));
     }
@@ -573,7 +574,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1203250798068(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct == null) {
       ct = ClassifierTypeUtil.getDeclarationClassifierType(TypeChecker.getInstance().getTypeOf(_context.getNode()));
     }
@@ -589,7 +590,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1209330086337(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return labels[0];
   }
 
@@ -630,7 +631,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1199624866931(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct != null) {
       return SLinkOperations.getTarget(ct, "classifier", false);
     }
@@ -638,7 +639,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1201044570620(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct != null) {
       return SLinkOperations.getTarget(ct, "classifier", false);
     }
@@ -670,7 +671,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1203682419133(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct == null || ((SNode)ct).getUserObject("returnType") == null) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false);
     } else
@@ -701,7 +702,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1216995176870(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode trg = FunctionTypeUtil.getAdaptableTarget(_context.getNode(), _context.getGenerator());
+    SNode trg = FunctionTypeUtil.getAdaptableTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if ((trg != null)) {
       SNode cc = _context.getOutputNodeByInputNodeAndMappingLabel(trg, "classifierType_adapter");
       List<SNode> cds = SLinkOperations.getTargets(cc, "constructor", true);
@@ -781,7 +782,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1203249920933(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return ct == null;
   }
 
@@ -791,7 +792,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1203250587999(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return ct == null;
   }
 
@@ -801,32 +802,32 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1203250752443(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return ct == null;
   }
 
   public static boolean ifMacro_Condition_1203250784283(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return ct == null;
   }
 
   public static boolean ifMacro_Condition_1203251514451(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return ct == null;
   }
 
   public static boolean ifMacro_Condition_1203267949368(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return ct != null;
   }
 
   public static boolean ifMacro_Condition_1203268216179(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return ct != null;
   }
 
   public static boolean ifMacro_Condition_1215429196709(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return ct == null;
   }
 
@@ -835,12 +836,12 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1215457391282(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return ct == null;
   }
 
   public static boolean ifMacro_Condition_1215457429074(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return ct != null;
   }
 
@@ -853,7 +854,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1199624915150(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
       if (imds.size() > 0) {
@@ -1002,7 +1003,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1203251634844(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
       if (imds.size() > 0) {
@@ -1160,7 +1161,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1201187449746(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), _context.getGenerator());
+    Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     int BEGIN = labels[0];
     int END = labels[1];
     List<SNode> results = new ArrayList<SNode>();
@@ -1176,8 +1177,8 @@ public class QueriesGenerated {
         /*
           SNode tmp = SNodeOperations.copyNode(stmt);
           SLinkOperations.addChild(slist, "statement", tmp);
-          PrepStatementUtil.copyPrepData(stmt, tmp, _context.getGenerator());
-          WrappersUtils.copyPrepData(stmt, tmp, _context.getGenerator());
+          PrepStatementUtil.copyPrepData(stmt, tmp, ((TemplateQueryContext)_context).getGenerator());
+          WrappersUtils.copyPrepData(stmt, tmp, ((TemplateQueryContext)_context).getGenerator());
         */
         chunk.add(stmt);
         lastStmt = stmt;
@@ -1195,7 +1196,7 @@ public class QueriesGenerated {
       }
       stmts = null;
       if ((cstmt != null)) {
-        labels = (Integer[])PrepStatementUtil.getPrepData(cstmt, _context.getGenerator());
+        labels = (Integer[])PrepStatementUtil.getPrepData(cstmt, ((TemplateQueryContext)_context).getGenerator());
         endLabel = (labels != null ?
           labels[0] :
           -1
@@ -1208,7 +1209,7 @@ public class QueriesGenerated {
             lastStmt = StatementListUtil.nextSibling(lastStmt);
           } else
           {
-            labels = (Integer[])PrepStatementUtil.getPrepData(cstmt, _context.getGenerator());
+            labels = (Integer[])PrepStatementUtil.getPrepData(cstmt, ((TemplateQueryContext)_context).getGenerator());
             BEGIN = (labels != null ?
               labels[labels.length - 1] :
               -1
@@ -1218,7 +1219,7 @@ public class QueriesGenerated {
         }
       }
       results.add(slist);
-      PrepStatementUtil.putPrepData(slist, new Integer[]{beginLabel,endLabel}, _context.getGenerator());
+      PrepStatementUtil.putPrepData(slist, new Integer[]{beginLabel,endLabel}, ((TemplateQueryContext)_context).getGenerator());
     } while(stmts != null && stmts.size() > 0);
     return results;
   }
@@ -1284,7 +1285,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1201783317579(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return FunctionTypeUtil.getAdaptableClassifierTypeTargets(_context.getNode(), _context.getGenerator());
+    return FunctionTypeUtil.getAdaptableClassifierTypeTargets(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static Iterable sourceNodesQuery_1202148923827(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1357,7 +1358,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1203268050251(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     List<SNode> res = new ArrayList<SNode>();
     for(SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
       res.add(pt);
@@ -1366,7 +1367,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1203268224153(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     List<SNode> res = new ArrayList<SNode>();
     for(SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
       res.add(pt);
@@ -1375,7 +1376,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1203686370624(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (true || ct == null || ((SNode)ct).getUserObject("returnType") == null) {
       return Collections.singletonList(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(TypeChecker.getInstance().getTypeOf(_context.getNode()))));
     } else
@@ -1394,7 +1395,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1215429255567(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
       if (imds.size() > 0) {
@@ -1419,7 +1420,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1215457425734(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> paramDecls = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
-    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
+    SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
       if (imds.size() > 0) {
@@ -1554,7 +1555,7 @@ public class QueriesGenerated {
     List<SNode> res = new ArrayList<SNode>();
     SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "parameter", true);
     for(SNode p : SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "parameter", true)) {
-      if (WrappersUtils.getPrepData(p, _context.getGenerator()) != null) {
+      if (WrappersUtils.getPrepData(p, ((TemplateQueryContext)_context).getGenerator()) != null) {
         res.add(p);
       }
     }
@@ -1621,21 +1622,21 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201782869830(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().getOutputModel().getRootByName("_FunctionTypes");
+    return ((TemplateQueryContext)_context).getGenerator().getOutputModel().getRootByName("_FunctionTypes");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1216995117212(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().getOutputModel().getRootByName("_Adapters");
+    return ((TemplateQueryContext)_context).getGenerator().getOutputModel().getRootByName("_Adapters");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1216995140837(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getGenerator().getOutputModel().getRootByName("_Adapters");
+    return ((TemplateQueryContext)_context).getGenerator().getOutputModel().getRootByName("_Adapters");
   }
 
   public static void mappingScript_CodeBlock_1201011417446(final IOperationContext operationContext, final MappingScriptContext _context) {
     for(SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
       if (ClosureLiteralUtil.hasYieldStatement(cl)) {
-        PrepStatementUtil.prepStatementList(SLinkOperations.getTarget(cl, "body", true), _context.getGenerator());
+        PrepStatementUtil.prepStatementList(SLinkOperations.getTarget(cl, "body", true), ((TemplateQueryContext)_context).getGenerator());
       }
     }
   }
@@ -1707,17 +1708,17 @@ public class QueriesGenerated {
     for(SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
       for(SNode vd : WrappersUtils.collectVariableDeclarationsToWrap(cl)) {
         if (SNodeOperations.isInstanceOf(vd, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-          WrappersUtils.putPrepData(vd, "needs_wrapping", _context.getGenerator());
+          WrappersUtils.putPrepData(vd, "needs_wrapping", ((TemplateQueryContext)_context).getGenerator());
           SNode sl = SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
           for(SNode desc : SNodeOperations.getDescendants(sl, null, false)) {
             if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && SLinkOperations.getTarget(desc, "variableDeclaration", false) == vd) {
-              WrappersUtils.putPrepData(desc, "needs_unwrapping", _context.getGenerator());
+              WrappersUtils.putPrepData(desc, "needs_unwrapping", ((TemplateQueryContext)_context).getGenerator());
             }
           }
         } else if (SNodeOperations.isInstanceOf(vd, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
           SPropertyOperations.set(vd, "isFinal", "" + (false));
-          WrappersUtils.putPrepData(vd, "needs_wrapping", _context.getGenerator());
-          WrappersUtils.putPrepData(SLinkOperations.getTarget(SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "body", true), "put_wrappers_here", _context.getGenerator());
+          WrappersUtils.putPrepData(vd, "needs_wrapping", ((TemplateQueryContext)_context).getGenerator());
+          WrappersUtils.putPrepData(SLinkOperations.getTarget(SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "body", true), "put_wrappers_here", ((TemplateQueryContext)_context).getGenerator());
         }
       }
     }

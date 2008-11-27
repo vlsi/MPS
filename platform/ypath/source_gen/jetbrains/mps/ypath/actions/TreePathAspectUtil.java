@@ -36,7 +36,7 @@ public class TreePathAspectUtil {
           SNode type = TreePath_Behavior.call_getNodeType_1213877481303(it);
           boolean result = false;
           if ((type != null)) {
-            result = TypeChecker.getInstance().getSubtypingManager().isSubtype(expType.value, type, false, false);
+            result = TypeChecker.getInstance().getSubtypingManager().isSubtype(expType.value, type, false);
           }
           return result;
         }

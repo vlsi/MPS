@@ -23,6 +23,7 @@ import jetbrains.mps.lang.plugin.behavior.AbstractEditorTab_Behavior;
 import jetbrains.mps.lang.plugin.behavior.ToolDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.ProjectPluginDeclaration_Behavior;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.plugin.behavior.GenerationListenerDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior;
 import jetbrains.mps.smodel.Generator;
@@ -229,7 +230,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1208965283805(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule module = _context.getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    IModule module = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     return (module == null ?
       null :
       module.getModuleUID()
@@ -267,7 +268,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1212256768919(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule module = _context.getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    IModule module = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     return (module == null ?
       null :
       module.getModuleUID()
@@ -275,7 +276,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1212583749804(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule originalModule = _context.getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    IModule originalModule = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     assert originalModule != null;
     if (originalModule instanceof Generator) {
       originalModule = ((Generator)originalModule).getSourceLanguage();
@@ -320,7 +321,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1215266495353(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule originalModule = _context.getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    IModule originalModule = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     assert originalModule != null;
     if (originalModule instanceof Generator) {
       originalModule = ((Generator)originalModule).getSourceLanguage();
@@ -389,7 +390,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1217679691887(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule module = _context.getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    IModule module = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     return (module == null ?
       null :
       module.getModuleUID()

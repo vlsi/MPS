@@ -8633,7 +8633,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197299931166">
                       <property name="value" value="10" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197299931167" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747491137" />
                   </node>
                 </node>
               </node>

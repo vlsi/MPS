@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
 import jetbrains.mps.ypath.behavior.ParameterWrapper_Behavior;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -39,7 +41,8 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
                 SNode targetType = FeatureTargetTypeUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1213877312166(SLinkOperations.getTarget(op, "paramObject", true)));
                 if (!((targetType != null))) {
                   BaseIntentionProvider intentionProvider = null;
-                  typeCheckingContext.reportTypeError(tpoe, "Received null target type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1196269826366", intentionProvider);
+                  IErrorTarget errorTarget = new NodeErrorTarget();
+                  typeCheckingContext.reportTypeError(tpoe, "Received null target type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1196269826366", intentionProvider, errorTarget);
                 }
                 if ((targetType != null)) {
                   {
@@ -50,7 +53,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
                 }
               }
 
-            }, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145326892");
+            }, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145326892", false);
           }
         }
       } else
@@ -65,7 +68,8 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
         } else
         if (!(false)) {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(tpoe, "No treepath found", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1196942498551", intentionProvider);
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          typeCheckingContext.reportTypeError(tpoe, "No treepath found", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1196942498551", intentionProvider, errorTarget);
         }
       }
     } else
