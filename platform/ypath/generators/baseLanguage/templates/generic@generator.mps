@@ -1112,7 +1112,19 @@
                                 <link role="link" targetNodeId="1.1194187847981" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1196767756992" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725082">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725083">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725084">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725085" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725086">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725087">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -1304,7 +1316,19 @@
                                 <link role="link" targetNodeId="1.1194187847981" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197305680636" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725869">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725870">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725871">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725872" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725873">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725874">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -1481,7 +1505,19 @@
                                 <link role="link" targetNodeId="1.1194187847981" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1196767766553" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725552">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725553">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725554">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725555" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725556">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725557">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -1673,7 +1709,19 @@
                                 <link role="link" targetNodeId="1.1194187847981" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1196767771829" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725605">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725606">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725607">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725608" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725609">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725610">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -1865,7 +1913,19 @@
                                 <link role="link" targetNodeId="1.1194187847981" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197305810099" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725135">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725136">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725137">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725138" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725139">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725140">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -2049,7 +2109,19 @@
                                 <link role="link" targetNodeId="1.1194621275686" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1196767863547" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725341">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725342">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725343">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725344" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725345">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725346">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -2233,7 +2305,19 @@
                                 <link role="link" targetNodeId="1.1194621275686" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197305766328" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747724961">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747724962">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747724963">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747724964" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747724965">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747724966">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -2402,7 +2486,19 @@
                                 <link role="link" targetNodeId="1.1194621275686" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1196767868419" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725446">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725447">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725448">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725449" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725450">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725451">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -2586,7 +2682,19 @@
                                 <link role="link" targetNodeId="1.1194621275686" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1196767873037" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747726224">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747726225">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747726226">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747726227" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747726228">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747726229">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -2770,7 +2878,19 @@
                                 <link role="link" targetNodeId="1.1194621275686" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197305842749" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725801">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725802">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725803">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725804" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725805">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725806">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -2945,7 +3065,19 @@
                                 <link role="link" targetNodeId="1.1194187847981" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1196767946011" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725975">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725976">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725977">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725978" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725979">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725980">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -3120,7 +3252,19 @@
                                 <link role="link" targetNodeId="1.1194187847981" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1196767953077" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747726134">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747726135">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747726136">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747726137" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747726138">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747726139">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -9664,7 +9808,19 @@
                                                   <link role="link" targetNodeId="1.1184776023529" />
                                                 </node>
                                               </node>
-                                              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225096837595" />
+                                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725499">
+                                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725500">
+                                                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725501">
+                                                    <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725502" />
+                                                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725503">
+                                                      <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725504">
+                                                  <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                                </node>
+                                              </node>
                                             </node>
                                           </node>
                                         </node>
@@ -9893,7 +10049,19 @@
                                             <link role="link" targetNodeId="1.1184776023529" />
                                           </node>
                                         </node>
-                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225096837696" />
+                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725204">
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725205">
+                                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725206">
+                                              <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725207" />
+                                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725208">
+                                                <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725209">
+                                            <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                          </node>
+                                        </node>
                                       </node>
                                     </node>
                                   </node>
@@ -10081,7 +10249,19 @@
                                     <link role="link" targetNodeId="1.1184776023529" />
                                   </node>
                                 </node>
-                                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225096843559" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747724855">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747724856">
+                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747724857">
+                                      <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747724858" />
+                                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747724859">
+                                        <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747724860">
+                                    <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -10269,7 +10449,19 @@
                                     <link role="link" targetNodeId="1.1184776023529" />
                                   </node>
                                 </node>
-                                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225097455034" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747724908">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747724909">
+                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747724910">
+                                      <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747724911" />
+                                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747724912">
+                                        <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747724913">
+                                    <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -11073,7 +11265,19 @@
                                             <link role="link" targetNodeId="1.1184776023529" />
                                           </node>
                                         </node>
-                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225096838337" />
+                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747726277">
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747726278">
+                                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747726279">
+                                              <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747726280" />
+                                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747726281">
+                                                <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747726282">
+                                            <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                          </node>
+                                        </node>
                                       </node>
                                     </node>
                                   </node>
@@ -11229,7 +11433,19 @@
                                         <link role="link" targetNodeId="1.1184776023529" />
                                       </node>
                                     </node>
-                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225097900610" />
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725393">
+                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725394">
+                                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725395">
+                                          <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725396" />
+                                          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725397">
+                                            <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725398">
+                                        <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
                               </node>
@@ -11493,7 +11709,19 @@
                                   <link role="link" targetNodeId="1.1184776023529" />
                                 </node>
                               </node>
-                              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1200052340876" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747726028">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747726029">
+                                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747726030">
+                                    <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747726031" />
+                                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747726032">
+                                      <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747726033">
+                                  <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -11989,7 +12217,19 @@
                                 <link role="link" targetNodeId="1.1184776023529" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225096843478" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725288">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725289">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725290">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725291" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725292">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725293">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -12221,7 +12461,19 @@
                                 <link role="link" targetNodeId="1.1184776023529" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225096836994" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725658">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725659">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725660">
+                                  <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725661" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725662">
+                                    <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725663">
+                                <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -12479,7 +12731,19 @@
                                         <link role="link" targetNodeId="1.1184776023529" />
                                       </node>
                                     </node>
-                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225096837137" />
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747726081">
+                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747726082">
+                                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747726083">
+                                          <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747726084" />
+                                          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747726085">
+                                            <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747726086">
+                                        <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
                               </node>
@@ -12575,7 +12839,19 @@
                                             <link role="link" targetNodeId="1.1184776023529" />
                                           </node>
                                         </node>
-                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225096837180" />
+                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725711">
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725712">
+                                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725713">
+                                              <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725714" />
+                                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725715">
+                                                <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725716">
+                                            <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                          </node>
+                                        </node>
                                       </node>
                                     </node>
                                   </node>
@@ -13531,7 +13807,19 @@
                                           <link role="link" targetNodeId="1.1184776023529" />
                                         </node>
                                       </node>
-                                      <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225096836435" />
+                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725029">
+                                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725030">
+                                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725031">
+                                            <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725032" />
+                                            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725033">
+                                              <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725034">
+                                          <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                        </node>
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
@@ -13765,7 +14053,19 @@
                                             <link role="link" targetNodeId="1.1184776023529" />
                                           </node>
                                         </node>
-                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225096836542" />
+                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747726171">
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747726172">
+                                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747726173">
+                                              <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747726174" />
+                                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747726175">
+                                                <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747726176">
+                                            <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                          </node>
+                                        </node>
                                       </node>
                                     </node>
                                   </node>
@@ -14020,7 +14320,19 @@
                                         <link role="link" targetNodeId="1.1184776023529" />
                                       </node>
                                     </node>
-                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225096836658" />
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725748">
+                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725749">
+                                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725750">
+                                          <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725751" />
+                                          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725752">
+                                            <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725753">
+                                        <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
                               </node>
@@ -14221,7 +14533,19 @@
                                             <link role="link" targetNodeId="1.1184776023529" />
                                           </node>
                                         </node>
-                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1225096836750" />
+                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227747725922">
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227747725923">
+                                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227747725924">
+                                              <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227747725925" />
+                                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227747725926">
+                                                <link role="classifier" targetNodeId="7.~TemplateQueryContext" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227747725927">
+                                            <link role="baseMethodDeclaration" targetNodeId="7.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                                          </node>
+                                        </node>
                                       </node>
                                     </node>
                                   </node>

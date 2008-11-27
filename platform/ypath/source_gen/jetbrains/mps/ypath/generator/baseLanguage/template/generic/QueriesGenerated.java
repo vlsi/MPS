@@ -35,6 +35,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 
 public class QueriesGenerated {
 
@@ -1449,7 +1450,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196598547056(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), ((TemplateQueryContext)_context).getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1458,7 +1459,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196599101382(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), ((TemplateQueryContext)_context).getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1467,7 +1468,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196600423556(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), ((TemplateQueryContext)_context).getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1476,7 +1477,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196615259356(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), ((TemplateQueryContext)_context).getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1485,7 +1486,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196615277216(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), ((TemplateQueryContext)_context).getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1494,7 +1495,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196615333654(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), ((TemplateQueryContext)_context).getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1503,7 +1504,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196619981661(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode is = IGenericFeature_Behavior.call_insertStatement_1213877249185(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode is = IGenericFeature_Behavior.call_insertStatement_1213877249185(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), ((TemplateQueryContext)_context).getGenerator());
     return ((is == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       is
@@ -1512,7 +1513,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1196621431704(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode is = IGenericFeature_Behavior.call_insertStatement_1213877249185(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode is = IGenericFeature_Behavior.call_insertStatement_1213877249185(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), ((TemplateQueryContext)_context).getGenerator());
     return ((is == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       is
@@ -1624,7 +1625,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1197305680604(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), ((TemplateQueryContext)_context).getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1633,7 +1634,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1197305766299(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), ((TemplateQueryContext)_context).getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1642,7 +1643,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1197305810067(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_replaceStatement_1213877249161(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), SLinkOperations.getTarget(_context.getNode(), "expression", true), ((TemplateQueryContext)_context).getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1651,7 +1652,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1197305842720(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode feature = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
-    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), _context.getGenerator());
+    SNode rs = IGenericFeature_Behavior.call_removeStatement_1213877249174(feature, OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "paramObject", true), SLinkOperations.getTarget(_context.getNode(), "range", true), ((TemplateQueryContext)_context).getGenerator());
     return ((rs == null) ?
       SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.NotAStatement", null) :
       rs
@@ -1660,7 +1661,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1200052339756(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode expression = OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true));
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SNodeOperations.copyNode(expression), SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SNodeOperations.copyNode(expression), SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096836382(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1672,7 +1673,7 @@ __switch__:
       }
 
     }).first(), false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096836489(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1684,7 +1685,7 @@ __switch__:
       }
 
     }).first(), false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096836605(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1696,7 +1697,7 @@ __switch__:
       }
 
     }).first(), false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096836697(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1708,7 +1709,7 @@ __switch__:
       }
 
     }).first(), false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096836936(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1721,7 +1722,7 @@ __switch__:
     }).first();
     SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096837079(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1734,14 +1735,14 @@ __switch__:
     }).first();
     SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096837143(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode yyy = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", true, false), "variable", true);
     SNode ref_yyy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", null);
     SLinkOperations.setTarget(ref_yyy, "variable", yyy, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_yyy, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_yyy, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096837537(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1754,7 +1755,7 @@ __switch__:
     }).first();
     SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096837639(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1767,28 +1768,28 @@ __switch__:
     }).first();
     SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096837837(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode cp = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "parameter", true)).first();
     SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
     SLinkOperations.setTarget(cpr, "variableDeclaration", cp, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096838301(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode zzz = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.ForeachStatement", false, false), "variable", true);
     SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096838366(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode cp = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "parameter", true)).first();
     SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
     SLinkOperations.setTarget(cpr, "variableDeclaration", cp, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096843420(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1801,14 +1802,14 @@ __switch__:
     }).first();
     SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096843523(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode cp = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "parameter", true)).first();
     SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
     SLinkOperations.setTarget(cpr, "variableDeclaration", cp, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
+    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
 
 }
