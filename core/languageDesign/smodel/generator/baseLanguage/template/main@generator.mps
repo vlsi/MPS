@@ -447,6 +447,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1139187530309">
     <property name="name" value="mc_property_operations" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1195249229777">
@@ -912,7 +913,19 @@
               <link role="classConcept" targetNodeId="15.1168968323635" />
               <link role="baseMethodDeclaration" targetNodeId="15.1168979165563" />
               <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1168979621799" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1168979627848" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227746497436">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227746497437">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227746497438">
+                    <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227746497439" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227746497440">
+                      <link role="classifier" targetNodeId="2v.~TemplateQueryContext" />
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227746497441">
+                  <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -930,7 +943,19 @@
               <link role="classConcept" targetNodeId="15.1168968323635" />
               <link role="baseMethodDeclaration" targetNodeId="15.1168979519274" />
               <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1168979716447" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1168979716448" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227746497414">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227746497415">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227746497416">
+                    <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227746497417" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227746497418">
+                      <link role="classifier" targetNodeId="2v.~TemplateQueryContext" />
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227746497419">
+                  <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

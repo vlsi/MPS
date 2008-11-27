@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.baseLanguage.util.QueriesUtil;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -64,11 +65,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1168979597371(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.isProperty_hasValueEnum_notNullDefaultValue(_context.getNode(), _context.getGenerator());
+    return QueriesUtil.isProperty_hasValueEnum_notNullDefaultValue(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static boolean baseMappingRule_Condition_1168979716443(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.isProperty_hasValueEnum_nullDefaultValue(_context.getNode(), _context.getGenerator());
+    return QueriesUtil.isProperty_hasValueEnum_nullDefaultValue(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
   }
 
   public static boolean baseMappingRule_Condition_1171323169610(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
