@@ -704,7 +704,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
 
     public boolean canExecute(EditorContext context) {
-      return !isFirstCaretPosition();
+      return isCaretPositionAllowed(getCaretPosition() - 1);
     }
 
     public void execute(EditorContext context) {
@@ -722,7 +722,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
 
     public boolean canExecute(EditorContext context) {
-      return !isLastCaretPosition();
+      return isCaretPositionAllowed(getCaretPosition() + 1);
     }
 
     public void execute(EditorContext context) {
