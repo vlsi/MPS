@@ -1,7 +1,6 @@
 package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.ide.ui.customization.CustomActionsSchema;
-import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -178,10 +177,8 @@ public class ApplicationPluginManager implements ApplicationComponent {
   private void refreshCustomizations() {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        CustomizableActionsSchemas allSchemasComponent = CustomizableActionsSchemas.getInstance();
-        CustomActionsSchema schema = allSchemasComponent.getActiveSchema();
+        CustomActionsSchema schema = CustomActionsSchema.getInstance();
         schema.resetMainActionGroups();
-        allSchemasComponent.setActiveSchema(schema);
         setCustomizationSchemaForCurrentProjects();
       }
     });
