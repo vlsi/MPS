@@ -733,28 +733,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1166749287094">
-    <property name="name" value="TemplateFunctionParameter_generator" />
-    <property name="package" value="functionParameter" />
-    <link role="extends" targetNodeId="6.1107135704075" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1166749287095">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1166749370921">
-        <link role="classifier" targetNodeId="7.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
-      </node>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1166749287097">
-      <property name="value" value="generator" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1166749287098">
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1218217766134">
-      <property name="value" value="not shown in parameters any more: use 'genContext'" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1167087469898">
     <property name="name" value="CreateRootRule" />
     <property name="package" value="rule" />

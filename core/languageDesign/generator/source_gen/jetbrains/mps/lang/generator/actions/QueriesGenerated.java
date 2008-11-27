@@ -6,14 +6,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
 public class QueriesGenerated {
@@ -24,13 +23,6 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1195244660444(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
-  }
-
-  public static void nodeFactory_NodeSetup_Node_FindOutputNode_1205663677153(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode cf = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", true, false);
-    if (cf != null && ListSequence.fromList(SLinkOperations.getConceptLinkTargets(cf, "applicableConceptFunctionParameter")).contains(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator"))) {
-      SLinkOperations.setNewChild(_context.getNewNode(), "templateGenerator", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator");
-    }
   }
 
   public static void nodeFactory_NodeSetup_MapSrcNodeMacro_1207674454117(final IOperationContext operationContext, final NodeSetupContext _context) {
