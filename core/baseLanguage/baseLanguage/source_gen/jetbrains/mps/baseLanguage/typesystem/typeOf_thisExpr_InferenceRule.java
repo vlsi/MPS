@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -20,21 +20,31 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
   }
 
   public void applyRule(final SNode thisExpr, final TypeCheckingContext typeCheckingContext) {
-    SNode classConcept;
+    SNode classifier;
     if ((SLinkOperations.getTarget(thisExpr, "classConcept", false) != null)) {
-      classConcept = SLinkOperations.getTarget(thisExpr, "classConcept", false);
+      classifier = SLinkOperations.getTarget(thisExpr, "classConcept", false);
     } else
     {
-      classConcept = SNodeOperations.getAncestor(thisExpr, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      SNode contextNode = thisExpr;
+      SNode parent = SNodeOperations.getParent(thisExpr);
+      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        for(SNode param : SLinkOperations.getTargets(parent, "parameter", true)) {
+          if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true)).contains(thisExpr)) {
+            contextNode = parent;
+            break;
+          }
+        }
+      }
+      classifier = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     }
     List<SNode> typeVarRefs = new ArrayList<SNode>();
-    for(SNode typeVariableDeclaration : SLinkOperations.getTargets(classConcept, "typeVariableDeclaration", true)) {
+    for(SNode typeVariableDeclaration : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
       ListSequence.fromList(typeVarRefs).addElement(new _Quotations.QuotationClass_14().createNode(typeVariableDeclaration, typeCheckingContext));
     }
     {
       SNode _nodeToCheck_1029348928467 = thisExpr;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(thisExpr, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810739", true), new _Quotations.QuotationClass_15().createNode(typeVarRefs, classConcept, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810737", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(thisExpr, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810739", true), new _Quotations.QuotationClass_15().createNode(typeVarRefs, classifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810737", intentionProvider);
     }
   }
 
