@@ -21,16 +21,19 @@ public class EventsCollector {
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
   private CommandListener myCommandListener;
   private CommandProcessor myCommandProcessor;
+  private Runnable myCurrentCommand;
 
   public EventsCollector() {
     myCommandProcessor = CommandProcessor.getInstance();
     ourListenersSupport.addCommandListener(myCommandListener = new CommandAdapter() {
       public void commandStarted(CommandEvent event) {
         myEvents.clear();
+        myCurrentCommand = myCommandProcessor.getCurrentCommand();
       }
 
       public void beforeCommandFinished(CommandEvent event) {
         flush();
+        myCurrentCommand = null;
       }
     });
   }
@@ -56,7 +59,7 @@ public class EventsCollector {
           if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
             SModelEvent e = (SModelEvent) args[0];
 
-            if (myCommandProcessor.getCurrentCommand() == null) {
+            if (myCurrentCommand == null) {
               throw new IllegalStateException("Event outside of a command");
             }
 

@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.util.Computable;
@@ -53,11 +54,14 @@ public class ModelAccess {
     });
   }
 
-  public void runWriteAction(final Runnable r) {        
-//    if (ApplicationManager.getApplication().isReadAccessAllowed() &&
-//      !ApplicationManager.getApplication().isWriteAccessAllowed()) {
-//      throw new IllegalStateException("Write actions inside of write action");
-//    }
+  public void runWriteAction(final Runnable r) {
+    ApplicationEx application = (ApplicationEx) ApplicationManager.getApplication();
+
+    if (application.holdsReadLock() &&
+      !application.isWriteAccessAllowed()) {
+      throw new IllegalStateException("Write actions inside of read action");
+    }
+
 
     runWriteAction(new Computable<Object>() {
       public Object compute() {

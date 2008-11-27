@@ -1,6 +1,7 @@
 package jetbrains.mps.workbench.actions.help;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class ShowTheSimplestLanguageScreenCastAction extends ShowSiteAction {
   public ShowTheSimplestLanguageScreenCastAction() {
