@@ -981,7 +981,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1202834560823(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    PrepStatementUtil.setFlag(_context.getNode(), _context.getGenerator(), Boolean.FALSE);
+    PrepStatementUtil.setFlag(_context.getNode(), _context, Boolean.FALSE);
     return _context.getNode();
   }
 

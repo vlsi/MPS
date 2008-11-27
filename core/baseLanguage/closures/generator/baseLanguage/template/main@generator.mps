@@ -606,7 +606,7 @@
                     <link role="baseMethodDeclaration" targetNodeId="13.1202834361651" resolveInfo="setFlag" />
                     <link role="classConcept" targetNodeId="13.1200861660719" resolveInfo="PrepStatementUtil" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1203006358406" />
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1203006359882" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227744733458" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203006363015">
                       <link role="classifier" targetNodeId="2.~Boolean" resolveInfo="Boolean" />
                       <link role="variableDeclaration" targetNodeId="2.~Boolean.FALSE" resolveInfo="FALSE" />
