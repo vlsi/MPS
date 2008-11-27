@@ -5079,47 +5079,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1200913739876">
-    <link role="conceptDeclaration" targetNodeId="1.1200913690460" resolveInfo="FindOutputNode" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1200913743143">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1200913743973">
-        <property name="text" value="!findOutput" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1216837938936">
-          <property name="color" value="red" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1200913832415">
-        <property name="text" value="(" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1200913865125">
-        <property name="text" value="with" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1200913869283">
-        <property name="noTargetText" value="&lt;no label&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1200913726734" />
-        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1200913869284">
-          <link role="conceptDeclaration" targetNodeId="1.1200911316486" resolveInfo="MappingLabelDeclaration" />
-          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1200913879395">
-            <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="1214407441914">
-              <property name="color" value="orange" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1200916090755">
-        <property name="text" value="in" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1200913861873">
-        <link role="relationDeclaration" targetNodeId="1.1200913810085" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1200913833901">
-        <property name="text" value=")" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1202780999264">
     <property name="package" value="rule.consequence" />
     <link role="conceptDeclaration" targetNodeId="1.1202776937179" resolveInfo="AbandonInput_RuleConsequence" />
