@@ -11,12 +11,14 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class GenerateCurrentModelAction extends BaseAction {
-  private SModelDescriptor myModel;
+import java.util.List;
+
+public abstract class GenerateModelsAction extends BaseAction {
+  private List<SModelDescriptor> myModels;
   private IOperationContext myContext;
   private GeneratorManager myGenManager;
 
-  public GenerateCurrentModelAction(@NotNull String name) {
+  public GenerateModelsAction(@NotNull String name) {
     super(name);
     setExecuteOutsideCommand(true);
   }
@@ -25,7 +27,7 @@ public abstract class GenerateCurrentModelAction extends BaseAction {
 
   public void doExecute(AnActionEvent e) {
     myGenManager.generateModelsWithProgressWindow(
-      CollectionUtil.list(myModel),
+      myModels,
       myContext,
       getGenerationType(),
       true
@@ -33,7 +35,14 @@ public abstract class GenerateCurrentModelAction extends BaseAction {
   }
 
   protected void doUpdate(AnActionEvent e) {
-    setEnabledState(e.getPresentation(), getGenerationType().isApplicable(myModel));
+    boolean applicable = true;
+    for (SModelDescriptor sm : myModels) {
+      if (!getGenerationType().isApplicable(sm)) {
+        applicable = false;
+      }
+    }
+
+    setEnabledState(e.getPresentation(), applicable);
   }
 
   @Override
@@ -42,8 +51,8 @@ public abstract class GenerateCurrentModelAction extends BaseAction {
     ActionEventData data = new ActionEventData(e);
     MPSProject project = data.getMPSProject();
     myGenManager =project.getComponentSafe(GeneratorManager.class);
-    myModel = data.getContextModelDescriptor();
-    if (myModel==null) return false;
+    myModels = data.getModels();
+    if (myModels==null) return false;
     myContext = data.getOperationContext();
     if (myContext==null) return false;
     return true;

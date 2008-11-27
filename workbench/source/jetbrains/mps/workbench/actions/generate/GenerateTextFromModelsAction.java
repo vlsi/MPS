@@ -3,8 +3,8 @@ package jetbrains.mps.workbench.actions.generate;
 import jetbrains.mps.generator.IGenerationType;
 import org.jetbrains.annotations.NotNull;
 
-public class GenerateTextFromCurrentModelAction extends GenerateCurrentModelAction {
-  public GenerateTextFromCurrentModelAction() {
+public class GenerateTextFromModelsAction extends GenerateModelsAction {
+  public GenerateTextFromModelsAction() {
     super("Generate Text From Current Model");
     addPlace(null);
   }

@@ -10,8 +10,8 @@ import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.actions.generate.SaveTransientModelsAction;
 import jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction;
-import jetbrains.mps.workbench.actions.generate.GenerateFilesFromCurrentModelAction;
-import jetbrains.mps.workbench.actions.generate.GenerateTextFromCurrentModelAction;
+import jetbrains.mps.workbench.actions.generate.GenerateFilesFromModelsAction;
+import jetbrains.mps.workbench.actions.generate.GenerateTextFromModelsAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -37,11 +37,11 @@ public class Generate_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateFilesFromCurrentModelAction.class, module.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateFilesFromModelsAction.class, module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTextFromCurrentModelAction.class, module.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTextFromModelsAction.class, module.getModuleFqName()));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

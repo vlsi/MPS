@@ -15,8 +15,8 @@ import jetbrains.mps.workbench.actions.nodes.HighlightInstancesAction;
 import jetbrains.mps.workbench.actions.nodes.SelectInActionAdapter;
 import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationAction;
 import jetbrains.mps.workbench.actions.nodes.GoToRulesAction;
-import jetbrains.mps.workbench.actions.generate.GenerateFilesFromCurrentModelAction;
-import jetbrains.mps.workbench.actions.generate.GenerateTextFromCurrentModelAction;
+import jetbrains.mps.workbench.actions.generate.GenerateFilesFromModelsAction;
+import jetbrains.mps.workbench.actions.generate.GenerateTextFromModelsAction;
 import jetbrains.mps.lang.generator.plugin.actions.GoToUsageInMappingConfigAction;
 import jetbrains.mps.lang.generator.plugin.debug.actions.ShowGenerationTraceAction;
 import jetbrains.mps.workbench.actions.nodes.FindSpecificNodeUsagesAction;
@@ -81,11 +81,11 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateFilesFromCurrentModelAction.class, module.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateFilesFromModelsAction.class, module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTextFromCurrentModelAction.class, module.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTextFromModelsAction.class, module.getModuleFqName()));
       }
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
