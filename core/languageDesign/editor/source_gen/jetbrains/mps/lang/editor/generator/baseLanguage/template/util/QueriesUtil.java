@@ -53,7 +53,7 @@ public class QueriesUtil {
             return new YieldingIterator <SNode>() {
 
               private int __CP__ = 0;
-              private SNode _3_output;
+              private SNode _5_output;
 
               protected boolean moveToNext() {
 __loop__:
@@ -63,26 +63,36 @@ __switch__:
                     case -1:
                       assert false : "Internal error";
                       return false;
-                    case 4:
-                      if (this._3_output != null) {
-                        this.__CP__ = 5;
+                    case 6:
+                      if (this._5_output != null) {
+                        this.__CP__ = 7;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 3:
+                      if (false) {
+                        this.__CP__ = 2;
                         break;
                       }
                       this.__CP__ = 1;
                       break;
-                    case 6:
-                      this.__CP__ = 7;
-                      this.yield(this._3_output);
+                    case 8:
+                      this.__CP__ = 9;
+                      this.yield(this._5_output);
                       return true;
-                    case 0:
-                      this._3_output = genctx.getOutputNodeByInputNodeAndMappingLabel(it, "generatedClass");
-                      this.__CP__ = 4;
-                      break;
-                    case 5:
+                    case 2:
+                      this._5_output = genctx.getOutputNodeByInputNodeAndMappingLabel(it, "generatedClass");
                       this.__CP__ = 6;
                       break;
                     case 7:
+                      this.__CP__ = 8;
+                      break;
+                    case 9:
                       throw new StopIteratingException();
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     default:
                       break __loop__;
                   }

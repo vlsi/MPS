@@ -7,8 +7,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.idea.LoggerFactory;
-import java.awt.event.MouseEvent;
-import java.awt.Panel;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.IFile;
 import javax.swing.SwingUtilities;
@@ -31,8 +29,6 @@ public class BaseTransformationTest extends TestCase {
 
   public BaseTransformationTest() {
     Logger.setFactory(LoggerFactory.getInstance());
-    //  Load class MouseEvent. This is hack, else test hungs.
-    new MouseEvent(new Panel(), 0, 0, 0, 0, 0, 0, false);
   }
 
   public void initTest(String projectName, final String model) throws Exception {

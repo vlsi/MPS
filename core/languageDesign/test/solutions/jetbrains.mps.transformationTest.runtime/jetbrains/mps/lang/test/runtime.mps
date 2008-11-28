@@ -1738,42 +1738,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225970305177">
-          <property name="value" value=" Load class MouseEvent. This is hack, else test hungs." />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225971513437">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225971513438">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1225971567376">
-              <link role="baseMethodDeclaration" targetNodeId="29.~MouseEvent.&lt;init&gt;(java.awt.Component,int,long,int,int,int,int,boolean)" resolveInfo="MouseEvent" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225972642252">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1225972647286">
-                  <link role="baseMethodDeclaration" targetNodeId="28.~Panel.&lt;init&gt;()" resolveInfo="Panel" />
-                </node>
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225971571660">
-                <property name="value" value="0" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225971573256">
-                <property name="value" value="0" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225971602964">
-                <property name="value" value="0" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225971604747">
-                <property name="value" value="0" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225971606499">
-                <property name="value" value="0" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225971607985">
-                <property name="value" value="0" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225971600321">
-                <property name="value" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215709528927">
