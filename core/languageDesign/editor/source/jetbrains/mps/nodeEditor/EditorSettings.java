@@ -383,9 +383,12 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
 
       ActionListener listener = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          myBlinkingDemo.getRootCell().switchCaretVisible();
           myBlinkingDemo.repaint();
-          myTimer.setDelay(getBlinkingPeriod());
+          EditorCell rootCell = myBlinkingDemo.getRootCell();
+          if (rootCell!=null){
+            rootCell.switchCaretVisible();
+            myTimer.setDelay(getBlinkingPeriod());
+          }
         }
       };
       myTimer = new Timer(myCaretBlinker.getCaretBlinkingRateTimeMillis(), listener);
