@@ -8,10 +8,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public abstract class GenerateModelsAction extends BaseAction {
   private List<SModelDescriptor> myModels;
@@ -51,8 +53,12 @@ public abstract class GenerateModelsAction extends BaseAction {
     ActionEventData data = new ActionEventData(e);
     MPSProject project = data.getMPSProject();
     myGenManager =project.getComponentSafe(GeneratorManager.class);
-    myModels = data.getModels();
-    if (myModels==null) return false;
+    myModels = e.getData(MPSDataKeys.MODELS);
+    if (myModels==null || myModels.isEmpty()){
+      myModels = new ArrayList<SModelDescriptor>();
+      myModels.add(e.getData(MPSDataKeys.CONTEXT_MODEL));
+    }
+    if (myModels.isEmpty()) return false;
     myContext = data.getOperationContext();
     if (myContext==null) return false;
     return true;

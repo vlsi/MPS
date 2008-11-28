@@ -101,6 +101,5 @@ public class ShowMappingsPartitioningAction extends BaseAction {
     if (myFrame == null) return false;
     myModels = data.getModels();
     return myModels.size() == 1;
-
   }
 }
