@@ -1538,32 +1538,6 @@
       <link role="intfc" targetNodeId="2.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1200913690460">
-    <property name="name" value="Node_FindOutputNode" />
-    <link role="extends" targetNodeId="11.1138411891628" resolveInfo="SNodeOperation" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1200913810085">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="templateGenerator" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="6.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1200913726734">
-      <property name="role" value="label" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1200911316486" resolveInfo="MappingLabelDeclaration" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1200913919570">
-      <property name="value" value="find output node" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1216838008250">
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1216837910044">
-      <property name="value" value="this operation is replaced with genctx.get output... operation" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1202776937179">
     <property name="package" value="rule.consequence" />
     <property name="name" value="AbandonInput_RuleConsequence" />
