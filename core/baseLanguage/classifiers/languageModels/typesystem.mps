@@ -224,7 +224,7 @@
                 <link role="link" targetNodeId="9.1068580123134" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.CountOperation" id="1205854646711" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation" id="1227869221040" />
           </node>
         </node>
       </node>

@@ -9,7 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -44,10 +45,11 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
         }
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)).count() != SLinkOperations.getCount(nodeToCheck, "actualArgument")) {
+    if (SLinkOperations.getCount(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter") != SLinkOperations.getCount(nodeToCheck, "actualArgument")) {
       {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(nodeToCheck, "Number of parameters doesn't match", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854659855", intentionProvider);
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportTypeError(nodeToCheck, "Number of parameters doesn't match", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854659855", intentionProvider, errorTarget);
       }
     }
   }

@@ -1468,7 +1468,7 @@
                   <link role="link" targetNodeId="1.1128555889557" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.CountOperation" id="1214840484947" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation" id="1227869148722" />
             </node>
           </node>
         </node>
@@ -4656,7 +4656,7 @@
                     <link role="link" targetNodeId="1.1070462273904" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.CountOperation" id="1214840517950" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation" id="1227869142010" />
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214840505320">

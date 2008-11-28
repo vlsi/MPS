@@ -50,7 +50,7 @@ public class Classifier_Behavior {
   }
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)).count() > 0;
+    return SLinkOperations.getCount(thisNode, "staticField") > 0;
   }
 
   public static boolean call_hasStaticMemebers_1214840444586(SNode thisNode) {

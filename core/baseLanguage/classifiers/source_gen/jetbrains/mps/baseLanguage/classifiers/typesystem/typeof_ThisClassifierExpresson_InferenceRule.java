@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpresson_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ThisClassifierExpresson_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -28,7 +30,8 @@ public class typeof_ThisClassifierExpresson_InferenceRule extends AbstractInfere
     {
       {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(nodeToCheck, "this classifier expression isn't applicable in this place", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205753211126", intentionProvider);
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportTypeError(nodeToCheck, "this classifier expression isn't applicable in this place", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205753211126", intentionProvider, errorTarget);
       }
     }
   }

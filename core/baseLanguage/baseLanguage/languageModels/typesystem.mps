@@ -11462,7 +11462,7 @@
                 <link role="link" targetNodeId="1.1109279881614" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.CountOperation" id="1220359380586" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation" id="1227869211261" />
           </node>
         </node>
       </node>

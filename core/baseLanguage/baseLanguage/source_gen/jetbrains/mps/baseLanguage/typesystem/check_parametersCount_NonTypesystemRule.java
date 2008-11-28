@@ -34,14 +34,14 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
     if (!(b)) {
       {
         BaseIntentionProvider intentionProvider = null;
-        intentionProvider = new BaseIntentionProvider("r:98e2a57d-1cfa-4722-96a8-57283a85ad60(jetbrains.mps.baseLanguage.typesystem@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+        intentionProvider = new BaseIntentionProvider("r:bbd9d512-ee75-43af-8949-bd1aafae4321(jetbrains.mps.baseLanguage.typesystem@6_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
         intentionProvider.putArgument("methodCall", iMethodCall);
         intentionProvider.putArgument("classifier", SNodeOperations.getAncestor(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
         IErrorTarget errorTarget = new NodeErrorTarget();
         typeCheckingContext.reportTypeError(iMethodCall, "wrong number of parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219948518456", intentionProvider, errorTarget);
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).count() > 0) {
+    if (SLinkOperations.getCount(baseMethodDeclaration, "typeVariableDeclaration") > 0) {
       for(SNode actual : actualArguments) {
         typeCheckingContext.addDependencyForCurrent(actual);
       }

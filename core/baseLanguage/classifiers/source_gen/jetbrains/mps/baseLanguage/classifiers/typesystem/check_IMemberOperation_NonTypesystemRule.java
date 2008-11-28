@@ -14,6 +14,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_IMemberOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -30,9 +32,12 @@ public class check_IMemberOperation_NonTypesystemRule extends AbstractNonTypesys
         if (!(ListSequence.fromList(BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_0, nodeToCheck)).contains(SLinkOperations.getTarget(nodeToCheck, "member", false)))) {
           {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportTypeError(nodeToCheck, "Declaration is out of scope", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205921883388", intentionProvider);
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            typeCheckingContext.reportTypeError(nodeToCheck, "Declaration is out of scope", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205921883388", intentionProvider, errorTarget);
           }
         }
+      } else
+      {
       }
     }
   }
