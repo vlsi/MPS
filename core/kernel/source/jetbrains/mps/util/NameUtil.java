@@ -311,7 +311,7 @@ public class NameUtil {
           result.append(".");
         }
 
-        if (i != parts.length - 1 && parts.length > 1) {
+        if (i < parts.length - 2) {
           result.append(parts[i].charAt(0));
         } else {
           result.append(parts[i]);
