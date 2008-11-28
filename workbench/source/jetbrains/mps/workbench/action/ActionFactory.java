@@ -6,6 +6,9 @@ import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -28,6 +31,58 @@ public class ActionFactory {
 
   private List<String> myActions = new ArrayList<String>();
 
+  public AnAction acquireRegisteredAction(String actionClassName, String moduleNamespace, Object... params) {
+    IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
+    if (module==null) return null;
+    Class actionClass = module.getClass(actionClassName);
+
+    Method idMethod = null;
+    for (Method m : actionClass.getMethods()) {
+      if (m.getName().equals(GeneratedAction.getIdMethodName())) {
+        idMethod = m;
+        break;
+      }
+    }
+
+    String id;
+    //todo - this is a support for java actions. When all java actions are rewritten,remove this
+    if (idMethod == null) {
+      id = actionClass.getName();
+    } else {
+      try {
+        String actionId = (String) idMethod.invoke(null, new Object[]{params});
+        id = getFullId(actionId, moduleNamespace, actionClass);
+      } catch (IllegalAccessException e) {
+        LOG.error("This can't happen", e);
+        return null;
+      } catch (InvocationTargetException e) {
+        LOG.error("User's getIdent() method failed", e);
+        return null;
+      }
+    }
+
+    AnAction action = ActionManager.getInstance().getAction(id);
+    if (action == null) {
+      try {
+        AnAction newAction = (AnAction) actionClass.getConstructors()[0].newInstance(params);
+        registerAction(newAction, id, moduleNamespace);
+        return newAction;
+      } catch (InstantiationException e) {
+        LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
+        return null;
+      } catch (IllegalAccessException e) {
+        LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
+        return null;
+      } catch (InvocationTargetException e) {
+        LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
+        return null;
+      }
+    } else {
+      return action;
+    }
+  }
+
+  @Deprecated
   @Nullable
   public AnAction acquireRegisteredAction(Class actionClass, String languageNamespace, Object... params) {
     Method idMethod = null;
@@ -76,6 +131,41 @@ public class ActionFactory {
     }
   }
 
+  @Nullable
+  public BaseGroup acquireRegisteredGroup(String groupClassName, String moduleNamespace, Object... params) {
+    IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
+    if (module==null) return null;
+    Class groupClass = module.getClass(groupClassName);
+
+    String id = null;
+    try {
+      id = (String) groupClass.getField("ID").get(null);
+    } catch (Exception e) {
+      id = groupClass.getName();
+    }
+
+    AnAction action = ActionManager.getInstance().getAction(id);
+    if (action == null) {
+      try {
+        BaseGroup group = (BaseGroup) groupClass.getConstructors()[0].newInstance(params);
+        registerGroup(group, id, moduleNamespace);
+        return group;
+      } catch (InstantiationException e) {
+        LOG.error("Unable to create action " + groupClass.getSimpleName(), e);
+        return null;
+      } catch (IllegalAccessException e) {
+        LOG.error("Unable to create action " + groupClass.getSimpleName(), e);
+        return null;
+      } catch (InvocationTargetException e) {
+        LOG.error("Unable to create action " + groupClass.getSimpleName(), e);
+        return null;
+      }
+    } else {
+      return (BaseGroup) action;
+    }
+  }
+
+  @Deprecated
   @Nullable
   public BaseGroup acquireRegisteredGroup(Class groupClass, String languageNamespace, Object... params) {
     String id = null;
