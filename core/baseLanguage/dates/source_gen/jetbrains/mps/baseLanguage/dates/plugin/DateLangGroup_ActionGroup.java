@@ -4,10 +4,6 @@ package jetbrains.mps.baseLanguage.dates.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup;
@@ -21,10 +17,7 @@ public class DateLangGroup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage.dates"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.dates.plugin.ConvertDateTimeOperations_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.baseLanguage.dates.plugin.ConvertDateTimeOperations_Action", "jetbrains.mps.baseLanguage.dates");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -6,20 +6,24 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Packaging_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.build.packaging"));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.build.packaging.plugin.ProjectPaneModelAddition_ActionGroup"), module.getModuleFqName()));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition_ActionGroup"), module.getModuleFqName()));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.build.packaging.plugin.SNodeAddition_ActionGroup"), module.getModuleFqName()));
+    String moduleName = "jetbrains.mps.build.packaging";
+    this.addGroup(groups, moduleName, "jetbrains.mps.build.packaging.plugin.ProjectPaneModelAddition_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.build.packaging.plugin.SNodeAddition_ActionGroup");
     return groups;
+  }
+
+  public void addGroup(List<BaseGroup> groups, String moduleName, String groupName) {
+    BaseGroup group = ActionFactory.getInstance().acquireRegisteredGroup(groupName, moduleName);
+    if (group != null) {
+      groups.add(group);
+    }
   }
 
 }

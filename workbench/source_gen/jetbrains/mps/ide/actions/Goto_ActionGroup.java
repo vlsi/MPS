@@ -4,21 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.actions.goTo.GoToActionAction;
-import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
-import jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction;
-import jetbrains.mps.workbench.actions.goTo.GoToConceptNodeAction;
-import jetbrains.mps.workbench.actions.goTo.GoToNodeByIdAction;
-import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationAction;
-import jetbrains.mps.workbench.actions.nodes.GoToRulesAction;
-import jetbrains.mps.workbench.actions.goTo.GoToModelAction;
-import jetbrains.mps.workbench.actions.goTo.GoToLanguageAction;
-import jetbrains.mps.workbench.actions.goTo.GoToSolutionAction;
-import jetbrains.mps.workbench.actions.goTo.GoToDevkitAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -32,57 +17,21 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToActionAction.class, module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToActionAction", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToRootNodeAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToNamedNodeAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToConceptNodeAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToNodeByIdAction.class, module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToConceptNodeAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToNodeByIdAction", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action"), module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToEditorDeclarationAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToRulesAction.class, module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.nodes.GoToRulesAction", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToModelAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToLanguageAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToSolutionAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToDevkitAction.class, module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToModelAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToLanguageAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToSolutionAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToDevkitAction", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

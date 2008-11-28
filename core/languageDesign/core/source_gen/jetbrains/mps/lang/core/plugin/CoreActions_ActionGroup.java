@@ -4,10 +4,6 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -21,10 +17,7 @@ public class CoreActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.core"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.core.plugin.ShowNodeMessages_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.lang.core.plugin.ShowNodeMessages_Action", "jetbrains.mps.lang.core");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

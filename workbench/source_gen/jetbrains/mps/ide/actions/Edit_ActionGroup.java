@@ -4,17 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.actions.nodes.CopyNodeAction;
-import jetbrains.mps.workbench.actions.nodes.CopyNodeReferenceAction;
-import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
-import jetbrains.mps.workbench.actions.nodes.CutNodeAction;
-import jetbrains.mps.workbench.actions.imports.AddModelImportAction;
-import jetbrains.mps.workbench.actions.imports.AddModelImportByRootNodeAction;
-import jetbrains.mps.workbench.actions.imports.AddLanguageImportAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -30,35 +19,14 @@ public class Edit_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(CopyNodeAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(CopyNodeReferenceAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(PasteNodeAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(CutNodeAction.class, module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.nodes.CopyNodeAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.nodes.CopyNodeReferenceAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.nodes.PasteNodeAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.nodes.CutNodeAction", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(AddModelImportAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(AddModelImportByRootNodeAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(AddLanguageImportAction.class, module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.imports.AddModelImportAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.imports.AddModelImportByRootNodeAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.imports.AddLanguageImportAction", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAnchor(Edit_ActionGroup.LABEL_ID_custom);
     } catch (Throwable t) {

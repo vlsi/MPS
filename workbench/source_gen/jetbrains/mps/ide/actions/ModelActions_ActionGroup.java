@@ -5,18 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
-import jetbrains.mps.workbench.actions.model.DeleteModelsAction;
-import jetbrains.mps.workbench.actions.model.OptimizeImportsAction;
-import jetbrains.mps.workbench.actions.model.ShowReferencesToMissingStuffAction;
-import jetbrains.mps.workbench.actions.model.GenerateModelFilesAction;
-import jetbrains.mps.workbench.actions.model.GenerateModelTextAction;
-import jetbrains.mps.workbench.actions.model.ShowMappingsPartitioningAction;
-import jetbrains.mps.workbench.actions.model.ModelPropertiesAction;
 
 public class ModelActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ModelActions_ActionGroup.class);
@@ -30,73 +18,31 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.add(new CreateRootNodeGroup());
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(PasteNodeAction.class, module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.nodes.PasteNodeAction", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(DeleteModelsAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.CloneModel_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.model.DeleteModelsAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.CloneModel_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(OptimizeImportsAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.AddMissingImports_Action"), module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowReferencesToMissingStuffAction.class, module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.model.OptimizeImportsAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.AddMissingImports_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.model.ShowReferencesToMissingStuffAction", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.CheckModel_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.ide.actions.CheckModel_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateModelFilesAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateModelTextAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowMappingsPartitioningAction.class, module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.model.GenerateModelFilesAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.model.GenerateModelTextAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.model.ShowMappingsPartitioningAction", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowDifferencesWithModelOnDisk_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.ide.actions.ShowDifferencesWithModelOnDisk_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.RevertMemoryChanges_Action"), module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.SaveModel_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.ide.actions.RevertMemoryChanges_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.SaveModel_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAnchor(ModelActions_ActionGroup.LABEL_ID_refactoring);
       this.addSeparator();
       this.addAnchor(ModelActions_ActionGroup.LABEL_ID_vcs);
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(ModelPropertiesAction.class, module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.model.ModelPropertiesAction", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -4,10 +4,6 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
@@ -21,14 +17,8 @@ public class FindInstancesByConditionGroup_ActionGroup extends GeneratedActionGr
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.quickQueryLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action"), module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.quickQueryLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryAction_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action", "jetbrains.mps.quickQueryLanguage");
+      this.addAction("jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryAction_Action", "jetbrains.mps.quickQueryLanguage");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

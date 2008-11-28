@@ -4,12 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.actions.project.AddModuleToProjectAction;
-import jetbrains.mps.workbench.actions.module.DeleteModuleAction;
 
 public class DevkitActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(DevkitActions_ActionGroup.class);
@@ -20,32 +14,14 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.SetModuleFolder_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.ide.actions.SetModuleFolder_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(AddModuleToProjectAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action"), module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(DeleteModuleAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.AnalyzeClasspath_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.project.AddModuleToProjectAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.module.DeleteModuleAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.DevkitProperties_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.ide.actions.DevkitProperties_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

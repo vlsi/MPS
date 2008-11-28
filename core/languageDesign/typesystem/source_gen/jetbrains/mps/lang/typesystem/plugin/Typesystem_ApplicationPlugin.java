@@ -6,22 +6,26 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
-    IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.typesystem"));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup"), module.getModuleFqName()));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.lang.typesystem.plugin.HelginsNodeActions_ActionGroup"), module.getModuleFqName()));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.lang.typesystem.plugin.HelginsEditorPopupInternal_ActionGroup"), module.getModuleFqName()));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.lang.typesystem.plugin.HelginsModelActions_ActionGroup"), module.getModuleFqName()));
-    groups.add(ActionFactory.getInstance().acquireRegisteredGroup(module.getClass("jetbrains.mps.lang.typesystem.plugin.HelginsToolsAddition_ActionGroup"), module.getModuleFqName()));
+    String moduleName = "jetbrains.mps.lang.typesystem";
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.HelginsNodeActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.HelginsEditorPopupInternal_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.HelginsModelActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.HelginsToolsAddition_ActionGroup");
     return groups;
+  }
+
+  public void addGroup(List<BaseGroup> groups, String moduleName, String groupName) {
+    BaseGroup group = ActionFactory.getInstance().acquireRegisteredGroup(groupName, moduleName);
+    if (group != null) {
+      groups.add(group);
+    }
   }
 
 }

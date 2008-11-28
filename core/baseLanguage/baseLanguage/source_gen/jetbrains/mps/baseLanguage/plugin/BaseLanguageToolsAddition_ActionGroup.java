@@ -4,10 +4,6 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
@@ -23,10 +19,7 @@ public class BaseLanguageToolsAddition_ActionGroup extends GeneratedActionGroup 
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.baseLanguage"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action", "jetbrains.mps.baseLanguage");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

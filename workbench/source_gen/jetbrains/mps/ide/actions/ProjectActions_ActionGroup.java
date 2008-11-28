@@ -4,10 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.workbench.action.ActionFactory;
 
 public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ProjectActions_ActionGroup.class);
@@ -21,27 +17,12 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
     try {
       this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_projectNew);
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.MakeProject_Action"), module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.RebuildProject_Action"), module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.CleanProject_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.ide.actions.MakeProject_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.RebuildProject_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.CleanProject_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.OptimizeProjectImports_Action"), module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.MPSProjectPaths_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.ide.actions.OptimizeProjectImports_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.MPSProjectPaths_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -4,13 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.actions.ReloadAllAction;
-import jetbrains.mps.workbench.actions.tools.InstallIDEAPluginAction;
-import jetbrains.mps.smodel.RenameAspectsAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -26,29 +19,14 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowModuleRepository_Action"), module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowModelRepository_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.ide.actions.ShowModuleRepository_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.ShowModelRepository_Action", "jetbrains.mps.ide");
       this.addAnchor(Tools_ActionGroup.LABEL_ID_customTools);
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(ReloadAllAction.class, module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.ReloadAllAction", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(InstallIDEAPluginAction.class, module.getModuleFqName()));
-      }
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(RenameAspectsAction.class, module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.workbench.actions.tools.InstallIDEAPluginAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.smodel.RenameAspectsAction", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal);
     } catch (Throwable t) {

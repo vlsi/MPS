@@ -4,10 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -21,15 +17,9 @@ public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(true);
     this.setPopup(false);
     try {
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.RemoveTransientModels_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.ide.actions.RemoveTransientModels_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      {
-        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.DumpKeyStrokes_Action"), module.getModuleFqName()));
-      }
+      this.addAction("jetbrains.mps.ide.actions.DumpKeyStrokes_Action", "jetbrains.mps.ide");
       this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
