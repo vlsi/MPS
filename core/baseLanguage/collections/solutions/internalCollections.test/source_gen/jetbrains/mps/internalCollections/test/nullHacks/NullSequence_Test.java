@@ -38,7 +38,7 @@ public class NullSequence_Test extends Util_Test {
       this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).union(null));
       this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).intersect(null));
       this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).disjunction(null));
-      this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).substract(null));
+      this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).subtract(null));
     }
   }
 

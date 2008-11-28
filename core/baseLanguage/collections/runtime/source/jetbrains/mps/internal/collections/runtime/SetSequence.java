@@ -162,9 +162,9 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
 	}
 
 	@Override
-	public ISequence<T> substract(ISequence<T> that) {
+	public ISequence<T> subtract(ISequence<T> that) {
 		// TODO Auto-generated method stub
-		return super.substract(that);
+		return super.subtract(that);
 	}
 
 	@Override

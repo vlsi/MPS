@@ -235,9 +235,9 @@ public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSe
     }
 
     @Override
-    public ISequence<IMapping<U,V>> substract(ISequence<IMapping<U,V>> that) {
+    public ISequence<IMapping<U,V>> subtract(ISequence<IMapping<U,V>> that) {
         // TODO Auto-generated method stub
-        return super.substract(that);
+        return super.subtract(that);
     }
 
     @Override

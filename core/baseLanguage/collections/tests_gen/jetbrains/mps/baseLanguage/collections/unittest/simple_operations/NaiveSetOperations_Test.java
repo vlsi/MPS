@@ -619,10 +619,10 @@ __switch__:
 
   @Test()
   public void test_exclude() throws Exception {
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).substract(Sequence.fromIterable(aabb)));
-    this.assertIterableEqualsIgnoreOrder(aabb, Sequence.fromIterable(aabbcc).substract(Sequence.fromIterable(ccc)));
-    this.assertIterableEqualsIgnoreOrder(aabbc, Sequence.fromIterable(aabbcc).substract(Sequence.fromIterable(c)));
-    this.assertIterableEqualsIgnoreOrder(abc, Sequence.fromIterable(aabbcc).substract(Sequence.fromIterable(abc)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(aabb)));
+    this.assertIterableEqualsIgnoreOrder(aabb, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(ccc)));
+    this.assertIterableEqualsIgnoreOrder(aabbc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(c)));
+    this.assertIterableEqualsIgnoreOrder(abc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(abc)));
   }
 
   @Test()

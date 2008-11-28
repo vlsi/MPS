@@ -39,7 +39,7 @@ public class ModificationStatement_modifiedGroup_ReferentConstraint extends Base
 
     }).toListSequence();
     ListSequence.fromList(thisGroupChildGroups).addElement(groupDeclaration);
-    return new SimpleSearchScope(ListSequence.fromList(actionGroupDeclarations).substract(ListSequence.fromList(thisGroupChildGroups)).toListSequence());
+    return new SimpleSearchScope(ListSequence.fromList(actionGroupDeclarations).subtract(ListSequence.fromList(thisGroupChildGroups)).toListSequence());
   }
 
 }

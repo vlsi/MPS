@@ -234,11 +234,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1205514854257">
-    <property name="testCaseName" value="SubstractTest" />
+    <property name="testCaseName" value="SubtractTest" />
+    <property name="name" value="SubtractTest_Test" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205514854258" />
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1205514854259">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1205514867105">
-        <property name="methodName" value="substractMethod" />
+        <property name="methodName" value="subtractMethod" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205514867106" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205514867107">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205514874053">
@@ -291,7 +292,7 @@
                   <link role="variableDeclaration" targetNodeId="1205514874054" resolveInfo="input" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205514914414">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~ISequence.substract(jetbrains.mps.internal.collections.runtime.ISequence):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="substract" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.~ISequence.subtract(jetbrains.mps.internal.collections.runtime.ISequence):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="subtract" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205514919218">
                     <link role="classConcept" targetNodeId="1.~Sequence" resolveInfo="Sequence" />
                     <link role="baseMethodDeclaration" targetNodeId="1.~Sequence.fromArray(java.lang.Object...):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
@@ -342,7 +343,7 @@
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1205515308375">
-        <property name="methodName" value="substractOperation" />
+        <property name="methodName" value="subtractOperation" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205515308376" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205515308377">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205515314846">

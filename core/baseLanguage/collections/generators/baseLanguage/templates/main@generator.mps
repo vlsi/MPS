@@ -8441,17 +8441,17 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1205497589298">
       <link role="applicableConcept" targetNodeId="8.1176923520476" resolveInfo="ExcludeOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1205497613916">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208692390767">
-          <link role="baseMethodDeclaration" targetNodeId="13.~ISequence.substract(jetbrains.mps.internal.collections.runtime.ISequence):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="substract" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="1208692390768">
-            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="1208692390769">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227874612726">
+          <link role="baseMethodDeclaration" targetNodeId="13.~ISequence.subtract(jetbrains.mps.internal.collections.runtime.ISequence):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="subtract" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="1227874612727">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="1227874612728">
               <link role="templateSwitch" targetNodeId="1203340411125" resolveInfo="switch_sequence_operation_toSequence" />
-              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1208692390770">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208692390771">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208692390772">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208692390773">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1208692390774" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1208692390775">
+              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1227874612729">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227874612730">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227874612731">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227874612732">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227874612733" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227874612734">
                         <link role="link" targetNodeId="8.1176906787974" />
                       </node>
                     </node>
