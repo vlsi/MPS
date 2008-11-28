@@ -186,10 +186,13 @@ public abstract class MPSTree extends DnDAwareTree {
     if (path == null) return;
 
     Object lastPathComponent = path.getLastPathComponent();
-    if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened() && (e.getClickCount() == 2 ||
-      (e.getClickCount() == 1 && isAutoOpen()))) {
+    if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened()) {
       MPSTreeNode nodeToClick = (MPSTreeNode) lastPathComponent;
-      nodeToClick.doubleClick();
+      if ((e.getClickCount() == 1 && isAutoOpen())){
+        nodeToClick.autoscroll();
+      } else if (e.getClickCount() == 2){
+        nodeToClick.doubleClick();
+      }
       e.consume();
     } else if (e.getButton() == MouseEvent.BUTTON3) {
       // fix right-click behaviour - make selection before showing popup

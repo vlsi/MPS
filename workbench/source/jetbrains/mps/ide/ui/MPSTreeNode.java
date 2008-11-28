@@ -429,4 +429,8 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   protected boolean canBeOpened() {
     return true;
   }
+
+  public void autoscroll() {
+    
+  }
 }
