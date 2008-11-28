@@ -9,6 +9,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
@@ -51,6 +52,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.nodes.GoByCurrentReferenceAction;
+import jetbrains.mps.TestMain;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -876,8 +878,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void dispose() {
-
-    hideMessageToolTip();
+    if (! IdeMain.isTestMode()) {
+      hideMessageToolTip();
+    }
 
     myHighlightManager.dispose();
 
