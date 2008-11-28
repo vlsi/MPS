@@ -713,26 +713,6 @@
     <link role="source" targetNodeId="2.1133920641626" />
     <link role="target" targetNodeId="1095672379244" resolveInfo="TemplateFragment" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1166748937193">
-    <property name="name" value="TemplateFunctionParameter_sourceModel" />
-    <property name="package" value="functionParameter" />
-    <link role="extends" targetNodeId="6.1107135704075" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1166749096861">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
-      <node role="target" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1166749224020" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1166749069874">
-      <property name="value" value="sourceModel" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1166749069875">
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1217017180351">
-      <property name="value" value="not shown in parameters any more: use 'genContext'" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1167087469898">
     <property name="name" value="CreateRootRule" />
     <property name="package" value="rule" />
@@ -1003,26 +983,6 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1167770229870">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1167774355440">
-    <property name="name" value="TemplateFunctionParameter_templateNode" />
-    <property name="package" value="functionParameter" />
-    <link role="extends" targetNodeId="6.1107135704075" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1167782639068">
-      <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
-      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1167782642914" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1167774355441">
-      <property name="value" value="templateNode" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1167774355442">
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1217369893873">
-      <property name="value" value="not shown in parameters any more. accessible via genContext" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1167945743726">

@@ -172,12 +172,6 @@
         <link role="template" targetNodeId="1216944103857" resolveInfo="reduce_ScopeToGetScope" />
       </node>
     </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1217370103996">
-      <link role="applicableConcept" targetNodeId="7.1167774355440" resolveInfo="TemplateFunctionParameter_templateNode" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1217370140234">
-        <link role="template" targetNodeId="1217370140232" resolveInfo="reduce_templateNodeToGetTemplateNode" />
-      </node>
-    </node>
     <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167172435386">
       <link role="applicableConcept" targetNodeId="7.1167087518662" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169670940578">
@@ -1725,37 +1719,6 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1217370140232">
-    <property name="name" value="reduce_templateNodeToGetTemplateNode" />
-    <link role="applicableConcept" targetNodeId="7.1167774355440" resolveInfo="TemplateFunctionParameter_templateNode" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1217370169892">
-      <property name="name" value="_context_" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217370169893" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217370169894" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217370169895">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217370169896">
-          <property name="value" value="'templateNode' has been removed from function parameters but we still have to support its generation" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217370169897">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217370169898">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1217370169899">
-              <link role="variableDeclaration" targetNodeId="1217370169902" resolveInfo="_context" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217370169900">
-              <link role="baseMethodDeclaration" targetNodeId="3.~TemplateQueryContext.getTemplateNode():jetbrains.mps.smodel.SNode" resolveInfo="getTemplateNode" />
-            </node>
-            <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1217370169901" />
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1217370169902">
-        <property name="name" value="_context" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217370169903">
-          <link role="classifier" targetNodeId="3.~TemplateQueryContext" resolveInfo="TemplateQueryContext" />
         </node>
       </node>
     </node>
