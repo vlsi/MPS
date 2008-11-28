@@ -48,6 +48,10 @@ public class EventsCollector {
       new Class[] { SModelListener.class },
       new InvocationHandler() {
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+          if (myDisposed) {
+            throw new IllegalStateException("Disposed events collector was called");
+          }
+
           if (method.getName().equals("equals") && args.length == 1) {
             return proxy == args[0];
           }
