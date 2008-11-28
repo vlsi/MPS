@@ -11,6 +11,7 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -34,7 +35,7 @@ public class LanguageConceptsUsagesFinder extends BaseFinder {
 
     searchResults.getSearchedNodes().addAll(sModel.getRoots());
 
-    SearchResults<SModel> modelResults = FindUtils.getSearchResults(indicator, new SearchQuery(sModel, GlobalScope.getInstance()), new ModelUsagesFinder());
+    SearchResults<SModel> modelResults = FindUtils.getSearchResults(indicator, new SearchQuery(sModel, GlobalScopeMinusTransient.getInstance()), new ModelUsagesFinder());
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
 
     for (SearchResult<SModel> sModelSearchResult : modelResults.getSearchResults()) {

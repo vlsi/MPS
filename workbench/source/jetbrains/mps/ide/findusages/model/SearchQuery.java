@@ -6,11 +6,8 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.model.holders.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.AbstractModule.ModuleScope;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.MPSProject.ProjectScope;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
@@ -127,7 +124,7 @@ public class SearchQuery implements IExternalizeable {
     Element scopeXML = element.getChild(SCOPE);
     String scopeType = scopeXML.getAttribute(SCOPE_TYPE).getValue();
     if (scopeType.equals(SCOPE_TYPE_GLOBAL)) {
-      myScope = GlobalScope.getInstance();
+      myScope = GlobalScopeMinusTransient.getInstance();
     } else if (scopeType.equals(SCOPE_TYPE_PROJECT)) {
       myScope = project.getScope();
     } else if (scopeType.equals(SCOPE_TYPE_MODULE)) {

@@ -16,7 +16,7 @@ public class GlobalScope extends BaseScope {
     return myInstance;
   }
 
-  private GlobalScope() {
+  protected GlobalScope() {
   }
 
   public String toString() {
