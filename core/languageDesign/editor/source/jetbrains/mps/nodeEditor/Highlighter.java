@@ -44,6 +44,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private ReloadListener myReloadListener = new ReloadAdapter() {
     public void onReload() {
       myCheckedOnceEditors.clear();
+      myCheckedOnceInspectors.clear();
     }
   };
   private SModelCommandListener myCommandListener = new SModelCommandListener() {
