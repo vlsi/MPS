@@ -1,18 +1,19 @@
 package jetbrains.mps.ide.ui;
 
-import com.intellij.ide.DataManager;
 import com.intellij.ide.dnd.aware.DnDAwareTree;
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -178,10 +179,12 @@ public abstract class MPSTree extends DnDAwareTree {
   }
 
   void myMouseReleased(MouseEvent e) {
-    if (e.isPopupTrigger()) showPopup(e);
+    if (e.isPopupTrigger()) showPopup(e.getX(), e.getY());
   }
 
   void myMousePressed(MouseEvent e) {
+    requestFocus(true);
+    
     TreePath path = getPathForLocation(e.getX(), e.getY());
     if (path == null) return;
 
@@ -201,7 +204,7 @@ public abstract class MPSTree extends DnDAwareTree {
       }
     }
 
-    if (e.isPopupTrigger()) showPopup(e);
+    if (e.isPopupTrigger()) showPopup(e.getX(), e.getY());
   }
 
   public void runWithoutExpansion(Runnable r) {
@@ -231,12 +234,6 @@ public abstract class MPSTree extends DnDAwareTree {
     return null;
   }
 
-  private static class TreePair extends Pair<KeyStroke, Class<? extends MPSTreeNode>> {
-    public TreePair(KeyStroke keyStroke, Class<? extends MPSTreeNode> nodeClass) {
-      super(keyStroke, nodeClass);
-    }
-  }
-
   protected JPopupMenu createDefaultPopupMenu() {
     return null;
   }
@@ -250,10 +247,6 @@ public abstract class MPSTree extends DnDAwareTree {
         return manager.createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, actionGroup).getComponent();
       }
     });
-  }
-
-  private void showPopup(MouseEvent e) {
-    showPopup(e.getX(), e.getY());
   }
 
   private void showPopup(int x, int y) {

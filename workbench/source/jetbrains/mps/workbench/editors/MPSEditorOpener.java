@@ -1,5 +1,6 @@
 package jetbrains.mps.workbench.editors;
 
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
@@ -8,17 +9,16 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.ide.DataManager;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
-import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
-import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
-import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
 import jetbrains.mps.ide.ConceptDeclarationEditor;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
+import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
+import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
+import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
+import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
@@ -26,9 +26,9 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -201,22 +201,22 @@ public class MPSEditorOpener implements ProjectComponent {
       }
     }
 
-    doFocus(focus, nodeEditor, false);
+    if (focus) {
+      doFocus(nodeEditor, false);
+    }
 
     return nodeEditor;
   }
 
-  private void doFocus(boolean focus, IEditor nodeEditor, boolean cellInInspector) {
-    if (focus) {
-      if (!cellInInspector) {
-        final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
-        manager.activateEditorComponent();
-        IdeFocusManager.getInstance(myProject).requestFocus(nodeEditor.getCurrentEditorComponent(), false);
-      } else {
-        final InspectorTool inspectorTool = myProject.getComponent(InspectorTool.class);
-        inspectorTool.getToolWindow().activate(null);
-        IdeFocusManager.getInstance(myProject).requestFocus(inspectorTool.getInspector(), true);
-      }
+  private void doFocus(IEditor nodeEditor, boolean cellInInspector) {
+    if (!cellInInspector) {
+      final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
+      manager.activateEditorComponent();
+      IdeFocusManager.getInstance(myProject).requestFocus(nodeEditor.getCurrentEditorComponent(), false);
+    } else {
+      final InspectorTool inspectorTool = myProject.getComponent(InspectorTool.class);
+      inspectorTool.getToolWindow().activate(null);
+      IdeFocusManager.getInstance(myProject).requestFocus(inspectorTool.getInspector(), true);
     }
   }
 
@@ -235,7 +235,9 @@ public class MPSEditorOpener implements ProjectComponent {
       EditorCell cellInInspector = inspector.findNodeCell(currentTargetNode);
       if (cellInInspector != null) {
         inspector.selectNode(node);
-        doFocus(focus, nodeEditor, currentTargetNode != node);
+        if (focus) {
+          doFocus(nodeEditor, currentTargetNode != node);
+        }
         return;
       }
       currentTargetNode = currentTargetNode.getParent();
@@ -251,7 +253,6 @@ public class MPSEditorOpener implements ProjectComponent {
     while (currentSelectionTarget != null) {
       EditorCell cell = component.findNodeCell(currentSelectionTarget);
       if (cell != null) {
-
         component.changeSelection(cell);
         return;
       }
@@ -270,10 +271,9 @@ public class MPSEditorOpener implements ProjectComponent {
 
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
+    FileEditor fileEditor=editorManager.openFile(file, false)[0];
 
-    FileEditor[] result = editorManager.openFile(file, false);
-
-    MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) result[0];
+    MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
 
     IEditor nodeEditor = fileNodeEditor.getNodeEditor();
 
