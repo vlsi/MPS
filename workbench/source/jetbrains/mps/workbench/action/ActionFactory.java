@@ -82,55 +82,6 @@ public class ActionFactory {
     }
   }
 
-  @Deprecated
-  @Nullable
-  public AnAction acquireRegisteredAction(Class actionClass, String languageNamespace, Object... params) {
-    Method idMethod = null;
-    for (Method m : actionClass.getMethods()) {
-      if (m.getName().equals(GeneratedAction.getIdMethodName())) {
-        idMethod = m;
-        break;
-      }
-    }
-
-    String id;
-    //todo - this is a support for java actions. When all java actions are rewritten,remove this
-    if (idMethod == null) {
-      id = actionClass.getName();
-    } else {
-      try {
-        String actionId = (String) idMethod.invoke(null, new Object[]{params});
-        id = getFullId(actionId, languageNamespace, actionClass);
-      } catch (IllegalAccessException e) {
-        LOG.error("This can't happen", e);
-        return null;
-      } catch (InvocationTargetException e) {
-        LOG.error("User's getIdent() method failed", e);
-        return null;
-      }
-    }
-
-    AnAction action = ActionManager.getInstance().getAction(id);
-    if (action == null) {
-      try {
-        AnAction newAction = (AnAction) actionClass.getConstructors()[0].newInstance(params);
-        registerAction(newAction, id, languageNamespace);
-        return newAction;
-      } catch (InstantiationException e) {
-        LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
-        return null;
-      } catch (IllegalAccessException e) {
-        LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
-        return null;
-      } catch (InvocationTargetException e) {
-        LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
-        return null;
-      }
-    } else {
-      return action;
-    }
-  }
-
   @Nullable
   public BaseGroup acquireRegisteredGroup(String groupClassName, String moduleNamespace, Object... params) {
     IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
@@ -149,36 +100,6 @@ public class ActionFactory {
       try {
         BaseGroup group = (BaseGroup) groupClass.getConstructors()[0].newInstance(params);
         registerGroup(group, id, moduleNamespace);
-        return group;
-      } catch (InstantiationException e) {
-        LOG.error("Unable to create action " + groupClass.getSimpleName(), e);
-        return null;
-      } catch (IllegalAccessException e) {
-        LOG.error("Unable to create action " + groupClass.getSimpleName(), e);
-        return null;
-      } catch (InvocationTargetException e) {
-        LOG.error("Unable to create action " + groupClass.getSimpleName(), e);
-        return null;
-      }
-    } else {
-      return (BaseGroup) action;
-    }
-  }
-
-  @Deprecated
-  @Nullable
-  public BaseGroup acquireRegisteredGroup(Class groupClass, String languageNamespace, Object... params) {
-    String id = null;
-    try {
-      id = (String) groupClass.getField("ID").get(null);
-    } catch (Exception e) {
-      id = groupClass.getName();
-    }
-    AnAction action = ActionManager.getInstance().getAction(id);
-    if (action == null) {
-      try {
-        BaseGroup group = (BaseGroup) groupClass.getConstructors()[0].newInstance(params);
-        registerGroup(group, id, languageNamespace);
         return group;
       } catch (InstantiationException e) {
         LOG.error("Unable to create action " + groupClass.getSimpleName(), e);
