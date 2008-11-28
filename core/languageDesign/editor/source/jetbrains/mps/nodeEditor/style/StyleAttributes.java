@@ -45,4 +45,6 @@ public class StyleAttributes {
 
   public static final StyleAttribute<String> POSITION = new SimpleStyleAttribute<String>("position");
   public static final StyleAttribute<String> POSITION_CHILDREN = new SimpleStyleAttribute<String>("position-children");
+
+  public static final StyleAttribute<String> NAVIGATABLE_REFERENCE = new SimpleStyleAttribute<String>("navigatableReference");
 }

@@ -205,6 +205,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         operationNode = referentNode;
       }
     }
+
     if (operationNode == null) operationNode = node;
     return operationNode;
   }
@@ -324,6 +325,10 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public LinkDeclaration getLinkDeclaration() {
+    String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
+    if (role != null) {
+      return getSNode().getLinkDeclaration(role);
+    }
     return myLinkDeclaration;
   }
 

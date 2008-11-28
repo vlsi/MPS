@@ -15006,6 +15006,12 @@
         <link role="template" targetNodeId="1226675799066" resolveInfo="AbstractPaddingStyleSheetItem" />
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1227875581096">
+      <link role="applicableConcept" targetNodeId="38.1227861515039" resolveInfo="NavigatableReferenceStyleClassItem" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1227875601036">
+        <link role="template" targetNodeId="1227875493717" resolveInfo="NavigatableReferenceStyleClassItem" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1186405163329">
     <property name="package" value="styleSheet.Switch" />
@@ -18571,6 +18577,65 @@
         </node>
       </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226675911996">
+        <link role="classifier" targetNodeId="64.~Style" resolveInfo="Style" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1227875493717">
+    <property name="package" value="styleSheet.Switch" />
+    <property name="name" value="NavigatableReferenceStyleClassItem" />
+    <link role="applicableConcept" targetNodeId="38.1227861515039" resolveInfo="NavigatableReferenceStyleClassItem" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1227875493718">
+      <property name="name" value="ABC" />
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1227875493719">
+        <property name="name" value="abc" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227875493720" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227875493721" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227875493722">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227875493723">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227875493724">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227875493725">
+                <link role="baseMethodDeclaration" targetNodeId="64.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void" resolveInfo="set" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1227875493726">
+                  <link role="classifier" targetNodeId="64.~StyleAttributes" resolveInfo="StyleAttributes" />
+                  <link role="variableDeclaration" targetNodeId="64.~StyleAttributes.NAVIGATABLE_REFERENCE" resolveInfo="NAVIGATABLE_REFERENCE" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227875493727">
+                  <property name="value" value="tag" />
+                  <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1227875493728">
+                    <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1227875493729">
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227875493730">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227875493731">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227875574342">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227875493732">
+                              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227875493733" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227875573310">
+                                <link role="link" targetNodeId="38.1227861587090" />
+                              </node>
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227875575377">
+                              <link role="property" targetNodeId="45.1071599776563" resolveInfo="role" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1227875493735" />
+            </node>
+            <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1227875493736" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227875493737" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1227875493738">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227875493739" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227875493740" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227875493741" />
+      </node>
+      <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227875493742">
         <link role="classifier" targetNodeId="64.~Style" resolveInfo="Style" />
       </node>
     </node>

@@ -3885,5 +3885,20 @@
       <property name="internalValue" value="SPACES" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227861515039">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="NavigatableReferenceStyleClassItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227861587090">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="link" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227874655665">
+      <property name="value" value="navigatable-reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

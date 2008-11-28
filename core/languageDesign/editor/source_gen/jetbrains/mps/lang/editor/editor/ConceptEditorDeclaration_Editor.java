@@ -280,6 +280,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.NAVIGATABLE_REFERENCE, "conceptDeclaration");
         }
 
       };
