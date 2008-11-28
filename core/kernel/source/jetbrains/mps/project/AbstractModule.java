@@ -715,6 +715,7 @@ public abstract class AbstractModule implements IModule {
         }
       });
     }
+    if (timestampString == null) return true;
     long timestamp = Long.decode(timestampString);
     return timestamp != myDescriptorFile.lastModified();
   }
