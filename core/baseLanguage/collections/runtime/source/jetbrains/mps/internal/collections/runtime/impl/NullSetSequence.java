@@ -70,14 +70,16 @@ public class NullSetSequence<T> extends NullSequence<T> implements ISetSequence<
 		return null;
 	}
 
-	public void addSequence(ISequence<T> seq) {
+	public ISetSequence<T> addSequence(ISequence<T> seq) {
+		return this;
 	}
 
 	public T removeElement(T t) {
 		return null;
 	}
 
-	public void removeSequence(ISequence<T> seq) {
+	public ISetSequence<T> removeSequence(ISequence<T> seq) {
+		return this;
 	}
 
 	@SuppressWarnings("unchecked")

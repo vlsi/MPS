@@ -128,7 +128,7 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
 		return set.toArray();
 	}
 
-	public <T> T[] toArray(T[] a) {
+	public <U> U[] toArray(U[] a) {
 		return set.toArray(a);
 	}
 
@@ -185,10 +185,10 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
         return t;
 	}
 
-	public void addSequence(ISequence<T> seq) {
+	public ISetSequence<T> addSequence(ISequence<T> seq) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (seq == null) {
-                return;
+                return this;
             }
         }
         for (T t : seq.toIterable()) {
@@ -199,7 +199,7 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
             }
             set.add(t);
         }
-		
+		return this;
 	}
 
 	public T removeElement(T t) {
@@ -209,15 +209,16 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
         return null;
 	}
 
-	public void removeSequence(ISequence<T> seq) {
+	public ISetSequence<T> removeSequence(ISequence<T> seq) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (seq == null) {
-                return;
+                return this;
             }
         }
         for (T t : seq.toIterable()) {
             set.remove(t);
         }
+        return this;
 	}
 
 	@SuppressWarnings("unchecked")

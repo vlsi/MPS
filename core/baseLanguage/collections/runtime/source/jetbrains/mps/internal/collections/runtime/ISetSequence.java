@@ -8,9 +8,9 @@ public interface ISetSequence<T> extends ISequence<T>, Set<T> {
     
     T removeElement (T t);
     
-    void addSequence(ISequence<T> seq);
+    ISetSequence<T> addSequence(ISequence<T> seq);
 
-    void removeSequence(ISequence<T> seq);
+    ISetSequence<T> removeSequence(ISequence<T> seq);
 
     Set<T> toSet();
 
