@@ -1173,62 +1173,6 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.mps.xml.deprecated.tmp" />
   </target>
-  <target name="pack.jetbrains.springframework.configuration">
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configuration.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configuration.tmp/module" />
-    <mkdir dir="platform/springframework/languages/configuration/classes_gen" />
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configuration.tmp/module">
-      <fileset file="platform/springframework/languages/configuration/configuration.mpl" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configuration.tmp/module">
-      <fileset dir="platform/springframework/languages/configuration" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configuration.tmp">
-      <fileset dir="platform/springframework/languages/configuration/classes_gen" />
-    </copy>
-    <jar destfile="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configuration.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configuration.tmp" />
-    </jar>
-    <delete dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configuration.tmp" />
-  </target>
-  <target name="pack.jetbrains.springframework.configurationInternal">
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configurationInternal.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configurationInternal.tmp/module" />
-    <mkdir dir="platform/springframework/languages/configurationInternal/classes_gen" />
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configurationInternal.tmp/module">
-      <fileset file="platform/springframework/languages/configurationInternal/configurationInternal.mpl" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configurationInternal.tmp/module">
-      <fileset dir="platform/springframework/languages/configurationInternal" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configurationInternal.tmp">
-      <fileset dir="platform/springframework/languages/configurationInternal/classes_gen" />
-    </copy>
-    <jar destfile="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configurationInternal.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configurationInternal.tmp" />
-    </jar>
-    <delete dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.springframework.configurationInternal.tmp" />
-  </target>
-  <target name="pack.jetbrains.mps.springframework.configuration.runtime">
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.mps.springframework.configuration.runtime.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.mps.springframework.configuration.runtime.tmp/module" />
-    <mkdir dir="platform/springframework/runtime/classes_gen" />
-    <mkdir dir="platform/springframework/runtime/classes_gen" />
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.mps.springframework.configuration.runtime.tmp/module">
-      <fileset file="platform/springframework/runtime/jetbrains.mps.springframework.configuration.runtime.msd" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.mps.springframework.configuration.runtime.tmp/module">
-      <fileset dir="platform/springframework/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.mps.springframework.configuration.runtime.tmp">
-      <fileset dir="platform/springframework/runtime/classes_gen" />
-      <fileset dir="platform/springframework/runtime/classes_gen" />
-    </copy>
-    <jar destfile="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.mps.springframework.configuration.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.mps.springframework.configuration.runtime.tmp" />
-    </jar>
-    <delete dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.mps.springframework.configuration.runtime.tmp" />
-  </target>
   <target name="pack.jetbrains.mps.baseLanguage.logging">
     <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.mps.baseLanguage.logging.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/platform/jetbrains.mps.baseLanguage.logging.tmp/module" />
