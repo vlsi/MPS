@@ -329,12 +329,12 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return myScrollPane;
   }
 
-  protected void editNode(final SNode node, final IOperationContext context) {
+  protected void editNode(final SNode node, final IOperationContext context, final boolean focus) {
     ModelAccess.instance().executeCommand(new Runnable() {
       public void run() {
         MPSEditorOpener opener = getProject().getComponent(MPSEditorOpener.class);
         assert opener != null;
-        opener.openNode(node, context);
+        opener.openNode(node, context,focus);
       }
     });
   }
@@ -945,8 +945,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       scrollsOnExpand = false;
     }
 
-    public void editNode(SNode node, IOperationContext context) {
-      ProjectPane.this.editNode(node, context);
+    public void editNode(SNode node, IOperationContext context, boolean focus) {
+      ProjectPane.this.editNode(node, context,focus);
     }
 
     @Override

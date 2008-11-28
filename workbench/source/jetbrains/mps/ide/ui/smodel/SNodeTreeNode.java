@@ -161,7 +161,15 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   public void doubleClick() {
     if (getTree() instanceof ProjectPane.MyTree) {
-      ((ProjectPane.MyTree) getTree()).editNode(myNode, getOperationContext());
+      ((ProjectPane.MyTree) getTree()).editNode(myNode, getOperationContext(), true);
+    }
+  }
+
+  @Override
+  public void autoscroll() {
+    super.autoscroll();
+    if (getTree() instanceof ProjectPane.MyTree) {
+      ((ProjectPane.MyTree) getTree()).editNode(myNode, getOperationContext(), false);
     }
   }
 
