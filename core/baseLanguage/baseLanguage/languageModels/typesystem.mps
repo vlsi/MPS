@@ -2492,13 +2492,25 @@
                         <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1227876792399">
                           <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1227876792400">
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1227876792401">
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876792402">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876814985">
-                                  <link role="variableDeclaration" targetNodeId="1227876792380" resolveInfo="it" />
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1227888744283">
+                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227888752506">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227888750489">
+                                    <link role="variableDeclaration" targetNodeId="1227876792380" resolveInfo="it" />
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1227888755368">
+                                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1227888794025">
+                                      <link role="conceptDeclaration" targetNodeId="43.1196350785113" resolveInfo="Quotation" />
+                                    </node>
+                                  </node>
                                 </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1227876792404">
-                                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1227876792405">
-                                    <link role="conceptDeclaration" targetNodeId="1.1170345865475" resolveInfo="AnonymousClass" />
+                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876792402">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876814985">
+                                    <link role="variableDeclaration" targetNodeId="1227876792380" resolveInfo="it" />
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1227876792404">
+                                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1227876792405">
+                                      <link role="conceptDeclaration" targetNodeId="1.1170345865475" resolveInfo="AnonymousClass" />
+                                    </node>
                                   </node>
                                 </node>
                               </node>
