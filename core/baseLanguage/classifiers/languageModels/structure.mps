@@ -59,6 +59,9 @@
       <property name="value" value="this classifier" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="short_description" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1227903702915">
+      <link role="intfc" targetNodeId="4.1224609861009" resolveInfo="IThisExpression" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1205752813637">
     <property name="name" value="BaseClassifierType" />

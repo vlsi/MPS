@@ -40,6 +40,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.test.structure.EditorOperation");
   }
 
+  public static boolean baseMappingRule_Condition_1227899006732(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.getParent(_context.getNode()) == null;
+  }
+
   public static Object propertyMacro_GetPropertyValue_1216995305411(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + "_Test";
   }

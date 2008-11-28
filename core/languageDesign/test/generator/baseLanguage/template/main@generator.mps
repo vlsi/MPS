@@ -83,6 +83,19 @@
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1216994496569">
       <link role="applicableConcept" targetNodeId="1.1216913645126" resolveInfo="NodesTestCase" />
       <link role="template" targetNodeId="1216994643104" resolveInfo="TestCaseName" />
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1227899006732">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227899006733">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227899035853">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1227899045972">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227899047678" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227899037543">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227899035854" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1227899044595" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1210689312859">
       <link role="applicableConcept" targetNodeId="1.1210674524691" resolveInfo="TestNodeReference" />
