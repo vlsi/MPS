@@ -9,6 +9,7 @@
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -1814,20 +1815,21 @@
                   <link role="link" targetNodeId="1.1144104376918" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1213877508981">
-                <node role="whereClosure" type="jetbrains.mps.baseLanguage.collections.structure.WhereBlock" id="1213877508982">
-                  <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.collections.structure.DefaultInputElement" id="1213877508983">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227876801653">
+                <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876801654">
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227876801655">
                     <property name="name" value="it" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1227876801656" />
                   </node>
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877508984">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877508985">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877508986">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1213877508987">
-                          <link role="closureParameter" targetNodeId="1213877508983" resolveInfo="it" />
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227876801657">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227876801658">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876801659">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876816241">
+                          <link role="variableDeclaration" targetNodeId="1227876801655" resolveInfo="it" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1213877508988">
-                          <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.PoundExpression" id="1213877508989">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1213877508990">
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1227876801661">
+                          <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.PoundExpression" id="1227876801662">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876801663">
                               <link role="variableDeclaration" targetNodeId="1213877508992" resolveInfo="parameterConcept" />
                             </node>
                           </node>

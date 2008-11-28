@@ -19,6 +19,7 @@
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -8303,20 +8304,21 @@
                       </node>
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1213104844232">
-                    <node role="whereClosure" type="jetbrains.mps.baseLanguage.collections.structure.WhereBlock" id="1213104844233">
-                      <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.collections.structure.DefaultInputElement" id="1213104844234">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227876797913">
+                    <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876797914">
+                      <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227876797915">
                         <property name="name" value="it" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1227876797916" />
                       </node>
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104844235">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104844236">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1213104844237">
-                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1213104844238" />
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104844239">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1213104844240">
-                                <link role="closureParameter" targetNodeId="1213104844234" resolveInfo="it" />
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227876797917">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227876797918">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1227876797919">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227876797920" />
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876797921">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876814762">
+                                <link role="variableDeclaration" targetNodeId="1227876797915" resolveInfo="it" />
                               </node>
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213104844241">
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227876797923">
                                 <link role="link" targetNodeId="1.1197546238121" />
                               </node>
                             </node>

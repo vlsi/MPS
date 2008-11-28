@@ -8,6 +8,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -408,19 +409,20 @@
                         <node role="scope" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1217013855110" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1217890533233">
-                      <node role="whereClosure" type="jetbrains.mps.baseLanguage.collections.structure.WhereBlock" id="1217890533234">
-                        <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.collections.structure.DefaultInputElement" id="1217890533235">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227876800484">
+                      <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876800485">
+                        <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227876800486">
                           <property name="name" value="it" />
+                          <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1227876800487" />
                         </node>
-                        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217890533236">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217890537990">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1217890547791">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217890547792">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1217890547793">
-                                  <link role="closureParameter" targetNodeId="1217890533235" resolveInfo="it" />
+                        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227876800488">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227876800489">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1227876800490">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876800491">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876814539">
+                                  <link role="variableDeclaration" targetNodeId="1227876800486" resolveInfo="it" />
                                 </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1217890547794">
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1227876800493">
                                   <link role="conceptProperty" targetNodeId="4.1137473854053" resolveInfo="abstract" />
                                 </node>
                               </node>

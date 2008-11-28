@@ -58,17 +58,17 @@
                 <link role="baseMethodDeclaration" targetNodeId="6.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
                 <link role="classConcept" targetNodeId="6.~Sequence" resolveInfo="Sequence" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1222765996269">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreatorWithSupplier" id="1222765996270">
-                    <node role="supplier" type="jetbrains.mps.baseLanguage.collections.structure.ValueSupplierBlock" id="1222765996271">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222765996272">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.TraversalYieldStatement" id="1222765996273">
-                          <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222765996274">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" id="1227876790336">
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227876790337" />
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876790338">
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227876790339">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="1227876819233">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227876819234">
                             <property name="value" value="3" />
                           </node>
                         </node>
                       </node>
                     </node>
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1223205687474" />
                   </node>
                 </node>
               </node>

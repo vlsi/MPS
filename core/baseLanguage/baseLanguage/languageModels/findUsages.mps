@@ -7,6 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -2345,19 +2346,20 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1204127619699" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1204127619700">
-                      <node role="whereClosure" type="jetbrains.mps.baseLanguage.collections.structure.WhereBlock" id="1204127619701">
-                        <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.collections.structure.DefaultInputElement" id="1204127619702">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227876797641">
+                      <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876797642">
+                        <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227876797643">
                           <property name="name" value="it" />
+                          <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1227876797644" />
                         </node>
-                        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204127619703">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204127619704">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204127619705">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1204127619706">
-                                <link role="closureParameter" targetNodeId="1204127619702" resolveInfo="it" />
+                        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227876797645">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227876797646">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876797647">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876814687">
+                                <link role="variableDeclaration" targetNodeId="1227876797643" resolveInfo="it" />
                               </node>
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1204127619707">
-                                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1204127619708">
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1227876797649">
+                                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1227876797650">
                                   <link role="conceptDeclaration" targetNodeId="1.1070475587102" resolveInfo="SuperConstructorInvocation" />
                                 </node>
                               </node>

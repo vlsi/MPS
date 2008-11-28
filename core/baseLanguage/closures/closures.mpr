@@ -4,18 +4,18 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\closures.test\closures.test.msd" />
-      <solutionPath path="${project}\solutions\closures.sandbox\closures.sandbox.msd" />
+      <solutionPath path="${project}/solutions/closures.test/closures.test.msd" />
+      <solutionPath path="${project}/solutions/closures.sandbox/closures.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\closures.mpl" />
+      <languagePath path="${project}/closures.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule name="closures.test" moduleUID="closures.test" />
-      <genConfModule name="closures" moduleUID="jetbrains.mps.baseLanguage.closures" />
+      <genConfModule name="closures.test" moduleRef="7a0c7a21-43a3-4bb4-b898-a819ebed44a5(closures.test)" />
+      <genConfModule name="closures" moduleRef="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
@@ -23,6 +23,7 @@
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
