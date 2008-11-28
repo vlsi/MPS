@@ -2,6 +2,7 @@ package jetbrains.mps.workbench.actions.goTo;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import com.intellij.ide.util.gotoByName.UseIdeaChooser;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -69,7 +70,8 @@ public class GoToSolutionAction extends BaseAction {
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToSolutionModel, new FakePsiContext());
-
+    popup.setUseIdeaChooser(UseIdeaChooser.useIdeaChooserForModules());
+    
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;

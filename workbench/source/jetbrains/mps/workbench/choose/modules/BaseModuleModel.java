@@ -49,7 +49,7 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
   }
 
   public String doGetObjectName(IModule module) {
-    return UseIdeaChooser.useIdeaChooser() ? NameUtil.shortNameFromLongName(module.getModuleUID()) : module.getModuleFqName();
+    return UseIdeaChooser.useIdeaChooserForModules() ? NameUtil.shortNameFromLongName(module.getModuleUID()) : module.getModuleFqName();
   }
 
   //---------------------INTERFACE STUFF------------------------

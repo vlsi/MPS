@@ -97,6 +97,7 @@ public abstract class ChooseByNameBase {
   @NonNls
   private static final String SEARCHING_CARD = "searching";
   private static final int REBUILD_DELAY = 300;
+  private boolean myUseIdeaChooser = true;
 
   /**
    * @param initialText initial text which will be in the lookup text field
@@ -937,6 +938,10 @@ public abstract class ChooseByNameBase {
 
   private static final String EXTRA_ELEM = "...";
 
+  public void setUseIdeaChooser(boolean useIdeaChooser) {
+    myUseIdeaChooser = useIdeaChooser;
+  }
+
   private class CalcElementsThread implements Runnable {
     private final String myPattern;
     private boolean myCheckboxState;
@@ -947,7 +952,6 @@ public abstract class ChooseByNameBase {
 
     private volatile boolean myCancelled = false;
     private boolean myCanCancel = true;
-    private Chooser myChooser = UseIdeaChooser.useIdeaChooser() ? new IdeaChooser() : new MPSChooser();
 
     public CalcElementsThread(String pattern, boolean checkboxState, CalcElementsCallback callback, ModalityState modalityState) {
       myPattern = pattern;
@@ -1020,11 +1024,11 @@ public abstract class ChooseByNameBase {
     }
 
     private void addElementsByPattern(Set<Object> elementsArray, String pattern) {
-      myChooser.addElementsByPattern(elementsArray, pattern);
+      (myUseIdeaChooser ? new IdeaChooser() : new MPSChooser()).addElementsByPattern(elementsArray, pattern);
     }
 
     public void getNamesByPattern(boolean checkboxState, List<String> list, String pattern) throws ProcessCanceledException {
-      myChooser.getNamesByPattern(checkboxState, this, list, pattern);
+      (myUseIdeaChooser ? new IdeaChooser() : new MPSChooser()).getNamesByPattern(checkboxState, this, list, pattern);
     }
 
     private void cancel() {

@@ -77,7 +77,9 @@ public class CommonChoosers {
         return "Model name:";
       }
     };
+    
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new FakePsiContext());
+    popup.setUseIdeaChooser(UseIdeaChooser.useIdeaChooserForModels());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -104,7 +106,7 @@ public class CommonChoosers {
       }
 
       public String doGetObjectName(T module) {
-        return UseIdeaChooser.useIdeaChooser() ? NameUtil.shortNameFromLongName(module.getModuleUID()) : module.getModuleFqName();
+        return UseIdeaChooser.useIdeaChooserForModules() ? NameUtil.shortNameFromLongName(module.getModuleUID()) : module.getModuleFqName();
       }
 
       public String getCheckBoxName() {
@@ -137,6 +139,7 @@ public class CommonChoosers {
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModuleModel, new FakePsiContext());
+    popup.setUseIdeaChooser(UseIdeaChooser.useIdeaChooserForModules());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
