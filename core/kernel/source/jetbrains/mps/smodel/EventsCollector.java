@@ -21,6 +21,7 @@ public class EventsCollector {
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
   private CommandListener myCommandListener;
   private CommandProcessor myCommandProcessor;
+  private boolean myDisposed;
 
   private Runnable myCurrentCommand;
 
@@ -104,6 +105,7 @@ public class EventsCollector {
       remove(sm);
     }
     ourListenersSupport.removeCommandListener(myCommandListener);
+    myDisposed = true;
   }
 
   private static class CommandListenersSupport {
