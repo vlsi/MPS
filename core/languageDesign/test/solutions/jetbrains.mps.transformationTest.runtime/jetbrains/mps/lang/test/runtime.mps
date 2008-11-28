@@ -42,7 +42,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <maxImportIndex value="35" />
+  <maxImportIndex value="37" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" version="-1" />
@@ -78,6 +78,8 @@
   <import index="33" modelUID="f:java_stub#jetbrains.mps.intentions(jetbrains.mps.intentions@java_stub)" version="-1" />
   <import index="34" modelUID="f:java_stub#jetbrains.mps.lang.test.matcher(jetbrains.mps.lang.test.matcher@java_stub)" version="-1" />
   <import index="35" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
+  <import index="36" modelUID="f:java_stub#com.intellij.idea(com.intellij.idea@java_stub)" version="-1" />
+  <import index="37" modelUID="f:java_stub#com.intellij.openapi.diagnostic(com.intellij.openapi.diagnostic@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1215078243118">
     <property name="name" value="SubtreeChecker" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1215078294635">
@@ -1726,6 +1728,16 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215696484423" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215696484424" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215696484425">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227881538848">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227881541381">
+            <link role="baseMethodDeclaration" targetNodeId="37.~Logger.setFactory(com.intellij.openapi.diagnostic.Logger$Factory):void" resolveInfo="setFactory" />
+            <link role="classConcept" targetNodeId="37.~Logger" resolveInfo="Logger" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227881551571">
+              <link role="baseMethodDeclaration" targetNodeId="36.~LoggerFactory.getInstance():com.intellij.idea.LoggerFactory" resolveInfo="getInstance" />
+              <link role="classConcept" targetNodeId="36.~LoggerFactory" resolveInfo="LoggerFactory" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225970305177">
           <property name="value" value=" Load class MouseEvent. This is hack, else test hungs." />
         </node>

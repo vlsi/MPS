@@ -16,7 +16,7 @@ public enum SideTransformTag {
   private String myName;
   private String myValue;
 
-SideTransformTag(String name, String value) {
+  SideTransformTag(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

@@ -10,6 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -31,7 +33,8 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule extends
     }
     {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(node, "couldn't define concept of child node", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1179782438058", intentionProvider);
+      IErrorTarget errorTarget = new NodeErrorTarget();
+      typeCheckingContext.reportTypeError(node, "couldn't define concept of child node", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1179782438058", intentionProvider, errorTarget);
     }
     {
       SNode _nodeToCheck_1029348928467 = node;

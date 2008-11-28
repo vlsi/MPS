@@ -12,7 +12,7 @@ public enum Side {
   private String myName;
   private String myValue;
 
-Side(String name, String value) {
+  Side(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

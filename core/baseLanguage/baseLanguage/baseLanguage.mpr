@@ -17,9 +17,9 @@
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" />
       <languagePath path="${project}/baseLanguage.mpl" />
-      <languagePath path="${project}/languages/blTypes/blTypes.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/actionsLanguage/languageDescriptor.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/editorLanguage/editorLanguage.mpl" />
+      <languagePath path="${mps_home}/core/baseLanguage/blTypes/blTypes.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/actions/languageDescriptor.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/editor/editor.mpl" />
       <languagePath path="${mps_home}/core/languageDesign/test/test.mpl" />
     </projectLanguages>
     <projectDevkits>

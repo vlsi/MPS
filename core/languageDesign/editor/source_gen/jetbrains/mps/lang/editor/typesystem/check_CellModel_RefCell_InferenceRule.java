@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_CellModel_RefCell_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -19,7 +21,8 @@ public class check_CellModel_RefCell_InferenceRule extends AbstractInferenceRule
   public void applyRule(final SNode refCell, final TypeCheckingContext typeCheckingContext) {
     if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(refCell, "relationDeclaration", false)))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(refCell, "multiple cardinality link is not applicable", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180280232711", intentionProvider);
+      IErrorTarget errorTarget = new NodeErrorTarget();
+      typeCheckingContext.reportTypeError(refCell, "multiple cardinality link is not applicable", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180280232711", intentionProvider, errorTarget);
     }
   }
 

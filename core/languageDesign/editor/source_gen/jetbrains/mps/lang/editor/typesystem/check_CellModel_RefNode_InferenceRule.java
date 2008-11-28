@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_CellModel_RefNode_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -20,11 +22,13 @@ public class check_CellModel_RefNode_InferenceRule extends AbstractInferenceRule
     SNode lnk = SLinkOperations.getTarget(refNode, "relationDeclaration", false);
     if (!(SPropertyOperations.hasValue(lnk, "metaClass", "aggregation", "reference"))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(refNode, "aggregation link expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180280667546", intentionProvider);
+      IErrorTarget errorTarget = new NodeErrorTarget();
+      typeCheckingContext.reportTypeError(refNode, "aggregation link expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180280667546", intentionProvider, errorTarget);
     }
     if (!(SPropertyOperations.hasValue(lnk, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(lnk, "sourceCardinality", "1", "0..1"))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(refNode, "single cardinality expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180280735244", intentionProvider);
+      IErrorTarget errorTarget = new NodeErrorTarget();
+      typeCheckingContext.reportTypeError(refNode, "single cardinality expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180280735244", intentionProvider, errorTarget);
     }
   }
 
