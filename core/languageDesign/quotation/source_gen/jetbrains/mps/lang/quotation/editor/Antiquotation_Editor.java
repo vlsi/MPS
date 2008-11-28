@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -19,11 +20,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-
+import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.nodeEditor.style.*;
 
 public class Antiquotation_Editor extends DefaultNodeEditor {
 
@@ -147,7 +149,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return s.equals(this.getText());
+        return EqualUtil.equals(s, this.getText());
       }
 
     }, node);
@@ -174,7 +176,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return s.equals(this.getText());
+        return EqualUtil.equals(s, this.getText());
       }
 
     }, node);

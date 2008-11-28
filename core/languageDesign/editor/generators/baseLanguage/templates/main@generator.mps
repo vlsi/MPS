@@ -18305,19 +18305,18 @@
                           </node>
                         </node>
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225901656363">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225901713614">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225901729493">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225901716944">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227859519927">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227859532748">
+                              <link role="baseMethodDeclaration" targetNodeId="20.~EqualUtil.equals(java.lang.Object,java.lang.Object):boolean" resolveInfo="equals" />
+                              <link role="classConcept" targetNodeId="20.~EqualUtil" resolveInfo="EqualUtil" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227859532749">
                                 <link role="variableDeclaration" targetNodeId="1225901656361" resolveInfo="s" />
                               </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225901734965">
-                                <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225901740591">
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225901740592">
-                                    <link role="baseMethodDeclaration" targetNodeId="1225901656348" resolveInfo="getText" />
-                                  </node>
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1225901740593" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227859532750">
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227859532751">
+                                  <link role="baseMethodDeclaration" targetNodeId="1225901656348" resolveInfo="getText" />
                                 </node>
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1227859532752" />
                               </node>
                             </node>
                           </node>
