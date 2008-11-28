@@ -527,7 +527,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     getTree().selectNode(mpsTreeNode);
   }
 
-  public void selectModel(SModelDescriptor modelDescriptor) {
+  public void selectModel(@NotNull SModelDescriptor modelDescriptor) {
     DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
     SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
@@ -540,7 +540,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
   }
 
-  public void selectModule(final IModule module) {
+  public void selectModule(@NotNull final IModule module) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         MPSTreeNode languageTreeNode = findModuleTreeNode(module);

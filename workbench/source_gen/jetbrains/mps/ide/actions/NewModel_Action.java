@@ -80,8 +80,11 @@ public class NewModel_Action extends GeneratedAction {
 
       });
       dialog[0].showDialog();
-      SModelDescriptor modelDescriptor = dialog[0].getResult();
-      NewModel_Action.this.project.getComponentSafe(ProjectPane.class).selectModel(modelDescriptor);
+      SModelDescriptor result = dialog[0].getResult();
+      if (result != null) {
+        SModelDescriptor modelDescriptor = result;
+        NewModel_Action.this.project.getComponentSafe(ProjectPane.class).selectModel(modelDescriptor);
+      }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "NewModel", t);
     }
