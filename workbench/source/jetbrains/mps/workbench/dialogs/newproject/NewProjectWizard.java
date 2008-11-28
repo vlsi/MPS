@@ -77,7 +77,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
       currentStep._check();
     }
     catch (final CommitStepException exc) {
-      Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
+      Frame frame = JOptionPane.getFrameForComponent(currentStep.getComponent());
       Messages.showErrorDialog(
         frame,
         exc.getMessage()
