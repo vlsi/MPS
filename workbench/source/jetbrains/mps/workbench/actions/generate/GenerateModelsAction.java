@@ -28,11 +28,10 @@ public abstract class GenerateModelsAction extends BaseAction {
   public abstract IGenerationType getGenerationType();
 
   public void doExecute(AnActionEvent e) {
-    myGenManager.generateModelsWithProgressWindow(
-      myModels,
+    myGenManager.generateModelsFromDifferentModules(
       myContext,
-      getGenerationType(),
-      true
+      myModels,
+      getGenerationType()
     );
   }
 
