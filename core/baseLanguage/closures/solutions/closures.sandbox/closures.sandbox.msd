@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="closures.sandbox" uuid="5e0a5bb4-5765-4a7f-b9ee-615f63ada8a1" extenallyVisible="true" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <classPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</dependency>
     <dependency reexport="false">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</dependency>
-    <dependency reexport="false">162b6fde-45a3-49a5-b434-9d2b99195fa9(jetbrains.mps.internal.collections#1201792019188)</dependency>
     <dependency reexport="false">83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</dependency>
   </dependencies>
   <usedLanguages>

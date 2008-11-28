@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.baseLanguage.regexp" uuid="daafa647-f1f7-4b0b-b096-69cd7c8408c0" java-stubs-enabled="true" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.baseLanguage.regexp" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.baseLanguage.regexp" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage.regexp" />
+    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.baseLanguage.regexp" />
   </models>
   <accessoryModels>
     <model modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" />
@@ -10,7 +10,7 @@
   <generators>
     <generator generatorUID="jetbrains.mps.baseLanguage.regexp#1174510748147" uuid="bffd1385-a29f-4b76-bb8a-cfb3227968be">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template" />
+        <modelRoot path="${language_descriptor}/generator/baseLanguage/template" namespacePrefix="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template" />
       </models>
       <external-templates>
         <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
@@ -34,16 +34,13 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}\classes" />
-    <entry path="${language_descriptor}\runtime\classes" />
+    <entry path="${language_descriptor}/classes" />
+    <entry path="${language_descriptor}/runtime/classes" />
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${language_descriptor}\runtime\classes" />
+    <entry path="${language_descriptor}/runtime/classes" />
   </languageRuntimeClassPath>
   <sourcePath />
-  <usedLanguages>
-    <usedLanguages>562bb5cb-73ce-4c74-a5e5-9f72731d9ac6(jetbrains.mps.internal.collections)</usedLanguages>
-  </usedLanguages>
   <usedDevKits>
     <usedDevKit>jetbrains.mps.devkit.language-design</usedDevKit>
   </usedDevKits>

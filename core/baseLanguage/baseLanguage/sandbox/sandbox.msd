@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.sandbox" uuid="4f57e080-33c7-449c-96f9-dd8dfead6ae4" extenallyVisible="true" compileInMPS="false" generatorOutputPath="${mps_home}\core\baseLanguage\baseLanguage\source_gen">
+<solution name="jetbrains.mps.baseLanguage.sandbox" uuid="4f57e080-33c7-449c-96f9-dd8dfead6ae4" extenallyVisible="true" compileInMPS="false" generatorOutputPath="${mps_home}/core/baseLanguage/baseLanguage/source_gen">
   <models>
-    <modelRoot path="${solution_descriptor}\" namespacePrefix="jetbrains.mps.baseLanguage.sandbox" />
+    <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.baseLanguage.sandbox" />
   </models>
   <classPath />
   <sourcePath />
@@ -18,7 +18,6 @@
     <dependency reexport="false">8fffa437-9500-4c6b-abfc-f4cb2335b059(jetbrains.mps.lang.typesystem#1174411220599)</dependency>
     <dependency reexport="false">b5660d3a-8a0d-4815-881b-7c884f61c9c7(internalCollections.test)</dependency>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
-    <dependency reexport="false">162b6fde-45a3-49a5-b434-9d2b99195fa9(jetbrains.mps.internal.collections#1201792019188)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>

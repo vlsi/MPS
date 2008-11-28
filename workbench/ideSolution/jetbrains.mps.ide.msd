@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide" uuid="019b622b-0aef-4dd3-86d0-4eef01f3f6bb" extenallyVisible="true" compileInMPS="false" generatorOutputPath="${mps_home}\workbench\source_gen">
+<solution name="jetbrains.mps.ide" uuid="019b622b-0aef-4dd3-86d0-4eef01f3f6bb" extenallyVisible="true" compileInMPS="false" generatorOutputPath="${mps_home}/workbench/source_gen">
   <models>
-    <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <classPath />
   <sourcePath />
@@ -27,7 +27,6 @@
     <usedLanguages>a20a42c8-ea20-45de-bc60-acb92cc25c46(jetbrains.mps.ide.uiLanguage)</usedLanguages>
     <usedLanguages>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguages>
     <usedLanguages>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguages>
-    <usedLanguages>562bb5cb-73ce-4c74-a5e5-9f72731d9ac6(jetbrains.mps.internal.collections)</usedLanguages>
     <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
     <usedLanguages>d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)</usedLanguages>
   </usedLanguages>
