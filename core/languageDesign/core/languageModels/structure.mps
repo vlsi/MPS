@@ -98,9 +98,6 @@
       <property name="name" value="dontSubstituteByDefault" />
       <property name="inheritable" value="true" />
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1215461340299">
-      <property name="name" value="deprecated944" />
-    </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1218562853918">
       <property name="name" value="deprecated1045" />
     </node>
