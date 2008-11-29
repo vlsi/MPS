@@ -48,20 +48,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="25" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1078489098625">
-    <property name="name" value="NamedConcept" />
-    <link role="extends" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1173467730296">
-      <link role="intfc" targetNodeId="1169194658468" resolveInfo="INamedConcept" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1133922301475">
-      <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1219695414809">
-      <property name="value" value="NamedConcept is not used any more. replaced with INamedConcept" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1218562853918" resolveInfo="deprecated_next_after_944" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration" id="1082983041843">
     <property name="name" value="string" />
   </node>

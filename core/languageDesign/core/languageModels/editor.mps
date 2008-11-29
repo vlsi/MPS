@@ -27,15 +27,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1117830771316">
-    <link role="conceptDeclaration" targetNodeId="1.1078489098625" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1219698911072">
-      <property name="text" value="the 'NamedConcept' is deprecated in favor of INamedConcept" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1219698997585">
-        <property name="color" value="red" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1133921100033">
     <link role="conceptDeclaration" targetNodeId="1.1133920641626" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1133921115694">
