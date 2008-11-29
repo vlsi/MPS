@@ -10,7 +10,7 @@ import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.baseLanguage.plugin.MethodRefactoringUtils;
+import jetbrains.mps.baseLanguage.plugin.MethodCallAdapter;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class ExactMethodUsages_Finder extends GeneratedFinder {
@@ -34,8 +34,10 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     for(SNode nodeUsage : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
-      if (MethodRefactoringUtils.getMethodDeclaration(nodeUsage) == node) {
-        ListOperations.addElement(_results, nodeUsage);
+      if (MethodCallAdapter.isMethodCall(nodeUsage)) {
+        if (new MethodCallAdapter(nodeUsage).getMethodDeclaration() == node) {
+          ListOperations.addElement(_results, nodeUsage);
+        }
       }
     }
   }

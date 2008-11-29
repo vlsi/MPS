@@ -3076,15 +3076,13 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215441331717">
             <link role="classConcept" targetNodeId="21.1222935385630" resolveInfo="_InlineMethodRefactoringAnalyzer" />
             <link role="baseMethodDeclaration" targetNodeId="21.1222935484721" resolveInfo="getErrors" />
-            <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441331719">
-              <link role="declaration" targetNodeId="1215441331601" resolveInfo="call1" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223034838483">
-              <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441331723">
-                <link role="declaration" targetNodeId="1215441331601" resolveInfo="call1" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223034842997">
-                <link role="link" targetNodeId="1.1202948736718" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227972191760">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227972205040">
+                <link role="baseMethodDeclaration" targetNodeId="21.1224070198856" resolveInfo="InlineMethodModel" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1227972208806">
+                  <link role="declaration" targetNodeId="1215441331601" resolveInfo="call1" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227972212385" />
               </node>
             </node>
           </node>
@@ -3095,15 +3093,13 @@
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1224761462250">
               <link role="baseMethodDeclaration" targetNodeId="21.1222935484721" resolveInfo="getErrors" />
               <link role="classConcept" targetNodeId="21.1222935385630" resolveInfo="InlineMethodRefactoringAnalyzer" />
-              <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1224761462251">
-                <link role="declaration" targetNodeId="1215441331607" resolveInfo="call2" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224761462252">
-                <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1224761462253">
-                  <link role="declaration" targetNodeId="1215441331607" resolveInfo="call2" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224761462254">
-                  <link role="link" targetNodeId="1.1202948736718" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227972217697">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227972217698">
+                  <link role="baseMethodDeclaration" targetNodeId="21.1224070198856" resolveInfo="InlineMethodModel" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1227972242010">
+                    <link role="declaration" targetNodeId="1215441331607" resolveInfo="call2" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227972217700" />
                 </node>
               </node>
             </node>
@@ -3113,15 +3109,13 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215441331739">
             <link role="classConcept" targetNodeId="21.1222935385630" resolveInfo="_InlineMethodRefactoringAnalyzer" />
             <link role="baseMethodDeclaration" targetNodeId="21.1222935484721" resolveInfo="getErrors" />
-            <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441331741">
-              <link role="declaration" targetNodeId="1215441331612" resolveInfo="call3" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223034882255">
-              <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441331745">
-                <link role="declaration" targetNodeId="1215441331612" resolveInfo="call3" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223034883727">
-                <link role="link" targetNodeId="1.1202948736718" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227972233885">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227972233886">
+                <link role="baseMethodDeclaration" targetNodeId="21.1224070198856" resolveInfo="InlineMethodModel" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1227972245527">
+                  <link role="declaration" targetNodeId="1215441331612" resolveInfo="call3" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227972233888" />
               </node>
             </node>
           </node>
@@ -3130,15 +3124,13 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215441331749">
             <link role="classConcept" targetNodeId="21.1222935385630" resolveInfo="_InlineMethodRefactoringAnalyzer" />
             <link role="baseMethodDeclaration" targetNodeId="21.1222935484721" resolveInfo="getErrors" />
-            <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441331751">
-              <link role="declaration" targetNodeId="1215441331617" resolveInfo="call4" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223034888806">
-              <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441331755">
-                <link role="declaration" targetNodeId="1215441331617" resolveInfo="call4" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223034890497">
-                <link role="link" targetNodeId="1.1202948736718" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227972234842">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227972234843">
+                <link role="baseMethodDeclaration" targetNodeId="21.1224070198856" resolveInfo="InlineMethodModel" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1227972246481">
+                  <link role="declaration" targetNodeId="1215441331617" resolveInfo="call4" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227972234845" />
               </node>
             </node>
           </node>
@@ -3149,15 +3141,13 @@
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215441331761">
               <link role="classConcept" targetNodeId="21.1222935385630" resolveInfo="_InlineMethodRefactoringAnalyzer" />
               <link role="baseMethodDeclaration" targetNodeId="21.1222935484721" resolveInfo="getErrors" />
-              <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441331763">
-                <link role="declaration" targetNodeId="1215441331622" resolveInfo="call5" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223034907579">
-                <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441331767">
-                  <link role="declaration" targetNodeId="1215441331622" resolveInfo="call5" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223034908863">
-                  <link role="link" targetNodeId="1.1202948736718" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227972236659">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227972236660">
+                  <link role="baseMethodDeclaration" targetNodeId="21.1224070198856" resolveInfo="InlineMethodModel" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1227972248998">
+                    <link role="declaration" targetNodeId="1215441331622" resolveInfo="call5" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227972236662" />
                 </node>
               </node>
             </node>
@@ -3167,15 +3157,13 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215441331771">
             <link role="classConcept" targetNodeId="21.1222935385630" resolveInfo="_InlineMethodRefactoringAnalyzer" />
             <link role="baseMethodDeclaration" targetNodeId="21.1222935484721" resolveInfo="getErrors" />
-            <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441331773">
-              <link role="declaration" targetNodeId="1215441331626" resolveInfo="call6" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223034913317">
-              <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441331777">
-                <link role="declaration" targetNodeId="1215441331626" resolveInfo="call6" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223034914867">
-                <link role="link" targetNodeId="1.1202948736718" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227972238741">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227972238742">
+                <link role="baseMethodDeclaration" targetNodeId="21.1224070198856" resolveInfo="InlineMethodModel" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1227972250967">
+                  <link role="declaration" targetNodeId="1215441331626" resolveInfo="call6" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227972238744" />
               </node>
             </node>
           </node>
@@ -5458,15 +5446,13 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215441319039">
             <link role="classConcept" targetNodeId="21.1222935385630" resolveInfo="_InlineMethodRefactoringAnalyzer" />
             <link role="baseMethodDeclaration" targetNodeId="21.1222935484721" resolveInfo="getErrors" />
-            <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441319041">
-              <link role="declaration" targetNodeId="1215441319077" resolveInfo="call" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215441319043">
-              <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441319045">
-                <link role="declaration" targetNodeId="1215441319077" resolveInfo="call" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223221750725">
-                <link role="link" targetNodeId="1.1202948736718" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227971745621">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227971850125">
+                <link role="baseMethodDeclaration" targetNodeId="21.1224070198856" resolveInfo="InlineMethodModel" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1227971851734">
+                  <link role="declaration" targetNodeId="1215441319077" resolveInfo="call" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227971856155" />
               </node>
             </node>
           </node>
@@ -7819,15 +7805,13 @@
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215441116179">
               <link role="classConcept" targetNodeId="21.1222935385630" resolveInfo="_InlineMethodRefactoringAnalyzer" />
               <link role="baseMethodDeclaration" targetNodeId="21.1222935484721" resolveInfo="getErrors" />
-              <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441116181">
-                <link role="declaration" targetNodeId="1215441116173" resolveInfo="call" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224079528254">
-                <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441116185">
-                  <link role="declaration" targetNodeId="1215441116173" resolveInfo="call" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224079530538">
-                  <link role="link" targetNodeId="1.1202948736718" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227972117276">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227972122761">
+                  <link role="baseMethodDeclaration" targetNodeId="21.1224070198856" resolveInfo="InlineMethodModel" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1227972127089">
+                    <link role="declaration" targetNodeId="1215441116173" resolveInfo="call" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227972129560" />
                 </node>
               </node>
             </node>
@@ -9481,9 +9465,14 @@
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215441128237">
               <link role="classConcept" targetNodeId="21.1222935385630" resolveInfo="_InlineMethodRefactoringAnalyzer" />
               <link role="baseMethodDeclaration" targetNodeId="21.1222935484721" resolveInfo="getErrors" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215441128238" />
-              <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441128240">
-                <link role="declaration" targetNodeId="1215441128231" resolveInfo="definition" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227972033708">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227972044177">
+                  <link role="baseMethodDeclaration" targetNodeId="21.1224070198856" resolveInfo="InlineMethodModel" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1227972047505">
+                    <link role="declaration" targetNodeId="1215441128231" resolveInfo="definition" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227972050959" />
+                </node>
               </node>
             </node>
           </node>

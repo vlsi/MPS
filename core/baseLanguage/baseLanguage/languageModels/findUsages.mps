@@ -3608,22 +3608,39 @@
             <node role="queryNode" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1227527207584" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227527192373">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227527250527">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227527250528">
-                <node role="statement" type="jetbrains.mps.lang.findUsages.structure.ResultStatement" id="1227527322022">
-                  <node role="foundNode" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1227527322023">
-                    <link role="variable" targetNodeId="1227527192370" resolveInfo="nodeUsage" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227970620175">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227970620176">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227970641476">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227970641477">
+                    <node role="statement" type="jetbrains.mps.lang.findUsages.structure.ResultStatement" id="1227970666726">
+                      <node role="foundNode" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1227970666727">
+                        <link role="variable" targetNodeId="1227527192370" resolveInfo="nodeUsage" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1227970660244">
+                    <node role="rightExpression" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1227970662635" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227970654777">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227970643036">
+                        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227970648295">
+                          <link role="baseMethodDeclaration" targetNodeId="19.1227969832187" resolveInfo="MethodCallAdapter" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1227970652560">
+                            <link role="variable" targetNodeId="1227527192370" resolveInfo="nodeUsage" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227970658167">
+                        <link role="baseMethodDeclaration" targetNodeId="19.1227970511521" resolveInfo="getMethodDeclaration" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1227528942893">
-                <node role="rightExpression" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1227528950138" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227528939735">
-                  <link role="baseMethodDeclaration" targetNodeId="19.1227528417926" resolveInfo="getMethodDeclaration" />
-                  <link role="classConcept" targetNodeId="19.1227519212562" resolveInfo="MethodRefactoringUtils" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1227528939736">
-                    <link role="variable" targetNodeId="1227527192370" resolveInfo="nodeUsage" />
-                  </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227970631799">
+                <link role="baseMethodDeclaration" targetNodeId="19.1227901293969" resolveInfo="isMethodCall" />
+                <link role="classConcept" targetNodeId="19.1227969832185" resolveInfo="MethodCallAdapter" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1227970636762">
+                  <link role="variable" targetNodeId="1227527192370" resolveInfo="nodeUsage" />
                 </node>
               </node>
             </node>
