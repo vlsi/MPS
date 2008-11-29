@@ -230,12 +230,14 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628999124">
               <link role="baseMethodDeclaration" targetNodeId="5.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1199654593605">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1199654593606">
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199654593607">
-                    <property name="value" value="8" />
-                  </node>
-                  <node role="function" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199654593608">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965887780">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199654593608">
                     <link role="variableDeclaration" targetNodeId="1199640036839" resolveInfo="fib" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965887786">
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227965887787">
+                      <property name="value" value="8" />
+                    </node>
                   </node>
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199654593609">
@@ -254,11 +256,8 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628995244">
               <link role="baseMethodDeclaration" targetNodeId="5.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1199640036857">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1199640036858">
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199640036859">
-                    <property name="value" value="9" />
-                  </node>
-                  <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1199654606685">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965887917">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1199654606685">
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1199654606686">
                       <property name="name" value="n" />
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1199654606687" />
@@ -303,6 +302,11 @@
                       </node>
                     </node>
                   </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965887919">
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227965887920">
+                      <property name="value" value="9" />
+                    </node>
+                  </node>
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199640036861">
                   <property name="value" value="fib(9)=" />
@@ -315,8 +319,8 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199652597598">
             <property name="name" value="calc" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1199652597599" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1199652619051">
-              <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1199652610616">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965887895">
+              <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1199652610616">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199652610617">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199652615539">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1199652615551">
@@ -330,6 +334,7 @@
                   </node>
                 </node>
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965887897" />
             </node>
           </node>
         </node>
@@ -361,11 +366,8 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628989577">
               <link role="baseMethodDeclaration" targetNodeId="5.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1199652692497">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1199652741884">
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199652747599">
-                    <property name="value" value="5" />
-                  </node>
-                  <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1199652693926">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965888009">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1199652693926">
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1199652696574">
                       <property name="name" value="n" />
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1199652697818" />
@@ -427,6 +429,11 @@
                           <link role="variableDeclaration" targetNodeId="1199652707100" resolveInfo="res" />
                         </node>
                       </node>
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965888011">
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227965888012">
+                      <property name="value" value="5" />
                     </node>
                   </node>
                 </node>
@@ -671,10 +678,11 @@
                 <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1200831938111">
-              <node role="function" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200832124881">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965887988">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200832124881">
                 <link role="variableDeclaration" targetNodeId="1200832124872" resolveInfo="foo" />
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965887990" />
             </node>
           </node>
         </node>
@@ -710,8 +718,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201289337678">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1201289338621">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1201289452171">
-              <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1201289341069">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965887876">
+              <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1201289341069">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201289341070">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="1201289358505">
                     <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201289358506">
@@ -811,6 +819,7 @@
                   </node>
                 </node>
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965887878" />
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201289337679">
               <link role="variableDeclaration" targetNodeId="1200831898911" resolveInfo="seq" />
@@ -849,8 +858,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201293160337">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1201293160338">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1201293160339">
-              <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1201293160340">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965889501">
+              <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1201293160340">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201293160341">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201293168251">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201293168252">
@@ -941,6 +950,7 @@
                   </node>
                 </node>
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965889503" />
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201293160381">
               <link role="variableDeclaration" targetNodeId="1200831898911" resolveInfo="seq" />
@@ -986,8 +996,8 @@
                 <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1201360178708">
-              <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1201360037132">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965889477">
+              <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1201360037132">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201360037133">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="1201360043314">
                     <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201360043315">
@@ -1033,6 +1043,7 @@
                   </node>
                 </node>
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965889480" />
             </node>
           </node>
         </node>
@@ -1058,8 +1069,8 @@
               </node>
             </node>
           </node>
-          <node role="iterable" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1201360334730">
-            <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1201360098077">
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965887818">
+            <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1201360098077">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201360098078">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1201360105432">
                   <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201360113567">
@@ -1086,6 +1097,7 @@
                 </node>
               </node>
             </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965887821" />
           </node>
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201360087031">
             <property name="name" value="i" />
@@ -1094,8 +1106,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201392249098">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1201392249099">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1201392249100">
-              <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1201392249101">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965887968">
+              <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1201392249101">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201392249102">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201392249103">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201392249104">
@@ -1327,6 +1339,7 @@
                   </node>
                 </node>
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965887971" />
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201392249139">
               <link role="variableDeclaration" targetNodeId="1200831898911" resolveInfo="seq" />

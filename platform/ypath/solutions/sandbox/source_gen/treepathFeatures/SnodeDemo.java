@@ -5,9 +5,7 @@ package treepathFeatures;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -21,10 +19,10 @@ public class SnodeDemo {
 
   public static void main(String[] args) {
     final SNode foo = null;
-    ListSequence.fromList((SLinkOperations.getTargets(foo, "implements", true))).translate(new ITranslator <SNode, SNode>() {
+    ListSequence.fromList((SLinkOperations.getTargets(foo, "implements", true))).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode it) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
             return new YieldingIterator <SNode>() {
@@ -59,10 +57,10 @@ __switch__:
         };
       }
 
-    }).translate(new ITranslator <SNode, SNode>() {
+    }).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode it) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
             return new YieldingIterator <SNode>() {
@@ -80,7 +78,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2__zzz__it = SLinkOperations.getTargets(it, "extends", true).iterator();
+                      this._2__zzz__it = Sequence.fromIterable(SLinkOperations.getTargets(it, "extends", true)).iterator();
                     case 3:
                       if (!(this._2__zzz__it.hasNext())) {
                         this.__CP__ = 1;
@@ -136,7 +134,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      this._4__yyy__it = SLinkOperations.getTargets(this._3__zzz_, "implements", true).iterator();
+                      this._4__yyy__it = Sequence.fromIterable(SLinkOperations.getTargets(this._3__zzz_, "implements", true)).iterator();
                     case 5:
                       if (!(this._4__yyy__it.hasNext())) {
                         this.__CP__ = 1;
@@ -169,10 +167,10 @@ __switch__:
         };
       }
 
-    })).translate(new ITranslator <SNode, SNode>() {
+    })).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode it) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
             return new YieldingIterator <SNode>() {
@@ -207,10 +205,10 @@ __switch__:
         };
       }
 
-    }).translate(new ITranslator <SNode, SNode>() {
+    }).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode it) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
             return new YieldingIterator <SNode>() {
@@ -228,7 +226,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2__yyy__it = SLinkOperations.getTargets(it, "extends", true).iterator();
+                      this._2__yyy__it = Sequence.fromIterable(SLinkOperations.getTargets(it, "extends", true)).iterator();
                     case 3:
                       if (!(this._2__yyy__it.hasNext())) {
                         this.__CP__ = 1;
@@ -262,10 +260,10 @@ __switch__:
 
     });
     // Another pair of tests
-    ListSequence.fromList(ListSequence.<SNode>fromArray(SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator <SNode, SNode>() {
+    ListSequence.fromList(ListSequence.<SNode>fromArray(SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode it) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
             return new YieldingIterator <SNode>() {
@@ -295,7 +293,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._5_c_it = SNodeOperations.getChildren(this._2_p).iterator();
+                      this._5_c_it = Sequence.fromIterable(SNodeOperations.getChildren(this._2_p)).iterator();
                     case 6:
                       if (!(this._5_c_it.hasNext())) {
                         this.__CP__ = 3;
@@ -341,10 +339,10 @@ __switch__:
       }
 
     });
-    ListSequence.fromList(ListSequence.<SNode>fromArray(SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator <SNode, SNode>() {
+    ListSequence.fromList(ListSequence.<SNode>fromArray(SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode it) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
             return new YieldingIterator <SNode>() {
@@ -423,9 +421,9 @@ __switch__:
     // And another one
     /*
       //  way too complicated
-      ListSequence.fromList(ListSequence.<SNode>fromArray(foo)).translate(new ITranslator <SNode, SNode>() {
+      ListSequence.fromList(ListSequence.<SNode>fromArray(foo)).translate(new ITranslator2 <SNode, SNode>() {
 
-        public ISequence<SNode> translate(SNode it) {
+        public Iterable<SNode> translate(SNode it) {
           return new _FunctionTypes._return_P1_E0 <Iterable<SNode>, SNode>() {
 
             public Iterable<SNode> invoke(final SNode _zzz_) {
@@ -447,7 +445,7 @@ __switch__:
                             assert false : "Internal error";
                             return false;
                           case 2:
-                            this._2__yyy__it = SNodeOperations.getChildren(_zzz_).iterator();
+                            this._2__yyy__it = Sequence.fromIterable(SNodeOperations.getChildren(_zzz_)).iterator();
                           case 3:
                             if (!(this._2__yyy__it.hasNext())) {
                               this.__CP__ = 1;
@@ -575,7 +573,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      this._4__yyy__it = SLinkOperations.getTargets(this._3__zzz_, "implements", true).iterator();
+                      this._4__yyy__it = Sequence.fromIterable(SLinkOperations.getTargets(this._3__zzz_, "implements", true)).iterator();
                     case 5:
                       if (!(this._4__yyy__it.hasNext())) {
                         this.__CP__ = 1;
@@ -608,10 +606,10 @@ __switch__:
         };
       }
 
-    })).translate(new ITranslator <SNode, SNode>() {
+    })).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode it) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
             return new YieldingIterator <SNode>() {

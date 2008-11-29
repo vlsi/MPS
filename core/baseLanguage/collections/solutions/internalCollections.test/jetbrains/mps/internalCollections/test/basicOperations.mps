@@ -266,8 +266,8 @@
                   <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1206980110999">
-                <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1206980058977">
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965887938">
+                <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1206980058977">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206980058978">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="1206980066832">
                       <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206980066833">
@@ -308,6 +308,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965887941" />
               </node>
             </node>
           </node>

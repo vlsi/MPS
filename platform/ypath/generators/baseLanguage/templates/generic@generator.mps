@@ -9631,11 +9631,8 @@
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225096837509">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1225096837510">
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225096842552">
-                      <link role="variableDeclaration" targetNodeId="1225096837495" resolveInfo="it" />
-                    </node>
-                    <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096837512">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965889455">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096837512">
                       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225096837513">
                         <property name="name" value="_zzz_" />
                         <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1225096837514">
@@ -10127,6 +10124,11 @@
                             </node>
                           </node>
                         </node>
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965889457">
+                      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227965889458">
+                        <link role="variableDeclaration" targetNodeId="1225096837495" resolveInfo="it" />
                       </node>
                     </node>
                   </node>

@@ -232,11 +232,8 @@
                   </node>
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223469226413">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223469226414">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1223469226415">
-                        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223469226416">
-                          <link role="variableDeclaration" targetNodeId="1223469226411" resolveInfo="it" />
-                        </node>
-                        <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1223469226417">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965887848">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1223469226417">
                           <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1223469226418">
                             <property name="name" value="it2" />
                             <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1223469226419" />
@@ -251,6 +248,11 @@
                                 </node>
                               </node>
                             </node>
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965887850">
+                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227965887852">
+                            <link role="variableDeclaration" targetNodeId="1223469226411" resolveInfo="it" />
                           </node>
                         </node>
                       </node>
