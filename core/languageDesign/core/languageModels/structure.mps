@@ -87,12 +87,6 @@
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1218562853918">
       <property name="name" value="deprecated1045" />
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1224111255512">
-      <property name="name" value="deprecated1117" />
-    </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1224193728639">
-      <property name="name" value="deprecatedNextAfter1117" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1133922314101">
       <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract" />
     </node>
