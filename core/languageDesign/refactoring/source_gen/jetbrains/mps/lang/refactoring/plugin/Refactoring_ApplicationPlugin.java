@@ -4,10 +4,19 @@ package jetbrains.mps.lang.refactoring.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
+import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import java.util.ArrayList;
 
 public class Refactoring_ApplicationPlugin extends BaseApplicationPlugin {
+
+  public void addGroup(List<BaseGroup> groups, String moduleName, String groupName) {
+    BaseGroup group = ActionFactory.getInstance().acquireRegisteredGroup(groupName, moduleName);
+    if (group != null) {
+      groups.add(group);
+    }
+  }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = new ArrayList<BaseCustomApplicationPlugin>();

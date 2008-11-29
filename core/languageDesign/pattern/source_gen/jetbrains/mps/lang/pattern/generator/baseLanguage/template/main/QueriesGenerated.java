@@ -19,7 +19,6 @@ import jetbrains.mps.lang.quotation.structure.AbstractAntiquotation;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.pattern.structure.AsPattern_AnnotationLink;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.pattern.structure.AsPattern;
 import jetbrains.mps.lang.pattern.structure.Pattern;
@@ -186,7 +185,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1190931377817(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(_context.getNode()))));
+    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(_context.getNode()))));
     return _context.getOutputNodeByInputNodeAndMappingLabel(attribute, "patternVarField");
   }
 
@@ -201,7 +200,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1190931377920(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(_context.getNode()))));
+    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(_context.getNode()))));
     return _context.getOutputNodeByInputNodeAndMappingLabel(attribute, "patternVarField");
   }
 

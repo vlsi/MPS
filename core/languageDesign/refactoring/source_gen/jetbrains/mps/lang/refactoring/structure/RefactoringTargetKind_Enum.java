@@ -15,7 +15,7 @@ public enum RefactoringTargetKind_Enum {
   private String myName;
   private String myValue;
 
-RefactoringTargetKind_Enum(String name, String value) {
+  RefactoringTargetKind_Enum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

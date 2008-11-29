@@ -30,7 +30,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection1227860237518(context, node);
+    return this.createCollection1227921750087(context, node);
   }
 
   public EditorCell createCollection1227010597707(EditorContext context, SNode node) {
@@ -45,14 +45,14 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  public EditorCell createCollection1227860237518(EditorContext context, SNode node) {
+  public EditorCell createCollection1227921750087(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12278602375181227860237518(editorCell, node, context);
+    setupBasic_Collection_12279217500871227921750087(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     if (renderingCondition4196_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode1227860237507(context, node));
+      editorCell.addEditorCell(this.createRefNode1227921750076(context, node));
     }
     return editorCell;
   }
@@ -123,25 +123,25 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1227860237507_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode1227921750076_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_toStringFunction1227860237507(editorCell, node, context);
+    setupBasic_refNode_toStringFunction1227921750076(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_toStringFunction_1227860237507((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_toStringFunction_1227921750076((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1227860237507(EditorContext context, SNode node) {
+  public EditorCell createRefNode1227921750076(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("toStringFunction");
     provider.setNoTargetText("<no toStringFunction>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1227860237507_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode1227921750076_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -178,11 +178,11 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_refNode_toStringFunction1227860237507(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_toStringFunction1227921750076(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Collection_12278602375181227860237518(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1227860237518");
+  private static void setupBasic_Collection_12279217500871227921750087(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1227921750087");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -203,7 +203,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
   private static void setupLabel_Constant_1227010597711_1227010597711(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_toStringFunction_1227860237507(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_toStringFunction_1227921750076(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition4196_0(SNode node, EditorContext editorContext, IScope scope) {

@@ -4,11 +4,11 @@ package jetbrains.mps.lang.intentions.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.GlobalScope;
 
 public class IntentionDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.intentions.structure.IntentionDeclaration";
@@ -76,7 +76,7 @@ public class IntentionDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public AbstractConceptDeclaration getForConcept() {
-    return (AbstractConceptDeclaration) this.getReferent(IntentionDeclaration.FOR_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(IntentionDeclaration.FOR_CONCEPT);
   }
 
   public void setForConcept(AbstractConceptDeclaration node) {
@@ -84,7 +84,7 @@ public class IntentionDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public DescriptionBlock getDescriptionFunction() {
-    return (DescriptionBlock) this.getChild(IntentionDeclaration.DESCRIPTION_FUNCTION);
+    return (DescriptionBlock)this.getChild(IntentionDeclaration.DESCRIPTION_FUNCTION);
   }
 
   public void setDescriptionFunction(DescriptionBlock node) {
@@ -92,7 +92,7 @@ public class IntentionDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public IsApplicableBlock getIsApplicableFunction() {
-    return (IsApplicableBlock) this.getChild(IntentionDeclaration.IS_APPLICABLE_FUNCTION);
+    return (IsApplicableBlock)this.getChild(IntentionDeclaration.IS_APPLICABLE_FUNCTION);
   }
 
   public void setIsApplicableFunction(IsApplicableBlock node) {
@@ -100,7 +100,7 @@ public class IntentionDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public ExecuteBlock getExecuteFunction() {
-    return (ExecuteBlock) this.getChild(IntentionDeclaration.EXECUTE_FUNCTION);
+    return (ExecuteBlock)this.getChild(IntentionDeclaration.EXECUTE_FUNCTION);
   }
 
   public void setExecuteFunction(ExecuteBlock node) {
@@ -109,7 +109,7 @@ public class IntentionDeclaration extends BaseConcept implements INamedConcept {
 
 
   public static IntentionDeclaration newInstance(SModel sm, boolean init) {
-    return (IntentionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntentionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntentionDeclaration newInstance(SModel sm) {
