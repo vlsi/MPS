@@ -6,17 +6,15 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationFailueException;
+import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.generator.GenerationFailueException;
-import jetbrains.mps.generator.GenerationCanceledException;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.jetbrains.annotations.Nullable;
 
 public class RuleManager {
   private static final Logger LOG = Logger.getLogger(RuleManager.class);
@@ -25,8 +23,6 @@ public class RuleManager {
   private List<Root_MappingRule> myRoot_MappingRules;
   private List<Weaving_MappingRule> myWeaving_MappingRules;
   private List<Reduction_MappingRule> myReduction_MappingRules;
-
-  private List<ConceptDeclaration> myAbandonedRootConcepts;
   private List<DropRootRule> myDropRootRules;
 
   private FastRuleFinder myRuleFinder;
@@ -46,7 +42,6 @@ public class RuleManager {
     myRoot_MappingRules = new ArrayList<Root_MappingRule>();
     myWeaving_MappingRules = new ArrayList<Weaving_MappingRule>();
     myReduction_MappingRules = new ArrayList<Reduction_MappingRule>();
-    myAbandonedRootConcepts = new ArrayList<ConceptDeclaration>();
     myDropRootRules = new ArrayList<DropRootRule>();
     initRules();
     myRuleFinder = new FastRuleFinder(myReduction_MappingRules, myGenerator);
@@ -60,16 +55,6 @@ public class RuleManager {
       myRoot_MappingRules.addAll(mappingConfig.getRootMappingRules());
       myWeaving_MappingRules.addAll(mappingConfig.getWeavingMappingRules());
       myReduction_MappingRules.addAll(mappingConfig.getReductionMappingRules());
-
-      // abandon roots (old)
-      List<ConceptDeclarationReference> abandonRootRules = mappingConfig.getAbandonRootRules();
-      for (ConceptDeclarationReference abandonRoot : abandonRootRules) {
-        ConceptDeclaration concept = abandonRoot.getConceptDeclaration();
-        if (!myAbandonedRootConcepts.contains(concept)) {
-          myAbandonedRootConcepts.add(concept);
-        }
-      }
-      // new
       myDropRootRules.addAll(mappingConfig.getDropRootRules());
     }
   }
@@ -97,16 +82,8 @@ public class RuleManager {
   }
 
   public boolean isRootToDrop(SNode rootNode) throws GenerationFailueException {
-    // new
     for (DropRootRule dropRootRule : myDropRootRules) {
-       if(GeneratorUtil.isApplicableDropRootRule(rootNode, dropRootRule, myGenerator)) {
-         return true;
-       }
-    }
-
-    // old
-    for (ConceptDeclaration abandonedRootConcept : myAbandonedRootConcepts) {
-      if (rootNode.isInstanceOfConcept(abandonedRootConcept)) {
+      if (GeneratorUtil.isApplicableDropRootRule(rootNode, dropRootRule, myGenerator)) {
         return true;
       }
     }
@@ -153,7 +130,7 @@ public class RuleManager {
    * @return null if no reductions found
    */
   @Nullable
-  /*package*/List<SNode> tryToReduce(SNode inputNode, String mappingName) throws GenerationFailueException, GenerationCanceledException {
+    /*package*/List<SNode> tryToReduce(SNode inputNode, String mappingName) throws GenerationFailueException, GenerationCanceledException {
     boolean needStopReductionBlocking = false;
     boolean wasChanged = myGenerator.isChanged();
     try {

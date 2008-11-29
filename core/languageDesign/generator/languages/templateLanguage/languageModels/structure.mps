@@ -397,12 +397,6 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1167087469898" resolveInfo="CreateRootRule" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1169742456963">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="abandonRootRule" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1114458327664" resolveInfo="ConceptDeclarationReference" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1219952894531">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="dropRootRule" />
@@ -430,10 +424,6 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1163452921864">
       <property name="value" value="mapping configuration" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1219960873185">
-      <property name="value" value="child 'abandonRootRule' is replaced with 'dropRootRule'" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1218562853918" resolveInfo="deprecated_next_after_944" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1095672379244">
@@ -513,18 +503,6 @@
       <property name="role" value="templateSwitch" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1112730859144" resolveInfo="TemplateSwitch" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1114458327664">
-    <property name="name" value="ConceptDeclarationReference" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1114458346385">
-      <property name="role" value="conceptDeclaration" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3.1071489090640" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1219960798370">
-      <property name="value" value="replaced with DropRootRule" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1218562853918" resolveInfo="deprecated_next_after_944" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1114706874351">

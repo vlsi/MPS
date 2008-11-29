@@ -23,7 +23,6 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   public static final String WEAVING_MAPPING_RULE = "weavingMappingRule";
   public static final String REDUCTION_MAPPING_RULE = "reductionMappingRule";
   public static final String CREATE_ROOT_RULE = "createRootRule";
-  public static final String ABANDON_ROOT_RULE = "abandonRootRule";
   public static final String DROP_ROOT_RULE = "dropRootRule";
   public static final String PRE_MAPPING_SCRIPT = "preMappingScript";
   public static final String POST_MAPPING_SCRIPT = "postMappingScript";
@@ -151,26 +150,6 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
 
   public void insertCreateRootRule(CreateRootRule prev, CreateRootRule node) {
     this.insertChild(prev, MappingConfiguration.CREATE_ROOT_RULE, node);
-  }
-
-  public int getAbandonRootRulesCount() {
-    return this.getChildCount(MappingConfiguration.ABANDON_ROOT_RULE);
-  }
-
-  public Iterator<ConceptDeclarationReference> abandonRootRules() {
-    return this.children(MappingConfiguration.ABANDON_ROOT_RULE);
-  }
-
-  public List<ConceptDeclarationReference> getAbandonRootRules() {
-    return this.getChildren(MappingConfiguration.ABANDON_ROOT_RULE);
-  }
-
-  public void addAbandonRootRule(ConceptDeclarationReference node) {
-    this.addChild(MappingConfiguration.ABANDON_ROOT_RULE, node);
-  }
-
-  public void insertAbandonRootRule(ConceptDeclarationReference prev, ConceptDeclarationReference node) {
-    this.insertChild(prev, MappingConfiguration.ABANDON_ROOT_RULE, node);
   }
 
   public int getDropRootRulesCount() {

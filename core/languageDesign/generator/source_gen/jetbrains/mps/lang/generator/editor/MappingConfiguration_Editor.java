@@ -20,9 +20,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -36,7 +33,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myListHandler_1195502470963;
   /* package */AbstractCellListHandler myListHandler_1195502488593;
   /* package */AbstractCellListHandler myListHandler_1195502503504;
-  /* package */AbstractCellListHandler myListHandler_1195502524916;
   /* package */AbstractCellListHandler myListHandler_1195502537139;
   /* package */AbstractCellListHandler myListHandler_1195502593677;
   /* package */AbstractCellListHandler myListHandler_1200911481866;
@@ -200,21 +196,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1195502524913(context, node, "abandon roots:"));
-    if (renderingCondition2420_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection1195502524914(context, node));
-    }
     editorCell.addEditorCell(this.createCollection1219952930751(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection1195502524914(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11955025249141195502524914(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1219960929780(context, node, "deprecated! run migration scripts!"));
-    editorCell.addEditorCell(this.createRefNodeList1195502524916(context, node));
     return editorCell;
   }
 
@@ -439,14 +421,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1219960929780(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12199609297801219960929780(editorCell, node, context);
-    setupLabel_Constant_1219960929780_1219960929780(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createRefNodeList1195502446255(EditorContext context, SNode node) {
     if (this.myListHandler_1195502446255 == null) {
       this.myListHandler_1195502446255 = new MappingConfiguration_Editor.createRootRuleListHandler_2420_0(node, "createRootRule", context);
@@ -496,19 +470,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_1195502503504.getElementRole());
-    return editorCell;
-  }
-
-  public EditorCell createRefNodeList1195502524916(EditorContext context, SNode node) {
-    if (this.myListHandler_1195502524916 == null) {
-      this.myListHandler_1195502524916 = new MappingConfiguration_Editor.abandonRootRuleListHandler_2420_0(node, "abandonRootRule", context);
-    }
-    EditorCell_Collection editorCell = this.myListHandler_1195502524916.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_refNodeList_abandonRootRule1195502524916(editorCell, node, context);
-    editorCell.setGridLayout(true);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.setRole(this.myListHandler_1195502524916.getElementRole());
     return editorCell;
   }
 
@@ -1051,32 +1012,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_11955025249141195502524914(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1195502524914");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_refNodeList_abandonRootRule1195502524916(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_abandonRootRule");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_Collection_11955025371351195502537135(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1195502537135");
     {
@@ -1316,19 +1251,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_12199609297801219960929780(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1219960929780");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupLabel_Constant_1095419376938_1095419376938(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -1386,9 +1308,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1195502524913_1195502524913(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNodeList_abandonRootRule_1195502524916(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_Constant_1195502537136_1195502537136(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -1414,13 +1333,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNodeList_dropRootRule_1219952930753(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1219960929780_1219960929780(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean renderingCondition2420_0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "abandonRootRule", true)).isNotEmpty();
   }
 
   public static class createRootRuleListHandler_2420_0 extends RefNodeListHandler {
@@ -1555,49 +1467,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   public static class reductionMappingRuleListHandler_2420_0 extends RefNodeListHandler {
 
     public reductionMappingRuleListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
-    }
-
-    public SNode createNodeToInsert(EditorContext context) {
-      SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, context, super.getElementRole());
-    }
-
-    public EditorCell createNodeCell(EditorContext context, SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(context, elementNode);
-      this.installElementCellActions(this.getOwner(), elementNode, elementCell, context);
-      return elementCell;
-    }
-
-    public EditorCell createEmptyCell(EditorContext context) {
-      EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(context);
-      this.installElementCellActions(super.getOwner(), null, emptyCell, context);
-      return emptyCell;
-    }
-
-    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
-        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
-        SNode substituteInfoNode = listOwner;
-        if (elementNode != null) {
-          substituteInfoNode = elementNode;
-          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
-        }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
-        }
-      }
-    }
-
-    public EditorCell createSeparatorCell(EditorContext context) {
-      return super.createSeparatorCell(context);
-    }
-
-}
-  public static class abandonRootRuleListHandler_2420_0 extends RefNodeListHandler {
-
-    public abandonRootRuleListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

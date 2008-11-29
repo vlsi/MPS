@@ -737,41 +737,6 @@
             <property name="color" value="DARK_BLUE" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1195502524914">
-          <property name="vertical" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1219960929780">
-            <property name="text" value="deprecated! run migration scripts!" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1219960952984">
-              <property name="color" value="red" />
-            </node>
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1195502524916">
-            <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
-            <link role="relationDeclaration" targetNodeId="1.1169742456963" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995140">
-              <property name="flag" value="false" />
-            </node>
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995015">
-            <property name="flag" value="false" />
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1219961175159">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219961175160">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219961215440">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219961225837">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219961215551">
-                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1219961215441" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1219961221976">
-                      <link role="link" targetNodeId="1.1169742456963" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1219961343970" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1219952930751">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1219952930752" />
@@ -1297,24 +1262,6 @@
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="4.1169194664001" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1114458549484">
-    <link role="conceptDeclaration" targetNodeId="1.1114458327664" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1114458600627">
-      <property name="noTargetText" value="&lt;choose concept declaration&gt;" />
-      <link role="relationDeclaration" targetNodeId="1.1114458346385" />
-      <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1114458566423">
-        <link role="conceptDeclaration" targetNodeId="6.1071489090640" />
-        <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1114458600628">
-          <property name="noTargetText" value="&lt;no name&gt;" />
-          <property name="readOnly" value="true" />
-          <link role="relationDeclaration" targetNodeId="4.1169194664001" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678334">
-            <property name="color" value="DARK_MAGENTA" />
-          </node>
         </node>
       </node>
     </node>
