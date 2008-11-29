@@ -15,122 +15,115 @@
   </target>
   <target name="folders.create" depends="clean.before">
     <mkdir dir="${deploy.dir}" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/Contents" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/bin" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/beansbinding" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/ant-1.7.0" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/asm" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/commons-lang" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/commons-logging" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/eclipse-compiler" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/idea-platform" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/joda-time" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/junit4" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/httpclient" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/mps.jar.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/mps.jar.tmp/idea" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/license" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/plugins" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/samples" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/core" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/core/devkits" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/core/baseLanguage" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/core/languageDesign" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/platform" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/plugin" />
-    <mkdir dir="${deploy.dir}/build-helpers.installers/MPS/workbench" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/bin" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/beansbinding" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/ant-1.7.0" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/asm" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/commons-lang" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/commons-logging" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/eclipse-compiler" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/idea-platform" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/joda-time" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/junit4" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/httpclient" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/mps.jar.tmp" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/mps.jar.tmp/idea" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/license" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/plugins" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/samples" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/plugin" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/workbench" />
     <mkdir dir="${deploy.dir}/debug" />
     <mkdir dir="${deploy.dir}/debug/MPS-src.zip.tmp" />
     <mkdir dir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources" />
   </target>
   <target name="do.the.job" depends="folders.create">
-    <copy todir="${deploy.dir}/build-helpers.installers">
-      <fileset dir="build/exe" includes="**/*.nsi, **/*.nsh, " />
+    <copy todir="${deploy.dir}/build-helpers.distrib">
+      <fileset dir="build" />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/Contents">
-      <fileset dir="build/Contents" excludes="**/*.iml, **/*.iws, " />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/bin">
-      <fileset dir="build/exe" excludes="**/*.iml, **/*.iws, " includes="**/*.ico, " />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/bin">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/bin">
       <fileset dir="bin" excludes="**/*.iml, **/*.iws, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/beansbinding">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/beansbinding">
       <fileset dir="lib/beansbinding" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/ant-1.7.0">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/ant-1.7.0">
       <fileset dir="lib/ant-1.7.0" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/asm">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/asm">
       <fileset dir="lib/asm" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/commons-lang">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/commons-lang">
       <fileset dir="lib/commons-lang" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/commons-logging">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/commons-logging">
       <fileset dir="lib/commons-logging" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/eclipse-compiler">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/eclipse-compiler">
       <fileset dir="lib/eclipse-compiler" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/idea-platform">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/idea-platform">
       <fileset dir="lib/idea-platform" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/joda-time">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/joda-time">
       <fileset dir="lib/joda-time" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/junit4">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/junit4">
       <fileset dir="lib/junit4" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/httpclient">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/httpclient">
       <fileset dir="lib/httpclient" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp">
       <fileset dir="core/idea-patch/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <jar destfile="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/idea-patch.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/idea-patch.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </jar>
-    <delete dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp" />
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/mps.jar.tmp">
+    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp" />
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="classes" excludes="production/, test/, **/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/mps.jar.tmp">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="workbench/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/mps.jar.tmp">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="core/kernel/classes" excludes="idea/MPSApplicationInfo.xml, **/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
     <antcall target="replace0" />
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/mps.jar.tmp">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="core/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/mps.jar.tmp">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="MPSPlugin/MPSSupport/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <jar destfile="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/mps.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/mps.jar.tmp" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/mps.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/mps.jar.tmp" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </jar>
-    <delete dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/mps.jar.tmp" />
+    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/mps.jar.tmp" />
     <antcall target="zkm" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
-      <param name="input.dir" value="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm" />
-      <param name="output.dir" value="${deploy.dir}/build-helpers.installers/MPS/lib" />
+      <param name="input.dir" value="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm" />
+      <param name="output.dir" value="${deploy.dir}/build-helpers.distrib/MPS/lib" />
     </antcall>
-    <delete dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm" />
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/license">
+    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm" />
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/license">
       <fileset dir="license" excludes="**/*.iml, **/*.iws, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/plugins">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/plugins">
       <fileset dir="plugins" excludes="**/*.iml, **/*.iws, " />
     </copy>
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/samples">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/samples">
       <fileset dir="samples" excludes="**/*.class, **/*.iml, **/*.iws, " />
     </copy>
     <antcall target="pack.jetbrains.mps.devkit.general-purpose" />
@@ -143,7 +136,6 @@
     <antcall target="pack.jetbrains.mps.baseLanguage.dates" />
     <antcall target="pack.jetbrains.mps.baseLanguage.datesInternal" />
     <antcall target="pack.jetbrains.mps.baseLanguage.dates.runtime" />
-    <antcall target="pack.jetbrains.mps.internal.collections" />
     <antcall target="pack.jetbrains.mps.baseLanguage.money" />
     <antcall target="pack.JDK" />
     <antcall target="pack.jetbrains.mps.baseLanguage.blTypes" />
@@ -202,22 +194,20 @@
     <antcall target="pack.jetbrains.mps.xmlSchema" />
     <antcall target="pack.jetbrains.mps.gtext.runtime" />
     <antcall target="pack.jetbrains.mps.quickQueryLanguage" />
-    <copy todir="${deploy.dir}/build-helpers.installers/MPS/plugin">
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/plugin">
       <fileset dir="plugin" excludes="**/*.java, **/*.iml, **/*.iws, " />
     </copy>
     <antcall target="pack.jetbrains.mps.ide.uiLanguage" />
     <antcall target="pack.jetbrains.mps.ide" />
-    <echo file="${deploy.dir}/build-helpers.installers/MPS/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
-    <copy file="entryPoints.xml" tofile="${deploy.dir}/build-helpers.installers/MPS/entryPoints.xml" />
-    <copy file="readme.txt" tofile="${deploy.dir}/build-helpers.installers/MPS/readme.txt" />
-    <copy file="mps.sh" tofile="${deploy.dir}/build-helpers.installers/MPS/mps.sh" />
-    <copy file="mps.bat" tofile="${deploy.dir}/build-helpers.installers/MPS/mps.bat" />
-    <antcall target="installers" inheritall="true">
+    <echo file="${deploy.dir}/build-helpers.distrib/MPS/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
+    <copy file="entryPoints.xml" tofile="${deploy.dir}/build-helpers.distrib/MPS/entryPoints.xml" />
+    <copy file="readme.txt" tofile="${deploy.dir}/build-helpers.distrib/MPS/readme.txt" />
+    <antcall target="distrib" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
-      <param name="input.dir" value="${deploy.dir}/build-helpers.installers" />
+      <param name="input.dir" value="${deploy.dir}/build-helpers.distrib" />
       <param name="output.dir" value="${deploy.dir}/" />
     </antcall>
-    <delete dir="${deploy.dir}/build-helpers.installers" />
+    <delete dir="${deploy.dir}/build-helpers.distrib" />
     <copy file="lib/idea-platform/idea-platform-src.zip" tofile="${deploy.dir}/debug/idea-platform-src.zip" />
     <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp">
       <fileset dir="source" />
@@ -255,8 +245,8 @@
     <delete dir="${deploy.dir}/debug/MPS-src.zip.tmp" />
   </target>
   <target name="clean.after" depends="do.the.job">
-    <delete dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp" />
-    <delete dir="${deploy.dir}/build-helpers.installers/MPS/lib/build-helpers.zkm/mps.jar.tmp" />
+    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp" />
+    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/build-helpers.zkm/mps.jar.tmp" />
     <delete dir="${deploy.dir}/debug/MPS-src.zip.tmp" />
   </target>
 </project>
