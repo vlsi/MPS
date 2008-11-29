@@ -73,14 +73,23 @@
   <target name="pack.jetbrains.mps.baseLanguage.collections">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.tmp/module" />
+    <mkdir dir="core/baseLanguage/collections/classes" />
+    <mkdir dir="core/baseLanguage/collections/runtime/classes" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.tmp/module">
-      <fileset file="C:/mps/core/baseLanguage/collections/collections.mpl" />
+      <fileset file="core/baseLanguage/collections/collections.mpl" />
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.tmp/module">
-      <fileset dir="C:/mps/core/baseLanguage/collections" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="core/baseLanguage/collections" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.tmp">
+      <fileset dir="core/baseLanguage/collections/classes" />
+      <fileset dir="core/baseLanguage/collections/runtime/classes" />
     </copy>
     <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.tmp" />
+    </jar>
+    <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="core/baseLanguage/collections/runtime/classes" />
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.tmp" />
   </target>
@@ -88,10 +97,10 @@
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/collections_samples.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/collections_samples.tmp/module" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/collections_samples.tmp/module">
-      <fileset file="C:/mps/core/baseLanguage/collections/solutions/collections/samples/collections_samples.msd" />
+      <fileset file="core/baseLanguage/collections/solutions/collections/samples/collections_samples.msd" />
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/collections_samples.tmp/module">
-      <fileset dir="C:/mps/core/baseLanguage/collections/solutions/collections/samples" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="core/baseLanguage/collections/solutions/collections/samples" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/collections_samples.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/collections_samples.tmp" />
