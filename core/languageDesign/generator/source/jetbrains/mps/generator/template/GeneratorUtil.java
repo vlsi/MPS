@@ -6,20 +6,20 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailueException;
+import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.lang.generator.structure.*;
+import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -47,29 +47,21 @@ public class GeneratorUtil {
       MappingLabelDeclaration mappingLabel = ((CreateRootRule) node).getLabel();
       if (mappingLabel != null) {
         mappingName = mappingLabel.getName();
-      } else {
-        mappingName = node.getName();
       }
     } else if (node instanceof BaseMappingRule) {
       MappingLabelDeclaration mappingLabel = ((BaseMappingRule) node).getLabelDeclaration();
       if (mappingLabel != null) {
         mappingName = mappingLabel.getName();
-      } else {
-        mappingName = node.getName();
       }
     } else if (node instanceof TemplateFragment) {
       MappingLabelDeclaration mappingLabel = ((TemplateFragment) node).getLabelDeclaration();
       if (mappingLabel != null) {
         mappingName = mappingLabel.getName();
-      } else {
-        mappingName = node.getName();
       }
     } else if (node instanceof NodeMacro) {
       MappingLabelDeclaration mappingLabel = ((NodeMacro) node).getMappingLabel();
       if (mappingLabel != null) {
         mappingName = mappingLabel.getName();
-      } else {
-        mappingName = ((NodeMacro) node).getMappingId();
       }
     } else {
       LOG.errorWithTrace("unexpected input " + node.getDebugText());
@@ -626,7 +618,8 @@ public class GeneratorUtil {
     return null;
   }
 
-  /*package*/ static void processGeneratorMessage(GeneratorMessage message, SNode inputNode, SNode templateNode, SNode ruleNode, ITemplateGenerator generator) {
+  /*package*/
+  static void processGeneratorMessage(GeneratorMessage message, SNode inputNode, SNode templateNode, SNode ruleNode, ITemplateGenerator generator) {
     if (message != null) {
       String text = message.getMessageText();
       if (message.getMessageType() == GeneratorMessageType.error) {

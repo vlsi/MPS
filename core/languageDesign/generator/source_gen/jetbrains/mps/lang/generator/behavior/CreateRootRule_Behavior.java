@@ -16,9 +16,6 @@ public class CreateRootRule_Behavior {
     StringBuilder sb = new StringBuilder(SConceptPropertyOperations.getString(thisNode, "alias"));
     sb.append(" ").append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "templateNode", false), "name"));
     String mappingLabel = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "label", false), "name");
-    if (mappingLabel == null) {
-      mappingLabel = SPropertyOperations.getString(thisNode, "name");
-    }
     if (mappingLabel != null) {
       sb.append(" [").append(mappingLabel).append("]");
     }

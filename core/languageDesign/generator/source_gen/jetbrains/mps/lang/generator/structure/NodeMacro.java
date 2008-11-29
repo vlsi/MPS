@@ -9,19 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeMacro extends AbstractMacro {
   public static final String concept = "jetbrains.mps.lang.generator.structure.NodeMacro";
-  public static final String MAPPING_ID = "mappingId";
   public static final String MAPPING_LABEL = "mappingLabel";
 
   public NodeMacro(SNode node) {
     super(node);
-  }
-
-  public String getMappingId() {
-    return this.getProperty(NodeMacro.MAPPING_ID);
-  }
-
-  public void setMappingId(String value) {
-    this.setProperty(NodeMacro.MAPPING_ID, value);
   }
 
   public MappingLabelDeclaration getMappingLabel() {

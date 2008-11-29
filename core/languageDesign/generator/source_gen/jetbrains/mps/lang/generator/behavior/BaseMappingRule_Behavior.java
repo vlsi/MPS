@@ -33,7 +33,7 @@ public class BaseMappingRule_Behavior {
     if (mappingLabel != null) {
       return mappingLabel;
     }
-    return SPropertyOperations.getString(thisNode, "name");
+    return null;
   }
 
   public static SNode call_getTemplateType_1213877498511(SNode thisNode) {

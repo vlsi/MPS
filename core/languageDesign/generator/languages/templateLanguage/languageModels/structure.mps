@@ -322,14 +322,6 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1185229020384">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215478730975">
-      <property name="value" value="'mappingId' property is replaced with 'mappingLabel' reference" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1152722085357">
-      <property name="name" value="mappingId" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1088761943574">
     <property name="name" value="ReferenceMacro" />
@@ -448,10 +440,6 @@
     <property name="name" value="TemplateFragment" />
     <property name="package" value="template" />
     <link role="extends" targetNodeId="2.1133920641626" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215477279208">
-      <property name="value" value="'name' property is replaced with 'label' reference" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1200916687663">
       <property name="role" value="labelDeclaration" />
       <link role="target" targetNodeId="1200911316486" resolveInfo="MappingLabelDeclaration" />
@@ -460,9 +448,6 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="contextNodeQuery" />
       <link role="target" targetNodeId="1184373935793" resolveInfo="TemplateFragment_ContextNodeQuery" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1175152860919">
-      <link role="intfc" targetNodeId="2.1169194658468" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1112730859144">
@@ -717,9 +702,6 @@
     <property name="name" value="CreateRootRule" />
     <property name="package" value="rule" />
     <link role="extends" targetNodeId="2.1133920641626" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1175152807351">
-      <link role="intfc" targetNodeId="2.1169194658468" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1167087469900">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="conditionFunction" />
@@ -738,10 +720,6 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1201894456441">
       <property name="value" value="create root" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215461323202">
-      <property name="value" value="'name' property is replaced with 'label' reference" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1167087518662">
@@ -812,9 +790,6 @@
     <property name="name" value="BaseMappingRule" />
     <property name="package" value="rule" />
     <link role="extends" targetNodeId="2.1133920641626" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1175152790300">
-      <link role="intfc" targetNodeId="2.1169194658468" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1167272244852">
       <property name="name" value="applyToConceptInheritors" />
       <link role="dataType" targetNodeId="2.1082983657063" />
@@ -837,10 +812,6 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1167169327669">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215477239972">
-      <property name="value" value="'name' property is replaced with 'label' reference" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1215461340299" resolveInfo="deprecated_next_after_798" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1167171569011">

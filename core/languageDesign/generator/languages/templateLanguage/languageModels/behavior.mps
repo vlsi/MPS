@@ -390,29 +390,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877263128">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877263129">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877263130">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1213877263131">
-                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877263132">
-                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877263133" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1213877263134">
-                    <link role="property" targetNodeId="11.1169194664001" resolveInfo="name" />
-                  </node>
-                </node>
-                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877263135">
-                  <link role="variableDeclaration" targetNodeId="1213877263121" resolveInfo="mappingLabel" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1213877263136">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1213877263137" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877263138">
-              <link role="variableDeclaration" targetNodeId="1213877263121" resolveInfo="mappingLabel" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877263139">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877263140">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877263141">
@@ -1507,15 +1484,10 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877498534">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877498535">
-            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877498536" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1213877498537">
-              <link role="property" targetNodeId="11.1169194664001" resolveInfo="name" />
-            </node>
-          </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227915920713" />
         </node>
       </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723855" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1227915910790" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877498538">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877498539" />

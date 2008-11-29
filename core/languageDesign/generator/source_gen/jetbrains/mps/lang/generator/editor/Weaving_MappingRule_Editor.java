@@ -11,17 +11,16 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
 
@@ -43,22 +42,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1167517960208(context, node, "weaving rule"));
     editorCell.addEditorCell(this.createConstant1167517960209(context, node, ""));
-    if (renderingCondition8866_2(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection1167517960210(context, node));
-    }
     editorCell.addEditorCell(this.createCollection1200917658730(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection1167517960210(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11675179602101167517960210(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1219864606390(context, node, "!deprecated label"));
-    editorCell.addEditorCell(this.createConstant1167517960211(context, node, "mapping name"));
-    editorCell.addEditorCell(this.createProperty1167517960212(context, node));
     return editorCell;
   }
 
@@ -82,9 +66,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection1169580472030(context, node));
     editorCell.addEditorCell(this.createConstant1169580472033(context, node, "-->"));
     if (renderingCondition8866_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection1169580472034(context, node));
-    }
-    if (renderingCondition8866_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1200917687309(context, node));
     }
     editorCell.addEditorCell(this.createCollection1169580472045(context, node));
@@ -98,18 +79,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent1169580472031(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection1169580472034(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11695804720341169580472034(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1215475315265(context, node, "!deprecated label"));
-    editorCell.addEditorCell(this.createProperty1169580472035(context, node));
-    editorCell.addEditorCell(this.createConstant1169580472036(context, node, ":"));
     return editorCell;
   }
 
@@ -183,26 +152,10 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1167517960211(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11675179602111167517960211(editorCell, node, context);
-    setupLabel_Constant_1167517960211_1167517960211(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstant1169580472033(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11695804720331169580472033(editorCell, node, context);
     setupLabel_Constant_1169580472033_1169580472033(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant1169580472036(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11695804720361169580472036(editorCell, node, context);
-    setupLabel_Constant_1169580472036_1169580472036(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -245,80 +198,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     setupLabel_Constant_1200917884282_1200917884282(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-
-  public EditorCell createConstant1215475315265(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12154753152651215475315265(editorCell, node, context);
-    setupLabel_Constant_1215475315265_1215475315265(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant1219864606390(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12198646063901219864606390(editorCell, node, context);
-    setupLabel_Constant_1219864606390_1219864606390(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createProperty1167517960212_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_name1167517960212(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_name_1167517960212((EditorCell_Label)editorCell, node, context);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty1167517960212(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("name");
-    provider.setNoTargetText("<none>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(true);
-    EditorCell cellWithRole = this.createProperty1167517960212_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
-  public EditorCell createProperty1169580472035_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_name1169580472035(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_name_1169580472035((EditorCell_Label)editorCell, node, context);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty1169580472035(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("name");
-    provider.setNoTargetText("<no mapping name>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(true);
-    EditorCell cellWithRole = this.createProperty1169580472035_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
   }
 
   public EditorCell createRefNode1169580472059_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -479,45 +358,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_11675179602101167517960210(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1167517960210");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Constant_11675179602111167517960211(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1167517960211");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_property_name1167517960212(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_Collection_11695804720281169580472028(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1169580472028");
   }
@@ -558,46 +398,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Collection_11695804720341169580472034(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1169580472034");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_property_name1169580472035(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
-          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Constant_11695804720361169580472036(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1169580472036");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
         }
 
       };
@@ -713,51 +513,13 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1200917884282");
   }
 
-  private static void setupBasic_Constant_12154753152651215475315265(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1215475315265");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Constant_12198646063901219864606390(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1219864606390");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupLabel_Constant_1167517960208_1167517960208(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1167517960209_1167517960209(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1167517960211_1167517960211(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_property_name_1167517960212(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_Constant_1169580472033_1169580472033(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_property_name_1169580472035(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1169580472036_1169580472036(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_refNode_ruleConsequence_1169580472059(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -787,22 +549,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1200917884282_1200917884282(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1215475315265_1215475315265(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1219864606390_1219864606390(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static boolean renderingCondition8866_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "name") != null;
-  }
-
-  public static boolean renderingCondition8866_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
-  }
-
-  public static boolean renderingCondition8866_2(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "name") != null;
   }
 
   public static class _Inline8866_0 extends AbstractCellProvider {
