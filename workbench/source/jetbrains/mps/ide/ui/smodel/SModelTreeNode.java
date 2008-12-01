@@ -38,11 +38,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private String myLabel;
   private boolean myInitialized = false;
   private boolean myInitializing = false;
-  private EventsCollector myEventsCollector = new EventsCollector() {
-    protected void eventsHappened(List<SModelEvent> events) {
-      eventsHappenedInCommand(events);
-    }
-  };
+  private EventsCollector myEventsCollector;
   private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
   private MyGenerationStatusListener myStatusListener = new MyGenerationStatusListener();
   private boolean myShowLongName;
@@ -284,6 +280,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public void flush() {
+    if (myEventsCollector == null) return;
     myEventsCollector.flush();
   }
 
@@ -400,16 +397,21 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private void addListeners() {
+    myEventsCollector = new MyEventsCollector();
     myEventsCollector.add(myModelDescriptor);
     getSModelDescriptor().addModelListener(mySimpleModelListener);
     ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myStatusListener);
   }
 
   private void removeListeners() {
-    myEventsCollector.remove(myModelDescriptor);
     getSModelDescriptor().removeModelListener(mySimpleModelListener);
     ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
+
+    if (myEventsCollector == null) return;
+    
+    myEventsCollector.remove(myModelDescriptor);
     myEventsCollector.dispose();
+    myEventsCollector = null;
   }
 
   private void updateNodePresentation(final boolean reloadSubTree) {
@@ -740,4 +742,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
   }
 
+  private class MyEventsCollector extends EventsCollector {
+    protected void eventsHappened(List<SModelEvent> events) {
+      eventsHappenedInCommand(events);
+    }
+  }
 }

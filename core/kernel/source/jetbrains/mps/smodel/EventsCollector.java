@@ -81,16 +81,22 @@ public class EventsCollector {
   }
 
   public void add(SModelDescriptor sm) {
+    assert !myDisposed;
+
     myModelDescriptors.add(sm);
     sm.addModelListener(myListeners);
   }
 
   public void remove(SModelDescriptor sm) {
+    assert !myDisposed;
+
     myModelDescriptors.remove(sm);
     sm.removeModelListener(myListeners);
   }
 
   public void flush() {
+    assert !myDisposed;
+
     if (myEvents.isEmpty()) return;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
