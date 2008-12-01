@@ -510,7 +510,6 @@
                     <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1178287198861" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="1178287203472">
                       <link role="concept" targetNodeId="1.1178286324487" />
-                      <node role="prototypeNode" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="1178287212565" />
                     </node>
                   </node>
                 </node>
@@ -571,7 +570,6 @@
                     <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1178287221677" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="1178287232077">
                       <link role="concept" targetNodeId="1.1178286324487" />
-                      <node role="prototypeNode" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="1178287236515" />
                     </node>
                   </node>
                 </node>
