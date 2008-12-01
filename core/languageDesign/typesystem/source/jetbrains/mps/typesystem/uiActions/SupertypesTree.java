@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
+import javax.swing.SwingUtilities;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.util.HashSet;
@@ -52,7 +53,11 @@ public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
 
   public boolean doubleClick(final HierarchyTreeNode<INodeAdapter> hierarchyTreeNode) {
     final BaseNodeDialog dialog = new MyBaseNodeDialog(hierarchyTreeNode);
-    dialog.showDialog();
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        dialog.showDialog();
+      }
+    });
     return true;
   }
 
