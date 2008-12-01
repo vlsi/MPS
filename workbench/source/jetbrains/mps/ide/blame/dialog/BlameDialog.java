@@ -165,7 +165,12 @@ public class BlameDialog extends BaseDialog {
 
   public void loadState(MyState state) {
     if (state == null) return;
-    myAnonymousRadio.setSelected(state.isAnonymous());
+    if (state.isAnonymous()) {
+      myAnonymousRadio.setSelected(true);
+    } else {
+      myRegisteredRadio.setSelected(true);
+    }
+
     myUsername.setText(state.getUsername());
     myPassword.setText(state.getPassword());
   }
@@ -263,6 +268,7 @@ public class BlameDialog extends BaseDialog {
     private boolean myAnonymous;
     private String myUsername;
     private String myPassword;
+
 
     public MyState() {
     }
