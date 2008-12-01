@@ -55,7 +55,10 @@ public abstract class GenerateModelsAction extends BaseAction {
     myModels = e.getData(MPSDataKeys.MODELS);
     if (myModels==null || myModels.isEmpty()){
       myModels = new ArrayList<SModelDescriptor>();
-      myModels.add(e.getData(MPSDataKeys.CONTEXT_MODEL));
+      SModelDescriptor model = e.getData(MPSDataKeys.CONTEXT_MODEL);
+      if (model!=null){
+        myModels.add(model);
+      }
     }
     if (myModels.isEmpty()) return false;
     myContext = data.getOperationContext();
