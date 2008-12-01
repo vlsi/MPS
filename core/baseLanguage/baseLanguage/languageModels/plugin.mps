@@ -21635,7 +21635,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224070198854">
     <property name="package" value="refactoring.inlineMethod" />
-    <property name="name" value="InlineMethodModel" />
+    <property name="name" value="InlineMethodDialogModel" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1224070383610">
       <property name="name" value="findUssages" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224070383611">
@@ -24060,6 +24060,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227630753778">
             <property name="name" value="message" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1227630753779" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228151769284" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1227629722568">
@@ -34889,8 +34890,8 @@
               <link role="baseMethodDeclaration" targetNodeId="10.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227529377912">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227529377913">
-                <link role="baseMethodDeclaration" targetNodeId="83.~BaseMethodUsages_Finder.&lt;init&gt;()" resolveInfo="BaseMethodUsages_Finder" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1228158679968">
+                <link role="baseMethodDeclaration" targetNodeId="83.~ExactMethodUsages_Finder.&lt;init&gt;()" resolveInfo="ExactMethodUsages_Finder" />
               </node>
             </node>
           </node>
