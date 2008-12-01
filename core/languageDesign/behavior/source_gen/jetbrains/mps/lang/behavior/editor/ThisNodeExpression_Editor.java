@@ -52,6 +52,7 @@ public class ThisNodeExpression_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };

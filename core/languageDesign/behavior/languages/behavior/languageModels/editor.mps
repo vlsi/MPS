@@ -1000,6 +1000,9 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225194692031">
           <property name="value" value="0.0" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1228124144580">
+          <property name="flag" value="true" />
+        </node>
       </node>
     </node>
   </node>

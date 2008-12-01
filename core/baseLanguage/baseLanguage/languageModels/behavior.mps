@@ -6151,8 +6151,8 @@
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877419060">
     <link role="concept" targetNodeId="1.1188207840427" resolveInfo="AnnotationInstance" />
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877419061">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877419062" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1228124415661">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228124415662" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877420728">
