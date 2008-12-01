@@ -30,7 +30,7 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    if ((SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept","jetbrains.mps.baseLanguage.structure.Interface"}, false, false) == null)) {
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null)) {
       return false;
     }
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");

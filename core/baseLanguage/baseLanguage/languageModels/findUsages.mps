@@ -3662,12 +3662,9 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228129663975">
               <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1228129663224" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1228129669629">
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="1228129695336">
-                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1228129695337">
-                    <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
-                  </node>
-                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1228129706293">
-                    <link role="concept" targetNodeId="1.1107796713796" resolveInfo="Interface" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1228131252727">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1228131256836">
+                    <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
                   </node>
                 </node>
               </node>
