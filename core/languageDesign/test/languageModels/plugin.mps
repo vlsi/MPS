@@ -271,6 +271,9 @@
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224600522095">
                                           <link role="variableDeclaration" targetNodeId="1224600415985" resolveInfo="testName" />
                                         </node>
+                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1228144088155">
+                                          <property name="value" value="true" />
+                                        </node>
                                       </node>
                                     </node>
                                   </node>

@@ -138,6 +138,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "keys");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1228144278600(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.test.structure.EditorTestMethod"));
+  }
+
   public static Object referenceMacro_GetReferent_1221567898656(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(_context.getNode()));
   }

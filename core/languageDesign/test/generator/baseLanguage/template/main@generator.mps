@@ -913,6 +913,27 @@
                   </node>
                 </node>
               </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1228143540486">
+                <property name="value" value="true" />
+                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1228144278599">
+                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1228144278600">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228144278601">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228144297971">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1228144297972">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228144303254">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1228144301625" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1228144305659">
+                              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1228144322337">
+                                <link role="conceptDeclaration" targetNodeId="1.1225977061701" resolveInfo="EditorTestMethod" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1221572119980" />
           </node>

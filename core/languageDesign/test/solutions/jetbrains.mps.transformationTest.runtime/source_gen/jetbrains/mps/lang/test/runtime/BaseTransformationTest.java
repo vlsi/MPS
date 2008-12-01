@@ -63,7 +63,7 @@ public class BaseTransformationTest extends TestCase {
     this.myTransidentModel.getSModel().validateLanguagesAndImports();
   }
 
-  public void runTest(final String className, final String methodName) throws Throwable {
+  public void runTest(final String className, final String methodName, final boolean runInCommand) throws Throwable {
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
     ModelAccess.instance().runReadAction(new Runnable() {
 
@@ -79,21 +79,18 @@ public class BaseTransformationTest extends TestCase {
     SwingUtilities.invokeAndWait(new Runnable() {
 
       public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        if (runInCommand) {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
-          public void run() {
-            try {
-              clazz.value.getDeclaredMethod(methodName).invoke(obj);
-            } catch (NoSuchMethodException e) {
-              e.printStackTrace();
-            } catch (IllegalAccessException e) {
-              e.printStackTrace();
-            } catch (InvocationTargetException e) {
-              exception.value = e.getCause();
+            public void run() {
+              exception.value = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
             }
-          }
 
-        });
+          });
+        } else
+        {
+          exception.value = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
+        }
       }
 
     });
@@ -107,6 +104,20 @@ public class BaseTransformationTest extends TestCase {
     if (exception.value != null) {
       throw exception.value;
     }
+  }
+
+  private Throwable tryToRunTest(Class clazz, String methodName, Object obj) {
+    Throwable exception = null;
+    try {
+      clazz.getDeclaredMethod(methodName).invoke(obj);
+    } catch (NoSuchMethodException e) {
+      e.printStackTrace();
+    } catch (IllegalAccessException e) {
+      e.printStackTrace();
+    } catch (InvocationTargetException e) {
+      exception = e.getCause();
+    }
+    return exception;
   }
 
 

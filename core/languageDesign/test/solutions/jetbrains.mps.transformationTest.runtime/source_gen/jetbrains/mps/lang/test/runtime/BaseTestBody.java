@@ -7,6 +7,7 @@ import jetbrains.mps.project.MPSProject;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -23,14 +24,20 @@ public class BaseTestBody {
     this.myCopyes = new ArrayList<SNode>();
   }
 
-  public void addNodeById(String id) throws Exception {
-    SNode node = BaseTestBody.this.myModel.getSModel().getNodeById(id);
-    SNode copy = CopyUtil.copy(node, BaseTestBody.this.myMap, true);
-    for(SNode a : Sequence.fromIterable(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.TestNodeAnnotation", false))) {
-      SNodeOperations.deleteNode(a);
-    }
-    BaseTestBody.this.myModel.getSModel().addRoot(copy);
-    BaseTestBody.this.myCopyes.add(copy);
+  public void addNodeById(final String id) throws Exception {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      public void run() {
+        SNode node = BaseTestBody.this.myModel.getSModel().getNodeById(id);
+        SNode copy = CopyUtil.copy(node, BaseTestBody.this.myMap, true);
+        for(SNode a : Sequence.fromIterable(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.TestNodeAnnotation", false))) {
+          SNodeOperations.deleteNode(a);
+        }
+        BaseTestBody.this.myModel.getSModel().addRoot(copy);
+        BaseTestBody.this.myCopyes.add(copy);
+      }
+
+    });
   }
 
   public SNode getNodeById(String id) {

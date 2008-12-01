@@ -109,7 +109,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
 
         public void run() {
           try {
-            testClass.runTest(className + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295(), testName);
+            testClass.runTest(className + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295(), testName, true);
           } catch (Throwable e) {
             e.printStackTrace();
           }
