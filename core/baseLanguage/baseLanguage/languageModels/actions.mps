@@ -2041,7 +2041,6 @@
                     <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1197031265553" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="1197031199096">
                       <link role="concept" targetNodeId="1.1197027756228" resolveInfo="OperationExpression" />
-                      <node role="prototypeNode" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="1197031273632" />
                     </node>
                   </node>
                 </node>
@@ -2218,7 +2217,6 @@
                     <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1205334661021" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="1205334661022">
                       <link role="concept" targetNodeId="1.1197027756228" resolveInfo="DotExpression" />
-                      <node role="prototypeNode" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="1205334661023" />
                     </node>
                   </node>
                 </node>
@@ -2405,7 +2403,6 @@
                     <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1218492474013" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="1218492474014">
                       <link role="concept" targetNodeId="1.1197027756228" resolveInfo="DotExpression" />
-                      <node role="prototypeNode" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="1218492474015" />
                     </node>
                   </node>
                 </node>
@@ -4293,7 +4290,6 @@
                     <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1181219864853" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="1181219868446">
                       <link role="concept" targetNodeId="1.1178893518978" />
-                      <node role="prototypeNode" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="1181219874399" />
                     </node>
                   </node>
                 </node>
@@ -4502,7 +4498,6 @@
                     <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1181219842496" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="1181219846145">
                       <link role="concept" targetNodeId="1.1070475587102" />
-                      <node role="prototypeNode" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="1181219855449" />
                     </node>
                   </node>
                 </node>
