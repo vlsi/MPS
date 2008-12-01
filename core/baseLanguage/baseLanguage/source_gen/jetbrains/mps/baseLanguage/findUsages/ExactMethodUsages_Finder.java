@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -16,10 +17,6 @@ import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 public class ExactMethodUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
 
-  public boolean isVisible(SNode node, IScope scope) {
-    return false;
-  }
-
   public String getDescription() {
     return "Exact Method Usages ";
   }
@@ -30,6 +27,10 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
 
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
+  }
+
+  public boolean isApplicable(SNode node) {
+    return (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept","jetbrains.mps.baseLanguage.structure.Interface"}, false, false) != null);
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
