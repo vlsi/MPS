@@ -39,13 +39,13 @@ public class ProjectModels {
 
   @NotNull
   public static SModelDescriptor createDescriptorFor(@NotNull ModelOwner owner) {
-    SModelFqName fqName = new SModelFqName("projectModel" + ourProjectModelDescriptorCount++, "$internal$");
+    SModelFqName fqName = new SModelFqName("projectModel" + ourProjectModelDescriptorCount++, SModelStereotype.INTERNAL); // "$internal$"
     SModelDescriptor result = new DefaultSModelDescriptor(ourModelRootManager, null, new SModelReference(fqName, SModelId.generate()));
     SModelRepository.getInstance().registerModelDescriptor(result, owner);
     return result;
   }
 
   public static boolean isProjectModel(@NotNull SModelReference reference) {
-    return "$internal$".equals(reference.getStereotype());
+    return SModelStereotype.INTERNAL.equals(reference.getStereotype()); // "$internal$"
   }
 }

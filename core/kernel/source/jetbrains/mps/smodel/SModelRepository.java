@@ -391,11 +391,11 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-  public void reloadAll() {
-    for (SModelDescriptor modelDescriptor : new HashSet<SModelDescriptor>(myModelDescriptors)) {
-      modelDescriptor.reloadFromDisk();
-    }
-  }
+//  public void reloadAll() {
+//    for (SModelDescriptor modelDescriptor : new HashSet<SModelDescriptor>(myModelDescriptors)) {
+//      modelDescriptor.reloadFromDisk();
+//    }
+//  }
 
   public boolean hasOwners(SModelDescriptor modelDescriptor) {
     return !myModelsToOwners.getByFirst(modelDescriptor).isEmpty();
