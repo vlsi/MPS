@@ -1375,6 +1375,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1225467537279">
     <property name="name" value="reduce_Project" />
+    <link role="applicableConcept" targetNodeId="1.1225467090849" resolveInfo="ProjectExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1225467552469">
       <property name="name" value="Clazz" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225467552470" />
@@ -1400,6 +1401,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1225469905440">
     <property name="name" value="reduce_Model" />
+    <link role="applicableConcept" targetNodeId="1.1225469856668" resolveInfo="ModelExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1225469905441">
       <property name="name" value="Clazz" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225469905442" />
