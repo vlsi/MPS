@@ -935,7 +935,7 @@
     <property name="name" value="ExcludeOperation" />
     <link role="extends" targetNodeId="1176906603202" resolveInfo="BinaryOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1176923534742">
-      <property name="value" value="exclude" />
+      <property name="value" value="except" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
