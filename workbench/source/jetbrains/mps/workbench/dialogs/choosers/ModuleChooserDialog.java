@@ -2,7 +2,6 @@ package jetbrains.mps.workbench.dialogs.choosers;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
-import com.intellij.ide.util.gotoByName.UseIdeaChooser;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
@@ -93,7 +92,6 @@ class ModuleChooserDialog<T> extends BaseDialog {
     };
 
     myChooser = new SmartChooseByNamePanel(goToModuleModel,!myNonProjectModules.isEmpty());
-    myChooser.setUseIdeaChooser(UseIdeaChooser.useIdeaChooserForModules());
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

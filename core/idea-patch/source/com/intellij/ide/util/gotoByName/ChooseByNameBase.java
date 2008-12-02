@@ -97,7 +97,6 @@ public abstract class ChooseByNameBase {
   @NonNls
   private static final String SEARCHING_CARD = "searching";
   private static final int REBUILD_DELAY = 300;
-  private boolean myUseIdeaChooser = true;
 
   /**
    * @param initialText initial text which will be in the lookup text field
@@ -938,10 +937,6 @@ public abstract class ChooseByNameBase {
 
   private static final String EXTRA_ELEM = "...";
 
-  public void setUseIdeaChooser(boolean useIdeaChooser) {
-    myUseIdeaChooser = useIdeaChooser;
-  }
-
   private class CalcElementsThread implements Runnable {
     private final String myPattern;
     private boolean myCheckboxState;
@@ -1024,12 +1019,9 @@ public abstract class ChooseByNameBase {
     }
 
     private void addElementsByPattern(Set<Object> elementsArray, String pattern) {
-      (myUseIdeaChooser ? new IdeaChooser() : new MPSChooser()).addElementsByPattern(elementsArray, pattern);
+      new CompositeChooser().addElementsByPattern(elementsArray, pattern);
     }
 
-    public void getNamesByPattern(boolean checkboxState, List<String> list, String pattern) throws ProcessCanceledException {
-      (myUseIdeaChooser ? new IdeaChooser() : new MPSChooser()).getNamesByPattern(checkboxState, this, list, pattern);
-    }
 
     private void cancel() {
       if (myCanCancel) {
@@ -1160,11 +1152,12 @@ public abstract class ChooseByNameBase {
               throw new ProcessCanceledException();
             }
             if (name != null) {
+              String shortName = jetbrains.mps.util.NameUtil.shortNameFromLongName(name);
               if (myModel instanceof GotoActionModel) {
-                if (((GotoActionModel) myModel).matches(name, pattern)) {
+                if (((GotoActionModel) myModel).matches(shortName, pattern)) {
                   list.add(name);
                 }
-              } else if (matcher.matches(name, compiledPattern)) {
+              } else if (matcher.matches(shortName, compiledPattern)) {
                 list.add(name);
               }
             }
@@ -1194,7 +1187,6 @@ public abstract class ChooseByNameBase {
         }
 
         String s = pattern.substring(lastSeparatorOccurence);
-        if (s.equals("")) s = "*";
         return s;
       }
     }
@@ -1255,33 +1247,32 @@ public abstract class ChooseByNameBase {
 
       private java.util.regex.Pattern getItemPattern() {
         final String text = myTextField.getText();
-        return getItemPattern(text);
-      }
-
-      private java.util.regex.Pattern getItemPattern(String text) {
         StringBuilder b = getExactItemPatternBuilder(text);
         b.append(".*");
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(b.toString());
         return p;
       }
 
-
       private StringBuilder getExactItemPatternBuilder(String text) {
         return ChooseItemComponent.getExactItemPatternBuilder(text);
       }
     }
-  }
 
+    private class CompositeChooser implements Chooser {
+      private MPSChooser myMPSChooser = new MPSChooser();
+      private IdeaChooser myIdeaChooser = new IdeaChooser() ;
+
+      public void addElementsByPattern(Set<Object> elementsArray, String pattern) {
+        myMPSChooser.addElementsByPattern(elementsArray, pattern);
+        myIdeaChooser.addElementsByPattern(elementsArray, pattern);
+      }
+    }
+  }
   private static interface CalcElementsCallback {
     void run(Set<?> elements);
   }
 
   public interface Chooser {
     public void addElementsByPattern(Set<Object> elementsArray, String pattern);
-
-    public void getNamesByPattern(final boolean checkboxState,
-                                  CalcElementsThread calcElementsThread,
-                                  final List<String> list,
-                                  String pattern) throws ProcessCanceledException;
   }
 }

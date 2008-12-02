@@ -3,7 +3,6 @@ package jetbrains.mps.workbench.dialogs.choosers;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
-import com.intellij.ide.util.gotoByName.UseIdeaChooser;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
@@ -79,7 +78,6 @@ public class CommonChoosers {
     };
     
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new FakePsiContext());
-    popup.setUseIdeaChooser(UseIdeaChooser.useIdeaChooserForModels());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -106,7 +104,7 @@ public class CommonChoosers {
       }
 
       public String doGetObjectName(T module) {
-        return UseIdeaChooser.useIdeaChooserForModules() ? NameUtil.shortNameFromLongName(module.getModuleUID()) : module.getModuleFqName();
+        return module.getModuleFqName();
       }
 
       public String getCheckBoxName() {
@@ -139,7 +137,6 @@ public class CommonChoosers {
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModuleModel, new FakePsiContext());
-    popup.setUseIdeaChooser(UseIdeaChooser.useIdeaChooserForModules());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
