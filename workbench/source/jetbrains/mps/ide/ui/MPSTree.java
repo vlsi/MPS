@@ -1,19 +1,15 @@
 package jetbrains.mps.ide.ui;
 
-import com.intellij.ide.dnd.aware.DnDAwareTree;
 import com.intellij.ide.DataManager;
+import com.intellij.ide.dnd.aware.DnDAwareTree;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.Pair;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -125,6 +121,20 @@ public abstract class MPSTree extends DnDAwareTree {
       }
     });
 
+    addKeyListener(new KeyAdapter() {
+      public void keyPressed(final KeyEvent e) {
+        TreePath[] paths = getSelectionPaths();
+        TreePath selPath = getSelectionPath();
+        if (selPath == null) return;
+        final MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
+        if (selNode == null) return;
+        for (TreePath path : paths) {
+          MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+          node.keyPressed(e);
+        }
+      }
+    });
+
     AbstractAction openNodeAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         TreePath selPath = getSelectionPath();
@@ -160,7 +170,7 @@ public abstract class MPSTree extends DnDAwareTree {
 
         paint(getGraphics());
       }
-      
+
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -184,16 +194,16 @@ public abstract class MPSTree extends DnDAwareTree {
 
   void myMousePressed(MouseEvent e) {
     requestFocus(true);
-    
+
     TreePath path = getPathForLocation(e.getX(), e.getY());
     if (path == null) return;
 
     Object lastPathComponent = path.getLastPathComponent();
     if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened()) {
       MPSTreeNode nodeToClick = (MPSTreeNode) lastPathComponent;
-      if ((e.getClickCount() == 1 && isAutoOpen())){
+      if ((e.getClickCount() == 1 && isAutoOpen())) {
         nodeToClick.autoscroll();
-      } else if (e.getClickCount() == 2){
+      } else if (e.getClickCount() == 2) {
         nodeToClick.doubleClick();
       }
       e.consume();
@@ -429,7 +439,7 @@ public abstract class MPSTree extends DnDAwareTree {
     setModel(model);
   }
 
-  public void addNotify() {                
+  public void addNotify() {
     super.addNotify();
     if (getModel().getRoot() instanceof MPSTreeNode) {
       ((MPSTreeNode) getModel().getRoot()).addThisAndChildren();
