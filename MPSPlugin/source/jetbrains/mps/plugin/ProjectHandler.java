@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2008 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.plugin;
 
 import com.intellij.javaee.web.facet.WebFacet;
@@ -69,7 +84,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   @NotNull
   public String getComponentName() {
-    
+
     return "MPSSupport Handler";
   }
 
@@ -85,7 +100,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   public void addSourceRoot(final String path) {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {                                                                   
+      public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
             LocalFileSystem lfs = LocalFileSystem.getInstance();
@@ -395,7 +410,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     });
   }
 
-  private void activateProjectWindow() {    
+  private void activateProjectWindow() {
     if (SystemInfo.isLinux) return;
 
     Frame window = (Frame) WindowManager.getInstance().suggestParentWindow(myProject);
@@ -689,7 +704,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
               FilePath fp = PeerFactory.getInstance().getVcsContextFactory().createFilePathOn(vf);
               AbstractVcs vcs = vcsManager.getVcsFor(vf);
               if (vcs != null) {
-                CheckinEnvironment ci = vcs.getCheckinEnvironment();                
+                CheckinEnvironment ci = vcs.getCheckinEnvironment();
                 if (ci != null && !vcs.fileIsUnderVcs(fp)) {
                   List<VirtualFile> vfs = new ArrayList<VirtualFile>();
                   vfs.add(vf);
