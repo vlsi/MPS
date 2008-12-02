@@ -277,19 +277,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS);
   }
 
-  private JPopupMenu createMenu(BaseGroup group) {
-    ActionManager manager = ActionManager.getInstance();
-    return manager.createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
-  }
-
   public void flush() {
     if (myEventsCollector == null) return;
     myEventsCollector.flush();
-  }
-
-  public JPopupMenu getQuickCreatePopupMenu() {
-    BaseGroup group = new CreateRootNodeGroup();
-    return createMenu(group);
   }
 
   protected CreateRootNodeGroup getQuickCreateGroup(boolean plain) {

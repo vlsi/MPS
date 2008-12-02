@@ -7,15 +7,16 @@ import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
+import javax.swing.MenuSelectionManager;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
@@ -101,15 +102,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return null;
   }
 
-  public JPopupMenu getQuickCreatePopupMenu() {
-    JPopupMenu popupMenu = null;
-    ActionGroup actionGroup = getQuickCreateGroup(false);
-    if (actionGroup != null) {
-      popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, actionGroup).getComponent();
-    }
-    return popupMenu;
-  }
-
   protected ActionGroup getQuickCreateGroup(boolean plain) {
     return null;
   }
@@ -125,19 +117,17 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
       ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
         public ListPopup compute() {
           ActionGroup group = getQuickCreateGroup(true);
-          ListPopup popup = null;
-          if (group != null) {
-            Presentation presentation = new Presentation();
-            AnActionEvent event = new AnActionEvent(keyEvent, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
-            ActionUtils.updateGroup(group, event);
-            popup = JBPopupFactory.getInstance()
-              .createActionGroupPopup("New",
-                group,
-                dataContext,
-                JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
-                false);
-          }
-          return popup;
+          if (group == null) return null;
+          Presentation presentation = new Presentation();
+          AnActionEvent event = new AnActionEvent(keyEvent, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
+          ActionUtils.updateGroup(group, event);
+          return JBPopupFactory.getInstance()
+            .createActionGroupPopup("New",
+              group,
+              dataContext,
+              JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
+              false);
+
         }
       });
       if (popup == null) return;
@@ -145,17 +135,21 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     } else if (keyEvent.isAltDown() && (
       (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
         (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
+      MPSTree mpsTree = getTree();
+      if (mpsTree == null) return;
+
       JPopupMenu popupMenu = ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
         public JPopupMenu compute() {
-          return getQuickCreatePopupMenu();
+          ActionGroup actionGroup = getQuickCreateGroup(false);
+          if (actionGroup == null) return null;
+          return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, actionGroup).getComponent();
         }
       });
-      if (popupMenu != null) {
-        MPSTree mpsTree = getTree();
-        if (mpsTree == null) return;
-        Rectangle rectangle = mpsTree.getPathBounds(mpsTree.getSelectionPath());
-        popupMenu.show(mpsTree, rectangle.x + rectangle.width / 2, rectangle.y);
-      }
+
+      if (popupMenu == null) return;
+
+      Rectangle rectangle = mpsTree.getPathBounds(mpsTree.getSelectionPath());
+      popupMenu.show(mpsTree, rectangle.x + rectangle.width / 2, rectangle.y);
     }
   }
 
@@ -250,7 +244,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
     for (int i = 0; i < getChildCount(); i++) {
       MPSTreeNode node = (MPSTreeNode) getChildAt(i);
-      node.addThisAndChildren();     
+      node.addThisAndChildren();
     }
   }
 
@@ -398,7 +392,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   private void updateErrorState() {
     ErrorState state = ErrorState.NONE;
-    if (propogateErrorUpwards()) {            
+    if (propogateErrorUpwards()) {
       for (MPSTreeNode node : this) {
         state = state.combine(node.getAggregatedErrorState());
       }
@@ -442,6 +436,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void autoscroll() {
-    
+
   }
 }
