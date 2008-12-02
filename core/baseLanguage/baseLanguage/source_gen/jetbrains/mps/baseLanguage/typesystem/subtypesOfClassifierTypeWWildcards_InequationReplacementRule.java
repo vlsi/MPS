@@ -58,16 +58,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                       typeCheckingContext.whenConcrete(concreteParam, new Runnable() {
 
                         public void run() {
-                          if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-                            /*
-                              {
-                                SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-                                BaseIntentionProvider intentionProvider = null;
-                                typeCheckingContext.createLessThanInequation(finalTypeParam, typeCheckingContext.getEquationManager().getRepresentator(concreteParam), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357893", false, 0, intentionProvider);
-                              }
-                            */
-                          } else
-                          {
+                          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.UpperBoundType"))) {
                             {
                               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                               BaseIntentionProvider intentionProvider = null;
@@ -89,7 +80,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                 SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
                 {
                   BaseIntentionProvider intentionProvider = null;
-                  intentionProvider = new BaseIntentionProvider("r:7e1cb7a6-2f79-4145-bd60-a901f4e4db83(jetbrains.mps.baseLanguage.typesystem@16_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+                  intentionProvider = new BaseIntentionProvider("r:3c782383-047c-4b5e-b10d-dfbda9232096(jetbrains.mps.baseLanguage.typesystem@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
                   intentionProvider.putArgument("methodCall", methodCall);
                   intentionProvider.putArgument("classifier", classifier);
                   IErrorTarget errorTarget = new NodeErrorTarget();
@@ -138,14 +129,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                 result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(finalTypeParam, myParam, true);
                 {
                   final SNode concreteParam = myParam;
-                  if (SNodeOperations.isInstanceOf(concreteParam, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(concreteParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-                    /*
-                      {
-                        result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(finalTypeParam, concreteParam, true);
-                      }
-                    */
-                  } else
-                  {
+                  if (!(SNodeOperations.isInstanceOf(concreteParam, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(concreteParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"))) {
                     result_14532009 = result_14532009 && MatchingUtil.matchNodes(finalTypeParam, concreteParam);
                   }
                 }

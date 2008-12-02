@@ -7,15 +7,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ClassifierTypeUtil {
 
@@ -48,18 +48,7 @@ public class ClassifierTypeUtil {
   }
 
   private static SNode coerceToClassifierType(SNode type) {
-    SNode cType = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-      (SNode)type :
-      null
-    );
-    if ((cType == null)) {
-      SNode ctw = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
-      SNode cts = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-      cType = ((cts != null) ?
-        cts :
-        ctw
-      );
-    }
+    SNode cType = ClassifierTypeUtil.coerceToClassifierTypeIgnoreParameters(type);
     if ((cType != null)) {
       List<SNode> params = SLinkOperations.getTargets(cType, "parameter", true);
       if (params != null && params.size() > 0) {
@@ -79,18 +68,7 @@ public class ClassifierTypeUtil {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       return type;
     }
-    SNode cType = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-      (SNode)type :
-      null
-    );
-    if ((cType == null)) {
-      SNode ctw = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
-      SNode cts = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-      cType = ((cts != null) ?
-        cts :
-        ctw
-      );
-    }
+    SNode cType = ClassifierTypeUtil.coerceToClassifierTypeIgnoreParameters(type);
     if ((cType != null)) {
       List<SNode> params = SLinkOperations.getTargets(cType, "parameter", true);
       if (params != null && params.size() > 0) {
@@ -297,6 +275,32 @@ public class ClassifierTypeUtil {
     } else
     {
       return SNodeOperations.copyNode(type);
+    }
+  }
+
+  private static SNode coerceToClassifierTypeIgnoreParameters(SNode type) {
+    SNode cType = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
+      (SNode)type :
+      null
+    );
+    if ((cType == null)) {
+      SNode ctw = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+      SNode cts = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+      cType = ((cts != null) ?
+        cts :
+        ctw
+      );
+    }
+    if ((cType != null)) {
+      SNode retVal = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+      SLinkOperations.setTarget(retVal, "classifier", SLinkOperations.getTarget(cType, "classifier", false), false);
+      for(SNode c : SNodeOperations.getChildren(type)) {
+        SLinkOperations.addChild(retVal, "parameter", SNodeOperations.copyNode(c));
+      }
+      return retVal;
+    } else
+    {
+      return null;
     }
   }
 

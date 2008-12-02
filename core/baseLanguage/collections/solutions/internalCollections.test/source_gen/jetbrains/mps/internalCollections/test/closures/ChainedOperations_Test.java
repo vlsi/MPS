@@ -6,13 +6,11 @@ import org.junit.Test;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Arrays;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 public class ChainedOperations_Test extends Util_Test {
 
@@ -24,10 +22,10 @@ public class ChainedOperations_Test extends Util_Test {
         return it * 3;
       }
 
-    }).translate(new ITranslator <Integer, String>() {
+    }).translate(new ITranslator2 <Integer, String>() {
 
-      public ISequence<String> translate(final Integer it) {
-        return new ISequenceIterableAdapter <String>() {
+      public Iterable<String> translate(final Integer it) {
+        return new Iterable <String>() {
 
           public Iterator<String> iterator() {
             return new YieldingIterator <String>() {

@@ -36,7 +36,7 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = fieldReference;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new _Quotations.QuotationClass_75().createNode(fieldClassifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174350", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new _Quotations.QuotationClass_76().createNode(fieldClassifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174350", false, 0, intentionProvider);
     }
     {
       final SNode IT = typeCheckingContext.getEquationManager().getRepresentator(InstanceType_typevar_1206554174334);

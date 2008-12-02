@@ -440,7 +440,7 @@
                   <link role="variableDeclaration" targetNodeId="1203688764225" resolveInfo="seq" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628910131">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator2):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1203688904920">
                     <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1221825186119">
                       <property name="name" value="it1" />
@@ -563,7 +563,7 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203688860709">
               <property name="name" value="trans" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203688860710">
-                <link role="classifier" targetNodeId="3.~ITranslator" resolveInfo="ITranslator" />
+                <link role="classifier" targetNodeId="3.~ITranslator2" resolveInfo="ITranslator2" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203688860711">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
@@ -655,7 +655,7 @@
                       <link role="variableDeclaration" targetNodeId="1203689079730" resolveInfo="seq" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628910051">
-                      <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
+                      <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator2):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203689102114">
                         <link role="variableDeclaration" targetNodeId="1203688860709" resolveInfo="foo" />
                       </node>
@@ -682,7 +682,7 @@
                       <link role="variableDeclaration" targetNodeId="1203689079730" resolveInfo="seq" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1203883648706">
-                      <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
+                      <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator2):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203883650420">
                         <link role="variableDeclaration" targetNodeId="1203688860709" resolveInfo="mapper" />
                       </node>
@@ -1451,7 +1451,9 @@
               <property name="name" value="test" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204129169610">
                 <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196696778" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228203557773">
+                  <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+                </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207561038146">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207561023635">
@@ -1489,7 +1491,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207561023636">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
+                    <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator2):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1204129169626">
                       <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1221825185893">
                         <property name="name" value="it" />

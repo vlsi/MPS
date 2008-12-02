@@ -26,7 +26,7 @@ public class supertypesOf_ListType_ClassifierTypeList_SubtypingRule extends Subt
   }
 
   public boolean isWeak() {
-    return false;
+    return true;
   }
 
 }

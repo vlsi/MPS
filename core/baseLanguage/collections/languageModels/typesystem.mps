@@ -3080,7 +3080,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1178725705709">
-    <property name="isWeak" value="false" />
+    <property name="isWeak" value="true" />
     <property name="name" value="supertypesOf_ListType_ClassifierTypeList" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178725705710">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178725705711">
@@ -5431,34 +5431,6 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1209728239444">
       <property name="name" value="cso" />
       <link role="concept" targetNodeId="3.1209727891789" resolveInfo="ComparatorSortOperation" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1223564732167">
-    <property name="name" value="experimental_sequence_strongSubtypeOf_Iterable" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223564732168">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223564777437">
-        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1223564780627">
-          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223564785656">
-            <link role="classifier" targetNodeId="1.~Iterable" resolveInfo="Iterable" />
-            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1223564786571">
-              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1223564792676">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223564795266">
-                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1223564794733">
-                    <link role="applicableNode" targetNodeId="1223564758820" resolveInfo="sequenceType" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223564797424">
-                    <link role="link" targetNodeId="3.1151689745422" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1223564758820">
-      <property name="name" value="sequenceType" />
-      <link role="concept" targetNodeId="3.1151689724996" resolveInfo="SequenceType" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1224414526096">

@@ -124,6 +124,12 @@ public class FunctionType_Behavior {
   }
 
   public static SNode call_getNormalizedReturnType_1213877405252(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "resultType", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceType")) {
+      SNode rt = new _Quotations.QuotationClass_1().createNode();
+      SNode pt = ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "resultType", true), "elementType", true));
+      SLinkOperations.addChild(rt, "parameter", SNodeOperations.copyNode(pt));
+      return rt;
+    }
     return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(thisNode, "resultType", true));
   }
 

@@ -5,12 +5,10 @@ package jetbrains.mps.internalCollections.test.closures;
 import org.junit.Test;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.Arrays;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import junit.framework.Assert;
 import java.util.Collections;
@@ -20,10 +18,10 @@ public class Mapper_Test extends Util_Test {
   @Test()
   public void test_mapMethod() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
-    ISequence<Integer> test = seq.translate(new ITranslator <Integer, Integer>() {
+    ISequence<Integer> test = seq.translate(new ITranslator2 <Integer, Integer>() {
 
-      public ISequence<Integer> translate(final Integer it1) {
-        return new ISequenceIterableAdapter <Integer>() {
+      public Iterable<Integer> translate(final Integer it1) {
+        return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
             return new YieldingIterator <Integer>() {
@@ -70,10 +68,10 @@ __switch__:
   @Test()
   public void test_mapperVar() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
-    ITranslator<Integer, Integer> trans = new ITranslator <Integer, Integer>() {
+    ITranslator2<Integer, Integer> trans = new ITranslator2 <Integer, Integer>() {
 
-      public ISequence<Integer> translate(final Integer i) {
-        return new ISequenceIterableAdapter <Integer>() {
+      public Iterable<Integer> translate(final Integer i) {
+        return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
             return new YieldingIterator <Integer>() {
