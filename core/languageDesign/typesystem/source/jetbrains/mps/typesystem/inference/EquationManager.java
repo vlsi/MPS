@@ -8,6 +8,7 @@ import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 
 import java.util.*;
 

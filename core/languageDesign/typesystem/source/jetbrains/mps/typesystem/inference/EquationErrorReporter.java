@@ -4,6 +4,7 @@ import jetbrains.mps.typesystem.uiActions.PresentationManager;
 import jetbrains.mps.typesystem.inference.IWrapper;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.MessageStatus;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 
 /**
  * Created by IntelliJ IDEA.

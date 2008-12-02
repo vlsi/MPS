@@ -10,7 +10,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.typesystem.inference.IErrorReporter;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.workbench.MPSDataKeys;
 

@@ -7,13 +7,12 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.nodeEditor.MessageStatus;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.logging.Logger;
 
 import java.util.Map;
 import java.util.List;
 import java.util.Stack;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.

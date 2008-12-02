@@ -1,16 +1,12 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.ColorAndGraphicsUtil;
-import jetbrains.mps.typesystem.inference.IErrorReporter;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.typesystem.inference.SimpleErrorReporter;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 import java.awt.Color;
-import java.awt.Graphics;
 import java.util.List;
 
 public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMessageOwner {

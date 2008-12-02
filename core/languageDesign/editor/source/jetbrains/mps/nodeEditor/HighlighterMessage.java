@@ -6,6 +6,7 @@ import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.ErrorTargetEnum;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -19,6 +20,7 @@ import java.awt.Graphics;
  */
 public class HighlighterMessage extends DefaultEditorMessage {
   private IErrorTarget myErrorTarget;
+  private IErrorReporter myErrorReporter;
 
   public HighlighterMessage(SNode errorNode, MessageStatus status, IErrorTarget target, Color color, String string, EditorMessageOwner owner) {
     super(errorNode, status, color, string, owner);

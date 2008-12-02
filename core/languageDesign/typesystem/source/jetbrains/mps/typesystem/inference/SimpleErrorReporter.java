@@ -2,6 +2,7 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.MessageStatus;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 
 /**
  * Created by IntelliJ IDEA.

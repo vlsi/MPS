@@ -247,7 +247,7 @@
                                 <link role="variableDeclaration" targetNodeId="1215607026362" resolveInfo="checker" />
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215607026433">
-                                <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
+                                <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215610210131">
                                   <link role="variableDeclaration" targetNodeId="1215607026378" resolveInfo="child" />
                                 </node>
@@ -267,14 +267,14 @@
                                   <link role="variableDeclaration" targetNodeId="1215607026362" resolveInfo="checker" />
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215607026439">
-                                  <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
+                                  <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215610203364">
                                     <link role="variableDeclaration" targetNodeId="1215607026378" resolveInfo="child" />
                                   </node>
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224766631996">
-                                <link role="baseMethodDeclaration" targetNodeId="1.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
+                                <link role="baseMethodDeclaration" targetNodeId="27.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
                               </node>
                             </node>
                           </node>
@@ -311,7 +311,7 @@
                                 <link role="variableDeclaration" targetNodeId="1215607026362" resolveInfo="checker" />
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215607026457">
-                                <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
+                                <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215610199379">
                                   <link role="variableDeclaration" targetNodeId="1215607026378" resolveInfo="child" />
                                 </node>
@@ -331,14 +331,14 @@
                                   <link role="variableDeclaration" targetNodeId="1215607026362" resolveInfo="checker" />
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215607026463">
-                                  <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
+                                  <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215610195690">
                                     <link role="variableDeclaration" targetNodeId="1215607026378" resolveInfo="child" />
                                   </node>
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224766783515">
-                                <link role="baseMethodDeclaration" targetNodeId="1.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
+                                <link role="baseMethodDeclaration" targetNodeId="27.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
                               </node>
                             </node>
                           </node>
@@ -390,7 +390,7 @@
                       <link role="variableDeclaration" targetNodeId="1215607026362" resolveInfo="checker" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215610523466">
-                      <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
+                      <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215610523467">
                         <link role="variableDeclaration" targetNodeId="1215607026378" resolveInfo="child" />
                       </node>

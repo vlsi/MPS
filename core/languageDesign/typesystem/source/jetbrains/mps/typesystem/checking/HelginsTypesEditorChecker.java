@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.NodeTypesComponent;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.typesystem.inference.IErrorReporter;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.intentions.IntentionProvider;

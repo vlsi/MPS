@@ -560,7 +560,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206105385969">
             <property name="name" value="error" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206105385970">
-              <link role="classifier" targetNodeId="21.~IErrorReporter" resolveInfo="IErrorReporter" />
+              <link role="classifier" targetNodeId="10.~IErrorReporter" resolveInfo="IErrorReporter" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105385971">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206105385972">
@@ -568,7 +568,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206105385973">
-                <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105385974">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206105385975" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420649642">
@@ -581,8 +581,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206108594276">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206108595576">
-            <link role="baseMethodDeclaration" targetNodeId="1206108407495" resolveInfo="goToTypeError" />
             <link role="classConcept" targetNodeId="1206108391540" resolveInfo="GoToTypeErrorRuleUtil" />
+            <link role="baseMethodDeclaration" targetNodeId="1206108407495" resolveInfo="goToTypeErrorRule" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206108601395">
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206108601396" />
               <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420647247">
@@ -603,7 +603,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206105127536">
             <property name="name" value="error" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206105127537">
-              <link role="classifier" targetNodeId="21.~IErrorReporter" resolveInfo="IErrorReporter" />
+              <link role="classifier" targetNodeId="10.~IErrorReporter" resolveInfo="IErrorReporter" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105154776">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206105151150">
@@ -611,7 +611,7 @@
                 <link role="classConcept" targetNodeId="21.~TypeChecker" resolveInfo="TypeChecker" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206105159032">
-                <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105163612">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206105161221" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420649643">
@@ -633,7 +633,7 @@
                       <link role="variableDeclaration" targetNodeId="1206105127536" resolveInfo="error" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206105339831">
-                      <link role="baseMethodDeclaration" targetNodeId="21.~IErrorReporter.getRuleModel():java.lang.String" resolveInfo="getRuleModel" />
+                      <link role="baseMethodDeclaration" targetNodeId="10.~IErrorReporter.getRuleModel():java.lang.String" resolveInfo="getRuleModel" />
                     </node>
                   </node>
                 </node>
@@ -643,7 +643,7 @@
                       <link role="variableDeclaration" targetNodeId="1206105127536" resolveInfo="error" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206105324804">
-                      <link role="baseMethodDeclaration" targetNodeId="21.~IErrorReporter.getRuleId():java.lang.String" resolveInfo="getRuleId" />
+                      <link role="baseMethodDeclaration" targetNodeId="10.~IErrorReporter.getRuleId():java.lang.String" resolveInfo="getRuleId" />
                     </node>
                   </node>
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206105332402" />
@@ -695,7 +695,7 @@
                 <link role="variableDeclaration" targetNodeId="1206108418949" resolveInfo="error" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206108441242">
-                <link role="baseMethodDeclaration" targetNodeId="21.~IErrorReporter.getRuleId():java.lang.String" resolveInfo="getRuleId" />
+                <link role="baseMethodDeclaration" targetNodeId="10.~IErrorReporter.getRuleId():java.lang.String" resolveInfo="getRuleId" />
               </node>
             </node>
           </node>
@@ -709,7 +709,7 @@
                 <link role="variableDeclaration" targetNodeId="1206108418949" resolveInfo="error" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206108441248">
-                <link role="baseMethodDeclaration" targetNodeId="21.~IErrorReporter.getRuleModel():java.lang.String" resolveInfo="getRuleModel" />
+                <link role="baseMethodDeclaration" targetNodeId="10.~IErrorReporter.getRuleModel():java.lang.String" resolveInfo="getRuleModel" />
               </node>
             </node>
           </node>
@@ -760,7 +760,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="8.~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolveInfo="getInstance" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206108441254">
-                <link role="baseMethodDeclaration" targetNodeId="8.~SModelRepository.getModelDescriptor(jetbrains.mps.smodel.SModel):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                <link role="baseMethodDeclaration" targetNodeId="8.~SModelRepository.getModelDescriptor(jetbrains.mps.smodel.SModelReference):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215599815768">
                   <link role="variableDeclaration" targetNodeId="1215599815748" resolveInfo="modelUID" />
                 </node>
@@ -891,7 +891,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206108418949">
         <property name="name" value="error" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206108420938">
-          <link role="classifier" targetNodeId="21.~IErrorReporter" resolveInfo="IErrorReporter" />
+          <link role="classifier" targetNodeId="10.~IErrorReporter" resolveInfo="IErrorReporter" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206108552275">
