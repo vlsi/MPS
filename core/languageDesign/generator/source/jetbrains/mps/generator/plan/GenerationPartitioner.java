@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.generator.plan;
 
+import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
@@ -83,22 +83,44 @@ public class GenerationPartitioner {
     PriorityMapUtil.makeLocksEqualsForCoherentMappings(myCoherentMappings, myPriorityMap, myConflictingRules);
 
     // remove 'weak' priorities
-    for (MappingConfiguration mapping : myPriorityMap.keySet()) {
-      while (true) {
-        List<MappingConfiguration> weakLockMappings = PriorityMapUtil.getWeakLockMappingsForLockedMapping(mapping, myPriorityMap);
-        if (weakLockMappings.isEmpty()) break;
-        for (MappingConfiguration weakLockMapping : weakLockMappings) {
-          // remove 'weak' dependency but don't allow locked-mapping to go before weak-lock mapping
-          PriorityMapUtil.replaceWeakLock(mapping, weakLockMapping, myPriorityMap);
-          checkSelfLocking(mapping);
-          // if locked-mapping goes strictly before other mappings,
-          // then weak-lock-mapping should go strictly before them as well.
-          List<MappingConfiguration> lockedMappings_1 = PriorityMapUtil.getStrictLockedMappingsForLockMapping(mapping, myPriorityMap);
-          for (MappingConfiguration lockedMapping_1 : lockedMappings_1) {
-            Map<MappingConfiguration, PriorityData> locks_1 = myPriorityMap.get(lockedMapping_1);
-            PriorityData priorityDataToApply = locks_1.get(mapping);
-            PriorityMapUtil.addLock(lockedMapping_1, weakLockMapping, priorityDataToApply, myPriorityMap);
-            checkSelfLocking(lockedMapping_1);
+    boolean need_more_passes = true;
+    while (need_more_passes) {
+      need_more_passes = false;
+      iterate_all_mappings:
+      for (MappingConfiguration lockedMapping : myPriorityMap.keySet()) {
+        while (true) {
+          List<MappingConfiguration> weakLockMappings = PriorityMapUtil.getWeakLockMappingsForLockedMapping(lockedMapping, myPriorityMap);
+          if (weakLockMappings.isEmpty()) break;
+          for (MappingConfiguration weakLockMapping : weakLockMappings) {
+            // remove 'weak' dependency but don't allow locked-lockedMapping to go before weak-lock lockedMapping
+            PriorityMapUtil.replaceWeakLock(lockedMapping, weakLockMapping, myPriorityMap);
+            checkSelfLocking(lockedMapping);
+//          // if locked-mapping is strict lock for other mappings,
+//          // then weak-lock-mapping should be strict lock for them as well.
+//          List<MappingConfiguration> lockedMappings_1 = PriorityMapUtil.getStrictLockedMappingsForLockMapping(lockedMapping, myPriorityMap);
+//          for (MappingConfiguration lockedMapping_1 : lockedMappings_1) {
+//            Map<MappingConfiguration, PriorityData> locks_1 = myPriorityMap.get(lockedMapping_1);
+//            PriorityData priorityDataToApply = locks_1.get(lockedMapping);
+//            PriorityMapUtil.addLock(lockedMapping_1, weakLockMapping, priorityDataToApply, myPriorityMap);
+//            checkSelfLocking(lockedMapping_1);
+//          }
+
+            // if locked-lockedMapping is a lock for other mappings,
+            // then weak-lock-lockedMapping should be a lock for them as well.
+            List<MappingConfiguration> lockedMappings_1 = PriorityMapUtil.getLockedMappingsForLockMapping(lockedMapping, myPriorityMap);
+            for (MappingConfiguration lockedMapping_1 : lockedMappings_1) {
+              Map<MappingConfiguration, PriorityData> locks_1 = myPriorityMap.get(lockedMapping_1);
+              PriorityData priorityDataToApply = locks_1.get(lockedMapping);
+              boolean newLockAdded = PriorityMapUtil.addLock(lockedMapping_1, weakLockMapping, priorityDataToApply, myPriorityMap);
+              checkSelfLocking(lockedMapping_1);
+              if (newLockAdded) {
+                // if new lock is a weak lock, then better start all over again (weak locks cleaning)
+                if (myPriorityMap.get(lockedMapping_1).get(weakLockMapping).isWeak()) {
+                  need_more_passes = true;
+                  break iterate_all_mappings;
+                }
+              }
+            }
           }
         }
       }
@@ -195,11 +217,7 @@ public class GenerationPartitioner {
 
     } else {
       // map: lesser-pri mapping -> {greater-pri mapping, .... , greater-pri mapping }
-//      if (rule.getGreaterPriorityMapping() instanceof MappingConfig_RefAllGlobal) {
-//        greaterPriMappings = CollectionUtil.subtraction(greaterPriMappings, lesserPriMappings);
-//      } else {
-        lesserPriMappings = CollectionUtil.subtract(lesserPriMappings, greaterPriMappings);
-//      }
+      lesserPriMappings = CollectionUtil.subtract(lesserPriMappings, greaterPriMappings);
 
       for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
         Map<MappingConfiguration, PriorityData> grtPriMappingsFromMap = myPriorityMap.get(lesserPriMapping);
@@ -310,6 +328,10 @@ public class GenerationPartitioner {
 
     public boolean isStrict() {
       return myStrict;
+    }
+
+    public boolean isWeak() {
+      return !myStrict;
     }
 
     public void update(PriorityData pd) {

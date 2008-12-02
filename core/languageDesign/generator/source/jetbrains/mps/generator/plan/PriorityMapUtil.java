@@ -156,7 +156,7 @@ import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
     return result;
   }
 
-  static void addLock(MappingConfiguration lockedMapping, MappingConfiguration lockMapping, PriorityData priorityDataToApply, Map<MappingConfiguration, Map<MappingConfiguration, PriorityData>> priorityMap) {
+  static boolean addLock(MappingConfiguration lockedMapping, MappingConfiguration lockMapping, PriorityData priorityDataToApply, Map<MappingConfiguration, Map<MappingConfiguration, PriorityData>> priorityMap) {
     Map<MappingConfiguration, PriorityData> locks = priorityMap.get(lockedMapping);
     PriorityData priorityData = locks.get(lockMapping);
     if (priorityData != null) {
@@ -164,6 +164,7 @@ import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
     } else {
       locks.put(lockMapping, new PriorityData(priorityDataToApply));
     }
+    return priorityData == null; // true - new lock added
   }
 
   static List<MappingConfiguration> getLockedMappingsForLockMapping(MappingConfiguration lockMapping, Map<MappingConfiguration, Map<MappingConfiguration, PriorityData>> priorityMap) {
