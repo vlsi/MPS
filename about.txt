@@ -1,0 +1,46 @@
+(C) Copyright JetBrains, s.r.o. 2003, 2008. All Rights Reserved
+
+Copyright (c) 2000-2005 INRIA, France Telecom
+  All rights reserved.
+
+Copyright (C) 2000-2002 Brett McLaughlin & Jason Hunter.
+  All rights reserved.
+
+Copyright (c) 2003, NanoContainer Organization
+  All rights reserved.
+
+Copyright (c) 1996, 1997 Original Reusable Objects, Inc.
+
+Copyright (c) 2003-2005, Joe Walnes
+  All rights reserved.
+
+Copyright (c) 2005-2007 Sun Microsystems, Inc., 4150 Network Circle, Santa
+  Clara, California 95054, U.S.A. All rights reserved.
+
+Copyright (c) 2002-2006 JGoodies Karsten Lentzsch. All rights reserved.
+
+Copyright (c) 2005-2006, Michael Baranov
+All rights reserved.
+
+Copyright ©2000-2008 Marc De Scheemaecker, All Rights Reserved.
+
+This product includes software developed by
+  The Apache Software Foundation (http://www.apache.org/), All Rights Reserved.
+  The W3C consortium (http://www.w3c.org), Alls Right Reserved
+  The SAX project (http://www.saxproject.org), All Rights Reserverd
+  INRIA, France Telecom (http://asm.objectweb.org/),
+  JDOM Project (http://www.jdom.org/)
+  NanoContainer Organization (http://www.picocontainer.org/)
+  Original Reusable Objects, Inc (http://www.savarese.org/oro/index.html)
+  Joe Walnes (http://xstream.codehaus.org/)
+  Eclipse Software Foundation (http://www.eclipse.org/)
+  Kent Beck, Erich Gamma, and David Saff (http://www.junit.org/)
+  Sun Microsystems (http://beansbinding.dev.java.net/)
+  Sun Microsystems (http://java.sun.com/javase/technologies/desktop/javahelp/)
+  INCORS GmbH (http://lookandfeel.incors.com/)
+  YourKit, LLC (http://yourkit.com)
+  JGoodies, Karsten Lentzsch (http://www.jgoodies.com/freeware/forms/)
+  Michael Baranov, (http://microba.sourceforge.net/)
+  Marc De Scheemaecker, (http://devkix.com/nanoxml.php/)
+
+You can find licenses in the %MPS_HOME%/license directory
