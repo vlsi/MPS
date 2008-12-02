@@ -19,7 +19,7 @@ public class VFSBenchmark {
   private static final int COUNT = 1;
 
   public static void main(String[] args) throws IOException {
-    final String jarPath = System.getProperty("user.dir") + File.separator + "lib" + File.separator + "idea-platform" + File.separator + "platform.jar";
+    final String jarPath = System.getProperty("user.dir") + File.separator + "lib" + File.separator + "jetbrains-ideframework" + File.separator + "platform.jar";
 
     File file = new File(jarPath);
     if (!(file.exists())) {
