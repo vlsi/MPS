@@ -31,8 +31,6 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.ide.DataManager;
 
 public class NodeEditorComponent extends EditorComponent {
-  public static final KeyStroke INSPECT_SHORTCUT = KeyStroke.getKeyStroke("alt shift I");
-
   private JPanel myExternalComponent;
   private SNodePointer myLastInspectedNode = new SNodePointer((SNode) null);
 
@@ -69,14 +67,6 @@ public class NodeEditorComponent extends EditorComponent {
         }
       }
     });
-
-    registerKeyboardAction(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        InspectorTool inspectorTool = getInspectorTool();
-        if (inspectorTool == null) return;
-        inspectorTool.openTool(true);
-      }
-    }, INSPECT_SHORTCUT, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
   public SNode getLastInspectedNode() {
