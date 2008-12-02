@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2008 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.util;
 
 
@@ -70,7 +85,7 @@ public class FileUtil {
     }
     return result;
   }
-  
+
   public static File getTempDir() {
     return new File(System.getProperty("java.io.tmpdir"));
   }
@@ -115,7 +130,7 @@ public class FileUtil {
         out.write(bytes);
       }
       out.closeEntry();
-    }    
+    }
 
     if (current.isDirectory()) {
       for (File file : current.listFiles()) {
@@ -240,7 +255,7 @@ public class FileUtil {
       return dir.lastModified();
     }
     long result = dir.lastModified();
-    for (File file : files) {      
+    for (File file : files) {
       if (file.getName().equals(".svn")) {
         continue;
       }
@@ -288,7 +303,7 @@ public class FileUtil {
 
       return result.toString();
     } catch(IOException e) {
-      throw new RuntimeException(e);      
+      throw new RuntimeException(e);
     } finally {
       try {
         if (r != null) {
@@ -319,7 +334,7 @@ public class FileUtil {
         if (currentLine == lineNo) {
           return line;
         }
-        currentLine++;       
+        currentLine++;
       }
 
       return null;
