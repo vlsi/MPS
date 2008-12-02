@@ -1069,6 +1069,9 @@
       <node role="ifTrueCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1178286428357">
         <property name="text" value="asc" />
         <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1228206420222">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="alternationCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1178286394776">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178286394777">
@@ -1085,6 +1088,9 @@
       <node role="ifFalseCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1178286435607">
         <property name="text" value="desc" />
         <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1228206432483">
+          <property name="value" value="0.0" />
+        </node>
       </node>
     </node>
   </node>
@@ -1488,6 +1494,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1205679897426">
         <property name="text" value="," />
         <link role="styleClass" targetNodeId="15.1215094139260" resolveInfo="Semicolon" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1228206448594">
+          <property name="value" value="0.5" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1205679897427">
         <link role="relationDeclaration" targetNodeId="1.1205679832066" />
@@ -1558,6 +1567,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1209728180700">
         <property name="text" value="," />
         <link role="styleClass" targetNodeId="15.1215094139260" resolveInfo="Semicolon" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1228206370844">
+          <property name="value" value="0.5" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1209728183886">
         <link role="relationDeclaration" targetNodeId="1.1209727996925" />

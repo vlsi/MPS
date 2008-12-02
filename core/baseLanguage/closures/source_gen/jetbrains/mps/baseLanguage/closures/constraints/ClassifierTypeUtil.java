@@ -291,17 +291,7 @@ public class ClassifierTypeUtil {
         ctw
       );
     }
-    if ((cType != null)) {
-      SNode retVal = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-      SLinkOperations.setTarget(retVal, "classifier", SLinkOperations.getTarget(cType, "classifier", false), false);
-      for(SNode c : SNodeOperations.getChildren(type)) {
-        SLinkOperations.addChild(retVal, "parameter", SNodeOperations.copyNode(c));
-      }
-      return retVal;
-    } else
-    {
-      return null;
-    }
+    return cType;
   }
 
 }

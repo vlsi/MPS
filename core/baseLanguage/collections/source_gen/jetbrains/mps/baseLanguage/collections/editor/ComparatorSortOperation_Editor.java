@@ -15,6 +15,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 
 public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
 
@@ -169,6 +173,15 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_12097281807001209728180700(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1209728180700");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.5, Measure.SPACES));
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_refNode_ascending1209728183886(EditorCell editorCell, SNode node, EditorContext context) {
