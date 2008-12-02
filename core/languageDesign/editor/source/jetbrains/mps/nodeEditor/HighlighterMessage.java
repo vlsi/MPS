@@ -1,6 +1,5 @@
-package jetbrains.mps.typesystem.checking;
+package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
@@ -10,7 +9,6 @@ import jetbrains.mps.typesystem.inference.ErrorTargetEnum;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
