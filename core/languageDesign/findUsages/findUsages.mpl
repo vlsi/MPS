@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.lang.findUsages" uuid="64d34fcd-ad02-4e73-aff8-a581124c2e30" java-stubs-enabled="true" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.lang.findUsages" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.lang.findUsages" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.findUsages" />
+    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.lang.findUsages" />
   </models>
   <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.lang.findUsages#1197044805809" uuid="1759b4cc-455d-49b4-a360-8baf1f5f8bab">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.lang.findUsages.generator.baseLanguage.template" />
+        <modelRoot path="${language_descriptor}/generator/baseLanguage/template" namespacePrefix="jetbrains.mps.lang.findUsages.generator.baseLanguage.template" />
       </models>
       <external-templates />
       <dependencies>
@@ -21,8 +21,8 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\lib\idea-platform\jdom.jar" />
-    <entry path="${language_descriptor}\classes" />
+    <entry path="${mps_home}/lib/jetbrains-ideframework/jdom.jar" />
+    <entry path="${language_descriptor}/classes" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
