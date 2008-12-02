@@ -8,6 +8,7 @@ import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.logging.Logger;
 
 import java.util.Map;

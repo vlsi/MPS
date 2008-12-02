@@ -12,6 +12,7 @@ import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 
 import java.util.*;
 import java.util.Map.Entry;

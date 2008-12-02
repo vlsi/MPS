@@ -1,8 +1,10 @@
-package jetbrains.mps.typesystem.inference;
+package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 /**
  * Created by IntelliJ IDEA.
