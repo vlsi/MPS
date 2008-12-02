@@ -9,7 +9,6 @@ import java.lang.reflect.Method;
 import jetbrains.mps.workbench.license.MPSLicenseManager;
 
 public class MPSMainImpl {
-
   protected static void start(final String[] args) {
     try {
       LicenseManager.setInstance(new MPSLicenseManager());
@@ -25,5 +24,4 @@ public class MPSMainImpl {
       e.printStackTrace();
     }
   }
-
 }

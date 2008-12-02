@@ -123,8 +123,6 @@
         <group id="ExportImportGroup">
           <action id="ExportSettings" class="com.intellij.ide.actions.ExportSettingsAction"/>
           <action id="ImportSettings" class="com.intellij.ide.actions.ImportSettingsAction"/>
-          <action id="SaveInNewFormat" class="com.intellij.ide.actions.OpenInNewFormatAction"
-                  text="Open in New (Directory Based) Format" internal="true"/>
         </group>
         <separator/>
         <action id="Synchronize" class="com.intellij.ide.actions.SynchronizeAction" icon="/actions/sync.png"/>
@@ -263,12 +261,10 @@
       </group>
 
       <!-- Help -->
-      <group id="HelpMenu" popup="true">
-        <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction" icon="/actions/menu-help.png"/>
-        <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
-        <action id="ProductivityGude" class="com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsAction"/>
+      <group id="HelpMenu" popup="true">                                         
+          <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction" icon="/actions/menu-help.png" />
+          <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
         <separator/>
-        <action id="Register" class="com.intellij.ide.actions.RegisterAction"/>
         <action id="About" class="com.intellij.ide.actions.AboutAction"/>
       </group>
 
