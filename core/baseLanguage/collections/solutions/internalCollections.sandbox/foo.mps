@@ -36,17 +36,25 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1228171899065" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228171899066" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228171899067">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228207056396">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1228207056397">
-            <property name="name" value="map" />
-            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1228207056398">
-              <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228207056399" />
-              <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1228207056400" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228216182489">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1228216182490">
+            <property name="name" value="asd" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1228216182491" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1228216215172" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228216185567">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228216191640">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228216222979">
+              <link role="variableDeclaration" targetNodeId="1228216182490" resolveInfo="asd" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1228207056401">
-              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1228207056402">
-                <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228207056403" />
-                <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1228207056404" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation" id="1228216204393">
+              <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1228216204394">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228216204395" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1228216204396">
+                  <property name="name" value="it" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1228216204397" />
+                </node>
               </node>
             </node>
           </node>
