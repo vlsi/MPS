@@ -20,8 +20,8 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMess
     if (errorReporter == null) {
       errorReporter = new SimpleErrorReporter(message, null, null, MessageStatus.ERROR, new NodeErrorTarget());
     }
-    final MessageStatus status = MessageStatus.ERROR;
-    HighlighterMessage error = new HighlighterMessage(node, errorReporter.getMessageStatus(), errorReporter.getErrorTarget(), getMessageColor(status), message, getOwner(node.getContainingRoot()));
+    final MessageStatus status = errorReporter.getMessageStatus();
+    HighlighterMessage error = new HighlighterMessage(node, status, errorReporter.getErrorTarget(), getMessageColor(status), message, getOwner(node.getContainingRoot()));
     error.setErrorReporter(errorReporter);
     return error;
   }
