@@ -115,8 +115,7 @@ public class CommonPaths {
   private static IClassPathItem getIDEAOpenAPIJar() {
     if (ourIDEAOpenAPIJar == null) {
       try {
-        String path = PathManager.getHomePath() + File.separator + "lib" + File.separator +
-          "idea-platform" + File.separator + "platform-api.jar";
+        String path = getIdeaPlatformPath() + File.separator + "platform-api.jar";
         ourIDEAOpenAPIJar = new JarFileClassPathItem(path);
       } catch (IOException e) {
         throw new RuntimeException(e);
@@ -125,11 +124,15 @@ public class CommonPaths {
     return ourIDEAOpenAPIJar;
   }
 
+  private static String getIdeaPlatformPath() {
+    return PathManager.getHomePath() + File.separator + "lib" + File.separator +
+      "jetbrains-ideframework";
+  }
+
   private static IClassPathItem getIDEAJar() {
     if (ourIDEAAPIJar == null) {
       try {
-        String path = PathManager.getHomePath() + File.separator + "lib" + File.separator +
-          "idea-platform" + File.separator + "platform.jar";
+        String path = getIdeaPlatformPath() + File.separator + "platform.jar";
         ourIDEAAPIJar = new JarFileClassPathItem(path);
       } catch (IOException e) {
         throw new RuntimeException(e);
@@ -141,8 +144,7 @@ public class CommonPaths {
   private static IClassPathItem getIDEAUtilJar() {
     if (ourIDEAUtilJar == null) {
       try {
-        String path = PathManager.getHomePath() + File.separator + "lib" + File.separator +
-          "idea-platform" + File.separator + "util.jar";
+        String path = getIdeaPlatformPath() + File.separator + "util.jar";
         ourIDEAUtilJar = new JarFileClassPathItem(path);
       } catch (IOException e) {
         throw new RuntimeException(e);
@@ -154,8 +156,7 @@ public class CommonPaths {
   private static IClassPathItem getIDEAExtensionsJar() {
     if (ourIDEAxtensionsJar == null) {
       try {
-        String path = PathManager.getHomePath() + File.separator + "lib" + File.separator +
-          "idea-platform" + File.separator + "extensions.jar";
+        String path = getIdeaPlatformPath() + File.separator + "extensions.jar";
         ourIDEAxtensionsJar = new JarFileClassPathItem(path);
       } catch (IOException e) {
         throw new RuntimeException(e);

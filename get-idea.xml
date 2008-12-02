@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="get-idea" default="default">
   <property name="main.url" value="http://buildserver/guestAuth/repository/download/bt24/.lastSuccessful" />
-  <property name="idea.platform.dir" value="lib/idea-platform" />
+  <property name="idea.platform.dir" value="lib/jetbrains-ideframework" />
   <property name="idea.platform.internal.dir" value="lib/idea-platform-internal" />
   <property name="tmp" value="idea.new" />
   <property name="idea.platform.build.property" value="idea.platform.build.number" />

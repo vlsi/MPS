@@ -971,7 +971,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/xml/xmlSchema/xmlSchema.iml" filepath="$PROJECT_DIR$/platform/xml/xmlSchema/xmlSchema.iml" group="platform/xml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectRunConfigurationManager">
@@ -1167,40 +1167,13 @@
     </library>
     <library name="IDEA-plaform">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/oromatcher.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/bootstrap.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/resources_en.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/platform.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/extensions.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/jh.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/forms_rt.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/xstream.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/icons.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/commons-codec-1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/resources.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/log4j.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/jdom.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/platform-api.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/jgoodies-forms.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/trove4j.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/commons-collections.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/boot.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/jna-utils.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/annotations.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/trove4j_src.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/jna.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/nanoxml-2.2.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/alloy.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/util.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/picocontainer.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/microba.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/yjp-controller-api-redist.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/xmlrpc-2.0.jar!/" />
+        <root url="file://$PROJECT_DIR$/lib/jetbrains-ideframework" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/idea-platform-src.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/idea-platform-src.zip!/" />
       </SOURCES>
+      <jarDirectory url="file://$PROJECT_DIR$/lib/jetbrains-ideframework" recursive="false" />
     </library>
     <library name="JUnit4">
       <CLASSES>
