@@ -865,9 +865,6 @@
     <property name="caption" value="Help" />
     <property name="package" value="Menu.MainMenu" />
     <property name="isPopup" value="false" />
-    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1215012711185">
-      <link role="modifiedGroup" targetNodeId="1215606446554" resolveInfo="MPSHelpMenu" />
-    </node>
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148361812">
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1228231953388">
         <link role="constructorDeclaration" targetNodeId="132.~AboutAction.&lt;init&gt;()" resolveInfo="AboutAction" />
