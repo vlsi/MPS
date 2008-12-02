@@ -2894,6 +2894,9 @@
                     <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1228174300617" />
                   </node>
                 </node>
+                <node role="statement" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" id="1228174472023">
+                  <property name="name" value="p" />
+                </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1228174300618">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228174300619">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228174300620">
@@ -2971,9 +2974,6 @@
                         <link role="variableDeclaration" targetNodeId="1204113905324" resolveInfo="TRACE_METHOD_TYPES" />
                       </node>
                     </node>
-                    <node role="statement" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" id="1228174472023">
-                      <property name="name" value="p" />
-                    </node>
                     <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1228174300650">
                       <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1228174300651">
                         <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1228174485458">
@@ -2986,23 +2986,23 @@
                         </node>
                       </node>
                     </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228174488039">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228174489681">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228174488040">
-                          <link role="variableDeclaration" targetNodeId="1228174212945" resolveInfo="params" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1228174492931">
-                          <node role="argument" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1228174494623">
-                            <link role="typeVarDeclaration" targetNodeId="1228174472023" resolveInfo="p" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1228174300658">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1228174300659" />
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228174300660">
                       <link role="variableDeclaration" targetNodeId="1228174300612" resolveInfo="nodes" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228174488039">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228174489681">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228174488040">
+                      <link role="variableDeclaration" targetNodeId="1228174212945" resolveInfo="params" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1228174492931">
+                      <node role="argument" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1228174494623">
+                        <link role="typeVarDeclaration" targetNodeId="1228174472023" resolveInfo="p" />
+                      </node>
                     </node>
                   </node>
                 </node>
