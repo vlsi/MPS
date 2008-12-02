@@ -4,7 +4,7 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
   <classPath>
-    <entry path="${mps_home}\lib\idea-platform\picocontainer.jar" />
+    <entry path="${mps_home}\lib\jetbrains-ideframework\picocontainer.jar" />
   </classPath>
   <sourcePath />
   <dependencies>
