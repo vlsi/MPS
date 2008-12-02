@@ -150,15 +150,21 @@ public class NewGeneratorDialog extends BaseDialog {
 
     Project p = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     assert p!=null;
+    final Generator[] newGenerator = new Generator[]{null};
     ProgressManager.getInstance().run(new Modal(p,"Creating...",false) {
       @Override
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            createNewGenerator(mySourceLanguage, dir, name);
+            newGenerator[0] = createNewGenerator(mySourceLanguage, dir, name);
           }
         });
+      }
+    });
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        adjustTemplateModel(mySourceLanguage, newGenerator[0]);
       }
     });
   }
@@ -168,7 +174,7 @@ public class NewGeneratorDialog extends BaseDialog {
     dispose();
   }
 
-  protected void createNewGenerator(Language sourceLanguage, File templateModelsDir, String name) {
+  protected Generator createNewGenerator(Language sourceLanguage, File templateModelsDir, String name) {
     LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
     SModel model = languageDescriptor.getModel();
     model.setLoading(true);
@@ -178,8 +184,7 @@ public class NewGeneratorDialog extends BaseDialog {
     generatorDescriptor.setName(name);
 
     // add "template models" model root
-    String templateModelNamePrefix = sourceLanguage.getNamespace() +
-      ".generator.template";
+    String templateModelNamePrefix = getTemplateModelPrefix(sourceLanguage);
     ModelRoot templateModelsRoot = ModelRoot.newInstance(model);
     templateModelsRoot.setPrefix(templateModelNamePrefix);
 
@@ -203,7 +208,15 @@ public class NewGeneratorDialog extends BaseDialog {
 
     // add <default> templates model (if root is empty)
     List<Generator> generators = sourceLanguage.getGenerators();
-    Generator newGenerator = generators.get(generators.size() - 1);
+    return generators.get(generators.size() - 1);
+  }
+
+  private String getTemplateModelPrefix(Language sourceLanguage) {
+    return sourceLanguage.getNamespace() +
+      ".generator.template";
+  }
+
+  private void adjustTemplateModel(Language sourceLanguage, Generator newGenerator) {
     boolean alreadyOwnsTemplateModel = false;
     for (SModelDescriptor modelDescriptor : newGenerator.getOwnModelDescriptors()) {
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
@@ -213,7 +226,7 @@ public class NewGeneratorDialog extends BaseDialog {
     }
     if (!alreadyOwnsTemplateModel) {
       SModelDescriptor templateModelDescriptor = newGenerator.createModel(
-        new SModelFqName(templateModelNamePrefix, "main", SModelStereotype.GENERATOR),
+        new SModelFqName(getTemplateModelPrefix(sourceLanguage), "main", SModelStereotype.GENERATOR),
         newGenerator.getSModelRoots().get(0));
 
       SModel templateModel = templateModelDescriptor.getSModel();
@@ -229,5 +242,6 @@ public class NewGeneratorDialog extends BaseDialog {
       templateModel.addRoot(mappingConfiguration);
       templateModelDescriptor.save();
     }
+
   }
 }
