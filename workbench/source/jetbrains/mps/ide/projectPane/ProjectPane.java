@@ -554,7 +554,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
           LOG.warning("Couldn't select module \"" + module.getModuleFqName() + "\" : tree node not found.");
         }
       }
-    });
+    });                                      
   }
 
   public void selectNode(final SNode node, final IOperationContext context) {

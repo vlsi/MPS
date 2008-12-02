@@ -18,6 +18,14 @@ import java.awt.event.ActionEvent;
 import java.io.File;
 import java.util.List;
 
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.ide.DataManager;
+import org.jetbrains.annotations.NotNull;
+
 public class NewGeneratorDialog extends BaseDialog {
   private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 400, 200);
 
@@ -140,9 +148,17 @@ public class NewGeneratorDialog extends BaseDialog {
 
     dispose();
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        createNewGenerator(mySourceLanguage, dir, name);
+    Project p = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    assert p!=null;
+    ProgressManager.getInstance().run(new Modal(p,"Creating...",false) {
+      @Override
+      public void run(@NotNull ProgressIndicator indicator) {
+        indicator.setIndeterminate(true);
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            createNewGenerator(mySourceLanguage, dir, name);
+          }
+        });
       }
     });
   }
