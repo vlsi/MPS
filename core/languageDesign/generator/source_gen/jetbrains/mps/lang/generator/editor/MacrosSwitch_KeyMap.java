@@ -12,6 +12,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.plugin.GeneratedQueriesOpener;
 
 public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
@@ -191,6 +192,9 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
       SNode propertyMacro = QueriesUtil.addPropertyMacro(node, editorContext.getSelectedCell());
       // set caret
       editorContext.selectAndSetCaret(propertyMacro, 0);
+      InspectorTool inspector = editorContext.getOperationContext().getComponent(InspectorTool.class);
+      assert inspector != null;
+      inspector.openTool(true);
     }
 
     public String getKeyStroke() {
@@ -240,6 +244,9 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
       SNode referenceMacro = QueriesUtil.addReferenceMacro(node, editorContext.getSelectedCell());
       // set caret
       editorContext.selectAndSetCaret(referenceMacro, 2);
+      InspectorTool inspector = editorContext.getOperationContext().getComponent(InspectorTool.class);
+      assert inspector != null;
+      inspector.openTool(true);
     }
 
     public String getKeyStroke() {
