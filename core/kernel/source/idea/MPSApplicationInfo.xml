@@ -1,11 +1,11 @@
 <component>
-  <version codename="Yellow Fox" major="8" minor="0M1" eap="true"/>
+  <version codename="" major="1" minor="" eap="false"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
   <logo url="/jetbrains/mps/workbench/icons/splash.png" textcolor="002387"/>
   <about url="/jetbrains/mps/workbench/icons/mpsAbout.png"/>
   <icon size32="/MPS_32.png" size16="/MPS_32.png" size32opaque="/MPS_32.png"/>
   <package code="__PACKAGE_CODE__"/>
-  <names product="MPS" fullname="JetBrains MPS"/>
+  <names product="MPS" fullname="JetBrains MPS Beta"/>
 
   <welcome-screen caption-url="/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png" slogan-url="/jetbrains/mps/workbench/icons/mpsSlogan.png"/>
 </component>
