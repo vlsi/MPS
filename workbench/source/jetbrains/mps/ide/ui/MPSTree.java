@@ -2,8 +2,13 @@ package jetbrains.mps.ide.ui;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.dnd.aware.DnDAwareTree;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
@@ -192,29 +197,37 @@ public abstract class MPSTree extends DnDAwareTree {
     if (e.isPopupTrigger()) showPopup(e.getX(), e.getY());
   }
 
-  void myMousePressed(MouseEvent e) {
-    requestFocus(true);
+  void myMousePressed(final MouseEvent e) {
+    Project p = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    assert p!=null;
+    IdeFocusManager focusManager = IdeFocusManager.getInstance(p);
 
-    TreePath path = getPathForLocation(e.getX(), e.getY());
-    if (path == null) return;
+    focusManager.requestFocus(this,true);
 
-    Object lastPathComponent = path.getLastPathComponent();
-    if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened()) {
-      MPSTreeNode nodeToClick = (MPSTreeNode) lastPathComponent;
-      if ((e.getClickCount() == 1 && isAutoOpen())) {
-        nodeToClick.autoscroll();
-      } else if (e.getClickCount() == 2) {
-        nodeToClick.doubleClick();
+    //workaround for context acquiers
+    focusManager.doWhenFocusSettlesDown(new Runnable() {
+      public void run() {
+        TreePath path = getPathForLocation(e.getX(), e.getY());
+        if (path == null) return;
+
+        Object lastPathComponent = path.getLastPathComponent();
+        if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened()) {
+          MPSTreeNode nodeToClick = (MPSTreeNode) lastPathComponent;
+          if ((e.getClickCount() == 1 && isAutoOpen())) {
+            nodeToClick.autoscroll();
+          } else if (e.getClickCount() == 2) {
+            nodeToClick.doubleClick();
+          }
+          e.consume();
+        } else if (e.getButton() == MouseEvent.BUTTON3) {
+          if (!isPathSelected(path)) {
+            setSelectionPath(path);
+          }
+        }
+
+        if (e.isPopupTrigger()) showPopup(e.getX(), e.getY());
       }
-      e.consume();
-    } else if (e.getButton() == MouseEvent.BUTTON3) {
-      // fix right-click behaviour - make selection before showing popup
-      if (!isPathSelected(path)) {
-        setSelectionPath(path);
-      }
-    }
-
-    if (e.isPopupTrigger()) showPopup(e.getX(), e.getY());
+    });
   }
 
   public void runWithoutExpansion(Runnable r) {
