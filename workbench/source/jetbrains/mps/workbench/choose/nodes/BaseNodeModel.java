@@ -31,7 +31,6 @@
  */
 package jetbrains.mps.workbench.choose.nodes;
 
-import com.intellij.ide.util.gotoByName.UseIdeaChooser;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;

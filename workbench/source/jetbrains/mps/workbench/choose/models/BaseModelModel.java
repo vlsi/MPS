@@ -1,6 +1,5 @@
 package jetbrains.mps.workbench.choose.models;
 
-import com.intellij.ide.util.gotoByName.UseIdeaChooser;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
