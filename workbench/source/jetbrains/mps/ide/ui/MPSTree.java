@@ -405,10 +405,6 @@ public abstract class MPSTree extends DnDAwareTree {
 
     runRebuildAction(new Runnable() {
       public void run() {
-        if (getModel().getRoot() instanceof MPSTreeNode && isDisplayable()) {
-          (getRootNode()).removeThisAndChildren();
-        }
-
         MPSTreeNode root = rebuild();
         setRootNode(root);
       }

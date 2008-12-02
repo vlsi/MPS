@@ -885,6 +885,9 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518716717">
         <link role="constructorDeclaration" targetNodeId="21.~ShowMPSBlogAction.&lt;init&gt;()" resolveInfo="ShowMPSBlogAction" />
       </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1228211993788">
+        <link role="constructorDeclaration" targetNodeId="21.~ShowMPSTrackerAction.&lt;init&gt;()" resolveInfo="ShowMPSTrackerAction" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991217354">
