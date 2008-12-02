@@ -3289,10 +3289,19 @@
         <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1227545687775">
           <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1227545696956">
             <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1227545696957">
-              <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227545699852">
-                <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1227545701459">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227545704576">
-                    <link role="variableDeclaration" targetNodeId="1208202100439" resolveInfo="TypeToEquate" />
+              <node role="quotedNode" type="jetbrains.mps.lang.typesystem.structure.JoinType" id="1228212386120">
+                <node role="argument" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228212394245">
+                  <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1228212427030">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228212431487">
+                      <link role="variableDeclaration" targetNodeId="1208202100439" resolveInfo="TypeToEquate" />
+                    </node>
+                  </node>
+                </node>
+                <node role="argument" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1228212421018">
+                  <node role="referenceAntiquotation$link_attribute$elementConcept" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1228212423236">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228212438109">
+                      <link role="variableDeclaration" targetNodeId="1208202100439" resolveInfo="TypeToEquate" />
+                    </node>
                   </node>
                 </node>
               </node>
