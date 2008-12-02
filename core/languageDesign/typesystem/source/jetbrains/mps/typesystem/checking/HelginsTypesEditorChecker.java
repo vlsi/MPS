@@ -57,13 +57,9 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
     // highlight nodes with errors
     for (Pair<SNode, IErrorReporter> errorNode : typesComponent.getNodesWithErrorStrings()) {
       MessageStatus status = errorNode.o2.getMessageStatus();
-      Color color = getMessageColor(status);
       String errorString = errorNode.o2.reportError();
-      DefaultEditorMessage message =
-        new HighlighterMessage(errorNode.o1, status, errorNode.o2.getErrorTarget(), color, "Typesystem " + status.getPresentation() + ": " + errorString, typesComponent);
+      HighlighterMessage message = createHighlighterMessage(errorNode.o1, "Typesystem " + status.getPresentation() + ": " + errorString, errorNode.o2);
       IntentionProvider intentionProvider = errorNode.o2.getIntentionProvider();
-
-      message.putUserObject(ERROR_INFO, errorNode.o2);
 
       if (intentionProvider != null && intentionProvider.isExecutedImmediately()) {
         final QuickFix_Runtime intention = intentionProvider.getQuickFix();
@@ -84,19 +80,6 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
       messages.add(message);
     }
     return messages;
-  }
-
-  private Color getMessageColor(MessageStatus messageStatus) {
-    if (messageStatus == MessageStatus.ERROR) {
-      return Color.RED;
-    }
-    if (messageStatus == MessageStatus.WARNING) {
-      return Color.YELLOW;
-    }
-    if (messageStatus == MessageStatus.OK) {
-      return Color.LIGHT_GRAY;
-    }
-    return Color.BLACK;
   }
 
   private boolean hasNonPropertyDramaticalEvent(List<SModelEvent> events) {

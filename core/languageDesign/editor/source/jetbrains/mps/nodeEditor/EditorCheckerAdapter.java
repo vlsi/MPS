@@ -16,12 +16,31 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMess
     return this;
   }
 
-  protected EditorMessage createErrorMessage(SNode node, String message) {
+  protected HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter) {
+    if (errorReporter == null) {
+      errorReporter = new SimpleErrorReporter(message, null, null, MessageStatus.ERROR, new NodeErrorTarget());
+    }
     final MessageStatus status = MessageStatus.ERROR;
-    HighlighterMessage error = new HighlighterMessage(node, status, new NodeErrorTarget(), Color.RED, message, getOwner(node.getContainingRoot()));
-    IErrorReporter errorReporter = new SimpleErrorReporter(message, null, null, status, new NodeErrorTarget());
-    error.putUserObject(ERROR_INFO, errorReporter);
+    HighlighterMessage error = new HighlighterMessage(node, errorReporter.getMessageStatus(), errorReporter.getErrorTarget(), getMessageColor(status), message, getOwner(node.getContainingRoot()));
+    error.setErrorReporter(errorReporter);
     return error;
+  }
+
+  protected HighlighterMessage createHighlighterMessage(SNode node, String message) {
+    return createHighlighterMessage(node, message, null);
+  }
+
+  private Color getMessageColor(MessageStatus messageStatus) {
+    if (messageStatus == MessageStatus.ERROR) {
+      return Color.RED;
+    }
+    if (messageStatus == MessageStatus.WARNING) {
+      return Color.YELLOW;
+    }
+    if (messageStatus == MessageStatus.OK) {
+      return Color.LIGHT_GRAY;
+    }
+    return Color.BLACK;
   }
 
   public boolean hasDramaticalEvent(List<SModelEvent> events) {

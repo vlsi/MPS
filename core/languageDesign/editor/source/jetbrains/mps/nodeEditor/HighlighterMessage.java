@@ -27,6 +27,14 @@ public class HighlighterMessage extends DefaultEditorMessage {
     myErrorTarget = target;
   }
 
+  public void setErrorReporter(IErrorReporter errorReporter) {
+    myErrorReporter = errorReporter;
+  }
+
+  public IErrorReporter getErrorReporter() {
+    return myErrorReporter;
+  }
+
   @Override
   public boolean sameAs(EditorMessage message) {
     if (!(message instanceof HighlighterMessage)) {

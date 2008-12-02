@@ -620,6 +620,16 @@ public abstract class EditorCell_Basic implements EditorCell {
     return new ArrayList<EditorMessage>(myMessages);
   }
 
+  public <T extends EditorMessage> List<T> getMessages(Class<T> clazz) {
+    List<T> result = new ArrayList<T>();
+    for (EditorMessage message : getMessages()) {
+      if (clazz.isInstance(message)) {
+        result.add((T) message);
+      }
+    }
+    return result;
+  }
+
   public List<EditorMessage> getMessagesForOwner(EditorMessageOwner owner) {
     if (myMessages == null) {
       return Collections.emptyList();

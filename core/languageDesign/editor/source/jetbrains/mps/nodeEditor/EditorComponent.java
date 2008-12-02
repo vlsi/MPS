@@ -579,17 +579,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private String getMessageTextFor(EditorCell cell) {
-    EditorMessage message = getEditorMessageFor(cell);
+    EditorMessage message = getHighlighterMessageFor(cell);
     if (message != null) {
       return message.getMessage();
     }
     return null;
   }
 
-  private EditorMessage getEditorMessageFor(EditorCell cell) {
+  private HighlighterMessage getHighlighterMessageFor(EditorCell cell) {
 
     while (cell != null) {
-      List<EditorMessage> messages = cell.getMessages();
+      List<HighlighterMessage> messages = cell.getMessages(HighlighterMessage.class);
       if (!messages.isEmpty()) {
         return messages.get(0);
       }
@@ -1419,11 +1419,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (selectedCell != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          final EditorMessage message = getEditorMessageFor(selectedCell);
+          final HighlighterMessage message = getHighlighterMessageFor(selectedCell);
           if (message == null) return;
-          Object info = message.getUserObject(EditorCheckerAdapter.ERROR_INFO);
-          if (info instanceof IErrorReporter) {
-            final IErrorReporter herror = (IErrorReporter) info;
+            final IErrorReporter herror = message.getErrorReporter();
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
                 String s = message.getMessage();
@@ -1446,7 +1444,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
               }
             });
             return;
-          }
         }
       });
     }
