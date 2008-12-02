@@ -7,8 +7,8 @@ import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.ArrayList;
 import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.action.ActionUtils;
-import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
 
@@ -54,7 +54,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     return groups;
   }
 
-  public void addGroup(List<BaseGroup> groups, String moduleName, String groupName) {
+  private void addGroup(List<BaseGroup> groups, String moduleName, String groupName) {
     BaseGroup group = ActionFactory.getInstance().acquireRegisteredGroup(groupName, moduleName);
     if (group != null) {
       groups.add(group);
@@ -62,44 +62,23 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustInterfaceGroups() {
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(ModelActions_ActionGroup.ID);
-      ActionGroup gWhat = ActionUtils.getDefaultGroup("VcsGroup");
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      {
-        String labelName = null;
-        labelName = ModelActions_ActionGroup.LABEL_ID_vcs;
-        Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-        gToBase.add(gWhat, constraints);
-      }
+    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "VcsGroup", ModelActions_ActionGroup.LABEL_ID_vcs);
+    this.insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, "VcsGroup", AbstractFileActions_ActionGroup.LABEL_ID_vcs);
+    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "VcsGroup", EditorPopup_ActionGroup.LABEL_ID_vcs);
+  }
+
+  public void insertGroupIntoAnother(String toId, String whatId, String labelName) {
+    DefaultActionGroup gTo = (DefaultActionGroup)ActionManager.getInstance().getAction(toId);
+    DefaultActionGroup gWhat = (DefaultActionGroup)ActionManager.getInstance().getAction(whatId);
+    if (gTo == null || gWhat == null) {
+      return;
     }
+    if (labelName != null) {
+      Constraints constraints = new Constraints(Anchor.AFTER, labelName);
+      gTo.add(gWhat, constraints);
+    } else
     {
-      BaseGroup gToBase = ActionUtils.getGroup(AbstractFileActions_ActionGroup.ID);
-      ActionGroup gWhat = ActionUtils.getDefaultGroup("VcsGroup");
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      {
-        String labelName = null;
-        labelName = AbstractFileActions_ActionGroup.LABEL_ID_vcs;
-        Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-        gToBase.add(gWhat, constraints);
-      }
-    }
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(EditorPopup_ActionGroup.ID);
-      ActionGroup gWhat = ActionUtils.getDefaultGroup("VcsGroup");
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      {
-        String labelName = null;
-        labelName = EditorPopup_ActionGroup.LABEL_ID_vcs;
-        Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-        gToBase.add(gWhat, constraints);
-      }
+      gTo.add(gWhat);
     }
   }
 

@@ -21,7 +21,7 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
     return groups;
   }
 
-  public void addGroup(List<BaseGroup> groups, String moduleName, String groupName) {
+  private void addGroup(List<BaseGroup> groups, String moduleName, String groupName) {
     BaseGroup group = ActionFactory.getInstance().acquireRegisteredGroup(groupName, moduleName);
     if (group != null) {
       groups.add(group);
