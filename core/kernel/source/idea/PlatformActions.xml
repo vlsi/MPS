@@ -262,10 +262,9 @@
 
       <!-- Help -->
       <group id="HelpMenu" popup="true">                                         
-          <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction" icon="/actions/menu-help.png" />
-          <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
+        <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction" icon="/actions/menu-help.png" />
+        <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
         <separator/>
-        <action id="About" class="com.intellij.ide.actions.AboutAction"/>
       </group>
 
       <group id="OtherMenu" class="com.intellij.ide.actions.OtherGroup"/>
