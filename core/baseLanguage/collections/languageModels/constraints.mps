@@ -99,22 +99,22 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107434874">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1213107434875">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107434876">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceExpression" id="1213107434877">
-                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1213107434878">
-                  <property name="name" value="mapType" />
-                  <link role="concept" targetNodeId="1.1197683403723" resolveInfo="MapType" />
-                </node>
-                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107434879">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107434880">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1213107434881">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" id="1228205371946">
+                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228205371947">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228205371948">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1228205371949">
                       <link role="concept" targetNodeId="4.1197027756228" resolveInfo="DotExpression" />
-                      <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1213107434882" />
+                      <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1228205371950" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213107434883">
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228205371951">
                       <link role="link" targetNodeId="4.1197027771414" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1213107434884" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1228205371952" />
+                </node>
+                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1228205371953">
+                  <property name="name" value="mapType" />
+                  <link role="concept" targetNodeId="1.1197683403723" resolveInfo="MapType" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1213107434885" />
@@ -578,20 +578,20 @@
               </node>
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224668314118">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceExpression" id="1224668303348">
-                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224669128080">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224668304323">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1224668304324">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" id="1228205376185">
+                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228205376186">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228205376187">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1228205376188">
                       <link role="concept" targetNodeId="4.1197027756228" resolveInfo="DotExpression" />
-                      <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1224668304325" />
+                      <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1228205376189" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224668304326">
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228205376190">
                       <link role="link" targetNodeId="4.1197027771414" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1224669128622" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1228205376191" />
                 </node>
-                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1224668308317">
+                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1228205376192">
                   <property name="name" value="sequenceType" />
                   <link role="concept" targetNodeId="1.1151689724996" resolveInfo="SequenceType" />
                 </node>
@@ -618,20 +618,20 @@
               </node>
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224668790042">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceExpression" id="1224668790043">
-                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224669133280">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224668790044">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1224668790045">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" id="1228205357715">
+                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228205357716">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228205357717">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1228205357718">
                       <link role="concept" targetNodeId="4.1197027756228" resolveInfo="DotExpression" />
-                      <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1224668790046" />
+                      <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1228205357719" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224668790047">
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228205357720">
                       <link role="link" targetNodeId="4.1197027771414" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1224669135281" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1228205357721" />
                 </node>
-                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1224668790048">
+                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1228205357722">
                   <property name="name" value="listType" />
                   <link role="concept" targetNodeId="1.1151688443754" resolveInfo="ListType" />
                 </node>
@@ -659,20 +659,20 @@
               </node>
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226566896653">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceExpression" id="1226566896654">
-                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226566896655">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226566896656">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1226566896657">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" id="1228205881020">
+                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228205881021">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228205881022">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1228205881023">
                       <link role="concept" targetNodeId="4.1197027756228" resolveInfo="DotExpression" />
-                      <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1226566896658" />
+                      <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1228205881024" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226566896659">
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228205881025">
                       <link role="link" targetNodeId="4.1197027771414" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1226566896660" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1228205881026" />
                 </node>
-                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1226566896661">
+                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1228205881027">
                   <property name="name" value="setType" />
                   <link role="concept" targetNodeId="1.1226511727824" resolveInfo="SetType" />
                 </node>

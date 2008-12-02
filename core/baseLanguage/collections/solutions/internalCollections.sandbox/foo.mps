@@ -118,6 +118,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228205660290">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228205660291">
+            <link role="variableDeclaration" targetNodeId="1228205322316" resolveInfo="result" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228171888559" />

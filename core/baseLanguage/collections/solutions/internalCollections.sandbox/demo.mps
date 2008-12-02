@@ -210,6 +210,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228205679443">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228205679532">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228205679444">
+              <link role="variableDeclaration" targetNodeId="1228156504257" resolveInfo="sl" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1228205680198">
+              <link role="link" targetNodeId="3.1068581517665" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228168519764">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1228168519765">
             <property name="name" value="stms" />
