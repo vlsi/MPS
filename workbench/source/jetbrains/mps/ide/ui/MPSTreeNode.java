@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
@@ -28,6 +29,8 @@ import java.util.Iterator;
  * @author Kostik
  */
 public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
+  private static Logger LOG = Logger.getLogger(MPSTreeNode.class);
+
   private IOperationContext myOperationContext;
   private MPSTree myTree;
 
@@ -199,7 +202,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void remove(int childIndex) {
-    if (getTree() != null) {
+    if (getTree() != null && getTree().isDisplayable()) {
       ((MPSTreeNode) getChildAt(childIndex)).removeThisAndChildren();
     }
     super.remove(childIndex);
@@ -209,7 +212,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   public void insert(MutableTreeNode newChild, int childIndex) {
     super.insert(newChild, childIndex);
-    if (getTree() != null) {
+    if (getTree() != null && getTree().isDisplayable()) {
       ((MPSTreeNode) getChildAt(childIndex)).addThisAndChildren();
     }
     updateErrorState();
@@ -223,7 +226,11 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   final void removeThisAndChildren() {
-    onRemove();
+    try {
+      onRemove();
+    } catch (Throwable t) {
+      LOG.error(t);
+    }
     if (!isInitialized()) {
       return;
     }
@@ -233,13 +240,17 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   final void addThisAndChildren() {
-    onAdd();
+    try {
+      onAdd();
+    } catch (Throwable t) {
+      LOG.error(t);
+    }
     if (!isInitialized()) {
       return;
     }
     for (int i = 0; i < getChildCount(); i++) {
       MPSTreeNode node = (MPSTreeNode) getChildAt(i);
-      node.addThisAndChildren();
+      node.addThisAndChildren();     
     }
   }
 

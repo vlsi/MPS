@@ -405,7 +405,7 @@ public abstract class MPSTree extends DnDAwareTree {
 
     runRebuildAction(new Runnable() {
       public void run() {
-        if (getModel().getRoot() instanceof MPSTreeNode) {
+        if (getModel().getRoot() instanceof MPSTreeNode && isDisplayable()) {
           (getRootNode()).removeThisAndChildren();
         }
 
@@ -420,18 +420,20 @@ public abstract class MPSTree extends DnDAwareTree {
   }
 
   private void setRootNode(MPSTreeNode root) {
-    if (getModel().getRoot() instanceof MPSTreeNode) {
+    if (getModel().getRoot() instanceof MPSTreeNode && isDisplayable()) {
       (getRootNode()).removeThisAndChildren();
     }
 
     root.setTree(this);
-    root.addThisAndChildren();
+    if (isDisplayable()) {
+      root.addThisAndChildren();
+    }
 
     DefaultTreeModel model = new DefaultTreeModel(root);
     setModel(model);
   }
 
-  public void addNotify() {
+  public void addNotify() {                
     super.addNotify();
     if (getModel().getRoot() instanceof MPSTreeNode) {
       ((MPSTreeNode) getModel().getRoot()).addThisAndChildren();

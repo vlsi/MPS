@@ -17,7 +17,7 @@ public class EventsCollector {
   private static CommandListenersSupport ourListenersSupport = new CommandListenersSupport();
 
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
-  private SModelListener myListeners = createCommandEventsCollector();
+  private SModelListener myListener = createCommandEventsCollector();
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
   private CommandListener myCommandListener;
   private CommandProcessor myCommandProcessor;
@@ -84,14 +84,14 @@ public class EventsCollector {
     assert !myDisposed;
 
     myModelDescriptors.add(sm);
-    sm.addModelListener(myListeners);
+    sm.addModelListener(myListener);
   }
 
   public void remove(SModelDescriptor sm) {
     assert !myDisposed;
 
     myModelDescriptors.remove(sm);
-    sm.removeModelListener(myListeners);
+    sm.removeModelListener(myListener);
   }
 
   public void flush() {

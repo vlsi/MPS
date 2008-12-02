@@ -171,6 +171,7 @@ public class NameUtil {
   }
 
   public static String namespaceFromConceptFQName(String fqName) {
+    if (fqName == null) return null;
     int offset = fqName.lastIndexOf("." + STRUCTURE + ".");
     if (offset > 0) {
       return fqName.substring(0, offset);
