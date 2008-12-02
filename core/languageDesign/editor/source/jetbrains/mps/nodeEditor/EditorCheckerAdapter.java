@@ -5,23 +5,26 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.typesystem.inference.IErrorReporter;
+import jetbrains.mps.typesystem.inference.SimpleErrorReporter;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.List;
 
 public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMessageOwner {
+  public static final Object ERROR_INFO = new Object();
 
   public EditorMessageOwner getOwner(SNode rootNode) {
     return this;
   }
 
   protected EditorMessage createErrorMessage(SNode node, String message) {
-    DefaultEditorMessage error = new DefaultEditorMessage(node, Color.RED, message, getOwner(node.getContainingRoot())) {
-      public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
-        ColorAndGraphicsUtil.drawWaveUnderCell(g, Color.RED, cell);
-      }
-    };
+    final MessageStatus status = MessageStatus.ERROR;
+    HighlighterMessage error = new HighlighterMessage(node, status, new NodeErrorTarget(), Color.RED, message, getOwner(node.getContainingRoot()));
+    IErrorReporter errorReporter = new SimpleErrorReporter(message, null, null, status, new NodeErrorTarget());
+    error.putUserObject(ERROR_INFO, errorReporter);
     return error;
   }
 

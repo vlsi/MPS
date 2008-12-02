@@ -38,7 +38,6 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.typesystem.checking.HelginsTypesEditorChecker;
 import jetbrains.mps.typesystem.inference.IErrorReporter;
 import jetbrains.mps.typesystem.inference.NodeTypesComponent;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
@@ -52,7 +51,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.nodes.GoByCurrentReferenceAction;
-import jetbrains.mps.TestMain;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -591,16 +589,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private EditorMessage getEditorMessageFor(EditorCell cell) {
-    SNode node = cell.getSNode();
-
-    if (node == null) {
-      return null;
-    }
-
-    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node.getContainingRoot());
 
     while (cell != null) {
-      List<EditorMessage> messages = cell.getMessagesForOwner(nodeTypesComponent);
+      List<EditorMessage> messages = cell.getMessages();
       if (!messages.isEmpty()) {
         return messages.get(0);
       }
@@ -1431,24 +1422,27 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           final EditorMessage message = getEditorMessageFor(selectedCell);
-          Object info = message.getUserObject(HelginsTypesEditorChecker.ERROR_INFO);
+          if (message == null) return;
+          Object info = message.getUserObject(EditorCheckerAdapter.ERROR_INFO);
           if (info instanceof IErrorReporter) {
             final IErrorReporter herror = (IErrorReporter) info;
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
                 String s = message.getMessage();
-                final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "Typesystem " + message.getStatus().getPresentation(), false);
-                JButton button = new JButton(new AbstractAction("Go To Rule") {
-                  public void actionPerformed(ActionEvent e) {
-                    ModelAccess.instance().runReadAction(new Runnable() {
-                      public void run() {
-                        GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, LOG);
-                        dialog.dispose();
-                      }
-                    });
-                  }
-                });
-                dialog.addButton(button);
+                final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, message.getStatus().getPresentation(), false);
+                if (herror.getRuleModel() != null && herror.getRuleId() != null) {
+                  JButton button = new JButton(new AbstractAction("Go To Rule") {
+                    public void actionPerformed(ActionEvent e) {
+                      ModelAccess.instance().runReadAction(new Runnable() {
+                        public void run() {
+                          GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, LOG);
+                          dialog.dispose();
+                        }
+                      });
+                    }
+                  });
+                  dialog.addButton(button);
+                }
                 dialog.initializeUI();
                 dialog.setVisible(true);
               }
