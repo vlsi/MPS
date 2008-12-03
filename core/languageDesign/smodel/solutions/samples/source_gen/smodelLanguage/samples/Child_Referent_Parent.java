@@ -14,7 +14,7 @@ public class Child_Referent_Parent {
   public void accessToChildNode_1(SNode ifStatement) {
     SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
     SNodeOperations.deleteNode(condition);
-    SLinkOperations.removeChild(ifStatement, "condition");
+    SNodeOperations.detachNode(SLinkOperations.getTarget(ifStatement, "condition", true));
   }
 
   public void accessToChildNode_2(SNode ifStatement, SNode newCondition) {
