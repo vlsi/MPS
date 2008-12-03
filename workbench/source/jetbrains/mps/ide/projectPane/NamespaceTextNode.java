@@ -116,8 +116,8 @@ public final class NamespaceTextNode extends TextTreeNode {
     for (MPSTreeNode child : this) {
       if (child instanceof SModelTreeNode) {
         models.add(((SModelTreeNode) child).getSModelDescriptor());
-      } else {
-        models.addAll(getModelsUnder());
+      } else if (child instanceof NamespaceTextNode){
+        models.addAll(((NamespaceTextNode) child).getModelsUnder());
       }
     }
 
@@ -133,8 +133,8 @@ public final class NamespaceTextNode extends TextTreeNode {
     for (MPSTreeNode child : this) {
       if (child instanceof ProjectModuleTreeNode) {
         modules.add(((ProjectModuleTreeNode) child).getModule());
-      } else {
-        if (child instanceof NamespaceTextNode) modules.addAll(getModulesUnder());
+      } else if (child instanceof NamespaceTextNode){
+        modules.addAll(((NamespaceTextNode)child).getModulesUnder());
       }
     }
     return modules;
