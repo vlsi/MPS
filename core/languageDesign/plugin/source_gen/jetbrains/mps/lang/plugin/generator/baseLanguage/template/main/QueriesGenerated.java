@@ -253,7 +253,7 @@ public class QueriesGenerated {
     IModule module = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     return (module == null ?
       null :
-      module.getModuleUID()
+      module.getModuleFqName()
     );
   }
 

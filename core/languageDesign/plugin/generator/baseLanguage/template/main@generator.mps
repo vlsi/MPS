@@ -276,8 +276,8 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208965283821">
                           <link role="variableDeclaration" targetNodeId="1208965283808" resolveInfo="module" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208965283822">
-                          <link role="baseMethodDeclaration" targetNodeId="35.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228323761071">
+                          <link role="baseMethodDeclaration" targetNodeId="35.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                         </node>
                       </node>
                       <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1208965283823">
