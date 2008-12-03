@@ -411,6 +411,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGES.getName())) return getSelectedPackages();
 
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return getContextForSelection();
+    if (dataId.equals(MPSDataKeys.LOGICAL_VIEW_NODE.getName())) return getSelectedTreeNode();
+    if (dataId.equals(MPSDataKeys.LOGICAL_VIEW_NODES.getName())) return getSelectedTreeNodes();
     if (dataId.equals(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE.getName())) return getSelectionPaths().length;
     if (dataId.equals(MPSDataKeys.PLACE.getName())) return getPlace();
 
@@ -794,6 +796,23 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
     selectedTreeNode = (TreeNode) selectedNode;
     return selectedTreeNode;
+  }
+
+  public List<TreeNode> getSelectedTreeNodes() {
+    TreePath[] selectionPaths = getTree().getSelectionPaths();
+    List<TreeNode> selectedTreeNodes = new ArrayList<TreeNode>(selectionPaths.length);
+
+    for (TreePath selectionPath:selectionPaths){
+      if (selectionPath == null) {
+        return null;
+      }
+      Object selectedNode = selectionPath.getLastPathComponent();
+      if (!(selectedNode instanceof TreeNode)) {
+        return null;
+      }
+      selectedTreeNodes.add((TreeNode) selectedNode);
+    }
+    return selectedTreeNodes;
   }
 
   public List<SModelDescriptor> getSelectedModels() {

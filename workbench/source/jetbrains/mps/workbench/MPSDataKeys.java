@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -30,6 +31,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreeNode;
 import java.awt.Frame;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -71,6 +74,13 @@ public class MPSDataKeys extends PlatformDataKeys {
   @Description(description = "editor context")
   public static final DataKey<EditorContext> EDITOR_CONTEXT = DataKey.create("MPS_EditorContext");
 
+  @Description(description = "node selected in Logical View")
+  public static final DataKey<TreeNode> LOGICAL_VIEW_NODE = DataKey.create("MPS_ProjetPaneNode");
+  @Description(description = "nodes selected in Logical View")
+  public static final DataKey<List<TreeNode>> LOGICAL_VIEW_NODES = DataKey.create("MPS_ProjetPaneNodes");
+  @Description(description = "number of selected items in ProjectPane")
+  public static final DataKey<Integer> LOGICAL_VIEW_SELECTION_SIZE = DataKey.create("MPS_SelectedItemsNum");
+
   @Description(description = "current editor cell")
   public static final DataKey<EditorCell> EDITOR_CELL = DataKey.create("MPS_EditorCell");
   @Description(description = "current editor")
@@ -81,8 +91,6 @@ public class MPSDataKeys extends PlatformDataKeys {
   public static final DataKey<IScope> SCOPE = DataKey.create("MPS_IScope");
   @Description(description = "current editor component")
   public static final DataKey<EditorComponent> EDITOR_COMPONENT = DataKey.create("MPS_EditorComponent");
-  @Description(description = "number of selected items in ProjectPane")
-  public static final DataKey<Integer> LOGICAL_VIEW_SELECTION_SIZE = DataKey.create("MPS_SelectedItemsNum");
   @Description(description = "active place")
   public static final DataKey<ActionPlace> PLACE = DataKey.create("MPS_Place");
 
