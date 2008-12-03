@@ -3,7 +3,7 @@
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
   <logo url="/jetbrains/mps/workbench/icons/splash.png" textcolor="002387"/>
   <about url="/jetbrains/mps/workbench/icons/mpsAbout.png"/>
-  <icon size32="/MPS_32.png" size16="/MPS_32.png" size32opaque="/MPS_32.png"/>
+  <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png"/>
   <package code="__PACKAGE_CODE__"/>
   <names product="MPS" fullname="JetBrains MPS Beta"/>
 
