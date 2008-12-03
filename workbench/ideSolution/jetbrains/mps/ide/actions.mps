@@ -7957,8 +7957,16 @@
     <property name="package" value="Menu.ProjectPane.Packages" />
     <property name="name" value="PackageActions" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1226501984271">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1226502091349">
-        <property name="name" value="packageInternal" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1228331890284">
+        <link role="constructorDeclaration" targetNodeId="3.~CreateRootNodeGroup.&lt;init&gt;()" resolveInfo="CreateRootNodeGroup" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1228331838859" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1228331809932">
+        <link role="constructorDeclaration" targetNodeId="1.~PasteNodeAction.&lt;init&gt;()" resolveInfo="PasteNodeAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1228331836529" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1228331821621">
+        <link role="constructorDeclaration" targetNodeId="126.~RenamePackageAction.&lt;init&gt;()" resolveInfo="RenamePackageAction" />
       </node>
     </node>
   </node>
@@ -7969,55 +7977,6 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1226502142427">
         <property name="name" value="namespaceInternal" />
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1226501950402">
-    <property name="package" value="Menu.ProjectPane.Packages" />
-    <property name="name" value="PackageInternalActions" />
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock" id="1226501976689">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226501976690">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226501976691">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226501976692">
-            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1226501976693" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226501976694">
-              <link role="baseMethodDeclaration" targetNodeId="100.~DefaultActionGroup.removeAll():void" resolveInfo="removeAll" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1226583103423">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226583105128">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1226583109318">
-              <link role="baseMethodDeclaration" targetNodeId="3.~CreateRootNodeGroup.&lt;init&gt;()" resolveInfo="CreateRootNodeGroup" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddStatement" id="1227452719629">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1227452719630" />
-          <node role="item" type="jetbrains.mps.lang.plugin.structure.Separator" id="1227452845363" />
-        </node>
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1226501976742">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226501976743">
-            <node role="creator" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1228327295373">
-              <link role="constructorDeclaration" targetNodeId="1.~PasteNodeAction.&lt;init&gt;()" resolveInfo="PasteNodeAction" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddStatement" id="1227452852849">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1227452852850" />
-          <node role="item" type="jetbrains.mps.lang.plugin.structure.Separator" id="1227452852851" />
-        </node>
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1228327314311">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1228327314312">
-            <node role="creator" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1228327319491">
-              <link role="constructorDeclaration" targetNodeId="126.~RenamePackageAction.&lt;init&gt;()" resolveInfo="RenamePackageAction" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1226502102194">
-      <link role="modifiedGroup" targetNodeId="1226495932324" resolveInfo="PackageActions" />
-      <link role="point" targetNodeId="1226502091349" resolveInfo="packageInternal" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1226502116289">

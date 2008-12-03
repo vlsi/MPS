@@ -4,18 +4,22 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 
 public class PackageActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(PackageActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.PackageActions";
-  public static final String LABEL_ID_packageInternal = ID + "packageInternal";
 
   public PackageActions_ActionGroup() {
     super("", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAnchor(PackageActions_ActionGroup.LABEL_ID_packageInternal);
+      this.add(new CreateRootNodeGroup());
+      this.addSeparator();
+      this.addAction("jetbrains.mps.workbench.actions.nodes.PasteNodeAction", "jetbrains.mps.ide");
+      this.addSeparator();
+      this.addAction("jetbrains.mps.ide.ui.smodel.RenamePackageAction", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

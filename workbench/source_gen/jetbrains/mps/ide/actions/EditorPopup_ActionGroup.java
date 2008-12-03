@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.actions.nodes.GoByReferenceGroup;
 
 public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
@@ -16,7 +17,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.workbench.actions.nodes.GoByReferenceGroup", "jetbrains.mps.ide");
+      this.add(new GoByReferenceGroup());
       this.addAction("jetbrains.mps.workbench.actions.nodes.GoByCurrentReferenceAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.nodes.HighlightUsagesAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.nodes.HighlightInstancesAction", "jetbrains.mps.ide");
