@@ -16,10 +16,13 @@
 package jetbrains.mps.workbench.actions.model;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.util.Computable;
+import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -34,6 +37,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 
 import javax.swing.Icon;
+import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -50,19 +54,23 @@ public class CreateRootNodeGroup extends BaseGroup {
     setPopup(true);
   }
 
-  public CreateRootNodeGroup(String pack) {
+  public CreateRootNodeGroup(boolean plain) {
     this();
-    myPackage = pack;
-  }
-
-  public CreateRootNodeGroup(String pack, boolean plain) {
-    this(pack);
     myPlain = plain;
   }
 
   public void doUpdate(AnActionEvent event) {
     removeAll();
     ActionEventData data = new ActionEventData(event);
+
+    DataContext dataContext = DataManager.getInstance().getDataContext();
+    TreeNode treeNode = MPSDataKeys.LOGICAL_VIEW_NODE.getData(dataContext);
+    if (!(treeNode instanceof PackageNode)){
+      myPackage = null;
+    }else{
+      final PackageNode node = (PackageNode) treeNode;
+      myPackage = node.getPackage();
+    }
 
     List<Language> modelLanguages = data.getModelDescriptor() == null ? new ArrayList<Language>() : data.getModelDescriptor().getSModel().getLanguages(data.getOperationContext().getScope());
     if (modelLanguages.size() == 0) {

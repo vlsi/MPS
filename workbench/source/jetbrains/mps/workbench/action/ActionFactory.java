@@ -71,7 +71,7 @@ public class ActionFactory {
         LOG.error("This can't happen", e);
         return null;
       } catch (InvocationTargetException e) {
-        LOG.error("User's getIdent() method failed", e);
+        LOG.error("User's "+BaseAction.getIdMethodName()+"() method failed", e);
         return null;
       }
     }

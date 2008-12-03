@@ -20,6 +20,9 @@ public class ShowMPSBlogAction extends ShowSiteAction {
     super("MPS Blog");
   }
 
+  public static String getActionId(Object... param){
+    return ShowMPSBlogAction.class.getName()+"#";
+  }
 
   protected String getSiteURL() {
     return "http://blogs.jetbrains.com/mps/";

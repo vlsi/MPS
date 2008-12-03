@@ -20,6 +20,10 @@ public class ShowMPSSiteAction extends ShowSiteAction {
     super("MPS Home");
   }
 
+  public static String getActionId(Object... param){
+    return ShowMPSSiteAction.class.getName()+"#";
+  }
+
   protected String getSiteURL() {
     return "http://www.jetbrains.com/mps";
   }

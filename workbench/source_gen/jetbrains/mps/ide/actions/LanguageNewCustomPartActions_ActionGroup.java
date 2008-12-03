@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.workbench.actions.language.NewAspectModelAction;
 
 public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageNewCustomPartActions_ActionGroup.class);
@@ -17,7 +16,7 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
     this.setPopup(false);
     try {
       for(LanguageAspect aspect : LanguageAspect.values()) {
-        this.add(new NewAspectModelAction(aspect));
+        this.addAction("jetbrains.mps.workbench.actions.language.NewAspectModelAction", "jetbrains.mps.ide", aspect);
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

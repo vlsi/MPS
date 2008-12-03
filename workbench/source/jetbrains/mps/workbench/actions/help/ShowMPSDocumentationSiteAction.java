@@ -26,6 +26,10 @@ public class ShowMPSDocumentationSiteAction extends ShowSiteAction {
     getTemplatePresentation().setIcon(Icons.READ_HELP_ICON);
   }
 
+  public static String getActionId(Object... param){
+    return ShowMPSDocumentationSiteAction.class.getName()+"#";
+  }
+
   @Override
   protected void doUpdate(AnActionEvent e) {
     super.doUpdate(e);

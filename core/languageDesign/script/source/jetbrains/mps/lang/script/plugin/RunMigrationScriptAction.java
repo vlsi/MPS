@@ -43,7 +43,6 @@ public class RunMigrationScriptAction extends AbstractMigrationScriptAction {
     myScript = script;
   }
 
-
   protected void doExecute(AnActionEvent e) {
     IScope migrationScope = createMigrationScope(myModels, myModules);
     if (migrationScope.getModelDescriptors().isEmpty()) {

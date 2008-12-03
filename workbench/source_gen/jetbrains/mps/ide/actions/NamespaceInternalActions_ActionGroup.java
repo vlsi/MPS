@@ -18,8 +18,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.ide.projectPane.GenerateFilesAction;
-import jetbrains.mps.ide.projectPane.RenameAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
@@ -51,9 +49,9 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
         this.add(newGroup);
         this.addSeparator();
       }
-      this.add(new GenerateFilesAction());
+      this.addAction("jetbrains.mps.ide.projectPane.GenerateFilesAction", "jetbrains.mps.ide");
       this.addSeparator();
-      this.add(new RenameAction());
+      this.addAction("jetbrains.mps.ide.projectPane.RenameAction", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

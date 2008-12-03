@@ -20,6 +20,10 @@ public class ShowMPSDiscussionForum extends ShowSiteAction {
     super("MPS Forum");
   }
 
+  public static String getActionId(Object... param){
+    return ShowMPSDiscussionForum.class.getName()+"#";
+  }
+
   protected String getSiteURL() {
     return "http://intellij.net/forums/forum.jspa?forumID=61";
   }

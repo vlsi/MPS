@@ -162,7 +162,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
 
   //used via reflection
   public static String getActionId(Object... params) {
-    return params[0].toString();
+    return GenerateAllModelsInModuleAction.class.getName()+"#"+params[0].toString();
   }
 
   private static class MyContext implements IOperationContext {

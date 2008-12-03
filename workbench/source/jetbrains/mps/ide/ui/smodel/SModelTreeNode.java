@@ -298,7 +298,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   protected CreateRootNodeGroup getQuickCreateGroup(boolean plain) {
-    return new CreateRootNodeGroup(null, plain);
+    return new CreateRootNodeGroup(plain);
   }
 
   public String calculateText() {

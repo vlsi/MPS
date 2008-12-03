@@ -1133,9 +1133,6 @@
       <property name="value" value="java action" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1227452170010">
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1205676232975">
       <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember" />
     </node>

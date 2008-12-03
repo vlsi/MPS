@@ -22,6 +22,10 @@ public class ShowMPSTrackerAction extends ShowSiteAction {
     super("MPS Issue Tracker");
   }
 
+  public static String getActionId(Object... param){
+    return ShowMPSTrackerAction.class.getName()+"#";
+  }
+
   protected String getSiteURL() {
     return Performer.TEAMSYS;
   }

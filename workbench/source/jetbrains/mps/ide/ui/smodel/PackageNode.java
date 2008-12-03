@@ -47,7 +47,7 @@ public class PackageNode extends SNodeGroupTreeNode {
   }
 
   public ActionGroup getQuickCreateGroup(boolean plain) {
-    return new CreateRootNodeGroup(getPackage(), plain);
+    return new CreateRootNodeGroup(plain);
   }
 
   public IOperationContext getOperationContext() {
