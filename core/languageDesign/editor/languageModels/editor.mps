@@ -6109,7 +6109,7 @@
                         <link role="link" targetNodeId="2.1186403803051" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1225466898200" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228344471874" />
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225466903031">
@@ -6259,7 +6259,7 @@
                         <link role="link" targetNodeId="2.1186403803051" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1225472714637" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228344471776" />
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225472714638">
@@ -6463,7 +6463,7 @@
                         <link role="link" targetNodeId="2.1220975211821" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1225473442554" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228344471857" />
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225473442555">

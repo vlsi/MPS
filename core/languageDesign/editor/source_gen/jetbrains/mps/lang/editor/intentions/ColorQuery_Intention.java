@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ColorQuery_Intention extends BaseIntention {
 
@@ -37,7 +38,7 @@ public class ColorQuery_Intention extends BaseIntention {
       SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
     } else
     {
-      SLinkOperations.removeChild(node, "query");
+      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
     }
   }
 

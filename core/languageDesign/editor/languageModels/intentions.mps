@@ -378,7 +378,7 @@
                       <link role="link" targetNodeId="1.1186403803051" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1221476464529" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228344471809" />
                 </node>
               </node>
             </node>
@@ -471,7 +471,7 @@
                       <link role="link" targetNodeId="1.1220975211821" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1221476606653" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228344471906" />
                 </node>
               </node>
             </node>
@@ -549,7 +549,7 @@
                       <link role="link" targetNodeId="1.1223387335081" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1223387877651" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228344471825" />
                 </node>
               </node>
             </node>

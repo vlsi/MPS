@@ -25,6 +25,7 @@ import java.util.List;
 import jetbrains.mps.lang.editor.structure._FontStyle_Enum;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 
@@ -196,7 +197,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction_impl(_FontStyle_Enum parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.removeChild(node, "query");
+      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
       SPropertyOperations.set(node, "style", parameterObject.getValue());
     }
 

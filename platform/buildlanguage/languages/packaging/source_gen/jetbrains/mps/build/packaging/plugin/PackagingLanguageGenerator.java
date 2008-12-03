@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class PackagingLanguageGenerator {
   public static SNode createFolder(String name) {
     SNode folderComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Folder", null);
     SLinkOperations.setTarget(folderComponent, "title", createSimpleString(name), true);
-    SLinkOperations.removeChild(folderComponent, "sourcePath");
+    SNodeOperations.detachNode(SLinkOperations.getTarget(folderComponent, "sourcePath", true));
     return folderComponent;
   }
 

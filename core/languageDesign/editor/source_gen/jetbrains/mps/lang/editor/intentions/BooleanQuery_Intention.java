@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BooleanQuery_Intention extends BaseIntention {
 
@@ -40,7 +41,7 @@ public class BooleanQuery_Intention extends BaseIntention {
       SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean");
     } else
     {
-      SLinkOperations.removeChild(node, "query");
+      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
     }
   }
 
