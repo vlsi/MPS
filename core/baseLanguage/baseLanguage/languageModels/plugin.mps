@@ -33739,7 +33739,7 @@
                 <property name="value" value="150" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225464665077">
-                <property name="value" value="60" />
+                <property name="value" value="100" />
               </node>
             </node>
           </node>
