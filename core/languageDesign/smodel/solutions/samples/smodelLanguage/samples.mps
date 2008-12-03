@@ -1891,6 +1891,53 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679227" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1228326347555">
+      <property name="name" value="accessToChildren_5" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1228326347556" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228326347557" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228326347558">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228326404825">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228326431516">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228326406796">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228326404826">
+                <link role="variableDeclaration" targetNodeId="1228326364104" resolveInfo="newExpr" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228326429405">
+                <link role="link" targetNodeId="1.1145553007750" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1228326434831">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1228326441381">
+                <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1228326443900">
+                  <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228326443901">
+                    <link role="concept" targetNodeId="1.1212685548494" resolveInfo="ClassCreator" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228326463577">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228326467583">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228326465469">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228326463578">
+                <link role="variableDeclaration" targetNodeId="1228326364104" resolveInfo="newExpr" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228326466472">
+                <link role="link" targetNodeId="1.1145553007750" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1228326521885" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1228326364104">
+        <property name="name" value="newExpr" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228326364105">
+          <link role="concept" targetNodeId="1.1145552977093" resolveInfo="GenericNewExpression" />
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472682764" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1145583629132">
