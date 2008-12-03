@@ -116,6 +116,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228302872441">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1228302872442">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228302885738">
+              <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228304853113">
+                <node role="referenceAntiquotation$link_attribute$classifier" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1228304853123">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1228302978051">
+                    <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1228302978052">
+                      <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228302978053">
+                        <link role="concept" targetNodeId="138.1068390468198" resolveInfo="ClassConcept" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227257103095">
         <property name="name" value="s" />
