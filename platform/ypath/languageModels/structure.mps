@@ -401,23 +401,6 @@
       <link role="target" targetNodeId="1184066209434" resolveInfo="IFeature" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1179571785614">
-    <property name="name" value="ArrayOrSequenceType" />
-    <link role="extends" targetNodeId="2.1068431790189" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1179571818225">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="elementType" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2.1068431790189" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1179571838461">
-      <property name="value" value="arrayOrSequence" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1188379094432">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1179740189248">
     <property name="name" value="TreeNodeKindReference" />
     <link role="extends" targetNodeId="2.1068431790191" />

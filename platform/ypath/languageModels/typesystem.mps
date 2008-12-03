@@ -741,62 +741,6 @@
       <link role="concept" targetNodeId="1.1168428529658" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1179572072200">
-    <property name="name" value="SequenceType_extends_ArrayOrSequenceType" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179572072201">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179572143816">
-        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196779275734">
-          <node role="quotedNode" type="jetbrains.mps.ypath.structure.ArrayOrSequenceType" id="1196779275735">
-            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196779275736">
-              <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
-              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1196779275741">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227915864">
-                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1196779275743">
-                    <link role="applicableNode" targetNodeId="1179572083845" resolveInfo="sequenceType" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1196779275744">
-                    <link role="link" targetNodeId="15.1151689745422" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1179572083845">
-      <property name="name" value="sequenceType" />
-      <link role="concept" targetNodeId="15.1151689724996" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1179572288203">
-    <property name="name" value="ArrayType_extends_ArrayOrSequenceType" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179572288204">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179572288205">
-        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196779275745">
-          <node role="quotedNode" type="jetbrains.mps.ypath.structure.ArrayOrSequenceType" id="1196779275746">
-            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196779275747">
-              <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
-              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1196779275752">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227899662">
-                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1196779275754">
-                    <link role="applicableNode" targetNodeId="1179572288213" resolveInfo="arrayType" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1196779275755">
-                    <link role="link" targetNodeId="3.1070534760952" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1179572288213">
-      <property name="name" value="arrayType" />
-      <link role="concept" targetNodeId="3.1070534760951" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1179740437546">
     <property name="name" value="typeof_TreeNodeKindReference" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179740437547">

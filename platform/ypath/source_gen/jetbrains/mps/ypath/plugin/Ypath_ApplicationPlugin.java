@@ -11,12 +11,13 @@ public class Ypath_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = new ArrayList<BaseCustomApplicationPlugin>();
-    {
-      BaseCustomApplicationPlugin plugin = new DesignPartLoader_CustomApplicationPlugin();
-      res.add(plugin);
-      plugin.init();
-    }
+    this.addCustomPart(res, new DesignPartLoader_CustomApplicationPlugin());
     return res;
+  }
+
+  private void addCustomPart(List<BaseCustomApplicationPlugin> plugins, BaseCustomApplicationPlugin plugin) {
+    plugins.add(plugin);
+    plugin.init();
   }
 
 }

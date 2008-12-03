@@ -20,7 +20,7 @@ public class typeof_VisitNodesStatement_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = visitNodesStatement;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(visitNodesStatement, "visitBlock", true), "expression", true), "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1180009367649", true), new _Quotations.QuotationClass_7().createNode(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1180009898513), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1180009374907", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(visitNodesStatement, "visitBlock", true), "expression", true), "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1180009367649", true), new _Quotations.QuotationClass_5().createNode(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1180009898513), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1180009374907", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = visitNodesStatement;
