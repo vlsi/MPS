@@ -4,8 +4,6 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 
 public class FindLanguageUsages_ActionGroup extends GeneratedActionGroup {
@@ -25,14 +23,7 @@ public class FindLanguageUsages_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(LanguageActions_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(FindLanguageUsages_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      gToBase.add(gWhat);
-    }
+    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, null);
   }
 
 }

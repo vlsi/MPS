@@ -4,8 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
 
 public class EditorInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorInternal_ActionGroup.class);
@@ -29,14 +27,7 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(EditorPopup_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(EditorInternal_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      gToBase.add(gWhat);
-    }
+    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
 
 }

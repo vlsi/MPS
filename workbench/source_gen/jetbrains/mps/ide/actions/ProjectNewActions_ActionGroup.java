@@ -4,10 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
-import com.intellij.openapi.actionSystem.Constraints;
-import com.intellij.openapi.actionSystem.Anchor;
 
 public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ProjectNewActions_ActionGroup.class);
@@ -27,19 +23,7 @@ public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(ProjectActions_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(ProjectNewActions_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      {
-        String labelName = null;
-        labelName = ProjectActions_ActionGroup.LABEL_ID_projectNew;
-        Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-        gToBase.add(gWhat, constraints);
-      }
-    }
+    this.insertGroupIntoAnother(ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_projectNew);
   }
 
 }

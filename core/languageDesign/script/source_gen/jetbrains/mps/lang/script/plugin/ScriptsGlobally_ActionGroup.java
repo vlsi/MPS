@@ -15,8 +15,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
 
 public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
@@ -67,14 +65,7 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(Tools_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(ScriptsGlobally_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      gToBase.add(gWhat);
-    }
+    this.insertGroupIntoAnother(Tools_ActionGroup.ID, null);
   }
 
 }

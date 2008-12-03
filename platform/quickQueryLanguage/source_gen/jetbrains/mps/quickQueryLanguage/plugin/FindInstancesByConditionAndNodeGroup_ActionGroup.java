@@ -4,8 +4,6 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 
@@ -26,22 +24,8 @@ public class FindInstancesByConditionAndNodeGroup_ActionGroup extends GeneratedA
   }
 
   public void adjust() {
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(NodeActions_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(FindInstancesByConditionAndNodeGroup_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      gToBase.add(gWhat);
-    }
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(EditorPopup_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(FindInstancesByConditionAndNodeGroup_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      gToBase.add(gWhat);
-    }
+    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
 
 }

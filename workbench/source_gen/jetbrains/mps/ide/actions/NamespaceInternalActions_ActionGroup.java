@@ -22,10 +22,6 @@ import jetbrains.mps.ide.projectPane.GenerateFilesAction;
 import jetbrains.mps.ide.projectPane.RenameAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
-import com.intellij.openapi.actionSystem.Constraints;
-import com.intellij.openapi.actionSystem.Anchor;
 
 public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NamespaceInternalActions_ActionGroup.class);
@@ -72,19 +68,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(NamespaceActions_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(NamespaceInternalActions_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      {
-        String labelName = null;
-        labelName = NamespaceActions_ActionGroup.LABEL_ID_namespaceInternal;
-        Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-        gToBase.add(gWhat, constraints);
-      }
-    }
+    this.insertGroupIntoAnother(NamespaceActions_ActionGroup.ID, NamespaceActions_ActionGroup.LABEL_ID_namespaceInternal);
   }
 
 }

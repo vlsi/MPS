@@ -4,9 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseGroup;
 
 public class Generate_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Generate_ActionGroup.class);
@@ -29,14 +26,7 @@ public class Generate_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    {
-      DefaultActionGroup gToDef = ActionUtils.getDefaultGroup("GenerateMenu");
-      BaseGroup gWhat = ActionUtils.getGroup(Generate_ActionGroup.ID);
-      if (gToDef == null || gWhat == null) {
-        return;
-      }
-      gToDef.add(gWhat);
-    }
+    this.insertGroupIntoAnother("GenerateMenu", null);
   }
 
 }

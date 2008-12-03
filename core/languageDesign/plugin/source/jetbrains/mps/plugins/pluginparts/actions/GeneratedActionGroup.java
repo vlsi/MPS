@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.plugins.pluginparts.actions;
 
-import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 
@@ -32,6 +32,20 @@ public abstract class GeneratedActionGroup extends BaseGroup {
     AnAction action = ActionFactory.getInstance().acquireRegisteredAction(actionClassName, moduleName, params);
     if (action != null) {
       this.add(action);
+    }
+  }
+
+  public void insertGroupIntoAnother(String toId, String labelName) {
+    DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
+    if (gTo == null) {
+      return;
+    }
+    if (labelName != null) {
+      Constraints constraints = new Constraints(Anchor.AFTER, labelName);
+      gTo.add(this, constraints);
+    } else
+    {
+      gTo.add(this);
     }
   }
 }

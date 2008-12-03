@@ -6,8 +6,6 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.workbench.actions.language.NewAspectModelAction;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
 
 public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageNewCustomPartActions_ActionGroup.class);
@@ -27,14 +25,7 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
   }
 
   public void adjust() {
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(LanguageNewActions_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(LanguageNewCustomPartActions_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      gToBase.add(gWhat);
-    }
+    this.insertGroupIntoAnother(LanguageNewActions_ActionGroup.ID, null);
   }
 
 }

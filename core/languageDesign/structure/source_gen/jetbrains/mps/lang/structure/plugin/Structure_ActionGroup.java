@@ -4,11 +4,7 @@ package jetbrains.mps.lang.structure.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
-import com.intellij.openapi.actionSystem.Constraints;
-import com.intellij.openapi.actionSystem.Anchor;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 
 public class Structure_ActionGroup extends GeneratedActionGroup {
@@ -27,32 +23,8 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(EditorPopup_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(Structure_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      {
-        String labelName = null;
-        labelName = EditorPopup_ActionGroup.LABEL_ID_structure;
-        Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-        gToBase.add(gWhat, constraints);
-      }
-    }
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(NodeActions_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(Structure_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      {
-        String labelName = null;
-        labelName = NodeActions_ActionGroup.LABEL_ID_structure;
-        Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-        gToBase.add(gWhat, constraints);
-      }
-    }
+    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_structure);
+    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_structure);
   }
 
 }

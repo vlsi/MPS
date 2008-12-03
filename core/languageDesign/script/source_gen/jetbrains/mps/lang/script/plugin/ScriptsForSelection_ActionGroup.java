@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
@@ -69,38 +67,10 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(ModelActions_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(ScriptsForSelection_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      gToBase.add(gWhat);
-    }
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(LanguageActions_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(ScriptsForSelection_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      gToBase.add(gWhat);
-    }
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(GeneratorActions_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(ScriptsForSelection_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      gToBase.add(gWhat);
-    }
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(SolutionActions_ActionGroup.ID);
-      BaseGroup gWhat = ActionUtils.getGroup(ScriptsForSelection_ActionGroup.ID);
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      gToBase.add(gWhat);
-    }
+    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(GeneratorActions_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, null);
   }
 
 }
