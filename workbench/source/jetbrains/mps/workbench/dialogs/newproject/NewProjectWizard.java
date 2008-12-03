@@ -24,7 +24,12 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -46,6 +51,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.awt.Frame;
 
@@ -139,9 +145,20 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
 
     myCreatedProject.save();
     ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
+
     projectManager.openProject(myCreatedProject);
 
     super.doOKAction();
+
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            myCreatedProject.getComponent(ProjectPane.class).activate();
+          }
+        }, ModalityState.NON_MODAL);            
+      }
+    }, ModalityState.NON_MODAL);
   }
 
   private void createProject() {
