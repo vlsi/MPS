@@ -246,6 +246,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
   public void disposeComponent() {
     getTree().clear();
+    getTree().dispose();
     removeListeners();
   }
 

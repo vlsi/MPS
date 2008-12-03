@@ -24,6 +24,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
+import com.intellij.openapi.Disposable;
 import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
@@ -43,7 +44,7 @@ import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
-public abstract class MPSTree extends DnDAwareTree {
+public abstract class MPSTree extends DnDAwareTree implements Disposable {
   public static final String MPS_TREE = "mps-tree";
   public static final String PATH = "path";
   public static final String SELECTION = "selection";
@@ -59,6 +60,8 @@ public abstract class MPSTree extends DnDAwareTree {
   private boolean myLoadingDisabled;
 
   private Set<MPSTreeNode> myExpadingNodes = new HashSet<MPSTreeNode>();
+
+  private boolean myDisposed = false;
 
   protected MPSTree() {
     setRootNode(new TextTreeNode("Empty"));
@@ -454,31 +457,15 @@ public abstract class MPSTree extends DnDAwareTree {
   }
 
   private void setRootNode(MPSTreeNode root) {
-    if (getModel().getRoot() instanceof MPSTreeNode && isDisplayable()) {
+    if (getModel().getRoot() instanceof MPSTreeNode) {
       (getRootNode()).removeThisAndChildren();
     }
 
     root.setTree(this);
-    if (isDisplayable()) {
-      root.addThisAndChildren();
-    }
+    root.addThisAndChildren();
 
     DefaultTreeModel model = new DefaultTreeModel(root);
     setModel(model);
-  }
-
-  public void addNotify() {
-    super.addNotify();
-    if (getModel().getRoot() instanceof MPSTreeNode) {
-      ((MPSTreeNode) getModel().getRoot()).addThisAndChildren();
-    }
-  }
-
-  public void removeNotify() {
-    super.removeNotify();
-    if (getModel().getRoot() instanceof MPSTreeNode) {
-      (getRootNode()).removeThisAndChildren();
-    }
   }
 
   private String pathToString(TreePath path) {
@@ -680,6 +667,19 @@ public abstract class MPSTree extends DnDAwareTree {
     return -1;
   }
 
+  public boolean isDisposed() {
+    return myDisposed;
+  }
+
+  public void dispose() {
+    assert !myDisposed;
+
+    myDisposed = true;
+
+    if (getModel().getRoot() instanceof MPSTreeNode) {
+      ((MPSTreeNode) getModel().getRoot()).removeThisAndChildren();
+    }
+  }
 
   protected static class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
     private JLabel myMainTextLabel = new JLabel();

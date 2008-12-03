@@ -211,7 +211,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void remove(int childIndex) {
-    if (getTree() != null && getTree().isDisplayable()) {
+    if (getTree() != null && !getTree().isDisposed()) {
       ((MPSTreeNode) getChildAt(childIndex)).removeThisAndChildren();
     }
     super.remove(childIndex);
@@ -221,7 +221,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   public void insert(MutableTreeNode newChild, int childIndex) {
     super.insert(newChild, childIndex);
-    if (getTree() != null && getTree().isDisplayable()) {
+    if (getTree() != null && !getTree().isDisposed()) {
       ((MPSTreeNode) getChildAt(childIndex)).addThisAndChildren();
     }
     updateErrorState();
