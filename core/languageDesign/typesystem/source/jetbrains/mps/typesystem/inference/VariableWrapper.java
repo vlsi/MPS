@@ -33,11 +33,13 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
 
   private boolean myIsShallowConcrete = false;
   private IWrapper myShallowConcreteRepresentator = null;
+  private EquationManager myEquationManager = null;
 
   protected VariableWrapper(SNode node, EquationManager equationManager, boolean equationManagerNullable) {
     super(node);
     if (equationManager != null) {
       addWrapperListener(this, equationManager);
+      myEquationManager = equationManager;
     } else {
       if (!equationManagerNullable) {
         LOG.error("equation manager in constructor is null");
@@ -55,6 +57,10 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
 
   public IWrapper getShallowConcreteRepresentator() {
     return myShallowConcreteRepresentator;
+  }
+
+  public EquationManager getEquationManager() {
+    return myEquationManager;
   }
 
   public RuntimeTypeVariable getVariable() {

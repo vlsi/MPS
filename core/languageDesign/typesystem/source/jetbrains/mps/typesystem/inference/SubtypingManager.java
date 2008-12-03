@@ -126,8 +126,10 @@ public class SubtypingManager {
       SNode node = superRepresentator.getNode();
       if (BaseAdapter.isInstance(node, JoinType.class)) {
         for (SNode argument : node.getChildren(JoinType.ARGUMENT)) {
-          if (isSubtypeByReplacementRules(subRepresentator.getNode(), argument)) {
-            return true;
+          if (equationManager == null || equationManager.isConcrete(NodeWrapper.createWrapperFromNode(argument, equationManager))) {
+            if (isSubtypeByReplacementRules(subRepresentator.getNode(), argument)) {
+              return true;
+            }
           }
           if (isSubtype(subRepresentator, NodeWrapper.createWrapperFromNode(argument, equationManager), equationManager, errorInfo, isWeak)) {
             return true;
@@ -142,9 +144,12 @@ public class SubtypingManager {
 
       //meets
       if (BaseAdapter.isInstance(node, MeetType.class)) {
+        boolean replacementAllowed = equationManager == null || equationManager.isConcrete(superRepresentator);
         for (SNode argument : node.getChildren(MeetType.ARGUMENT)) {
-          if (isSubtypeByReplacementRules(argument, superRepresentator.getNode())) {
-            return true;
+          if (replacementAllowed) {
+            if (isSubtypeByReplacementRules(argument, superRepresentator.getNode())) {
+              return true;
+            }
           }
           if (isSubtype(NodeWrapper.createWrapperFromNode(argument, equationManager), superRepresentator, equationManager, errorInfo, isWeak)) {
             return true;
@@ -184,9 +189,9 @@ public class SubtypingManager {
       for (SNode node : frontier) {
         collectImmediateSupertypes_internal(node, isWeak, ancestors);
         yetPassedRaw.add(node);
-    //    yetPassed.add(node);
+        //    yetPassed.add(node);
       }
-   /*   for (SNode passedNode : yetPassed) {
+      /*   for (SNode passedNode : yetPassed) {
         ancestors.removeStructurally(passedNode);
       }*/
       ArrayList<SNode> ancestorsSorted;
@@ -242,26 +247,26 @@ public class SubtypingManager {
   }
 
   private Boolean getCacheAnswer(NodeWrapper subRepresentator, IMatcher superRepresentator, boolean isWeak) {
- //   if (myTypeChecker.isGenerationMode()) {
-      SubtypingCache cache = myTypeChecker.getSubtypingCache();
-      if (cache != null) {
-        if (superRepresentator instanceof NodeWrapper) {
-          return cache.getAnswer(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), isWeak);
-        }
+    //   if (myTypeChecker.isGenerationMode()) {
+    SubtypingCache cache = myTypeChecker.getSubtypingCache();
+    if (cache != null) {
+      if (superRepresentator instanceof NodeWrapper) {
+        return cache.getAnswer(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), isWeak);
       }
-   // }
+    }
+    // }
     return null;
   }
 
   private void addToCache(NodeWrapper subRepresentator, IMatcher superRepresentator, boolean answer, boolean isWeak) {
-   // if (myTypeChecker.isGenerationMode()) {
-      SubtypingCache cache = myTypeChecker.getSubtypingCache();
-      if (cache != null) {
-        if (superRepresentator instanceof NodeWrapper) {
-          cache.addCacheEntry(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), answer, isWeak);
-        }
+    // if (myTypeChecker.isGenerationMode()) {
+    SubtypingCache cache = myTypeChecker.getSubtypingCache();
+    if (cache != null) {
+      if (superRepresentator instanceof NodeWrapper) {
+        cache.addCacheEntry(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), answer, isWeak);
       }
-   // }
+    }
+    // }
   }
 
   public StructuralNodeSet<?> collectImmediateSupertypes(SNode term) {
@@ -395,8 +400,8 @@ public class SubtypingManager {
       newFrontier = new HashSet<IWrapper>();
     }
 
-   /* System.out.println("alltypes size = " + allTypes.size());
-    System.out.println("alltypes = " + allTypes);*/
+    /* System.out.println("alltypes size = " + allTypes.size());
+System.out.println("alltypes = " + allTypes);*/
 
     for (IWrapper node2 : allTypes) { // transitive closure
       for (IWrapper node1 : allTypes) {
@@ -510,13 +515,13 @@ public class SubtypingManager {
 
     //asking the cache
 //    if (myTypeChecker.isGenerationMode()) {
-      SubtypingCache cache = myTypeChecker.getSubtypingCache();
-      if (cache != null) {
-        Pair<Boolean,SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
-        if (nodePair.o1) {
-          return nodePair.o2;
-        }
-  //    }
+    SubtypingCache cache = myTypeChecker.getSubtypingCache();
+    if (cache != null) {
+      Pair<Boolean,SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
+      if (nodePair.o1) {
+        return nodePair.o2;
+      }
+      //    }
     }
 
     CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
@@ -529,12 +534,12 @@ public class SubtypingManager {
     }
 
     //writing to the cache
- //   if (myTypeChecker.isGenerationMode()) {
-      SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
-      if (subtypingCache != null) {
-        subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
-      }
-  //  }
+    //   if (myTypeChecker.isGenerationMode()) {
+    SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
+    if (subtypingCache != null) {
+      subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
+    }
+    //  }
 
     return result;
   }
