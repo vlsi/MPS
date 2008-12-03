@@ -32,5 +32,26 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1228342784211">
+    <property name="migrationFromBuild" value="1193" />
+    <property name="name" value="Replace_Remove_withDetach" />
+    <property name="title" value="Replace 'remove' with 'detach'" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1228342850868">
+      <property name="description" value="-" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1140129518788" resolveInfo="Link_DeleteChildOperation" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1228342850869">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228342850870">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228343159715">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228343159842">
+              <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1228343159716" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" id="1228343164126">
+                <link role="concept" targetNodeId="1.1228341669568" resolveInfo="Node_DetachOperation" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
