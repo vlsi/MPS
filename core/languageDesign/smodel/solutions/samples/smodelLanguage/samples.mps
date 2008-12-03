@@ -543,6 +543,33 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228342379959">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1228342379960">
+            <property name="name" value="detachedExpression" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228342379961">
+              <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228342379962">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228342379963">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228342379964">
+                  <link role="variableDeclaration" targetNodeId="1206556966531" resolveInfo="ifStatement" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228342379965">
+                  <link role="link" targetNodeId="1.1068580123160" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228342379966" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228342391907">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228342394737">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228342391908">
+              <link role="variableDeclaration" targetNodeId="1206556966531" resolveInfo="ifStatement" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228342396880" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206556966531">
         <property name="name" value="ifStatement" />

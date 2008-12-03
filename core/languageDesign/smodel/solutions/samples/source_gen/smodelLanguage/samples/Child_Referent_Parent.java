@@ -37,6 +37,8 @@ public class Child_Referent_Parent {
 
   public void accessToChildNode_5(SNode ifStatement) {
     SLinkOperations.setTarget(ifStatement, "condition", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
+    SNode detachedExpression = SNodeOperations.detachNode(SLinkOperations.getTarget(ifStatement, "condition", true));
+    SNodeOperations.detachNode(ifStatement);
   }
 
   public void accessToReferentNode_1(SNode methodCall, SNode method) {
