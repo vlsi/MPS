@@ -1707,9 +1707,10 @@ public final class SNode {
 
   public int depth() {
     int childDepth = 0;
-    for (SNode child : getChildren()) {
-      if (childDepth < child.depth()) {
-        childDepth = child.depth();
+    for (SNode child : myChildren) {
+      int depth = child.depth();
+      if (childDepth < depth) {
+        childDepth = depth;
       }
     }
     return childDepth + 1;
