@@ -3002,8 +3002,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205267196393">
                   <link role="variableDeclaration" targetNodeId="1205267148496" resolveInfo="linkAccessT" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1205267196394">
-                  <link role="property" targetNodeId="1.1205264860045" resolveInfo="isSingularCradinality" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1228341336341">
+                  <link role="property" targetNodeId="1.1205266306005" resolveInfo="aggregation" />
                 </node>
               </node>
             </node>

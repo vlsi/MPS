@@ -44,7 +44,6 @@ public class Child_Referent_Parent {
     String oldMethopdName = SPropertyOperations.getString(oldMethod, "name");
     oldMethopdName = SPropertyOperations.getString(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "name");
     SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", method, false);
-    SLinkOperations.removeChild(methodCall, "baseMethodDeclaration");
   }
 
   public void accessToReferentNode_2(SNode methodCall, SNode method) {

@@ -440,6 +440,18 @@ public class SNodeOperations {
     }
   }
 
+  public static SNode detachNode(SNode node) {
+    if (node != null && node.isRegistered()) {
+      SNode parent = node.getParent();
+      if (parent != null) {
+        parent.removeChild(node);
+      } else {
+        node.getModel().removeRoot(node);
+      }
+    }
+    return node;
+  }
+
   public static boolean hasRole(SNode node, String conceptOfParentFqName, String role) {
     if (node == null || node.getParent() == null ||
       conceptOfParentFqName == null || conceptOfParentFqName.length() == 0 ||

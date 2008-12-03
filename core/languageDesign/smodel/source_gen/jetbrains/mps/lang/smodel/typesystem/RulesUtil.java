@@ -135,7 +135,7 @@ public class RulesUtil {
     boolean isGood = false;
     SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);
     if (linkAccessT != null) {
-      if (SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
+      if (SPropertyOperations.getBoolean(linkAccessT, "aggregation")) {
         isGood = true;
       }
     }

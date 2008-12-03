@@ -69,9 +69,4 @@ public class Children {
     List<SNode> children2 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, true);
   }
 
-  public void accessToChildren_5(SNode newExpr) {
-    SLinkOperations.setTarget(newExpr, "creator", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null), true);
-    SLinkOperations.removeChild(newExpr, "creator");
-  }
-
 }
