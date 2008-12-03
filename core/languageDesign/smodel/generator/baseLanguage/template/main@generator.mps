@@ -1779,8 +1779,52 @@
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1168975651078">
       <link role="applicableConcept" targetNodeId="6.1140133623887" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1170384773365">
-        <link role="template" targetNodeId="1140134173768" resolveInfo="reduce_DeleteOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1228341997990">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1228341997992">
+          <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.deleteNode(jetbrains.mps.smodel.SNode):void" resolveInfo="deleteNode" />
+          <link role="classConcept" targetNodeId="2.~SNodeOperations" resolveInfo="SNodeOperations" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1228341997993">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1228341997994">
+              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1228341997995">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228341997996">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228341997997">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228341997998">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1228341997999" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1228341998000">
+                        <link role="baseMethodDeclaration" targetNodeId="51.1213877508894" resolveInfo="getLeftExpression" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1228342022189">
+      <link role="applicableConcept" targetNodeId="6.1228341669568" resolveInfo="Node_DetachOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1228342022190">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1228342030033">
+          <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.detachNode(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="detachNode" />
+          <link role="classConcept" targetNodeId="2.~SNodeOperations" resolveInfo="SNodeOperations" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1228342030034">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1228342030035">
+              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1228342030036">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228342030037">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228342030038">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228342030039">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1228342030040" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1228342030041">
+                        <link role="baseMethodDeclaration" targetNodeId="51.1213877508894" resolveInfo="getLeftExpression" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1168975694599">
@@ -2037,31 +2081,6 @@
         </node>
       </node>
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1140132803083" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1140134173768">
-    <property name="name" value="reduce_DeleteOperation" />
-    <link role="applicableConcept" targetNodeId="6.1140133623887" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1140134173769">
-      <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.deleteNode(jetbrains.mps.smodel.SNode):void" resolveInfo="deleteNode" />
-      <link role="classConcept" targetNodeId="2.~SNodeOperations" resolveInfo="SNodeOperations" />
-      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1140134173772">
-        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1140134173773">
-          <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1170443922573">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170443922574">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203105160669">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227910281">
-                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1170443922579" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1203105157949">
-                    <link role="baseMethodDeclaration" targetNodeId="51.1213877508894" resolveInfo="getLeftExpression" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1140134173771" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1143221281255">

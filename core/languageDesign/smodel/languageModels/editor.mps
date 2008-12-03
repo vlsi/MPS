@@ -2559,5 +2559,19 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1228341821339">
+    <property name="package" value="operation.node" />
+    <link role="conceptDeclaration" targetNodeId="1.1228341669568" resolveInfo="Node_DetachOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228341824091">
+      <property name="attractsFocus" value="1" />
+      <property name="text" value="detach" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1228341824092">
+        <property name="value" value="0.0" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1228341824093">
+        <property name="value" value="0.0" />
+      </node>
+    </node>
+  </node>
 </model>
 

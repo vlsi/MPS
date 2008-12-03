@@ -2892,5 +2892,24 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1166617629900" resolveInfo="priority" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1228341669568">
+    <property name="package" value="operation.node" />
+    <property name="name" value="Node_DetachOperation" />
+    <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1228341730131">
+      <property name="value" value="detach" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1228341730132">
+      <property name="value" value="removes from container" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1228341730133">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" resolveInfo="applicableToNode" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1228341730134">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicableToLink" />
+    </node>
+  </node>
 </model>
 

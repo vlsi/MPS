@@ -666,10 +666,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "replacementNode", true);
   }
 
-  public static SNode sourceNodeQuery_1170443922573(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
-  }
-
   public static SNode sourceNodeQuery_1170443980567(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
   }
@@ -1164,6 +1160,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1227265835859(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1228341997995(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1228342030036(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
