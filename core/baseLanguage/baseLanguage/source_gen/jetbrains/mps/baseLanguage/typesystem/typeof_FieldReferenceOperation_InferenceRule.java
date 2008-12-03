@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -38,25 +37,15 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new _Quotations.QuotationClass_76().createNode(fieldClassifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174350", false, 0, intentionProvider);
     }
+    Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
+    SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(typeCheckingContext, SLinkOperations.getTarget(fieldDeclaration, "type", true), mmap);
     {
-      final SNode IT = typeCheckingContext.getEquationManager().getRepresentator(InstanceType_typevar_1206554174334);
-      typeCheckingContext.whenConcrete(IT, new Runnable() {
-
-        public void run() {
-          Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
-          Pair<SNode, Map<SNode, List<SNode>>> pair;
-          SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(typeCheckingContext, SLinkOperations.getTarget(fieldDeclaration, "type", true), mmap);
-          {
-            SNode _nodeToCheck_1029348928467 = fieldReference;
-            BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createEquation(typeCheckingContext.typeOf(fieldReference, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174385", true), matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174383", intentionProvider);
-          }
-          RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, fieldClassifier, typeCheckingContext.getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), mmap);
-          RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
-        }
-
-      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174358", false);
+      SNode _nodeToCheck_1029348928467 = fieldReference;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(fieldReference, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174385", true), matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174383", intentionProvider);
     }
+    RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, fieldClassifier, typeCheckingContext.getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), mmap);
+    RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
   }
 
   public String getApplicableConceptFQName() {

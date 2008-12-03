@@ -29,7 +29,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
 
         public void run() {
           {
-            _Patterns.Pattern_10 pattern_0 = new _Patterns.Pattern_10(SLinkOperations.getTarget(supertype, "classifier", false));
+            _Patterns.Pattern_9 pattern_0 = new _Patterns.Pattern_9(SLinkOperations.getTarget(supertype, "classifier", false));
             SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(t), pattern_0, typeCheckingContext);
             if (coercedNode_0 != null) {
               {
@@ -80,7 +80,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                 SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
                 {
                   BaseIntentionProvider intentionProvider = null;
-                  intentionProvider = new BaseIntentionProvider("r:0d36a335-df61-4e52-9b2e-632f52645ddd(jetbrains.mps.baseLanguage.typesystem@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+                  intentionProvider = new BaseIntentionProvider("r:9afe09ac-1141-4e02-b71c-ddea0b98330a(jetbrains.mps.baseLanguage.typesystem@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
                   intentionProvider.putArgument("methodCall", methodCall);
                   intentionProvider.putArgument("classifier", classifier);
                   IErrorTarget errorTarget = new NodeErrorTarget();
@@ -107,7 +107,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     {
       final SNode t = subtype;
       {
-        _Patterns.Pattern_10 pattern_1 = new _Patterns.Pattern_10(SLinkOperations.getTarget(supertype, "classifier", false));
+        _Patterns.Pattern_9 pattern_1 = new _Patterns.Pattern_9(SLinkOperations.getTarget(supertype, "classifier", false));
         SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_1);
         if (coercedNode_1 != null) {
           {

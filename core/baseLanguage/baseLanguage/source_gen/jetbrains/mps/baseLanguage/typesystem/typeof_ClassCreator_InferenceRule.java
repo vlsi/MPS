@@ -55,19 +55,10 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
       typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1212781606045), constructedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1212781606046", intentionProvider);
     }
     // --- following piece of cake is identical for any method call ---
-    {
-      final SNode _representatorVar1 = typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1212781606045);
-      typeCheckingContext.whenConcrete(_representatorVar1, new Runnable() {
-
-        public void run() {
-          Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
-          RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, creator, null, mmap);
-          RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1212781606045), mmap);
-          RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
-        }
-
-      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1212781606052", false);
-    }
+    Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
+    RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, creator, null, mmap);
+    RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1212781606045), mmap);
+    RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
   }
 
   public String getApplicableConceptFQName() {
