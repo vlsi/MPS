@@ -9221,7 +9221,7 @@
                 <link role="link" targetNodeId="1.1082485599094" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1217845923337" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343710774" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217845923338">

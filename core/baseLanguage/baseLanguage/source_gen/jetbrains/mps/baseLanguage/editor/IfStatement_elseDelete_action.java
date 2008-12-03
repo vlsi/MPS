@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class IfStatement_elseDelete_action {
@@ -28,7 +29,7 @@ public class IfStatement_elseDelete_action {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.removeChild(node, "ifFalseStatement");
+      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
     }
 
 }

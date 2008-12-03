@@ -27448,7 +27448,7 @@
                             <link role="link" targetNodeId="1.1068431790190" />
                           </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1224783382771" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343711208" />
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224783078697" />

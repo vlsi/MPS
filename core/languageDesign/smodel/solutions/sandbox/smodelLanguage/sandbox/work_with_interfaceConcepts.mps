@@ -177,7 +177,7 @@
                 <link role="link" targetNodeId="3.1068580123160" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1173918699481" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343508665" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1173981843222">
@@ -199,7 +199,7 @@
                 <link role="link" targetNodeId="3.1068580123160" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1173983809878" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343508633" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1173919907780">

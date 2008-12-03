@@ -831,7 +831,7 @@
                 <link role="link" targetNodeId="1.1138662048170" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1224687803796" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343711111" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224687770055">
@@ -858,7 +858,7 @@
                 <link role="link" targetNodeId="2.1197027771414" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1224687780077" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343710951" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224687610605">
@@ -971,7 +971,7 @@
                 <link role="link" targetNodeId="1.1140725362529" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1224751766250" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343710710" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224751802832">
@@ -998,7 +998,7 @@
                 <link role="link" targetNodeId="2.1197027771414" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1224751788767" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343710918" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224751808496">

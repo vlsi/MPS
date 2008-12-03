@@ -381,7 +381,7 @@
               <link role="concept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205529236422">
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1205529236423" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343448157" />
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205529236424">
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1205529236425">
                   <link role="link" targetNodeId="4.1068580123156" />
@@ -438,7 +438,7 @@
               <link role="concept" targetNodeId="2.1087833241328" resolveInfo="PropertyMacro" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205529266613">
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1205529266614" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343448174" />
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205529266615">
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1205529266616">
                   <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier" id="1205529266617">

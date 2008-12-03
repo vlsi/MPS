@@ -142,6 +142,11 @@ public class SLinkOperations {
     return removeChild(parent, role);
   }
 
+  /**
+   * replaced with SNodeOperations.detachNode(node)
+   *
+   * @deprecated
+   */
   public static SNode removeChild(SNode parent, String role) {
     if (parent == null) return null;
     SNode child = parent.getChild(role);

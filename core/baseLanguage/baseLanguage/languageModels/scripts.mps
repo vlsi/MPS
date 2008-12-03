@@ -1509,7 +1509,7 @@
                   <link role="link" targetNodeId="1.1171626359898" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1221740870821" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343711063" />
             </node>
           </node>
         </node>

@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
@@ -35,7 +36,7 @@ public class LocalVariableDeclaration_Initializer_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.removeChild(node, "initializer");
+      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "initializer", true));
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getNodeEditorComponent();
       EditorCell nodeCell = editor.findNodeCell(node);

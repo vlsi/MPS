@@ -26,7 +26,7 @@ public class RemoveUnusedAssignment_QuickFix extends QuickFix_Runtime {
       }
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-      SLinkOperations.removeChild(node, "initializer");
+      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "initializer", true));
     }
   }
 

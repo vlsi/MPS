@@ -8790,7 +8790,7 @@
                 <link role="link" targetNodeId="8.1070534934092" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1224687003002" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343711143" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224686748124">

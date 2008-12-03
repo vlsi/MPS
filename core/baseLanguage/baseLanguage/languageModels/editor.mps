@@ -5885,7 +5885,7 @@
                   <link role="link" targetNodeId="17.1068431790190" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1144367235177" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343710983" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218121588161">
@@ -8580,7 +8580,7 @@
                   <link role="link" targetNodeId="17.1082485599094" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1177552278107" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343710806" />
             </node>
           </node>
         </node>

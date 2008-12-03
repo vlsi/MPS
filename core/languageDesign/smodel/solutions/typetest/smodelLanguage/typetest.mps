@@ -2186,7 +2186,7 @@
                 <link role="link" targetNodeId="6.1197029500499" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1173296740954" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343412276" />
           </node>
         </node>
       </node>
@@ -2280,7 +2280,7 @@
                 <link role="link" targetNodeId="6.1068580123160" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1173296715634" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343412309" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1173300492074">

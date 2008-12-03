@@ -21,7 +21,7 @@ public class IfStatement_Behavior {
     {
       SLinkOperations.addChild(SLinkOperations.getTarget(result, "statementList", true), "statement", SNodeOperations.copyNode(ifFalseStatement));
     }
-    SLinkOperations.removeChild(thisNode, "ifFalseStatement");
+    SNodeOperations.detachNode(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true));
     SLinkOperations.addChild(thisNode, "elsifClauses", result);
   }
 

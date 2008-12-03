@@ -5,8 +5,8 @@ package jetbrains.mps.lang.smodel.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ConvertCastToSModelCast_QuickFix extends QuickFix_Runtime {
 
@@ -21,7 +21,7 @@ public class ConvertCastToSModelCast_QuickFix extends QuickFix_Runtime {
     SNode snode = node;
     SNode blCast = snode;
     SNode expr = SLinkOperations.getTarget(blCast, "expression", true);
-    SLinkOperations.removeChild(blCast, "expression");
+    SNodeOperations.detachNode(SLinkOperations.getTarget(blCast, "expression", true));
     SNode cast = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null);
     SLinkOperations.setTarget(cast, "concept", SLinkOperations.getTarget(SLinkOperations.getTarget(blCast, "type", true), "concept", false), false);
     SNodeOperations.replaceWithAnother(snode, cast);

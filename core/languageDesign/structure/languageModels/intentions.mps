@@ -123,7 +123,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1224245578655" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343710838" />
                 </node>
               </node>
             </node>

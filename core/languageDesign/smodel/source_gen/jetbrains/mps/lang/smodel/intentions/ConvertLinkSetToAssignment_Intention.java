@@ -7,8 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ConvertLinkSetToAssignment_Intention extends BaseIntention {
 
@@ -31,9 +31,9 @@ public class ConvertLinkSetToAssignment_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode lValue = IOperation_Behavior.call_getOperand_1213877410070(node);
     SNode rValue = SLinkOperations.getTarget(node, "linkTarget", true);
-    SLinkOperations.removeChild(node, "linkTarget");
+    SNodeOperations.detachNode(SLinkOperations.getTarget(node, "linkTarget", true));
     SNode dotExpression = IOperation_Behavior.call_getDotExpression_1224687669172(node);
-    SLinkOperations.removeChild(dotExpression, "operand");
+    SNodeOperations.detachNode(SLinkOperations.getTarget(dotExpression, "operand", true));
     SNode assignment = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
     SLinkOperations.setTarget(assignment, "lValue", lValue, true);
     SLinkOperations.setTarget(assignment, "rValue", rValue, true);

@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AddDeprecatedAnnotation_Intention extends BaseIntention {
 
@@ -36,7 +37,7 @@ public class AddDeprecatedAnnotation_Intention extends BaseIntention {
       SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), annotation, true);
     } else
     {
-      SLinkOperations.removeChild(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"));
+      SNodeOperations.detachNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true));
     }
   }
 

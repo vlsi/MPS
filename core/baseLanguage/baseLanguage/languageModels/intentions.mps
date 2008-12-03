@@ -5164,7 +5164,7 @@
                 <link role="link" targetNodeId="1.1068431790190" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1201103462431" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228343711175" />
           </node>
         </node>
       </node>
