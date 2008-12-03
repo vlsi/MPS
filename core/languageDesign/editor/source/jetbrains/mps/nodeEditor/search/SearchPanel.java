@@ -324,7 +324,7 @@ public class SearchPanel extends JPanel {
       myCells.add(cells.get(index));
       CellLayout cellLayout = cells.get(index).getParent().getCellLayout();
       int highlightLength = 0;
-      while (startCellPosition.get(index) < matcher.end()) {
+      while (index < startCellPosition.size() && startCellPosition.get(index) < matcher.end()) {
         resultIndex.add(index);
         startHighlightPosition.add(Math.max(0, matcher.start() - startCellPosition.get(index)));
         endHighlightPosition.add(Math.min(matcher.end(), endCellPosition.get(index)) - startCellPosition.get(index));
