@@ -17,6 +17,9 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.ide.projectPane.GenerateFilesAction;
+import jetbrains.mps.ide.projectPane.RenameAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -47,7 +50,14 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
       DefaultMutableTreeNode selectedNode = MPSDataKeys.PROJECT.getData(dataContext).getComponent(ProjectPane.class).getSelectedNode();
       assert selectedNode instanceof NamespaceTextNode;
       NamespaceTextNode node = (NamespaceTextNode)selectedNode;
-      this.add(node.getActionGroup_internal());
+      DefaultActionGroup newGroup = node.createNewGroup();
+      if (newGroup != null) {
+        this.add(newGroup);
+        this.addSeparator();
+      }
+      this.add(new GenerateFilesAction());
+      this.addSeparator();
+      this.add(new RenameAction());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

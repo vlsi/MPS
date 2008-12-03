@@ -17,8 +17,6 @@ package jetbrains.mps.ide.projectPane;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.actions.NewModel_Action;
@@ -37,8 +35,10 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.project.NewLanguageAction;
 import jetbrains.mps.workbench.actions.project.NewSolutionAction;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.JOptionPane;
+import javax.swing.tree.TreeNode;
 import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
@@ -86,67 +86,7 @@ public final class NamespaceTextNode extends TextTreeNode {
     return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_NAMESPACE_ACTIONS);
   }
 
-  public ActionGroup getActionGroup_internal() {
-    BaseAction generateAction = new BaseAction("Generate files", "Generate files from all models under this namespace", IconManager.EMPTY_ICON) {
-      {
-        setExecuteOutsideCommand(true);
-      }
-
-      protected void doExecute(AnActionEvent e) {
-        DataContext dataContext = DataManager.getInstance().getDataContext();
-        Project ideaProject = PlatformDataKeys.PROJECT.getData(dataContext);
-        if (ideaProject == null) return;
-        MPSProjectHolder holder = ideaProject.getComponent(MPSProjectHolder.class);
-        if (holder == null) return;
-        MPSProject project = holder.getMPSProject();
-        GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
-        List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-        for (SModelDescriptor modelDescriptor : getModelsUnder(NamespaceTextNode.this)) {
-          if (!modelDescriptor.isTransient() && (modelDescriptor instanceof DefaultSModelDescriptor)) {
-            models.add(modelDescriptor);
-          }
-        }
-        manager.generateModelsFromDifferentModules(project.createOperationContext(), models, IGenerationType.FILES);
-      }
-    };
-
-    BaseAction renameAction = new BaseAction("Rename") {
-      protected void doExecute(AnActionEvent e) {
-        Frame frame = NamespaceTextNode.this.getOperationContext().getMainFrame();
-        String newFolder = JOptionPane.showInputDialog(frame, "Enter new Folder", myName);
-        if (newFolder != null) {
-          if (newFolder.equals("")) {
-
-            newFolder = null;
-          }
-
-          ActionEventData data = new ActionEventData(e);
-
-          for (IModule m : getModulesUnder(NamespaceTextNode.this)) {
-            data.getMPSProject().setFolderFor(m, newFolder);
-          }
-
-          data.getMPSProject().getComponent(ProjectPane.class).rebuild();
-        }
-      }
-    };
-
-    DefaultActionGroup group = new DefaultActionGroup();
-
-    DefaultActionGroup newGroup = createNewGroup();
-    if (newGroup != null) {
-      group.add(newGroup);
-      group.addSeparator();
-    }
-
-    group.add(generateAction);
-    group.addSeparator();
-    group.add(renameAction);
-
-    return group;
-  }
-
-  private DefaultActionGroup createNewGroup() {
+  public DefaultActionGroup createNewGroup() {
     boolean hasModulesUnder = hasModulesUnder();
     boolean hasModelsUnder = hasModelsUnder();
 
@@ -171,41 +111,40 @@ public final class NamespaceTextNode extends TextTreeNode {
     return newGroup;
   }
 
-  private List<SModelDescriptor> getModelsUnder(MPSTreeNode node) {
+  public List<SModelDescriptor> getModelsUnder() {
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-    for (MPSTreeNode child : node) {
+    for (MPSTreeNode child : this) {
       if (child instanceof SModelTreeNode) {
         models.add(((SModelTreeNode) child).getSModelDescriptor());
       } else {
-        models.addAll(getModelsUnder(child));
+        models.addAll(getModelsUnder());
       }
     }
 
     return models;
   }
 
-  private boolean hasModelsUnder() {
-    return getModelsUnder(this).size() > 0;
+  public boolean hasModelsUnder() {
+    return getModelsUnder().size() > 0;
   }
 
-  private boolean hasModulesUnder() {
-    return getModulesUnder(this).size() > 0;
-  }
-
-  private List<IModule> getModulesUnder(MPSTreeNode node) {
+  public List<IModule> getModulesUnder() {
     List<IModule> modules = new ArrayList<IModule>();
-    for (MPSTreeNode child : node) {
+    for (MPSTreeNode child : this) {
       if (child instanceof ProjectModuleTreeNode) {
         modules.add(((ProjectModuleTreeNode) child).getModule());
       } else {
-        if (child instanceof NamespaceTextNode) modules.addAll(getModulesUnder(child));
+        if (child instanceof NamespaceTextNode) modules.addAll(getModulesUnder());
       }
     }
     return modules;
   }
 
+  public boolean hasModulesUnder() {
+    return getModulesUnder().size() > 0;
+  }
+
   public String getName() {
     return myName;
   }
-
 }
