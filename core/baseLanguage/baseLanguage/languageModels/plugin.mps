@@ -8671,15 +8671,19 @@
                 <link role="concept" targetNodeId="1.1068498886292" resolveInfo="ParameterDeclaration" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225459400213">
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation" id="1225459400214" />
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225459400215">
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1225459400216">
-                  <link role="link" targetNodeId="1.1068580123134" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228388089219">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1228388087639">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225459400215">
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1225459400216">
+                    <link role="link" targetNodeId="1.1068580123134" />
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225459400287">
+                    <link role="variableDeclaration" targetNodeId="1225459400202" resolveInfo="method" />
+                  </node>
                 </node>
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225459400287">
-                  <link role="variableDeclaration" targetNodeId="1225459400202" resolveInfo="method" />
-                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228388090244">
+                <link role="baseMethodDeclaration" targetNodeId="4.~List.iterator():java.util.Iterator" resolveInfo="iterator" />
               </node>
             </node>
           </node>

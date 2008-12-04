@@ -2874,11 +2874,24 @@
                     <link role="concept" targetNodeId="1.1068498886292" resolveInfo="ParameterDeclaration" />
                   </node>
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219947068966">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219947068967">
-                    <link role="variableDeclaration" targetNodeId="1219946893022" resolveInfo="parameterDeclarations" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228388603798">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.DowncastExpression" id="1228388602734">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1228388594177">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1228388594721">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228388594722">
+                          <link role="variableDeclaration" targetNodeId="1219946893022" resolveInfo="parameterDeclarations" />
+                        </node>
+                        <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1228388594723">
+                          <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228388594724">
+                            <link role="concept" targetNodeId="1.1068498886292" resolveInfo="ParameterDeclaration" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation" id="1219947068968" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228388604828">
+                    <link role="baseMethodDeclaration" targetNodeId="18.~List.iterator():java.util.Iterator" resolveInfo="iterator" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -2891,16 +2904,20 @@
                     <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
                   </node>
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219947095798">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219947095799">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219947095800">
-                      <link role="variableDeclaration" targetNodeId="1203441332134" resolveInfo="mc" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1219947095801">
-                      <link role="link" targetNodeId="1.1068499141038" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228388258943">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1228388257732">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219947095799">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219947095800">
+                        <link role="variableDeclaration" targetNodeId="1203441332134" resolveInfo="mc" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1219947095801">
+                        <link role="link" targetNodeId="1.1068499141038" />
+                      </node>
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation" id="1219947095802" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228388259881">
+                    <link role="baseMethodDeclaration" targetNodeId="18.~List.iterator():java.util.Iterator" resolveInfo="iterator" />
+                  </node>
                 </node>
               </node>
             </node>

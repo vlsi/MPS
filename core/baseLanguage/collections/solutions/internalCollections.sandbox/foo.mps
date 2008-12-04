@@ -47,6 +47,18 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1228229775355" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228388012951">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228388026132">
+            <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.DowncastExpression" id="1228388025115">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228388012952">
+                <link role="variableDeclaration" targetNodeId="1228229765510" resolveInfo="si" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228388029131">
+              <link role="baseMethodDeclaration" targetNodeId="1.~Iterable.iterator():java.util.Iterator" resolveInfo="iterator" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228229776558">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228230387573">
             <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.DowncastExpression" id="1228229779290">
