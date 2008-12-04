@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.ArrayList;
 
 public class ResolveUtil {
@@ -33,9 +32,9 @@ public class ResolveUtil {
     Set<SNode> frontier = new HashSet<SNode>();
     Set<SNode> newFrontier = new HashSet<SNode>();
     SNode concreteMethodClassifierType = null;
-    SetSequence.fromSet(frontier).addElement(instanceType);
+    frontier.add(instanceType);
 outer:
-    while (SetSequence.fromSet(frontier).isNotEmpty()) {
+    while (!(frontier.isEmpty())) {
       for(SNode currentType : frontier) {
         SNode currentClassifier = SLinkOperations.getTarget(currentType, "classifier", false);
         if (currentClassifier == classifier) {
@@ -44,15 +43,15 @@ outer:
         }
         if (SNodeOperations.isInstanceOf(currentClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           SNode classConcept = currentClassifier;
-          SetSequence.fromSet(newFrontier).addElement(getConcreteClassifierType(SLinkOperations.getTarget(classConcept, "superclass", true), currentType));
+          newFrontier.add(getConcreteClassifierType(SLinkOperations.getTarget(classConcept, "superclass", true), currentType));
           for(SNode intfc : SLinkOperations.getTargets(classConcept, "implementedInterface", true)) {
-            SetSequence.fromSet(newFrontier).addElement(getConcreteClassifierType(intfc, currentType));
+            newFrontier.add(getConcreteClassifierType(intfc, currentType));
           }
         }
         if (SNodeOperations.isInstanceOf(currentClassifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
           SNode interfaceConcept = currentClassifier;
           for(SNode intfc : SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true)) {
-            SetSequence.fromSet(newFrontier).addElement(getConcreteClassifierType(intfc, currentType));
+            newFrontier.add(getConcreteClassifierType(intfc, currentType));
           }
         }
       }
