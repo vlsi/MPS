@@ -111,11 +111,6 @@ public enum LanguageAspect {
     }
   },
 
-  DOCUMENTATION("documentation"){
-    public ModuleReference getMainLanguage() {
-      return null;
-    }},
-
   INTENTIONS("intentions") {
     public ModuleReference getMainLanguage() {
       return Intentions_Language.MODULE_REFERENCE;
