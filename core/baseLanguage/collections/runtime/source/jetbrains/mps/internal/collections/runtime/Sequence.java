@@ -170,10 +170,6 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
         }        
         return new ComparingSequence<T> (this, that, ComparingSequence.Kind.INTERSECTION);
     }
-
-    public ISequence<T> substract(ISequence<T> that) {
-    	return subtract(that);
-    }
     
     public ISequence<T> subtract (ISequence<T> that) {
         if (USE_NULL_SEQUENCE) {

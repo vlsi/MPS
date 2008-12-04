@@ -56,9 +56,6 @@ public interface ISequence<T> extends Iterable<T> {
 
     ISequence<T> intersect(ISequence<T> that);
 
-    @Deprecated
-    ISequence<T> substract(ISequence<T> that);
-
     ISequence<T> subtract(ISequence<T> that);
 
     ISequence<T> union(ISequence<T> that);
