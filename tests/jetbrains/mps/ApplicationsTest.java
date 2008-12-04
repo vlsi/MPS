@@ -18,11 +18,6 @@ package jetbrains.mps;
 import java.io.File;
 
 public class ApplicationsTest extends BaseMPSTest {
-
-  public void testPanacea() {
-    assertGenerates(new File("platform/panacea/Panacea.mpr"));
-  }
-
   public void testMPSLite() {
     assertGenerates(new File("core/languageDesign/mps-lite/mps-lite.mpr"));
   }
