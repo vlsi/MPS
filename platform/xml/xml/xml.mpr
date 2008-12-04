@@ -4,21 +4,20 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\jetbrains.mps.webr.xml.sandbox\jetbrains.mps.webr.xml.sandbox.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.webr.xml.sandbox/jetbrains.mps.webr.xml.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\xml.mpl" />
-      <languagePath path="${mps_home}\platform\xml\xmlInternal\xmlInternal.mpl" />
-      <languagePath path="${mps_home}\platform\xml\xmlSchema\xmlSchema.mpl" />
+      <languagePath path="${project}/xml.mpl" />
+      <languagePath path="${mps_home}/platform/xml/xmlInternal/xmlInternal.mpl" />
+      <languagePath path="${mps_home}/platform/xml/xmlSchema/xmlSchema.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
-      <genConfLanguage name="xml" language="jetbrains.mps.xml" />
-      <genConfLanguage name="xmlInternal" language="jetbrains.mps.xmlInternal" />
-      <genConfLanguage name="xmlSchema" language="jetbrains.mps.xmlSchema" />
+      <genConfModule name="xml" moduleRef="2c55c7ac-60c3-4eea-b9db-0d627bd2dcb9(jetbrains.mps.xml)" />
+      <genConfModule name="xmlInternal" moduleRef="64f62b28-36e3-4052-9f72-f616211ae615(jetbrains.mps.xmlInternal)" />
+      <genConfModule name="xmlSchema" moduleRef="b51b9e02-45dc-4b48-b300-cf49360a8d1f(jetbrains.mps.xmlSchema)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
