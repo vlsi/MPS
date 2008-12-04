@@ -254,9 +254,6 @@
       <fileset dir="" excludes="**/idea-platform-src.zip, **/*.zip, **/artifacts/**, " />
     </copy>
     <copy file="lib/jetbrains-ideframework/idea-external-src.zip" tofile="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS/lib/jetbrains-ideframework/idea-platform-src.zip" />
-    <copy todir="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS/lib/jetbrains-ideframework">
-      <fileset dir="" />
-    </copy>
     <zip destfile="${deploy.dir}/MPS-${build.number}-src.zip" duplicate="preserve" filesonly="true">
       <zipfileset dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp" />
     </zip>
