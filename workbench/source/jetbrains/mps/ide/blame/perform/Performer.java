@@ -21,7 +21,7 @@ import org.apache.commons.httpclient.methods.PostMethod;
 import java.io.IOException;
 
 public class Performer {
-  public static final String TEAMSYS = "http://jetbrains.net/tracker/";
+  public static final String TEAMSYS = "http://jetbrains.net/tracker";
   public static final String LOGIN = "/rest/user/login";
   public static final String ISSUE = "XX-1";
   public static final String POST_ISSUE = "/rest/issue/";
