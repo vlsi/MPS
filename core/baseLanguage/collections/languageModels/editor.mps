@@ -2234,5 +2234,52 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1228228982767">
+    <link role="conceptDeclaration" targetNodeId="1.1228228912534" resolveInfo="DowncastExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1228229012775">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1228229048096">
+        <link role="relationDeclaration" targetNodeId="1.1228228959951" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228229012777">
+        <property name="text" value="/" />
+        <property name="attractsFocus" value="1" />
+        <link role="actionMap" targetNodeId="1228229067051" resolveInfo="DowncastExpression_DELETE" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1228229012778">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1228229012779">
+          <property name="color" value="DARK_MAGENTA" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1228229012780">
+          <property name="value" value="0.0" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1228229012781" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="1228229067051">
+    <property name="name" value="DowncastExpression_DELETE" />
+    <link role="applicableConcept" targetNodeId="1.1228228912534" resolveInfo="DowncastExpression" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="1228229070811">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="1228229070812">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228229070813">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228229093419">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228229093467">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1228229093420" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1228229096882">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228229097799">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1228229097756" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228229099064">
+                    <link role="link" targetNodeId="1.1228228959951" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

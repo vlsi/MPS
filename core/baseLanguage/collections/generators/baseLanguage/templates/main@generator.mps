@@ -5052,6 +5052,27 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1228232636375">
+      <link role="applicableConcept" targetNodeId="8.1228228912534" resolveInfo="DowncastExpression" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1228232647695">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.Expression" id="1228232697129">
+          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1228232701629">
+            <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1228232701630">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228232701631">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228232705298">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228232705347">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1228232705299" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228232707128">
+                      <link role="link" targetNodeId="8.1228228959951" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1208621001675">
       <link role="applicableConcept" targetNodeId="8.1201792049884" resolveInfo="TranslateOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1208621008713">

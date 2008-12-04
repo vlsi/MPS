@@ -18,7 +18,7 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+    return "jetbrains.mps.baseLanguage.collections.structure.SetType";
   }
 
   public boolean isApplicable(SNode argument) {
@@ -27,7 +27,7 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
   }
 
   public boolean isWeak() {
-    return false;
+    return true;
   }
 
 }

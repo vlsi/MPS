@@ -882,11 +882,15 @@
                   <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208429172093">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208429171554">
-                  <link role="variableDeclaration" targetNodeId="1207052129598" resolveInfo="input" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228385341293">
+                <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.DowncastExpression" id="1228385340210">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208429171554">
+                    <link role="variableDeclaration" targetNodeId="1207052129598" resolveInfo="input" />
+                  </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation" id="1208429180020" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228385344143">
+                  <link role="baseMethodDeclaration" targetNodeId="4.~Iterable.iterator():java.util.Iterator" resolveInfo="iterator" />
+                </node>
               </node>
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208429184887">

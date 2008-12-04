@@ -3684,7 +3684,7 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179262412845">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196777966186">
           <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196777966187">
-            <link role="classifier" targetNodeId="6.~ISequence" resolveInfo="ISequence" />
+            <link role="classifier" targetNodeId="1.~Iterable" resolveInfo="Iterable" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1196777966188">
               <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1196777966193">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227923049">
@@ -6583,16 +6583,17 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1226599215753">
     <property name="name" value="ClassifierType_Set_weakSupertypeOf_set" />
-    <property name="isWeak" value="false" />
+    <property name="isWeak" value="true" />
     <property name="package" value="set" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226599215754">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226599255596">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1226599258332">
-          <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1226599267719">
-            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1226599267720">
-              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1226599270153">
-                <node role="expression" type="jetbrains.mps.lang.typesystem.structure.PatternVariableReference" id="1226599273851">
-                  <link role="patternVarDecl" targetNodeId="1226599245208" resolveInfo="#elementType" />
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228232393709">
+            <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
+            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1228232394499">
+              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1228232396602">
+                <node role="expression" type="jetbrains.mps.lang.typesystem.structure.PatternVariableReference" id="1228232398883">
+                  <link role="patternVarDecl" targetNodeId="1228232377139" resolveInfo="#elementType" />
                 </node>
               </node>
             </node>
@@ -6603,10 +6604,9 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1226599234235">
       <property name="name" value="set" />
       <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1226599234236">
-        <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226599242550">
-          <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1226599243852">
-            <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1226599245208">
+        <node role="patternNode" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1228232375657">
+          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1228232375658">
+            <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1228232377139">
               <property name="varName" value="elementType" />
             </node>
           </node>
@@ -7154,6 +7154,62 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1227627122676">
       <property name="name" value="variable" />
       <link role="concept" targetNodeId="3.1153944193378" resolveInfo="ForEachVariable" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1228229118221">
+    <property name="name" value="typeof_DowncastExpression" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228229118222">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="1228231553787">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228231553788">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CoerceStatement" id="1228231671615">
+            <node role="nodeToCoerce" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference" id="1228231682378">
+              <link role="whenConcreteVar" targetNodeId="1228231553790" resolveInfo="expType" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228231671618">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1228231787457">
+                <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1228231798252">
+                  <node role="normalType" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1228231800430">
+                    <link role="baseMethodDeclaration" targetNodeId="2.1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
+                    <link role="classConcept" targetNodeId="2.1201536121399" resolveInfo="ClassifierTypeUtil" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1228231815787">
+                      <link role="applicableNode" targetNodeId="1228231761606" resolveInfo="type" />
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1228231787460">
+                  <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1228231710394">
+                    <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1228231718668">
+                      <link role="applicableNode" targetNodeId="1228229118223" resolveInfo="expression" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1228231761606">
+              <property name="name" value="type" />
+              <link role="concept" targetNodeId="7.1068431790189" resolveInfo="Type" />
+            </node>
+          </node>
+        </node>
+        <node role="argument" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1228231559409">
+          <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228231563410">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1228231561833">
+              <link role="applicableNode" targetNodeId="1228229118223" resolveInfo="expression" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228231563980">
+              <link role="link" targetNodeId="3.1228228959951" />
+            </node>
+          </node>
+        </node>
+        <node role="argumentRepresentator" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration" id="1228231553790">
+          <property name="name" value="expType" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1228231553791" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1228229118223">
+      <property name="name" value="expression" />
+      <link role="concept" targetNodeId="3.1228228912534" resolveInfo="DowncastExpression" />
     </node>
   </node>
 </model>
