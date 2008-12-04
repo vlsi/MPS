@@ -6568,6 +6568,23 @@
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877435147">
     <property name="package" value="method.instance" />
     <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1228406320322">
+      <property name="name" value="isDataFlowChecked" />
+      <link role="overriddenMethod" targetNodeId="1227714048980" resolveInfo="isDataFlowChecked" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228406320324">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1228406370446">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1228406375807">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228406379248">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1228406377325" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1228406380970">
+                <link role="property" targetNodeId="1.1178608670077" resolveInfo="isAbstract" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1228406330060" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877435148">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877435149" />
     </node>
