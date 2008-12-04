@@ -1001,24 +1001,6 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.property.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.bookLanguage">
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.bookLanguage.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.bookLanguage.tmp/module" />
-    <mkdir dir="platform/textLanguage/classes" />
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.bookLanguage.tmp/module">
-      <fileset file="platform/textLanguage/languages/bookLanguage/bookLanguage.mpl" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.bookLanguage.tmp/module">
-      <fileset dir="platform/textLanguage/languages/bookLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.bookLanguage.tmp">
-      <fileset dir="platform/textLanguage/classes" />
-    </copy>
-    <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.bookLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.bookLanguage.tmp" />
-    </jar>
-    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.bookLanguage.tmp" />
-  </target>
   <target name="pack.jetbrains.mps.baseLanguage.regexp">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.regexp.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.regexp.tmp/module" />
@@ -1061,60 +1043,6 @@
       <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.regexp.examples.tmp" />
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.regexp.examples.tmp" />
-  </target>
-  <target name="pack.jetbrains.mps.textLanguage">
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.tmp/module" />
-    <mkdir dir="platform/textLanguage/classes" />
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.tmp/module">
-      <fileset file="platform/textLanguage/languages/textLanguage/textLanguage.mpl" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.tmp/module">
-      <fileset dir="platform/textLanguage/languages/textLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.tmp">
-      <fileset dir="platform/textLanguage/classes" />
-    </copy>
-    <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.tmp" />
-    </jar>
-    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.tmp" />
-  </target>
-  <target name="pack.jetbrains.mps.textLanguage.formula">
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.formula.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.formula.tmp/module" />
-    <mkdir dir="platform/textLanguage/classes" />
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.formula.tmp/module">
-      <fileset file="platform/textLanguage/languages/formula/formula.mpl" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.formula.tmp/module">
-      <fileset dir="platform/textLanguage/languages/formula" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.formula.tmp">
-      <fileset dir="platform/textLanguage/classes" />
-    </copy>
-    <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.formula.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.formula.tmp" />
-    </jar>
-    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.formula.tmp" />
-  </target>
-  <target name="pack.jetbrains.mps.textLanguage.table">
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.table.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.table.tmp/module" />
-    <mkdir dir="platform/textLanguage/classes" />
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.table.tmp/module">
-      <fileset file="platform/textLanguage/languages/table/table.mpl" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.table.tmp/module">
-      <fileset dir="platform/textLanguage/languages/table" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.table.tmp">
-      <fileset dir="platform/textLanguage/classes" />
-    </copy>
-    <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.table.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.table.tmp" />
-    </jar>
-    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.textLanguage.table.tmp" />
   </target>
   <target name="pack.jetbrains.mps.uiLanguage">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.uiLanguage.tmp" />
