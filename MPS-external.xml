@@ -51,6 +51,7 @@
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/workbench" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/build-helpers.append.idea.version" />
     <mkdir dir="${deploy.dir}/debug" />
+    <mkdir dir="${deploy.dir}/build-helpers.pack.mps.src" />
   </target>
   <target name="do.the.job" depends="folders.create">
     <copy todir="${deploy.dir}/build-helpers.distrib">
@@ -247,6 +248,12 @@
     </antcall>
     <delete dir="${deploy.dir}/build-helpers.distrib" />
     <copy file="lib/jetbrains-ideframework/idea-platform-src.zip" tofile="${deploy.dir}/debug/idea-platform-src.zip" />
+    <antcall target="pack.mps.src" inheritall="true">
+      <param name="deploy.dir" value="${deploy.dir}" />
+      <param name="input.dir" value="${deploy.dir}/build-helpers.pack.mps.src" />
+      <param name="output.dir" value="${deploy.dir}/" />
+    </antcall>
+    <delete dir="${deploy.dir}/build-helpers.pack.mps.src" />
   </target>
   <target name="clean.after" depends="do.the.job">
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/idea-patch.jar.tmp" />
