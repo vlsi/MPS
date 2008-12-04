@@ -549,10 +549,6 @@ public class Language extends AbstractModule {
     return LanguageAspect.SCRIPTS.get(this);
   }
 
-  public SModelDescriptor getDocumentationModelDescriptor() {
-    return LanguageAspect.DOCUMENTATION.get(this);
-  }
-
   public SModelDescriptor getEditorModelDescriptor() {
     return LanguageAspect.EDITOR.get(this);
   }
