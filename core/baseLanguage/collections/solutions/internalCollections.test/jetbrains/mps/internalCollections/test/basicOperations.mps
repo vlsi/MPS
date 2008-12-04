@@ -1190,6 +1190,14 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="1227378086718" />
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228409274438">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228409478861">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228409274439">
+                <link role="variableDeclaration" targetNodeId="1227357225521" resolveInfo="test" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.AbstractOperation" id="1228409478863" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

@@ -34,6 +34,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation", new RemoveAtElementOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation", new AddLastElementOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation", new AddFirstElementOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", new DowncastExpression_DataFlow());
   }
 
 }

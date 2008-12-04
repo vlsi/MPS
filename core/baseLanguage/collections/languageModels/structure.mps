@@ -1034,7 +1034,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1228215145108">
-      <property name="value" value="produces sequence with unique elements" />
+      <property name="value" value="produce sequence with unique elements" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>

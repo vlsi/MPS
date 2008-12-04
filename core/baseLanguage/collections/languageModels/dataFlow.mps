@@ -505,5 +505,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1228409375651">
+    <link role="conceptDeclaration" targetNodeId="1.1228228912534" resolveInfo="DowncastExpression" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1228409375652">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228409375653">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1228409378599">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228409380920">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1228409380848" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228409383903">
+              <link role="link" targetNodeId="1.1228228959951" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -2890,5 +2890,45 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1228409395542">
+    <link role="concept" targetNodeId="1.1225797177491" resolveInfo="InvokeFunctionOperation" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1228409397979">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228409397980">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228409414448">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1228409419180">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228409451130">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" id="1228409429897">
+                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228409439405">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228409437011">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1228409433137">
+                      <link role="concept" targetNodeId="6.1197027756228" resolveInfo="DotExpression" />
+                      <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1228409431803" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228409439057">
+                      <link role="link" targetNodeId="6.1197027771414" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1228409440493" />
+                </node>
+                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1228409446022">
+                  <property name="name" value="functionType" />
+                  <link role="concept" targetNodeId="1.1199542442495" resolveInfo="FunctionType" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1228409451894" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228409414942">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1228409414449" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1228409415970">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1228409417827">
+                  <link role="conceptDeclaration" targetNodeId="6.1197027756228" resolveInfo="DotExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
