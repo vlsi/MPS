@@ -50,10 +50,6 @@
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/plugin" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/workbench" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/build-helpers.append.idea.version" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS/lib" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS/lib/jetbrains-ideframework" />
     <mkdir dir="${deploy.dir}/debug" />
   </target>
   <target name="do.the.job" depends="folders.create">
@@ -250,21 +246,12 @@
       <param name="output.dir" value="${deploy.dir}/" />
     </antcall>
     <delete dir="${deploy.dir}/build-helpers.distrib" />
-    <copy todir="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS">
-      <fileset dir="" excludes="**/idea-platform-src.zip, **/*.zip, **/artifacts/**, " />
-    </copy>
-    <copy file="lib/jetbrains-ideframework/idea-external-src.zip" tofile="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS/lib/jetbrains-ideframework/idea-platform-src.zip" />
-    <zip destfile="${deploy.dir}/MPS-${build.number}-src.zip" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp" />
-    </zip>
-    <delete dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp" />
     <copy file="lib/jetbrains-ideframework/idea-platform-src.zip" tofile="${deploy.dir}/debug/idea-platform-src.zip" />
   </target>
   <target name="clean.after" depends="do.the.job">
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp" />
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp" />
-    <delete dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp" />
   </target>
 </project>
 
