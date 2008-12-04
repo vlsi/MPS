@@ -21,6 +21,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
@@ -60,7 +61,7 @@ import java.util.concurrent.Executors;
   )
     }
 )
-public class GeneratorManager implements PersistentStateComponent<MyState>, Configurable {
+public class GeneratorManager implements PersistentStateComponent<MyState>, SearchableConfigurable {
   public static final int AMOUNT_PER_MODEL = 100;
   public static final int AMOUNT_PER_COMPILATION = 100;
 
@@ -416,6 +417,14 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
 
   public void disposeUIResources() {
 
+  }
+
+  public String getId() {
+    return "generator.manager";  
+  }
+
+  public Runnable enableSearch(String option) {
+    return null;
   }
 
   public static class MyState {

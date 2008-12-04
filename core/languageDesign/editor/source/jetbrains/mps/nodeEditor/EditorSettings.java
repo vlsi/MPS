@@ -21,6 +21,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -52,7 +53,7 @@ import java.util.List;
     )}
 )
 
-public class EditorSettings implements Configurable, PersistentStateComponent<MyState> {
+public class EditorSettings implements SearchableConfigurable, PersistentStateComponent<MyState> {
   private static Logger LOG = Logger.getLogger(EditorSettings.class);
 
   public static EditorSettings getInstance() {
@@ -160,6 +161,14 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
       myPreferencesPage = new MyPreferencesPage();
     }
     return myPreferencesPage;
+  }
+
+  public String getId() {
+    return "mps.editor.settings";  
+  }
+
+  public Runnable enableSearch(String option) {
+    return null;  
   }
 
   private abstract static class MyColorComponent extends JPanel {

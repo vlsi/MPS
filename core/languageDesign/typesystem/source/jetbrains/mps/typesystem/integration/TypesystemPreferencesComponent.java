@@ -21,6 +21,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent.MyState;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
@@ -41,7 +42,7 @@ import java.awt.GridLayout;
       file = "$APP_CONFIG$/typesystem.xml"
     )}
 )
-public class TypesystemPreferencesComponent implements Configurable, PersistentStateComponent<MyState> {
+public class TypesystemPreferencesComponent implements SearchableConfigurable, PersistentStateComponent<MyState> {
   private MyState myState = new MyState();
 
   private MyPreferencesPage myPreferencesPage = new MyPreferencesPage();
@@ -108,6 +109,14 @@ public class TypesystemPreferencesComponent implements Configurable, PersistentS
   }
 
   public void disposeUIResources() {
+  }
+
+  public String getId() {
+    return "mps.typesystem.preferences.component";  
+  }
+
+  public Runnable enableSearch(String option) {
+    return null;
   }
 
   private class MyPreferencesPage {

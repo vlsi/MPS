@@ -1,6 +1,7 @@
 <extensions>
     <errorHandler implementation="com.intellij.diagnostic.ITNReporter"/>
     <appStarter implementation="com.intellij.openapi.diff.DiffApplication"/>
+    <appStarter implementation="com.intellij.ide.ui.search.TraverseUIStarter"/>
 
     <applicationService serviceInterface="com.intellij.openapi.vfs.tracker.VirtualFileTracker"
                         serviceImplementation="com.intellij.openapi.vfs.tracker.VirtualFileTrackerImpl"/>
