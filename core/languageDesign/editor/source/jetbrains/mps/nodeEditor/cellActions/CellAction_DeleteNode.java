@@ -51,7 +51,7 @@ public class CellAction_DeleteNode extends EditorCellAction {
 
   public boolean canExecute(EditorContext context) {
     EditorCell cell = context.getNodeEditorComponent().findNodeCell(mySemanticNode);
-    return cell.getParent() != null;
+    return cell != null && cell.getParent() != null;
   }
 
   public void execute(EditorContext context) {
