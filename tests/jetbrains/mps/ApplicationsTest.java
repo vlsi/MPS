@@ -19,24 +19,12 @@ import java.io.File;
 
 public class ApplicationsTest extends BaseMPSTest {
 
-  public void testWebQuery() {
-    assertGenerates(new File("platform/web-query/jetbrains.mps.web-query.mpr"));
-  }
-
   public void testPanacea() {
     assertGenerates(new File("platform/panacea/Panacea.mpr"));
   }
 
-  public void testProjectHalo() {
-    assertGenerates(new File("app/ProjectHalo/ProjectHalo.mpr"));
-  }
-
   public void testMPSLite() {
     assertGenerates(new File("core/languageDesign/mps-lite/mps-lite.mpr"));
-  }
-
-  public void testTextLanguage() {                 
-    assertGenerates(new File("platform/textLanguage/jetbrains.mps.textLanguage.mpr"));
   }
 
   public void testBuildLanguage() {
