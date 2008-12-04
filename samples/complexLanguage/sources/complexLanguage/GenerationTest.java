@@ -13,6 +13,6 @@ import java.io.File;
  */
 public class GenerationTest extends BaseMPSTest {
   public void testGeneration() {    
-    testProject(new File("app/complexLanguage/Complex.mpr"));
+    testProject(new File("samples/complexLanguage/Complex.mpr"));
   }
 }
