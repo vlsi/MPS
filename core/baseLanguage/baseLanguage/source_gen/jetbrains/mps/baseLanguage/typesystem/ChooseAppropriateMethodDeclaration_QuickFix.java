@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
@@ -24,7 +24,6 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
   }
 
   public void execute(SNode node) {
-    SNode instanceType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(((SNode)this.getField("methodCall")[0])), "operand", true));
     if (SNodeOperations.isInstanceOf(((SNode)this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.ClassCreator") && SNodeOperations.isInstanceOf(((SNode)this.getField("classifier")[0]), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode constructorCall = ((SNode)this.getField("methodCall")[0]);
       SNode classConcept = ((SNode)this.getField("classifier")[0]);
@@ -32,10 +31,11 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
       for(SNode constructorDeclaration : list) {
         if (SLinkOperations.getCount(constructorDeclaration, "parameter") == SLinkOperations.getCount(constructorCall, "actualArgument")) {
           boolean good = true;
+          List<SNode> parameterTypes = ResolveUtil.parameterTypes(SLinkOperations.getTarget(constructorCall, "baseMethodDeclaration", false), TypeChecker.getInstance().getTypeOf(constructorCall), ((SNode)this.getField("classifier")[0]));
           {
             SNode parameter;
             SNode argument;
-            Iterator<SNode> parameter_iterator = SLinkOperations.getTargets(constructorDeclaration, "parameter", true).iterator();
+            Iterator<SNode> parameter_iterator = parameterTypes.iterator();
             Iterator<SNode> argument_iterator = SLinkOperations.getTargets(constructorCall, "actualArgument", true).iterator();
             while (true) {
               if (!(parameter_iterator.hasNext())) {
@@ -60,6 +60,7 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
       }
     } else
     {
+      SNode instanceType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(((SNode)this.getField("methodCall")[0])), "operand", true));
       ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope((Classifier)((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))));
       List list = scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name"));
       for(Object object : list) {
