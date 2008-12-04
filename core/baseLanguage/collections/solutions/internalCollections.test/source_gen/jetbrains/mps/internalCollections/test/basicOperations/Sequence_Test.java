@@ -337,13 +337,6 @@ __switch__:
   }
 
   @Test()
-  public void test_toSetList() throws Exception {
-    Iterable<Integer> input = Arrays.asList(5, 3, 2, 5, 1, 1, 4, 5);
-    this.assertIterableEquals(Arrays.asList(5, 3, 2, 1, 4), ListSequence.fromIterable(input).distinctList());
-    this.assertIterableEquals(Sequence.fromIterable(input).distinct(), ListSequence.fromIterable(input).distinctList());
-  }
-
-  @Test()
   public void test_primitiveParameter() throws Exception {
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure <Integer>() {
 

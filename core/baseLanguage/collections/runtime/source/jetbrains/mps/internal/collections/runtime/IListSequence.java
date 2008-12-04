@@ -42,6 +42,7 @@ public interface IListSequence<T> extends ISequence<T>, List<T> {
 
     IListSequence<T> reversedList ();
 
+    @Deprecated
     IListSequence<T> distinctList ();
     
     List<T> toList();
