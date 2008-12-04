@@ -849,15 +849,11 @@
   <target name="pack.transform">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/transform.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/transform.tmp/module" />
-    <mkdir dir="platform/panacea/classes" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/transform.tmp/module">
       <fileset file="platform/panacea/languages/transform/transform.mpl" />
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/transform.tmp/module">
       <fileset dir="platform/panacea/languages/transform" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/transform.tmp">
-      <fileset dir="platform/panacea/classes" />
     </copy>
     <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/platform/transform.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/platform/transform.tmp" />

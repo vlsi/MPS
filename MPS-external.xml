@@ -52,9 +52,9 @@
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/build-helpers.append.idea.version" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS" />
+    <mkdir dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS/lib" />
+    <mkdir dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS/lib/jetbrains-ideframework" />
     <mkdir dir="${deploy.dir}/debug" />
-    <mkdir dir="${deploy.dir}/debug/MPS-src.zip.tmp" />
-    <mkdir dir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources" />
   </target>
   <target name="do.the.job" depends="folders.create">
     <copy todir="${deploy.dir}/build-helpers.distrib">
@@ -252,54 +252,23 @@
     </antcall>
     <delete dir="${deploy.dir}/build-helpers.distrib" />
     <copy todir="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS">
-      <fileset dir="" excludes="**/idea-platform-src.zip, " />
+      <fileset dir="" excludes="**/idea-platform-src.zip, **/*.zip, " />
+    </copy>
+    <copy file="lib/jetbrains-ideframework/idea-external-src.zip" tofile="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS/lib/jetbrains-ideframework/idea-platform-src.zip" />
+    <copy todir="${deploy.dir}/MPS-${build.number}-src.zip.tmp/MPS/lib/jetbrains-ideframework">
+      <fileset dir="" />
     </copy>
     <zip destfile="${deploy.dir}/MPS-${build.number}-src.zip" duplicate="preserve" filesonly="true">
       <zipfileset dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp" />
     </zip>
     <delete dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp" />
     <copy file="lib/jetbrains-ideframework/idea-platform-src.zip" tofile="${deploy.dir}/debug/idea-platform-src.zip" />
-    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp">
-      <fileset dir="source" />
-    </copy>
-    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp">
-      <fileset dir="source_gen" />
-    </copy>
-    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp">
-      <fileset dir="tests" />
-    </copy>
-    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
-      <fileset dir="core" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
-      <fileset dir="platform" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
-      <fileset dir="plugin" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
-      <fileset dir="resources" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
-      <fileset dir="workbench" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
-    </copy>
-    <antcall target="repack.sources" inheritall="true">
-      <param name="deploy.dir" value="${deploy.dir}" />
-      <param name="input.dir" value="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources" />
-      <param name="output.dir" value="${deploy.dir}/debug/MPS-src.zip.tmp" />
-    </antcall>
-    <delete dir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources" />
-    <zip destfile="${deploy.dir}/debug/MPS-src.zip" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${deploy.dir}/debug/MPS-src.zip.tmp" />
-    </zip>
-    <delete dir="${deploy.dir}/debug/MPS-src.zip.tmp" />
   </target>
   <target name="clean.after" depends="do.the.job">
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp" />
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp" />
     <delete dir="${deploy.dir}/MPS-${build.number}-src.zip.tmp" />
-    <delete dir="${deploy.dir}/debug/MPS-src.zip.tmp" />
   </target>
 </project>
 
