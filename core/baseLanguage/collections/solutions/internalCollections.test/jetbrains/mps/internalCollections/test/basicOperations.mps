@@ -266,7 +266,7 @@
                   <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227965887938">
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228409681868">
                 <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1206980058977">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206980058978">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="1206980066832">
@@ -308,7 +308,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1227965887941" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1228409682891" />
               </node>
             </node>
           </node>
@@ -1188,14 +1188,6 @@
                 <link role="variableDeclaration" targetNodeId="1227378057663" resolveInfo="carr" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="1227378086718" />
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228409274438">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228409478861">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228409274439">
-                <link role="variableDeclaration" targetNodeId="1227357225521" resolveInfo="test" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.AbstractOperation" id="1228409478863" />
             </node>
           </node>
         </node>
