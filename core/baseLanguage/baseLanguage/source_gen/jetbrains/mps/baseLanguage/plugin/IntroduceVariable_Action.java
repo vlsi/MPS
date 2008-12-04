@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -37,7 +36,7 @@ public class IntroduceVariable_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(IntroduceVariable_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression");
+    return IntroduceLocalVariableRefactoring.isApplicable(IntroduceVariable_Action.this.node);
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
