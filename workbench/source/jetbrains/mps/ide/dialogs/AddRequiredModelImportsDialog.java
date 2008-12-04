@@ -159,7 +159,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     dispose();
   }
 
-  @BaseDialog.Button(position = 3, name = "Cancel")
+  @BaseDialog.Button(position = 2, name = "Cancel")
   public void buttonCancel() {
     myCanceled = true;
     dispose();
