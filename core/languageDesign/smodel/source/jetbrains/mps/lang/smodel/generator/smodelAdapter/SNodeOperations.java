@@ -242,6 +242,7 @@ public class SNodeOperations {
 
   public static boolean isInstanceOf(SNode node, String conceptFQName) {
     if (node == null) return false;
+    if (conceptFQName == null) return false;
     return node.isInstanceOfConcept(conceptFQName);
   }
 
