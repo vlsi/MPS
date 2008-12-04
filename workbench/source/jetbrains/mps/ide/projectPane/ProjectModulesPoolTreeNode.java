@@ -22,6 +22,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
 
@@ -52,16 +53,35 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
 
   private void populate() {
     List<IModule> modules = collectModules();
-    ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
-    for (IModule module : modules) {
-      ProjectModuleTreeNode node = ProjectModuleTreeNode.createFor(myProject, module, true);
-
-      if (node != null) {
-        builder.addNode(node);
+    {
+      ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
+      TextTreeNode solutions = new TextTreeNode("Solutions");
+      for (Solution s : CollectionUtil.filter(Solution.class, modules)) {
+        builder.addNode(new ProjectSolutionTreeNode(s, myProject, true));
       }
+      builder.fillNode(solutions);
+      add(solutions);
+    }
+    
+    {
+      ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
+      TextTreeNode languages = new TextTreeNode("Languages");
+      for (Language l : CollectionUtil.filter(Language.class, modules)) {
+        builder.addNode(new ProjectLanguageTreeNode(l, myProject, true));
+      }
+      builder.fillNode(languages);
+      add(languages);
     }
 
-    builder.fillNode(this);
+    {
+      ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
+      TextTreeNode devkits = new TextTreeNode("DevKits");
+      for (DevKit devKit : CollectionUtil.filter(DevKit.class, modules)) {
+        builder.addNode(new ProjectDevKitTreeNode(devKit, myProject, true));   
+      }
+      builder.fillNode(devkits);
+      add(devkits);
+    }
   }
 
   private List<IModule> collectModules() {
@@ -73,19 +93,19 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
     protected String getNamespace(ProjectModuleTreeNode node) {
       if (node.getModule() instanceof Generator) {
         Generator generator = (Generator) node.getModule();
-        return "Languages." + NameUtil.namespaceFromLongName(generator.getSourceLanguage().getNamespace());
+        return NameUtil.namespaceFromLongName(generator.getSourceLanguage().getNamespace());
       }
 
       if (node.getModule() instanceof Solution) {
-        return "Solutions." + NameUtil.namespaceFromLongName(node.getModule().toString());
+        return NameUtil.namespaceFromLongName(node.getModule().toString());
       }
 
       if (node.getModule() instanceof DevKit) {
-        return "DevKits." + NameUtil.namespaceFromLongName(node.getModule().toString());
+        return NameUtil.namespaceFromLongName(node.getModule().toString());
       }
 
       if (node.getModule() instanceof Language) {
-        return "Languages." + NameUtil.namespaceFromLongName(node.getModule().getModuleUID());
+        return NameUtil.namespaceFromLongName(node.getModule().getModuleUID());
       }
 
       return "Others." + node.getModule().getModuleUID();
