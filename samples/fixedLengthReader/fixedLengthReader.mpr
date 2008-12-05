@@ -16,15 +16,14 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\myReaderConfiguration\myReaderConfiguration.msd" />
+      <solutionPath path="${project}/myReaderConfiguration/myReaderConfiguration.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\readerConfigLanguage\readerConfigLanguage.mpl" />
+      <languagePath path="${project}/readerConfigLanguage/readerConfigLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs />
   </component>
   <component name="ProjectDetails">

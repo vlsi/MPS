@@ -16,16 +16,15 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="true" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\framework\agreementRegistryBuilder.msd" />
+      <solutionPath path="${project}/framework/agreementRegistryBuilder.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\agreementLanguage\languageDescriptor.mpl" />
-      <languagePath path="${mps_home}\app\formulaLanguage\language\formulaLanguage.mpl" />
+      <languagePath path="${project}/agreementLanguage/languageDescriptor.mpl" />
+      <languagePath path="${mps_home}/samples/formulaLanguage/language/formulaLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs />
   </component>
   <component name="ProjectDetails">

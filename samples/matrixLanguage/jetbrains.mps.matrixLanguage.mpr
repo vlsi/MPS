@@ -19,18 +19,18 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\jetbrains.mps.matrixLanguage.runtime\jetbrains.mps.matrixLanguage.runtime.msd" />
-      <solutionPath path="${project}\solutions\jetbrains.mps.matrixLanguage.sandbox\jetbrains.mps.matrixLanguage.sandbox.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.matrixLanguage.runtime/jetbrains.mps.matrixLanguage.runtime.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.matrixLanguage.sandbox/jetbrains.mps.matrixLanguage.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\languages\matrixLanguage\matrixLanguage.mpl" />
+      <languagePath path="${project}/languages/matrixLanguage/matrixLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule name="test matrix language" moduleUID="jetbrains.mps.samples.matrixLanguage" />
-      <genConfModule name="test matrix runtime" moduleUID="jetbrains.mps.matrixLanguage.runtime" />
+      <genConfModule name="test matrix language" moduleRef="aeb98137-c8ec-4c86-a51b-f00c080e4652(jetbrains.mps.samples.matrixLanguage)" />
+      <genConfModule name="test matrix runtime" moduleRef="29b98b6d-4c16-4c58-a0bb-9645a5db33a6(jetbrains.mps.matrixLanguage.runtime)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
