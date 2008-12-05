@@ -28,10 +28,9 @@ public class TContent {
   private TBuffer buf;
   private int position = -1;
 
-  public TContent(String name, TBuffer buf, int position) {
+  public TContent(String name, TBuffer buf) {
     this.name = name;
     this.buf = buf;
-    this.position = position;
   }
 
   public String getName() {
