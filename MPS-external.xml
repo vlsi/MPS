@@ -4,7 +4,7 @@
   <fail unless="build.number" message="Property build.number unspecified." />
   <fail unless="build.vcs.number" message="Property build.vcs.number unspecified." />
   <fail unless="teamcity.buildConfName" message="Property teamcity.buildConfName unspecified." />
-  <fail unless="system.version" message="Property system.version unspecified." />
+  <fail unless="version" message="Property version unspecified." />
   <import file="MPS-languages.xml" />
   <import file="MPS-multistep.xml" />
   <import file="build-helpers.xml" />
