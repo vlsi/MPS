@@ -527,15 +527,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1203530035708(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
-    return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1203531487305(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("VariableProvider", null);
-  }
-
   public static Object propertyMacro_GetPropertyValue_1205764543396(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "modelId");
   }
@@ -1173,10 +1164,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1203434823199(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "listVarDeclaration", false), "listVar");
-  }
-
-  public static Object referenceMacro_GetReferent_1203530166954(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "providerForItem").getChild("constructor");
   }
 
   public static Object referenceMacro_GetReferent_1206451286951(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1910,10 +1897,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1203531622138(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "provider", true), "body", true);
-  }
-
   public static SNode sourceNodeQuery_1203646554999(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operation", true);
   }
@@ -2334,15 +2317,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1201610301765(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return BaseAdapter.toNodes(_context.getInputModel().getRootsAdapters(InequationReplacementRule.class));
-  }
-
-  public static Iterable sourceNodesQuery_1203529514730(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> variableProviders = SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.VariableProviders");
-    List<SNode> result = new ArrayList<SNode>();
-    for(SNode varProviders : variableProviders) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(varProviders, "item", true)));
-    }
-    return result;
   }
 
   public static Iterable sourceNodesQuery_1206451286909(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

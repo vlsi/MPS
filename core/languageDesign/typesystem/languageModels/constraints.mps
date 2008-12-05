@@ -2410,25 +2410,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1227088652478">
-    <link role="concept" targetNodeId="1.1203524059255" resolveInfo="VariableProviders" />
-    <node role="canBeRoot" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot" id="1227088653776">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227088653777">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227088654122">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227088654123">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1227088654124">
-              <link role="enumClass" targetNodeId="22.~LanguageAspect" resolveInfo="LanguageAspect" />
-              <link role="enumConstantDeclaration" targetNodeId="22.~LanguageAspect.TYPESYSTEM" resolveInfo="TYPESYSTEM" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227088654125">
-              <link role="baseMethodDeclaration" targetNodeId="22.~LanguageAspect.is(jetbrains.mps.smodel.SModel):boolean" resolveInfo="is" />
-              <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1227088654126" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1227098342559">
     <link role="concept" targetNodeId="1.1227096498176" resolveInfo="PropertyMessageTarget" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1227098346884">
