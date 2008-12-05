@@ -203,11 +203,16 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
   }
 
   public void addFileToVcs(VirtualFile file, boolean recursive) {
-    MPSVCSManager manager = MPSVCSManager.getInstance(getProjectForFile(file));
-    if (manager != null) {
-      manager.addVirtualFilesToVcs(Collections.singletonList(file), recursive);
+    Project project = getProjectForFile(file);
+    if (project != null) {
+      MPSVCSManager manager = MPSVCSManager.getInstance(project);
+      if (manager != null) {
+        manager.addVirtualFilesToVcs(Collections.singletonList(file), recursive);
+      } else {
+        LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
+      }
     } else {
-      LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
+      LOG.warning("Can't find project for " + file.getPath());
     }
   }
 
