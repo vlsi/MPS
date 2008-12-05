@@ -523,12 +523,14 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1220447917749">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220447917750">
-            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement" id="1220447933325">
-              <node role="jumpTo" type="jetbrains.mps.lang.dataFlow.structure.AfterPosition" id="1220447961921">
-                <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220447964674">
-                  <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1220447964641" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1220447966177">
-                    <link role="link" targetNodeId="1.1220447035659" />
+            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable" id="1228490473750">
+              <node role="emitStatement" type="jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement" id="1228490477783">
+                <node role="jumpTo" type="jetbrains.mps.lang.dataFlow.structure.AfterPosition" id="1228490477784">
+                  <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228490477785">
+                    <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1228490477786" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228490477787">
+                      <link role="link" targetNodeId="1.1220447035659" />
+                    </node>
                   </node>
                 </node>
               </node>

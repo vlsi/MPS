@@ -19,7 +19,13 @@ public class CoerceStatement_DataFlow extends DataFlowBuilder {
     _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
     if ((SLinkOperations.getTarget(_context.getNode(), "elseClause", true) != null)) {
-      _context.getBuilder().emitJump(_context.getBuilder().after(SLinkOperations.getTarget(_context.getNode(), "elseClause", true)));
+      _context.getBuilder().emitMayBeUnreachable(new Runnable() {
+
+        public void run() {
+          _context.getBuilder().emitJump(_context.getBuilder().after(SLinkOperations.getTarget(_context.getNode(), "elseClause", true)));
+        }
+
+      });
     }
     _context.getBuilder().emitLabel("endOfTrue");
     if ((SLinkOperations.getTarget(_context.getNode(), "elseClause", true) != null)) {
