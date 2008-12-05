@@ -82,6 +82,9 @@
     <node role="dropRootRule" type="jetbrains.mps.lang.generator.structure.DropRootRule" id="1223047869854">
       <link role="applicableConcept" targetNodeId="1.1223034639282" resolveInfo="SimpleRulesContainer" />
     </node>
+    <node role="dropRootRule" type="jetbrains.mps.lang.generator.structure.DropRootRule" id="1228492036863">
+      <link role="applicableConcept" targetNodeId="1.1228482838236" resolveInfo="VariableConvertersContainer" />
+    </node>
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1203435207004">
       <property name="name" value="listVar" />
       <link role="sourceConcept" targetNodeId="1.1203432538703" resolveInfo="ListVarDeclaration" />
@@ -4427,8 +4430,8 @@
                                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228490422299">
                                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228490417403">
                                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1228490417099" />
-                                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228490420960">
-                                        <link role="link" targetNodeId="1.1228482339775" />
+                                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228492669621">
+                                        <link role="link" targetNodeId="1.1228482335255" />
                                       </node>
                                     </node>
                                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228490424459">

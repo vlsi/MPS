@@ -2130,7 +2130,7 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1228487489962" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1228487475682">
-      <property name="value" value="isAggeration" />
+      <property name="value" value="isAggregation" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>

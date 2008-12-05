@@ -2228,7 +2228,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1228490414576(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicableBlock", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "convertBlock", true), "body", true);
   }
 
   public static Iterable sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
