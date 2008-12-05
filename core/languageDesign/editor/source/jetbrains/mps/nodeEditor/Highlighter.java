@@ -178,7 +178,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       }
     }
 
-    if (myInspectorTool != null) {
+    if (myInspectorTool != null && myInspectorTool.getInspector() != null) {
       if (updateEditorComponent(myInspectorTool.getInspector(), events, checkers, checkersToRemove)) {
         isUpdated = true;
       }
