@@ -161,7 +161,7 @@
       <fileset dir="plugins" excludes="**/*.iml, **/*.iws, " />
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/samples">
-      <fileset dir="samples" excludes="**/*.class, **/*.iml, **/*.iws, " />
+      <fileset dir="samples" excludes="**/*.iml, **/*.iws, " />
     </copy>
     <antcall target="pack.jetbrains.mps.devkit.general-purpose" />
     <antcall target="pack.jetbrains.mps.devkit.language-design" />
