@@ -55,8 +55,5 @@
     <mapping directory="" vcs="" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
-  <UsedPathMacros>
-    <macro name="mps.webr-dnq" />
-  </UsedPathMacros>
 </project>
 
