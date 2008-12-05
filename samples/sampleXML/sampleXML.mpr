@@ -19,15 +19,14 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\sandbox\sampleXML.sandbox.msd" />
+      <solutionPath path="${project}/solutions/sandbox/sampleXML.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\languages\sampleXML\sampleXML.mpl" />
+      <languagePath path="${project}/languages/sampleXML/sampleXML.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs />
   </component>
   <component name="ProjectDetails">
