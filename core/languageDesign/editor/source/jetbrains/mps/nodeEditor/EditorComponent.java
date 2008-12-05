@@ -22,6 +22,7 @@ import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.IdeMain;
@@ -64,6 +65,8 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.nodes.GoByCurrentReferenceAction;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -2161,6 +2164,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (myNodePointer == null || myNodePointer.getNode() == null) return null;
           SNode node = myNodePointer.getNode();
           return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
+        }
+      });
+    }
+    if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
+      return ModelAccess.instance().runReadAction(new Computable<Object>() {
+        public Object compute() {
+          if (myNodePointer == null || myNodePointer.getNode() == null) return null;
+          SModelDescriptor sModelDescriptor = myNodePointer.getNode().getModel().getModelDescriptor();
+          IFile ifile = sModelDescriptor.getModelFile();
+          if (ifile == null || !ifile.exists()) return null;
+          VirtualFile vfile = VFileSystem.getFile(ifile);
+          if (vfile == null) return null;
+          return new VirtualFile[]{vfile};
         }
       });
     }
