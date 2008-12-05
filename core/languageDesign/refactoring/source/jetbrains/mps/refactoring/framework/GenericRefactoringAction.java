@@ -54,6 +54,15 @@ public class GenericRefactoringAction extends BaseAction {
     new RefactoringProcessor().execute(myRefactoring, context);
   }
 
+  @NotNull()
+  public static String getActionId(Object... args) {
+    StringBuilder res = new StringBuilder(500);
+    res.append(GenericRefactoringAction.class.getName());
+    res.append("#");
+    res.append(args[0].getClass().getName());
+    return res.toString();
+  }
+
   @NotNull
   public String getKeyStroke() {
     return myRefactoring.getKeyStroke();
