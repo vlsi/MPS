@@ -5441,10 +5441,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203701528632">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1206187269353">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206187271029">
-              <property name="value" value="Remove Static Modifier" />
+              <property name="value" value="Remove 'static' Modifier" />
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206187273765">
-              <property name="value" value="Add Static Modifier" />
+              <property name="value" value="Add 'static' Modifier" />
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206187260191">
               <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1206187258689" />
@@ -5847,10 +5847,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203703504225">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1203703510996">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203703520296">
-              <property name="value" value="Remove Final Modifier" />
+              <property name="value" value="Remove 'final' Modifier" />
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203703534844">
-              <property name="value" value="Add Final Modifier" />
+              <property name="value" value="Add 'final' Modifier" />
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203703505289">
               <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1203703504226" />
