@@ -24,8 +24,6 @@ import jetbrains.mps.project.GlobalScope;
 
 import java.util.Set;
 import java.util.HashSet;
-import java.util.Map;
-import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -42,10 +40,13 @@ public class RulesManager {
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
   private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
+
+  private Set<IVariableConverter_Runtime> myVariableConverters = new HashSet<IVariableConverter_Runtime>();
+
   private DependenciesContainer myDependenciesContainer = new DependenciesContainer();
+
   private Set<SModelDescriptor> myModelsWithLoadedRules = new HashSet<SModelDescriptor>();
 
-  private Map<String,IVariableProvider> myConceptsToVariableProviders = new HashMap<String, IVariableProvider>(5);
 
   private static Logger LOG = Logger.getLogger(RulesManager.class);
 
@@ -67,7 +68,7 @@ public class RulesManager {
     myComparisonRules.clear();
     myReplacementRules.clear();
     myDependenciesContainer.clear();
-    myConceptsToVariableProviders.clear();
+    myVariableConverters.clear();
   }
 
   public boolean hasModelLoadedRules(SModelDescriptor model) {
@@ -108,7 +109,7 @@ public class RulesManager {
         myComparisonRules.addRuleSetItem(helginsDescriptor.getComparisonRules());
         myReplacementRules.addRuleSetItem(helginsDescriptor.getEliminationRules());
         myDependenciesContainer.addDependencies(helginsDescriptor.getDependencies());
-        myConceptsToVariableProviders.putAll(helginsDescriptor.getVariableProviders());
+        myVariableConverters.addAll(helginsDescriptor.getVariableConverters());
         myInferenceRules.makeConsistent();
         myNonTypesystemRules.makeConsistent();
         mySubtypingRules.makeConsistent();
@@ -127,10 +128,9 @@ public class RulesManager {
     }
   }
 
-  public SNode provideVariable(SNode argument) {
-    IVariableProvider variableProvider = myConceptsToVariableProviders.get(argument.getConceptFqName());
-    if (variableProvider != null) {
-      return variableProvider.provideVariable(argument);
+  public IVariableConverter_Runtime getVariableConverter(SNode context, String role, SNode variable, boolean isAggregation) {
+    for (IVariableConverter_Runtime converter : myVariableConverters) {
+      if (converter.isApplicable(context, role, variable, isAggregation)) return converter;
     }
     return null;
   }

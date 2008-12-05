@@ -1159,6 +1159,9 @@ public class EquationManager {
     for (SNode child : children) {
       SNode newChild = expandNode(term, NodeWrapper.createWrapperFromNode(child, this),
         representator, depth + 1, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
+      if (finalExpansion && BaseAdapter.isInstance(newChild, RuntimeTypeVariable.class)) {
+        newChild = convertChildVariable(node, child.getRole_(), newChild);
+      }
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
@@ -1177,7 +1180,6 @@ public class EquationManager {
       SNode childReplacement = childrenReplacement.get(child);
       childReplacement = CopyUtil.copy(childReplacement);
       parent.replaceChild(child, childReplacement);
-      //parent.addChild(roleInParent, childReplacement);
     }
     Map<SReference, SNode> referenceReplacement = new HashMap<SReference, SNode>();
     List<SReference> references = new ArrayList<SReference>(wrapper.getNode().getReferences());
@@ -1186,6 +1188,11 @@ public class EquationManager {
       if (BaseAdapter.isInstance(oldNode, RuntimeTypeVariable.class)) {
         SNode newNode = expandNode(term, NodeWrapper.createWrapperFromNode(oldNode, this), representator,
           depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent, false).getNode();
+
+        if (finalExpansion && BaseAdapter.isInstance(newNode, RuntimeTypeVariable.class)) {
+          newNode = convertReferentVariable(node, reference.getRole(), newNode);
+        }
+
         referenceReplacement.put(reference, newNode);
       }
     }
@@ -1200,6 +1207,18 @@ public class EquationManager {
     }
 
     return (NodeWrapper) wrapper;
+  }
+
+  private SNode convertReferentVariable(SNode sourceNode, String role, SNode variable) {
+    IVariableConverter_Runtime converter = myTypeChecker.getRulesManager().getVariableConverter(sourceNode, role, variable, false);
+    if (converter == null) return variable;
+    return converter.convert(sourceNode, role, variable, false);
+  }
+
+  private SNode convertChildVariable(SNode parent, String role, SNode variable) {
+    IVariableConverter_Runtime converter = myTypeChecker.getRulesManager().getVariableConverter(parent, role, variable, true);
+    if (converter == null) return variable;
+    return converter.convert(parent, role, variable, true);
   }
 
   private void processConcretes() {

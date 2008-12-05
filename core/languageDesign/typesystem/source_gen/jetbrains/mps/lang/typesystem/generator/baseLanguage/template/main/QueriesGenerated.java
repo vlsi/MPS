@@ -2223,6 +2223,14 @@ public class QueriesGenerated {
     return null;
   }
 
+  public static SNode sourceNodeQuery_1228490392992(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicableBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1228490414576(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicableBlock", true), "body", true);
+  }
+
   public static Iterable sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "judgement", true);
   }
@@ -2363,6 +2371,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1224761479351(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "actualArgument", true);
+  }
+
+  public static Iterable sourceNodesQuery_1228490286261(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.VariableConverterItem");
   }
 
   public static void mappingScript_CodeBlock_1223389174474(final IOperationContext operationContext, final MappingScriptContext _context) {

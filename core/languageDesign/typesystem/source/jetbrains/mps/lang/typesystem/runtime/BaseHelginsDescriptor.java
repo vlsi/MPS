@@ -16,12 +16,10 @@
 package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
-import jetbrains.mps.typesystem.inference.IVariableProvider;
+import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 
 import java.util.Set;
 import java.util.HashSet;
-import java.util.Map;
-import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -37,7 +35,7 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
   protected Set<ComparisonRule_Runtime> myComparisonRules = new HashSet<ComparisonRule_Runtime>();
   protected Set<InequationReplacementRule_Runtime> myInequationReplacementRules = new HashSet<InequationReplacementRule_Runtime>();
   protected Set<IDependency_Runtime> myDependencies = new HashSet<IDependency_Runtime>();
-  protected Map<String, IVariableProvider> myVariableProviders = new HashMap<String, IVariableProvider>();
+  protected Set<IVariableConverter_Runtime> myVariableConverters = new HashSet<IVariableConverter_Runtime>();
 
   public Set<InferenceRule_Runtime> getInferenceRules() {
     return new HashSet<InferenceRule_Runtime>(this.myInferenceRules);
@@ -63,7 +61,7 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
     return new HashSet<InequationReplacementRule_Runtime>(this.myInequationReplacementRules);
   }
 
-  public Map<String, IVariableProvider> getVariableProviders() {
-    return new HashMap<String, IVariableProvider>(this.myVariableProviders);
+  public Set<IVariableConverter_Runtime> getVariableConverters() {
+    return new HashSet<IVariableConverter_Runtime>(this.myVariableConverters);
   }
 }

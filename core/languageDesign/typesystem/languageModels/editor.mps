@@ -3547,5 +3547,47 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1228482691271">
+    <link role="conceptDeclaration" targetNodeId="1.1228481911130" resolveInfo="VariableConverterItem" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1228482714594">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228482718503">
+        <property name="text" value="is applicable:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1228482734899">
+        <link role="relationDeclaration" targetNodeId="1.1228482339775" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228482737971">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1228482761643" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228482776254">
+        <property name="text" value="convertor:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1228482793474">
+        <link role="relationDeclaration" targetNodeId="1.1228482335255" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228482800345">
+        <property name="text" value="" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1228482803569" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1228482940000">
+    <link role="conceptDeclaration" targetNodeId="1.1228482838236" resolveInfo="VariableConvertersContainer" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1228482999822">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228483002364">
+        <property name="text" value="Variable Converters:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228483016843">
+        <property name="text" value="" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1228483020041" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1228483029018">
+        <property name="vertical" value="true" />
+        <link role="relationDeclaration" targetNodeId="1.1228482919686" />
+      </node>
+    </node>
+  </node>
 </model>
 
