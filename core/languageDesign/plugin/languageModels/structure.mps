@@ -1796,7 +1796,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210686936988">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="resetBlock" />
-      <property name="sourceCardinality" value="0..1" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1210686882550" resolveInfo="ValidatePreferencePageBlock" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210686956582">
