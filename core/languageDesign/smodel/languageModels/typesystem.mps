@@ -10066,5 +10066,65 @@
       <link role="concept" targetNodeId="1.1228341669568" resolveInfo="Node_DetachOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer" id="1228490012587">
+    <node role="converterItem" type="jetbrains.mps.lang.typesystem.structure.VariableConverterItem" id="1228490020134">
+      <node role="applicableBlock" type="jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock" id="1228490020135">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228490020136">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1228490043313">
+            <node role="condition" type="jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation" id="1228490046480" />
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228490043315">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1228490047841">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1228490049321">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228490120695">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1228490120696">
+              <property name="name" value="concept" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228490120697" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228490120698">
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1228490120699">
+                  <link role="concept" targetNodeId="1.1138055754698" resolveInfo="SNodeType" />
+                  <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode" id="1228490120700" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228490120701">
+                  <link role="link" targetNodeId="1.1138405853777" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228490058337">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1228490068679">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1228490099741">
+                <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var" id="1228490102741" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228490120707">
+                  <link role="variableDeclaration" targetNodeId="1228490120696" resolveInfo="concept" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228490060310">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode" id="1228490058338" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1228490060732">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1228490064444">
+                    <link role="conceptDeclaration" targetNodeId="1.1138055754698" resolveInfo="SNodeType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="convertBlock" type="jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock" id="1228490020137">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228490020138">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1228490164836">
+            <node role="expression" type="jetbrains.mps.lang.smodel.structure.NodeRefExpression" id="1228490175743">
+              <link role="referentNode" targetNodeId="18.1133920641626" resolveInfo="BaseConcept" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
