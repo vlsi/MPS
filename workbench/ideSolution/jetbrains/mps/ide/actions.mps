@@ -8120,14 +8120,6 @@
               <link role="constructorDeclaration" targetNodeId="82.~RenameAction.&lt;init&gt;()" resolveInfo="RenameAction" />
             </node>
           </node>
-          <node role="element" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1228318098574">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1228318098575">
-              <link role="baseMethodDeclaration" targetNodeId="82.~GenerateFilesAction.&lt;init&gt;()" resolveInfo="GenerateFilesAction" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228318098576">
-                <link role="variableDeclaration" targetNodeId="1226502135322" resolveInfo="node" />
-              </node>
-            </node>
-          </node>
         </node>
       </node>
     </node>
