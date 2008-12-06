@@ -516,6 +516,10 @@
       <property name="name" value="cellId" />
       <link role="dataType" targetNodeId="5.1082983041843" resolveInfo="string" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1228588423523">
+      <property name="name" value="caretPosition" />
+      <link role="dataType" targetNodeId="5.1082983657062" resolveInfo="integer" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1226950608043">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
     </node>

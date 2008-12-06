@@ -130,16 +130,16 @@ public class QueriesGenerated {
     return SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "declaration", false)).getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1226951689790(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "declaration", false), "cellId");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1227191831234(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "keys");
   }
 
   public static Object propertyMacro_GetPropertyValue_1228144278600(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.test.structure.EditorTestMethod"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1228589289728(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "declaration", false).getId();
   }
 
   public static Object referenceMacro_GetReferent_1221567898656(final IOperationContext operationContext, final ReferenceMacroContext _context) {

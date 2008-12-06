@@ -128,7 +128,7 @@ public class IntelligentInputUtil {
     boolean sourceCellRemains = false;
     NodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
-      substituteInfo = new NullSubstituteInfo();
+        substituteInfo = new NullSubstituteInfo();
     }
 
     EditorCell cellForNewNode;

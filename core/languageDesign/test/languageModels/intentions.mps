@@ -286,14 +286,25 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228588344665">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1228588344666">
+            <property name="name" value="contextCell" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228588344667">
+              <link role="classifier" targetNodeId="7.~EditorCell" resolveInfo="EditorCell" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228588344668">
+              <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1228588344669" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228588344670">
+                <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getContextCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getContextCell" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228582820226">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1228582820227">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228582820228">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228582820229">
-                <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1228582820230" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228582820231">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getContextCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getContextCell" />
-                </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228588344671">
+                <link role="variableDeclaration" targetNodeId="1228588344666" resolveInfo="contextCell" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228582820232">
                 <link role="baseMethodDeclaration" targetNodeId="7.~EditorCell.getCellId():java.lang.String" resolveInfo="getCellId" />
@@ -306,6 +317,45 @@
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1228582820235">
                 <link role="property" targetNodeId="1.1226066756036" resolveInfo="cellId" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1228588348423">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228588348424">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228588496209">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1228588501684">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228588539901">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1228588529131">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1228588529132">
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228588529133">
+                        <link role="classifier" targetNodeId="7.~EditorCell_Label" resolveInfo="EditorCell_Label" />
+                      </node>
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228588529134">
+                        <link role="variableDeclaration" targetNodeId="1228588344666" resolveInfo="contextCell" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228588553123">
+                    <link role="baseMethodDeclaration" targetNodeId="7.~EditorCell_Label.getCaretPosition():int" resolveInfo="getCaretPosition" />
+                  </node>
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228588496399">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228588496210">
+                    <link role="variableDeclaration" targetNodeId="1226066626901" resolveInfo="newAnnotation" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1228588498870">
+                    <link role="property" targetNodeId="1.1228588423523" resolveInfo="caretPosition" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1228588402191">
+            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228588414757">
+              <link role="classifier" targetNodeId="7.~EditorCell_Label" resolveInfo="EditorCell_Label" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228588356162">
+              <link role="variableDeclaration" targetNodeId="1228588344666" resolveInfo="contextCell" />
             </node>
           </node>
         </node>

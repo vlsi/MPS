@@ -5,23 +5,24 @@ package jetbrains.mps.lang.test.runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CellReference {
 
   private SNode myNode;
-  private String myId;
+  private SNode myAnnotation;
 
-  public CellReference(SNode node, String id) {
+  public CellReference(SNode node, SNode annotation) {
     this.myNode = node;
-    this.myId = id;
+    this.myAnnotation = annotation;
   }
 
   public SNode getNode() {
     return this.myNode;
   }
 
-  public String getID() {
-    return this.myId;
+  public SNode getAnnotation() {
+    return this.myAnnotation;
   }
 
   public String toString() {
@@ -29,11 +30,15 @@ public class CellReference {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        result.value = "node = " + CellReference.this.myNode.getId() + ", id = " + CellReference.this.myId;
+        result.value = "node = " + CellReference.this.myNode.getId();
       }
 
     });
     return result.value;
+  }
+
+  public String getId() {
+    return SPropertyOperations.getString(this.myAnnotation, "cellId");
   }
 
 }
