@@ -8,6 +8,7 @@
   <usedLanguages>
     <usedLanguages>772f6dcd-8c0d-48f7-869c-908e036f7c8e(jetbrains.mps.sampleXML)</usedLanguages>
     <usedLanguages>fae29102-8774-4e55-af5d-93fa67387f38(jetbrains.mps.samples.generator_demo.demoLang1)</usedLanguages>
+    <usedLanguages>ef47f5be-76c4-4166-8925-2b415ec6b840(jetbrains.mps.samples.generator_demo.demoLang2)</usedLanguages>
   </usedLanguages>
 </solution>
 

@@ -11,6 +11,7 @@
     <projectLanguages>
       <languagePath path="${project}/languages/demoLang1/demoLang1.mpl" />
       <languagePath path="${mps_home}/samples/sampleXML/languages/sampleXML/sampleXML.mpl" />
+      <languagePath path="${project}/languages/demoLang2/demoLang2.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs />
@@ -23,6 +24,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="C:/MPS-beta1" vcs="svn" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
 </project>
