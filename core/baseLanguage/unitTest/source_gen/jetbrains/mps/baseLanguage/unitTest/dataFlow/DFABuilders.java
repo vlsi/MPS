@@ -12,6 +12,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", new AssertEquals_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse", new AssertFalse_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull", new AssertIsNull_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", new AssertSame_DataFlow());
   }
 
 }

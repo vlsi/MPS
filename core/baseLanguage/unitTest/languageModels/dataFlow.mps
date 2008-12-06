@@ -93,5 +93,29 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1228580711772">
+    <link role="conceptDeclaration" targetNodeId="1.1171985735491" resolveInfo="AssertSame" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1228580711773">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228580711774">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1228580727025">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228580739153">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1228580738465" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228580739578">
+              <link role="link" targetNodeId="1.1171985757430" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1228580741986">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228580745271">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1228580744098" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228580746164">
+              <link role="link" targetNodeId="1.1171985765010" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitNopStatement" id="1228580760685" />
+      </node>
+    </node>
+  </node>
 </model>
 
