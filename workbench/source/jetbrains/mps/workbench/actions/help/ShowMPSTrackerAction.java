@@ -27,6 +27,6 @@ public class ShowMPSTrackerAction extends ShowSiteAction {
   }
 
   protected String getSiteURL() {
-    return Performer.TEAMSYS;
+    return Performer.TEAMSYS + "/workspace";
   }
 }
