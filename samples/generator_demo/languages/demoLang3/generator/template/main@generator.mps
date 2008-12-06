@@ -26,10 +26,17 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="r:723d40a4-f803-4d86-95e7-ec10ffbaf771(jetbrains.mps.samples.generator_demo.demoLang3.structure)" version="-1" />
-  <import index="2" modelUID="java.lang@java_stub" version="-1" />
+  <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
@@ -154,7 +161,7 @@
         <property name="name" value="args" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1228529813142">
           <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228529813143">
-            <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+            <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
           </node>
         </node>
       </node>
@@ -211,7 +218,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228530360559">
-                <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228530362544">
                   <property name="value" value="button" />
                 </node>
@@ -249,7 +256,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228530974526">
-                <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228530974527">
                   <property name="value" value="label" />
                 </node>
@@ -324,7 +331,7 @@
                                           </node>
                                         </node>
                                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228530869184">
-                                          <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                                          <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228530869185">
                                             <property name="value" value="text" />
                                           </node>
@@ -376,7 +383,7 @@
                                     </node>
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228530797289">
-                                    <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                                    <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228530798482">
                                       <property name="value" value="text" />
                                     </node>
@@ -487,7 +494,7 @@
                                     </node>
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228531790004">
-                                    <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                                    <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228531790005">
                                       <property name="value" value="addContent" />
                                     </node>
@@ -589,7 +596,7 @@
                                           </node>
                                         </node>
                                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228530922063">
-                                          <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                                          <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228530922064">
                                             <property name="value" value="text" />
                                           </node>
@@ -641,7 +648,7 @@
                                     </node>
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228530922085">
-                                    <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                                    <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228530922086">
                                       <property name="value" value="text" />
                                     </node>
@@ -752,7 +759,7 @@
                                     </node>
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228531631962">
-                                    <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                                    <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228531631963">
                                       <property name="value" value="addContent" />
                                     </node>
@@ -830,7 +837,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228532323631">
-                              <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                              <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228532324851">
                                 <property name="value" value="true" />
                               </node>
@@ -868,7 +875,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228532250853">
-                                  <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                                  <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228532254202">
                                     <property name="value" value="enabled" />
                                   </node>
@@ -957,7 +964,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228532713803">
-                                  <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                                  <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228532713804">
                                     <property name="value" value="background" />
                                   </node>

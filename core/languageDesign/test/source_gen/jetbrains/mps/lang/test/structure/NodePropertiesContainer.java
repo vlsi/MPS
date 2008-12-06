@@ -10,39 +10,12 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class NodePropertiesContainer extends BaseConcept implements INodeAnnotattion {
+public class NodePropertiesContainer extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.test.structure.NodePropertiesContainer";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROPERTIES = "properties";
 
   public NodePropertiesContainer(SNode node) {
     super(node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(NodePropertiesContainer.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(NodePropertiesContainer.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(NodePropertiesContainer.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(NodePropertiesContainer.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(NodePropertiesContainer.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(NodePropertiesContainer.VIRTUAL_PACKAGE, value);
   }
 
   public int getPropertiesesCount() {

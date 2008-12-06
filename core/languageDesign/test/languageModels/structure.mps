@@ -205,9 +205,6 @@
     <property name="name" value="NodePropertiesContainer" />
     <property name="package" value="nodeProperties" />
     <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1228584866408">
-      <link role="intfc" targetNodeId="1228584180295" resolveInfo="INodeAnnotattion" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1215507909023">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="properties" />
