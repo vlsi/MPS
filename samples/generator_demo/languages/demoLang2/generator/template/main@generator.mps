@@ -44,6 +44,9 @@
     <node role="createRootRule" type="jetbrains.mps.lang.generator.structure.CreateRootRule" id="1228517787089">
       <link role="templateNode" targetNodeId="1228517514681" resolveInfo="map_Document" />
     </node>
+    <node role="dropRootRule" type="jetbrains.mps.lang.generator.structure.DropRootRule" id="1228528984907">
+      <link role="applicableConcept" targetNodeId="7.1225239603382" resolveInfo="Document" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1228517514681">
     <property name="name" value="DemoApp" />
