@@ -658,6 +658,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1226066777145">
+    <property name="package" value="editor" />
     <link role="conceptDeclaration" targetNodeId="1.1226066719224" resolveInfo="TestCellAnnotation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1226066826518">
       <property name="vertical" value="false" />
@@ -703,6 +704,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1226950564883">
+    <property name="package" value="editor" />
     <link role="conceptDeclaration" targetNodeId="1.1226949237497" resolveInfo="TestCellReference" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1226950572119">
       <link role="relationDeclaration" targetNodeId="1.1226949237498" />

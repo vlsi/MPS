@@ -286,6 +286,29 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228582820226">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1228582820227">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228582820228">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228582820229">
+                <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1228582820230" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228582820231">
+                  <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getContextCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getContextCell" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228582820232">
+                <link role="baseMethodDeclaration" targetNodeId="7.~EditorCell.getCellId():java.lang.String" resolveInfo="getCellId" />
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228582820233">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228582820234">
+                <link role="variableDeclaration" targetNodeId="1226066626901" resolveInfo="newAnnotation" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1228582820235">
+                <link role="property" targetNodeId="1.1226066756036" resolveInfo="cellId" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226066626906">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1226066626907">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226066626908">
@@ -297,29 +320,6 @@
                 <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="1226066626912">
                   <link role="annotationLink" targetNodeId="1.1210673592080" resolveInfo="testNode" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226066887934">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1226066926739">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226066941283">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226066928290">
-                <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1226066927430" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226066940454">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getContextCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getContextCell" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226067603808">
-                <link role="baseMethodDeclaration" targetNodeId="7.~EditorCell.getCellId():java.lang.String" resolveInfo="getCellId" />
-              </node>
-            </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226066921923">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226066919016">
-                <link role="variableDeclaration" targetNodeId="1226066626901" resolveInfo="newAnootation" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1226066925223">
-                <link role="property" targetNodeId="1.1226066756036" resolveInfo="cellId" />
               </node>
             </node>
           </node>

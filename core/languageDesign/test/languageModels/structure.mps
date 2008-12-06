@@ -145,6 +145,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1210673695631">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1228584427154">
+      <link role="intfc" targetNodeId="1228584180295" resolveInfo="INodeAnnotattion" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210674524691">
     <property name="name" value="TestNodeReference" />
@@ -202,8 +205,8 @@
     <property name="name" value="NodePropertiesContainer" />
     <property name="package" value="nodeProperties" />
     <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1215507571425">
-      <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1228584866408">
+      <link role="intfc" targetNodeId="1228584180295" resolveInfo="INodeAnnotattion" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1215507909023">
       <property name="metaClass" value="aggregation" />
@@ -287,6 +290,9 @@
       <property name="role" value="operations" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1215601147424" resolveInfo="NodeOperation" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1228584854484">
+      <link role="intfc" targetNodeId="1228584180295" resolveInfo="INodeAnnotattion" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="1215603953686">
@@ -508,6 +514,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226066719224">
     <property name="name" value="TestCellAnnotation" />
+    <property name="package" value="editor" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1226066756036">
       <property name="name" value="cellId" />
       <link role="dataType" targetNodeId="5.1082983041843" resolveInfo="string" />
@@ -515,9 +522,13 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1226950608043">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1228584438922">
+      <link role="intfc" targetNodeId="1228584180295" resolveInfo="INodeAnnotattion" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226949237497">
     <property name="name" value="TestCellReference" />
+    <property name="package" value="editor" />
     <link role="extends" targetNodeId="7.1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1226949237498">
       <property name="role" value="declaration" />
@@ -581,6 +592,9 @@
       <property name="value" value="assert editor" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1228584180295">
+    <property name="name" value="INodeAnnotattion" />
   </node>
 </model>
 
