@@ -283,6 +283,8 @@ public abstract class BaseTool {
     if (icon != null) {
       content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
       content.setIcon(icon);
+    }else{
+      content.setIcon(myIcon);
     }
     ContentManager contentManager = getContentManager();
     contentManager.addContent(content);
