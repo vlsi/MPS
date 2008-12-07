@@ -128,14 +128,16 @@ public class AboutAction extends AnAction {
     int[] grabbed = new int[w * (h + hAdd)];
     try {
       new PixelGrabber(image, 0, 0, w, hHead, grabbed, 0, w).grabPixels();
+      for (int i = hHead; i < hHead + hAdd; i++) {
+        for (int j = 0;j<w;j++){
+          grabbed[i*w+j] = grabbed[(hHead-1)*w+j];
+        }
+      }
       new PixelGrabber(image, 0, hHead, w, h - hHead, grabbed, w * (hHead + hAdd), w).grabPixels();
     } catch (InterruptedException e) {
       return image;
     }
 
-    for (int i = w * hHead; i < w * (hHead + hAdd); i++) {
-      grabbed[i] = 0xffffff;
-    }
 
     MemoryImageSource mis = new MemoryImageSource(w, h + hAdd, grabbed, 0, w);
     return Toolkit.getDefaultToolkit().createImage(mis);
@@ -225,14 +227,14 @@ public class AboutAction extends AnAction {
 
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent event) {
-          if (linkNum != -1 && myLinks != null) {
-            event.consume();
-            BrowserUtil.launchBrowser(myLinks.get(linkNum).url);
-          }
+          if (linkNum == -1 || myLinks == null) return;
+          event.consume();
+          BrowserUtil.launchBrowser(myLinks.get(linkNum).url);
         }
       });
       addMouseMotionListener(new MouseMotionAdapter() {
         public void mouseMoved(MouseEvent event) {
+          if (myLinks==null) return;
           Point pSur = new Point(event.getPoint());
           pSur.translate(InfoSurface.this.getX(), InfoSurface.this.getY());
           linkNum = -1;
@@ -251,10 +253,9 @@ public class AboutAction extends AnAction {
     }
 
     private void addFileText() {
-      myLines.add(new AboutBoxLine(""));
-      myLines.add(new AboutBoxLine(""));
-      myLines.add(new AboutBoxLine(""));
-      myLines.add(new AboutBoxLine(""));
+      for (int i=0;i<5;i++){
+        myLines.add(new AboutBoxLine(""));
+      }
 
       String others = FileUtil.read(new File(PathManager.getHomePath() + File.separator + "about.txt"));
 
