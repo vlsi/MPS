@@ -477,6 +477,9 @@
       <property name="value" value="create new sequence with value supplier" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1228653041114">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1152906680026">
     <property name="name" value="MappingOperation" />
