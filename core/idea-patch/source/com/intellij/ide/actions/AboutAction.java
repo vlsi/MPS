@@ -218,7 +218,7 @@ public class AboutAction extends AnAction {
         //noinspection HardCodedStringLiteral
         myLines.add(new AboutBoxLine(IdeBundle.message("aboutbox.vendor", properties.getProperty("java.vendor", "unknown"))));
       }
-      myLines.add(new AboutBoxLine(""));
+      myLines.add(new AboutBoxLine(" "));
       //noinspection HardCodedStringLiteral
       myLines.add(new AboutBoxLine("JetBrains s.r.o.", true, false));
       myLines.add(new AboutBoxLine(LicenseUrls.getCompanyUrl(), true, true));
@@ -353,6 +353,7 @@ public class AboutAction extends AnAction {
           final String s = line.getText();
           setFont(line.isBold() ? myBoldFont : myFont);
           if (line.isLink()) {
+            x +=20;
             g2.setColor(linkCol);
             if (fillLinks) {
               FontMetrics metrics = g2.getFontMetrics(font);
@@ -366,6 +367,7 @@ public class AboutAction extends AnAction {
           } else {
             g2.setColor(Color.black);
           }
+
           renderString(s, indentX);
 
           if (i < lines.size() - 1) {
