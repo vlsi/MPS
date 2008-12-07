@@ -759,6 +759,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "icon") != null;
   }
 
+  public static boolean ifMacro_Condition_1218025271085(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.FileGeneratorPluginDeclaration")).isNotEmpty();
+  }
+
   public static boolean ifMacro_Condition_1218028221953(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration")).isNotEmpty();
   }
@@ -921,6 +925,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1207146117813(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1207321869329(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "getFileGeneratorBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1207490121824(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

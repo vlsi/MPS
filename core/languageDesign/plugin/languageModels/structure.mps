@@ -1391,6 +1391,43 @@
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1207320991007">
+    <property name="name" value="FileGeneratorPluginDeclaration" />
+    <property name="package" value="FileGenerator.todelete" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1207321017343">
+      <property name="value" value="FileGeneratorPlugin" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1218035882094">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1207321253960">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="getFileGeneratorBlock" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1207321054393" resolveInfo="GetFileGeneratorBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1207321054393">
+    <property name="package" value="FileGenerator.todelete" />
+    <property name="name" value="GetFileGeneratorBlock" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1207321098395">
+      <property name="value" value="getFileGenerator" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1216470208842">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1207321121837">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207321231738">
+        <link role="classifier" targetNodeId="17.~IFileGenerator" resolveInfo="IFileGenerator" />
+      </node>
+    </node>
+  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1207489456631">
     <property name="package" value="Actions.Groups.GroupContents" />
     <property name="name" value="DoUpdateGroupBlock" />
