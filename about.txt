@@ -1,22 +1,63 @@
-(C) Copyright JetBrains, s.r.o. 2003, 2008. All Rights Reserved
-
 This product includes software developed by
-  The Apache Software Foundation (http://www.apache.org/)
-  The W3C consortium (http://www.w3c.org)
-  The SAX project (http://www.saxproject.org)
-  INRIA, France Telecom (http://asm.objectweb.org/). Copyright (c) 2000-2005 All rights reserved.
-  JDOM Project (http://www.jdom.org/) Copyright (C) 2000-2002 Brett McLaughlin & Jason Hunter. All rights reserved.
-  NanoContainer Organization (http://www.picocontainer.org/). Copyright (c) 2003
-  Original Reusable Objects, Inc (http://www.savarese.org/oro/index.html). Copyright (c) 1996, 1997
-  Joe Walnes (http://xstream.codehaus.org/), Copyright (c) 2003-2005. All rights reserved.
-  Eclipse Software Foundation (http://www.eclipse.org/)
-  Kent Beck, Erich Gamma, and David Saff (http://www.junit.org/)
-  Sun Microsystems, Inc., 4150 Network Circle, Santa Clara, California 95054, U.S.A. (http://beansbinding.dev.java.net/) Copyright (c) 2005-2007 All rights reserved.
-  Sun Microsystems (http://java.sun.com/javase/technologies/desktop/javahelp/)
-  INCORS GmbH (http://lookandfeel.incors.com/)
-  YourKit, LLC (http://yourkit.com)
-  JGoodies, Karsten Lentzsch (http://www.jgoodies.com/freeware/forms/), Copyright (c) 2002-2006. All rights reserved.
-  Michael Baranov, (http://microba.sourceforge.net/), Copyright (c) 2005-2006. All rights reserved.
-  Marc De Scheemaecker, (http://devkix.com/nanoxml.php/), Copyright (C) 2000-2008. All Rights Reserved.
+
+The Apache Software Foundation
+http://www.apache.org/
+
+The W3C consortium 
+http://www.w3c.org
+
+The SAX project 
+http://www.saxproject.org
+
+INRIA, France Telecom  
+http://asm.objectweb.org/
+Copyright (c) 2000-2005 All rights reserved.
+
+JDOM Project 
+http://www.jdom.org/
+Copyright (C) 2000-2002 Brett McLaughlin & Jason Hunter. All rights reserved.
+
+NanoContainer Organization 
+http://www.picocontainer.org/
+Copyright (c) 2003
+
+Original Reusable Objects, Inc 
+http://www.savarese.org/oro/index.html
+Copyright (c) 1996, 1997
+
+Joe Walnes 
+http://xstream.codehaus.org/
+Copyright (c) 2003-2005. All rights reserved.
+
+Eclipse Software Foundation 
+http://www.eclipse.org/
+
+Kent Beck, Erich Gamma, and David Saff 
+http://www.junit.org/
+
+Sun Microsystems, Inc., 4150 Network Circle, Santa Clara, California 95054, U.S.A. 
+http://beansbinding.dev.java.net/
+Copyright (c) 2005-2007 All rights reserved.
+
+Sun Microsystems 
+http://java.sun.com/javase/technologies/desktop/javahelp/
+
+INCORS GmbH 
+http://lookandfeel.incors.com/
+
+YourKit, LLC 
+http://yourkit.com
+
+JGoodies, Karsten Lentzsch 
+http://www.jgoodies.com/freeware/forms/
+Copyright (c) 2002-2006. All rights reserved.
+
+Michael Baranov
+http://microba.sourceforge.net/
+Copyright (c) 2005-2006. All rights reserved.
+
+Marc De Scheemaecker
+http://devkix.com/nanoxml.php/
+Copyright (C) 2000-2008. All Rights Reserved.
 
 You can find licenses for these software in the %MPS_HOME%/license directory

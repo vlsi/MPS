@@ -35,7 +35,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Generate_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Goto_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Tools_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Help_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.LanguageNewCustomPartActions_ActionGroup");

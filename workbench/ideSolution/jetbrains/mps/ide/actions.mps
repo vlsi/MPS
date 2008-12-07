@@ -41,7 +41,6 @@
   <import index="13" modelUID="f:java_stub#jetbrains.mps.workbench.actions.tools(jetbrains.mps.workbench.actions.tools@java_stub)" version="-1" />
   <import index="14" modelUID="f:java_stub#jetbrains.mps.workbench.actions.generate(jetbrains.mps.workbench.actions.generate@java_stub)" version="-1" />
   <import index="16" modelUID="f:java_stub#jetbrains.mps.workbench.actions.baseLanguage(jetbrains.mps.workbench.actions.baseLanguage@java_stub)" version="-1" />
-  <import index="21" modelUID="f:java_stub#jetbrains.mps.workbench.actions.help(jetbrains.mps.workbench.actions.help@java_stub)" version="-1" />
   <import index="40" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="42" modelUID="f:java_stub#jetbrains.mps.ide.classpath(jetbrains.mps.ide.classpath@java_stub)" version="-1" />
   <import index="43" modelUID="f:java_stub#jetbrains.mps.lang.generator.plugin.debug.actions(jetbrains.mps.lang.generator.plugin.debug.actions@java_stub)" version="-1" />
@@ -100,7 +99,6 @@
   <import index="128" modelUID="f:java_stub#com.intellij.ide.projectView.impl(com.intellij.ide.projectView.impl@java_stub)" version="-1" />
   <import index="129" modelUID="f:java_stub#jetbrains.mps.ide.projectPane.fileSystem.actions(jetbrains.mps.ide.projectPane.fileSystem.actions@java_stub)" version="-1" />
   <import index="131" modelUID="f:java_stub#jetbrains.mps.lang.generator.plugin.actions(jetbrains.mps.lang.generator.plugin.actions@java_stub)" version="-1" />
-  <import index="132" modelUID="f:java_stub#jetbrains.mps.workbench.about(jetbrains.mps.workbench.about@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="NodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -857,40 +855,6 @@
           </node>
           <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1207148387807" />
         </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991238844">
-    <property name="name" value="Help" />
-    <property name="caption" value="Help" />
-    <property name="package" value="Menu.MainMenu" />
-    <property name="isPopup" value="false" />
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148361812">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1228231953388">
-        <link role="constructorDeclaration" targetNodeId="132.~AboutAction.&lt;init&gt;()" resolveInfo="AboutAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1222862635686" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1222862632262">
-        <link role="action" targetNodeId="1222862438774" resolveInfo="ShowDefaultKeymap" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204983980877" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518716474">
-        <link role="constructorDeclaration" targetNodeId="21.~ShowMPSSiteAction.&lt;init&gt;()" resolveInfo="ShowMPSSiteAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1223033538295">
-        <link role="constructorDeclaration" targetNodeId="21.~ShowMPSTutorialsSiteAction.&lt;init&gt;()" resolveInfo="ShowMPSTutorialsSiteAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518717784">
-        <link role="constructorDeclaration" targetNodeId="21.~ShowMPSDocumentationSiteAction.&lt;init&gt;()" resolveInfo="ShowMPSDocumentationSiteAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518717818">
-        <link role="constructorDeclaration" targetNodeId="21.~ShowMPSDiscussionForum.&lt;init&gt;()" resolveInfo="ShowMPSDiscussionForum" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518716717">
-        <link role="constructorDeclaration" targetNodeId="21.~ShowMPSBlogAction.&lt;init&gt;()" resolveInfo="ShowMPSBlogAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1228211993788">
-        <link role="constructorDeclaration" targetNodeId="21.~ShowMPSTrackerAction.&lt;init&gt;()" resolveInfo="ShowMPSTrackerAction" />
       </node>
     </node>
   </node>

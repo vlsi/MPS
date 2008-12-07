@@ -203,7 +203,7 @@ public abstract class BaseTool {
       //noinspection ConstantConditions
       if (keymap.getShortcuts(actionId).length != 0) {
         KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null);
-        keymap.addShortcut(actionId,shortcut);
+        keymap.addShortcut(actionId, shortcut);
       }
     }
 
@@ -283,7 +283,7 @@ public abstract class BaseTool {
     if (icon != null) {
       content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
       content.setIcon(icon);
-    }else{
+    } else {
       content.setIcon(myIcon);
     }
     ContentManager contentManager = getContentManager();
