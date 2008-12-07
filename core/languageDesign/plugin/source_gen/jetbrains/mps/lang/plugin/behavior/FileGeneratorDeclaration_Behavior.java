@@ -5,9 +5,7 @@ package jetbrains.mps.lang.plugin.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -23,7 +21,7 @@ public class FileGeneratorDeclaration_Behavior {
   }
 
   public static String call_getGeneratedName_1218038748102(SNode thisNode) {
-    return PluginNameUtils.getModuleShortName(SModelUtil_new.getDeclaringLanguage(thisNode.getConceptDeclarationAdapter(), GlobalScope.getInstance())) + "_FileGenerator";
+    return SPropertyOperations.getString(thisNode, "name") + "_FileGenerator";
   }
 
   public static String call_getGeneratedClassFQName_1218038748112(SNode thisNode) {

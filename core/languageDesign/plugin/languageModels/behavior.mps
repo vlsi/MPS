@@ -1930,25 +1930,11 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192517212" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218038748104">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218038874633">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1218039212014">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218038920326">
-              <link role="baseMethodDeclaration" targetNodeId="13.1218029277052" resolveInfo="getModuleShortName" />
-              <link role="classConcept" targetNodeId="13.1213878920295" resolveInfo="PluginNameUtils" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218039275266">
-                <link role="classConcept" targetNodeId="5.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.getDeclaringLanguage(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.Language" resolveInfo="getDeclaringLanguage" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218039310925">
-                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1218039310267">
-                    <node role="leftExpression" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1218039280276" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218039314955">
-                    <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getConceptDeclarationAdapter():jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" resolveInfo="getConceptDeclarationAdapter" />
-                  </node>
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218039290540">
-                  <link role="baseMethodDeclaration" targetNodeId="9.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
-                  <link role="classConcept" targetNodeId="9.~GlobalScope" resolveInfo="GlobalScope" />
-                </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1228678056211">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228678063918">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1228678062464" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1228678065500">
+                <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
               </node>
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1218039214655">
