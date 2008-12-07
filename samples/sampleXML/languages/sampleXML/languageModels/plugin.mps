@@ -35,6 +35,7 @@
   <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration" id="1228521817646">
+    <property name="name" value="Xml" />
     <link role="extendedClass" targetNodeId="2.~DefaultFileGenerator" resolveInfo="DefaultFileGenerator" />
     <node role="method" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1228523885175">
       <property name="name" value="isDefault" />

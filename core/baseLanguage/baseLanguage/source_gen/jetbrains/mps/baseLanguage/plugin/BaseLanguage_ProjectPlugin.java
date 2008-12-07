@@ -31,7 +31,7 @@ public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
   }
 
   public IFileGenerator initFileGenerator() {
-    return new Plugin_FileGenerator();
+    return new Java_FileGenerator();
   }
 
 }

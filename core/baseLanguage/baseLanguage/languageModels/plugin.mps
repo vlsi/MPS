@@ -35654,6 +35654,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration" id="1228676539462">
+    <property name="name" value="Java" />
     <link role="extendedClass" targetNodeId="99.~DefaultFileGenerator" resolveInfo="DefaultFileGenerator" />
     <node role="method" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1228676958079">
       <property name="name" value="getExtenstion" />
