@@ -3805,47 +3805,6 @@
         </node>
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1218024047489">
-      <property name="name" value="initFileGenerator" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218024083603">
-        <link role="classifier" targetNodeId="44.~IFileGenerator" resolveInfo="IFileGenerator" />
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218024047491" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218024047492">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218024112011">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218030077311">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1218024113872">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1218024128609">
-                <link role="baseMethodDeclaration" targetNodeId="1207323288328" resolveInfo="GeneratedFileGeneratorPlugin" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218030083236">
-              <link role="baseMethodDeclaration" targetNodeId="1207321732105" resolveInfo="getFileGenerator" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1218025271084">
-        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1218025271085">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218025271086">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218025276087">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218025276088">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218025276089">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218025276090">
-                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218025276091" />
-                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218025276092" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1218025276093">
-                    <link role="concept" targetNodeId="1.1207320991007" resolveInfo="FileGeneratorPluginDeclaration" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1218025276094" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1218039990253">
       <property name="name" value="initFileGenerator" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218039990254">
@@ -6773,57 +6732,9 @@
         <link role="template" targetNodeId="1205855692185" resolveInfo="reduce_DefaultClassifierMethodCall" />
       </node>
     </node>
-    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1207321416375">
-      <link role="applicableConcept" targetNodeId="1.1207320991007" resolveInfo="FileGeneratorDeclaration" />
-      <link role="template" targetNodeId="1207321597673" resolveInfo="GeneratedFileGenerator" />
-    </node>
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1218037251916">
       <link role="applicableConcept" targetNodeId="1.1218035894314" resolveInfo="FileGenerator" />
       <link role="template" targetNodeId="1218037280980" resolveInfo="GeneratedFileGenerator" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1207321597673">
-    <property name="name" value="GeneratedFileGeneratorPlugin" />
-    <property name="package" value="FileGenerator" />
-    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1207323288328">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1207323288329" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207323288330" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207323288331" />
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1207321732105">
-      <property name="name" value="getFileGenerator" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207321732107" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207321732108">
-        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1207321869328">
-          <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1207321869329">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207321869330">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207321878489">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207321886088">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207321879741">
-                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207321878490" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207321884447">
-                      <link role="link" targetNodeId="1.1207321253960" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207321890387">
-                    <link role="link" targetNodeId="4.1137022507850" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207321865263">
-        <link role="classifier" targetNodeId="44.~IFileGenerator" resolveInfo="IFileGenerator" />
-      </node>
-    </node>
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207321598055" />
-    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1207321598056">
-      <link role="applicableConcept" targetNodeId="1.1207320991007" resolveInfo="FileGeneratorDeclaration" />
-    </node>
-    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207321714213">
-      <link role="classifier" targetNodeId="71.~FileGeneratorPlugin" resolveInfo="FileGeneratorPlugin" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1209909488875">
