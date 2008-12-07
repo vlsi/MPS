@@ -132,6 +132,9 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
     String langaugeNamespace = namespace.substring(0, namespace.length() - ".editor".length());
     Language language = (Language) MPSModuleRepository.getInstance().getModuleByUID(langaugeNamespace);
+    if (language == null) {
+      return null;
+    }
 
     return language.getClass(fqName);
   }
