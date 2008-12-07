@@ -119,7 +119,7 @@ public class AboutAction extends AnAction {
   }
 
   private static Image transform(Image image) {
-    int hAdd = 300;
+    int hAdd = 650;
     int hHead = 200;
 
     int w = image.getWidth(null);
@@ -253,6 +253,8 @@ public class AboutAction extends AnAction {
     private void addFileText() {
       myLines.add(new AboutBoxLine(""));
       myLines.add(new AboutBoxLine(""));
+      myLines.add(new AboutBoxLine(""));
+      myLines.add(new AboutBoxLine(""));
 
       String others = FileUtil.read(new File(PathManager.getHomePath() + File.separator + "about.txt"));
 
@@ -277,7 +279,7 @@ public class AboutAction extends AnAction {
       g2.drawImage(myImage, 0, 0, this);
       g2.setColor(col);
       int startX = (int) (-300 * (1.0f - myAlpha) + 1);
-      TextRenderer renderer = new TextRenderer(startX, 145, 398, 400, g2);
+      TextRenderer renderer = new TextRenderer(startX, 145, 398, 750, g2);
       g2.setComposite(AlphaComposite.Src);
       myFont = labelFont.deriveFont(Font.PLAIN, 10);
       myBoldFont = labelFont.deriveFont(Font.BOLD, 11);
