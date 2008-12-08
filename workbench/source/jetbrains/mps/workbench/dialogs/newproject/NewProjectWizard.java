@@ -188,16 +188,20 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
       if (!projectDirFile.mkdirs()) return "Project directory creation failed";
     }
 
-    File languageDirFile = new File(myOptions.getLanguagePath());
-    if (!(languageDirFile.exists())) {
-      if (!languageDirFile.mkdirs()) return "Language directory creation failed";
+    if (myOptions.getCreateNewLanguage()){
+      File languageDirFile = new File(myOptions.getLanguagePath());
+      if (!(languageDirFile.exists())) {
+        if (!languageDirFile.mkdirs()) return "Language directory creation failed";
+      }
     }
 
-    String path = getSolutionFileName();
-    File solutionDescriptorFile = new File(path);
-    File dir = solutionDescriptorFile.getParentFile();
-    if (!(dir.exists())) {
-      if (!dir.mkdirs()) return "Solution directory creation failed";
+    if (myOptions.getCreateNewSolution()){
+      String path = getSolutionFileName();
+      File solutionDescriptorFile = new File(path);
+      File dir = solutionDescriptorFile.getParentFile();
+      if (!(dir.exists())) {
+        if (!dir.mkdirs()) return "Solution directory creation failed";
+      }
     }
 
     return null;
