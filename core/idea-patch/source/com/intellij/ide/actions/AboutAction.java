@@ -61,6 +61,7 @@ public class AboutAction extends AnAction {
       final InfoSurface infoSurface = new InfoSurface(newImage);
       infoSurface.setPreferredSize(new Dimension(newImage.getWidth(null), newImage.getHeight(null)));
       mainPanel.add(infoSurface, BorderLayout.NORTH);
+      mainPanel.add(new LicensesList(), BorderLayout.CENTER);
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           infoSurface.start();
@@ -119,7 +120,7 @@ public class AboutAction extends AnAction {
   }
 
   private static Image transform(Image image) {
-    int hAdd = 650;
+    int hAdd = 30;
     int hHead = 200;
 
     int w = image.getWidth(null);
@@ -129,9 +130,7 @@ public class AboutAction extends AnAction {
     try {
       new PixelGrabber(image, 0, 0, w, hHead, grabbed, 0, w).grabPixels();
       for (int i = hHead; i < hHead + hAdd; i++) {
-        for (int j = 0;j<w;j++){
-          grabbed[i*w+j] = grabbed[(hHead-1)*w+j];
-        }
+        System.arraycopy(grabbed,(hHead-1)*w,grabbed,i*w,w);
       }
       new PixelGrabber(image, 0, hHead, w, h - hHead, grabbed, w * (hHead + hAdd), w).grabPixels();
     } catch (InterruptedException e) {
@@ -223,8 +222,6 @@ public class AboutAction extends AnAction {
       myLines.add(new AboutBoxLine("JetBrains s.r.o.", true, false));
       myLines.add(new AboutBoxLine(LicenseUrls.getCompanyUrl(), true, true));
 
-      addFileText();
-
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent event) {
           if (linkNum == -1 || myLinks == null) return;
@@ -252,24 +249,6 @@ public class AboutAction extends AnAction {
       });
     }
 
-    private void addFileText() {
-      for (int i=0;i<5;i++){
-        myLines.add(new AboutBoxLine(""));
-      }
-
-      String others = FileUtil.read(new File(PathManager.getHomePath() + File.separator + "about.txt"));
-
-      StringTokenizer st = new StringTokenizer(others, "\n");
-
-      myLines.add(new AboutBoxLine(st.nextToken(), true, false));
-
-      while (st.hasMoreTokens()) {
-        String line = st.nextToken();
-        boolean isLink = line.trim().startsWith("http://");
-        myLines.add(new AboutBoxLine(line, false, isLink));
-      }
-    }
-
     public void render(int w, int h, Graphics2D g2) {
       AlphaComposite ac = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, myAlpha);
       g2.setComposite(ac);
@@ -280,7 +259,7 @@ public class AboutAction extends AnAction {
       g2.drawImage(myImage, 0, 0, this);
       g2.setColor(col);
       int startX = (int) (-300 * (1.0f - myAlpha) + 1);
-      TextRenderer renderer = new TextRenderer(startX, 145, 398, 750, g2);
+      TextRenderer renderer = new TextRenderer(startX, 145, 398, 150, g2);
       g2.setComposite(AlphaComposite.Src);
       myFont = labelFont.deriveFont(Font.PLAIN, 10);
       myBoldFont = labelFont.deriveFont(Font.BOLD, 11);
@@ -303,11 +282,6 @@ public class AboutAction extends AnAction {
       } else if (myAlphaDirection == DOWN) {
         stop();
       }
-    }
-
-    private class LinkData {
-      public String url;
-      public Rectangle rect;
     }
 
     public class TextRenderer {
@@ -425,5 +399,94 @@ public class AboutAction extends AnAction {
         fontHeight = fontmetrics.getHeight();
       }
     }
+  }
+
+  private static class LicensesList extends JPanel {
+    private JList myList;
+    private JScrollPane myScrollPane;
+
+    private LicensesList() throws HeadlessException {
+      AboutBoxLine[] items = addFileText();
+      myList = new JList(items);
+      myList.addMouseListener(new MouseAdapter() {
+        public void mousePressed(MouseEvent event) {
+          AboutBoxLine line = getLineUnderMouse(event.getPoint());
+          if (line==null) return;
+          if (!line.isLink()) return;
+          event.consume();
+          BrowserUtil.launchBrowser(line.getText());
+        }
+      });
+      myList.addMouseMotionListener(new MouseMotionAdapter() {
+        public void mouseMoved(MouseEvent event) {
+          AboutBoxLine line = getLineUnderMouse(event.getPoint());
+
+          if (line==null || !line.isLink()){
+            setCursor(Cursor.getDefaultCursor());
+          } else{
+            setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+          }
+        }
+      });
+      myList.setCellRenderer(new DefaultListCellRenderer(){
+        @Override
+        
+        public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+          AboutBoxLine line = (AboutBoxLine) value;
+          String text = line.getText();
+
+          if (line.isBold()){
+            text = "<b>"+text+"</b>";
+          }
+          if (line.isLink()){
+            text = "<font color='blue'>"+"&nbsp;&nbsp;&nbsp;&nbsp;"+text+"</font>";
+          }
+          text = "<html>"+text+"</html>";
+          return new JLabel(text);
+        }
+      });
+
+      myList.setBorder(BorderFactory.createEmptyBorder(5,5,3,3));
+      myScrollPane = new JScrollPane(myList);
+      myScrollPane.setPreferredSize(new Dimension(300,200));
+
+      JLabel caption = new JLabel("<html>"+"<b>"+"This product includes software developed by"+"</b>"+"</html>");
+      JLabel footer = new JLabel("You can find licenses for these software in the %MPS_HOME%/license directory");
+
+      setBorder(BorderFactory.createEmptyBorder(3,3,3,3));
+      setBackground(Color.WHITE);
+      setLayout(new BorderLayout());
+      add(myScrollPane,BorderLayout.CENTER);
+      add(caption,BorderLayout.NORTH);
+      add(footer,BorderLayout.SOUTH);
+    }
+
+    private AboutBoxLine getLineUnderMouse(Point p){
+      for (int i = 0;i<myList.getModel().getSize();i++){
+        if (myList.getCellBounds(i,i).contains(p)){
+          return (AboutBoxLine)myList.getModel().getElementAt(i);
+        }
+      }
+      return null;
+    }
+
+    private AboutBoxLine[] addFileText() {
+      String others = FileUtil.read(new File(PathManager.getHomePath() + File.separator + "about.txt"));
+      StringTokenizer st = new StringTokenizer(others, "\n");
+
+      List<AboutBoxLine> lines = new ArrayList<AboutBoxLine>();
+      while (st.hasMoreTokens()) {
+        String line = st.nextToken();
+        boolean isLink = line.trim().startsWith("http://");
+        lines.add(new AboutBoxLine(line, false, isLink));
+      }
+
+      return lines.toArray(new AboutBoxLine[lines.size()]);
+    }
+  }
+
+  private static class LinkData {
+    public String url;
+    public Rectangle rect;
   }
 }
