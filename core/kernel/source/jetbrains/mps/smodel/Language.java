@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.logging.Logger;
@@ -28,6 +29,7 @@ import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -36,6 +38,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -628,58 +631,63 @@ public class Language extends AbstractModule {
     return result;
   }
 
-  public Set<String> getAncestorsNames(String conceptFqName) {
+  public Set<String> getAncestorsNames(final String conceptFqName) {
     if (myAncestorsNamesMap.containsKey(conceptFqName)) {
       //return new HashSet<String>(myParentsNamesMap.get(conceptFqName));
       return myAncestorsNamesMap.get(conceptFqName);
     } else {
-      Set<String> result = new HashSet<String>();
-      Set<String> parents = new HashSet<String>();
-      AbstractConceptDeclaration declaration = findConceptDeclaration(NameUtil.shortNameFromLongName(conceptFqName));
-      if (declaration == null) {
-        return result;
-      }
 
-      result.add(conceptFqName);
-
-      if (declaration instanceof ConceptDeclaration) {
-        ConceptDeclaration cd = (ConceptDeclaration) declaration;
-        ConceptDeclaration extendedConcept = cd.getExtends();
-        if (extendedConcept != null) {
-          String fqName = NameUtil.nodeFQName(extendedConcept);
-          Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
-          if (declaringLanguage != null) {
-            parents.add(fqName);
-            result.addAll(declaringLanguage.getAncestorsNames(fqName));
+      return NodeReadAccessCaster.runReadTransparentAction(new Computable<Set<String>>() {
+        public Set<String> compute() {
+          Set<String> result = new HashSet<String>();
+          Set<String> parents = new HashSet<String>();
+          AbstractConceptDeclaration declaration = findConceptDeclaration(NameUtil.shortNameFromLongName(conceptFqName));
+          if (declaration == null) {
+            return result;
           }
-        }
 
-        for (InterfaceConceptReference icr : cd.getImplementses()) {
-          InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
-          if (interfaceConcept == null) continue;
-          String fqName = NameUtil.nodeFQName(interfaceConcept);
-          Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
-          if (declaringLanguage == null) continue;
-          parents.add(fqName);
-          result.addAll(declaringLanguage.getAncestorsNames(fqName));
-        }
-      }
+          result.add(conceptFqName);
 
-      if (declaration instanceof InterfaceConceptDeclaration) {
-        InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
-        for (InterfaceConceptReference icr : icd.getExtendses()) {
-          InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
-          if (interfaceConcept == null) continue;
-          String fqName = NameUtil.nodeFQName(interfaceConcept);
-          Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
-          if (declaringLanguage == null) continue;
-          parents.add(fqName);
-          result.addAll(declaringLanguage.getAncestorsNames(fqName));
+          if (declaration instanceof ConceptDeclaration) {
+            ConceptDeclaration cd = (ConceptDeclaration) declaration;
+            ConceptDeclaration extendedConcept = cd.getExtends();
+            if (extendedConcept != null) {
+              String fqName = NameUtil.nodeFQName(extendedConcept);
+              Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
+              if (declaringLanguage != null) {
+                parents.add(fqName);
+                result.addAll(declaringLanguage.getAncestorsNames(fqName));
+              }
+            }
+
+            for (InterfaceConceptReference icr : cd.getImplementses()) {
+              InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
+              if (interfaceConcept == null) continue;
+              String fqName = NameUtil.nodeFQName(interfaceConcept);
+              Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
+              if (declaringLanguage == null) continue;
+              parents.add(fqName);
+              result.addAll(declaringLanguage.getAncestorsNames(fqName));
+            }
+          }
+
+          if (declaration instanceof InterfaceConceptDeclaration) {
+            InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
+            for (InterfaceConceptReference icr : icd.getExtendses()) {
+              InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
+              if (interfaceConcept == null) continue;
+              String fqName = NameUtil.nodeFQName(interfaceConcept);
+              Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
+              if (declaringLanguage == null) continue;
+              parents.add(fqName);
+              result.addAll(declaringLanguage.getAncestorsNames(fqName));
+            }
+          }
+          myParentsNamesMap.put(conceptFqName, parents);
+          myAncestorsNamesMap.put(conceptFqName, result);
+          return result;
         }
-      }
-      myParentsNamesMap.put(conceptFqName, parents);
-      myAncestorsNamesMap.put(conceptFqName, result);
-      return result;
+      });
     }
   }
 
@@ -708,7 +716,7 @@ public class Language extends AbstractModule {
     while (accessoryModels.hasNext()) {
       Model model = accessoryModels.next();
       SModelReference accessoryReference = SModelReference.fromString(model.getModelRef());
-      if (accessoryReference.equals(modelReference)) {
+      if (EqualUtil.equals(accessoryReference, modelReference)) {
         return true;
       }
     }

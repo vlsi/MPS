@@ -32,6 +32,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.InternUtil;
+import com.intellij.openapi.util.Computable;
 
 public class PropertyCellProvider extends CellProviderWithRole {
   private static Logger LOG = Logger.getLogger(PropertyCellProvider.class);
@@ -77,19 +78,23 @@ public class PropertyCellProvider extends CellProviderWithRole {
 
 
   public NodeSubstituteInfo createDefaultSubstituteInfo() {
-    if (myPropertyDeclaration == null) {
-      LOG.error("no property declaration to create substitute info");
-      return null;
-    }
-    DataTypeDeclaration dataType = myPropertyDeclaration.getDataType();
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<NodeSubstituteInfo>() {
+      public NodeSubstituteInfo compute() {
+        if (myPropertyDeclaration == null) {
+          LOG.error("no property declaration to create substitute info");
+          return null;
+        }
+        DataTypeDeclaration dataType = myPropertyDeclaration.getDataType();
 
-    if (Primitives.BOOLEAN_TYPE.equals(dataType.getName())) {
-      return new BooleanPropertySubstituteInfo(getSNode(), myPropertyName, myEditorContext);
-    }
-    if (dataType instanceof EnumerationDataTypeDeclaration) {
-      return new EnumPropertySubstituteInfo(getSNode(), myPropertyDeclaration, myEditorContext);
-    }
-    return null;
+        if (Primitives.BOOLEAN_TYPE.equals(dataType.getName())) {
+          return new BooleanPropertySubstituteInfo(getSNode(), myPropertyName, myEditorContext);
+        }
+        if (dataType instanceof EnumerationDataTypeDeclaration) {
+          return new EnumPropertySubstituteInfo(getSNode(), myPropertyDeclaration, myEditorContext);
+        }
+        return null;
+      }
+    });
   }
 
   public CellContext getCellContext() {

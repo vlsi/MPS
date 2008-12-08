@@ -1963,7 +1963,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       dependentCells = new WeakSet<EditorCell>();
       myNodePropertiesAccessedDirtilyToDependentCellsMap.put(pair, dependentCells);
     }
-    dependentCells.add(cell);
   }
 
   public void addCellDependentOnNodePropertyWhichExistenceWasChecked(EditorCell cell, Pair<SNodePointer, String> pair) {

@@ -65,12 +65,16 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       return;
     }
 
-    myGenuineLinkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
-    myGenuineRole = myGenuineLinkDeclaration.getRole();
-    myIsAggregation = myGenuineLinkDeclaration.getMetaClass() == LinkMetaclass.aggregation;
-    Cardinality sourceCardinality = myGenuineLinkDeclaration.getSourceCardinality();
-    myIsCardinality0 = (sourceCardinality == Cardinality._0__1 || sourceCardinality == Cardinality._0__n);
-    myIsCardinality1 = (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._1__n);
+    NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
+      public void run() {
+        myGenuineLinkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
+        myGenuineRole = myGenuineLinkDeclaration.getRole();
+        myIsAggregation = myGenuineLinkDeclaration.getMetaClass() == LinkMetaclass.aggregation;
+        Cardinality sourceCardinality = myGenuineLinkDeclaration.getSourceCardinality();
+        myIsCardinality0 = (sourceCardinality == Cardinality._0__1 || sourceCardinality == Cardinality._0__n);
+        myIsCardinality1 = (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._1__n);
+      }
+    });
   }
 
   //gets an attribute for this provider's node hanging on this provider's role
@@ -162,11 +166,11 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   public CellContext getCellContext() {
     if (myIsAggregation) {
       SNode parentNode = getSNode();
-      SNode currentChild = parentNode.getChild(myGenuineLinkDeclaration.getRole());
+      SNode currentChild = parentNode.getChild(myGenuineRole);
       return new AggregationCellContext(parentNode, currentChild, myLinkDeclaration);
     }
     SNode referenceNode = getSNode();
-    SNode currentReferent = referenceNode.getReferent(myGenuineLinkDeclaration.getRole());
+    SNode currentReferent = referenceNode.getReferent(myGenuineRole);
     return new ReferenceCellContext(referenceNode, currentReferent, myLinkDeclaration);
   }
 }

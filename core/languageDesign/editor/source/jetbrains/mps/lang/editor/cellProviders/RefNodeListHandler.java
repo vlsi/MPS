@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
@@ -36,15 +37,19 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   private LinkDeclaration myLinkDeclaration;
   private boolean myIsReverseOrder = false;
 
-  public RefNodeListHandler(SNode ownerNode, String childRole, EditorContext editorContext) {
+  public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
     super(ownerNode, childRole, editorContext);
-    myLinkDeclaration = ownerNode.getLinkDeclaration(childRole);
-    myChildConcept = myLinkDeclaration.getTarget();
-    LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
-    if (genuineLink.getMetaClass() != LinkMetaclass.aggregation) {
-      throw new RuntimeException("Only Aggregation links can be used in list");
-    }
-    myElementRole = genuineLink.getRole();
+    NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
+      public void run() {
+        myLinkDeclaration = ownerNode.getLinkDeclaration(childRole);
+        LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
+        myChildConcept = myLinkDeclaration.getTarget();
+        if (genuineLink.getMetaClass() != LinkMetaclass.aggregation) {
+          throw new RuntimeException("Only Aggregation links can be used in list");
+        }
+        myElementRole = genuineLink.getRole();
+      }
+    });
   }
 
   public RefNodeListHandler(SNode ownerNode, String childRole, EditorContext editorContext, boolean isReverseOrder) {

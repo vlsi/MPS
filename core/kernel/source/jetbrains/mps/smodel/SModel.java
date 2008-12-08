@@ -274,7 +274,7 @@ public class SModel implements Iterable<SNode> {
 
   public boolean isLoading() {
     return myLoading;
-  }
+  }    
 
   @ForDebug
   @NotNull

@@ -18,9 +18,12 @@ package jetbrains.mps.smodel.search;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
+
+import com.intellij.openapi.util.Computable;
 
 /**
  * Igor Alshannikov
@@ -70,15 +73,19 @@ public class SModelSearchUtil {
     return result;
   }
 
-  public static List<LinkDeclaration> getReferenceLinkDeclarations(AbstractConceptDeclaration concept) {
-    List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
-    List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
-    for (LinkDeclaration link : list) {
-      if (link.getMetaClass() == LinkMetaclass.reference) {
-        result.add(link);
+  public static List<LinkDeclaration> getReferenceLinkDeclarations(final AbstractConceptDeclaration concept) {
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<List<LinkDeclaration>>() {
+      public List<LinkDeclaration> compute() {
+        List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
+        List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
+        for (LinkDeclaration link : list) {
+          if (link.getMetaClass() == LinkMetaclass.reference) {
+            result.add(link);
+          }
+        }
+        return result;
       }
-    }
-    return result;
+    });
   }
 
 

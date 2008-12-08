@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.constraints;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
@@ -30,6 +31,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -228,7 +230,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return (INodePropertySetter) getNodePropertyGetterOrSetter(node.getAdapter(), propertyName, true);
   }
 
-  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull final INodeAdapter node, @NotNull final String propertyName, boolean isSetter) {
+  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull final INodeAdapter node, @NotNull final String propertyName, final boolean isSetter) {
     String namespace = node.getNode().getLanguageNamespace();
 
     // 'bootstrap' properties
@@ -254,7 +256,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
       final String nodeConceptFqName = node.getConceptFQName();
       builder.append(nodeConceptFqName);
       builder.append(prefixedPropertyName);
-      String originalKey = builder.toString();
+      final String originalKey = builder.toString();
 
       if (isSetter) {
         if (myNodePropertySettersCache.containsKey(originalKey)) {
@@ -266,104 +268,95 @@ public class ModelConstraintsManager implements ApplicationComponent {
         }
       }
 
-      // find getter/setter and put to cache
-      List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
+      return NodeReadAccessCaster.runReadTransparentAction(new Computable<IModelConstraints>() {
+        public IModelConstraints compute() {
+          List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
 
-      for (final AbstractConceptDeclaration concept : hierarchy) {
-        Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
-        if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
-          processLanguageAdded(l);
-        }
+          for (final AbstractConceptDeclaration concept : hierarchy) {
+            Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+            if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
+              processLanguageAdded(l);
+            }
 
-        final String conceptFqName = NameUtil.nodeFQName(concept);
-        final IModelConstraints result;
-        builder.setLength(0);
-        builder.append(conceptFqName);
-        builder.append(prefixedPropertyName);
-        if (isSetter) {
-          result = myNodePropertySettersMap.get(builder.toString());
-        } else {
-          result = myNodePropertyGettersMap.get(builder.toString());
-        }
-        if (result != null) {
-          if (isSetter) {
-            myNodePropertySettersCache.put(originalKey, (INodePropertySetter) result);
-          } else {
-            myNodePropertyGettersCache.put(originalKey, (INodePropertyGetter) result);
+            final String conceptFqName = NameUtil.nodeFQName(concept);
+            final IModelConstraints result;
+            builder.setLength(0);
+            builder.append(conceptFqName);
+            builder.append(prefixedPropertyName);
+            if (isSetter) {
+              result = myNodePropertySettersMap.get(builder.toString());
+            } else {
+              result = myNodePropertyGettersMap.get(builder.toString());
+            }
+            if (result != null) {
+              if (isSetter) {
+                myNodePropertySettersCache.put(originalKey, (INodePropertySetter) result);
+              } else {
+                myNodePropertyGettersCache.put(originalKey, (INodePropertyGetter) result);
+              }
+              return result;
+            }
           }
-          return result;
-        }
-      }
 
-      // no setter/getter found
-      if (isSetter) {
-        myNodePropertySettersCache.put(originalKey, null);
-      } else {
-        myNodePropertyGettersCache.put(originalKey, null);
-      }
-      return null;
+          // no setter/getter found
+          if (isSetter) {
+            myNodePropertySettersCache.put(originalKey, null);
+          } else {
+            myNodePropertyGettersCache.put(originalKey, null);
+          }
+          return null;
+        }
+      });
     }
     finally {
       StringBuilderSpinAllocator.dispose(builder);
     }
   }
 
-  public INodePropertyValidator getNodePropertyValidator(SNode node, @NotNull String propertyName) {
+  public INodePropertyValidator getNodePropertyValidator(final SNode node, @NotNull String propertyName) {
     if(node == null) return null;
     
-//    String namespace = node.getNode().getLanguageNamespace();
-
-    // 'bootstrap' properties
-// may be for validators it is safe?
-//    if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(NamedConcept.NAME)
-//      && !node.getConceptFQName().equals("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration")) {
-//      return null;
-//    }
-//    if (namespace.equals("jetbrains.mps.projectLanguage")) {
-//      return null;
-//    }
-//    if (node instanceof RuntimeTypeVariable) {
-//      // helgins ku-ku!
-//      return null;
-//    }
-
-    StringBuilder builder = new StringBuilder();
+    final StringBuilder builder = new StringBuilder();
     builder.append('#');
     builder.append(propertyName);
-    String prefixedPropertyName = builder.toString();
+    final String prefixedPropertyName = builder.toString();
     builder.setLength(0);
 
     String nodeConceptFqName = node.getConceptFqName();
     builder.append(nodeConceptFqName);
     builder.append(prefixedPropertyName);
-    String originalKey = builder.toString();
+    final String originalKey = builder.toString();
 
     if (myNodePropertyValidatorsCache.containsKey(originalKey)) {
       return myNodePropertyValidatorsCache.get(originalKey);
     }
 
-    // find validator and put to cache
-    List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
-    for (AbstractConceptDeclaration concept : hierarchy) {
-      Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
-      if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
-        processLanguageAdded(l);
-      }
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<INodePropertyValidator>() {
+      public INodePropertyValidator compute() {
+        // find validator and put to cache
+        List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
+        for (AbstractConceptDeclaration concept : hierarchy) {
+          Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+          if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
+            processLanguageAdded(l);
+          }
 
-      String conceptFqName = NameUtil.nodeFQName(concept);
-      builder.setLength(0);
-      builder.append(conceptFqName);
-      builder.append(prefixedPropertyName);
-      INodePropertyValidator result = myNodePropertyValidatorsMap.get(builder.toString());
-      if (result != null) {
-        myNodePropertyValidatorsCache.put(originalKey, result);
-        return result;
-      }
-    }
+          String conceptFqName = NameUtil.nodeFQName(concept);
+          builder.setLength(0);
+          builder.append(conceptFqName);
+          builder.append(prefixedPropertyName);
+          INodePropertyValidator result = myNodePropertyValidatorsMap.get(builder.toString());
+          if (result != null) {
+            myNodePropertyValidatorsCache.put(originalKey, result);
+            return result;
+          }
+        }
 
-    // no setter/getter found
-    myNodePropertyValidatorsCache.put(originalKey, null);
-    return null;
+        // no setter/getter found
+        myNodePropertyValidatorsCache.put(originalKey, null);
+        return null;
+      }
+    });
   }
 
   /*package*/ INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(AbstractConceptDeclaration referentConcept) {

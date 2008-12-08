@@ -32,6 +32,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -112,28 +113,32 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
   }
 
-  public INodeEditor findEditor(SNode nodeToEdit, EditorContext context) {
-    IScope scope = context.getOperationContext().getScope();
-    AbstractConceptDeclaration abstractConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(BaseAdapter.fromAdapter(nodeToEdit.getConceptDeclarationAdapter()));
-    if (abstractConcept == null) {
-      LOG.errorWithTrace("error loading editor for node " + nodeToEdit.getDebugText() + "\n" +
-              "couldn't find node concept in scope " + scope);
-      return null;
-    }
-    if (abstractConcept instanceof InterfaceConceptDeclaration) {
-      return new DefaultInterfaceEditor();
-    }
+  public INodeEditor findEditor(final SNode nodeToEdit, final EditorContext context) {
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<INodeEditor>() {
+      public INodeEditor compute() {
+        IScope scope = context.getOperationContext().getScope();
+        AbstractConceptDeclaration abstractConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(BaseAdapter.fromAdapter(nodeToEdit.getConceptDeclarationAdapter()));
+        if (abstractConcept == null) {
+          LOG.errorWithTrace("error loading editor for node " + nodeToEdit.getDebugText() + "\n" +
+                  "couldn't find node concept in scope " + scope);
+          return null;
+        }
+        if (abstractConcept instanceof InterfaceConceptDeclaration) {
+          return new DefaultInterfaceEditor();
+        }
 
-    ConceptDeclaration concept = (ConceptDeclaration) abstractConcept;
-    while (concept != null) {
-      INodeEditor nodeEditor = findEditor(concept, /*stereotype*/ scope);
-      if (nodeEditor != null) {
-        return nodeEditor;
+        ConceptDeclaration concept = (ConceptDeclaration) abstractConcept;
+        while (concept != null) {
+          INodeEditor nodeEditor = findEditor(concept, /*stereotype*/ scope);
+          if (nodeEditor != null) {
+            return nodeEditor;
+          }
+          concept = concept.getExtends();
+        }
+        LOG.error("Couldn't load editor for node " + nodeToEdit.getDebugText());
+        return null;
       }
-      concept = concept.getExtends();
-    }
-    LOG.error("Couldn't load editor for node " + nodeToEdit.getDebugText());
-    return null;
+    });
   }
 
   private INodeEditor findEditor(ConceptDeclaration nodeConcept, IScope scope) {

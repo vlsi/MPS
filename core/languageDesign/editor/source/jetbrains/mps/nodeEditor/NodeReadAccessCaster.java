@@ -23,6 +23,8 @@ import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import java.util.Set;
 import java.util.Stack;
 
+import com.intellij.openapi.util.Computable;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -93,7 +95,8 @@ public class NodeReadAccessCaster {
 
   public static void fireNodeReadAccessed(SNode node) {    
     if (ourEventsBlocked) return;
-    if(!node.isRegistered()) return;
+    if (!node.isRegistered()) return;
+    if (node.isModelLoading()) return;
     if (ourReadAccessListener != null) ourReadAccessListener.readAccess(node);
     if (ourAbstractReadAccessListener != null) ourAbstractReadAccessListener.readAccess(node);
   }
@@ -110,7 +113,8 @@ public class NodeReadAccessCaster {
 
   public static void firePropertyReadAccessed(SNode node, String propertyName, boolean propertyExistenceCheck) {
     if (ourEventsBlocked) return;
-    if(!node.isRegistered()) return;
+    if (!node.isRegistered()) return;
+    if (node.isModelLoading()) return;
     if (!ourCanFirePropertyReadAccessedEvent) return;
     if (ourPropertyAccessor != null) {
       if (ourPropertyCellCreationAccessListener != null) {
@@ -136,7 +140,8 @@ public class NodeReadAccessCaster {
 
   public static void fireReferenceTargetReadAccessed(SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
     if (ourEventsBlocked) return;
-    if(!sourceNode.isRegistered()) return;
+    if (!sourceNode.isRegistered()) return;
+    if (sourceNode.isModelLoading()) return;
     if (ourReadAccessListener != null) {
       ourReadAccessListener.addRefTargetToDependOn(new SNodePointer(targetModelReference, targetNodeId));
     }
@@ -156,5 +161,25 @@ public class NodeReadAccessCaster {
 
   public static void unblockEvents() {
     ourEventsBlocked = false;
+  }
+
+  public static void runReadTransparentAction(Runnable r) {
+    boolean wereBlocked = ourEventsBlocked;
+    ourEventsBlocked = true;
+    try {
+      r.run();
+    } finally {
+      ourEventsBlocked = wereBlocked;
+    }
+  }
+
+  public static <T> T runReadTransparentAction(final Computable<T> c) {
+    final Object[] result = new Object[1];
+    runReadTransparentAction(new Runnable() {
+      public void run() {
+        result[0] = c.compute();        
+      }
+    });
+    return (T) result[0];
   }
 }

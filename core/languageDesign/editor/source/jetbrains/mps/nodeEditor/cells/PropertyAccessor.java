@@ -96,7 +96,7 @@ public class PropertyAccessor implements ModelAccessor {
 
     if (myPropertyDeclaration != null) {
       PropertySupport propertySupport = PropertySupport.getPropertySupport(myPropertyDeclaration);
-      return propertySupport.canSetValue(myNodePointer.getNode(), myPropertyDeclaration.getName(), text, myScope);
+      return propertySupport.canSetValue(myNodePointer.getNode(), myPropertyName, text, myScope);
     }
     return true;
   }

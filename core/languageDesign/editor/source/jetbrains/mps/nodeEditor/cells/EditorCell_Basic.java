@@ -330,13 +330,17 @@ public abstract class EditorCell_Basic implements EditorCell {
     myRole = role;
   }
 
-  public void setLinkDeclaration(LinkDeclaration link) {
-    myLinkDeclaration = link;
-    if (myLinkDeclaration != null) {
-      myIsReferenceCell = link.getMetaClass() != LinkMetaclass.aggregation;
-    } else {
-      myIsReferenceCell = false;
-    }
+  public void setLinkDeclaration(final LinkDeclaration link) {
+    NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
+      public void run() {
+        myLinkDeclaration = link;
+        if (myLinkDeclaration != null) {
+          myIsReferenceCell = link.getMetaClass() != LinkMetaclass.aggregation;
+        } else {
+          myIsReferenceCell = false;
+        }
+      }
+    });
   }
 
   public LinkDeclaration getLinkDeclaration() {

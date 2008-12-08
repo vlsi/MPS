@@ -22,11 +22,14 @@ import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.intellij.openapi.util.Computable;
 
 /**
  * Igor Alshannikov
@@ -44,34 +47,58 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
     return new ArrayList(ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConcepts());
   }
 
-  public PropertyDeclaration getPropertyDeclarationByName(String name) {
+  public PropertyDeclaration getPropertyDeclarationByName(final String name) {
     if (myTopConcept == null) return null;
-    return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getPropertyDeclarationByName(name);
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<PropertyDeclaration>() {
+      public PropertyDeclaration compute() {
+        return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getPropertyDeclarationByName(name);
+      }
+    });
   }
 
   public List<PropertyDeclaration> getPropertyDeclarations() {
     if (myTopConcept == null) return new ArrayList(1);
-    return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getPropertyDeclarations();
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<List<PropertyDeclaration>>() {
+      public List<PropertyDeclaration> compute() {
+        return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getPropertyDeclarations();
+      }
+    });
   }
 
-  public LinkDeclaration getLinkDeclarationByRole(String role) {
+  public LinkDeclaration getLinkDeclarationByRole(final String role) {
     if (myTopConcept == null) return null;
-    return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationByRole(role);
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<LinkDeclaration>() {
+      public LinkDeclaration compute() {
+        return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationByRole(role); 
+      }
+    });
   }
 
-  public LinkDeclaration getMostSpecificLinkDeclarationByRole(String role) {
+  public LinkDeclaration getMostSpecificLinkDeclarationByRole(final String role) {
     if (myTopConcept == null) return null;
-    return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getMostSpecificLinkDeclarationByRole(role);
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<LinkDeclaration>() {
+      public LinkDeclaration compute() {
+        return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getMostSpecificLinkDeclarationByRole(role);
+      }
+    });
   }
 
   public List<LinkDeclaration> getLinkDeclarationsExcludingOverridden() {
     if (myTopConcept == null) return new ArrayList<LinkDeclaration>(1);
-    return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationsExcludingOverridden();
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<List<LinkDeclaration>>() {
+      public List<LinkDeclaration> compute() {
+        return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationsExcludingOverridden();
+      }
+    });
   }
 
-  public ConceptProperty getConceptPropertyByName(String name) {
+  public ConceptProperty getConceptPropertyByName(final String name) {
     if (myTopConcept == null) return null;
-    return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConceptPropertyByName(name);
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<ConceptProperty>() {
+      public ConceptProperty compute() {
+        return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConceptPropertyByName(name);
+      }
+    });
   }
 
 

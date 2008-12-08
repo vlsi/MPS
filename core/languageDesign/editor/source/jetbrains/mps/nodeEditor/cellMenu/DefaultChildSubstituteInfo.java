@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
@@ -38,31 +39,39 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   private LinkDeclaration myLinkDeclaration;
 
 
-  public DefaultChildSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
+  public DefaultChildSubstituteInfo(final SNode sourceNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
-    if (isNotAggregation(linkDeclaration)) {
-      LOG.error("only aggregation links are allowed here", linkDeclaration.getNode());
-    }
-    Cardinality sourceCardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
-    if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0__1)) {
-      LOG.error("only cardinalities 1 or 0..1 are allowed here", linkDeclaration.getNode());
-    }
+    NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
+      public void run() {
+        if (isNotAggregation(linkDeclaration)) {
+          LOG.error("only aggregation links are allowed here", linkDeclaration.getNode());
+        }
+        Cardinality sourceCardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
+        if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0__1)) {
+          LOG.error("only cardinalities 1 or 0..1 are allowed here", linkDeclaration.getNode());
+        }
 
-    myParentNode = sourceNode;
-    myLinkDeclaration = linkDeclaration;
-    myCurrentChild = sourceNode.getChild(SModelUtil_new.getGenuineLinkRole(linkDeclaration));
+        myParentNode = sourceNode;
+        myLinkDeclaration = linkDeclaration;
+        myCurrentChild = sourceNode.getChild(SModelUtil_new.getGenuineLinkRole(linkDeclaration));
+      }
+    });
   }
 
-  public DefaultChildSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
+  public DefaultChildSubstituteInfo(final SNode parentNode, final SNode currChildNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
-    if (linkDeclaration == null) {
-      LOG.error("link declaration is null", new IllegalArgumentException("link declaration is null"));
-    } else if (isNotAggregation(linkDeclaration)) {
-      LOG.error("only aggregation links are allowed here", new RuntimeException("only aggregation links are allowed here"), linkDeclaration.getNode());
-    }
-    myParentNode = parentNode;
-    myLinkDeclaration = linkDeclaration;
-    myCurrentChild = currChildNode;
+    NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
+      public void run() {
+        if (linkDeclaration == null) {
+          LOG.error("link declaration is null", new IllegalArgumentException("link declaration is null"));
+        } else if (isNotAggregation(linkDeclaration)) {
+          LOG.error("only aggregation links are allowed here", new RuntimeException("only aggregation links are allowed here"), linkDeclaration.getNode());
+        }
+        myParentNode = parentNode;
+        myLinkDeclaration = linkDeclaration;
+        myCurrentChild = currChildNode;
+      }
+    });
   }
 
   public List<INodeSubstituteAction> createActions() {

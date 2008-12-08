@@ -24,9 +24,12 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.constraints.INodePropertyValidator;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+
+import com.intellij.openapi.util.Computable;
 
 public abstract class PropertySupport {
   private static final Logger LOG = Logger.getLogger(PropertySupport.class);
@@ -59,35 +62,39 @@ public abstract class PropertySupport {
     return value;
   }
 
-  public static PropertySupport getPropertySupport(PropertyDeclaration propertyDeclaration) {
-    DataTypeDeclaration dataType = propertyDeclaration.getDataType();
-    if (dataType != null) {
-      PropertySupport propertySupport = (PropertySupport) dataType.getNode().getUserObject(PROPERTY_SUPPORT);
-      if (propertySupport != null) {
-        return propertySupport;
-      }
-      if (dataType instanceof PrimitiveDataTypeDeclaration) {
-        String dataTypeName = dataType.getName();
-        if (Primitives.STRING_TYPE.equals(dataTypeName)) {
-          propertySupport = new DefaultPropertySupport();
-        } else if (Primitives.INTEGER_TYPE.equals(dataTypeName)) {
-          propertySupport = new IntegerPropertySupport();
-        } else if (Primitives.BOOLEAN_TYPE.equals(dataTypeName)) {
-          propertySupport = new BooleanPropertySupport();
-        } else {
-          throw new RuntimeException("Unknown primitive type: " + dataTypeName);
-        }
-      } else {
-        propertySupport = loadPropertySupport(propertyDeclaration);
-      }
+  public static PropertySupport getPropertySupport(final PropertyDeclaration propertyDeclaration) {
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<PropertySupport>() {
+      public PropertySupport compute() {
+        DataTypeDeclaration dataType = propertyDeclaration.getDataType();
+        if (dataType != null) {
+          PropertySupport propertySupport = (PropertySupport) dataType.getNode().getUserObject(PROPERTY_SUPPORT);
+          if (propertySupport != null) {
+            return propertySupport;
+          }
+          if (dataType instanceof PrimitiveDataTypeDeclaration) {
+            String dataTypeName = dataType.getName();
+            if (Primitives.STRING_TYPE.equals(dataTypeName)) {
+              propertySupport = new DefaultPropertySupport();
+            } else if (Primitives.INTEGER_TYPE.equals(dataTypeName)) {
+              propertySupport = new IntegerPropertySupport();
+            } else if (Primitives.BOOLEAN_TYPE.equals(dataTypeName)) {
+              propertySupport = new BooleanPropertySupport();
+            } else {
+              throw new RuntimeException("Unknown primitive type: " + dataTypeName);
+            }
+          } else {
+            propertySupport = loadPropertySupport(propertyDeclaration);
+          }
 
-      if (propertySupport == null) {
-        propertySupport = new DefaultPropertySupport();
+          if (propertySupport == null) {
+            propertySupport = new DefaultPropertySupport();
+          }
+          dataType.getNode().putUserObject(PROPERTY_SUPPORT, propertySupport);
+          return propertySupport;
+        }
+        return new DefaultPropertySupport();
       }
-      dataType.getNode().putUserObject(PROPERTY_SUPPORT, propertySupport);
-      return propertySupport;
-    }
-    return new DefaultPropertySupport();
+    });
   }
 
   /**

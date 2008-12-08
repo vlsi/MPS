@@ -24,8 +24,11 @@ import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
 import java.util.List;
+
+import com.intellij.openapi.util.Computable;
 
 /**
  * Igor Alshannikov
@@ -46,36 +49,40 @@ public class ReferenceConceptUtil {
    * @param concept with is possibly 'pure reference' concept.
    * @return characteristic reference or NULL
    */
-  public static LinkDeclaration getCharacteristicReference(AbstractConceptDeclaration concept) {
-    String expectedReferentRole = null;
-    String alias = concept.getConceptProperty("alias");
-    if (alias != null) {
-      // handle pattern 'xxx <{_referent_role_}> yyy'
-      if (!alias.matches(".*<\\{.+\\}>.*")) {
-        // trick (why?): has an alias but it doesn't match pattern - no characteristic reference
+  public static LinkDeclaration getCharacteristicReference(final AbstractConceptDeclaration concept) {
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<LinkDeclaration>() {
+      public LinkDeclaration compute() {
+        String expectedReferentRole = null;
+        String alias = concept.getConceptProperty("alias");
+        if (alias != null) {
+          // handle pattern 'xxx <{_referent_role_}> yyy'
+          if (!alias.matches(".*<\\{.+\\}>.*")) {
+            // trick (why?): has an alias but it doesn't match pattern - no characteristic reference
+            return null;
+          }
+          String[] matches = alias.split("<\\{|\\}>");
+          expectedReferentRole = matches[1];
+        }
+
+        List<LinkDeclaration> links = SModelSearchUtil.getReferenceLinkDeclarations(concept);
+        if (expectedReferentRole != null) {
+          for (LinkDeclaration link : links) {
+            if (expectedReferentRole.equals(link.getRole())) {
+              return link;
+            }
+          }
+          LOG.warning("the '" + alias + "' doesn't match any reference link in " + concept.getDebugText());
+        } else {
+          // if concept declares exactly ONE REQUIRED reference link...
+          if (links.size() == 1) {
+            if (SModelUtil_new.getGenuineLinkSourceCardinality(links.get(0)) == Cardinality._1) {
+              return links.get(0);
+            }
+          }
+        }
         return null;
       }
-      String[] matches = alias.split("<\\{|\\}>");
-      expectedReferentRole = matches[1];
-    }
-
-    List<LinkDeclaration> links = SModelSearchUtil.getReferenceLinkDeclarations(concept);
-    if (expectedReferentRole != null) {
-      for (LinkDeclaration link : links) {
-        if (expectedReferentRole.equals(link.getRole())) {
-          return link;
-        }
-      }
-      LOG.warning("the '" + alias + "' doesn't match any reference link in " + concept.getDebugText());
-    } else {
-      // if concept declares exactly ONE REQUIRED reference link...
-      if (links.size() == 1) {
-        if (SModelUtil_new.getGenuineLinkSourceCardinality(links.get(0)) == Cardinality._1) {
-          return links.get(0);
-        }
-      }
-    }
-    return null;
+    });
   }
 
   public static boolean hasSmartAlias(AbstractConceptDeclaration concept) {

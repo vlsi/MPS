@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -35,6 +36,7 @@ import java.util.regex.Matcher;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -152,35 +154,39 @@ public final class BehaviorManager implements ApplicationComponent {
   public void reloadAll() {
   }
 
-  private Method getMethod(AbstractConceptDeclaration concept, String methodName, Class[] parameterTypes) {
-    Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+  private Method getMethod(final AbstractConceptDeclaration concept, final String methodName, final Class[] parameterTypes) {
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<Method>() {
+      public Method compute() {
+        Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
 
-    Method method = null;
-    String fqName = NameUtil.nodeFQName(concept);
+        Method method = null;
+        String fqName = NameUtil.nodeFQName(concept);
 
-    MethodInfo mi = new MethodInfo(fqName, methodName, parameterTypes);
+        MethodInfo mi = new MethodInfo(fqName, methodName, parameterTypes);
 
-    if (myMethods.containsKey(mi)) {
-      return myMethods.get(mi);
-    }
+        if (myMethods.containsKey(mi)) {
+          return myMethods.get(mi);
+        }
 
-    String behaviorClass = behaviorClassByConceptFqName(fqName);
+        String behaviorClass = behaviorClassByConceptFqName(fqName);
 
-    try {
-      Class cls = l.getClass(behaviorClass);
-      if (cls != null) {
-        method = cls.getMethod(methodName, parameterTypes);
+        try {
+          Class cls = l.getClass(behaviorClass);
+          if (cls != null) {
+            method = cls.getMethod(methodName, parameterTypes);
+          }
+        } catch (NoSuchMethodException e) {
+          //ignore too
+        }
+
+        if (method != null) {
+          method.setAccessible(true);
+        }
+        myMethods.put(mi, method);
+
+        return method;
       }
-    } catch (NoSuchMethodException e) {
-      //ignor too
-    }
-
-    if (method != null) {
-      method.setAccessible(true);
-    }
-    myMethods.put(mi, method);
-
-    return method;
+    });
   }
 
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {

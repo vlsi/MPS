@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.util.List;
@@ -40,26 +41,30 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   private LinkDeclaration myLinkDeclaration;
   private SNode myCurrentReferent;
 
-  public DefaultReferenceSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
+  public DefaultReferenceSubstituteInfo(final SNode sourceNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {    
     super(editorContext);
-    LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
-    myLinkDeclaration = linkDeclaration;
 
-    if (genuineLink == null) {
-      return;
-    }
+    NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
+      public void run() {
+        LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
+        myLinkDeclaration = linkDeclaration;
 
+        if (genuineLink == null) {
+          return;
+        }
 
-    if (genuineLink.getMetaClass() != LinkMetaclass.reference) {
-      LOG.error("only reference links are allowed here", linkDeclaration.getNode());
-    }
-    Cardinality sourceCardinality = genuineLink.getSourceCardinality();
-    if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0__1)) {
-      LOG.error("only cardinalities 1 or 0..1 are allowed here", linkDeclaration.getNode());
-    }
+        if (genuineLink.getMetaClass() != LinkMetaclass.reference) {
+          LOG.error("only reference links are allowed here", linkDeclaration.getNode());
+        }
+        Cardinality sourceCardinality = genuineLink.getSourceCardinality();
+        if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0__1)) {
+          LOG.error("only cardinalities 1 or 0..1 are allowed here", linkDeclaration.getNode());
+        }
 
-    mySourceNode = sourceNode;
-    myCurrentReferent = sourceNode.getReferent(SModelUtil_new.getGenuineLinkRole(linkDeclaration));
+        mySourceNode = sourceNode;
+        myCurrentReferent = sourceNode.getReferent(SModelUtil_new.getGenuineLinkRole(linkDeclaration));
+      }
+    });
   }
 
   public List<INodeSubstituteAction> createActions() {
