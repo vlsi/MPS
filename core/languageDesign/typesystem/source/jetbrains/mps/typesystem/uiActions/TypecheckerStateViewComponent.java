@@ -68,8 +68,11 @@ public class TypecheckerStateViewComponent extends JPanel {
   }
 
   public class EquationItem extends JPanel {
+    SNodeTree myNodeTree1;
+    SNodeTree myNodeTree2;
+
     public EquationItem(SNode node1, SNode node2) {
-    //  setBackground(Color.CYAN);
+
       setLayout(new GridBagLayout());
       GridBagConstraints constraints = new GridBagConstraints();
       constraints.gridy = 0;
@@ -79,7 +82,8 @@ public class TypecheckerStateViewComponent extends JPanel {
       constraints.weightx = 0;
       constraints.fill = GridBagConstraints.NONE;
       constraints.anchor = GridBagConstraints.NORTHWEST;
-      add(new SNodeTree(node1), constraints);
+      myNodeTree1 = new SNodeTree(node1);
+      add(myNodeTree1, constraints);
 
       constraints.gridx = 1;
       constraints.weightx = 1;
@@ -91,7 +95,13 @@ public class TypecheckerStateViewComponent extends JPanel {
       constraints.weightx = 0;
       constraints.fill = GridBagConstraints.NONE;
       constraints.anchor = GridBagConstraints.NORTHEAST;
-      add(new SNodeTree(node2), constraints);
+      myNodeTree2 = new SNodeTree(node2);
+      add(myNodeTree2, constraints);
+
+      setBackground(myNodeTree1.getBackground());
+      myNodeTree1.rebuildNow();
+      myNodeTree2.rebuildNow();
     }
+
   }
 }
