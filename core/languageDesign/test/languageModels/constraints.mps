@@ -42,6 +42,30 @@
       <link role="applicableLink" targetNodeId="1.1210674534086" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104844718">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104844719">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1228735143620">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228735143621">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1228735143622">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1228735143623">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1228735143624">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~EmptySearchScope.&lt;init&gt;()" resolveInfo="EmptySearchScope" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1228735406189">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228735406190">
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1228735406191" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1228735406192">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1228735406193">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1228735412727">
+                      <link role="conceptDeclaration" targetNodeId="1.1216989428737" resolveInfo="TestNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1228735406195" />
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104844720">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104844721">
               <property name="name" value="test" />
@@ -138,6 +162,30 @@
       <link role="applicableLink" targetNodeId="1.1210674534086" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1227899311527">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227899311528">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1228735062630">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228735062631">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1228735124426">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1228735128882">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1228735130399">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~EmptySearchScope.&lt;init&gt;()" resolveInfo="EmptySearchScope" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1228735398760">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228735398761">
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1228735398762" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1228735398763">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1228735398764">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1228735398765">
+                      <link role="conceptDeclaration" targetNodeId="1.1216989428737" resolveInfo="TestNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1228735398766" />
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227899311529">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227899311530">
               <property name="name" value="test" />
