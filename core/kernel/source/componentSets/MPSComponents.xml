@@ -371,6 +371,11 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.typesystem.uiActions.TypecheckerStateView</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.MPSProjectHolder</implementation-class>
     </component>
 
