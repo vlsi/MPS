@@ -17,6 +17,26 @@ public class Slicer {
   private Set<SNode> myNodesToSliceWith = new HashSet<SNode>();
   private List<SliceInfo> mySliceInfos = new ArrayList<SliceInfo>();
 
+  public void addNodeToSliceWith(SNode node) {
+    myNodesToSliceWith.add(node);
+  }
+
+  public void removeNodeToSliceWith(SNode node) {
+    myNodesToSliceWith.remove(node);
+  }
+
+  public void clearNodesToSliceWith() {
+    myNodesToSliceWith.clear();
+  }
+
+  public List<SNode> getNodesToSliceWith()  {
+    return new ArrayList<SNode>();
+  }
+
+  public List<SliceInfo> getSliceInfos() {
+    return new ArrayList<SliceInfo>(mySliceInfos);
+  }
+
   public List<SliceInfo> beforeUserEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo) {
     List<SliceInfo> result = new ArrayList<SliceInfo>();
     EquationManager equationManager = typeCheckingContext.getEquationManager();
@@ -50,15 +70,15 @@ public class Slicer {
 
     for (SNode node : myNodesToSliceWith) {
       SNode nodeType = typeCheckingContext.getMainContext().get(node);
-       if (nodeType != null) {
+      if (nodeType != null) {
         NodeWrapper typeWrapper = NodeWrapper.fromNode(nodeType, equationManager);
         IWrapper representatorWrapper = equationManager.getRepresentatorWrapper(typeWrapper);
-          if (representatorWrapper.equals(representator)) {
+        if (representatorWrapper.equals(representator)) {
           Slicer.SliceInfo sliceInfo = new SliceInfo(node, representatorWrapper.getNode(), null, null, "inequations solved", inequations);
           mySliceInfos.add(sliceInfo);
           result.add(sliceInfo);
         }
-       }
+      }
     }
     return result;
   }
