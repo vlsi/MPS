@@ -33,6 +33,11 @@ import java.util.*;
 import java.util.List;
 
 public class AboutAction extends AnAction {
+  private static final int TEXT_HEIGHT = 140;
+  private static final int TEXT_WIDTH = 398;
+  private static final int IMAGE_HEADER_HEIGHT = 150;
+  private static final int LICENSES_HEIGHT = 200;
+
   public void update(AnActionEvent e) {
     e.getPresentation().setVisible(!SystemInfo.isMacSystemMenu);
   }
@@ -121,25 +126,20 @@ public class AboutAction extends AnAction {
   }
 
   private static Image transform(Image image) {
-    int hAdd = 30;
-    int hHead = 200;
-
     int w = image.getWidth(null);
-    int h = image.getHeight(null);
 
-    int[] grabbed = new int[w * (h + hAdd)];
+    int[] grabbed = new int[w * (IMAGE_HEADER_HEIGHT + TEXT_HEIGHT)];
     try {
-      new PixelGrabber(image, 0, 0, w, hHead, grabbed, 0, w).grabPixels();
-      for (int i = hHead; i < hHead + hAdd; i++) {
-        System.arraycopy(grabbed,(hHead-1)*w,grabbed,i*w,w);
+      new PixelGrabber(image, 0, 0, w, IMAGE_HEADER_HEIGHT, grabbed, 0, w).grabPixels();
+      for (int i = IMAGE_HEADER_HEIGHT; i < IMAGE_HEADER_HEIGHT + TEXT_HEIGHT; i++) {
+        System.arraycopy(grabbed,(IMAGE_HEADER_HEIGHT -1)*w,grabbed,i*w,w);
       }
-      new PixelGrabber(image, 0, hHead, w, h - hHead, grabbed, w * (hHead + hAdd), w).grabPixels();
     } catch (InterruptedException e) {
       return image;
     }
 
 
-    MemoryImageSource mis = new MemoryImageSource(w, h + hAdd, grabbed, 0, w);
+    MemoryImageSource mis = new MemoryImageSource(w, IMAGE_HEADER_HEIGHT + TEXT_HEIGHT, grabbed, 0, w);
     return Toolkit.getDefaultToolkit().createImage(mis);
   }
 
@@ -187,7 +187,6 @@ public class AboutAction extends AnAction {
     private List<AboutBoxLine> myLines = new ArrayList<AboutBoxLine>();
     private int linkNum = -1;
     private List<LinkData> myLinks = null;
-
 
     public InfoSurface(Image image) {
       myImage = image;
@@ -260,7 +259,7 @@ public class AboutAction extends AnAction {
       g2.drawImage(myImage, 0, 0, this);
       g2.setColor(col);
       int startX = (int) (-300 * (1.0f - myAlpha) + 1);
-      TextRenderer renderer = new TextRenderer(startX, 145, 398, 150, g2);
+      TextRenderer renderer = new TextRenderer(startX, IMAGE_HEADER_HEIGHT, TEXT_WIDTH, TEXT_HEIGHT, g2);
       g2.setComposite(AlphaComposite.Src);
       myFont = labelFont.deriveFont(Font.PLAIN, 10);
       myBoldFont = labelFont.deriveFont(Font.BOLD, 11);
@@ -446,23 +445,19 @@ public class AboutAction extends AnAction {
           return new JLabel(text);
         }
       });
+      myList.setBorder(BorderFactory.createEmptyBorder(0,5,3,5));
 
-      myList.setBorder(BorderFactory.createEmptyBorder(5,5,3,3));
       myScrollPane = new JScrollPane(myList);
-      myScrollPane.setPreferredSize(new Dimension(300,200));
-
-      JLabel caption = new JLabel("<html>"+"<b>"+"This product includes software developed by"+"</b>"+"</html>");
-      JLabel footer = new JLabel("You can find licenses for these software in the %MPS_HOME%/license directory");
+      myScrollPane.setPreferredSize(new Dimension(1, LICENSES_HEIGHT));
+      myScrollPane.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 
       Border inner = BorderFactory.createEmptyBorder(10, 3, 3, 3);
-      Border outer = BorderFactory.createLineBorder(Color.GRAY);
+      Border outer = BorderFactory.createMatteBorder(0,1,1,1,Color.GRAY);
       setBorder(BorderFactory.createCompoundBorder(outer,inner));
       setBackground(Color.WHITE);
       
       setLayout(new BorderLayout());
       add(myScrollPane,BorderLayout.CENTER);
-      add(caption,BorderLayout.NORTH);
-      add(footer,BorderLayout.SOUTH);
     }
 
     private AboutBoxLine getLineUnderMouse(Point p){
@@ -479,6 +474,9 @@ public class AboutAction extends AnAction {
       StringTokenizer st = new StringTokenizer(others, "\n");
 
       List<AboutBoxLine> lines = new ArrayList<AboutBoxLine>();
+      lines.add(new AboutBoxLine("Copyright 2000-2008. JetBrains s.r.o. All rights reserved.", true, false));
+      lines.add(new AboutBoxLine("", false, false));
+      lines.add(new AboutBoxLine(st.nextToken(), true, false));
       while (st.hasMoreTokens()) {
         String line = st.nextToken();
         boolean isLink = line.trim().startsWith("http://");
