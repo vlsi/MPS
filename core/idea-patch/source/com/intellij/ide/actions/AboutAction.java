@@ -22,6 +22,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.MemoryImageSource;
@@ -453,8 +454,11 @@ public class AboutAction extends AnAction {
       JLabel caption = new JLabel("<html>"+"<b>"+"This product includes software developed by"+"</b>"+"</html>");
       JLabel footer = new JLabel("You can find licenses for these software in the %MPS_HOME%/license directory");
 
-      setBorder(BorderFactory.createEmptyBorder(3,3,3,3));
+      Border inner = BorderFactory.createEmptyBorder(10, 3, 3, 3);
+      Border outer = BorderFactory.createLineBorder(Color.GRAY);
+      setBorder(BorderFactory.createCompoundBorder(outer,inner));
       setBackground(Color.WHITE);
+      
       setLayout(new BorderLayout());
       add(myScrollPane,BorderLayout.CENTER);
       add(caption,BorderLayout.NORTH);
