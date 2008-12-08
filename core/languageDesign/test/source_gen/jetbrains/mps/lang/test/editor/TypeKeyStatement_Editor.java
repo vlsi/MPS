@@ -101,7 +101,7 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1227182962482(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-    transformationTest_StyleSheet.getEditorOpration(editorCell).apply(editorCell);
+    transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_keys1227184516328(EditorCell editorCell, SNode node, EditorContext context) {

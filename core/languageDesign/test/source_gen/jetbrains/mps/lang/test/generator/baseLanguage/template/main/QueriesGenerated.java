@@ -190,10 +190,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "operation", true);
   }
 
-  public static SNode sourceNodeQuery_1227189404789(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "finishState", true);
-  }
-
   public static SNode sourceNodeQuery_1227189426393(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "finishCell", true);
   }

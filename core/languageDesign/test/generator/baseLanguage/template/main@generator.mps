@@ -448,22 +448,6 @@
             <link role="baseMethodDeclaration" targetNodeId="26.1227188648979" resolveInfo="assertEditor" />
             <link role="classConcept" targetNodeId="26.1227009528702" resolveInfo="EditorOperations" />
             <node role="actualArgument" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1227189359911" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227189375007">
-              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1227189404788">
-                <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1227189404789">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227189404790">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227189408276">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227189408856">
-                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227189408277" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227189418734">
-                          <link role="link" targetNodeId="1.1227187928483" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227189381026">
               <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1227189426392">
                 <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1227189426393">

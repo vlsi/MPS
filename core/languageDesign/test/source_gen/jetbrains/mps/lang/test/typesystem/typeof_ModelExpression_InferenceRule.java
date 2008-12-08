@@ -18,7 +18,7 @@ public class typeof_ModelExpression_InferenceRule extends AbstractInferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = expression;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(expression, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1228148720926", true), new _Quotations.QuotationClass_9().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1228148726945", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(expression, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1228148720926", true), new _Quotations.QuotationClass_8().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1228148726945", false, 0, intentionProvider);
     }
   }
 

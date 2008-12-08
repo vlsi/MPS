@@ -577,12 +577,6 @@
     <property name="package" value="editor" />
     <property name="name" value="AssertEditor" />
     <link role="extends" targetNodeId="7.1068580123157" resolveInfo="Statement" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227187928483">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="finishState" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="7.1068431790191" resolveInfo="Expression" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227187956219">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="finishCell" />

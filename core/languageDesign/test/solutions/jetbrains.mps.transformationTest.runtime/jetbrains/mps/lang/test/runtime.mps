@@ -3329,10 +3329,6 @@
           <link role="classifier" targetNodeId="13.~IEditor" resolveInfo="IEditor" />
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227188681789">
-        <property name="name" value="result" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227188688822" />
-      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227188648982">
         <property name="name" value="cell" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227188648983">
@@ -3424,6 +3420,34 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228751297497">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1228751297498">
+                  <property name="name" value="result" />
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228751297499" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228751344672">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228751329709">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228751323364">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228751322008">
+                          <link role="variableDeclaration" targetNodeId="1227188648982" resolveInfo="cell" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228751328228">
+                          <link role="baseMethodDeclaration" targetNodeId="1227009788555" resolveInfo="getNode" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1228751337143">
+                        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1228751337144">
+                          <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1228751342225">
+                            <link role="conceptDeclaration" targetNodeId="2.1216989428737" resolveInfo="TestNode" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228751360846">
+                      <link role="link" targetNodeId="2.1216989461394" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1228145826688">
                 <node role="expected" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1228145826689" />
                 <node role="actual" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1228145826690">
@@ -3444,8 +3468,8 @@
                       <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228145826697">
                         <link role="classifier" targetNodeId="17.~SNode" resolveInfo="SNode" />
                       </node>
-                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228145826698">
-                        <link role="variableDeclaration" targetNodeId="1227188681789" resolveInfo="result" />
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228751302143">
+                        <link role="variableDeclaration" targetNodeId="1228751297498" resolveInfo="result" />
                       </node>
                     </node>
                   </node>

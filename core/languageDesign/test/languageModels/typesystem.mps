@@ -297,25 +297,6 @@
     <property name="name" value="typeof_AssertEditor" />
     <property name="package" value="editor" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228148008450">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1228148071638">
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1228148073220">
-          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1228148088066">
-            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228148118350" />
-          </node>
-        </node>
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1228148071641">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1228148035492">
-            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228148047541">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1228148047542">
-                <link role="applicableNode" targetNodeId="1228148008451" resolveInfo="editor" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228148047543">
-                <link role="link" targetNodeId="1.1227187928483" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1228148127477">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1228148127478">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1228148127479">

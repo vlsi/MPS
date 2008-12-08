@@ -143,7 +143,7 @@
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1227190782920">
-      <property name="name" value="EditorOpration" />
+      <property name="name" value="EditorOperation" />
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1227190799140">
         <property name="color" value="DARK_MAGENTA" />
       </node>
@@ -668,9 +668,12 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1226066826520">
         <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
-        <link role="styleClass" targetNodeId="1215703780827" resolveInfo="NodeAnnotation" />
+        <link role="styleClass" targetNodeId="1227190782920" resolveInfo="EditorOpration" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1226066826521">
           <property name="value" value="1.0" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem" id="1228750663194">
+          <property name="underlined" value="2" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" id="1226066826522" />
@@ -722,10 +725,15 @@
       <link role="relationDeclaration" targetNodeId="1.1226949237498" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1226950572120">
         <link role="conceptDeclaration" targetNodeId="1.1226066719224" resolveInfo="TestCellAnnotation" />
-        <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1226950619310">
-          <property name="readOnly" value="true" />
+        <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1228750688521">
           <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
-          <link role="styleClass" targetNodeId="1215703780827" resolveInfo="NodeAnnotation" />
+          <link role="styleClass" targetNodeId="1227190782920" resolveInfo="EditorOpration" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1228750688522">
+            <property name="value" value="0.0" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem" id="1228750688523">
+            <property name="underlined" value="2" />
+          </node>
         </node>
       </node>
     </node>
@@ -754,18 +762,8 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227188018599">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227188026131">
-        <property name="text" value="assert editor at state" />
+        <property name="text" value="assert editor at cell" />
         <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227188120075">
-        <link role="relationDeclaration" targetNodeId="1.1227187928483" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227188134595">
-        <property name="text" value="at cell" />
-        <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1227188390050">
-          <property name="value" value="1.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227188152737">
         <link role="relationDeclaration" targetNodeId="1.1227187956219" />
