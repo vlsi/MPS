@@ -596,6 +596,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myTextLine.setCaretPosition(stSel);
     editor.resetLastCaretX();
     ensureCaretVisible();
+    editor.relayout();
   }
 
   public void changeText(final String text) {
