@@ -474,7 +474,7 @@ public class AboutAction extends AnAction {
       StringTokenizer st = new StringTokenizer(others, "\n");
 
       List<AboutBoxLine> lines = new ArrayList<AboutBoxLine>();
-      lines.add(new AboutBoxLine("Copyright 2000-2008. JetBrains s.r.o. All rights reserved.", true, false));
+      lines.add(new AboutBoxLine("Copyright 2003-2008. JetBrains s.r.o. All rights reserved.", true, false));
       lines.add(new AboutBoxLine("", false, false));
       lines.add(new AboutBoxLine(st.nextToken(), true, false));
       while (st.hasMoreTokens()) {
