@@ -14,7 +14,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class Slicer {
-  private Set<SNode> myNodesToSliceWith = new HashSet<SNode>();
+  private Set<SNode> myNodesToSliceWith = new HashSet<SNode>(2);
   private List<SliceInfo> mySliceInfos = new ArrayList<SliceInfo>();
 
   public void addNodeToSliceWith(SNode node) {
@@ -39,6 +39,7 @@ public class Slicer {
 
   public List<SliceInfo> beforeUserEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo) {
     List<SliceInfo> result = new ArrayList<SliceInfo>();
+    if (myNodesToSliceWith.isEmpty()) return result;
     EquationManager equationManager = typeCheckingContext.getEquationManager();
     IWrapper representator1 = equationManager.getRepresentatorWrapper(NodeWrapper.fromNode(type1, equationManager));
     IWrapper representator2 = equationManager.getRepresentatorWrapper(NodeWrapper.fromNode(type2, equationManager));
@@ -65,6 +66,7 @@ public class Slicer {
 
   public List<SliceInfo> beforeInequationsSolvedForType(SNode type, TypeCheckingContext typeCheckingContext, List<EquationInfo> inequations) {
     List<SliceInfo> result = new ArrayList<SliceInfo>();
+    if (myNodesToSliceWith.isEmpty()) return result;
     EquationManager equationManager = typeCheckingContext.getEquationManager();
     IWrapper representator = equationManager.getRepresentatorWrapper(NodeWrapper.fromNode(type, equationManager));
 
