@@ -87,6 +87,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
 
+  private static final int SCROLL_GAP = 15;
+
   public static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
       g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
@@ -1633,8 +1635,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           scrollRectToVisible(
             expandRectangleOneLine(
               new Rectangle(
-                x0, largestVerticalBigCell.getY(),
-                viewportWidth, largestVerticalBigCell.getHeight()
+                x0 - SCROLL_GAP, largestVerticalBigCell.getY(),
+                viewportWidth + SCROLL_GAP, largestVerticalBigCell.getHeight()
               )));
         }
       } else {
