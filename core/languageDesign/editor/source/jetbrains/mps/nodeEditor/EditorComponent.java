@@ -1191,12 +1191,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
-  public EditorCellAction getComponentAction(CellActionType type) {
-    EditorCellAction action = myActionMap.get(type);
-    if (action != null && action.canExecute(getEditorContext())) {
-      return action;
-    }
-    return null;
+  public EditorCellAction getComponentAction(final CellActionType type) {
+    return ModelAccess.instance().runReadAction(new Computable<EditorCellAction>() {
+      public EditorCellAction compute() {
+        EditorCellAction action = myActionMap.get(type);
+        if (action != null && action.canExecute(getEditorContext())) {
+          return action;
+        }
+        return null;
+      }
+    });
   }
 
   public void relayout() {

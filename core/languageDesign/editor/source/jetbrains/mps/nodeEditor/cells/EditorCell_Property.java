@@ -96,8 +96,12 @@ public class EditorCell_Property extends EditorCell_Label {
     setErrorState(!isValidText(text));
   }
 
-  public boolean isValidText(String text) {
-    return myModelAccessor.isValidText(text);
+  public boolean isValidText(final String text) {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return myModelAccessor.isValidText(text);
+      }
+    });
   }
 
   public NodeSubstituteInfo getSubstituteInfo() {

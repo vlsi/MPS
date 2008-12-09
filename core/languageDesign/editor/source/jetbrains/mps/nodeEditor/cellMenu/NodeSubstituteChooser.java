@@ -141,78 +141,82 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private void rebuildMenuEntries() {
-    myMenuEmpty = false;
-    final String pattern = getPatternEditor().getPattern();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myMenuEmpty = false;
+        final String pattern = getPatternEditor().getPattern();
 
-    List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern, false);    
-    if (matchingActions.isEmpty()) {
-      matchingActions = myNodeSubstituteInfo.getMatchingActions(IntelligentInputUtil.trimLeft(pattern), false);
-    }
-
-    try {
-      Collections.sort(matchingActions, new Comparator<INodeSubstituteAction>() {
-        public int compare(INodeSubstituteAction i1, INodeSubstituteAction i2) {
-          int p1 = i1.getSortPriority(pattern);
-          int p2 = i2.getSortPriority(pattern);
-          if (p1 != p2) {
-            return p1 - p2;
-          }
-
-          String s1 = i1.getVisibleMatchingText(pattern);
-          String s2 = i2.getVisibleMatchingText(pattern);
-          boolean null_s1 = (s1 == null || s1.length() == 0);
-          boolean null_s2 = (s2 == null || s2.length() == 0);
-          if (null_s1 && null_s2) return 0;
-          if (null_s1) return 1;
-          if (null_s2) return -1;
-          int comparisonResult = s1.compareTo(s2);
-
-          if (comparisonResult == 0) {
-            return 0;
-          }
-
-          if (s1.startsWith(s2)) {
-            return 1;
-          }
-
-          if (s2.startsWith(s1)) {
-            return -1;
-          }
-
-          return comparisonResult;
-        }
-      });
-    } catch (Exception e) {
-      LOG.error(e, e);
-    }
-    mySubstituteActions = matchingActions;
-    if (mySubstituteActions.size() == 0) {
-      myMenuEmpty = true;
-      mySubstituteActions.add(new AbstractNodeSubstituteAction() {
-        public String getMatchingText(String pattern) {
-          return "No variants for \"" + getPatternEditor().getPattern() + "\"";
+        List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern, false);
+        if (matchingActions.isEmpty()) {
+          matchingActions = myNodeSubstituteInfo.getMatchingActions(IntelligentInputUtil.trimLeft(pattern), false);
         }
 
-        public String getVisibleMatchingText(String pattern) {
-          return getMatchingText(pattern);
+        try {
+          Collections.sort(matchingActions, new Comparator<INodeSubstituteAction>() {
+            public int compare(INodeSubstituteAction i1, INodeSubstituteAction i2) {
+              int p1 = i1.getSortPriority(pattern);
+              int p2 = i2.getSortPriority(pattern);
+              if (p1 != p2) {
+                return p1 - p2;
+              }
+
+              String s1 = i1.getVisibleMatchingText(pattern);
+              String s2 = i2.getVisibleMatchingText(pattern);
+              boolean null_s1 = (s1 == null || s1.length() == 0);
+              boolean null_s2 = (s2 == null || s2.length() == 0);
+              if (null_s1 && null_s2) return 0;
+              if (null_s1) return 1;
+              if (null_s2) return -1;
+              int comparisonResult = s1.compareTo(s2);
+
+              if (comparisonResult == 0) {
+                return 0;
+              }
+
+              if (s1.startsWith(s2)) {
+                return 1;
+              }
+
+              if (s2.startsWith(s1)) {
+                return -1;
+              }
+
+              return comparisonResult;
+            }
+          });
+        } catch (Exception e) {
+          LOG.error(e, e);
+        }
+        mySubstituteActions = matchingActions;
+        if (mySubstituteActions.size() == 0) {
+          myMenuEmpty = true;
+          mySubstituteActions.add(new AbstractNodeSubstituteAction() {
+            public String getMatchingText(String pattern) {
+              return "No variants for \"" + getPatternEditor().getPattern() + "\"";
+            }
+
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
+
+            public SNode doSubstitute(String pattern) {
+              return null;
+            }
+          });
         }
 
-        public SNode doSubstitute(String pattern) {
-          return null;
+        int textLength = 0;
+        int descriptionLength = 0;
+        for (INodeSubstituteAction item : mySubstituteActions) {
+          try {
+            textLength = Math.max(textLength, getTextLength(item, pattern));
+            descriptionLength = Math.max(descriptionLength, getDescriptionLength(item, pattern));
+          } catch(Throwable t) {
+            LOG.error(t, t);
+          }
         }
-      });
-    }
-
-    int textLength = 0;
-    int descriptionLength = 0;
-    for (INodeSubstituteAction item : mySubstituteActions) {
-      try {
-        textLength = Math.max(textLength, getTextLength(item, pattern));
-        descriptionLength = Math.max(descriptionLength, getDescriptionLength(item, pattern));
-      } catch(Throwable t) {
-        LOG.error(t, t);
       }
-    }
+    });
   }
 
   private int getDescriptionLength(INodeSubstituteAction action, String pattern) {

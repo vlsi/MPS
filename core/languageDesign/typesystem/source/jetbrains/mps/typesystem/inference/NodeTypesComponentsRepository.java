@@ -26,6 +26,7 @@ import java.util.HashMap;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -91,20 +92,24 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
     return createTypeCheckingContext(node).getNodeTypesComponent();
   }
 
-  public TypeCheckingContext createTypeCheckingContext(SNode node) {
-    if (node == null) return null;
-    SNode root = node.getContainingRoot();
-    if (root == null) return null;
+  public TypeCheckingContext createTypeCheckingContext(final SNode node) {
+    return ModelAccess.instance().runReadAction(new Computable<TypeCheckingContext>() {
+      public TypeCheckingContext compute() {
+        if (node == null) return null;
+        SNode root = node.getContainingRoot();
+        if (root == null) return null;
 
-    TypeCheckingContext typeCheckingContext = getTypeCheckingContext(root);
-    if (typeCheckingContext != null) {
-      return typeCheckingContext;
-    }
-    typeCheckingContext = new TypeCheckingContext(root, myTypeChecker);
-    myNodesToContexts.put(typeCheckingContext.getNode(), typeCheckingContext);
-    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
-    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
-    return typeCheckingContext;
+        TypeCheckingContext typeCheckingContext = getTypeCheckingContext(root);
+        if (typeCheckingContext != null) {
+          return typeCheckingContext;
+        }
+        typeCheckingContext = new TypeCheckingContext(root, myTypeChecker);
+        myNodesToContexts.put(typeCheckingContext.getNode(), typeCheckingContext);
+        SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+        SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
+        return typeCheckingContext;
+      }
+    });
   }
 
   public void clear() {
