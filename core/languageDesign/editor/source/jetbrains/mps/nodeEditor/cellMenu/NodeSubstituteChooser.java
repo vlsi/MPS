@@ -37,8 +37,6 @@ import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
-import com.intellij.openapi.util.Computable;
-
 /**
  * Author: Sergey Dmitriev.
  * Created Sep 16, 2003
@@ -237,7 +235,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return text.length();
   }
 
-  public boolean processKeyPressed(EditorContext editorContext, final KeyEvent keyEvent) {
+  public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     if (getPatternEditor().processKeyPressed(keyEvent)) {
       if (myPopupActivated) {
         rebuildMenuEntries();
@@ -253,11 +251,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
 
     if (myPopupActivated) {
-      return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        public Boolean compute() {
-          return menu_processKeyPressed(keyEvent);
-        }
-      });
+      return menu_processKeyPressed(keyEvent);
     }
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
