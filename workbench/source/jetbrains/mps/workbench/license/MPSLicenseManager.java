@@ -84,7 +84,7 @@ public class MPSLicenseManager extends LicenseManager {
   }
 
   public LicenseFactory createLicenseFactory() {
-    return new LicenseFactoryImpl();
+    throw new UnsupportedOperationException();
   }
 
   public boolean isEvaluationLicense() {
