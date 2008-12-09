@@ -17,12 +17,15 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.util.*;
+
+import com.intellij.openapi.util.Computable;
 
 /**
  * Author: Sergey Dmitriev.
@@ -80,37 +83,45 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return getMatchingActions(pattern, strictMatching).size() == n;
   }
 
-  public List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
-    Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
-    List<INodeSubstituteAction> result = pair.o2;
+  public List<INodeSubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
+    return ModelAccess.instance().runReadAction(new Computable<List<INodeSubstituteAction>>() {
+      public List<INodeSubstituteAction> compute() {
+        Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
+        List<INodeSubstituteAction> result = pair.o2;
 
-    if (strictMatching) {
-      Iterator<INodeSubstituteAction> iterator1 = result.iterator();
-      while (iterator1.hasNext()) {
-        INodeSubstituteAction substituteItem = iterator1.next();
-        if (substituteItem.canSubstituteStrictly(pattern)) continue;
-        iterator1.remove();
-      }
+        if (strictMatching) {
+          Iterator<INodeSubstituteAction> iterator1 = result.iterator();
+          while (iterator1.hasNext()) {
+            INodeSubstituteAction substituteItem = iterator1.next();
+            if (substituteItem.canSubstituteStrictly(pattern)) continue;
+            iterator1.remove();
+          }
 
-      myStrictPatternsToActionListsCache.put(pattern, new ArrayList<INodeSubstituteAction>(result));
-    } else {
-      Iterator<INodeSubstituteAction> items = result.iterator();
-      while (items.hasNext()) {
-        INodeSubstituteAction item = items.next();
-        if (!item.canSubstitute(pattern)) {
-          items.remove();
+          myStrictPatternsToActionListsCache.put(pattern, new ArrayList<INodeSubstituteAction>(result));
+        } else {
+          Iterator<INodeSubstituteAction> items = result.iterator();
+          while (items.hasNext()) {
+            INodeSubstituteAction item = items.next();
+            if (!item.canSubstitute(pattern)) {
+              items.remove();
+            }
+          }
+
+          myPatternsToActionListsCache.put(pattern, new ArrayList<INodeSubstituteAction>(result));
         }
+
+        return (List)result;
       }
-
-      myPatternsToActionListsCache.put(pattern, new ArrayList<INodeSubstituteAction>(result));
-    }
-
-    return (List)result;
+    });
   }
 
   private List<INodeSubstituteAction> getActions() {
     if (myCachedActionList == null) {
-      myCachedActionList = (List) createActions();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          myCachedActionList = (List) createActions();
+        }
+      });
     }
     return Collections.unmodifiableList(myCachedActionList);
   }
