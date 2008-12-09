@@ -21,7 +21,7 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}/lib/jetbrains-ideframework/jdom.jar" />
+    <entry path="${mps_home}/lib/jdom/jdom.jar" />
     <entry path="${language_descriptor}/classes" />
   </classPath>
   <languageRuntimeClassPath />
