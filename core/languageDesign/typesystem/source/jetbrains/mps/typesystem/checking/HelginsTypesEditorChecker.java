@@ -25,12 +25,12 @@ import jetbrains.mps.typesystem.inference.NodeTypesComponent;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 
-import java.awt.Color;
 import java.util.*;
 
 /**
@@ -44,6 +44,7 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
   private static Logger LOG = Logger.getLogger(HelginsTypesEditorChecker.class);
 
   private Timer myTimer = new Timer("helgins interruptor");
+  private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
 
   public Set<EditorMessage> createMessages(final SNode node, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
@@ -79,15 +80,18 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
       if (intentionProvider != null && intentionProvider.isExecutedImmediately()) {
         final QuickFix_Runtime intention = intentionProvider.getQuickFix();
         if (intention != null) {
-          ThreadUtils.runInUIThreadNoWait(new Runnable() {
-            public void run() {
-              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                public void run() {
-                  intention.execute(node);
-                }
-              });
-            }
-          });
+          if (!myOnceExecutedQuickFixes.contains(intention)) {
+            myOnceExecutedQuickFixes.add(intention);
+            ThreadUtils.runInUIThreadNoWait(new Runnable() {
+              public void run() {
+                ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                  public void run() {
+                    intention.execute(node);
+                  }
+                });
+              }
+            });
+          }
         }
       } else {
         message.setIntentionProvider(intentionProvider);
