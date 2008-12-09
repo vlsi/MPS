@@ -429,24 +429,36 @@ public abstract class EditorCell_Basic implements EditorCell {
     return doProcessKeyTyped(e);
   }
 
-  protected boolean doProcessKeyTyped(KeyEvent e) {
-    if (getSNode() != null && !getSNode().isRoot() && UIUtil.isReallyTypedEvent(e)) {
-      SNode newNode = replaceWithDefault();
-      EditorComponent editor = getEditorContext().getNodeEditorComponent();
-      EditorCell nodeCell = editor.findNodeCell(newNode);
-      if (nodeCell == null) return false;
-      EditorCell_Label editable = nodeCell.findChild(CellFinders.FIRST_EDITABLE);
-      if (editable != null) {
-        editor.changeSelection(editable);
-        editable.processKeyPressed(e, true);
-      } else {
-        editor.changeSelection(nodeCell);
-        editor.activateNodeSubstituteChooser(nodeCell, true);
-        editor.processKeyPressed(e);
+  protected boolean doProcessKeyTyped(final KeyEvent e) {
+    if (getSNode() == null) return false;
+
+    if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return getSNode().isRoot();
       }
-      return true;
-    }
-    return false;
+    })) return false;
+
+    if (!UIUtil.isReallyTypedEvent(e)) return false;
+
+    getEditorContext().executeCommand(new Runnable() {
+      public void run() {
+        SNode newNode = replaceWithDefault();
+        EditorComponent editor = getEditorContext().getNodeEditorComponent();
+        EditorCell nodeCell = editor.findNodeCell(newNode);
+        if (nodeCell == null) return;
+        EditorCell_Label editable = nodeCell.findChild(CellFinders.FIRST_EDITABLE);
+        if (editable != null) {
+          editor.changeSelection(editable);
+          editable.processKeyTyped(e);
+        } else {
+          editor.changeSelection(nodeCell);
+          editor.activateNodeSubstituteChooser(nodeCell, true);
+          editor.processKeyTyped(e);
+        }
+      }
+    });
+
+    return true;
   }
 
   private SNode replaceWithDefault() {
