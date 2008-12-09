@@ -37,6 +37,8 @@ import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
+import com.intellij.openapi.util.Computable;
+
 /**
  * Author: Sergey Dmitriev.
  * Created Sep 16, 2003
@@ -493,9 +495,13 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myList.setSelectedIndex(index);
     }
 
-    public String getSelectedText(String pattern) {
+    public String getSelectedText(final String pattern) {
       if (getSelectionIndex() != -1) {
-        String result = mySubstituteActions.get(getSelectionIndex()).getMatchingText(pattern);
+        String result = ModelAccess.instance().runReadAction(new Computable<String>() {
+          public String compute() {
+            return mySubstituteActions.get(getSelectionIndex()).getMatchingText(pattern);
+          }
+        });
         return result != null ? result : "";
       }
       return "";
