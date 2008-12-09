@@ -14512,5 +14512,61 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1228836164183">
+    <property name="package" value="editor" />
+    <property name="name" value="ForTest" />
+    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1228836164184">
+      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1228836164185">
+        <property name="name" value="method" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1228836164186" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228836164187" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228836164188">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestCellAnnotation" id="1228836201088">
+            <property name="cellId" value="Constant_1079958242049" />
+            <property name="caretPosition" value="0" />
+            <property name="name" value="start" />
+          </node>
+        </node>
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1228836164190">
+          <property name="name" value="before" />
+        </node>
+      </node>
+    </node>
+    <node role="testMethods" type="jetbrains.mps.lang.test.structure.EditorTestMethod" id="1228836164191">
+      <property name="name" value="editorTest" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1228836164192" />
+      <node role="nodeToEdit" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1228836164193">
+        <link role="declaration" targetNodeId="1228836164190" resolveInfo="before" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228836164194">
+        <node role="statement" type="jetbrains.mps.lang.test.structure.SelectCellStatement" id="1228836164195">
+          <node role="arg" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228836208692">
+            <link role="declaration" targetNodeId="1228836201088" resolveInfo="start" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1228836164197">
+          <property name="keys" value="for " />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1228836164198">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228836164199">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228836164200">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228836164201">
+                <node role="operand" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1228836164202" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228836164203">
+                  <link role="baseMethodDeclaration" targetNodeId="31.~IEditor.getCurrentEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getCurrentEditorComponent" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228836164204">
+                <link role="baseMethodDeclaration" targetNodeId="36.~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228836164205">
+              <link role="baseMethodDeclaration" targetNodeId="39.~NodeSubstituteChooser.isVisible():boolean" resolveInfo="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
