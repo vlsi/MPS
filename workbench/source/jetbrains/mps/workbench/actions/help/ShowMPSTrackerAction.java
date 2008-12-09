@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.help;
 
-import jetbrains.mps.ide.blame.command.Performer;
+import jetbrains.mps.ide.blame.command.Command;
 
 public class ShowMPSTrackerAction extends ShowSiteAction {
   public ShowMPSTrackerAction() {
@@ -27,6 +27,6 @@ public class ShowMPSTrackerAction extends ShowSiteAction {
   }
 
   protected String getSiteURL() {
-    return Performer.TEAMSYS + "/workspace";
+    return Command.TEAMSYS + "/workspace";
   }
 }

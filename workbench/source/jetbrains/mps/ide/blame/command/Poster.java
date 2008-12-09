@@ -19,33 +19,33 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.blame.perform.*;
 import org.apache.commons.httpclient.HttpClient;
 
-public class IssuePoster {
+public class Poster {
   private Executor myExecutor;
 
-  public IssuePoster(Project project) {
+  public Poster(Project project) {
     myExecutor = new Executor(project);
   }
 
-  public void send(final Query query, ResponseCallback callback) {
+  public Response send(final Query query) {
     Performable send = new Performable() {
       public Response perform() throws Exception {
         HttpClient c = new HttpClient();
-        Response r = Performer.login(c, query);
+        Response r = Command.login(c, query);
         if (r.isSuccess()) {
-          r = Performer.postIssue(c, query.getIssue(), query.getDescription());
+          r = Command.postIssue(c, query.getIssue(), query.getDescription());
         }
         return r;
       }
     };
-    myExecutor.execute(send, callback);
+    return myExecutor.execute(send);
   }
 
-  public void test(final Query query, ResponseCallback callback) {
+  public Response test(final Query query) {
     Performable test = new Performable() {
       public Response perform() throws Exception {
-        return Performer.login(new HttpClient(), query);
+        return Command.login(new HttpClient(), query);
       }
     };
-    myExecutor.execute(test, callback);
+    return myExecutor.execute(test);
   }
 }

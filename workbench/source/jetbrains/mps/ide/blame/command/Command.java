@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.blame.command;
 
 import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.params.HttpClientParams;
 import org.apache.commons.httpclient.methods.PostMethod;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ import java.io.IOException;
 import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.ide.blame.perform.Query;
 
-public class Performer {
+public class Command {
   public static final String TEAMSYS = "http://jetbrains.net/tracker";
   public static final String LOGIN = "/rest/user/login";
   public static final String ISSUE = "XX-1";
@@ -35,6 +36,8 @@ public class Performer {
     PostMethod p = new PostMethod(TEAMSYS + LOGIN);
     p.addParameter("login", query.getUser());
     p.addParameter("password", query.getPassword());
+
+    setTimeouts(c);
     c.executeMethod(p);
 
     int statusCode = p.getStatusCode();
@@ -51,6 +54,8 @@ public class Performer {
     p.addParameter("project", PROJECT);
     p.addParameter("summary", summary);
     p.addParameter("description", description);
+
+    setTimeouts(c);
     c.executeMethod(p);
 
     int statusCode = p.getStatusCode();
@@ -62,4 +67,10 @@ public class Performer {
     }
   }
 
+  private static void setTimeouts(HttpClient c) {
+    HttpClientParams params = c.getParams();
+    params.setConnectionManagerTimeout(5000);
+    params.setSoTimeout(5000);
+    c.setParams(params);
+  }
 }

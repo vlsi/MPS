@@ -29,7 +29,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.ide.blame.perform.ResponseCallback;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
@@ -341,17 +340,17 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(WindowManager.getInstance().getFrame(getProject()));
     dialog.setMessage(msg.getText());
     dialog.setEx(msg.getException());
-    dialog.setCallback(new ResponseCallback() {
-      public void run(Response response) {
-        String message = response.getMessage();
-        if (response.isSuccess()) {
-          JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-          JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
-        }
-      }
-    });
     dialog.showDialog();
+
+    if (!dialog.isCancelled()){
+      Response response = dialog.getResult();
+      String message = response.getMessage();
+      if (response.isSuccess()) {
+        JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
+      } else {
+        JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
+      }
+    }
   }
 
   private void openCurrentMessageNodeIfPossible() {

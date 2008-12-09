@@ -22,9 +22,8 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import jetbrains.mps.ide.blame.perform.Query;
-import jetbrains.mps.ide.blame.perform.ResponseCallback;
 import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.ide.blame.command.IssuePoster;
+import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -45,7 +44,6 @@ public class BlameDialog extends BaseDialog {
   private static final String CAPTION = "Submit System Exception to Developers";
 
   private boolean myIsCancelled = false;
-  private ResponseCallback myCallback = null;
 
   private Throwable myEx;
   private JPanel myPanel;
@@ -58,6 +56,7 @@ public class BlameDialog extends BaseDialog {
   private JRadioButton myRegisteredRadio;
   private JRadioButton myAnonymousRadio;
   private String myMessage;
+  private Response myResult;
 
   public BlameDialog(Dialog dialog) {
     super(dialog, CAPTION);
@@ -67,10 +66,6 @@ public class BlameDialog extends BaseDialog {
   public BlameDialog(Frame mainFrame) {
     super(mainFrame, CAPTION);
     init();
-  }
-
-  public void setCallback(ResponseCallback callback) {
-    myCallback = callback;
   }
 
   private void updateExceptionText() {
@@ -102,9 +97,15 @@ public class BlameDialog extends BaseDialog {
     myTestLoginButton.setAction(new AbstractAction("Test Login") {
       public void actionPerformed(ActionEvent e) {
         Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-        IssuePoster poster = new IssuePoster(project);
+        Poster poster = new Poster(project);
         Query query = new Query(getLogin(), getPassword(), null, null);
-        poster.test(query, new TestCallback());
+
+        Response response = poster.test(query);
+        if (response.isSuccess()) {
+          JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Info", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+          JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
       }
     });
   }
@@ -154,6 +155,10 @@ public class BlameDialog extends BaseDialog {
     return myAnonymousRadio.isSelected() ? Query.ANONYMOUS_PASSWORD : myPassword.getText();
   }
 
+  public Response getResult() {
+    return myResult;
+  }
+
   @Button(position = 0, name = "Send")
   public void onSend() {
     String description = myDescription.getText();
@@ -163,9 +168,9 @@ public class BlameDialog extends BaseDialog {
     String issue = getBuildString() + myMessage;
 
     Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    IssuePoster poster = new IssuePoster(project);
+    Poster poster = new Poster(project);
     Query query = new Query(getLogin(), getPassword(), issue, description);
-    poster.send(query, myCallback);
+    myResult = poster.send(query);
 
     myIsCancelled = false;
     BlameDialogComponent.getInstance().loadState(getState());
@@ -175,6 +180,7 @@ public class BlameDialog extends BaseDialog {
   @Button(position = 1, name = "Cancel")
   public void onCancel() {
     myIsCancelled = true;
+    myResult = null;
     setVisible(false);
   }
 
@@ -320,16 +326,6 @@ public class BlameDialog extends BaseDialog {
 
     public void setPassword(String password) {
       myPassword = password;
-    }
-  }
-
-  private class TestCallback implements ResponseCallback {
-    public void run(Response response) {
-      if (response.isSuccess()) {
-        JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Info", JOptionPane.INFORMATION_MESSAGE);
-      } else {
-        JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-      }
     }
   }
 }

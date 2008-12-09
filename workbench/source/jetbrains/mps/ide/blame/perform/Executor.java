@@ -19,7 +19,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Backgroundable;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.httpclient.HttpClient;
 import org.jetbrains.annotations.NotNull;
 
 public class Executor {
@@ -29,38 +28,22 @@ public class Executor {
     myProject = project;
   }
 
-  public void execute(final Performable procedure, final ResponseCallback callback) {
+  public Response execute(final Performable procedure) {
+    final Response[] response = new Response[1];
+    
     ProgressManager.getInstance().run(new Backgroundable(myProject, "Connection in progress. Please wait.", true) {
       public void run(@NotNull ProgressIndicator indicator) {
-        final Response[] response = new Response[1];
-        Thread thread = new Thread(){
-          @Override
-          public void run() {
-            HttpClient c = new HttpClient();
-            try {
-              response[0] = procedure.perform();
-            } catch (Throwable e) {
-              response[0] = new Response(e.getMessage(), false, e);
-            }
-          }
-        };
-        thread.start();
-
         try {
-          thread.join(10000);
-        } catch (InterruptedException e1) {
-          //this won't happen
+          response[0] = procedure.perform();
+        } catch (Throwable e) {
+          response[0] = new Response(e.getMessage(), false, e);
         }
 
-        if (thread.isAlive()) {
-          thread.interrupt();
-          response[0] = new Response();
-          response[0].setSuccess(false);
-          response[0].setMessage("Bugtracker does not respond");
-          return;
-        } 
-        if (callback != null) callback.run(response[0]);
+        response[0].setSuccess(false);
+        response[0].setMessage("Bugtracker does not respond");
       }
     });
+
+    return response[0];
   }
 }
