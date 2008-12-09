@@ -33,6 +33,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.intellij.openapi.util.Computable;
+
 // ----- range selection ----
 
 public class NodeRangeSelection implements KeyboardHandler {
@@ -159,9 +161,14 @@ public class NodeRangeSelection implements KeyboardHandler {
   }
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
-    if (getNodes().size() != 0) {
+    List<SNode> nodes = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
+      public List<SNode> compute() {
+        return getNodes();
+      }
+    });
+    if (nodes.size() != 0) {
       EditorComponent editor = editorContext.getNodeEditorComponent();
-      SNode node = getNodes().get(0);
+      SNode node = nodes.get(0);
       EditorCell cell = editor.findNodeCell(node);
       List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = KeyMapUtil.getKeyMapActionsForEvent(cell, keyEvent, editorContext);
       if (actionsInfo.size() == 1) {
@@ -224,7 +231,12 @@ public class NodeRangeSelection implements KeyboardHandler {
 
     boolean next = (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT || keyEvent.getKeyCode() == KeyEvent.VK_DOWN);
     SNode newLastNode = null;
-    Iterator<SNode> iterator = myParentNode.getChildren(myRole).iterator();
+    List<SNode> children = ModelAccess.instance(). runReadAction(new Computable<List<SNode>>() {
+      public List<SNode> compute() {
+        return myParentNode.getChildren(myRole);
+      }
+    });
+    Iterator<SNode> iterator = children.iterator();
     while (iterator.hasNext()) {
       SNode semanticNode = iterator.next();
       if (semanticNode == myLastNode) {

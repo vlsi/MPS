@@ -16,20 +16,18 @@
 package jetbrains.mps.nodeEditor;
 
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Pair;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
-
-import com.intellij.openapi.util.Computable;
 
 public class EditorComponentKeyboardHandler implements KeyboardHandler {
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
@@ -52,7 +50,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     EditorCell selectedCell = editorContext.getSelectedCell();
 
     if (selectedCell != null) {
-      boolean endEditKeystroke = isEndEditKeystroke(keyEvent);      
+      boolean endEditKeystroke = isEndEditKeystroke(keyEvent);
 
       if (selectedCell.isErrorState()) {
         if (endEditKeystroke ||
@@ -99,11 +97,15 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         }
       }
 
-      if (!keyEvent.isConsumed()) {        
+      if (!keyEvent.isConsumed()) {
         if (editorContext.getNodeEditorComponent().getNodeRangeSelection().isSelectionKeystroke(keyEvent)) {
-          if (editorContext.getNodeEditorComponent().getNodeRangeSelection().activate(keyEvent)) {
-            return true;
-          }
+          final NodeRangeSelection selection = editorContext.getNodeEditorComponent().getNodeRangeSelection();
+          boolean b = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+            public Boolean compute() {
+              return selection.activate(keyEvent);
+            }
+          });
+          if (b) return true;
         }
 
         // allow selected cell to process event.
