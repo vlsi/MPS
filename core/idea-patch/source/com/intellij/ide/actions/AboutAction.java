@@ -471,14 +471,8 @@ public class AboutAction extends AnAction {
 
     private AboutBoxLine[] addFileText() {
       String others = FileUtil.read(new File(PathManager.getHomePath() + File.separator + "about.txt"));
-      StringTokenizer st = new StringTokenizer(others, "\n");
-
       List<AboutBoxLine> lines = new ArrayList<AboutBoxLine>();
-      lines.add(new AboutBoxLine("Copyright 2003-2008. JetBrains s.r.o. All rights reserved.", true, false));
-      lines.add(new AboutBoxLine("", false, false));
-      lines.add(new AboutBoxLine(st.nextToken(), true, false));
-      while (st.hasMoreTokens()) {
-        String line = st.nextToken();
+      for (String line : others.split("\n")) {
         boolean isLink = line.trim().startsWith("http://");
         lines.add(new AboutBoxLine(line, false, isLink));
       }
