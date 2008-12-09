@@ -24,5 +24,9 @@ public abstract class EditorCellAction {
     return true;
   }
 
+  public boolean executeInCommand() {
+    return true;
+  }
+
   public abstract void execute(EditorContext context); 
 }

@@ -17,15 +17,19 @@ package jetbrains.mps.nodeEditor;
 
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
+
+import com.intellij.openapi.util.Computable;
 
 public class EditorComponentKeyboardHandler implements KeyboardHandler {
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
@@ -256,26 +260,34 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     return true;
   }
 
-  private boolean hasSingleRolesAtRightBoundary(EditorCell cell) {
-    if (!hasSingleRole(cell.getSNode())) return false;
+  private boolean hasSingleRolesAtRightBoundary(final EditorCell cell) {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        if (!hasSingleRole(cell.getSNode())) return false;
 
-    if (cell.isOnRightBoundary()) {
-      EditorCell parent = cell.getParent();
-      if (parent == null) {
+        if (cell.isOnRightBoundary()) {
+          EditorCell parent = cell.getParent();
+          if (parent == null) {
+            return true;
+          } else {
+            return hasSingleRolesAtRightBoundary(parent);
+          }
+        }
+
         return true;
-      } else {
-        return hasSingleRolesAtRightBoundary(parent);
       }
-    }
-
-    return true;
+    });
   }
 
-  private boolean hasSingleRole(SNode node) {
-    String role = node.getRole_();
-    if (role == null) return false;
-    LinkDeclaration link = node.getParent().getLinkDeclaration(role);
-    if (link == null) return false;
-    return link.getSourceCardinality() == Cardinality._0__1 || link.getSourceCardinality() == Cardinality._1;
+  private boolean hasSingleRole(final SNode node) {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        String role = node.getRole_();
+        if (role == null) return false;
+        LinkDeclaration link = node.getParent().getLinkDeclaration(role);
+        if (link == null) return false;
+        return link.getSourceCardinality() == Cardinality._0__1 || link.getSourceCardinality() == Cardinality._1;
+      }
+    });
   }
 }

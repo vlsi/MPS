@@ -21,7 +21,14 @@ import java.awt.*;
 
 
 public class NodeEditorActions {
-  public static class MoveLeft extends EditorCellAction {
+  public abstract static class NavigationAction extends EditorCellAction {
+    @Override
+    public boolean executeInCommand() {
+      return false;
+    }
+  }
+
+  public static class MoveLeft extends NavigationAction {
     private boolean myHome;
 
     public MoveLeft() {
@@ -63,7 +70,7 @@ public class NodeEditorActions {
   }
     
 
-  public static class MoveToRootHome extends EditorCellAction {
+  public static class MoveToRootHome extends NavigationAction {
 
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
@@ -85,7 +92,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MoveToRootEnd extends EditorCellAction {
+  public static class MoveToRootEnd extends NavigationAction {
 
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
@@ -108,7 +115,7 @@ public class NodeEditorActions {
 
   }
 
-  public static class MoveHome extends EditorCellAction {
+  public static class MoveHome extends NavigationAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       return selection != null && findTarget(selection) != null;
@@ -132,7 +139,7 @@ public class NodeEditorActions {
 
   }
 
-  public static class MoveEnd extends EditorCellAction {
+  public static class MoveEnd extends NavigationAction {
 
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
@@ -156,7 +163,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MoveRight extends EditorCellAction {
+  public static class MoveRight extends NavigationAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       return selection != null && findTarget(selection) != null;
@@ -184,7 +191,7 @@ public class NodeEditorActions {
     }
   }
 
-    public static class MoveUp extends EditorCellAction {
+    public static class MoveUp extends NavigationAction {
       public boolean canExecute(EditorContext context) {
         EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
         return selection != null && selection.getParent() != null && findTarget(selection, selection.getCaretX()) != null;
@@ -208,7 +215,7 @@ public class NodeEditorActions {
       }
     }
 
-  public static class MoveDown extends EditorCellAction {
+  public static class MoveDown extends NavigationAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       return selection != null && findTarget(selection, selection.getCaretX()) != null;
@@ -232,7 +239,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MoveNext extends EditorCellAction {
+  public static class MoveNext extends NavigationAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       return selection != null && selection.getNextLeaf(CellConditions.EDITABLE) != null;
@@ -245,7 +252,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MovePrev extends EditorCellAction {
+  public static class MovePrev extends NavigationAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       return selection != null && selection.getPrevLeaf(CellConditions.EDITABLE) != null;
@@ -277,7 +284,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MovePageUp extends EditorCellAction {
+  public static class MovePageUp extends NavigationAction {
     public boolean canExecute(EditorContext context) {
       return true;
     }

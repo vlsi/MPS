@@ -1184,7 +1184,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   boolean executeComponentAction(CellActionType type) {
     EditorCellAction action = getComponentAction(type);
-    if (action != null) {
+    if (action != null && action.executeInCommand()) {
       action.execute(getEditorContext());
       return true;
     }
@@ -1813,44 +1813,33 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     // all other processing should be performed inside command
-    executeCommand(new Runnable() {
-      public void run() {
-        EditorContext editorContext = getEditorContext();
-        if (editorContext == null) {
-          return; //i.e. editor is disposed
-        }
+    EditorContext editorContext = getEditorContext();
+    if (editorContext == null) {
+      return; //i.e. editor is disposed
+    }
 
-        if (peekKeyboardHandler().processKeyPressed(editorContext, keyEvent)) {
-          keyEvent.consume();
-        }
-      }
-    });
+    if (peekKeyboardHandler().processKeyPressed(editorContext, keyEvent)) {
+      keyEvent.consume();
+    }
     revalidateAndRepaint(false);
   }
 
   public void processKeyReleased(final KeyEvent keyEvent) {
     if (keyEvent.isConsumed()) return;
 
-    executeCommand(new Runnable() {
-      public void run() {
-        if (peekKeyboardHandler().processKeyReleased(getEditorContext(), keyEvent)) {
-          keyEvent.consume();
-        }
-      }
-    });
+    if (peekKeyboardHandler().processKeyReleased(getEditorContext(), keyEvent)) {
+      keyEvent.consume();
+    }
+
     revalidateAndRepaint(false);
   }
 
   public void processKeyTyped(final KeyEvent keyEvent) {
     if (keyEvent.isConsumed()) return;
 
-    executeCommand(new Runnable() {
-      public void run() {
-        if (peekKeyboardHandler().processKeyTyped(getEditorContext(), keyEvent)) {
-          keyEvent.consume();
-        }
-      }
-    });
+    if (peekKeyboardHandler().processKeyTyped(getEditorContext(), keyEvent)) {
+      keyEvent.consume();
+    }
 
     revalidateAndRepaint(false);
   }

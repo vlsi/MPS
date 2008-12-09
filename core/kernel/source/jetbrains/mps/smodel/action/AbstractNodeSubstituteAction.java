@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.ide.ChooseItemComponent;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -148,27 +149,40 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return matchingText.toUpperCase().startsWith(pattern.toUpperCase());
   }
 
-  public final SNode substitute(@Nullable EditorContext context, String pattern) {
-    SNode newNode = doSubstitute(pattern);
-    if (context != null) {
-      if (newNode == null) {
-        context.flushEvents();
+  public final SNode substitute(@Nullable final EditorContext context, final String pattern) {
+    final SNode[] newNode = new SNode[1];
 
-        EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+    Runnable runnable = new Runnable() {
+      public void run() {
+        newNode[0] = doSubstitute(pattern);
+        if (context != null) {
+          if (newNode[0] == null) {
+            context.flushEvents();
 
-        selectedCell.getContainingBigCell().synchronizeViewWithModel();
-        context.getNodeEditorComponent().relayout();
+            EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
 
-        // put caret at the end of text
-        if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isEditable()) {
-          EditorCell_Label cell = (EditorCell_Label) selectedCell;
-          cell.end();
+            selectedCell.getContainingBigCell().synchronizeViewWithModel();
+            context.getNodeEditorComponent().relayout();
+
+            // put caret at the end of text
+            if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isEditable()) {
+              EditorCell_Label cell = (EditorCell_Label) selectedCell;
+              cell.end();
+            }
+          } else {
+            context.selectWRTFocusPolicy(newNode[0], true);
+          }
         }
-      } else {
-        context.selectWRTFocusPolicy(newNode, true);
       }
+    };
+
+    if (context != null) {
+      context.executeCommand(runnable);
+    } else {
+      ModelAccess.instance().executeCommand(runnable);
     }
-    return newNode;
+
+    return newNode[0];
   }
 
   public int getSortPriority(String pattern) {

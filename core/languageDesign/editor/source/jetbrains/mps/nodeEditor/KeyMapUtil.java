@@ -49,33 +49,37 @@ public class KeyMapUtil {
   /**
    * @return list of pairs: keymapAction/actionCell
    */
-  static List<Pair<EditorCellKeyMapAction, EditorCell>> getKeyMapActionsForEvent(EditorCell selectedCell, KeyEvent keyEvent, EditorContext editorContext) {
-    // need to process key event?
-    if (keyEvent.getID() != KeyEvent.KEY_PRESSED && keyEvent.getID() != KeyEvent.KEY_TYPED) return Collections.emptyList();
-    int keyCode = keyEvent.getKeyCode();
-    if (keyCode == KeyEvent.VK_CONTROL || keyCode == KeyEvent.VK_ALT || keyCode == KeyEvent.VK_SHIFT ||
-            /*keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_RIGHT || */ //TODO why?!
-            keyCode == KeyEvent.VK_PAGE_UP || keyCode == KeyEvent.VK_PAGE_DOWN
-            /* || keyCode == KeyEvent.VK_BACK_SPACE*/) {
-      return Collections.emptyList();
-    }
-    if ((keyEvent.getModifiers() & (KeyEvent.CTRL_MASK | KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK)) == 0) {
-      // no modifiers - ignore letters/digits etc.
-      char keyChar = keyEvent.getKeyChar();
-      if (Character.isLetterOrDigit(keyChar)
-              /* || Character.isSpaceChar(keyChar) || Character.isWhitespace(keyChar)  
-                Sorry, I need to handle space manually in textLanguage */) {
-        return Collections.emptyList(); //TODO why?!
+  static List<Pair<EditorCellKeyMapAction, EditorCell>> getKeyMapActionsForEvent(final EditorCell selectedCell, final KeyEvent keyEvent, final EditorContext editorContext) {
+    return ModelAccess.instance().runReadAction(new Computable<List<Pair<EditorCellKeyMapAction, EditorCell>>>() {
+      public List<Pair<EditorCellKeyMapAction, EditorCell>> compute() {
+        // need to process key event?
+        if (keyEvent.getID() != KeyEvent.KEY_PRESSED && keyEvent.getID() != KeyEvent.KEY_TYPED) return Collections.emptyList();
+        int keyCode = keyEvent.getKeyCode();
+        if (keyCode == KeyEvent.VK_CONTROL || keyCode == KeyEvent.VK_ALT || keyCode == KeyEvent.VK_SHIFT ||
+                /*keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_RIGHT || */ //TODO why?!
+                keyCode == KeyEvent.VK_PAGE_UP || keyCode == KeyEvent.VK_PAGE_DOWN
+                /* || keyCode == KeyEvent.VK_BACK_SPACE*/) {
+          return Collections.emptyList();
+        }
+        if ((keyEvent.getModifiers() & (KeyEvent.CTRL_MASK | KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK)) == 0) {
+          // no modifiers - ignore letters/digits etc.
+          char keyChar = keyEvent.getKeyChar();
+          if (Character.isLetterOrDigit(keyChar)
+                  /* || Character.isSpaceChar(keyChar) || Character.isWhitespace(keyChar)
+                    Sorry, I need to handle space manually in textLanguage */) {
+            return Collections.emptyList(); //TODO why?!
+          }
+        }
+
+        // collect all keymaps available
+        List<Pair<EditorCellKeyMap, EditorCell>> keymapsAndCells = getRegisteredKeymaps(selectedCell, editorContext);
+        if (keymapsAndCells.isEmpty()) {
+          return Collections.emptyList();
+        }
+
+        return selectActionsFromKeymaps(selectedCell, keyEvent, editorContext, keymapsAndCells);
       }
-    }
-
-    // collect all keymaps available
-    List<Pair<EditorCellKeyMap, EditorCell>> keymapsAndCells = getRegisteredKeymaps(selectedCell, editorContext);
-    if (keymapsAndCells.isEmpty()) {
-      return Collections.emptyList();
-    }
-
-    return selectActionsFromKeymaps(selectedCell, keyEvent, editorContext, keymapsAndCells);
+    });
   }
 
   /**
@@ -250,7 +254,11 @@ public class KeyMapUtil {
   public static void executeKeyMapAction(final EditorCellKeyMapAction action, final KeyEvent keyEvent, EditorCell contextCell, final EditorContext editorContext) {
     editorContext.runWithContextCell(contextCell, new Runnable() {
       public void run() {
-        action.execute(keyEvent, editorContext);
+        editorContext.executeCommand(new Runnable() {
+          public void run() {
+            action.execute(keyEvent, editorContext);
+          }
+        });
       }
     });
   }

@@ -462,14 +462,25 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return result;
   }
 
-  private boolean processMutableKeyPressed(KeyEvent keyEvent, boolean allowErrors) {
-    if (!isEditable()) {
-      return false;
-    }
-    if (!isMutableKeystroke(keyEvent)) {
-      return false;
-    }
-    return processMutableKeyPressed_impl(keyEvent, allowErrors);
+  private boolean processMutableKeyPressed(final KeyEvent keyEvent, final boolean allowErrors) {    
+    final boolean[] result = new boolean[1];
+
+    getEditorContext().executeCommand(new Runnable() {
+      public void run() {
+        if (!isEditable()) {
+          result[0] = false;
+          return;
+        }
+        if (!isMutableKeystroke(keyEvent)) {
+          result[0] = false;
+          return;
+        }
+        result[0] = processMutableKeyPressed_impl(keyEvent, allowErrors);
+        return;
+      }
+    });
+
+    return result[0];
   }
 
   private boolean processMutableKeyPressed_impl(KeyEvent keyEvent, boolean allowErrors) {
@@ -535,25 +546,34 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return false;
   }
 
-  private boolean processMutableKeyTyped(KeyEvent keyEvent) {
-    String oldText = myTextLine.getText();
-    EditorComponent editor = getEditorContext().getNodeEditorComponent();
+  private boolean processMutableKeyTyped(final KeyEvent keyEvent) {
+    final boolean[] result = new boolean[1];
 
-    int startSelection = myTextLine.getStartTextSelectionPosition();
-    int endSelection = myTextLine.getEndTextSelectionPosition();
+    getEditorContext().executeCommand(new Runnable() {
+      public void run() {
+        String oldText = myTextLine.getText();
+        EditorComponent editor = getEditorContext().getNodeEditorComponent();
 
-    char keyChar = keyEvent.getKeyChar();
-    if (UIUtil.isReallyTypedEvent(keyEvent)) {
-      String newText = oldText.substring(0, startSelection) + keyChar + oldText.substring(endSelection);
-      changeText(newText);
-      setCaretPositionIfPossible(startSelection + 1);
-      myTextLine.resetSelection();
-      editor.resetLastCaretX();
-      ensureCaretVisible();
-      return true;
-    }
-    return false;
+        int startSelection = myTextLine.getStartTextSelectionPosition();
+        int endSelection = myTextLine.getEndTextSelectionPosition();
 
+        char keyChar = keyEvent.getKeyChar();
+        if (UIUtil.isReallyTypedEvent(keyEvent)) {
+          String newText = oldText.substring(0, startSelection) + keyChar + oldText.substring(endSelection);
+          changeText(newText);
+          setCaretPositionIfPossible(startSelection + 1);
+          myTextLine.resetSelection();
+          editor.resetLastCaretX();
+          ensureCaretVisible();
+          result[0] = true;
+          return;
+        }
+        result[0] = false;
+        return;
+      }
+    });
+
+    return result[0];
   }
 
   private boolean canDeleteFrom(EditorCell cell) {

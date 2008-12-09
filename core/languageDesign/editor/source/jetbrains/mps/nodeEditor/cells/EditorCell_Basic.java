@@ -43,6 +43,7 @@ import java.util.*;
 import java.util.List;
 
 import com.intellij.util.ui.UIUtil;
+import com.intellij.openapi.util.Computable;
 
 /**
  * Author: Sergey Dmitriev
@@ -172,10 +173,26 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public boolean executeAction(CellActionType type) {
-    EditorCellAction action = getApplicableCellAction(type);
+    final EditorCellAction action = getApplicableCellAction(type);
     if (action == null) return false;
-    if (!action.canExecute(myEditorContext)) return false;
-    action.execute(myEditorContext);
+
+    if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return !action.canExecute(myEditorContext);
+      }
+    })) {
+      return false;
+    }
+
+    if (action.executeInCommand()) {
+      getEditorContext().executeCommand(new Runnable() {
+        public void run() {
+          action.execute(myEditorContext);
+        }
+      });
+    } else {
+      action.execute(myEditorContext);
+    }
     return true;
   }
 
