@@ -21,14 +21,31 @@
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/bin" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/beansbinding" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/alloy" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/ant-1.7.0" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/asm" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/commons-codec" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/commons-collections" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/commons-lang" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/commons-logging" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/commons-net" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/eclipse-compiler" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/javahelp" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/jdom" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/jgoodies" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/jetbrains-ideframework" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/jna" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/joda-time" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/junit4" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/log4j" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/microba" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/nanoxml" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/oromatcher" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/picocontainer" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/trove4j" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/xmlrpc" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/xstream" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/yjp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/httpclient" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/idea-patch.jar.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp" />
@@ -64,11 +81,20 @@
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/beansbinding">
       <fileset dir="lib/beansbinding" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/alloy">
+      <fileset dir="lib/alloy" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/ant-1.7.0">
       <fileset dir="lib/ant-1.7.0" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/asm">
       <fileset dir="lib/asm" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/commons-codec">
+      <fileset dir="lib/commons-codec" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/commons-collections">
+      <fileset dir="lib/commons-collections" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/commons-lang">
       <fileset dir="lib/commons-lang" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
@@ -76,17 +102,59 @@
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/commons-logging">
       <fileset dir="lib/commons-logging" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/commons-net">
+      <fileset dir="lib/commons-net" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/eclipse-compiler">
       <fileset dir="lib/eclipse-compiler" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/javahelp">
+      <fileset dir="lib/javahelp" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/jdom">
+      <fileset dir="lib/jdom" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/jgoodies">
+      <fileset dir="lib/jgoodies" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/jetbrains-ideframework">
       <fileset dir="lib/jetbrains-ideframework" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/jna">
+      <fileset dir="lib/jna" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/joda-time">
       <fileset dir="lib/joda-time" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/junit4">
       <fileset dir="lib/junit4" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/log4j">
+      <fileset dir="lib/log4j" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/microba">
+      <fileset dir="lib/microba" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/nanoxml">
+      <fileset dir="lib/nanoxml" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/oromatcher">
+      <fileset dir="lib/oromatcher" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/picocontainer">
+      <fileset dir="lib/picocontainer" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/trove4j">
+      <fileset dir="lib/trove4j" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/xmlrpc">
+      <fileset dir="lib/xmlrpc" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/xstream">
+      <fileset dir="lib/xstream" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/yjp">
+      <fileset dir="lib/yjp" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/httpclient">
       <fileset dir="lib/httpclient" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
