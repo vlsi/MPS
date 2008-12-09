@@ -125,7 +125,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               tool.registerLater();
-              if (false) tool.openToolLater(false);
             }
           });
         }
