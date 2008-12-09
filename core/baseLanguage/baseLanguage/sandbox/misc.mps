@@ -72,6 +72,9 @@
             <property name="name" value="b" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228839968252">
               <link role="classifier" targetNodeId="1228322990974" resolveInfo="B" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228840200779">
+                <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
+              </node>
             </node>
           </node>
         </node>
@@ -81,13 +84,14 @@
               <link role="variableDeclaration" targetNodeId="1228839968251" resolveInfo="b" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228839981766">
-              <link role="baseMethodDeclaration" targetNodeId="1228391841894" resolveInfo="foo" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228840033726">
-                <property name="value" value="2" />
+              <link role="baseMethodDeclaration" targetNodeId="1228391836841" resolveInfo="foo" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228840653230">
+                <property name="value" value="" />
               </node>
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1228840460356" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227257103095">
         <property name="name" value="s" />

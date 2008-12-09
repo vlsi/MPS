@@ -6,6 +6,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.typesystem.debug.SliceInfo;
+import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
@@ -20,6 +21,10 @@ import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
+import java.util.List;
+import java.util.ArrayList;
+
+import com.intellij.openapi.util.Computable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -36,6 +41,8 @@ public class TypecheckerStateViewComponent extends JPanel {
   private int myEquationItemsCount = 0;
   private GridBagConstraints myGridBagConstraints;
   private JPanel myGauge = new JPanel();
+
+  private List<SNodePointer> myNodesToSliceWith = new ArrayList<SNodePointer>();
 
 
   private JButton myDebugCurrentRootButton;
@@ -59,11 +66,14 @@ public class TypecheckerStateViewComponent extends JPanel {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
           if (editorComponent != null) {
             final SNode currentRoot = editorComponent.getEditedNode();
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                TypeChecker.getInstance().checkRoot(currentRoot, true);
+            ISlicer slicer = ModelAccess.instance().runReadAction(new Computable<ISlicer>() {
+              public ISlicer compute() {
+                return TypeChecker.getInstance().debugRoot(currentRoot);
               }
             });
+            for (SliceInfo sliceInfo : slicer.getSliceInfos()) {
+              addSliceItem(sliceInfo);
+            }
           }
         }
       }
@@ -81,6 +91,13 @@ public class TypecheckerStateViewComponent extends JPanel {
     constraints.gridx = 1;
     upperPanel.add(new JPanel(), constraints);
     addItem(upperPanel);
+  }
+
+  public void addNodeToSliceWith(SNode node) {
+    SNodePointer pointer = new SNodePointer(node);
+    if (!myNodesToSliceWith.contains(pointer)) {
+      myNodesToSliceWith.add(pointer);
+    }
   }
 
   private void addItem(Component c) {
