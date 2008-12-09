@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.blame.dialog;
+package jetbrains.mps.ide.blame.command;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.blame.perform.*;
@@ -33,7 +33,6 @@ public class IssuePoster {
   public void test(Query query, ResponseCallback callback) {
     new Executor(myProject).send(query, new TestThread(), callback);
   }
-
 
   private class TestThread extends QueryThread {
     public Response doRun(Query q) throws Exception {

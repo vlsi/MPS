@@ -13,12 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.blame.perform;
+package jetbrains.mps.ide.blame.command;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.PostMethod;
 
 import java.io.IOException;
+
+import jetbrains.mps.ide.blame.perform.Response;
+import jetbrains.mps.ide.blame.perform.Query;
 
 public class Performer {
   public static final String TEAMSYS = "http://jetbrains.net/tracker";

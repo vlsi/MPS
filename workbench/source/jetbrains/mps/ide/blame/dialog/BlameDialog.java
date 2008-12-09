@@ -24,7 +24,7 @@ import com.intellij.uiDesigner.core.Spacer;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.ResponseCallback;
 import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.ide.blame.perform.Executor;
+import jetbrains.mps.ide.blame.command.IssuePoster;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.workbench.MPSDataKeys;

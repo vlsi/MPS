@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.help;
 
-import jetbrains.mps.ide.blame.perform.Performer;
+import jetbrains.mps.ide.blame.command.Performer;
 
 public class ShowMPSTrackerAction extends ShowSiteAction {
   public ShowMPSTrackerAction() {
