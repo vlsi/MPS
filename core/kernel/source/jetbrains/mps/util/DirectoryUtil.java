@@ -23,10 +23,9 @@ import java.io.File;
  * @author Kostik
  */
 public class DirectoryUtil {
-  public static boolean askToCreateNewDirectory(Frame mainFrame, File dir, boolean showCancel) {
+  public static boolean askToCreateNewDirectory(Frame mainFrame, File dir) {
     if (!dir.exists()) {
-      int mode = showCancel ? JOptionPane.YES_NO_CANCEL_OPTION : JOptionPane.YES_NO_OPTION;
-      int result = JOptionPane.showConfirmDialog(mainFrame, "Do you want to create directory " + dir, "Directory doesn't exist", mode, JOptionPane.INFORMATION_MESSAGE);
+      int result = JOptionPane.showConfirmDialog(mainFrame, "Do you want to create directory " + dir, "Directory doesn't exist", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
       if (result != JOptionPane.OK_OPTION) {
         return false;
       }

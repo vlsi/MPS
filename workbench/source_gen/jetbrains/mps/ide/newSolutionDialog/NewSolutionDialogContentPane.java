@@ -235,7 +235,7 @@ public class NewSolutionDialogContentPane extends JPanel {
       return;
     }
     if (!(dir.exists())) {
-      if (!(DirectoryUtil.askToCreateNewDirectory((Frame)myThis.getDialog().getOwner(), dir, true))) {
+      if (!(DirectoryUtil.askToCreateNewDirectory((Frame)myThis.getDialog().getOwner(), dir))) {
         myThis.getDialog().setErrorText("Enter correct path");
         return;
       }

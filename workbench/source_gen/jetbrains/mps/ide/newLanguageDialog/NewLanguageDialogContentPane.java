@@ -230,7 +230,7 @@ public class NewLanguageDialogContentPane extends JPanel {
       return;
     }
     if (!(dir.exists())) {
-      if (!(DirectoryUtil.askToCreateNewDirectory((Frame)myThis.getDialog().getOwner(), dir, true))) {
+      if (!(DirectoryUtil.askToCreateNewDirectory((Frame)myThis.getDialog().getOwner(), dir))) {
         return;
       }
     }

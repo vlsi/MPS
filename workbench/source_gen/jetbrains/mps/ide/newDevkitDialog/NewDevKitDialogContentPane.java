@@ -204,7 +204,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     }
     File dir = new File(myThis.getDevkitDir());
     if (!(dir.exists())) {
-      if (!(DirectoryUtil.askToCreateNewDirectory((Frame)myThis.getDialog().getOwner(), dir, true))) {
+      if (!(DirectoryUtil.askToCreateNewDirectory((Frame)myThis.getDialog().getOwner(), dir))) {
         myThis.getDialog().setErrorText("Enter correct path");
         return;
       }
