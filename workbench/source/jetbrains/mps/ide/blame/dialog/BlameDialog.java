@@ -23,6 +23,8 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.ResponseCallback;
+import jetbrains.mps.ide.blame.perform.Response;
+import jetbrains.mps.ide.blame.perform.Executor;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -35,6 +37,7 @@ import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
@@ -96,10 +99,12 @@ public class BlameDialog extends BaseDialog {
       }
     });
 
-    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    myTestLoginButton.setAction(new TestLoginAction(this, project) {
-      protected Query getQuery() {
-        return new Query(getLogin(), getPassword(), null, null);
+    myTestLoginButton.setAction(new AbstractAction("Test Login") {
+      public void actionPerformed(ActionEvent e) {
+        Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+        IssuePoster poster = new IssuePoster(project);
+        Query query = new Query(getLogin(), getPassword(), null, null);
+        poster.test(query, new TestCallback());
       }
     });
   }
@@ -151,15 +156,14 @@ public class BlameDialog extends BaseDialog {
 
   @Button(position = 0, name = "Send")
   public void onSend() {
-    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    IssuePoster poster = new IssuePoster(project);
-
     String description = myDescription.getText();
     description = description == null || description.length() == 0 ? getAdditionalInfo() : description + "\n\n" + getAdditionalInfo() + "\n\n\n";
     description = description + ex2str(myEx);
 
     String issue = getBuildString() + myMessage;
 
+    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    IssuePoster poster = new IssuePoster(project);
     Query query = new Query(getLogin(), getPassword(), issue, description);
     poster.send(query, myCallback);
 
@@ -319,4 +323,13 @@ public class BlameDialog extends BaseDialog {
     }
   }
 
+  private class TestCallback implements ResponseCallback {
+    public void run(Response response) {
+      if (response.isSuccess()) {
+        JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Info", JOptionPane.INFORMATION_MESSAGE);
+      } else {
+        JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+      }
+    }
+  }
 }

@@ -27,31 +27,28 @@ public class IssuePoster {
   }
 
   public void send(Query query, ResponseCallback callback) {
-    new Executor(myProject).send(query, new MyThread(), callback);
+    new Executor(myProject).send(query, new SendThread(), callback);
   }
 
-  private class MyThread extends QueryThread {
-    private Query myQuery;
-    private Response myResponse = new Response();
+  public void test(Query query, ResponseCallback callback) {
+    new Executor(myProject).send(query, new TestThread(), callback);
+  }
 
-    public void setQuery(Query query) {
-      myQuery = query;
+
+  private class TestThread extends QueryThread {
+    public Response doRun(Query q) throws Exception {
+      return Performer.login(new HttpClient(), q);
     }
+  }
 
-    public Response getResponse() {
-      return myResponse;
-    }
-
-    public void run() {
+  private class SendThread extends QueryThread {
+    public Response doRun(Query q) throws Exception {
       HttpClient c = new HttpClient();
-      try {
-        myResponse = Performer.login(c, myQuery);
-        if (myResponse.isSuccess()) {
-          myResponse = Performer.postIssue(c, myQuery.getIssue(), myQuery.getDescription());
-        }
-      } catch (Throwable e) {
-        myResponse = new Response(e.getMessage(), false, e);
+      Response r = Performer.login(c, q);
+      if (r.isSuccess()) {
+        r = Performer.postIssue(c, q.getIssue(), q.getDescription());
       }
+      return r;
     }
   }
 }
