@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.ErrorState;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {
@@ -82,14 +81,17 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   protected abstract String getModulePresentation();
 
   public boolean generationRequired() {
+    if (getModule().isPackaged()) {
+      return false;
+    }
     return generationRequired(this);
   }
 
   private boolean generationRequired(MPSTreeNode node) {
-    if (getModule().isPackaged()) {
+    if (node instanceof AccessoriesModelTreeNode){
       return false;
     }
-
+    
     if (node instanceof SModelTreeNode) {
       SModelTreeNode smodelTreeNode = (SModelTreeNode) node;
       return smodelTreeNode.generationRequired();

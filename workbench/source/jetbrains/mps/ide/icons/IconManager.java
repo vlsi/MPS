@@ -139,7 +139,7 @@ public class IconManager {
       return aspect.getIcon();
     } else if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
       return Icons.TEMPLATES_MODEL_ICON;
-    } else if (Language.isAccessoryModel(modelDescriptor)) {
+    } else if (Language.isLanguageOwnedAccessoryModel(modelDescriptor)) {
       return Icons.ACCESSORY_MODEL_ICON;
     }
     return Icons.MODEL_ICON;

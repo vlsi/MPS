@@ -52,7 +52,7 @@ public class ModelGenerationStatusManager {
       return false;
     }
 
-    if (Language.isAccessoryModel(sm)) {
+    if (Language.isLanguageOwnedAccessoryModel(sm)) {
       return false;
     }
 

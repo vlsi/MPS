@@ -103,11 +103,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
     // language accessory models
     if (myLanguage.getAccessoryModels().size() > 0) {
-      TextTreeNode accessories = new TextTreeNode("accessories") {
-        {
-          setIcon(Icons.LIB_ICON);
-        }
-      };
+      TextTreeNode accessories = new AccessoriesModelTreeNode();
 
       List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getAccessoryModels());
       for (SModelDescriptor model : sortedModels) {
@@ -139,5 +135,12 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     add(allModels);
 
 
+  }
+
+  public class AccessoriesModelTreeNode extends TextTreeNode {
+    public AccessoriesModelTreeNode() {
+      super("accessories");
+      setIcon(Icons.LIB_ICON);
+    }
   }
 }

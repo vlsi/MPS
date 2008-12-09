@@ -803,7 +803,7 @@ public class Language extends AbstractModule {
     return null;
   }
 
-  public static boolean isAccessoryModel(SModelDescriptor sm) {
+  public static boolean isLanguageOwnedAccessoryModel(SModelDescriptor sm) {
     Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(sm);
     for (ModelOwner modelOwner : owners) {
       if (modelOwner instanceof Language) {
