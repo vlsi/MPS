@@ -59,5 +59,13 @@ Copyright (c) 2005-2006. All rights reserved.
 Marc De Scheemaecker
 http://devkix.com/nanoxml.php/
 Copyright (C) 2000-2008. All Rights Reserved.
- 
+
+Eric D. Friedman
+http://trove4j.sourceforge.net/
+Copyright (c) 2001, All Rights Reserved
+
+CERN - European Organization for Nuclear Research
+http://trove4j.sourceforge.net/
+Copyright (c) 1999
+
 You can find licenses for these software in the %MPS_HOME%/license directory
