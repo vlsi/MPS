@@ -20,8 +20,6 @@ import com.intellij.ide.license.LicenseFactory;
 import com.intellij.ide.license.LicenseMessages;
 import com.intellij.ide.license.ui.LicenseMessagesImpl;
 import com.intellij.ide.license.ui.AgreementDialog;
-import com.intellij.ide.license.impl.LicenseFactoryImpl;
-import com.intellij.ide.license.impl.IdeaLicenseNew;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
