@@ -29,7 +29,7 @@ public class Executor {
     myProject = project;
   }
 
-  public void send(final Query query, final UnstableCalculable procedure, final ResponseCallback callback) {
+  public void execute(final Performable procedure, final ResponseCallback callback) {
     ProgressManager.getInstance().run(new Backgroundable(myProject, "Connection in progress. Please wait.", true) {
       public void run(@NotNull ProgressIndicator indicator) {
         final Response[] response = new Response[1];
@@ -38,7 +38,7 @@ public class Executor {
           public void run() {
             HttpClient c = new HttpClient();
             try {
-              response[0] = procedure.getResponse(query);
+              response[0] = procedure.perform();
             } catch (Throwable e) {
               response[0] = new Response(e.getMessage(), false, e);
             }

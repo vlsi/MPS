@@ -20,34 +20,32 @@ import jetbrains.mps.ide.blame.perform.*;
 import org.apache.commons.httpclient.HttpClient;
 
 public class IssuePoster {
-  private Project myProject;
+  private Executor myExecutor;
 
   public IssuePoster(Project project) {
-    myProject = project;
+    myExecutor = new Executor(project);
   }
 
-  public void send(Query query, ResponseCallback callback) {
-    new Executor(myProject).send(query, new SendThread(), callback);
-  }
-
-  public void test(Query query, ResponseCallback callback) {
-    new Executor(myProject).send(query, new TestThread(), callback);
-  }
-
-  private class TestThread implements UnstableCalculable{
-    public Response getResponse(Query query) throws Exception {
-      return Performer.login(new HttpClient(), query);
-    }
-  }
-
-  private class SendThread implements UnstableCalculable{
-    public Response getResponse(Query query) throws Exception {
-      HttpClient c = new HttpClient();
-      Response r = Performer.login(c, query);
-      if (r.isSuccess()) {
-        r = Performer.postIssue(c, query.getIssue(), query.getDescription());
+  public void send(final Query query, ResponseCallback callback) {
+    Performable send = new Performable() {
+      public Response perform() throws Exception {
+        HttpClient c = new HttpClient();
+        Response r = Performer.login(c, query);
+        if (r.isSuccess()) {
+          r = Performer.postIssue(c, query.getIssue(), query.getDescription());
+        }
+        return r;
       }
-      return r;
-    }
+    };
+    myExecutor.execute(send, callback);
+  }
+
+  public void test(final Query query, ResponseCallback callback) {
+    Performable test = new Performable() {
+      public Response perform() throws Exception {
+        return Performer.login(new HttpClient(), query);
+      }
+    };
+    myExecutor.execute(test, callback);
   }
 }
