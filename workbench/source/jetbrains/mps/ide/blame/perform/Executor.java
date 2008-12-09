@@ -32,9 +32,18 @@ public class Executor {
   public void send(final Query query, final UnstableCalculable procedure, final ResponseCallback callback) {
     ProgressManager.getInstance().run(new Backgroundable(myProject, "Connection in progress. Please wait.", true) {
       public void run(@NotNull ProgressIndicator indicator) {
-        QueryThread thread = new QueryThread(procedure);
-        Response response;
-        thread.setQuery(query);
+        final Response[] response = new Response[1];
+        Thread thread = new Thread(){
+          @Override
+          public void run() {
+            HttpClient c = new HttpClient();
+            try {
+              response[0] = procedure.getResponse(query);
+            } catch (Throwable e) {
+              response[0] = new Response(e.getMessage(), false, e);
+            }
+          }
+        };
         thread.start();
 
         try {
@@ -45,42 +54,13 @@ public class Executor {
 
         if (thread.isAlive()) {
           thread.interrupt();
-          response = new Response();
-          response.setSuccess(false);
-          response.setMessage("Bugtracker does not respond");
+          response[0] = new Response();
+          response[0].setSuccess(false);
+          response[0].setMessage("Bugtracker does not respond");
           return;
-        } else {
-          response = thread.getResponse();
-        }
-        if (callback != null) callback.run(response);
+        } 
+        if (callback != null) callback.run(response[0]);
       }
     });
-  }
-
-  private class QueryThread extends Thread {
-    private Query myQuery;
-    private Response myResponse = new Response();
-    private UnstableCalculable myProcedure;
-
-    public QueryThread(UnstableCalculable c) {
-      myProcedure = c;
-    }
-
-    public void setQuery(Query query) {
-      myQuery = query;
-    }
-
-    public Response getResponse() {
-      return myResponse;
-    }
-
-    public void run() {
-      HttpClient c = new HttpClient();
-      try {
-        myResponse = myProcedure.getResponse(myQuery);
-      } catch (Throwable e) {
-        myResponse = new Response(e.getMessage(), false, e);
-      }
-    }
   }
 }
