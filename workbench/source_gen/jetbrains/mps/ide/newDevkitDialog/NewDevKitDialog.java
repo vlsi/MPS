@@ -7,6 +7,7 @@ import java.awt.Frame;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import javax.swing.JComponent;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.DevKit;
 
 public class NewDevKitDialog extends BaseDialog {
 
@@ -47,6 +48,11 @@ public class NewDevKitDialog extends BaseDialog {
     return this.myContentPane.getProject();
   }
 
+  public DevKit getResult() {
+    this.getMainComponent();
+    return this.myContentPane.getResult();
+  }
+
   public void setDevkitName(String newValue) {
     this.getMainComponent();
     this.myContentPane.setDevkitName(newValue);
@@ -60,6 +66,11 @@ public class NewDevKitDialog extends BaseDialog {
   public void setProject(MPSProject newValue) {
     this.getMainComponent();
     this.myContentPane.setProject(newValue);
+  }
+
+  public void setResult(DevKit newValue) {
+    this.getMainComponent();
+    this.myContentPane.setResult(newValue);
   }
 
   @BaseDialog.Button(name = "OK", position = 0, defaultButton = true)

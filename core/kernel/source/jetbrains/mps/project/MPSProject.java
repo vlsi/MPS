@@ -229,10 +229,20 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     setProjectDescriptor(projectDescriptor);
   }
 
-  public void addProjectDevKit(@NotNull IFile devKitDescriptorFile) {
+  public DevKit addProjectDevKit(@NotNull IFile devKitDescriptorFile) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     projectDescriptor.addDevkit(devKitDescriptorFile.getAbsolutePath());
     setProjectDescriptor(projectDescriptor);
+
+    for (DevKit dk : getProjectDevKits()) {
+      IFile descriptorFile = dk.getDescriptorFile();
+      assert descriptorFile != null;
+      if (descriptorFile.getAbsolutePath().equals(devKitDescriptorFile.getAbsolutePath())) {
+        return dk;
+      }
+    }
+
+    throw new RuntimeException("it can't happen");
   }
 
   public void removeProjectDevKit(@NotNull DevKit devkit) {

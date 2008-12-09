@@ -48,6 +48,7 @@ public class NewGeneratorDialog extends BaseDialog {
   private JTextField myTemplateModelsDir;
   private JTextField myGeneratorName;
   private Language mySourceLanguage;
+  private Generator myResult;
 
   public NewGeneratorDialog(Frame mainFrame, Language sourceLanguage) throws HeadlessException {
     super(mainFrame, "New Generator");
@@ -138,6 +139,10 @@ public class NewGeneratorDialog extends BaseDialog {
     return true;
   }
 
+  public Generator getResult() {
+    return myResult;
+  }
+
   @Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOK() {
     String templateModelsPath = myTemplateModelsDir.getText();
@@ -182,6 +187,7 @@ public class NewGeneratorDialog extends BaseDialog {
         adjustTemplateModel(mySourceLanguage, newGenerator[0]);
       }
     });
+    myResult = newGenerator[0];
   }
 
   @Button(position = 1, name = "Cancel")

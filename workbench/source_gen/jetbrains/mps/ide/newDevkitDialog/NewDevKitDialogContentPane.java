@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.DevKit;
 import java.util.List;
 import org.jdesktop.beansbinding.AutoBinding;
 import java.util.ArrayList;
@@ -48,6 +49,7 @@ public class NewDevKitDialogContentPane extends JPanel {
   private String myDevkitName;
   private String myDevkitDir;
   private MPSProject myProject;
+  private DevKit myResult;
   private NewDevKitDialog myDialog;
   public List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
   private Events myEvents = new Events(null) {
@@ -154,6 +156,10 @@ public class NewDevKitDialogContentPane extends JPanel {
     return this.myProject;
   }
 
+  public DevKit getResult() {
+    return this.myResult;
+  }
+
   public NewDevKitDialog getDialog() {
     return this.myDialog;
   }
@@ -176,6 +182,12 @@ public class NewDevKitDialogContentPane extends JPanel {
     this.myProject = newValue;
     this.firePropertyChange("project", oldValue, newValue);
     myThis.updateSolutionPath();
+  }
+
+  public void setResult(DevKit newValue) {
+    DevKit oldValue = this.myResult;
+    this.myResult = newValue;
+    this.firePropertyChange("result", oldValue, newValue);
   }
 
   public void setDialog(NewDevKitDialog newValue) {
@@ -211,6 +223,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     }
     myThis.getDialog().dispose();
     Project ideaProject = myThis.getProject().getComponent(Project.class);
+    final DevKit[] localResult = new DevKit[1];
     ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Creating", false) {
 
       public void run(@NotNull() ProgressIndicator indicator) {
@@ -218,13 +231,14 @@ public class NewDevKitDialogContentPane extends JPanel {
         ModelAccess.instance().runWriteAction(new Runnable() {
 
           public void run() {
-            myThis.createNewDevKit(new File(devkitPath));
+            localResult[0] = myThis.createNewDevKit(new File(devkitPath));
           }
 
         });
       }
 
     });
+    myThis.setResult(localResult[0]);
   }
 
   /* package */void onCancel() {
@@ -242,12 +256,12 @@ public class NewDevKitDialogContentPane extends JPanel {
     }
   }
 
-  /* package */void createNewDevKit(final File devkitPath) {
+  /* package */DevKit createNewDevKit(final File devkitPath) {
     SNode descriptor = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.DevKitDescriptor", null);
     SPropertyOperations.set(descriptor, "name", myThis.getDevkitName());
     FileSystemFile devkitFile = new FileSystemFile(devkitPath);
     DescriptorsPersistence.saveDevKitDescriptor(((DevKitDescriptor)SNodeOperations.getAdapter(descriptor)), devkitFile);
-    myThis.getProject().addProjectDevKit(devkitFile);
+    DevKit devkit = myThis.getProject().addProjectDevKit(devkitFile);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
 
       public void run() {
@@ -255,6 +269,7 @@ public class NewDevKitDialogContentPane extends JPanel {
       }
 
     }, ModalityState.NON_MODAL);
+    return devkit;
   }
 
 }

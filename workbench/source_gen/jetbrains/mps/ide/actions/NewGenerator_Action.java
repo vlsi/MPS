@@ -6,20 +6,24 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import java.awt.Frame;
+import jetbrains.mps.project.IModule;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.dialogs.NewGeneratorDialog;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewGenerator_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(NewGenerator_Action.class);
   private static final Icon ICON = null;
 
   public Frame frame;
+  public IModule module;
+  public Project project;
 
   public NewGenerator_Action() {
     super("New Generator", "", ICON);
@@ -33,9 +37,7 @@ public class NewGenerator_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    ActionEventData data = new ActionEventData(event);
-    IModule module = data.getModule();
-    return module != null && module instanceof Language;
+    return NewGenerator_Action.this.module != null && NewGenerator_Action.this.module instanceof Language;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -59,23 +61,33 @@ public class NewGenerator_Action extends GeneratedAction {
     if (this.frame == null) {
       return false;
     }
+    this.module = event.getData(MPSDataKeys.MODULE);
+    if (this.module == null) {
+      return false;
+    }
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ActionEventData data = new ActionEventData(event);
-      final Language language = (Language)data.getModule();
       final Frame localFrame = NewGenerator_Action.this.frame;
       final NewGeneratorDialog[] dialog = new NewGeneratorDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          dialog[0] = new NewGeneratorDialog(localFrame, language);
+          dialog[0] = new NewGeneratorDialog(localFrame, ((Language)NewGenerator_Action.this.module));
         }
 
       });
       dialog[0].showDialog();
+      Generator result = dialog[0].getResult();
+      if (result != null) {
+        NewGenerator_Action.this.project.getComponent(ProjectPane.class).selectModule(result);
+      }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "NewGenerator", t);
     }

@@ -7,10 +7,13 @@ import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import java.awt.Frame;
 import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.newDevkitDialog.NewDevKitDialog;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewDevKit_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(NewDevKit_Action.class);
@@ -18,6 +21,7 @@ public class NewDevKit_Action extends GeneratedAction {
 
   public Frame frame;
   public MPSProject project;
+  public Project ideaProject;
 
   public NewDevKit_Action() {
     super("New DevKit", "", ICON);
@@ -52,6 +56,10 @@ public class NewDevKit_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
+    this.ideaProject = event.getData(MPSDataKeys.PROJECT);
+    if (this.ideaProject == null) {
+      return false;
+    }
     return true;
   }
 
@@ -60,6 +68,8 @@ public class NewDevKit_Action extends GeneratedAction {
       NewDevKitDialog dialog = new NewDevKitDialog(NewDevKit_Action.this.frame);
       dialog.setProject(NewDevKit_Action.this.project);
       dialog.showDialog();
+      DevKit devkit = dialog.getResult();
+      NewDevKit_Action.this.project.getComponent(ProjectPane.class).selectModule(devkit);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "NewDevKit", t);
     }
