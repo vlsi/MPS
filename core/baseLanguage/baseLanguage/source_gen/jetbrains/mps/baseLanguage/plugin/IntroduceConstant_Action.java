@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import javax.swing.JOptionPane;
 
 public class IntroduceConstant_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(IntroduceConstant_Action.class);
@@ -84,16 +85,22 @@ public class IntroduceConstant_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final Wrappers._T<IntroduceConstantRefactoring> refactoring = new Wrappers._T<IntroduceConstantRefactoring>();
+      final Wrappers._T<String> error = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
           refactoring.value = new IntroduceConstantRefactoring();
-          refactoring.value.init(IntroduceConstant_Action.this.node, IntroduceConstant_Action.this.component);
+          error.value = refactoring.value.init(IntroduceConstant_Action.this.node, IntroduceConstant_Action.this.component);
         }
 
       });
-      IntroduceConstantDialog dialog = new IntroduceConstantDialog(IntroduceConstant_Action.this.frame, refactoring.value, IntroduceConstant_Action.this.context);
-      dialog.showDialog();
+      if (error.value == null) {
+        IntroduceConstantDialog dialog = new IntroduceConstantDialog(IntroduceConstant_Action.this.frame, refactoring.value, IntroduceConstant_Action.this.context);
+        dialog.showDialog();
+      } else
+      {
+        JOptionPane.showMessageDialog(IntroduceConstant_Action.this.component, error.value, "Error", JOptionPane.ERROR_MESSAGE);
+      }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "IntroduceConstant", t);
     }

@@ -14,6 +14,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import javax.swing.JOptionPane;
 
 public class IntroduceVariable_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(IntroduceVariable_Action.class);
@@ -83,16 +84,22 @@ public class IntroduceVariable_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final Wrappers._T<IntroduceLocalVariableRefactoring> refactoring = new Wrappers._T<IntroduceLocalVariableRefactoring>();
+      final Wrappers._T<String> error = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
           refactoring.value = new IntroduceLocalVariableRefactoring();
-          refactoring.value.init(IntroduceVariable_Action.this.node, IntroduceVariable_Action.this.component);
+          error.value = refactoring.value.init(IntroduceVariable_Action.this.node, IntroduceVariable_Action.this.component);
         }
 
       });
-      IntroduceLocalVariableDialog dialog = new IntroduceLocalVariableDialog(IntroduceVariable_Action.this.frame, refactoring.value, IntroduceVariable_Action.this.context);
-      dialog.showDialog();
+      if (error.value == null) {
+        IntroduceLocalVariableDialog dialog = new IntroduceLocalVariableDialog(IntroduceVariable_Action.this.frame, refactoring.value, IntroduceVariable_Action.this.context);
+        dialog.showDialog();
+      } else
+      {
+        JOptionPane.showMessageDialog(IntroduceVariable_Action.this.component, error.value, "Error", JOptionPane.ERROR_MESSAGE);
+      }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "IntroduceVariable", t);
     }

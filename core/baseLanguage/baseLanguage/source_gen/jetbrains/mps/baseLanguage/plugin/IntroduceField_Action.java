@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import javax.swing.JOptionPane;
 
 public class IntroduceField_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(IntroduceField_Action.class);
@@ -84,17 +85,20 @@ public class IntroduceField_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final IntroduceFieldRefactoring introducer = new IntroduceFieldRefactoring();
-      final Wrappers._boolean canRefactor = new Wrappers._boolean();
+      final Wrappers._T<String> error = new Wrappers._T<String>();
       ModelAccess.instance().runWriteAction(new Runnable() {
 
         public void run() {
-          canRefactor.value = introducer.init(IntroduceField_Action.this.node, IntroduceField_Action.this.component);
+          error.value = introducer.init(IntroduceField_Action.this.node, IntroduceField_Action.this.component);
         }
 
       });
-      if (canRefactor.value) {
+      if (error.value == null) {
         IntroduceFieldDialog dialog = new IntroduceFieldDialog(IntroduceField_Action.this.frame, introducer, IntroduceField_Action.this.context);
         dialog.showDialog();
+      } else
+      {
+        JOptionPane.showMessageDialog(IntroduceField_Action.this.component, error.value, "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "IntroduceField", t);
