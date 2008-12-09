@@ -18,6 +18,8 @@ package jetbrains.mps.workbench.dialogs.newproject;
 import com.intellij.ide.wizard.AbstractWizard;
 import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.ide.DataManager;
+import com.intellij.ide.IdeBundle;
+import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -28,6 +30,7 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.CommonBundle;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -117,6 +120,10 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
   }
 
   protected void doOKAction() {
+    super.doOKAction();
+    int exitCode = Messages.showDialog(IdeBundle.message("prompt.open.project.in.new.frame"), IdeBundle.message("title.open.project"),
+                                       new String[]{IdeBundle.message("button.newframe"), IdeBundle.message("button.existingframe")}, 1, Messages.getQuestionIcon());
+
     final String[] error = new String[]{null};
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Creating", false) {
       public void run(@NotNull() ProgressIndicator indicator) {
@@ -142,13 +149,14 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     });
 
     if (myCreatedProject == null) return;
-
     myCreatedProject.save();
+
+    if (exitCode==1){
+      ProjectUtil.closeProject(myProject);
+    }
+
     ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
-
     projectManager.openProject(myCreatedProject);
-
-    super.doOKAction();
 
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {

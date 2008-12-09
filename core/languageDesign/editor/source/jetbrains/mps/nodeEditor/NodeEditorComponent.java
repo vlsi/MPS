@@ -132,7 +132,10 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   public void dispose() {
-    getInspectorTool().inspect(null, null, null);
+    InspectorTool inspectorTool = getInspectorTool();
+    if (inspectorTool!=null){
+      inspectorTool.inspect(null, null, null);
+    }
     super.dispose();
   }
 }
