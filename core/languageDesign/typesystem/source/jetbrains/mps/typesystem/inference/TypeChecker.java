@@ -195,8 +195,7 @@ public class TypeChecker implements ApplicationComponent {
     checkRoot(node, false, null);
   }
 
-  public ISlicer debugRoot(final SNode node) {
-    ISlicer slicer = new SlicerImpl();
+  public ISlicer debugRoot(final SNode node, ISlicer slicer) {
     checkRoot(node, true, slicer);
     return slicer;
   }

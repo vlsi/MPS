@@ -7,6 +7,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.typesystem.debug.SliceInfo;
 import jetbrains.mps.typesystem.debug.ISlicer;
+import jetbrains.mps.typesystem.debug.SlicerImpl;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
@@ -16,7 +17,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import javax.swing.*;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -38,14 +38,19 @@ public class TypecheckerStateViewComponent extends JPanel {
 
   private IOperationContext myOperationContext;
   private EditorsProvider myEditorsProvider;
-  private int myEquationItemsCount = 0;
+  private int mySliceItemsCount = 0;
   private GridBagConstraints myGridBagConstraints;
   private JPanel myGauge = new JPanel();
+  private JPanel myUpperGauge = new JPanel();
+  private List<SliceItemPanel> mySliceItems = new ArrayList<SliceItemPanel>();
 
   private List<SNodePointer> myNodesToSliceWith = new ArrayList<SNodePointer>();
+  private List<SNodeTree> myTreesOfNodesToSliceWith = new ArrayList<SNodeTree>();
 
 
   private JButton myDebugCurrentRootButton;
+  public JPanel myUpperPanel;
+  public GridBagConstraints myUpperPanelConstraints;
 
   public TypecheckerStateViewComponent(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -68,9 +73,17 @@ public class TypecheckerStateViewComponent extends JPanel {
             final SNode currentRoot = editorComponent.getEditedNode();
             ISlicer slicer = ModelAccess.instance().runReadAction(new Computable<ISlicer>() {
               public ISlicer compute() {
-                return TypeChecker.getInstance().debugRoot(currentRoot);
+                ISlicer slicer = new SlicerImpl();
+                for (SNodePointer nodePointer : myNodesToSliceWith) {
+                  slicer.addNodeToSliceWith(nodePointer.getNode());
+                }
+                return TypeChecker.getInstance().debugRoot(currentRoot, slicer);
               }
             });
+            for (SliceItemPanel sliceItemPanel : mySliceItems) {
+              TypecheckerStateViewComponent.this.remove(sliceItemPanel);
+            }
+            mySliceItemsCount = 0;
             for (SliceInfo sliceInfo : slicer.getSliceInfos()) {
               addSliceItem(sliceInfo);
             }
@@ -78,30 +91,54 @@ public class TypecheckerStateViewComponent extends JPanel {
         }
       }
     });
-    JPanel upperPanel = new JPanel();
-    upperPanel.setLayout(new GridBagLayout());
-    GridBagConstraints constraints = new GridBagConstraints();
-    constraints.gridx = 0;
-    constraints.gridy = 0;
-    constraints.weightx = 0;
-    constraints.weighty = 0;
-    constraints.anchor = GridBagConstraints.NORTHWEST;
-    upperPanel.add(myDebugCurrentRootButton, constraints);
-    constraints.weightx = 1;
-    constraints.gridx = 1;
-    upperPanel.add(new JPanel(), constraints);
-    addItem(upperPanel);
+    myUpperPanel = new JPanel();
+    myUpperPanel.setLayout(new GridBagLayout());
+    myUpperPanelConstraints = new GridBagConstraints();
+    myUpperPanelConstraints.gridx = 0;
+    myUpperPanelConstraints.gridy = 0;
+    myUpperPanelConstraints.weightx = 0;
+    myUpperPanelConstraints.weighty = 0;
+    myUpperPanelConstraints.anchor = GridBagConstraints.NORTHWEST;
+    myUpperPanel.add(myDebugCurrentRootButton, myUpperPanelConstraints);
+    readdUpperGauge();
+    addItem(myUpperPanel);
+  }
+
+  private void readdUpperGauge() {
+    myUpperPanelConstraints.weightx = 1;
+    myUpperPanelConstraints.gridx = myNodesToSliceWith.size() + 1;
+    myUpperPanel.add(myUpperGauge, myUpperPanelConstraints);
   }
 
   public void addNodeToSliceWith(SNode node) {
     SNodePointer pointer = new SNodePointer(node);
     if (!myNodesToSliceWith.contains(pointer)) {
       myNodesToSliceWith.add(pointer);
+      TypecheckerStateViewComponent.SNodeTree tree = new SNodeTree(node);
+      myTreesOfNodesToSliceWith.add(tree);
+      myUpperPanelConstraints.weightx = 0;
+      myUpperPanelConstraints.gridx = myNodesToSliceWith.size();
+      myUpperPanel.add(tree);
+      tree.rebuildNow();
+      readdUpperGauge();
     }
   }
 
+  public void removeNodeToSliceWith(SNode node) {
+    int i = 0;
+    for (SNodePointer pointer : new ArrayList<SNodePointer>(myNodesToSliceWith)) {
+      if (node == pointer.getNode()) {
+        myNodesToSliceWith.remove(pointer);
+        TypecheckerStateViewComponent.SNodeTree tree = myTreesOfNodesToSliceWith.remove(i);
+        myUpperPanel.remove(tree);
+      }
+      i++;
+    }
+    readdUpperGauge();
+  }
+
   private void addItem(Component c) {
-    myGridBagConstraints.gridy = myEquationItemsCount++;
+    myGridBagConstraints.gridy = mySliceItemsCount++;
     myGridBagConstraints.weighty = 0;
     add(c, myGridBagConstraints);
     readdGauge();
@@ -117,7 +154,7 @@ public class TypecheckerStateViewComponent extends JPanel {
 
   private void readdGauge() {
     remove(myGauge);
-    myGridBagConstraints.gridy = myEquationItemsCount;
+    myGridBagConstraints.gridy = mySliceItemsCount;
     myGridBagConstraints.weighty = 1;
     add(myGauge, myGridBagConstraints);
   }
@@ -193,7 +230,11 @@ public class TypecheckerStateViewComponent extends JPanel {
       constraints.weightx = 0;
       constraints.fill = GridBagConstraints.NONE;
       constraints.anchor = GridBagConstraints.NORTHWEST;
-      myNodelabel = new JLabel(mySliceInfo.getNode().toString());
+      myNodelabel = new JLabel(ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return mySliceInfo.getNode().toString();
+        }
+      }));
       myNodelabel.addMouseListener(new MouseAdapter() {
         @Override
         public void mousePressed(MouseEvent e) {
@@ -226,16 +267,21 @@ public class TypecheckerStateViewComponent extends JPanel {
         public void mousePressed(MouseEvent e) {
           if (e.getClickCount() == 2) {
             String ruleModel = mySliceInfo.getRuleModel();
-            String ruleID = mySliceInfo.getRuleId();
+            final String ruleID = mySliceInfo.getRuleId();
             if (ruleModel == null || ruleID == null) return;
             SModelReference modelUID = SModelReference.fromString(ruleModel);
             modelUID = SModelReference.fromString(modelUID.getLongName());
-            SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+            final SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
             if (modelDescriptor == null) {
               LOG.error("can't find rule's model " + ruleModel);
               return;
             }
-            final SNode rule = modelDescriptor.getSModel().getNodeById(ruleID);
+
+            final SNode rule = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+              public SNode compute() {
+                return modelDescriptor.getSModel().getNodeById(ruleID);
+              }
+            });
             if (rule == null) {
               LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
               return;
@@ -249,6 +295,9 @@ public class TypecheckerStateViewComponent extends JPanel {
         }
       });
       add(myReasonLabel, constraints);
+
+      myEquatedTypeTree.rebuildNow();
+      myResultTypeTree.rebuildNow();
     }
 
 
