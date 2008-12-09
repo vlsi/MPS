@@ -31,26 +31,31 @@ import java.util.List;
 public class IntelligentInputUtil {
   private static EditorManager ourServiceEditorManager = new EditorManager();
 
-  public static void processCell(EditorCell_Label cell, final EditorContext editorContext, String pattern, CellSide side) {
+  public static void processCell(final EditorCell_Label cell, final EditorContext editorContext, final String pattern, final CellSide side) {
     if (pattern == null || pattern.equals("")) {
       return;
     }
 
-    if (cell instanceof EditorCell_STHint) {
-      EditorCell_STHint rtHintCell = (EditorCell_STHint) cell;
-      processSTHintCell(rtHintCell, editorContext, pattern);
-      return;
-    }
+    editorContext.executeCommand(new Runnable() {
+      public void run() {
+        if (cell instanceof EditorCell_STHint) {
+          EditorCell_STHint rtHintCell = (EditorCell_STHint) cell;
+          processSTHintCell(rtHintCell, editorContext, pattern);
+          return;
+        }
 
-    if (side == CellSide.LEFT) {
-      String head = "" + pattern.charAt(0);
-      String smallPattern = pattern.substring(1);
-      processCellAtStart(cell, editorContext, head, smallPattern);
-    } else {
-      String smallPattern = pattern.substring(0, pattern.length() - 1);
-      String tail = pattern.substring(pattern.length() - 1, pattern.length());
-      processCellAtEnd(cell, editorContext, smallPattern, tail);
-    }  
+        if (side == CellSide.LEFT) {
+          String head = "" + pattern.charAt(0);
+          String smallPattern = pattern.substring(1);
+          processCellAtStart(cell, editorContext, head, smallPattern);
+        } else {
+          String smallPattern = pattern.substring(0, pattern.length() - 1);
+          String tail = pattern.substring(pattern.length() - 1, pattern.length());
+          processCellAtEnd(cell, editorContext, smallPattern, tail);
+        }
+      }
+    });
+
   }
 
   private static void processSTHintCell(EditorCell_STHint cell, EditorContext editorContext, String pattern) {
@@ -202,7 +207,7 @@ public class IntelligentInputUtil {
       cell.changeText(smallPattern);
       editorContext.getNodeEditorComponent().relayout();
     }
-    
+
     rtAction.execute(editorContext);
 
     EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
