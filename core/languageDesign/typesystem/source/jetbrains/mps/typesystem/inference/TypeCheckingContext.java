@@ -26,7 +26,7 @@ import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.typesystem.debug.Slicer;
-import jetbrains.mps.typesystem.debug.Slicer.SliceInfo;
+import jetbrains.mps.typesystem.debug.SliceInfo;
 
 import java.util.Map;
 import java.util.List;

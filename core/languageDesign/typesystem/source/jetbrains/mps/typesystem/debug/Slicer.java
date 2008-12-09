@@ -62,12 +62,12 @@ public class Slicer {
         NodeWrapper typeWrapper = NodeWrapper.fromNode(type, equationManager);
         IWrapper representatorWrapper = equationManager.getRepresentatorWrapper(typeWrapper);
         if (representatorWrapper.equals(representator1)) {
-          Slicer.SliceInfo sliceInfo = new SliceInfo(node, type1, equationInfo.getRuleModel(), equationInfo.getRuleId(), reason, CollectionUtil.list(equationInfo));
+          SliceInfo sliceInfo = new SliceInfo(node, type1, equationInfo.getRuleModel(), equationInfo.getRuleId(), reason, CollectionUtil.list(equationInfo));
           mySliceInfos.add(sliceInfo);
           result.add(sliceInfo);
         }
         if (representatorWrapper.equals(representator2)) {
-          Slicer.SliceInfo sliceInfo = new SliceInfo(node, type2, equationInfo.getRuleModel(), equationInfo.getRuleId(), reason, CollectionUtil.list(equationInfo));
+          SliceInfo sliceInfo = new SliceInfo(node, type2, equationInfo.getRuleModel(), equationInfo.getRuleId(), reason, CollectionUtil.list(equationInfo));
           mySliceInfos.add(sliceInfo);
           result.add(sliceInfo);
         }
@@ -88,7 +88,7 @@ public class Slicer {
         NodeWrapper typeWrapper = NodeWrapper.fromNode(nodeType, equationManager);
         IWrapper representatorWrapper = equationManager.getRepresentatorWrapper(typeWrapper);
         if (representatorWrapper.equals(representator)) {
-          Slicer.SliceInfo sliceInfo = new SliceInfo(node, representatorWrapper.getNode(), null, null, "inequations solved", inequations);
+          SliceInfo sliceInfo = new SliceInfo(node, representatorWrapper.getNode(), null, null, "inequations solved", inequations);
           mySliceInfos.add(sliceInfo);
           result.add(sliceInfo);
         }
@@ -103,28 +103,4 @@ public class Slicer {
     }
   }
 
-  public static class SliceInfo {
-    private SNode myNode;
-    private SNode myEquatedType;
-    private SNode myResultType;
-    private String myRuleModel;
-    private String myRuleId;
-    private String myReason;
-    private List<EquationInfo> myCauses;
-    public SliceInfo(SNode node, SNode equatedType, String ruleModel, String ruleId, String reason, Collection<EquationInfo> causes) {
-      myNode = node;
-      myEquatedType = equatedType;
-      myRuleModel = ruleModel;
-      myRuleId = ruleId;
-      myReason = reason;
-      myCauses = new ArrayList<EquationInfo>(causes);
-    }
-
-    public void completeResultType(TypeCheckingContext typeCheckingContext) {
-      SNode type = typeCheckingContext.getMainContext().get(myNode);
-      if (type != null) {
-        myResultType = typeCheckingContext.getEquationManager().getRepresentator(type);
-      }
-    }
-  }
 }

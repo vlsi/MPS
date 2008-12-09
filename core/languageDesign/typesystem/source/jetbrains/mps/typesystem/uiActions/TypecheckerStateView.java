@@ -4,6 +4,8 @@ import jetbrains.mps.workbench.tools.BaseProjectTool;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.MPSProjectHolder;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 
@@ -30,7 +32,7 @@ public class TypecheckerStateView extends BaseProjectTool {
 
   public void initComponent() {
     super.initComponent();
-    myComponent = new TypecheckerStateViewComponent(getProject().getComponent(IOperationContext.class));
+    myComponent = new TypecheckerStateViewComponent(getProject().getComponent(MPSProjectHolder.class).getMPSProject().createOperationContext());
   }
 
   public void addEquationItem(SNode node1, SNode node2) {

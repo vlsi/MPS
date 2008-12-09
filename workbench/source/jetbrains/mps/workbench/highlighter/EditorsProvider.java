@@ -68,6 +68,7 @@ public class EditorsProvider {
   private void updateInformation() {
     synchronized (myLock) {
       myEditors.clear();
+      myCurrentEditor = null;
 
       FileEditorManager fileEditorManager = FileEditorManager.getInstance(myProject);
       for (FileEditor fileEditor : fileEditorManager.getAllEditors()) {
@@ -103,6 +104,7 @@ public class EditorsProvider {
 
   public IEditor getCurrentEditor() {
     synchronized (myLock) {
+      if (myCurrentEditor == null) return null;
       return myCurrentEditor.getNodeEditor();
     }
   }

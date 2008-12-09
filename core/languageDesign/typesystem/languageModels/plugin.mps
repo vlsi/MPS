@@ -1608,7 +1608,11 @@
       <link role="modifiedGroup" targetNodeId="4.1204991238062" resolveInfo="Tools" />
       <link role="point" targetNodeId="4.1217598172089" resolveInfo="customTools" />
     </node>
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1219330134776" />
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1219330134776">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1228837096104">
+        <link role="action" targetNodeId="1228836959162" resolveInfo="ShowTypechekerDebugger" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1228749836410">
     <property name="package" value="Actions" />
@@ -1691,6 +1695,43 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228750048815">
               <link role="baseMethodDeclaration" targetNodeId="29.~BaseTool.openTool(boolean):void" resolveInfo="openTool" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1228750056549">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1228836959162">
+    <property name="package" value="Actions" />
+    <property name="name" value="ShowTypechekerDebugger" />
+    <property name="caption" value="Show Typechecker Debugger" />
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1228837001272">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="34.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1228836959163">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228836959164">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228837017560">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228837076576">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228837020714">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228837017561">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1228837017562" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1228837017563">
+                  <link role="member" targetNodeId="1228837001272" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228837029606">
+                <link role="baseMethodDeclaration" targetNodeId="14.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1228837052745">
+                  <link role="classifier" targetNodeId="2.~TypecheckerStateView" resolveInfo="TypecheckerStateView" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228837077938">
+              <link role="baseMethodDeclaration" targetNodeId="29.~BaseTool.openToolLater(boolean):void" resolveInfo="openToolLater" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1228837079047">
                 <property name="value" value="true" />
               </node>
             </node>
