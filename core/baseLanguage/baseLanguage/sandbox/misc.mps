@@ -85,9 +85,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228839981766">
               <link role="baseMethodDeclaration" targetNodeId="1228391836841" resolveInfo="foo" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228840653230">
-                <property name="value" value="" />
-              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1228842671585" />
             </node>
           </node>
         </node>

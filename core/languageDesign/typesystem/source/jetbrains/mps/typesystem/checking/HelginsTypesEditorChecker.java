@@ -64,10 +64,12 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
     NodeTypesComponent typesComponent = getNodeTypesComponent(node);
 
     //non-typesystem checks
-    try {
-      typesComponent.applyNonTypesystemRulesToRoot();
-    } catch (Throwable t) {
-      LOG.error(t);
+    if (!wasCheckedOnce) {
+      try {
+        typesComponent.applyNonTypesystemRulesToRoot();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
 
     // highlight nodes with errors

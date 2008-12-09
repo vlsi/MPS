@@ -228,12 +228,16 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         return false;
       }
 
+      boolean hackCheckedOnce = wasCheckedOnce;
       if (component instanceof InspectorEditorComponent) {
+        hackCheckedOnce = true;
         myCheckedOnceInspectors.add(((InspectorEditorComponent)component).getInspectionSessionId());
       } else {
         myCheckedOnceEditors.add(component);
       }
-      if (updateEditor(component, events, wasCheckedOnce, checkersToRecheck, checkersToRemove)) {
+
+
+      if (updateEditor(component, events, hackCheckedOnce, checkersToRecheck, checkersToRemove)) {
         return true;
       }
     }
