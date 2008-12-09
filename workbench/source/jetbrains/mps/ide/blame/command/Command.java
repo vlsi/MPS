@@ -36,8 +36,6 @@ public class Command {
     PostMethod p = new PostMethod(TEAMSYS + LOGIN);
     p.addParameter("login", query.getUser());
     p.addParameter("password", query.getPassword());
-
-    setTimeouts(c);
     c.executeMethod(p);
 
     int statusCode = p.getStatusCode();
@@ -54,8 +52,6 @@ public class Command {
     p.addParameter("project", PROJECT);
     p.addParameter("summary", summary);
     p.addParameter("description", description);
-
-    setTimeouts(c);
     c.executeMethod(p);
 
     int statusCode = p.getStatusCode();
@@ -65,12 +61,5 @@ public class Command {
     } else {
       return new Response("Can't post issue: " + responseString, false, null);
     }
-  }
-
-  private static void setTimeouts(HttpClient c) {
-    HttpClientParams params = c.getParams();
-    params.setConnectionManagerTimeout(5000);
-    params.setSoTimeout(5000);
-    c.setParams(params);
   }
 }

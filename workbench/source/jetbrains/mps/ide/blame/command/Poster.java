@@ -18,8 +18,11 @@ package jetbrains.mps.ide.blame.command;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.blame.perform.*;
 import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.params.HttpClientParams;
 
 public class Poster {
+  private static final int TIMEOUT = 5000;
+
   private Executor myExecutor;
 
   public Poster(Project project) {
@@ -29,10 +32,11 @@ public class Poster {
   public Response send(final Query query) {
     Performable send = new Performable() {
       public Response perform() throws Exception {
-        HttpClient c = new HttpClient();
-        Response r = Command.login(c, query);
+        HttpClient client = new HttpClient();
+        setTimeouts(client);
+        Response r = Command.login(client, query);
         if (r.isSuccess()) {
-          r = Command.postIssue(c, query.getIssue(), query.getDescription());
+          r = Command.postIssue(client, query.getIssue(), query.getDescription());
         }
         return r;
       }
@@ -43,9 +47,18 @@ public class Poster {
   public Response test(final Query query) {
     Performable test = new Performable() {
       public Response perform() throws Exception {
-        return Command.login(new HttpClient(), query);
+        HttpClient client = new HttpClient();
+        setTimeouts(client);
+        return Command.login(client, query);
       }
     };
     return myExecutor.execute(test);
+  }
+
+  private static void setTimeouts(HttpClient c) {
+    HttpClientParams params = c.getParams();
+    params.setConnectionManagerTimeout(TIMEOUT);
+    params.setSoTimeout(TIMEOUT);
+    c.setParams(params);
   }
 }
