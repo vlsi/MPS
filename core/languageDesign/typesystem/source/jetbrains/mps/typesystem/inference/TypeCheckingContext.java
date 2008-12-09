@@ -25,7 +25,7 @@ import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.typesystem.debug.Slicer;
+import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.debug.SliceInfo;
 
 import java.util.Map;
@@ -43,7 +43,6 @@ public class TypeCheckingContext {
   private NodeTypesComponent myNodeTypesComponent;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
-  private Slicer mySlicer = new Slicer();
 
   private Stack<Boolean> myIsInEditorQueriesStack = new Stack<Boolean>();
   private Stack<NodeTypesComponent> myTemporaryComponentsStack = new Stack<NodeTypesComponent>();
@@ -88,6 +87,10 @@ public class TypeCheckingContext {
     if (!myIsInEditorQueriesStack.isEmpty()) {
       myIsInEditorQueriesStack.pop();
     }
+  }
+
+  public ISlicer getCurrentSlicer() {
+    return getNodeTypesComponent().getSlicer();
   }
 
   //errors reporting
@@ -205,12 +208,12 @@ public class TypeCheckingContext {
                              String ruleId,
                              IntentionProvider intentionProvider) {
     EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
-    List<SliceInfo> sliceInfos = mySlicer.beforeUserEquationAdded(node1, node2, this, equationInfo);
+    List<SliceInfo> sliceInfos = getCurrentSlicer().beforeUserEquationAdded(node1, node2, this, equationInfo);
     getNodeTypesComponent().getEquationManager().addEquation(
       node1,
       node2,
       equationInfo);
-    mySlicer.afterEquationAdded(sliceInfos, this);
+    getCurrentSlicer().afterEquationAdded(sliceInfos, this);
   }
 
   public void createLessThanInequation(SNode node1,
@@ -376,10 +379,6 @@ public class TypeCheckingContext {
 
   public void popTemporaryTypesComponent() {
     myTemporaryComponentsStack.pop();
-  }
-
-  public Slicer getSlicer() {
-    return mySlicer;
   }
 
   public static class NodeInfo {

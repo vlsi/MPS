@@ -25,7 +25,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_R
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
-import jetbrains.mps.typesystem.debug.Slicer;
+import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.debug.SliceInfo;
 
 import java.util.*;
@@ -517,7 +517,7 @@ public class EquationManager {
   }
 
   void addChildEquations(Set<Pair<SNode, SNode>> childEqs, EquationInfo errorInfo) {
-    Slicer slicer = myTypeCheckingContext.getSlicer();
+    ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
     for (Pair<SNode, SNode> eq : childEqs) {
       List<SliceInfo> sliceInfos = slicer.beforeChildEquationAdded(eq.o2, eq.o1, myTypeCheckingContext, errorInfo);
       addEquation(NodeWrapper.fromNode(eq.o2, this), NodeWrapper.fromNode(eq.o1, this), errorInfo);
@@ -850,7 +850,7 @@ public class EquationManager {
     eliminateConcretePartsOfInequations(false);
     Set<IWrapper> types = eliminateConcretePartsOfInequations(true);
 
-    Slicer slicer = myTypeCheckingContext.getSlicer();
+    ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
     for (IWrapper type : types) {
       if (type == null) continue;
       assert !type.isConcrete();
@@ -960,7 +960,7 @@ public class EquationManager {
           IWrapper expanded = expandWrapper(null, subtype, myTypeChecker.getRuntimeTypesModel());
           expandedSubtypes.add(expanded);
         }
-        Slicer slicer = myTypeCheckingContext.getSlicer();
+        ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
         List<SliceInfo> sliceInfos = slicer.beforeInequationsSolvedForType(type.getNode(), myTypeCheckingContext, new ArrayList<EquationInfo>(errorInfoMap.values()));
         addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(expandedSubtypes, isWeak, EquationManager.this),
           errorInfo);
@@ -1036,7 +1036,7 @@ public class EquationManager {
     return thisLessThanType(var, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         // c :< T => c = T
-        Slicer slicer = myTypeCheckingContext.getSlicer();
+        ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
         List<SliceInfo> sliceInfos = slicer.beforeInequationsSolvedForType(type.getNode(), myTypeCheckingContext, new ArrayList<EquationInfo>(errorInfoMap.values()));
         addEquation(type,  /*concreteSupertypes.iterator().next()*/decideIfIsLineAndReturnInfimum(concreteSupertypes), errorInfo);
         slicer.afterEquationAdded(sliceInfos, myTypeCheckingContext);

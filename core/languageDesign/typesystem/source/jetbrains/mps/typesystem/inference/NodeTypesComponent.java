@@ -28,6 +28,9 @@ import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
+import jetbrains.mps.typesystem.debug.ISlicer;
+import jetbrains.mps.typesystem.debug.SlicerImpl;
+import jetbrains.mps.typesystem.debug.NullSlicer;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -83,6 +86,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   boolean myIsNonTypesystemCheckingInProgress = false;
 
   private TypeCheckingContext myTypeCheckingContext;
+  private ISlicer mySlicer;
 
   public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myRootNode = rootNode;
@@ -624,6 +628,17 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     } else {
       return variables.toArray(new SNode[variables.size()]);
     }
+  }
+
+  public ISlicer getSlicer() {
+    if (mySlicer == null) {
+      return new NullSlicer();
+    }
+    return mySlicer;
+  }
+
+  public void setSlicer(ISlicer slicer) {
+    mySlicer = slicer;
   }
 
 

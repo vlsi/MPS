@@ -26,7 +26,8 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
-import jetbrains.mps.typesystem.debug.Slicer;
+import jetbrains.mps.typesystem.debug.ISlicer;
+import jetbrains.mps.typesystem.debug.SlicerImpl;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import org.jetbrains.annotations.Nullable;
@@ -191,15 +192,28 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void checkRoot(SNode node) {
-    checkRoot(node, false);
+    checkRoot(node, false, null);
+  }
+
+  public ISlicer debugRoot(final SNode node) {
+    ISlicer slicer = new SlicerImpl();
+    checkRoot(node, true, slicer);
+    return slicer;
   }
 
   public void checkRoot(final SNode node, final boolean refreshTypes) {
+    checkRoot(node, refreshTypes, null);
+  }
+
+  private void checkRoot(final SNode node, final boolean refreshTypes, final ISlicer slicer) {
     if (node == null) return;
     assert node.isRoot();
     checkWithinRoot(node, new Runnable() {
       public void run() {
         NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node);
+        if (slicer != null) {
+          component.setSlicer(slicer);
+        }
         component.computeTypes(refreshTypes);
         myCheckedRoots.add(node);
       }

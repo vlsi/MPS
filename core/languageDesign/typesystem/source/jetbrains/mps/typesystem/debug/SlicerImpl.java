@@ -4,17 +4,20 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.CollectionUtil;
 
-import java.util.*;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: User
- * Date: 08.12.2008
- * Time: 22:48:12
+ * User: Cyril.Konopko
+ * Date: 09.12.2008
+ * Time: 19:16:55
  * To change this template use File | Settings | File Templates.
  */
-public class Slicer {
-  private Set<SNode> myNodesToSliceWith = new HashSet<SNode>(2);
+public class SlicerImpl implements ISlicer {
+   private Set<SNode> myNodesToSliceWith = new HashSet<SNode>(2);
   private List<SliceInfo> mySliceInfos = new ArrayList<SliceInfo>();
 
   public void addNodeToSliceWith(SNode node) {
@@ -102,5 +105,4 @@ public class Slicer {
       sliceInfo.completeResultType(typeCheckingContext);
     }
   }
-
 }
