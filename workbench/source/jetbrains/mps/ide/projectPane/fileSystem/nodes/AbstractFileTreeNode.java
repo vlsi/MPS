@@ -66,7 +66,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
     }
     setText(myFile.getName());
     if (myShowFullPath) {
-      setAdditionalText(myFile.getUrl());
+      setAdditionalText(myFile.getPresentableUrl());
     }
     setNodeIdentifier(myFile.getPath() != null ? myFile.getPath() : "");
     setColor(myProvider.getFileStatus(myFile).getColor());
