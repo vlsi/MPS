@@ -57,6 +57,8 @@ public class AutoResolver extends EditorCheckerAdapter {
 
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
+        if (resolveResultArrayList.isEmpty()) return;
+
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             for (ResolveResult resolveResult : resolveResultArrayList) {

@@ -462,19 +462,18 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return result;
   }
 
-  private boolean processMutableKeyPressed(final KeyEvent keyEvent, final boolean allowErrors) {    
+  private boolean processMutableKeyPressed(final KeyEvent keyEvent, final boolean allowErrors) {
+    if (!isEditable()) {
+      return false;
+    }
+    if (!isMutableKeystroke(keyEvent)) {
+      return false;
+    }
+
     final boolean[] result = new boolean[1];
 
     getEditorContext().executeCommand(new Runnable() {
       public void run() {
-        if (!isEditable()) {
-          result[0] = false;
-          return;
-        }
-        if (!isMutableKeystroke(keyEvent)) {
-          result[0] = false;
-          return;
-        }
         result[0] = processMutableKeyPressed_impl(keyEvent, allowErrors);
         return;
       }
