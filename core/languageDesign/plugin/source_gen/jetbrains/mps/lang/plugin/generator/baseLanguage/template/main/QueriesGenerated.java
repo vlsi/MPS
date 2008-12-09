@@ -623,6 +623,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "constructorDeclaration", false);
   }
 
+  public static Object referenceMacro_GetReferent_1228847767142(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_FileGeneratorConstructor");
+  }
+
   public static boolean ifMacro_Condition_1204048094902(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "createBlock", true) == null;
   }
@@ -1265,6 +1269,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1228332141058(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
+  }
+
+  public static Iterable sourceNodesQuery_1228847767150(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1217678861866(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {

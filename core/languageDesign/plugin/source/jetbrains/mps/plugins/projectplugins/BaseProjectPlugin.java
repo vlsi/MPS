@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandlerOwner;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
@@ -73,8 +74,8 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     return new ArrayList<GenerationListener>();
   }
 
-  protected IFileGenerator initFileGenerator() {
-    return null;
+  protected List<IFileGenerator> initFileGenerators() {
+    return new ArrayList<IFileGenerator>();
   }
 
   //------------------quick access stuff-----------------------

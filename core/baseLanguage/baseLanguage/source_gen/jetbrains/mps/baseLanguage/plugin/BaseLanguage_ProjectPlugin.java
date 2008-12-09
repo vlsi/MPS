@@ -30,8 +30,10 @@ public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
     return res;
   }
 
-  public IFileGenerator initFileGenerator() {
-    return new Java_FileGenerator();
+  public List<IFileGenerator> initFileGenerators() {
+    List<IFileGenerator> generators = new ArrayList<IFileGenerator>();
+    generators.add(new Java_FileGenerator());
+    return generators;
   }
 
 }
