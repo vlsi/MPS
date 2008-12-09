@@ -51,7 +51,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <maxImportIndex value="38" />
+  <maxImportIndex value="39" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -80,6 +80,7 @@
   <import index="36" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
   <import index="38" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="-1" />
+  <import index="39" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215441101658">
     <property name="name" value="SandboxConcept" />
     <property name="package" value="inlineMethod" />
@@ -13720,11 +13721,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228146245425">
-          <node role="finishState" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1228146253944">
-            <link role="declaration" targetNodeId="1225551623717" resolveInfo="after" />
-          </node>
-          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228591085589">
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228822494353">
+          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228822496152">
             <link role="declaration" targetNodeId="1228591056166" resolveInfo="finish" />
           </node>
         </node>
@@ -13766,9 +13764,6 @@
             <property name="caretPosition" value="0" />
             <property name="name" value="finish" />
           </node>
-        </node>
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1225551623717">
-          <property name="name" value="after" />
         </node>
       </node>
     </node>
@@ -13850,9 +13845,6 @@
           <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1226944279235" />
           <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226944279236" />
         </node>
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1226944279238">
-          <property name="name" value="after" />
-        </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226944279233" />
       </node>
     </node>
@@ -13867,11 +13859,8 @@
         <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1227191974865">
           <property name="keys" value="2+2" />
         </node>
-        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228480519436">
-          <node role="finishState" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1228480523487">
-            <link role="declaration" targetNodeId="1226944279238" resolveInfo="after" />
-          </node>
-          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228480527160">
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228822476662">
+          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228822478507">
             <link role="declaration" targetNodeId="1227187693502" resolveInfo="end" />
           </node>
         </node>
@@ -14052,9 +14041,6 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1228494146631">
-          <property name="name" value="after" />
-        </node>
       </node>
     </node>
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.EditorTestMethod" id="1228494154835">
@@ -14072,11 +14058,8 @@
         <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1228494230227">
           <property name="keys" value="true" />
         </node>
-        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228494239947">
-          <node role="finishState" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1228494248669">
-            <link role="declaration" targetNodeId="1228494146631" resolveInfo="after" />
-          </node>
-          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228494253530">
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228822444575">
+          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228822445968">
             <link role="declaration" targetNodeId="1228494113082" resolveInfo="finish" />
           </node>
         </node>
@@ -14101,12 +14084,9 @@
         <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1228496200250">
           <property name="keys" value="*2" />
         </node>
-        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228496200251">
-          <node role="finishState" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1228496200252">
-            <link role="declaration" targetNodeId="1228495906682" resolveInfo="after" />
-          </node>
-          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228585292571">
-            <link role="declaration" targetNodeId="1228585279428" resolveInfo="finsh" />
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228822455470">
+          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228822457191">
+            <link role="declaration" targetNodeId="1228585279428" resolveInfo="finish" />
           </node>
         </node>
       </node>
@@ -14153,9 +14133,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1228495906682">
-          <property name="name" value="after" />
         </node>
       </node>
     </node>
@@ -14227,11 +14204,8 @@
         <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1228587474567">
           <property name="keys" value="=0" />
         </node>
-        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228587474568">
-          <node role="finishState" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1228587474569">
-            <link role="declaration" targetNodeId="1228587392671" resolveInfo="after" />
-          </node>
-          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228587474570">
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228822370386">
+          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228822372638">
             <link role="declaration" targetNodeId="1228587424067" resolveInfo="finish" />
           </node>
         </node>
@@ -14256,11 +14230,8 @@
         <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1228735603813">
           <property name="keys" value="ifa==b" />
         </node>
-        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228735603814">
-          <node role="finishState" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1228735603815">
-            <link role="declaration" targetNodeId="1228734547584" resolveInfo="after" />
-          </node>
-          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228735765125">
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228822418227">
+          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228822422307">
             <link role="declaration" targetNodeId="1228735754936" resolveInfo="finish" />
           </node>
         </node>
@@ -14322,9 +14293,6 @@
           <property name="name" value="b" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1228734491584" />
         </node>
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1228734547584">
-          <property name="name" value="after" />
-        </node>
       </node>
     </node>
   </node>
@@ -14346,11 +14314,8 @@
         <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1228737345581">
           <property name="keys" value="2;" />
         </node>
-        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228737345582">
-          <node role="finishState" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1228737345583">
-            <link role="declaration" targetNodeId="1228737345611" resolveInfo="after" />
-          </node>
-          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228737497801">
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228822407348">
+          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228822408928">
             <link role="declaration" targetNodeId="1228737466940" resolveInfo="finish" />
           </node>
         </node>
@@ -14406,9 +14371,6 @@
           <property name="name" value="b" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1228737345610" />
         </node>
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1228737345611">
-          <property name="name" value="after" />
-        </node>
       </node>
     </node>
   </node>
@@ -14430,11 +14392,8 @@
         <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1228738573042">
           <property name="keys" value="#" />
         </node>
-        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228738573043">
-          <node role="finishState" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1228738573044">
-            <link role="declaration" targetNodeId="1228738573069" resolveInfo="after" />
-          </node>
-          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228738713981">
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228822384953">
+          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228822386596">
             <link role="declaration" targetNodeId="1228738656230" resolveInfo="finsh" />
           </node>
         </node>
@@ -14495,8 +14454,60 @@
           <property name="name" value="b" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1228738573068" />
         </node>
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1228738573069">
-          <property name="name" value="after" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1228822784873">
+    <property name="package" value="editor" />
+    <property name="name" value="ForeachTest" />
+    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1228822784874">
+      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1228822784875">
+        <property name="name" value="method" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1228822784876" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228822784877" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228822784878">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestCellAnnotation" id="1228822784879">
+            <property name="cellId" value="Constant_1079958242049" />
+            <property name="name" value="start" />
+          </node>
+        </node>
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1228822784880">
+          <property name="name" value="before" />
+        </node>
+      </node>
+    </node>
+    <node role="testMethods" type="jetbrains.mps.lang.test.structure.EditorTestMethod" id="1228822784889">
+      <property name="name" value="editorTest" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1228822784890" />
+      <node role="nodeToEdit" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1228822784891">
+        <link role="declaration" targetNodeId="1228822784880" resolveInfo="before" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228822784892">
+        <node role="statement" type="jetbrains.mps.lang.test.structure.SelectCellStatement" id="1228822784893">
+          <node role="arg" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228822784894">
+            <link role="declaration" targetNodeId="1228822784879" resolveInfo="start" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1228822784895">
+          <property name="keys" value="foreach" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1228828826860">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228828835018">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228828835019">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228828835020">
+                <node role="operand" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1228828835021" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228828835022">
+                  <link role="baseMethodDeclaration" targetNodeId="31.~IEditor.getCurrentEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getCurrentEditorComponent" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228828835023">
+                <link role="baseMethodDeclaration" targetNodeId="36.~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228828835024">
+              <link role="baseMethodDeclaration" targetNodeId="39.~NodeSubstituteChooser.isVisible():boolean" resolveInfo="isVisible" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

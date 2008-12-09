@@ -1919,6 +1919,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return true;
   }
 
+  public NodeSubstituteChooser getNodeSubstituteChooser() {
+    return myNodeSubstituteChooser;
+  }
+  
+
   public void paint(Graphics g) {
     super.paint(g);
     if (myNodeRangeSelection.isActive()) {

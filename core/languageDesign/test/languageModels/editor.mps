@@ -747,12 +747,23 @@
         <link role="relationDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
         <link role="styleClass" targetNodeId="1227190782920" resolveInfo="EditorOpration" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228828287051">
+        <property name="text" value="&quot;" />
+        <link role="styleClass" targetNodeId="3.1186415563770" resolveInfo="StringLiteral" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1228828647652">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1227184516328">
         <link role="relationDeclaration" targetNodeId="1.1227184461946" resolveInfo="keys" />
         <link role="styleClass" targetNodeId="3.1186415563770" resolveInfo="StringLiteral" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1227185051640">
           <property name="value" value="0.0" />
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228828295225">
+        <property name="text" value="&quot;" />
+        <link role="styleClass" targetNodeId="3.1186415563770" resolveInfo="StringLiteral" />
       </node>
     </node>
   </node>

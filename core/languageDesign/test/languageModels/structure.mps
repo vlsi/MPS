@@ -560,19 +560,6 @@
       <link role="intfc" targetNodeId="7.1197027803184" resolveInfo="IOperation" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227182079811">
-    <property name="package" value="editor" />
-    <property name="name" value="TypeKeyStatement" />
-    <link role="extends" targetNodeId="7.1068580123157" resolveInfo="Statement" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1227184461946">
-      <property name="name" value="keys" />
-      <link role="dataType" targetNodeId="5.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227182099750">
-      <property name="value" value="type" />
-      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227187903044">
     <property name="package" value="editor" />
     <property name="name" value="AssertEditor" />
@@ -590,6 +577,19 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1228584180295">
     <property name="name" value="INodeAnnotattion" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227182079811">
+    <property name="package" value="editor" />
+    <property name="name" value="TypeKeyStatement" />
+    <link role="extends" targetNodeId="7.1068580123157" resolveInfo="Statement" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1227184461946">
+      <property name="name" value="keys" />
+      <link role="dataType" targetNodeId="5.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227182099750">
+      <property name="value" value="type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
 </model>
 

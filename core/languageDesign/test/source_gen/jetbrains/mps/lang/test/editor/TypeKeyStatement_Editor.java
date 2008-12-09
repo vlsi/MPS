@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
@@ -32,7 +33,25 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty1227182962482(context, node));
+    editorCell.addEditorCell(this.createConstant1228828287051(context, node, "\""));
     editorCell.addEditorCell(this.createProperty1227184516328(context, node));
+    editorCell.addEditorCell(this.createConstant1228828295225(context, node, "\""));
+    return editorCell;
+  }
+
+  public EditorCell createConstant1228828287051(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12288282870511228828287051(editorCell, node, context);
+    setupLabel_Constant_1228828287051_1228828287051(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1228828295225(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12288282952251228828295225(editorCell, node, context);
+    setupLabel_Constant_1228828295225_1228828295225(editorCell, node, context);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -118,10 +137,35 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static void setupBasic_Constant_12288282870511228828287051(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1228828287051");
+    BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_12288282952251228828295225(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1228828295225");
+    BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
+  }
+
   private static void setupLabel_conceptProperty_alias_1227182962482(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_property_keys_1227184516328(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1228828287051_1228828287051(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1228828295225_1228828295225(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

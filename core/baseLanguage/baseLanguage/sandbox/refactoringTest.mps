@@ -187,18 +187,9 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1224153941794">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224153941795" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1224171641026" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224153941797">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228738961843">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228738963085">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1228738961844" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1228738963511">
-              <link role="fieldDeclaration" targetNodeId="1228738397217" resolveInfo="a" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224153941797" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1224154273299">
-        <property name="name" value="a" />
+        <property name="name" value="if" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1224154273300" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1224154274472">

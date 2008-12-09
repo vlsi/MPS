@@ -25,6 +25,10 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.TestMain;
+import jetbrains.mps.MPSMainImpl;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.project.MPSProjects;
 
 import javax.swing.*;
 import javax.swing.event.ListDataListener;
@@ -114,17 +118,21 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (myChooserActivated != b) {
       if (b) {
         myEditorComponent.pushKeyboardHandler(this);
-        getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
-        myNodeSubstituteInfo.invalidateActions();
-        rebuildMenuEntries();
-        getPopupWindow().relayout();
-        getPopupWindow().setSelectionIndex(0);
-        getPopupWindow().setVisible(true);
+        if (!(IdeMain.isTestMode())) {        
+          getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
+          myNodeSubstituteInfo.invalidateActions();
+          rebuildMenuEntries();
+          getPopupWindow().relayout();
+          getPopupWindow().setSelectionIndex(0);
+          getPopupWindow().setVisible(true);
+        }
         myPopupActivated = true;
       } else {
-        getPopupWindow().setVisible(false);
-        getPatternEditor().done();
-        getPopupWindow().setRelativeCell(null);
+        if (!(IdeMain.isTestMode())) {
+          getPopupWindow().setVisible(false);
+          getPatternEditor().done();
+          getPopupWindow().setRelativeCell(null);          
+        }
         myPopupActivated = false;
         myEditorComponent.popKeyboardHandler();
       }
