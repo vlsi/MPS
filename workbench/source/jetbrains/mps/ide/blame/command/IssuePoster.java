@@ -34,18 +34,18 @@ public class IssuePoster {
     new Executor(myProject).send(query, new TestThread(), callback);
   }
 
-  private class TestThread extends QueryThread {
-    public Response doRun(Query q) throws Exception {
-      return Performer.login(new HttpClient(), q);
+  private class TestThread implements UnstableCalculable{
+    public Response getResponse(Query query) throws Exception {
+      return Performer.login(new HttpClient(), query);
     }
   }
 
-  private class SendThread extends QueryThread {
-    public Response doRun(Query q) throws Exception {
+  private class SendThread implements UnstableCalculable{
+    public Response getResponse(Query query) throws Exception {
       HttpClient c = new HttpClient();
-      Response r = Performer.login(c, q);
+      Response r = Performer.login(c, query);
       if (r.isSuccess()) {
-        r = Performer.postIssue(c, q.getIssue(), q.getDescription());
+        r = Performer.postIssue(c, query.getIssue(), query.getDescription());
       }
       return r;
     }
