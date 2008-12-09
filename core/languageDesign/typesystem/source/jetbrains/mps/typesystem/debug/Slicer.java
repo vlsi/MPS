@@ -38,6 +38,18 @@ public class Slicer {
   }
 
   public List<SliceInfo> beforeUserEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo) {
+    return beforeEquationAdded(type1, type2, typeCheckingContext, equationInfo, "user equation added");
+  }
+
+  public List<SliceInfo> beforeInequationTriggeredEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo) {
+    return beforeEquationAdded(type1, type2, typeCheckingContext, equationInfo, "inequation triggered equation added");
+  }
+
+  public List<SliceInfo> beforeChildEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo) {
+    return beforeEquationAdded(type1, type2, typeCheckingContext, equationInfo, "child equation added");
+  }
+
+  private List<SliceInfo> beforeEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo, String reason) {
     List<SliceInfo> result = new ArrayList<SliceInfo>();
     if (myNodesToSliceWith.isEmpty()) return result;
     EquationManager equationManager = typeCheckingContext.getEquationManager();
@@ -50,12 +62,12 @@ public class Slicer {
         NodeWrapper typeWrapper = NodeWrapper.fromNode(type, equationManager);
         IWrapper representatorWrapper = equationManager.getRepresentatorWrapper(typeWrapper);
         if (representatorWrapper.equals(representator1)) {
-          Slicer.SliceInfo sliceInfo = new SliceInfo(node, type1, equationInfo.getRuleModel(), equationInfo.getRuleId(), "user equation added", CollectionUtil.list(equationInfo));
+          Slicer.SliceInfo sliceInfo = new SliceInfo(node, type1, equationInfo.getRuleModel(), equationInfo.getRuleId(), reason, CollectionUtil.list(equationInfo));
           mySliceInfos.add(sliceInfo);
           result.add(sliceInfo);
         }
         if (representatorWrapper.equals(representator2)) {
-          Slicer.SliceInfo sliceInfo = new SliceInfo(node, type2, equationInfo.getRuleModel(), equationInfo.getRuleId(), "user equation added", CollectionUtil.list(equationInfo));
+          Slicer.SliceInfo sliceInfo = new SliceInfo(node, type2, equationInfo.getRuleModel(), equationInfo.getRuleId(), reason, CollectionUtil.list(equationInfo));
           mySliceInfos.add(sliceInfo);
           result.add(sliceInfo);
         }

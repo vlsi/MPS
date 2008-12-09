@@ -378,6 +378,10 @@ public class TypeCheckingContext {
     myTemporaryComponentsStack.pop();
   }
 
+  public Slicer getSlicer() {
+    return mySlicer;
+  }
+
   public static class NodeInfo {
     private SNode myNode;
     private SNode myType;
