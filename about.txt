@@ -69,5 +69,8 @@ Copyright (c) 2001, All Rights Reserved
 CERN - European Organization for Nuclear Research
 http://trove4j.sourceforge.net/
 Copyright (c) 1999
- 
+
+JNA Project
+https://jna.dev.java.net/
+
 You can find licenses for these software in the %MPS_HOME%/license directory

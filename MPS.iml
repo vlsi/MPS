@@ -10,9 +10,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPSSupport" exported="" />
-    <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="library" exported="" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" exported="" name="asm" level="project" />
-    <orderEntry type="library" name="commons-logging" level="project" />
+    <orderEntry type="library" exported="" name="commons-logging" level="project" />
     <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="blTypes" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
@@ -51,6 +51,22 @@
     <orderEntry type="module" module-name="actions" exported="" />
     <orderEntry type="module" module-name="baseLanguage-runtime" exported="" />
     <orderEntry type="module" module-name="behavior" exported="" />
+    <orderEntry type="library" exported="" name="Alloy" level="project" />
+    <orderEntry type="library" exported="" name="Commons-codec" level="project" />
+    <orderEntry type="library" exported="" name="Commons-net" level="project" />
+    <orderEntry type="library" exported="" name="Commons-collections" level="project" />
+    <orderEntry type="library" exported="" name="JavaHelp" level="project" />
+    <orderEntry type="library" exported="" name="JGoodies Forms" level="project" />
+    <orderEntry type="library" exported="" name="JNA" level="project" />
+    <orderEntry type="library" exported="" name="Log4j" level="project" />
+    <orderEntry type="library" exported="" name="Microba" level="project" />
+    <orderEntry type="library" exported="" name="NanoXML" level="project" />
+    <orderEntry type="library" exported="" name="OROMatcher" level="project" />
+    <orderEntry type="library" exported="" name="PicoContainer" level="project" />
+    <orderEntry type="library" exported="" name="Trove4j" level="project" />
+    <orderEntry type="library" exported="" name="XmlRpc" level="project" />
+    <orderEntry type="library" exported="" name="XStream" level="project" />
+    <orderEntry type="library" exported="" name="YJP" level="project" />
   </component>
   <component name="copyright">
     <Base>

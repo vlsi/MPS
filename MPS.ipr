@@ -97,10 +97,46 @@
           <option name="LABEL_INDENT_SIZE" value="0" />
           <option name="LABEL_INDENT_ABSOLUTE" value="false" />
         </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="groovy">
+          <option name="INDENT_SIZE" value="2" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="gsp">
+          <option name="INDENT_SIZE" value="2" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
         <ADDITIONAL_INDENT_OPTIONS fileType="java">
           <option name="INDENT_SIZE" value="2" />
           <option name="CONTINUATION_INDENT_SIZE" value="2" />
           <option name="TAB_SIZE" value="8" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="js">
+          <option name="INDENT_SIZE" value="4" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="jsp">
+          <option name="INDENT_SIZE" value="4" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
           <option name="USE_TAB_CHARACTER" value="false" />
           <option name="SMART_TABS" value="false" />
           <option name="LABEL_INDENT_SIZE" value="0" />
@@ -609,6 +645,7 @@
               <list size="0" />
             </value>
           </option>
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
@@ -704,6 +741,7 @@
               <list size="0" />
             </value>
           </option>
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
@@ -854,6 +892,7 @@
               <list size="0" />
             </value>
           </option>
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
@@ -1202,6 +1241,31 @@
         <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="http://svn.jetbrains.org/mps/branches">
+                    <value>
+                      <list>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1228731564947" />
+                          <option name="revision" value="42449" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/beta1.0" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1224609042985" />
+                          <option name="revision" value="41021" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/xmlDeprecatedToXML" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1128685466811" />
+                          <option name="revision" value="4818" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/JetBrains" />
+                        </SvnBranchItem>
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
               <option name="branchUrls">
                 <list>
                   <option value="http://svn.jetbrains.org/mps/branches" />
@@ -1447,7 +1511,7 @@
   <component name="libraryTable">
     <library name="JDOM">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/idea-platform/jdom.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jdom/jdom.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -1497,18 +1561,6 @@
         <root url="jar://$PROJECT_DIR$/lib/httpclient/httpclient-src.zip!/" />
       </SOURCES>
     </library>
-    <library name="htmlparser">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/htmlparser/filterbuilder.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/htmlparser/htmllexer.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/htmlparser/htmlparser.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/htmlparser/sax2.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/htmlparser/src.zip!/src" />
-      </SOURCES>
-    </library>
     <library name="commons-lang">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/commons-lang/commons-lang-2.1.jar!/" />
@@ -1536,13 +1588,22 @@
     </library>
     <library name="IDEA-plaform">
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/jetbrains-ideframework" />
+        <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/resources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/platform-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/annotations.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/platform.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/boot.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/util.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/bootstrap.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/icons.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/extensions.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/resources_en.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/forms_rt.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/jetbrains-ideframework/idea-platform-src.zip!/" />
       </SOURCES>
-      <jarDirectory url="file://$PROJECT_DIR$/lib/jetbrains-ideframework" recursive="false" />
     </library>
     <library name="JUnit4">
       <CLASSES>
@@ -1552,6 +1613,119 @@
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/junit4/junit-4.1-src.jar!/" />
       </SOURCES>
+    </library>
+    <library name="Alloy">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/alloy/alloy.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Commons-codec">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/commons-codec/commons-codec-1.3.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Commons-net">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/commons-net/commons-net-1.4.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Commons-collections">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/commons-collections/commons-collections.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="JavaHelp">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/javahelp/jh.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="JGoodies Forms">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/jgoodies/jgoodies-forms.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="JNA">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/jna/jna-utils.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jna/jna.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Log4j">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/log4j/log4j.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Microba">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/microba/microba.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="NanoXML">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/nanoxml/nanoxml-2.2.3.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="OROMatcher">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/oromatcher/oromatcher.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="PicoContainer">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/picocontainer/picocontainer.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Trove4j">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/trove4j/trove4j.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="XmlRpc">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/xmlrpc/xmlrpc-2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="XStream">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/xstream/xstream.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="YJP">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/yjp/yjp-controller-api-redist.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
     </library>
   </component>
   <component name="uidesigner-configuration">
