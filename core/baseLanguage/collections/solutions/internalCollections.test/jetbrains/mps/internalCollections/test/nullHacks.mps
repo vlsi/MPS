@@ -540,6 +540,38 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1228857666951">
+        <property name="methodName" value="nullArray" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1228857666952" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228857666953">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228857666954">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1228857666955">
+              <property name="name" value="arr" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1228857666956">
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1228857666957" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1228857666958" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1228857666959">
+            <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1228857666960">
+              <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1228857666961">
+                <property name="name" value="i" />
+              </node>
+              <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228857666962">
+                <link role="variableDeclaration" targetNodeId="1228857666955" resolveInfo="arr" />
+              </node>
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228857666963">
+                <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1228857666964">
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1228857666965">
+                    <property name="value" value="false" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207738889315">
       <link role="classifier" targetNodeId="2.1204129267857" resolveInfo="Util_Test" />

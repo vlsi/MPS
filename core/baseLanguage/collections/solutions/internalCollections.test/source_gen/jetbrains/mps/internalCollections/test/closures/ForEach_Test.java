@@ -5,6 +5,7 @@ package jetbrains.mps.internalCollections.test.closures;
 import org.junit.Test;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import junit.framework.Assert;
 
 public class ForEach_Test extends Util_Test {
 
@@ -15,6 +16,46 @@ public class ForEach_Test extends Util_Test {
       res.add(foo * 2);
     }
     this.assertIterableEquals(this.expectEven10(), res);
+  }
+
+  @Test()
+  public void test_iterateArray() throws Exception {
+    int[] arr = new int[]{1,2,3,4,5};
+    Iterable<Integer> exp = this.input5();
+    for(int i : arr) {
+      Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
+    }
+    String[] arr2 = new String[]{"A","B","C"};
+    Iterable<String> exp2 = this.inputABC();
+    for(String s : arr2) {
+      Assert.assertTrue(Sequence.fromIterable(exp2).contains(s));
+    }
+  }
+
+  @Test()
+  public void test_noWrapperForGNE() throws Exception {
+    Iterable<Integer> exp = this.input5();
+    for(int i : new int[]{1,2,3,4,5}) {
+      Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
+      this.accept(i);
+    }
+  }
+
+  @Test()
+  public void test_noWrapperForArray() throws Exception {
+    Iterable<Integer> exp = this.input5();
+    int[] arr = new int[]{1,2,3,4,5};
+    for(int i : arr) {
+      Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
+      this.accept(i);
+    }
+  }
+
+  private void accept(int valid) {
+  }
+
+  private void accept(Object invalid) {
+    Assert.assertTrue(false);
   }
 
 }

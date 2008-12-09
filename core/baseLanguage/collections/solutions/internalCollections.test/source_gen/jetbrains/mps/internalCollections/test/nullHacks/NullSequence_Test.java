@@ -75,11 +75,19 @@ public class NullSequence_Test extends Util_Test {
   @Test()
   public void test_forEach() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
-      for(Object foo : Sequence.fromIterable(null)) {
-        //  must not throw exception
-        throw new RuntimeException("me fail english? unpossible!");
+      for(Object foo : Sequence.emptySequence()) {
       }
     }
+  }
+
+  @Test()
+  public void test_nullArray() throws Exception {
+    int[] arr = null;
+    /*
+      for(int i : arr) {
+        Assert.assertTrue(false);
+      }
+    */
   }
 
 }

@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.impl.ConcatingSequence;
 import jetbrains.mps.internal.collections.runtime.impl.FilteringSequence;
 import jetbrains.mps.internal.collections.runtime.impl.LimitedCardinalitySequence;
 import jetbrains.mps.internal.collections.runtime.impl.NullSequence;
+import jetbrains.mps.internal.collections.runtime.impl.NullSetSequence;
 import jetbrains.mps.internal.collections.runtime.impl.PagingSequence;
 import jetbrains.mps.internal.collections.runtime.impl.SelectingSequence;
 import jetbrains.mps.internal.collections.runtime.impl.SortingSequence;
@@ -67,6 +68,10 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
      * </p>
      */
     public static final boolean NULL_WHEN_EMPTY = true;
+    
+    public static <U> ISequence<U> emptySequence () {
+    	return NullSetSequence.instance();
+    }
     
     public static <U> ISequence<U> fromArray (U...array) {
         return new BasicSequence<U> (Arrays.asList(array));

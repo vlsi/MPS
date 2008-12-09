@@ -409,6 +409,14 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(type, "componentType", true), "jetbrains.mps.baseLanguage.structure.ShortType");
   }
 
+  public static boolean baseMappingRule_Condition_1228851169281(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), "jetbrains.mps.baseLanguage.structure.ArrayType");
+  }
+
+  public static boolean baseMappingRule_Condition_1228857380984(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true), "jetbrains.mps.baseLanguage.structure.NullLiteral");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1167778587376(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.createUniqueName("_zCursor", null);
   }
@@ -525,6 +533,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1226932910972(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "jetbrains.mps.internal.collections.runtime.SetSequence";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1228851216391(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", true), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1228857465147(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", true), "name");
   }
 
   public static Object referenceMacro_GetReferent_1170982686718(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1444,10 +1460,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1226410564271(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "inputSequence", true);
-  }
-
   public static SNode sourceNodeQuery_1226410635744(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
       IMatchingPattern pattern_4 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
@@ -1595,6 +1607,26 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1228232701630(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1228851199511(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), "componentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1228851225284(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "inputSequence", true);
+  }
+
+  public static SNode sourceNodeQuery_1228851407882(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1228851459823(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "inputSequence", true);
+  }
+
+  public static SNode sourceNodeQuery_1228857449495(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return new _Quotations.QuotationClass_7().createNode();
   }
 
   public static Iterable sourceNodesQuery_1200500184872(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -6,7 +6,6 @@ import junit.framework.TestCase;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
 
 public class Sort_Test1 extends TestCase {
@@ -22,7 +21,7 @@ public class Sort_Test1 extends TestCase {
 
     }, true).toListSequence();
     int index = 0;
-    for(Integer i : Sequence.fromIterable(list_sorted)) {
+    for(Integer i : ListSequence.fromList(list_sorted)) {
       Assert.assertEquals(ListSequence.fromList(expected).getElement(index), i);
       index = index + 1;
     }
@@ -39,7 +38,7 @@ public class Sort_Test1 extends TestCase {
 
     }, false).toListSequence();
     int index = 0;
-    for(Integer i : Sequence.fromIterable(list_sorted)) {
+    for(Integer i : ListSequence.fromList(list_sorted)) {
       Assert.assertEquals(ListSequence.fromList(expected).getElement(index), i);
       index = index + 1;
     }
