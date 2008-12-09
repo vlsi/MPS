@@ -22,6 +22,8 @@ import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.SwingUtilities;
 
+import com.intellij.openapi.util.Computable;
+
 /**
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
@@ -99,11 +101,15 @@ public class EditorCell_Property extends EditorCell_Label {
   }
 
   public NodeSubstituteInfo getSubstituteInfo() {
-    NodeSubstituteInfo substituteInfo = super.getSubstituteInfo();
-    if (substituteInfo != null) {
-      substituteInfo.setOriginalText(myModelAccessor.getText());
-    }
-    return substituteInfo;
+    final NodeSubstituteInfo substituteInfo = super.getSubstituteInfo();
+    return ModelAccess.instance().runReadAction(new Computable<NodeSubstituteInfo>() {
+      public NodeSubstituteInfo compute() {
+        if (substituteInfo != null) {
+          substituteInfo.setOriginalText(myModelAccessor.getText());
+        }
+        return substituteInfo;
+      }
+    });
   }
 
   public ModelAccessor getModelAccessor() {
