@@ -67,9 +67,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   private Map<String, PackageNode> myPackageNodes = new HashMap<String, PackageNode>();
 
-  private Throwable myPreviousAdd;
-  private Throwable myPreviousRemove;
-
   public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
                         @NotNull IOperationContext operationContext) {
@@ -405,39 +402,21 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private void addListeners() {
-    myPreviousRemove = null;
-
-    if (myEventsCollector != null) {
-      myPreviousAdd.printStackTrace();
-      System.out.println("was prev add");
-    }
-
     assert myEventsCollector == null;
 
     myEventsCollector = new MyEventsCollector();
     myEventsCollector.add(myModelDescriptor);
     getSModelDescriptor().addModelListener(mySimpleModelListener);
     ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myStatusListener);
-
-    myPreviousAdd = new Throwable();
   }
 
   private void removeListeners() {
-    if (myEventsCollector == null) {
-      myPreviousRemove.printStackTrace();
-      System.out.println("was prev remove");
-    }
-
-    myPreviousAdd = null;
-
     getSModelDescriptor().removeModelListener(mySimpleModelListener);
     ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
 
     myEventsCollector.remove(myModelDescriptor);
     myEventsCollector.dispose();
     myEventsCollector = null;
-
-    myPreviousRemove = new Throwable();
   }
 
   private void updateNodePresentation(final boolean reloadSubTree) {
