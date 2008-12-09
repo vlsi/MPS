@@ -216,8 +216,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   void myMousePressed(final MouseEvent e) {
-    Project p = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    assert p!=null;
+    Project p = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext(this));
+    if (p==null) return;
     IdeFocusManager focusManager = IdeFocusManager.getInstance(p);
 
     focusManager.requestFocus(this,true);
