@@ -60,9 +60,9 @@ public class Language extends AbstractModule {
   private IClassPathItem myLanguageRuntimeClasspath;
 
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
-  private
-  @Nullable
-  Set<ILoggableRefactoring> myCachedRefactorings = null;
+  private @Nullable Set<ILoggableRefactoring> myCachedRefactorings = null;
+
+  private List<Language> myAllExtendedLanguages = new ArrayList<Language>();
 
   private Map<String, Set<String>> myAncestorsNamesMap = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
@@ -204,9 +204,12 @@ public class Language extends AbstractModule {
   }
 
   public List<Language> getAllExtendedLanguages() {
-    Set<Language> set = new LinkedHashSet<Language>();
-    collectExtendedLanguages(set);
-    return new ArrayList<Language>(set);
+    if (myAllExtendedLanguages == null) {
+      Set<Language> set = new LinkedHashSet<Language>();
+      collectExtendedLanguages(set);
+      myAllExtendedLanguages = new ArrayList<Language>(set);
+    }
+    return Collections.unmodifiableList(myAllExtendedLanguages);
   }
 
   public List<Dependency> getRuntimeDependOn() {
@@ -578,6 +581,7 @@ public class Language extends AbstractModule {
     myNameToConceptCache.clear();
     myNotFoundRefactorings.clear();
     myCachedRefactorings = null;
+    myAllExtendedLanguages = null;
   }
 
   private void invalidateHierarchyCaches() {
