@@ -14139,7 +14139,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1228587277348">
     <property name="package" value="editor" />
-    <property name="name" value="Assignmen" />
+    <property name="name" value="Assignment" />
     <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1228587296630">
       <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1228587306850">
         <property name="name" value="method" />
@@ -14563,6 +14563,111 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228836164205">
               <link role="baseMethodDeclaration" targetNodeId="39.~NodeSubstituteChooser.isVisible():boolean" resolveInfo="isVisible" />
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1228925485239">
+    <property name="package" value="editor" />
+    <property name="name" value="AnonynousClassTest" />
+    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1228925521397">
+      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1228925521398">
+        <property name="name" value="method" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1228925521399" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228925521400" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228925521401">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228925545222">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1228925545223">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1228925549819">
+                <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1228925549820">
+                  <link role="classifier" targetNodeId="4.~AbstractList" resolveInfo="AbstractList" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228925549821" />
+                  <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1228925549822">
+                    <property name="isAbstract" value="false" />
+                    <property name="name" value="get" />
+                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228925549823" />
+                    <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228925549824">
+                      <link role="classifier" targetNodeId="5.~Object" />
+                    </node>
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1228925549825">
+                      <property name="name" value="p0" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1228925549826" />
+                    </node>
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228925549827" />
+                  </node>
+                  <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestCellAnnotation" id="1228925585922">
+                    <property name="cellId" value="refCell_classifier" />
+                    <property name="caretPosition" value="12" />
+                    <property name="name" value="start" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1228925521406">
+          <property name="name" value="before" />
+        </node>
+      </node>
+    </node>
+    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1228925521407">
+      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1228925521408">
+        <property name="name" value="method" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1228925521409" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228925521410" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228925521411">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228925554704">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1228925554705">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1228925558426">
+                <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1228925558427">
+                  <link role="classifier" targetNodeId="4.~AbstractList" resolveInfo="AbstractList" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228925558428" />
+                  <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1228925558429">
+                    <property name="isAbstract" value="false" />
+                    <property name="name" value="get" />
+                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228925558430" />
+                    <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228925558431">
+                      <link role="classifier" targetNodeId="5.~Object" />
+                    </node>
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1228925558432">
+                      <property name="name" value="p0" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1228925558433" />
+                    </node>
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228925558434" />
+                  </node>
+                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1228925567842">
+                    <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestCellAnnotation" id="1228925569718">
+                      <property name="cellId" value="Alternation_1138060380694" />
+                      <property name="caretPosition" value="0" />
+                      <property name="name" value="finish" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="testMethods" type="jetbrains.mps.lang.test.structure.EditorTestMethod" id="1228925598705">
+      <property name="name" value="editorTest" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1228925598706" />
+      <node role="nodeToEdit" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1228925600646">
+        <link role="declaration" targetNodeId="1228925521406" resolveInfo="before" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228925598708">
+        <node role="statement" type="jetbrains.mps.lang.test.structure.SelectCellStatement" id="1228925622866">
+          <node role="arg" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228925622867">
+            <link role="declaration" targetNodeId="1228925585922" resolveInfo="start" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1228925622868">
+          <property name="keys" value="&lt;" />
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1228925622869">
+          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1228925622870">
+            <link role="declaration" targetNodeId="1228925569718" resolveInfo="finish" />
           </node>
         </node>
       </node>

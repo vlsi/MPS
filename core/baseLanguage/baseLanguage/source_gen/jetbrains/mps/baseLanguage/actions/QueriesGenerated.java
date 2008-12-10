@@ -38,7 +38,6 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
@@ -65,6 +64,8 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
+import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
+import jetbrains.mps.util.Condition;
 
 public class QueriesGenerated {
 
@@ -604,7 +605,7 @@ __switch__:
             }
             List<SNode> result = new ArrayList<SNode>();
             List<SNode> outerClassifiers = SNodeOperations.getAncestors(anonymousClass, "jetbrains.mps.baseLanguage.structure.Classifier", false);
-            for(SNode outerClassifier : Sequence.fromIterable(outerClassifiers)) {
+            for(SNode outerClassifier : ListSequence.fromList(outerClassifiers)) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(outerClassifier, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_METHOD)));
             }
             return result;
@@ -902,7 +903,7 @@ __switch__:
                 SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", null);
                 SLinkOperations.setTarget(newNode, "constructorDeclaration", (item), false);
                 if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")) {
-                  for(SNode argument : Sequence.fromIterable(SLinkOperations.getTargets(_context.getCurrentTargetNode(), "actualArgument", true))) {
+                  for(SNode argument : ListSequence.fromList(SLinkOperations.getTargets(_context.getCurrentTargetNode(), "actualArgument", true))) {
                     SLinkOperations.addChild(newNode, "actualArgument", argument);
                   }
                 }
@@ -951,7 +952,7 @@ __switch__:
                 SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", null);
                 SLinkOperations.setTarget(newNode, "constructorDeclaration", (item), false);
                 if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation")) {
-                  for(SNode argument : Sequence.fromIterable(SLinkOperations.getTargets(_context.getCurrentTargetNode(), "actualArgument", true))) {
+                  for(SNode argument : ListSequence.fromList(SLinkOperations.getTargets(_context.getCurrentTargetNode(), "actualArgument", true))) {
                     SLinkOperations.addChild(newNode, "actualArgument", argument);
                   }
                 }
@@ -1030,7 +1031,7 @@ __switch__:
               }
 
             });
-            for(SNode method : Sequence.fromIterable(SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true))) {
+            for(SNode method : ListSequence.fromList(SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true))) {
               ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).visitAll(new IVisitor <SNode>() {
 
                 public void visit(SNode it) {
@@ -1247,7 +1248,7 @@ __switch__:
 
                   }).toListSequence();
                 }
-                for(SNode method : Sequence.fromIterable(methodsToImplement)) {
+                for(SNode method : ListSequence.fromList(methodsToImplement)) {
                   SNode method_copy = SNodeOperations.copyNode(method);
                   SPropertyOperations.set(method_copy, "isAbstract", "" + false);
                   SLinkOperations.setNewChild(method_copy, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
@@ -1255,7 +1256,7 @@ __switch__:
                 }
                 // replace all type vars with Object
                 List<SNode> typeVarRefs = SNodeOperations.getDescendants(SLinkOperations.getTarget(creator, "cls", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false);
-                for(SNode typeVar : Sequence.fromIterable(typeVarRefs)) {
+                for(SNode typeVar : ListSequence.fromList(typeVarRefs)) {
                   SNodeOperations.replaceWithAnother(typeVar, new _Quotations.QuotationClass_3().createNode());
                 }
                 return creator;
@@ -2451,7 +2452,7 @@ __switch__:
         public SNode doSubstitute(String pattern) {
           SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
           SNode cls = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
-          for(SNode arg : Sequence.fromIterable(SLinkOperations.getTargets(_context.getSourceNode(), "actualArgument", true))) {
+          for(SNode arg : ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "actualArgument", true))) {
             SLinkOperations.addChild(cls, "parameter", arg);
           }
           SLinkOperations.setTarget(cls, "classifier", SNodeOperations.getParent(SLinkOperations.getTarget(_context.getSourceNode(), "baseMethodDeclaration", false)), false);
@@ -2784,6 +2785,27 @@ __switch__:
       }
     }
     return result;
+  }
+
+  public static void removeSideTransformActionsByCondition_1228923203001(final IOperationContext operationContext, final RemoveSideTransformActionByConditionContext _context) {
+    Iterator<INodeSubstituteAction> actions = _context.getActions();
+    while (actions.hasNext()) {
+      INodeSubstituteAction current = actions.next();
+      if (!(SNodeOperations.isInstanceOf(((SNode)current.getOutputConcept()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+        continue;
+      }
+      final SNode concept = current.getOutputConcept();
+      Condition condition = new Condition() {
+
+        public boolean met(Object p0) {
+          return concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass");
+        }
+
+      };
+      if (condition.met(null)) {
+        actions.remove();
+      }
+    }
   }
 
 }

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.lang.test.runtime" uuid="707c4fde-f79a-44b5-b3d7-b5cef8844ccf" extenallyVisible="true" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <classPath>
-    <entry path="${mps_home}\lib\jetbrains-ideframework\picocontainer.jar" />
-  </classPath>
+  <classPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">8fffa437-9500-4c6b-abfc-f4cb2335b059(jetbrains.mps.lang.typesystem#1174411220599)</dependency>

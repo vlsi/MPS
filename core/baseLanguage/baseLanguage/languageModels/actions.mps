@@ -6887,6 +6887,20 @@
           </node>
         </node>
       </node>
+      <node role="part" type="jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart" id="1228923203001">
+        <node role="condition" type="jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition" id="1228923203002">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228923203003">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228923239023">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1228923297466">
+                <node role="rightExpression" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1228923303547">
+                  <link role="conceptDeclaration" targetNodeId="1.1170345865475" resolveInfo="AnonymousClass" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept" id="1228923239024" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1221054943487">
         <link role="concept" targetNodeId="1.1170345865475" resolveInfo="AnonymousClass" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="1221054949505">
