@@ -144,7 +144,7 @@ public abstract class CompletionTextField extends JTextField {
     super.removeNotify();
   }
 
-  protected abstract List<String> getProposals(String text);
+  public abstract List<String> getProposals(String text);
 
   private String getTextPrefix() {
     try {

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.search.icons;
+package jetbrains.mps.workbench.search.icons;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;

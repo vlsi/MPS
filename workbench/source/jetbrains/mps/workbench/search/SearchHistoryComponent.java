@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.search;
+package jetbrains.mps.workbench.search;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import jetbrains.mps.nodeEditor.search.SearchHistoryComponent.MyState;
+import jetbrains.mps.workbench.search.SearchHistoryComponent.MyState;
 
 @State(
   name = "NodeEditorSearchHistory",

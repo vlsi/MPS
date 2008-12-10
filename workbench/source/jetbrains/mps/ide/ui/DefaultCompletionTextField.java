@@ -29,7 +29,7 @@ public class DefaultCompletionTextField extends CompletionTextField {
     myPossibleValues.addAll(possibleValues);
   }
 
-  protected List<String> getProposals(String text) {
+  public List<String> getProposals(String text) {
     List<String> result = new ArrayList<String>();
     Pattern pattern = Pattern.compile(ChooseItemComponent.getExactItemPatternBuilder(text) + ".*");
     for (String possibleValue : myPossibleValues) {

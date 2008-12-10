@@ -91,6 +91,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private MessageViewLoggingHandler myLoggingHandler;
   private ActionToolbar myToolbar;
   private AtomicInteger myMessagesInProgress = new AtomicInteger();
+  private MessageToolSearchPanel mySearchPanel = new MessageToolSearchPanel(myList, getProject());
 
   public MessagesViewTool(Project project) {
     super(project, "MPS Messages", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
@@ -119,7 +120,15 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     });
 
     myComponent.add(panel, BorderLayout.WEST);
+    myComponent.add(mySearchPanel, BorderLayout.NORTH);
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
+
+    myComponent.registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        mySearchPanel.activate();
+      }
+    }, KeyStroke.getKeyStroke("ctrl F"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
 
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
 
@@ -175,37 +184,6 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         } else {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         }
-      }
-    });
-
-    myList.setCellRenderer(new DefaultListCellRenderer() {
-      public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-        super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-
-        setBackground(isSelected ? Color.LIGHT_GRAY : Color.WHITE);
-        setBorder(new EmptyBorder(0, 0, 0, 0));
-
-        Message msg = (Message) value;
-        if (msg.getHintObject() != null) {
-          setText(msg.getCreationTimeString() + "\t: " + msg.getText());
-          setForeground(Color.BLUE);
-        } else {
-          setText(msg.getCreationTimeString() + "\t: " + msg.getText());
-          setForeground(Color.BLACK);
-        }
-
-        switch (msg.getKind()) {
-          case INFORMATION:
-            setIcon(jetbrains.mps.ide.messages.Icons.INFORMATION_ICON);
-            break;
-          case WARNING:
-            setIcon(jetbrains.mps.ide.messages.Icons.WARNING_ICON);
-            break;
-          case ERROR:
-            setIcon(jetbrains.mps.ide.messages.Icons.ERROR_ICON);
-            break;
-        }
-        return this;
       }
     });
   }
