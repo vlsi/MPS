@@ -15,7 +15,7 @@ GETTING HELP
   For getting help you can visit several locations:
   - home http://www.jetbrains.com/mps/
   - documentation pages http://www.jetbrains.net/confluence/display/MPS/MPS+Documentation+Page
-  - issue tracker http://teamsys.intellij.net/
+  - issue tracker http://jetbrains.net/tracker
 
 ----------------------
 Develop with pleasure!
