@@ -149,15 +149,19 @@ public class NodeRangeSelection implements KeyboardHandler {
   }
 
   public List<SNode> getNodes() {
-    if (myParentNode == null) return new ArrayList<SNode>();
-    List<SNode> children = myParentNode.getChildren(myRole);
-    LinkedList<SNode> resultList = new LinkedList<SNode>();
-    int i1 = children.indexOf(myFirstNode);
-    int i2 = children.indexOf(myLastNode);
-    for (int index = Math.min(i1, i2); index <= Math.max(i1, i2); index++) {
-      resultList.add(children.get(index));
-    }
-    return resultList;
+    return ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
+      public List<SNode> compute() {
+        if (myParentNode == null) return new ArrayList<SNode>();
+        List<SNode> children = myParentNode.getChildren(myRole);
+        LinkedList<SNode> resultList = new LinkedList<SNode>();
+        int i1 = children.indexOf(myFirstNode);
+        int i2 = children.indexOf(myLastNode);
+        for (int index = Math.min(i1, i2); index <= Math.max(i1, i2); index++) {
+          resultList.add(children.get(index));
+        }
+        return resultList;
+      }
+    });
   }
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
