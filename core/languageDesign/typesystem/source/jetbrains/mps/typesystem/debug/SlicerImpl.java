@@ -17,20 +17,7 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class SlicerImpl implements ISlicer {
-   private Set<SNode> myNodesToSliceWith = new HashSet<SNode>(2);
   private List<SliceInfo> mySliceInfos = new ArrayList<SliceInfo>();
-
-  public void addNodeToSliceWith(SNode node) {
-    myNodesToSliceWith.add(node);
-  }
-
-  public void removeNodeToSliceWith(SNode node) {
-    myNodesToSliceWith.remove(node);
-  }
-
-  public void clearNodesToSliceWith() {
-    myNodesToSliceWith.clear();
-  }
 
   public List<SNode> getNodesToSliceWith()  {
     return new ArrayList<SNode>();
@@ -54,12 +41,10 @@ public class SlicerImpl implements ISlicer {
 
   private List<SliceInfo> beforeEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo, String reason) {
     List<SliceInfo> result = new ArrayList<SliceInfo>();
-    if (myNodesToSliceWith.isEmpty()) return result;
-    EquationManager equationManager = typeCheckingContext.getEquationManager();
+  /*  EquationManager equationManager = typeCheckingContext.getEquationManager();
     IWrapper representator1 = equationManager.getRepresentatorWrapper(NodeWrapper.fromNode(type1, equationManager));
     IWrapper representator2 = equationManager.getRepresentatorWrapper(NodeWrapper.fromNode(type2, equationManager));
 
-    for (SNode node : myNodesToSliceWith) {
       SNode type = typeCheckingContext.getMainContext().get(node);
       if (type != null) {
         NodeWrapper typeWrapper = NodeWrapper.fromNode(type, equationManager);
@@ -74,18 +59,15 @@ public class SlicerImpl implements ISlicer {
           mySliceInfos.add(sliceInfo);
           result.add(sliceInfo);
         }
-      }
-    }
+      }*/
     return result;
   }
 
   public List<SliceInfo> beforeInequationsSolvedForType(SNode type, TypeCheckingContext typeCheckingContext, List<EquationInfo> inequations) {
     List<SliceInfo> result = new ArrayList<SliceInfo>();
-    if (myNodesToSliceWith.isEmpty()) return result;
-    EquationManager equationManager = typeCheckingContext.getEquationManager();
+  /*  EquationManager equationManager = typeCheckingContext.getEquationManager();
     IWrapper representator = equationManager.getRepresentatorWrapper(NodeWrapper.fromNode(type, equationManager));
 
-    for (SNode node : myNodesToSliceWith) {
       SNode nodeType = typeCheckingContext.getMainContext().get(node);
       if (nodeType != null) {
         NodeWrapper typeWrapper = NodeWrapper.fromNode(nodeType, equationManager);
@@ -95,8 +77,7 @@ public class SlicerImpl implements ISlicer {
           mySliceInfos.add(sliceInfo);
           result.add(sliceInfo);
         }
-      }
-    }
+      }*/
     return result;
   }
 

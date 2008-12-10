@@ -73,7 +73,7 @@ public class TypecheckerStateViewComponent extends JPanel {
               public ISlicer compute() {
                 ISlicer slicer = new SlicerImpl();
                 for (SNodePointer nodePointer : myNodesToSliceWith) {
-                  slicer.addNodeToSliceWith(nodePointer.getNode());
+            //      slicer.addNodeToSliceWith(nodePointer.getNode());
                 }
                 return TypeChecker.getInstance().debugRoot(currentRoot, slicer);
               }

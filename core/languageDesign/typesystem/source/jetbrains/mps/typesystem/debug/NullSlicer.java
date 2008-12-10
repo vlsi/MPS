@@ -15,19 +15,6 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class NullSlicer implements ISlicer {
-  public void addNodeToSliceWith(SNode node) {
-
-  }
-
-  public void removeNodeToSliceWith(SNode node) {
-  }
-
-  public void clearNodesToSliceWith() {
-  }
-
-  public List<SNode> getNodesToSliceWith() {
-    return new ArrayList<SNode>();
-  }
 
   public List<SliceInfo> getSliceInfos() {
     return new ArrayList<SliceInfo>();

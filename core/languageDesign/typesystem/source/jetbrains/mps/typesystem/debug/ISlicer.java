@@ -15,14 +15,6 @@ import java.util.*;
  */
 public interface ISlicer {
 
-  public void addNodeToSliceWith(SNode node);
-
-  public void removeNodeToSliceWith(SNode node);
-
-  public void clearNodesToSliceWith();
-
-  public List<SNode> getNodesToSliceWith();
-
   public List<SliceInfo> getSliceInfos();
 
   public List<SliceInfo> beforeUserEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo);
