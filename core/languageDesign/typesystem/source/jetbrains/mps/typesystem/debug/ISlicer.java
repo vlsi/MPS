@@ -23,7 +23,7 @@ public interface ISlicer {
 
   public List<SliceInfo> beforeChildEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo);
 
-  public List<SliceInfo> beforeInequationsSolvedForType(SNode type, TypeCheckingContext typeCheckingContext, List<EquationInfo> inequations);
+  public List<SliceInfo> beforeInequationsSolvedForType(SNode type, SNode otherType, TypeCheckingContext typeCheckingContext, List<EquationInfo> inequations);
 
   public void afterEquationAdded(List<SliceInfo> sliceInfos, TypeCheckingContext typeCheckingContext);
 

@@ -32,7 +32,7 @@ public class NullSlicer implements ISlicer {
     return new ArrayList<SliceInfo>();
   }
 
-  public List<SliceInfo> beforeInequationsSolvedForType(SNode type, TypeCheckingContext typeCheckingContext, List<EquationInfo> inequations) {
+  public List<SliceInfo> beforeInequationsSolvedForType(SNode type, SNode otherType, TypeCheckingContext typeCheckingContext, List<EquationInfo> inequations) {
     return new ArrayList<SliceInfo>();
   }
 

@@ -18,6 +18,7 @@ import java.util.ArrayList;
  */
 public class SlicerImpl implements ISlicer {
   private List<SliceInfo> mySliceInfos = new ArrayList<SliceInfo>();
+  private List<EquationLogItem> myEquationLogItems = new ArrayList<EquationLogItem>();
 
   public List<SNode> getNodesToSliceWith()  {
     return new ArrayList<SNode>();
@@ -41,43 +42,19 @@ public class SlicerImpl implements ISlicer {
 
   private List<SliceInfo> beforeEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo, String reason) {
     List<SliceInfo> result = new ArrayList<SliceInfo>();
-  /*  EquationManager equationManager = typeCheckingContext.getEquationManager();
-    IWrapper representator1 = equationManager.getRepresentatorWrapper(NodeWrapper.fromNode(type1, equationManager));
-    IWrapper representator2 = equationManager.getRepresentatorWrapper(NodeWrapper.fromNode(type2, equationManager));
-
-      SNode type = typeCheckingContext.getMainContext().get(node);
-      if (type != null) {
-        NodeWrapper typeWrapper = NodeWrapper.fromNode(type, equationManager);
-        IWrapper representatorWrapper = equationManager.getRepresentatorWrapper(typeWrapper);
-        if (representatorWrapper.equals(representator1)) {
-          SliceInfo sliceInfo = new SliceInfo(node, type1, equationInfo.getRuleModel(), equationInfo.getRuleId(), reason, CollectionUtil.list(equationInfo));
-          mySliceInfos.add(sliceInfo);
-          result.add(sliceInfo);
-        }
-        if (representatorWrapper.equals(representator2)) {
-          SliceInfo sliceInfo = new SliceInfo(node, type2, equationInfo.getRuleModel(), equationInfo.getRuleId(), reason, CollectionUtil.list(equationInfo));
-          mySliceInfos.add(sliceInfo);
-          result.add(sliceInfo);
-        }
-      }*/
+    EquationManager equationManager = typeCheckingContext.getEquationManager();
+    SNode representator1 = equationManager.getRepresentator(type1);
+    SNode representator2 = equationManager.getRepresentator(type2);
+    myEquationLogItems.add(new EquationLogItem(type1, type2, representator1, representator2, equationInfo.getRuleModel(), equationInfo.getRuleId(), reason));
     return result;
   }
 
-  public List<SliceInfo> beforeInequationsSolvedForType(SNode type, TypeCheckingContext typeCheckingContext, List<EquationInfo> inequations) {
+  public List<SliceInfo> beforeInequationsSolvedForType(SNode type, SNode otherType, TypeCheckingContext typeCheckingContext, List<EquationInfo> inequations) {
     List<SliceInfo> result = new ArrayList<SliceInfo>();
-  /*  EquationManager equationManager = typeCheckingContext.getEquationManager();
-    IWrapper representator = equationManager.getRepresentatorWrapper(NodeWrapper.fromNode(type, equationManager));
-
-      SNode nodeType = typeCheckingContext.getMainContext().get(node);
-      if (nodeType != null) {
-        NodeWrapper typeWrapper = NodeWrapper.fromNode(nodeType, equationManager);
-        IWrapper representatorWrapper = equationManager.getRepresentatorWrapper(typeWrapper);
-        if (representatorWrapper.equals(representator)) {
-          SliceInfo sliceInfo = new SliceInfo(node, representatorWrapper.getNode(), null, null, "inequations solved", inequations);
-          mySliceInfos.add(sliceInfo);
-          result.add(sliceInfo);
-        }
-      }*/
+    EquationManager equationManager = typeCheckingContext.getEquationManager();
+    SNode representator = equationManager.getRepresentator(type);
+    SNode otherRepresentator = equationManager.getRepresentator(otherType);
+    myEquationLogItems.add(new EquationLogItem(type, otherType, representator, otherRepresentator, null, null, "inequations solved", inequations));
     return result;
   }
 

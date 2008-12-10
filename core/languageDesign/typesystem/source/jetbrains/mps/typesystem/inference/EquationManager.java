@@ -961,8 +961,9 @@ public class EquationManager {
           expandedSubtypes.add(expanded);
         }
         ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
-        List<SliceInfo> sliceInfos = slicer.beforeInequationsSolvedForType(type.getNode(), myTypeCheckingContext, new ArrayList<EquationInfo>(errorInfoMap.values()));
-        addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(expandedSubtypes, isWeak, EquationManager.this),
+        IWrapper otherType = myTypeChecker.getSubtypingManager().leastCommonSupertype(expandedSubtypes, isWeak, EquationManager.this);
+        List<SliceInfo> sliceInfos = slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), myTypeCheckingContext, new ArrayList<EquationInfo>(errorInfoMap.values()));
+        addEquation(type, otherType,
           errorInfo);
         slicer.afterEquationAdded(sliceInfos, myTypeCheckingContext);
       }
@@ -1037,8 +1038,9 @@ public class EquationManager {
       public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         // c :< T => c = T
         ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
-        List<SliceInfo> sliceInfos = slicer.beforeInequationsSolvedForType(type.getNode(), myTypeCheckingContext, new ArrayList<EquationInfo>(errorInfoMap.values()));
-        addEquation(type,  /*concreteSupertypes.iterator().next()*/decideIfIsLineAndReturnInfimum(concreteSupertypes), errorInfo);
+        IWrapper otherType = decideIfIsLineAndReturnInfimum(concreteSupertypes);
+        List<SliceInfo> sliceInfos = slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), myTypeCheckingContext, new ArrayList<EquationInfo>(errorInfoMap.values()));
+        addEquation(type,  /*concreteSupertypes.iterator().next()*/otherType, errorInfo);
         slicer.afterEquationAdded(sliceInfos, myTypeCheckingContext);
       }
     }, priority, minPriority, isShallow);
