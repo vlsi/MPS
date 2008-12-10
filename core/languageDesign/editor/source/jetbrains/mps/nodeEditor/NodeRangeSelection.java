@@ -269,14 +269,32 @@ public class NodeRangeSelection implements KeyboardHandler {
     return false;
   }
 
-  private void doDeleteNodes(EditorContext editorContext) {
+  private void doDeleteNodes(final EditorContext editorContext) {
     if (getNodes().size() > 1) {
-      new DeleteNodesHelper(getNodes(), editorContext.getOperationContext(), false).deleteNodes(false);
+      editorContext.executeCommand(new Runnable() {
+        public void run() {
+          new DeleteNodesHelper(getNodes(), editorContext.getOperationContext(), false).deleteNodes(false);
+        }
+      });
     } else {
       for (SNode semanticNode : getNodes()) {
         EditorCell nodeCell = myEditorComponent.findNodeCell(semanticNode);
-        EditorCellAction action = nodeCell.getAction(CellActionType.DELETE);
-        if (action != null && action.canExecute(editorContext)) {
+        final EditorCellAction action = nodeCell.getAction(CellActionType.DELETE);
+        if (action == null) continue;
+
+        if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          public Boolean compute() {
+            return action.canExecute(editorContext);
+          }
+        })) continue;
+
+        if (action.executeInCommand()) {
+          editorContext.executeCommand(new Runnable() {
+            public void run() {
+              action.execute(editorContext);
+            }
+          });
+        } else {
           action.execute(editorContext);
         }
       }
