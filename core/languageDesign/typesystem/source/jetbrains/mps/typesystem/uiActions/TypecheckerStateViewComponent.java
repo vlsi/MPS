@@ -69,22 +69,11 @@ public class TypecheckerStateViewComponent extends JPanel {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
           if (editorComponent != null) {
             final SNode currentRoot = editorComponent.getEditedNode();
-            ISlicer slicer = ModelAccess.instance().runReadAction(new Computable<ISlicer>() {
+              ISlicer slicer = ModelAccess.instance().runReadAction(new Computable<ISlicer>() {
               public ISlicer compute() {
-                ISlicer slicer = new SlicerImpl();
-                for (SNodePointer nodePointer : myNodesToSliceWith) {
-            //      slicer.addNodeToSliceWith(nodePointer.getNode());
-                }
-                return TypeChecker.getInstance().debugRoot(currentRoot, slicer);
+                return TypeChecker.getInstance().debugRoot(currentRoot, new SlicerImpl());
               }
             });
-            for (SliceItemPanel sliceItemPanel : mySliceItems) {
-              TypecheckerStateViewComponent.this.remove(sliceItemPanel);
-            }
-            mySliceItemsCount = 0;
-            for (SliceInfo sliceInfo : slicer.getSliceInfos()) {
-              addSliceItem(sliceInfo);
-            }
           }
         }
       }

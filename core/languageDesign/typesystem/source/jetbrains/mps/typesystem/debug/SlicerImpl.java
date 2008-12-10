@@ -4,10 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.CollectionUtil;
 
-import java.util.Set;
-import java.util.HashSet;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,6 +16,7 @@ import java.util.ArrayList;
 public class SlicerImpl implements ISlicer {
   private List<SliceInfo> mySliceInfos = new ArrayList<SliceInfo>();
   private List<EquationLogItem> myEquationLogItems = new ArrayList<EquationLogItem>();
+  private Map<SNode, SNode> myNodesToTypes;
 
   public List<SNode> getNodesToSliceWith()  {
     return new ArrayList<SNode>();
@@ -56,6 +54,10 @@ public class SlicerImpl implements ISlicer {
     SNode otherRepresentator = equationManager.getRepresentator(otherType);
     myEquationLogItems.add(new EquationLogItem(type, otherType, representator, otherRepresentator, null, null, "inequations solved", inequations));
     return result;
+  }
+
+  public void beforeTypesExpanded(Map<SNode, SNode> context) {
+    myNodesToTypes.putAll(context);
   }
 
   public void afterEquationAdded(List<SliceInfo> sliceInfos, TypeCheckingContext typeCheckingContext) {

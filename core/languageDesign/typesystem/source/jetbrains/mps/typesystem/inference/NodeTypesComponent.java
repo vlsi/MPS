@@ -287,6 +287,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   public void solveInequationsAndExpandTypes() {
     // solve residual inequations
     myEquationManager.solveInequations();
+    getSlicer().beforeTypesExpanded(myNodesToTypesMap);
 
     // setting expanded types to nodes
     for (Entry<SNode, SNode> contextEntry : new HashSet<Entry<SNode, SNode>>(myNodesToTypesMap.entrySet())) {

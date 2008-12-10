@@ -6,6 +6,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -38,5 +39,9 @@ public class NullSlicer implements ISlicer {
 
   public void afterEquationAdded(List<SliceInfo> sliceInfos, TypeCheckingContext typeCheckingContext) {
 
+  }
+
+  public void beforeTypesExpanded(Map<SNode, SNode> context) {
+    
   }
 }

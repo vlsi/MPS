@@ -27,4 +27,5 @@ public interface ISlicer {
 
   public void afterEquationAdded(List<SliceInfo> sliceInfos, TypeCheckingContext typeCheckingContext);
 
+  public void beforeTypesExpanded(Map<SNode, SNode> context);
 }
