@@ -34,8 +34,4 @@ public class TypecheckerStateView extends BaseProjectTool {
     super.initComponent();
     myComponent = new TypecheckerStateViewComponent(getProject().getComponent(MPSProjectHolder.class).getMPSProject().createOperationContext());
   }
-
-  public void addEquationItem(SNode node1, SNode node2) {
-    myComponent.addEquationItem(node1, node2);
-  }
 }

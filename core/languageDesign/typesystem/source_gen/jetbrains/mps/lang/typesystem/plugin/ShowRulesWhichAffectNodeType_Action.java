@@ -20,7 +20,7 @@ import java.util.Set;
 import jetbrains.mps.util.Pair;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
@@ -101,7 +101,7 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
         return;
       }
       List<SNode> rules = new ArrayList<SNode>();
-      for(Pair<String, String> ruleId : Sequence.fromIterable(rulesIds)) {
+      for(Pair<String, String> ruleId : SetSequence.fromSet(rulesIds)) {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ruleId.o1));
         if (modelDescriptor == null) {
           continue;

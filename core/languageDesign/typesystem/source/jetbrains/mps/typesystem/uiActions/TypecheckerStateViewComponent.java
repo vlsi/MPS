@@ -18,9 +18,7 @@ import javax.swing.*;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.ActionEvent;
+import java.awt.event.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -114,14 +112,23 @@ public class TypecheckerStateViewComponent extends JPanel {
     SNodePointer pointer = new SNodePointer(node);
     if (!myNodesToSliceWith.contains(pointer)) {
       myNodesToSliceWith.add(pointer);
-      TypecheckerStateViewComponent.SNodeTree tree = new SNodeTree(node);
+      final TypecheckerStateViewComponent.SNodeTree tree = new SNodeTree(node);
       myTreesOfNodesToSliceWith.add(tree);
       myUpperPanelConstraints.weightx = 0;
       myUpperPanelConstraints.gridx = myNodesToSliceWith.size();
       myUpperPanel.add(tree);
+      tree.addKeyListener(new KeyAdapter() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+          if (e.getKeyChar() == KeyEvent.VK_DELETE) {
+            removeNodeToSliceWith(tree.myNode);
+          }
+        }
+      });
       tree.rebuildNow();
       readdUpperGauge();
     }
+    invalidate();
   }
 
   public void removeNodeToSliceWith(SNode node) {
@@ -135,6 +142,7 @@ public class TypecheckerStateViewComponent extends JPanel {
       i++;
     }
     readdUpperGauge();
+    invalidate();
   }
 
   private void addItem(Component c) {
@@ -142,10 +150,7 @@ public class TypecheckerStateViewComponent extends JPanel {
     myGridBagConstraints.weighty = 0;
     add(c, myGridBagConstraints);
     readdGauge();
-  }
-
-  public void addEquationItem(SNode node1, SNode node2) {
-    addItem(new EquationItem(node1, node2));
+    invalidate();
   }
 
   public void addSliceItem(SliceInfo sliceInfo) {
@@ -170,44 +175,6 @@ public class TypecheckerStateViewComponent extends JPanel {
       SNodeTreeNode treeNode = new SNodeTreeNode(myNode, myOperationContext);
       return treeNode;
     }
-  }
-
-  public class EquationItem extends JPanel {
-    SNodeTree myNodeTree1;
-    SNodeTree myNodeTree2;
-
-    public EquationItem(SNode node1, SNode node2) {
-
-      setLayout(new GridBagLayout());
-      GridBagConstraints constraints = new GridBagConstraints();
-      constraints.gridy = 0;
-      constraints.weighty = 0;
-
-      constraints.gridx = 0;
-      constraints.weightx = 0;
-      constraints.fill = GridBagConstraints.NONE;
-      constraints.anchor = GridBagConstraints.NORTHWEST;
-      myNodeTree1 = new SNodeTree(node1);
-      add(myNodeTree1, constraints);
-
-      constraints.gridx = 1;
-      constraints.weightx = 1;
-      constraints.fill = GridBagConstraints.BOTH;
-      constraints.anchor = GridBagConstraints.CENTER;
-      add(new JLabel("==", null, SwingConstants.CENTER), constraints);
-
-      constraints.gridx = 2;
-      constraints.weightx = 0;
-      constraints.fill = GridBagConstraints.NONE;
-      constraints.anchor = GridBagConstraints.NORTHEAST;
-      myNodeTree2 = new SNodeTree(node2);
-      add(myNodeTree2, constraints);
-
-      setBackground(myNodeTree1.getBackground());
-      myNodeTree1.rebuildNow();
-      myNodeTree2.rebuildNow();
-    }
-
   }
 
   public class SliceItemPanel extends JPanel {
