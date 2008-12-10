@@ -199,7 +199,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
   }
 
   private boolean processSideDeletes(EditorContext editorContext, KeyEvent keyEvent) {
-    EditorCell selectedCell = editorContext.getSelectedCell();
+    final EditorCell selectedCell = editorContext.getSelectedCell();
     if (selectedCell == null) return false;
     if (areModifiersPressed(keyEvent)) return false;
 
@@ -218,7 +218,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     }
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && selectedCell.isFirstPositionInBigCell() && !selectedCell.isLastPositionInBigCell()) {
-      EditorCell target;
+      final EditorCell target;
       if (selectedCell.isFirstPositionInBigCell() && selectedCell.getContainingBigCell().getPrevSibling() != null) {
         target = selectedCell.getContainingBigCell().getPrevSibling();
       } else if (selectedCell.getPrevSibling() != null) {
@@ -226,7 +226,14 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       } else {
         target = selectedCell.getPrevLeaf(CellConditions.SELECTABLE);
       }
-      if (target == null || target.getSNode().isAncestorOf(selectedCell.getSNode())) return false;
+
+      if (target == null) return false;
+      if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return target.getSNode().isAncestorOf(selectedCell.getSNode());
+        }
+      })) return false;
+
       return target.executeAction(CellActionType.DELETE);
     }
 
