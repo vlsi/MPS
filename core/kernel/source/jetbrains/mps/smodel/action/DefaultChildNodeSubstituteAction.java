@@ -27,7 +27,6 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   private SNode myCurrentChild;
   private IScope myScope;
   private IChildNodeSetter mySetter;
-  Throwable myCreationPoint = new Throwable();
 
   /**
    * @deprecated  - ambiguity
