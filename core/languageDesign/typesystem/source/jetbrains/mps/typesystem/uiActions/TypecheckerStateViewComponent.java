@@ -122,6 +122,7 @@ public class TypecheckerStateViewComponent extends JPanel {
         public void keyTyped(KeyEvent e) {
           if (e.getKeyChar() == KeyEvent.VK_DELETE) {
             removeNodeToSliceWith(tree.myNode);
+            e.consume();
           }
         }
       });
@@ -154,7 +155,9 @@ public class TypecheckerStateViewComponent extends JPanel {
   }
 
   public void addSliceItem(SliceInfo sliceInfo) {
-    addItem(new SliceItemPanel(sliceInfo));
+    SliceItemPanel sliceItemPanel = new SliceItemPanel(sliceInfo);
+    mySliceItems.add(sliceItemPanel);
+    addItem(sliceItemPanel);
   }
 
   private void readdGauge() {
