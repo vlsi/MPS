@@ -433,7 +433,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.nodeEditor.search.SearchHistoryComponent</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.search.SearchHistoryComponent</implementation-class>
     </component>
 
     <component>

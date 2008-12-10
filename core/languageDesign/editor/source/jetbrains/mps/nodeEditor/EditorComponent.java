@@ -46,7 +46,6 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
-import jetbrains.mps.nodeEditor.search.SearchPanel;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
