@@ -35,7 +35,6 @@ import java.util.List;
  * Time: Nov 25, 2003 7:27:37 PM
  */
 public class NodePaster {
-
   private static final int PASTE_N_A = 0;
   private static final int PASTE_TO_TARGET = 1;
   private static final int PASTE_TO_PARENT = 2;

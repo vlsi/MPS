@@ -168,21 +168,23 @@ public abstract class EditorCell_Basic implements EditorCell {
     myActionMap.put(type, action);
   }
 
-  public boolean canExecuteAction(CellActionType type) {
-    return getApplicableCellAction(type) != null;
+  public boolean canExecuteAction(final CellActionType type) {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return getApplicableCellAction(type) != null;
+      }
+    });
   }
 
-  public boolean executeAction(CellActionType type) {
-    final EditorCellAction action = getApplicableCellAction(type);
-    if (action == null) return false;
-
-    if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        return !action.canExecute(myEditorContext);
+  public boolean executeAction(final CellActionType type) {
+    final EditorCellAction action = ModelAccess.instance().runReadAction(new Computable<EditorCellAction>() {
+      public EditorCellAction compute() {
+        return getApplicableCellAction(type);
       }
-    })) {
-      return false;
-    }
+    });
+
+
+    if (action == null) return false;
 
     if (action.executeInCommand()) {
       getEditorContext().executeCommand(new Runnable() {
@@ -205,7 +207,11 @@ public abstract class EditorCell_Basic implements EditorCell {
       }
       current = current.getParent();
     }
-    return myEditorContext.getNodeEditorComponent().getComponentAction(type);
+    EditorCellAction action = myEditorContext.getNodeEditorComponent().getComponentAction(type);
+    if (action != null && action.canExecute(myEditorContext)) {
+      return action;
+    }
+    return null;
   }
 
   public void addKeyMap(EditorCellKeyMap keyMap) {

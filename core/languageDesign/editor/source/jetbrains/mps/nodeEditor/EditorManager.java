@@ -308,8 +308,12 @@ public class EditorManager {
         for (final Object action : list) {
           wrapperList.add(new NodeSubstituteActionWrapper((INodeSubstituteAction) action) {
             public SNode substitute(@Nullable EditorContext context, String pattern) {
-              node.removeRightTransformHint();
-              node.removeLeftTransformHint();
+              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                public void run() {
+                  node.removeRightTransformHint();
+                  node.removeLeftTransformHint();
+                }
+              });
               return super.substitute(context, pattern);
             }
 
