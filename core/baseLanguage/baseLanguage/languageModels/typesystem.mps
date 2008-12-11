@@ -16402,5 +16402,67 @@
       <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1228992488875">
+    <property name="package" value="method" />
+    <property name="name" value="check_LocalStaticMethodCall" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228992488876">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228992644008">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1228992644009">
+          <property name="name" value="containers" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1228992644010">
+            <link role="elementConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228992654090">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1228992653417">
+              <link role="applicableNode" targetNodeId="1228992496828" resolveInfo="call" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" id="1228992657294">
+              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1228992662889">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1228992665188">
+                  <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1228992667565">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228992667566">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1228992682236">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228992683239">
+              <property name="value" value="This method can't be called from the current context" />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1228992709050">
+              <link role="applicableNode" targetNodeId="1228992496828" resolveInfo="call" />
+            </node>
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1228992669209">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228992672618">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228992670711">
+              <link role="variableDeclaration" targetNodeId="1228992644009" resolveInfo="containers" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" id="1228992673996">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228992678940">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228992675780">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1228992675373">
+                    <link role="applicableNode" targetNodeId="1228992496828" resolveInfo="call" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1228992678189">
+                    <link role="link" targetNodeId="1.1172058436957" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1228992680626" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1228992496828">
+      <property name="name" value="call" />
+      <link role="concept" targetNodeId="1.1172058436953" resolveInfo="LocalStaticMethodCall" />
+    </node>
+  </node>
 </model>
 

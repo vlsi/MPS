@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.util.NameUtil;
@@ -31,7 +30,7 @@ public class ClassifierType_Behavior {
     List<SNode> parms = SLinkOperations.getTargets(thisNode, "parameter", true);
     if (ListSequence.fromList(parms).isNotEmpty()) {
       String parmsText = "";
-      for(SNode parm : Sequence.fromIterable(parms)) {
+      for(SNode parm : ListSequence.fromList(parms)) {
         if (parmsText.length() > 0) {
           parmsText = parmsText + ",";
         }
@@ -66,7 +65,7 @@ public class ClassifierType_Behavior {
       if (!(SPropertyOperations.getBoolean(classifier, "abstractClass")) && ListSequence.fromList(SLinkOperations.getTargets(classifier, "constructor", true)).isNotEmpty()) {
         SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
         SLinkOperations.setTarget(creator, "baseMethodDeclaration", ListSequence.fromList(SLinkOperations.getTargets(classifier, "constructor", true)).first(), false);
-        for(SNode typeParm : Sequence.fromIterable(SLinkOperations.getTargets(thisNode, "parameter", true))) {
+        for(SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true))) {
           SLinkOperations.addChild(creator, "typeParameter", SNodeOperations.copyNode(typeParm));
         }
         return creator;
