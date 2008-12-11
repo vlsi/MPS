@@ -97,9 +97,12 @@ public class TypecheckerStateViewComponent extends JPanel {
     int y = 1;
     for (EquationLogItem equationLogItem : myCurrentSlice) {
       gridBagConstraints.gridy = y;
-      add(new EquationLogItemPanel(equationLogItem));
+      add(new EquationLogItemPanel(equationLogItem), gridBagConstraints);
       y++;
     }
+    gridBagConstraints.gridy = y;
+    gridBagConstraints.weighty = 1;
+    add(new JPanel(), gridBagConstraints);
   }
 
   public void sliceWithNode(SNode node) {
