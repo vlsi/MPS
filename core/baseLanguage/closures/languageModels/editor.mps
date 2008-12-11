@@ -168,6 +168,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1199569970439">
+        <property name="attractsFocus" value="3" />
         <link role="relationDeclaration" targetNodeId="1.1199569916463" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem" id="1214313021467">
           <property name="flag" value="true" />

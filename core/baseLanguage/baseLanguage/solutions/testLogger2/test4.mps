@@ -29,6 +29,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227608665601" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227608665602" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227608665603">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1228985888587" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227608680173">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227608680174">
             <property name="name" value="i" />

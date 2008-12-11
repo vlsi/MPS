@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
 
@@ -120,6 +121,9 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNode_closure1206729664780(EditorCell editorCell, SNode node, EditorContext context) {
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_RECURSIVELY);
+    }
   }
 
   private static void setupBasic_Constant_12067296647811206729664781(EditorCell editorCell, SNode node, EditorContext context) {

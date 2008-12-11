@@ -1540,6 +1540,7 @@
         <link role="styleClass" targetNodeId="15.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1206729664780">
+        <property name="attractsFocus" value="3" />
         <link role="relationDeclaration" targetNodeId="1.1204796294226" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206729664781">
