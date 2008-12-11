@@ -179,6 +179,7 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   public void openNode(final SNode node, final boolean focus) {
+    if(node == null) return;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         ModuleContext context = ModuleContext.create(node, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
@@ -237,6 +238,7 @@ public class MPSEditorOpener implements ProjectComponent {
 
   private void selectInInspector(final IEditor nodeEditor, final SNode node, IOperationContext context, final boolean focus) {
     final NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
+    if(nec == null) return;
     final InspectorTool inspectorTool = nec.getInspectorTool();
     if (inspectorTool == null) return;
     if (nec.getLastInspectedNode() == null) return;
