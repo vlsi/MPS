@@ -449,7 +449,7 @@ public class AboutAction extends AnAction {
 
       myScrollPane = new JScrollPane(myList);
       myScrollPane.setPreferredSize(new Dimension(1, LICENSES_HEIGHT));
-      myScrollPane.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+      myScrollPane.setBorder(BorderFactory.createLineBorder(Color.lightGray));      
 
       Border inner = BorderFactory.createEmptyBorder(10, 3, 3, 3);
       Border outer = BorderFactory.createMatteBorder(0,1,1,1,Color.GRAY);
