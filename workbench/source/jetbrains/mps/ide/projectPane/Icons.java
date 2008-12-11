@@ -113,4 +113,7 @@ public class Icons {
   public static final Icon AUTOSCROLL_FROM_SOURCE = new ImageIcon(Icons.class.getResource("nodes/autoscrollFromSource.png"));
 
   public static final Icon STRONG_SUBTYPE_ICON = new ImageIcon(Icons.class.getResource("nodes/strongSubtype.png"));
+
+  public static final Icon MODULE_GROUP_CLOSED = new ImageIcon(Icons.class.getResource("nodes/moduleGroupClosed.png"));
+  public static final Icon MODULE_GROUP_OPENED = new ImageIcon(Icons.class.getResource("nodes/moduleGroupOpen.png"));
 }

@@ -34,7 +34,8 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
     super("Modules Pool");
     myProject = project;
 
-    setIcon(Icons.PROJECT_ICON);
+    setIcon(Icons.MODULE_GROUP_CLOSED, false);
+    setIcon(Icons.MODULE_GROUP_OPENED, true);
   }
 
 
