@@ -45,7 +45,12 @@ public class CopyPasteUtil {
   }
 
 
-  private static void processImportsAndLanguages(HashSet<SModelReference> necessaryImports, HashSet<ModuleReference> necessaryLanguages, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
+  private static void processImportsAndLanguages(
+      Set<SModelReference> necessaryImports,
+      Set<ModuleReference> necessaryLanguages,
+      Map<SNode, SNode> sourceNodesToNewNodes,
+      Set<SReference> allReferences) {
+    
     necessaryImports.clear();
     necessaryLanguages.clear();
     Set<SNode> sourceNodes = sourceNodesToNewNodes.keySet();
@@ -60,7 +65,10 @@ public class CopyPasteUtil {
     }
   }
 
-  public static PasteNodeData createNodeDataIn(List<SNode> sourceNodes, Map<SNode, Set<SNode>> sourceNodesAndAttributes) {
+  public static PasteNodeData createNodeDataIn(
+      List<SNode> sourceNodes,
+      Map<SNode, Set<SNode>> sourceNodesAndAttributes) {
+    
     if (sourceNodes.isEmpty()) return PasteNodeData.emptyPasteNodeData(null);
     SModel model = sourceNodes.get(0).getModel();
 
@@ -294,8 +302,15 @@ public class CopyPasteUtil {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
+        for (SModelDescriptor sm : targetModel.allImportedModels(context.getScope())) {
+          allImportedModels.add(sm.getSModelReference());
+        }
+
         for (SModelReference modelReference : necessaryImports) {
-          if (modelReference != null && !(targetModel.hasImportedModel(modelReference)) && !(targetModel.getSModelReference().equals(modelReference)))
+          if (modelReference != null &&
+            !(allImportedModels.contains(modelReference)) &&
+            !(targetModel.getSModelReference().equals(modelReference)))
             additionalModels.add(modelReference);
         }
 

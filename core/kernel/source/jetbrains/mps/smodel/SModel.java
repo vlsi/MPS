@@ -816,7 +816,6 @@ public class SModel implements Iterable<SNode> {
     return new ArrayList<ModuleReference>(myLanguages);
   }
 
-
   public boolean hasImportedModel(@NotNull SModelReference modelReference) {
     return getImportElement(modelReference) != null;
   }
@@ -945,7 +944,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   @NotNull
-  public Iterator<SModelDescriptor> importedModels(@NotNull IScope scope) {
+  public List<SModelDescriptor> importedModels(@NotNull IScope scope) {
     List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
     for (ImportElement importElement : myImports) {
       SModelReference modelReference = importElement.getModelReference();
@@ -968,7 +967,7 @@ public class SModel implements Iterable<SNode> {
         LOG.error("Couldn't find model descriptor for imported model: \"" + modelReference.getSModelFqName() + "\" in: \"" + getSModelReference().getSModelFqName() + "\"");
       }
     }
-    return modelsList.iterator();
+    return modelsList;
   }
 
   public List<SModelDescriptor> allImportedModels(IScope scope) {
@@ -983,9 +982,8 @@ public class SModel implements Iterable<SNode> {
       }
     }
 
-    Iterator<SModelDescriptor> imports = importedModels(scope);
-    while (imports.hasNext()) {
-      SModelDescriptor importedModel = imports.next();
+    List<SModelDescriptor> imports = importedModels(scope);
+    for (SModelDescriptor importedModel : imports) {
       if (importedModel != sourceModel && !result.contains(importedModel)) {
         result.add(importedModel);
       }
