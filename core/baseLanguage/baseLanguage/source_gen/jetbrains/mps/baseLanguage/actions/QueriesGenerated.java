@@ -301,18 +301,6 @@ __switch__:
     }
   }
 
-  public static void nodeFactory_NodeSetup_CastExpression_1158871408598(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
-      // Looking for the original node is required because sampleNode is just a copy
-      SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getEnclosingNode(), _context.getSampleNode());
-      if ((originalExpression != null)) {
-        SNode castType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
-        SLinkOperations.setTarget(_context.getNewNode(), "type", castType, true);
-      }
-      SLinkOperations.setTarget(_context.getNewNode(), "expression", _context.getSampleNode(), true);
-    }
-  }
-
   public static void nodeFactory_NodeSetup_ReturnStatement_1158938591702(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       SLinkOperations.setTarget(_context.getNewNode(), "expression", SLinkOperations.getTarget(_context.getSampleNode(), "expression", true), true);
@@ -1590,6 +1578,49 @@ __switch__:
             });
           }
         }
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1229000267030(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            if (!(SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.Expression"))) {
+              return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CastExpression", null);
+            }
+            SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getParentNode(), _context.getCurrentTargetNode());
+            SNode castType = null;
+            if ((originalExpression != null)) {
+              castType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
+            }
+            if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+              return new _Quotations.QuotationClass_5().createNode(SNodeOperations.copyNode(castType), SNodeOperations.copyNode(_context.getCurrentTargetNode()));
+            } else
+            {
+              return new _Quotations.QuotationClass_6().createNode(SNodeOperations.copyNode(castType), SNodeOperations.copyNode(_context.getCurrentTargetNode()));
+            }
+          }
+
+          public String getDescriptionText(String pattern) {
+            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "shortDescription");
+          }
+
+          public String getMatchingText(String pattern) {
+            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "alias");
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
+        });
       }
     }
     return result;

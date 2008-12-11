@@ -576,7 +576,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     });
   }
-
+                  
   public void updateStatusBarMessage() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {

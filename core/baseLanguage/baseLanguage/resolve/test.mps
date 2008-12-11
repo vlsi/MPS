@@ -4,6 +4,7 @@
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="ac2f1963-1b72-479d-bbf6-e8da39fb6f41(jetbrains.mps.lang.annotations)" />
+  <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -88,7 +89,24 @@
                   <property name="name" value="size" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228129566091" />
                   <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1228129566092" />
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228129566093" />
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228129566093">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229001744625">
+                      <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1229001744626">
+                        <property name="name" value="o" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229001744627">
+                          <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1229001434522">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1229001928687">
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1229001928688" />
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1229001929800">
+                          <property name="value" value="23" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1228129566094">
                   <property name="isAbstract" value="false" />

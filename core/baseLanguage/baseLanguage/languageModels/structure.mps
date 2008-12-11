@@ -771,6 +771,9 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1070534934090">
     <property name="name" value="CastExpression" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1229001198177">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107215844612">
       <property name="value" value="(type)exp" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
