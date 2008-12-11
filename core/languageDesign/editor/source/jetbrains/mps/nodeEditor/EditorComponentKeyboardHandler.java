@@ -50,13 +50,10 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     EditorCell selectedCell = editorContext.getSelectedCell();
 
     if (selectedCell != null) {
-      boolean endEditKeystroke = isEndEditKeystroke(keyEvent);
-
       if (selectedCell.isErrorState()) {
-        if (endEditKeystroke ||
-          actionType == CellActionType.INSERT ||
+        if (actionType == CellActionType.INSERT ||
           actionType == CellActionType.INSERT_BEFORE) {
-          if (selectedCell.validate(endEditKeystroke, true)) {
+          if (selectedCell.validate(actionType != CellActionType.INSERT, true)) {
             return true;
           }
         }
