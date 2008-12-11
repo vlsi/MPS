@@ -1288,7 +1288,7 @@
     <property name="package" value="internal" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1201885265234">
-      <property name="value" value="translate" />
+      <property name="value" value="selectMany" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1228215281495">
@@ -1375,7 +1375,7 @@
     <property name="package" value="internal" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1205842034725">
-      <property name="value" value="visitAll" />
+      <property name="value" value="forEach" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1228215299194">
