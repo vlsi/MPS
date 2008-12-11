@@ -6,7 +6,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-
 import java.util.List;
 
 /* package */class Main_sequence_as_javaList {
@@ -18,7 +17,7 @@ import java.util.List;
         return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
-            return new YieldingIterator<Integer>() {
+            return new YieldingIterator <Integer>() {
 
               private int __CP__ = 0;
               private int _2_i;

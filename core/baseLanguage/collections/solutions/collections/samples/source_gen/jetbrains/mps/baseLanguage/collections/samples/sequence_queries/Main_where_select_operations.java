@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
         return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
-            return new YieldingIterator<Integer>() {
+            return new YieldingIterator <Integer>() {
 
               private int __CP__ = 0;
               private int _2_i;
@@ -88,7 +88,7 @@ __switch__:
 
     });
     System.out.println("count (before):" + count.value);
-    for(String s : strings) {
+    for(String s : Sequence.fromIterable(strings)) {
       System.out.println(s);
     }
     System.out.println("count (after):" + count.value);

@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     ListSequence.fromList(list).addElement("var4");
     ListSequence.fromList(list).addElement("var5");
     ListSequence.fromList(list).addSequence(ListSequence.fromList(ListSequence.<String>fromArray("var6", "var7")));
-    for(String s : list) {
+    for(String s : ListSequence.fromList(list)) {
       System.out.println(s);
     }
     for(int i = 0 ; i < ListSequence.fromList(list).count() ; i = i + 1) {

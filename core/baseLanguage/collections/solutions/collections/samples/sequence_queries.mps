@@ -430,20 +430,6 @@
                     </node>
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224754223581">
                       <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.StopStatement" id="1224754226525" />
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224754223583">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224754223584">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1224754223585">
-                            <link role="variableDeclaration" targetNodeId="2.~System.out" resolveInfo="out" />
-                            <link role="classifier" targetNodeId="2.~System" resolveInfo="System" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224754223586">
-                            <link role="baseMethodDeclaration" targetNodeId="1.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224754223587">
-                              <property name="value" value="never printed" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
                     </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1224754223588">

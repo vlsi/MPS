@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
         return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
-            return new YieldingIterator<Integer>() {
+            return new YieldingIterator <Integer>() {
 
               private int __CP__ = 0;
               private int _3_num;
@@ -68,7 +68,7 @@ __switch__:
     System.out.println("from infinite sequence take first 10 numbers,");
     System.out.println("ignore odd numbers,");
     System.out.println("print even numbers");
-    for(Integer num : nums) {
+    for(Integer num : Sequence.fromIterable(nums)) {
       if (num >= 10) {
         break;
       }

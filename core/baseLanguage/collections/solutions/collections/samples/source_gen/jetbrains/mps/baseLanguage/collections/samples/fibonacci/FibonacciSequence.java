@@ -19,7 +19,7 @@ public class FibonacciSequence {
         return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
-            return new YieldingIterator<Integer>() {
+            return new YieldingIterator <Integer>() {
 
               private int __CP__ = 0;
               private int _6_n_;

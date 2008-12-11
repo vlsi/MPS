@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.collections.samples.java_collections;
 
 import java.util.LinkedList;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 /* package */class Main_javaIterable_as_sequence {
 
@@ -14,7 +15,7 @@ import java.util.List;
     }
     System.out.println("java-iterable as sequence");
     Iterable<Integer> sequence = javaIterable;
-    for(Integer n : sequence) {
+    for(Integer n : Sequence.fromIterable(sequence)) {
       System.out.println(n);
     }
   }

@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.StopIteratingException;
         return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
-            return new YieldingIterator<Integer>() {
+            return new YieldingIterator <Integer>() {
 
               private int __CP__ = 0;
               private int _3_num;
@@ -77,7 +77,6 @@ __skip__:
         do {
           if (n >= 10) {
             throw new StopIteratingException();
-//            System.out.println("never printed");
           }
           if (n % 2 != 0) {
             break __skip__;

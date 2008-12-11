@@ -7,9 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 
 /* package */class Main_map_operation {
@@ -74,13 +72,13 @@ __switch__:
     System.out.println("ignore odd numbers,");
     System.out.println("map each even number to two strings");
     final Wrappers._int count = new Wrappers._int(0);
-    Iterable<String> strings = Sequence.fromIterable(nums).translate(new ITranslator <Integer, String>() {
+    Iterable<String> strings = Sequence.fromIterable(nums).translate(new ITranslator2 <Integer, String>() {
 
-      public ISequence<String> translate(final Integer n) {
-        return new ISequenceIterableAdapter <String>() {
+      public Iterable<String> translate(final Integer n) {
+        return new Iterable <String>() {
 
           public Iterator<String> iterator() {
-            return new YieldingIterator<String>() {
+            return new YieldingIterator <String>() {
 
               private int __CP__ = 0;
 
@@ -125,9 +123,6 @@ __switch__:
                       this.__CP__ = 13;
                       this.yield("*100: " + (n * 100));
                       return true;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
@@ -139,6 +134,9 @@ __switch__:
                       throw new StopIteratingException();
                     case 9:
                       this.__CP__ = 1;
+                      break;
+                    case 0:
+                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;
@@ -155,7 +153,7 @@ __switch__:
 
     });
     System.out.println("count (before):" + count.value);
-    for(String s : strings) {
+    for(String s : Sequence.fromIterable(strings)) {
       System.out.println(s);
     }
     System.out.println("count (after):" + count.value);
