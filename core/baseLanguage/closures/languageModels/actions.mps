@@ -298,6 +298,9 @@
       <node role="part" type="jetbrains.mps.lang.actions.structure.RemovePart" id="1201777204143">
         <link role="conceptToRemove" targetNodeId="1.1200830824066" resolveInfo="YieldStatement" />
       </node>
+      <node role="part" type="jetbrains.mps.lang.actions.structure.RemovePart" id="1229001827438">
+        <link role="conceptToRemove" targetNodeId="1.1228997946467" resolveInfo="YieldAllStatement" />
+      </node>
     </node>
   </node>
 </model>

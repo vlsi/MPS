@@ -25,11 +25,9 @@ import java.util.HashMap;
 public class ClosureLiteralUtil {
 
   public static boolean hasYieldStatement(SNode cl) {
-    for(SNode desc : SNodeOperations.getDescendants(cl, null, false)) {
-      if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement")) {
-        if (cl == SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
-          return true;
-        }
+    for(SNode desc : SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false)) {
+      if (cl == SNodeOperations.getAncestorWhereConceptInList(desc, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false)) {
+        return true;
       }
     }
     return false;

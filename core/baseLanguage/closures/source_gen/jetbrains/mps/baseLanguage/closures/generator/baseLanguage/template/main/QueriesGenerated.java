@@ -35,6 +35,7 @@ import java.util.Collections;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
+import java.util.Iterator;
 
 public class QueriesGenerated {
 
@@ -1859,6 +1860,52 @@ public class QueriesGenerated {
           FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(pdecl, "type", true), arg, _context);
         }
         idx = idx + 1;
+      }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_1229012655006(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for(SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
+      List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(cl, "body", true), "statement", true);
+      List<SNode> allYas = new ArrayList<SNode>();
+      List<SNode> allYs = new ArrayList<SNode>();
+      allYas.addAll(SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", false));
+      allYs.addAll(SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false));
+      for(Iterator<SNode> it = allYas.iterator() ; it.hasNext() ; ) {
+        if (SNodeOperations.getAncestorWhereConceptInList(it.next(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false) != cl) {
+          it.remove();
+        }
+      }
+      for(Iterator<SNode> it = allYs.iterator() ; it.hasNext() ; ) {
+        if (SNodeOperations.getAncestorWhereConceptInList(it.next(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false) != cl) {
+          it.remove();
+        }
+      }
+      switch (allYas.size()) {
+        case 0:
+          break;
+        case 1:
+          if (allYas.get(0) == stmts.get(stmts.size() - 1) && allYs.isEmpty()) {
+            SNode yas = allYas.get(0);
+            SNode rs = SNodeOperations.replaceWithNewChild(yas, "jetbrains.mps.baseLanguage.structure.ReturnStatement");
+            SLinkOperations.setTarget(rs, "expression", SNodeOperations.detachNode(SLinkOperations.getTarget(yas, "expression", true)), true);
+            break;
+          }
+          //  fall through
+        default:
+          for(SNode yas : allYas) {
+            SNode elementType = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(yas, "expression", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true), "elementType", true);
+            SNode fes = SNodeOperations.replaceWithNewChild(yas, "jetbrains.mps.baseLanguage.structure.ForeachStatement");
+            //  now fes.body.statement contains a copy of yas. WTF?
+            SLinkOperations.removeAllChildren(SLinkOperations.getTarget(fes, "body", true), "statement");
+            SLinkOperations.setTarget(fes, "iterable", SNodeOperations.detachNode(SLinkOperations.getTarget(yas, "expression", true)), true);
+            SNode var = SLinkOperations.setNewChild(fes, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+            SPropertyOperations.set(var, "name", "_yield");
+            SLinkOperations.setTarget(var, "type", SNodeOperations.copyNode(elementType), true);
+            SNode ys = SLinkOperations.addNewChild(SLinkOperations.getTarget(fes, "body", true), "statement", "jetbrains.mps.baseLanguage.closures.structure.YieldStatement");
+            SNode lvr = SLinkOperations.setNewChild(ys, "expression", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+            SLinkOperations.setTarget(lvr, "variableDeclaration", var, false);
+          }
       }
     }
   }
