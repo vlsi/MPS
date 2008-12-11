@@ -28,6 +28,7 @@ public class Icons {
   public static final Icon PROJECT_ICON = new ImageIcon(Icons.class.getResource("nodes/project.png"));
   public static final Icon PROJECT_LANGUAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/projectLanguages.png"));
   public static final Icon PROJECT_MODELS_ICON = new ImageIcon(Icons.class.getResource("nodes/projectModels.png"));
+  public static final Icon PROJECT_MODELS_EXPANDED_ICON = new ImageIcon(Icons.class.getResource("nodes/projectModelsExpanded.png"));
   public static final Icon LANGUAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/languages.png"));
   public static final Icon EDITORS_ICON = new ImageIcon(Icons.class.getResource("nodes/editors.png"));
   public static final Icon GENERATORS_ICON = new ImageIcon(Icons.class.getResource("nodes/generators.png"));

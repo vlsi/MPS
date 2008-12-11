@@ -75,7 +75,8 @@ public class SModelsSubtree {
     public JavaStubsTreeNode(IOperationContext context) {
       super("java stubs", context);
 
-      setIcon(Icons.PROJECT_MODELS_ICON);
+      setIcon(Icons.PROJECT_MODELS_ICON, false);
+      setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
     }
   }
 }

@@ -130,7 +130,8 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     add(languageRuntime);
 
     TextTreeNode allModels = new TextTreeNode("all models");
-    allModels.setIcon(Icons.PROJECT_MODELS_ICON);
+    allModels.setIcon(Icons.PROJECT_MODELS_ICON, false);
+    allModels.setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
     SModelsSubtree.create(allModels, getOperationContext());
     add(allModels);
 
