@@ -5,9 +5,8 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.typesystem.debug.SliceInfo;
 import jetbrains.mps.typesystem.debug.ISlicer;
-import jetbrains.mps.typesystem.debug.SlicerImpl;
+import jetbrains.mps.typesystem.debug.EquationLogItem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
@@ -17,7 +16,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import javax.swing.*;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-import java.awt.Component;
 import java.awt.event.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -36,126 +34,81 @@ public class TypecheckerStateViewComponent extends JPanel {
 
   private IOperationContext myOperationContext;
   private EditorsProvider myEditorsProvider;
-  private int mySliceItemsCount = 0;
-  private GridBagConstraints myGridBagConstraints;
-  private JPanel myGauge = new JPanel();
-  private JPanel myUpperGauge = new JPanel();
-  private List<SliceItemPanel> mySliceItems = new ArrayList<SliceItemPanel>();
-
-  private List<SNodePointer> myNodesToSliceWith = new ArrayList<SNodePointer>();
-  private List<SNodeTree> myTreesOfNodesToSliceWith = new ArrayList<SNodeTree>();
 
   private ISlicer mySlicer;
-
-  private JButton myDebugCurrentRootButton;
-  public JPanel myUpperPanel;
-  public GridBagConstraints myUpperPanelConstraints;
+  private List<EquationLogItem> myCurrentSlice = new ArrayList<EquationLogItem>();
 
   public TypecheckerStateViewComponent(IOperationContext operationContext) {
     myOperationContext = operationContext;
     myEditorsProvider = new EditorsProvider(operationContext.getProject());
-    setLayout(new GridBagLayout());
-    myGridBagConstraints = new GridBagConstraints();
-    myGridBagConstraints.gridx = 0;
-    myGridBagConstraints.gridy = 0;
-    myGridBagConstraints.weightx = 1;
-    myGridBagConstraints.weighty = 0;
-    myGridBagConstraints.anchor = GridBagConstraints.NORTH;
-    myGridBagConstraints.fill = GridBagConstraints.BOTH;
+    rebuild();
+  }
 
-    myDebugCurrentRootButton = new JButton(new AbstractAction("Debug Current Root") {
+  private void rebuild() {
+    removeAll();
+    setLayout(new GridBagLayout());
+    GridBagConstraints gridBagConstraints = new GridBagConstraints();
+    gridBagConstraints.gridx = 0;
+    gridBagConstraints.gridy = 0;
+    gridBagConstraints.weightx = 1;
+    gridBagConstraints.weighty = 0;
+    gridBagConstraints.anchor = GridBagConstraints.NORTH;
+    gridBagConstraints.fill = GridBagConstraints.BOTH;
+
+    //upper panel
+    JButton debugCurrentRootButton = new JButton(new AbstractAction("Debug Current Root") {
       public void actionPerformed(ActionEvent e) {
         IEditor currentEditor = myEditorsProvider.getCurrentEditor();
         if (currentEditor != null) {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
           if (editorComponent != null) {
             final SNode currentRoot = editorComponent.getEditedNode();
-              mySlicer = ModelAccess.instance().runReadAction(new Computable<ISlicer>() {
+            mySlicer = ModelAccess.instance().runReadAction(new Computable<ISlicer>() {
               public ISlicer compute() {
                 return TypeChecker.getInstance().debugRoot(currentRoot);
               }
             });
+            rebuild();
           }
         }
       }
     });
-    myUpperPanel = new JPanel();
-    myUpperPanel.setLayout(new GridBagLayout());
-    myUpperPanelConstraints = new GridBagConstraints();
-    myUpperPanelConstraints.gridx = 0;
-    myUpperPanelConstraints.gridy = 0;
-    myUpperPanelConstraints.weightx = 0;
-    myUpperPanelConstraints.weighty = 0;
-    myUpperPanelConstraints.anchor = GridBagConstraints.NORTHWEST;
-    myUpperPanel.add(myDebugCurrentRootButton, myUpperPanelConstraints);
-    readdUpperGauge();
-    addItem(myUpperPanel);
-  }
+    JPanel upperPanel = new JPanel();
+    upperPanel.setLayout(new GridBagLayout());
+    GridBagConstraints upperPanelConstraints = new GridBagConstraints();
+    upperPanelConstraints.gridx = 0;
+    upperPanelConstraints.gridy = 0;
+    upperPanelConstraints.weightx = 0;
+    upperPanelConstraints.weighty = 0;
+    upperPanelConstraints.anchor = GridBagConstraints.NORTHWEST;
+    upperPanel.add(debugCurrentRootButton, upperPanelConstraints);
 
-  private void readdUpperGauge() {
-    myUpperPanelConstraints.weightx = 1;
-    myUpperPanelConstraints.gridx = myNodesToSliceWith.size() + 1;
-    myUpperPanel.add(myUpperGauge, myUpperPanelConstraints);
-  }
+    String text = mySlicer == null ? "no info collected" : "info collected for " + mySlicer.getRootInfo();
+    upperPanelConstraints.gridx = 1;
+    upperPanel.add(new JLabel(text));
 
-  public void addNodeToSliceWith(SNode node) {
-    SNodePointer pointer = new SNodePointer(node);
-    if (!myNodesToSliceWith.contains(pointer)) {
-      myNodesToSliceWith.add(pointer);
-      final TypecheckerStateViewComponent.SNodeTree tree = new SNodeTree(node);
-      myTreesOfNodesToSliceWith.add(tree);
-      myUpperPanelConstraints.weightx = 0;
-      myUpperPanelConstraints.gridx = myNodesToSliceWith.size();
-      myUpperPanel.add(tree);
-      tree.addKeyListener(new KeyAdapter() {
-        @Override
-        public void keyTyped(KeyEvent e) {
-          if (e.getKeyChar() == KeyEvent.VK_DELETE) {
-            removeNodeToSliceWith(tree.myNode);
-            e.consume();
-          }
-        }
-      });
-      tree.rebuildNow();
-      readdUpperGauge();
+    upperPanelConstraints.weightx = 1;
+    upperPanelConstraints.gridx = 2;
+    upperPanel.add(new JPanel(), upperPanelConstraints);
+
+    add(upperPanel, gridBagConstraints);
+
+    //slice items
+    int y = 1;
+    for (EquationLogItem equationLogItem : myCurrentSlice) {
+      gridBagConstraints.gridy = y;
+      add(new EquationLogItemPanel(equationLogItem));
+      y++;
     }
-    invalidate();
   }
 
-  public void removeNodeToSliceWith(SNode node) {
-    int i = 0;
-    for (SNodePointer pointer : new ArrayList<SNodePointer>(myNodesToSliceWith)) {
-      if (node == pointer.getNode()) {
-        myNodesToSliceWith.remove(pointer);
-        TypecheckerStateViewComponent.SNodeTree tree = myTreesOfNodesToSliceWith.remove(i);
-        myUpperPanel.remove(tree);
-      }
-      i++;
-    }
-    readdUpperGauge();
-    invalidate();
+  public void sliceWithNode(SNode node) {
+    if (mySlicer == null) return;
+    myCurrentSlice = mySlicer.getSlice(node);
+    rebuild();
   }
 
-  private void addItem(Component c) {
-    myGridBagConstraints.gridy = mySliceItemsCount++;
-    myGridBagConstraints.weighty = 0;
-    add(c, myGridBagConstraints);
-    readdGauge();
-    invalidate();
-  }
 
-  public void addSliceItem(SliceInfo sliceInfo) {
-    SliceItemPanel sliceItemPanel = new SliceItemPanel(sliceInfo);
-    mySliceItems.add(sliceItemPanel);
-    addItem(sliceItemPanel);
-  }
-
-  private void readdGauge() {
-    remove(myGauge);
-    myGridBagConstraints.gridy = mySliceItemsCount;
-    myGridBagConstraints.weighty = 1;
-    add(myGauge, myGridBagConstraints);
-  }
 
   public class SNodeTree extends MPSTree {
     private SNode myNode;
@@ -170,64 +123,42 @@ public class TypecheckerStateViewComponent extends JPanel {
     }
   }
 
-  public class SliceItemPanel extends JPanel {
 
-    private SliceInfo mySliceInfo;
-    private JLabel myNodelabel;
-    private SNodeTree myEquatedTypeTree;
-    private SNodeTree myResultTypeTree;
-    public JLabel myReasonLabel;
 
-    public SliceItemPanel(SliceInfo sliceInfo) {
-      mySliceInfo = sliceInfo;
+  public class EquationLogItemPanel extends JPanel {
+    private EquationLogItem myEquationLogItem;
+
+    public EquationLogItemPanel(EquationLogItem equationLogItem) {
+      myEquationLogItem = equationLogItem;
+
       setLayout(new GridBagLayout());
 
       GridBagConstraints constraints = new GridBagConstraints();
       constraints.gridy = 0;
       constraints.weighty = 0;
-
-      constraints.gridx = 0;
-      constraints.weightx = 0;
       constraints.fill = GridBagConstraints.NONE;
       constraints.anchor = GridBagConstraints.NORTHWEST;
-      myNodelabel = new JLabel(ModelAccess.instance().runReadAction(new Computable<String>() {
-        public String compute() {
-          return mySliceInfo.getNode().toString();
-        }
-      }));
-      myNodelabel.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mousePressed(MouseEvent e) {
-          if (e.getClickCount() == 2) {
-            ModelAccess.instance().executeCommand(new Runnable() {
-              public void run() {
-                MPSEditorOpener opener = myOperationContext.getComponent(MPSEditorOpener.class);
-                assert opener != null;
-                opener.openNode(mySliceInfo.getNode(), myOperationContext, false);
-              }
-            });
-          }
-        }
-      });
-      add(myNodelabel, constraints);
+
+      JLabel label = new JLabel("equation");
+      add(label, constraints);
 
       constraints.gridx = 1;
-      myEquatedTypeTree = new SNodeTree(mySliceInfo.getEquatedType());
-      add(myEquatedTypeTree, constraints);
+      SNodeTree leftTree = new SNodeTree(myEquationLogItem.getLeftRepresentator());
+      add(leftTree, constraints);
 
       constraints.gridx = 2;
-      myResultTypeTree = new SNodeTree(mySliceInfo.getResultType());
-      add(myResultTypeTree, constraints);
+      SNodeTree rightTree = new SNodeTree(myEquationLogItem.getRightRepresentator());
+      add(rightTree, constraints);
 
       constraints.gridx = 3;
       constraints.weightx = 1;
-      myReasonLabel = new JLabel(mySliceInfo.getReason());
-      myReasonLabel.addMouseListener(new MouseAdapter() {
+      JLabel reasonLabel = new JLabel(myEquationLogItem.getReason());
+      reasonLabel.addMouseListener(new MouseAdapter() {
         @Override
         public void mousePressed(MouseEvent e) {
           if (e.getClickCount() == 2) {
-            String ruleModel = mySliceInfo.getRuleModel();
-            final String ruleID = mySliceInfo.getRuleId();
+            String ruleModel = myEquationLogItem.getRuleModel();
+            final String ruleID = myEquationLogItem.getRuleId();
             if (ruleModel == null || ruleID == null) return;
             SModelReference modelUID = SModelReference.fromString(ruleModel);
             modelUID = SModelReference.fromString(modelUID.getLongName());
@@ -254,12 +185,11 @@ public class TypecheckerStateViewComponent extends JPanel {
           }
         }
       });
-      add(myReasonLabel, constraints);
+      add(reasonLabel, constraints);
 
-      myEquatedTypeTree.rebuildNow();
-      myResultTypeTree.rebuildNow();
+      leftTree.rebuildNow();
+      rightTree.rebuildNow();
     }
-
 
   }
 }

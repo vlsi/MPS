@@ -35,4 +35,8 @@ public class NullSlicer implements ISlicer {
   public List<EquationLogItem> getSlice(SNode nodeToSliceWith) {
     return new ArrayList<EquationLogItem>();
   }
+
+  public String getRootInfo() {
+    return null;
+  }
 }

@@ -74,4 +74,12 @@ public class EquationLogItem {
   public List<Pair<String, String>> getCauses() {
     return new ArrayList<Pair<String, String>>(myCauses);
   }
+
+  public String getRuleModel() {
+    return myRuleModel;
+  }
+
+  public String getRuleId() {
+    return myRuleId;
+  }
 }

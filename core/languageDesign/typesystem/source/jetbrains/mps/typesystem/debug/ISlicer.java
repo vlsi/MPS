@@ -26,4 +26,6 @@ public interface ISlicer {
   public void beforeTypesExpanded(Map<SNode, SNode> context);
 
   public List<EquationLogItem> getSlice(SNode nodeToSliceWith);
+
+  public String getRootInfo();
 }

@@ -1656,8 +1656,8 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1228846419607">
     <property name="package" value="Actions" />
-    <property name="name" value="AddNodeToSliceWith" />
-    <property name="caption" value="Add Node To Slice With" />
+    <property name="name" value="SliceWithNode" />
+    <property name="caption" value="Slice With Selected Node" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1228846419608">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228846419609">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228847408927">
@@ -1709,7 +1709,7 @@
               <link role="variableDeclaration" targetNodeId="1228846523126" resolveInfo="component" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228846629847">
-              <link role="baseMethodDeclaration" targetNodeId="2.~TypecheckerStateViewComponent.addNodeToSliceWith(jetbrains.mps.smodel.SNode):void" resolveInfo="addNodeToSliceWith" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~TypecheckerStateViewComponent.sliceWithNode(jetbrains.mps.smodel.SNode):void" resolveInfo="sliceWithNode" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228846634272">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1228846634273" />
                 <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1228846634274">

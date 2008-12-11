@@ -2,7 +2,6 @@ package jetbrains.mps.typesystem.debug;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.*;
-import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 
@@ -15,15 +14,17 @@ import java.util.*;
  */
 public class SlicerImpl implements ISlicer {
   private List<EquationLogItem> myEquationLogItems = new ArrayList<EquationLogItem>();
-  private Map<SNode, SNode> myNodesToTypes;
+  private Map<SNode, SNode> myNodesToTypes = new HashMap<SNode, SNode>();
   private NodeTypesComponent myNodeTypesComponent;
+  private String myRootInfo;
 
   public SlicerImpl(NodeTypesComponent nodeTypesComponent) {
     myNodeTypesComponent = nodeTypesComponent;
+    myRootInfo = nodeTypesComponent.getNode() + "";
   }
 
-  public List<SNode> getNodesToSliceWith()  {
-    return new ArrayList<SNode>();
+  public String getRootInfo() {
+    return myRootInfo;
   }
 
   public void beforeUserEquationAdded(SNode type1, SNode type2, EquationInfo equationInfo) {
