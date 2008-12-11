@@ -77,14 +77,14 @@ public class SlicerImpl implements ISlicer {
            if (varWrapper.equals(leftWrapper)) {
              residual.remove(logItem);
              slice.add(logItem);
-             if (rightWrapper.isVariable()) {
+             if (rightWrapper != null) {
                varsAffectingType_collected.add(rightWrapper.getNode());
              }
            }
            if (varWrapper.equals(rightWrapper)) {
              residual.remove(logItem);
              slice.add(logItem);
-             if (leftWrapper.isVariable()) {
+             if (leftWrapper != null) {
                varsAffectingType_collected.add(leftWrapper.getNode());
              }
            }
@@ -95,7 +95,7 @@ public class SlicerImpl implements ISlicer {
     }
     Collections.sort(slice, new Comparator<EquationLogItem>() {
       public int compare(EquationLogItem o1, EquationLogItem o2) {
-        return myEquationLogItems.indexOf(o2) - myEquationLogItems.indexOf(o1);
+        return myEquationLogItems.indexOf(o1) - myEquationLogItems.indexOf(o2);
       }
     });
     return slice;

@@ -63,12 +63,7 @@ public class TypecheckerStateViewComponent extends JPanel {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
           if (editorComponent != null) {
             final SNode currentRoot = editorComponent.getEditedNode();
-            mySlicer = ModelAccess.instance().runReadAction(new Computable<ISlicer>() {
-              public ISlicer compute() {
-                return TypeChecker.getInstance().debugRoot(currentRoot);
-              }
-            });
-            rebuild();
+            debugRoot(currentRoot);
           }
         }
       }
@@ -105,7 +100,21 @@ public class TypecheckerStateViewComponent extends JPanel {
     add(new JPanel(), gridBagConstraints);
   }
 
+  public void debugRoot(final SNode currentRoot) {
+    myCurrentSlice = new ArrayList<EquationLogItem>();
+    mySlicer = ModelAccess.instance().runReadAction(new Computable<ISlicer>() {
+      public ISlicer compute() {
+        return TypeChecker.getInstance().debugRoot(currentRoot);
+      }
+    });
+    rebuild();
+  }
+
   public void sliceWithNode(SNode node) {
+    if (node == null) return;
+    if (mySlicer == null) {
+      debugRoot(node.getContainingRoot());
+    }
     if (mySlicer == null) return;
     myCurrentSlice = mySlicer.getSlice(node);
     rebuild();
