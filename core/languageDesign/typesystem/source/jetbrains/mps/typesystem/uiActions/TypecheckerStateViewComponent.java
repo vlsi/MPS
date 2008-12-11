@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
@@ -21,6 +22,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Pair;
 
 /**
  * Created by IntelliJ IDEA.
@@ -121,8 +123,34 @@ public class TypecheckerStateViewComponent extends JPanel {
   }
 
 
+  private void openRule(String ruleModel, final String ruleID) {
+    if (ruleModel == null || ruleID == null) return;
+    SModelReference modelUID = SModelReference.fromString(ruleModel);
+    modelUID = SModelReference.fromString(modelUID.getLongName());
+    final SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+    if (modelDescriptor == null) {
+      LOG.error("can't find rule's model " + ruleModel);
+      return;
+    }
+
+    final SNode rule = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      public SNode compute() {
+        return modelDescriptor.getSModel().getNodeById(ruleID);
+      }
+    });
+    if (rule == null) {
+      LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
+      return;
+    }
+    ModelAccess.instance().executeCommand(new Runnable() {
+      public void run() {
+        myOperationContext.getComponent(MPSEditorOpener.class).openNode(rule);
+      }
+    });
+  }
 
   public class SNodeTree extends MPSTree {
+
     private SNode myNode;
 
     public SNodeTree(SNode node) {
@@ -133,11 +161,12 @@ public class TypecheckerStateViewComponent extends JPanel {
       SNodeTreeNode treeNode = new SNodeTreeNode(myNode, myOperationContext);
       return treeNode;
     }
+
+
   }
 
-
-
   public class EquationLogItemPanel extends JPanel {
+
     private EquationLogItem myEquationLogItem;
 
     public EquationLogItemPanel(EquationLogItem equationLogItem) {
@@ -171,37 +200,44 @@ public class TypecheckerStateViewComponent extends JPanel {
           if (e.getClickCount() == 2) {
             String ruleModel = myEquationLogItem.getRuleModel();
             final String ruleID = myEquationLogItem.getRuleId();
-            if (ruleModel == null || ruleID == null) return;
-            SModelReference modelUID = SModelReference.fromString(ruleModel);
-            modelUID = SModelReference.fromString(modelUID.getLongName());
-            final SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
-            if (modelDescriptor == null) {
-              LOG.error("can't find rule's model " + ruleModel);
-              return;
-            }
-
-            final SNode rule = ModelAccess.instance().runReadAction(new Computable<SNode>() {
-              public SNode compute() {
-                return modelDescriptor.getSModel().getNodeById(ruleID);
-              }
-            });
-            if (rule == null) {
-              LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
-              return;
-            }
-            ModelAccess.instance().executeCommand(new Runnable() {
-              public void run() {
-                myOperationContext.getComponent(MPSEditorOpener.class).openNode(rule);
-              }
-            });
+            openRule(ruleModel, ruleID);
           }
         }
       });
       add(reasonLabel, constraints);
 
+      List<Pair<String, String>> causes = myEquationLogItem.getCauses();
+      if (!causes.isEmpty()) {
+        constraints.gridx = 4;
+        constraints.weightx = 0;
+        TypecheckerStateViewComponent.EquationLogItemPanel.CausesTree causesTree = new CausesTree(causes);
+        add(causesTree, constraints);
+        causesTree.rebuildNow();
+      }
+
       leftTree.rebuildNow();
       rightTree.rebuildNow();
     }
 
+    class CausesTree extends MPSTree {
+      private List<Pair<String, String>> myCauses;
+
+      public CausesTree(List<Pair<String, String>> causes) {
+        myCauses = new ArrayList<Pair<String, String>>(causes);
+      }
+
+      protected MPSTreeNode rebuild() {
+        TextTreeNode root = new TextTreeNode("causes", myOperationContext);
+        for (final Pair<String, String> cause : myCauses) {
+          TextTreeNode child = new TextTreeNode(cause.first + " : " + cause.second) {
+            public void doubleClick() {
+              openRule(cause.first, cause.second);
+            }
+          };
+          root.add(child);
+        }
+        return root;
+      }
+    }
   }
 }
