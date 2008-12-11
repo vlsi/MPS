@@ -17,31 +17,22 @@ import java.util.Map;
  */
 public class NullSlicer implements ISlicer {
 
-  public List<SliceInfo> getSliceInfos() {
-    return new ArrayList<SliceInfo>();
+  public void beforeUserEquationAdded(SNode type1, SNode type2, EquationInfo equationInfo) {
   }
 
-  public List<SliceInfo> beforeUserEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo) {
-    return new ArrayList<SliceInfo>();
+  public void beforeInequationTriggeredEquationAdded(SNode type1, SNode type2, EquationInfo equationInfo) {
   }
 
-  public List<SliceInfo> beforeInequationTriggeredEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo) {
-    return new ArrayList<SliceInfo>();
+  public void beforeChildEquationAdded(SNode type1, SNode type2, EquationInfo equationInfo) {
   }
 
-  public List<SliceInfo> beforeChildEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo) {
-    return new ArrayList<SliceInfo>();
-  }
-
-  public List<SliceInfo> beforeInequationsSolvedForType(SNode type, SNode otherType, TypeCheckingContext typeCheckingContext, List<EquationInfo> inequations) {
-    return new ArrayList<SliceInfo>();
-  }
-
-  public void afterEquationAdded(List<SliceInfo> sliceInfos, TypeCheckingContext typeCheckingContext) {
-
+  public void beforeInequationsSolvedForType(SNode type, SNode otherType, List<EquationInfo> inequations) {
   }
 
   public void beforeTypesExpanded(Map<SNode, SNode> context) {
-    
+  }
+
+  public List<EquationLogItem> getSlice(SNode nodeToSliceWith) {
+    return new ArrayList<EquationLogItem>();
   }
 }

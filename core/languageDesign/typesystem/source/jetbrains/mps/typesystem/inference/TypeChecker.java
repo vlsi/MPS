@@ -28,6 +28,7 @@ import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.debug.SlicerImpl;
+import jetbrains.mps.typesystem.debug.NullSlicer;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import org.jetbrains.annotations.Nullable;
@@ -195,7 +196,10 @@ public class TypeChecker implements ApplicationComponent {
     checkRoot(node, false, null);
   }
 
-  public ISlicer debugRoot(final SNode node, ISlicer slicer) {
+  public ISlicer debugRoot(final SNode node) {
+    if (node == null) return new NullSlicer();
+    assert node.isRoot();
+    ISlicer slicer = new SlicerImpl(NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node));
     checkRoot(node, true, slicer);
     return slicer;
   }

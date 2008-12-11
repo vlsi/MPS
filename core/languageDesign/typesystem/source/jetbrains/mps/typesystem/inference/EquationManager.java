@@ -519,9 +519,8 @@ public class EquationManager {
   void addChildEquations(Set<Pair<SNode, SNode>> childEqs, EquationInfo errorInfo) {
     ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
     for (Pair<SNode, SNode> eq : childEqs) {
-      List<SliceInfo> sliceInfos = slicer.beforeChildEquationAdded(eq.o2, eq.o1, myTypeCheckingContext, errorInfo);
+      slicer.beforeChildEquationAdded(eq.o2, eq.o1, errorInfo);
       addEquation(NodeWrapper.fromNode(eq.o2, this), NodeWrapper.fromNode(eq.o1, this), errorInfo);
-      slicer.afterEquationAdded(sliceInfos, myTypeCheckingContext);
     }
   }
 
@@ -861,9 +860,8 @@ public class EquationManager {
         for (IWrapper supertype : supertypes.keySet()) {
           mySupertypesToSubtypesMap.get(supertype).remove(type);
           EquationInfo errorInfo = supertypes.get(supertype);
-          List<SliceInfo> sliceInfos = slicer.beforeInequationTriggeredEquationAdded(type.getNode(), supertype.getNode(), myTypeCheckingContext, errorInfo);
+          slicer.beforeInequationTriggeredEquationAdded(type.getNode(), supertype.getNode(), errorInfo);
           addEquation(type, supertype, errorInfo);
-          slicer.afterEquationAdded(sliceInfos, myTypeCheckingContext);
         }
       }
       Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMap.get(type);
@@ -872,9 +870,8 @@ public class EquationManager {
         for (IWrapper subtype : subtypes.keySet()) {
           mySubtypesToSupertypesMap.get(subtype).remove(type);
           EquationInfo errorInfo = subtypes.get(subtype);
-          List<SliceInfo> sliceInfos = slicer.beforeInequationTriggeredEquationAdded(type.getNode(), subtype.getNode(), myTypeCheckingContext, errorInfo);
+          slicer.beforeInequationTriggeredEquationAdded(type.getNode(), subtype.getNode(), errorInfo);
           addEquation(type, subtype, errorInfo);
-          slicer.afterEquationAdded(sliceInfos, myTypeCheckingContext);
         }
       }
       Map<IWrapper, EquationInfo> supertypesStrong = mySubtypesToSupertypesMapStrong.get(type);
@@ -883,9 +880,8 @@ public class EquationManager {
         for (IWrapper supertype : supertypesStrong.keySet()) {
           mySupertypesToSubtypesMapStrong.get(supertype).remove(type);
           EquationInfo errorInfo = supertypesStrong.get(supertype);
-          List<SliceInfo> sliceInfos = slicer.beforeInequationTriggeredEquationAdded(type.getNode(), supertype.getNode(), myTypeCheckingContext, errorInfo);
+          slicer.beforeInequationTriggeredEquationAdded(type.getNode(), supertype.getNode(), errorInfo);
           addEquation(type, supertype, errorInfo);
-          slicer.afterEquationAdded(sliceInfos, myTypeCheckingContext);
         }
       }
       Map<IWrapper, EquationInfo> subtypesStrong = mySupertypesToSubtypesMapStrong.get(type);
@@ -894,9 +890,8 @@ public class EquationManager {
         for (IWrapper subtype : subtypesStrong.keySet()) {
           mySubtypesToSupertypesMapStrong.get(subtype).remove(type);
           EquationInfo errorInfo = subtypesStrong.get(subtype);
-          List<SliceInfo> sliceInfos = slicer.beforeInequationTriggeredEquationAdded(type.getNode(), subtype.getNode(), myTypeCheckingContext, errorInfo);
+          slicer.beforeInequationTriggeredEquationAdded(type.getNode(), subtype.getNode(), errorInfo);
           addEquation(type, subtype, errorInfo);
-          slicer.afterEquationAdded(sliceInfos, myTypeCheckingContext);
         }
       }
     }
@@ -962,10 +957,9 @@ public class EquationManager {
         }
         ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
         IWrapper otherType = myTypeChecker.getSubtypingManager().leastCommonSupertype(expandedSubtypes, isWeak, EquationManager.this);
-        List<SliceInfo> sliceInfos = slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), myTypeCheckingContext, new ArrayList<EquationInfo>(errorInfoMap.values()));
+        slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), new ArrayList<EquationInfo>(errorInfoMap.values()));
         addEquation(type, otherType,
           errorInfo);
-        slicer.afterEquationAdded(sliceInfos, myTypeCheckingContext);
       }
     }, priority, minPriority, isShallow);
   }
@@ -1039,9 +1033,8 @@ public class EquationManager {
         // c :< T => c = T
         ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
         IWrapper otherType = decideIfIsLineAndReturnInfimum(concreteSupertypes);
-        List<SliceInfo> sliceInfos = slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), myTypeCheckingContext, new ArrayList<EquationInfo>(errorInfoMap.values()));
+        slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), new ArrayList<EquationInfo>(errorInfoMap.values()));
         addEquation(type,  /*concreteSupertypes.iterator().next()*/otherType, errorInfo);
-        slicer.afterEquationAdded(sliceInfos, myTypeCheckingContext);
       }
     }, priority, minPriority, isShallow);
   }

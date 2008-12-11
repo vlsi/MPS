@@ -45,6 +45,7 @@ public class TypecheckerStateViewComponent extends JPanel {
   private List<SNodePointer> myNodesToSliceWith = new ArrayList<SNodePointer>();
   private List<SNodeTree> myTreesOfNodesToSliceWith = new ArrayList<SNodeTree>();
 
+  private ISlicer mySlicer;
 
   private JButton myDebugCurrentRootButton;
   public JPanel myUpperPanel;
@@ -69,9 +70,9 @@ public class TypecheckerStateViewComponent extends JPanel {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
           if (editorComponent != null) {
             final SNode currentRoot = editorComponent.getEditedNode();
-              ISlicer slicer = ModelAccess.instance().runReadAction(new Computable<ISlicer>() {
+              mySlicer = ModelAccess.instance().runReadAction(new Computable<ISlicer>() {
               public ISlicer compute() {
-                return TypeChecker.getInstance().debugRoot(currentRoot, new SlicerImpl());
+                return TypeChecker.getInstance().debugRoot(currentRoot);
               }
             });
           }

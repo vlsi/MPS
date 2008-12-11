@@ -208,12 +208,11 @@ public class TypeCheckingContext {
                              String ruleId,
                              IntentionProvider intentionProvider) {
     EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
-    List<SliceInfo> sliceInfos = getCurrentSlicer().beforeUserEquationAdded(node1, node2, this, equationInfo);
+    getCurrentSlicer().beforeUserEquationAdded(node1, node2, equationInfo);
     getNodeTypesComponent().getEquationManager().addEquation(
       node1,
       node2,
       equationInfo);
-    getCurrentSlicer().afterEquationAdded(sliceInfos, this);
   }
 
   public void createLessThanInequation(SNode node1,

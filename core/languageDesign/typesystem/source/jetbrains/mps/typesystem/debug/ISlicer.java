@@ -15,17 +15,15 @@ import java.util.*;
  */
 public interface ISlicer {
 
-  public List<SliceInfo> getSliceInfos();
+  public void beforeUserEquationAdded(SNode type1, SNode type2, EquationInfo equationInfo);
 
-  public List<SliceInfo> beforeUserEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo);
+  public void beforeInequationTriggeredEquationAdded(SNode type1, SNode type2, EquationInfo equationInfo);
 
-  public List<SliceInfo> beforeInequationTriggeredEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo);
+  public void beforeChildEquationAdded(SNode type1, SNode type2, EquationInfo equationInfo);
 
-  public List<SliceInfo> beforeChildEquationAdded(SNode type1, SNode type2, TypeCheckingContext typeCheckingContext, EquationInfo equationInfo);
-
-  public List<SliceInfo> beforeInequationsSolvedForType(SNode type, SNode otherType, TypeCheckingContext typeCheckingContext, List<EquationInfo> inequations);
-
-  public void afterEquationAdded(List<SliceInfo> sliceInfos, TypeCheckingContext typeCheckingContext);
+  public void beforeInequationsSolvedForType(SNode type, SNode otherType, List<EquationInfo> inequations);
 
   public void beforeTypesExpanded(Map<SNode, SNode> context);
+
+  public List<EquationLogItem> getSlice(SNode nodeToSliceWith);
 }
