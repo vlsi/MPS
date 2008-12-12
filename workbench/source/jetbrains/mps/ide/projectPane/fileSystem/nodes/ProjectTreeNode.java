@@ -46,10 +46,13 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
     MPSProjectHolder mpsProjectHolder = project.getComponent(MPSProjectHolder.class);
     List<ModuleTreeNode> moduleNodes = new LinkedList<ModuleTreeNode>();
     if (mpsProjectHolder != null) {
-      List<IModule> modules = mpsProjectHolder.getMPSProject().getModules();
-      for (IModule m : modules) {
-        if (m.getDescriptorFile().exists()) {
-          moduleNodes.add(new ModuleTreeNode(project, m));
+      MPSProject mpsProject = mpsProjectHolder.getMPSProject();
+      if (mpsProject != null) {
+        List<IModule> modules = mpsProject.getModules();
+        for (IModule m : modules) {
+          if (m.getDescriptorFile().exists()) {
+            moduleNodes.add(new ModuleTreeNode(project, m));
+          }
         }
       }
     }
