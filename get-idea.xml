@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="get-idea" default="default">
   <property name="main.url" value="http://buildserver/guestAuth/repository/download/bt24/.lastSuccessful" />
-  <property name="idea.platform.dir" value="lib/jetbrains-ideframework" />
-  <property name="idea.platform.internal.dir" value="lib/idea-platform-internal" />
+  <property name="lib.dir" value="lib" />
+  <property name="idea.platform.dir" value="${lib.dir}/jetbrains-ideframework" />
   <property name="tmp" value="idea.new" />
   <property name="idea.platform.build.property" value="idea.platform.build.number" />
   <property name="platfrom.src.zip" value="idea-platform-src.zip" />
@@ -17,6 +17,7 @@
     <get src="${main.url}/platform15/resources_en.jar" dest="${idea.platform.dir}/resources_en.jar" />
     <get src="${main.url}/sources.zip" dest="${idea.platform.dir}/sources.zip" />
     <get src="${main.url}/idea{build.number}-jdk15.zip" dest="${tmp}/idea-jdk15.zip" />
+    <get src="${main.url}/idea{build.number}-dev.zip" dest="${tmp}/idea-dev.zip" />
   </target>
   <target name="clean.license.classes" depends="download">
     <property name="platform.jar" value="${idea.platform.dir}/platform.jar" />
@@ -29,11 +30,33 @@
   </target>
   <target name="replace.libraries" depends="download">
     <unzip src="${tmp}/idea-jdk15.zip" dest="${tmp}/idea" />
-    <copy todir="${idea.platform.dir}" overwrite="true">
-      <fileset dir="${tmp}/idea/lib" includes="alloy.jar, annotations.jar, boot.jar, bootstrap.jar, commons-codec-1.3.jar, commons-collections.jar, extensions.jar, forms_rt.jar, icons.jar, jh.jar, jdom.jar, jgoodies-forms.jar, jna-utils.jar, jna.jar, log4j.jar, microba.jar, nanoxml-2.2.3.jar, oromatcher.jar, picocontainer.jar, trove4j.jar, trove4j_src.jar, util.jar, xmlrpc-2.0.jar, xstream.jar, yjp-controller-api-redist.jar" />
+    <copy file="${tmp}/idea/lib/alloy.jar" todir="${lib.dir}/alloy" overwrite="true" />
+    <copy file="${tmp}/idea/lib/commons-codec-1.3.jar" todir="${lib.dir}/commons-codec" overwrite="true" />
+    <copy file="${tmp}/idea/lib/commons-collections.jar" todir="${lib.dir}/commons-collections" overwrite="true" />
+    <copy file="${tmp}/idea/lib/jdom.jar" todir="${lib.dir}/jdom" overwrite="true" />
+    <copy file="${tmp}/idea/lib/jgoodies-forms.jar" todir="${lib.dir}/jgoodies" overwrite="true" />
+    <copy file="${tmp}/idea/lib/jh.jar" todir="${lib.dir}/javahelp" overwrite="true" />
+    <copy todir="${lib.dir}/jna" overwrite="true">
+      <fileset dir="${tmp}/idea/lib">
+        <include name="jna-utils.jar, jna.jar" />
+      </fileset>
     </copy>
-    <copy todir="${idea.platform.internal.dir}" overwrite="true">
-      <fileset dir="${tmp}/idea/lib" includes="cocoa.jar, exe4jlib.jar, growl.jar, jLmgr.jar, ui.jar, velocity.jar" />
+    <copy file="${tmp}/idea/lib/log4j.jar" todir="${lib.dir}/log4j" overwrite="true" />
+    <copy file="${tmp}/idea/lib/microba.jar" todir="${lib.dir}/microba" overwrite="true" />
+    <copy file="${tmp}/idea/lib/nanoxml-2.2.3.jar" todir="${lib.dir}/nanoxml" overwrite="true" />
+    <copy file="${tmp}/idea/lib/oromatcher.jar" todir="${lib.dir}/oromatcher" overwrite="true" />
+    <copy file="${tmp}/idea/lib/picocontainer.jar" todir="${lib.dir}/picocontainer" overwrite="true" />
+    <copy todir="${lib.dir}/trove4j" overwrite="true">
+      <fileset dir="${tmp}/idea/lib">
+        <include name="trove4j_src.jar, trove4j.jar" />
+      </fileset>
+    </copy>
+    <copy file="${tmp}/idea/lib/alloy.jar" todir="${lib.dir}/alloy" overwrite="true" />
+    <copy file="${tmp}/idea/lib/xmlrpc-2.0.jar" todir="${lib.dir}/xmlrpc" overwrite="true" />
+    <copy file="${tmp}/idea/lib/xstream.jar" todir="${lib.dir}/xstream" overwrite="true" />
+    <copy file="${tmp}/idea/lib/yjp-controller-api-redist.jar" todir="${lib.dir}/yjp" overwrite="true" />
+    <copy todir="${idea.platform.dir}" overwrite="true">
+      <fileset dir="${tmp}/idea/lib" includes="annotations.jar, boot.jar, bootstrap.jar, extensions.jar, forms_rt.jar, icons.jar, util.jar, " />
     </copy>
     <replaceregexp match="${idea.platform.build.property}=(.*)" file="build.number" replace="${idea.platform.build.property}=" byline="true" />
     <concat append="true" destfile="build.number">
@@ -65,13 +88,24 @@
       <fileset dir="${tmp}/idea-src/vcs-impl/src/" />
     </zip>
     <delete file="${idea.platform.dir}/${platfrom.src.zip}.old" />
+    <delete file="${idea.platform.dir}/sources.zip" />
+  </target>
+  <target name="unpack.external.sources" depends="download">
+    <property name="src" value="${tmp}/idea-dev/lib/src/src_openapi.zip" />
+    <unzip src="${tmp}/idea-dev.zip" dest="${tmp}/idea-dev" />
+    <unzip src="${src}" dest="${tmp}/idea-openapi" />
+    <zip destfile="${idea.platform.dir}/idea-external-src.zip">
+      <zipfileset dir="${tmp}/idea-openapi">
+        <include name="**/*.java" />
+      </zipfileset>
+    </zip>
   </target>
   <target name="upgrade.plugins" depends="replace.libraries">
     <copy todir="plugins" overwrite="true">
       <fileset dir="${tmp}/idea/plugins/" includes="ClearCaseIntegration/**, cvsIntegration/**, git4idea/**, PerforceIntegration/**, starteamIntegration/**, svn4idea/**, vssIntegration/**" />
     </copy>
   </target>
-  <target name="clean" depends="upgrade.plugins,download,replace.libraries,unpack.sources,prepare,clean.license.classes">
+  <target name="clean" depends="upgrade.plugins,download,replace.libraries,unpack.sources,prepare,clean.license.classes,unpack.external.sources">
     <delete dir="${tmp}" />
   </target>
 </project>
