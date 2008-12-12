@@ -27,5 +27,7 @@ public interface ISlicer {
 
   public List<EquationLogItem> getSlice(SNode nodeToSliceWith);
 
+  public SNode getInitialNodeType(SNode node);
+
   public String getRootInfo();
 }

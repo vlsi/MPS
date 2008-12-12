@@ -57,6 +57,10 @@ public class SlicerImpl implements ISlicer {
     myNodesToTypes.putAll(context);
   }
 
+  public SNode getInitialNodeType(SNode node) {
+    return myNodesToTypes.get(node);
+  }
+
   public List<EquationLogItem> getSlice(SNode nodeToSliceWith) {
     SNode type = myNodesToTypes.get(nodeToSliceWith);
     if (type == null) {

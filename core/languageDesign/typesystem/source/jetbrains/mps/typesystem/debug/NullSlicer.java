@@ -39,4 +39,8 @@ public class NullSlicer implements ISlicer {
   public String getRootInfo() {
     return null;
   }
+
+  public SNode getInitialNodeType(SNode node) {
+    return null;
+  }
 }

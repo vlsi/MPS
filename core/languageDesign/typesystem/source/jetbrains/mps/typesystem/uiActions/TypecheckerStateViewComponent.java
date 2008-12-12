@@ -39,9 +39,8 @@ public class TypecheckerStateViewComponent extends JPanel {
   private EditorsProvider myEditorsProvider;
 
   private ISlicer mySlicer;
+  private SNode myNodeToSliceWith = null;
   private List<EquationLogItem> myCurrentSlice = new ArrayList<EquationLogItem>();
-
-  private JScrollPane myScrollPane;
 
   public TypecheckerStateViewComponent(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -96,13 +95,36 @@ public class TypecheckerStateViewComponent extends JPanel {
 
     JPanel innerPanel = new JPanel(new GridBagLayout());
 
+    int y = 1;
+    if (myNodeToSliceWith != null) {
+      //initial node type
+      JPanel nodeTypePanel = new JPanel(new GridBagLayout());
+      GridBagConstraints nodeTypePanelConstraints = new GridBagConstraints();
+      nodeTypePanel.setBackground(Color.WHITE);
 
-    //slice items
-    int y = 0;
-    for (EquationLogItem equationLogItem : myCurrentSlice) {
-      gridBagConstraints.gridy = y;
-      innerPanel.add(new EquationLogItemPanel(equationLogItem), gridBagConstraints);
-      y++;
+      nodeTypePanelConstraints.gridy = 0;
+      nodeTypePanelConstraints.weighty = 0;
+      nodeTypePanelConstraints.weightx = 0;
+      nodeTypePanelConstraints.fill = GridBagConstraints.NONE;
+      nodeTypePanelConstraints.anchor = GridBagConstraints.NORTHWEST;
+
+      nodeTypePanelConstraints.gridx = 0;
+      nodeTypePanel.add(new JLabel("initial type: "), nodeTypePanelConstraints);
+
+      nodeTypePanelConstraints.gridx = 1;
+      TypecheckerStateViewComponent.SNodeTree initialTypeTree = new SNodeTree(mySlicer.getInitialNodeType(myNodeToSliceWith));
+      nodeTypePanel.add(initialTypeTree, nodeTypePanelConstraints);
+      initialTypeTree.rebuildNow();
+
+      innerPanel.add(nodeTypePanel, gridBagConstraints);
+
+      //slice items
+
+      for (EquationLogItem equationLogItem : myCurrentSlice) {
+        gridBagConstraints.gridy = y;
+        innerPanel.add(new EquationLogItemPanel(equationLogItem), gridBagConstraints);
+        y++;
+      }
     }
     gridBagConstraints.gridy = y;
     gridBagConstraints.weighty = 1;
@@ -117,10 +139,12 @@ public class TypecheckerStateViewComponent extends JPanel {
     gridBagConstraints.weighty = 1;
     gridBagConstraints.gridy = 1;
     add(scrollPane, gridBagConstraints);
+
   }
 
   public void debugRoot(final SNode currentRoot) {
     myCurrentSlice = new ArrayList<EquationLogItem>();
+    myNodeToSliceWith = null;
     mySlicer = ModelAccess.instance().runReadAction(new Computable<ISlicer>() {
       public ISlicer compute() {
         return TypeChecker.getInstance().debugRoot(currentRoot);
@@ -134,6 +158,7 @@ public class TypecheckerStateViewComponent extends JPanel {
     if (mySlicer == null) {
       debugRoot(node.getContainingRoot());
     }
+    myNodeToSliceWith = node;
     if (mySlicer == null) return;
     myCurrentSlice = mySlicer.getSlice(node);
     rebuild();
