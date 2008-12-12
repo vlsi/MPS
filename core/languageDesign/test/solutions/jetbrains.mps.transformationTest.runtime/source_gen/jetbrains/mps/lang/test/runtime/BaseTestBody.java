@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BaseTestBody {
@@ -30,7 +30,7 @@ public class BaseTestBody {
       public void run() {
         SNode node = BaseTestBody.this.myModel.getSModel().getNodeById(id);
         SNode copy = CopyUtil.copy(node, BaseTestBody.this.myMap, true);
-        for(SNode a : Sequence.fromIterable(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.INodeAnnotattion", false))) {
+        for(SNode a : ListSequence.fromList(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.INodeAnnotattion", false))) {
           SNodeOperations.deleteNode(a);
         }
         BaseTestBody.this.myModel.getSModel().addRoot(copy);

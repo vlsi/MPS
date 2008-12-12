@@ -3322,6 +3322,85 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227185232629" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227185232630" />
     </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1228935369323">
+      <property name="name" value="pressKeys" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1228935383384">
+        <property name="name" value="editor" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228935383385">
+          <link role="classifier" targetNodeId="13.~IEditor" resolveInfo="IEditor" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1228935467065">
+        <property name="name" value="keyCodes" />
+        <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1228935484781">
+          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1228935486704" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1228935369324" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228935369325" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228935369326">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228935542655">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1228935542656">
+            <property name="name" value="editorComponent" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228935542657">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228935542658">
+                <link role="variableDeclaration" targetNodeId="1228935383384" resolveInfo="editor" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228935542659">
+                <link role="baseMethodDeclaration" targetNodeId="13.~IEditor.getCurrentEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getCurrentEditorComponent" />
+              </node>
+            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228935542660">
+              <link role="classifier" targetNodeId="27.~EditorComponent" resolveInfo="EditorComponent" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1228935512320">
+          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1228935512321">
+            <property name="name" value="code" />
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228935525475">
+            <link role="variableDeclaration" targetNodeId="1228935467065" resolveInfo="keyCodes" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228935512323">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228935534302">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228935534303">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228935534304">
+                  <link role="variableDeclaration" targetNodeId="1228935542656" resolveInfo="editorComponent" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228935534305">
+                  <link role="baseMethodDeclaration" targetNodeId="27.~EditorComponent.processKeyTyped(java.awt.event.KeyEvent):void" resolveInfo="processKeyTyped" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1228935534306">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1228935534307">
+                      <link role="baseMethodDeclaration" targetNodeId="29.~KeyEvent.&lt;init&gt;(java.awt.Component,int,long,int,int,char)" resolveInfo="KeyEvent" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228935534308">
+                        <link role="variableDeclaration" targetNodeId="1228935542656" resolveInfo="editorComponent" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1228935534309">
+                        <link role="classifier" targetNodeId="29.~KeyEvent" resolveInfo="KeyEvent" />
+                        <link role="variableDeclaration" targetNodeId="29.~KeyEvent.KEY_PRESSED" resolveInfo="KEY_PRESSED" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1228935534310">
+                        <property name="value" value="0" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1228935534311">
+                        <property name="value" value="0" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1228935583272">
+                        <link role="variable" targetNodeId="1228935512321" resolveInfo="code" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="1228935603834">
+                        <property name="charConstant" value="\0" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1227188648979">
       <property name="name" value="assertEditor" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227188648980">

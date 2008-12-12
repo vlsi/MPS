@@ -591,5 +591,20 @@
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1228934484974">
+    <property name="package" value="editor" />
+    <property name="name" value="PressKeyStatement" />
+    <link role="extends" targetNodeId="7.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1228934507814">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="keyCodes" />
+      <property name="sourceCardinality" value="1..n" />
+      <link role="target" targetNodeId="7.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1228934692399">
+      <property name="value" value="press keys" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

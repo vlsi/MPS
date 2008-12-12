@@ -21,7 +21,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -208,7 +207,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1216995908944(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> res = new ArrayList<SNode>();
-    for(SNode method : Sequence.fromIterable(SLinkOperations.getTargets(_context.getNode(), "testMethods", true))) {
+    for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "testMethods", true))) {
       ListSequence.fromList(res).addElement(method);
     }
     ListSequence.fromList(res).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.test.structure.NodeOperation", false)));
@@ -221,7 +220,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1221567898689(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     HashSet<SNode> set = new LinkedHashSet<SNode>();
-    for(SNode ref : Sequence.fromIterable(SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "body", true), "jetbrains.mps.lang.test.structure.TestNodeReference", false))) {
+    for(SNode ref : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "body", true), "jetbrains.mps.lang.test.structure.TestNodeReference", false))) {
       set.add(SLinkOperations.getTarget(ref, "declaration", false));
     }
     return new ArrayList<SNode>(set);
@@ -249,7 +248,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1225976113129(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for(SNode nodeTocheck : Sequence.fromIterable(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", false, false), "nodesToCheck", true))) {
+    for(SNode nodeTocheck : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", false, false), "nodesToCheck", true))) {
       ListSequence.fromList(nodes).addElement(((SNode)nodeTocheck));
     }
     return nodes;
@@ -261,7 +260,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1225981729543(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for(SNode nodeTocheck : Sequence.fromIterable(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", false, false), "nodesToCheck", true))) {
+    for(SNode nodeTocheck : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", false, false), "nodesToCheck", true))) {
       ListSequence.fromList(nodes).addElement(((SNode)nodeTocheck));
     }
     return nodes;
@@ -269,6 +268,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1225981729641(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
+  }
+
+  public static Iterable sourceNodesQuery_1228936386481(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "keyCodes", true);
   }
 
 }

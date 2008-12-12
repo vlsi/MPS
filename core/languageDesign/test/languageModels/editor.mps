@@ -784,5 +784,23 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1228934535921">
+    <property name="package" value="editor" />
+    <link role="conceptDeclaration" targetNodeId="1.1228934484974" resolveInfo="PressKeyStatement" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1228934540801">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228934544554">
+        <property name="text" value="press keys" />
+        <link role="styleClass" targetNodeId="1227190782920" resolveInfo="EditorOperation" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1228934562018">
+        <property name="separatorText" value="," />
+        <link role="relationDeclaration" targetNodeId="1.1228934507814" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228935068186">
+        <property name="text" value=";" />
+      </node>
+    </node>
+  </node>
 </model>
 
