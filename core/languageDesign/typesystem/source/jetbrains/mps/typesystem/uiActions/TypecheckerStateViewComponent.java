@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import javax.swing.*;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.Color;
 import java.awt.event.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -40,6 +41,8 @@ public class TypecheckerStateViewComponent extends JPanel {
   private ISlicer mySlicer;
   private List<EquationLogItem> myCurrentSlice = new ArrayList<EquationLogItem>();
 
+  private JScrollPane myScrollPane;
+
   public TypecheckerStateViewComponent(IOperationContext operationContext) {
     myOperationContext = operationContext;
     myEditorsProvider = new EditorsProvider(operationContext.getProject());
@@ -49,6 +52,7 @@ public class TypecheckerStateViewComponent extends JPanel {
   private void rebuild() {
     removeAll();
     setLayout(new GridBagLayout());
+
     GridBagConstraints gridBagConstraints = new GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 0;
@@ -90,16 +94,29 @@ public class TypecheckerStateViewComponent extends JPanel {
 
     add(upperPanel, gridBagConstraints);
 
+    JPanel innerPanel = new JPanel(new GridBagLayout());
+
+
     //slice items
-    int y = 1;
+    int y = 0;
     for (EquationLogItem equationLogItem : myCurrentSlice) {
       gridBagConstraints.gridy = y;
-      add(new EquationLogItemPanel(equationLogItem), gridBagConstraints);
+      innerPanel.add(new EquationLogItemPanel(equationLogItem), gridBagConstraints);
       y++;
     }
     gridBagConstraints.gridy = y;
     gridBagConstraints.weighty = 1;
-    add(new JPanel(), gridBagConstraints);
+    JPanel gauge = new JPanel();
+    gauge.setBackground(Color.WHITE);
+    innerPanel.add(gauge, gridBagConstraints);
+
+    innerPanel.setBackground(Color.WHITE);
+    JScrollPane scrollPane = new JScrollPane(innerPanel);
+    scrollPane.setBackground(Color.WHITE);
+
+    gridBagConstraints.weighty = 1;
+    gridBagConstraints.gridy = 1;
+    add(scrollPane, gridBagConstraints);
   }
 
   public void debugRoot(final SNode currentRoot) {
@@ -173,10 +190,12 @@ public class TypecheckerStateViewComponent extends JPanel {
       myEquationLogItem = equationLogItem;
 
       setLayout(new GridBagLayout());
+      setBackground(Color.WHITE);
 
       GridBagConstraints constraints = new GridBagConstraints();
       constraints.gridy = 0;
       constraints.weighty = 0;
+      constraints.weightx = 0;
       constraints.fill = GridBagConstraints.NONE;
       constraints.anchor = GridBagConstraints.NORTHWEST;
 
