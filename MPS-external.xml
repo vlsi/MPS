@@ -220,6 +220,7 @@
       <zipfileset dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp" excludes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </zip>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp" />
+    <copy file="lib/jetbrains-ideframework/idea-external-src.zip" tofile="${deploy.dir}/build-helpers.distrib/MPS/lib/IDEA-src.zip" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/license">
       <fileset dir="license" excludes="**/*.iml, **/*.iws, " />
     </copy>
