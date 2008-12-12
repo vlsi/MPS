@@ -21,11 +21,12 @@ import com.intellij.openapi.progress.Task.Backgroundable;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class Executor {
   private Project myProject;
 
-  public Executor(Project project) {
+  public Executor(@Nullable Project project) {
     myProject = project;
   }
 

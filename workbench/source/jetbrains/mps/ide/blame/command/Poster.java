@@ -19,13 +19,14 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.blame.perform.*;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.params.HttpClientParams;
+import org.jetbrains.annotations.Nullable;
 
 public class Poster {
   private static final int TIMEOUT = 5000;
 
   private Executor myExecutor;
 
-  public Poster(Project project) {
+  public Poster(@Nullable Project project) {
     myExecutor = new Executor(project);
   }
 
