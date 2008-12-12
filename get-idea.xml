@@ -18,6 +18,15 @@
     <get src="${main.url}/sources.zip" dest="${idea.platform.dir}/sources.zip" />
     <get src="${main.url}/idea{build.number}-jdk15.zip" dest="${tmp}/idea-jdk15.zip" />
   </target>
+  <target name="clean.license.classes" depends="download">
+    <property name="platform.jar" value="${idea.platform.dir}/platform.jar" />
+    <property name="tmpdir" value="${idea.platform.dir}/tmp" />
+    <mkdir dir="${tmpdir}" />
+    <unzip src="${platform.jar}" dest="${tmpdir}" />
+    <delete dir="${tmpdir}" includes="**com/intellij/ide/license/impl/**" />
+    <jar basedir="${tmpdir}" destfile="${platform.jar}" update="false" />
+    <delete dir="${tmpdir}" />
+  </target>
   <target name="replace.libraries" depends="download">
     <unzip src="${tmp}/idea-jdk15.zip" dest="${tmp}/idea" />
     <copy todir="${idea.platform.dir}" overwrite="true">
@@ -62,7 +71,7 @@
       <fileset dir="${tmp}/idea/plugins/" includes="ClearCaseIntegration/**, cvsIntegration/**, git4idea/**, PerforceIntegration/**, starteamIntegration/**, svn4idea/**, vssIntegration/**" />
     </copy>
   </target>
-  <target name="clean" depends="upgrade.plugins,download,replace.libraries,unpack.sources,prepare">
+  <target name="clean" depends="upgrade.plugins,download,replace.libraries,unpack.sources,prepare,clean.license.classes">
     <delete dir="${tmp}" />
   </target>
 </project>
