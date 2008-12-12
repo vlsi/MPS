@@ -24,7 +24,6 @@ import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
 
-import javax.swing.JOptionPane;
 import java.awt.Component;
 
 public class CharismaReporter extends ErrorReportSubmitter {
@@ -42,7 +41,7 @@ public class CharismaReporter extends ErrorReportSubmitter {
 
     BlameDialog blameDialog = BlameDialogComponent.getInstance().createDialog(parentComponent);
     blameDialog.setEx(events[0].getThrowable());
-    blameDialog.setMessage(events[0].getMessage());
+    blameDialog.setIssueTitle(events[0].getMessage());
 
     blameDialog.showDialog();
 

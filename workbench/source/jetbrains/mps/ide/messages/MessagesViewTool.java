@@ -38,7 +38,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
@@ -316,7 +315,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
   private void submitToTracker(Message msg) {
     BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(WindowManager.getInstance().getFrame(getProject()));
-    dialog.setMessage(msg.getText());
+    dialog.setIssueTitle(msg.getText());
     dialog.setEx(msg.getException());
     dialog.showDialog();
 
