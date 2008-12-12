@@ -9,6 +9,10 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import junit.framework.Assert;
 
 public class YieldClosures_Test extends ClosuresBase_Test {
 
@@ -1342,6 +1346,196 @@ __switch__:
       }
 
     });
+  }
+
+  @Test()
+  public void test_timur1() throws Exception {
+    //  {1, 2, 3}.select{ it => yield 4; yield 5; }
+    final List<Integer> input = ListSequence.<Integer>fromArray(1, 2, 3);
+    List<Iterable<Integer>> exp = ListSequence.<Iterable<Integer>>fromArray(ListSequence.<Integer>fromArray(4, 5), ListSequence.<Integer>fromArray(4, 5), ListSequence.<Integer>fromArray(4, 5));
+    List<Iterable<Integer>> res = ListSequence.<Iterable<Integer>>fromArray();
+    ListSequence.fromList(res).addSequence(Sequence.fromIterable(new _FunctionTypes._return_P0_E0 <ISequence<Iterable<Integer>>>() {
+
+      public ISequence<Iterable<Integer>> invoke() {
+        return ListSequence.fromList(input).select(new ISelector <Integer, Iterable<Integer>>() {
+
+          public Iterable<Integer> select(final Integer it) {
+            return new Iterable <Integer>() {
+
+              public Iterator<Integer> iterator() {
+                return new YieldingIterator <Integer>() {
+
+                  private int __CP__ = 0;
+
+                  protected boolean moveToNext() {
+__loop__:
+                    do {
+__switch__:
+                      switch (this.__CP__) {
+                        case -1:
+                          assert false : "Internal error";
+                          return false;
+                        case 2:
+                          this.__CP__ = 3;
+                          this.yield(4);
+                          return true;
+                        case 3:
+                          this.__CP__ = 1;
+                          this.yield(5);
+                          return true;
+                        case 0:
+                          this.__CP__ = 2;
+                          break;
+                        default:
+                          break __loop__;
+                      }
+                    } while(true);
+                    return false;
+                  }
+
+                };
+              }
+
+            };
+          }
+
+        });
+      }
+
+    }.invoke()));
+    Assert.assertSame(ListSequence.fromList(exp).count(), ListSequence.fromList(res).count());
+    {
+      Iterable<Integer> foo;
+      Iterable<Integer> bar;
+      Iterator<Iterable<Integer>> foo_iterator = exp.iterator();
+      Iterator<Iterable<Integer>> bar_iterator = res.iterator();
+      while (true) {
+        if (!(foo_iterator.hasNext())) {
+          break;
+        }
+        if (!(bar_iterator.hasNext())) {
+          break;
+        }
+        foo = foo_iterator.next();
+        bar = bar_iterator.next();
+        Assert.assertSame(Sequence.fromIterable(foo).count(), Sequence.fromIterable(bar).count());
+        {
+          Integer a;
+          Integer b;
+          Iterator<Integer> a_iterator = foo.iterator();
+          Iterator<Integer> b_iterator = bar.iterator();
+          while (true) {
+            if (!(a_iterator.hasNext())) {
+              break;
+            }
+            if (!(b_iterator.hasNext())) {
+              break;
+            }
+            a = a_iterator.next();
+            b = b_iterator.next();
+            Assert.assertSame(a, b);
+          }
+        }
+      }
+    }
+  }
+
+  @Test()
+  public void test_timur2() throws Exception {
+    //  {1, 2, 3}.select{ it => if (it == 2) {yield 4;}; }
+    final List<Integer> input = ListSequence.<Integer>fromArray(1, 2, 3);
+    List<Iterable<Integer>> exp = ListSequence.<Iterable<Integer>>fromArray(ListSequence.<Integer>fromArray(), ListSequence.<Integer>fromArray(4), ListSequence.<Integer>fromArray());
+    List<Iterable<Integer>> res = ListSequence.<Iterable<Integer>>fromArray();
+    ListSequence.fromList(res).addSequence(Sequence.fromIterable(new _FunctionTypes._return_P0_E0 <ISequence<Iterable<Integer>>>() {
+
+      public ISequence<Iterable<Integer>> invoke() {
+        return ListSequence.fromList(input).select(new ISelector <Integer, Iterable<Integer>>() {
+
+          public Iterable<Integer> select(final Integer it) {
+            return new Iterable <Integer>() {
+
+              public Iterator<Integer> iterator() {
+                return new YieldingIterator <Integer>() {
+
+                  private int __CP__ = 0;
+
+                  protected boolean moveToNext() {
+__loop__:
+                    do {
+__switch__:
+                      switch (this.__CP__) {
+                        case -1:
+                          assert false : "Internal error";
+                          return false;
+                        case 2:
+                          if (it == 2) {
+                            this.__CP__ = 3;
+                            break;
+                          }
+                          this.__CP__ = 1;
+                          break;
+                        case 4:
+                          this.__CP__ = 1;
+                          this.yield(4);
+                          return true;
+                        case 0:
+                          this.__CP__ = 2;
+                          break;
+                        case 3:
+                          this.__CP__ = 4;
+                          break;
+                        default:
+                          break __loop__;
+                      }
+                    } while(true);
+                    return false;
+                  }
+
+                };
+              }
+
+            };
+          }
+
+        });
+      }
+
+    }.invoke()));
+    Assert.assertSame(ListSequence.fromList(exp).count(), ListSequence.fromList(res).count());
+    {
+      Iterable<Integer> foo;
+      Iterable<Integer> bar;
+      Iterator<Iterable<Integer>> foo_iterator = exp.iterator();
+      Iterator<Iterable<Integer>> bar_iterator = res.iterator();
+      while (true) {
+        if (!(foo_iterator.hasNext())) {
+          break;
+        }
+        if (!(bar_iterator.hasNext())) {
+          break;
+        }
+        foo = foo_iterator.next();
+        bar = bar_iterator.next();
+        Assert.assertSame(Sequence.fromIterable(foo).count(), Sequence.fromIterable(bar).count());
+        {
+          Integer a;
+          Integer b;
+          Iterator<Integer> a_iterator = foo.iterator();
+          Iterator<Integer> b_iterator = bar.iterator();
+          while (true) {
+            if (!(a_iterator.hasNext())) {
+              break;
+            }
+            if (!(b_iterator.hasNext())) {
+              break;
+            }
+            a = a_iterator.next();
+            b = b_iterator.next();
+            Assert.assertSame(a, b);
+          }
+        }
+      }
+    }
   }
 
 }
