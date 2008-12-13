@@ -320,16 +320,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225567254065">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225567254066">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225567254067">
-                  <link role="variableDeclaration" targetNodeId="1225567254006" resolveInfo="process" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225567254068">
-                  <link role="baseMethodDeclaration" targetNodeId="22.~Process.waitFor():int" resolveInfo="waitFor" />
-                </node>
-              </node>
-            </node>
           </node>
           <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1225567254069">
             <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225567254070">
@@ -339,15 +329,6 @@
               </node>
             </node>
             <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225567254072" />
-          </node>
-          <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1225567254073">
-            <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225567254074">
-              <property name="name" value="exception" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225567254075">
-                <link role="classifier" targetNodeId="22.~InterruptedException" resolveInfo="InterruptedException" />
-              </node>
-            </node>
-            <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225567254076" />
           </node>
         </node>
       </node>

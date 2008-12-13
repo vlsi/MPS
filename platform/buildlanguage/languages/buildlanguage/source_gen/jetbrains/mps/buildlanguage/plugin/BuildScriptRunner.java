@@ -47,9 +47,7 @@ public class BuildScriptRunner extends BaseRunner {
 
       };
       error.start();
-      process.waitFor();
     } catch (IOException exception) {
-    } catch (InterruptedException exception) {
     }
   }
 
