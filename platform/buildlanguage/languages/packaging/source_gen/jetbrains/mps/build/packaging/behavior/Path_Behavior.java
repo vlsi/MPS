@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -24,7 +23,7 @@ public class Path_Behavior {
       return "";
     }
     StringBuffer sb = new StringBuffer();
-    for(SNode component : Sequence.fromIterable(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true))) {
+    for(SNode component : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true))) {
       sb.append(SPropertyOperations.getString(component, "path"));
       sb.append(File.separator);
     }

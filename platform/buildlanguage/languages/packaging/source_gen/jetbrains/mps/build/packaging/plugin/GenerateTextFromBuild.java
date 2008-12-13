@@ -19,7 +19,6 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import java.util.List;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import java.io.IOException;
@@ -53,7 +52,7 @@ public class GenerateTextFromBuild {
         File tmpDir = FileUtil.createTmpDir();
         List<File> generatedFiles = ListSequence.<File>fromArray();
         // generate files
-        for(SNode output : Sequence.fromIterable(roots)) {
+        for(SNode output : ListSequence.fromList(roots)) {
           TextGenerationUtil.TextGenerationResult result = TextGenerationUtil.generateText(ocontext, output);
           GenerateTextFromBuild.LOG.assertLog(!(result.hasErrors()), "Could not generate build files");
           SNode input = status.getTraceMap().getOriginalInputNode(output);
@@ -66,7 +65,7 @@ public class GenerateTextFromBuild {
           }
         }
         // move to basedir
-        for(File file : Sequence.fromIterable(generatedFiles)) {
+        for(File file : ListSequence.fromList(generatedFiles)) {
           File target = new File(basedir + File.separator + file.getName());
           FileUtil.copyFile(file, target);
           if (file.getName().equals(SPropertyOperations.getString(mpsLayout, "name") + "-" + ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "configuration", true)).first() + ".xml")) {
@@ -88,7 +87,7 @@ public class GenerateTextFromBuild {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        for(SNode root : Sequence.fromIterable(roots)) {
+        for(SNode root : ListSequence.fromList(roots)) {
           if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.build.packaging.structure.MPSLayout")) {
             layout.value = (SNode)root;
             return;

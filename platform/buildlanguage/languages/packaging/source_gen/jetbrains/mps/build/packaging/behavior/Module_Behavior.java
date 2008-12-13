@@ -13,10 +13,9 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -107,7 +106,7 @@ public class Module_Behavior {
       projectBasedir = AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode) + File.separator + projectBasedir;
     }
     // process classpath
-    for(String cp : Sequence.fromIterable(classpath)) {
+    for(String cp : ListSequence.fromList(classpath)) {
       if (!(onlyUnderProjectBasedir) || cp.startsWith(projectBasedir)) {
         SNode nodeCP = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathHolder", null);
         SPropertyOperations.set(nodeCP, "fullPath", ModuleUtil.getRelativePath(cp, AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath()));
@@ -159,13 +158,13 @@ public class Module_Behavior {
 
   public static List<String> getAllAvailableModules_1222444513017() {
     List<String> list = ListSequence.<String>fromArray();
-    for(Language language : Sequence.fromIterable(GlobalScope.getInstance().getVisibleLanguages())) {
+    for(Language language : ListSequence.fromList(GlobalScope.getInstance().getVisibleLanguages())) {
       ListSequence.fromList(list).addElement(language.getModuleReference().getModuleFqName());
     }
-    for(DevKit devKit : Sequence.fromIterable(GlobalScope.getInstance().getVisibleDevkits())) {
+    for(DevKit devKit : ListSequence.fromList(GlobalScope.getInstance().getVisibleDevkits())) {
       ListSequence.fromList(list).addElement(devKit.getModuleReference().getModuleFqName());
     }
-    for(Solution solution : Sequence.fromIterable(GlobalScope.getInstance().getVisibleSolutions())) {
+    for(Solution solution : ListSequence.fromList(GlobalScope.getInstance().getVisibleSolutions())) {
       ListSequence.fromList(list).addElement(solution.getModuleReference().getModuleFqName());
     }
     return list;
@@ -173,13 +172,13 @@ public class Module_Behavior {
 
   public static List<IModule> getAllAvailableModules_1222444746697() {
     List<IModule> list = ListSequence.<IModule>fromArray();
-    for(Language language : Sequence.fromIterable(GlobalScope.getInstance().getVisibleLanguages())) {
+    for(Language language : ListSequence.fromList(GlobalScope.getInstance().getVisibleLanguages())) {
       ListSequence.fromList(list).addElement(language);
     }
-    for(DevKit devKit : Sequence.fromIterable(GlobalScope.getInstance().getVisibleDevkits())) {
+    for(DevKit devKit : ListSequence.fromList(GlobalScope.getInstance().getVisibleDevkits())) {
       ListSequence.fromList(list).addElement(devKit);
     }
-    for(Solution solution : Sequence.fromIterable(GlobalScope.getInstance().getVisibleSolutions())) {
+    for(Solution solution : ListSequence.fromList(GlobalScope.getInstance().getVisibleSolutions())) {
       ListSequence.fromList(list).addElement(solution);
     }
     return list;

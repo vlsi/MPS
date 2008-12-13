@@ -13,9 +13,10 @@ import java.util.Comparator;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
 import java.util.LinkedHashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedList;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
@@ -77,7 +78,7 @@ public class LanguagesStep extends AbstractStep {
 
     });
     NamespaceTreeBuilder builder = new LanguagesStep.MyTreeBuilder(this.myMpsProject);
-    for(ModuleData moduleData : Sequence.fromIterable(children)) {
+    for(ModuleData moduleData : ListSequence.fromList(children)) {
       builder.addNode(new CheckBoxNode(moduleData, false));
     }
     CheckBoxNode allModulesNode = new CheckBoxNode(data, false);
@@ -105,7 +106,7 @@ public class LanguagesStep extends AbstractStep {
   public void _commit(boolean finish) {
     Set<NodeData> selectedItems = this.myCheckTree.getSelectedItems();
     Set<NodeData> modules = new LinkedHashSet<NodeData>();
-    for(NodeData item : Sequence.fromIterable(selectedItems)) {
+    for(NodeData item : SetSequence.fromSet(selectedItems)) {
       this.fillWithParents(item, modules);
     }
     LinkedList<NodeData> toSort = new LinkedList<NodeData>(modules);

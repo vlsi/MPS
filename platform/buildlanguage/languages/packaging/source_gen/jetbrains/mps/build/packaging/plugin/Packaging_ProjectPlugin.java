@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
+import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 
 public class Packaging_ProjectPlugin extends BaseProjectPlugin {
 
@@ -14,6 +15,12 @@ public class Packaging_ProjectPlugin extends BaseProjectPlugin {
     List<GeneratedTool> tools = new ArrayList<GeneratedTool>();
     tools.add(new BuildTool_Tool(project));
     return tools;
+  }
+
+  public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
+    List<BaseProjectPrefsComponent> components = new ArrayList<BaseProjectPrefsComponent>();
+    components.add(new PackagingRunnerPreferences_PreferencesComponent(project));
+    return components;
   }
 
 }

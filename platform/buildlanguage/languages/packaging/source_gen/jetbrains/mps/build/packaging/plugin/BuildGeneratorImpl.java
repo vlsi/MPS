@@ -25,8 +25,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.LinkedHashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
@@ -131,7 +131,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   private static void createContent(List<NodeData> selectedData, SNode folder, SModel targetSModel) {
     Map<NodeData, SNode> createdComponent = MapSequence.fromMap(new HashMap<NodeData, SNode>());
     Set<SNode> topLevel = new LinkedHashSet<SNode>();
-    for(NodeData data : Sequence.fromIterable(selectedData)) {
+    for(NodeData data : ListSequence.fromList(selectedData)) {
       // creating component
       SNode component = createComponent(data, targetSModel);
       if (component == null) {
@@ -142,7 +142,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       // dealing with children
       if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
         List<NodeData> children = data.getChildren();
-        for(NodeData child : Sequence.fromIterable(children)) {
+        for(NodeData child : ListSequence.fromList(children)) {
           if (MapSequence.fromMap(createdComponent).containsKey(child)) {
             SNode childComponent = MapSequence.fromMap(createdComponent).get(child);
             SLinkOperations.addChild(component, "entry", childComponent);
@@ -163,7 +163,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       }
     }
     // 
-    for(SNode topLevelComponent : Sequence.fromIterable(topLevel)) {
+    for(SNode topLevelComponent : SetSequence.fromSet(topLevel)) {
       SLinkOperations.addChild(folder, "entry", topLevelComponent);
     }
   }

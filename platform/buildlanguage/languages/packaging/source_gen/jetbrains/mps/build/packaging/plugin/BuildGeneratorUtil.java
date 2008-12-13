@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -33,7 +33,7 @@ public class BuildGeneratorUtil {
     SModelFqName newModelFQName = SModelFqName.fromString(modelName);
     List<SModelDescriptor> ownModelDescriptors = solution.getOwnModelDescriptors();
     SModelDescriptor modelDescriptor = null;
-    for(SModelDescriptor descriptor : Sequence.fromIterable(ownModelDescriptors)) {
+    for(SModelDescriptor descriptor : ListSequence.fromList(ownModelDescriptors)) {
       if (descriptor.getSModelFqName().equals(newModelFQName)) {
         modelDescriptor = descriptor;
         break;

@@ -19,9 +19,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.io.File;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.io.File;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
@@ -78,7 +77,7 @@ public class QueriesGenerated {
             if (base == null) {
               base = "";
             }
-            for(SNode path : Sequence.fromIterable(SLinkOperations.getTargets(compositePathComponent, "pathComponent", true))) {
+            for(SNode path : ListSequence.fromList(SLinkOperations.getTargets(compositePathComponent, "pathComponent", true))) {
               if (path == _context.getCurrentTargetNode()) {
                 break;
               }

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -39,7 +38,7 @@ public class CreateNewBuildLanguageProject_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode project = SConceptOperations.createNewNode("jetbrains.mps.buildlanguage.structure.Project", null);
     List<String> externalProps = ListSequence.<String>fromArray("input.dir", "output.dir", "deploy.dir");
-    for(String prop : Sequence.fromIterable(externalProps)) {
+    for(String prop : ListSequence.fromList(externalProps)) {
       SNode property = SConceptOperations.createNewNode("jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration", null);
       SPropertyOperations.set(property, "name", prop);
       SLinkOperations.setTarget(property, "type", SConceptOperations.createNewNode("jetbrains.mps.buildlanguage.structure.FileType", null), true);
