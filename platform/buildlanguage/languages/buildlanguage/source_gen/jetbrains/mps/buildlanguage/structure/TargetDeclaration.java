@@ -12,6 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TargetDeclaration extends BaseConcept implements IProjectComponent, IPropertyHolder, ICommented {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.TargetDeclaration";
+  public static final String IF = "if";
+  public static final String UNLESS = "unless";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -22,6 +24,22 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
 
   public TargetDeclaration(SNode node) {
     super(node);
+  }
+
+  public String getIf() {
+    return this.getProperty(TargetDeclaration.IF);
+  }
+
+  public void setIf(String value) {
+    this.setProperty(TargetDeclaration.IF, value);
+  }
+
+  public String getUnless() {
+    return this.getProperty(TargetDeclaration.UNLESS);
+  }
+
+  public void setUnless(String value) {
+    this.setProperty(TargetDeclaration.UNLESS, value);
   }
 
   public String getName() {
