@@ -54,7 +54,7 @@ public class CharismaReporter extends ErrorReportSubmitter {
       if (response.isSuccess()) {
         return new SubmittedReportInfo(null, "", SubmissionStatus.NEW_ISSUE);
       } else {
-        LOG.info("Submit failed: "+response.getMessage(),response.getThrowable());
+        LOG.error("Submit failed: "+response.getMessage(),response.getThrowable());
         return new SubmittedReportInfo(null, "Submit failed: "+response.getMessage(), SubmissionStatus.FAILED);
       }
     }

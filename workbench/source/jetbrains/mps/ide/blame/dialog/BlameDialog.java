@@ -103,7 +103,7 @@ public class BlameDialog extends BaseDialog {
           JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Info", JOptionPane.INFORMATION_MESSAGE);
         } else {
           JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-          LOG.info("Submit failed: " + response.getMessage(), response.getThrowable());
+          LOG.error("Submit failed: " + response.getMessage(), response.getThrowable());
         }
       }
     });

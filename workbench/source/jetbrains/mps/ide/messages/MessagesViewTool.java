@@ -327,7 +327,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
       } else {
         JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
-        LOG.info("Submit failed: "+response.getMessage(),response.getThrowable());
+        LOG.error("Submit failed: "+response.getMessage(),response.getThrowable());
       }
     }
   }
