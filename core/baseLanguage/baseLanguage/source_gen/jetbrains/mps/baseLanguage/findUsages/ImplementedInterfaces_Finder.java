@@ -11,7 +11,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
@@ -34,14 +33,14 @@ public class ImplementedInterfaces_Finder extends GeneratedFinder {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> classNodes = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", node, scope, indicator);
     ListSequence.fromList(classNodes).addElement(node);
-    for(SNode classNode : Sequence.fromIterable(classNodes)) {
-      for(SNode implementedInterface : Sequence.fromIterable(SLinkOperations.getTargets((SNode)classNode, "implementedInterface", true))) {
+    for(SNode classNode : ListSequence.fromList(classNodes)) {
+      for(SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets((SNode)classNode, "implementedInterface", true))) {
         SNode interfaceNode = (SNode)SLinkOperations.getTarget(implementedInterface, "classifier", false);
         ListSequence.fromList(result).addElement(interfaceNode);
         ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>)FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, indicator)));
       }
     }
-    for(SNode interfaceNode : Sequence.fromIterable(result)) {
+    for(SNode interfaceNode : ListSequence.fromList(result)) {
       ListOperations.addElement(_results, interfaceNode);
     }
   }

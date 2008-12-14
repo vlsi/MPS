@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class ImplementingClasses_Finder extends GeneratedFinder {
@@ -44,7 +43,7 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(interfaceNode), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         if (SNodeOperations.hasRole(interfaceNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
           ListOperations.addElement(_results, SNodeOperations.getParent(interfaceNode));
-          for(SNode classNode : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(interfaceNode), scope, indicator))) {
+          for(SNode classNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(interfaceNode), scope, indicator))) {
             ListOperations.addElement(_results, classNode);
           }
         }
@@ -54,7 +53,7 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
 
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListOperations.addElement(_results, node);
-    for(SNode derivedInterface : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder", node, scope, new EmptyProgressIndicator()))) {
+    for(SNode derivedInterface : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder", node, scope, new EmptyProgressIndicator()))) {
       ListOperations.addElement(_results, derivedInterface);
     }
   }

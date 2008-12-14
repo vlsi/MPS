@@ -6,7 +6,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.Closure_Behavior;
 
 public class Closure_DataFlow extends DataFlowBuilder {
@@ -15,7 +15,7 @@ public class Closure_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode var : Sequence.fromIterable(Closure_Behavior.call_getVariablesReferencedInClosure_1223989736803(_context.getNode()))) {
+    for(SNode var : ListSequence.fromList(Closure_Behavior.call_getVariablesReferencedInClosure_1223989736803(_context.getNode()))) {
       _context.getBuilder().emitRead(var);
     }
   }

@@ -11,7 +11,6 @@ import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -41,9 +40,9 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, indicator);
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
-    for(SNode methodNode : Sequence.fromIterable(overridingMethods)) {
+    for(SNode methodNode : ListSequence.fromList(overridingMethods)) {
       SNode parameterNode = ListSequence.fromList(SLinkOperations.getTargets(methodNode, "parameter", true)).getElement(SNodeOperations.getIndexInParent(node));
-      for(SNode parameterUsage : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, indicator))) {
+      for(SNode parameterUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, indicator))) {
         ListOperations.addElement(_results, parameterUsage);
       }
     }
@@ -55,7 +54,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, new EmptyProgressIndicator());
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
-    for(SNode methodNode : Sequence.fromIterable(overridingMethods)) {
+    for(SNode methodNode : ListSequence.fromList(overridingMethods)) {
       ListOperations.addElement(_results, ListSequence.fromList(SLinkOperations.getTargets(methodNode, "parameter", true)).getElement(SNodeOperations.getIndexInParent(node)));
     }
   }

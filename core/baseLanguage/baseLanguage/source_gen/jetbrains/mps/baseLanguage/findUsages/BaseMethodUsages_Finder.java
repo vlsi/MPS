@@ -11,10 +11,9 @@ import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class BaseMethodUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder");
@@ -43,8 +42,8 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> baseMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder", node, GlobalScope.getInstance(), indicator);
-    for(SNode method : Sequence.fromIterable(baseMethods)) {
-      for(SNode usage : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder", method, scope, indicator))) {
+    for(SNode method : ListSequence.fromList(baseMethods)) {
+      for(SNode usage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder", method, scope, indicator))) {
         ListOperations.addElement(_results, usage);
       }
     }
@@ -53,7 +52,7 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     List<SNode> baseMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder", node, GlobalScope.getInstance(), new EmptyProgressIndicator());
     ListSequence.fromList(baseMethods).addElement(node);
-    for(SNode method : Sequence.fromIterable(baseMethods)) {
+    for(SNode method : ListSequence.fromList(baseMethods)) {
       ListOperations.addElement(_results, method);
     }
   }

@@ -12,7 +12,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
@@ -48,8 +47,8 @@ public class FieldUsages_Finder extends GeneratedFinder {
       ListSequence.fromList(fieldDeclarations).addSequence(ListSequence.fromList((List<SNode>)FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, indicator)));
     }
     // 
-    for(SNode fieldDeclaration : Sequence.fromIterable(fieldDeclarations)) {
-      for(SNode fieldUsage : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", fieldDeclaration, scope, indicator))) {
+    for(SNode fieldDeclaration : ListSequence.fromList(fieldDeclarations)) {
+      for(SNode fieldUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", fieldDeclaration, scope, indicator))) {
         ListOperations.addElement(_results, fieldUsage);
       }
     }
@@ -58,7 +57,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListOperations.addElement(_results, node);
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
-      for(SNode fieldNode : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, new EmptyProgressIndicator()))) {
+      for(SNode fieldNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, new EmptyProgressIndicator()))) {
         ListOperations.addElement(_results, fieldNode);
       }
     }

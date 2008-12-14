@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class ITestCase_Behavior {
   private static Class[] PARAMETERS_1216130724401 = {SNode.class};
   private static Class[] PARAMETERS_1216136193905 = {SNode.class};
+  private static Class[] PARAMETERS_1229278847513 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -21,12 +22,20 @@ public class ITestCase_Behavior {
     return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getClassName_1216136193905", PARAMETERS_1216136193905);
   }
 
+  public static String call_getSimpleClassName_1229278847513(SNode thisNode) {
+    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getSimpleClassName_1229278847513", PARAMETERS_1229278847513);
+  }
+
   public static List<SNode> callSuper_getTestSet_1216130724401(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getTestSet_1216130724401", PARAMETERS_1216130724401);
   }
 
   public static String callSuper_getClassName_1216136193905(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getClassName_1216136193905", PARAMETERS_1216136193905);
+  }
+
+  public static String callSuper_getSimpleClassName_1229278847513(SNode thisNode, String callerConceptFqName) {
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getSimpleClassName_1229278847513", PARAMETERS_1229278847513);
   }
 
 }

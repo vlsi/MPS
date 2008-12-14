@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class QueriesUtil {
 
@@ -44,7 +43,7 @@ public class QueriesUtil {
       SLinkOperations.setTarget(newNode, "classConcept", classifier, false);
       if (SNodeOperations.isInstanceOf(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
         SNode call = oldNode;
-        for(SNode arg : Sequence.fromIterable(SLinkOperations.getTargets(call, "actualArgument", true))) {
+        for(SNode arg : ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true))) {
           SLinkOperations.addChild(newNode, "actualArgument", SNodeOperations.copyNode(arg));
         }
       }

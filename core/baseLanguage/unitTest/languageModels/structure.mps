@@ -207,6 +207,9 @@
     <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1216130711762">
       <link role="intfc" targetNodeId="1215620452633" resolveInfo="ITestable" />
     </node>
+    <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229279139878">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1216134482493">
     <property name="name" value="ITestMethod" />

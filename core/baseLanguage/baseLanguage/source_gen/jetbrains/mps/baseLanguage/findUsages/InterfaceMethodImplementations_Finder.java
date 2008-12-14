@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.findusages.view.FindUtils;
 import java.util.Set;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
@@ -40,18 +40,18 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
-    for(SNode implementor : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
+    for(SNode implementor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
       ListSequence.fromList(implementorsAndAncestorsList).addElement(implementor);
       ListSequence.fromList(implementorsAndAncestorsList).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", implementor, scope, indicator)));
     }
     // 
     Set<SNode> implementorsAndAncestorsNodes = new HashSet<SNode>();
-    for(SNode implementorOrAncestor : Sequence.fromIterable(implementorsAndAncestorsList)) {
+    for(SNode implementorOrAncestor : ListSequence.fromList(implementorsAndAncestorsList)) {
       implementorsAndAncestorsNodes.add(implementorOrAncestor);
     }
     // 
-    for(SNode classNode : Sequence.fromIterable(implementorsAndAncestorsNodes)) {
-      for(SNode sMethod : Sequence.fromIterable(SLinkOperations.getTargets(classNode, "method", true))) {
+    for(SNode classNode : SetSequence.fromSet(implementorsAndAncestorsNodes)) {
+      for(SNode sMethod : ListSequence.fromList(SLinkOperations.getTargets(classNode, "method", true))) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
           ListOperations.addElement(_results, sMethod);
         }

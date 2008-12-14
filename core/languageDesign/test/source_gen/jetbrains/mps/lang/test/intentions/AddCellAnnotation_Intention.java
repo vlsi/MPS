@@ -5,7 +5,7 @@ package jetbrains.mps.lang.test.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -32,11 +32,11 @@ public class AddCellAnnotation_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return NodesTestCase_Behavior.isIntentionApplicable_1217250498008(node);
+    return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.test.structure.EditorTestCase", false, false) != null;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.TestCellAnnotation", null);
+    SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", null);
     EditorCell contextCell = editorContext.getContextCell();
     SPropertyOperations.set(newAnnotation, "cellId", contextCell.getCellId());
     if (contextCell instanceof EditorCell_Label) {

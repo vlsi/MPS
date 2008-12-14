@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 
@@ -38,10 +37,10 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
       return;
     }
     SNode current = node;
-    for(SNode ancestor : Sequence.fromIterable(SLinkOperations.getTargets(current, "extendedInterface", true))) {
+    for(SNode ancestor : ListSequence.fromList(SLinkOperations.getTargets(current, "extendedInterface", true))) {
       SNode ancestorNode = (SNode)SLinkOperations.getTarget(ancestor, "classifier", false);
       ListOperations.addElement(_results, ancestorNode);
-      for(SNode ancestorAncestor : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestorNode, scope, indicator))) {
+      for(SNode ancestorAncestor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestorNode, scope, indicator))) {
         ListOperations.addElement(_results, ancestorAncestor);
       }
     }

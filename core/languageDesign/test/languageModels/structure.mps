@@ -137,7 +137,7 @@
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="1210673592080">
     <property name="role" value="testNode" />
     <link role="source" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
-    <link role="target" targetNodeId="1210673684636" resolveInfo="TestNodeAnnotation" />
+    <link role="target" targetNodeId="1228584180295" resolveInfo="INodeAnnotattion" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210673684636">
     <property name="name" value="TestNodeAnnotation" />
@@ -160,6 +160,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1211979288880">
     <property name="name" value="AssertMatch" />
+    <property name="package" value="asserts" />
     <link role="extends" targetNodeId="7.1068580123157" resolveInfo="Statement" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1211979384649">
       <property name="value" value="assert match" />
@@ -231,6 +232,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="1215508141892">
     <property name="role" value="nodePropertiesMarker" />
+    <property name="package" value="nodeProperties" />
     <link role="source" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <link role="target" targetNodeId="1215507532627" resolveInfo="NodePropertiesContainer" />
   </node>
@@ -491,6 +493,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225989773458">
     <property name="name" value="InvokeIntentionStatement" />
+    <property name="package" value="editor" />
     <link role="extends" targetNodeId="7.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225990836098">
       <property name="metaClass" value="aggregation" />
@@ -604,6 +607,56 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1228934692399">
       <property name="value" value="press keys" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1229187653856">
+    <property name="name" value="EditorTestCase" />
+    <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}\icons\nodesTest.png" />
+    <property name="package" value="editor" />
+    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1229187676388">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="nodeToEdit" />
+      <link role="target" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1229187707859">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="result" />
+      <link role="target" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1229187755283">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="code" />
+      <link role="target" targetNodeId="7.1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229187727516">
+      <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229274138993">
+      <link role="intfc" targetNodeId="8.1216134482493" resolveInfo="ITestMethod" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229188274254">
+      <link role="intfc" targetNodeId="8.1216130694486" resolveInfo="ITestCase" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1229194968594">
+    <property name="name" value="AnonymousCellAnnotation" />
+    <property name="package" value="editor" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1229194968595">
+      <property name="name" value="cellId" />
+      <link role="dataType" targetNodeId="5.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1229194968596">
+      <property name="name" value="caretPosition" />
+      <link role="dataType" targetNodeId="5.1082983657062" resolveInfo="integer" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229194968597">
+      <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229194968598">
+      <link role="intfc" targetNodeId="1228584180295" resolveInfo="INodeAnnotattion" />
     </node>
   </node>
 </model>

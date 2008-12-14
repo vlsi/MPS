@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ReplaceBlockWithItsContent_Intention extends BaseIntention {
 
@@ -59,7 +58,7 @@ public class ReplaceBlockWithItsContent_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true);
-    for(SNode statement : Sequence.fromIterable(statements)) {
+    for(SNode statement : ListSequence.fromList(statements)) {
       SNodeOperations.insertPrevSiblingChild(node, statement);
     }
     SNodeOperations.deleteNode(node);

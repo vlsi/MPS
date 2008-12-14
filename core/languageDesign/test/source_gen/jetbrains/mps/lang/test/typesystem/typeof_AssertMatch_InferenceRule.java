@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.Iterator;
@@ -18,14 +18,14 @@ public class typeof_AssertMatch_InferenceRule extends AbstractInferenceRule_Runt
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
-    for(SNode node : Sequence.fromIterable(SLinkOperations.getTargets(nodeToCheck, "before", true))) {
+    for(SNode node : ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "before", true))) {
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1211982433134", true), new _Quotations.QuotationClass_1().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1211982433132", false, 0, intentionProvider);
       }
     }
-    for(SNode node : Sequence.fromIterable(SLinkOperations.getTargets(nodeToCheck, "after", true))) {
+    for(SNode node : ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "after", true))) {
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;

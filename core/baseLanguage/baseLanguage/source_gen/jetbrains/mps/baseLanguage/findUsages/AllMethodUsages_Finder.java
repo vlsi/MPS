@@ -11,7 +11,6 @@ import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -52,7 +51,7 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
     }
     // 
     for(SNode methodDeclaration : methodDeclarations) {
-      for(SNode nodeUsage : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", methodDeclaration, scope, indicator))) {
+      for(SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", methodDeclaration, scope, indicator))) {
         if (!(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(nodeUsage), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) && !(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(nodeUsage), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"))) {
           continue;
         }

@@ -9,8 +9,9 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpresson_B
 import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
@@ -44,7 +45,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1216995305411(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name") + "_Test";
+    return ITestCase_Behavior.call_getSimpleClassName_1229278847513(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1216996538619(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -139,6 +140,44 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1228589289728(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "declaration", false).getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229198684556(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ITestCase_Behavior.call_getSimpleClassName_1229278847513(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229198973212(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ITestMethod_Behavior.call_getTestName_1216136419751(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229198973224(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    IOperationContext invocationContext = _context.getInvocationContext();
+    String url = invocationContext.getProject().getPresentableUrl();
+    if (url != null) {
+      String path = url.replaceAll("/", "\\\\");
+      return Macros.mpsHomeMacros().shrinkPath(path, (IFile)null).replaceAll("\\\\", "/");
+    }
+    return "";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229198973269(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalInputModel().getSModelReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229198973287(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229211902562(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NodesTestCase_Behavior.getTestBodyName_1224602741295();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229266784861(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "nodeToEdit", true).getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229266813131(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "result", true).getId();
   }
 
   public static Object referenceMacro_GetReferent_1221567898656(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -272,6 +311,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1228936386481(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "keyCodes", true);
+  }
+
+  public static Iterable sourceNodesQuery_1229268854954(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "code", true), "statement", true);
   }
 
 }

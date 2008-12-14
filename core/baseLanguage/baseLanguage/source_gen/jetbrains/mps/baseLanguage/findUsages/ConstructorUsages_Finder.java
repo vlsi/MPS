@@ -9,11 +9,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
@@ -40,19 +39,19 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     // search for straight usages & search for SUPER calls
     // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS
-    for(SNode nodeUsage : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
+    for(SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
       ListOperations.addElement(_results, nodeUsage);
     }
     // WORKAROUND - FIND SUPER() CALLS
-    for(SNode subclassResult : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope, indicator))) {
-      for(SNode constructorNode : Sequence.fromIterable(SLinkOperations.getTargets(subclassResult, "constructor", true))) {
-        for(SNode invocation : Sequence.fromIterable(ListSequence.fromList(SNodeOperations.getDescendants(constructorNode, null, false)).where(new IWhereFilter <SNode>() {
+    for(SNode subclassResult : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope, indicator))) {
+      for(SNode constructorNode : ListSequence.fromList(SLinkOperations.getTargets(subclassResult, "constructor", true))) {
+        for(SNode invocation : ListSequence.fromList(SNodeOperations.getDescendants(constructorNode, null, false)).where(new IWhereFilter <SNode>() {
 
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
           }
 
-        }))) {
+        })) {
           boolean thisConstructor = true;
           SNode invocationNode = (SNode)invocation;
           if (ListSequence.fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count()) {
@@ -73,7 +72,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     // search for enum constants creation
     SNode enumNode = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
     if (enumNode != null) {
-      for(SNode enumConstant : Sequence.fromIterable(SLinkOperations.getTargets(enumNode, "enumConstant", true))) {
+      for(SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(enumNode, "enumConstant", true))) {
         boolean thisConstructor = true;
         if (ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count()) {
           for(int i = 0 ; i < ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).count() ; i = i + 1) {

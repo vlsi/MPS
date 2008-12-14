@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -34,7 +34,7 @@ public class CommentedStatementsBlock_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      for(SNode statement : Sequence.fromIterable(SLinkOperations.getTargets(node, "statement", true))) {
+      for(SNode statement : ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true))) {
         SNodeOperations.insertPrevSiblingChild(node, statement);
       }
       SNodeOperations.deleteNode(node);

@@ -7,12 +7,12 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 public class TestNode_AnnotationLink {
   public static final String TEST_NODE = "testNode";
 
-  public static void setTestNode(BaseConcept source, TestNodeAnnotation target) {
+  public static void setTestNode(BaseConcept source, INodeAnnotattion target) {
     source.setAttribute(TestNode_AnnotationLink.TEST_NODE, target);
   }
 
-  public static TestNodeAnnotation getTestNode(BaseConcept source) {
-    return (TestNodeAnnotation)source.getAttribute(TestNode_AnnotationLink.TEST_NODE);
+  public static INodeAnnotattion getTestNode(BaseConcept source) {
+    return (INodeAnnotattion)source.getAttribute(TestNode_AnnotationLink.TEST_NODE);
   }
 
 }

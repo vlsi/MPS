@@ -7,9 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.LastStatementUtil;
 import jetbrains.mps.project.GlobalScope;
 
@@ -21,7 +20,7 @@ public class StatementList_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       SNode bmd = SNodeOperations.getParent(_context.getNode());
-      for(SNode param : Sequence.fromIterable(SLinkOperations.getTargets(bmd, "parameter", true))) {
+      for(SNode param : ListSequence.fromList(SLinkOperations.getTargets(bmd, "parameter", true))) {
         _context.getBuilder().build((SNode)param);
       }
     }
