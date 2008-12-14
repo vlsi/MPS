@@ -1756,6 +1756,7 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227022244036" />
       <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.MapSrcListMacro" id="1227034491251">
+        <link role="mappingLabel" targetNodeId="1227022331899" resolveInfo="map_ConstructorParameterToString" />
         <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1227034491252">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227034491253">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227034493519">

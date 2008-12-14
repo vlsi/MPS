@@ -132,7 +132,8 @@ public abstract class BaseAction extends AnAction {
     p.setVisible(true);
   }
 
-  protected void setEnabledState(Presentation p, boolean state) {
+  //made public just to use in MPS classifiers, workaround on MPS-3472
+  public void setEnabledState(Presentation p, boolean state) {
     if (state) enable(p);
     else disable(p);
   }
