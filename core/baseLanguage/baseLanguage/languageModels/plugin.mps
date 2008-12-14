@@ -139,31 +139,6 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1205837184579">
         <link role="action" targetNodeId="1205836731341" resolveInfo="RunClassConcept" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1207660282049" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1220973077865">
-        <link role="action" targetNodeId="1223451793768" resolveInfo="ExtractMethod" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1223457975109">
-        <link role="action" targetNodeId="1223452095337" resolveInfo="_InlineMethod" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1214478246100">
-        <link role="action" targetNodeId="1223451996501" resolveInfo="ChangeMethodSignature" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1225104815444">
-        <link role="action" targetNodeId="1225103350103" resolveInfo="IntroduceVariable" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1225105171285">
-        <link role="action" targetNodeId="1225103563547" resolveInfo="IntroduceField" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1225105175396">
-        <link role="action" targetNodeId="1225104324580" resolveInfo="IntroduceConstant" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1225448359031">
-        <link role="action" targetNodeId="1225447880158" resolveInfo="MoveStaticMethod" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1225464050533">
-        <link role="action" targetNodeId="1225463448250" resolveInfo="RenameVariable" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247375460">
@@ -35804,6 +35779,30 @@
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1229260465012">
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229260476607">
         <link role="action" targetNodeId="1224422652338" resolveInfo="InlineLocalVariable" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229260815076">
+        <link role="action" targetNodeId="1223451793768" resolveInfo="ExtractMethod" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229260815077">
+        <link role="action" targetNodeId="1223452095337" resolveInfo="InlineMethod" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229260815078">
+        <link role="action" targetNodeId="1223451996501" resolveInfo="ChangeMethodSignature" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229260815079">
+        <link role="action" targetNodeId="1225103350103" resolveInfo="IntroduceVariable" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229260815080">
+        <link role="action" targetNodeId="1225103563547" resolveInfo="IntroduceField" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229260815081">
+        <link role="action" targetNodeId="1225104324580" resolveInfo="IntroduceConstant" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229260815082">
+        <link role="action" targetNodeId="1225447880158" resolveInfo="MoveStaticMethod" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229260815083">
+        <link role="action" targetNodeId="1225463448250" resolveInfo="RenameVariable" />
       </node>
     </node>
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1229260478592">

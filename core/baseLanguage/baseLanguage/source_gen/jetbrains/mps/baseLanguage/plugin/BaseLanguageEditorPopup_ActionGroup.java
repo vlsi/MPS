@@ -18,15 +18,6 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.baseLanguage.plugin.CommentStatements_Action", "jetbrains.mps.baseLanguage");
       this.addAction("jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action", "jetbrains.mps.baseLanguage");
       this.addAction("jetbrains.mps.baseLanguage.plugin.RunClassConcept_Action", "jetbrains.mps.baseLanguage");
-      this.addSeparator();
-      this.addAction("jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action", "jetbrains.mps.baseLanguage");
-      this.addAction("jetbrains.mps.baseLanguage.plugin.InlineMethod_Action", "jetbrains.mps.baseLanguage");
-      this.addAction("jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action", "jetbrains.mps.baseLanguage");
-      this.addAction("jetbrains.mps.baseLanguage.plugin.IntroduceVariable_Action", "jetbrains.mps.baseLanguage");
-      this.addAction("jetbrains.mps.baseLanguage.plugin.IntroduceField_Action", "jetbrains.mps.baseLanguage");
-      this.addAction("jetbrains.mps.baseLanguage.plugin.IntroduceConstant_Action", "jetbrains.mps.baseLanguage");
-      this.addAction("jetbrains.mps.baseLanguage.plugin.MoveStaticMethod_Action", "jetbrains.mps.baseLanguage");
-      this.addAction("jetbrains.mps.baseLanguage.plugin.RenameVariable_Action", "jetbrains.mps.baseLanguage");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
