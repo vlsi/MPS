@@ -98,7 +98,7 @@ public class DeleteNode_Action extends GeneratedAction {
         }
         safe.value = dialog.isSafe();
       }
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
         public void run() {
           new DeleteNodesHelper(DeleteNode_Action.this.nodes, DeleteNode_Action.this.context, safe.value).deleteNodes(true);
