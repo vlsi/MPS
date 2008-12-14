@@ -201,7 +201,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     if (areModifiersPressed(keyEvent)) return false;
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && selectedCell.isLastPositionInBigCell() && !selectedCell.isFirstPositionInBigCell()) {
-      EditorCell target;
+      final EditorCell target;
       if (selectedCell.isLastPositionInBigCell() && selectedCell.getContainingBigCell().getNextSibling() != null) {
         target = selectedCell.getContainingBigCell().getNextSibling();
       } else if (selectedCell.getNextSibling() != null) {
@@ -210,7 +210,12 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         target = selectedCell.getNextLeaf(CellConditions.SELECTABLE);
       }
 
-      if (target == null || target.getSNode().isAncestorOf(selectedCell.getSNode())) return false;
+      if (target == null || ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return target.getSNode().isAncestorOf(selectedCell.getSNode());
+        }
+      })) return false;
+
       return target.executeAction(CellActionType.DELETE);
     }
 
