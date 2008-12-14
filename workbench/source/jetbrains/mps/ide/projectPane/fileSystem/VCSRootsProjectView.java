@@ -80,48 +80,4 @@ public class VCSRootsProjectView extends FileViewProjectPane {
 
     return files;
   }
-
-  public SelectInTarget createSelectInTarget() {
-    return new SelectInTarget() {
-      public VirtualFile myFile;
-
-      public boolean canSelect(SelectInContext context) {
-        VirtualFile virtualFile = context.getVirtualFile();
-        if (getNode(virtualFile) == null) return false;
-
-        myFile = virtualFile;
-        return true;
-      }
-
-      public void selectIn(final SelectInContext context, boolean requestFocus) {
-        final ToolWindowManager manager = ToolWindowManager.getInstance(getProject());
-        manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
-          public void run() {
-            manager.getFocusManager().requestFocus(myTree, false);
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                selectNode(myFile, true);
-              }
-            });
-          }
-        }, false);
-      }
-
-      public String getToolWindowId() {
-        return VCSRootsProjectView.this.getId();
-      }
-
-      public String getMinorViewId() {
-        return null;
-      }
-
-      public float getWeight() {
-        return VCSRootsProjectView.this.getWeight();
-      }
-
-      public String toString() {
-        return VCSRootsProjectView.this.getTitle();
-      }
-    };
-  }
 }

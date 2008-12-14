@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.projectPane.fileSystem;
 
 import com.intellij.ide.SelectInTarget;
+import com.intellij.ide.SelectInContext;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.actionSystem.DataProvider;
@@ -37,6 +38,9 @@ import com.intellij.openapi.vcs.changes.ChangeListListener;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vfs.*;
+import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.openapi.wm.ToolWindowId;
+import com.intellij.openapi.util.Computable;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -48,12 +52,10 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -232,10 +234,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     selectNode(file, false);
   }
 
-  public SelectInTarget createSelectInTarget() {
-    return null;
-  }
-
   public void projectOpened() {
     rebuildTreeLater();
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
@@ -364,6 +362,66 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
 
   public void dispose() {
     //if this method is not overridden, myTree is set to null on every change
+  }
+
+  public SelectInTarget createSelectInTarget() {
+    return new SelectInTarget() {
+      public VirtualFile myFile;
+
+      public boolean canSelect(SelectInContext context) {
+        VirtualFile virtualFile = context.getVirtualFile();
+        if (!(virtualFile instanceof MPSNodeVirtualFile)) {
+
+          if (getNode(virtualFile) == null) return false;
+
+          myFile = virtualFile;
+          return true;
+        }
+
+        final MPSNodeVirtualFile nodeVirtualFile = (MPSNodeVirtualFile) virtualFile;
+        SModel smodel = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+          public SModel compute() {
+            return nodeVirtualFile.getNode().getModel();
+          }
+        });
+        VirtualFile realFile = VFileSystem.getFile(smodel.getModelDescriptor().getModelFile());
+
+        if ((realFile == null) || (getNode(realFile) == null)) return false;
+
+        myFile = realFile;
+        return true;
+      }
+
+      public void selectIn(final SelectInContext context, boolean requestFocus) {
+        final ToolWindowManager manager = ToolWindowManager.getInstance(getProject());
+        manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
+          public void run() {
+            manager.getFocusManager().requestFocus(myTree, false);
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                selectNode(myFile, true);
+              }
+            });
+          }
+        }, false);
+      }
+
+      public String getToolWindowId() {
+        return FileViewProjectPane.this.getId();
+      }
+
+      public String getMinorViewId() {
+        return null;
+      }
+
+      public float getWeight() {
+        return FileViewProjectPane.this.getWeight();
+      }
+
+      public String toString() {
+        return FileViewProjectPane.this.getTitle();
+      }
+    };
   }
 
   private class RefreshListener implements VirtualFileManagerListener {
