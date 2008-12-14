@@ -53,7 +53,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
-  <maxImportIndex value="99" />
+  <maxImportIndex value="100" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -123,6 +123,7 @@
   <import index="97" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="98" modelUID="f:java_stub#jetbrains.mps.lang.behavior.findUsages(jetbrains.mps.lang.behavior.findUsages@java_stub)" version="-1" />
   <import index="99" modelUID="f:java_stub#jetbrains.mps.generator.fileGenerator(jetbrains.mps.generator.fileGenerator@java_stub)" version="-1" />
+  <import index="100" modelUID="r:00000000-0000-4000-0000-011c89590317(jetbrains.mps.lang.refactoring.plugin)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup" />
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247338363">
@@ -147,9 +148,6 @@
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1214478246100">
         <link role="action" targetNodeId="1223451996501" resolveInfo="ChangeMethodSignature" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1224423351740">
-        <link role="action" targetNodeId="1224422652338" resolveInfo="InilneLocalVariable" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1225104815444">
         <link role="action" targetNodeId="1225103350103" resolveInfo="IntroduceVariable" />
@@ -35799,6 +35797,17 @@
           <link role="classifier" targetNodeId="5.~INodeAdapter" resolveInfo="INodeAdapter" />
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1229260453323">
+    <property name="name" value="RefactoringAddition" />
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1229260465012">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229260476607">
+        <link role="action" targetNodeId="1224422652338" resolveInfo="InlineLocalVariable" />
+      </node>
+    </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1229260478592">
+      <link role="modifiedGroup" targetNodeId="100.1229259662341" resolveInfo="Refactoring" />
     </node>
   </node>
 </model>
