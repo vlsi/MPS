@@ -72,7 +72,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.DeleteModelsAction;
 import jetbrains.mps.workbench.actions.nodes.CopyNodeAction;
 import jetbrains.mps.workbench.actions.nodes.CutNodeAction;
-import jetbrains.mps.workbench.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;

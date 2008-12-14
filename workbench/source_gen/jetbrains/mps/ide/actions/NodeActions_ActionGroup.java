@@ -29,7 +29,7 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.workbench.actions.nodes.CutNodeAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.CloneRoot_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.nodes.DeleteNodeAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.DeleteNode_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationAction", "jetbrains.mps.ide");
