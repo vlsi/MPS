@@ -15,18 +15,11 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class ReferencesTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
@@ -41,6 +34,9 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
     setNodeIdentifier("references");
   }
 
+  public SNode getNode() {
+    return myNode;
+  }
 
   public boolean isInitialized() {
     return myInitialized;
@@ -50,7 +46,7 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
     super.doInit();
 
     for (final SReference ref : myNode.getReferences()) {
-      add(new ReferenceTreeNode(ref));
+      add(new ReferenceTreeNode(this.getOperationContext(), ref));
     }
 
     myInitialized = true;
@@ -62,38 +58,4 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
     myInitialized = false;
   }
 
-  private class ReferenceTreeNode extends TextTreeNode {
-    private final SReference myRef;
-
-    public ReferenceTreeNode(SReference ref) {
-      super(ref.getRole() + ": " + ref.getTargetNode(), ReferencesTreeNode.this.getOperationContext());
-      myRef = ref;
-      setIcon(Icons.DEFAULT_ICON);
-    }
-
-    public void doubleClick() {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          SNode target = myRef.getTargetNode();
-          if (target == null) return;
-
-          getOperationContext().getComponent(MPSEditorOpener.class).openNode(target);
-        }
-      });
-    }
-
-    @Override
-    public ActionGroup getActionGroup() {
-      BaseAction deleteAction = new BaseAction("Delete") {
-        protected void doExecute(AnActionEvent e) {
-          myNode.removeReference(myRef);
-        }
-      };
-      return ActionUtils.groupFromActions(deleteAction);
-    }
-
-    public boolean isLeaf() {
-      return true;
-    }
-  }
 }
