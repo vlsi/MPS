@@ -648,10 +648,6 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518716620">
         <link role="constructorDeclaration" targetNodeId="16.~ShowParametersAction.&lt;init&gt;()" resolveInfo="ShowParametersAction" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204981073163" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518717651">
-        <link role="constructorDeclaration" targetNodeId="3.~ModelPropertiesActionWOShortcuts.&lt;init&gt;()" resolveInfo="ModelPropertiesActionWOShortcuts" />
-      </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1214581695123" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1221753146354">
         <property name="name" value="vcs" />

@@ -130,8 +130,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     if (myModelDescriptor != null && myModelDescriptor.isInitialized()) {
-      setErrorState(getSModelDescriptor().isValid(getOperationContext().getScope()) ? ErrorState.NONE : ErrorState.ERROR);
-      List<String> errors = getSModelDescriptor().validate(getOperationContext().getScope());
+      IScope scope = getOperationContext().getScope();
+      setErrorState(getSModelDescriptor().isValid(scope) ? ErrorState.NONE : ErrorState.ERROR);
+      List<String> errors = getSModelDescriptor().validate(scope);
       if (errors.isEmpty()) {
         setTooltipText(null);
       } else {

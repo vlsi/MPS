@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -74,7 +74,7 @@ public class CloneRoot_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      for(SNode node : Sequence.fromIterable(CloneRoot_Action.this.nodes)) {
+      for(SNode node : ListSequence.fromList(CloneRoot_Action.this.nodes)) {
         SNode root = SNodeOperations.getContainingRoot(node);
         SNode copy = SNodeOperations.copyNode(root);
         SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);

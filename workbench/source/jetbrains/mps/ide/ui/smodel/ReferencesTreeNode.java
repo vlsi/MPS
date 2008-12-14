@@ -86,11 +86,7 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
     public ActionGroup getActionGroup() {
       BaseAction deleteAction = new BaseAction("Delete") {
         protected void doExecute(AnActionEvent e) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              myNode.removeReference(myRef);
-            }
-          });
+          myNode.removeReference(myRef);
         }
       };
       return ActionUtils.groupFromActions(deleteAction);
