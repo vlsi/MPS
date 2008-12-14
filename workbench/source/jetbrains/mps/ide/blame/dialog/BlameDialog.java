@@ -27,6 +27,7 @@ import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -41,6 +42,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 public class BlameDialog extends BaseDialog {
+  private static final Logger LOG = Logger.getLogger(BlameDialog.class);
   private static final String CAPTION = "Submit System Exception to Developers";
 
   private JPanel myPanel;
@@ -101,6 +103,7 @@ public class BlameDialog extends BaseDialog {
           JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Info", JOptionPane.INFORMATION_MESSAGE);
         } else {
           JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+          LOG.info("Submit failed: " + response.getMessage(), response.getThrowable());
         }
       }
     });

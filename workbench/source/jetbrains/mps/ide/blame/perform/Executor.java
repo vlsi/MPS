@@ -39,8 +39,6 @@ public class Executor {
           response[0] = procedure.perform();
         } catch (Throwable e) {
           response[0] = new Response(e.getMessage(), false, e);
-          response[0].setSuccess(false);
-          response[0].setMessage("Bugtracker does not respond");
         }
       }
     });

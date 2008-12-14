@@ -23,10 +23,12 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
+import jetbrains.mps.logging.Logger;
 
 import java.awt.Component;
 
 public class CharismaReporter extends ErrorReportSubmitter {
+  private static final Logger LOG = Logger.getLogger(CharismaReporter.class);
 
   public String getReportActionText() {
     return "Report To JetBrains MPS Tracker";
@@ -52,7 +54,8 @@ public class CharismaReporter extends ErrorReportSubmitter {
       if (response.isSuccess()) {
         return new SubmittedReportInfo(null, "", SubmissionStatus.NEW_ISSUE);
       } else {
-        return new SubmittedReportInfo(null, "Cancelled issue submit: "+response.getMessage(), SubmissionStatus.FAILED);
+        LOG.info("Submit failed: "+response.getMessage(),response.getThrowable());
+        return new SubmittedReportInfo(null, "Submit failed: "+response.getMessage(), SubmissionStatus.FAILED);
       }
     }
   }

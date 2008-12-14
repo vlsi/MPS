@@ -60,6 +60,7 @@ import java.util.concurrent.atomic.AtomicInteger;
     }
 )
 public class MessagesViewTool extends BaseProjectTool implements PersistentStateComponent<MyState> {
+  private static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
   private static final int MAX_MESSAGES_SIZE = 30000;
 
   private MyToggleAction myErrorsAction = new MyToggleAction("Show Error Messages", jetbrains.mps.ide.messages.Icons.ERROR_ICON, new Computable<Boolean>() {
@@ -326,6 +327,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
       } else {
         JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
+        LOG.info("Submit failed: "+response.getMessage(),response.getThrowable());
       }
     }
   }
