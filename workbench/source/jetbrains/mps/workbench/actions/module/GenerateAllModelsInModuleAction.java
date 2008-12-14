@@ -65,6 +65,41 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     return "ctrl F9";
   }
 
+  protected void doUpdate(AnActionEvent e) {
+    for (IModule module : myModules) {
+      if ((!(module instanceof Solution)) && (!(module instanceof Language)) && (!(module instanceof Generator))) {
+        disable(e.getPresentation());
+        return;
+      }
+    }
+    enable(e.getPresentation());
+    String obj = myModules.size() == 1 ? NameUtil.shortNameFromLongName(myModules.iterator().next().getClass().getName()) : "Modules";
+    String newText = (myRegenerate ? "Regenerate" : "Generate") + " " + obj;
+    e.getPresentation().setText(newText);
+  }
+
+  protected boolean collectActionData(AnActionEvent e) {
+    if (!super.collectActionData(e)) return false;
+    ActionEventData data = new ActionEventData(e);
+    myProject = data.getMPSProject();
+    myOperationContext = data.getOperationContext();
+    if (myOperationContext == null) return false;
+    myModules = new HashSet(data.getModules());
+    if (myModules.isEmpty()) {
+      IModule contextModule = data.getContextModule();
+      if (contextModule == null) return false;
+      myModules.add(contextModule);
+    }
+    myFrame = data.getFrame();
+    if (myFrame == null) return false;
+    return true;
+  }
+
+  //used via reflection
+  public static String getActionId(Object... params) {
+    return GenerateAllModelsInModuleAction.class.getName()+"#"+params[0].toString();
+  }
+
   protected void doExecute(AnActionEvent e) {
     List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
 
@@ -128,41 +163,6 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
 
     if (params == null) return new ArrayList<SModelDescriptor>();
     return params.getModels();
-  }
-
-  protected void doUpdate(AnActionEvent e) {
-    for (IModule module : myModules) {
-      if ((!(module instanceof Solution)) && (!(module instanceof Language)) && (!(module instanceof Generator))) {
-        disable(e.getPresentation());
-        return;
-      }
-    }
-    enable(e.getPresentation());
-    String obj = myModules.size() == 1 ? NameUtil.shortNameFromLongName(myModules.iterator().next().getClass().getName()) : "Modules";
-    String newText = (myRegenerate ? "Regenerate" : "Generate") + " " + obj;
-    e.getPresentation().setText(newText);
-  }
-
-  protected boolean collectActionData(AnActionEvent e) {
-    if (!super.collectActionData(e)) return false;
-    ActionEventData data = new ActionEventData(e);
-    myProject = data.getMPSProject();
-    myOperationContext = data.getOperationContext();
-    if (myOperationContext == null) return false;
-    myModules = new HashSet(data.getModules());
-    if (myModules.isEmpty()) {
-      IModule contextModule = data.getContextModule();
-      if (contextModule == null) return false;
-      myModules.add(contextModule);
-    }
-    myFrame = data.getFrame();
-    if (myFrame == null) return false;
-    return true;
-  }
-
-  //used via reflection
-  public static String getActionId(Object... params) {
-    return GenerateAllModelsInModuleAction.class.getName()+"#"+params[0].toString();
   }
 
   private static class MyContext implements IOperationContext {
