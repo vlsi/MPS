@@ -20,10 +20,6 @@ public class ShowMPSTutorialsSiteAction extends ShowSiteAction {
     super("MPS Tutorials");
   }
 
-  public static String getActionId(Object... param){
-    return ShowMPSTutorialsSiteAction.class.getName()+"#";
-  }
-
   protected String getSiteURL() {
     return "http://www.jetbrains.net/confluence/display/MPS/MPS+Tutorials+Page";
   }

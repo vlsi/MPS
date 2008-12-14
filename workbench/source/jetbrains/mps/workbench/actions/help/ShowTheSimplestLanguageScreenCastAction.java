@@ -25,10 +25,6 @@ public class ShowTheSimplestLanguageScreenCastAction extends ShowSiteAction {
     getTemplatePresentation().setIcon(Icons.SCREENCAST);
   }
 
-  public static String getActionId(Object... param){
-    return ShowTheSimplestLanguageScreenCastAction.class.getName()+"#";
-  }
-
   protected String getSiteURL() {
     return "http://www.vimeo.com/1284260";
   }

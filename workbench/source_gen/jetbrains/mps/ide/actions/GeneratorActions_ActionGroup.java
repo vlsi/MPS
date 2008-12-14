@@ -16,8 +16,8 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.addAnchor(GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
-      this.addAction("jetbrains.mps.workbench.actions.language.GenerateTemplateQueriesAction", "jetbrains.mps.ide", true);
-      this.addAction("jetbrains.mps.workbench.actions.language.GenerateTemplateQueriesAction", "jetbrains.mps.ide", false);
+      this.addAction("jetbrains.mps.ide.actions.GenerateTemplateQueries_Action", "jetbrains.mps.ide", true);
+      this.addAction("jetbrains.mps.ide.actions.GenerateTemplateQueries_Action", "jetbrains.mps.ide", false);
       this.addSeparator();
       this.addAction("jetbrains.mps.workbench.actions.module.ShowModuleDependenciesAction", "jetbrains.mps.ide");
       this.addSeparator();
