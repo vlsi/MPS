@@ -30,7 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="135" />
+  <maxImportIndex value="137" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -103,6 +103,8 @@
   <import index="133" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="134" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs(jetbrains.mps.workbench.dialogs@java_stub)" version="-1" />
   <import index="135" modelUID="f:java_stub#com.intellij.openapi.ui(com.intellij.openapi.ui@java_stub)" version="-1" />
+  <import index="136" modelUID="f:java_stub#com.intellij.psi.impl(com.intellij.psi.impl@java_stub)" version="-1" />
+  <import index="137" modelUID="f:java_stub#jetbrains.mps.workbench.choose.models(jetbrains.mps.workbench.choose.models@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="NodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -713,14 +715,14 @@
         <link role="constructorDeclaration" targetNodeId="1.~CutNodeAction.&lt;init&gt;()" resolveInfo="CutNodeAction" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204983234438" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518715883">
-        <link role="constructorDeclaration" targetNodeId="46.~AddModelImportAction.&lt;init&gt;()" resolveInfo="AddModelImportAction" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229267916515">
+        <link role="action" targetNodeId="1229267732058" resolveInfo="AddModelImport" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217953950794">
-        <link role="constructorDeclaration" targetNodeId="46.~AddModelImportByRootNodeAction.&lt;init&gt;()" resolveInfo="AddModelImportByRootNodeAction" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229269063784">
+        <link role="action" targetNodeId="1229269040855" resolveInfo="AddModelImportByRoot" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518716782">
-        <link role="constructorDeclaration" targetNodeId="46.~AddLanguageImportAction.&lt;init&gt;()" resolveInfo="AddLanguageImportAction" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229269066552">
+        <link role="action" targetNodeId="1229269032161" resolveInfo="AddLanguageImport" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1215010700512" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1207910902706">
@@ -8781,6 +8783,183 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1229267732058">
+    <property name="package" value="Menu.MainMenu.EditActions" />
+    <property name="name" value="AddModelImport" />
+    <property name="caption" value="Add Model Import" />
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229267786063">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229267793206">
+      <property name="name" value="mpsProject" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229267825009">
+      <property name="name" value="module" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODULE" resolveInfo="MODULE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229267843824">
+      <property name="name" value="model" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1229267732059">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229267732060">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229268940428">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1229268944384">
+            <link role="baseMethodDeclaration" targetNodeId="46.~ImportHelper.addModelImport(com.intellij.openapi.project.Project,jetbrains.mps.project.MPSProject,jetbrains.mps.project.IModule,jetbrains.mps.smodel.SModelDescriptor):void" resolveInfo="addModelImport" />
+            <link role="classConcept" targetNodeId="46.~ImportHelper" resolveInfo="ImportHelper" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229268947088">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1229268947089" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229268947090">
+                <link role="member" targetNodeId="1229267786063" resolveInfo="project" />
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229268953128">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1229268953129" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229268953130">
+                <link role="member" targetNodeId="1229267793206" resolveInfo="mpsProject" />
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229268982941">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1229268982942" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229268982943">
+                <link role="member" targetNodeId="1229267825009" resolveInfo="module" />
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229268985820">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1229268985821" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229268985822">
+                <link role="member" targetNodeId="1229267843824" resolveInfo="model" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1229267764764">
+      <property name="keycode" value="VK_M" />
+      <property name="modifiers" value="ctrl" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1229269032161">
+    <property name="package" value="Menu.MainMenu.EditActions" />
+    <property name="name" value="AddLanguageImport" />
+    <property name="caption" value="Add Language Import" />
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229269032162">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229269032163">
+      <property name="name" value="mpsProject" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229269032164">
+      <property name="name" value="module" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODULE" resolveInfo="MODULE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229269032165">
+      <property name="name" value="model" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1229269032166">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229269032167">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229269032168">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1229269112507">
+            <link role="baseMethodDeclaration" targetNodeId="46.~ImportHelper.addLanguageImport(com.intellij.openapi.project.Project,jetbrains.mps.project.MPSProject,jetbrains.mps.project.IModule,jetbrains.mps.smodel.SModelDescriptor):void" resolveInfo="addLanguageImport" />
+            <link role="classConcept" targetNodeId="46.~ImportHelper" resolveInfo="ImportHelper" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229269112508">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1229269112509" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229269112510">
+                <link role="member" targetNodeId="1229269032162" resolveInfo="project" />
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229269112511">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1229269112512" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229269112513">
+                <link role="member" targetNodeId="1229269032163" resolveInfo="mpsProject" />
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229269112514">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1229269112515" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229269112516">
+                <link role="member" targetNodeId="1229269032164" resolveInfo="module" />
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229269112517">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1229269112518" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229269112519">
+                <link role="member" targetNodeId="1229269032165" resolveInfo="model" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1229269032182">
+      <property name="keycode" value="VK_L" />
+      <property name="modifiers" value="ctrl" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1229269040855">
+    <property name="package" value="Menu.MainMenu.EditActions" />
+    <property name="name" value="AddModelImportByRoot" />
+    <property name="caption" value="Add Model Import By Root" />
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229269040856">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229269040857">
+      <property name="name" value="mpsProject" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229269040858">
+      <property name="name" value="module" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODULE" resolveInfo="MODULE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229269040859">
+      <property name="name" value="model" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1229269040860">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229269040861">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229269040862">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1229269132305">
+            <link role="baseMethodDeclaration" targetNodeId="46.~ImportHelper.addModelImportByRoot(com.intellij.openapi.project.Project,jetbrains.mps.project.MPSProject,jetbrains.mps.project.IModule,jetbrains.mps.smodel.SModelDescriptor):void" resolveInfo="addModelImportByRoot" />
+            <link role="classConcept" targetNodeId="46.~ImportHelper" resolveInfo="ImportHelper" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229269132306">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1229269132307" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229269132308">
+                <link role="member" targetNodeId="1229269040856" resolveInfo="project" />
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229269132309">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1229269132310" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229269132311">
+                <link role="member" targetNodeId="1229269040857" resolveInfo="mpsProject" />
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229269132312">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1229269132313" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229269132314">
+                <link role="member" targetNodeId="1229269040858" resolveInfo="module" />
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229269132315">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1229269132316" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229269132317">
+                <link role="member" targetNodeId="1229269040859" resolveInfo="model" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1229269040876">
+      <property name="keycode" value="VK_R" />
+      <property name="modifiers" value="ctrl" />
     </node>
   </node>
 </model>

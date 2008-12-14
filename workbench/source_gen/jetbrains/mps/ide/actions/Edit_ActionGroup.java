@@ -21,9 +21,9 @@ public class Edit_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.workbench.actions.nodes.PasteNodeAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.nodes.CutNodeAction", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.imports.AddModelImportAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.imports.AddModelImportByRootNodeAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.imports.AddLanguageImportAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.AddModelImport_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.AddModelImportByRoot_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.AddLanguageImport_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAnchor(Edit_ActionGroup.LABEL_ID_custom);
     } catch (Throwable t) {
