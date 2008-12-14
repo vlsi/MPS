@@ -9,6 +9,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
@@ -18,7 +19,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.transformation.TemplateLanguageGenerationUtil;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 
@@ -44,6 +44,14 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull() AnActionEvent event) {
     try {
+      {
+        String text = ((GenerateTemplateQueries_Action.this.regenerate ?
+          "Regenereate" :
+          "Generate"
+        )) + " Generator";
+        event.getPresentation().setText(text);
+        GenerateTemplateQueries_Action.this.setEnabledState(event.getPresentation(), GenerateTemplateQueries_Action.this.module instanceof Generator);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "GenerateTemplateQueries", t);
       this.disable(event.getPresentation());
