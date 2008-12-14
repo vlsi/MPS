@@ -27,17 +27,17 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
 
     private int hasNext = -1;
 
-    private DelayedException delayedEx;
+//    private DelayedException delayedEx;
 
     public boolean hasNext() {
         if (this.hasNext < 0) {
             this.hasNext = (this.moveToNext() ? 1 : 0);
         }
-        if (delayedEx != null) {
-            DelayedException tmp = this.delayedEx;
-            this.delayedEx = null;
-            throw tmp;
-        }
+//        if (delayedEx != null) {
+//            DelayedException tmp = this.delayedEx;
+//            this.delayedEx = null;
+//            throw tmp;
+//        }
         return this.hasNext == 1;
     }
 
@@ -46,13 +46,15 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
             throw new NoSuchElementException();
         }
         T tmp = this.yielded;
-        try {
-            this.hasNext = (this.moveToNext() ? 1 : 0);
-        }
-        catch (DelayedException ex) {
-            this.delayedEx = ex;
-            this.hasNext = 0;
-        }
+        this.yielded = null;
+        this.hasNext = -1;
+//        try {
+//            this.hasNext = (this.moveToNext() ? 1 : 0);
+//        }
+//        catch (DelayedException ex) {
+//            this.delayedEx = ex;
+//            this.hasNext = 0;
+//        }
         return tmp;
     }
 

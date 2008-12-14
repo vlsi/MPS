@@ -1403,41 +1403,7 @@ __switch__:
       }
 
     }.invoke()));
-    Assert.assertSame(ListSequence.fromList(exp).count(), ListSequence.fromList(res).count());
-    {
-      Iterable<Integer> foo;
-      Iterable<Integer> bar;
-      Iterator<Iterable<Integer>> foo_iterator = exp.iterator();
-      Iterator<Iterable<Integer>> bar_iterator = res.iterator();
-      while (true) {
-        if (!(foo_iterator.hasNext())) {
-          break;
-        }
-        if (!(bar_iterator.hasNext())) {
-          break;
-        }
-        foo = foo_iterator.next();
-        bar = bar_iterator.next();
-        Assert.assertSame(Sequence.fromIterable(foo).count(), Sequence.fromIterable(bar).count());
-        {
-          Integer a;
-          Integer b;
-          Iterator<Integer> a_iterator = foo.iterator();
-          Iterator<Integer> b_iterator = bar.iterator();
-          while (true) {
-            if (!(a_iterator.hasNext())) {
-              break;
-            }
-            if (!(b_iterator.hasNext())) {
-              break;
-            }
-            a = a_iterator.next();
-            b = b_iterator.next();
-            Assert.assertSame(a, b);
-          }
-        }
-      }
-    }
+    this.assertEquals(exp, res);
   }
 
   @Test()
@@ -1501,6 +1467,82 @@ __switch__:
       }
 
     }.invoke()));
+    this.assertEquals(exp, res);
+  }
+
+  @Test()
+  public void test_mps3477() throws Exception {
+    List<Integer> exp = ListSequence.<Integer>fromArray(10, 0, 20, 11, 1, 21, 12, 2, 22, 13, 3, 23, 14, 4, 24, 15, 5, 25, 16, 6, 26, 17, 7, 27, 18, 8, 28, 19, 9, 29);
+    final List<Integer> res = ListSequence.<Integer>fromArray();
+    _FunctionTypes._return_P2_E0<? extends Iterable<Integer>, ? super Integer, ? super Integer> foo = new _FunctionTypes._return_P2_E0 <Iterable<Integer>, Integer, Integer>() {
+
+      public Iterable<Integer> invoke(final Integer start, final Integer end) {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _2_i;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_i = start;
+                    case 3:
+                      if (!(this._2_i < end)) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._2_i++ ;
+                      this.__CP__ = 3;
+                      break;
+                    case 7:
+                      this.__CP__ = 8;
+                      this.yield(this._2_i);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      ListSequence.fromList(res).addElement(this._2_i + 10);
+                      this.__CP__ = 7;
+                      break;
+                    case 8:
+                      ListSequence.fromList(res).addElement(this._2_i + 20);
+                      this.__CP__ = 5;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    };
+    Iterable<Integer> out = foo.invoke(0, 10);
+    for(int k : Sequence.fromIterable(out)) {
+      ListSequence.fromList(res).addElement(k);
+    }
+    Assert.assertEquals(exp, res);
+  }
+
+  private void assertEquals(List<Iterable<Integer>> exp, List<Iterable<Integer>> res) {
     Assert.assertSame(ListSequence.fromList(exp).count(), ListSequence.fromList(res).count());
     {
       Iterable<Integer> foo;
