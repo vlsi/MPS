@@ -35,8 +35,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
           typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(pt_typevar_1221579075465), typeCheckingContext.typeOf(param, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075470", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075466", intentionProvider);
         }
         paramTypes.add(typeCheckingContext.getEquationManager().getRepresentator(pt_typevar_1221579075465));
-      } else
-      {
+      } else if ((SLinkOperations.getTarget(param, "type", true) != null)) {
         paramTypes.add(SLinkOperations.getTarget(param, "type", true));
       }
     }
