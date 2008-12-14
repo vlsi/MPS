@@ -26,7 +26,7 @@ public class DeleteReferenceAction_Action extends GeneratedAction {
 
   @NotNull()
   public String getKeyStroke() {
-    return "none DELETE";
+    return " DELETE";
   }
 
   public boolean isApplicable(AnActionEvent event) {

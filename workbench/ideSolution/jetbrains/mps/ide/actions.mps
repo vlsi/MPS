@@ -8306,7 +8306,6 @@
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1229264389345">
       <property name="keycode" value="VK_DELETE" />
-      <property name="modifiers" value="none" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229264405097">
       <property name="name" value="node" />
@@ -8456,7 +8455,6 @@
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1229265515353">
       <property name="keycode" value="VK_DELETE" />
-      <property name="modifiers" value="none" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229265515354">
       <property name="name" value="node" />

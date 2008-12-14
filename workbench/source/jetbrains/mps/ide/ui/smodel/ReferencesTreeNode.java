@@ -34,7 +34,8 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
     setNodeIdentifier("references");
   }
 
-  public SNode getNode() {
+  @Override
+  public SNode getSNode() {
     return myNode;
   }
 

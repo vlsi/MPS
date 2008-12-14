@@ -36,6 +36,7 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
     setNodeIdentifier("properties");
   }
 
+  @Override
   public SNode getSNode() {
     return myNode;
   }
