@@ -1472,8 +1472,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private void processCoordSelection(MouseEvent mouseEvent) {
-    if (mouseEvent.getButton() != MouseEvent.BUTTON1 && mouseEvent.getButton() != MouseEvent.BUTTON2) return;
+  private void processCoordSelection(MouseEvent mouseEvent) {   
     EditorCell newSelectedCell = myRootCell.findLeaf(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
     if (newSelectedCell == null || !newSelectedCell.isSelectable()) {
       newSelectedCell = myRootCell.findCellWeak(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
