@@ -414,18 +414,18 @@
     <property name="name" value="typeof_ProjectExpression" />
     <property name="package" value="expression" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228148844376">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="1228148857073">
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1228148861186">
-          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1228148861187">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228148924159">
-              <link role="classifier" targetNodeId="10.~MPSProject" resolveInfo="MPSProject" />
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1229343523390">
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1229343523391">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1229343523392">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1229343523393">
+              <link role="applicableNode" targetNodeId="1228148844377" resolveInfo="expression" />
             </node>
           </node>
         </node>
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1228148857076">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1228148850882">
-            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1228148853963">
-              <link role="applicableNode" targetNodeId="1228148844377" resolveInfo="expression" />
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1229343523394">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1229343523395">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229343523396">
+              <link role="classifier" targetNodeId="10.~MPSProject" resolveInfo="MPSProject" />
             </node>
           </node>
         </node>

@@ -20,11 +20,11 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import java.util.List;
 
 public class QueriesGenerated {
 
@@ -41,7 +41,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1227899006732(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.getParent(_context.getNode()) == null;
+    return (SNodeOperations.getParent(_context.getNode()) == null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1216995305411(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -245,12 +245,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1216995908944(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> res = new ArrayList<SNode>();
-    for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "testMethods", true))) {
-      ListSequence.fromList(res).addElement(method);
-    }
-    ListSequence.fromList(res).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.test.structure.NodeOperation", false)));
-    return res;
+    return ITestCase_Behavior.call_getTestSet_1216130724401(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1221567884870(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
