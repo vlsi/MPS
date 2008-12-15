@@ -2167,14 +2167,30 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208873074133">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208873074134">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208873074135">
-                  <link role="variableDeclaration" targetNodeId="1208873074107" resolveInfo="curTestMethods" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1229283292321">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229283292322">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229283330210">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229283330211">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229283330212">
+                      <link role="variableDeclaration" targetNodeId="1208873074107" resolveInfo="curTestMethods" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1229283330213">
+                      <node role="argument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1229283330214">
+                        <link role="variable" targetNodeId="1208873074095" resolveInfo="testMethod" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1208873074136">
-                  <node role="argument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1208873074137">
-                    <link role="variable" targetNodeId="1208873074095" resolveInfo="testMethod" />
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1229283297387">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229283307547">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229283304139">
+                    <link role="variableDeclaration" targetNodeId="1208873074107" resolveInfo="curTestMethods" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" id="1229283311706">
+                    <node role="argument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1229283324536">
+                      <link role="variable" targetNodeId="1208873074095" resolveInfo="testMethod" />
+                    </node>
                   </node>
                 </node>
               </node>

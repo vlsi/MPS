@@ -12,6 +12,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestTree extends MPSTree {
 
@@ -32,7 +33,7 @@ public class TestTree extends MPSTree {
       TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
       root.add(testCaseTreeNode);
       this.map.put(testCase, testCaseTreeNode);
-      for(SNode method : Sequence.fromIterable(MapSequence.fromMap(this.tests).get(testCase))) {
+      for(SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
         TestMethodTreeNode testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
         testCaseTreeNode.add(testMethodTreeNode);
         this.map.put(testCase, method, testMethodTreeNode);

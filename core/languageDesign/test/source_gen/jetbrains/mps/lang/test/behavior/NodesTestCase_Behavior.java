@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import com.intellij.util.lang.UrlClassLoader;
 import java.net.URL;
@@ -28,13 +27,6 @@ public class NodesTestCase_Behavior {
       ListSequence.fromList(result).addElement(operation);
     }
     return result;
-  }
-
-  public static List<String> virtual_getParametersPart_1215620460293(SNode thisNode) {
-    ArrayList<String> list = new ArrayList<String>();
-    list.add("-c");
-    list.add(ITestCase_Behavior.call_getClassName_1216136193905(thisNode));
-    return list;
   }
 
   public static TestRunParameters virtual_getTestRunParameters_1216045139515(SNode thisNode) {

@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class BTestCase extends ClassConcept implements ITestCase {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase";
   public static final String TEST_CASE_NAME = "testCaseName";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
@@ -26,6 +27,14 @@ public class BTestCase extends ClassConcept implements ITestCase {
 
   public void setTestCaseName(String value) {
     this.setProperty(BTestCase.TEST_CASE_NAME, value);
+  }
+
+  public String getName() {
+    return this.getProperty(BTestCase.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(BTestCase.NAME, value);
   }
 
   public String getShortDescription() {

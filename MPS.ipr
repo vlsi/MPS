@@ -106,15 +106,6 @@
           <option name="LABEL_INDENT_SIZE" value="0" />
           <option name="LABEL_INDENT_ABSOLUTE" value="false" />
         </ADDITIONAL_INDENT_OPTIONS>
-        <ADDITIONAL_INDENT_OPTIONS fileType="jsp">
-          <option name="INDENT_SIZE" value="4" />
-          <option name="CONTINUATION_INDENT_SIZE" value="8" />
-          <option name="TAB_SIZE" value="4" />
-          <option name="USE_TAB_CHARACTER" value="false" />
-          <option name="SMART_TABS" value="false" />
-          <option name="LABEL_INDENT_SIZE" value="0" />
-          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-        </ADDITIONAL_INDENT_OPTIONS>
         <ADDITIONAL_INDENT_OPTIONS fileType="txt">
           <option name="INDENT_SIZE" value="4" />
           <option name="CONTINUATION_INDENT_SIZE" value="8" />
@@ -618,7 +609,6 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
@@ -714,7 +704,6 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
@@ -865,7 +854,6 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
@@ -1139,6 +1127,28 @@
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="TraverseUI" type="Application" factoryName="Application" enabled="false" merge="false" sample_coverage="true" runner="emma">
+      <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
+      <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=92m -Xss1024k -Dmps.internal=true " />
+      <option name="PROGRAM_PARAMETERS" value="traverseUI $PROJECT_DIR$/core/kernel/source/search/searchableOptions.xml" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="BuildLanguage" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="1062" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
     <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false" sample_coverage="true" runner="emma">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
       <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=92m -Xss1024k -Dmps.internal=true " />
@@ -1163,28 +1173,6 @@
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Profile " />
       <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="false" name="TraverseUI" type="Application" factoryName="Application" enabled="false" merge="false" sample_coverage="true" runner="emma">
-      <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
-      <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=92m -Xss1024k -Dmps.internal=true " />
-      <option name="PROGRAM_PARAMETERS" value="traverseUI $PROJECT_DIR$/core/kernel/source/search/searchableOptions.xml" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="BuildLanguage" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="1062" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
       <method>
         <option name="Make" value="true" />
       </method>

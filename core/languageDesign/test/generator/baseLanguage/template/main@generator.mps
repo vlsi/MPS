@@ -978,7 +978,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216995320129">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229202660924">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1216995320130" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1229202664270">
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1229280689908">
                 <link role="baseMethodDeclaration" targetNodeId="31.1229278847513" resolveInfo="getSimpleClassName" />
               </node>
             </node>
@@ -2045,6 +2045,20 @@
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1229211902362" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229212105053" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229268854047">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229284513467">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1229284513468">
+              <property name="name" value="test" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229284513469">
+                <link role="classifier" targetNodeId="17.~IEditor" resolveInfo="IEditor" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229284532616">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1229284532617">
+                  <link role="fieldDeclaration" targetNodeId="26.1229266543141" resolveInfo="editor" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1229284532618" />
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229266768416">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229266768417">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229266768418">

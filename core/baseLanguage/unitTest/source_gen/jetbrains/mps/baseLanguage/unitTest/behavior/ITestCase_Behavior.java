@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ITestCase_Behavior {
@@ -21,6 +22,13 @@ public class ITestCase_Behavior {
 
   public static String virtual_getSimpleClassName_1229278847513(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name") + "_Test";
+  }
+
+  public static List<String> virtual_getParametersPart_1215620460293(SNode thisNode) {
+    ArrayList<String> list = new ArrayList<String>();
+    list.add("-c");
+    list.add(ITestCase_Behavior.call_getClassName_1216136193905(thisNode));
+    return list;
   }
 
   public static List<SNode> call_getTestSet_1216130724401(SNode thisNode) {

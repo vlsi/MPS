@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 
 public class EditorTestCase_Behavior {
 
@@ -22,6 +23,10 @@ public class EditorTestCase_Behavior {
 
   public static SNode virtual_getTestCase_1216134500045(SNode thisNode) {
     return thisNode;
+  }
+
+  public static TestRunParameters virtual_getTestRunParameters_1216045139515(SNode thisNode) {
+    return NodesTestCase_Behavior.getTestRunParameters_1217424543047();
   }
 
 }

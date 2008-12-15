@@ -9,7 +9,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import org.apache.commons.lang.ObjectUtils;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Disposer;
 
@@ -38,7 +37,7 @@ public class TestOutputComponent {
       this.filterClass = filterClass;
       this.filterMethod = filterMethod;
       this.consoleView.clear();
-      for(TestOutputComponent.Message message : Sequence.fromIterable(this.messages)) {
+      for(TestOutputComponent.Message message : ListSequence.fromList(this.messages)) {
         this.append(message);
       }
     }
