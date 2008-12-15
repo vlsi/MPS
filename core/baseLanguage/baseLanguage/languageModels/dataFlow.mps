@@ -22,12 +22,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="8" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.baseLanguage(jetbrains.mps.baseLanguage@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
+  <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1206454554507">
     <property name="package" value="if" />
     <link role="conceptDeclaration" targetNodeId="1.1068580123159" resolveInfo="IfStatement" />
@@ -598,7 +600,44 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitRetStatement" id="1206463375273" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1229351971769">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229351971770">
+            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement" id="1229352005756">
+              <node role="jumpTo" type="jetbrains.mps.lang.dataFlow.structure.AfterPosition" id="1229352009102">
+                <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229352026784">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229352018248">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229352015901">
+                      <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1229352015902" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1229352015903">
+                        <link role="baseMethodDeclaration" targetNodeId="6.1229351767970" resolveInfo="getExecuteCommandStatementSync" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1229352021767">
+                      <link role="link" targetNodeId="7.1225441160167" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1229352029178">
+                    <link role="link" targetNodeId="8.1199569916463" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1229351985294">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1229351987000" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229351978649">
+              <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1229351977414" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1229351981871">
+                <link role="baseMethodDeclaration" targetNodeId="6.1229351767970" resolveInfo="getExecuteCommandStatementSync" />
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1229351991438">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229351991439">
+              <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitRetStatement" id="1229351994644" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

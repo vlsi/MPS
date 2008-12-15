@@ -2350,7 +2350,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225441285519">
     <property name="package" value="Command" />
     <property name="name" value="ExecuteCommandStatement" />
-    <link role="extends" targetNodeId="1225441160166" resolveInfo="BaseExecuteCommandStatement" />
+    <link role="extends" targetNodeId="1229346248766" resolveInfo="BaseExecuteCommandStatementSync" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225441285520">
       <property name="value" value="command" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
@@ -2368,7 +2368,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225441341971">
     <property name="package" value="Command" />
     <property name="name" value="ExecuteLightweightCommandStatement" />
-    <link role="extends" targetNodeId="1225441160166" resolveInfo="BaseExecuteCommandStatement" />
+    <link role="extends" targetNodeId="1229346248766" resolveInfo="BaseExecuteCommandStatementSync" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225441341972">
       <property name="value" value="read action" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
@@ -2377,7 +2377,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225441380935">
     <property name="package" value="Command" />
     <property name="name" value="ExecuteWriteActionStatement" />
-    <link role="extends" targetNodeId="1225441160166" resolveInfo="BaseExecuteCommandStatement" />
+    <link role="extends" targetNodeId="1229346248766" resolveInfo="BaseExecuteCommandStatementSync" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225441380936">
       <property name="value" value="write action" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
@@ -2458,6 +2458,15 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1227021121807">
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1229346143986">
+    <property name="package" value="Command" />
+    <property name="name" value="IExecuteCommandStatementSync" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1229346248766">
+    <property name="package" value="Command" />
+    <property name="name" value="BaseExecuteCommandStatementSync" />
+    <link role="extends" targetNodeId="1225441160166" resolveInfo="BaseExecuteCommandStatement" />
   </node>
 </model>
 

@@ -49,4 +49,12 @@ public class ReturnStatement_Behavior {
     return type;
   }
 
+  public static SNode call_getExecuteCommandStatementSync_1229351767970(SNode thisNode) {
+    SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(container), "jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatementSync")) {
+      return SNodeOperations.getParent(container);
+    }
+    return null;
+  }
+
 }

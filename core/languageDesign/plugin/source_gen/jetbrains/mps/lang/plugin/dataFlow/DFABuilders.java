@@ -10,9 +10,7 @@ public class DFABuilders extends DataFlowBuilders {
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement", new BaseExecuteCommandStatement_DataFlow());
     manager.register("jetbrains.mps.lang.plugin.structure.CommandClosureLiteral", new CommandClosureLiteral_DataFlow());
-    manager.register("jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement", new ExecuteCommandStatement_DataFlow());
-    manager.register("jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement", new ExecuteLightweightCommandStatement_DataFlow());
-    manager.register("jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement", new ExecuteWriteActionStatement_DataFlow());
+    manager.register("jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatementSync", new BaseExecuteCommandStatementSync_DataFlow());
   }
 
 }

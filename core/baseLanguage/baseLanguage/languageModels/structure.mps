@@ -288,6 +288,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1224848629420">
       <link role="intfc" targetNodeId="1224848483129" resolveInfo="IDeprecatableBase" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229351221060">
+      <link role="intfc" targetNodeId="1199653749349" resolveInfo="IStatementListContainer" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123136">
     <property name="name" value="StatementList" />

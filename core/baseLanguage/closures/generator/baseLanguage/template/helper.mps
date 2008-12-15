@@ -9576,7 +9576,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888366596">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888366598">
-                <link role="baseMethodDeclaration" targetNodeId="21.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~ArrayList.&lt;init&gt;(int)" resolveInfo="ArrayList" />
                 <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1207245196118" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207245199013">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207245198149">

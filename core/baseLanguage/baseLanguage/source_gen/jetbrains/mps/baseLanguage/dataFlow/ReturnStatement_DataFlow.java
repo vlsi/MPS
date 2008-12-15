@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.ReturnStatement_Behavior;
 
 public class ReturnStatement_DataFlow extends DataFlowBuilder {
 
@@ -15,7 +16,12 @@ public class ReturnStatement_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "expression", true));
-    _context.getBuilder().emitRet();
+    if (ReturnStatement_Behavior.call_getExecuteCommandStatementSync_1229351767970(_context.getNode()) != null) {
+      _context.getBuilder().emitJump(_context.getBuilder().after(SLinkOperations.getTarget(SLinkOperations.getTarget(ReturnStatement_Behavior.call_getExecuteCommandStatementSync_1229351767970(_context.getNode()), "commandClosureLiteral", true), "body", true)));
+    } else
+    {
+      _context.getBuilder().emitRet();
+    }
   }
 
 }

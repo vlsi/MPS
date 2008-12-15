@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
 
 public class DataFlowUtil {
@@ -77,10 +78,12 @@ public class DataFlowUtil {
     for(SNode read : uninitializedReads) {
       if (SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) {
         SNode ref = read;
-        {
-          BaseIntentionProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          typeCheckingContext.reportTypeError(ref, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640624825", intentionProvider, errorTarget);
+        if (!(LocalVariableDeclaration_Behavior.call_isVariableReferencedInClosures_1229352990212(SLinkOperations.getTarget(ref, "variableDeclaration", false)))) {
+          {
+            BaseIntentionProvider intentionProvider = null;
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            typeCheckingContext.reportTypeError(ref, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1229353228479", intentionProvider, errorTarget);
+          }
         }
       }
     }
