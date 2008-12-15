@@ -16630,6 +16630,29 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1229343002972">
+      <link role="applicableConcept" targetNodeId="38.1073390211982" resolveInfo="CellModel_RefNodeList" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1229343031059">
+        <link role="template" targetNodeId="1229342844257" resolveInfo="reduce_WrapRootRefNodeList" />
+      </node>
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1229343052631">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229343052632">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229343060355">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229343060356">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229343060357">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1229343060358" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1229343060359" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1229343060360">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1229343060361">
+                  <link role="conceptDeclaration" targetNodeId="38.1166049232041" resolveInfo="AbstractComponent" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1198258380049">
     <property name="name" value="reduce_CellModel_BlockEnd" />
@@ -18638,6 +18661,26 @@
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227875493742">
         <link role="classifier" targetNodeId="64.~Style" resolveInfo="Style" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1229342844257">
+    <property name="package" value="sugar" />
+    <property name="name" value="reduce_WrapRootRefNodeList" />
+    <link role="applicableConcept" targetNodeId="38.1073390211982" resolveInfo="CellModel_RefNodeList" />
+    <node role="contentNode" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1229342946521">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229342954079">
+        <property name="text" value="place for ref.node" />
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1229342979272">
+          <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1229342979273">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229342979274">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229342988628">
+                <node role="expression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1229342988629" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1229342973941" />
     </node>
   </node>
 </model>

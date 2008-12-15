@@ -64,6 +64,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.AbstractComponent") && (SLinkOperations.getTarget(_context.getNode(), "renderingCondition", true) != null);
   }
 
+  public static boolean baseMappingRule_Condition_1229343052631(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.AbstractComponent");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1168382526229(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -1632,6 +1636,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1226676047185(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return StyleClassItem_Behavior.call_getStyleConstant_1215703564594(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1229342979273(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
   }
 
   public static Iterable sourceNodesQuery_1168628426627(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
