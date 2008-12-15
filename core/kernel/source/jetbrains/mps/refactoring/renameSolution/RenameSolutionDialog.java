@@ -91,8 +91,9 @@ public class RenameSolutionDialog extends BaseDialog {
     return myMainPanel;
   }
 
+
   public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(300, 300, 300, 200);
+    return new DialogDimensions(300, 300, 400, 200);
   }
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)

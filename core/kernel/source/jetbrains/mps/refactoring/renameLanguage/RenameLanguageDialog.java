@@ -96,7 +96,7 @@ public class RenameLanguageDialog extends BaseDialog {
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(300, 300, 300, 200);
+    return new DialogDimensions(300, 300, 400, 200);
   }
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
