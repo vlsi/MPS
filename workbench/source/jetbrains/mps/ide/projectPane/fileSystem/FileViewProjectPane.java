@@ -333,7 +333,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
 
   @Nullable
   private MPSTreeNode getNode(MPSTreeNode rootTreeNode, VirtualFile file) {
-    if (rootTreeNode instanceof FileNode) {
+    if (rootTreeNode instanceof   FileNode) {
       VirtualFile nodeFile = ((FileNode) rootTreeNode).getFile();
 
       if (nodeFile != null) {

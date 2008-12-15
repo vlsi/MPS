@@ -21,7 +21,7 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
   public void applyRule(final SNode method, final TypeCheckingContext typeCheckingContext) {
     if (SPropertyOperations.getBoolean(method, "isAbstract")) {
       SNode classConcept = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      if (!(SPropertyOperations.getBoolean(classConcept, "abstractClass"))) {
+      if ((classConcept != null) && !(SPropertyOperations.getBoolean(classConcept, "abstractClass"))) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();

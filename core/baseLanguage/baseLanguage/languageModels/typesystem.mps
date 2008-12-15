@@ -16375,13 +16375,21 @@
                 </node>
               </node>
             </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1228407618457">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228407618458">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228407618459">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1229334899240">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229334902338">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229334900774">
                   <link role="variableDeclaration" targetNodeId="1228407542167" resolveInfo="classConcept" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1228407618460">
-                  <link role="property" targetNodeId="1.1075300953594" resolveInfo="abstractClass" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1229334903153" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1228407618457">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228407618458">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228407618459">
+                    <link role="variableDeclaration" targetNodeId="1228407542167" resolveInfo="classConcept" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1228407618460">
+                    <link role="property" targetNodeId="1.1075300953594" resolveInfo="abstractClass" />
+                  </node>
                 </node>
               </node>
             </node>
