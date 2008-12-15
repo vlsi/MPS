@@ -24,6 +24,7 @@ import java.util.ArrayList;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
+import org.jdom.Text;
 
 /**
  * Created by IntelliJ IDEA.
@@ -95,42 +96,45 @@ public class TypecheckerStateViewComponent extends JPanel {
 
     JPanel innerPanel = new JPanel(new GridBagLayout());
 
-    int y = 1;
+    int y = 0;
+    GridBagConstraints innerConstraints = new GridBagConstraints();
+
     if (myNodeToSliceWith != null) {
       //initial node type
-      JPanel nodeTypePanel = new JPanel(new GridBagLayout());
-      GridBagConstraints nodeTypePanelConstraints = new GridBagConstraints();
-      nodeTypePanel.setBackground(Color.WHITE);
 
-      nodeTypePanelConstraints.gridy = 0;
-      nodeTypePanelConstraints.weighty = 0;
-      nodeTypePanelConstraints.weightx = 0;
-      nodeTypePanelConstraints.fill = GridBagConstraints.NONE;
-      nodeTypePanelConstraints.anchor = GridBagConstraints.NORTHWEST;
+      innerConstraints.gridy = y; y++;
+      innerConstraints.weighty = 0;
+      innerConstraints.weightx = 0;
+      innerConstraints.fill = GridBagConstraints.NONE;
+      innerConstraints.anchor = GridBagConstraints.NORTHWEST;
 
-      nodeTypePanelConstraints.gridx = 0;
-      nodeTypePanel.add(new JLabel("initial type: "), nodeTypePanelConstraints);
+      innerConstraints.gridx = 0;
+      innerPanel.add(new JLabel("initial type: "), innerConstraints);
 
-      nodeTypePanelConstraints.gridx = 1;
+      innerConstraints.gridx = 1;
+      innerConstraints.gridwidth = GridBagConstraints.REMAINDER;
       TypecheckerStateViewComponent.SNodeTree initialTypeTree = new SNodeTree(mySlicer.getInitialNodeType(myNodeToSliceWith));
-      nodeTypePanel.add(initialTypeTree, nodeTypePanelConstraints);
+      innerPanel.add(initialTypeTree, innerConstraints);
       initialTypeTree.rebuildNow();
 
-      innerPanel.add(nodeTypePanel, gridBagConstraints);
+      //innerPanel.add(nodeTypePanel, gridBagConstraints);
 
       //slice items
+      innerConstraints.gridwidth = 1;
 
       for (EquationLogItem equationLogItem : myCurrentSlice) {
-        gridBagConstraints.gridy = y;
-        innerPanel.add(new EquationLogItemPanel(equationLogItem), gridBagConstraints);
+        innerConstraints.gridy = y;
+        addEquationLog(innerPanel, innerConstraints, equationLogItem);
+        // innerPanel.add(new EquationLogItemPanel(equationLogItem), gridBagConstraints);
         y++;
       }
     }
-    gridBagConstraints.gridy = y;
-    gridBagConstraints.weighty = 1;
+
+    innerConstraints.gridy = y;
+    innerConstraints.weighty = 1;
     JPanel gauge = new JPanel();
     gauge.setBackground(Color.WHITE);
-    innerPanel.add(gauge, gridBagConstraints);
+    innerPanel.add(gauge, innerConstraints);
 
     innerPanel.setBackground(Color.WHITE);
     JScrollPane scrollPane = new JScrollPane(innerPanel);
@@ -200,11 +204,62 @@ public class TypecheckerStateViewComponent extends JPanel {
     }
 
     protected MPSTreeNode rebuild() {
+      if (myNode == null) {
+        return new TextTreeNode("null");
+      }
       SNodeTreeNode treeNode = new SNodeTreeNode(myNode, myOperationContext);
       return treeNode;
     }
 
 
+  }
+
+  private void addEquationLog(JPanel panel, GridBagConstraints constraints, final EquationLogItem item) {
+    constraints.weightx = 0;
+    constraints.fill = GridBagConstraints.NONE;
+    constraints.anchor = GridBagConstraints.NORTHWEST;
+
+    constraints.gridx = 0;
+    JLabel label = new JLabel("equation");
+    panel.add(label, constraints);
+
+    constraints.gridx = 1;
+    SNodeTree leftTree = new SNodeTree(item.getLeftRepresentator());
+    panel.add(leftTree, constraints);
+
+    constraints.gridx = 2;
+    SNodeTree rightTree = new SNodeTree(item.getRightRepresentator());
+    panel.add(rightTree, constraints);
+
+    constraints.gridx = 3;
+    constraints.weightx = 1;
+    JLabel reasonLabel = new JLabel(item.getReason());
+    reasonLabel.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mousePressed(MouseEvent e) {
+        if (e.getClickCount() == 2) {
+          String ruleModel = item.getRuleModel();
+          final String ruleID = item.getRuleId();
+          openRule(ruleModel, ruleID);
+        }
+      }
+    });
+    panel.add(reasonLabel, constraints);
+
+    List<Pair<String, String>> causes = item.getCauses();
+    constraints.gridx = 4;
+    constraints.weightx = 0;
+    if (!causes.isEmpty()) {
+
+      CausesTree causesTree = new CausesTree(causes);
+      panel.add(causesTree, constraints);
+      causesTree.rebuildNow();
+    } else {
+      add(new JLabel(""), constraints);
+    }
+
+    leftTree.rebuildNow();
+    rightTree.rebuildNow();
   }
 
   public class EquationLogItemPanel extends JPanel {
@@ -254,7 +309,7 @@ public class TypecheckerStateViewComponent extends JPanel {
       if (!causes.isEmpty()) {
         constraints.gridx = 4;
         constraints.weightx = 0;
-        TypecheckerStateViewComponent.EquationLogItemPanel.CausesTree causesTree = new CausesTree(causes);
+        CausesTree causesTree = new CausesTree(causes);
         add(causesTree, constraints);
         causesTree.rebuildNow();
       }
@@ -263,25 +318,26 @@ public class TypecheckerStateViewComponent extends JPanel {
       rightTree.rebuildNow();
     }
 
-    class CausesTree extends MPSTree {
-      private List<Pair<String, String>> myCauses;
 
-      public CausesTree(List<Pair<String, String>> causes) {
-        myCauses = new ArrayList<Pair<String, String>>(causes);
-      }
+  }
+  class CausesTree extends MPSTree {
+    private List<Pair<String, String>> myCauses;
 
-      protected MPSTreeNode rebuild() {
-        TextTreeNode root = new TextTreeNode("causes", myOperationContext);
-        for (final Pair<String, String> cause : myCauses) {
-          TextTreeNode child = new TextTreeNode(cause.first + " : " + cause.second) {
-            public void doubleClick() {
-              openRule(cause.first, cause.second);
-            }
-          };
-          root.add(child);
-        }
-        return root;
+    public CausesTree(List<Pair<String, String>> causes) {
+      myCauses = new ArrayList<Pair<String, String>>(causes);
+    }
+
+    protected MPSTreeNode rebuild() {
+      TextTreeNode root = new TextTreeNode("causes", myOperationContext);
+      for (final Pair<String, String> cause : myCauses) {
+        TextTreeNode child = new TextTreeNode(cause.first + " : " + cause.second) {
+          public void doubleClick() {
+            openRule(cause.first, cause.second);
+          }
+        };
+        root.add(child);
       }
+      return root;
     }
   }
 }
