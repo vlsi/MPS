@@ -2592,7 +2592,9 @@
     <property name="name" value="BaseEditorTestBody" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1229266577468">
       <property name="name" value="initEditor" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1229266577469" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229347123869">
+        <link role="classifier" targetNodeId="13.~IEditor" resolveInfo="IEditor" />
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229266577470" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229266577471">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229266642933">
@@ -2758,6 +2760,14 @@
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1229277027965" />
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1229347129465">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229347132357">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1229347132358">
+              <link role="fieldDeclaration" targetNodeId="1229266543141" resolveInfo="editor" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1229347132359" />
           </node>
         </node>
       </node>

@@ -172,11 +172,11 @@ public class QueriesGenerated {
     return NodesTestCase_Behavior.getTestBodyName_1224602741295();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1229266784861(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1229347144474(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "nodeToEdit", true).getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1229266813131(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1229347144485(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "result", true).getId();
   }
 
