@@ -10,8 +10,8 @@ import java.awt.BorderLayout;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.tree.TreePath;
 import javax.swing.JScrollPane;
+import javax.swing.tree.TreePath;
 import java.util.Collections;
 
 public class CheckBoxTree <N extends NodeData> extends JPanel {
@@ -27,60 +27,62 @@ public class CheckBoxTree <N extends NodeData> extends JPanel {
     this.myTree.addMouseListener(new MouseAdapter() {
 
       public void mousePressed(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-        int row = CheckBoxTree.this.myTree.getRowForLocation(x, y);
-        if (row == 0) {
-          CheckBoxTree.this.myTree.revalidate();
-          CheckBoxTree.this.myTree.repaint();
-        }
-        TreePath path = CheckBoxTree.this.myTree.getPathForRow(row);
-        if (path == null) {
-          return;
-        }
-        Object lastPathComponent = path.getLastPathComponent();
-        CheckBoxNode<N> cbNode = (CheckBoxNode)lastPathComponent;
-        boolean isChecked = this.isChecked(cbNode);
-        this.checkNodeRecursively(cbNode, !(isChecked));
-        if (isChecked) {
-          this.uncheckParents(cbNode);
-        }
-        CheckBoxTree.this.repaint();
-      }
-
-      public void checkNodeRecursively(CheckBoxNode<N> checkBoxNode, boolean check) {
-        this.checkNode(checkBoxNode, check);
-        int childCount = checkBoxNode.getChildCount();
-        for(int i = 0 ; i < childCount ; i++ ) {
-          this.checkNodeRecursively((CheckBoxNode<N>)checkBoxNode.getChildAt(i), check);
-        }
-      }
-
-      public boolean isChecked(CheckBoxNode<N> cbNode) {
-        return CheckBoxTree.this.mySelectedItems.contains(cbNode.getData());
-      }
-
-      public void uncheckParents(CheckBoxNode<N> cbNode) {
-        CheckBoxNode<N> parent = (CheckBoxNode<N>)cbNode.getParent();
-        if (parent == null) {
-          return;
-        }
-        this.checkNode(parent, false);
-        this.uncheckParents(parent);
-      }
-
-      private void checkNode(CheckBoxNode<N> checkBoxNode, boolean check) {
-        if (check) {
-          CheckBoxTree.this.mySelectedItems.add(checkBoxNode.getData());
-        } else
-        {
-          CheckBoxTree.this.mySelectedItems.remove(checkBoxNode.getData());
-        }
-        checkBoxNode.setChecked(check);
+        CheckBoxTree.this.mouseParessed(e.getX(), e.getY());
       }
 
     });
     this.add(new JScrollPane(this.myTree), BorderLayout.CENTER);
+  }
+
+  public void mouseParessed(int x, int y) {
+    int row = this.myTree.getRowForLocation(x, y);
+    if (row == 0) {
+      this.myTree.revalidate();
+      this.myTree.repaint();
+    }
+    TreePath path = this.myTree.getPathForRow(row);
+    if (path == null) {
+      return;
+    }
+    Object lastPathComponent = path.getLastPathComponent();
+    CheckBoxNode<N> cbNode = (CheckBoxNode)lastPathComponent;
+    boolean isChecked = this.isChecked(cbNode);
+    this.checkNodeRecursively(cbNode, !(isChecked));
+    if (isChecked) {
+      this.uncheckParents(cbNode);
+    }
+    this.repaint();
+  }
+
+  public void checkNodeRecursively(CheckBoxNode<N> checkBoxNode, boolean check) {
+    this.checkNode(checkBoxNode, check);
+    int childCount = checkBoxNode.getChildCount();
+    for(int i = 0 ; i < childCount ; i++ ) {
+      this.checkNodeRecursively((CheckBoxNode<N>)checkBoxNode.getChildAt(i), check);
+    }
+  }
+
+  public boolean isChecked(CheckBoxNode<N> cbNode) {
+    return CheckBoxTree.this.mySelectedItems.contains(cbNode.getData());
+  }
+
+  public void uncheckParents(CheckBoxNode<N> cbNode) {
+    CheckBoxNode<N> parent = (CheckBoxNode<N>)cbNode.getParent();
+    if (parent == null) {
+      return;
+    }
+    this.checkNode(parent, false);
+    this.uncheckParents(parent);
+  }
+
+  private void checkNode(CheckBoxNode<N> checkBoxNode, boolean check) {
+    if (check) {
+      CheckBoxTree.this.mySelectedItems.add(checkBoxNode.getData());
+    } else
+    {
+      CheckBoxTree.this.mySelectedItems.remove(checkBoxNode.getData());
+    }
+    checkBoxNode.setChecked(check);
   }
 
   public Set<N> getSelectedItems() {
