@@ -47,8 +47,8 @@
     <option name="myVersion" value="124" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="C:/MPS-beta1" vcs="svn" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="C:/MPS-beta1" vcs="svn" />
     <mapping directory="$PROJECT_DIR$" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/TLBase_sandbox" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/test/inputLang" vcs="svn" />
