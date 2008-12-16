@@ -21,19 +21,44 @@ import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.misc.hash.HashMap;
+import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.structure.testconfigurations.ModuleTestConfiguration;
+import jetbrains.mps.generator.*;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.logging.Logger;
+
+import java.util.*;
 
 public class MPSEditorWarningsManager implements ProjectComponent {
+  public static final Logger LOG = Logger.getLogger(MPSEditorWarningsManager.class);
+
   private FileEditorManager myFileEditorManager;
+  private ClassLoaderManager myClassLoaderManager;
+  private ReloadListener myReloadListener = new MyReloadListener();
+  private Project myProject;
 
   private MyFileEditorManagerListener myFileEditorManagerListener = new MyFileEditorManagerListener();
+  private Map<MPSFileNodeEditor, Set<WarningPanel>> myWarnings = new WeakHashMap<MPSFileNodeEditor, Set<WarningPanel>>();
 
-  public MPSEditorWarningsManager(FileEditorManager fileEditorManager) {
+  public MPSEditorWarningsManager(Project project, FileEditorManager fileEditorManager, ClassLoaderManager classLoaderManager) {
+    myProject = project;
     myFileEditorManager = fileEditorManager;
+    myClassLoaderManager = classLoaderManager;
   }
 
   public void projectOpened() {
@@ -49,26 +74,94 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   public void initComponent() {
+    myClassLoaderManager.addReloadHandler(myReloadListener);
 
   }
 
   public void disposeComponent() {
-
+    myClassLoaderManager.removeReloadHandler(myReloadListener);
   }
 
-  private void addWarnings(final MPSFileNodeEditor editor) {
+  private void updateWarnings(final MPSFileNodeEditor editor) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        if (myWarnings.containsKey(editor)) {
+          for (WarningPanel panel : myWarnings.get(editor)) {
+            myFileEditorManager.removeTopComponent(editor, panel);
+          }
+          myWarnings.remove(editor);
+        }
+
         SModelDescriptor model = editor.getFile().getNode().getModel().getModelDescriptor();
         if (model.isTransient()) {
-          myFileEditorManager.addTopComponent(editor, new WarningPanel("Warning: node is in transient model. Your changes won't be saved."));
+          addWarningPanel(editor, "Warning: node is in transient model. Your changes won't be saved.");
         }
 
         if (model.getModule().isPackaged()) {
-          myFileEditorManager.addTopComponent(editor, new WarningPanel("Warning: node is in packaged model. Your changes won't be saved"));
+          addWarningPanel(editor, "Warning: node is in packaged model. Your changes won't be saved");
+        }
+
+
+        final Set<Language> outdatedLanguages = new HashSet<Language>();
+        for (Language l : model.getSModel().getLanguages(GlobalScope.getInstance())) {
+          if (l.getEditorModelDescriptor() != null && ModelGenerationStatusManager.getInstance().generationRequired(l.getEditorModelDescriptor())) {
+            outdatedLanguages.add(l);
+          }
+        }
+        if (!outdatedLanguages.isEmpty()) {
+          addWarningPanel(editor,
+            "Warning: one or more of the used languges requires generation",
+            "Generate",
+            new Runnable() {
+              public void run() {
+                final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+                final List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+                ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    for (Language l : outdatedLanguages) {
+                      ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
+                      languageConfig.setModuleRef(l.getModuleReference());
+                      languageConfig.setName("tmp");
+                      try {
+                        models.addAll(languageConfig.getGenParams(mpsProject, false).getModels());
+                      } catch (IllegalGeneratorConfigurationException e) {
+                        LOG.error(e);
+                      }
+                    }
+                  }
+                });
+
+                myProject.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(
+                  editor.getNodeEditor().getOperationContext(),
+                  models,
+                  IGenerationType.FILES
+                );
+              }
+            });
         }
       }
     });
+  }
+
+  private void updateAllWarnings() {
+    for (FileEditor editor : myFileEditorManager.getAllEditors()) {
+      if (editor instanceof MPSFileNodeEditor) {
+        updateWarnings((MPSFileNodeEditor) editor);
+      }
+    }
+  }
+
+  private void addWarningPanel(MPSFileNodeEditor editor, String text) {
+    addWarningPanel(editor, text, null, null);
+  }
+
+  private void addWarningPanel(MPSFileNodeEditor editor, String text, String linkText, Runnable handler) {
+    if (!myWarnings.containsKey(editor)) {
+      myWarnings.put(editor, new HashSet<WarningPanel>());
+    }
+    WarningPanel panel = new WarningPanel(text, linkText, handler);
+    myFileEditorManager.addTopComponent(editor, panel);
+    myWarnings.get(editor).add(panel);
   }
 
   private class MyFileEditorManagerListener implements FileEditorManagerListener {
@@ -76,7 +169,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
       if (file instanceof MPSNodeVirtualFile) {
         for (FileEditor fe : myFileEditorManager.getEditors(file)) {
           if (fe instanceof MPSFileNodeEditor) {
-            addWarnings((MPSFileNodeEditor) fe);
+            updateWarnings((MPSFileNodeEditor) fe);
           }
         }
       }
@@ -86,6 +179,19 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     }
 
     public void selectionChanged(FileEditorManagerEvent event) {
+      updateAllWarnings();
     }
+  }
+
+  private class MyReloadListener extends ReloadAdapter {
+    @Override
+    public void onAfterReload() {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          updateAllWarnings();
+        }
+      });
+    }
+
   }
 }

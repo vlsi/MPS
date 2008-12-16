@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-public class IllegalGeneratorConfigurationException extends Exception {
+public class IllegalGeneratorConfigurationException extends RuntimeException {
   public IllegalGeneratorConfigurationException(String message) {
     super(message);
   }
