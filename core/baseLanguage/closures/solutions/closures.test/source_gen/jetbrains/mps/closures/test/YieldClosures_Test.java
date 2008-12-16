@@ -13,6 +13,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import junit.framework.Assert;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import java.util.NoSuchElementException;
 
 public class YieldClosures_Test extends ClosuresBase_Test {
 
@@ -1540,6 +1542,65 @@ __switch__:
       ListSequence.fromList(res).addElement(k);
     }
     Assert.assertEquals(exp, res);
+  }
+
+  @Test()
+  public void test_yieldNext() throws Exception {
+    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure <Integer>() {
+
+      public Iterable<Integer> iterable() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 3;
+                      this.yield(42);
+                      return true;
+                    case 3:
+                      this.__CP__ = 1;
+                      this.yield(24);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    Iterator<Integer> it = test.iterator();
+    Assert.assertTrue(it.hasNext());
+    Assert.assertSame(42, it.next());
+    //  don't call hasNext, must still yield result
+    Assert.assertSame(24, it.next());
+    try {
+      it.next();
+      Assert.assertTrue(false);
+    } catch (NoSuchElementException e) {
+      //  ok
+    }
+    Assert.assertFalse(it.hasNext());
   }
 
   private void assertEquals(List<Iterable<Integer>> exp, List<Iterable<Integer>> res) {

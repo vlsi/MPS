@@ -25,37 +25,61 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
 
     private T yielded;
 
-    private int hasNext = -1;
+    private State state = State.UNKNOWN;
 
-//    private DelayedException delayedEx;
+    private DelayedException delayedEx;
 
     public boolean hasNext() {
-        if (this.hasNext < 0) {
-            this.hasNext = (this.moveToNext() ? 1 : 0);
+        if (state == State.UNKNOWN) {
+        	try {
+        		this.state = (this.moveToNext() ? State.HAS_NEXT : State.AT_END);
+        	}
+        	catch (DelayedException ex) {
+        		this.state = State.AT_END;
+        		throw ex;
+        	}
         }
-//        if (delayedEx != null) {
-//            DelayedException tmp = this.delayedEx;
-//            this.delayedEx = null;
-//            throw tmp;
-//        }
-        return this.hasNext == 1;
+        if (delayedEx != null) {
+            DelayedException tmp = this.delayedEx;
+            this.delayedEx = null;
+            throw tmp;
+        }
+        return state == State.HAS_NEXT;
     }
 
     public T next() {
-        if (this.hasNext != 1) {
-            throw new NoSuchElementException();
-        }
-        T tmp = this.yielded;
-        this.yielded = null;
-        this.hasNext = -1;
-//        try {
-//            this.hasNext = (this.moveToNext() ? 1 : 0);
-//        }
-//        catch (DelayedException ex) {
-//            this.delayedEx = ex;
-//            this.hasNext = 0;
-//        }
-        return tmp;
+    	T res = this.yielded;
+    	this.yielded = null;
+    	switch (state) {
+		case AT_END:
+			throw new NoSuchElementException();
+			
+		case UNKNOWN:
+			try {
+				if (this.moveToNext()) {
+					res = this.yielded;
+					this.yielded = null;
+		        	this.state = State.UNKNOWN;
+				}
+				else {
+					this.state = State.AT_END;
+					throw new NoSuchElementException();
+				}
+			}
+			catch (DelayedException ex) {
+				this.delayedEx = ex;
+				this.state = State.AT_END;
+			}
+			break;
+			
+		case HAS_NEXT:
+			break;
+			
+		default:
+			break;
+		}
+    	this.state = State.UNKNOWN;
+        return res;
     }
 
     public void remove() {
@@ -66,5 +90,11 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
 
     protected void yield(T t) {
         this.yielded = t;
+    }
+    
+    private enum State {
+    	HAS_NEXT,
+    	AT_END,
+    	UNKNOWN;
     }
 }
