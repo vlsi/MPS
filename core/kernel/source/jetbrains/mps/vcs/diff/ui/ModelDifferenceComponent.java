@@ -16,6 +16,11 @@
 package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -31,13 +36,15 @@ import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.MPSProjectHolder;
 
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
+import javax.swing.*;
 import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
+import java.awt.event.ActionEvent;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -45,30 +52,7 @@ import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 
 class ModelDifferenceComponent extends JPanel {
-  private MPSTree myModelTree = new MPSTree() {
-    protected MPSTreeNode rebuild() {
-      if (myNewModel == null) {
-        return new TextTreeNode("No Model To Display");
-      } else {
-        // todo where to get context?
-        return new MySModelTreeNode(myNewModel, "", new StandaloneMPSContext() {
-          @Deprecated
-          public MPSProject getMPSProject() {
-            return null;
-          }
-
-          public IModule getModule() {
-            return null;
-          }
-
-          @NotNull
-          public IScope getScope() {
-            return GlobalScope.getInstance();
-          }
-        });
-      }
-    }
-  };
+  private MPSTree myModelTree = new MyMPSTree();
 
   private MPSTree myChangesTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
@@ -84,6 +68,7 @@ class ModelDifferenceComponent extends JPanel {
   private Set<SNodeId> myAddedNodes = new HashSet<SNodeId>();
   private SModel myNewModel;
   private List<Change> myChanges;
+  private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
 
   public ModelDifferenceComponent() {
     setLayout(new BorderLayout());
@@ -243,6 +228,38 @@ class ModelDifferenceComponent extends JPanel {
     }
   }
 
+  private void openCurrentNode() {
+    MPSTreeNode currentNode = myModelTree.getCurrentNode();
+    if (!(currentNode instanceof SNodeTreeNode)){
+      return;
+    }
+    SNodeTreeNode snodeNode = (SNodeTreeNode) currentNode;
+    final SNode node = snodeNode.getSNode();
+
+    Runnable openAction = ModelAccess.instance().runReadAction(new Computable<Runnable>() {
+      public Runnable compute() {
+        List<SModelDescriptor> descriptors = SModelRepository.getInstance().getModelDescriptorsByModelName(node.getModel().getLongName());
+        for (SModelDescriptor d : descriptors) {
+          final SNode targetNode = d.getSModel().getNodeById(node.getId());
+          if (targetNode != null) {
+            Project[] openedProjects = ProjectManager.getInstance().getOpenProjects();
+            if (openedProjects.length == 0) break;
+            final Project firstOpenedProject = openedProjects[0];
+            return new Runnable() {
+              public void run() {
+                firstOpenedProject.getComponent(MPSProjectHolder.class).getMPSProject().getComponentSafe(MPSEditorOpener.class).openNode(targetNode, true);
+              }
+            };
+          }
+        }
+        return null;
+      }
+    });
+    if (openAction != null) {
+      openAction.run();
+    }
+  }
+
   private class MySModelTreeNode extends SModelTreeNode {
     private SModel myModel;
 
@@ -325,6 +342,42 @@ class ModelDifferenceComponent extends JPanel {
 
     public boolean isLeaf() {
       return true;
+    }
+  }
+
+  private class MyMPSTree extends MPSTree {
+
+    private MyMPSTree() {
+      getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0), COMMAND_OPEN_NODE_IN_PROJECT);
+
+      getActionMap().put(COMMAND_OPEN_NODE_IN_PROJECT, new AbstractAction() {
+        public void actionPerformed(ActionEvent e) {
+          openCurrentNode();
+        }
+      });
+    }
+
+    protected MPSTreeNode rebuild() {
+      if (myNewModel == null) {
+        return new TextTreeNode("No Model To Display");
+      } else {
+        // todo where to get context?
+        return new MySModelTreeNode(myNewModel, "", new StandaloneMPSContext() {
+          @Deprecated
+          public MPSProject getMPSProject() {
+            return null;
+          }
+
+          public IModule getModule() {
+            return null;
+          }
+
+          @NotNull
+          public IScope getScope() {
+            return GlobalScope.getInstance();
+          }
+        });
+      }
     }
   }
 }
