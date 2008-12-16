@@ -34,6 +34,10 @@ public class NullSubstituteInfo implements NodeSubstituteInfo {
     return new ArrayList<INodeSubstituteAction>();
   }
 
+  public List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, SNode contextNode) {
+    return new ArrayList<INodeSubstituteAction>();
+  }
+
   public void invalidateActions() {
 
   }

@@ -56,6 +56,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private Point myPatternEditorLocation = new Point(10, 10);
   private Dimension myPatternEditorSize = new Dimension(50, 50);
 
+  private SNode myContextNode;
+  private boolean myIsSmart = false;
   private EditorComponent myEditorComponent;
   private NodeSubstitutePatternEditor myPatternEditor;
   private NodeSubstituteInfo myNodeSubstituteInfo;
@@ -74,7 +76,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (myPopupWindow == null) {
       myPopupWindow = new PopupWindow(getEditorWindow());
     }
-    return myPopupWindow;                                       
+    return myPopupWindow;
   }
 
   private Window getEditorWindow() {
@@ -105,6 +107,14 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     myPatternEditor = patternEditor;
   }
 
+  public void setContextNode(SNode contextNode) {
+    myContextNode = contextNode;
+  }
+
+  public void setIsSmart(boolean isSmart) {
+    myIsSmart = isSmart;
+  }
+
   protected NodeSubstitutePatternEditor getPatternEditor() {
     if (myPatternEditor == null) {
       myPatternEditor = new NodeSubstitutePatternEditor();
@@ -120,7 +130,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (myChooserActivated != b) {
       if (b) {
         myEditorComponent.pushKeyboardHandler(this);
-        if (!(IdeMain.isTestMode())) {        
+        if (!(IdeMain.isTestMode())) {
           getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
           myNodeSubstituteInfo.invalidateActions();
           rebuildMenuEntries();
@@ -133,7 +143,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         if (!(IdeMain.isTestMode())) {
           getPopupWindow().setVisible(false);
           getPatternEditor().done();
-          getPopupWindow().setRelativeCell(null);          
+          getPopupWindow().setRelativeCell(null);
         }
         myPopupActivated = false;
         myEditorComponent.popKeyboardHandler();
@@ -142,15 +152,23 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     myChooserActivated = b;
   }
 
+  private List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
+    if (myIsSmart) {
+      return myNodeSubstituteInfo.getMatchingActions(pattern, strictMatching);
+    } else {
+      return myNodeSubstituteInfo.getSmartMatchingActions(pattern, strictMatching, myContextNode);
+    }
+  }
+
   private void rebuildMenuEntries() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myMenuEmpty = false;
         final String pattern = getPatternEditor().getPattern();
 
-        List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern, false);
+        List<INodeSubstituteAction> matchingActions = getMatchingActions(pattern, false);
         if (matchingActions.isEmpty()) {
-          matchingActions = myNodeSubstituteInfo.getMatchingActions(IntelligentInputUtil.trimLeft(pattern), false);
+          matchingActions = getMatchingActions(IntelligentInputUtil.trimLeft(pattern), false);
         }
 
         try {
@@ -344,7 +362,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private int getPageSize() {
-    return myPopupWindow.myList.getLastVisibleIndex() - myPopupWindow.myList.getFirstVisibleIndex(); 
+    return myPopupWindow.myList.getLastVisibleIndex() - myPopupWindow.myList.getFirstVisibleIndex();
   }
 
   private void doSubstituteSelection() {
@@ -395,7 +413,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     String prefix = pattern.substring(0, pattern.length() - 1);
     if (myNodeSubstituteInfo.hasExactlyNActions(pattern, false, 0) &&
       myNodeSubstituteInfo.hasExactlyNActions(prefix, true, 1)) {
-      INodeSubstituteAction action = myNodeSubstituteInfo.getMatchingActions(prefix, true).get(0);
+      INodeSubstituteAction action = getMatchingActions(prefix, true).get(0);
       final SNode node = action.substitute(myEditorComponent.getEditorContext(), prefix);
 
       myEditorComponent.flushEvents();
@@ -545,8 +563,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       scrollToSelection();
 
       setSize(
-              Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 21),
-              Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height + getVerticalScrollerHeight()));
+        Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 21),
+        Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height + getVerticalScrollerHeight()));
 
       if (getPosition() == PopupWindowPosition.TOP) {
         newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myRelativeCell.getHeight());
@@ -608,10 +626,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     public Component getListCellRendererComponent(final JList list, final Object value, int index, final boolean isSelected, boolean cellHasFocus) {
       ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            setupThis(list, value, isSelected);
-          }
-        });
+        public void run() {
+          setupThis(list, value, isSelected);
+        }
+      });
 
       return this;
     }

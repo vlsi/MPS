@@ -23,6 +23,8 @@ import java.util.List;
 public interface NodeSubstituteInfo {
   List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching);
 
+  List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, SNode contextNode);
+
   void invalidateActions();
 
   void setOriginalNode(SNode node);

@@ -37,6 +37,7 @@ import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
+import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
 import jetbrains.mps.nodeEditor.cellActions.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
@@ -286,6 +287,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(CellActionType.LEFT_TRANSFORM, new CellAction_SideTransform(CellSide.LEFT));
 
     myActionMap.put(CellActionType.COMPLETE, new NodeEditorActions.Complete());
+    myActionMap.put(CellActionType.COMPLETE_SMART, new CompleteSmart());
 
     myActionMap.put(CellActionType.SHOW_MESSAGE, new ShowMessage());
 
@@ -1069,6 +1071,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && ctrlDown(keyEvent)) {
       return CellActionType.COMPLETE;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && ctrlShiftDown(keyEvent)) {
+      return CellActionType.COMPLETE_SMART;
     }
     if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
       return CellActionType.SHOW_MESSAGE;
@@ -1865,8 +1870,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
+    return activateNodeSubstituteChooser(editorCell, resetPattern, false);
+  }
+
+  public boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern, boolean isSmart) {
     if (myNodeSubstituteChooser.isVisible()) {
       return true;
+      //todo: rebuild menu if smartness changed
     }
 
     // try to obtain substitute info
@@ -1875,10 +1885,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       substituteInfo = editorCell.getSubstituteInfo();
     }
 
-    return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern);
+    return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern, isSmart);
   }
 
   public boolean activateNodeSubstituteChooser(EditorCell editorCell, NodeSubstituteInfo substituteInfo, boolean resetPattern) {
+    return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern, false);
+  }
+
+  public boolean activateNodeSubstituteChooser(EditorCell editorCell, NodeSubstituteInfo substituteInfo, boolean resetPattern, boolean isSmart) {
     if (substituteInfo == null) {
       return false;
     }
@@ -1894,9 +1908,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
         pattern.equals(patternEditor.getText()); // caret at the end
 
+    SNode contextNode = editorCell.getSNode();
+
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
     if (trySubstituteNow) {
-      List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, false);
+      List<INodeSubstituteAction> matchingActions = isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, contextNode) :
+        substituteInfo.getMatchingActions(pattern, false);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         matchingActions.get(0).substitute(this.getEditorContext(), pattern);
         return true;
@@ -1906,6 +1923,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myNodeSubstituteChooser.setNodeSubstituteInfo(substituteInfo);
     myNodeSubstituteChooser.setPatternEditor(patternEditor);
     myNodeSubstituteChooser.setLocationRelative(editorCell);
+    myNodeSubstituteChooser.setIsSmart(isSmart);
+    myNodeSubstituteChooser.setContextNode(contextNode);
     myNodeSubstituteChooser.setVisible(true);
     return true;
   }

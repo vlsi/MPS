@@ -456,6 +456,18 @@ public class NodeEditorActions {
     }
   }
 
+  public static class CompleteSmart extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      EditorCell selection = context.getSelectedCell();
+      return selection != null && selection.getSubstituteInfo() != null;
+    }
+
+    public void execute(EditorContext context) {
+      EditorCell selection = context.getSelectedCell();
+      context.getNodeEditorComponent().activateNodeSubstituteChooser(selection, false, true);
+    }
+  }
+
   public static class ShowMessage extends EditorCellAction {
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().showMessageTooltip();

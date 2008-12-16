@@ -83,6 +83,10 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return getMatchingActions(pattern, strictMatching).size() == n;
   }
 
+  public List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, SNode contextNode) {
+    return getMatchingActions(pattern, strictMatching); //todo
+  }
+
   public List<INodeSubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
     return ModelAccess.instance().runReadAction(new Computable<List<INodeSubstituteAction>>() {
       public List<INodeSubstituteAction> compute() {

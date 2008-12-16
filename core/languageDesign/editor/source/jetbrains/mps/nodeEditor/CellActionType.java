@@ -54,6 +54,7 @@ public enum CellActionType {
   LEFT_TRANSFORM,
 
   COMPLETE,
+  COMPLETE_SMART,
 
   FOLD,
   UNFOLD,
