@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
 
-  public ModelStep(Project project, BuildGenerator buildGenerator, IErrorHandler handler) {
+  public ModelStep(Project project, AbstractBuildGenerator buildGenerator, IErrorHandler handler) {
     super(project, buildGenerator, handler);
   }
 

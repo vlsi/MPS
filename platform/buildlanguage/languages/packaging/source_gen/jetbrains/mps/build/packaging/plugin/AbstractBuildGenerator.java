@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
-public abstract class AbstractBuildGenerator implements BuildGenerator {
+public abstract class AbstractBuildGenerator {
 
   private String myProjectName;
   private String mySolutionName;
@@ -27,6 +27,8 @@ public abstract class AbstractBuildGenerator implements BuildGenerator {
 
   public AbstractBuildGenerator() {
   }
+
+  public abstract void generate();
 
   public void setProjectName(String projectName) {
     this.myProjectName = projectName;

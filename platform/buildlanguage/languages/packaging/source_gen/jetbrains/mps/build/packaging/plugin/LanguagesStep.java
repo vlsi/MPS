@@ -29,12 +29,12 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 public class LanguagesStep extends AbstractStep {
 
   private final Project myProject;
-  private final BuildGenerator myGenerator;
+  private final AbstractBuildGenerator myGenerator;
   private CheckBoxTree myCheckTree;
   private final MPSProject myMpsProject;
   private final IErrorHandler myHandler;
 
-  public LanguagesStep(Project project, BuildGenerator generator, IErrorHandler handler) {
+  public LanguagesStep(Project project, AbstractBuildGenerator generator, IErrorHandler handler) {
     this.myGenerator = generator;
     this.myProject = project;
     this.myMpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();

@@ -24,7 +24,7 @@ import javax.swing.DefaultComboBoxModel;
 
 public abstract class TwoOptionsStep <M> extends AbstractStep {
 
-  protected final BuildGenerator myGenerator;
+  protected final AbstractBuildGenerator myGenerator;
   protected final Project myProject;
   private JTextField myTextField;
   private Color myDefaultTextFieldColor;
@@ -33,10 +33,10 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
   private IErrorHandler myHandler;
   protected M[] myVariantsArray;
 
-  public TwoOptionsStep(Project project, BuildGenerator buildGenerator, IErrorHandler handler) {
-    this.myProject = project;
+  public TwoOptionsStep(Project project, AbstractBuildGenerator buildGenerator, IErrorHandler handler) {
     this.myGenerator = buildGenerator;
     this.myHandler = handler;
+    this.myProject = project;
   }
 
   protected abstract M[] getVariants();

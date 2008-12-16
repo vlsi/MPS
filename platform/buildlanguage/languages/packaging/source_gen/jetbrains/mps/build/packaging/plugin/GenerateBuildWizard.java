@@ -12,9 +12,9 @@ public class GenerateBuildWizard extends AbstractWizard {
 
   private final String myTitle;
   private final Project myProject;
-  private final BuildGenerator myGenerator;
+  private final AbstractBuildGenerator myGenerator;
 
-  public GenerateBuildWizard(String title, Project project, BuildGenerator generator) {
+  public GenerateBuildWizard(String title, Project project, AbstractBuildGenerator generator) {
     super(title, project);
     this.myTitle = title;
     this.myProject = project;

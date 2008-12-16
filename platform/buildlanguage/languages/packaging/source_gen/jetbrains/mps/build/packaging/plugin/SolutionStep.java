@@ -17,7 +17,7 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
 
   private final MPSProject myMpsProject;
 
-  public SolutionStep(Project project, BuildGenerator generator, IErrorHandler handler) {
+  public SolutionStep(Project project, AbstractBuildGenerator generator, IErrorHandler handler) {
     super(project, generator, handler);
     this.myMpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
