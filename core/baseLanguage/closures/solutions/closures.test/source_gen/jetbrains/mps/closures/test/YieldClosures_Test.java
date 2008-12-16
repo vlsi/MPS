@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.NoSuchElementException;
+import jetbrains.mps.baseLanguage.closures.runtime.DelayedException;
 
 public class YieldClosures_Test extends ClosuresBase_Test {
 
@@ -1601,6 +1602,90 @@ __switch__:
       //  ok
     }
     Assert.assertFalse(it.hasNext());
+  }
+
+  @Test()
+  public void test_delayedException() throws Exception {
+    Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure <Integer>() {
+
+      public Iterable<Integer> iterable() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 3:
+                      if (true) {
+                        this.__CP__ = 4;
+                        break;
+                      }
+                      this.__CP__ = 5;
+                      break;
+                    case 2:
+                      this.__CP__ = 3;
+                      this.yield(1);
+                      return true;
+                    case 5:
+                      this.__CP__ = 1;
+                      this.yield(-1);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      throw new DelayedException();
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    Iterator<Integer> it = seq.iterator();
+    Assert.assertSame(1, it.next());
+    try {
+      it.next();
+      Assert.assertTrue(false);
+    } catch (NoSuchElementException e) {
+      //  ok
+    }
+    try {
+      Assert.assertFalse(it.hasNext());
+      Assert.assertTrue(false);
+    } catch (DelayedException e) {
+      //  ok
+    }
+    it = seq.iterator();
+    Assert.assertSame(1, it.next());
+    try {
+      Assert.assertFalse(it.hasNext());
+      Assert.assertTrue(false);
+    } catch (DelayedException e) {
+      //  ok
+    }
+    try {
+      it.next();
+      Assert.assertTrue(false);
+    } catch (NoSuchElementException e) {
+      //  ok
+    }
   }
 
   private void assertEquals(List<Iterable<Integer>> exp, List<Iterable<Integer>> res) {

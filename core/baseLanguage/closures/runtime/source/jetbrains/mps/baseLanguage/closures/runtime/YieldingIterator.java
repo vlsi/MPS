@@ -48,20 +48,13 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
     }
 
     public T next() {
-    	T res = this.yielded;
-    	this.yielded = null;
     	switch (state) {
 		case AT_END:
 			throw new NoSuchElementException();
 			
 		case UNKNOWN:
 			try {
-				if (this.moveToNext()) {
-					res = this.yielded;
-					this.yielded = null;
-		        	this.state = State.UNKNOWN;
-				}
-				else {
+				if (!this.moveToNext()) {
 					this.state = State.AT_END;
 					throw new NoSuchElementException();
 				}
@@ -69,17 +62,19 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
 			catch (DelayedException ex) {
 				this.delayedEx = ex;
 				this.state = State.AT_END;
+				throw new NoSuchElementException ();
 			}
-			break;
+			// fall through
 			
 		case HAS_NEXT:
-			break;
+			T res = this.yielded;
+			this.yielded = null;
+			this.state = State.UNKNOWN;
+			return res;
 			
 		default:
-			break;
+			throw new IllegalStateException ();
 		}
-    	this.state = State.UNKNOWN;
-        return res;
     }
 
     public void remove() {
