@@ -1058,7 +1058,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1176906872313">
         <property name="text" value=")" />
-        <link role="styleClass" targetNodeId="15.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="15.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
@@ -1513,16 +1513,18 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1205753275877">
         <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
-        <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
+        <link role="styleClass" targetNodeId="1215707981329" resolveInfo="Operation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1205753281209">
         <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="15.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1205753284619">
         <link role="relationDeclaration" targetNodeId="1.1205753261887" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1205753287338">
         <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="15.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>

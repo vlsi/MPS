@@ -116,11 +116,12 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1205753275877(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12057532812091205753281209(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1205753281209");
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_length1205753284619(EditorCell editorCell, SNode node, EditorContext context) {
@@ -128,6 +129,7 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12057532873381205753287338(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1205753287338");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_conceptProperty_alias_1205753275877(EditorCell_Label editorCell, SNode node, EditorContext context) {
