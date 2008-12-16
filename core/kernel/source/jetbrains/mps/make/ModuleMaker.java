@@ -43,6 +43,8 @@ import com.intellij.openapi.progress.ProgressIndicator;
 public class ModuleMaker {
   private static Logger LOG = Logger.getLogger(ModuleMaker.class);
 
+  private static int MAX_ERRORS = 100;
+
   private Map<String, IModule> myContainingModules = new HashMap<String, IModule>();
   private Map<IModule, ModuleSources> myModuleSources = new HashMap<IModule, ModuleSources>();
 
@@ -156,6 +158,7 @@ public class ModuleMaker {
     compiler.compile();
 
     int errorCount = 0;
+    int outputtedErrors = 0;
 
     for (CompilationResult cr : compiler.getCompilationResults()) {
       Set<String> classesWithErrors = new HashSet<String>();
@@ -173,7 +176,10 @@ public class ModuleMaker {
           if (cp.isWarning()) {
             LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
           } else {
-            LOG.error(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
+            if (outputtedErrors < MAX_ERRORS) {
+              outputtedErrors++;
+              LOG.error(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
+            }
           }
         }
         
