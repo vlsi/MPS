@@ -2633,6 +2633,21 @@
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_RemoveOperation" id="1215467676419" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229470992893">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" id="1229470998431">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229471001621">
+              <property name="value" value="_suffix" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229470993067">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1229470992894">
+                <link role="variableDeclaration" targetNodeId="1206550857193" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1229470993961">
+                <link role="property" targetNodeId="6.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206550857193">
         <property name="name" value="node" />

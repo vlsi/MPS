@@ -28,6 +28,7 @@ public class Properties {
     SPropertyOperations.set(node, "name", null);
     SPropertyOperations.set(node, "name", null);
     SPropertyOperations.set(node, "name", null);
+    SPropertyOperations.set(node, "name", SPropertyOperations.getString_def(node, "name", "") + "_suffix");
   }
 
   public void booleanProperty(SNode boolConst) {
