@@ -57,7 +57,7 @@ public class Properties {
     SPropertyOperations.set(node, "value", "" + 10);
     SPropertyOperations.set(node, "value", null);
     SPropertyOperations.set(node, "value", "" + (SPropertyOperations.getInteger(node, "value") + 10));
-    SPropertyOperations.set(node, "value", "" + (SPropertyOperations.getInteger(node, "value") + 10));
+    SPropertyOperations.set(node, "value", "" + (SPropertyOperations.getInteger(node, "value") - 10));
   }
 
   public void enumProperty_string(SNode link) {
