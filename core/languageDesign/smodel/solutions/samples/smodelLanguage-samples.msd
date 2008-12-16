@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="smodelLanguage-samples" uuid="8ff25029-6ea8-4612-9a0a-439f73131035" extenallyVisible="true" compileInMPS="false">
+<solution name="jetbrains.mps.samples.smodelLanguage-samples" uuid="8ff25029-6ea8-4612-9a0a-439f73131035" extenallyVisible="true" compileInMPS="false">
   <models>
-    <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <classPath />
   <sourcePath />
