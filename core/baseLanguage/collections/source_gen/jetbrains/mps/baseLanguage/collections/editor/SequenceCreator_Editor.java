@@ -248,7 +248,7 @@ public class SequenceCreator_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    SequenceCreator_add_initializer.setCellActions(editorCell, node, context);
+    editorCell.addKeyMap(new SequenceCreator_add_initializer());
   }
 
   private static void setupBasic_refNode_initializer1224422543898(EditorCell editorCell, SNode node, EditorContext context) {
