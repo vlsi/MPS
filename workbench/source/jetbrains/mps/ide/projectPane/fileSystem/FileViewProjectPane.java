@@ -44,8 +44,8 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileNode;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.AbstractFileTreeNode;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePaneCopyProvider;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePanePasteProvider;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -72,9 +72,13 @@ import java.util.Collection;
 
 public abstract class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
   private static final Logger LOG = Logger.getLogger(FileViewProjectPane.class);
-  private ChangeListListener myChangeListListener;
+  private static final int DELAY = 10;
+
+  private final Project myProject;
   private final MessageBus myBus;
-  private MessageBusConnection myMessageBusConnection;
+  private final IdeDocumentHistory myIdeDocumentHistory;
+  private final ProjectView myProjectView;
+  private final FileEditorManager myEditorManager;
   private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
     @Override
     public void modelSaved(SModelDescriptor sm) {
@@ -84,17 +88,11 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     }
   };
 
-  @Override
-  public void addToolbarActions(DefaultActionGroup actionGroup) {
-    super.addToolbarActions(actionGroup);
-  }
-
-  private Project myProject;
-  private ProjectView myProjectView;
+  private ChangeListListener myChangeListListener;
+  private MessageBusConnection myMessageBusConnection;
   private FileStatusListener myFileStatusListener;
   private VirtualFileAdapter myFileListener;
   private Timer myTimer;
-  private static final int DELAY = 10;
   private VcsListener myDirectoryMappingListener = new VcsListener() {
     public void directoryMappingChanged() {
       rebuildTreeLater();
@@ -102,13 +100,20 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   };
   private VirtualFileManagerListener myVirtualFileManagerListener;
 
-  protected FileViewProjectPane(final Project project, final ProjectView projectView, final MessageBus bus) {
+  @Override
+  public void addToolbarActions(DefaultActionGroup actionGroup) {
+    super.addToolbarActions(actionGroup);
+  }
+
+  protected FileViewProjectPane(final Project project, final ProjectView projectView, final MessageBus bus, IdeDocumentHistory ideDocumentHistory, FileEditorManager fileEditorManager) {
     super(project);
 
     myProject = project;
     myProjectView = projectView;
     myBus = bus;
-
+    myIdeDocumentHistory = ideDocumentHistory;
+    myEditorManager = fileEditorManager;
+    
     myTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
         MPSTreeNode node;
@@ -247,14 +252,14 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   }
 
   public Object getData(String dataId) {
-    if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
+    if (PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName().equals(dataId)) {
       List<VirtualFile> files = new LinkedList<VirtualFile>();
       TreePath[] treePaths = getSelectionPaths();
       if (treePaths != null) {
         for (TreePath tp : treePaths) {
           Object lastPathComponent = tp.getLastPathComponent();
-          if (lastPathComponent instanceof FileNode) {
-            FileNode node = (FileNode) lastPathComponent;
+          if (lastPathComponent instanceof AbstractFileTreeNode) {
+            AbstractFileTreeNode node = (AbstractFileTreeNode) lastPathComponent;
             VirtualFile file = node.getFile();
             if (file.isValid()) {
               files.add(file);
@@ -263,33 +268,33 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         }
       }
       return files.toArray(new VirtualFile[files.size()]);
-    } else if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE.getName())) {
+    } else if (PlatformDataKeys.VIRTUAL_FILE.getName().equals(dataId)) {
       TreePath tp = getSelectedPath();
       if (tp == null) {
         return super.getData(dataId);
       }
       Object lastPathComponent = tp.getLastPathComponent();
-      if (lastPathComponent instanceof FileNode) {
-        FileNode node = (FileNode) lastPathComponent;
+      if (lastPathComponent instanceof AbstractFileTreeNode) {
+        AbstractFileTreeNode node = (AbstractFileTreeNode) lastPathComponent;
         VirtualFile file = node.getFile();
         if (file.isValid()) {
           return node.getFile();
         }
       }
-    } else if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) {
+    } else if (PlatformDataKeys.COPY_PROVIDER.getName().equals(dataId)) {
       return new FilePaneCopyProvider();
-    } else if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) {
+    } else if (PlatformDataKeys.PASTE_PROVIDER.getName().equals(dataId)) {
       return new FilePanePasteProvider();
-    } else if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) {
+    } else if (PlatformDataKeys.CUT_PROVIDER.getName().equals(dataId)) {
       return new FilePaneCopyProvider();
     }
     return super.getData(dataId);
   }
 
-  private void getFiles(FileNode node, Collection<VirtualFile> files) {
+  private void getFiles(AbstractFileTreeNode node, Collection<VirtualFile> files) {
     files.add(node.getFile());
     ((MPSTreeNode) node).init();
-    for (FileNode child : node.getChildren()) {
+    for (AbstractFileTreeNode child : node.getChildren()) {
       getFiles(child, files);
     }
   }
@@ -302,9 +307,8 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
 
     com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
       public void run() {
-        myProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
-        FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
-        editorManager.openFile(fileTreeNode.getFile(), true);
+        myIdeDocumentHistory.includeCurrentCommandAsNavigation();
+        myEditorManager.openFile(fileTreeNode.getFile(), true);
       }
     }, "navigate", "");
   }
@@ -333,8 +337,8 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
 
   @Nullable
   private MPSTreeNode getNode(MPSTreeNode rootTreeNode, VirtualFile file) {
-    if (rootTreeNode instanceof   FileNode) {
-      VirtualFile nodeFile = ((FileNode) rootTreeNode).getFile();
+    if (rootTreeNode instanceof AbstractFileTreeNode) {
+      VirtualFile nodeFile = ((AbstractFileTreeNode) rootTreeNode).getFile();
 
       if (nodeFile != null) {
         if (nodeFile.getUrl().equals(file.getUrl())) {

@@ -38,7 +38,6 @@ public class CompositeTreeNode extends MPSTreeNode {
     ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myProject);
     Set<String> roots = new LinkedHashSet<String>();
 
-//      collecting roots
     for (VcsDirectoryMapping m : manager.getDirectoryMappings()) {
       String dir = m.getDirectory();
       if (dir.equals("")) {
@@ -55,7 +54,6 @@ public class CompositeTreeNode extends MPSTreeNode {
       }
     }
 
-//      adding roots
     for (String dir : roots) {
       VirtualFile file = VFileSystem.getFile(dir);
       if (file != null) {

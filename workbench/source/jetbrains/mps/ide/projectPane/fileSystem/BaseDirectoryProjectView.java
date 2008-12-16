@@ -15,18 +15,13 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem;
 
-import com.intellij.ide.SelectInContext;
-import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.wm.ToolWindowId;
-import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.util.messages.MessageBus;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -36,7 +31,7 @@ public class BaseDirectoryProjectView extends FileViewProjectPane {
   public static final String TITLE = "File System";
 
   protected BaseDirectoryProjectView(final Project project, final ProjectView projectView, final MessageBus bus) {
-    super(project, projectView, bus);
+    super(project, projectView, bus, null, null);
   }
 
   protected MPSTreeNode createRoot(Project project) {

@@ -35,7 +35,7 @@ import java.awt.Frame;
 
 import org.jetbrains.annotations.NotNull;
 
-public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNode {
+public abstract class AbstractFileTreeNode extends MPSTreeNode {
   protected final VirtualFile myFile;
   protected VcsFileStatusProvider myProvider;
   protected Project myProject;
@@ -85,10 +85,10 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
     return myFile.getUrl();
   }
 
-  public Collection<? extends FileNode> getChildren() {
-    List<FileNode> children = new LinkedList<FileNode>();
+  public Collection<? extends AbstractFileTreeNode> getChildren() {
+    List<AbstractFileTreeNode> children = new LinkedList<AbstractFileTreeNode>();
       for (int i = 0; i < getChildCount(); i++){
-        children.add((FileNode) getChildAt(i));
+        children.add((AbstractFileTreeNode) getChildAt(i));
       }
     return children;
   }
