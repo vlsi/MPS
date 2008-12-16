@@ -230,14 +230,14 @@ class ModelDifferenceComponent extends JPanel {
 
   private void openCurrentNode() {
     MPSTreeNode currentNode = myModelTree.getCurrentNode();
-    if (!(currentNode instanceof SNodeTreeNode)){
+    if (!(currentNode instanceof SNodeTreeNode)) {
       return;
     }
     SNodeTreeNode snodeNode = (SNodeTreeNode) currentNode;
     final SNode node = snodeNode.getSNode();
 
-    Runnable openAction = ModelAccess.instance().runReadAction(new Computable<Runnable>() {
-      public Runnable compute() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
         List<SModelDescriptor> descriptors = SModelRepository.getInstance().getModelDescriptorsByModelName(node.getModel().getLongName());
         for (SModelDescriptor d : descriptors) {
           final SNode targetNode = d.getSModel().getNodeById(node.getId());
@@ -245,19 +245,12 @@ class ModelDifferenceComponent extends JPanel {
             Project[] openedProjects = ProjectManager.getInstance().getOpenProjects();
             if (openedProjects.length == 0) break;
             final Project firstOpenedProject = openedProjects[0];
-            return new Runnable() {
-              public void run() {
-                firstOpenedProject.getComponent(MPSProjectHolder.class).getMPSProject().getComponentSafe(MPSEditorOpener.class).openNode(targetNode, true);
-              }
-            };
+            firstOpenedProject.getComponent(MPSProjectHolder.class).getMPSProject().getComponentSafe(MPSEditorOpener.class).openNode(targetNode, true);
           }
         }
-        return null;
       }
     });
-    if (openAction != null) {
-      openAction.run();
-    }
+
   }
 
   private class MySModelTreeNode extends SModelTreeNode {
@@ -279,7 +272,6 @@ class ModelDifferenceComponent extends JPanel {
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
       return new MySNodeTreeNode(node, role, operationContext);
     }
-
 
     public SModel getSModel() {
       return myModel;
