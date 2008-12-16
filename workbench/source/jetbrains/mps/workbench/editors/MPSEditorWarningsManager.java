@@ -110,7 +110,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
         }
         if (!outdatedLanguages.isEmpty()) {
           addWarningPanel(editor,
-            "Warning: one or more of the used languges requires generation",
+            "Warning: one or more of the used languges require generation",
             "Generate",
             new Runnable() {
               public void run() {
