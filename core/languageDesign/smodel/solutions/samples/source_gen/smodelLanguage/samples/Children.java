@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
@@ -38,7 +37,7 @@ public class Children {
     for(SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
       SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
     }
-    for(SNode statement : Sequence.fromIterable(SLinkOperations.getTargets(statementList2, "statement", true))) {
+    for(SNode statement : ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true))) {
       SLinkOperations.addChild(statementList2, "statement", ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).first());
     }
   }
