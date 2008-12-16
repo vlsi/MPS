@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class NullSubstituteInfo implements NodeSubstituteInfo {
     return new ArrayList<INodeSubstituteAction>();
   }
 
-  public List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, SNode contextNode) {
+  public List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
     return new ArrayList<INodeSubstituteAction>();
   }
 

@@ -17,13 +17,14 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.util.List;
 
 public interface NodeSubstituteInfo {
   List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching);
 
-  List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, SNode contextNode);
+  List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell);
 
   void invalidateActions();
 

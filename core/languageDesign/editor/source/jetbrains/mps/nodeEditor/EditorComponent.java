@@ -1908,11 +1908,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
         pattern.equals(patternEditor.getText()); // caret at the end
 
-    SNode contextNode = editorCell.getSNode();
 
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
     if (trySubstituteNow) {
-      List<INodeSubstituteAction> matchingActions = isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, contextNode) :
+      List<INodeSubstituteAction> matchingActions = isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
         substituteInfo.getMatchingActions(pattern, false);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         matchingActions.get(0).substitute(this.getEditorContext(), pattern);
@@ -1924,7 +1923,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myNodeSubstituteChooser.setPatternEditor(patternEditor);
     myNodeSubstituteChooser.setLocationRelative(editorCell);
     myNodeSubstituteChooser.setIsSmart(isSmart);
-    myNodeSubstituteChooser.setContextNode(contextNode);
+    myNodeSubstituteChooser.setContextCell(editorCell);
     myNodeSubstituteChooser.setVisible(true);
     return true;
   }

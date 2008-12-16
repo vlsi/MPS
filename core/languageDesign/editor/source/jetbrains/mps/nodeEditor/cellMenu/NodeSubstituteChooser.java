@@ -25,10 +25,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.TestMain;
-import jetbrains.mps.MPSMainImpl;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.project.MPSProjects;
 
 import javax.swing.*;
 import javax.swing.event.ListDataListener;
@@ -56,7 +53,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private Point myPatternEditorLocation = new Point(10, 10);
   private Dimension myPatternEditorSize = new Dimension(50, 50);
 
-  private SNode myContextNode;
+  private EditorCell myContextCell;
   private boolean myIsSmart = false;
   private EditorComponent myEditorComponent;
   private NodeSubstitutePatternEditor myPatternEditor;
@@ -107,8 +104,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     myPatternEditor = patternEditor;
   }
 
-  public void setContextNode(SNode contextNode) {
-    myContextNode = contextNode;
+  public void setContextCell(EditorCell contextCell) {
+    myContextCell = contextCell;
   }
 
   public void setIsSmart(boolean isSmart) {
@@ -156,7 +153,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (myIsSmart) {
       return myNodeSubstituteInfo.getMatchingActions(pattern, strictMatching);
     } else {
-      return myNodeSubstituteInfo.getSmartMatchingActions(pattern, strictMatching, myContextNode);
+      return myNodeSubstituteInfo.getSmartMatchingActions(pattern, strictMatching, myContextCell);
     }
   }
 
