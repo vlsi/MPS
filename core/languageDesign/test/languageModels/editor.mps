@@ -899,6 +899,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" id="1229195083676" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229195046654">
         <property name="text" value="&gt;" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1229431957077">
+          <property name="value" value="0.0" />
+        </node>
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1229277791864">
@@ -913,6 +916,39 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1229277846684">
           <link role="relationDeclaration" targetNodeId="1.1229194968595" resolveInfo="cellId" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1229432159652">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1229432159653">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229432173813">
+          <property name="text" value="position:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Alternation" id="1229432434153">
+          <property name="vertical" value="true" />
+          <node role="ifTrueCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229432473118">
+            <property name="text" value="last" />
+          </node>
+          <node role="alternationCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1229432434155">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229432434156">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229432451221">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229432452223">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1229432451222" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1229432456913">
+                    <link role="property" targetNodeId="1.1229432188737" resolveInfo="isLast" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty" id="1229432500275">
+            <link role="relationDeclaration" targetNodeId="1.1229194968596" resolveInfo="caretPosition" />
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1229432159655">
+          <property name="flag" value="false" />
         </node>
       </node>
     </node>

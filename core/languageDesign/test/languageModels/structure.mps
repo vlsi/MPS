@@ -652,6 +652,10 @@
       <property name="name" value="caretPosition" />
       <link role="dataType" targetNodeId="5.1082983657062" resolveInfo="integer" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1229432188737">
+      <property name="name" value="isLastPosition" />
+      <link role="dataType" targetNodeId="5.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229194968597">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
     </node>

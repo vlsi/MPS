@@ -9813,5 +9813,11 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225280605265" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1229429530507">
+    <link role="concept" targetNodeId="1.1199653749349" resolveInfo="IStatementListContainer" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1229429530508">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229429530509" />
+    </node>
+  </node>
 </model>
 

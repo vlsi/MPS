@@ -16,6 +16,7 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_LAST_POSITION = "isLastPosition";
   public static final String CARET_POSITION = "caretPosition";
 
   public AnonymousCellAnnotation(SNode node) {
@@ -60,6 +61,14 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
 
   public void setVirtualPackage(String value) {
     this.setProperty(AnonymousCellAnnotation.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getIsLastPosition() {
+    return this.getBooleanProperty(AnonymousCellAnnotation.IS_LAST_POSITION);
+  }
+
+  public void setIsLastPosition(boolean value) {
+    this.setBooleanProperty(AnonymousCellAnnotation.IS_LAST_POSITION, value);
   }
 
   public int getCaretPosition() {

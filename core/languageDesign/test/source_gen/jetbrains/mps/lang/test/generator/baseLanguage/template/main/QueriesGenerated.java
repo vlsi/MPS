@@ -177,7 +177,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1229347144485(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "result", true).getId();
+    if (SLinkOperations.getTarget(_context.getNode(), "result", true) != null) {
+      return SLinkOperations.getTarget(_context.getNode(), "result", true).getId();
+    } else
+    {
+      return "";
+    }
   }
 
   public static Object referenceMacro_GetReferent_1221567898656(final IOperationContext operationContext, final ReferenceMacroContext _context) {

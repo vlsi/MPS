@@ -40,7 +40,13 @@ public class AddCellAnnotation_Intention extends BaseIntention {
     EditorCell contextCell = editorContext.getContextCell();
     SPropertyOperations.set(newAnnotation, "cellId", contextCell.getCellId());
     if (contextCell instanceof EditorCell_Label) {
-      SPropertyOperations.set(newAnnotation, "caretPosition", "" + ((EditorCell_Label)contextCell).getCaretPosition());
+      int caretPosition = ((EditorCell_Label)contextCell).getCaretPosition();
+      if (caretPosition == ((EditorCell_Label)contextCell).getText().length()) {
+        SPropertyOperations.set(newAnnotation, "isLastPosition", "" + true);
+      } else
+      {
+        SPropertyOperations.set(newAnnotation, "caretPosition", "" + caretPosition);
+      }
     }
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("testNode"), newAnnotation, true);
     editorContext.select(newAnnotation);
