@@ -27,6 +27,8 @@ public interface INodeSubstituteAction {
 
   SNode getOutputConcept();
 
+  SNode getActionType();
+
   String getMatchingText(String pattern);
   String getVisibleMatchingText(String pattern);
   String getDescriptionText(String pattern);

@@ -90,6 +90,10 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return getIconFor(pattern, false);
   }
 
+  public SNode getActionType() {
+    return null;
+  }
+
   protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
     if (myParameterObject instanceof SNode) {
       return NodePresentationUtil.matchingText((SNode) myParameterObject, referent_presentation, visible);
