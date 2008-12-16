@@ -74,30 +74,33 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1073416106125">
     <property name="name" value="StatementList_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123136" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1073416106126">
-      <property name="usesFolding" value="true" />
-      <property name="vertical" value="true" />
-      <link role="relationDeclaration" targetNodeId="17.1068581517665" />
-      <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1079958242049">
-        <property name="nullText" value="&lt;no statements&gt;" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996160">
-          <property name="flag" value="true" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1229447107349">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1229447107959">
+        <property name="usesFolding" value="true" />
+        <property name="vertical" value="true" />
+        <link role="relationDeclaration" targetNodeId="17.1068581517665" />
+        <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229447107960">
+          <property name="nullText" value="&lt;no statements&gt;" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1229447107961">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1229447107962">
+            <property name="style" value="ITALIC" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1229447107963">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1229447107964">
+            <property name="color" value="darkGray" />
+          </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934116">
-          <property name="style" value="ITALIC" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1229447107965">
+          <property name="flag" value="false" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032002">
-          <property name="flag" value="true" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem" id="1229447107966">
+          <property name="position" value="next-line" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678087">
-          <property name="color" value="darkGray" />
-        </node>
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997508">
-        <property name="flag" value="false" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem" id="1216562285799">
-        <property name="position" value="next-line" />
       </node>
     </node>
   </node>

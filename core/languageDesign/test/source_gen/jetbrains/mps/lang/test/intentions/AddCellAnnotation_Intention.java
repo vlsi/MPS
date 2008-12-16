@@ -8,8 +8,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
@@ -38,7 +38,6 @@ public class AddCellAnnotation_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", null);
     EditorCell contextCell = editorContext.getContextCell();
-    SPropertyOperations.set(newAnnotation, "cellId", contextCell.getCellId());
     if (contextCell instanceof EditorCell_Label) {
       int caretPosition = ((EditorCell_Label)contextCell).getCaretPosition();
       if (caretPosition == ((EditorCell_Label)contextCell).getText().length()) {

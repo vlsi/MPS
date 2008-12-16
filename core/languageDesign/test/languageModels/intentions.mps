@@ -308,26 +308,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228582820226">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1228582820227">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228582820228">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228588344671">
-                <link role="variableDeclaration" targetNodeId="1228588344666" resolveInfo="contextCell" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228582820232">
-                <link role="baseMethodDeclaration" targetNodeId="7.~EditorCell.getCellId():java.lang.String" resolveInfo="getCellId" />
-              </node>
-            </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228582820233">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228582820234">
-                <link role="variableDeclaration" targetNodeId="1226066626901" resolveInfo="newAnnotation" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1229196161162">
-                <link role="property" targetNodeId="1.1229194968595" resolveInfo="cellId" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1228588348423">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228588348424">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229432616638">

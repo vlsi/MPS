@@ -14263,7 +14263,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229429873902" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229429873903">
         <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1229429931128">
-          <property name="cellId" value="Constant_1229429649501" />
+          <property name="cellId" value="Constant_1229447107960" />
           <property name="caretPosition" value="0" />
         </node>
       </node>
@@ -14300,7 +14300,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229430487947" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229430487948">
         <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1229430529878">
-          <property name="cellId" value="Constant_1229429649501" />
+          <property name="cellId" value="Constant_1229447107960" />
           <property name="caretPosition" value="0" />
         </node>
       </node>
@@ -14341,7 +14341,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229430731123" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229430731124">
         <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1229430756041">
-          <property name="cellId" value="Constant_1229429649501" />
+          <property name="cellId" value="Constant_1229447107960" />
           <property name="caretPosition" value="0" />
         </node>
       </node>
@@ -14377,7 +14377,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229431213401" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229431213402">
         <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1229431134768">
-          <property name="cellId" value="Constant_1229429649501" />
+          <property name="cellId" value="Constant_1229447107960" />
           <property name="caretPosition" value="0" />
         </node>
       </node>
@@ -14435,7 +14435,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229433218100" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229433218101">
         <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1229433225527">
-          <property name="cellId" value="Constant_1229429649501" />
+          <property name="cellId" value="Constant_1229447107960" />
           <property name="isLastPosition" value="true" />
         </node>
       </node>
@@ -14473,7 +14473,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229434999061" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229434999062">
         <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1229435018080">
-          <property name="cellId" value="Constant_1229429649501" />
+          <property name="cellId" value="Constant_1229447107960" />
           <property name="isLastPosition" value="true" />
         </node>
       </node>
@@ -14525,7 +14525,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229435254700" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229435254701">
         <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1229435415002">
-          <property name="cellId" value="Constant_1229429649501" />
+          <property name="cellId" value="Constant_1229447107960" />
           <property name="isLastPosition" value="true" />
         </node>
       </node>
@@ -14587,7 +14587,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229435715066" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229435715067">
         <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1229435719637">
-          <property name="cellId" value="Constant_1229429649501" />
+          <property name="cellId" value="Constant_1229447107960" />
           <property name="isLastPosition" value="true" />
         </node>
       </node>

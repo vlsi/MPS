@@ -30,7 +30,7 @@ public class CellReference {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        result.value = "node = " + CellReference.this.myNode.getId();
+        result.value = "(node " + CellReference.this.myNode.getId() + ", id " + CellReference.this.getId() + ")";
       }
 
     });
