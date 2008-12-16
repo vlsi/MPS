@@ -34,7 +34,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
     nodeEditor.hideMessageToolTip();
 
-    if (processKeyPressedOnCell(editorContext, keyEvent, false)) {
+    if (processSelectedCell(editorContext, keyEvent, false)) {
       return true;
     }
 
@@ -132,11 +132,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
 
     EditorCell selectedCell = editorContext.getSelectedCell();
 
-    if (selectedCell != null && selectedCell.processKeyTyped(keyEvent)) {
-      keyEvent.consume();
-      return true;
-    }
-
     if (processKeyMaps(editorContext, keyEvent)) {
       return true;
     }
@@ -157,6 +152,11 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
           return true;
         }
       }
+
+      if (selectedCell.processKeyTyped(keyEvent)) {
+        keyEvent.consume();
+        return true;
+      }
     }
 
     return false;
@@ -166,7 +166,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     return false;
   }
 
-  private boolean processKeyPressedOnCell(EditorContext editorContext, KeyEvent event, boolean allowErrors) {
+  private boolean processSelectedCell(EditorContext editorContext, KeyEvent event, boolean allowErrors) {
     EditorCell selectedCell = editorContext.getSelectedCell();
     if (selectedCell != null) {
       if (selectedCell.processKeyPressed(event, allowErrors)) {
