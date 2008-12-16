@@ -14,6 +14,7 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -170,8 +171,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1206552173985(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     // apply rule if the value is string
-    SNode typeOfValue = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rValue", true));
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfValue, new _Quotations.QuotationClass_2().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rValue", true)), new _Quotations.QuotationClass_2().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1206558374188(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -186,6 +186,29 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1221172048706(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "operation", true)), "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation");
+  }
+
+  public static boolean baseMappingRule_Condition_1229466109667(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    //  string?
+    return PropertyDeclaration_Behavior.call_isPrimitiveString_1229468583974(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "property", false));
+  }
+
+  public static boolean baseMappingRule_Condition_1229466109777(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "jetbrains.mps.lang.smodel.structure.SPropertyAccess");
+  }
+
+  public static boolean baseMappingRule_Condition_1229467146762(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    // int?
+    return PropertyDeclaration_Behavior.call_isPrimitiveInteger_1229468978693(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "property", false));
+  }
+
+  public static boolean baseMappingRule_Condition_1229469897126(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    // int?
+    return PropertyDeclaration_Behavior.call_isPrimitiveInteger_1229468978693(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "property", false));
+  }
+
+  public static boolean baseMappingRule_Condition_1229469897209(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "jetbrains.mps.lang.smodel.structure.SPropertyAccess");
   }
 
   public static Object propertyMacro_GetPropertyValue_1168981884180(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -535,6 +558,30 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1226362379166(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false), "role");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229466109698(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "property", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229466901404(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "property", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229469897156(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "property", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229469943829(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "property", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229469966583(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "property", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1229469999016(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "property", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1168,6 +1215,42 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1228342030036(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1229466109687(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1229466630019(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "rValue", true);
+  }
+
+  public static SNode sourceNodeQuery_1229466901393(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1229469897145(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1229469943818(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1229469966572(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1229469966599(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "rValue", true);
+  }
+
+  public static SNode sourceNodeQuery_1229469999005(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1229469999032(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "rValue", true);
   }
 
   public static Iterable sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
