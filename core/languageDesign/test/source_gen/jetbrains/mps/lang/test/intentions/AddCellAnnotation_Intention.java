@@ -47,6 +47,7 @@ public class AddCellAnnotation_Intention extends BaseIntention {
         SPropertyOperations.set(newAnnotation, "caretPosition", "" + caretPosition);
       }
     }
+    SPropertyOperations.set(newAnnotation, "cellId", contextCell.getCellId());
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("testNode"), newAnnotation, true);
     editorContext.select(newAnnotation);
   }
