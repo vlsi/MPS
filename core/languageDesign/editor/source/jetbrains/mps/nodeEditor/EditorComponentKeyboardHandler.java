@@ -132,12 +132,17 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
 
     EditorCell selectedCell = editorContext.getSelectedCell();
 
-    if (selectedCell != null && selectedCell.processKeyTyped(keyEvent)) {
+    if (selectedCell != null && selectedCell.processKeyTyped(keyEvent, false)) {
       keyEvent.consume();
       return true;
     }
 
     if (processKeyMaps(editorContext, keyEvent)) {
+      return true;
+    }
+
+    if (selectedCell != null && selectedCell.processKeyTyped(keyEvent, true)) {
+      keyEvent.consume();
       return true;
     }
 

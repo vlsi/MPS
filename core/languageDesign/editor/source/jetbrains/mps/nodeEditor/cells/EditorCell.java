@@ -101,7 +101,7 @@ public interface EditorCell extends Cloneable {
   boolean processMousePressed(MouseEvent e);
 
   boolean processKeyPressed(KeyEvent e, boolean allowErrors);
-  boolean processKeyTyped(KeyEvent e);
+  boolean processKeyTyped(KeyEvent e, boolean allowErrors);
 
   EditorContext getEditorContext();
 

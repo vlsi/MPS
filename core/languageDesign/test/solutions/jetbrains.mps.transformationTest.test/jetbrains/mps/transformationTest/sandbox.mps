@@ -105,10 +105,23 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1223651509989" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1223651509990" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223651509991">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229488910012">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1229488929420">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1229488929579">
+              <property name="value" value="2" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1229488910013">
+              <property name="value" value="3" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223651522966">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223651522967">
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223651522968">
               <link role="baseMethodDeclaration" targetNodeId="1223651512352" resolveInfo="m" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1229488977331">
+                <property name="value" value="22" />
+              </node>
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223651522969" />
           </node>

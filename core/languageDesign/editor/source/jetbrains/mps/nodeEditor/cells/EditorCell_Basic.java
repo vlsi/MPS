@@ -430,12 +430,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     return false;
   }
 
-  public final boolean processKeyTyped(KeyEvent e) {
+  public final boolean processKeyTyped(KeyEvent e, boolean allowErrors) {
     if (e.isConsumed()) return false;
-    return doProcessKeyTyped(e);
+    return doProcessKeyTyped(e, allowErrors);
   }
 
-  protected boolean doProcessKeyTyped(final KeyEvent e) {
+  protected boolean doProcessKeyTyped(final KeyEvent e, final boolean allowErrors) {
     if (getSNode() == null) return false;
 
     if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
@@ -455,7 +455,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         EditorCell_Label editable = nodeCell.findChild(CellFinders.FIRST_EDITABLE);
         if (editable != null) {
           editor.changeSelection(editable);
-          editable.processKeyTyped(e);
+          editable.processKeyTyped(e, allowErrors);
         } else {
           editor.changeSelection(nodeCell);
           editor.activateNodeSubstituteChooser(nodeCell, true);

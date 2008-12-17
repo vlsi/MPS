@@ -394,7 +394,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return false;
   }
 
-  protected boolean doProcessKeyTyped(KeyEvent keyEvent) {
+  protected boolean doProcessKeyTyped(KeyEvent keyEvent, boolean allowErrors) {
     int wasPosition = getCaretPosition();
     CellSide side;
     if (wasPosition == 0) {
@@ -406,7 +406,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myCaretIsVisible = true;
 
 
-    if (isEditable() && processMutableKeyTyped(keyEvent)) {
+    if (isEditable() && processMutableKeyTyped(keyEvent, allowErrors)) {
       getEditorContext().flushEvents();
 
       getEditor().relayout();
@@ -416,8 +416,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
           String pattern = this.getRenderedText();
           IntelligentInputUtil.processCell(this, getEditorContext(), pattern, side);
         }
+        return true;
       }
-      return true;
     }
     if (!isEditable() && allowsIntelligentInputKeyStroke(keyEvent)) {
       String pattern = getRenderedTextOn(keyEvent);
@@ -451,7 +451,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     int caretPosition = myTextLine.getCaretPosition();
     int nullCaretPosition = myNullTextLine.getCaretPosition();
     boolean wasErrorState = isErrorState();
-    processMutableKeyTyped(keyEvent);
+    processMutableKeyTyped(keyEvent, true);
     T result = c.compute();
     myTextLine.setText(oldString);
     myNullTextLine.setText(oldNullString);
@@ -544,7 +544,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return false;
   }
 
-  private boolean processMutableKeyTyped(final KeyEvent keyEvent) {
+  private boolean processMutableKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
     final boolean[] result = new boolean[1];
 
     getEditorContext().executeCommand(new Runnable() {
@@ -558,6 +558,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         char keyChar = keyEvent.getKeyChar();
         if (UIUtil.isReallyTypedEvent(keyEvent)) {
           String newText = oldText.substring(0, startSelection) + keyChar + oldText.substring(endSelection);
+
+          if (!allowErrors && !isValidText(newText)) {
+            result[0] = false;
+            return;
+          }
+
           changeText(newText);
           setCaretPositionIfPossible(startSelection + 1);
           myTextLine.resetSelection();
