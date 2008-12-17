@@ -22,10 +22,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -151,7 +148,7 @@ public class NodePaster {
   private boolean canPasteToTarget(SNode pasteTarget, String role, boolean allowOneCardinality) {
     AbstractConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclarationAdapter();
     LinkDeclaration link = findSuitableLink(pasteTargetType, role);
-    if (link != null) {
+    if (link != null && link.getMetaClass() == LinkMetaclass.aggregation) {
       if (!allowOneCardinality) {
         return link.getSourceCardinality() != Cardinality._0__1 && link.getSourceCardinality() != Cardinality._1; 
       } else {
