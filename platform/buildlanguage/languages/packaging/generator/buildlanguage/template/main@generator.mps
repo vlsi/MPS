@@ -964,6 +964,33 @@
         </node>
       </node>
     </node>
+    <node role="basedir" type="jetbrains.mps.buildlanguage.structure.FileName" id="1229523116692">
+      <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1229523116693">
+        <property name="value" value=".." />
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1229523121819">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1229523121820">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229523121821">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229523127330">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229523140675">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229523135175">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229523127491">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1229523127331" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1229523134044">
+                      <link role="baseMethodDeclaration" targetNodeId="20.1213877261819" resolveInfo="getLayout" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1229523138406">
+                    <link role="property" targetNodeId="1.1229522370639" resolveInfo="scriptsFolder" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="1229523143256" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1203620346433">
     <property name="name" value="reduce_File" />

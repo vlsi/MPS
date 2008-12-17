@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="MPS-external" default="main">
-  <property file="./MPS.properties" />
+<project name="MPS-external" default="main" basedir="..">
+  <property file="${ant.file}/../MPS.properties" />
   <fail unless="build.number" message="Property build.number unspecified." />
   <fail unless="build.vcs.number" message="Property build.vcs.number unspecified." />
   <fail unless="teamcity.buildConfName" message="Property teamcity.buildConfName unspecified." />
   <fail unless="version" message="Property version unspecified." />
-  <import file="MPS-languages.xml" />
-  <import file="MPS-multistep.xml" />
-  <import file="build-helpers.xml" />
+  <import file="${ant.file}/../MPS-languages.xml" />
+  <import file="${ant.file}/../MPS-multistep.xml" />
+  <import file="${ant.file}/../build-helpers.xml" />
   <target name="main" depends="compile,clean.before,folders.create,do.the.job,clean.after" />
   <target name="compile" />
   <target name="clean.before" depends="compile">

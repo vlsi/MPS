@@ -41,6 +41,13 @@ public class MPSLayout_Behavior {
     }
   }
 
+  public static String call_getFolderToGenerate_1229522949966(SNode thisNode) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "scriptsFolder"))) {
+      return ILayoutComponent_Behavior.call_getPath_1213877230696(thisNode);
+    }
+    return ILayoutComponent_Behavior.call_getPath_1213877230696(thisNode) + File.separator + SPropertyOperations.getString(thisNode, "scriptsFolder");
+  }
+
   public static String virtual_getPath_1213877230696(SNode thisNode) {
     String macro = MPSLayout_Behavior.call_evaluateMacro_1220980091008(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "baseDirectory", true), "macro", true), "name"));
     String fullPathWithoutMacro = Path_Behavior.call_getFullPathWithoutMacro_1226511495568(SLinkOperations.getTarget(thisNode, "baseDirectory", true));

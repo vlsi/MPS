@@ -11382,8 +11382,8 @@
                               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1224851586142">
                                 <link role="variableDeclaration" targetNodeId="1224851609204" resolveInfo="mpsLayout" />
                               </node>
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224851586143">
-                                <link role="baseMethodDeclaration" targetNodeId="30.1213877230696" resolveInfo="getPath" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1229523074630">
+                                <link role="baseMethodDeclaration" targetNodeId="30.1229522949966" resolveInfo="getFolderToGenerate" />
                               </node>
                             </node>
                           </node>

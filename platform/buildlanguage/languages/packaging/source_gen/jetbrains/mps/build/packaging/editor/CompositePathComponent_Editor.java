@@ -25,27 +25,37 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class CompositePathComponent_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1220978198900;
+  /* package */AbstractCellListHandler myListHandler_1229522743690;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRefNodeList1220978198900(context, node);
+    return this.createCollection1229522743692(context, node);
   }
 
-  public EditorCell createRefNodeList1220978198900(EditorContext context, SNode node) {
-    if (this.myListHandler_1220978198900 == null) {
-      this.myListHandler_1220978198900 = new CompositePathComponent_Editor.pathComponentListHandler_6133_0(node, "pathComponent", context);
-    }
-    EditorCell_Collection editorCell = this.myListHandler_1220978198900.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_refNodeList_pathComponent1220978198900(editorCell, node, context);
+  public EditorCell createCollection1229522743692(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_12295227436921229522743692(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.setRole(this.myListHandler_1220978198900.getElementRole());
+    editorCell.addEditorCell(this.createRefNodeList1229522743690(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createRefNodeList1229522743690(EditorContext context, SNode node) {
+    if (this.myListHandler_1229522743690 == null) {
+      this.myListHandler_1229522743690 = new CompositePathComponent_Editor.pathComponentListHandler_6133_0(node, "pathComponent", context);
+    }
+    EditorCell_Collection editorCell = this.myListHandler_1229522743690.createCells(context, new CellLayout_Horizontal(), false);
+    setupBasic_refNodeList_pathComponent1229522743690(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.setRole(this.myListHandler_1229522743690.getElementRole());
     return editorCell;
   }
 
 
-  private static void setupBasic_refNodeList_pathComponent1220978198900(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNodeList_pathComponent1229522743690(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_pathComponent");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -58,7 +68,11 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_refNodeList_pathComponent_1220978198900(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_12295227436921229522743692(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1229522743692");
+  }
+
+  private static void setupLabel_refNodeList_pathComponent_1229522743690(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class pathComponentListHandler_6133_0 extends RefNodeListHandler {

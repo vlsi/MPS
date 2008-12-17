@@ -88,6 +88,14 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1226493258397">
           <link role="relationDeclaration" targetNodeId="1.1226493152214" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229522445495">
+          <property name="text" value="scripts folder" />
+          <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1229522457585">
+          <property name="allowEmptyText" value="true" />
+          <link role="relationDeclaration" targetNodeId="1.1229522370639" resolveInfo="scriptsFolder" />
+        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996536">
           <property name="flag" value="false" />
         </node>

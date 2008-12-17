@@ -526,6 +526,10 @@
       <property name="name" value="compile" />
       <link role="dataType" targetNodeId="3.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1229522370639">
+      <property name="name" value="scriptsFolder" />
+      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1203013653398">
     <property name="name" value="ILayoutComponent" />

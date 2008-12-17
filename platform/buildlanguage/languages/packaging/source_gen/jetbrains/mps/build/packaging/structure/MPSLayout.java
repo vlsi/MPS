@@ -13,6 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.MPSLayout";
+  public static final String SCRIPTS_FOLDER = "scriptsFolder";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
@@ -28,6 +29,14 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
 
   public MPSLayout(SNode node) {
     super(node);
+  }
+
+  public String getScriptsFolder() {
+    return this.getProperty(MPSLayout.SCRIPTS_FOLDER);
+  }
+
+  public void setScriptsFolder(String value) {
+    this.setProperty(MPSLayout.SCRIPTS_FOLDER, value);
   }
 
   public String getShortDescription() {

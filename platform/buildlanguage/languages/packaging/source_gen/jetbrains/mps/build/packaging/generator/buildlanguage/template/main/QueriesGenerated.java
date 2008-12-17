@@ -501,6 +501,10 @@ public class QueriesGenerated {
     return StringUtils.isNotEmpty(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()));
   }
 
+  public static boolean ifMacro_Condition_1229523121820(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "scriptsFolder"));
+  }
+
   public static SNode sourceNodeQuery_1219156054317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "left", true);
   }

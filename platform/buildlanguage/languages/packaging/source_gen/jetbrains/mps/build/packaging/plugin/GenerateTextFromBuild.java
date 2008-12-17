@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
+import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -27,7 +27,7 @@ public class GenerateTextFromBuild {
     String basedir = ModelAccess.instance().runReadAction(new Computable <String>() {
 
       public String compute() {
-        return ILayoutComponent_Behavior.call_getPath_1213877230696(mpsLayout);
+        return MPSLayout_Behavior.call_getFolderToGenerate_1229522949966(mpsLayout);
       }
 
     });

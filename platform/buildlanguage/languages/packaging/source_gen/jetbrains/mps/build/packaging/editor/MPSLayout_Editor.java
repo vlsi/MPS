@@ -78,6 +78,8 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1204114265324(context, node, "basedir"));
     editorCell.addEditorCell(this.createRefNode1226493258397(context, node));
+    editorCell.addEditorCell(this.createConstant1229522445495(context, node, "scripts folder"));
+    editorCell.addEditorCell(this.createProperty1229522457585(context, node));
     return editorCell;
   }
 
@@ -193,6 +195,14 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12169011368961216901136896(editorCell, node, context);
     setupLabel_Constant_1216901136896_1216901136896(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1229522445495(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12295224454951229522445495(editorCell, node, context);
+    setupLabel_Constant_1229522445495_1229522445495(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -347,6 +357,35 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode1226493258397_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createProperty1229522457585_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_property_scriptsFolder1229522457585(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_property_scriptsFolder_1229522457585((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createProperty1229522457585(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("scriptsFolder");
+    provider.setNoTargetText("<no scriptsFolder>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(true);
+    EditorCell cellWithRole = this.createProperty1229522457585_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -576,6 +615,15 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
   private static void setupBasic_refNode_baseDirectory1226493258397(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_Constant_12295224454951229522445495(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1229522445495");
+    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+  }
+
+  private static void setupBasic_property_scriptsFolder1229522457585(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("property_scriptsFolder");
+  }
+
   private static void setupLabel_Constant_1203430907103_1203430907103(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -622,6 +670,12 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_baseDirectory_1226493258397(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1229522445495_1229522445495(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_property_scriptsFolder_1229522457585(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class componentListHandler_8098_0 extends RefNodeListHandler {
