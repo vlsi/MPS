@@ -20,7 +20,7 @@
       <languagePath path="${project}/languages/blTypes/blTypes.mpl" />
       <languagePath path="${mps_home}/core/languageDesign/actionsLanguage/languageDescriptor.mpl" />
       <languagePath path="${mps_home}/core/languageDesign/editorLanguage/editorLanguage.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/transformationTest/transformationTest.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/test/test.mpl" />
     </projectLanguages>
     <projectDevkits>
       <devkitPath path="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />

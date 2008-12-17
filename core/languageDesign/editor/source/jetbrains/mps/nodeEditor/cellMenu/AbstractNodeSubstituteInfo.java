@@ -85,7 +85,9 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
   }
 
   public List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
-    return getMatchingActions(pattern, strictMatching); //todo
+
+    List<INodeSubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
+    return substituteActionList; //todo
   }
 
   public List<INodeSubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
