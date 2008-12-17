@@ -40,6 +40,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.logging.Logger;
 
 import java.util.*;
@@ -149,6 +150,8 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void updateAllWarnings() {
+    if (IdeMain.isTestMode()) return;    
+
     for (FileEditor editor : myFileEditorManager.getAllEditors()) {
       if (editor instanceof MPSFileNodeEditor) {
         updateWarnings((MPSFileNodeEditor) editor);
