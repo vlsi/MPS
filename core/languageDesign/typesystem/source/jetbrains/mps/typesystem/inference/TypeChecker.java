@@ -254,7 +254,7 @@ public class TypeChecker implements ApplicationComponent {
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
 
-  //  System.err.println("getting type of " + node + node.getId() + " in a root " + containingRoot + " in a model " + node.getModel().getModelDescriptor().getSModelFqName());
+    //  System.err.println("getting type of " + node + node.getId() + " in a root " + containingRoot + " in a model " + node.getModel().getModelDescriptor().getSModelFqName());
 
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
       getNodeTypesComponent(node.getContainingRoot());
@@ -271,12 +271,24 @@ public class TypeChecker implements ApplicationComponent {
         }
       });
       SNode resultt_type = result[0];
-   //   System.err.println("type is " + resultt_type);
+      //   System.err.println("type is " + resultt_type);
       return resultt_type;
     }
     SNode resultType = getTypeDontCheck(node);
-  //  System.err.println("type is " + resultType);
+    //  System.err.println("type is " + resultType);
     return resultType;
+  }
+
+  public InequationSystem getInequationsForHole(SNode hole) {
+    TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(hole.getContainingRoot());
+    final NodeTypesComponent temporaryComponent;
+    temporaryComponent = typeCheckingContext.createTemporaryTypesComponent();
+    try {
+      return temporaryComponent.computeInequationsForHole(hole);
+    } finally {
+      temporaryComponent.clearListeners(); //in order to prevent memory leaks.
+      typeCheckingContext.popTemporaryTypesComponent();
+    }
   }
 
   private SNode getTypeOf_resolveMode(final SNode node, boolean nodeIsNotChecked) {
@@ -336,7 +348,7 @@ public class TypeChecker implements ApplicationComponent {
   public SNode getTypeOf(SNode node) {
     if (node == null) return null;
     if (NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node).isInEditorQueries()) {
-       return getTypeOf_resolveMode(node, true);
+      return getTypeOf_resolveMode(node, true);
     } else if (myIsGeneration && TypesystemPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
       return getTypeOf_generationMode(node);
     } else {

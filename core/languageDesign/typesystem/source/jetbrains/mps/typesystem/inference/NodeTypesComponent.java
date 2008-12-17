@@ -29,7 +29,6 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.typesystem.debug.ISlicer;
-import jetbrains.mps.typesystem.debug.SlicerImpl;
 import jetbrains.mps.typesystem.debug.NullSlicer;
 
 import java.util.*;
@@ -81,12 +80,16 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private Set<SNode> myCurrentFrontier;
   private SNode myCurrentCheckedNode;
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
-  private boolean myIsGeneration = false;
+  private boolean myIsSpecial = false;
 
   boolean myIsNonTypesystemCheckingInProgress = false;
 
   private TypeCheckingContext myTypeCheckingContext;
   private ISlicer mySlicer;
+
+  private boolean myIsSmartCompletion = false;
+  private SNode mySmartCompletionHole = null;
+  private InequationSystem mySmartCompletionInequationSystem = null;
 
   public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myRootNode = rootNode;
@@ -286,8 +289,12 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   public void solveInequationsAndExpandTypes() {
     // solve residual inequations
-    myEquationManager.solveInequations();
-    getSlicer().beforeTypesExpanded(myNodesToTypesMap);
+    if (myIsSmartCompletion) {
+      mySmartCompletionInequationSystem = myEquationManager.solveInequations(mySmartCompletionHole);
+    } else {
+      myEquationManager.solveInequations();
+      getSlicer().beforeTypesExpanded(myNodesToTypesMap);
+    }
 
     // setting expanded types to nodes
     for (Entry<SNode, SNode> contextEntry : new HashSet<Entry<SNode, SNode>>(myNodesToTypesMap.entrySet())) {
@@ -322,14 +329,33 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     return result;
   }
 
+  public InequationSystem computeInequationsForHole(SNode hole) {
+    List<SNode> additionalNodes = new ArrayList<SNode>();
+    additionalNodes.add(hole);
+    myIsSmartCompletion = true;
+    mySmartCompletionHole = hole;
+    try {
+      computeTypesForNode_special(hole.getParent(), null, false, additionalNodes);
+      return mySmartCompletionInequationSystem;
+    } finally {
+      myIsSmartCompletion = false;
+      mySmartCompletionInequationSystem = null;
+      mySmartCompletionHole = null;
+    }
+  }
+
   private SNode computeTypesForNode_special(SNode initialNode, Runnable continuation, boolean refreshTypes) {
+    return computeTypesForNode_special(initialNode, continuation, refreshTypes, new ArrayList<SNode>());
+  }
+
+  private SNode computeTypesForNode_special(SNode initialNode, Runnable continuation, boolean refreshTypes, List<SNode> givenAdditionalNodes) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
-    myIsGeneration = true;
+    myIsSpecial = true;
     try {
       while (node != null) {
-        List<SNode> additionalNodes = new ArrayList<SNode>();
+        List<SNode> additionalNodes = new ArrayList<SNode>(givenAdditionalNodes);
         if (prevNode != null) {
           additionalNodes.add(prevNode);
         }
@@ -354,7 +380,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         }
       }
     } finally {
-      myIsGeneration = false;
+      myIsSpecial = false;
     }
     return type;
   }
@@ -370,7 +396,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         if (myFullyCheckedNodes.contains(sNode)) {
           continue;
         }
-        if (myIsGeneration) {
+        if (myIsSpecial) {
           newFrontier.addAll(myTypeChecker.getRulesManager().getDependencies(sNode));
         }
         if (forceChildrenCheck) {
