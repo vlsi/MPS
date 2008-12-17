@@ -6,6 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class CellReference {
 
@@ -21,24 +25,48 @@ public class CellReference {
     return this.myNode;
   }
 
-  public SNode getAnnotation() {
-    return this.myAnnotation;
-  }
-
   public String toString() {
     final Wrappers._T<String> result = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        result.value = "(node " + CellReference.this.myNode.getId() + ", id " + CellReference.this.getId() + ")";
+        result.value = "(node " + CellReference.this.myNode.getId() + ", id " + CellReference.this.getCellId() + ")";
       }
 
     });
     return result.value;
   }
 
-  public String getId() {
+  public String getCellId() {
     return SPropertyOperations.getString(this.myAnnotation, "cellId");
+  }
+
+  public void selectCell(IEditor editor) {
+    final EditorComponent editorComponent = editor.getCurrentEditorComponent();
+    final Wrappers._T<EditorCell> cellWithId = new Wrappers._T<EditorCell>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+
+      public void run() {
+        cellWithId.value = editorComponent.findCellWithId(CellReference.this.getNode(), CellReference.this.getCellId());
+        if (cellWithId.value instanceof EditorCell_Label) {
+          ((EditorCell_Label)cellWithId.value).setCaretPosition(CellReference.this.getCaretPosition(cellWithId.value));
+        }
+        if (cellWithId.value == null) {
+          throw new RuntimeException("No cell " + CellReference.this);
+        }
+      }
+
+    });
+    editorComponent.changeSelection(cellWithId.value);
+  }
+
+  public int getCaretPosition(EditorCell cell) {
+    if (SPropertyOperations.getBoolean(this.myAnnotation, "isLastPosition")) {
+      return ((EditorCell_Label)cell).getText().length();
+    } else
+    {
+      return SPropertyOperations.getInteger(this.myAnnotation, "caretPosition");
+    }
   }
 
 }
