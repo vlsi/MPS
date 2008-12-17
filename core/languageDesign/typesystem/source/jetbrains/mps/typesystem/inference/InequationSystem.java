@@ -44,4 +44,13 @@ public class InequationSystem {
       supertypesToSubtypes.put(supertype, subtypes);
     }
   }
+
+  public boolean satisfies(SNode type) {
+    for (SNode subtype : mySubtypesToSupertypesMap.keySet()) {
+      if (NodeWrapper.fromNode(subtype, myEquationManager).equals(NodeWrapper.fromNode(myType, myEquationManager))) {
+        
+      }
+    }   //todo
+    return false;
+  }
 }
