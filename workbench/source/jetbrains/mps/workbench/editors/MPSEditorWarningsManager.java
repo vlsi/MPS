@@ -93,6 +93,11 @@ public class MPSEditorWarningsManager implements ProjectComponent {
         }
 
         SModelDescriptor model = editor.getFile().getNode().getModel().getModelDescriptor();
+
+        if (model == null) {
+          return;
+        }
+
         if (model.isTransient()) {
           addWarningPanel(editor, "Warning: node is in transient model. Your changes won't be saved.");
         }
