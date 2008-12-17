@@ -105,7 +105,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     super.addToolbarActions(actionGroup);
   }
 
-  protected FileViewProjectPane(final Project project, final ProjectView projectView, final MessageBus bus, IdeDocumentHistory ideDocumentHistory, FileEditorManager fileEditorManager) {
+  protected FileViewProjectPane(final Project project, final ProjectView projectView, final MessageBus bus, @NotNull IdeDocumentHistory ideDocumentHistory, @NotNull FileEditorManager fileEditorManager) {
     super(project);
 
     myProject = project;

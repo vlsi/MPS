@@ -18,6 +18,8 @@ package jetbrains.mps.ide.projectPane.fileSystem;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.util.messages.MessageBus;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -30,8 +32,8 @@ public class BaseDirectoryProjectView extends FileViewProjectPane {
   public static final String ID = "FileSystem";
   public static final String TITLE = "File System";
 
-  protected BaseDirectoryProjectView(final Project project, final ProjectView projectView, final MessageBus bus) {
-    super(project, projectView, bus, null, null);
+  protected BaseDirectoryProjectView(final Project project, final ProjectView projectView, final MessageBus bus, IdeDocumentHistory ideDocumentHistory, FileEditorManager fileEditorManager) {
+    super(project, projectView, bus, ideDocumentHistory, fileEditorManager);
   }
 
   protected MPSTreeNode createRoot(Project project) {
