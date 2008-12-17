@@ -16,16 +16,16 @@
 package jetbrains.mps.generator.template;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.lang.generator.structure.RuleConsequence;
 import jetbrains.mps.lang.generator.structure.TemplateSwitch;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
@@ -146,7 +146,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     List<SNode> copiedRoots = new ArrayList<SNode>();
     for (SNode rootToCopy : rootsToCopy) {
-      copiedRoots.add(CloneUtil.clone(rootToCopy, myOutputModel));
+      copiedRoots.add(CloneUtil.clone(rootToCopy, myOutputModel, getGeneratorSessionContext().getOriginalInputModel() == myInputModel));
     }
     return copiedRoots;
   }

@@ -156,6 +156,10 @@ public class RuleManager {
           myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNodes.get(0));
           // preserve user objects
           outputNodes.get(0).putUserObjects(inputNode);
+          // keep track of 'original input node'
+          if (inputNode.getModel() == myGenerator.getGeneratorSessionContext().getOriginalInputModel()) {
+            outputNodes.get(0).putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+          }
         }
         return outputNodes;
       }

@@ -35,13 +35,12 @@ import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
-import java.util.List;
 import java.util.Comparator;
-
-import org.jetbrains.annotations.NotNull;
+import java.util.List;
 
 /**
  * Igor Alshannikov
@@ -217,7 +216,7 @@ public class GenerationSession implements IGenerationSession {
       if (needToCloneInputMode) {
         SModel currentInputModel_clone = createTransientModel(modelsLongName);
         addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
-        CloneUtil.cloneModel(currentInputModel, currentInputModel_clone);
+        CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, true);
 
         if (!myDiscardTransients) { // tracing
           mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, preMappingScripts);
@@ -305,7 +304,7 @@ public class GenerationSession implements IGenerationSession {
       !myDiscardTransients) {  // clone model - needed for tracing
       SModel currentOutputModel_clone = createTransientModel(modelsLongName);
       addMessage(MessageKind.INFORMATION, "clone model '" + currentOutputModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");
-      CloneUtil.cloneModel(currentOutputModel, currentOutputModel_clone);
+      CloneUtil.cloneModel(currentOutputModel, currentOutputModel_clone, false);
 
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentOutputModel, currentOutputModel_clone, postMappingScripts);
       currentOutputModel = currentOutputModel_clone;

@@ -29,14 +29,14 @@ public class CloneUtil {
    * Creates cloned model, each node in target model has the same nodeId that corresponding node in source model
    * it allows to resolve internal references much faster
    */
-  public static void cloneModel(SModel inputModel, SModel outputModel) {
+  public static void cloneModel(SModel inputModel, SModel outputModel, boolean originalInput) {
     for (SNode node : inputModel.getRoots()) {
-      SNode outputNode = clone(node, outputModel);
+      SNode outputNode = clone(node, outputModel, originalInput);
       outputModel.addRoot(outputNode);
     }
   }
 
-  public static SNode clone(SNode inputNode, SModel outputModel) {
+  public static SNode clone(SNode inputNode, SModel outputModel, boolean originalInput) {
     // new SNode() uses intern. It's a very expensive operation and we know that when we copy node, concept fq name
     // is already interned. So we don't intern anything. DO NOT replace this stuff with instantiateStuff
     SNode outputNode = new SNode(outputModel, inputNode.getConceptFqName(), false);
@@ -44,6 +44,10 @@ public class CloneUtil {
     outputNode.setId(inputNode.getSNodeId());
     outputNode.putProperties(inputNode);
     outputNode.putUserObjects(inputNode);
+    // keep track of 'original input node'
+    if (originalInput) {
+      outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+    }
     for (SReference reference : inputNode.getReferences()) {
       SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
       if (targetModelReference == null) {
@@ -51,18 +55,18 @@ public class CloneUtil {
       } else {
         if (reference instanceof StaticReference) {
           StaticReference outputReference = new StaticReference(
-                  reference.getRole(),
-                  outputNode,
+            reference.getRole(),
+            outputNode,
             targetModelReference,
-                  ((StaticReference) reference).getTargetNodeId(),
-                  reference.getResolveInfo());
+            ((StaticReference) reference).getTargetNodeId(),
+            reference.getResolveInfo());
           outputNode.addReference(outputReference);
         } else if (reference instanceof DynamicReference) {
           DynamicReference outputReference = new DynamicReference(
-                  reference.getRole(),
-                  outputNode,
+            reference.getRole(),
+            outputNode,
             targetModelReference,
-                  reference.getResolveInfo());
+            reference.getResolveInfo());
           outputNode.addReference(outputReference);
         } else {
           LOG.error("internal error: can't clone reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
@@ -74,7 +78,7 @@ public class CloneUtil {
     for (SNode child : inputNode.getChildren()) {
       String role = child.getRole_();
       assert role != null;
-      outputNode.addChild(role, clone(child, outputModel));
+      outputNode.addChild(role, clone(child, outputModel, originalInput));
     }
     return outputNode;
   }

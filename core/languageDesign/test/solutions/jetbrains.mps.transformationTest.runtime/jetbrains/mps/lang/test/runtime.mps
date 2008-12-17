@@ -1374,8 +1374,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224595559060">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1224595559061">
-            <link role="baseMethodDeclaration" targetNodeId="3v.~CloneUtil.cloneModel(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel):void" resolveInfo="cloneModel" />
             <link role="classConcept" targetNodeId="3v.~CloneUtil" resolveInfo="CloneUtil" />
+            <link role="baseMethodDeclaration" targetNodeId="3v.~CloneUtil.cloneModel(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,boolean):void" resolveInfo="cloneModel" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224595559062">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224595559063">
                 <link role="baseMethodDeclaration" targetNodeId="17.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
@@ -1397,6 +1397,9 @@
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1224595636120" />
               </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1229477098026">
+              <property name="value" value="false" />
             </node>
           </node>
         </node>

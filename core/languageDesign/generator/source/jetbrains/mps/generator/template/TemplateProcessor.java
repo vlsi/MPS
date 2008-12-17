@@ -488,6 +488,10 @@ public class TemplateProcessor {
 
     outputNode.putProperties(inputNode);
     outputNode.putUserObjects(inputNode);
+    // keep track of 'original input node'
+    if (inputNode.getModel() == myGenerator.getGeneratorSessionContext().getOriginalInputModel()) {
+      outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+    }
 
     SModel inputModel = myGenerator.getInputModel();
     for (SReference inputReference : inputNode.getReferences()) {

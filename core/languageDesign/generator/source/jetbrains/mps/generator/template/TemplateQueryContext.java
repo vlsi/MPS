@@ -27,6 +27,10 @@ import java.util.List;
  * Jul 21, 2008
  */
 public class TemplateQueryContext {
+  // key for 'node user object' used to keep track of 'original input node' for a generated node
+  // only used when output node has been created as a 'copy' of 'original input node'
+  public static final Object ORIGINAL_INPUT_NODE = new Object(); 
+
   private SNode myInputNode;
   private SNode myTemplateNode;
   private ITemplateGenerator myGenerator;
