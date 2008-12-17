@@ -156,7 +156,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1182974244862(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return EditorCellModel_Behavior.call_getCellId_1216737839993(_context.getNode());
+    SNode originalNode = _context.getOriginalCopiedInputNode(_context.getNode());
+    if ((originalNode == null)) {
+      originalNode = _context.getNode();
+    }
+    return EditorCellModel_Behavior.call_getCellId_1216737839993(originalNode);
   }
 
   public static Object propertyMacro_GetPropertyValue_1182981045553(final IOperationContext operationContext, final PropertyMacroContext _context) {
