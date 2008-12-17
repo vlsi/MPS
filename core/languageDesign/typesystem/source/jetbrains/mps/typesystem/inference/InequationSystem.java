@@ -16,7 +16,11 @@ import java.util.Set;
  */
 public class InequationSystem {
   private SNode myType;
+  private EquationManager myEquationManager;
 
+  public InequationSystem(EquationManager equationManager) {
+    myEquationManager = equationManager;
+  }
 
   private Map<SNode, Set<SNode>> mySubtypesToSupertypesMap = new HashMap<SNode, Set<SNode>>();
   private Map<SNode, Set<SNode>> mySupertypesToSubtypesMap = new HashMap<SNode, Set<SNode>>();

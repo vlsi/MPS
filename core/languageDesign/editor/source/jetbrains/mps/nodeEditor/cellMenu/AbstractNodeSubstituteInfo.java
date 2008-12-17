@@ -23,6 +23,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.typesystem.inference.InequationSystem;
 
 import java.util.*;
 

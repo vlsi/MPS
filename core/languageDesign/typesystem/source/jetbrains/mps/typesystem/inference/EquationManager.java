@@ -858,7 +858,7 @@ public class EquationManager {
     eliminateConcretePartsOfInequations(false, holeWrapper);
     Set<IWrapper> types = eliminateConcretePartsOfInequations(true, holeWrapper);
 
-    InequationSystem inequationSystem = new InequationSystem();
+    InequationSystem inequationSystem = new InequationSystem(this);
 
     ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
     for (IWrapper type : types) {
