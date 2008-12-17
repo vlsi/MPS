@@ -530,5 +530,28 @@
       <link role="concept" targetNodeId="1.1221218985173" resolveInfo="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1229478029842">
+    <property name="name" value="typeof_GenerationContextOp_GetOriginalCopiedInputByOutput" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229478029843">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1229478073864">
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1229478073882">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1229478051687">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1229478053955">
+              <link role="applicableNode" targetNodeId="1229478029844" resolveInfo="op" />
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1229478194505">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1229478194506">
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1229478209773" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1229478029844">
+      <property name="name" value="op" />
+      <link role="concept" targetNodeId="1.1229477454423" resolveInfo="GenerationContextOp_GetOriginalCopiedInputByOutput" />
+    </node>
+  </node>
 </model>
 

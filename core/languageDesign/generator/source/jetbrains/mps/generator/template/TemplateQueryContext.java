@@ -29,7 +29,7 @@ import java.util.List;
 public class TemplateQueryContext {
   // key for 'node user object' used to keep track of 'original input node' for a generated node
   // only used when output node has been created as a 'copy' of 'original input node'
-  public static final Object ORIGINAL_INPUT_NODE = new Object(); 
+  public static final Object ORIGINAL_INPUT_NODE = new Object();
 
   private SNode myInputNode;
   private SNode myTemplateNode;
@@ -97,12 +97,12 @@ public class TemplateQueryContext {
   }
 
   public SNode getOutputNodeByInputNodeAndMappingLabel(SNode inputNode, String label) {
-    if(inputNode == null) return null;
+    if (inputNode == null) return null;
     return myGenerator.findOutputNodeByInputNodeAndMappingName(inputNode, label);
   }
 
   public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode inputNode, String label) {
-    if(inputNode == null) return null;
+    if (inputNode == null) return null;
     return myGenerator.findAllOutputNodesByInputNodeAndMappingName(inputNode, label);
   }
 
@@ -111,12 +111,17 @@ public class TemplateQueryContext {
   }
 
   public SNode getCopiedOutputNodeForInputNode(SNode inputNode) {
-    if(inputNode == null) return null;
+    if (inputNode == null) return null;
     return myGenerator.findCopiedOutputNodeForInputNode(inputNode);
   }
 
   public SNode getPreviousInputNodeByMappingLabel(String label) {
     return myGenerator.getPreviousInputNodeByMappingName(label);
+  }
+
+  public SNode getOriginalCopiedInputNode(SNode outputNode) {
+    if (outputNode == null) return null;
+    return (SNode) outputNode.getUserObject(ORIGINAL_INPUT_NODE);
   }
 
   public String createUniqueName(String baseName, SNode contextNode) {

@@ -146,5 +146,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1229478234165">
+    <link role="conceptDeclaration" targetNodeId="1.1229477454423" resolveInfo="GenerationContextOp_GetOriginalCopiedInputByOutput" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1229478234166">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229478234167">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1229478247887">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229478262765">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1229478262686" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1229478274893">
+              <link role="link" targetNodeId="1.1229477520175" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

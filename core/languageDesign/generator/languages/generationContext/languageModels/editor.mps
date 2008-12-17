@@ -321,5 +321,27 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1229477688085">
+    <link role="conceptDeclaration" targetNodeId="1.1229477454423" resolveInfo="GenerationContextOp_GetCopiedOriginalInputByOutput" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1229477705977">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229477705978">
+        <property name="text" value="get original copied input for" />
+        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229477705979">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1229477705980">
+        <property name="noTargetText" value="&lt;no input node&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1229477520175" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229477705981">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
+      </node>
+    </node>
+  </node>
 </model>
 
