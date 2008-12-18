@@ -32,7 +32,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_1820_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_11648263313201164826331320(editorCell, node, context);
+    setupBasic_Collection_1820_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -43,8 +43,8 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_1820_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11648263414941164826341494(editorCell, node, context);
-    setupLabel_Constant_1164826341494_1164826341494(editorCell, node, context);
+    setupBasic_Constant_1820_0(editorCell, node, context);
+    setupLabel_Constant_1820_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -54,7 +54,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
       this.myListHandler_1820_0 = new CellMenuDescriptor_Editor.cellMenuPartListHandler_1820_0(node, "cellMenuPart", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1820_0.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_refNodeList_cellMenuPart1164826358683(editorCell, node, context);
+    setupBasic_RefNodeList_1820_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -63,22 +63,22 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11648263313201164826331320(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_1820_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1164826331320");
   }
 
-  private static void setupBasic_Constant_11648263414941164826341494(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_1820_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1164826341494");
   }
 
-  private static void setupBasic_refNodeList_cellMenuPart1164826358683(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNodeList_1820_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_cellMenuPart");
   }
 
-  private static void setupLabel_Constant_1164826341494_1164826341494(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1820_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNodeList_cellMenuPart_1164826358683(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNodeList_1820_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class cellMenuPartListHandler_1820_0 extends RefNodeListHandler {
@@ -129,14 +129,14 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstant_1820_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_11648263760281164826376028(editorCell, node, context);
-      setupLabel_Constant_1164826376028_1164826376028(editorCell, node, context);
+      setupBasic_Constant_1820_1(editorCell, node, context);
+      setupLabel_Constant_1820_1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 
 
-    private static void setupBasic_Constant_11648263760281164826376028(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_Constant_1820_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_1164826376028");
       {
         Style inlineStyle = new Style(editorCell) {
@@ -151,7 +151,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
       }
     }
 
-    private static void setupLabel_Constant_1164826376028_1164826376028(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_Constant_1820_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

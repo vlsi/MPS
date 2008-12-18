@@ -37,7 +37,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_4607_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11864038348981186403834898(editorCell, node, context);
+    setupBasic_Collection_4607_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -54,8 +54,8 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_4607_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11864038419661186403841966(editorCell, node, context);
-    setupLabel_Constant_1186403841966_1186403841966(editorCell, node, context);
+    setupBasic_Constant_4607_0(editorCell, node, context);
+    setupLabel_Constant_4607_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -64,9 +64,9 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_conceptProperty_alias1186403839417(editorCell, node, context);
+    setupBasic_ConceptProperty_4607_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_conceptProperty_alias_1186403839417((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptProperty_4607_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
@@ -94,9 +94,9 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_color1186412595080(editorCell, node, context);
+    setupBasic_Property_4607_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_color_1186412595080((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_4607_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu0(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu2(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu3()}));
@@ -124,9 +124,9 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_query1186412603348(editorCell, node, context);
+    setupBasic_RefNode_4607_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_query_1186412603348((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_4607_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu1(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu4(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu5()}));
@@ -151,36 +151,36 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11864038348981186403834898(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1186403834898");
   }
 
-  private static void setupBasic_conceptProperty_alias1186403839417(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConceptProperty_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_11864038419661186403841966(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1186403841966");
   }
 
-  private static void setupBasic_property_color1186412595080(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_color");
   }
 
-  private static void setupBasic_refNode_query1186412603348(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_conceptProperty_alias_1186403839417(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptProperty_4607_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1186403841966_1186403841966(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_4607_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_color_1186412595080(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_4607_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_query_1186412603348(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_4607_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition4607_0(SNode node, EditorContext editorContext, IScope scope) {

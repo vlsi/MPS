@@ -26,7 +26,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
 
   public EditorCell createCollection_2322_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12143201571951214320157195(editorCell, node, context);
+    setupBasic_Collection_2322_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -38,8 +38,8 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
 
   public EditorCell createConstant_2322_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12143201571971214320157197(editorCell, node, context);
-    setupLabel_Constant_1214320157197_1214320157197(editorCell, node, context);
+    setupBasic_Constant_2322_0(editorCell, node, context);
+    setupLabel_Constant_2322_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -48,9 +48,9 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_conceptProperty_alias1214320157196(editorCell, node, context);
+    setupBasic_ConceptProperty_2322_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_conceptProperty_alias_1214320157196((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptProperty_2322_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new SideTransformAnchorTagStyleClassItem_Editor.SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
@@ -78,9 +78,9 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_tag1214320157198(editorCell, node, context);
+    setupBasic_Property_2322_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_tag_1214320157198((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_2322_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -104,30 +104,30 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
   }
 
 
-  private static void setupBasic_Collection_12143201571951214320157195(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_2322_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1214320157195");
   }
 
-  private static void setupBasic_conceptProperty_alias1214320157196(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConceptProperty_2322_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_12143201571971214320157197(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_2322_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1214320157197");
   }
 
-  private static void setupBasic_property_tag1214320157198(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_2322_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_tag");
   }
 
-  private static void setupLabel_conceptProperty_alias_1214320157196(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptProperty_2322_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1214320157197_1214320157197(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2322_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_tag_1214320157198(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_2322_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

@@ -32,7 +32,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_4462_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11864157490741186415749074(editorCell, node, context);
+    setupBasic_Collection_4462_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -49,8 +49,8 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_4462_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11864157825501186415782550(editorCell, node, context);
-    setupLabel_Constant_1186415782550_1186415782550(editorCell, node, context);
+    setupBasic_Constant_4462_0(editorCell, node, context);
+    setupLabel_Constant_4462_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -59,9 +59,9 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_conceptProperty_alias1186415811915(editorCell, node, context);
+    setupBasic_ConceptProperty_4462_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_conceptProperty_alias_1186415811915((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptProperty_4462_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new FontSizeStyleClassItem_Editor.FontSizeStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
@@ -89,9 +89,9 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_query1221064737626(editorCell, node, context);
+    setupBasic_RefNode_4462_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_query_1221064737626((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_4462_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -118,9 +118,9 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_value1221209981973(editorCell, node, context);
+    setupBasic_Property_4462_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_value_1221209981973((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_4462_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new FontSizeStyleClassItem_Editor.FontSizeStyleClassItem_generic_cellMenu0()}));
@@ -145,37 +145,37 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11864157490741186415749074(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_4462_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1186415749074");
   }
 
-  private static void setupBasic_Constant_11864157825501186415782550(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_4462_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1186415782550");
   }
 
-  private static void setupBasic_conceptProperty_alias1186415811915(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConceptProperty_4462_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_refNode_query1221064737626(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_4462_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_property_value1221209981973(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_4462_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_value");
     BaseLanguageStyle_StyleSheet.getNumericLiteral(editorCell).apply(editorCell);
   }
 
-  private static void setupLabel_Constant_1186415782550_1186415782550(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_4462_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_conceptProperty_alias_1186415811915(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptProperty_4462_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_query_1221064737626(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_4462_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_value_1221209981973(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_4462_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition4462_0(SNode node, EditorContext editorContext, IScope scope) {

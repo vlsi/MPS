@@ -30,7 +30,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2675_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11864145640661186414564066(editorCell, node, context);
+    setupBasic_Collection_2675_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -47,8 +47,8 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_2675_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11864145682891186414568289(editorCell, node, context);
-    setupLabel_Constant_1186414568289_1186414568289(editorCell, node, context);
+    setupBasic_Constant_2675_0(editorCell, node, context);
+    setupLabel_Constant_2675_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -57,9 +57,9 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_conceptProperty_alias1186414565427(editorCell, node, context);
+    setupBasic_ConceptProperty_2675_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_conceptProperty_alias_1186414565427((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptProperty_2675_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
@@ -87,9 +87,9 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_flag1186414570275(editorCell, node, context);
+    setupBasic_Property_2675_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_flag_1186414570275((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_2675_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -116,9 +116,9 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_query1223461953254(editorCell, node, context);
+    setupBasic_RefNode_2675_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_query_1223461953254((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_2675_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{}));
@@ -143,36 +143,36 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11864145640661186414564066(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_2675_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1186414564066");
   }
 
-  private static void setupBasic_conceptProperty_alias1186414565427(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConceptProperty_2675_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_11864145682891186414568289(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_2675_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1186414568289");
   }
 
-  private static void setupBasic_property_flag1186414570275(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_2675_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_flag");
   }
 
-  private static void setupBasic_refNode_query1223461953254(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_2675_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_conceptProperty_alias_1186414565427(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptProperty_2675_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1186414568289_1186414568289(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2675_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_flag_1186414570275(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_2675_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_query_1223461953254(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_2675_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition2675_0(SNode node, EditorContext editorContext, IScope scope) {

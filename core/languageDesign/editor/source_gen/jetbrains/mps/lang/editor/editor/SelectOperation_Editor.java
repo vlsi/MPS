@@ -35,7 +35,7 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_5999_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12012661563291201266156329(editorCell, node, context);
+    setupBasic_Collection_5999_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -48,7 +48,7 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_5999_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12012661979531201266197953(editorCell, node, context);
+    setupBasic_Collection_5999_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -60,32 +60,32 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_5999_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12012661570031201266157003(editorCell, node, context);
-    setupLabel_Constant_1201266157003_1201266157003(editorCell, node, context);
+    setupBasic_Constant_5999_0(editorCell, node, context);
+    setupLabel_Constant_5999_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5999_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12012661924971201266192497(editorCell, node, context);
-    setupLabel_Constant_1201266192497_1201266192497(editorCell, node, context);
+    setupBasic_Constant_5999_1(editorCell, node, context);
+    setupLabel_Constant_5999_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5999_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12012661987361201266198736(editorCell, node, context);
-    setupLabel_Constant_1201266198736_1201266198736(editorCell, node, context);
+    setupBasic_Constant_5999_2(editorCell, node, context);
+    setupLabel_Constant_5999_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5999_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12012662003321201266200332(editorCell, node, context);
-    setupLabel_Constant_1201266200332_1201266200332(editorCell, node, context);
+    setupBasic_Constant_5999_3(editorCell, node, context);
+    setupLabel_Constant_5999_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -95,7 +95,7 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
       this.myListHandler_5999_0 = new SelectOperation_Editor.selectLaterParameterListHandler_5999_0(node, "selectLaterParameter", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_5999_0.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_refNodeList_selectLaterParameter1201266206773(editorCell, node, context);
+    setupBasic_RefNodeList_5999_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -107,9 +107,9 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_editorContext1201266171463(editorCell, node, context);
+    setupBasic_RefNode_5999_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_editorContext_1201266171463((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_5999_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -133,22 +133,22 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_12012661563291201266156329(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_5999_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1201266156329");
   }
 
-  private static void setupBasic_Constant_12012661570031201266157003(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_5999_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1201266157003");
   }
 
-  private static void setupBasic_refNode_editorContext1201266171463(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_5999_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Constant_12012661924971201266192497(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_5999_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1201266192497");
   }
 
-  private static void setupBasic_Collection_12012661979531201266197953(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_5999_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1201266197953");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -161,34 +161,34 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_12012661987361201266198736(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_5999_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1201266198736");
   }
 
-  private static void setupBasic_Constant_12012662003321201266200332(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_5999_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1201266200332");
   }
 
-  private static void setupBasic_refNodeList_selectLaterParameter1201266206773(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNodeList_5999_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_selectLaterParameter");
   }
 
-  private static void setupLabel_Constant_1201266157003_1201266157003(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_5999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_editorContext_1201266171463(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_5999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1201266192497_1201266192497(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_5999_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1201266198736_1201266198736(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_5999_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1201266200332_1201266200332(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_5999_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNodeList_selectLaterParameter_1201266206773(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNodeList_5999_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class selectLaterParameterListHandler_5999_0 extends RefNodeListHandler {

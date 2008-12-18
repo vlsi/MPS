@@ -31,7 +31,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2890_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12143162871751214316287175(editorCell, node, context);
+    setupBasic_Collection_2890_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -48,8 +48,8 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_2890_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12143162916631214316291663(editorCell, node, context);
-    setupLabel_Constant_1214316291663_1214316291663(editorCell, node, context);
+    setupBasic_Constant_2890_0(editorCell, node, context);
+    setupLabel_Constant_2890_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -58,9 +58,9 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_conceptProperty_alias1214316290161(editorCell, node, context);
+    setupBasic_ConceptProperty_2890_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_conceptProperty_alias_1214316290161((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptProperty_2890_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new UnderlinedStyleClassItem_Editor.UnderlinedStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
@@ -88,9 +88,9 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_underlined1214316297759(editorCell, node, context);
+    setupBasic_Property_2890_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_underlined_1214316297759((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_2890_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new UnderlinedStyleClassItem_Editor.UnderlinedStyleClassItem_generic_cellMenu0()}));
@@ -118,9 +118,9 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_query1221219095122(editorCell, node, context);
+    setupBasic_RefNode_2890_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_query_1221219095122((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_2890_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -144,36 +144,36 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_12143162871751214316287175(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_2890_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1214316287175");
   }
 
-  private static void setupBasic_conceptProperty_alias1214316290161(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConceptProperty_2890_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_12143162916631214316291663(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_2890_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1214316291663");
   }
 
-  private static void setupBasic_property_underlined1214316297759(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_2890_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_underlined");
   }
 
-  private static void setupBasic_refNode_query1221219095122(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_2890_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_conceptProperty_alias_1214316290161(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptProperty_2890_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1214316291663_1214316291663(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2890_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_underlined_1214316297759(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_2890_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_query_1221219095122(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_2890_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition2890_0(SNode node, EditorContext editorContext, IScope scope) {

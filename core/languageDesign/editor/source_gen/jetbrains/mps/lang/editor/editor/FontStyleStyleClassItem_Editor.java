@@ -37,7 +37,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0528_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11864038891791186403889179(editorCell, node, context);
+    setupBasic_Collection_0528_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -54,8 +54,8 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0528_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11864038899311186403889931(editorCell, node, context);
-    setupLabel_Constant_1186403889931_1186403889931(editorCell, node, context);
+    setupBasic_Constant_0528_0(editorCell, node, context);
+    setupLabel_Constant_0528_0(editorCell, node, context);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
@@ -63,8 +63,8 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0528_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11864038941981186403894198(editorCell, node, context);
-    setupLabel_Constant_1186403894198_1186403894198(editorCell, node, context);
+    setupBasic_Constant_0528_1(editorCell, node, context);
+    setupLabel_Constant_0528_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -73,9 +73,9 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_style1186403896216(editorCell, node, context);
+    setupBasic_Property_0528_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_style_1186403896216((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_0528_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -102,9 +102,9 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_query1220975756218(editorCell, node, context);
+    setupBasic_RefNode_0528_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_query_1220975756218((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_0528_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu1(),new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu0()}));
@@ -129,36 +129,36 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11864038891791186403889179(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_0528_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1186403889179");
   }
 
-  private static void setupBasic_Constant_11864038899311186403889931(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_0528_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1186403889931");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_11864038941981186403894198(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_0528_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1186403894198");
   }
 
-  private static void setupBasic_property_style1186403896216(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_0528_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_style");
   }
 
-  private static void setupBasic_refNode_query1220975756218(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_0528_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1186403889931_1186403889931(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_0528_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1186403894198_1186403894198(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_0528_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_style_1186403896216(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_0528_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_query_1220975756218(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_0528_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition0528_0(SNode node, EditorContext editorContext, IScope scope) {

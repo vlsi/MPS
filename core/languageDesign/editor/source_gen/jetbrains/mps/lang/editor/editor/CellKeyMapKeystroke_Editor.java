@@ -32,7 +32,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_3628_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11369235426611136923542661(editorCell, node, context);
+    setupBasic_Collection_3628_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(true);
     editorCell.setCanBeFolded(false);
@@ -46,24 +46,24 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_3628_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11369235426621136923542662(editorCell, node, context);
-    setupLabel_Constant_1136923542662_1136923542662(editorCell, node, context);
+    setupBasic_Constant_3628_0(editorCell, node, context);
+    setupLabel_Constant_3628_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_3628_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11369235426641136923542664(editorCell, node, context);
-    setupLabel_Constant_1136923542664_1136923542664(editorCell, node, context);
+    setupBasic_Constant_3628_1(editorCell, node, context);
+    setupLabel_Constant_3628_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_3628_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11369235426661136923542666(editorCell, node, context);
-    setupLabel_Constant_1136923542666_1136923542666(editorCell, node, context);
+    setupBasic_Constant_3628_2(editorCell, node, context);
+    setupLabel_Constant_3628_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -72,9 +72,9 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_modifiers1136923542663(editorCell, node, context);
+    setupBasic_Property_3628_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_modifiers_1136923542663((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_3628_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_modifiers_cellMenu0()}));
@@ -102,9 +102,9 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_keycode1136923542665(editorCell, node, context);
+    setupBasic_Property_3628_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_keycode_1136923542665((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_3628_1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_keycode_cellMenu0()}));
@@ -129,11 +129,11 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11369235426611136923542661(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_3628_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1136923542661");
   }
 
-  private static void setupBasic_Constant_11369235426621136923542662(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_3628_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1136923542662");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -146,7 +146,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_property_modifiers1136923542663(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_3628_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_modifiers");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -160,7 +160,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_11369235426641136923542664(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_3628_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1136923542664");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -173,7 +173,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_property_keycode1136923542665(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_3628_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_keycode");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -187,7 +187,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_11369235426661136923542666(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_3628_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1136923542666");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -200,19 +200,19 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1136923542662_1136923542662(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_3628_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_modifiers_1136923542663(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_3628_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1136923542664_1136923542664(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_3628_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_keycode_1136923542665(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_3628_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1136923542666_1136923542666(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_3628_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class CellKeyMapKeystroke_keycode_cellMenu0 extends AbstractCellMenuPart_PropertyValues {

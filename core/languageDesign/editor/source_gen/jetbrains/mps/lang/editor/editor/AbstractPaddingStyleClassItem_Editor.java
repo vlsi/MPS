@@ -26,7 +26,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2253_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12264929636651226492963665(editorCell, node, context);
+    setupBasic_Collection_2253_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -39,8 +39,8 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_2253_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12264929636691226492963669(editorCell, node, context);
-    setupLabel_Constant_1226492963669_1226492963669(editorCell, node, context);
+    setupBasic_Constant_2253_0(editorCell, node, context);
+    setupLabel_Constant_2253_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -49,9 +49,9 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_conceptProperty_alias1226492963666(editorCell, node, context);
+    setupBasic_ConceptProperty_2253_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_conceptProperty_alias_1226492963666((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptProperty_2253_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new AbstractPaddingStyleClassItem_Editor.AbstractPaddingStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
@@ -79,9 +79,9 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_value1226492963670(editorCell, node, context);
+    setupBasic_Property_2253_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_value_1226492963670((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_2253_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -108,9 +108,9 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_measure1226504870583(editorCell, node, context);
+    setupBasic_Property_2253_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_measure_1226504870583((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_2253_1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -134,37 +134,37 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_12264929636651226492963665(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_2253_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1226492963665");
   }
 
-  private static void setupBasic_conceptProperty_alias1226492963666(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConceptProperty_2253_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_12264929636691226492963669(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_2253_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1226492963669");
   }
 
-  private static void setupBasic_property_value1226492963670(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_2253_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_value");
   }
 
-  private static void setupBasic_property_measure1226504870583(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_2253_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_measure");
   }
 
-  private static void setupLabel_conceptProperty_alias_1226492963666(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptProperty_2253_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1226492963669_1226492963669(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2253_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_value_1226492963670(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_2253_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_measure_1226504870583(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_2253_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class AbstractPaddingStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

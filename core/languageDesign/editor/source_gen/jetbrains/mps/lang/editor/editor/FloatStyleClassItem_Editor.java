@@ -26,7 +26,7 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_1626_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12150078421181215007842118(editorCell, node, context);
+    setupBasic_Collection_1626_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -38,8 +38,8 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_1626_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12150078460911215007846091(editorCell, node, context);
-    setupLabel_Constant_1215007846091_1215007846091(editorCell, node, context);
+    setupBasic_Constant_1626_0(editorCell, node, context);
+    setupLabel_Constant_1626_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -48,9 +48,9 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_conceptProperty_alias1215007844401(editorCell, node, context);
+    setupBasic_ConceptProperty_1626_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_conceptProperty_alias_1215007844401((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptProperty_1626_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new FloatStyleClassItem_Editor.FloatStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
@@ -78,9 +78,9 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_value1215007848233(editorCell, node, context);
+    setupBasic_Property_1626_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_value_1215007848233((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_1626_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -104,30 +104,30 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_12150078421181215007842118(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_1626_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1215007842118");
   }
 
-  private static void setupBasic_conceptProperty_alias1215007844401(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConceptProperty_1626_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_12150078460911215007846091(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_1626_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1215007846091");
   }
 
-  private static void setupBasic_property_value1215007848233(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_1626_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_value");
   }
 
-  private static void setupLabel_conceptProperty_alias_1215007844401(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptProperty_1626_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1215007846091_1215007846091(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1626_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_value_1215007848233(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_1626_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class FloatStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

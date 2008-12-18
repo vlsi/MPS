@@ -22,9 +22,9 @@ public class ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_getter1226061419246(editorCell, node, context);
+    setupBasic_RefNode_4178_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_getter_1226061419246((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_4178_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -48,10 +48,10 @@ public class ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_refNode_getter1226061419246(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_4178_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_getter_1226061419246(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_4178_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

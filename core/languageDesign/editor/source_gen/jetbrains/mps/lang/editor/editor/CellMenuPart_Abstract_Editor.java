@@ -20,13 +20,13 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
 
   public EditorCell createError_7903_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose menu part>");
-    setupBasic_Error_11648414107651164841410765(editorCell, node, context);
-    setupLabel_Error_1164841410765_1164841410765(editorCell, node, context);
+    setupBasic_Error_7903_0(editorCell, node, context);
+    setupLabel_Error_7903_0(editorCell, node, context);
     return editorCell;
   }
 
 
-  private static void setupBasic_Error_11648414107651164841410765(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Error_7903_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Error_1164841410765");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -39,7 +39,7 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Error_1164841410765_1164841410765(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Error_7903_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

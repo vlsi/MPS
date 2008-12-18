@@ -140,7 +140,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1182907991433(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("setupBasic_", _context.getNode());
+    return _context.createUniqueName("setupBasic_" + EditorCellModel_Behavior.call_getCellModelKind_1216811674575(_context.getNode()) + "_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1182971164193(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -164,7 +164,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1182981045553(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("setupLabel_", _context.getNode());
+    return _context.createUniqueName("setupLabel_" + EditorCellModel_Behavior.call_getCellModelKind_1216811674575(_context.getNode()) + "_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1182981596975(final IOperationContext operationContext, final PropertyMacroContext _context) {

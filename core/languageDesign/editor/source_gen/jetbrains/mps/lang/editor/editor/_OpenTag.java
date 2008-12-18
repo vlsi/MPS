@@ -48,13 +48,13 @@ public class _OpenTag extends AbstractCellProvider {
 
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ReadOnlyModelAccessor_12260625288661226062528866(editorCell, node, context);
-    setupLabel_ReadOnlyModelAccessor_1226062528866_1226062528866(editorCell, node, context);
+    setupBasic_ReadOnlyModelAccessor_4575_0(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_4575_0(editorCell, node, context);
     return editorCell;
   }
 
 
-  private static void setupBasic_ReadOnlyModelAccessor_12260625288661226062528866(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ReadOnlyModelAccessor_4575_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_1226062528866");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -81,7 +81,7 @@ public class _OpenTag extends AbstractCellProvider {
     }
   }
 
-  private static void setupLabel_ReadOnlyModelAccessor_1226062528866_1226062528866(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ReadOnlyModelAccessor_4575_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static Color _StyleParameter_QueryFunction_1226320982079(SNode node, EditorContext editorContext) {

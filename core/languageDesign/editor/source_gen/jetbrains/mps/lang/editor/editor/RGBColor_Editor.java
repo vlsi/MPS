@@ -28,7 +28,7 @@ public class RGBColor_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_1526_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12254566834661225456683466(editorCell, node, context);
+    setupBasic_Collection_1526_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -39,8 +39,8 @@ public class RGBColor_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_1526_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12254585155911225458515591(editorCell, node, context);
-    setupLabel_Constant_1225458515591_1225458515591(editorCell, node, context);
+    setupBasic_Constant_1526_0(editorCell, node, context);
+    setupLabel_Constant_1526_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -49,9 +49,9 @@ public class RGBColor_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_value1225456821421(editorCell, node, context);
+    setupBasic_Property_1526_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_value_1225456821421((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_1526_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -75,16 +75,16 @@ public class RGBColor_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_12254566834661225456683466(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_1526_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1225456683466");
   }
 
-  private static void setupBasic_property_value1225456821421(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_1526_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_value");
     BaseLanguageStyle_StyleSheet.getNumericLiteral(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_12254585155911225458515591(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_1526_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1225458515591");
     BaseLanguageStyle_StyleSheet.getNumericLiteral(editorCell).apply(editorCell);
     {
@@ -99,10 +99,10 @@ public class RGBColor_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_property_value_1225456821421(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_1526_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1225458515591_1225458515591(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1526_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

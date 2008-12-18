@@ -20,14 +20,14 @@ public class CellModel_Indent_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_8904_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11982569606551198256960655(editorCell, node, context);
-    setupLabel_Constant_1198256960655_1198256960655(editorCell, node, context);
+    setupBasic_Constant_8904_0(editorCell, node, context);
+    setupLabel_Constant_8904_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_11982569606551198256960655(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Constant_8904_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1198256960655");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -41,7 +41,7 @@ public class CellModel_Indent_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1198256960655_1198256960655(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_8904_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }
