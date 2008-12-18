@@ -29,10 +29,10 @@ public class _OpenTag extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createReadOnlyModelAccessor1226062528866(context, node);
+    return this.createReadOnlyModelAccessor_4575_0(context, node);
   }
 
-  public EditorCell createReadOnlyModelAccessor1226062528866(final EditorContext context, final SNode node) {
+  public EditorCell createReadOnlyModelAccessor_4575_0(final EditorContext context, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {

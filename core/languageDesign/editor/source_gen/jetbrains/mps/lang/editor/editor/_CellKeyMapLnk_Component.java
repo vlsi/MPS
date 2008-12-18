@@ -26,10 +26,10 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRefCell1140223991344(context, node);
+    return this.createRefCell_8023_1(context, node);
   }
 
-  public EditorCell createRefCell1140223991344_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_8023_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new _CellKeyMapLnk_Component._Inline8023_0());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -41,13 +41,13 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefCell1140223991344(EditorContext context, SNode node) {
+  public EditorCell createRefCell_8023_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("keyMap");
     provider.setNoTargetText("<default>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1140223991344_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_8023_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -86,10 +86,10 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1140223996488(context, node);
+      return this.createProperty_8023_1(context, node);
     }
 
-    public EditorCell createProperty1140223996488_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_8023_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -101,13 +101,13 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       return editorCell;
     }
 
-    public EditorCell createProperty1140223996488(EditorContext context, SNode node) {
+    public EditorCell createProperty_8023_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1140223996488_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_8023_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {

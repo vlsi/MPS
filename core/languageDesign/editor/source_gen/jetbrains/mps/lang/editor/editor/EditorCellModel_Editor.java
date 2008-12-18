@@ -17,24 +17,24 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class EditorCellModel_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createError1080925357598(context, node);
+    return this.createError_1982_0(context, node);
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection1080925357596(context, node);
+    return this.createCollection_1982_0(context, node);
   }
 
-  public EditorCell createCollection1080925357596(EditorContext context, SNode node) {
+  public EditorCell createCollection_1982_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_10809253575961080925357596(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1080925357597(context, node, "< abstract cell >"));
+    editorCell.addEditorCell(this.createConstant_1982_0(context, node, "< abstract cell >"));
     return editorCell;
   }
 
-  public EditorCell createConstant1080925357597(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1982_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_10809253575971080925357597(editorCell, node, context);
     setupLabel_Constant_1080925357597_1080925357597(editorCell, node, context);
@@ -42,7 +42,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createError1080925357598(EditorContext context, SNode node) {
+  public EditorCell createError_1982_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose cell model>");
     setupBasic_Error_10809253575981080925357598(editorCell, node, context);
     setupLabel_Error_1080925357598_1080925357598(editorCell, node, context);

@@ -27,49 +27,49 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_CellModel_Common0582_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1225900578294(context, node);
+    return this.createCollection_0582_0(context, node);
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection1225900615400(context, node);
+    return this.createCollection_0582_1(context, node);
   }
 
-  public EditorCell createCollection1225900578294(EditorContext context, SNode node) {
+  public EditorCell createCollection_0582_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_12259005782941225900578294(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createComponent1226070216539(context, node));
-    editorCell.addEditorCell(this.createConstant1225900578296(context, node, "R/O model access"));
-    editorCell.addEditorCell(this.createComponent1226070224915(context, node));
+    editorCell.addEditorCell(this.createComponent_0582_0(context, node));
+    editorCell.addEditorCell(this.createConstant_0582_0(context, node, "R/O model access"));
+    editorCell.addEditorCell(this.createComponent_0582_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1225900615400(EditorContext context, SNode node) {
+  public EditorCell createCollection_0582_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_12259006154001225900615400(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createComponent1226072308234(context, node));
-    editorCell.addEditorCell(this.createConstant1226335562250(context, node, ""));
-    editorCell.addEditorCell(this.createConstant1225900615405(context, node, "Value:"));
-    editorCell.addEditorCell(this.createCollection1226072334801(context, node));
+    editorCell.addEditorCell(this.createComponent_0582_2(context, node));
+    editorCell.addEditorCell(this.createConstant_0582_2(context, node, ""));
+    editorCell.addEditorCell(this.createConstant_0582_1(context, node, "Value:"));
+    editorCell.addEditorCell(this.createCollection_0582_2(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1226072334801(EditorContext context, SNode node) {
+  public EditorCell createCollection_0582_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_12260723348011226072334801(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRefNode1226061336321(context, node));
+    editorCell.addEditorCell(this.createRefNode_0582_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createComponent1226070216539(EditorContext context, SNode node) {
+  public EditorCell createComponent_0582_0(EditorContext context, SNode node) {
     if (this.my_OpenTag0582_0 == null) {
       this.my_OpenTag0582_0 = new _OpenTag(node);
     }
@@ -78,7 +78,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent1226070224915(EditorContext context, SNode node) {
+  public EditorCell createComponent_0582_1(EditorContext context, SNode node) {
     if (this.my_CloseTag0582_0 == null) {
       this.my_CloseTag0582_0 = new _CloseTag(node);
     }
@@ -87,7 +87,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent1226072308234(EditorContext context, SNode node) {
+  public EditorCell createComponent_0582_2(EditorContext context, SNode node) {
     if (this.my_CellModel_Common0582_0 == null) {
       this.my_CellModel_Common0582_0 = new _CellModel_Common(node);
     }
@@ -96,7 +96,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1225900578296(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_0582_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12259005782961225900578296(editorCell, node, context);
     setupLabel_Constant_1225900578296_1225900578296(editorCell, node, context);
@@ -104,7 +104,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1225900615405(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_0582_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12259006154051225900615405(editorCell, node, context);
     setupLabel_Constant_1225900615405_1225900615405(editorCell, node, context);
@@ -112,7 +112,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1226335562250(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_0582_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12263355622501226335562250(editorCell, node, context);
     setupLabel_Constant_1226335562250_1226335562250(editorCell, node, context);
@@ -120,7 +120,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode1226061336321_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_0582_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -132,13 +132,13 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode1226061336321(EditorContext context, SNode node) {
+  public EditorCell createRefNode_0582_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("modelAccessor");
     provider.setNoTargetText("<no modelAccessor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1226061336321_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_0582_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

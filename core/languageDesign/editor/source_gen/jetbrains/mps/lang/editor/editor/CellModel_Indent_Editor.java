@@ -15,10 +15,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class CellModel_Indent_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1198256960655(context, node, "--->");
+    return this.createConstant_8904_0(context, node, "--->");
   }
 
-  public EditorCell createConstant1198256960655(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_8904_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11982569606551198256960655(editorCell, node, context);
     setupLabel_Constant_1198256960655_1198256960655(editorCell, node, context);

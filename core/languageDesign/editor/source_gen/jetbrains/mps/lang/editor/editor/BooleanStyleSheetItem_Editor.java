@@ -25,27 +25,27 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1186414564066(context, node);
+    return this.createCollection_2675_0(context, node);
   }
 
-  public EditorCell createCollection1186414564066(EditorContext context, SNode node) {
+  public EditorCell createCollection_2675_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_11864145640661186414564066(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConceptProperty1186414565427(context, node));
-    editorCell.addEditorCell(this.createConstant1186414568289(context, node, ":"));
+    editorCell.addEditorCell(this.createConceptProperty_2675_1(context, node));
+    editorCell.addEditorCell(this.createConstant_2675_0(context, node, ":"));
     if (renderingCondition2675_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createProperty1186414570275(context, node));
+      editorCell.addEditorCell(this.createProperty_2675_1(context, node));
     }
     if (renderingCondition2675_1(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode1223461953254(context, node));
+      editorCell.addEditorCell(this.createRefNode_2675_1(context, node));
     }
     return editorCell;
   }
 
-  public EditorCell createConstant1186414568289(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2675_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11864145682891186414568289(editorCell, node, context);
     setupLabel_Constant_1186414568289_1186414568289(editorCell, node, context);
@@ -53,7 +53,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1186414565427_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptProperty_2675_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -66,13 +66,13 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1186414565427(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_2675_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptProperty1186414565427_internal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptProperty_2675_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -83,7 +83,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty1186414570275_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_2675_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -95,13 +95,13 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1186414570275(EditorContext context, SNode node) {
+  public EditorCell createProperty_2675_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("flag");
     provider.setNoTargetText("<no flag>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1186414570275_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_2675_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -112,7 +112,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1223461953254_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_2675_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -125,13 +125,13 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode1223461953254(EditorContext context, SNode node) {
+  public EditorCell createRefNode_2675_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1223461953254_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_2675_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

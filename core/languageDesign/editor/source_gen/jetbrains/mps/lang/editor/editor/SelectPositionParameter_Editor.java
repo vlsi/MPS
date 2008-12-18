@@ -17,22 +17,22 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class SelectPositionParameter_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1201268892010(context, node);
+    return this.createCollection_0936_0(context, node);
   }
 
-  public EditorCell createCollection1201268892010(EditorContext context, SNode node) {
+  public EditorCell createCollection_0936_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_12012688920101201268892010(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1201268892699(context, node, "position"));
-    editorCell.addEditorCell(this.createConstant1201268895904(context, node, "="));
-    editorCell.addEditorCell(this.createProperty1201268897781(context, node));
+    editorCell.addEditorCell(this.createConstant_0936_0(context, node, "position"));
+    editorCell.addEditorCell(this.createConstant_0936_1(context, node, "="));
+    editorCell.addEditorCell(this.createProperty_0936_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1201268892699(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_0936_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12012688926991201268892699(editorCell, node, context);
     setupLabel_Constant_1201268892699_1201268892699(editorCell, node, context);
@@ -40,7 +40,7 @@ public class SelectPositionParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1201268895904(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_0936_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12012688959041201268895904(editorCell, node, context);
     setupLabel_Constant_1201268895904_1201268895904(editorCell, node, context);
@@ -48,7 +48,7 @@ public class SelectPositionParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1201268897781_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_0936_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -60,13 +60,13 @@ public class SelectPositionParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1201268897781(EditorContext context, SNode node) {
+  public EditorCell createProperty_0936_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("position");
     provider.setNoTargetText("<no position>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1201268897781_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_0936_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

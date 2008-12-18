@@ -27,21 +27,21 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myListHandler_1820_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1164826331320(context, node);
+    return this.createCollection_1820_0(context, node);
   }
 
-  public EditorCell createCollection1164826331320(EditorContext context, SNode node) {
+  public EditorCell createCollection_1820_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_11648263313201164826331320(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1164826341494(context, node, "menu parts:"));
-    editorCell.addEditorCell(this.createRefNodeList1164826358683(context, node));
+    editorCell.addEditorCell(this.createConstant_1820_0(context, node, "menu parts:"));
+    editorCell.addEditorCell(this.createRefNodeList_1820_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1164826341494(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1820_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11648263414941164826341494(editorCell, node, context);
     setupLabel_Constant_1164826341494_1164826341494(editorCell, node, context);
@@ -49,7 +49,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList1164826358683(EditorContext context, SNode node) {
+  public EditorCell createRefNodeList_1820_0(EditorContext context, SNode node) {
     if (this.myListHandler_1820_0 == null) {
       this.myListHandler_1820_0 = new CellMenuDescriptor_Editor.cellMenuPartListHandler_1820_0(node, "cellMenuPart", context);
     }
@@ -106,7 +106,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext context, SNode node) {
-      return this.createConstant1164826376028(context, node, "<choose menu part>");
+      return this.createConstant_1820_1(context, node, "<choose menu part>");
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
@@ -127,7 +127,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant1164826376028(EditorContext context, SNode node, String text) {
+    public EditorCell createConstant_1820_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_Constant_11648263760281164826376028(editorCell, node, context);
       setupLabel_Constant_1164826376028_1164826376028(editorCell, node, context);

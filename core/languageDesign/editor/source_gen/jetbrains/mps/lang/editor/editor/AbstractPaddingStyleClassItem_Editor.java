@@ -21,23 +21,23 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1226492963665(context, node);
+    return this.createCollection_2253_0(context, node);
   }
 
-  public EditorCell createCollection1226492963665(EditorContext context, SNode node) {
+  public EditorCell createCollection_2253_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_12264929636651226492963665(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConceptProperty1226492963666(context, node));
-    editorCell.addEditorCell(this.createConstant1226492963669(context, node, ":"));
-    editorCell.addEditorCell(this.createProperty1226492963670(context, node));
-    editorCell.addEditorCell(this.createProperty1226504870583(context, node));
+    editorCell.addEditorCell(this.createConceptProperty_2253_1(context, node));
+    editorCell.addEditorCell(this.createConstant_2253_0(context, node, ":"));
+    editorCell.addEditorCell(this.createProperty_2253_1(context, node));
+    editorCell.addEditorCell(this.createProperty_2253_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1226492963669(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2253_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12264929636691226492963669(editorCell, node, context);
     setupLabel_Constant_1226492963669_1226492963669(editorCell, node, context);
@@ -45,7 +45,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1226492963666_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptProperty_2253_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -58,13 +58,13 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1226492963666(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_2253_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptProperty1226492963666_internal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptProperty_2253_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -75,7 +75,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty1226492963670_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_2253_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -87,13 +87,13 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1226492963670(EditorContext context, SNode node) {
+  public EditorCell createProperty_2253_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1226492963670_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_2253_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -104,7 +104,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty1226504870583_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_2253_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -116,13 +116,13 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1226504870583(EditorContext context, SNode node) {
+  public EditorCell createProperty_2253_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("measure");
     provider.setNoTargetText("<no measure>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1226504870583_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_2253_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

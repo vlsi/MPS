@@ -17,42 +17,42 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1165017449838(context, node);
+    return this.createCollection_2608_0(context, node);
   }
 
-  public EditorCell createCollection1165017449838(EditorContext context, SNode node) {
+  public EditorCell createCollection_2608_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_11650174498381165017449838(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection1165017468128(context, node));
-    editorCell.addEditorCell(this.createCollection1165017449839(context, node));
+    editorCell.addEditorCell(this.createCollection_2608_2(context, node));
+    editorCell.addEditorCell(this.createCollection_2608_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1165017449839(EditorContext context, SNode node) {
+  public EditorCell createCollection_2608_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_11650174498391165017449839(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1165017598538(context, node, "  "));
-    editorCell.addEditorCell(this.createConstant1165017449842(context, node, "no customization needed"));
+    editorCell.addEditorCell(this.createConstant_2608_2(context, node, "  "));
+    editorCell.addEditorCell(this.createConstant_2608_0(context, node, "no customization needed"));
     return editorCell;
   }
 
-  public EditorCell createCollection1165017468128(EditorContext context, SNode node) {
+  public EditorCell createCollection_2608_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_11650174681281165017468128(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1165017468129(context, node, "primary choose referent menu"));
+    editorCell.addEditorCell(this.createConstant_2608_1(context, node, "primary choose referent menu"));
     return editorCell;
   }
 
-  public EditorCell createConstant1165017449842(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2608_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11650174498421165017449842(editorCell, node, context);
     setupLabel_Constant_1165017449842_1165017449842(editorCell, node, context);
@@ -60,7 +60,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1165017468129(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2608_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11650174681291165017468129(editorCell, node, context);
     setupLabel_Constant_1165017468129_1165017468129(editorCell, node, context);
@@ -68,7 +68,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1165017598538(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2608_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11650175985381165017598538(editorCell, node, context);
     setupLabel_Constant_1165017598538_1165017598538(editorCell, node, context);

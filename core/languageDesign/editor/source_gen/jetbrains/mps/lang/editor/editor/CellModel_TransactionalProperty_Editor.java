@@ -30,72 +30,72 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_CellModel_Common3190_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1216381326735(context, node);
+    return this.createCollection_3190_0(context, node);
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection1216382040437(context, node);
+    return this.createCollection_3190_1(context, node);
   }
 
-  public EditorCell createCollection1216381326735(EditorContext context, SNode node) {
+  public EditorCell createCollection_3190_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_12163813267351216381326735(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createComponent1216381983842(context, node));
-    editorCell.addEditorCell(this.createRefCell1216381326738(context, node));
-    editorCell.addEditorCell(this.createComponent1216381326743(context, node));
+    editorCell.addEditorCell(this.createComponent_3190_1(context, node));
+    editorCell.addEditorCell(this.createRefCell_3190_1(context, node));
+    editorCell.addEditorCell(this.createComponent_3190_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1216382040437(EditorContext context, SNode node) {
+  public EditorCell createCollection_3190_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_12163820404371216382040437(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createComponent1216382040438(context, node));
-    editorCell.addEditorCell(this.createConstant1216382040439(context, node, ""));
-    editorCell.addEditorCell(this.createConstant1216382040441(context, node, "Transactional property cell:"));
-    editorCell.addEditorCell(this.createCollection1216382040442(context, node));
+    editorCell.addEditorCell(this.createComponent_3190_2(context, node));
+    editorCell.addEditorCell(this.createConstant_3190_0(context, node, ""));
+    editorCell.addEditorCell(this.createConstant_3190_1(context, node, "Transactional property cell:"));
+    editorCell.addEditorCell(this.createCollection_3190_2(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1216382040442(EditorContext context, SNode node) {
+  public EditorCell createCollection_3190_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_12163820404421216382040442(editorCell, node, context);
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection1216382092309(context, node));
-    editorCell.addEditorCell(this.createCollection1216382040443(context, node));
+    editorCell.addEditorCell(this.createCollection_3190_4(context, node));
+    editorCell.addEditorCell(this.createCollection_3190_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1216382040443(EditorContext context, SNode node) {
+  public EditorCell createCollection_3190_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_12163820404431216382040443(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1216382040444(context, node, "handler:"));
-    editorCell.addEditorCell(this.createRefNode1216382040446(context, node));
+    editorCell.addEditorCell(this.createConstant_3190_2(context, node, "handler:"));
+    editorCell.addEditorCell(this.createRefNode_3190_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1216382092309(EditorContext context, SNode node) {
+  public EditorCell createCollection_3190_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_12163820923091216382092309(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1216382092310(context, node, "property"));
-    editorCell.addEditorCell(this.createRefCell1216382092311(context, node));
+    editorCell.addEditorCell(this.createConstant_3190_3(context, node, "property"));
+    editorCell.addEditorCell(this.createRefCell_3190_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createComponent1216381326743(EditorContext context, SNode node) {
+  public EditorCell createComponent_3190_0(EditorContext context, SNode node) {
     if (this.my_CloseTag3190_0 == null) {
       this.my_CloseTag3190_0 = new _CloseTag(node);
     }
@@ -104,7 +104,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent1216381983842(EditorContext context, SNode node) {
+  public EditorCell createComponent_3190_1(EditorContext context, SNode node) {
     if (this.my_OpenTag3190_0 == null) {
       this.my_OpenTag3190_0 = new _OpenTag(node);
     }
@@ -113,7 +113,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent1216382040438(EditorContext context, SNode node) {
+  public EditorCell createComponent_3190_2(EditorContext context, SNode node) {
     if (this.my_CellModel_Common3190_0 == null) {
       this.my_CellModel_Common3190_0 = new _CellModel_Common(node);
     }
@@ -122,7 +122,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1216382040439(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_3190_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12163820404391216382040439(editorCell, node, context);
     setupLabel_Constant_1216382040439_1216382040439(editorCell, node, context);
@@ -130,7 +130,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1216382040441(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_3190_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12163820404411216382040441(editorCell, node, context);
     setupLabel_Constant_1216382040441_1216382040441(editorCell, node, context);
@@ -138,7 +138,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1216382040444(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_3190_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12163820404441216382040444(editorCell, node, context);
     setupLabel_Constant_1216382040444_1216382040444(editorCell, node, context);
@@ -146,7 +146,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1216382092310(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_3190_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12163820923101216382092310(editorCell, node, context);
     setupLabel_Constant_1216382092310_1216382092310(editorCell, node, context);
@@ -154,7 +154,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell1216381326738_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_3190_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellModel_TransactionalProperty_Editor._Inline3190_0());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -166,13 +166,13 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell1216381326738(EditorContext context, SNode node) {
+  public EditorCell createRefCell_3190_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1216381326738_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_3190_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -183,7 +183,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1216382040446_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_3190_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -195,13 +195,13 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode1216382040446(EditorContext context, SNode node) {
+  public EditorCell createRefNode_3190_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("handlerBlock");
     provider.setNoTargetText("<no handlerBlock>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1216382040446_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_3190_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -212,7 +212,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefCell1216382092311_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_3190_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellModel_TransactionalProperty_Editor._Inline3190_1());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -224,13 +224,13 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell1216382092311(EditorContext context, SNode node) {
+  public EditorCell createRefCell_3190_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1216382092311_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_3190_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -547,10 +547,10 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1216381326740(context, node);
+      return this.createProperty_3190_1(context, node);
     }
 
-    public EditorCell createProperty1216381326740_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_3190_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -562,13 +562,13 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    public EditorCell createProperty1216381326740(EditorContext context, SNode node) {
+    public EditorCell createProperty_3190_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1216381326740_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_3190_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -608,10 +608,10 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1216382092313(context, node);
+      return this.createProperty_3190_3(context, node);
     }
 
-    public EditorCell createProperty1216382092313_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_3190_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -623,13 +623,13 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    public EditorCell createProperty1216382092313(EditorContext context, SNode node) {
+    public EditorCell createProperty_3190_3(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1216382092313_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_3190_2_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {

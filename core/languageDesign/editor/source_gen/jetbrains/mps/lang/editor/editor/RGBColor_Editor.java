@@ -23,21 +23,21 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class RGBColor_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1225456683466(context, node);
+    return this.createCollection_1526_0(context, node);
   }
 
-  public EditorCell createCollection1225456683466(EditorContext context, SNode node) {
+  public EditorCell createCollection_1526_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_12254566834661225456683466(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1225458515591(context, node, "#"));
-    editorCell.addEditorCell(this.createProperty1225456821421(context, node));
+    editorCell.addEditorCell(this.createConstant_1526_0(context, node, "#"));
+    editorCell.addEditorCell(this.createProperty_1526_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1225458515591(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1526_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12254585155911225458515591(editorCell, node, context);
     setupLabel_Constant_1225458515591_1225458515591(editorCell, node, context);
@@ -45,7 +45,7 @@ public class RGBColor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1225456821421_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_1526_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -57,13 +57,13 @@ public class RGBColor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1225456821421(EditorContext context, SNode node) {
+  public EditorCell createProperty_1526_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1225456821421_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_1526_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

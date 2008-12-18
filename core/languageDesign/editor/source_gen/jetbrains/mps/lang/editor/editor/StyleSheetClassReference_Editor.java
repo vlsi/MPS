@@ -17,10 +17,10 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRefCell1198252344955(context, node);
+    return this.createRefCell_0725_1(context, node);
   }
 
-  public EditorCell createRefCell1198252344955_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_0725_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new StyleSheetClassReference_Editor._Inline0725_0());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -32,13 +32,13 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell1198252344955(EditorContext context, SNode node) {
+  public EditorCell createRefCell_0725_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("styleSheetClass");
     provider.setNoTargetText("<no styleSheetClass>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1198252344955_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_0725_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -68,10 +68,10 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1198252346521(context, node);
+      return this.createProperty_0725_1(context, node);
     }
 
-    public EditorCell createProperty1198252346521_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_0725_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -83,13 +83,13 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    public EditorCell createProperty1198252346521(EditorContext context, SNode node) {
+    public EditorCell createProperty_0725_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1198252346521_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_0725_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {

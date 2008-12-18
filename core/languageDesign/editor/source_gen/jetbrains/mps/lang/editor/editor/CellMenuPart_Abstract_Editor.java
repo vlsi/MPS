@@ -15,10 +15,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createError1164841410765(context, node);
+    return this.createError_7903_0(context, node);
   }
 
-  public EditorCell createError1164841410765(EditorContext context, SNode node) {
+  public EditorCell createError_7903_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose menu part>");
     setupBasic_Error_11648414107651164841410765(editorCell, node, context);
     setupLabel_Error_1164841410765_1164841410765(editorCell, node, context);

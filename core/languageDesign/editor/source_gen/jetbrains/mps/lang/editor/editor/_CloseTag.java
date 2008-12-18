@@ -29,10 +29,10 @@ public class _CloseTag extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createReadOnlyModelAccessor1226062535564(context, node);
+    return this.createReadOnlyModelAccessor_6449_0(context, node);
   }
 
-  public EditorCell createReadOnlyModelAccessor1226062535564(final EditorContext context, final SNode node) {
+  public EditorCell createReadOnlyModelAccessor_6449_0(final EditorContext context, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {

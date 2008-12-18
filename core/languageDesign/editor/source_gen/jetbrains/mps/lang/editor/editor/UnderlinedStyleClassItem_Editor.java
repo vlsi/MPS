@@ -26,27 +26,27 @@ import jetbrains.mps.smodel.SModel;
 public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1214316287175(context, node);
+    return this.createCollection_2890_0(context, node);
   }
 
-  public EditorCell createCollection1214316287175(EditorContext context, SNode node) {
+  public EditorCell createCollection_2890_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_12143162871751214316287175(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConceptProperty1214316290161(context, node));
-    editorCell.addEditorCell(this.createConstant1214316291663(context, node, ":"));
+    editorCell.addEditorCell(this.createConceptProperty_2890_1(context, node));
+    editorCell.addEditorCell(this.createConstant_2890_0(context, node, ":"));
     if (renderingCondition2890_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createProperty1214316297759(context, node));
+      editorCell.addEditorCell(this.createProperty_2890_1(context, node));
     }
     if (renderingCondition2890_1(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode1221219095122(context, node));
+      editorCell.addEditorCell(this.createRefNode_2890_1(context, node));
     }
     return editorCell;
   }
 
-  public EditorCell createConstant1214316291663(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2890_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12143162916631214316291663(editorCell, node, context);
     setupLabel_Constant_1214316291663_1214316291663(editorCell, node, context);
@@ -54,7 +54,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1214316290161_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptProperty_2890_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -67,13 +67,13 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1214316290161(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_2890_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptProperty1214316290161_internal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptProperty_2890_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -84,7 +84,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty1214316297759_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_2890_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -97,13 +97,13 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1214316297759(EditorContext context, SNode node) {
+  public EditorCell createProperty_2890_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("underlined");
     provider.setNoTargetText("<no underlined>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1214316297759_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_2890_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -114,7 +114,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1221219095122_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_2890_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -126,13 +126,13 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode1221219095122(EditorContext context, SNode node) {
+  public EditorCell createRefNode_2890_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1221219095122_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_2890_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

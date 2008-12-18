@@ -22,24 +22,24 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_CellModel_Common1215_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createProperty1198504910573(context, node);
+    return this.createProperty_1215_1(context, node);
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection1198504953470(context, node);
+    return this.createCollection_1215_0(context, node);
   }
 
-  public EditorCell createCollection1198504953470(EditorContext context, SNode node) {
+  public EditorCell createCollection_1215_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_11985049534701198504953470(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createComponent1214478813995(context, node));
+    editorCell.addEditorCell(this.createComponent_1215_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createComponent1214478813995(EditorContext context, SNode node) {
+  public EditorCell createComponent_1215_0(EditorContext context, SNode node) {
     if (this.my_CellModel_Common1215_0 == null) {
       this.my_CellModel_Common1215_0 = new _CellModel_Common(node);
     }
@@ -48,7 +48,7 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1198504910573_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_1215_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -60,13 +60,13 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1198504910573(EditorContext context, SNode node) {
+  public EditorCell createProperty_1215_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("openBrace");
     provider.setNoTargetText("{");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
-    EditorCell cellWithRole = this.createProperty1198504910573_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_1215_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

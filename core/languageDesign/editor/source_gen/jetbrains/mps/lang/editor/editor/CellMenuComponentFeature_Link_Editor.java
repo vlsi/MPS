@@ -20,10 +20,10 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRefCell1166057869265(context, node);
+    return this.createRefCell_9149_1(context, node);
   }
 
-  public EditorCell createRefCell1166057869265_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_9149_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Link_Editor._Inline9149_0());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -35,13 +35,13 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell1166057869265(EditorContext context, SNode node) {
+  public EditorCell createRefCell_9149_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<choose property>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1166057869265_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_9149_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -71,10 +71,10 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1166057869267(context, node);
+      return this.createProperty_9149_1(context, node);
     }
 
-    public EditorCell createProperty1166057869267_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_9149_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -86,13 +86,13 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    public EditorCell createProperty1166057869267(EditorContext context, SNode node) {
+    public EditorCell createProperty_9149_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1166057869267_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_9149_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {

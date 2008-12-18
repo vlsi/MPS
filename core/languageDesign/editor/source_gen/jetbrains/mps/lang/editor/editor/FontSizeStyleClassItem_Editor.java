@@ -27,27 +27,27 @@ import jetbrains.mps.smodel.SModel;
 public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1186415749074(context, node);
+    return this.createCollection_4462_0(context, node);
   }
 
-  public EditorCell createCollection1186415749074(EditorContext context, SNode node) {
+  public EditorCell createCollection_4462_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_11864157490741186415749074(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConceptProperty1186415811915(context, node));
-    editorCell.addEditorCell(this.createConstant1186415782550(context, node, ":"));
+    editorCell.addEditorCell(this.createConceptProperty_4462_1(context, node));
+    editorCell.addEditorCell(this.createConstant_4462_0(context, node, ":"));
     if (renderingCondition4462_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createProperty1221209981973(context, node));
+      editorCell.addEditorCell(this.createProperty_4462_1(context, node));
     }
     if (renderingCondition4462_1(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode1221064737626(context, node));
+      editorCell.addEditorCell(this.createRefNode_4462_1(context, node));
     }
     return editorCell;
   }
 
-  public EditorCell createConstant1186415782550(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_4462_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11864157825501186415782550(editorCell, node, context);
     setupLabel_Constant_1186415782550_1186415782550(editorCell, node, context);
@@ -55,7 +55,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1186415811915_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptProperty_4462_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -68,13 +68,13 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1186415811915(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_4462_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptProperty1186415811915_internal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptProperty_4462_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -85,7 +85,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1221064737626_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_4462_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -97,13 +97,13 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode1221064737626(EditorContext context, SNode node) {
+  public EditorCell createRefNode_4462_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1221064737626_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_4462_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -114,7 +114,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty1221209981973_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_4462_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -127,13 +127,13 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1221209981973(EditorContext context, SNode node) {
+  public EditorCell createProperty_4462_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1221209981973_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_4462_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -19,36 +19,36 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_CellModel_Common5840_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1136564583726(context, node);
+    return this.createCollection_5840_0(context, node);
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection1149850641679(context, node);
+    return this.createCollection_5840_1(context, node);
   }
 
-  public EditorCell createCollection1136564583726(EditorContext context, SNode node) {
+  public EditorCell createCollection_5840_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_11365645837261136564583726(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1136564583727(context, node, "//>"));
-    editorCell.addEditorCell(this.createConstant1136564583728(context, node, "attributed link"));
-    editorCell.addEditorCell(this.createConstant1136564583729(context, node, "<//"));
+    editorCell.addEditorCell(this.createConstant_5840_0(context, node, "//>"));
+    editorCell.addEditorCell(this.createConstant_5840_1(context, node, "attributed link"));
+    editorCell.addEditorCell(this.createConstant_5840_2(context, node, "<//"));
     return editorCell;
   }
 
-  public EditorCell createCollection1149850641679(EditorContext context, SNode node) {
+  public EditorCell createCollection_5840_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_11498506416791149850641679(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createComponent1214478688195(context, node));
+    editorCell.addEditorCell(this.createComponent_5840_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createComponent1214478688195(EditorContext context, SNode node) {
+  public EditorCell createComponent_5840_0(EditorContext context, SNode node) {
     if (this.my_CellModel_Common5840_0 == null) {
       this.my_CellModel_Common5840_0 = new _CellModel_Common(node);
     }
@@ -57,7 +57,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1136564583727(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_5840_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11365645837271136564583727(editorCell, node, context);
     setupLabel_Constant_1136564583727_1136564583727(editorCell, node, context);
@@ -65,7 +65,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1136564583728(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_5840_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11365645837281136564583728(editorCell, node, context);
     setupLabel_Constant_1136564583728_1136564583728(editorCell, node, context);
@@ -73,7 +73,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1136564583729(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_5840_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11365645837291136564583729(editorCell, node, context);
     setupLabel_Constant_1136564583729_1136564583729(editorCell, node, context);

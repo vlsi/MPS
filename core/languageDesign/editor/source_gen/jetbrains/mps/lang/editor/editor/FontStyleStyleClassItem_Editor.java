@@ -32,27 +32,27 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1186403889179(context, node);
+    return this.createCollection_0528_0(context, node);
   }
 
-  public EditorCell createCollection1186403889179(EditorContext context, SNode node) {
+  public EditorCell createCollection_0528_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_11864038891791186403889179(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1186403889931(context, node, "font-style"));
-    editorCell.addEditorCell(this.createConstant1186403894198(context, node, ":"));
+    editorCell.addEditorCell(this.createConstant_0528_0(context, node, "font-style"));
+    editorCell.addEditorCell(this.createConstant_0528_1(context, node, ":"));
     if (renderingCondition0528_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createProperty1186403896216(context, node));
+      editorCell.addEditorCell(this.createProperty_0528_1(context, node));
     }
     if (renderingCondition0528_1(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode1220975756218(context, node));
+      editorCell.addEditorCell(this.createRefNode_0528_1(context, node));
     }
     return editorCell;
   }
 
-  public EditorCell createConstant1186403889931(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_0528_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11864038899311186403889931(editorCell, node, context);
     setupLabel_Constant_1186403889931_1186403889931(editorCell, node, context);
@@ -61,7 +61,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1186403894198(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_0528_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11864038941981186403894198(editorCell, node, context);
     setupLabel_Constant_1186403894198_1186403894198(editorCell, node, context);
@@ -69,7 +69,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1186403896216_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_0528_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -81,13 +81,13 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1186403896216(EditorContext context, SNode node) {
+  public EditorCell createProperty_0528_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("style");
     provider.setNoTargetText("<no style>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1186403896216_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_0528_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -98,7 +98,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1220975756218_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_0528_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -111,13 +111,13 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode1220975756218(EditorContext context, SNode node) {
+  public EditorCell createRefNode_0528_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1220975756218_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_0528_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

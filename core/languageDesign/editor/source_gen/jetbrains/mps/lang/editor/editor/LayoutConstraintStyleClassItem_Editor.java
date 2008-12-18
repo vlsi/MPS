@@ -21,22 +21,22 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1214317920059(context, node);
+    return this.createCollection_4603_0(context, node);
   }
 
-  public EditorCell createCollection1214317920059(EditorContext context, SNode node) {
+  public EditorCell createCollection_4603_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_12143179200591214317920059(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConceptProperty1214317920060(context, node));
-    editorCell.addEditorCell(this.createConstant1214317920061(context, node, ":"));
-    editorCell.addEditorCell(this.createProperty1214317920062(context, node));
+    editorCell.addEditorCell(this.createConceptProperty_4603_1(context, node));
+    editorCell.addEditorCell(this.createConstant_4603_0(context, node, ":"));
+    editorCell.addEditorCell(this.createProperty_4603_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1214317920061(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_4603_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12143179200611214317920061(editorCell, node, context);
     setupLabel_Constant_1214317920061_1214317920061(editorCell, node, context);
@@ -44,7 +44,7 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1214317920060_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptProperty_4603_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -57,13 +57,13 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1214317920060(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_4603_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptProperty1214317920060_internal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptProperty_4603_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -74,7 +74,7 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty1214317920062_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_4603_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -86,13 +86,13 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty1214317920062(EditorContext context, SNode node) {
+  public EditorCell createProperty_4603_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("layoutConstraint");
     provider.setNoTargetText("<no layoutConstraint>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1214317920062_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_4603_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -24,36 +24,36 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_CellModel_Common6025_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1078939636327(context, node);
+    return this.createCollection_6025_0(context, node);
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection1078941097162(context, node);
+    return this.createCollection_6025_1(context, node);
   }
 
-  public EditorCell createCollection1078939636327(EditorContext context, SNode node) {
+  public EditorCell createCollection_6025_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_10789396363271078939636327(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createComponent1176717023528(context, node));
-    editorCell.addEditorCell(this.createRefCell1140222839466(context, node));
-    editorCell.addEditorCell(this.createComponent1176717029764(context, node));
+    editorCell.addEditorCell(this.createComponent_6025_0(context, node));
+    editorCell.addEditorCell(this.createRefCell_6025_1(context, node));
+    editorCell.addEditorCell(this.createComponent_6025_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1078941097162(EditorContext context, SNode node) {
+  public EditorCell createCollection_6025_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_10789410971621078941097162(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createComponent1214478501206(context, node));
+    editorCell.addEditorCell(this.createComponent_6025_2(context, node));
     return editorCell;
   }
 
-  public EditorCell createComponent1176717023528(EditorContext context, SNode node) {
+  public EditorCell createComponent_6025_0(EditorContext context, SNode node) {
     if (this.my_OpenTag6025_0 == null) {
       this.my_OpenTag6025_0 = new _OpenTag(node);
     }
@@ -62,7 +62,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent1176717029764(EditorContext context, SNode node) {
+  public EditorCell createComponent_6025_1(EditorContext context, SNode node) {
     if (this.my_CloseTag6025_0 == null) {
       this.my_CloseTag6025_0 = new _CloseTag(node);
     }
@@ -71,7 +71,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent1214478501206(EditorContext context, SNode node) {
+  public EditorCell createComponent_6025_2(EditorContext context, SNode node) {
     if (this.my_CellModel_Common6025_0 == null) {
       this.my_CellModel_Common6025_0 = new _CellModel_Common(node);
     }
@@ -80,7 +80,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell1140222839466_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_6025_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellModel_Component_Editor._Inline6025_0());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -92,13 +92,13 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell1140222839466(EditorContext context, SNode node) {
+  public EditorCell createRefCell_6025_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("editorComponent");
     provider.setNoTargetText("<no component>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1140222839466_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_6025_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -185,10 +185,10 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1140222845140(context, node);
+      return this.createProperty_6025_1(context, node);
     }
 
-    public EditorCell createProperty1140222845140_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_6025_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -200,13 +200,13 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    public EditorCell createProperty1140222845140(EditorContext context, SNode node) {
+    public EditorCell createProperty_6025_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1140222845140_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_6025_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {

@@ -21,22 +21,22 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1214320157195(context, node);
+    return this.createCollection_2322_0(context, node);
   }
 
-  public EditorCell createCollection1214320157195(EditorContext context, SNode node) {
+  public EditorCell createCollection_2322_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_12143201571951214320157195(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConceptProperty1214320157196(context, node));
-    editorCell.addEditorCell(this.createConstant1214320157197(context, node, ":"));
-    editorCell.addEditorCell(this.createProperty1214320157198(context, node));
+    editorCell.addEditorCell(this.createConceptProperty_2322_1(context, node));
+    editorCell.addEditorCell(this.createConstant_2322_0(context, node, ":"));
+    editorCell.addEditorCell(this.createProperty_2322_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1214320157197(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2322_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12143201571971214320157197(editorCell, node, context);
     setupLabel_Constant_1214320157197_1214320157197(editorCell, node, context);
@@ -44,7 +44,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1214320157196_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptProperty_2322_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -57,13 +57,13 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1214320157196(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_2322_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptProperty1214320157196_internal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptProperty_2322_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -74,7 +74,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     return cellWithRole;
   }
 
-  public EditorCell createProperty1214320157198_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_2322_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -86,13 +86,13 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createProperty1214320157198(EditorContext context, SNode node) {
+  public EditorCell createProperty_2322_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("tag");
     provider.setNoTargetText("<no tag>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1214320157198_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_2322_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

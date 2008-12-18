@@ -22,44 +22,44 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1166059732993(context, node);
+    return this.createCollection_8123_0(context, node);
   }
 
-  public EditorCell createCollection1166059732993(EditorContext context, SNode node) {
+  public EditorCell createCollection_8123_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_11660597329931166059732993(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection1166059732994(context, node));
-    editorCell.addEditorCell(this.createCollection1166059732996(context, node));
+    editorCell.addEditorCell(this.createCollection_8123_1(context, node));
+    editorCell.addEditorCell(this.createCollection_8123_2(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1166059732994(EditorContext context, SNode node) {
+  public EditorCell createCollection_8123_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_11660597329941166059732994(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1166059732995(context, node, "menu component"));
+    editorCell.addEditorCell(this.createConstant_8123_0(context, node, "menu component"));
     return editorCell;
   }
 
-  public EditorCell createCollection1166059732996(EditorContext context, SNode node) {
+  public EditorCell createCollection_8123_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_11660597329961166059732996(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1166059732997(context, node, "  "));
-    editorCell.addEditorCell(this.createConstant1166059732998(context, node, "component"));
-    editorCell.addEditorCell(this.createConstant1166059732999(context, node, ":"));
-    editorCell.addEditorCell(this.createRefCell1166059755673(context, node));
+    editorCell.addEditorCell(this.createConstant_8123_1(context, node, "  "));
+    editorCell.addEditorCell(this.createConstant_8123_2(context, node, "component"));
+    editorCell.addEditorCell(this.createConstant_8123_3(context, node, ":"));
+    editorCell.addEditorCell(this.createRefCell_8123_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1166059732995(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_8123_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11660597329951166059732995(editorCell, node, context);
     setupLabel_Constant_1166059732995_1166059732995(editorCell, node, context);
@@ -67,7 +67,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1166059732997(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_8123_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11660597329971166059732997(editorCell, node, context);
     setupLabel_Constant_1166059732997_1166059732997(editorCell, node, context);
@@ -75,7 +75,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1166059732998(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_8123_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11660597329981166059732998(editorCell, node, context);
     setupLabel_Constant_1166059732998_1166059732998(editorCell, node, context);
@@ -83,7 +83,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1166059732999(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_8123_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11660597329991166059732999(editorCell, node, context);
     setupLabel_Constant_1166059732999_1166059732999(editorCell, node, context);
@@ -91,7 +91,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell1166059755673_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_8123_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CellMenuPart_CellMenuComponent_Editor._Inline8123_0());
     EditorCell editorCell = provider.createEditorCell(context);
@@ -103,13 +103,13 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell1166059755673(EditorContext context, SNode node) {
+  public EditorCell createRefCell_8123_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("cellMenuComponent");
     provider.setNoTargetText("<choose menu component>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1166059755673_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_8123_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -234,10 +234,10 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1166059764129(context, node);
+      return this.createProperty_8123_1(context, node);
     }
 
-    public EditorCell createProperty1166059764129_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_8123_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
@@ -249,13 +249,13 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    public EditorCell createProperty1166059764129(EditorContext context, SNode node) {
+    public EditorCell createProperty_8123_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1166059764129_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_8123_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
