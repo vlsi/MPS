@@ -470,7 +470,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1210371574993(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "myListHandler_" + _context.getNode().getId();
+    return _context.createUniqueName("myListHandler_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1210372531515(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -831,36 +831,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1197572506143(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode generatedMethod = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellFactoryMethod");
-    return ((SNode)generatedMethod);
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellFactoryMethod");
   }
 
   public static Object referenceMacro_GetReferent_1197572720842(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode generatedMethod = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellFactoryMethod");
-    return ((SNode)generatedMethod);
-  }
-
-  public static Object referenceMacro_GetReferent_1197573314450(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode cellLayout = SLinkOperations.getTarget(_context.getNode(), "cellLayout", true);
-    if (cellLayout == null) {
-      // no cell layout
-      if (SPropertyOperations.getBoolean(_context.getNode(), "vertical")) {
-        return SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "baseMethodDeclaration", false);
-      }
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "baseMethodDeclaration", false);
-    }
-    // cell layout is defined
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_6().createNode(), "baseMethodDeclaration", false);
-    }
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_7().createNode(), "baseMethodDeclaration", false);
-    }
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Flow")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_8().createNode(), "baseMethodDeclaration", false);
-    }
-    // default
-    return SLinkOperations.getTarget(new _Quotations.QuotationClass_9().createNode(), "baseMethodDeclaration", false);
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellFactoryMethod");
   }
 
   public static Object referenceMacro_GetReferent_1197580078127(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -868,19 +843,19 @@ public class QueriesGenerated {
     // no cell layout defined (obsolete)
     if (cellLayout == null) {
       if (SPropertyOperations.getBoolean(_context.getNode(), "vertical")) {
-        return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_10().createNode(), "creator", true), "baseMethodDeclaration", false);
+        return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "creator", true), "baseMethodDeclaration", false);
       }
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(), "creator", true), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
     // choose cell layout
     if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Vertical")) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_12().createNode(), "creator", true), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_6().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
     if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal")) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_13().createNode(), "creator", true), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_7().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
     if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Flow")) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_14().createNode(), "creator", true), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_8().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
     // error
     return null;
@@ -1048,6 +1023,29 @@ public class QueriesGenerated {
       SPropertyOperations.getString_def(_context.getNode(), "measure", "SPACES").toUpperCase() :
       "SPACES"
     );
+  }
+
+  public static Object referenceMacro_GetReferent_1229561240559(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode cellLayout = SLinkOperations.getTarget(_context.getNode(), "cellLayout", true);
+    if (cellLayout == null) {
+      // no cell layout
+      if (SPropertyOperations.getBoolean(_context.getNode(), "vertical")) {
+        return SLinkOperations.getTarget(new _Quotations.QuotationClass_9().createNode(), "baseMethodDeclaration", false);
+      }
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_10().createNode(), "baseMethodDeclaration", false);
+    }
+    // cell layout is defined
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(), "baseMethodDeclaration", false);
+    }
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_12().createNode(), "baseMethodDeclaration", false);
+    }
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Flow")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_13().createNode(), "baseMethodDeclaration", false);
+    }
+    // default
+    return SLinkOperations.getTarget(new _Quotations.QuotationClass_14().createNode(), "baseMethodDeclaration", false);
   }
 
   public static boolean ifMacro_Condition_1168384460946(final IOperationContext operationContext, final IfMacroContext _context) {
