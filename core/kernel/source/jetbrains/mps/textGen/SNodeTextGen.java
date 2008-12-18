@@ -133,4 +133,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     return targetNode.getName();
   }
 
+  protected String getDeafultNoTextGenErrorText(INodeAdapter node) {
+    return "<!TextGen not found for '" + node.getConceptFQName() + "'!>";
+  }
 }
