@@ -37,7 +37,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1136930934885;
+  /* package */AbstractCellListHandler myListHandler_6671_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1081293243883(context, node);
@@ -159,15 +159,15 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1136930934885(EditorContext context, SNode node) {
-    if (this.myListHandler_1136930934885 == null) {
-      this.myListHandler_1136930934885 = new CellKeyMapDeclaration_Editor.itemListHandler_6671_0(node, "item", context);
+    if (this.myListHandler_6671_0 == null) {
+      this.myListHandler_6671_0 = new CellKeyMapDeclaration_Editor.itemListHandler_6671_0(node, "item", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_1136930934885.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_6671_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_item1136930934885(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.setRole(this.myListHandler_1136930934885.getElementRole());
+    editorCell.setRole(this.myListHandler_6671_0.getElementRole());
     return editorCell;
   }
 

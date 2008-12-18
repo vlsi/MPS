@@ -27,7 +27,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class SelectOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1201266206773;
+  /* package */AbstractCellListHandler myListHandler_5999_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1201266156329(context, node);
@@ -91,15 +91,15 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1201266206773(EditorContext context, SNode node) {
-    if (this.myListHandler_1201266206773 == null) {
-      this.myListHandler_1201266206773 = new SelectOperation_Editor.selectLaterParameterListHandler_5999_0(node, "selectLaterParameter", context);
+    if (this.myListHandler_5999_0 == null) {
+      this.myListHandler_5999_0 = new SelectOperation_Editor.selectLaterParameterListHandler_5999_0(node, "selectLaterParameter", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_1201266206773.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_5999_0.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_refNodeList_selectLaterParameter1201266206773(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.setRole(this.myListHandler_1201266206773.getElementRole());
+    editorCell.setRole(this.myListHandler_5999_0.getElementRole());
     return editorCell;
   }
 

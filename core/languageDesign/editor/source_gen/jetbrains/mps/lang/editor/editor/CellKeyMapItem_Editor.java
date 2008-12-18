@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class CellKeyMapItem_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1216158369218;
+  /* package */AbstractCellListHandler myListHandler_9930_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1216158369199(context, node);
@@ -286,15 +286,15 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1216158369218(EditorContext context, SNode node) {
-    if (this.myListHandler_1216158369218 == null) {
-      this.myListHandler_1216158369218 = new CellKeyMapItem_Editor.keystrokeListHandler_9930_0(node, "keystroke", context);
+    if (this.myListHandler_9930_0 == null) {
+      this.myListHandler_9930_0 = new CellKeyMapItem_Editor.keystrokeListHandler_9930_0(node, "keystroke", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_1216158369218.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_9930_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_keystroke1216158369218(editorCell, node, context);
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.setRole(this.myListHandler_1216158369218.getElementRole());
+    editorCell.setRole(this.myListHandler_9930_0.getElementRole());
     return editorCell;
   }
 

@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1164826358683;
+  /* package */AbstractCellListHandler myListHandler_1820_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1164826331320(context, node);
@@ -50,15 +50,15 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createRefNodeList1164826358683(EditorContext context, SNode node) {
-    if (this.myListHandler_1164826358683 == null) {
-      this.myListHandler_1164826358683 = new CellMenuDescriptor_Editor.cellMenuPartListHandler_1820_0(node, "cellMenuPart", context);
+    if (this.myListHandler_1820_0 == null) {
+      this.myListHandler_1820_0 = new CellMenuDescriptor_Editor.cellMenuPartListHandler_1820_0(node, "cellMenuPart", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_1164826358683.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1820_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_refNodeList_cellMenuPart1164826358683(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.setRole(this.myListHandler_1164826358683.getElementRole());
+    editorCell.setRole(this.myListHandler_1820_0.getElementRole());
     return editorCell;
   }
 
