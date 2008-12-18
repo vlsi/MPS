@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -39,8 +40,8 @@ public class EditorCellModel_Behavior {
     return EditorCellModel_Behavior.call_getCellModelKind_1216811674575(thisNode) + "_" + thisNode.getId();
   }
 
-  public static String call_getFactoryMethodName_1216812165609(SNode thisNode) {
-    return "create" + EditorCellModel_Behavior.call_getCellModelKind_1216811674575(thisNode) + thisNode.getId();
+  public static String call_getFactoryMethodName_1216812165609(SNode thisNode, TemplateQueryContext cg) {
+    return cg.createUniqueName("create" + EditorCellModel_Behavior.call_getCellModelKind_1216811674575(thisNode) + "_", thisNode);
   }
 
   public static SNode virtual_getParent_1219419981626(SNode thisNode) {
