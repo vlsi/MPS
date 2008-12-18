@@ -746,11 +746,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1183057724880(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_Basic");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_Basic");
   }
 
   public static Object referenceMacro_GetReferent_1183057724900(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_AbstractLabel");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_AbstractLabel");
   }
 
   public static Object referenceMacro_GetReferent_1183058085351(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1006,14 +1006,6 @@ public class QueriesGenerated {
     return QueriesUtil.getGeneratedClassByAncestor(SLinkOperations.getTarget(_context.getNode(), "query", true), _context);
   }
 
-  public static Object referenceMacro_GetReferent_1225901389730(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_Basic");
-  }
-
-  public static Object referenceMacro_GetReferent_1225901389745(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_AbstractLabel");
-  }
-
   public static Object referenceMacro_GetReferent_1227109487647(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (SPropertyOperations.getString_def(_context.getNode(), "measure", "SPACES") != null ?
       SPropertyOperations.getString_def(_context.getNode(), "measure", "SPACES").toUpperCase() :
@@ -1042,6 +1034,14 @@ public class QueriesGenerated {
     }
     // default
     return SLinkOperations.getTarget(new _Quotations.QuotationClass_14().createNode(), "baseMethodDeclaration", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1229564403929(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_AbstractLabel");
+  }
+
+  public static Object referenceMacro_GetReferent_1229564403944(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_Basic");
   }
 
   public static boolean ifMacro_Condition_1168384460946(final IOperationContext operationContext, final IfMacroContext _context) {
