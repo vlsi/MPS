@@ -211,9 +211,17 @@
         <property name="text" value="unique name from" />
         <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229564645789">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1218048120849">
         <property name="noTargetText" value="no base name" />
         <link role="relationDeclaration" targetNodeId="1.1218047638032" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229564883651">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1218049817425">
         <property name="text" value="in context" />
@@ -222,9 +230,17 @@
           <property name="value" value="1.0" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229564651649">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1218049832911">
         <property name="noTargetText" value="&lt;no node&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1218049772449" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229564893058">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>

@@ -19,10 +19,10 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class GenerationContextOp_Base_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConceptProperty1217004816051(context, node);
+    return this.createConceptProperty_4980_1(context, node);
   }
 
-  public EditorCell createConceptProperty1217004816051_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptProperty_4980_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -34,13 +34,13 @@ public class GenerationContextOp_Base_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1217004816051(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_4980_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptProperty1217004816051_internal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptProperty_4980_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

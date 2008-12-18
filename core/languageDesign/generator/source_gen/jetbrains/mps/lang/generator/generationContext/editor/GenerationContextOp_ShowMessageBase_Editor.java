@@ -23,23 +23,23 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1217960440453(context, node);
+    return this.createCollection_3544_0(context, node);
   }
 
-  public EditorCell createCollection1217960440453(EditorContext context, SNode node) {
+  public EditorCell createCollection_3544_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_12179604404531217960440453(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConceptProperty1217960446064(context, node));
-    editorCell.addEditorCell(this.createRefNode1217960469679(context, node));
-    editorCell.addEditorCell(this.createConstant1217960507306(context, node, "->"));
-    editorCell.addEditorCell(this.createRefNode1218048531617(context, node));
+    editorCell.addEditorCell(this.createConceptProperty_3544_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_3544_1(context, node));
+    editorCell.addEditorCell(this.createConstant_3544_0(context, node, "->"));
+    editorCell.addEditorCell(this.createRefNode_3544_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1217960507306(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_3544_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12179605073061217960507306(editorCell, node, context);
     setupLabel_Constant_1217960507306_1217960507306(editorCell, node, context);
@@ -47,7 +47,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1217960446064_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptProperty_3544_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -60,13 +60,13 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1217960446064(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_3544_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptProperty1217960446064_internal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptProperty_3544_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -77,7 +77,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1217960469679_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_3544_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -89,13 +89,13 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  public EditorCell createRefNode1217960469679(EditorContext context, SNode node) {
+  public EditorCell createRefNode_3544_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("messageText");
     provider.setNoTargetText("<no text>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1217960469679_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_3544_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -106,7 +106,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1218048531617_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_3544_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
@@ -118,13 +118,13 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  public EditorCell createRefNode1218048531617(EditorContext context, SNode node) {
+  public EditorCell createRefNode_3544_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("referenceNode");
     provider.setNoTargetText("<node>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1218048531617_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_3544_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
