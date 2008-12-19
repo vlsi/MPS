@@ -851,14 +851,15 @@ public class EquationManager {
   public InequationSystem solveInequations(SNode hole) {
 
     IWrapper holeWrapper = null;
+    SNode holeType = myTypeCheckingContext.getMainContext().get(hole);
     if (hole != null) {
-      holeWrapper = NodeWrapper.fromNode(myTypeCheckingContext.getMainContext().get(hole), this);
+      holeWrapper = NodeWrapper.fromNode(holeType, this);
     }
 
     eliminateConcretePartsOfInequations(false, holeWrapper);
     Set<IWrapper> types = eliminateConcretePartsOfInequations(true, holeWrapper);
 
-    InequationSystem inequationSystem = new InequationSystem(this);
+    InequationSystem inequationSystem = new InequationSystem(this, hole);
 
     ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
     for (IWrapper type : types) {

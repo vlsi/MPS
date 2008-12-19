@@ -59,6 +59,10 @@ public class TypeCheckingContext {
     myRootNode = rootNode;
   }
 
+  public SubtypingManager getSubtypingManager() {
+    return myTypeChecker.getSubtypingManager();
+  }
+
   public SModel getRuntimeTypesModel() {
     return myTypeChecker.getRuntimeTypesModel();
   }
