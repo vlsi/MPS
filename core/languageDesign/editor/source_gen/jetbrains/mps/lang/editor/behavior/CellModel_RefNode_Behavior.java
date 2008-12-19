@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 
 public class CellModel_RefNode_Behavior {
 
@@ -15,7 +16,7 @@ public class CellModel_RefNode_Behavior {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role");
   }
 
-  public static String virtual_getCellId_1216737839993(SNode thisNode) {
+  public static String virtual_getCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
     return "refNode_" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role");
   }
 

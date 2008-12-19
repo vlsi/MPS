@@ -10078,6 +10078,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1229511945808">
                               <link role="baseMethodDeclaration" targetNodeId="62.1216737839993" resolveInfo="getCellId" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1229648608181" />
                             </node>
                           </node>
                         </node>

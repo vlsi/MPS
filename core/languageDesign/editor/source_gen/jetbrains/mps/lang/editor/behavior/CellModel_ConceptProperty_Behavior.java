@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.structure.behavior.ConceptPropertyDeclaration_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 
@@ -17,7 +18,7 @@ public class CellModel_ConceptProperty_Behavior {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "name");
   }
 
-  public static String virtual_getCellId_1216737839993(SNode thisNode) {
+  public static String virtual_getCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
     return ConceptPropertyDeclaration_Behavior.call_getCellId_1216822989252(SLinkOperations.getTarget(thisNode, "relationDeclaration", false));
   }
 

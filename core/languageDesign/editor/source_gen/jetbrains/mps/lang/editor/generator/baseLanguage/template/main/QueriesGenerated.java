@@ -160,7 +160,7 @@ public class QueriesGenerated {
     if ((originalNode == null)) {
       originalNode = _context.getNode();
     }
-    return EditorCellModel_Behavior.call_getCellId_1216737839993(originalNode);
+    return EditorCellModel_Behavior.call_getCellId_1216737839993(originalNode, _context);
   }
 
   public static Object propertyMacro_GetPropertyValue_1182981045553(final IOperationContext operationContext, final PropertyMacroContext _context) {
