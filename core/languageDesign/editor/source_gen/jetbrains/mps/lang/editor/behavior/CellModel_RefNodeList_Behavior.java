@@ -12,7 +12,7 @@ public class CellModel_RefNodeList_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static String virtual_getCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
+  public static String virtual_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
     return "refNodeList_" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role");
   }
 

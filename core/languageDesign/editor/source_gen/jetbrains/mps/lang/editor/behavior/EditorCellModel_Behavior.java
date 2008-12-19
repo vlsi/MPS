@@ -36,7 +36,7 @@ public class EditorCellModel_Behavior {
     return result;
   }
 
-  public static String virtual_getCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
+  public static String virtual_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
     return gc.createUniqueName(EditorCellModel_Behavior.call_getCellModelKind_1216811674575(thisNode) + "_", thisNode);
   }
 
@@ -179,8 +179,8 @@ public class EditorCellModel_Behavior {
     return MPSFonts.PLAIN;
   }
 
-  public static String call_getCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getCellId_1216737839993", PARAMETERS_1216737839993, gc);
+  public static String call_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
+    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_createCellId_1216737839993", PARAMETERS_1216737839993, gc);
   }
 
   public static String call_getOpeningText_1220339714057(SNode thisNode) {
@@ -195,8 +195,8 @@ public class EditorCellModel_Behavior {
     return (Integer)BehaviorManager.getInstance().invoke(Integer.class, thisNode, "virtual_getDefaultFontStyle_1221472292001", PARAMETERS_1221472292001);
   }
 
-  public static String callSuper_getCellId_1216737839993(SNode thisNode, String callerConceptFqName, TemplateQueryContext gc) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getCellId_1216737839993", PARAMETERS_1216737839993, gc);
+  public static String callSuper_createCellId_1216737839993(SNode thisNode, String callerConceptFqName, TemplateQueryContext gc) {
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_createCellId_1216737839993", PARAMETERS_1216737839993, gc);
   }
 
   public static String callSuper_getOpeningText_1220339714057(SNode thisNode, String callerConceptFqName) {
