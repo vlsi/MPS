@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.typesystem.inference.InequationSystem;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
 import java.util.*;
 
@@ -85,9 +86,17 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return getMatchingActions(pattern, strictMatching).size() == n;
   }
 
+  protected InequationSystem getInequationSystem(EditorCell contextCell) {
+    return null;
+  }
+
   public List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
+    InequationSystem inequationSystem = getInequationSystem(contextCell);
 
     List<INodeSubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
+    for (INodeSubstituteAction nodeSubstituteAction : substituteActionList) {
+ //     SNode node = nodeSubstituteAction.substitute(myEditorContext, pattern);
+    }
     return substituteActionList; //todo
   }
 

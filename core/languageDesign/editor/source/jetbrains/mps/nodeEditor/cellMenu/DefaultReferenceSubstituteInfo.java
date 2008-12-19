@@ -18,9 +18,12 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -30,9 +33,13 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.typesystem.inference.InequationSystem;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
 import java.util.Collections;
+
+import com.intellij.util.containers.HashMap;
 
 public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   private static final Logger LOG = Logger.getLogger(DefaultReferenceSubstituteInfo.class);
@@ -67,6 +74,21 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     });
   }
 
+  protected InequationSystem getInequationSystem(EditorCell contextCell) {
+    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(mySourceNode.getContainingRoot()), mapping).get(0);
+    SModel auxModel = nodeCopyRoot.getModel();
+    if (!nodeCopyRoot.isRoot()) {
+      auxModel.addRoot(nodeCopyRoot);
+    }
+    String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
+    RuntimeTypeVariable var = RuntimeTypeVariable.newInstance(auxModel);
+    auxModel.removeRoot(nodeCopyRoot);
+
+    //todo
+    return null;
+  }
+
   public List<INodeSubstituteAction> createActions() {
     if (myLinkDeclaration == null) {
       return Collections.emptyList();
@@ -86,5 +108,9 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     }
 
     return ModelActions.createReferentSubstituteActions(mySourceNode, myCurrentReferent, myLinkDeclaration, getOperationContext());
+  }
+
+  protected LinkDeclaration getLinkDeclaration() {
+    return myLinkDeclaration;
   }
 }
