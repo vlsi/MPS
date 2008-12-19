@@ -152,7 +152,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1186403834898");
+    editorCell.setCellId("Collection_4607_0");
   }
 
   private static void setupBasic_ConceptProperty_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -161,7 +161,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1186403841966");
+    editorCell.setCellId("Constant_4607_0");
   }
 
   private static void setupBasic_Property_4607_0(EditorCell editorCell, SNode node, EditorContext context) {

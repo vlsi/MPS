@@ -64,11 +64,11 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_1820_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1164826331320");
+    editorCell.setCellId("Collection_1820_0");
   }
 
   private static void setupBasic_Constant_1820_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1164826341494");
+    editorCell.setCellId("Constant_1820_0");
   }
 
   private static void setupBasic_RefNodeList_1820_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -137,7 +137,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_1820_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("Constant_1164826376028");
+      editorCell.setCellId("Constant_1820_1");
       {
         Style inlineStyle = new Style(editorCell) {
           {

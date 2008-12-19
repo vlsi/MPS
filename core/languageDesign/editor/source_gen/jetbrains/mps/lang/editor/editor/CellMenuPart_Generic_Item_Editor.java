@@ -199,11 +199,11 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_8838_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1165424779461");
+    editorCell.setCellId("Collection_8838_0");
   }
 
   private static void setupBasic_Collection_8838_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1165424779462");
+    editorCell.setCellId("Collection_8838_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -216,7 +216,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_8838_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165424779463");
+    editorCell.setCellId("Constant_8838_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -230,7 +230,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_8838_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1165424779464");
+    editorCell.setCellId("Collection_8838_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -243,7 +243,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_8838_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165424779465");
+    editorCell.setCellId("Constant_8838_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -256,7 +256,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_8838_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1165424779466");
+    editorCell.setCellId("Collection_8838_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -269,7 +269,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_8838_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1165424779467");
+    editorCell.setCellId("Collection_8838_4");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -282,11 +282,11 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_8838_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165424779468");
+    editorCell.setCellId("Constant_8838_2");
   }
 
   private static void setupBasic_Constant_8838_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165424779469");
+    editorCell.setCellId("Constant_8838_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -312,7 +312,7 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_8838_5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1165424779471");
+    editorCell.setCellId("Collection_8838_5");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -325,11 +325,11 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_8838_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165424779472");
+    editorCell.setCellId("Constant_8838_4");
   }
 
   private static void setupBasic_Constant_8838_5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165424779473");
+    editorCell.setCellId("Constant_8838_5");
     {
       Style inlineStyle = new Style(editorCell) {
         {

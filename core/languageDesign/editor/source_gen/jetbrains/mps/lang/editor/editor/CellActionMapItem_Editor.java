@@ -201,11 +201,11 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_7515_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1139533175437");
+    editorCell.setCellId("Collection_7515_0");
   }
 
   private static void setupBasic_Constant_7515_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1139533175438");
+    editorCell.setCellId("Constant_7515_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -218,7 +218,7 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_7515_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1139533175439");
+    editorCell.setCellId("Collection_7515_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -231,7 +231,7 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_7515_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1139533175452");
+    editorCell.setCellId("Collection_7515_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -244,11 +244,11 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_7515_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1139533175453");
+    editorCell.setCellId("Constant_7515_1");
   }
 
   private static void setupBasic_Constant_7515_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1139533175454");
+    editorCell.setCellId("Constant_7515_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -277,7 +277,7 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_7515_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1139537337310");
+    editorCell.setCellId("Collection_7515_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -290,11 +290,11 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_7515_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1139537337311");
+    editorCell.setCellId("Constant_7515_3");
   }
 
   private static void setupBasic_Constant_7515_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1139537337312");
+    editorCell.setCellId("Constant_7515_4");
     {
       Style inlineStyle = new Style(editorCell) {
         {

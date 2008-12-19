@@ -135,7 +135,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_2253_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1226492963665");
+    editorCell.setCellId("Collection_2253_0");
   }
 
   private static void setupBasic_ConceptProperty_2253_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -144,7 +144,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_2253_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1226492963669");
+    editorCell.setCellId("Constant_2253_0");
   }
 
   private static void setupBasic_Property_2253_0(EditorCell editorCell, SNode node, EditorContext context) {

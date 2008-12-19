@@ -72,7 +72,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_2949_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1088186441777");
+    editorCell.setCellId("Collection_2949_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -85,7 +85,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_2949_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1088420259174");
+    editorCell.setCellId("Constant_2949_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {

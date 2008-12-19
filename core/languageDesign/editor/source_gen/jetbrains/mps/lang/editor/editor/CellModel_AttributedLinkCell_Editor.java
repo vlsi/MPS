@@ -83,7 +83,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_5840_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1136564583726");
+    editorCell.setCellId("Collection_5840_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -96,7 +96,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_5840_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1136564583727");
+    editorCell.setCellId("Constant_5840_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -110,7 +110,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_5840_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1136564583728");
+    editorCell.setCellId("Constant_5840_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -125,7 +125,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_5840_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1136564583729");
+    editorCell.setCellId("Constant_5840_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -139,7 +139,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_5840_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1149850641679");
+    editorCell.setCellId("Collection_5840_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {

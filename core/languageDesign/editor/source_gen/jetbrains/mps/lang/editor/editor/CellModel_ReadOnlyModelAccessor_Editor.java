@@ -151,7 +151,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_0582_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1225900578294");
+    editorCell.setCellId("Collection_0582_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -164,7 +164,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_0582_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1225900578296");
+    editorCell.setCellId("Constant_0582_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -242,7 +242,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_0582_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1225900615400");
+    editorCell.setCellId("Collection_0582_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -255,7 +255,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_0582_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1225900615405");
+    editorCell.setCellId("Constant_0582_1");
     Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
   }
 
@@ -275,11 +275,11 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_0582_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1226072334801");
+    editorCell.setCellId("Collection_0582_2");
   }
 
   private static void setupBasic_Constant_0582_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1226335562250");
+    editorCell.setCellId("Constant_0582_2");
   }
 
   private static void setupLabel_Constant_0582_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

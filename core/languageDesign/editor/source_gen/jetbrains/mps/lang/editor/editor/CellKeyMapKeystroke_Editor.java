@@ -130,11 +130,11 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_3628_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1136923542661");
+    editorCell.setCellId("Collection_3628_0");
   }
 
   private static void setupBasic_Constant_3628_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1136923542662");
+    editorCell.setCellId("Constant_3628_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -161,7 +161,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_3628_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1136923542664");
+    editorCell.setCellId("Constant_3628_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -188,7 +188,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_3628_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1136923542666");
+    editorCell.setCellId("Constant_3628_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {

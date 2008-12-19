@@ -55,7 +55,7 @@ public class _CloseTag extends AbstractCellProvider {
 
 
   private static void setupBasic_ReadOnlyModelAccessor_6449_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ReadOnlyModelAccessor_1226062535564");
+    editorCell.setCellId("ReadOnlyModelAccessor_6449_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {

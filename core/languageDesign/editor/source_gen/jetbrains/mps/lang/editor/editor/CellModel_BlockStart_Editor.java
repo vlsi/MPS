@@ -94,7 +94,7 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_1215_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1198504953470");
+    editorCell.setCellId("Collection_1215_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {

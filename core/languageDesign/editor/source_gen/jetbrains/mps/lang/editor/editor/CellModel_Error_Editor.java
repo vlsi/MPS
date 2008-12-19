@@ -191,7 +191,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_6148_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1078250851486");
+    editorCell.setCellId("Collection_6148_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -232,7 +232,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_6148_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1078251446492");
+    editorCell.setCellId("Collection_6148_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -245,12 +245,12 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_6148_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1078251446493");
+    editorCell.setCellId("Constant_6148_0");
     Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_6148_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1078251768573");
+    editorCell.setCellId("Collection_6148_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -264,7 +264,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_6148_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1078251768574");
+    editorCell.setCellId("Collection_6148_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -278,7 +278,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_6148_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1078251768575");
+    editorCell.setCellId("Constant_6148_1");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
   }
 
@@ -315,7 +315,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_6148_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1214480392873");
+    editorCell.setCellId("Constant_6148_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {

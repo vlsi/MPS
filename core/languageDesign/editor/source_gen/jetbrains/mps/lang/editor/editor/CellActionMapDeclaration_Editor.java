@@ -203,11 +203,11 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_9910_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1139532930463");
+    editorCell.setCellId("Collection_9910_0");
   }
 
   private static void setupBasic_Collection_9910_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1139532930464");
+    editorCell.setCellId("Collection_9910_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -220,7 +220,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9910_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1139532930465");
+    editorCell.setCellId("Constant_9910_0");
   }
 
   private static void setupBasic_Property_9910_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -228,7 +228,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9910_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1139532930469");
+    editorCell.setCellId("Constant_9910_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -241,7 +241,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_9910_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1139532930470");
+    editorCell.setCellId("Collection_9910_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -254,7 +254,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9910_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1139532930471");
+    editorCell.setCellId("Constant_9910_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -271,7 +271,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9910_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1139532930475");
+    editorCell.setCellId("Constant_9910_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -284,7 +284,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9910_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1139532930476");
+    editorCell.setCellId("Constant_9910_4");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -297,7 +297,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9910_5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1139532930477");
+    editorCell.setCellId("Constant_9910_5");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -144,7 +144,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_2675_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1186414564066");
+    editorCell.setCellId("Collection_2675_0");
   }
 
   private static void setupBasic_ConceptProperty_2675_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -153,7 +153,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_2675_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1186414568289");
+    editorCell.setCellId("Constant_2675_0");
   }
 
   private static void setupBasic_Property_2675_0(EditorCell editorCell, SNode node, EditorContext context) {

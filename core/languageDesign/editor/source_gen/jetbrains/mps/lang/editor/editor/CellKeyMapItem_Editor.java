@@ -474,11 +474,11 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_9930_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1216158369199");
+    editorCell.setCellId("Collection_9930_0");
   }
 
   private static void setupBasic_Collection_9930_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1216158369200");
+    editorCell.setCellId("Collection_9930_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -491,7 +491,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369201");
+    editorCell.setCellId("Constant_9930_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -504,7 +504,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_9930_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1216158369203");
+    editorCell.setCellId("Collection_9930_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -517,7 +517,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_9930_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1216158369204");
+    editorCell.setCellId("Collection_9930_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -530,7 +530,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369205");
+    editorCell.setCellId("Constant_9930_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -543,7 +543,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369207");
+    editorCell.setCellId("Constant_9930_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -570,7 +570,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_9930_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1216158369213");
+    editorCell.setCellId("Collection_9930_4");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -583,7 +583,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369214");
+    editorCell.setCellId("Constant_9930_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -596,7 +596,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369216");
+    editorCell.setCellId("Constant_9930_4");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -622,7 +622,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_9930_5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1216158369221");
+    editorCell.setCellId("Collection_9930_5");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -635,7 +635,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369222");
+    editorCell.setCellId("Constant_9930_5");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -648,7 +648,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369224");
+    editorCell.setCellId("Constant_9930_6");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -675,7 +675,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_9930_6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1216158369230");
+    editorCell.setCellId("Collection_9930_6");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -688,7 +688,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_7(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369231");
+    editorCell.setCellId("Constant_9930_7");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -701,7 +701,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_8(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369233");
+    editorCell.setCellId("Constant_9930_8");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -718,7 +718,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_9930_7(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1216158369237");
+    editorCell.setCellId("Collection_9930_7");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -731,7 +731,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_9(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369238");
+    editorCell.setCellId("Constant_9930_9");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -744,7 +744,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_10(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369240");
+    editorCell.setCellId("Constant_9930_10");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -761,7 +761,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_9930_8(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1216158369244");
+    editorCell.setCellId("Collection_9930_8");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -774,7 +774,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_11(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369245");
+    editorCell.setCellId("Constant_9930_11");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -787,7 +787,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_12(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369247");
+    editorCell.setCellId("Constant_9930_12");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -803,7 +803,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_9930_9(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1216158369251");
+    editorCell.setCellId("Collection_9930_9");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -816,7 +816,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_13(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369252");
+    editorCell.setCellId("Constant_9930_13");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -829,7 +829,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_14(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158369254");
+    editorCell.setCellId("Constant_9930_14");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -845,7 +845,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_9930_15(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216158402620");
+    editorCell.setCellId("Constant_9930_15");
     {
       Style inlineStyle = new Style(editorCell) {
         {

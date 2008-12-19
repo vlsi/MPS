@@ -105,7 +105,7 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_4603_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1214317920059");
+    editorCell.setCellId("Collection_4603_0");
   }
 
   private static void setupBasic_ConceptProperty_4603_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -114,7 +114,7 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_4603_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1214317920061");
+    editorCell.setCellId("Constant_4603_0");
   }
 
   private static void setupBasic_Property_4603_0(EditorCell editorCell, SNode node, EditorContext context) {

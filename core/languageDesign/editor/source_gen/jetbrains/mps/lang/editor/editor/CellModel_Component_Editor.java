@@ -111,7 +111,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_6025_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1078939636327");
+    editorCell.setCellId("Collection_6025_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -125,7 +125,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_6025_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1078941097162");
+    editorCell.setCellId("Collection_6025_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {

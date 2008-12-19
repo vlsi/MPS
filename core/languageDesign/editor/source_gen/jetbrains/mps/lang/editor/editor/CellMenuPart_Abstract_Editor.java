@@ -27,7 +27,7 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_7903_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Error_1164841410765");
+    editorCell.setCellId("Error_7903_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {

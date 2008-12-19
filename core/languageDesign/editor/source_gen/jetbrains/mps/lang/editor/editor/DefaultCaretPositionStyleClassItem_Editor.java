@@ -105,7 +105,7 @@ public class DefaultCaretPositionStyleClassItem_Editor extends DefaultNodeEditor
 
 
   private static void setupBasic_Collection_2359_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1214472839331");
+    editorCell.setCellId("Collection_2359_0");
   }
 
   private static void setupBasic_ConceptProperty_2359_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -114,7 +114,7 @@ public class DefaultCaretPositionStyleClassItem_Editor extends DefaultNodeEditor
   }
 
   private static void setupBasic_Constant_2359_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1214472842648");
+    editorCell.setCellId("Constant_2359_0");
   }
 
   private static void setupBasic_Property_2359_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -247,7 +247,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_6752_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1080742754454");
+    editorCell.setCellId("Collection_6752_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -365,7 +365,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_6752_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1080742936930");
+    editorCell.setCellId("Collection_6752_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -378,12 +378,12 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_6752_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1080742964963");
+    editorCell.setCellId("Constant_6752_0");
     Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_6752_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1080742964964");
+    editorCell.setCellId("Collection_6752_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -397,7 +397,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_6752_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1080742964965");
+    editorCell.setCellId("Collection_6752_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -411,7 +411,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_6752_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1080742964966");
+    editorCell.setCellId("Constant_6752_1");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
   }
 
@@ -431,7 +431,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_6752_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1082639645063");
+    editorCell.setCellId("Collection_6752_4");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -445,7 +445,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_6752_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1082639645064");
+    editorCell.setCellId("Constant_6752_2");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
   }
 
@@ -477,7 +477,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_6752_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1214479415173");
+    editorCell.setCellId("Constant_6752_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {

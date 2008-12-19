@@ -145,7 +145,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_2890_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1214316287175");
+    editorCell.setCellId("Collection_2890_0");
   }
 
   private static void setupBasic_ConceptProperty_2890_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -154,7 +154,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_2890_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1214316291663");
+    editorCell.setCellId("Constant_2890_0");
   }
 
   private static void setupBasic_Property_2890_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -105,7 +105,7 @@ public class PositionChildrenStyleClassItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_4122_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1216561900974");
+    editorCell.setCellId("Collection_4122_0");
   }
 
   private static void setupBasic_ConceptProperty_4122_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -114,7 +114,7 @@ public class PositionChildrenStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_4122_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216561900976");
+    editorCell.setCellId("Constant_4122_0");
   }
 
   private static void setupBasic_Property_4122_0(EditorCell editorCell, SNode node, EditorContext context) {

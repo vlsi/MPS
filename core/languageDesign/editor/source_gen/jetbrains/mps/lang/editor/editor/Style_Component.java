@@ -159,11 +159,11 @@ public class Style_Component extends AbstractCellProvider {
 
 
   private static void setupBasic_Collection_7233_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1214305831635");
+    editorCell.setCellId("Collection_7233_0");
   }
 
   private static void setupBasic_Collection_7233_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1214305837264");
+    editorCell.setCellId("Collection_7233_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -176,7 +176,7 @@ public class Style_Component extends AbstractCellProvider {
   }
 
   private static void setupBasic_Indent_7233_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Indent_1214305839047");
+    editorCell.setCellId("Indent_7233_0");
   }
 
   private static void setupBasic_RefNodeList_7233_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -184,7 +184,7 @@ public class Style_Component extends AbstractCellProvider {
   }
 
   private static void setupBasic_Collection_7233_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1214306226091");
+    editorCell.setCellId("Collection_7233_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -197,7 +197,7 @@ public class Style_Component extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_7233_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1214306226952");
+    editorCell.setCellId("Constant_7233_0");
     Styles_StyleSheet.getStyle(editorCell).apply(editorCell);
   }
 
@@ -206,15 +206,15 @@ public class Style_Component extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_7233_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1214306251240");
+    editorCell.setCellId("Constant_7233_1");
   }
 
   private static void setupBasic_Constant_7233_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1214306254664");
+    editorCell.setCellId("Constant_7233_2");
   }
 
   private static void setupBasic_Constant_7233_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1214306426285");
+    editorCell.setCellId("Constant_7233_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -105,7 +105,7 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_1626_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1215007842118");
+    editorCell.setCellId("Collection_1626_0");
   }
 
   private static void setupBasic_ConceptProperty_1626_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -114,7 +114,7 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_1626_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1215007846091");
+    editorCell.setCellId("Constant_1626_0");
   }
 
   private static void setupBasic_Property_1626_0(EditorCell editorCell, SNode node, EditorContext context) {

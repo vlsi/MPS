@@ -122,11 +122,11 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
 
 
   private static void setupBasic_Collection_7061_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1165261271532");
+    editorCell.setCellId("Collection_7061_0");
   }
 
   private static void setupBasic_Collection_7061_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1165261271533");
+    editorCell.setCellId("Collection_7061_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -139,7 +139,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   }
 
   private static void setupBasic_Constant_7061_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165261271534");
+    editorCell.setCellId("Constant_7061_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -152,7 +152,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   }
 
   private static void setupBasic_Constant_7061_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165261271535");
+    editorCell.setCellId("Constant_7061_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -169,7 +169,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   }
 
   private static void setupBasic_Collection_7061_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1165261279434");
+    editorCell.setCellId("Collection_7061_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -182,7 +182,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   }
 
   private static void setupBasic_Constant_7061_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165261279435");
+    editorCell.setCellId("Constant_7061_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -196,7 +196,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   }
 
   private static void setupBasic_Constant_7061_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165261371430");
+    editorCell.setCellId("Constant_7061_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {

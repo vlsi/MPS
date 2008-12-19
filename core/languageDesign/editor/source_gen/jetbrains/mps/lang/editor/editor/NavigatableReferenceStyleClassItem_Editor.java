@@ -103,7 +103,7 @@ public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor
 
 
   private static void setupBasic_Collection_0469_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1227861645910");
+    editorCell.setCellId("Collection_0469_0");
   }
 
   private static void setupBasic_ConceptProperty_0469_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -112,7 +112,7 @@ public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor
   }
 
   private static void setupBasic_Constant_0469_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1227861652164");
+    editorCell.setCellId("Constant_0469_0");
   }
 
   private static void setupBasic_RefCell_0469_0(EditorCell editorCell, SNode node, EditorContext context) {

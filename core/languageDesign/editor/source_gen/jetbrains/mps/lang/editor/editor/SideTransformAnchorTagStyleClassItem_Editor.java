@@ -105,7 +105,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
 
 
   private static void setupBasic_Collection_2322_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1214320157195");
+    editorCell.setCellId("Collection_2322_0");
   }
 
   private static void setupBasic_ConceptProperty_2322_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -114,7 +114,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
   }
 
   private static void setupBasic_Constant_2322_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1214320157197");
+    editorCell.setCellId("Constant_2322_0");
   }
 
   private static void setupBasic_Property_2322_0(EditorCell editorCell, SNode node, EditorContext context) {

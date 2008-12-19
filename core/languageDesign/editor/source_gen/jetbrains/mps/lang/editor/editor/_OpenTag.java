@@ -55,7 +55,7 @@ public class _OpenTag extends AbstractCellProvider {
 
 
   private static void setupBasic_ReadOnlyModelAccessor_4575_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ReadOnlyModelAccessor_1226062528866");
+    editorCell.setCellId("ReadOnlyModelAccessor_4575_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {

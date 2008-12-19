@@ -207,7 +207,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_0905_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1198490019130");
+    editorCell.setCellId("Collection_0905_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -220,7 +220,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_0905_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1198490032195");
+    editorCell.setCellId("Collection_0905_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -234,7 +234,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_0905_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1198490035838");
+    editorCell.setCellId("Collection_0905_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -248,7 +248,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_0905_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Indent_1198490062806");
+    editorCell.setCellId("Indent_0905_0");
   }
 
   private static void setupBasic_RefNode_0905_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -258,7 +258,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_0905_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1198502445685");
+    editorCell.setCellId("Collection_0905_3");
   }
 
   private static void setupBasic_Property_0905_0(EditorCell editorCell, SNode node, EditorContext context) {

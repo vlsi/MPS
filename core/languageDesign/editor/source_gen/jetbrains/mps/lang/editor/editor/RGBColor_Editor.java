@@ -76,7 +76,7 @@ public class RGBColor_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_1526_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1225456683466");
+    editorCell.setCellId("Collection_1526_0");
   }
 
   private static void setupBasic_Property_1526_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -85,7 +85,7 @@ public class RGBColor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_1526_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1225458515591");
+    editorCell.setCellId("Constant_1526_0");
     BaseLanguageStyle_StyleSheet.getNumericLiteral(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

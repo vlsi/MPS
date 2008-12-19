@@ -130,16 +130,16 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_0528_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1186403889179");
+    editorCell.setCellId("Collection_0528_0");
   }
 
   private static void setupBasic_Constant_0528_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1186403889931");
+    editorCell.setCellId("Constant_0528_0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_0528_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1186403894198");
+    editorCell.setCellId("Constant_0528_1");
   }
 
   private static void setupBasic_Property_0528_0(EditorCell editorCell, SNode node, EditorContext context) {

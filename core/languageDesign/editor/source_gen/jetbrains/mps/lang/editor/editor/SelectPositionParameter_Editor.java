@@ -79,15 +79,15 @@ public class SelectPositionParameter_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_0936_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1201268892010");
+    editorCell.setCellId("Collection_0936_0");
   }
 
   private static void setupBasic_Constant_0936_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1201268892699");
+    editorCell.setCellId("Constant_0936_0");
   }
 
   private static void setupBasic_Constant_0936_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1201268895904");
+    editorCell.setCellId("Constant_0936_1");
   }
 
   private static void setupBasic_Property_0936_0(EditorCell editorCell, SNode node, EditorContext context) {

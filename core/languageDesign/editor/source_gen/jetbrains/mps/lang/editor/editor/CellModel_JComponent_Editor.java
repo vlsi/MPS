@@ -92,22 +92,22 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_3375_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1103016682285");
+    editorCell.setCellId("Collection_3375_0");
   }
 
   private static void setupBasic_Constant_3375_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1103016939596");
+    editorCell.setCellId("Constant_3375_0");
   }
 
   private static void setupBasic_Constant_3375_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1176475173506");
+    editorCell.setCellId("Constant_3375_1");
   }
 
   private static void setupBasic_RefNode_3375_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Collection_3375_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1214477400704");
+    editorCell.setCellId("Collection_3375_1");
   }
 
   private static void setupLabel_Constant_3375_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

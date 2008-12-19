@@ -104,7 +104,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
 
 
   private static void setupBasic_Collection_7117_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1229566172052");
+    editorCell.setCellId("Collection_7117_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -117,11 +117,11 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_7117_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1229566172053");
+    editorCell.setCellId("Constant_7117_0");
   }
 
   private static void setupBasic_Collection_7117_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1229566172054");
+    editorCell.setCellId("Collection_7117_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -137,7 +137,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   }
 
   private static void setupBasic_Collection_7117_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1229566172068");
+    editorCell.setCellId("Collection_7117_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {

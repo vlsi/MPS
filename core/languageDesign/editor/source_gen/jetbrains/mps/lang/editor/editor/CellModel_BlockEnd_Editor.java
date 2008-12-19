@@ -79,7 +79,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_3910_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1198506653653");
+    editorCell.setCellId("Collection_3910_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {

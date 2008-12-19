@@ -146,11 +146,11 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_4462_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1186415749074");
+    editorCell.setCellId("Collection_4462_0");
   }
 
   private static void setupBasic_Constant_4462_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1186415782550");
+    editorCell.setCellId("Constant_4462_0");
   }
 
   private static void setupBasic_ConceptProperty_4462_0(EditorCell editorCell, SNode node, EditorContext context) {

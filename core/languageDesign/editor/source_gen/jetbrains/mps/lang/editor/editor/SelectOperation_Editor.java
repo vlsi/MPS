@@ -134,22 +134,22 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_5999_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1201266156329");
+    editorCell.setCellId("Collection_5999_0");
   }
 
   private static void setupBasic_Constant_5999_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1201266157003");
+    editorCell.setCellId("Constant_5999_0");
   }
 
   private static void setupBasic_RefNode_5999_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_5999_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1201266192497");
+    editorCell.setCellId("Constant_5999_1");
   }
 
   private static void setupBasic_Collection_5999_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1201266197953");
+    editorCell.setCellId("Collection_5999_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -162,11 +162,11 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_5999_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1201266198736");
+    editorCell.setCellId("Constant_5999_2");
   }
 
   private static void setupBasic_Constant_5999_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1201266200332");
+    editorCell.setCellId("Constant_5999_3");
   }
 
   private static void setupBasic_RefNodeList_5999_0(EditorCell editorCell, SNode node, EditorContext context) {

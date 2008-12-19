@@ -143,11 +143,11 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_6590_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1186402314561");
+    editorCell.setCellId("Collection_6590_0");
   }
 
   private static void setupBasic_Collection_6590_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1186402316579");
+    editorCell.setCellId("Collection_6590_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -160,7 +160,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_6590_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1186402317378");
+    editorCell.setCellId("Constant_6590_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -177,17 +177,17 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_6590_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1186402327648");
+    editorCell.setCellId("Constant_6590_1");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_6590_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1186402330134");
+    editorCell.setCellId("Constant_6590_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_6590_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1186402342355");
+    editorCell.setCellId("Collection_6590_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -204,7 +204,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_6590_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Indent_1219418596502");
+    editorCell.setCellId("Indent_6590_0");
   }
 
   private static void setupLabel_Constant_6590_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

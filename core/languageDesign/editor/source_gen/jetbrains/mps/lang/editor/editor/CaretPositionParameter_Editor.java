@@ -79,15 +79,15 @@ public class CaretPositionParameter_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_3119_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1201270917284");
+    editorCell.setCellId("Collection_3119_0");
   }
 
   private static void setupBasic_Constant_3119_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1201270918661");
+    editorCell.setCellId("Constant_3119_0");
   }
 
   private static void setupBasic_Constant_3119_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1201270927258");
+    editorCell.setCellId("Constant_3119_1");
   }
 
   private static void setupBasic_RefNode_3119_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -78,11 +78,11 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_2608_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1165017449838");
+    editorCell.setCellId("Collection_2608_0");
   }
 
   private static void setupBasic_Collection_2608_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1165017449839");
+    editorCell.setCellId("Collection_2608_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -95,7 +95,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_2608_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165017449842");
+    editorCell.setCellId("Constant_2608_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -109,7 +109,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_2608_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1165017468128");
+    editorCell.setCellId("Collection_2608_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -122,7 +122,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_2608_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165017468129");
+    editorCell.setCellId("Constant_2608_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -136,7 +136,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_2608_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1165017598538");
+    editorCell.setCellId("Constant_2608_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
