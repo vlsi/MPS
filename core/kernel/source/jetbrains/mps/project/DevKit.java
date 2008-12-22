@@ -103,6 +103,7 @@ public class DevKit extends AbstractModule {
     SModelRepository.getInstance().registerModelDescriptor(descriptor.getModel().getModelDescriptor(), this);
 
     myDescriptor = descriptor;
+    myDescriptor.getModel().setLoading(true);
 
     if (myDescriptor.getName() != null) {
       ModuleReference mp = new ModuleReference(myDescriptor.getName(), myDescriptor.getModuleUUID());

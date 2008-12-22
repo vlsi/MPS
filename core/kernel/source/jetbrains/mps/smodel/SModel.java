@@ -55,9 +55,6 @@ public class SModel implements Iterable<SNode> {
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelReference myReference;
 
-  @ForDebug
-  private Throwable myStackTrace;
-
   private boolean myDisposed;
   private boolean myLoading;
 
@@ -274,17 +271,6 @@ public class SModel implements Iterable<SNode> {
   public boolean isLoading() {
     return myLoading;
   }    
-
-  @ForDebug
-  @NotNull
-  public Throwable getCreationStackTrace() {
-    return myStackTrace;
-  }
-
-  @ForDebug
-  public void fillInStackTrace(Throwable t) {
-    myStackTrace = t;
-  }
 
   public SModelDescriptor getModelDescriptor() {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(this);

@@ -370,10 +370,7 @@ public class Language extends AbstractModule {
   }
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
-    // release modules and models (except descriptor model)
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getSModelReference(), Language.this);
-
-    assert modelDescriptor != null;
+    newDescriptor.getModel().setLoading(true);
 
     myLanguageDescriptor = newDescriptor;
 

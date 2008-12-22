@@ -100,6 +100,8 @@ public class Solution extends AbstractModule {
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
     mySolutionDescriptor = newDescriptor;
+    
+    newDescriptor.getModel().setLoading(true);
 
     ModuleReference mp;
     if (isExternallyVisible() && mySolutionDescriptor.getName() != null) {
