@@ -280,33 +280,33 @@ public class NodeRangeSelection implements KeyboardHandler {
           new DeleteNodesHelper(getNodes(), editorContext.getOperationContext(), false).deleteNodes(false);
         }
       });
-    } else {
-      for (SNode semanticNode : getNodes()) {
-        EditorCell nodeCell = myEditorComponent.findNodeCell(semanticNode);
-        final EditorCellAction action = nodeCell.getAction(CellActionType.DELETE);
-        if (action == null) continue;
+    } else if (getNodes().size() == 1){
+      SNode semanticNode = getNodes().get(0);
 
-        if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          public Boolean compute() {
-            return action.canExecute(editorContext);
-          }
-        })) continue;
+      EditorCell nodeCell = myEditorComponent.findNodeCell(semanticNode);
+      final EditorCellAction action = nodeCell.getAction(CellActionType.DELETE);
+      if (action == null) return;
 
-        if (action.executeInCommand()) {
-          editorContext.executeCommand(new Runnable() {
-            public void run() {
-              action.execute(editorContext);
-            }
-          });
-        } else {
-          action.execute(editorContext);
+      if (!ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return action.canExecute(editorContext);
         }
+      })) return;
+
+      if (action.executeInCommand()) {
+        editorContext.executeCommand(new Runnable() {
+          public void run() {
+            action.execute(editorContext);
+          }
+        });
+      } else {
+        action.execute(editorContext);
       }
     }
   }
 
   public void paint(final Graphics g) {
-    myEditorComponent.turnOnAliasingIfPossible((Graphics2D) g);
+    EditorComponent.turnOnAliasingIfPossible((Graphics2D) g);
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
