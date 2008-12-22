@@ -91,8 +91,9 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
   }
 
   public List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
-    InequationSystem inequationSystem = getInequationSystem(contextCell);
-
+// I commented this out because of exception   
+//    InequationSystem inequationSystem = getInequationSystem(contextCell);
+//
     List<INodeSubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
     for (INodeSubstituteAction nodeSubstituteAction : substituteActionList) {
  //     SNode node = nodeSubstituteAction.substitute(myEditorContext, pattern);
