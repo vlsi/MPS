@@ -83,6 +83,9 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     }
     String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
     RuntimeTypeVariable var = RuntimeTypeVariable.newInstance(auxModel);
+
+    //mySourceNode
+
     auxModel.removeRoot(nodeCopyRoot);
 
     //todo

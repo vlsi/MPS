@@ -280,7 +280,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public InequationSystem getInequationsForHole(SNode hole) {
-    TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(hole.getContainingRoot());
+    TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(hole.getContainingRoot());
     final NodeTypesComponent temporaryComponent;
     temporaryComponent = typeCheckingContext.createTemporaryTypesComponent();
     try {

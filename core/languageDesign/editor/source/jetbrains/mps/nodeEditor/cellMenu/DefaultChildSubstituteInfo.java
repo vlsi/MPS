@@ -17,6 +17,8 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -24,12 +26,17 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.typesystem.inference.InequationSystem;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
+
+import com.intellij.util.containers.HashMap;
 
 public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   private static final Logger LOG = Logger.getLogger(DefaultChildSubstituteInfo.class);
@@ -72,6 +79,31 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
         myCurrentChild = currChildNode;
       }
     });
+  }
+
+  @Override
+  protected InequationSystem getInequationSystem(EditorCell contextCell) {
+    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(myParentNode.getContainingRoot()), mapping).get(0);
+    SModel auxModel = nodeCopyRoot.getModel();
+    if (!nodeCopyRoot.isRoot()) {
+      auxModel.addRoot(nodeCopyRoot);
+    }
+    String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
+    AbstractConceptDeclaration target = myLinkDeclaration.getTarget();
+
+    SNode hole = null;
+    if (target instanceof ConceptDeclaration) {
+      hole = SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) target, auxModel).getNode();
+    } else {
+      hole = new SNode(auxModel, "jetbrains.mps.lang.core.BaseConcept");
+    }
+    SNode parentCopy = mapping.get(myParentNode);
+    parentCopy.addChild(role, hole);
+    InequationSystem inequationsForHole = TypeChecker.getInstance().getInequationsForHole(hole);
+    auxModel.removeRoot(nodeCopyRoot);
+
+    return inequationsForHole;
   }
 
   public List<INodeSubstituteAction> createActions() {

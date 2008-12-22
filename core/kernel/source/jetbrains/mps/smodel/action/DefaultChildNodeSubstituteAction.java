@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 
 /**
  * Igor Alshannikov
@@ -64,6 +66,18 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
       return mySetter.execute(parentNode, myCurrentChild, newChild, getScope());
     }
     return null;
+  }
+
+  @Override
+  public SNode getActionType(String pattern) {
+    SNode parentNode = getSourceNode();
+    SModelDescriptor sModelDescriptor = AuxilaryRuntimeModel.getDescriptor();
+    SModel auxModel = sModelDescriptor.getSModel();
+    SNode newChild = createChildNode(getParameterObject(), auxModel, pattern);
+    auxModel.addRoot(newChild);
+    SNode type = TypeChecker.getInstance().getTypeOf(newChild);
+    auxModel.removeRoot(newChild);
+    return type;
   }
 
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {

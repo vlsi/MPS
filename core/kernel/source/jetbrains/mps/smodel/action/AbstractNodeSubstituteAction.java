@@ -90,7 +90,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return getIconFor(pattern, false);
   }
 
-  public SNode getActionType() {
+  public SNode getActionType(String pattern) {
     return null;
   }
 

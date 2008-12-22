@@ -41,8 +41,8 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
     return mySubstituteAction.getOutputConcept();
   }
 
-  public SNode getActionType() {
-    return mySubstituteAction.getActionType();
+  public SNode getActionType(String pattern) {
+    return mySubstituteAction.getActionType(pattern);
   }
 
   public Icon getIconFor(String pattern) {

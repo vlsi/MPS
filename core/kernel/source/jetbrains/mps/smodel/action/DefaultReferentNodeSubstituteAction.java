@@ -19,6 +19,7 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 import javax.swing.Icon;
 
@@ -64,5 +65,11 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
       getSourceNode().setReferent(SModelUtil_new.getGenuineLinkRole(myLinkDeclaration), parameterNode);
     }
     return null;
+  }
+
+  @Override
+  public SNode getActionType(String pattern) {
+    SNode parameterNode = (SNode) getParameterObject();
+    return TypeChecker.getInstance().getTypeOf(parameterNode);
   }
 }

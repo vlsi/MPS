@@ -150,7 +150,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
-    if (myIsSmart) {
+    if (!myIsSmart) {
       return myNodeSubstituteInfo.getMatchingActions(pattern, strictMatching);
     } else {
       return myNodeSubstituteInfo.getSmartMatchingActions(pattern, strictMatching, myContextCell);
