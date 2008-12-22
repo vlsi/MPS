@@ -157,10 +157,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (!SModelStereotype.isUserModel(mySModel)) {
       return;
     }
-    boolean wasLoading = mySModel.isLoading();
-    try {
-      mySModel.setLoading(true);
-
+    boolean wasLoading = mySModel.setLoading(true);
+    try {      
       for (SModelDescriptor modelDescriptor : mySModel.getDependenciesModels()) {
         playUsedModelDescriptorsRefactoring(modelDescriptor);
       }

@@ -33,7 +33,7 @@ public class ProjectModels {
       throw new RuntimeException();
     }
 
-    @NotNull
+    @NotNull  
     public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
       return new SModel(modelDescriptor.getSModelReference());
     }

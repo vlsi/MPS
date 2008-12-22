@@ -306,44 +306,47 @@ public class Merger {
 
   private void rebuldResultModel() {
     myResultModel = ModelPersistence.copyModel(getBase(mySourceModels));
-    myResultModel.setLoading(true);
+    boolean wasLoading = myResultModel.setLoading(true);
 
-    ModuleReference languageNamespace = ModuleReference.fromString("jetbrains.mps.core");
-    SNode tmp = new SNode(myResultModel, NameUtil.conceptFQNameFromNamespaceAndShortName(languageNamespace.getModuleFqName(), "BaseConcept"));
-    boolean notRemoveLanguage = false;
-    if (myResultModel.getExplicitlyImportedLanguages().contains(languageNamespace)) {
-      notRemoveLanguage = true;
-    }
-    myResultModel.addRoot(tmp);
-
-    applyImportLanguages();
-    applyImportModels();
-    applyLanguageAspectChange();
-    applyNewNodes();
-    applyProperties();
-    applyReferences();
-
-    //move all nodes which are to move into tmp root
-    for (MoveNodeChange mnc : getChanges(MoveNodeChange.class)) {
-      SNode node = myResultModel.getNodeById(mnc.getNode());
-      if (node != null) {
-        if (node.isRoot()) {
-          myResultModel.removeRoot(node);
-        } else {
-          node.getParent().removeChild(node);
-        }
-
-        tmp.addChild("tmp", node);
+    try {
+      ModuleReference languageNamespace = ModuleReference.fromString("jetbrains.mps.core");
+      SNode tmp = new SNode(myResultModel, NameUtil.conceptFQNameFromNamespaceAndShortName(languageNamespace.getModuleFqName(), "BaseConcept"));
+      boolean notRemoveLanguage = false;
+      if (myResultModel.getExplicitlyImportedLanguages().contains(languageNamespace)) {
+        notRemoveLanguage = true;
       }
+      myResultModel.addRoot(tmp);
+
+      applyImportLanguages();
+      applyImportModels();
+      applyLanguageAspectChange();
+      applyNewNodes();
+      applyProperties();
+      applyReferences();
+
+      //move all nodes which are to move into tmp root
+      for (MoveNodeChange mnc : getChanges(MoveNodeChange.class)) {
+        SNode node = myResultModel.getNodeById(mnc.getNode());
+        if (node != null) {
+          if (node.isRoot()) {
+            myResultModel.removeRoot(node);
+          } else {
+            node.getParent().removeChild(node);
+          }
+
+          tmp.addChild("tmp", node);
+        }
+      }
+
+      applyDeletes();
+      applyMoves();
+      applyConceptChanges();
+
+      myResultModel.removeRoot(tmp);
+      if (!notRemoveLanguage) myResultModel.deleteLanguage(languageNamespace);
+    } finally {
+      myResultModel.setLoading(wasLoading);
     }
-
-    applyDeletes();
-    applyMoves();
-    applyConceptChanges();
-
-    myResultModel.removeRoot(tmp);
-    if (!notRemoveLanguage) myResultModel.deleteLanguage(languageNamespace);
-    myResultModel.setLoading(false);
   }
 
   private void applyImportModels() {

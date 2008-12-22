@@ -103,8 +103,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void runLoadingAction(@NotNull Runnable runnable) {
-    boolean wasLoading = isLoading();
-    if (!wasLoading) setLoading(true);
+    boolean wasLoading = setLoading(true);
     try {
       runnable.run();
     } finally {
