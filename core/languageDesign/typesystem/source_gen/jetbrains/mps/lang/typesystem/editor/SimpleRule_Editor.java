@@ -12,22 +12,22 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class SimpleRule_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createError1223034616928(context, node);
+    return this.createError_0958_0(context, node);
   }
 
-  public EditorCell createError1223034616928(EditorContext context, SNode node) {
+  public EditorCell createError_0958_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<abstract simple rule>");
-    setupBasic_Error_12230346169281223034616928(editorCell, node, context);
-    setupLabel_Error_1223034616928_1223034616928(editorCell, node, context);
+    setupBasic_Error_0958_0(editorCell, node, context);
+    setupLabel_Error_0958_0(editorCell, node, context);
     return editorCell;
   }
 
 
-  private static void setupBasic_Error_12230346169281223034616928(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Error_1223034616928");
+  private static void setupBasic_Error_0958_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Error_0958_0");
   }
 
-  private static void setupLabel_Error_1223034616928_1223034616928(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Error_0958_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

@@ -309,7 +309,6 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_6697_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_propertyDeclaration");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -485,7 +484,6 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_6697_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_propertyDeclaration");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -498,11 +496,9 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_6697_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__OpenTag");
   }
 
   private static void setupBasic_Component_6697_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CloseTag");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -529,7 +525,6 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_6697_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupBasic_Collection_6697_5(EditorCell editorCell, SNode node, EditorContext context) {

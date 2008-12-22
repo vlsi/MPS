@@ -26,9 +26,9 @@ public class GenerationContextOp_Base_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_conceptProperty_alias1217004816051(editorCell, node, context);
+    setupBasic_ConceptProperty_4980_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_conceptProperty_alias_1217004816051((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptProperty_4980_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -52,7 +52,7 @@ public class GenerationContextOp_Base_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_conceptProperty_alias1217004816051(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConceptProperty_4980_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
@@ -66,7 +66,7 @@ public class GenerationContextOp_Base_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_conceptProperty_alias_1217004816051(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptProperty_4980_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

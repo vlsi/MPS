@@ -60,7 +60,6 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
 
 
   private static void setupBasic_RefCell_8023_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_keyMap");
     {
       Style inlineStyle = new Style(editorCell) {
         {

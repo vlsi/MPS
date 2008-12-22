@@ -2020,7 +2020,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   void registerAsBigCell(EditorCell cell, ReferencedNodeContext refContext, EditorManager manager) {
-    if (manager == EditorManager.getInstanceFromContext(myOperationContext)) {
+   if (manager == EditorManager.getInstanceFromContext(myOperationContext)) {
       myRefNodeContextsToBigCellsMap.put(refContext, new WeakReference<EditorCell>(cell));
       myNodesToBigCellsMap.put(cell.getSNode(), new WeakReference<EditorCell>(cell));
     }

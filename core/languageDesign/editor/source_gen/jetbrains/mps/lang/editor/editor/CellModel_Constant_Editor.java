@@ -465,15 +465,12 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_6752_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__OpenTag");
   }
 
   private static void setupBasic_Component_6752_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CloseTag");
   }
 
   private static void setupBasic_Component_6752_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupBasic_Constant_6752_3(EditorCell editorCell, SNode node, EditorContext context) {

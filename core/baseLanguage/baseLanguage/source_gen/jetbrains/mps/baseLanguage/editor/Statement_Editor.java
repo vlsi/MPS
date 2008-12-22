@@ -16,19 +16,19 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class Statement_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createError1078746085984(context, node);
+    return this.createError_3869_0(context, node);
   }
 
-  public EditorCell createError1078746085984(EditorContext context, SNode node) {
+  public EditorCell createError_3869_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<statement>");
-    setupBasic_Error_10787460859841078746085984(editorCell, node, context);
-    setupLabel_Error_1078746085984_1078746085984(editorCell, node, context);
+    setupBasic_Error_3869_0(editorCell, node, context);
+    setupLabel_Error_3869_0(editorCell, node, context);
     return editorCell;
   }
 
 
-  private static void setupBasic_Error_10787460859841078746085984(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Error_1078746085984");
+  private static void setupBasic_Error_3869_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Error_3869_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -41,7 +41,7 @@ public class Statement_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Error_1078746085984_1078746085984(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Error_3869_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

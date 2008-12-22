@@ -13,53 +13,53 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class UpdateModelByDefaultOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1197382618067(context, node);
+    return this.createCollection_6465_0(context, node);
   }
 
-  public EditorCell createCollection1197382618067(EditorContext context, SNode node) {
+  public EditorCell createCollection_6465_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11973826180671197382618067(editorCell, node, context);
+    setupBasic_Collection_6465_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1197382629053(context, node, "updateModelByDefault"));
-    editorCell.addEditorCell(this.createConstant1197382637587(context, node, ";"));
+    editorCell.addEditorCell(this.createConstant_6465_0(context, node, "updateModelByDefault"));
+    editorCell.addEditorCell(this.createConstant_6465_1(context, node, ";"));
     return editorCell;
   }
 
-  public EditorCell createConstant1197382629053(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_6465_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11973826290531197382629053(editorCell, node, context);
-    setupLabel_Constant_1197382629053_1197382629053(editorCell, node, context);
+    setupBasic_Constant_6465_0(editorCell, node, context);
+    setupLabel_Constant_6465_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1197382637587(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_6465_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11973826375871197382637587(editorCell, node, context);
-    setupLabel_Constant_1197382637587_1197382637587(editorCell, node, context);
+    setupBasic_Constant_6465_1(editorCell, node, context);
+    setupLabel_Constant_6465_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_11973826180671197382618067(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1197382618067");
+  private static void setupBasic_Collection_6465_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_6465_0");
   }
 
-  private static void setupBasic_Constant_11973826290531197382629053(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1197382629053");
+  private static void setupBasic_Constant_6465_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_6465_0");
   }
 
-  private static void setupBasic_Constant_11973826375871197382637587(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1197382637587");
+  private static void setupBasic_Constant_6465_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_6465_1");
   }
 
-  private static void setupLabel_Constant_1197382629053_1197382629053(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_6465_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1197382637587_1197382637587(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_6465_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

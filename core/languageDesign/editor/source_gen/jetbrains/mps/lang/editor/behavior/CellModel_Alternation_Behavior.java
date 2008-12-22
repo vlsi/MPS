@@ -17,4 +17,8 @@ public class CellModel_Alternation_Behavior {
     return "if)";
   }
 
+  public static boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
+    return true;
+  }
+
 }

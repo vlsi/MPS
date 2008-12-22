@@ -197,11 +197,9 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_8637_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__OpenTag");
   }
 
   private static void setupBasic_Component_8637_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CloseTag");
   }
 
   private static void setupBasic_Collection_8637_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -230,7 +228,6 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_8637_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component_Style_Component");
   }
 
   private static void setupBasic_Collection_8637_3(EditorCell editorCell, SNode node, EditorContext context) {

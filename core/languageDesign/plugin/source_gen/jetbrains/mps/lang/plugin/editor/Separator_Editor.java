@@ -12,23 +12,23 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class Separator_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1204908141843(context, node, "<--->");
+    return this.createConstant_6969_0(context, node, "<--->");
   }
 
-  public EditorCell createConstant1204908141843(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_6969_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12049081418431204908141843(editorCell, node, context);
-    setupLabel_Constant_1204908141843_1204908141843(editorCell, node, context);
+    setupBasic_Constant_6969_0(editorCell, node, context);
+    setupLabel_Constant_6969_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_12049081418431204908141843(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1204908141843");
+  private static void setupBasic_Constant_6969_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_6969_0");
   }
 
-  private static void setupLabel_Constant_1204908141843_1204908141843(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_6969_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

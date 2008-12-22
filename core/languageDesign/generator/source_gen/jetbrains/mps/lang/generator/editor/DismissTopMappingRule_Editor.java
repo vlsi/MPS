@@ -20,47 +20,47 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class DismissTopMappingRule_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1169670446867(context, node);
+    return this.createCollection_9261_0(context, node);
   }
 
-  public EditorCell createCollection1169670446867(EditorContext context, SNode node) {
+  public EditorCell createCollection_9261_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11696704468671169670446867(editorCell, node, context);
+    setupBasic_Collection_9261_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1169670468666(context, node, "DISMISS TOP RULE"));
-    editorCell.addEditorCell(this.createRefNode1169670501887(context, node));
+    editorCell.addEditorCell(this.createConstant_9261_0(context, node, "DISMISS TOP RULE"));
+    editorCell.addEditorCell(this.createRefNode_9261_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1169670468666(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_9261_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11696704686661169670468666(editorCell, node, context);
-    setupLabel_Constant_1169670468666_1169670468666(editorCell, node, context);
+    setupBasic_Constant_9261_0(editorCell, node, context);
+    setupLabel_Constant_9261_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode1169670501887_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_9261_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_generatorMessage1169670501887(editorCell, node, context);
+    setupBasic_RefNode_9261_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_generatorMessage_1169670501887((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_9261_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1169670501887(EditorContext context, SNode node) {
+  public EditorCell createRefNode_9261_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("generatorMessage");
     provider.setNoTargetText("<no message>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1169670501887_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_9261_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -72,12 +72,12 @@ public class DismissTopMappingRule_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11696704468671169670446867(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1169670446867");
+  private static void setupBasic_Collection_9261_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_9261_0");
   }
 
-  private static void setupBasic_Constant_11696704686661169670468666(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1169670468666");
+  private static void setupBasic_Constant_9261_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_9261_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -89,13 +89,13 @@ public class DismissTopMappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_refNode_generatorMessage1169670501887(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_9261_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1169670468666_1169670468666(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_9261_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_generatorMessage_1169670501887(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_9261_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

@@ -17,75 +17,75 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class MoneyCreator_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1187343594899(context, node);
+    return this.createCollection_2512_0(context, node);
   }
 
-  public EditorCell createCollection1187343594899(EditorContext context, SNode node) {
+  public EditorCell createCollection_2512_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11873435948991187343594899(editorCell, node, context);
+    setupBasic_Collection_2512_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1187343609605(context, node, "Money"));
-    editorCell.addEditorCell(this.createConstant1187343622248(context, node, "("));
-    editorCell.addEditorCell(this.createRefNode1187344116411(context, node));
-    editorCell.addEditorCell(this.createConstant1187344249463(context, node, ","));
-    editorCell.addEditorCell(this.createRefNode1187344118569(context, node));
-    editorCell.addEditorCell(this.createConstant1187343637158(context, node, ")"));
+    editorCell.addEditorCell(this.createConstant_2512_0(context, node, "Money"));
+    editorCell.addEditorCell(this.createConstant_2512_1(context, node, "("));
+    editorCell.addEditorCell(this.createRefNode_2512_1(context, node));
+    editorCell.addEditorCell(this.createConstant_2512_3(context, node, ","));
+    editorCell.addEditorCell(this.createRefNode_2512_3(context, node));
+    editorCell.addEditorCell(this.createConstant_2512_2(context, node, ")"));
     return editorCell;
   }
 
-  public EditorCell createConstant1187343609605(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2512_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11873436096051187343609605(editorCell, node, context);
-    setupLabel_Constant_1187343609605_1187343609605(editorCell, node, context);
+    setupBasic_Constant_2512_0(editorCell, node, context);
+    setupLabel_Constant_2512_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1187343622248(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2512_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11873436222481187343622248(editorCell, node, context);
-    setupLabel_Constant_1187343622248_1187343622248(editorCell, node, context);
+    setupBasic_Constant_2512_1(editorCell, node, context);
+    setupLabel_Constant_2512_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1187343637158(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2512_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11873436371581187343637158(editorCell, node, context);
-    setupLabel_Constant_1187343637158_1187343637158(editorCell, node, context);
+    setupBasic_Constant_2512_2(editorCell, node, context);
+    setupLabel_Constant_2512_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1187344249463(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2512_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11873442494631187344249463(editorCell, node, context);
-    setupLabel_Constant_1187344249463_1187344249463(editorCell, node, context);
+    setupBasic_Constant_2512_3(editorCell, node, context);
+    setupLabel_Constant_2512_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode1187344116411_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_2512_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_amount1187344116411(editorCell, node, context);
+    setupBasic_RefNode_2512_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_amount_1187344116411((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_2512_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1187344116411(EditorContext context, SNode node) {
+  public EditorCell createRefNode_2512_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("amount");
     provider.setNoTargetText("<no amount>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1187344116411_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_2512_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -96,25 +96,25 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1187344118569_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_2512_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_currency1187344118569(editorCell, node, context);
+    setupBasic_RefNode_2512_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_currency_1187344118569((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_2512_1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1187344118569(EditorContext context, SNode node) {
+  public EditorCell createRefNode_2512_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("currency");
     provider.setNoTargetText("<no currency>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1187344118569_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_2512_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -126,48 +126,50 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11873435948991187343594899(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1187343594899");
+  private static void setupBasic_Collection_2512_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2512_0");
   }
 
-  private static void setupBasic_Constant_11873436096051187343609605(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1187343609605");
+  private static void setupBasic_Constant_2512_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2512_0");
   }
 
-  private static void setupBasic_Constant_11873436222481187343622248(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1187343622248");
+  private static void setupBasic_Constant_2512_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2512_1");
   }
 
-  private static void setupBasic_Constant_11873436371581187343637158(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1187343637158");
+  private static void setupBasic_Constant_2512_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2512_2");
   }
 
-  private static void setupBasic_refNode_amount1187344116411(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_2512_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("refNode_amount");
   }
 
-  private static void setupBasic_refNode_currency1187344118569(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_2512_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("refNode_currency");
   }
 
-  private static void setupBasic_Constant_11873442494631187344249463(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1187344249463");
+  private static void setupBasic_Constant_2512_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2512_3");
   }
 
-  private static void setupLabel_Constant_1187343609605_1187343609605(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2512_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1187343622248_1187343622248(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2512_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1187343637158_1187343637158(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2512_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_amount_1187344116411(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_2512_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_currency_1187344118569(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_2512_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1187344249463_1187344249463(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2512_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

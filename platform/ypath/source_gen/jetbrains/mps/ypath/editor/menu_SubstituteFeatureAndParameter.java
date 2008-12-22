@@ -43,7 +43,7 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
         for(SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType))) {
           if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
             if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-              for(SNode pw : Sequence.fromIterable(IParamFeature_Behavior.call_getParameterObjects_1213877340242(feat, nodeType))) {
+              for(SNode pw : ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(feat, nodeType))) {
                 ListSequence.fromList(res).addElement(new Pair(feat, pw));
               }
             } else

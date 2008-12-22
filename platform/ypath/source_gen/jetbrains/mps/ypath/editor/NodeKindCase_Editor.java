@@ -12,22 +12,22 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class NodeKindCase_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createError1180010067930(context, node);
+    return this.createError_1206_0(context, node);
   }
 
-  public EditorCell createError1180010067930(EditorContext context, SNode node) {
+  public EditorCell createError_1206_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "select case");
-    setupBasic_Error_11800100679301180010067930(editorCell, node, context);
-    setupLabel_Error_1180010067930_1180010067930(editorCell, node, context);
+    setupBasic_Error_1206_0(editorCell, node, context);
+    setupLabel_Error_1206_0(editorCell, node, context);
     return editorCell;
   }
 
 
-  private static void setupBasic_Error_11800100679301180010067930(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Error_1180010067930");
+  private static void setupBasic_Error_1206_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Error_1206_0");
   }
 
-  private static void setupLabel_Error_1180010067930_1180010067930(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Error_1206_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

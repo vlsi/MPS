@@ -20,47 +20,47 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 public class TransposeExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1209999527439(context, node);
+    return this.createCollection_8379_0(context, node);
   }
 
-  public EditorCell createCollection1209999527439(EditorContext context, SNode node) {
+  public EditorCell createCollection_8379_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12099995274391209999527439(editorCell, node, context);
+    setupBasic_Collection_8379_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRefNode1209999546411(context, node));
-    editorCell.addEditorCell(this.createConstant1209999557387(context, node, "T"));
+    editorCell.addEditorCell(this.createRefNode_8379_1(context, node));
+    editorCell.addEditorCell(this.createConstant_8379_0(context, node, "T"));
     return editorCell;
   }
 
-  public EditorCell createConstant1209999557387(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_8379_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12099995573871209999557387(editorCell, node, context);
-    setupLabel_Constant_1209999557387_1209999557387(editorCell, node, context);
+    setupBasic_Constant_8379_0(editorCell, node, context);
+    setupLabel_Constant_8379_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode1209999546411_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_8379_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_matrix1209999546411(editorCell, node, context);
+    setupBasic_RefNode_8379_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_matrix_1209999546411((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_8379_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1209999546411(EditorContext context, SNode node) {
+  public EditorCell createRefNode_8379_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("matrix");
     provider.setNoTargetText("<no matrix>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1209999546411_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_8379_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -72,15 +72,16 @@ public class TransposeExpression_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_12099995274391209999527439(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1209999527439");
+  private static void setupBasic_Collection_8379_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_8379_0");
   }
 
-  private static void setupBasic_refNode_matrix1209999546411(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_8379_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("refNode_matrix");
   }
 
-  private static void setupBasic_Constant_12099995573871209999557387(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1209999557387");
+  private static void setupBasic_Constant_8379_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_8379_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -92,10 +93,10 @@ public class TransposeExpression_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_refNode_matrix_1209999546411(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_8379_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1209999557387_1209999557387(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_8379_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

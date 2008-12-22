@@ -16,34 +16,34 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class LineEndRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1175161323378(context, node);
+    return this.createCollection_9140_0(context, node);
   }
 
-  public EditorCell createCollection1175161323378(EditorContext context, SNode node) {
+  public EditorCell createCollection_9140_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11751613233781175161323378(editorCell, node, context);
+    setupBasic_Collection_9140_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1175161324177(context, node, "$"));
+    editorCell.addEditorCell(this.createConstant_9140_0(context, node, "$"));
     return editorCell;
   }
 
-  public EditorCell createConstant1175161324177(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_9140_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11751613241771175161324177(editorCell, node, context);
-    setupLabel_Constant_1175161324177_1175161324177(editorCell, node, context);
+    setupBasic_Constant_9140_0(editorCell, node, context);
+    setupLabel_Constant_9140_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_11751613233781175161323378(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1175161323378");
+  private static void setupBasic_Collection_9140_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_9140_0");
   }
 
-  private static void setupBasic_Constant_11751613241771175161324177(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1175161324177");
+  private static void setupBasic_Constant_9140_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_9140_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -55,7 +55,7 @@ public class LineEndRegexp_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1175161324177_1175161324177(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_9140_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

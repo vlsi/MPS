@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModel;
@@ -33,7 +32,7 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
       List<Pair> res = ListSequence.<Pair>fromArray();
       final SNode srcNode = node;
       final boolean isGeneric = SNodeOperations.isInstanceOf(srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
-      for(SNode fe : Sequence.fromIterable(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(srcNode), "features", true)).where(new IWhereFilter <SNode>() {
+      for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(srcNode), "features", true)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
           return it != srcNode && ((isGeneric ?
@@ -42,7 +41,7 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
           ));
         }
 
-      }))) {
+      })) {
         ListSequence.fromList(res).addElement(new Pair(fe, Boolean.TRUE));
         ListSequence.fromList(res).addElement(new Pair(fe, Boolean.FALSE));
       }

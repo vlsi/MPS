@@ -14,35 +14,34 @@ public class Concept_GetAllSuperConcepts_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider myReplaceableAliasAndParms_Comp6584_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1206996255986(context, node);
+    return this.createCollection_6584_0(context, node);
   }
 
-  public EditorCell createCollection1206996255986(EditorContext context, SNode node) {
+  public EditorCell createCollection_6584_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12069962559861206996255986(editorCell, node, context);
+    setupBasic_Collection_6584_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createComponent1206996255987(context, node));
+    editorCell.addEditorCell(this.createComponent_6584_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createComponent1206996255987(EditorContext context, SNode node) {
+  public EditorCell createComponent_6584_0(EditorContext context, SNode node) {
     if (this.myReplaceableAliasAndParms_Comp6584_0 == null) {
       this.myReplaceableAliasAndParms_Comp6584_0 = new ReplaceableAliasAndParms_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAliasAndParms_Comp6584_0.createEditorCell(context);
-    setupBasic_component_ReplaceableAliasAndParms_Comp1206996255987(editorCell, node, context);
+    setupBasic_Component_6584_0(editorCell, node, context);
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_12069962559861206996255986(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1206996255986");
+  private static void setupBasic_Collection_6584_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_6584_0");
   }
 
-  private static void setupBasic_component_ReplaceableAliasAndParms_Comp1206996255987(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component_ReplaceableAliasAndParms_Comp");
+  private static void setupBasic_Component_6584_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
 }

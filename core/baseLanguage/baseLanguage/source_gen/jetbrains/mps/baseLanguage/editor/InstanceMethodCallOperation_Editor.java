@@ -20,48 +20,48 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider myIMethodCall_actualArguments2215_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1202948902315(context, node);
+    return this.createCollection_2215_0(context, node);
   }
 
-  public EditorCell createCollection1202948902315(EditorContext context, SNode node) {
+  public EditorCell createCollection_2215_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12029489023151202948902315(editorCell, node, context);
+    setupBasic_Collection_2215_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRefCell1202948938317(context, node));
-    editorCell.addEditorCell(this.createComponent1225532011450(context, node));
+    editorCell.addEditorCell(this.createRefCell_2215_1(context, node));
+    editorCell.addEditorCell(this.createComponent_2215_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createComponent1225532011450(EditorContext context, SNode node) {
+  public EditorCell createComponent_2215_0(EditorContext context, SNode node) {
     if (this.myIMethodCall_actualArguments2215_0 == null) {
       this.myIMethodCall_actualArguments2215_0 = new IMethodCall_actualArguments(node);
     }
     EditorCell editorCell = this.myIMethodCall_actualArguments2215_0.createEditorCell(context);
-    setupBasic_component_IMethodCall_actualArguments1225532011450(editorCell, node, context);
+    setupBasic_Component_2215_0(editorCell, node, context);
     return editorCell;
   }
 
-  public EditorCell createRefCell1202948938317_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_2215_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new InstanceMethodCallOperation_Editor._Inline2215_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refCell_instanceMethodDeclaration1202948938317(editorCell, node, context);
+    setupBasic_RefCell_2215_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refCell_instanceMethodDeclaration_1202948938317((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefCell_2215_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefCell1202948938317(EditorContext context, SNode node) {
+  public EditorCell createRefCell_2215_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("instanceMethodDeclaration");
     provider.setNoTargetText("<no method>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1202948938317_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_2215_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -73,19 +73,17 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_12029489023151202948902315(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1202948902315");
+  private static void setupBasic_Collection_2215_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2215_0");
   }
 
-  private static void setupBasic_refCell_instanceMethodDeclaration1202948938317(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_instanceMethodDeclaration");
+  private static void setupBasic_RefCell_2215_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_component_IMethodCall_actualArguments1225532011450(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component_IMethodCall_actualArguments");
+  private static void setupBasic_Component_2215_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refCell_instanceMethodDeclaration_1202948938317(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefCell_2215_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline2215_0 extends AbstractCellProvider {
@@ -99,28 +97,28 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1202948938319(context, node);
+      return this.createProperty_2215_1(context, node);
     }
 
-    public EditorCell createProperty1202948938319_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_2215_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_property_name1202948938319(editorCell, node, context);
+      setupBasic_Property_2215_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_property_name_1202948938319((EditorCell_Label)editorCell, node, context);
+        setupLabel_Property_2215_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
 
-    public EditorCell createProperty1202948938319(EditorContext context, SNode node) {
+    public EditorCell createProperty_2215_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1202948938319_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_2215_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -132,12 +130,12 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     }
 
 
-    private static void setupBasic_property_name1202948938319(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_Property_2215_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
     }
 
-    private static void setupLabel_property_name_1202948938319(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_Property_2215_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

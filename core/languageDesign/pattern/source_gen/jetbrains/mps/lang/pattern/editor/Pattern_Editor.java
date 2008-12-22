@@ -12,22 +12,22 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class Pattern_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createError1136720096757(context, node);
+    return this.createError_3948_0(context, node);
   }
 
-  public EditorCell createError1136720096757(EditorContext context, SNode node) {
+  public EditorCell createError_3948_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<undefined pattern>");
-    setupBasic_Error_11367200967571136720096757(editorCell, node, context);
-    setupLabel_Error_1136720096757_1136720096757(editorCell, node, context);
+    setupBasic_Error_3948_0(editorCell, node, context);
+    setupLabel_Error_3948_0(editorCell, node, context);
     return editorCell;
   }
 
 
-  private static void setupBasic_Error_11367200967571136720096757(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Error_1136720096757");
+  private static void setupBasic_Error_3948_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Error_3948_0");
   }
 
-  private static void setupLabel_Error_1136720096757_1136720096757(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Error_3948_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

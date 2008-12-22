@@ -23,49 +23,49 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 public class EqualsOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1134035401245(context, node);
+    return this.createCollection_4892_0(context, node);
   }
 
-  public EditorCell createCollection1134035401245(EditorContext context, SNode node) {
+  public EditorCell createCollection_4892_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11340354012451134035401245(editorCell, node, context);
+    setupBasic_Collection_4892_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRefNode1134035401246(context, node));
-    editorCell.addEditorCell(this.createConstant1134035401247(context, node, "=="));
-    editorCell.addEditorCell(this.createRefNode1134035401248(context, node));
+    editorCell.addEditorCell(this.createRefNode_4892_1(context, node));
+    editorCell.addEditorCell(this.createConstant_4892_0(context, node, "=="));
+    editorCell.addEditorCell(this.createRefNode_4892_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1134035401247(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_4892_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11340354012471134035401247(editorCell, node, context);
-    setupLabel_Constant_1134035401247_1134035401247(editorCell, node, context);
+    setupBasic_Constant_4892_0(editorCell, node, context);
+    setupLabel_Constant_4892_0(editorCell, node, context);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new EqualsOperation_Editor.EqualsOperation_Editor_replaceWith_Operation_cellMenu0()}));
     return editorCell;
   }
 
-  public EditorCell createRefNode1134035401246_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_4892_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_leftOperand1134035401246(editorCell, node, context);
+    setupBasic_RefNode_4892_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_leftOperand_1134035401246((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_4892_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1134035401246(EditorContext context, SNode node) {
+  public EditorCell createRefNode_4892_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftOperand");
     provider.setNoTargetText("<no leftOperand>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1134035401246_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_4892_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -76,25 +76,25 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1134035401248_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_4892_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_rightOperand1134035401248(editorCell, node, context);
+    setupBasic_RefNode_4892_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_rightOperand_1134035401248((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_4892_1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1134035401248(EditorContext context, SNode node) {
+  public EditorCell createRefNode_4892_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rightOperand");
     provider.setNoTargetText("<no rightOperand>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1134035401248_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_4892_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -106,16 +106,17 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11340354012451134035401245(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1134035401245");
+  private static void setupBasic_Collection_4892_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_4892_0");
   }
 
-  private static void setupBasic_refNode_leftOperand1134035401246(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_4892_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("refNode_leftOperand");
     Operation_leftOperand_Actions.setCellActions(editorCell, node, context);
   }
 
-  private static void setupBasic_Constant_11340354012471134035401247(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1134035401247");
+  private static void setupBasic_Constant_4892_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_4892_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -128,17 +129,18 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
     Operation_symbol_Actions.setCellActions(editorCell, node, context);
   }
 
-  private static void setupBasic_refNode_rightOperand1134035401248(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_4892_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("refNode_rightOperand");
     Operation_rightOperand_Actions.setCellActions(editorCell, node, context);
   }
 
-  private static void setupLabel_refNode_leftOperand_1134035401246(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_4892_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1134035401247_1134035401247(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_4892_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_rightOperand_1134035401248(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_4892_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class EqualsOperation_Editor_replaceWith_Operation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

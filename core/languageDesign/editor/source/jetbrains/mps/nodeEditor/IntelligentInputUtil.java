@@ -32,7 +32,12 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers._boolean;
 import java.util.List;
 
 public class IntelligentInputUtil {
-  private static EditorManager ourServiceEditorManager = new EditorManager();
+  private static EditorManager ourServiceEditorManager = new EditorManager() {
+    @Override
+    protected boolean areAttributesShown() {
+      return false;
+    }
+  };
 
   public static boolean processCell(final EditorCell_Label cell, final EditorContext editorContext, final String pattern, final CellSide side) {
     if (pattern == null || pattern.equals("")) {

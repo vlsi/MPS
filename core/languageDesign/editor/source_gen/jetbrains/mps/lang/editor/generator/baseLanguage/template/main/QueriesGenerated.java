@@ -1265,7 +1265,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1212417793238(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefNode"));
+    return !(EditorCellModel_Behavior.call_isCellIdInitialized_1229948571177(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1214307718552(final IOperationContext operationContext, final IfMacroContext _context) {

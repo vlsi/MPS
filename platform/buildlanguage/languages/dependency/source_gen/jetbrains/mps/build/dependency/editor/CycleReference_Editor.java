@@ -17,28 +17,28 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 public class CycleReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRefCell1216914819221(context, node);
+    return this.createRefCell_6727_1(context, node);
   }
 
-  public EditorCell createRefCell1216914819221_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_6727_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new CycleReference_Editor._Inline6727_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refCell_cycle1216914819221(editorCell, node, context);
+    setupBasic_RefCell_6727_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refCell_cycle_1216914819221((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefCell_6727_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefCell1216914819221(EditorContext context, SNode node) {
+  public EditorCell createRefCell_6727_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("cycle");
     provider.setNoTargetText("<no cycle>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1216914819221_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_6727_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -50,11 +50,10 @@ public class CycleReference_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_refCell_cycle1216914819221(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_cycle");
+  private static void setupBasic_RefCell_6727_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refCell_cycle_1216914819221(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefCell_6727_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline6727_0 extends AbstractCellProvider {
@@ -68,28 +67,28 @@ public class CycleReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1216914823785(context, node);
+      return this.createProperty_6727_1(context, node);
     }
 
-    public EditorCell createProperty1216914823785_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_6727_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_property_name1216914823785(editorCell, node, context);
+      setupBasic_Property_6727_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_property_name_1216914823785((EditorCell_Label)editorCell, node, context);
+        setupLabel_Property_6727_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
 
-    public EditorCell createProperty1216914823785(EditorContext context, SNode node) {
+    public EditorCell createProperty_6727_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1216914823785_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_6727_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -101,11 +100,11 @@ public class CycleReference_Editor extends DefaultNodeEditor {
     }
 
 
-    private static void setupBasic_property_name1216914823785(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_Property_6727_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
     }
 
-    private static void setupLabel_property_name_1216914823785(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_Property_6727_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

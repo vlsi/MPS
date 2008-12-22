@@ -148,6 +148,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220340048708" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229951703301">
+      <property name="name" value="isCellIdInitialized" />
+      <link role="overriddenMethod" targetNodeId="1229948571177" resolveInfo="isCellIdInitialized" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229951703303">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229951725812">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1229951725813">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1229951708320" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229951720649" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877260635">
     <property name="package" value="Stylesheet" />
@@ -690,6 +703,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220339855608" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229951193831">
+      <property name="name" value="isCellIdInitialized" />
+      <link role="overriddenMethod" targetNodeId="1229948571177" resolveInfo="isCellIdInitialized" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229951193833">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229951213450">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1229951213451">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1229951206615" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229951217749" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877309981">
     <property name="package" value="CellModel" />
@@ -1108,6 +1134,19 @@
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220340004621" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229950563129">
+      <property name="name" value="isCellIdInitialized" />
+      <link role="overriddenMethod" targetNodeId="1229948571177" resolveInfo="isCellIdInitialized" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229950563130">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229950563131">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1229950563132">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1229950563133" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229950563134" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877342152">
@@ -2508,6 +2547,19 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229948571177">
+      <property name="name" value="isCellIdInitialized" />
+      <property name="isVirtual" value="true" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229948571179">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1229948612803">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1229948615055">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229948574462" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1229948580436" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877386053">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877386054" />
@@ -3951,6 +4003,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220340065995" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229954024807">
+      <property name="name" value="isCellIdInitialized" />
+      <link role="overriddenMethod" targetNodeId="1229948571177" resolveInfo="isCellIdInitialized" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229954024809">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229954038692">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1229954038693">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1229954028279" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229954034389" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220340080983">
     <property name="package" value="CellModel" />
@@ -4540,6 +4605,66 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1226492900090">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226492900091" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1229954885568">
+    <property name="package" value="CellModel" />
+    <link role="concept" targetNodeId="1.1136564507907" resolveInfo="CellModel_AttributedLinkCell" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229954888837">
+      <property name="name" value="isCellIdInitialized" />
+      <link role="overriddenMethod" targetNodeId="1229948571177" resolveInfo="isCellIdInitialized" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229954888839">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229954899502">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1229954899503">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1229954892746" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229954903801" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1229954885569">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229954885570" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1229954912396">
+    <property name="package" value="CellModel" />
+    <link role="concept" targetNodeId="1.1149850725784" resolveInfo="CellModel_AttributedNodeCell" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229954916212">
+      <property name="name" value="isCellIdInitialized" />
+      <link role="overriddenMethod" targetNodeId="1229948571177" resolveInfo="isCellIdInitialized" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229954916213">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229954916214">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1229954916215">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1229954916216" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229954916217" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1229954912397">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229954912398" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1229954921077">
+    <property name="package" value="CellModel" />
+    <link role="concept" targetNodeId="1.1134379236839" resolveInfo="CellModel_AttributedPropertyCell" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229954923377">
+      <property name="name" value="isCellIdInitialized" />
+      <link role="overriddenMethod" targetNodeId="1229948571177" resolveInfo="isCellIdInitialized" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229954923378">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229954923379">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1229954923380">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1229954923381" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229954923382" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1229954921078">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229954921079" />
     </node>
   </node>
 </model>

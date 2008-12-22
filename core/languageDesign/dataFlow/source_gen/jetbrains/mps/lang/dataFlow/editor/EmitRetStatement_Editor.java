@@ -12,24 +12,24 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class EmitRetStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1206462913500(context, node, "ret");
+    return this.createConstant_1061_0(context, node, "ret");
   }
 
-  public EditorCell createConstant1206462913500(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1061_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12064629135001206462913500(editorCell, node, context);
-    setupLabel_Constant_1206462913500_1206462913500(editorCell, node, context);
+    setupBasic_Constant_1061_0(editorCell, node, context);
+    setupLabel_Constant_1061_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_12064629135001206462913500(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1206462913500");
+  private static void setupBasic_Constant_1061_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1061_0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 
-  private static void setupLabel_Constant_1206462913500_1206462913500(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1061_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

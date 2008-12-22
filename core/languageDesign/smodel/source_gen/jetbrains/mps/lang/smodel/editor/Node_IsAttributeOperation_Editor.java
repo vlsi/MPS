@@ -12,23 +12,23 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class Node_IsAttributeOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1205861801901(context, node, "isAttribute");
+    return this.createConstant_9414_0(context, node, "isAttribute");
   }
 
-  public EditorCell createConstant1205861801901(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_9414_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12058618019011205861801901(editorCell, node, context);
-    setupLabel_Constant_1205861801901_1205861801901(editorCell, node, context);
+    setupBasic_Constant_9414_0(editorCell, node, context);
+    setupLabel_Constant_9414_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_12058618019011205861801901(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1205861801901");
+  private static void setupBasic_Constant_9414_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_9414_0");
   }
 
-  private static void setupLabel_Constant_1205861801901_1205861801901(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_9414_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

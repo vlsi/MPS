@@ -143,10 +143,14 @@ public class EditorManager {
     return stack.isEmpty() ? null : stack.peek();
   }
 
+  protected boolean areAttributesShown() {
+    return !myCreatingInspectedCell;
+  }
+
   /*package*/ EditorCell createEditorCell(EditorContext context, List<SModelEvent> events, ReferencedNodeContext refContext) {
     SNode node = refContext.getNode();
 
-    if (!myCreatingInspectedCell) {
+    if (areAttributesShown()) {
       for (SNode attribute : node.getNodeAttributes()) {
         //if the whole node has attribute
         if (attribute != null) {

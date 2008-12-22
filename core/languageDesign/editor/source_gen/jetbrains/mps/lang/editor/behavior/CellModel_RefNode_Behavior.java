@@ -28,4 +28,8 @@ public class CellModel_RefNode_Behavior {
     return "%";
   }
 
+  public static boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
+    return true;
+  }
+
 }

@@ -12,22 +12,22 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class ConceptProperty_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createError1105728957754(context, node);
+    return this.createError_5599_0(context, node);
   }
 
-  public EditorCell createError1105728957754(EditorContext context, SNode node) {
+  public EditorCell createError_5599_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose property>");
-    setupBasic_Error_11057289577541105728957754(editorCell, node, context);
-    setupLabel_Error_1105728957754_1105728957754(editorCell, node, context);
+    setupBasic_Error_5599_0(editorCell, node, context);
+    setupLabel_Error_5599_0(editorCell, node, context);
     return editorCell;
   }
 
 
-  private static void setupBasic_Error_11057289577541105728957754(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Error_1105728957754");
+  private static void setupBasic_Error_5599_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Error_5599_0");
   }
 
-  private static void setupLabel_Error_1105728957754_1105728957754(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Error_5599_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

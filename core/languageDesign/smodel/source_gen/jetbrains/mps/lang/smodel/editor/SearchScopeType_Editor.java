@@ -17,20 +17,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class SearchScopeType_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1221162027771(context, node, "search scope");
+    return this.createConstant_2022_0(context, node, "search scope");
   }
 
-  public EditorCell createConstant1221162027771(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2022_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12211620277711221162027771(editorCell, node, context);
-    setupLabel_Constant_1221162027771_1221162027771(editorCell, node, context);
+    setupBasic_Constant_2022_0(editorCell, node, context);
+    setupLabel_Constant_2022_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_12211620277711221162027771(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1221162027771");
+  private static void setupBasic_Constant_2022_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2022_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -43,7 +43,7 @@ public class SearchScopeType_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1221162027771_1221162027771(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2022_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

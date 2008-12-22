@@ -337,7 +337,8 @@ public abstract class EditorCell_Basic implements EditorCell {
     getStyle().set(StyleAttributes.SELECTABLE, selectable);
   }
 
-  public void setCellId(String cellId) {
+  public void setCellId(String cellId) {    
+    assert myCellId == null;
     myCellId = cellId;
   }
 

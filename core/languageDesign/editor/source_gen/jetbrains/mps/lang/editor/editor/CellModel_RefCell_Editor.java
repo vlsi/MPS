@@ -535,7 +535,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_8529_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_linkDeclaration");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -548,7 +547,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_8529_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_linkDeclaration");
     SharedStyles_StyleSheet.getReferenceDecorated(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -562,15 +560,12 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_8529_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_editorComponent");
   }
 
   private static void setupBasic_Component_8529_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__OpenTag");
   }
 
   private static void setupBasic_Component_8529_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CloseTag");
   }
 
   private static void setupBasic_Collection_8529_5(EditorCell editorCell, SNode node, EditorContext context) {
@@ -591,7 +586,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_8529_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupBasic_Collection_8529_6(EditorCell editorCell, SNode node, EditorContext context) {
@@ -847,7 +841,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_RefCell_8529_3(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("refCell_conceptDeclaration");
     }
 
     private static void setupLabel_RefCell_8529_3(EditorCell_Label editorCell, SNode node, EditorContext context) {

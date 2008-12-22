@@ -18,34 +18,34 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class SuperNodeExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1225194628492(context, node);
+    return this.createCollection_3177_0(context, node);
   }
 
-  public EditorCell createCollection1225194628492(EditorContext context, SNode node) {
+  public EditorCell createCollection_3177_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12251946284921225194628492(editorCell, node, context);
+    setupBasic_Collection_3177_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1225194628493(context, node, "super"));
+    editorCell.addEditorCell(this.createConstant_3177_0(context, node, "super"));
     return editorCell;
   }
 
-  public EditorCell createConstant1225194628493(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_3177_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12251946284931225194628493(editorCell, node, context);
-    setupLabel_Constant_1225194628493_1225194628493(editorCell, node, context);
+    setupBasic_Constant_3177_0(editorCell, node, context);
+    setupLabel_Constant_3177_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_12251946284921225194628492(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1225194628492");
+  private static void setupBasic_Collection_3177_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_3177_0");
   }
 
-  private static void setupBasic_Constant_12251946284931225194628493(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1225194628493");
+  private static void setupBasic_Constant_3177_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_3177_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -58,7 +58,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1225194628493_1225194628493(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_3177_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

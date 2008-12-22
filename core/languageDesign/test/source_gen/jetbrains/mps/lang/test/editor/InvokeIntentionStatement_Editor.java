@@ -20,66 +20,66 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1225989934582(context, node);
+    return this.createCollection_1183_0(context, node);
   }
 
-  public EditorCell createCollection1225989934582(EditorContext context, SNode node) {
+  public EditorCell createCollection_1183_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12259899345821225989934582(editorCell, node, context);
+    setupBasic_Collection_1183_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1225989938412(context, node, "invoke intention"));
-    editorCell.addEditorCell(this.createRefCell1225989952789(context, node));
-    editorCell.addEditorCell(this.createConstant1225990811873(context, node, "on"));
-    editorCell.addEditorCell(this.createRefNode1225990862384(context, node));
-    editorCell.addEditorCell(this.createConstant1225991178476(context, node, ";"));
+    editorCell.addEditorCell(this.createConstant_1183_0(context, node, "invoke intention"));
+    editorCell.addEditorCell(this.createRefCell_1183_1(context, node));
+    editorCell.addEditorCell(this.createConstant_1183_1(context, node, "on"));
+    editorCell.addEditorCell(this.createRefNode_1183_1(context, node));
+    editorCell.addEditorCell(this.createConstant_1183_2(context, node, ";"));
     return editorCell;
   }
 
-  public EditorCell createConstant1225989938412(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1183_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12259899384121225989938412(editorCell, node, context);
-    setupLabel_Constant_1225989938412_1225989938412(editorCell, node, context);
+    setupBasic_Constant_1183_0(editorCell, node, context);
+    setupLabel_Constant_1183_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1225990811873(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1183_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12259908118731225990811873(editorCell, node, context);
-    setupLabel_Constant_1225990811873_1225990811873(editorCell, node, context);
+    setupBasic_Constant_1183_1(editorCell, node, context);
+    setupLabel_Constant_1183_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1225991178476(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1183_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12259911784761225991178476(editorCell, node, context);
-    setupLabel_Constant_1225991178476_1225991178476(editorCell, node, context);
+    setupBasic_Constant_1183_2(editorCell, node, context);
+    setupLabel_Constant_1183_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefCell1225989952789_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_1183_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new InvokeIntentionStatement_Editor._Inline1183_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refCell_intention1225989952789(editorCell, node, context);
+    setupBasic_RefCell_1183_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refCell_intention_1225989952789((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefCell_1183_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefCell1225989952789(EditorContext context, SNode node) {
+  public EditorCell createRefCell_1183_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("intention");
     provider.setNoTargetText("<no intention>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1225989952789_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_1183_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -90,25 +90,25 @@ public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1225990862384_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_1183_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_parameter1225990862384(editorCell, node, context);
+    setupBasic_RefNode_1183_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_parameter_1225990862384((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_1183_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1225990862384(EditorContext context, SNode node) {
+  public EditorCell createRefNode_1183_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("parameter");
     provider.setNoTargetText("<no parameter>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1225990862384_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_1183_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -120,42 +120,41 @@ public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_12259899345821225989934582(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1225989934582");
+  private static void setupBasic_Collection_1183_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1183_0");
   }
 
-  private static void setupBasic_Constant_12259899384121225989938412(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1225989938412");
+  private static void setupBasic_Constant_1183_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1183_0");
   }
 
-  private static void setupBasic_refCell_intention1225989952789(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_intention");
+  private static void setupBasic_RefCell_1183_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Constant_12259908118731225990811873(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1225990811873");
+  private static void setupBasic_Constant_1183_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1183_1");
   }
 
-  private static void setupBasic_refNode_parameter1225990862384(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_1183_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Constant_12259911784761225991178476(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1225991178476");
+  private static void setupBasic_Constant_1183_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1183_2");
   }
 
-  private static void setupLabel_Constant_1225989938412_1225989938412(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1183_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refCell_intention_1225989952789(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefCell_1183_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1225990811873_1225990811873(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1183_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_parameter_1225990862384(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_1183_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1225991178476_1225991178476(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1183_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline1183_0 extends AbstractCellProvider {
@@ -169,28 +168,28 @@ public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1225989992575(context, node);
+      return this.createProperty_1183_1(context, node);
     }
 
-    public EditorCell createProperty1225989992575_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_1183_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_property_name1225989992575(editorCell, node, context);
+      setupBasic_Property_1183_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_property_name_1225989992575((EditorCell_Label)editorCell, node, context);
+        setupLabel_Property_1183_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
 
-    public EditorCell createProperty1225989992575(EditorContext context, SNode node) {
+    public EditorCell createProperty_1183_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1225989992575_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_1183_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -202,11 +201,11 @@ public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
     }
 
 
-    private static void setupBasic_property_name1225989992575(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_Property_1183_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
     }
 
-    private static void setupLabel_property_name_1225989992575(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_Property_1183_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

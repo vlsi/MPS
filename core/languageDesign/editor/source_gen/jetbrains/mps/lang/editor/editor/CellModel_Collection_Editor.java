@@ -799,27 +799,22 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_2102_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__OpenTag");
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Component_2102_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CloseTag");
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Component_2102_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__OpenTag");
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Component_2102_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CloseTag");
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Component_2102_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupBasic_Constant_2102_7(EditorCell editorCell, SNode node, EditorContext context) {

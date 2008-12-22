@@ -15,28 +15,28 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class MatrixElementVariableDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createProperty1210238332891(context, node);
+    return this.createProperty_1593_1(context, node);
   }
 
-  public EditorCell createProperty1210238332891_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_1593_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_name1210238332891(editorCell, node, context);
+    setupBasic_Property_1593_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_name_1210238332891((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_1593_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty1210238332891(EditorContext context, SNode node) {
+  public EditorCell createProperty_1593_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1210238332891_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_1593_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -48,11 +48,11 @@ public class MatrixElementVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_property_name1210238332891(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_1593_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
   }
 
-  private static void setupLabel_property_name_1210238332891(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_1593_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

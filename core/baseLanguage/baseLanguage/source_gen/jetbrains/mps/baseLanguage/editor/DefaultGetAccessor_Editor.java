@@ -13,54 +13,54 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class DefaultGetAccessor_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1202065274342(context, node);
+    return this.createCollection_2800_0(context, node);
   }
 
-  public EditorCell createCollection1202065274342(EditorContext context, SNode node) {
+  public EditorCell createCollection_2800_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12020652743421202065274342(editorCell, node, context);
+    setupBasic_Collection_2800_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1202065275985(context, node, "get"));
-    editorCell.addEditorCell(this.createConstant1202065292940(context, node, ";"));
+    editorCell.addEditorCell(this.createConstant_2800_0(context, node, "get"));
+    editorCell.addEditorCell(this.createConstant_2800_1(context, node, ";"));
     return editorCell;
   }
 
-  public EditorCell createConstant1202065275985(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2800_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12020652759851202065275985(editorCell, node, context);
-    setupLabel_Constant_1202065275985_1202065275985(editorCell, node, context);
+    setupBasic_Constant_2800_0(editorCell, node, context);
+    setupLabel_Constant_2800_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1202065292940(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2800_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12020652929401202065292940(editorCell, node, context);
-    setupLabel_Constant_1202065292940_1202065292940(editorCell, node, context);
+    setupBasic_Constant_2800_1(editorCell, node, context);
+    setupLabel_Constant_2800_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_12020652743421202065274342(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1202065274342");
+  private static void setupBasic_Collection_2800_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2800_0");
   }
 
-  private static void setupBasic_Constant_12020652759851202065275985(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1202065275985");
+  private static void setupBasic_Constant_2800_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2800_0");
   }
 
-  private static void setupBasic_Constant_12020652929401202065292940(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1202065292940");
+  private static void setupBasic_Constant_2800_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2800_1");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
-  private static void setupLabel_Constant_1202065275985_1202065275985(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2800_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1202065292940_1202065292940(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2800_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

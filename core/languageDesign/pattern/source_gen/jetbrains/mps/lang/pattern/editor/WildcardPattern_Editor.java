@@ -17,34 +17,34 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class WildcardPattern_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1136720096762(context, node);
+    return this.createCollection_1606_0(context, node);
   }
 
-  public EditorCell createCollection1136720096762(EditorContext context, SNode node) {
+  public EditorCell createCollection_1606_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11367200967621136720096762(editorCell, node, context);
+    setupBasic_Collection_1606_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1136720096763(context, node, "_"));
+    editorCell.addEditorCell(this.createConstant_1606_0(context, node, "_"));
     return editorCell;
   }
 
-  public EditorCell createConstant1136720096763(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1606_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11367200967631136720096763(editorCell, node, context);
-    setupLabel_Constant_1136720096763_1136720096763(editorCell, node, context);
+    setupBasic_Constant_1606_0(editorCell, node, context);
+    setupLabel_Constant_1606_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_11367200967621136720096762(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1136720096762");
+  private static void setupBasic_Collection_1606_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1606_0");
   }
 
-  private static void setupBasic_Constant_11367200967631136720096763(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1136720096763");
+  private static void setupBasic_Constant_1606_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1606_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -57,7 +57,7 @@ public class WildcardPattern_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1136720096763_1136720096763(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1606_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

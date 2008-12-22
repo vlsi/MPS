@@ -16,20 +16,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class LinkList_GetCountOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1145468793690(context, node, "count");
+    return this.createConstant_2571_0(context, node, "count");
   }
 
-  public EditorCell createConstant1145468793690(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2571_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11454687936901145468793690(editorCell, node, context);
-    setupLabel_Constant_1145468793690_1145468793690(editorCell, node, context);
+    setupBasic_Constant_2571_0(editorCell, node, context);
+    setupLabel_Constant_2571_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_11454687936901145468793690(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1145468793690");
+  private static void setupBasic_Constant_2571_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2571_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -42,7 +42,7 @@ public class LinkList_GetCountOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1145468793690_1145468793690(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2571_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

@@ -30,83 +30,83 @@ import jetbrains.mps.smodel.SModel;
 public class ElsifClause_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1206061047106(context, node);
+    return this.createCollection_1596_0(context, node);
   }
 
-  public EditorCell createCollection1206061047106(EditorContext context, SNode node) {
+  public EditorCell createCollection_1596_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_12060610471061206061047106(editorCell, node, context);
+    setupBasic_Collection_1596_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection1206061051592(context, node));
-    editorCell.addEditorCell(this.createCollection1206061099778(context, node));
+    editorCell.addEditorCell(this.createCollection_1596_1(context, node));
+    editorCell.addEditorCell(this.createCollection_1596_2(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1206061051592(EditorContext context, SNode node) {
+  public EditorCell createCollection_1596_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12060610515921206061051592(editorCell, node, context);
+    setupBasic_Collection_1596_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1206061055032(context, node, "}"));
-    editorCell.addEditorCell(this.createConstant1206061059815(context, node, "else if"));
-    editorCell.addEditorCell(this.createConstant1206061068802(context, node, "("));
-    editorCell.addEditorCell(this.createRefNode1206061083792(context, node));
-    editorCell.addEditorCell(this.createConstant1206061071100(context, node, ")"));
-    editorCell.addEditorCell(this.createConstant1206061074509(context, node, "{"));
+    editorCell.addEditorCell(this.createConstant_1596_0(context, node, "}"));
+    editorCell.addEditorCell(this.createConstant_1596_1(context, node, "else if"));
+    editorCell.addEditorCell(this.createConstant_1596_2(context, node, "("));
+    editorCell.addEditorCell(this.createRefNode_1596_1(context, node));
+    editorCell.addEditorCell(this.createConstant_1596_3(context, node, ")"));
+    editorCell.addEditorCell(this.createConstant_1596_4(context, node, "{"));
     return editorCell;
   }
 
-  public EditorCell createCollection1206061099778(EditorContext context, SNode node) {
+  public EditorCell createCollection_1596_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12060610997781206061099778(editorCell, node, context);
+    setupBasic_Collection_1596_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndentCell1596_0(context, node));
-    editorCell.addEditorCell(this.createRefNode1206061106547(context, node));
+    editorCell.addEditorCell(this.createRefNode_1596_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1206061055032(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1596_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12060610550321206061055032(editorCell, node, context);
-    setupLabel_Constant_1206061055032_1206061055032(editorCell, node, context);
+    setupBasic_Constant_1596_0(editorCell, node, context);
+    setupLabel_Constant_1596_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1206061059815(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1596_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12060610598151206061059815(editorCell, node, context);
-    setupLabel_Constant_1206061059815_1206061059815(editorCell, node, context);
+    setupBasic_Constant_1596_1(editorCell, node, context);
+    setupLabel_Constant_1596_1(editorCell, node, context);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu0()}));
     return editorCell;
   }
 
-  public EditorCell createConstant1206061068802(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1596_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12060610688021206061068802(editorCell, node, context);
-    setupLabel_Constant_1206061068802_1206061068802(editorCell, node, context);
+    setupBasic_Constant_1596_2(editorCell, node, context);
+    setupLabel_Constant_1596_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1206061071100(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1596_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12060610711001206061071100(editorCell, node, context);
-    setupLabel_Constant_1206061071100_1206061071100(editorCell, node, context);
+    setupBasic_Constant_1596_3(editorCell, node, context);
+    setupLabel_Constant_1596_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1206061074509(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1596_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12060610745091206061074509(editorCell, node, context);
-    setupLabel_Constant_1206061074509_1206061074509(editorCell, node, context);
+    setupBasic_Constant_1596_4(editorCell, node, context);
+    setupLabel_Constant_1596_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -116,25 +116,25 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  public EditorCell createRefNode1206061083792_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_1596_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_condition1206061083792(editorCell, node, context);
+    setupBasic_RefNode_1596_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_condition_1206061083792((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_1596_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1206061083792(EditorContext context, SNode node) {
+  public EditorCell createRefNode_1596_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1206061083792_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_1596_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -145,25 +145,25 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1206061106547_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_1596_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_statementList1206061106547(editorCell, node, context);
+    setupBasic_RefNode_1596_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_statementList_1206061106547((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_1596_1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1206061106547(EditorContext context, SNode node) {
+  public EditorCell createRefNode_1596_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("statementList");
     provider.setNoTargetText("<no statementList>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1206061106547_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_1596_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -175,8 +175,8 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_12060610471061206061047106(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1206061047106");
+  private static void setupBasic_Collection_1596_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1596_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -188,8 +188,8 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_12060610515921206061051592(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1206061051592");
+  private static void setupBasic_Collection_1596_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1596_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -201,14 +201,14 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_12060610550321206061055032(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1206061055032");
+  private static void setupBasic_Constant_1596_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1596_0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     ElseifClause_DeletePrevious.setCellActions(editorCell, node, context);
   }
 
-  private static void setupBasic_Constant_12060610598151206061059815(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1206061059815");
+  private static void setupBasic_Constant_1596_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1596_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -221,26 +221,26 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_12060610688021206061068802(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1206061068802");
+  private static void setupBasic_Constant_1596_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1596_2");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_12060610711001206061071100(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1206061071100");
+  private static void setupBasic_Constant_1596_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1596_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_12060610745091206061074509(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1206061074509");
+  private static void setupBasic_Constant_1596_4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1596_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_refNode_condition1206061083792(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_1596_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Collection_12060610997781206061099778(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1206061099778");
+  private static void setupBasic_Collection_1596_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1596_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -253,8 +253,8 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Indent_12060610997791206061099779(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Indent_1206061099779");
+  private static void setupBasic_Indent_1596_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Indent_1596_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -266,28 +266,28 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_refNode_statementList1206061106547(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_1596_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1206061055032_1206061055032(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1596_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1206061059815_1206061059815(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1596_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1206061068802_1206061068802(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1596_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1206061071100_1206061071100(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1596_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1206061074509_1206061074509(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1596_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_condition_1206061083792(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_1596_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_statementList_1206061106547(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_1596_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class ElsifClause_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {

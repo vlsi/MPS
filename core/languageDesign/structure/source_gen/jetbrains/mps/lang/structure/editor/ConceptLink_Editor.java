@@ -12,22 +12,22 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class ConceptLink_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createError1105742555383(context, node);
+    return this.createError_8038_0(context, node);
   }
 
-  public EditorCell createError1105742555383(EditorContext context, SNode node) {
+  public EditorCell createError_8038_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose link>");
-    setupBasic_Error_11057425553831105742555383(editorCell, node, context);
-    setupLabel_Error_1105742555383_1105742555383(editorCell, node, context);
+    setupBasic_Error_8038_0(editorCell, node, context);
+    setupLabel_Error_8038_0(editorCell, node, context);
     return editorCell;
   }
 
 
-  private static void setupBasic_Error_11057425553831105742555383(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Error_1105742555383");
+  private static void setupBasic_Error_8038_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Error_8038_0");
   }
 
-  private static void setupLabel_Error_1105742555383_1105742555383(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Error_8038_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

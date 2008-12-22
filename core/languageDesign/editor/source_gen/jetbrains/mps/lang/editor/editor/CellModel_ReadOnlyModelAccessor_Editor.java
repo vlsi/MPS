@@ -263,15 +263,12 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_0582_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__OpenTag");
   }
 
   private static void setupBasic_Component_0582_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CloseTag");
   }
 
   private static void setupBasic_Component_0582_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupBasic_Collection_0582_2(EditorCell editorCell, SNode node, EditorContext context) {

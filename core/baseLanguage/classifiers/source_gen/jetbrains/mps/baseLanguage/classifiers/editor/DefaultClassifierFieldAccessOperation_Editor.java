@@ -22,28 +22,28 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRefCell1213999826700(context, node);
+    return this.createRefCell_2689_1(context, node);
   }
 
-  public EditorCell createRefCell1213999826700_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_2689_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new DefaultClassifierFieldAccessOperation_Editor._Inline2689_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refCell_field1213999826700(editorCell, node, context);
+    setupBasic_RefCell_2689_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refCell_field_1213999826700((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefCell_2689_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefCell1213999826700(EditorContext context, SNode node) {
+  public EditorCell createRefCell_2689_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("field");
     provider.setNoTargetText("<no field>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1213999826700_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_2689_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -55,11 +55,10 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
   }
 
 
-  private static void setupBasic_refCell_field1213999826700(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_field");
+  private static void setupBasic_RefCell_2689_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refCell_field_1213999826700(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefCell_2689_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline2689_0 extends AbstractCellProvider {
@@ -73,28 +72,28 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1213999830409(context, node);
+      return this.createProperty_2689_1(context, node);
     }
 
-    public EditorCell createProperty1213999830409_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_2689_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_property_name1213999830409(editorCell, node, context);
+      setupBasic_Property_2689_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_property_name_1213999830409((EditorCell_Label)editorCell, node, context);
+        setupLabel_Property_2689_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
 
-    public EditorCell createProperty1213999830409(EditorContext context, SNode node) {
+    public EditorCell createProperty_2689_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1213999830409_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_2689_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -106,7 +105,7 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
     }
 
 
-    private static void setupBasic_property_name1213999830409(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_Property_2689_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
       {
@@ -120,7 +119,7 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
       }
     }
 
-    private static void setupLabel_property_name_1213999830409(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_Property_2689_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

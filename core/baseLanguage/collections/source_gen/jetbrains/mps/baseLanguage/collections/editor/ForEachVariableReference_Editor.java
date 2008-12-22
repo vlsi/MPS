@@ -21,28 +21,28 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class ForEachVariableReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRefCell1153944293571(context, node);
+    return this.createRefCell_3065_1(context, node);
   }
 
-  public EditorCell createRefCell1153944293571_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_3065_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new ForEachVariableReference_Editor._Inline3065_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refCell_variable1153944293571(editorCell, node, context);
+    setupBasic_RefCell_3065_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refCell_variable_1153944293571((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefCell_3065_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefCell1153944293571(EditorContext context, SNode node) {
+  public EditorCell createRefCell_3065_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1153944293571_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_3065_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -54,11 +54,10 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_refCell_variable1153944293571(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_variable");
+  private static void setupBasic_RefCell_3065_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refCell_variable_1153944293571(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefCell_3065_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline3065_0 extends AbstractCellProvider {
@@ -72,28 +71,28 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1153944301918(context, node);
+      return this.createProperty_3065_1(context, node);
     }
 
-    public EditorCell createProperty1153944301918_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_3065_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_property_name1153944301918(editorCell, node, context);
+      setupBasic_Property_3065_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_property_name_1153944301918((EditorCell_Label)editorCell, node, context);
+        setupLabel_Property_3065_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
 
-    public EditorCell createProperty1153944301918(EditorContext context, SNode node) {
+    public EditorCell createProperty_3065_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1153944301918_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_3065_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -105,7 +104,7 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
     }
 
 
-    private static void setupBasic_property_name1153944301918(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_Property_3065_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
@@ -118,7 +117,7 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
       }
     }
 
-    private static void setupLabel_property_name_1153944301918(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_Property_3065_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

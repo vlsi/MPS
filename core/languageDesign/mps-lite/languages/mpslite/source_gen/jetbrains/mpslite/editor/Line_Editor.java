@@ -19,46 +19,46 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Line_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1182511258456;
+  /* package */AbstractCellListHandler myListHandler_8408_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1182511256407(context, node);
+    return this.createCollection_8408_0(context, node);
   }
 
-  public EditorCell createCollection1182511256407(EditorContext context, SNode node) {
+  public EditorCell createCollection_8408_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11825112564071182511256407(editorCell, node, context);
+    setupBasic_Collection_8408_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRefNodeList1182511258456(context, node));
+    editorCell.addEditorCell(this.createRefNodeList_8408_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNodeList1182511258456(EditorContext context, SNode node) {
-    if (this.myListHandler_1182511258456 == null) {
-      this.myListHandler_1182511258456 = new Line_Editor.linePartListHandler_8408_0(node, "linePart", context);
+  public EditorCell createRefNodeList_8408_0(EditorContext context, SNode node) {
+    if (this.myListHandler_8408_0 == null) {
+      this.myListHandler_8408_0 = new Line_Editor.linePartListHandler_8408_0(node, "linePart", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_1182511258456.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_refNodeList_linePart1182511258456(editorCell, node, context);
+    EditorCell_Collection editorCell = this.myListHandler_8408_0.createCells(context, new CellLayout_Horizontal(), false);
+    setupBasic_RefNodeList_8408_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.setRole(this.myListHandler_1182511258456.getElementRole());
+    editorCell.setRole(this.myListHandler_8408_0.getElementRole());
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_11825112564071182511256407(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1182511256407");
+  private static void setupBasic_Collection_8408_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_8408_0");
   }
 
-  private static void setupBasic_refNodeList_linePart1182511258456(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNodeList_8408_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_linePart");
     editorCell.addKeyMap(new _Line_Actions());
   }
 
-  private static void setupLabel_refNodeList_linePart_1182511258456(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNodeList_8408_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class linePartListHandler_8408_0 extends RefNodeListHandler {

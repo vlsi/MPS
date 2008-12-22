@@ -36,29 +36,29 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createProperty1181823199382(context, node);
+    return this.createProperty_7633_1(context, node);
   }
 
-  public EditorCell createProperty1181823199382_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_7633_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_name1181823199382(editorCell, node, context);
+    setupBasic_Property_7633_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_name_1181823199382((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_7633_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu0()}));
     return editorCell;
   }
 
-  public EditorCell createProperty1181823199382(EditorContext context, SNode node) {
+  public EditorCell createProperty_7633_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1181823199382_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_7633_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -70,7 +70,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
   }
 
 
-  private static void setupBasic_property_name1181823199382(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_7633_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
     BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
     {
@@ -85,7 +85,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     }
   }
 
-  private static void setupLabel_property_name_1181823199382(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_7633_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class VariableDeclaration_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {

@@ -13,24 +13,24 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class CheckDataFlowOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1215611873639(context, node, "check dataflow");
+    return this.createConstant_5947_0(context, node, "check dataflow");
   }
 
-  public EditorCell createConstant1215611873639(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_5947_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12156118736391215611873639(editorCell, node, context);
-    setupLabel_Constant_1215611873639_1215611873639(editorCell, node, context);
+    setupBasic_Constant_5947_0(editorCell, node, context);
+    setupLabel_Constant_5947_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_12156118736391215611873639(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1215611873639");
+  private static void setupBasic_Constant_5947_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_5947_0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
   }
 
-  private static void setupLabel_Constant_1215611873639_1215611873639(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_5947_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

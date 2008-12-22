@@ -17,20 +17,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class Node_DetachOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1228341824091(context, node, "detach");
+    return this.createConstant_4197_0(context, node, "detach");
   }
 
-  public EditorCell createConstant1228341824091(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_4197_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12283418240911228341824091(editorCell, node, context);
-    setupLabel_Constant_1228341824091_1228341824091(editorCell, node, context);
+    setupBasic_Constant_4197_0(editorCell, node, context);
+    setupLabel_Constant_4197_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_12283418240911228341824091(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1228341824091");
+  private static void setupBasic_Constant_4197_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_4197_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -46,7 +46,7 @@ public class Node_DetachOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1228341824091_1228341824091(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_4197_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

@@ -108,7 +108,6 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_1215_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupLabel_Property_1215_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

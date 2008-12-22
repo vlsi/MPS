@@ -10054,14 +10054,12 @@
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1212417793237">
               <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1212417793238">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212417793239">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212417839040">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1212417839041">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212417842513">
-                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1212417841434" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1212417844157">
-                          <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1212417881018">
-                            <link role="conceptDeclaration" targetNodeId="38.1073389882823" resolveInfo="CellModel_RefNode" />
-                          </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229948678717">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1229948678718">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229948683001">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1229948680704" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1229948686191">
+                          <link role="baseMethodDeclaration" targetNodeId="62.1229948571177" resolveInfo="isCellIdInitialized" />
                         </node>
                       </node>
                     </node>

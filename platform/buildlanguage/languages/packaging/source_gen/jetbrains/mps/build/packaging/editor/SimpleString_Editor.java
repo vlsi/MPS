@@ -19,28 +19,28 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class SimpleString_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createProperty1205339395970(context, node);
+    return this.createProperty_4553_1(context, node);
   }
 
-  public EditorCell createProperty1205339395970_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_4553_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_name1205339395970(editorCell, node, context);
+    setupBasic_Property_4553_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_name_1205339395970((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_4553_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty1205339395970(EditorContext context, SNode node) {
+  public EditorCell createProperty_4553_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1205339395970_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_4553_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -52,7 +52,7 @@ public class SimpleString_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_property_name1205339395970(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_4553_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
     MPSLayoutStyles_StyleSheet.getString(editorCell).apply(editorCell);
     {
@@ -68,7 +68,7 @@ public class SimpleString_Editor extends DefaultNodeEditor {
     CompositeString_RT.setCellActions(editorCell, node, context);
   }
 
-  private static void setupLabel_property_name_1205339395970(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_4553_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

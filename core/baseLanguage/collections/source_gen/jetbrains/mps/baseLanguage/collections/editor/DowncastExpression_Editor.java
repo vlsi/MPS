@@ -23,47 +23,47 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 public class DowncastExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1228229012775(context, node);
+    return this.createCollection_1517_0(context, node);
   }
 
-  public EditorCell createCollection1228229012775(EditorContext context, SNode node) {
+  public EditorCell createCollection_1517_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12282290127751228229012775(editorCell, node, context);
+    setupBasic_Collection_1517_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRefNode1228229048096(context, node));
-    editorCell.addEditorCell(this.createConstant1228229012777(context, node, "/"));
+    editorCell.addEditorCell(this.createRefNode_1517_1(context, node));
+    editorCell.addEditorCell(this.createConstant_1517_0(context, node, "/"));
     return editorCell;
   }
 
-  public EditorCell createConstant1228229012777(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1517_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12282290127771228229012777(editorCell, node, context);
-    setupLabel_Constant_1228229012777_1228229012777(editorCell, node, context);
+    setupBasic_Constant_1517_0(editorCell, node, context);
+    setupLabel_Constant_1517_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode1228229048096_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_1517_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_expression1228229048096(editorCell, node, context);
+    setupBasic_RefNode_1517_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_expression_1228229048096((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_1517_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1228229048096(EditorContext context, SNode node) {
+  public EditorCell createRefNode_1517_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1228229048096_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_1517_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -75,12 +75,12 @@ public class DowncastExpression_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_12282290127751228229012775(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1228229012775");
+  private static void setupBasic_Collection_1517_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1517_0");
   }
 
-  private static void setupBasic_Constant_12282290127771228229012777(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1228229012777");
+  private static void setupBasic_Constant_1517_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1517_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -99,13 +99,13 @@ public class DowncastExpression_Editor extends DefaultNodeEditor {
     DowncastExpression_DELETE.setCellActions(editorCell, node, context);
   }
 
-  private static void setupBasic_refNode_expression1228229048096(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_1517_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1228229012777_1228229012777(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1517_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_expression_1228229048096(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_1517_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

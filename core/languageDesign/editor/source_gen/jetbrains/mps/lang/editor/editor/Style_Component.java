@@ -202,7 +202,6 @@ public class Style_Component extends AbstractCellProvider {
   }
 
   private static void setupBasic_RefCell_7233_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_styleClass");
   }
 
   private static void setupBasic_Constant_7233_1(EditorCell editorCell, SNode node, EditorContext context) {

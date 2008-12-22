@@ -23,28 +23,28 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class SLinkListAccess_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRefCell1138412361312(context, node);
+    return this.createRefCell_5555_1(context, node);
   }
 
-  public EditorCell createRefCell1138412361312_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_5555_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new SLinkListAccess_Editor._Inline5555_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refCell_link1138412361312(editorCell, node, context);
+    setupBasic_RefCell_5555_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refCell_link_1138412361312((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefCell_5555_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefCell1138412361312(EditorContext context, SNode node) {
+  public EditorCell createRefCell_5555_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1138412361312_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_5555_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -56,11 +56,10 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_refCell_link1138412361312(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_link");
+  private static void setupBasic_RefCell_5555_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refCell_link_1138412361312(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefCell_5555_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline5555_0 extends AbstractCellProvider {
@@ -74,28 +73,28 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1138412361314(context, node);
+      return this.createProperty_5555_1(context, node);
     }
 
-    public EditorCell createProperty1138412361314_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_5555_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_property_role1138412361314(editorCell, node, context);
+      setupBasic_Property_5555_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_property_role_1138412361314((EditorCell_Label)editorCell, node, context);
+        setupLabel_Property_5555_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
 
-    public EditorCell createProperty1138412361314(EditorContext context, SNode node) {
+    public EditorCell createProperty_5555_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1138412361314_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_5555_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -107,7 +106,7 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
     }
 
 
-    private static void setupBasic_property_role1138412361314(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_Property_5555_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_role");
       {
         Style inlineStyle = new Style(editorCell) {
@@ -122,7 +121,7 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
       }
     }
 
-    private static void setupLabel_property_role_1138412361314(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_Property_5555_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

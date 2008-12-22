@@ -12,23 +12,23 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class CheckCancelledStatusStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1207141899185(context, node, "check cancelled status;");
+    return this.createConstant_1992_0(context, node, "check cancelled status;");
   }
 
-  public EditorCell createConstant1207141899185(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1992_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12071418991851207141899185(editorCell, node, context);
-    setupLabel_Constant_1207141899185_1207141899185(editorCell, node, context);
+    setupBasic_Constant_1992_0(editorCell, node, context);
+    setupLabel_Constant_1992_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_12071418991851207141899185(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1207141899185");
+  private static void setupBasic_Constant_1992_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1992_0");
   }
 
-  private static void setupLabel_Constant_1207141899185_1207141899185(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1992_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

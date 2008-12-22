@@ -16,34 +16,34 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class RemoveDefaultsPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1177614732612(context, node);
+    return this.createCollection_4285_0(context, node);
   }
 
-  public EditorCell createCollection1177614732612(EditorContext context, SNode node) {
+  public EditorCell createCollection_4285_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11776147326121177614732612(editorCell, node, context);
+    setupBasic_Collection_4285_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1177614733418(context, node, "remove defaults"));
+    editorCell.addEditorCell(this.createConstant_4285_0(context, node, "remove defaults"));
     return editorCell;
   }
 
-  public EditorCell createConstant1177614733418(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_4285_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11776147334181177614733418(editorCell, node, context);
-    setupLabel_Constant_1177614733418_1177614733418(editorCell, node, context);
+    setupBasic_Constant_4285_0(editorCell, node, context);
+    setupLabel_Constant_4285_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_11776147326121177614732612(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1177614732612");
+  private static void setupBasic_Collection_4285_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_4285_0");
   }
 
-  private static void setupBasic_Constant_11776147334181177614733418(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1177614733418");
+  private static void setupBasic_Constant_4285_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_4285_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -55,7 +55,7 @@ public class RemoveDefaultsPart_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1177614733418_1177614733418(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_4285_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

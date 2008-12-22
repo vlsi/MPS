@@ -256,7 +256,6 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_3190_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_property");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -360,7 +359,6 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_3190_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CloseTag");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -373,7 +371,6 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_3190_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__OpenTag");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -399,7 +396,6 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_3190_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupBasic_Constant_3190_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -475,7 +471,6 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_3190_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_property");
     {
       Style inlineStyle = new Style(editorCell) {
         {

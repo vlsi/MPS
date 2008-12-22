@@ -1045,7 +1045,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_6321_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__OpenTag");
   }
 
   private static void setupBasic_Collection_6321_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -1105,7 +1104,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_6321_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_linkDeclaration");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -1213,7 +1211,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_6321_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_linkDeclaration");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -1265,7 +1262,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_6321_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CloseTag");
   }
 
   private static void setupBasic_Collection_6321_7(EditorCell editorCell, SNode node, EditorContext context) {
@@ -1306,7 +1302,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_6321_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_linkDeclaration");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -1323,7 +1318,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_6321_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupBasic_Collection_6321_9(EditorCell editorCell, SNode node, EditorContext context) {
@@ -1626,7 +1620,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_6321_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_elementActionMap");
     {
       Style inlineStyle = new Style(editorCell) {
         {

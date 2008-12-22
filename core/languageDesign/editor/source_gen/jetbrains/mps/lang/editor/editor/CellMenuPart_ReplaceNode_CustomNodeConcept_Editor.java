@@ -165,7 +165,6 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   }
 
   private static void setupBasic_RefCell_7061_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_replacementConcept");
   }
 
   private static void setupBasic_Collection_7061_2(EditorCell editorCell, SNode node, EditorContext context) {

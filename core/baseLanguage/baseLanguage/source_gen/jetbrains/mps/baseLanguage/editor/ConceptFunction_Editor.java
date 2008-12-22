@@ -19,28 +19,28 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider myCellProvider3364_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createComponent1196975582231(context, node);
+    return this.createComponent_3364_0(context, node);
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCustom1207577922324(context, node);
+    return this.createCustom_3364_0(context, node);
   }
 
-  public EditorCell createComponent1196975582231(EditorContext context, SNode node) {
+  public EditorCell createComponent_3364_0(EditorContext context, SNode node) {
     if (this.myConceptFunction_Component3364_0 == null) {
       this.myConceptFunction_Component3364_0 = new ConceptFunction_Component(node);
     }
     EditorCell editorCell = this.myConceptFunction_Component3364_0.createEditorCell(context);
-    setupBasic_component_ConceptFunction_Component1196975582231(editorCell, node, context);
+    setupBasic_Component_3364_0(editorCell, node, context);
     return editorCell;
   }
 
-  public EditorCell createCustom1207577922324(EditorContext context, SNode node) {
+  public EditorCell createCustom_3364_0(EditorContext context, SNode node) {
     if (this.myCellProvider3364_0 == null) {
       this.myCellProvider3364_0 = this._cellProviderFactory_1207577922324(node, context);
     }
     EditorCell editorCell = this.myCellProvider3364_0.createEditorCell(context);
-    setupBasic_Custom_12075779223241207577922324(editorCell, node, context);
+    setupBasic_Custom_3364_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -71,12 +71,11 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_component_ConceptFunction_Component1196975582231(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component_ConceptFunction_Component");
+  private static void setupBasic_Component_3364_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Custom_12075779223241207577922324(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Custom_1207577922324");
+  private static void setupBasic_Custom_3364_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Custom_3364_0");
   }
 
 }

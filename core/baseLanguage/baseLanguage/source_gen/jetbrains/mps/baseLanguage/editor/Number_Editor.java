@@ -15,20 +15,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class Number_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1157103836672(context, node, "number");
+    return this.createConstant_0029_0(context, node, "number");
   }
 
-  public EditorCell createConstant1157103836672(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_0029_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11571038366721157103836672(editorCell, node, context);
-    setupLabel_Constant_1157103836672_1157103836672(editorCell, node, context);
+    setupBasic_Constant_0029_0(editorCell, node, context);
+    setupLabel_Constant_0029_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_11571038366721157103836672(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1157103836672");
+  private static void setupBasic_Constant_0029_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_0029_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -40,7 +40,7 @@ public class Number_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1157103836672_1157103836672(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_0029_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

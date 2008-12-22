@@ -25,29 +25,29 @@ public class Expression_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider myCellProvider6116_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createAlternation1209147315297(context, node);
+    return this.createAlternation_6116_0(context, node);
   }
 
-  public EditorCell createAlternation1209147315297(EditorContext context, SNode node) {
+  public EditorCell createAlternation_6116_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = Expression_Editor.renderingCondition6116_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createCustom1209147315298(context, node);
+      editorCell = this.createCustom_6116_0(context, node);
     } else
     {
-      editorCell = this.createConceptProperty1209748868405(context, node);
+      editorCell = this.createConceptProperty_6116_1(context, node);
     }
-    setupBasic_Alternation_12091473152971209147315297(editorCell, node, context);
+    setupBasic_Alternation_6116_0(editorCell, node, context);
     return editorCell;
   }
 
-  public EditorCell createCustom1209147315298(EditorContext context, SNode node) {
+  public EditorCell createCustom_6116_0(EditorContext context, SNode node) {
     if (this.myCellProvider6116_0 == null) {
       this.myCellProvider6116_0 = this._cellProviderFactory_1209147315298(node, context);
     }
     EditorCell editorCell = this.myCellProvider6116_0.createEditorCell(context);
-    setupBasic_Custom_12091473152981209147315298(editorCell, node, context);
+    setupBasic_Custom_6116_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -64,25 +64,25 @@ public class Expression_Editor extends DefaultNodeEditor {
     };
   }
 
-  public EditorCell createConceptProperty1209748868405_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptProperty_6116_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_conceptProperty_alias1209748868405(editorCell, node, context);
+    setupBasic_ConceptProperty_6116_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_conceptProperty_alias_1209748868405((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptProperty_6116_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1209748868405(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_6116_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptProperty1209748868405_internal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptProperty_6116_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -94,15 +94,14 @@ public class Expression_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Alternation_12091473152971209147315297(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Alternation_1209147315297");
+  private static void setupBasic_Alternation_6116_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Custom_12091473152981209147315298(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Custom_1209147315298");
+  private static void setupBasic_Custom_6116_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Custom_6116_0");
   }
 
-  private static void setupBasic_conceptProperty_alias1209748868405(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConceptProperty_6116_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -116,7 +115,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_conceptProperty_alias_1209748868405(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptProperty_6116_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition6116_0(SNode node, EditorContext editorContext, IScope scope) {

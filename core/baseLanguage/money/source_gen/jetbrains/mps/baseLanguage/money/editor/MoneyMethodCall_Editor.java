@@ -19,39 +19,39 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 public class MoneyMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1187703319820(context, node);
+    return this.createCollection_7315_0(context, node);
   }
 
-  public EditorCell createCollection1187703319820(EditorContext context, SNode node) {
+  public EditorCell createCollection_7315_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11877033198201187703319820(editorCell, node, context);
+    setupBasic_Collection_7315_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRefNode1187703323463(context, node));
-    editorCell.addEditorCell(this.createConceptProperty1187703331058(context, node));
+    editorCell.addEditorCell(this.createRefNode_7315_1(context, node));
+    editorCell.addEditorCell(this.createConceptProperty_7315_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNode1187703323463_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_7315_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_instance1187703323463(editorCell, node, context);
+    setupBasic_RefNode_7315_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_instance_1187703323463((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_7315_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1187703323463(EditorContext context, SNode node) {
+  public EditorCell createRefNode_7315_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("instance");
     provider.setNoTargetText("<no instance>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1187703323463_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_7315_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -62,25 +62,25 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createConceptProperty1187703331058_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptProperty_7315_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_conceptProperty_alias1187703331058(editorCell, node, context);
+    setupBasic_ConceptProperty_7315_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_conceptProperty_alias_1187703331058((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptProperty_7315_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1187703331058(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_7315_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptProperty1187703331058_internal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptProperty_7315_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -92,14 +92,15 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11877033198201187703319820(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1187703319820");
+  private static void setupBasic_Collection_7315_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_7315_0");
   }
 
-  private static void setupBasic_refNode_instance1187703323463(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_7315_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("refNode_instance");
   }
 
-  private static void setupBasic_conceptProperty_alias1187703331058(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConceptProperty_7315_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -112,10 +113,10 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_refNode_instance_1187703323463(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_7315_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_conceptProperty_alias_1187703331058(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptProperty_7315_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

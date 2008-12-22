@@ -18,43 +18,43 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class SkipStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1224446624012(context, node);
+    return this.createCollection_3324_0(context, node);
   }
 
-  public EditorCell createCollection1224446624012(EditorContext context, SNode node) {
+  public EditorCell createCollection_3324_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12244466240121224446624012(editorCell, node, context);
+    setupBasic_Collection_3324_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1224446624013(context, node, "skip"));
-    editorCell.addEditorCell(this.createConstant1224446624015(context, node, ";"));
+    editorCell.addEditorCell(this.createConstant_3324_0(context, node, "skip"));
+    editorCell.addEditorCell(this.createConstant_3324_1(context, node, ";"));
     return editorCell;
   }
 
-  public EditorCell createConstant1224446624013(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_3324_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12244466240131224446624013(editorCell, node, context);
-    setupLabel_Constant_1224446624013_1224446624013(editorCell, node, context);
+    setupBasic_Constant_3324_0(editorCell, node, context);
+    setupLabel_Constant_3324_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1224446624015(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_3324_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12244466240151224446624015(editorCell, node, context);
-    setupLabel_Constant_1224446624015_1224446624015(editorCell, node, context);
+    setupBasic_Constant_3324_1(editorCell, node, context);
+    setupLabel_Constant_3324_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_12244466240121224446624012(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1224446624012");
+  private static void setupBasic_Collection_3324_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_3324_0");
   }
 
-  private static void setupBasic_Constant_12244466240131224446624013(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1224446624013");
+  private static void setupBasic_Constant_3324_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_3324_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -67,15 +67,15 @@ public class SkipStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_12244466240151224446624015(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1224446624015");
+  private static void setupBasic_Constant_3324_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_3324_1");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
-  private static void setupLabel_Constant_1224446624013_1224446624013(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_3324_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1224446624015_1224446624015(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_3324_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

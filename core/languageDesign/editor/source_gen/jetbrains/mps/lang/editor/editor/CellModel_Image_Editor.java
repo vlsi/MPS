@@ -415,7 +415,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_5161_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupBasic_Constant_5161_5(EditorCell editorCell, SNode node, EditorContext context) {

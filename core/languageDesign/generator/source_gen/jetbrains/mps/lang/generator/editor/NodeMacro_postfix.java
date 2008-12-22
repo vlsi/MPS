@@ -40,45 +40,45 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1184865301579(context, node);
+    return this.createCollection_9824_0(context, node);
   }
 
-  public EditorCell createCollection1184865301579(EditorContext context, SNode node) {
+  public EditorCell createCollection_9824_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11848653015791184865301579(editorCell, node, context);
+    setupBasic_Collection_9824_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     if (renderingCondition9824_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection1184865302330(context, node));
+      editorCell.addEditorCell(this.createCollection_9824_1(context, node));
     }
     if (renderingCondition9824_1(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefCell1200912672389(context, node));
+      editorCell.addEditorCell(this.createRefCell_9824_1(context, node));
     }
-    editorCell.addEditorCell(this.createAttributedNodeCell1184865331991(context, node));
+    editorCell.addEditorCell(this.createAttributedNodeCell_9824_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1184865302330(EditorContext context, SNode node) {
+  public EditorCell createCollection_9824_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11848653023301184865302330(editorCell, node, context);
+    setupBasic_Collection_9824_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1184865302331(context, node, "bad role:"));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor1226062535455(context, node));
+    editorCell.addEditorCell(this.createConstant_9824_0(context, node, "bad role:"));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_9824_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1184865302331(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_9824_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11848653023311184865302331(editorCell, node, context);
-    setupLabel_Constant_1184865302331_1184865302331(editorCell, node, context);
+    setupBasic_Constant_9824_0(editorCell, node, context);
+    setupLabel_Constant_9824_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createReadOnlyModelAccessor1226062535455(final EditorContext context, final SNode node) {
+  public EditorCell createReadOnlyModelAccessor_9824_0(final EditorContext context, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
@@ -94,38 +94,38 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ReadOnlyModelAccessor_12260625354551226062535455(editorCell, node, context);
-    setupLabel_ReadOnlyModelAccessor_1226062535455_1226062535455(editorCell, node, context);
+    setupBasic_ReadOnlyModelAccessor_9824_0(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_9824_0(editorCell, node, context);
     return editorCell;
   }
 
-  public EditorCell createAttributedNodeCell1184865331991(EditorContext context, SNode node) {
+  public EditorCell createAttributedNodeCell_9824_0(EditorContext context, SNode node) {
     IOperationContext opContext = context.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
-    setupBasic_AttributedNodeCell_11848653319911184865331991(editorCell, node, context);
+    setupBasic_AttributedNodeCell_9824_0(editorCell, node, context);
     return editorCell;
   }
 
-  public EditorCell createRefCell1200912672389_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_9824_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new NodeMacro_postfix._Inline9824_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refCell_mappingLabel1200912672389(editorCell, node, context);
+    setupBasic_RefCell_9824_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refCell_mappingLabel_1200912672389((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefCell_9824_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefCell1200912672389(EditorContext context, SNode node) {
+  public EditorCell createRefCell_9824_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no mappingLabel>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1200912672389_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_9824_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -137,8 +137,8 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
 
-  private static void setupBasic_Collection_11848653015791184865301579(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1184865301579");
+  private static void setupBasic_Collection_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_9824_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -150,21 +150,19 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     }
   }
 
-  private static void setupBasic_Collection_11848653023301184865302330(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1184865302330");
+  private static void setupBasic_Collection_9824_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_9824_1");
   }
 
-  private static void setupBasic_Constant_11848653023311184865302331(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1184865302331");
+  private static void setupBasic_Constant_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_9824_0");
   }
 
-  private static void setupBasic_AttributedNodeCell_11848653319911184865331991(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("AttributedNodeCell_1184865331991");
+  private static void setupBasic_AttributedNodeCell_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
     Styles_StyleSheet.getNodeUnderMacro(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_refCell_mappingLabel1200912672389(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_mappingLabel");
+  private static void setupBasic_RefCell_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -176,8 +174,8 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     }
   }
 
-  private static void setupBasic_ReadOnlyModelAccessor_12260625354551226062535455(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ReadOnlyModelAccessor_1226062535455");
+  private static void setupBasic_ReadOnlyModelAccessor_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_9824_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -189,13 +187,13 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     }
   }
 
-  private static void setupLabel_Constant_1184865302331_1184865302331(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_9824_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refCell_mappingLabel_1200912672389(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefCell_9824_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ReadOnlyModelAccessor_1226062535455_1226062535455(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ReadOnlyModelAccessor_9824_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition9824_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -219,28 +217,28 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1200912674689(context, node);
+      return this.createProperty_9824_1(context, node);
     }
 
-    public EditorCell createProperty1200912674689_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_9824_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_property_name1200912674689(editorCell, node, context);
+      setupBasic_Property_9824_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_property_name_1200912674689((EditorCell_Label)editorCell, node, context);
+        setupLabel_Property_9824_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
 
-    public EditorCell createProperty1200912674689(EditorContext context, SNode node) {
+    public EditorCell createProperty_9824_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1200912674689_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_9824_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -252,7 +250,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     }
 
 
-    private static void setupBasic_property_name1200912674689(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_Property_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
@@ -265,7 +263,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
       }
     }
 
-    private static void setupLabel_property_name_1200912674689(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_Property_9824_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

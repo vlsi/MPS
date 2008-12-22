@@ -21,48 +21,48 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class GeneratorMessage_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1169670581344(context, node);
+    return this.createCollection_0648_0(context, node);
   }
 
-  public EditorCell createCollection1169670581344(EditorContext context, SNode node) {
+  public EditorCell createCollection_0648_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11696705813441169670581344(editorCell, node, context);
+    setupBasic_Collection_0648_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createProperty1169670587361(context, node));
-    editorCell.addEditorCell(this.createConstant1169670599832(context, node, ":"));
-    editorCell.addEditorCell(this.createProperty1169670607428(context, node));
+    editorCell.addEditorCell(this.createProperty_0648_1(context, node));
+    editorCell.addEditorCell(this.createConstant_0648_0(context, node, ":"));
+    editorCell.addEditorCell(this.createProperty_0648_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1169670599832(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_0648_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11696705998321169670599832(editorCell, node, context);
-    setupLabel_Constant_1169670599832_1169670599832(editorCell, node, context);
+    setupBasic_Constant_0648_0(editorCell, node, context);
+    setupLabel_Constant_0648_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createProperty1169670587361_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_0648_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_messageType1169670587361(editorCell, node, context);
+    setupBasic_Property_0648_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_messageType_1169670587361((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_0648_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty1169670587361(EditorContext context, SNode node) {
+  public EditorCell createProperty_0648_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("messageType");
     provider.setNoTargetText("<no messageType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1169670587361_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_0648_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -73,25 +73,25 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty1169670607428_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_0648_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_messageText1169670607428(editorCell, node, context);
+    setupBasic_Property_0648_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_messageText_1169670607428((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_0648_1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty1169670607428(EditorContext context, SNode node) {
+  public EditorCell createProperty_0648_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("messageText");
     provider.setNoTargetText("<no text>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1169670607428_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_0648_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -103,11 +103,11 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11696705813441169670581344(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1169670581344");
+  private static void setupBasic_Collection_0648_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_0648_0");
   }
 
-  private static void setupBasic_property_messageType1169670587361(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_0648_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_messageType");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -121,8 +121,8 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_11696705998321169670599832(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1169670599832");
+  private static void setupBasic_Constant_0648_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_0648_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -134,7 +134,7 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_property_messageText1169670607428(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_0648_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_messageText");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -147,13 +147,13 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_property_messageType_1169670587361(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_0648_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1169670599832_1169670599832(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_0648_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_messageText_1169670607428(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_0648_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

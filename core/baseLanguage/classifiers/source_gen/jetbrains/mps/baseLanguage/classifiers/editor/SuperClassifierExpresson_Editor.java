@@ -17,20 +17,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class SuperClassifierExpresson_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1217433575742(context, node, "super");
+    return this.createConstant_5353_0(context, node, "super");
   }
 
-  public EditorCell createConstant1217433575742(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_5353_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12174335757421217433575742(editorCell, node, context);
-    setupLabel_Constant_1217433575742_1217433575742(editorCell, node, context);
+    setupBasic_Constant_5353_0(editorCell, node, context);
+    setupLabel_Constant_5353_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_12174335757421217433575742(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1217433575742");
+  private static void setupBasic_Constant_5353_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_5353_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -43,7 +43,7 @@ public class SuperClassifierExpresson_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1217433575742_1217433575742(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_5353_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

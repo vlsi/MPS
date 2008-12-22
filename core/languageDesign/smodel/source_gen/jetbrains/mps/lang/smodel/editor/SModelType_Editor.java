@@ -17,20 +17,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class SModelType_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1143226143282(context, node, "model");
+    return this.createConstant_8660_0(context, node, "model");
   }
 
-  public EditorCell createConstant1143226143282(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_8660_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11432261432821143226143282(editorCell, node, context);
-    setupLabel_Constant_1143226143282_1143226143282(editorCell, node, context);
+    setupBasic_Constant_8660_0(editorCell, node, context);
+    setupLabel_Constant_8660_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_11432261432821143226143282(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1143226143282");
+  private static void setupBasic_Constant_8660_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_8660_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -43,7 +43,7 @@ public class SModelType_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1143226143282_1143226143282(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_8660_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

@@ -267,7 +267,6 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_9910_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_applicableConcept");
   }
 
   private static void setupBasic_Constant_9910_3(EditorCell editorCell, SNode node, EditorContext context) {

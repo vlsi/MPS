@@ -22,67 +22,67 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class Document_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1225239646553(context, node);
+    return this.createCollection_8673_0(context, node);
   }
 
-  public EditorCell createCollection1225239646553(EditorContext context, SNode node) {
+  public EditorCell createCollection_8673_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_12252396465531225239646553(editorCell, node, context);
+    setupBasic_Collection_8673_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection1225239646554(context, node));
-    editorCell.addEditorCell(this.createConstant1225239646562(context, node, ""));
-    editorCell.addEditorCell(this.createRefNode1225239646564(context, node));
+    editorCell.addEditorCell(this.createCollection_8673_1(context, node));
+    editorCell.addEditorCell(this.createConstant_8673_1(context, node, ""));
+    editorCell.addEditorCell(this.createRefNode_8673_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1225239646554(EditorContext context, SNode node) {
+  public EditorCell createCollection_8673_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12252396465541225239646554(editorCell, node, context);
+    setupBasic_Collection_8673_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1225239646555(context, node, "document"));
-    editorCell.addEditorCell(this.createProperty1225239646558(context, node));
+    editorCell.addEditorCell(this.createConstant_8673_0(context, node, "document"));
+    editorCell.addEditorCell(this.createProperty_8673_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1225239646555(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_8673_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12252396465551225239646555(editorCell, node, context);
-    setupLabel_Constant_1225239646555_1225239646555(editorCell, node, context);
+    setupBasic_Constant_8673_0(editorCell, node, context);
+    setupLabel_Constant_8673_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1225239646562(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_8673_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12252396465621225239646562(editorCell, node, context);
-    setupLabel_Constant_1225239646562_1225239646562(editorCell, node, context);
+    setupBasic_Constant_8673_1(editorCell, node, context);
+    setupLabel_Constant_8673_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createProperty1225239646558_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_8673_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_name1225239646558(editorCell, node, context);
+    setupBasic_Property_8673_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_name_1225239646558((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_8673_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty1225239646558(EditorContext context, SNode node) {
+  public EditorCell createProperty_8673_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("?name?");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1225239646558_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_8673_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -93,25 +93,25 @@ public class Document_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1225239646564_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_8673_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_rootElement1225239646564(editorCell, node, context);
+    setupBasic_RefNode_8673_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_rootElement_1225239646564((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_8673_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1225239646564(EditorContext context, SNode node) {
+  public EditorCell createRefNode_8673_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rootElement");
     provider.setNoTargetText("<no root element>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1225239646564_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_8673_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -123,12 +123,12 @@ public class Document_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_12252396465531225239646553(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1225239646553");
+  private static void setupBasic_Collection_8673_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_8673_0");
   }
 
-  private static void setupBasic_Collection_12252396465541225239646554(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1225239646554");
+  private static void setupBasic_Collection_8673_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_8673_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -140,8 +140,8 @@ public class Document_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_12252396465551225239646555(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1225239646555");
+  private static void setupBasic_Constant_8673_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_8673_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -154,7 +154,7 @@ public class Document_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_property_name1225239646558(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_8673_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -168,8 +168,8 @@ public class Document_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_12252396465621225239646562(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1225239646562");
+  private static void setupBasic_Constant_8673_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_8673_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -181,19 +181,20 @@ public class Document_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_refNode_rootElement1225239646564(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_8673_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("refNode_rootElement");
   }
 
-  private static void setupLabel_Constant_1225239646555_1225239646555(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_8673_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_name_1225239646558(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_8673_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1225239646562_1225239646562(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_8673_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_rootElement_1225239646564(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_8673_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

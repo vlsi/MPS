@@ -22,49 +22,49 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 public class Type_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createAlternation1138060380694(context, node);
+    return this.createAlternation_9010_0(context, node);
   }
 
-  public EditorCell createAlternation1138060380694(EditorContext context, SNode node) {
+  public EditorCell createAlternation_9010_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = Type_Editor.renderingCondition9010_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createError1138060384542(context, node);
+      editorCell = this.createError_9010_0(context, node);
     } else
     {
-      editorCell = this.createConceptProperty1138060501183(context, node);
+      editorCell = this.createConceptProperty_9010_1(context, node);
     }
-    setupBasic_Alternation_11380603806941138060380694(editorCell, node, context);
+    setupBasic_Alternation_9010_0(editorCell, node, context);
     return editorCell;
   }
 
-  public EditorCell createError1138060384542(EditorContext context, SNode node) {
+  public EditorCell createError_9010_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<type>");
-    setupBasic_Error_11380603845421138060384542(editorCell, node, context);
-    setupLabel_Error_1138060384542_1138060384542(editorCell, node, context);
+    setupBasic_Error_9010_0(editorCell, node, context);
+    setupLabel_Error_9010_0(editorCell, node, context);
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1138060501183_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptProperty_9010_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_conceptProperty_alias1138060501183(editorCell, node, context);
+    setupBasic_ConceptProperty_9010_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_conceptProperty_alias_1138060501183((EditorCell_Label)editorCell, node, context);
+      setupLabel_ConceptProperty_9010_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createConceptProperty1138060501183(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_9010_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<type has no alias>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptProperty1138060501183_internal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptProperty_9010_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -76,12 +76,11 @@ public class Type_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Alternation_11380603806941138060380694(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Alternation_1138060380694");
+  private static void setupBasic_Alternation_9010_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Error_11380603845421138060384542(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Error_1138060384542");
+  private static void setupBasic_Error_9010_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Error_9010_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -94,7 +93,7 @@ public class Type_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_conceptProperty_alias1138060501183(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConceptProperty_9010_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -109,10 +108,10 @@ public class Type_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Error_1138060384542_1138060384542(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Error_9010_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_conceptProperty_alias_1138060501183(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConceptProperty_9010_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition9010_0(SNode node, EditorContext editorContext, IScope scope) {

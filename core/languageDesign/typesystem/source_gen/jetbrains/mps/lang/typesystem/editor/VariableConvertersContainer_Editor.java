@@ -22,64 +22,64 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1228483029018;
+  /* package */AbstractCellListHandler myListHandler_7098_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1228482999822(context, node);
+    return this.createCollection_7098_0(context, node);
   }
 
-  public EditorCell createCollection1228482999822(EditorContext context, SNode node) {
+  public EditorCell createCollection_7098_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_12284829998221228482999822(editorCell, node, context);
+    setupBasic_Collection_7098_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1228483002364(context, node, "Variable Converters:"));
-    editorCell.addEditorCell(this.createConstant1228483016843(context, node, ""));
-    editorCell.addEditorCell(this.createRefNodeList1228483029018(context, node));
+    editorCell.addEditorCell(this.createConstant_7098_0(context, node, "Variable Converters:"));
+    editorCell.addEditorCell(this.createConstant_7098_1(context, node, ""));
+    editorCell.addEditorCell(this.createRefNodeList_7098_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1228483002364(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_7098_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12284830023641228483002364(editorCell, node, context);
-    setupLabel_Constant_1228483002364_1228483002364(editorCell, node, context);
+    setupBasic_Constant_7098_0(editorCell, node, context);
+    setupLabel_Constant_7098_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1228483016843(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_7098_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12284830168431228483016843(editorCell, node, context);
-    setupLabel_Constant_1228483016843_1228483016843(editorCell, node, context);
+    setupBasic_Constant_7098_1(editorCell, node, context);
+    setupLabel_Constant_7098_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList1228483029018(EditorContext context, SNode node) {
-    if (this.myListHandler_1228483029018 == null) {
-      this.myListHandler_1228483029018 = new VariableConvertersContainer_Editor.converterItemListHandler_7098_0(node, "converterItem", context);
+  public EditorCell createRefNodeList_7098_0(EditorContext context, SNode node) {
+    if (this.myListHandler_7098_0 == null) {
+      this.myListHandler_7098_0 = new VariableConvertersContainer_Editor.converterItemListHandler_7098_0(node, "converterItem", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_1228483029018.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_refNodeList_converterItem1228483029018(editorCell, node, context);
+    EditorCell_Collection editorCell = this.myListHandler_7098_0.createCells(context, new CellLayout_Vertical(), false);
+    setupBasic_RefNodeList_7098_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.setRole(this.myListHandler_1228483029018.getElementRole());
+    editorCell.setRole(this.myListHandler_7098_0.getElementRole());
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_12284829998221228482999822(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1228482999822");
+  private static void setupBasic_Collection_7098_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_7098_0");
   }
 
-  private static void setupBasic_Constant_12284830023641228483002364(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1228483002364");
+  private static void setupBasic_Constant_7098_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_7098_0");
   }
 
-  private static void setupBasic_Constant_12284830168431228483016843(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1228483016843");
+  private static void setupBasic_Constant_7098_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_7098_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -91,17 +91,17 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_refNodeList_converterItem1228483029018(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNodeList_7098_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_converterItem");
   }
 
-  private static void setupLabel_Constant_1228483002364_1228483002364(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_7098_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1228483016843_1228483016843(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_7098_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNodeList_converterItem_1228483029018(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNodeList_7098_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class converterItemListHandler_7098_0 extends RefNodeListHandler {

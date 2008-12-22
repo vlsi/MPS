@@ -23,68 +23,68 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1223034714783;
+  /* package */AbstractCellListHandler myListHandler_7856_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1223034674682(context, node);
+    return this.createCollection_7856_0(context, node);
   }
 
-  public EditorCell createCollection1223034674682(EditorContext context, SNode node) {
+  public EditorCell createCollection_7856_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_12230346746821223034674682(editorCell, node, context);
+    setupBasic_Collection_7856_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1223034679000(context, node, "simple rules container"));
-    editorCell.addEditorCell(this.createConstant1223059927949(context, node, ""));
-    editorCell.addEditorCell(this.createRefNodeList1223034714783(context, node));
+    editorCell.addEditorCell(this.createConstant_7856_0(context, node, "simple rules container"));
+    editorCell.addEditorCell(this.createConstant_7856_1(context, node, ""));
+    editorCell.addEditorCell(this.createRefNodeList_7856_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1223034679000(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_7856_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12230346790001223034679000(editorCell, node, context);
-    setupLabel_Constant_1223034679000_1223034679000(editorCell, node, context);
+    setupBasic_Constant_7856_0(editorCell, node, context);
+    setupLabel_Constant_7856_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1223059927949(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_7856_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12230599279491223059927949(editorCell, node, context);
-    setupLabel_Constant_1223059927949_1223059927949(editorCell, node, context);
+    setupBasic_Constant_7856_1(editorCell, node, context);
+    setupLabel_Constant_7856_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList1223034714783(EditorContext context, SNode node) {
-    if (this.myListHandler_1223034714783 == null) {
-      this.myListHandler_1223034714783 = new SimpleRulesContainer_Editor.simpleRuleListHandler_7856_0(node, "simpleRule", context);
+  public EditorCell createRefNodeList_7856_0(EditorContext context, SNode node) {
+    if (this.myListHandler_7856_0 == null) {
+      this.myListHandler_7856_0 = new SimpleRulesContainer_Editor.simpleRuleListHandler_7856_0(node, "simpleRule", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_1223034714783.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_refNodeList_simpleRule1223034714783(editorCell, node, context);
+    EditorCell_Collection editorCell = this.myListHandler_7856_0.createCells(context, new CellLayout_Vertical(), false);
+    setupBasic_RefNodeList_7856_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.setRole(this.myListHandler_1223034714783.getElementRole());
+    editorCell.setRole(this.myListHandler_7856_0.getElementRole());
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_12230346746821223034674682(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1223034674682");
+  private static void setupBasic_Collection_7856_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_7856_0");
   }
 
-  private static void setupBasic_Constant_12230346790001223034679000(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1223034679000");
+  private static void setupBasic_Constant_7856_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_7856_0");
   }
 
-  private static void setupBasic_refNodeList_simpleRule1223034714783(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNodeList_7856_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_simpleRule");
   }
 
-  private static void setupBasic_Constant_12230599279491223059927949(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1223059927949");
+  private static void setupBasic_Constant_7856_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_7856_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -96,13 +96,13 @@ public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1223034679000_1223034679000(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_7856_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNodeList_simpleRule_1223034714783(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNodeList_7856_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1223059927949_1223059927949(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_7856_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class simpleRuleListHandler_7856_0 extends RefNodeListHandler {

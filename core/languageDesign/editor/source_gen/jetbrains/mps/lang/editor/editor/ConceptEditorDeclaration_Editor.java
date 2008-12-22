@@ -409,7 +409,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_7895_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_conceptDeclaration");
   }
 
   private static void setupBasic_RefNode_7895_1(EditorCell editorCell, SNode node, EditorContext context) {

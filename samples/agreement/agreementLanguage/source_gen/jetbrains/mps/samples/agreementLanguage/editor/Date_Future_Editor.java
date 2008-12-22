@@ -16,20 +16,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class Date_Future_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1116445935702(context, node, "FUTURE");
+    return this.createConstant_4696_0(context, node, "FUTURE");
   }
 
-  public EditorCell createConstant1116445935702(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_4696_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11164459357021116445935702(editorCell, node, context);
-    setupLabel_Constant_1116445935702_1116445935702(editorCell, node, context);
+    setupBasic_Constant_4696_0(editorCell, node, context);
+    setupLabel_Constant_4696_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_11164459357021116445935702(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1116445935702");
+  private static void setupBasic_Constant_4696_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_4696_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -43,7 +43,7 @@ public class Date_Future_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1116445935702_1116445935702(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_4696_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

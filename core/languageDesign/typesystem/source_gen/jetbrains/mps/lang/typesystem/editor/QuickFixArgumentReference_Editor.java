@@ -18,28 +18,28 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRefCell1216390449476(context, node);
+    return this.createRefCell_9926_1(context, node);
   }
 
-  public EditorCell createRefCell1216390449476_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_9926_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new QuickFixArgumentReference_Editor._Inline9926_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refCell_quickFixArgument1216390449476(editorCell, node, context);
+    setupBasic_RefCell_9926_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refCell_quickFixArgument_1216390449476((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefCell_9926_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefCell1216390449476(EditorContext context, SNode node) {
+  public EditorCell createRefCell_9926_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("quickFixArgument");
     provider.setNoTargetText("<no quickFixArgument>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1216390449476_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_9926_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -51,11 +51,10 @@ public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_refCell_quickFixArgument1216390449476(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_quickFixArgument");
+  private static void setupBasic_RefCell_9926_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refCell_quickFixArgument_1216390449476(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefCell_9926_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline9926_0 extends AbstractCellProvider {
@@ -69,28 +68,28 @@ public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1216390449478(context, node);
+      return this.createProperty_9926_1(context, node);
     }
 
-    public EditorCell createProperty1216390449478_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_9926_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_property_name1216390449478(editorCell, node, context);
+      setupBasic_Property_9926_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_property_name_1216390449478((EditorCell_Label)editorCell, node, context);
+        setupLabel_Property_9926_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
 
-    public EditorCell createProperty1216390449478(EditorContext context, SNode node) {
+    public EditorCell createProperty_9926_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1216390449478_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_9926_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -102,12 +101,12 @@ public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
     }
 
 
-    private static void setupBasic_property_name1216390449478(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_Property_9926_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
     }
 
-    private static void setupLabel_property_name_1216390449478(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_Property_9926_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

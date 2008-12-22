@@ -323,7 +323,6 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_1311_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_linkDeclaration");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -336,11 +335,9 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_1311_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__OpenTag");
   }
 
   private static void setupBasic_Component_1311_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CloseTag");
   }
 
   private static void setupBasic_Collection_1311_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -376,7 +373,6 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_1311_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_linkDeclaration");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -423,7 +419,6 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_1311_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupBasic_Constant_1311_3(EditorCell editorCell, SNode node, EditorContext context) {

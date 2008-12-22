@@ -19,28 +19,28 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class BooleanConstant_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createProperty1088424970609(context, node);
+    return this.createProperty_9600_1(context, node);
   }
 
-  public EditorCell createProperty1088424970609_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_9600_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_value1088424970609(editorCell, node, context);
+    setupBasic_Property_9600_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_value_1088424970609((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_9600_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty1088424970609(EditorContext context, SNode node) {
+  public EditorCell createProperty_9600_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1088424970609_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_9600_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -52,7 +52,7 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_property_value1088424970609(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_9600_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_value");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -67,7 +67,7 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_property_value_1088424970609(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_9600_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

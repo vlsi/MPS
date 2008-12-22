@@ -138,7 +138,6 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_6025_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_editorComponent");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -151,11 +150,9 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_6025_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__OpenTag");
   }
 
   private static void setupBasic_Component_6025_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CloseTag");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -168,7 +165,6 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_6025_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupLabel_RefCell_6025_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -520,7 +520,6 @@ public class _CellModel_Common extends AbstractCellProvider {
   }
 
   private static void setupBasic_RefCell_7442_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_actionMap");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -552,7 +551,6 @@ public class _CellModel_Common extends AbstractCellProvider {
   }
 
   private static void setupBasic_RefCell_7442_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_keyMap");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -686,7 +684,6 @@ public class _CellModel_Common extends AbstractCellProvider {
   }
 
   private static void setupBasic_RefCell_7442_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_styleClass");
   }
 
   private static void setupBasic_Constant_7442_7(EditorCell editorCell, SNode node, EditorContext context) {

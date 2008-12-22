@@ -12,22 +12,22 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class ApplicableNodeCondition_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createError1176905455508(context, node);
+    return this.createError_7758_0(context, node);
   }
 
-  public EditorCell createError1176905455508(EditorContext context, SNode node) {
+  public EditorCell createError_7758_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<condition>");
-    setupBasic_Error_11769054555081176905455508(editorCell, node, context);
-    setupLabel_Error_1176905455508_1176905455508(editorCell, node, context);
+    setupBasic_Error_7758_0(editorCell, node, context);
+    setupLabel_Error_7758_0(editorCell, node, context);
     return editorCell;
   }
 
 
-  private static void setupBasic_Error_11769054555081176905455508(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Error_1176905455508");
+  private static void setupBasic_Error_7758_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Error_7758_0");
   }
 
-  private static void setupLabel_Error_1176905455508_1176905455508(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Error_7758_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

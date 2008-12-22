@@ -15,40 +15,39 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_NotInRules_Component4604_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1176544322411(context, node, "type");
+    return this.createConstant_4604_0(context, node, "type");
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createComponent1176544407635(context, node);
+    return this.createComponent_4604_0(context, node);
   }
 
-  public EditorCell createComponent1176544407635(EditorContext context, SNode node) {
+  public EditorCell createComponent_4604_0(EditorContext context, SNode node) {
     if (this.my_NotInRules_Component4604_0 == null) {
       this.my_NotInRules_Component4604_0 = new _NotInRules_Component(node);
     }
     EditorCell editorCell = this.my_NotInRules_Component4604_0.createEditorCell(context);
-    setupBasic_component__NotInRules_Component1176544407635(editorCell, node, context);
+    setupBasic_Component_4604_0(editorCell, node, context);
     return editorCell;
   }
 
-  public EditorCell createConstant1176544322411(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_4604_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11765443224111176544322411(editorCell, node, context);
-    setupLabel_Constant_1176544322411_1176544322411(editorCell, node, context);
+    setupBasic_Constant_4604_0(editorCell, node, context);
+    setupLabel_Constant_4604_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_11765443224111176544322411(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1176544322411");
+  private static void setupBasic_Constant_4604_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_4604_0");
   }
 
-  private static void setupBasic_component__NotInRules_Component1176544407635(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__NotInRules_Component");
+  private static void setupBasic_Component_4604_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1176544322411_1176544322411(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_4604_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

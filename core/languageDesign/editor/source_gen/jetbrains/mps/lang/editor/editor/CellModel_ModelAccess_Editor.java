@@ -287,11 +287,9 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_0649_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__OpenTag");
   }
 
   private static void setupBasic_Component_0649_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CloseTag");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -416,7 +414,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_0649_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupBasic_Constant_0649_4(EditorCell editorCell, SNode node, EditorContext context) {

@@ -20,6 +20,7 @@ public class EditorCellModel_Behavior {
   private static Class[] PARAMETERS_1220339714057 = {SNode.class};
   private static Class[] PARAMETERS_1220339738643 = {SNode.class};
   private static Class[] PARAMETERS_1221472292001 = {SNode.class};
+  private static Class[] PARAMETERS_1229948571177 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -179,6 +180,10 @@ public class EditorCellModel_Behavior {
     return MPSFonts.PLAIN;
   }
 
+  public static boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
+    return false;
+  }
+
   public static String call_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
     return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_createCellId_1216737839993", PARAMETERS_1216737839993, gc);
   }
@@ -195,6 +200,10 @@ public class EditorCellModel_Behavior {
     return (Integer)BehaviorManager.getInstance().invoke(Integer.class, thisNode, "virtual_getDefaultFontStyle_1221472292001", PARAMETERS_1221472292001);
   }
 
+  public static boolean call_isCellIdInitialized_1229948571177(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isCellIdInitialized_1229948571177", PARAMETERS_1229948571177);
+  }
+
   public static String callSuper_createCellId_1216737839993(SNode thisNode, String callerConceptFqName, TemplateQueryContext gc) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_createCellId_1216737839993", PARAMETERS_1216737839993, gc);
   }
@@ -209,6 +218,10 @@ public class EditorCellModel_Behavior {
 
   public static int callSuper_getDefaultFontStyle_1221472292001(SNode thisNode, String callerConceptFqName) {
     return (Integer)BehaviorManager.getInstance().invokeSuper(Integer.class, thisNode, callerConceptFqName, "virtual_getDefaultFontStyle_1221472292001", PARAMETERS_1221472292001);
+  }
+
+  public static boolean callSuper_isCellIdInitialized_1229948571177(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isCellIdInitialized_1229948571177", PARAMETERS_1229948571177);
   }
 
 }

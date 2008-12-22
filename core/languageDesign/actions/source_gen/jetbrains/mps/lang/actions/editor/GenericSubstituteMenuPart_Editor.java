@@ -21,45 +21,45 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1199902727792(context, node);
+    return this.createCollection_0295_0(context, node);
   }
 
-  public EditorCell createCollection1199902727792(EditorContext context, SNode node) {
+  public EditorCell createCollection_0295_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_11999027277921199902727792(editorCell, node, context);
+    setupBasic_Collection_0295_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection1199902730544(context, node));
-    editorCell.addEditorCell(this.createCollection1199902739705(context, node));
+    editorCell.addEditorCell(this.createCollection_0295_1(context, node));
+    editorCell.addEditorCell(this.createCollection_0295_2(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1199902730544(EditorContext context, SNode node) {
+  public EditorCell createCollection_0295_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11999027305441199902730544(editorCell, node, context);
+    setupBasic_Collection_0295_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1199902731515(context, node, "generic query"));
+    editorCell.addEditorCell(this.createConstant_0295_0(context, node, "generic query"));
     return editorCell;
   }
 
-  public EditorCell createCollection1199902739705(EditorContext context, SNode node) {
+  public EditorCell createCollection_0295_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11999027397051199902739705(editorCell, node, context);
+    setupBasic_Collection_0295_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndentCell0295_0(context, node));
-    editorCell.addEditorCell(this.createRefNode1199902749771(context, node));
+    editorCell.addEditorCell(this.createRefNode_0295_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1199902731515(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_0295_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11999027315151199902731515(editorCell, node, context);
-    setupLabel_Constant_1199902731515_1199902731515(editorCell, node, context);
+    setupBasic_Constant_0295_0(editorCell, node, context);
+    setupLabel_Constant_0295_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -69,25 +69,25 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  public EditorCell createRefNode1199902749771_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_0295_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_query1199902749771(editorCell, node, context);
+    setupBasic_RefNode_0295_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_query_1199902749771((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_0295_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1199902749771(EditorContext context, SNode node) {
+  public EditorCell createRefNode_0295_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1199902749771_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_0295_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -99,12 +99,12 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11999027277921199902727792(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1199902727792");
+  private static void setupBasic_Collection_0295_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_0295_0");
   }
 
-  private static void setupBasic_Collection_11999027305441199902730544(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1199902730544");
+  private static void setupBasic_Collection_0295_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_0295_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -116,8 +116,8 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_11999027315151199902731515(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1199902731515");
+  private static void setupBasic_Constant_0295_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_0295_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -129,8 +129,8 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_11999027397051199902739705(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1199902739705");
+  private static void setupBasic_Collection_0295_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_0295_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -142,17 +142,17 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Indent_11999027454571199902745457(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Indent_1199902745457");
+  private static void setupBasic_Indent_0295_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Indent_0295_0");
   }
 
-  private static void setupBasic_refNode_query1199902749771(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_0295_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1199902731515_1199902731515(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_0295_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_query_1199902749771(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_0295_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

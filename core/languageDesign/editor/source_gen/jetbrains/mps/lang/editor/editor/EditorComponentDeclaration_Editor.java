@@ -384,7 +384,6 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_6270_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_conceptDeclaration");
   }
 
   private static void setupBasic_Property_6270_1(EditorCell editorCell, SNode node, EditorContext context) {

@@ -436,7 +436,6 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   private static void setupBasic_RefCell_9522_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_queryIdProperty");
   }
 
   private static void setupLabel_Constant_9522_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

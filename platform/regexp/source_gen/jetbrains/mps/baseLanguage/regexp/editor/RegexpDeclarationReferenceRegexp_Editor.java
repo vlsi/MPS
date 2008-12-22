@@ -22,38 +22,38 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1174662639718(context, node);
+    return this.createCollection_1993_0(context, node);
   }
 
-  public EditorCell createCollection1174662639718(EditorContext context, SNode node) {
+  public EditorCell createCollection_1993_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11746626397181174662639718(editorCell, node, context);
+    setupBasic_Collection_1993_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRefCell1174662648736(context, node));
+    editorCell.addEditorCell(this.createRefCell_1993_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefCell1174662648736_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefCell_1993_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new RegexpDeclarationReferenceRegexp_Editor._Inline1993_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refCell_regexp1174662648736(editorCell, node, context);
+    setupBasic_RefCell_1993_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refCell_regexp_1174662648736((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefCell_1993_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefCell1174662648736(EditorContext context, SNode node) {
+  public EditorCell createRefCell_1993_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefCell1174662648736_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefCell_1993_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -65,15 +65,14 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11746626397181174662639718(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1174662639718");
+  private static void setupBasic_Collection_1993_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1993_0");
   }
 
-  private static void setupBasic_refCell_regexp1174662648736(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_regexp");
+  private static void setupBasic_RefCell_1993_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refCell_regexp_1174662648736(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefCell_1993_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline1993_0 extends AbstractCellProvider {
@@ -87,28 +86,28 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty1174662650208(context, node);
+      return this.createProperty_1993_1(context, node);
     }
 
-    public EditorCell createProperty1174662650208_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    public EditorCell createProperty_1993_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_property_name1174662650208(editorCell, node, context);
+      setupBasic_Property_1993_0(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_property_name_1174662650208((EditorCell_Label)editorCell, node, context);
+        setupLabel_Property_1993_0((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
 
-    public EditorCell createProperty1174662650208(EditorContext context, SNode node) {
+    public EditorCell createProperty_1993_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
-      EditorCell cellWithRole = this.createProperty1174662650208_internal(context, node, provider);
+      EditorCell cellWithRole = this.createProperty_1993_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
@@ -120,7 +119,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
     }
 
 
-    private static void setupBasic_property_name1174662650208(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_Property_1993_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
@@ -134,7 +133,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
       }
     }
 
-    private static void setupLabel_property_name_1174662650208(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_Property_1993_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

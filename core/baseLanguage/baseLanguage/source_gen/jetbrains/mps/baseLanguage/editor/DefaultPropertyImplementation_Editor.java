@@ -16,39 +16,39 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1201372751844(context, node);
+    return this.createCollection_4340_0(context, node);
   }
 
-  public EditorCell createCollection1201372751844(EditorContext context, SNode node) {
+  public EditorCell createCollection_4340_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12013727518441201372751844(editorCell, node, context);
+    setupBasic_Collection_4340_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRefNode1202065379758(context, node));
-    editorCell.addEditorCell(this.createRefNode1202078100030(context, node));
+    editorCell.addEditorCell(this.createRefNode_4340_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_4340_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNode1202065379758_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_4340_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_defaultGetAccessor1202065379758(editorCell, node, context);
+    setupBasic_RefNode_4340_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_defaultGetAccessor_1202065379758((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_4340_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1202065379758(EditorContext context, SNode node) {
+  public EditorCell createRefNode_4340_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("defaultGetAccessor");
     provider.setNoTargetText("<no defaultGetAccessor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1202065379758_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_4340_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -59,25 +59,25 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1202078100030_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_4340_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_defaultSetAccessor1202078100030(editorCell, node, context);
+    setupBasic_RefNode_4340_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_defaultSetAccessor_1202078100030((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_4340_1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1202078100030(EditorContext context, SNode node) {
+  public EditorCell createRefNode_4340_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("defaultSetAccessor");
     provider.setNoTargetText("<no defaultSetAccessor>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1202078100030_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_4340_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -89,20 +89,20 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_12013727518441201372751844(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1201372751844");
+  private static void setupBasic_Collection_4340_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_4340_0");
   }
 
-  private static void setupBasic_refNode_defaultGetAccessor1202065379758(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_4340_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_refNode_defaultSetAccessor1202078100030(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_4340_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_defaultGetAccessor_1202065379758(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_4340_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_defaultSetAccessor_1202078100030(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_4340_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

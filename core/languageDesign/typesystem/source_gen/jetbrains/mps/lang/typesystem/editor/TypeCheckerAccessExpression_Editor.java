@@ -12,23 +12,23 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class TypeCheckerAccessExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1175594925954(context, node, "typechecker");
+    return this.createConstant_2171_0(context, node, "typechecker");
   }
 
-  public EditorCell createConstant1175594925954(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2171_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11755949259541175594925954(editorCell, node, context);
-    setupLabel_Constant_1175594925954_1175594925954(editorCell, node, context);
+    setupBasic_Constant_2171_0(editorCell, node, context);
+    setupLabel_Constant_2171_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_11755949259541175594925954(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1175594925954");
+  private static void setupBasic_Constant_2171_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2171_0");
   }
 
-  private static void setupLabel_Constant_1175594925954_1175594925954(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2171_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

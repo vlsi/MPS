@@ -16,20 +16,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class Node_GetPrevSiblingOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant1143512939911(context, node, "prev-sibling");
+    return this.createConstant_4187_0(context, node, "prev-sibling");
   }
 
-  public EditorCell createConstant1143512939911(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_4187_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11435129399111143512939911(editorCell, node, context);
-    setupLabel_Constant_1143512939911_1143512939911(editorCell, node, context);
+    setupBasic_Constant_4187_0(editorCell, node, context);
+    setupLabel_Constant_4187_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
 
-  private static void setupBasic_Constant_11435129399111143512939911(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1143512939911");
+  private static void setupBasic_Constant_4187_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_4187_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -42,7 +42,7 @@ public class Node_GetPrevSiblingOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_1143512939911_1143512939911(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_4187_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

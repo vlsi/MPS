@@ -355,7 +355,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_6671_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_applicableConcept");
   }
 
   private static void setupBasic_Constant_6671_5(EditorCell editorCell, SNode node, EditorContext context) {

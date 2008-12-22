@@ -21,78 +21,78 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class PressKeyStatement_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1228934562018;
+  /* package */AbstractCellListHandler myListHandler_3031_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1228934540801(context, node);
+    return this.createCollection_3031_0(context, node);
   }
 
-  public EditorCell createCollection1228934540801(EditorContext context, SNode node) {
+  public EditorCell createCollection_3031_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_12289345408011228934540801(editorCell, node, context);
+    setupBasic_Collection_3031_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1228934544554(context, node, "press keys"));
-    editorCell.addEditorCell(this.createRefNodeList1228934562018(context, node));
-    editorCell.addEditorCell(this.createConstant1228935068186(context, node, ";"));
+    editorCell.addEditorCell(this.createConstant_3031_0(context, node, "press keys"));
+    editorCell.addEditorCell(this.createRefNodeList_3031_0(context, node));
+    editorCell.addEditorCell(this.createConstant_3031_1(context, node, ";"));
     return editorCell;
   }
 
-  public EditorCell createConstant1228934544554(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_3031_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12289345445541228934544554(editorCell, node, context);
-    setupLabel_Constant_1228934544554_1228934544554(editorCell, node, context);
+    setupBasic_Constant_3031_0(editorCell, node, context);
+    setupLabel_Constant_3031_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1228935068186(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_3031_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12289350681861228935068186(editorCell, node, context);
-    setupLabel_Constant_1228935068186_1228935068186(editorCell, node, context);
+    setupBasic_Constant_3031_1(editorCell, node, context);
+    setupLabel_Constant_3031_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList1228934562018(EditorContext context, SNode node) {
-    if (this.myListHandler_1228934562018 == null) {
-      this.myListHandler_1228934562018 = new PressKeyStatement_Editor.keyCodesListHandler_3031_0(node, "keyCodes", context);
+  public EditorCell createRefNodeList_3031_0(EditorContext context, SNode node) {
+    if (this.myListHandler_3031_0 == null) {
+      this.myListHandler_3031_0 = new PressKeyStatement_Editor.keyCodesListHandler_3031_0(node, "keyCodes", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_1228934562018.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_refNodeList_keyCodes1228934562018(editorCell, node, context);
+    EditorCell_Collection editorCell = this.myListHandler_3031_0.createCells(context, new CellLayout_Horizontal(), false);
+    setupBasic_RefNodeList_3031_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.setRole(this.myListHandler_1228934562018.getElementRole());
+    editorCell.setRole(this.myListHandler_3031_0.getElementRole());
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_12289345408011228934540801(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1228934540801");
+  private static void setupBasic_Collection_3031_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_3031_0");
   }
 
-  private static void setupBasic_Constant_12289345445541228934544554(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1228934544554");
+  private static void setupBasic_Constant_3031_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_3031_0");
     transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_refNodeList_keyCodes1228934562018(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNodeList_3031_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_keyCodes");
   }
 
-  private static void setupBasic_Constant_12289350681861228935068186(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1228935068186");
+  private static void setupBasic_Constant_3031_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_3031_1");
   }
 
-  private static void setupLabel_Constant_1228934544554_1228934544554(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_3031_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNodeList_keyCodes_1228934562018(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNodeList_3031_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1228935068186_1228935068186(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_3031_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class keyCodesListHandler_3031_0 extends RefNodeListHandler {

@@ -319,7 +319,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_4976_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_conceptDeclaration");
   }
 
   private static void setupBasic_Constant_4976_2(EditorCell editorCell, SNode node, EditorContext context) {

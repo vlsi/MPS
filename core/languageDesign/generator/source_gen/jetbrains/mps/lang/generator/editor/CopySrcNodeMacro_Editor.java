@@ -22,66 +22,64 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider myNodeMacro_postfix2079_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1149866056564(context, node);
+    return this.createCollection_2079_0(context, node);
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createComponent1184214434098(context, node);
+    return this.createComponent_2079_0(context, node);
   }
 
-  public EditorCell createCollection1149866056564(EditorContext context, SNode node) {
+  public EditorCell createCollection_2079_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11498660565641149866056564(editorCell, node, context);
+    setupBasic_Collection_2079_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1216152679070(context, node, "$COPY_SRC$"));
-    editorCell.addEditorCell(this.createComponent1184865678180(context, node));
+    editorCell.addEditorCell(this.createConstant_2079_0(context, node, "$COPY_SRC$"));
+    editorCell.addEditorCell(this.createComponent_2079_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createComponent1184214434098(EditorContext context, SNode node) {
+  public EditorCell createComponent_2079_0(EditorContext context, SNode node) {
     if (this.myCopyScrNodeMacro_inspector2079_0 == null) {
       this.myCopyScrNodeMacro_inspector2079_0 = new CopyScrNodeMacro_inspector(node);
     }
     EditorCell editorCell = this.myCopyScrNodeMacro_inspector2079_0.createEditorCell(context);
-    setupBasic_component_CopyScrNodeMacro_inspector1184214434098(editorCell, node, context);
+    setupBasic_Component_2079_0(editorCell, node, context);
     return editorCell;
   }
 
-  public EditorCell createComponent1184865678180(EditorContext context, SNode node) {
+  public EditorCell createComponent_2079_1(EditorContext context, SNode node) {
     if (this.myNodeMacro_postfix2079_0 == null) {
       this.myNodeMacro_postfix2079_0 = new NodeMacro_postfix(node);
     }
     EditorCell editorCell = this.myNodeMacro_postfix2079_0.createEditorCell(context);
-    setupBasic_component_NodeMacro_postfix1184865678180(editorCell, node, context);
+    setupBasic_Component_2079_1(editorCell, node, context);
     return editorCell;
   }
 
-  public EditorCell createConstant1216152679070(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2079_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12161526790701216152679070(editorCell, node, context);
-    setupLabel_Constant_1216152679070_1216152679070(editorCell, node, context);
+    setupBasic_Constant_2079_0(editorCell, node, context);
+    setupLabel_Constant_2079_0(editorCell, node, context);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new CopySrcNodeMacro_Editor.CopySrcNodeMacro_Editor_replaceWith_NodeMacro_cellMenu0()}));
     return editorCell;
   }
 
 
-  private static void setupBasic_Collection_11498660565641149866056564(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1149866056564");
+  private static void setupBasic_Collection_2079_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2079_0");
   }
 
-  private static void setupBasic_component_CopyScrNodeMacro_inspector1184214434098(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component_CopyScrNodeMacro_inspector");
+  private static void setupBasic_Component_2079_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_component_NodeMacro_postfix1184865678180(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component_NodeMacro_postfix");
+  private static void setupBasic_Component_2079_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Constant_12161526790701216152679070(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1216152679070");
+  private static void setupBasic_Constant_2079_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2079_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
@@ -89,7 +87,7 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
     MacroSymbol_Actions.setCellActions(editorCell, node, context);
   }
 
-  private static void setupLabel_Constant_1216152679070_1216152679070(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2079_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class CopySrcNodeMacro_Editor_replaceWith_NodeMacro_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

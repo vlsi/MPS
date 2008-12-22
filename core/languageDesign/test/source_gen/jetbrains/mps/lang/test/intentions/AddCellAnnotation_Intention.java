@@ -36,6 +36,13 @@ public class AddCellAnnotation_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
+    SNode ancessor = node;
+    while (ancessor != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(ancessor), "jetbrains.mps.lang.test.structure.EditorTestCase"))) {
+      ancessor = SNodeOperations.getParent(ancessor);
+    }
+    for(SNode oldAnnotation : SNodeOperations.getDescendants(ancessor, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", false)) {
+      SNodeOperations.deleteNode(oldAnnotation);
+    }
     SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", null);
     EditorCell contextCell = editorContext.getContextCell();
     if (contextCell instanceof EditorCell_Label) {
@@ -46,6 +53,9 @@ public class AddCellAnnotation_Intention extends BaseIntention {
       {
         SPropertyOperations.set(newAnnotation, "caretPosition", "" + caretPosition);
       }
+    } else
+    {
+      SPropertyOperations.set(newAnnotation, "caretPosition", "" + 0);
     }
     SPropertyOperations.set(newAnnotation, "cellId", contextCell.getCellId());
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("testNode"), newAnnotation, true);

@@ -20,48 +20,48 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1174558324060(context, node);
+    return this.createCollection_1602_0(context, node);
   }
 
-  public EditorCell createCollection1174558324060(EditorContext context, SNode node) {
+  public EditorCell createCollection_1602_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11745583240601174558324060(editorCell, node, context);
+    setupBasic_Collection_1602_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createProperty1174558326265(context, node));
-    editorCell.addEditorCell(this.createConstant1174558328282(context, node, "-"));
-    editorCell.addEditorCell(this.createProperty1174558329519(context, node));
+    editorCell.addEditorCell(this.createProperty_1602_1(context, node));
+    editorCell.addEditorCell(this.createConstant_1602_0(context, node, "-"));
+    editorCell.addEditorCell(this.createProperty_1602_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant1174558328282(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_1602_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11745583282821174558328282(editorCell, node, context);
-    setupLabel_Constant_1174558328282_1174558328282(editorCell, node, context);
+    setupBasic_Constant_1602_0(editorCell, node, context);
+    setupLabel_Constant_1602_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createProperty1174558326265_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_1602_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_start1174558326265(editorCell, node, context);
+    setupBasic_Property_1602_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_start_1174558326265((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_1602_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty1174558326265(EditorContext context, SNode node) {
+  public EditorCell createProperty_1602_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("start");
     provider.setNoTargetText("<no start>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1174558326265_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_1602_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -72,25 +72,25 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty1174558329519_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_1602_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_end1174558329519(editorCell, node, context);
+    setupBasic_Property_1602_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_end_1174558329519((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_1602_1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty1174558329519(EditorContext context, SNode node) {
+  public EditorCell createProperty_1602_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("end");
     provider.setNoTargetText("<no end>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1174558329519_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_1602_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -102,16 +102,16 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11745583240601174558324060(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1174558324060");
+  private static void setupBasic_Collection_1602_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1602_0");
   }
 
-  private static void setupBasic_property_start1174558326265(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_1602_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_start");
   }
 
-  private static void setupBasic_Constant_11745583282821174558328282(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1174558328282");
+  private static void setupBasic_Constant_1602_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1602_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -123,17 +123,17 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_property_end1174558329519(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_1602_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_end");
   }
 
-  private static void setupLabel_property_start_1174558326265(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_1602_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1174558328282_1174558328282(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1602_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_end_1174558329519(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_1602_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

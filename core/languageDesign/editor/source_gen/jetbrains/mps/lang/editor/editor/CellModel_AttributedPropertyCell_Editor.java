@@ -152,7 +152,6 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_0981_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupLabel_Constant_0981_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

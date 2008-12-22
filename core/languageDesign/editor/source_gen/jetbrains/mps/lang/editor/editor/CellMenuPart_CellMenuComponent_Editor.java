@@ -205,7 +205,6 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_8123_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refCell_cellMenuComponent");
   }
 
   private static void setupLabel_Constant_8123_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

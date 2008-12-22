@@ -24,198 +24,198 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class SubtypingRule_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection1175147714476(context, node);
+    return this.createCollection_2905_0(context, node);
   }
 
-  public EditorCell createCollection1175147714476(EditorContext context, SNode node) {
+  public EditorCell createCollection_2905_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_11751477144761175147714476(editorCell, node, context);
+    setupBasic_Collection_2905_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection1175147714477(context, node));
-    editorCell.addEditorCell(this.createCollection1198243869687(context, node));
-    editorCell.addEditorCell(this.createConstant1198243861558(context, node, "}"));
+    editorCell.addEditorCell(this.createCollection_2905_1(context, node));
+    editorCell.addEditorCell(this.createCollection_2905_2(context, node));
+    editorCell.addEditorCell(this.createConstant_2905_3(context, node, "}"));
     return editorCell;
   }
 
-  public EditorCell createCollection1175147714477(EditorContext context, SNode node) {
+  public EditorCell createCollection_2905_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11751477144771175147714477(editorCell, node, context);
+    setupBasic_Collection_2905_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1175147714478(context, node, "subtyping"));
-    editorCell.addEditorCell(this.createConstant1198243854491(context, node, "rule"));
-    editorCell.addEditorCell(this.createProperty1175147714479(context, node));
-    editorCell.addEditorCell(this.createConstant1198243858337(context, node, "{"));
+    editorCell.addEditorCell(this.createConstant_2905_0(context, node, "subtyping"));
+    editorCell.addEditorCell(this.createConstant_2905_1(context, node, "rule"));
+    editorCell.addEditorCell(this.createProperty_2905_1(context, node));
+    editorCell.addEditorCell(this.createConstant_2905_2(context, node, "{"));
     return editorCell;
   }
 
-  public EditorCell createCollection1198243869687(EditorContext context, SNode node) {
+  public EditorCell createCollection_2905_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11982438696871198243869687(editorCell, node, context);
+    setupBasic_Collection_2905_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndentCell2905_0(context, node));
-    editorCell.addEditorCell(this.createCollection1198243875549(context, node));
+    editorCell.addEditorCell(this.createCollection_2905_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1198243875549(EditorContext context, SNode node) {
+  public EditorCell createCollection_2905_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_11982438755491198243875549(editorCell, node, context);
+    setupBasic_Collection_2905_3(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection1198243875826(context, node));
-    editorCell.addEditorCell(this.createCollection1198243875817(context, node));
-    editorCell.addEditorCell(this.createConstant1198243875820(context, node, ""));
-    editorCell.addEditorCell(this.createCollection1198243909542(context, node));
-    editorCell.addEditorCell(this.createCollection1198243875822(context, node));
-    editorCell.addEditorCell(this.createConstant1198243875825(context, node, "}"));
+    editorCell.addEditorCell(this.createCollection_2905_6(context, node));
+    editorCell.addEditorCell(this.createCollection_2905_4(context, node));
+    editorCell.addEditorCell(this.createConstant_2905_5(context, node, ""));
+    editorCell.addEditorCell(this.createCollection_2905_7(context, node));
+    editorCell.addEditorCell(this.createCollection_2905_5(context, node));
+    editorCell.addEditorCell(this.createConstant_2905_6(context, node, "}"));
     return editorCell;
   }
 
-  public EditorCell createCollection1198243875817(EditorContext context, SNode node) {
+  public EditorCell createCollection_2905_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11982438758171198243875817(editorCell, node, context);
+    setupBasic_Collection_2905_4(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1198243875818(context, node, "applicable"));
-    editorCell.addEditorCell(this.createConstant1198243894221(context, node, "for"));
-    editorCell.addEditorCell(this.createRefNode1198243875819(context, node));
+    editorCell.addEditorCell(this.createConstant_2905_4(context, node, "applicable"));
+    editorCell.addEditorCell(this.createConstant_2905_8(context, node, "for"));
+    editorCell.addEditorCell(this.createRefNode_2905_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1198243875822(EditorContext context, SNode node) {
+  public EditorCell createCollection_2905_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11982438758221198243875822(editorCell, node, context);
+    setupBasic_Collection_2905_5(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndentCell2905_1(context, node));
-    editorCell.addEditorCell(this.createRefNode1198243875824(context, node));
+    editorCell.addEditorCell(this.createRefNode_2905_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1198243875826(EditorContext context, SNode node) {
+  public EditorCell createCollection_2905_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11982438758261198243875826(editorCell, node, context);
+    setupBasic_Collection_2905_6(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1198243875827(context, node, "weak"));
-    editorCell.addEditorCell(this.createConstant1198243920500(context, node, "="));
-    editorCell.addEditorCell(this.createProperty1198243875828(context, node));
+    editorCell.addEditorCell(this.createConstant_2905_7(context, node, "weak"));
+    editorCell.addEditorCell(this.createConstant_2905_11(context, node, "="));
+    editorCell.addEditorCell(this.createProperty_2905_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection1198243909542(EditorContext context, SNode node) {
+  public EditorCell createCollection_2905_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_11982439095421198243909542(editorCell, node, context);
+    setupBasic_Collection_2905_7(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1198243909543(context, node, "rule"));
-    editorCell.addEditorCell(this.createConstant1198243911030(context, node, "{"));
+    editorCell.addEditorCell(this.createConstant_2905_9(context, node, "rule"));
+    editorCell.addEditorCell(this.createConstant_2905_10(context, node, "{"));
     return editorCell;
   }
 
-  public EditorCell createConstant1175147714478(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2905_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11751477144781175147714478(editorCell, node, context);
-    setupLabel_Constant_1175147714478_1175147714478(editorCell, node, context);
+    setupBasic_Constant_2905_0(editorCell, node, context);
+    setupLabel_Constant_2905_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1198243854491(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2905_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11982438544911198243854491(editorCell, node, context);
-    setupLabel_Constant_1198243854491_1198243854491(editorCell, node, context);
+    setupBasic_Constant_2905_1(editorCell, node, context);
+    setupLabel_Constant_2905_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1198243858337(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2905_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11982438583371198243858337(editorCell, node, context);
-    setupLabel_Constant_1198243858337_1198243858337(editorCell, node, context);
+    setupBasic_Constant_2905_2(editorCell, node, context);
+    setupLabel_Constant_2905_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1198243861558(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2905_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11982438615581198243861558(editorCell, node, context);
-    setupLabel_Constant_1198243861558_1198243861558(editorCell, node, context);
+    setupBasic_Constant_2905_3(editorCell, node, context);
+    setupLabel_Constant_2905_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1198243875818(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2905_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11982438758181198243875818(editorCell, node, context);
-    setupLabel_Constant_1198243875818_1198243875818(editorCell, node, context);
+    setupBasic_Constant_2905_4(editorCell, node, context);
+    setupLabel_Constant_2905_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1198243875820(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2905_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11982438758201198243875820(editorCell, node, context);
-    setupLabel_Constant_1198243875820_1198243875820(editorCell, node, context);
+    setupBasic_Constant_2905_5(editorCell, node, context);
+    setupLabel_Constant_2905_5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1198243875825(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2905_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11982438758251198243875825(editorCell, node, context);
-    setupLabel_Constant_1198243875825_1198243875825(editorCell, node, context);
+    setupBasic_Constant_2905_6(editorCell, node, context);
+    setupLabel_Constant_2905_6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1198243875827(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2905_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11982438758271198243875827(editorCell, node, context);
-    setupLabel_Constant_1198243875827_1198243875827(editorCell, node, context);
+    setupBasic_Constant_2905_7(editorCell, node, context);
+    setupLabel_Constant_2905_7(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1198243894221(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2905_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11982438942211198243894221(editorCell, node, context);
-    setupLabel_Constant_1198243894221_1198243894221(editorCell, node, context);
+    setupBasic_Constant_2905_8(editorCell, node, context);
+    setupLabel_Constant_2905_8(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1198243909543(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2905_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11982439095431198243909543(editorCell, node, context);
-    setupLabel_Constant_1198243909543_1198243909543(editorCell, node, context);
+    setupBasic_Constant_2905_9(editorCell, node, context);
+    setupLabel_Constant_2905_9(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1198243911030(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2905_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11982439110301198243911030(editorCell, node, context);
-    setupLabel_Constant_1198243911030_1198243911030(editorCell, node, context);
+    setupBasic_Constant_2905_10(editorCell, node, context);
+    setupLabel_Constant_2905_10(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant1198243920500(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2905_11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11982439205001198243920500(editorCell, node, context);
-    setupLabel_Constant_1198243920500_1198243920500(editorCell, node, context);
+    setupBasic_Constant_2905_11(editorCell, node, context);
+    setupLabel_Constant_2905_11(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -230,25 +230,25 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  public EditorCell createProperty1175147714479_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_2905_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_name1175147714479(editorCell, node, context);
+    setupBasic_Property_2905_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_name_1175147714479((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_2905_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty1175147714479(EditorContext context, SNode node) {
+  public EditorCell createProperty_2905_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1175147714479_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_2905_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -259,25 +259,25 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1198243875819_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_2905_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_applicableNode1198243875819(editorCell, node, context);
+    setupBasic_RefNode_2905_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_applicableNode_1198243875819((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_2905_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1198243875819(EditorContext context, SNode node) {
+  public EditorCell createRefNode_2905_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("applicableNode");
     provider.setNoTargetText("<no applicableNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1198243875819_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_2905_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -288,25 +288,25 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode1198243875824_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_2905_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_body1198243875824(editorCell, node, context);
+    setupBasic_RefNode_2905_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_body_1198243875824((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_2905_1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode1198243875824(EditorContext context, SNode node) {
+  public EditorCell createRefNode_2905_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createRefNode1198243875824_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_2905_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -317,25 +317,25 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty1198243875828_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createProperty_2905_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_isWeak1198243875828(editorCell, node, context);
+    setupBasic_Property_2905_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_isWeak_1198243875828((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_2905_1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty1198243875828(EditorContext context, SNode node) {
+  public EditorCell createProperty_2905_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("isWeak");
     provider.setNoTargetText("<no isWeak>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1198243875828_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_2905_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -347,16 +347,16 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Collection_11751477144761175147714476(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1175147714476");
+  private static void setupBasic_Collection_2905_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2905_0");
   }
 
-  private static void setupBasic_Collection_11751477144771175147714477(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1175147714477");
+  private static void setupBasic_Collection_2905_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2905_1");
   }
 
-  private static void setupBasic_Constant_11751477144781175147714478(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1175147714478");
+  private static void setupBasic_Constant_2905_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2905_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -369,7 +369,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_property_name1175147714479(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_2905_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -382,13 +382,13 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_11982438544911198243854491(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1198243854491");
+  private static void setupBasic_Constant_2905_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2905_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_11982438583371198243858337(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1198243858337");
+  private static void setupBasic_Constant_2905_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2905_2");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -401,13 +401,13 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_11982438615581198243861558(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1198243861558");
+  private static void setupBasic_Constant_2905_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2905_3");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Collection_11982438696871198243869687(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1198243869687");
+  private static void setupBasic_Collection_2905_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2905_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -419,8 +419,8 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_11982438755491198243875549(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1198243875549");
+  private static void setupBasic_Collection_2905_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2905_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -432,8 +432,8 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_11982438758171198243875817(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1198243875817");
+  private static void setupBasic_Collection_2905_4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2905_4");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -445,8 +445,8 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_11982438758181198243875818(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1198243875818");
+  private static void setupBasic_Constant_2905_4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2905_4");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -459,11 +459,11 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_refNode_applicableNode1198243875819(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_2905_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Constant_11982438758201198243875820(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1198243875820");
+  private static void setupBasic_Constant_2905_5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2905_5");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -475,8 +475,8 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_11982438758221198243875822(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1198243875822");
+  private static void setupBasic_Collection_2905_5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2905_5");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -488,11 +488,11 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_refNode_body1198243875824(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RefNode_2905_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Constant_11982438758251198243875825(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1198243875825");
+  private static void setupBasic_Constant_2905_6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2905_6");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -506,8 +506,8 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_11982438758261198243875826(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1198243875826");
+  private static void setupBasic_Collection_2905_6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2905_6");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -519,22 +519,22 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_11982438758271198243875827(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1198243875827");
+  private static void setupBasic_Constant_2905_7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2905_7");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_property_isWeak1198243875828(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_2905_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_isWeak");
   }
 
-  private static void setupBasic_Constant_11982438942211198243894221(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1198243894221");
+  private static void setupBasic_Constant_2905_8(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2905_8");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Collection_11982439095421198243909542(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1198243909542");
+  private static void setupBasic_Collection_2905_7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2905_7");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -546,8 +546,8 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_11982439095431198243909543(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1198243909543");
+  private static void setupBasic_Constant_2905_9(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2905_9");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -560,69 +560,69 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_11982439110301198243911030(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1198243911030");
+  private static void setupBasic_Constant_2905_10(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2905_10");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_11982439205001198243920500(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1198243920500");
+  private static void setupBasic_Constant_2905_11(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2905_11");
   }
 
-  private static void setupBasic_Indent_12173352888461217335288846(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Indent_1217335288846");
+  private static void setupBasic_Indent_2905_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Indent_2905_0");
   }
 
-  private static void setupBasic_Indent_12173352943471217335294347(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Indent_1217335294347");
+  private static void setupBasic_Indent_2905_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Indent_2905_1");
   }
 
-  private static void setupLabel_Constant_1175147714478_1175147714478(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2905_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_name_1175147714479(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_2905_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1198243854491_1198243854491(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2905_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1198243858337_1198243858337(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2905_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1198243861558_1198243861558(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2905_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1198243875818_1198243875818(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2905_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_applicableNode_1198243875819(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_2905_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1198243875820_1198243875820(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2905_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_refNode_body_1198243875824(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_2905_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1198243875825_1198243875825(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2905_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1198243875827_1198243875827(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2905_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_property_isWeak_1198243875828(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_2905_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1198243894221_1198243894221(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2905_8(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1198243909543_1198243909543(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2905_9(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1198243911030_1198243911030(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2905_10(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1198243920500_1198243920500(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_2905_11(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

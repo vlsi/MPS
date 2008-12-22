@@ -113,7 +113,7 @@ __switch__:
   public static String keyMapActionClassName(SNode keyMapItem) {
     SNode keyMapDeclaration = SNodeOperations.getParent(keyMapItem);
     int index = 0;
-    for(SNode curItem : Sequence.fromIterable(SLinkOperations.getTargets(keyMapDeclaration, "item", true))) {
+    for(SNode curItem : ListSequence.fromList(SLinkOperations.getTargets(keyMapDeclaration, "item", true))) {
       if (curItem == keyMapItem) {
         break;
       }
