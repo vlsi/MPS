@@ -791,6 +791,8 @@ public abstract class AbstractModule implements IModule {
       return false;
     }
 
+    assert getModuleDescriptor().getModel().isLoading();
+
     for (jetbrains.mps.projectLanguage.structure.ModuleReference ref : getModuleDescriptor().getDescendants(jetbrains.mps.projectLanguage.structure.ModuleReference.class)) {
       ModuleReference oldRef = ModuleReference.fromString(ref.getName());
       ModuleReference newRef = oldRef.update();
