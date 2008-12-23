@@ -55,9 +55,9 @@ public class ExpandBoolean_Intention extends BaseIntention {
     // 
     final SNode fake_node = node;
     Iterable<SNode> refs;
-    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), null, false)).where(new IWhereFilter <?>() {
+    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), null, false)).where(new IWhereFilter <SNode>() {
 
-      public boolean accept(? it) {
+      public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(it, "variableDeclaration", false) == SLinkOperations.getTarget(fake_node, "variableDeclaration", false);
       }
 
@@ -70,9 +70,9 @@ public class ExpandBoolean_Intention extends BaseIntention {
       }
 
     });
-    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifFalse, "statement", true)).first(), null, false)).where(new IWhereFilter <?>() {
+    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifFalse, "statement", true)).first(), null, false)).where(new IWhereFilter <SNode>() {
 
-      public boolean accept(? it) {
+      public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(it, "variableDeclaration", false) == SLinkOperations.getTarget(fake_node, "variableDeclaration", false);
       }
 

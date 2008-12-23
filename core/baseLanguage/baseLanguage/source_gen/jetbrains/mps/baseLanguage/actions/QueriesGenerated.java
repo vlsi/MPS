@@ -158,16 +158,16 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BreakStatement_1199466283835(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     if (SPropertyOperations.hasValue(_context.getSourceNode(), "label", null)) {
-      boolean loopsWithLabels = ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter <?>() {
+      boolean loopsWithLabels = ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter <SNode>() {
 
-        public boolean accept(? it) {
+        public boolean accept(SNode it) {
           return !(SPropertyOperations.hasValue(it, "label", null));
         }
 
       }).isNotEmpty();
-      boolean sstmtsWithLabels = ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).where(new IWhereFilter <?>() {
+      boolean sstmtsWithLabels = ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).where(new IWhereFilter <SNode>() {
 
-        public boolean accept(? it) {
+        public boolean accept(SNode it) {
           return !(SPropertyOperations.hasValue(it, "label", null));
         }
 
@@ -178,9 +178,9 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ContinueStatement_1199470413669(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SPropertyOperations.hasValue(_context.getSourceNode(), "label", null) && ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2 <?, String>() {
+    return SPropertyOperations.hasValue(_context.getSourceNode(), "label", null) && ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2 <SNode, String>() {
 
-      public Iterable<String> translate(final ? it) {
+      public Iterable<String> translate(final SNode it) {
         return new Iterable <String>() {
 
           public Iterator<String> iterator() {
@@ -680,9 +680,9 @@ __switch__:
         public Object calculate() {
           List<SNode> functions = SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false);
           // skip Closure
-          SNode parentFunction = ListSequence.fromList(functions).where(new IWhereFilter <?>() {
+          SNode parentFunction = ListSequence.fromList(functions).where(new IWhereFilter <SNode>() {
 
-            public boolean accept(? it) {
+            public boolean accept(SNode it) {
               return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Closure"));
             }
 
@@ -1012,25 +1012,25 @@ __switch__:
             SNode classConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
             List<SNode> fieldDeclarations = (List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(classConcept, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD);
             final Set<String> localNames = new HashSet<String>();
-            ListSequence.fromList(new LocalVariablesScope(_context.getParentNode()).getNodes()).visitAll(new IVisitor <?>() {
+            ListSequence.fromList(new LocalVariablesScope(_context.getParentNode()).getNodes()).visitAll(new IVisitor <SNode>() {
 
-              public void visit(? it) {
+              public void visit(SNode it) {
                 localNames.add(SPropertyOperations.getString(it, "name"));
               }
 
             });
             for(SNode method : ListSequence.fromList(SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true))) {
-              ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).visitAll(new IVisitor <?>() {
+              ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).visitAll(new IVisitor <SNode>() {
 
-                public void visit(? it) {
+                public void visit(SNode it) {
                   localNames.add(SPropertyOperations.getString(it, "name"));
                 }
 
               });
             }
-            return ListSequence.fromList(fieldDeclarations).where(new IWhereFilter <?>() {
+            return ListSequence.fromList(fieldDeclarations).where(new IWhereFilter <SNode>() {
 
-              public boolean accept(? it) {
+              public boolean accept(SNode it) {
                 return !(localNames.contains(SPropertyOperations.getString(it, "name")));
               }
 
@@ -1072,9 +1072,9 @@ __switch__:
 
           public Object calculate() {
             //  'qualified this' - only in inner classes
-            return ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", false)).where(new IWhereFilter <?>() {
+            return ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", false)).where(new IWhereFilter <SNode>() {
 
-              public boolean accept(? it) {
+              public boolean accept(SNode it) {
                 return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
               }
 
@@ -1207,9 +1207,9 @@ __switch__:
           public Object calculate() {
             VisibleClassifiersScope serchScope = new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.ANYTHING, operationContext.getScope());
             List<SNode> list = (List<SNode>)serchScope.getClassifierNodes();
-            return ListSequence.fromList(list).where(new IWhereFilter <?>() {
+            return ListSequence.fromList(list).where(new IWhereFilter <SNode>() {
 
-              public boolean accept(? it) {
+              public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface") || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean(it, "abstractClass"));
               }
 
@@ -1228,9 +1228,9 @@ __switch__:
                 SLinkOperations.setTarget(SLinkOperations.getTarget(creator, "cls", true), "classifier", (item), false);
                 List<SNode> methodsToImplement = SLinkOperations.getTargets((item), "method", true);
                 if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-                  methodsToImplement = ListSequence.fromList(methodsToImplement).where(new IWhereFilter <?>() {
+                  methodsToImplement = ListSequence.fromList(methodsToImplement).where(new IWhereFilter <SNode>() {
 
-                    public boolean accept(? it) {
+                    public boolean accept(SNode it) {
                       return SPropertyOperations.getBoolean(it, "isAbstract");
                     }
 
@@ -2048,9 +2048,9 @@ __switch__:
 
         public Object calculate() {
           List<String> labels = ListSequence.<String>fromArray();
-          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2 <?, String>() {
+          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2 <SNode, String>() {
 
-            public Iterable<String> translate(final ? it) {
+            public Iterable<String> translate(final SNode it) {
               return new Iterable <String>() {
 
                 public Iterator<String> iterator() {
@@ -2097,9 +2097,9 @@ __switch__:
             }
 
           }));
-          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).translate(new ITranslator2 <?, String>() {
+          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).translate(new ITranslator2 <SNode, String>() {
 
-            public Iterable<String> translate(final ? it) {
+            public Iterable<String> translate(final SNode it) {
               return new Iterable <String>() {
 
                 public Iterator<String> iterator() {
@@ -2189,9 +2189,9 @@ __switch__:
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          return ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2 <?, String>() {
+          return ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2 <SNode, String>() {
 
-            public Iterable<String> translate(final ? it) {
+            public Iterable<String> translate(final SNode it) {
               return new Iterable <String>() {
 
                 public Iterator<String> iterator() {

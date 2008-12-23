@@ -24,9 +24,9 @@ public class check_ContinueStatement_InferenceRule extends AbstractInferenceRule
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
     if (!(SPropertyOperations.hasValue(nodeToCheck, "label", null))) {
       final String lbl = SPropertyOperations.getString(nodeToCheck, "label");
-      Iterable<SNode> matchingLoops = ListSequence.fromList(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter <?>() {
+      Iterable<SNode> matchingLoops = ListSequence.fromList(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter <SNode>() {
 
-        public boolean accept(? it) {
+        public boolean accept(SNode it) {
           return lbl.equals(SPropertyOperations.getString(it, "label"));
         }
 

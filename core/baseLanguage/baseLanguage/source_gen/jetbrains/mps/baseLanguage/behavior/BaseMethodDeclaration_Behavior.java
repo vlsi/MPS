@@ -74,9 +74,9 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static Class[] call_getParameterTypes_1213877350411(SNode thisNode, final IModule module) {
-    return ListSequence.fromIterable(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector <?, Class>() {
+    return ListSequence.fromIterable(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector <SNode, Class>() {
 
-      public Class select(? it) {
+      public Class select(SNode it) {
         return Type_Behavior.call_getClass_1213877337327(SLinkOperations.getTarget(it, "type", true), module);
       }
 

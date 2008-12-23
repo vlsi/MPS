@@ -56,9 +56,9 @@ public class ClassConcept_Behavior {
   }
 
   public static SNode call_getMainMethod_1213877355884(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)).where(new IWhereFilter <?>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)).where(new IWhereFilter <SNode>() {
 
-      public boolean accept(? it) {
+      public boolean accept(SNode it) {
         return StaticMethodDeclaration_Behavior.call_isMainMethod_1213877536670(it);
       }
 
