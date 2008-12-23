@@ -16,9 +16,9 @@ public class BaseMethodCall_Behavior {
   }
 
   public static Object[] call_getActualArguments_1213877339153(SNode thisNode, final IModule module) {
-    return ListSequence.fromIterable(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)).select(new ISelector <SNode, Object>() {
+    return ListSequence.fromIterable(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)).select(new ISelector <?, Object>() {
 
-      public Object select(SNode it) {
+      public Object select(? it) {
         return Expression_Behavior.call_eval_1213877519769(it, module);
       }
 

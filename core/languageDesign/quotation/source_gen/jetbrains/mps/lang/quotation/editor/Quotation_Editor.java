@@ -168,7 +168,6 @@ public class Quotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_3472_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_quotedNode");
   }
 
   private static void setupBasic_Constant_3472_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -205,7 +204,6 @@ public class Quotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_3472_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_modelToCreate");
   }
 
   private static void setupBasic_Constant_3472_3(EditorCell editorCell, SNode node, EditorContext context) {

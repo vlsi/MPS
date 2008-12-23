@@ -45,9 +45,9 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     // WORKAROUND - FIND SUPER() CALLS
     for(SNode subclassResult : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope, indicator))) {
       for(SNode constructorNode : ListSequence.fromList(SLinkOperations.getTargets(subclassResult, "constructor", true))) {
-        for(SNode invocation : ListSequence.fromList(SNodeOperations.getDescendants(constructorNode, null, false)).where(new IWhereFilter <SNode>() {
+        for(SNode invocation : ListSequence.fromList(SNodeOperations.getDescendants(constructorNode, null, false)).where(new IWhereFilter <?>() {
 
-          public boolean accept(SNode it) {
+          public boolean accept(? it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
           }
 

@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class SConceptType_Behavior {
 
@@ -29,7 +28,7 @@ public class SConceptType_Behavior {
     List<String> variableSuffixes = ListSequence.<String>fromArray("concept");
     if ((SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false) != null)) {
       String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false), "name"));
-      for(String element : Sequence.fromIterable(NameUtil.splitByCamels(name))) {
+      for(String element : ListSequence.fromList(NameUtil.splitByCamels(name))) {
         ListSequence.fromList(variableSuffixes).addElement(element + "Concept");
       }
     }

@@ -21,9 +21,9 @@ public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_parameterObjects(SNode classifier, SNode contextNode) {
     ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), contextNode, IClassifiersSearchScope.STATIC_MEMBER);
     List<SNode> members = (List<SNode>)searchScope.getNodes();
-    List<SNode> result = ListSequence.fromList(members).where(new IWhereFilter <SNode>() {
+    List<SNode> result = ListSequence.fromList(members).where(new IWhereFilter <?>() {
 
-      public boolean accept(SNode it) {
+      public boolean accept(? it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
       }
 

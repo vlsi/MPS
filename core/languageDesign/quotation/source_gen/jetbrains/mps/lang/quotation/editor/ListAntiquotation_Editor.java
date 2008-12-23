@@ -249,7 +249,6 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_7120_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_expression");
   }
 
   private static void setupBasic_Constant_7120_1(EditorCell editorCell, SNode node, EditorContext context) {

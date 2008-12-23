@@ -180,9 +180,9 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2 <SNode, String>() {
+      return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2 <?, String>() {
 
-        public Iterable<String> translate(final SNode it) {
+        public Iterable<String> translate(final ? it) {
           return new Iterable <String>() {
 
             public Iterator<String> iterator() {

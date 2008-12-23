@@ -32,9 +32,9 @@ public class ConceptFunctionParameter_Behavior {
   public static SNode call_findConceptFunction_1213877522934(SNode thisNode) {
     List<SNode> functions = SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false);
     final SNode ourConcept = SNodeOperations.getConceptDeclaration(thisNode);
-    return ListSequence.fromList(functions).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(functions).where(new IWhereFilter <?>() {
 
-      public boolean accept(SNode it) {
+      public boolean accept(? it) {
         return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(it, "conceptFunctionParameter")).contains(ourConcept) || ListSequence.fromList(SLinkOperations.getConceptLinkTargets(it, "applicableConceptFunctionParameter")).contains(ourConcept);
       }
 

@@ -24,9 +24,9 @@ public class check_BreakStatement_InferenceRule extends AbstractInferenceRule_Ru
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
     if (!(SPropertyOperations.hasValue(nodeToCheck, "label", null))) {
       final String lbl = SPropertyOperations.getString(nodeToCheck, "label");
-      Iterable<SNode> matchingLoops = ListSequence.fromList(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter <SNode>() {
+      Iterable<SNode> matchingLoops = ListSequence.fromList(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter <?>() {
 
-        public boolean accept(SNode it) {
+        public boolean accept(? it) {
           return lbl.equals(SPropertyOperations.getString(it, "label"));
         }
 

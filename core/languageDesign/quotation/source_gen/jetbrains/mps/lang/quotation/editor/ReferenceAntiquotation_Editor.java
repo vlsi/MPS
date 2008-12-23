@@ -254,7 +254,6 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_6627_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_expression");
   }
 
   private static void setupBasic_Constant_6627_1(EditorCell editorCell, SNode node, EditorContext context) {

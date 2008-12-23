@@ -249,7 +249,6 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_5335_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_expression");
   }
 
   private static void setupBasic_Constant_5335_1(EditorCell editorCell, SNode node, EditorContext context) {
