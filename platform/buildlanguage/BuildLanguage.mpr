@@ -22,12 +22,14 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.build/mpsbuild.msd" folder="packaging" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.build.sandbox/jetbrains.mps.build.sandbox.msd" folder="packaging" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/buildlanguage/buildlanguage.mpl" />
       <languagePath path="${project}/languages/dependency/dependency.mpl" folder="packaging" />
       <languagePath path="${project}/languages/packaging/packaging.mpl" folder="packaging" />
       <languagePath path="${project}/languages/property/property.mpl" />
+      <languagePath path="${project}/languages/classpath/classpath.mpl" folder="packaging" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

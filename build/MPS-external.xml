@@ -214,6 +214,7 @@
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp/build-helpers.repack.sources" />
       <param name="output.dir" value="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp" />
+      <param name="basedir" value="${basedir}" />
     </antcall>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp/build-helpers.repack.sources" />
     <zip destfile="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip" duplicate="preserve" filesonly="true">
@@ -303,6 +304,7 @@
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/build-helpers.distrib/MPS/build-helpers.append.idea.version" />
       <param name="output.dir" value="${deploy.dir}/build-helpers.distrib/MPS" />
+      <param name="basedir" value="${basedir}" />
     </antcall>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/build-helpers.append.idea.version" />
     <copy file="entryPoints.xml" tofile="${deploy.dir}/build-helpers.distrib/MPS/entryPoints.xml" />
@@ -312,6 +314,7 @@
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/build-helpers.distrib" />
       <param name="output.dir" value="${deploy.dir}/" />
+      <param name="basedir" value="${basedir}" />
     </antcall>
     <delete dir="${deploy.dir}/build-helpers.distrib" />
     <copy file="lib/jetbrains-ideframework/idea-platform-src.zip" tofile="${deploy.dir}/debug/idea-platform-src.zip" />
@@ -319,6 +322,7 @@
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/build-helpers.pack.mps.src" />
       <param name="output.dir" value="${deploy.dir}/" />
+      <param name="basedir" value="${basedir}" />
     </antcall>
     <delete dir="${deploy.dir}/build-helpers.pack.mps.src" />
   </target>

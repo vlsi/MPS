@@ -3314,6 +3314,21 @@
               </node>
             </node>
           </node>
+          <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1229973818309">
+            <link role="declaration" targetNodeId="7.1201800720773" resolveInfo="param" />
+            <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1229973821810">
+              <link role="attributeDeclaration" targetNodeId="7.1199644185282" resolveInfo="name" />
+              <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1229973824546">
+                <property name="value" value="basedir" />
+              </node>
+            </node>
+            <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1229973828859">
+              <link role="attributeDeclaration" targetNodeId="7.1199644185306" resolveInfo="value" />
+              <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1229973836236">
+                <property name="value" value="${basedir}" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="default" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1210779856505">
