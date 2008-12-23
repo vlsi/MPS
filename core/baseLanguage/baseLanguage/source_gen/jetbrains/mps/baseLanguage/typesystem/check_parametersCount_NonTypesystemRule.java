@@ -34,7 +34,7 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
     if (!(b)) {
       {
         BaseIntentionProvider intentionProvider = null;
-        intentionProvider = new BaseIntentionProvider("r:6805a134-fd49-4635-86a9-bec8bc503480(jetbrains.mps.baseLanguage.typesystem@16_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+        intentionProvider = new BaseIntentionProvider("r:bf4bb971-a761-4690-99b5-27562a190811(jetbrains.mps.baseLanguage.typesystem@16_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
         intentionProvider.putArgument("methodCall", iMethodCall);
         intentionProvider.putArgument("classifier", SNodeOperations.getAncestor(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
         IErrorTarget errorTarget = new NodeErrorTarget();

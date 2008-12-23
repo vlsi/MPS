@@ -21,12 +21,10 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.library.LibraryManager;
 import org.jetbrains.annotations.NonNls;
@@ -198,8 +196,11 @@ public class ClassLoaderManager implements ApplicationComponent {
       generatorPrefixes.add(l.getNamespace() + ".generator");
     }
 
-    return new RuntimeEnvironment() {
-      public Class loadFromParent(String cls) {
+    return new RuntimeEnvironment<ModuleReference>() {
+      public Class loadFromParent(String cls, RBundle<ModuleReference> bundle) {
+        if (MPSModuleRepository.getInstance().getModule(bundle.getId()) instanceof Solution)  {
+          return null;
+        }
         String pack = NameUtil.namespaceFromLongName(cls);
         if (excludedPackages.contains(pack)) {
           return null;
@@ -209,8 +210,7 @@ public class ClassLoaderManager implements ApplicationComponent {
           if (cls.startsWith(prefix)) {
             return null;
           }
-        }
-
+        }        
         return getFromParent(cls);
       }
     };

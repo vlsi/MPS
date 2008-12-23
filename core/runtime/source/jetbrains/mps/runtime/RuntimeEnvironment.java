@@ -34,7 +34,7 @@ public class RuntimeEnvironment<T> {
     return this;
   }
 
-  public Class loadFromParent(String cls) {
+  public Class loadFromParent(String cls, RBundle<T> bundle) {
     for (String prefix : myLoadFromParentPrefixes) {
       if (cls.startsWith(prefix)) {
         return getFromParent(cls);
