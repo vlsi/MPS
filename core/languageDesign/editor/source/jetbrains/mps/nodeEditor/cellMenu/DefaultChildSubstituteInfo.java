@@ -93,13 +93,20 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     AbstractConceptDeclaration target = myLinkDeclaration.getTarget();
 
     SNode hole = null;
-    if (target instanceof ConceptDeclaration) {
-      hole = SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) target, auxModel).getNode();
+    if (myCurrentChild == null) {
+      if (target instanceof ConceptDeclaration) {
+        hole = SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) target, auxModel).getNode();
+      } else {
+        hole = new SNode(auxModel, "jetbrains.mps.lang.core.BaseConcept");
+      }
     } else {
-      hole = new SNode(auxModel, "jetbrains.mps.lang.core.BaseConcept");
+      hole = mapping.get(myCurrentChild);
     }
-    SNode parentCopy = mapping.get(myParentNode);
-    parentCopy.addChild(role, hole);
+
+    if (myCurrentChild == null) {
+      SNode parentCopy = mapping.get(myParentNode);
+      parentCopy.addChild(role, hole);
+    }
     InequationSystem inequationsForHole = TypeChecker.getInstance().getInequationsForHole(hole);
     auxModel.removeRoot(nodeCopyRoot);
 
@@ -108,9 +115,9 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   public List<INodeSubstituteAction> createActions() {
     List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(myParentNode, myCurrentChild,
-            (AbstractConceptDeclaration) myLinkDeclaration.getTarget(),
-            createDefaultNodeSetter(),
-            getOperationContext());
+      (AbstractConceptDeclaration) myLinkDeclaration.getTarget(),
+      createDefaultNodeSetter(),
+      getOperationContext());
     return actions;
   }
 

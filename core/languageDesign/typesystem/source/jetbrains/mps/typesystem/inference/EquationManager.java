@@ -864,7 +864,7 @@ public class EquationManager {
     ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
     for (IWrapper type : types) {
       if (type == null) continue;
-      assert !type.isConcrete();
+    //  assert !type.isConcrete();
 
       Map<IWrapper, EquationInfo> supertypes = mySubtypesToSupertypesMap.get(type);
       if (supertypes != null) {
@@ -949,7 +949,7 @@ public class EquationManager {
           varLessThanType(type, true, priority, minPriority, shallow, holeTypeWrapper);
           varLessThanType(type, false, priority, minPriority, shallow, holeTypeWrapper);
         } else if ( (shallow && type.isConcrete()) || (!shallow && isConcrete(type)) ) {
-          if (shallow) {
+          if (shallow && holeTypeWrapper == null) {
             hasConcreteTypes = true;
           }
           hasConcreteTypes = typeLessThanConcrete(type, true, priority, minPriority, shallow, holeTypeWrapper) || hasConcreteTypes;
