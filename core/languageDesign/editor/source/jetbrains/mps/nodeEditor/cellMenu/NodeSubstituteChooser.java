@@ -428,6 +428,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private class PopupWindow extends JWindow {
+    private final Color BACKGROUND_COLOR = new Color(235, 244, 254);
+    private final Color FOREGROUND_COLOR = Color.black;
+    private final Color SELECTED_BACKGROUND_COLOR = new Color(0, 82, 164);
+    private final Color SELECTED_FOREGROUND_COLOR = Color.white;    
     private JList myList = new JList(new DefaultListModel());
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
     private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -447,7 +451,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
       myList.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-      myList.setBackground(UIManager.getColor("TextArea.selectionBackground").brighter());
+      myList.setBackground(BACKGROUND_COLOR);
+      myList.setForeground(FOREGROUND_COLOR);
+      myList.setSelectionBackground(SELECTED_BACKGROUND_COLOR);
+      myList.setSelectionForeground(SELECTED_FOREGROUND_COLOR);
 
       myList.addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
@@ -648,14 +655,16 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         LOG.error(t);
       }
 
-      myLeft.setForeground(UIManager.getColor("TextArea.selectionForeground"));
-      myRight.setForeground(UIManager.getColor("TextArea.selectionForeground"));
       if (isSelected) {
         setBackground(list.getSelectionBackground());
         setForeground(list.getSelectionForeground());
+        myLeft.setForeground(list.getSelectionForeground());
+        myRight.setForeground(list.getSelectionForeground());
       } else {
         setBackground(list.getBackground());
         setForeground(list.getForeground());
+        myLeft.setForeground(list.getForeground());
+        myRight.setForeground(list.getForeground());
       }
     }
   }
