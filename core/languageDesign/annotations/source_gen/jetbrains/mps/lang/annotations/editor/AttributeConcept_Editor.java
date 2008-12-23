@@ -87,7 +87,6 @@ public class AttributeConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_7184_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_attributedNode");
   }
 
   private static void setupBasic_Constant_7184_1(EditorCell editorCell, SNode node, EditorContext context) {
