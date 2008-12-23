@@ -26,9 +26,12 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Messages;
+import com.yourkit.api.ControllerImpl.GenerationType;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GeneratorManager.MyState;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
+import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.logging.Logger;
@@ -73,10 +76,8 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
   private MyState myState = new MyState();
 
   private GeneratorManagerPreferencesPage myPreferences;
-
-  private ExecutorService myExecutorService = Executors.newCachedThreadPool();
-
   private Project myProject;
+  private boolean myGeneratingRequirements;
 
   public GeneratorManager(Project project) {
     myProject = project;
@@ -231,6 +232,37 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
       saveTransientModels = false;
     }
 
+    if (!myGeneratingRequirements) {
+      boolean wasSaveTransientModels = isSaveTransientModels();
+      myGeneratingRequirements = true;
+      try {
+        final List<SModelDescriptor> requirements = new ArrayList<SModelDescriptor>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            for (Pair<SModelDescriptor, IOperationContext> inputModel : inputModels) {
+              requirements.addAll(getModelsToGenerateBeforeGeneration(inputModel.o1, inputModel.o2));
+            }
+          }
+        });
+
+        if (!requirements.isEmpty()) {
+          String message = "The following models might be required for generation\n" +
+                            "but aren't generated. Do you want to generate them?\n";
+          for (SModelDescriptor sm : requirements) {
+            message += "\n" + sm.getSModelFqName();
+          }
+
+          int result = Messages.showYesNoDialog(myProject, message, "Generate Required Models", Messages.getWarningIcon());
+          if (result == 0) { //idea don't have constants for YES/NO
+            generateModelsFromDifferentModules(invocationContext, requirements, IGenerationType.FILES);            
+          }
+        }
+      } finally {
+        setSaveTransientModels(wasSaveTransientModels);
+        myGeneratingRequirements = false;
+      }
+    }
+
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModelRepository.getInstance().saveAll();
@@ -247,6 +279,27 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
       }
     });
     return result[0];
+  }
+
+  private List<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, IOperationContext context) {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+
+    ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
+    for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), context.getScope())) {
+      for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
+        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm)) {
+          result.add(sm);
+        }
+      }
+
+      for (SModelDescriptor sm : g.getSourceLanguage().getAspectModelDescriptors()) {
+        if (statusManager.generationRequired(sm)) {
+          result.add(sm);
+        }
+      }
+    }
+
+    return result;
   }
 
   /**
