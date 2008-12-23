@@ -320,7 +320,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_AttributedNodeCell_8968_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("AttributedNodeCell_8968_0");
   }
 
   private static void setupBasic_Collection_8968_2(EditorCell editorCell, SNode node, EditorContext context) {

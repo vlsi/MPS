@@ -7,10 +7,9 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class MappingLabelUtil {
@@ -18,8 +17,8 @@ public class MappingLabelUtil {
   public static SNode findOrCreateMappingLabelForName(SNode templateNode, String labelName) {
     SNode mappingLabel = null;
     List<SNode> mappingConfigurations = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(templateNode), GlobalScope.getInstance(), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
-    for(SNode mc : Sequence.fromIterable(mappingConfigurations)) {
-      for(SNode ml : Sequence.fromIterable(SLinkOperations.getTargets(mc, "mappingLabel", true))) {
+    for(SNode mc : ListSequence.fromList(mappingConfigurations)) {
+      for(SNode ml : ListSequence.fromList(SLinkOperations.getTargets(mc, "mappingLabel", true))) {
         if (labelName.equals(SPropertyOperations.getString(ml, "name"))) {
           mappingLabel = ml;
           break;

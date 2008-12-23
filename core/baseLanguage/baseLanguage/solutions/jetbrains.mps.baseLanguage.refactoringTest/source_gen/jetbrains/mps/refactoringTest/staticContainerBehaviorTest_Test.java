@@ -27,23 +27,23 @@ public class staticContainerBehaviorTest_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
 
     public void test_staticContainerBehaviorTest() throws Exception {
-      this.addNodeById("1230040828066");
-      this.addNodeById("1230040828098");
-      this.addNodeById("1230040828111");
-      this.addNodeById("1230040828116");
+      this.addNodeById("1230052684554");
+      this.addNodeById("1230052684570");
+      this.addNodeById("1230052684583");
+      this.addNodeById("1230052684588");
       SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);
-      SLinkOperations.setTarget(call, "baseMethodDeclaration", this.getNodeById("1230040828118"), false);
+      SLinkOperations.setTarget(call, "baseMethodDeclaration", this.getNodeById("1230052684590"), false);
       SNode var = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-      SLinkOperations.setTarget(var, "variableDeclaration", this.getNodeById("1230040828103"), false);
+      SLinkOperations.setTarget(var, "variableDeclaration", this.getNodeById("1230052684575"), false);
       SLinkOperations.addChild(call, "actualArgument", var);
-      SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(this.getNodeById("1230040828117"), "concept", false), false);
-      SNodeOperations.replaceWithAnother(this.getNodeById("1230040828108"), call);
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(this.getNodeById("1230040828090")));
+      SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(this.getNodeById("1230052684589"), "concept", false), false);
+      SNodeOperations.replaceWithAnother(this.getNodeById("1230052684580"), call);
+      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(this.getNodeById("1230052684562")));
       params.setName("foo");
       ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
-      ref.setStaticContainer(this.getNodeById("1230040828112"));
+      ref.setStaticContainer(this.getNodeById("1230052684584"));
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230040828067"), this.getNodeById("1230040828112")), ListSequence.<SNode>fromArray(this.getNodeById("1230040828099"), this.getNodeById("1230040828117"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230052684555"), this.getNodeById("1230052684584")), ListSequence.<SNode>fromArray(this.getNodeById("1230052684571"), this.getNodeById("1230052684589"))));
     }
 
 }

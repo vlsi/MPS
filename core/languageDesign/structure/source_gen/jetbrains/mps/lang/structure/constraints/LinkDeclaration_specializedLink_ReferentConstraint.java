@@ -13,9 +13,8 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
@@ -41,7 +40,7 @@ public class LinkDeclaration_specializedLink_ReferentConstraint extends BaseNode
     List<SNode> result = new ArrayList<SNode>();
     SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
     List<SNode> directSupers = SConceptOperations.getDirectSuperConcepts(enclosingConcept, false);
-    for(SNode concept : Sequence.fromIterable(directSupers)) {
+    for(SNode concept : ListSequence.fromList(directSupers)) {
       List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept);
       ListSequence.fromList(result).addSequence(ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 

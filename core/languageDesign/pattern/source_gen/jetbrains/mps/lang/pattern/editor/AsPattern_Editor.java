@@ -115,7 +115,6 @@ public class AsPattern_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_AttributedNodeCell_0290_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("AttributedNodeCell_0290_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {

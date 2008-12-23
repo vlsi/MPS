@@ -22,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
 
@@ -112,7 +111,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_label_it = Sequence.fromIterable(SLinkOperations.getTargets(it, "mappingLabel", true)).iterator();
+                      this._2_label_it = ListSequence.fromList(SLinkOperations.getTargets(it, "mappingLabel", true)).iterator();
                     case 3:
                       if (!(this._2_label_it.hasNext())) {
                         this.__CP__ = 1;

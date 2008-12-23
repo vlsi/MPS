@@ -9,13 +9,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -72,7 +72,7 @@ public class QueriesUtil {
     }
     List<SNode> attributes = SNodeOperations.getAllAttributes(node);
     SNode prevMacro = null;
-    for(SNode attribute : Sequence.fromIterable(attributes)) {
+    for(SNode attribute : ListSequence.fromList(attributes)) {
       if (attribute == currMacroNode) {
         break;
       }

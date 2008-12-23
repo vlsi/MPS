@@ -24,7 +24,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.SModel;
@@ -735,7 +734,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_p_it = Sequence.fromIterable(SLinkOperations.getTargets(it, "propertyDeclaration", true)).iterator();
+                      this._2_p_it = ListSequence.fromList(SLinkOperations.getTargets(it, "propertyDeclaration", true)).iterator();
                     case 3:
                       if (!(this._2_p_it.hasNext())) {
                         this.__CP__ = 1;
@@ -816,7 +815,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_p_it = Sequence.fromIterable(SLinkOperations.getTargets(it, "propertyDeclaration", true)).iterator();
+                      this._2_p_it = ListSequence.fromList(SLinkOperations.getTargets(it, "propertyDeclaration", true)).iterator();
                     case 3:
                       if (!(this._2_p_it.hasNext())) {
                         this.__CP__ = 1;
@@ -897,7 +896,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_p_it = Sequence.fromIterable(SLinkOperations.getTargets(it, "propertyDeclaration", true)).iterator();
+                      this._2_p_it = ListSequence.fromList(SLinkOperations.getTargets(it, "propertyDeclaration", true)).iterator();
                     case 3:
                       if (!(this._2_p_it.hasNext())) {
                         this.__CP__ = 1;
@@ -978,7 +977,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_p_it = Sequence.fromIterable(SLinkOperations.getTargets(it, "propertyDeclaration", true)).iterator();
+                      this._2_p_it = ListSequence.fromList(SLinkOperations.getTargets(it, "propertyDeclaration", true)).iterator();
                     case 3:
                       if (!(this._2_p_it.hasNext())) {
                         this.__CP__ = 1;
@@ -1058,7 +1057,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_link_it = Sequence.fromIterable(SLinkOperations.getTargets(it, "linkDeclaration", true)).iterator();
+                      this._2_link_it = ListSequence.fromList(SLinkOperations.getTargets(it, "linkDeclaration", true)).iterator();
                     case 3:
                       if (!(this._2_link_it.hasNext())) {
                         this.__CP__ = 1;
@@ -1127,7 +1126,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_link_it = Sequence.fromIterable(SLinkOperations.getTargets(it, "linkDeclaration", true)).iterator();
+                      this._2_link_it = ListSequence.fromList(SLinkOperations.getTargets(it, "linkDeclaration", true)).iterator();
                     case 3:
                       if (!(this._2_link_it.hasNext())) {
                         this.__CP__ = 1;
@@ -1196,7 +1195,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_link_it = Sequence.fromIterable(SLinkOperations.getTargets(it, "linkDeclaration", true)).iterator();
+                      this._2_link_it = ListSequence.fromList(SLinkOperations.getTargets(it, "linkDeclaration", true)).iterator();
                     case 3:
                       if (!(this._2_link_it.hasNext())) {
                         this.__CP__ = 1;
@@ -1265,7 +1264,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_link_it = Sequence.fromIterable(SLinkOperations.getTargets(it, "linkDeclaration", true)).iterator();
+                      this._2_link_it = ListSequence.fromList(SLinkOperations.getTargets(it, "linkDeclaration", true)).iterator();
                     case 3:
                       if (!(this._2_link_it.hasNext())) {
                         this.__CP__ = 1;
@@ -1340,7 +1339,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_link_it = Sequence.fromIterable(SLinkOperations.getTargets(it, "linkDeclaration", true)).iterator();
+                      this._2_link_it = ListSequence.fromList(SLinkOperations.getTargets(it, "linkDeclaration", true)).iterator();
                     case 3:
                       if (!(this._2_link_it.hasNext())) {
                         this.__CP__ = 1;
@@ -1544,7 +1543,7 @@ __switch__:
 
   public static SNode templateFragment_ContextNodeQuery_1184375448947(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     List<SNode> methods = SLinkOperations.getTargets(_context.getMainContextNode(), "method", true);
-    for(SNode method : Sequence.fromIterable(methods)) {
+    for(SNode method : ListSequence.fromList(methods)) {
       if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
         return SLinkOperations.getTarget(method, "body", true);
       }
@@ -1554,7 +1553,7 @@ __switch__:
 
   public static SNode templateFragment_ContextNodeQuery_1184375906184(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     List<SNode> methods = SLinkOperations.getTargets(_context.getMainContextNode(), "method", true);
-    for(SNode method : Sequence.fromIterable(methods)) {
+    for(SNode method : ListSequence.fromList(methods)) {
       if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
         return SLinkOperations.getTarget(method, "body", true);
       }
@@ -1564,7 +1563,7 @@ __switch__:
 
   public static SNode templateFragment_ContextNodeQuery_1184375942612(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     List<SNode> methods = SLinkOperations.getTargets(_context.getMainContextNode(), "method", true);
-    for(SNode method : Sequence.fromIterable(methods)) {
+    for(SNode method : ListSequence.fromList(methods)) {
       if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
         return SLinkOperations.getTarget(method, "body", true);
       }

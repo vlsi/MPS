@@ -27,20 +27,20 @@ public class staticContainerClassTest_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
 
     public void test_staticContainerClassTest() throws Exception {
-      this.addNodeById("1230040828215");
-      this.addNodeById("1230040828225");
-      this.addNodeById("1230040828233");
-      this.addNodeById("1230040828237");
+      this.addNodeById("1230052684687");
+      this.addNodeById("1230052684697");
+      this.addNodeById("1230052684705");
+      this.addNodeById("1230052684709");
       SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-      SLinkOperations.setTarget(call, "baseMethodDeclaration", this.getNodeById("1230040828239"), false);
-      SLinkOperations.setTarget(call, "classConcept", this.getNodeById("1230040828238"), false);
-      SNodeOperations.replaceWithAnother(this.getNodeById("1230040828230"), call);
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(this.getNodeById("1230040828219")));
+      SLinkOperations.setTarget(call, "baseMethodDeclaration", this.getNodeById("1230052684711"), false);
+      SLinkOperations.setTarget(call, "classConcept", this.getNodeById("1230052684710"), false);
+      SNodeOperations.replaceWithAnother(this.getNodeById("1230052684702"), call);
+      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(this.getNodeById("1230052684691")));
       params.setName("foo");
       ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
-      ref.setStaticContainer(this.getNodeById("1230040828234"));
+      ref.setStaticContainer(this.getNodeById("1230052684706"));
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230040828216"), this.getNodeById("1230040828234")), ListSequence.<SNode>fromArray(this.getNodeById("1230040828226"), this.getNodeById("1230040828238"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230052684688"), this.getNodeById("1230052684706")), ListSequence.<SNode>fromArray(this.getNodeById("1230052684698"), this.getNodeById("1230052684710"))));
     }
 
 }

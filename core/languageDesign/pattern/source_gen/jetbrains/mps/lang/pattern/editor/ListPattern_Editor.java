@@ -115,7 +115,6 @@ public class ListPattern_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_AttributedNodeCell_0934_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("AttributedNodeCell_0934_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {

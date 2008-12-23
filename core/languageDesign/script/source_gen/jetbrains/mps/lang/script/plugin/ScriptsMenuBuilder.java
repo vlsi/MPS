@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.action.BaseAction;
 
 public class ScriptsMenuBuilder {
@@ -49,7 +49,7 @@ public class ScriptsMenuBuilder {
   public BaseGroup create_ByLanguagePopup() {
     BaseGroup byLanguageGroup = new BaseGroup("By Language");
     byLanguageGroup.setPopup(true);
-    for(Language language : Sequence.fromIterable(this.allLanguages)) {
+    for(Language language : ListSequence.fromList(this.allLanguages)) {
       ScriptsActionGroupHelper.populateByLanguageGroup(language, byLanguageGroup, this.applyToSelection);
     }
     return byLanguageGroup;

@@ -14,8 +14,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -55,7 +55,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      this._4_link_it = Sequence.fromIterable(this._3_links).iterator();
+                      this._4_link_it = ListSequence.fromList(this._3_links).iterator();
                     case 5:
                       if (!(this._4_link_it.hasNext())) {
                         this.__CP__ = 1;
