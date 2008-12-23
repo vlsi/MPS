@@ -68,7 +68,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068390468200">
-    <property name="iconPath" value="${language_descriptor}\icons\field.png" />
+    <property name="iconPath" value="${language_descriptor}/icons/fieldNew.png" />
     <property name="name" value="FieldDeclaration" />
     <link role="extends" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1178285346338">
@@ -83,7 +83,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068390468198">
     <property name="name" value="ClassConcept" />
-    <property name="iconPath" value="${language_descriptor}\icons\class.png" />
+    <property name="iconPath" value="${language_descriptor}/icons/classType.png" />
     <property name="rootable" value="true" />
     <property name="package" value="classifier" />
     <link role="extends" targetNodeId="1107461130800" resolveInfo="Classifier" />
@@ -244,7 +244,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123132">
-    <property name="iconPath" value="${language_descriptor}\icons\method.png" />
+    <property name="iconPath" value="${language_descriptor}/icons/methodNew.png" />
     <property name="name" value="BaseMethodDeclaration" />
     <property name="package" value="method" />
     <link role="extends" targetNodeId="1109279851642" resolveInfo="GenericDeclaration" />
@@ -1087,7 +1087,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1083245097125">
     <property name="name" value="EnumClass" />
-    <property name="iconPath" value="${language_descriptor}\icons\enum.png" />
+    <property name="iconPath" value="${language_descriptor}/icons/enumType.png" />
     <property name="rootable" value="true" />
     <property name="package" value="classifier.enum" />
     <link role="extends" targetNodeId="1068390468198" resolveInfo="ClassConcept" />
@@ -1268,7 +1268,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1107796713796">
     <property name="name" value="Interface" />
-    <property name="iconPath" value="${language_descriptor}\icons\interface.png" />
+    <property name="iconPath" value="${language_descriptor}/icons/interfaceType.png" />
     <property name="rootable" value="true" />
     <property name="package" value="classifier" />
     <link role="extends" targetNodeId="1107461130800" resolveInfo="Classifier" />
@@ -1904,6 +1904,7 @@
     <property name="name" value="AnonymousClass" />
     <property name="rootable" value="false" />
     <property name="package" value="classifier" />
+    <property name="iconPath" value="${language_descriptor}/icons/anonymousClass.png" />
     <link role="extends" targetNodeId="1068390468198" resolveInfo="ClassConcept" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1174396598233">
       <property name="value" value="anonymous class" />
@@ -2728,6 +2729,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1221737317277">
     <property name="name" value="StaticInitializer" />
     <property name="package" value="classifier" />
+    <property name="iconPath" value="${language_descriptor}/icons/classInitializer.png" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1221737317278">
       <property name="metaClass" value="aggregation" />

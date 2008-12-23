@@ -85,6 +85,9 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229429553362">
               <link role="baseMethodDeclaration" targetNodeId="3.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1230048448794">
+                <link role="variableDeclaration" targetNodeId="1227257103095" resolveInfo="s" />
+              </node>
             </node>
           </node>
         </node>
