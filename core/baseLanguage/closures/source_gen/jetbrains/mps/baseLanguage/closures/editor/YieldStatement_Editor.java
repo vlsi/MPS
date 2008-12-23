@@ -106,7 +106,6 @@ public class YieldStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_6730_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_expression");
   }
 
   private static void setupBasic_Constant_6730_0(EditorCell editorCell, SNode node, EditorContext context) {

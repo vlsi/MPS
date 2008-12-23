@@ -131,7 +131,6 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_1988_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_function");
   }
 
   private static void setupBasic_Constant_1988_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -194,7 +194,6 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_1642_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_resultType");
     FunctionType_addThrows.setCellActions(editorCell, node, context);
   }
 

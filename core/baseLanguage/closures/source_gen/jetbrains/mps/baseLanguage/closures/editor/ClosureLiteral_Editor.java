@@ -170,7 +170,6 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_2648_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_body");
     {
       Style inlineStyle = new Style(editorCell) {
         {
