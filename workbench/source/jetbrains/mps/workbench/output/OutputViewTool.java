@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.AbstractActionWithEmptyIcon;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -149,7 +150,11 @@ public class OutputViewTool extends BaseProjectTool {
   }
 
   public void clear() {
-    myTextArea.setText("");
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        myTextArea.setText("");
+      }
+    });
   }
 
   public JComponent getComponent() {
