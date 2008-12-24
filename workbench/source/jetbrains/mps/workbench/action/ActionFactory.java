@@ -52,6 +52,11 @@ public class ActionFactory {
     Class actionClass = module.getClass(actionClassName);
 
     Method idMethod = null;
+    if (actionClass==null){
+      LOG.warning("Action "+actionClassName+" is not found in module "+moduleNamespace);
+      return null;
+    }
+
     for (Method m : actionClass.getMethods()) {
       if (m.getName().equals(GeneratedAction.getIdMethodName())) {
         idMethod = m;
