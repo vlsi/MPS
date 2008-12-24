@@ -22,9 +22,14 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.logging.*;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class ReferencesTest extends BaseMPSTest {
   private static Logger LOG = Logger.getLogger(ReferencesTest.class);
@@ -32,6 +37,17 @@ public class ReferencesTest extends BaseMPSTest {
   public void testBrokenReferences() {
     IdeMain.setTestMode(true);
     TestMain.configureMPS();
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        new ModuleMaker().make(
+          new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
+          new EmptyProgressIndicator());
+
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      }
+    });
+
 
     final List<String> errors = new ArrayList<String>();
     final List<String> fatals = new ArrayList<String>();
