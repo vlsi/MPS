@@ -2146,5 +2146,9 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230113867585">
+    <property name="name" value="RuntimeHoleType" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+  </node>
 </model>
 

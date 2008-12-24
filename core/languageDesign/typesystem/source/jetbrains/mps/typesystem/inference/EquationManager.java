@@ -68,6 +68,8 @@ public class EquationManager {
   private Map<IWrapper, Set<IWrapperListener>> myWrapperListeners = new HashMap<IWrapper, Set<IWrapperListener>>(64, 0.4f);
   private boolean myCollectConcretes = false;
 
+  private Map<HoleWrapper, InequationSystem> myHolesToInequationSystems = new HashMap<HoleWrapper, InequationSystem>();
+
   private Set<WhenConcreteEntity> myCollectedWhenConcreteEntities = new HashSet<WhenConcreteEntity>();
   private TypeCheckingContext myTypeCheckingContext;
 
@@ -145,6 +147,14 @@ public class EquationManager {
     variables.add(variable);
   }
 
+  InequationSystem getInequationSystem(HoleWrapper holeWrapper) {
+    return myHolesToInequationSystems.get(holeWrapper);
+  }
+
+  void putInequationSystem(HoleWrapper holeWrapper, InequationSystem inequationSystem) {
+    myHolesToInequationSystems.put(holeWrapper, inequationSystem);
+  }
+
 
   public void addInequation(SNode subType, SNode supertype, EquationInfo errorInfo, boolean isWeak, boolean checkOnly) {
     addInequation(NodeWrapper.createWrapperFromNode(subType, this), NodeWrapper.createWrapperFromNode(supertype, this), errorInfo, isWeak, true, checkOnly);
@@ -181,6 +191,18 @@ public class EquationManager {
     isConcrete(subtypeRepresentator);
     boolean subtypeHasNonConcreteVars = !isConcrete(subtypeRepresentator);
     boolean supertypeHasNonConcreteVars = !isConcrete(supertypeRepresentator);
+
+    //holes (should be on top)
+    if (subtypeRepresentator instanceof HoleWrapper) {
+      HoleWrapper subHole = (HoleWrapper) subtypeRepresentator;
+      subHole.getInequationSystem().addSupertype(supertypeRepresentator, isWeak);
+      return;
+    }
+    if (supertypeRepresentator instanceof HoleWrapper) {
+      HoleWrapper superHole = (HoleWrapper) supertypeRepresentator;
+      superHole.getInequationSystem().addSubtype(subtypeRepresentator, isWeak);
+      return;
+    }
 
     //if check only
     if (checkOnly) {
@@ -426,7 +448,7 @@ public class EquationManager {
   /*package*/ boolean isConcrete(IWrapper wrapper) {
     if (wrapper == null) return false;
     if (!(wrapper instanceof NodeWrapper)) return false;
-    if (wrapper.isVariable()) {
+    if (!wrapper.isConcrete()) {
       return false;
     }
     if (!myNonConcreteVars.containsKey(wrapper)) {
@@ -492,6 +514,16 @@ public class EquationManager {
         processEquation(lhsRepresentator, rhsRepresentator, errorInfo);
         return;
       }
+    }
+
+    //holes
+    if (rhsRepresentator instanceof HoleWrapper) {
+      ((HoleWrapper)rhsRepresentator).getInequationSystem().addEquation(lhsRepresentator);
+      return;
+    }
+    if (lhsRepresentator instanceof HoleWrapper) {
+      ((HoleWrapper)lhsRepresentator).getInequationSystem().addEquation(rhsRepresentator);
+      return;
     }
 
     // solve equation
@@ -671,22 +703,6 @@ public class EquationManager {
     error.fireRepresentatorSet(type, this);
   }
 
-  public void clear() {
-    mySubtypesToSupertypesMap.clear();
-    mySupertypesToSubtypesMap.clear();
-    mySubtypesToSupertypesMapStrong.clear();
-    mySupertypesToSubtypesMapStrong.clear();
-    mySubtypesToSupertypesMap_check.clear();
-    mySupertypesToSubtypesMap_check.clear();
-    mySubtypesToSupertypesMapStrong_check.clear();
-    mySupertypesToSubtypesMapStrong_check.clear();
-    myComparableTypesMap.clear();
-    myEquations.clear();
-    myWhenConcreteEntities.clear();
-    myNonConcreteVars.clear();
-    myWrapperListeners.clear();
-  }
-
   private boolean compareWrappers(IWrapper wrapper1, IWrapper wrapper2, EquationInfo errorInfo) {
     if (wrapper1 == wrapper2) return true;
     if (wrapper1 == null) {
@@ -845,40 +861,23 @@ public class EquationManager {
   }
 
   public void solveInequations() {
-    solveInequations(null);
-  }
 
-  public InequationSystem solveInequations(SNode hole) {
-
-    IWrapper holeWrapper = null;
-    SNode holeType = myTypeCheckingContext.getMainContext().get(hole);
-    if (hole != null) {
-      holeWrapper = NodeWrapper.fromNode(holeType, this);
-    }
-
-    eliminateConcretePartsOfInequations(false, holeWrapper);
-    Set<IWrapper> types = eliminateConcretePartsOfInequations(true, holeWrapper);
-
-    InequationSystem inequationSystem = new InequationSystem(this, holeType);
+    eliminateConcretePartsOfInequations(false);
+    Set<IWrapper> types = eliminateConcretePartsOfInequations(true);
 
     ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
     for (IWrapper type : types) {
       if (type == null) continue;
-    //  assert !type.isConcrete();
+      assert !type.isConcrete();
 
       Map<IWrapper, EquationInfo> supertypes = mySubtypesToSupertypesMap.get(type);
       if (supertypes != null) {
         mySubtypesToSupertypesMap.remove(type);
         for (IWrapper supertype : supertypes.keySet()) {
           mySupertypesToSubtypesMap.get(supertype).remove(type);
-          IWrapper holeRepresentatorWrapper = getRepresentatorWrapper(holeWrapper);
-          if (getRepresentatorWrapper(supertype).equals(holeRepresentatorWrapper) || getRepresentatorWrapper(type).equals(holeRepresentatorWrapper)) {
-            inequationSystem.addInequation(holeRepresentatorWrapper.getNode(), supertype.getNode(), false);
-          } else {
             EquationInfo errorInfo = supertypes.get(supertype);
             slicer.beforeInequationTriggeredEquationAdded(type.getNode(), supertype.getNode(), errorInfo);
             addEquation(type, supertype, errorInfo);
-          }
         }
       }
       Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMap.get(type);
@@ -886,14 +885,9 @@ public class EquationManager {
         mySupertypesToSubtypesMap.remove(type);
         for (IWrapper subtype : subtypes.keySet()) {
           mySubtypesToSupertypesMap.get(subtype).remove(type);
-          IWrapper holeRepresentatorWrapper = getRepresentatorWrapper(holeWrapper);
-          if (getRepresentatorWrapper(subtype).equals(holeRepresentatorWrapper) || getRepresentatorWrapper(type).equals(holeRepresentatorWrapper)) {
-            inequationSystem.addInequation(subtype.getNode(), holeRepresentatorWrapper.getNode(), false);
-          } else {
             EquationInfo errorInfo = subtypes.get(subtype);
             slicer.beforeInequationTriggeredEquationAdded(type.getNode(), subtype.getNode(), errorInfo);
             addEquation(type, subtype, errorInfo);
-          }
         }
       }
       Map<IWrapper, EquationInfo> supertypesStrong = mySubtypesToSupertypesMapStrong.get(type);
@@ -901,14 +895,9 @@ public class EquationManager {
         mySubtypesToSupertypesMapStrong.remove(type);
         for (IWrapper supertype : supertypesStrong.keySet()) {
           mySupertypesToSubtypesMapStrong.get(supertype).remove(type);
-          IWrapper holeRepresentatorWrapper = getRepresentatorWrapper(holeWrapper);
-          if (getRepresentatorWrapper(supertype).equals(holeRepresentatorWrapper) || getRepresentatorWrapper(type).equals(holeRepresentatorWrapper)) {
-            inequationSystem.addInequation(holeRepresentatorWrapper.getNode(), supertype.getNode(), true);
-          } else {
             EquationInfo errorInfo = supertypesStrong.get(supertype);
             slicer.beforeInequationTriggeredEquationAdded(type.getNode(), supertype.getNode(), errorInfo);
             addEquation(type, supertype, errorInfo);
-          }
         }
       }
       Map<IWrapper, EquationInfo> subtypesStrong = mySupertypesToSubtypesMapStrong.get(type);
@@ -916,23 +905,17 @@ public class EquationManager {
         mySupertypesToSubtypesMapStrong.remove(type);
         for (IWrapper subtype : subtypesStrong.keySet()) {
           mySubtypesToSupertypesMapStrong.get(subtype).remove(type);
-          IWrapper holeRepresentatorWrapper = getRepresentatorWrapper(holeWrapper);
-          if (getRepresentatorWrapper(subtype).equals(holeRepresentatorWrapper) || getRepresentatorWrapper(type).equals(holeRepresentatorWrapper)) {
-            inequationSystem.addInequation(subtype.getNode(), holeRepresentatorWrapper.getNode(), true);
-          } else {
             EquationInfo errorInfo = subtypesStrong.get(subtype);
             slicer.beforeInequationTriggeredEquationAdded(type.getNode(), subtype.getNode(), errorInfo);
             addEquation(type, subtype, errorInfo);
-          }
         }
       }
     }
 
     processCheckingEquations();
-    return inequationSystem;
   }
 
-  private Set<IWrapper> eliminateConcretePartsOfInequations(boolean shallow, IWrapper holeTypeWrapper) {
+  private Set<IWrapper> eliminateConcretePartsOfInequations(boolean shallow) {
     Set<IWrapper> types = subtypingGraphVertices();
     boolean hasConcreteTypes = true;
     int priority = 0;
@@ -942,20 +925,19 @@ public class EquationManager {
       hasConcreteTypes = false;
       for (IWrapper type : types) {
         if (type == null) continue;
-        if (getRepresentatorWrapper(type).equals(holeTypeWrapper)) continue;
         if (!type.isConcrete()) {
-          typeLessThanVar(type, true, priority, minPriority, shallow, holeTypeWrapper);
-          typeLessThanVar(type, false, priority, minPriority, shallow, holeTypeWrapper);
-          varLessThanType(type, true, priority, minPriority, shallow, holeTypeWrapper);
-          varLessThanType(type, false, priority, minPriority, shallow, holeTypeWrapper);
+          typeLessThanVar(type, true, priority, minPriority, shallow);
+          typeLessThanVar(type, false, priority, minPriority, shallow);
+          varLessThanType(type, true, priority, minPriority, shallow);
+          varLessThanType(type, false, priority, minPriority, shallow);
         } else if ( (shallow && type.isConcrete()) || (!shallow && isConcrete(type)) ) {
-          if (shallow && holeTypeWrapper == null) {
+          if (shallow) {
             hasConcreteTypes = true;
           }
-          hasConcreteTypes = typeLessThanConcrete(type, true, priority, minPriority, shallow, holeTypeWrapper) || hasConcreteTypes;
-          hasConcreteTypes = typeLessThanConcrete(type, false, priority, minPriority, shallow, holeTypeWrapper) || hasConcreteTypes;
-          hasConcreteTypes = concreteLessThanType(type, true, priority, minPriority, shallow, holeTypeWrapper) || hasConcreteTypes;
-          hasConcreteTypes = concreteLessThanType(type, false, priority, minPriority, shallow, holeTypeWrapper) || hasConcreteTypes;
+          hasConcreteTypes = typeLessThanConcrete(type, true, priority, minPriority, shallow) || hasConcreteTypes;
+          hasConcreteTypes = typeLessThanConcrete(type, false, priority, minPriority, shallow) || hasConcreteTypes;
+          hasConcreteTypes = concreteLessThanType(type, true, priority, minPriority, shallow) || hasConcreteTypes;
+          hasConcreteTypes = concreteLessThanType(type, false, priority, minPriority, shallow) || hasConcreteTypes;
         }
       }
       processConcretes();
@@ -980,7 +962,7 @@ public class EquationManager {
     public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo);
   }
 
-  private boolean typeLessThanVar(IWrapper var, boolean isWeak, int priority, int[] minPriority, boolean isShallow, IWrapper holeWrapper) {
+  private boolean typeLessThanVar(IWrapper var, boolean isWeak, int priority, int[] minPriority, boolean isShallow) {
     return typeLessThanThis(var, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         //  T,S <: c => c = lcs(T,S)
@@ -995,10 +977,10 @@ public class EquationManager {
         addEquation(type, otherType,
           errorInfo);
       }
-    }, priority, minPriority, isShallow, holeWrapper);
+    }, priority, minPriority, isShallow);
   }
 
-  private boolean typeLessThanConcrete(IWrapper concreteType, boolean isWeak, int priority, int[] minPriority, boolean isShallow, IWrapper holeWrapper) {
+  private boolean typeLessThanConcrete(IWrapper concreteType, boolean isWeak, int priority, int[] minPriority, boolean isShallow) {
     return typeLessThanThis(concreteType, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         for (IWrapper subtype : concreteSubtypes) {
@@ -1006,10 +988,10 @@ public class EquationManager {
           addInequation(subtype, type, errorInfoMap.get(subtype), isWeak, false);
         }
       }
-    }, priority, minPriority, isShallow, holeWrapper);
+    }, priority, minPriority, isShallow);
   }
 
-  private boolean typeLessThanThis(IWrapper thisType, boolean isWeak, IActionPerformer action, int priority, int[] minPriority, boolean isShallow, IWrapper holeWrapper) {
+  private boolean typeLessThanThis(IWrapper thisType, boolean isWeak, IActionPerformer action, int priority, int[] minPriority, boolean isShallow) {
     final Map<IWrapper, Map<IWrapper, EquationInfo>> supertypesToSubtypesMap;
     final Map<IWrapper, Map<IWrapper, EquationInfo>> subtypesToSupertypesMap;
     if (isWeak) {
@@ -1033,9 +1015,6 @@ public class EquationManager {
     for (IWrapper subtypeNode : new HashSet<IWrapper>(subtypes.keySet())) {
       if (subtypeNode == null) {
         subtypes.remove(subtypeNode);
-        continue;
-      }
-      if (getRepresentatorWrapper(subtypeNode).equals(getRepresentatorWrapper(holeWrapper))) {
         continue;
       }
       int inequationPriority = subtypes.get(subtypeNode).getInequationPriority();
@@ -1064,7 +1043,7 @@ public class EquationManager {
     return true;
   }
 
-  private boolean varLessThanType(IWrapper var, boolean isWeak, int priority, int[] minPriority, boolean isShallow, IWrapper holeWrapper) {
+  private boolean varLessThanType(IWrapper var, boolean isWeak, int priority, int[] minPriority, boolean isShallow) {
     return thisLessThanType(var, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         // c :< T => c = T
@@ -1073,10 +1052,10 @@ public class EquationManager {
         slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), new ArrayList<EquationInfo>(errorInfoMap.values()));
         addEquation(type,  /*concreteSupertypes.iterator().next()*/otherType, errorInfo);
       }
-    }, priority, minPriority, isShallow, holeWrapper);
+    }, priority, minPriority, isShallow);
   }
 
-  private boolean concreteLessThanType(IWrapper concreteType, boolean isWeak, int priority, int[] minPriority, boolean isShallow, IWrapper holeWrapper) {
+  private boolean concreteLessThanType(IWrapper concreteType, boolean isWeak, int priority, int[] minPriority, boolean isShallow) {
     return thisLessThanType(concreteType, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         for (IWrapper supertype : concreteSupertypes) {
@@ -1084,10 +1063,10 @@ public class EquationManager {
           addInequation(type, supertype, errorInfoMap.get(supertype), isWeak, false);
         }
       }
-    }, priority, minPriority, isShallow, holeWrapper);
+    }, priority, minPriority, isShallow);
   }
 
-  private boolean thisLessThanType(IWrapper thisType, boolean isWeak, IActionPerformer actionPerformer, int priority, int[] minPriority, boolean isShallow, IWrapper holeWrapper) {
+  private boolean thisLessThanType(IWrapper thisType, boolean isWeak, IActionPerformer actionPerformer, int priority, int[] minPriority, boolean isShallow) {
     final Map<IWrapper, Map<IWrapper, EquationInfo>> supertypesToSubtypesMap;
     final Map<IWrapper, Map<IWrapper, EquationInfo>> subtypesToSupertypesMap;
     if (isWeak) {
@@ -1110,9 +1089,6 @@ public class EquationManager {
     for (IWrapper supertypeNode : new HashSet<IWrapper>(supertypes.keySet())) {
       if (supertypeNode == null) {
         supertypes.remove(supertypeNode);
-        continue;
-      }
-      if (getRepresentatorWrapper(supertypeNode).equals(getRepresentatorWrapper(holeWrapper))) {
         continue;
       }
       int inequationPriority = supertypes.get(supertypeNode).getInequationPriority();

@@ -18,8 +18,8 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 /**
  * Igor Alshannikov
@@ -68,18 +68,6 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     return null;
   }
 
-  @Override
-  public SNode getActionType(String pattern) {
-    SNode parentNode = getSourceNode();
-    SModelDescriptor sModelDescriptor = AuxilaryRuntimeModel.getDescriptor();
-    SModel auxModel = sModelDescriptor.getSModel();
-    SNode newChild = createChildNode(getParameterObject(), auxModel, pattern);
-    auxModel.addRoot(newChild);
-    SNode type = TypeChecker.getInstance().getTypeOf(newChild);
-    auxModel.removeRoot(newChild);
-    return type;
-  }
-
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
     ConceptDeclaration conceptDeclaration = null;
 
@@ -96,5 +84,16 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
       throw new RuntimeException("Couldn't create child node. Parameter object: " + getParameterObject());
     }
     return NodeFactoryManager.createNode(conceptDeclaration, myCurrentChild, getSourceNode(), model, getScope());
+  }
+
+  public SNode getActionType(String pattern) {
+    SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
+    SNode node = createChildNode(getParameterObject(), auxModel, pattern);
+    if (!node.isRoot()) {
+      auxModel.addRoot(node);
+    }
+    SNode type = TypeChecker.getInstance().getTypeOf(node);
+    auxModel.removeRoot(node);
+    return type;
   }
 }

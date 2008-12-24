@@ -92,10 +92,14 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
 
   public List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
     InequationSystem inequationSystem = getInequationSystem(contextCell);
+
     List<INodeSubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
+    if (inequationSystem == null) return substituteActionList;
+
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     for (INodeSubstituteAction nodeSubstituteAction : substituteActionList) {
-      if (inequationSystem == null || inequationSystem.satisfies(nodeSubstituteAction.getActionType(pattern))) {
+      SNode type = nodeSubstituteAction.getActionType(pattern);
+      if (type != null && inequationSystem.satisfies(type)) {
         result.add(nodeSubstituteAction);
       }
     }

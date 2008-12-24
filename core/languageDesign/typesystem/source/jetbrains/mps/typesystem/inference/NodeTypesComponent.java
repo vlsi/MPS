@@ -88,8 +88,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private ISlicer mySlicer;
 
   private boolean myIsSmartCompletion = false;
-  private SNode mySmartCompletionHole = null;
-  private InequationSystem mySmartCompletionInequationSystem = null;
+  private SNode myHole = null;
+  private HoleWrapper myHoleTypeWrapper = null;
 
   public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myRootNode = rootNode;
@@ -289,13 +289,13 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   public void solveInequationsAndExpandTypes() {
     // solve residual inequations
-    if (myIsSmartCompletion) {
-      mySmartCompletionInequationSystem = myEquationManager.solveInequations(mySmartCompletionHole);
-    } else {
-      myEquationManager.solveInequations();
-      getSlicer().beforeTypesExpanded(myNodesToTypesMap);
-    }
+    myEquationManager.solveInequations();
+    getSlicer().beforeTypesExpanded(myNodesToTypesMap);
 
+    if (myIsSmartCompletion) {
+      myHoleTypeWrapper.getInequationSystem().normalize();
+    }
+    
     // setting expanded types to nodes
     for (Entry<SNode, SNode> contextEntry : new HashSet<Entry<SNode, SNode>>(myNodesToTypesMap.entrySet())) {
       SNode term = contextEntry.getKey();
@@ -332,15 +332,16 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   public InequationSystem computeInequationsForHole(SNode hole) {
     List<SNode> additionalNodes = new ArrayList<SNode>();
     additionalNodes.add(hole);
-    myIsSmartCompletion = true;
-    mySmartCompletionHole = hole;
+
     try {
+      myIsSmartCompletion = true;
+      myHole = hole;
       computeTypesForNode_special(hole.getParent(), null, false, additionalNodes);
-      return mySmartCompletionInequationSystem;
+      return myHoleTypeWrapper.getInequationSystem();
     } finally {
       myIsSmartCompletion = false;
-      mySmartCompletionInequationSystem = null;
-      mySmartCompletionHole = null;
+      myHoleTypeWrapper = null;
+      myHole = null;
     }
   }
 
@@ -391,6 +392,10 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
     frontier.add(node);
     frontier.addAll(additionalNodes);
+    if (myIsSmartCompletion) {
+      myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager);
+      myNodesToTypesMap.put(myHole, myHoleTypeWrapper.getNode());
+    }
     while (!(frontier.isEmpty())) {
       for (SNode sNode : frontier) {
         if (myFullyCheckedNodes.contains(sNode)) {

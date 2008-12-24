@@ -1,11 +1,13 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
+import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,74 +17,115 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class InequationSystem {
-  private SNode myHoleType;
+  private HoleWrapper myHoleType;
   private EquationManager myEquationManager;
 
-  public InequationSystem(EquationManager equationManager, SNode holeType) {
+  public InequationSystem(EquationManager equationManager, HoleWrapper holeType) {
     myEquationManager = equationManager;
     myHoleType = holeType;
   }
 
-  private Map<SNode, Set<SNode>> mySubtypesToSupertypesMap = new HashMap<SNode, Set<SNode>>();
-  private Map<SNode, Set<SNode>> mySupertypesToSubtypesMap = new HashMap<SNode, Set<SNode>>();
-  private Map<SNode, Set<SNode>> mySubtypesToSupertypesMapStrong = new HashMap<SNode, Set<SNode>>();
-  private Map<SNode, Set<SNode>> mySupertypesToSubtypesMapStrong = new HashMap<SNode, Set<SNode>>();
+  private Set<IWrapper> myEquals = new HashSet<IWrapper>();
+  private Set<IWrapper> mySubtypes = new HashSet<IWrapper>();
+  private Set<IWrapper> myStrongSubtypes = new HashSet<IWrapper>();
+  private Set<IWrapper> mySupertypes = new HashSet<IWrapper>();
+  private Set<IWrapper> myStrongSupertypes = new HashSet<IWrapper>();
 
-  public void addInequation(SNode subtype, SNode supertype, boolean strong) {
-    Map<SNode, Set<SNode>> subtypesToSupertypes = strong ? mySubtypesToSupertypesMapStrong : mySubtypesToSupertypesMap;
-    Map<SNode, Set<SNode>> supertypesToSubtypes = strong ? mySupertypesToSubtypesMapStrong : mySupertypesToSubtypesMap;
+  public void addEquation(IWrapper equalWrapper) {
+    myEquals.add(equalWrapper);
+  }
 
-    Set<SNode> supertypes = subtypesToSupertypes.get(subtype);
-    if (supertypes == null) {
-      supertypes = new HashSet<SNode>();
-      subtypesToSupertypes.put(subtype, supertypes);
+  public void addSupertype(IWrapper supertype, boolean isWeak) {
+    if (isWeak) {
+      mySupertypes.add(supertype);
+    } else {
+      myStrongSupertypes.add(supertype);
     }
-    supertypes.add(supertype);
+  }
 
-    Set<SNode> subtypes = supertypesToSubtypes.get(supertype);
-    if (subtypes == null) {
-      subtypes = new HashSet<SNode>();
-      supertypesToSubtypes.put(supertype, subtypes);
+  public void addSubtype(IWrapper subtype, boolean isWeak) {
+    if (isWeak) {
+      mySubtypes.add(subtype);
+    } else {
+      myStrongSubtypes.add(subtype);
     }
   }
 
   public boolean satisfies(SNode type) {
-    if (!satisfiesStrongOrWeak(type, false)) return false;
-    if (!satisfiesStrongOrWeak(type, true)) return false;
-    return true;
-  }
-
-  private boolean satisfiesStrongOrWeak(SNode type, boolean isStrong) {
-    NodeWrapper wrapperOfMyNode = NodeWrapper.fromNode(myHoleType, myEquationManager);
     SubtypingManager subtypingManager = myEquationManager.getTypeCheckingContext().getSubtypingManager();
-    Map<SNode, Set<SNode>> subtypesToSupertypesMap = isStrong ? mySubtypesToSupertypesMapStrong :  mySubtypesToSupertypesMap;
-    Map<SNode, Set<SNode>> supertypesToSubtypesMap = isStrong ? mySupertypesToSubtypesMapStrong :  mySupertypesToSubtypesMap;
-
-    for (SNode subtype : subtypesToSupertypesMap.keySet()) {
-      if (wrapperOfMyNode.equals(NodeWrapper.fromNode(subtype, myEquationManager))) {
-        for (SNode supertype : subtypesToSupertypesMap.get(subtype)) {
-          if (wrapperOfMyNode.equals(NodeWrapper.fromNode(supertype, myEquationManager))) {
-            continue;
-          }
-          if (!subtypingManager.isSubtype(type, supertype)) {
-            return false;
-          }
-        }
+    IWrapper typeWrapper = NodeWrapper.fromNode(type, myEquationManager);
+    for (IWrapper w : myEquals) {
+      if (!MatchingUtil.matchNodes(w.getNode(), type)) {
+        return false;
       }
     }
-
-    for (SNode supertype : supertypesToSubtypesMap.keySet()) {
-      if (wrapperOfMyNode.equals(NodeWrapper.fromNode(supertype, myEquationManager))) {
-        for (SNode subtype : supertypesToSubtypesMap.get(supertype)) {
-          if (wrapperOfMyNode.equals(NodeWrapper.fromNode(subtype, myEquationManager))) {
-            continue;
-          }
-          if (!subtypingManager.isSubtype(subtype, type)) {
-            return false;
-          }
-        }
+    for (IWrapper supertype : mySupertypes) {
+      if (!subtypingManager.isSubtype(typeWrapper, supertype, null, null, true)) {
+        return false;
+      }
+    }
+    for (IWrapper supertype : myStrongSupertypes) {
+      if (!subtypingManager.isSubtype(typeWrapper, supertype, null, null, false)) {
+        return false;
+      }
+    }
+    for (IWrapper subtype : mySubtypes) {
+      if (!subtypingManager.isSubtype(subtype, typeWrapper, null, null, true)) {
+        return false;
+      }
+    }
+    for (IWrapper subtype : myStrongSubtypes) {
+      if (!subtypingManager.isSubtype(subtype, typeWrapper, null, null, false)) {
+        return false;
       }
     }
     return true;
   }
+
+  public void normalize() {
+    SModel runtimeTypesModel = myEquationManager.getTypeCheckingContext().getRuntimeTypesModel();
+
+    {
+      HashSet<IWrapper> wrappers = new HashSet<IWrapper>(myEquals);
+      myEquals.clear();
+      for (IWrapper wrapper : wrappers) {
+        myEquals.add(myEquationManager.expandWrapper(null, wrapper, runtimeTypesModel));
+      }
+    }
+
+    {
+      HashSet<IWrapper> wrappers = new HashSet<IWrapper>(mySubtypes);
+      mySubtypes.clear();
+      for (IWrapper wrapper : wrappers) {
+        mySubtypes.add(myEquationManager.expandWrapper(null, wrapper, runtimeTypesModel));
+      }
+    }
+
+    {
+      HashSet<IWrapper> wrappers = new HashSet<IWrapper>(mySupertypes);
+      mySupertypes.clear();
+      for (IWrapper wrapper : wrappers) {
+        mySupertypes.add(myEquationManager.expandWrapper(null, wrapper, runtimeTypesModel));
+      }
+    }
+
+    {
+      HashSet<IWrapper> wrappers = new HashSet<IWrapper>(myStrongSubtypes);
+      myStrongSubtypes.clear();
+      for (IWrapper wrapper : wrappers) {
+        myStrongSubtypes.add(myEquationManager.expandWrapper(null, wrapper, runtimeTypesModel));
+      }
+    }
+
+    {
+      HashSet<IWrapper> wrappers = new HashSet<IWrapper>(myStrongSupertypes);
+      myStrongSupertypes.clear();
+      for (IWrapper wrapper : wrappers) {
+        myStrongSupertypes.add(myEquationManager.expandWrapper(null, wrapper, runtimeTypesModel));
+      }
+    }
+
+  }
+
+
 }

@@ -27,12 +27,16 @@ import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.typesystem.inference.InequationSystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 
 import java.util.List;
 
@@ -81,44 +85,34 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     });
   }
 
-  @Override
+  public List<INodeSubstituteAction> createActions() {
+    List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(myParentNode, myCurrentChild,
+            (AbstractConceptDeclaration) myLinkDeclaration.getTarget(),
+            createDefaultNodeSetter(),
+            getOperationContext());
+    return actions;
+  }
+
   protected InequationSystem getInequationSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
     SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(myParentNode.getContainingRoot()), mapping).get(0);
-    SModel auxModel = nodeCopyRoot.getModel();
     if (!nodeCopyRoot.isRoot()) {
       auxModel.addRoot(nodeCopyRoot);
     }
-    String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
-    AbstractConceptDeclaration target = myLinkDeclaration.getTarget();
 
     SNode hole = null;
-    if (myCurrentChild == null) {
-      if (target instanceof ConceptDeclaration) {
-        hole = SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) target, auxModel).getNode();
-      } else {
-        hole = new SNode(auxModel, "jetbrains.mps.lang.core.BaseConcept");
-      }
-    } else {
+    if (myCurrentChild != null) {
       hole = mapping.get(myCurrentChild);
-    }
-
-    if (myCurrentChild == null) {
-      SNode parentCopy = mapping.get(myParentNode);
-      parentCopy.addChild(role, hole);
+    } else {
+      SNode parent = mapping.get(myParentNode);
+      String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
+      hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
+      parent.setChild(role, hole);
     }
     InequationSystem inequationsForHole = TypeChecker.getInstance().getInequationsForHole(hole);
     auxModel.removeRoot(nodeCopyRoot);
-
     return inequationsForHole;
-  }
-
-  public List<INodeSubstituteAction> createActions() {
-    List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(myParentNode, myCurrentChild,
-      (AbstractConceptDeclaration) myLinkDeclaration.getTarget(),
-      createDefaultNodeSetter(),
-      getOperationContext());
-    return actions;
   }
 
   protected DefaultChildNodeSetter createDefaultNodeSetter() {
