@@ -71,7 +71,7 @@ public class ShowMappingsPartitioningAction extends BaseAction {
     if (partitioner.hasConflictingPriorityRules()) {
       // message view
       messagesView.openToolLater(true);
-      messagesView.add(new Message(MessageKind.ERROR, "Conflicting mapping priority rules encountered:"));
+      messagesView.add(new Message(MessageKind.ERROR, "Conflicting mapping priority rules encountered:"),ShowMappingsPartitioningAction.class);
       List<Pair<MappingPriorityRule, String>> messagesFull = GenerationPartitioningUtil.toStrings(partitioner.getConflictingPriorityRules(), true);
       for (Pair<MappingPriorityRule, String> message : messagesFull) {
         MappingPriorityRule rule = message.first;
@@ -79,7 +79,7 @@ public class ShowMappingsPartitioningAction extends BaseAction {
         GeneratorDescriptor generatorDescriptor = rule.findParent(GeneratorDescriptor.class);
         Generator generatorModule = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorDescriptor.getGeneratorUID());
 
-        messagesView.add(new Message(MessageKind.ERROR, text, generatorModule));
+        messagesView.add(new Message(MessageKind.ERROR, text, generatorModule),ShowMappingsPartitioningAction.class);
       }
       messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
 

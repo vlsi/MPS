@@ -27,23 +27,19 @@ public class Message {
   private Throwable myException;
   private long myCreationTime = System.currentTimeMillis();
 
-  public Message(MessageKind kind, String text, Object hintObject) {
+  public Message(MessageKind kind, String text, Object hintObject, Throwable exception) {
     myKind = kind;
     myText = text;
     myHintObject = hintObject;
+    myException = exception;
   }
 
-  public Message(MessageKind kind, String text, Object hintObject, Throwable exception) {
-    this(kind, text, hintObject);
-    myException = exception;
+  public Message(MessageKind kind, String text, Object hintObject) {
+    this(kind, text, hintObject,null);
   }
 
   public Message(MessageKind kind, String text) {
     this(kind, text, null);
-  }
-
-  public Message(String text) {
-    this(MessageKind.INFORMATION, text);
   }
 
   public MessageKind getKind() {

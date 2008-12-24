@@ -230,7 +230,7 @@ public class RefactoringProcessor {
               operationContext,
               IGenerationType.FILES,
               progressIndicator,
-              new DefaultMessageHandler(operationContext.getMPSProject())
+              new DefaultMessageHandler(operationContext.getMPSProject(),RefactoringProcessor.class)
             );
           } finally {
             SNode.setNodeMemeberAccessModifier(null);

@@ -50,6 +50,9 @@ import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+
 @State(
   name = "MessagesViewTool",
   storages = {
@@ -386,6 +389,14 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   public void add(final Message message) {
+    add(message,(String)null);
+  }
+
+  public void add(final Message message,@NotNull Class poster) {
+    add(message,poster.getSimpleName());
+  }
+
+  public void add(final Message message,@Nullable String poster) {
     if (IdeMain.isTestMode()) {
       return;
     }

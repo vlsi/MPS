@@ -24,9 +24,11 @@ import jetbrains.mps.project.MPSProject;
  */
 public class DefaultMessageHandler implements IMessageHandler {
   private MPSProject myProject;
+  private String myPoster;
 
-  public DefaultMessageHandler(MPSProject project) {
+  public DefaultMessageHandler(MPSProject project,Class poster) {
     myProject = project;
+    myPoster = poster.getSimpleName();
   }
 
 

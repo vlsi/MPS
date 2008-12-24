@@ -151,7 +151,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
         ModuleContext moduleContext = ModuleContext.create(model, operationContext.getMPSProject(), false);
         if (moduleContext == null) {
           MessagesViewTool messagesTool = operationContext.getProject().getComponent(MessagesViewTool.class);
-          messagesTool.add(new Message(MessageKind.WARNING, "Model " + model.getLongName() + " won't be generated"));
+          messagesTool.add(new Message(MessageKind.WARNING, "Model " + model.getLongName() + " won't be generated",GeneratorManager.class));
           continue;
         }
         modelsWithContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
@@ -203,7 +203,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
     }
 
     final IOperationContext invocationContext = inputModels.get(0).o2;
-    final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getMPSProject());
+    final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getMPSProject(),GeneratorManager.class);
 
     // confirm saving transient models
     final boolean saveTransientModels;
