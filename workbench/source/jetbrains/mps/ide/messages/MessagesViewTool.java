@@ -535,7 +535,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     }
   }
 
-  private class PostedMessage extends Pair<Message,String>{
+  public class PostedMessage extends Pair<Message,String>{
     public PostedMessage(Message first, String second) {
       super(first, second);
     }
