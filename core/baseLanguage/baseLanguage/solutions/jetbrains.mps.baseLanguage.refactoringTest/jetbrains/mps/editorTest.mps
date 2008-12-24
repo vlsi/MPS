@@ -410,78 +410,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1230058635811">
-    <property name="name" value="IntentionTest" />
-    <property name="package" value="intellijeyInputUtil" />
-    <node role="testMethods" type="jetbrains.mps.lang.test.structure.EditorTestMethod" id="1230058635812">
-      <property name="name" value="editorTest" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635813" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635814">
-        <node role="statement" type="jetbrains.mps.lang.test.structure.SelectCellStatement" id="1230058635815">
-          <node role="arg" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1230058635816">
-            <link role="declaration" targetNodeId="1230058635832" resolveInfo="before" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.lang.test.structure.InvokeIntentionStatement" id="1230058635817">
-          <link role="intention" targetNodeId="5.1223648378225" resolveInfo="DeprecatedJavaDoc" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230058635818">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1230058635819">
-              <node role="expression" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1230058635820">
-                <link role="declaration" targetNodeId="1230058635832" resolveInfo="before" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230058635821">
-              <link role="baseMethodDeclaration" targetNodeId="2.1227009788555" resolveInfo="getNode" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1230058635822">
-          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1230058635823">
-            <link role="declaration" targetNodeId="1230058635841" resolveInfo="finish" />
-          </node>
-        </node>
-      </node>
-      <node role="nodeToEdit" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1230058635824">
-        <link role="declaration" targetNodeId="1230058635833" resolveInfo="test" />
-      </node>
-    </node>
-    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1230058635825">
-      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1230058635826">
-        <property name="name" value="Clazz" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230058635827" />
-        <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1230058635828">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635829" />
-          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230058635830" />
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635831" />
-          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestCellAnnotation" id="1230058635832">
-            <property name="cellId" value="property_name" />
-            <property name="caretPosition" value="0" />
-            <property name="name" value="before" />
-          </node>
-        </node>
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1230058635833">
-          <property name="name" value="test" />
-        </node>
-      </node>
-    </node>
-    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1230058635834">
-      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1230058635835">
-        <property name="name" value="Clazz" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230058635836" />
-        <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1230058635837">
-          <property name="isDeprecated" value="true" />
-          <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635838" />
-          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230058635839" />
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635840" />
-          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestCellAnnotation" id="1230058635841">
-            <property name="cellId" value="Collection_5292_0" />
-            <property name="caretPosition" value="0" />
-            <property name="name" value="finish" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635842">
     <property name="name" value="RemoveNodeTest" />
     <property name="package" value="intellijeyInputUtil" />
@@ -725,6 +653,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230119686657">
     <property name="name" value="SelectTwoCells" />
+    <property name="package" value="selection" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230119716735">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230119716736" />
@@ -767,6 +696,42 @@
           <property name="modifiers" value="shift" />
           <property name="keycode" value="VK_RIGHT" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230132483495">
+    <property name="package" value="intellijeyInputUtil" />
+    <property name="name" value="IntentionTest" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1230132506154">
+      <property name="name" value="Clazz" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230132506155" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1230132506156">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230132506157" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230132506158" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230132506159" />
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1230137161024">
+          <property name="caretPosition" value="0" />
+          <property name="cellId" value="property_name" />
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1230132540710">
+      <property name="name" value="Clazz" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230132540711" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1230132540712">
+        <property name="isDeprecated" value="true" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230132540713" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230132540714" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230132540715" />
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1230137499217">
+          <property name="caretPosition" value="0" />
+          <property name="cellId" value="Collection_5292_0" />
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230132588282">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.InvokeIntentionStatement" id="1230132588987">
+        <link role="intention" targetNodeId="5.1223648378225" resolveInfo="DeprecatedJavaDoc" />
       </node>
     </node>
   </node>

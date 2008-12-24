@@ -5,7 +5,6 @@ package jetbrains.mps.lang.test.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.intentions.structure.IntentionDeclaration;
-import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -13,7 +12,6 @@ import jetbrains.mps.project.GlobalScope;
 public class InvokeIntentionStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.test.structure.InvokeIntentionStatement";
   public static final String INTENTION = "intention";
-  public static final String PARAMETER = "parameter";
 
   public InvokeIntentionStatement(SNode node) {
     super(node);
@@ -25,14 +23,6 @@ public class InvokeIntentionStatement extends Statement {
 
   public void setIntention(IntentionDeclaration node) {
     super.setReferent(InvokeIntentionStatement.INTENTION, node);
-  }
-
-  public Expression getParameter() {
-    return (Expression)this.getChild(InvokeIntentionStatement.PARAMETER);
-  }
-
-  public void setParameter(Expression node) {
-    super.setChild(InvokeIntentionStatement.PARAMETER, node);
   }
 
 

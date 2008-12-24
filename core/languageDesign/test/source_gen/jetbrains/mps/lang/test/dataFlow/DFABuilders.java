@@ -9,6 +9,7 @@ public class DFABuilders extends DataFlowBuilders {
 
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.lang.test.structure.AssertMatch", new AssertMatch_DataFlow());
+    manager.register("jetbrains.mps.lang.test.structure.EditorOperation", new EditorOperation_DataFlow());
   }
 
 }

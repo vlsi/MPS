@@ -4,29 +4,23 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
-import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.lang.test.runtime.CellReference;
+import jetbrains.mps.ide.IEditor;
 
 public class IntentionTest_Test extends BaseTransformationTest {
 
   @Test()
-  public void test_editorTest() throws Throwable {
+  public void test_IntentionTest() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
-    this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_editorTest", false);
+    this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
-  public static class TestBody extends BaseTestBody {
+  public static class TestBody extends BaseEditorTestBody {
 
-    public void test_editorTest() throws Exception {
-      this.addNodeById("1230058635825");
-      this.addNodeById("1230058635834");
-      IEditor editor = BaseEditorTestBody.openEditor(this.myProject, this.myModel, this.getNodeById("1230058635826"));
-      BaseEditorTestBody.selectCell(editor, new CellReference(this.getNodeById("1230058635828"), this.getRealNodeById("1230058635832")));
-      BaseEditorTestBody.invokeIntention("jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention", editor, (new CellReference(this.getNodeById("1230058635828"), this.getRealNodeById("1230058635832"))).getNode());
-      BaseEditorTestBody.assertEditor(editor, new CellReference(this.getNodeById("1230058635837"), this.getRealNodeById("1230058635841")));
-      BaseEditorTestBody.closeEditor(this.myProject, this.getNodeById("1230058635826"));
+    public void testMethod() throws Exception {
+      IEditor editor = this.initEditor("1230132506154", "1230132540710");
+      BaseEditorTestBody.invokeIntention("jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention", editor, this.myStart.getNode());
+      this.finishTest();
     }
 
 }

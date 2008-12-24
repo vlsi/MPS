@@ -75,5 +75,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1230135277005">
+    <property name="package" value="editor" />
+    <link role="conceptDeclaration" targetNodeId="1.1227003183644" resolveInfo="EditorOperation" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1230135277006">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230135277007" />
+    </node>
+  </node>
 </model>
 

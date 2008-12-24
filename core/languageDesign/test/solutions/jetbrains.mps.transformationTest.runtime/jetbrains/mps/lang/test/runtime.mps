@@ -3133,14 +3133,14 @@
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1229266983755">
       <property name="name" value="myStart" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1229266983756" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1230134050160" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229266991696">
         <link role="classifier" targetNodeId="1226949310940" resolveInfo="CellReference" />
       </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1229267001166">
       <property name="name" value="myFinish" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1229267001167" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1230134054848" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229267005419">
         <link role="classifier" targetNodeId="1226949310940" resolveInfo="CellReference" />
       </node>
@@ -3717,55 +3717,6 @@
                           <link role="variableDeclaration" targetNodeId="1230128938415" resolveInfo="stroke" />
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230131886190">
-                          <link role="baseMethodDeclaration" targetNodeId="28.~AWTKeyStroke.getKeyChar():char" resolveInfo="getKeyChar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230132086890">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230132086891">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230132086892">
-                  <link role="variableDeclaration" targetNodeId="1228935542656" resolveInfo="editorComponent" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230132086893">
-                  <link role="baseMethodDeclaration" targetNodeId="27.~EditorComponent.processKeyTyped(java.awt.event.KeyEvent):void" resolveInfo="processKeyTyped" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1230132086894">
-                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1230132086895">
-                      <link role="baseMethodDeclaration" targetNodeId="29.~KeyEvent.&lt;init&gt;(java.awt.Component,int,long,int,int,char)" resolveInfo="KeyEvent" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230132086896">
-                        <link role="variableDeclaration" targetNodeId="1228935542656" resolveInfo="editorComponent" />
-                      </node>
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1230132086897">
-                        <link role="classifier" targetNodeId="29.~KeyEvent" resolveInfo="KeyEvent" />
-                        <link role="variableDeclaration" targetNodeId="29.~KeyEvent.KEY_TYPED" resolveInfo="KEY_TYPED" />
-                      </node>
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1230132086898">
-                        <property name="value" value="0" />
-                      </node>
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230132086899">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230132086900">
-                          <link role="variableDeclaration" targetNodeId="1230128938415" resolveInfo="stroke" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230132086901">
-                          <link role="baseMethodDeclaration" targetNodeId="28.~AWTKeyStroke.getModifiers():int" resolveInfo="getModifiers" />
-                        </node>
-                      </node>
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230132086902">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230132086903">
-                          <link role="variableDeclaration" targetNodeId="1230128938415" resolveInfo="stroke" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230132086904">
-                          <link role="baseMethodDeclaration" targetNodeId="28.~AWTKeyStroke.getKeyCode():int" resolveInfo="getKeyCode" />
-                        </node>
-                      </node>
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230132086905">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230132086906">
-                          <link role="variableDeclaration" targetNodeId="1230128938415" resolveInfo="stroke" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230132086907">
                           <link role="baseMethodDeclaration" targetNodeId="28.~AWTKeyStroke.getKeyChar():char" resolveInfo="getKeyChar" />
                         </node>
                       </node>

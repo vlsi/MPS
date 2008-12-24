@@ -504,12 +504,6 @@
     <property name="name" value="InvokeIntentionStatement" />
     <property name="package" value="editor" />
     <link role="extends" targetNodeId="7.1068580123157" resolveInfo="Statement" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225990836098">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="parameter" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="7.1068431790191" resolveInfo="Expression" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225989811227">
       <property name="metaClass" value="reference" />
       <property name="role" value="intention" />
