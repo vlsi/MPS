@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.browser;
 
+import com.intellij.ide.BrowserUtil;
+
 import javax.swing.JComponent;
 import javax.swing.JEditorPane;
 import javax.swing.event.HyperlinkEvent;

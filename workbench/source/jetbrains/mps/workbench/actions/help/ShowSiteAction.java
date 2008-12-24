@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.actions.help;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.browser.BrowserUtil;
+import com.intellij.ide.BrowserUtil;
 import jetbrains.mps.workbench.action.BaseAction;
 
 public abstract class ShowSiteAction extends BaseAction {
