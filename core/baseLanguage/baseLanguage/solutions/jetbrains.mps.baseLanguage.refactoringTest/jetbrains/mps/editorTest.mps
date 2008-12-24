@@ -32,6 +32,7 @@
   <import index="9" modelUID="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635633">
     <property name="name" value="AnonymousClassTest" />
+    <property name="package" value="bugTest" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230058635634">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635635" />
@@ -110,6 +111,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635669">
     <property name="name" value="AssignmentTest" />
+    <property name="package" value="simple" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230058635670">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635671" />
@@ -155,6 +157,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635689">
     <property name="name" value="BadCodeInTheLeftTest" />
+    <property name="package" value="intellijeyInputUtil" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230058635690">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635691" />
@@ -211,6 +214,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635714">
     <property name="name" value="BadCodeTest" />
+    <property name="package" value="intellijeyInputUtil" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230058635715">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635716" />
@@ -262,6 +266,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635737">
     <property name="name" value="EqualsTest" />
+    <property name="package" value="intellijeyInputUtil" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230058635738">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635739" />
@@ -319,6 +324,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635763">
     <property name="name" value="ForEachTest" />
+    <property name="package" value="intellijeyInputUtil" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230058635764">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635765" />
@@ -356,6 +362,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635795">
     <property name="name" value="ForTest" />
+    <property name="package" value="intellijeyInputUtil" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230058635796">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635797" />
@@ -393,6 +400,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1230058635811">
     <property name="name" value="IntentionTest" />
+    <property name="package" value="intellijeyInputUtil" />
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.EditorTestMethod" id="1230058635812">
       <property name="name" value="editorTest" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635813" />
@@ -464,6 +472,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635842">
     <property name="name" value="RemoveNodeTest" />
+    <property name="package" value="intellijeyInputUtil" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230058635843">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635844" />
@@ -518,6 +527,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635866">
     <property name="name" value="ReturnNullTest" />
+    <property name="package" value="bugTest" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230058635867">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230058635868">
@@ -556,6 +566,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635881">
     <property name="name" value="TrueTest" />
+    <property name="package" value="simple" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230058635882">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635883" />
@@ -591,6 +602,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1230058635896">
     <property name="name" value="TwoMullTwo" />
+    <property name="package" value="intellijeyInputUtil" />
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.EditorTestMethod" id="1230058635897">
       <property name="name" value="editorTest" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635898" />
@@ -661,6 +673,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635925">
     <property name="name" value="TwoPlusTwo" />
+    <property name="package" value="simple" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230058635926">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635927" />
