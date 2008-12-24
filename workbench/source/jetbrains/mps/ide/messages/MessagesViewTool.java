@@ -414,15 +414,16 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
           }
         }
 
+        PostedMessage postedMessage = new PostedMessage(message, poster);
         if (isVisible(message)) {
-          myModel.addElement(message);
+          myModel.addElement(postedMessage);
           int index = myModel.size() - 1;
           myList.getSelectionModel().setSelectionInterval(index, index);
           if (messages == 0) {
             myList.ensureIndexIsVisible(index);
           }
         }
-        myMessages.add(new PostedMessage(message,poster));
+        myMessages.add(postedMessage);
 
         int width = getMessageWidth(message);
         if (width > myList.getFixedCellWidth()) {
