@@ -5,6 +5,9 @@
   <language namespace="8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
+  <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -20,6 +23,15 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <maxImportIndex value="9" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="-1" />
@@ -516,11 +528,10 @@
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1230058635862" />
       </node>
     </node>
-    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635863">
-      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1230058635864">
-        <node role="keyCodes" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1230058635865">
-          <link role="classifier" targetNodeId="4.~KeyEvent" resolveInfo="KeyEvent" />
-          <link role="variableDeclaration" targetNodeId="4.~KeyEvent.VK_BACK_SPACE" resolveInfo="VK_BACK_SPACE" />
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230126822439">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1230126822440">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1230127396447">
+          <property name="keycode" value="VK_BACK_SPACE" />
         </node>
       </node>
     </node>
@@ -709,6 +720,53 @@
     <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635940">
       <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1230058635941">
         <property name="keys" value="2+2" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230119686657">
+    <property name="name" value="SelectTwoCells" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230119716735">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230119716736" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230119716737" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230119716738">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230119731920">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1230119731921">
+            <property name="value" value="3" />
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1230119764499">
+              <property name="caretPosition" value="0" />
+              <property name="cellId" value="property_value" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230119724125">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230119724126" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230119724127" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230119724128">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230119954132">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1230119954133">
+            <property name="value" value="3" />
+          </node>
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1230130246961">
+            <property name="caretPosition" value="0" />
+            <property name="cellId" value="Collection_9211_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230119788157">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1230130064519">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1230130064520">
+          <property name="modifiers" value="shift" />
+          <property name="keycode" value="VK_RIGHT" />
+        </node>
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1230130082772">
+          <property name="modifiers" value="shift" />
+          <property name="keycode" value="VK_RIGHT" />
+        </node>
       </node>
     </node>
   </node>

@@ -48,7 +48,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <maxImportIndex value="36" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
+  <maxImportIndex value="37" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
@@ -77,6 +79,8 @@
   <import index="34" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="-1" />
   <import index="35" modelUID="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)" version="-1" />
   <import index="36" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="37" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="-1" />
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1210261200088">
     <property name="name" value="main" />
     <property name="topPriorityGroup" value="true" />
@@ -471,7 +475,29 @@
                     </node>
                   </node>
                 </node>
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1228936386487" />
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1230128797671" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1230128803485">
+      <link role="applicableConcept" targetNodeId="2v.1207318242772" resolveInfo="KeyMapKeystroke" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1230128827065">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230128836927">
+          <property name="value" value="str" />
+          <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1230128844193">
+            <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1230128844194">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230128844195">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230128855681">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230128857026">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1230128855682" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230128860561">
+                      <link role="baseMethodDeclaration" targetNodeId="37.1213877278942" resolveInfo="getKeyStroke" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

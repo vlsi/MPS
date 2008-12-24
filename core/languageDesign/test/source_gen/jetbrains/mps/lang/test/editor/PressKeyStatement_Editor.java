@@ -57,7 +57,7 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList_3031_0(EditorContext context, SNode node) {
     if (this.myListHandler_3031_0 == null) {
-      this.myListHandler_3031_0 = new PressKeyStatement_Editor.keyCodesListHandler_3031_0(node, "keyCodes", context);
+      this.myListHandler_3031_0 = new PressKeyStatement_Editor.keyStrokesListHandler_3031_0(node, "keyStrokes", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_3031_0.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_RefNodeList_3031_0(editorCell, node, context);
@@ -79,7 +79,7 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_3031_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_keyCodes");
+    editorCell.setCellId("refNodeList_keyStrokes");
   }
 
   private static void setupBasic_Constant_3031_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -95,9 +95,9 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_3031_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class keyCodesListHandler_3031_0 extends RefNodeListHandler {
+  public static class keyStrokesListHandler_3031_0 extends RefNodeListHandler {
 
-    public keyCodesListHandler_3031_0(SNode ownerNode, String childRole, EditorContext context) {
+    public keyStrokesListHandler_3031_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

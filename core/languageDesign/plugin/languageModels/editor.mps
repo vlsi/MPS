@@ -54,7 +54,7 @@
   <import index="24" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="25" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="-1" />
   <import index="28" modelUID="f:java_stub#jetbrains.mps.lang.structure.editor(jetbrains.mps.lang.structure.editor@java_stub)" version="-1" />
-  <import index="31" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
+  <import index="31" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1203083734526">
     <property name="package" value="Actions.Action" />
     <link role="conceptDeclaration" targetNodeId="1.1203071646776" resolveInfo="Action" />
@@ -1491,7 +1491,7 @@
     <property name="package" value="Actions.Action" />
     <link role="conceptDeclaration" targetNodeId="1.1207318242772" resolveInfo="KeyMapKeystroke" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1207318325522">
-      <property name="usesBraces" value="true" />
+      <property name="usesBraces" value="false" />
       <property name="name" value="nodeBox" />
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1207318325523">
@@ -1655,6 +1655,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1207318325566">
         <property name="text" value="&gt;" />
         <link role="styleClass" targetNodeId="17.1215091331565" resolveInfo="RightBrace" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1230128415049">
+          <property name="value" value="0.0" />
+        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995669">
           <property name="flag" value="false" />
         </node>

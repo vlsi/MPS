@@ -16,6 +16,7 @@ import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior;
+import jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -185,6 +186,10 @@ public class QueriesGenerated {
     }
   }
 
+  public static Object propertyMacro_GetPropertyValue_1230128844194(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return KeyMapKeystroke_Behavior.call_getKeyStroke_1213877278942(_context.getNode());
+  }
+
   public static Object referenceMacro_GetReferent_1221567898656(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(_context.getNode()));
   }
@@ -310,7 +315,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1228936386481(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "keyCodes", true);
+    return SLinkOperations.getTargets(_context.getNode(), "keyStrokes", true);
   }
 
   public static Iterable sourceNodesQuery_1229268854954(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

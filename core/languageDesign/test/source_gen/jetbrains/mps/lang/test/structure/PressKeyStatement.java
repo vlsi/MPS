@@ -5,7 +5,7 @@ package jetbrains.mps.lang.test.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.lang.plugin.structure.KeyMapKeystroke;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -13,30 +13,30 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PressKeyStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.test.structure.PressKeyStatement";
-  public static final String KEY_CODES = "keyCodes";
+  public static final String KEY_STROKES = "keyStrokes";
 
   public PressKeyStatement(SNode node) {
     super(node);
   }
 
-  public int getKeyCodesesCount() {
-    return this.getChildCount(PressKeyStatement.KEY_CODES);
+  public int getKeyStrokesesCount() {
+    return this.getChildCount(PressKeyStatement.KEY_STROKES);
   }
 
-  public Iterator<Expression> keyCodeses() {
-    return this.children(PressKeyStatement.KEY_CODES);
+  public Iterator<KeyMapKeystroke> keyStrokeses() {
+    return this.children(PressKeyStatement.KEY_STROKES);
   }
 
-  public List<Expression> getKeyCodeses() {
-    return this.getChildren(PressKeyStatement.KEY_CODES);
+  public List<KeyMapKeystroke> getKeyStrokeses() {
+    return this.getChildren(PressKeyStatement.KEY_STROKES);
   }
 
-  public void addKeyCodes(Expression node) {
-    this.addChild(PressKeyStatement.KEY_CODES, node);
+  public void addKeyStrokes(KeyMapKeystroke node) {
+    this.addChild(PressKeyStatement.KEY_STROKES, node);
   }
 
-  public void insertKeyCodes(Expression prev, Expression node) {
-    this.insertChild(prev, PressKeyStatement.KEY_CODES, node);
+  public void insertKeyStrokes(KeyMapKeystroke prev, KeyMapKeystroke node) {
+    this.insertChild(prev, PressKeyStatement.KEY_STROKES, node);
   }
 
 

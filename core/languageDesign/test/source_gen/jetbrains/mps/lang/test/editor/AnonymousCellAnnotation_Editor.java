@@ -241,6 +241,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_7250_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7250_2");
     transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
+    Annotation_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Collection_7250_1(EditorCell editorCell, SNode node, EditorContext context) {

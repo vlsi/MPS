@@ -8,10 +8,10 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
-public class RemoveNodeTest_Test extends BaseTransformationTest {
+public class SelectTwoCells_Test extends BaseTransformationTest {
 
   @Test()
-  public void test_RemoveNodeTest() throws Throwable {
+  public void test_SelectTwoCells() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
@@ -19,8 +19,8 @@ public class RemoveNodeTest_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
 
     public void testMethod() throws Exception {
-      IEditor editor = this.initEditor("1230058635843", "1230058635854");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" BACK_SPACE"));
+      IEditor editor = this.initEditor("1230119716735", "1230119724125");
+      BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray("shift RIGHT", "shift RIGHT"));
       this.finishTest();
     }
 

@@ -37,7 +37,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_0302_0(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(true);
+    editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_0302_0(context, node, "<"));
     editorCell.addEditorCell(this.createProperty_0302_1(context, node));
@@ -217,6 +217,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.SELECTABLE, false);
         }
 
