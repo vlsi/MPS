@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -393,7 +394,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   public void add(final Message message,@NotNull Class poster) {
-    add(message,poster.getSimpleName());
+    add(message,poster.getName());
   }
 
   public void add(final Message message,@Nullable final String poster) {
@@ -414,7 +415,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
           }
         }
 
-        PostedMessage postedMessage = new PostedMessage(message, poster);
+        PostedMessage postedMessage = new PostedMessage(message, NameUtil.shortNameFromLongName(poster));
         if (isVisible(message)) {
           myModel.addElement(postedMessage);
           int index = myModel.size() - 1;
@@ -542,7 +543,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
     @Override
     public String toString() {
-      String prefix = getSecond() == null ? "" : "[" + getSecond() + "] ";
+      String prefix = ((getSecond() == null) ? "" : "[" + getSecond() + "] ");
       return prefix+getFirst().toString();
     }
   }
