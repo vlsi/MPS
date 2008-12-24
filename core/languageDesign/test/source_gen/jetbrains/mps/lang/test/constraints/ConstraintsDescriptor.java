@@ -13,7 +13,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     this.myConstraints.add(new TestNodeReference_declaration_ReferentConstraint());
-    this.myConstraints.add(new TestCellReference_declaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

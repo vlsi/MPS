@@ -794,27 +794,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1225988545335">
-    <property name="package" value="editor" />
-    <link role="concept" targetNodeId="1.1225977061701" resolveInfo="EditorTestMethod" />
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1225988545336">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225988545337">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225988556636">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1225988565049">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225988565255">
-              <property name="value" value="editorTest" />
-            </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225988557732">
-              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1225988556637" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1225988561704">
-                <link role="property" targetNodeId="16.1169194664001" resolveInfo="name" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1229204042979">
     <property name="package" value="editor" />
     <link role="concept" targetNodeId="1.1229187653856" resolveInfo="EditorTestCase" />
