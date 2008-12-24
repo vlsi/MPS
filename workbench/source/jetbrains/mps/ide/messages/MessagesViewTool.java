@@ -366,7 +366,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     int width = 0;
     for (PostedMessage m : myMessages) {
       if (isVisible(m.getFirst())) {
-        width = Math.max(width, getMessageWidth(m.getFirst()));
+        width = Math.max(width, getMessageWidth(m));
         messagesToAdd.add(m);
       }
     }
@@ -425,7 +425,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         }
         myMessages.add(postedMessage);
 
-        int width = getMessageWidth(message);
+        int width = getMessageWidth(postedMessage);
         if (width > myList.getFixedCellWidth()) {
           myList.setFixedCellWidth(width);
         }
@@ -438,7 +438,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     myToolbar.updateActionsImmediately();
   }
 
-  private int getMessageWidth(Message message) {
+  private int getMessageWidth(PostedMessage message) {
     Component renderer = myList.getCellRenderer().getListCellRendererComponent(myList, message, 0, false, false);
     int width = renderer.getPreferredSize().width;
     return width;
