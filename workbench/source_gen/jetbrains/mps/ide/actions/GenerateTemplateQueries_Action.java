@@ -86,7 +86,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
           models.value = ListSequence.fromList(models.value).where(new IWhereFilter <SModelDescriptor>() {
 
             public boolean accept(SModelDescriptor it) {
-              return !(GenerateTemplateQueries_Action.this.regenerate) && !(ModelGenerationStatusManager.getInstance().generationRequired(it));
+              return GenerateTemplateQueries_Action.this.regenerate || ModelGenerationStatusManager.getInstance().generationRequired(it);
             }
 
           }).toListSequence();
