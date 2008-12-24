@@ -2785,6 +2785,25 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230143063532">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230143066083">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230143063533">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1230143063534">
+                <link role="fieldDeclaration" targetNodeId="1229266983755" resolveInfo="myStart" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1230143063535" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230143067179">
+              <link role="baseMethodDeclaration" targetNodeId="1228589548291" resolveInfo="selectCell" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230143070493">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1230143070494">
+                  <link role="fieldDeclaration" targetNodeId="1229266543141" resolveInfo="editor" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1230143070495" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1229347129465">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229347132357">
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1229347132358">
