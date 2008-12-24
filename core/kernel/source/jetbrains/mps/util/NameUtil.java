@@ -125,6 +125,7 @@ public class NameUtil {
   }
 
   public static List<String> splitByCamels(String source) {
+    if (source == null) return null;
     List<String> result = new ArrayList<String>();
     StringBuffer current = new StringBuffer();
     for (int i = source.length() - 1; i >= 0; i--) {
