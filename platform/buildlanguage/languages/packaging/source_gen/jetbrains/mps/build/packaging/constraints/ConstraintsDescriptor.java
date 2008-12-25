@@ -18,6 +18,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new Echo_name_PropertyConstraint());
     this.myConstraints.add(new File_name_PropertyConstraint());
     this.myConstraints.add(new Variable_name_PropertyConstraint());
+    this.myConstraints.add(new Configuration_fullName_PropertyConstraint());
     this.myConstraints.add(new MacroReference_path_PropertyConstraint());
     this.myConstraints.add(new Antcall_targetDeclaration_ReferentConstraint());
     this.myConstraints.add(new Antcall_project_ReferentConstraint());

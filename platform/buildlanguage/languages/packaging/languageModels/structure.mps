@@ -1021,6 +1021,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230210597557">
     <property name="name" value="MPSLayoutImport" />
+    <property name="package" value="buildlanguageExtension" />
     <link role="extends" targetNodeId="4.1230209993244" resolveInfo="AbstractImportProject" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230210625046">
       <property name="metaClass" value="reference" />
@@ -1041,6 +1042,17 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230210659645">
       <property name="value" value="packaging language script import" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230220313182">
+    <property name="package" value="buildlanguageExtension" />
+    <property name="name" value="MPSLayoutConfigurationReferencePropertyValueExpression" />
+    <link role="extends" targetNodeId="4.1196851952934" resolveInfo="PropertyValueExpression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230220362584">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="configuration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1204115658627" resolveInfo="Configuration" />
     </node>
   </node>
 </model>

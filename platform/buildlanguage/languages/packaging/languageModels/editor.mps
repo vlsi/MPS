@@ -1537,6 +1537,7 @@
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904c2(jetbrains.mps.buildlanguage.editor)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1230210678168">
+    <property name="package" value="buildlanguageExtension" />
     <link role="conceptDeclaration" targetNodeId="1.1230210597557" resolveInfo="MPSLayoutImport" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230210703811">
       <property name="vertical" value="false" />
@@ -1565,6 +1566,21 @@
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1230220382861">
+    <property name="package" value="buildlanguageExtension" />
+    <link role="conceptDeclaration" targetNodeId="1.1230220313182" resolveInfo="MPSLayoutConfigurationReferencePropertyValueExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1230220403472">
+      <link role="relationDeclaration" targetNodeId="1.1230220362584" />
+      <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1230220403474">
+        <link role="conceptDeclaration" targetNodeId="1.1204115658627" resolveInfo="Configuration" />
+        <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230220411720">
+          <property name="readOnly" value="true" />
+          <link role="relationDeclaration" targetNodeId="1.1230216579521" resolveInfo="fullName" />
+          <link role="styleClass" targetNodeId="1204115710587" resolveInfo="configuration" />
         </node>
       </node>
     </node>
