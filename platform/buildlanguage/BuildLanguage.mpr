@@ -30,6 +30,7 @@
       <languagePath path="${project}/languages/packaging/packaging.mpl" folder="packaging" />
       <languagePath path="${project}/languages/property/property.mpl" />
       <languagePath path="${project}/languages/classpath/classpath.mpl" folder="packaging" />
+      <languagePath path="${project}/languages/distrib/distrib.mpl" folder="packaging" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/buildlanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/classpath/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/dependency/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/languages/distrib/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/distribute/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/mpsProjectLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/packaging/source_gen" isTestSource="false" />
