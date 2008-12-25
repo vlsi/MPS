@@ -101,19 +101,19 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
     return this.getChildCount(Project.IMPORT_PROJECT);
   }
 
-  public Iterator<ImportProject> importProjects() {
+  public Iterator<AbstractImportProject> importProjects() {
     return this.children(Project.IMPORT_PROJECT);
   }
 
-  public List<ImportProject> getImportProjects() {
+  public List<AbstractImportProject> getImportProjects() {
     return this.getChildren(Project.IMPORT_PROJECT);
   }
 
-  public void addImportProject(ImportProject node) {
+  public void addImportProject(AbstractImportProject node) {
     this.addChild(Project.IMPORT_PROJECT, node);
   }
 
-  public void insertImportProject(ImportProject prev, ImportProject node) {
+  public void insertImportProject(AbstractImportProject prev, AbstractImportProject node) {
     this.insertChild(prev, Project.IMPORT_PROJECT, node);
   }
 

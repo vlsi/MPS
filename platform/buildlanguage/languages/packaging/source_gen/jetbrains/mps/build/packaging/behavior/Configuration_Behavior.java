@@ -4,6 +4,7 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Configuration_Behavior {
 
@@ -12,6 +13,10 @@ public class Configuration_Behavior {
 
   public static SNode call_getLayout_1213877261819(SNode thisNode) {
     return SNodeOperations.getParent(thisNode);
+  }
+
+  public static String call_getBuildFileName_1230217425313(SNode thisNode) {
+    return SPropertyOperations.getString(Configuration_Behavior.call_getLayout_1213877261819(thisNode), "name") + "-" + SPropertyOperations.getString(thisNode, "name");
   }
 
 }

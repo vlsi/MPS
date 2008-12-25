@@ -131,6 +131,10 @@ public class MPSLayout_Behavior {
     return PathMacros.getInstance().getValue(macroName);
   }
 
+  public static String call_getDefaultTargetName_1230209625713(SNode thisNode) {
+    return "main";
+  }
+
   public static String getMPSHomeName_1226508944077() {
     return Macros.MPS_HOME.substring("${".length(), Macros.MPS_HOME.lastIndexOf("}"));
   }

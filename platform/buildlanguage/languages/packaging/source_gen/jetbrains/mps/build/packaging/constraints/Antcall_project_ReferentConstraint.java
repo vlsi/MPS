@@ -23,7 +23,9 @@ public class Antcall_project_ReferentConstraint implements IModelConstraints, IN
   }
 
   public void processReferentSetEvent(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
-    SLinkOperations.setTarget(referenceNode, "targetDeclaration", null, false);
+    if (oldReferentNode != newReferentNode) {
+      SLinkOperations.setTarget(referenceNode, "targetDeclaration", null, false);
+    }
   }
 
 }

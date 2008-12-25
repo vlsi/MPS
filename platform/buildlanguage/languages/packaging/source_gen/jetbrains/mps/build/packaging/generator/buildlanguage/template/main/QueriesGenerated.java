@@ -23,6 +23,7 @@ import jetbrains.mps.build.packaging.behavior.PathHolder_Behavior;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.build.packaging.behavior.ModuleUtil;
 import jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior;
+import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -31,7 +32,6 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import java.util.ArrayList;
 import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
 import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
@@ -62,7 +62,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1203614794462(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "name") + "-" + SPropertyOperations.getString(_context.getNode(), "name");
+    return Configuration_Behavior.call_getBuildFileName_1230217425313(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1203614993869(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -324,6 +324,10 @@ public class QueriesGenerated {
     return CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(_context.getNode(), "compositePathComponent", true));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1230209762850(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSLayout_Behavior.call_getDefaultTargetName_1230209625713(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()));
+  }
+
   public static Object referenceMacro_GetReferent_1204022248333(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "LanguageTargets");
   }
@@ -368,6 +372,10 @@ public class QueriesGenerated {
       }
     }
     return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1230211791253(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "configuration", false), "ConfigurationToProject");
   }
 
   public static boolean ifMacro_Condition_1203619982544(final IOperationContext operationContext, final IfMacroContext _context) {

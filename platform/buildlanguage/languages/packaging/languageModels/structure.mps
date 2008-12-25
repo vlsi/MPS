@@ -704,6 +704,10 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1204115671003">
       <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230216579521">
+      <property name="name" value="fullName" />
+      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1204115822363">
     <property name="name" value="ConfigurationReference" />
@@ -1014,6 +1018,30 @@
     <property name="name" value="BaseDirPath" />
     <property name="package" value="sourcePaths.basedir" />
     <link role="extends" targetNodeId="1220973916698" resolveInfo="Path" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230210597557">
+    <property name="name" value="MPSLayoutImport" />
+    <link role="extends" targetNodeId="4.1230209993244" resolveInfo="AbstractImportProject" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230210625046">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="layout" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1202916958754" resolveInfo="MPSLayout" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230212870792">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="configuration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1204115658627" resolveInfo="Configuration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230210639236">
+      <property name="value" value="import" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230210659645">
+      <property name="value" value="packaging language script import" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="shortDescription" />
+    </node>
   </node>
 </model>
 
