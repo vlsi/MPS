@@ -58,21 +58,23 @@ public class CommonPaths {
 
   public static IClassPathItem getJDK() {
     if (ourRTJar == null) {
-      if (! SystemInfo.isMac) {
-        ourRTJar = findBootstrapJarByName("rt.jar");
-        if (ourRTJar == null) {
+      CompositeClassPathItem composite = new CompositeClassPathItem();
+      if (!SystemInfo.isMac) {
+        JarFileClassPathItem rtJar = findBootstrapJarByName("rt.jar");
+        if (rtJar != null) {
+          composite.add(rtJar);
+        } else {
           LOG.error("Can't find rt.jar. Make sure you are using JDK 5.0");
         }
       } else {
-        CompositeClassPathItem composite = new CompositeClassPathItem();
         IClassPathItem item = findBootstrapJarByName("classes.jar");
         if (item == null) {
           LOG.error("Can't find classes.jar. Make sure you are using JDK 5.0");
         } else {
           composite.add(item);
         }
-        ourRTJar = composite;
       }
+      ourRTJar = composite;
     }
     return ourRTJar;
   }
