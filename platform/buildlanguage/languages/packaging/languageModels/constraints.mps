@@ -454,7 +454,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230221294728">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230221297746">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230221294782">
-                  <property name="value" value="." />
+                  <property name="value" value="@" />
                 </node>
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230221304539">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230221301395">

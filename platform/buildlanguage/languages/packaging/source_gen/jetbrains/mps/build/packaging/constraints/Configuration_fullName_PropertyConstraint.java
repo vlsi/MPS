@@ -24,7 +24,7 @@ public class Configuration_fullName_PropertyConstraint implements IModelConstrai
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return SPropertyOperations.getString(node, "name") + "." + SPropertyOperations.getString(Configuration_Behavior.call_getLayout_1213877261819(node), "name");
+    return SPropertyOperations.getString(node, "name") + "@" + SPropertyOperations.getString(Configuration_Behavior.call_getLayout_1213877261819(node), "name");
   }
 
 }
