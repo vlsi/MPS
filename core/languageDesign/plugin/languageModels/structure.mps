@@ -456,12 +456,12 @@
   <import index="22" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="23" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
-  <import index="28" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
+  <import index="28" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203071646776">
     <property name="name" value="ActionDeclaration" />
     <property name="rootable" value="true" />
     <property name="package" value="Actions.Action" />
-    <property name="iconPath" value="${language_descriptor}\icons\uiAction.png" />
+    <property name="iconPath" value="${language_descriptor}/icons/actionNew.png" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1203083196627">
       <property name="metaClass" value="aggregation" />
@@ -655,7 +655,7 @@
     <property name="package" value="Actions.Groups" />
     <property name="name" value="ActionGroupDeclaration" />
     <property name="rootable" value="true" />
-    <property name="iconPath" value="${language_descriptor}\icons\actionGroup.png" />
+    <property name="iconPath" value="${language_descriptor}/icons/actionGroupNew.png" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1204991552650">
       <property name="metaClass" value="aggregation" />
@@ -1237,7 +1237,7 @@
     <property name="name" value="ProjectPluginDeclaration" />
     <property name="package" value="Custom.ProjectPlugin" />
     <property name="rootable" value="true" />
-    <property name="iconPath" value="${language_descriptor}\icons\customPlugin.png" />
+    <property name="iconPath" value="${language_descriptor}/icons/plugin.png" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1206111500859">
       <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier" />

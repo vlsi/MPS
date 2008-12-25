@@ -87,32 +87,38 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   public List<INodeSubstituteAction> createActions() {
     List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(myParentNode, myCurrentChild,
-            (AbstractConceptDeclaration) myLinkDeclaration.getTarget(),
-            createDefaultNodeSetter(),
-            getOperationContext());
+      (AbstractConceptDeclaration) myLinkDeclaration.getTarget(),
+      createDefaultNodeSetter(),
+      getOperationContext());
     return actions;
   }
 
   public InequationSystem getInequationSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
-    SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(myParentNode.getContainingRoot()), mapping).get(0);
-    if (!nodeCopyRoot.isRoot()) {
-      auxModel.addRoot(nodeCopyRoot);
-    }
+    boolean wasLoading = auxModel.isLoading();
+    auxModel.setLoading(true);
+    try {
+      SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(myParentNode.getContainingRoot()), mapping).get(0);
+      if (!nodeCopyRoot.isRoot()) {
+        auxModel.addRoot(nodeCopyRoot);
+      }
 
-    SNode hole = null;
-    if (myCurrentChild != null) {
-      hole = mapping.get(myCurrentChild);
-    } else {
-      SNode parent = mapping.get(myParentNode);
-      String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
-      hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
-      parent.setChild(role, hole);
+      SNode hole = null;
+      if (myCurrentChild != null) {
+        hole = mapping.get(myCurrentChild);
+      } else {
+        SNode parent = mapping.get(myParentNode);
+        String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
+        hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
+        parent.setChild(role, hole);
+      }
+      InequationSystem inequationsForHole = TypeChecker.getInstance().getInequationsForHole(hole);
+      auxModel.removeRoot(nodeCopyRoot);
+      return inequationsForHole;
+    } finally {
+      auxModel.setLoading(wasLoading);
     }
-    InequationSystem inequationsForHole = TypeChecker.getInstance().getInequationsForHole(hole);
-    auxModel.removeRoot(nodeCopyRoot);
-    return inequationsForHole;
   }
 
   protected DefaultChildNodeSetter createDefaultNodeSetter() {
