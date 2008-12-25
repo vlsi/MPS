@@ -51,8 +51,8 @@ public class ReturnStatement_Behavior {
 
   public static SNode call_getExecuteCommandStatementSync_1229351767970(SNode thisNode) {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(container), "jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatementSync")) {
-      return SNodeOperations.getParent(container);
+    if (IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(container)) {
+      return container;
     }
     return null;
   }

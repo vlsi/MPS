@@ -78,7 +78,6 @@ public class AConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_8779_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_expression");
   }
 
   private static void setupLabel_Constant_8779_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

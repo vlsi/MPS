@@ -2026,5 +2026,33 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218036272973" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230213597648">
+    <property name="package" value="Command" />
+    <link role="concept" targetNodeId="1.1225441216717" resolveInfo="CommandClosureLiteral" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230213600259">
+      <property name="name" value="isExecuteSynchronous" />
+      <link role="overriddenMethod" targetNodeId="8.1230212745736" resolveInfo="isExecuteSynchronous" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230213600261">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230213737701">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230213749841">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230213745814">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230213744239" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1230213748473" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1230213751371">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1230213757177">
+                <link role="conceptDeclaration" targetNodeId="1.1229346248766" resolveInfo="BaseExecuteCommandStatementSync" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230213604476" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1230213651438" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1230213597649">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230213597650" />
+    </node>
+  </node>
 </model>
 
