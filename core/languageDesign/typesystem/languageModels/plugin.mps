@@ -33,7 +33,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="37" />
+  <maxImportIndex value="38" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.typesystem.uiActions(jetbrains.mps.typesystem.uiActions@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
@@ -60,6 +60,7 @@
   <import index="34" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="35" modelUID="f:java_stub#jetbrains.mps.typesystem.statistics(jetbrains.mps.typesystem.statistics@java_stub)" version="-1" />
   <import index="36" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
+  <import index="38" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205244087094">
     <property name="name" value="TypesystemActions" />
     <property name="caption" value="Type System" />
@@ -118,6 +119,9 @@
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1228846932936">
         <link role="action" targetNodeId="1228846419607" resolveInfo="AddNodeToSliceWith" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1230216511092">
+        <link role="action" targetNodeId="1230214426481" resolveInfo="ShowInequationsForCell" />
       </node>
     </node>
   </node>
@@ -1742,6 +1746,99 @@
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1228846534038">
       <property name="name" value="project" />
       <link role="key" targetNodeId="34.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1230214426481">
+    <property name="package" value="Actions" />
+    <property name="name" value="ShowInequationsForCell" />
+    <property name="caption" value="Show Inequations For Cell" />
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1230214590204">
+      <property name="name" value="selectedCell" />
+      <link role="key" targetNodeId="34.~MPSDataKeys.EDITOR_CELL" resolveInfo="EDITOR_CELL" />
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1230214426482">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230214426483">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1230214614445">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1230214614446">
+            <property name="name" value="substituteInfo" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230214614447">
+              <link role="classifier" targetNodeId="38.~NodeSubstituteInfo" resolveInfo="NodeSubstituteInfo" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230214614448">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230214614449">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1230214614450" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1230214614451">
+                  <link role="member" targetNodeId="1230214590204" resolveInfo="selectedCell" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230214614452">
+                <link role="baseMethodDeclaration" targetNodeId="33.~EditorCell.getSubstituteInfo():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo" resolveInfo="getSubstituteInfo" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1230214997211">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1230214997212">
+            <property name="name" value="inequationSystem" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230214997213">
+              <link role="classifier" targetNodeId="21.~InequationSystem" resolveInfo="InequationSystem" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230214997214">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230214997215">
+                <link role="variableDeclaration" targetNodeId="1230214614446" resolveInfo="substituteInfo" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230214997216">
+                <link role="baseMethodDeclaration" targetNodeId="38.~NodeSubstituteInfo.getInequationSystem(jetbrains.mps.nodeEditor.cells.EditorCell):jetbrains.mps.typesystem.inference.InequationSystem" resolveInfo="getInequationSystem" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230214997217">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1230214997218" />
+                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1230214997219">
+                    <link role="member" targetNodeId="1230214590204" resolveInfo="selectedCell" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1230215568466">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230215568467">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230216309719">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1230216336167">
+                <link role="baseMethodDeclaration" targetNodeId="20.~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolveInfo="showMessageDialog" />
+                <link role="classConcept" targetNodeId="20.~JOptionPane" resolveInfo="JOptionPane" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1230216339902" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230216347389">
+                  <property name="value" value="no inequation system" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1230215602372">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1230215605515" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230215583753">
+              <link role="variableDeclaration" targetNodeId="1230214997212" resolveInfo="inequationSystem" />
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1230215611392">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230215611393">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230216359703">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1230216367142">
+                  <link role="baseMethodDeclaration" targetNodeId="20.~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolveInfo="showMessageDialog" />
+                  <link role="classConcept" targetNodeId="20.~JOptionPane" resolveInfo="JOptionPane" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1230216369143" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230216374475">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230216374099">
+                      <link role="variableDeclaration" targetNodeId="1230214997212" resolveInfo="inequationSystem" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230216380978">
+                      <link role="baseMethodDeclaration" targetNodeId="21.~InequationSystem.getPresentation():java.lang.String[]" resolveInfo="getPresentation" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

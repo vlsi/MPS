@@ -127,5 +127,26 @@ public class InequationSystem {
 
   }
 
+  public String[] getPresentation() {
+    String[] result = new String[myEquals.size() + mySubtypes.size() + mySupertypes.size() + myStrongSubtypes.size() + myStrongSupertypes.size()];
+    int i = 0;
+    for (IWrapper wrapper : myEquals) {
+      result[i++] = "* == " + wrapper.toString();
+    }
+    for (IWrapper wrapper : mySubtypes) {
+      result[i++] = wrapper.toString() + " < *";
+    }
+    for (IWrapper wrapper : myStrongSubtypes) {
+      result[i++] = wrapper.toString() + " << *";
+    }
+    for (IWrapper wrapper : mySupertypes) {
+      result[i++] = "* < " + wrapper.toString();
+    }
+    for (IWrapper wrapper : myStrongSupertypes) {
+      result[i++] = "* << " + wrapper.toString();
+    }
+    return result;
+  }
+
 
 }

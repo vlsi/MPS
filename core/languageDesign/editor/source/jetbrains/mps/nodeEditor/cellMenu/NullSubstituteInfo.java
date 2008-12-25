@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.typesystem.inference.InequationSystem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,5 +68,9 @@ public class NullSubstituteInfo implements NodeSubstituteInfo {
 
   public boolean hasNoActionsWithPrefix(String pattern) {
     return true;
+  }
+
+  public InequationSystem getInequationSystem(EditorCell contextCell) {
+    return null;
   }
 }

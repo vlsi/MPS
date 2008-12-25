@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.typesystem.inference.InequationSystem;
 
 import java.util.List;
 
@@ -39,4 +40,6 @@ public interface NodeSubstituteInfo {
   boolean hasExactlyNActions(String pattern, boolean strictMatching, int n);
 
   boolean hasNoActionsWithPrefix(String pattern);
+
+  public InequationSystem getInequationSystem(EditorCell contextCell);
 }

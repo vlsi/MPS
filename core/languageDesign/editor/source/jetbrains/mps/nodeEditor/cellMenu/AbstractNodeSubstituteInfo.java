@@ -86,7 +86,7 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return getMatchingActions(pattern, strictMatching).size() == n;
   }
 
-  protected InequationSystem getInequationSystem(EditorCell contextCell) {
+  public InequationSystem getInequationSystem(EditorCell contextCell) {
     return null;
   }
 

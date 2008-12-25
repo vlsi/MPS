@@ -74,7 +74,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     });
   }
 
-  protected InequationSystem getInequationSystem(EditorCell contextCell) {
+  public InequationSystem getInequationSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(mySourceNode.getContainingRoot()), mapping).get(0);
     SModel auxModel = nodeCopyRoot.getModel();

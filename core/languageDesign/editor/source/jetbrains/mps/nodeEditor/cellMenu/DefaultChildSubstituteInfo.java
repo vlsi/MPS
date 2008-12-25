@@ -93,7 +93,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     return actions;
   }
 
-  protected InequationSystem getInequationSystem(EditorCell contextCell) {
+  public InequationSystem getInequationSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
     SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(myParentNode.getContainingRoot()), mapping).get(0);
