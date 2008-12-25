@@ -47,17 +47,17 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1169471975875(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode method = null;
     if (SPropertyOperations.hasValue(_context.getNode(), "severity", "fatal", "debug")) {
-      method = SLinkOperations.getTarget(new QuotationClass_0().createNode(), "baseMethodDeclaration", false);
+      method = SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "baseMethodDeclaration", false);
     } else if (SPropertyOperations.hasValue(_context.getNode(), "severity", "error", "debug")) {
-      method = SLinkOperations.getTarget(new QuotationClass_1().createNode(), "baseMethodDeclaration", false);
+      method = SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "baseMethodDeclaration", false);
     } else if (SPropertyOperations.hasValue(_context.getNode(), "severity", "warn", "debug")) {
-      method = SLinkOperations.getTarget(new QuotationClass_2().createNode(), "baseMethodDeclaration", false);
+      method = SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "baseMethodDeclaration", false);
     } else if (SPropertyOperations.hasValue(_context.getNode(), "severity", "debug", "debug")) {
-      method = SLinkOperations.getTarget(new QuotationClass_3().createNode(), "baseMethodDeclaration", false);
+      method = SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "baseMethodDeclaration", false);
     } else if (SPropertyOperations.hasValue(_context.getNode(), "severity", "info", "debug")) {
-      method = SLinkOperations.getTarget(new QuotationClass_4().createNode(), "baseMethodDeclaration", false);
+      method = SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "baseMethodDeclaration", false);
     } else if (SPropertyOperations.hasValue(_context.getNode(), "severity", "trace", "debug")) {
-      method = SLinkOperations.getTarget(new QuotationClass_5().createNode(), "baseMethodDeclaration", false);
+      method = SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "baseMethodDeclaration", false);
     }
     return method;
   }

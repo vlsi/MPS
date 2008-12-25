@@ -97,7 +97,6 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_7315_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_instance");
   }
 
   private static void setupBasic_ConceptProperty_7315_0(EditorCell editorCell, SNode node, EditorContext context) {

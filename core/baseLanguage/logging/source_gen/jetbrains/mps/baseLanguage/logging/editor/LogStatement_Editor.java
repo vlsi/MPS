@@ -237,7 +237,6 @@ public class LogStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_2351_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_logExpression");
   }
 
   private static void setupBasic_Collection_2351_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -267,7 +266,6 @@ public class LogStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_2351_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_exception");
   }
 
   private static void setupBasic_Constant_2351_1(EditorCell editorCell, SNode node, EditorContext context) {

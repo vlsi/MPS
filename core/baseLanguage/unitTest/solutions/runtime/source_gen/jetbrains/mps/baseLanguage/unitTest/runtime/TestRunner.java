@@ -40,7 +40,7 @@ public class TestRunner extends BaseTestRunner {
     System.setOut(new PrintStream(out));
     System.setErr(new PrintStream(err));
     testResult.addListener(new MyTestListener(out, err));
-    for(Test test : tests) {
+    for(Test test : ListSequence.fromList(tests)) {
       test.run(testResult);
     }
   }

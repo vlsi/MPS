@@ -143,11 +143,9 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_2512_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_amount");
   }
 
   private static void setupBasic_RefNode_2512_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_currency");
   }
 
   private static void setupBasic_Constant_2512_3(EditorCell editorCell, SNode node, EditorContext context) {

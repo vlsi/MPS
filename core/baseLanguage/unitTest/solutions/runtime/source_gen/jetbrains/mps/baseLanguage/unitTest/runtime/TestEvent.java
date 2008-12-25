@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.unitTest.runtime;
 import java.util.List;
 import junit.framework.Test;
 import junit.framework.TestCase;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestEvent {
   public static String START_TEST_PREFIX = "<START_TEST>";
@@ -72,7 +72,7 @@ public class TestEvent {
 
   public static String isTestEvent(String messageString) {
     String token = null;
-    for(String expectedToken : ALL_TOKENS) {
+    for(String expectedToken : ListSequence.fromList(ALL_TOKENS)) {
       if (messageString.startsWith(expectedToken)) {
         token = expectedToken;
         break;

@@ -30,7 +30,7 @@ import jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclarat
 import jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 
 public class QueriesGenerated {
 
@@ -189,7 +189,7 @@ public class QueriesGenerated {
           return ListSequence.fromList(regexps).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
-              for(SNode exclude : excludeList) {
+              for(SNode exclude : ListSequence.fromList(excludeList)) {
                 if (SConceptOperations.isSubConceptOf(it, NameUtil.nodeFQName(exclude))) {
                   return false;
                 }
@@ -329,7 +329,7 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, _context.getSourceNode(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"))), "match", operationContext);
+          SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, _context.getSourceNode(), ((ConceptDeclaration)SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"))), "match", operationContext);
           return status.getSearchScope().getNodes();
         }
 

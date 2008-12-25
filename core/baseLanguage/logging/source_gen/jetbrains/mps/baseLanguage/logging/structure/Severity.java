@@ -16,7 +16,7 @@ public enum Severity {
   private String myName;
   private String myValue;
 
-Severity(String name, String value) {
+  Severity(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

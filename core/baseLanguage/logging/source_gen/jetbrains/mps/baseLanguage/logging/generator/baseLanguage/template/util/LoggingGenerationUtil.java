@@ -14,7 +14,7 @@ public class LoggingGenerationUtil {
     if (ListSequence.fromList(textExpressions).isNotEmpty()) {
       result = SNodeOperations.copyNode(ListSequence.fromList(textExpressions).first());
       for(SNode textExpression : ListSequence.fromList(textExpressions).skip(1)) {
-        result = new QuotationClass_0().createNode(SNodeOperations.copyNode(textExpression), result);
+        result = new _Quotations.QuotationClass_0().createNode(SNodeOperations.copyNode(textExpression), result);
       }
     }
     return result;
