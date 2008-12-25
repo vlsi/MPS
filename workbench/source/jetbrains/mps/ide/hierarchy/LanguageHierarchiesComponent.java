@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.hierarchy.icons.Icons;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
@@ -96,7 +97,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     myScaleField = new JTextField("100%");
     myScaleField.setEditable(false);
     toolsPane.add(myScaleField);
-    toolsPane.add(new JButton(new AbstractAction("+") {
+    toolsPane.add(new JButton(new AbstractAction(null, Icons.ZOOM_IN_ICON) {
       public void actionPerformed(ActionEvent e) {
         if (myScale < 6) {
           myScale += 0.2;
@@ -109,7 +110,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         }
       }
     }));
-    toolsPane.add(new JButton(new AbstractAction("-") {
+    toolsPane.add(new JButton(new AbstractAction(null, Icons.ZOOM_OUT_ICON) {
       public void actionPerformed(ActionEvent e) {
         if (myScale > 0.2) {
           myScale -= 0.2;
@@ -122,7 +123,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         }
       }
     }));
-    toolsPane.add(new JButton(new AbstractAction("=") {
+    toolsPane.add(new JButton(new AbstractAction(null, Icons.ACTUAL_ZOOM_ICON) {
       public void actionPerformed(ActionEvent e) {
         if (myScale != 1) {
           myScale = 1;

@@ -21,5 +21,11 @@ import javax.swing.ImageIcon;
 public class Icons {
   public static final Icon CHILDREN_ICON = new ImageIcon(Icons.class.getResource("subtypes.png"));
   public static final Icon PARENT_ICON = new ImageIcon(Icons.class.getResource("supertypes.png"));
+  public static final Icon ZOOM_IN_ICON = new ImageIcon(Icons.class.getResource("zoomIn.png"));
+  public static final Icon ZOOM_OUT_ICON = new ImageIcon(Icons.class.getResource("zoomOut.png"));
+  public static final Icon ACTUAL_ZOOM_ICON = new ImageIcon(Icons.class.getResource("actualZoom.png"));
+
+
+
   public static final Icon THIS_MODEL_ICON = jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
 }
