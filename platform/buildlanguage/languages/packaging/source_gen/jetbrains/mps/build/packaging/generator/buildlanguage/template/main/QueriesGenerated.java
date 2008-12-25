@@ -374,10 +374,6 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static Object referenceMacro_GetReferent_1230211791253(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "configuration", false), "ConfigurationToProject");
-  }
-
   public static Object referenceMacro_GetReferent_1230221653582(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget((_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "configuration", false), "ConfigurationToProject")), "default", true), "targetDeclaration", false);
   }

@@ -15,11 +15,15 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "configuration", false) == null)) {
       return null;
     }
-    return MPSLayout_Behavior.call_getDefaultTargetName_1230209625713(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(thisNode, "configuration", false))) + "." + Configuration_Behavior.call_getBuildFileName_1230217425313(SLinkOperations.getTarget(thisNode, "configuration", false));
+    return MPSLayout_Behavior.call_getDefaultTargetName_1230209625713(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(thisNode, "configuration", false))) + "." + MPSLayoutConfigurationReferencePropertyValueExpression_Behavior.call_getProjectName_1230223364921(thisNode);
   }
 
   public static String virtual_toString_1213877472569(SNode thisNode) {
     return PropertyValueExpression_Behavior.call_getActualValue_1213877472572(thisNode);
+  }
+
+  public static String call_getProjectName_1230223364921(SNode thisNode) {
+    return Configuration_Behavior.call_getBuildFileName_1230217425313(SLinkOperations.getTarget(thisNode, "configuration", false));
   }
 
 }

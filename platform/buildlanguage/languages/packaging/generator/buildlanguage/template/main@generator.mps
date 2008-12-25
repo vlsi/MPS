@@ -175,12 +175,6 @@
         <link role="template" targetNodeId="1220983155596" resolveInfo="reduce_Path" />
       </node>
     </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1230211696322">
-      <link role="applicableConcept" targetNodeId="1.1230210597557" resolveInfo="MPSLayoutImport" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1230211821011">
-        <link role="template" targetNodeId="1230211733644" resolveInfo="reduce_MPSLayoutImport" />
-      </node>
-    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1230221595098">
       <link role="applicableConcept" targetNodeId="1.1230220313182" resolveInfo="MPSLayoutConfigurationReferencePropertyValueExpression" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1230221604642">
@@ -5509,43 +5503,6 @@
       </node>
       <node role="default" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1220983171841">
         <link role="targetDeclaration" targetNodeId="1220983162745" resolveInfo="target" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1230211733644">
-    <property name="name" value="reduce_MPSLayoutImport" />
-    <link role="applicableConcept" targetNodeId="1.1230210597557" resolveInfo="MPSLayoutImport" />
-    <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1230211758393">
-      <property name="name" value="tmp.project" />
-      <node role="importProject" type="jetbrains.mps.buildlanguage.structure.ImportProject" id="1230211771288">
-        <link role="project" targetNodeId="1203611981921" resolveInfo="project" />
-        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1230211782166" />
-        <node role="referenceMacro$link_attribute$project" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1230211791252">
-          <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1230211791253">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230211791254">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230211804425">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230211804426">
-                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1230211804427" />
-                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1230211804428">
-                    <link role="label" targetNodeId="1230211425287" resolveInfo="ConfigurationToProject" />
-                    <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230213239463">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1230213239169" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230213243395">
-                        <link role="link" targetNodeId="1.1230212870792" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1230211758394">
-        <property name="name" value="default" />
-      </node>
-      <node role="default" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1230211758395">
-        <link role="targetDeclaration" targetNodeId="1230211758394" resolveInfo="default" />
       </node>
     </node>
   </node>
