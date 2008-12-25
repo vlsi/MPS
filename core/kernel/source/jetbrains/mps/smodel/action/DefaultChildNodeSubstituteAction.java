@@ -88,12 +88,15 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
 
   public SNode getActionType(String pattern) {
     SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
+    boolean wasLoading = auxModel.isLoading();
+    auxModel.setLoading(true);
     SNode node = createChildNode(getParameterObject(), auxModel, pattern);
     if (!node.isRoot()) {
       auxModel.addRoot(node);
     }
     SNode type = TypeChecker.getInstance().getTypeOf(node);
     auxModel.removeRoot(node);
+    auxModel.setLoading(wasLoading);
     return type;
   }
 }

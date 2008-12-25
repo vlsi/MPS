@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.typesystem.inference.InequationSystem;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
 import java.util.*;
@@ -97,12 +98,14 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     if (inequationSystem == null) return substituteActionList;
 
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    TypeChecker.getInstance().enableTypesComputingForCompletion();
     for (INodeSubstituteAction nodeSubstituteAction : substituteActionList) {
       SNode type = nodeSubstituteAction.getActionType(pattern);
       if (type != null && inequationSystem.satisfies(type)) {
         result.add(nodeSubstituteAction);
       }
     }
+    TypeChecker.getInstance().clearTypesComputedForCompletion();
     return result;
   }
 
