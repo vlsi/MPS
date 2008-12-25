@@ -16,8 +16,8 @@ import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.build.packaging.behavior.Copy_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.Antcall_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.packaging.behavior.PathHolder_Behavior;
 import jetbrains.mps.project.IModule;
@@ -32,11 +32,11 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.util.ArrayList;
 import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
 import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -201,10 +201,6 @@ public class QueriesGenerated {
     return Module_Behavior.call_getBasedir_1213877514794(_context.getNode()).replace(File.separator, Util.SEPARATOR);
   }
 
-  public static Object propertyMacro_GetPropertyValue_1210785663407(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "targetDeclaration", false), "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1210846061742(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Util.SEPARATOR + ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(_context.getNode()).replace(File.separator, Util.SEPARATOR);
   }
@@ -332,10 +328,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "LanguageTargets");
   }
 
-  public static Object referenceMacro_GetReferent_1210779752250(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getNode();
-  }
-
   public static Object referenceMacro_GetReferent_1212487446848(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ReplaceTargets");
   }
@@ -378,6 +370,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget((_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "configuration", false), "ConfigurationToProject")), "default", true), "targetDeclaration", false);
   }
 
+  public static Object referenceMacro_GetReferent_1230233294691(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "targetDeclaration", false);
+  }
+
   public static boolean ifMacro_Condition_1203619982544(final IOperationContext operationContext, final IfMacroContext _context) {
     return SConceptPropertyOperations.getBoolean(_context.getNode(), "cleanAfterTheJob");
   }
@@ -416,10 +412,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1210254552692(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(SPropertyOperations.getString(_context.getNode(), "fullPath").endsWith("jar"));
-  }
-
-  public static boolean ifMacro_Condition_1215711557318(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "jetbrains.mps.build.packaging.structure.Replace", false)).count() > 0;
   }
 
   public static boolean ifMacro_Condition_1217529239036(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -463,10 +455,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1220986250252(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name").equals("basedir"));
-  }
-
-  public static boolean ifMacro_Condition_1221759211471(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "jetbrains.mps.build.packaging.structure.Module", false)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1224776239614(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -595,21 +583,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1210254517273(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Module_Behavior.call_getClassPath_1213877515083(_context.getNode());
-  }
-
-  public static Iterable sourceNodesQuery_1210779121082(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> antcalls = SNodeOperations.getDescendants(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "jetbrains.mps.build.packaging.structure.Antcall", false);
-    List<SNode> projects = new ArrayList<SNode>();
-    for(SNode call : ListSequence.fromList(antcalls)) {
-      if ((SLinkOperations.getTarget(call, "project", false) == null)) {
-        _context.showErrorMessage(call, "Null project reference!");
-        continue;
-      }
-      if (!(ListSequence.fromList(projects).contains(SLinkOperations.getTarget(call, "project", false)))) {
-        ListSequence.fromList(projects).addElement(SLinkOperations.getTarget(call, "project", false));
-      }
-    }
-    return projects;
   }
 
   public static Iterable sourceNodesQuery_1212486359885(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
