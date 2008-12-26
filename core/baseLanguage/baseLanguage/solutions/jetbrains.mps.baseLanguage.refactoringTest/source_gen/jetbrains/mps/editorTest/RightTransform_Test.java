@@ -18,7 +18,8 @@ public class RightTransform_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
 
     public void testMethod() throws Exception {
-      IEditor editor = this.initEditor("1230303902564", "");
+      IEditor editor = this.initEditor("1230303902564", "1230306744845");
+      BaseEditorTestBody.typeString(editor, " [");
       this.finishTest();
     }
 
