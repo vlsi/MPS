@@ -18,20 +18,16 @@ package jetbrains.mps.workbench.actions.language;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.MessageDialog;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionEventData;
 
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DeleteGeneratorHelper {
@@ -51,15 +47,18 @@ public class DeleteGeneratorHelper {
   }
 
   private static void safeDelete(final Project project, Language sourceLanguage, final Generator generator, GeneratorDescriptor generatorDescriptor, boolean deleteFiles) {
-    SearchQuery searchQuery = new SearchQuery(generator, GlobalScope.getInstance());
-    SearchResults results = FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), searchQuery, new DependentGeneratorsFinder());
-    if (!results.getSearchResults().isEmpty()) {
+    List<Generator> dependant = new ArrayList<Generator>();
+    for (Generator gen : MPSModuleRepository.getInstance().getAllGenerators()) {
+      if (gen.getReferencedGenerators().contains(generator)) {
+        dependant.add(gen);
+      }
+    }
+    if (!dependant.isEmpty()) {
       final StringBuilder report = new StringBuilder();
       report.append("Can't delete generator ").append(generator.getModuleFqName()).append(".\n");
       report.append("The following generators depend on it:\n\n");
-      for (SearchResult result : (List<SearchResult>) results.getSearchResults()) {
-        Generator g = (Generator) result.getObject();
-        report.append(g.getModuleFqName()).append("\n");
+      for (Generator gen : dependant) {
+        report.append(gen.getModuleFqName()).append("\n");
       }
 
       SwingUtilities.invokeLater(new Runnable() {
