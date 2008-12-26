@@ -105,7 +105,7 @@
                     <link role="variableDeclaration" targetNodeId="1206377950230" resolveInfo="leftType" />
                   </node>
                   <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1206377950240">
-                    <property name="name" value="_LinkAccessT" />
+                    <property name="name" value="v" />
                     <link role="concept" targetNodeId="1.1204919674986" resolveInfo="_LinkAccessT" />
                   </node>
                 </node>

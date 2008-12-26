@@ -106,26 +106,6 @@ public class RulesUtil {
   }
 
   @CheckingMethod()
-  public static void checkAppliedTo_LinkListAccess_aggregation(final TypeCheckingContext typeCheckingContext, final SNode op) {
-    // expect access to an aggregation link with plural cardinality
-    // ------------------- new (duplicates checkAppliedCorrectly_generic)
-    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
-    SNode LeftType = TypeChecker.getInstance().getTypeOf(leftExpression);
-    boolean isGood = false;
-    SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);
-    if (linkAccessT != null) {
-      if (!(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality"))) {
-        isGood = true;
-      }
-    }
-    if (!(isGood)) {
-      BaseIntentionProvider intentionProvider = null;
-      IErrorTarget errorTarget = new NodeErrorTarget();
-      typeCheckingContext.reportTypeError(op, "operation is only applicable to aggregation-link-list-access", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205271287931", intentionProvider, errorTarget);
-    }
-  }
-
-  @CheckingMethod()
   public static void checkAppliedTo_LinkAccess_aggregation(final TypeCheckingContext typeCheckingContext, final SNode op) {
     // expect access to an aggregation link with singular cardinality
     // ------------------- new (duplicates checkAppliedCorrectly_generic)
