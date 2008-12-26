@@ -293,7 +293,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         if (editors.length != 0) {
           FileEditor editor = editors[0];
           if (!(editor instanceof MPSFileNodeEditor)) return false;
-          myNode = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent().getEditedNode();
+          EditorComponent editorComponent = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent();
+          if (editorComponent==null) return false;
+          myNode = editorComponent.getEditedNode();
         } else {
           myNode = file.getNode();
         }
