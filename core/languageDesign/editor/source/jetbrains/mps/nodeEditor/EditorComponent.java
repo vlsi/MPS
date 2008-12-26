@@ -1414,7 +1414,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     requestFocus();
     processCoordSelection(mouseEvent);
 
-
     if (mouseEvent.getButton() == MouseEvent.BUTTON2) {
       goByCurrentReference();
     }
@@ -1482,7 +1481,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (newSelectedCell == null || !newSelectedCell.isSelectable()) {
       newSelectedCell = myRootCell.findCellWeak(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
     }
-    if (newSelectedCell != null) {
+    if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || !getSelectedCell().isAncestorOf(newSelectedCell))) {
       changeSelection(newSelectedCell, true, false);
       mySelectedCell.processMousePressed(mouseEvent);
       revalidateAndRepaint(false);
