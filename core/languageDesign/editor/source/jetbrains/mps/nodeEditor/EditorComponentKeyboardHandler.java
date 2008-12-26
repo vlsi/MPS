@@ -141,11 +141,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       return true;
     }
 
-    if (selectedCell != null && selectedCell.processKeyTyped(keyEvent, true)) {
-      keyEvent.consume();
-      return true;
-    }
-
     CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
 
     if (selectedCell != null) {
@@ -162,6 +157,11 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
           return true;
         }
       }
+    }
+    
+    if (selectedCell != null && selectedCell.processKeyTyped(keyEvent, true)) {
+      keyEvent.consume();
+      return true;
     }
 
     return false;

@@ -804,6 +804,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" id="1230224899038" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230224906353">
         <property name="text" value="&gt;" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1230302731773">
+          <property name="value" value="0.0" />
+        </node>
       </node>
     </node>
   </node>
