@@ -37,12 +37,14 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.projectLanguage.structure.ClassPathEntry;
 
 public class ExcludedFileIndexApplicationComponent implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ExcludedFileIndexApplicationComponent.class);
@@ -57,6 +59,12 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
     @Override
     public void moduleAdded(IModule module) {
+      addModuleFile(module);
+    }
+
+    @Override
+    public void moduleInitialized(IModule module) {
+      ((AbstractModule)module).updateExcludes();
       addModuleFile(module);
     }
 
@@ -103,20 +111,24 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     if (classesGenVirtual != null) {
       myExcludedFiles.add(classesGenVirtual);
     }
-    excludeClassPath(module.getClassPathItem());
+    excludeClassPath(module, module.getClassPathItem());
   }
 
-  private void excludeClassPath(IClassPathItem item) {
+  private void excludeClassPath(IModule module, IClassPathItem item) {
     if (item instanceof CompositeClassPathItem) {
       List<IClassPathItem> children = ((CompositeClassPathItem) item).getChildren();
       for (IClassPathItem child : children) {
-        excludeClassPath(child);
+        excludeClassPath(module, child);
       }
     } else if (item instanceof FileClassPathItem) {
       String classPath = ((FileClassPathItem) item).getClassPath();
       VirtualFile classPathFile = VFileSystem.getFile(classPath);
-      if (classPathFile != null){
-        myExcludedFiles.add(classPathFile);
+      if (classPathFile != null) {
+        if (module.isClassPathExcluded(classPath)) {
+          myExcludedFiles.add(classPathFile);
+        } else {
+          myExcludedFiles.remove(classPathFile);
+        }
       }
     }
   }

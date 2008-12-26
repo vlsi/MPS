@@ -103,4 +103,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   void reloadFromDisk();
 
   boolean needReloading();
+
+  boolean isClassPathExcluded(String path);
 }

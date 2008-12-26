@@ -67,6 +67,7 @@ public abstract class AbstractModule implements IModule {
   private IClassPathItem myClassPath;
   private MyClassPathModelRootManager myManager = new MyClassPathModelRootManager();
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
+  private Set<String> myIncludedClassPath;
 
   private ModuleReference myModuleReference;
 
@@ -500,6 +501,17 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  public Set<String> getIncludedClassPath() {
+    LinkedHashSet<String> result = new LinkedHashSet<String>();
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      for (ClassPathEntry entry : descriptor.getClassPathEntries()) {
+        if (entry.getIncludeInVCS()) result.add(entry.getPath());
+      }
+    }
+    return result;
+  }
+
   public List<String> getSourcePaths() {
     List<String> result = new ArrayList<String>();
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -528,6 +540,10 @@ public abstract class AbstractModule implements IModule {
 
   public IClassPathItem getClassPathItem() {
     return myClassPath;
+  }
+
+  public boolean isClassPathExcluded(String path) {
+    return !myIncludedClassPath.contains(path);    
   }
 
   public Class getClass(String fqName) {
@@ -567,7 +583,12 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
+    updateExcludes();
     myClassPath = result;
+  }
+
+  public void updateExcludes() {
+    myIncludedClassPath = getIncludedClassPath();
   }
 
   private void releaseJavaStubs() {
