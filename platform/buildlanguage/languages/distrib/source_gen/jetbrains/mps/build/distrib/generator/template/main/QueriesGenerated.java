@@ -13,6 +13,7 @@ import jetbrains.mps.build.distrib.behavior.ClassPathItem_Behavior;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.build.distrib.behavior.UnixConfig_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
@@ -23,6 +24,14 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1230234578161(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildlanguage.structure.Project");
+  }
+
+  public static boolean baseMappingRule_Condition_1230293388595(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.distrib.structure.DistribConfiguration");
+  }
+
+  public static boolean baseMappingRule_Condition_1230293506967(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildlanguage.structure.Project");
   }
 
@@ -50,6 +59,26 @@ public class QueriesGenerated {
     return SConceptPropertyOperations.getString(_context.getNode(), "operatingSystem") + ".dist";
   }
 
+  public static Object propertyMacro_GetPropertyValue_1230292998920(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return UnixConfig_Behavior.call_getStartupScriptExtension_1230292961412(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230293047562(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return UnixConfig_Behavior.call_getStartupScriptName_1230292766208(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230293101910(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupClass");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230293101928(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ClassPathItem_Behavior.call_getFullPath_1230059208735(_context.getNode()).replace("\\", "/");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230293422263(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SConceptPropertyOperations.getString(_context.getNode(), "operatingSystem") + ".dist";
+  }
+
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
   }
@@ -68,6 +97,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1230234413536(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "systemSpecificConfig", true);
+  }
+
+  public static Iterable sourceNodesQuery_1230293101939(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true);
   }
 
 }

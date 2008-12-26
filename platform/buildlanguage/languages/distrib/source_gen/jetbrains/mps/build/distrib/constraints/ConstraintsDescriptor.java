@@ -12,6 +12,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
   public ConstraintsDescriptor() {
+    this.myConstraints.add(new DistribConfiguration_projectFolder_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

@@ -42,6 +42,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="3v.1204115658627" resolveInfo="Configuration" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230293684459">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="projectFolder" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.1203598512427" resolveInfo="Folder" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230059446051">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="classPath" />
@@ -128,6 +134,19 @@
     <property name="package" value="systemSpecific" />
     <property name="name" value="ImportWindowsConfig" />
     <link role="extends" targetNodeId="4v.1230209993244" resolveInfo="AbstractImportProject" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230292331281">
+    <property name="package" value="systemSpecific" />
+    <property name="name" value="UnixConfig" />
+    <link role="extends" targetNodeId="1230207207601" resolveInfo="SystemSpecificConfig" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230292394720">
+      <property name="value" value="unix" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1230207324294" resolveInfo="operatingSystem" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230292555791">
+      <property name="value" value="unix" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
 </model>
 

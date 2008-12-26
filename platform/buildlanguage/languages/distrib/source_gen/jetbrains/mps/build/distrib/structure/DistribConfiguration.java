@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.structure.Configuration;
+import jetbrains.mps.build.packaging.structure.Folder;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -20,6 +21,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BUILD_SCRIPT_CONFIGURATION = "buildScriptConfiguration";
+  public static final String PROJECT_FOLDER = "projectFolder";
   public static final String CLASS_PATH = "classPath";
   public static final String SYSTEM_SPECIFIC_CONFIG = "systemSpecificConfig";
 
@@ -73,6 +75,14 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
 
   public void setBuildScriptConfiguration(Configuration node) {
     super.setReferent(DistribConfiguration.BUILD_SCRIPT_CONFIGURATION, node);
+  }
+
+  public Folder getProjectFolder() {
+    return (Folder)this.getReferent(DistribConfiguration.PROJECT_FOLDER);
+  }
+
+  public void setProjectFolder(Folder node) {
+    super.setReferent(DistribConfiguration.PROJECT_FOLDER, node);
   }
 
   public ClassPath getClassPath() {
