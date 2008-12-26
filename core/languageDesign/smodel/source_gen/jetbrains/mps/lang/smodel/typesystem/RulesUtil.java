@@ -108,7 +108,6 @@ public class RulesUtil {
   @CheckingMethod()
   public static void checkAppliedTo_LinkAccess_aggregation(final TypeCheckingContext typeCheckingContext, final SNode op) {
     // expect access to an aggregation link with singular cardinality
-    // ------------------- new (duplicates checkAppliedCorrectly_generic)
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     SNode LeftType = TypeChecker.getInstance().getTypeOf(leftExpression);
     boolean isGood = false;
@@ -123,6 +122,27 @@ public class RulesUtil {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       typeCheckingContext.reportTypeError(op, "operation is only applicable to aggregation-link-access", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205272067893", intentionProvider, errorTarget);
+    }
+  }
+
+  @CheckingMethod()
+  public static void checkAppliedNotTo_LinkAccess_reference(final TypeCheckingContext typeCheckingContext, SNode op) {
+    // expect access to an aggregation link with singular cardinality
+    // left expression could also be something else (like just 'node') but not access to a reference link
+    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
+    SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
+    boolean isGood = true;
+    SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);
+    if (linkAccessT != null) {
+      if (!(SPropertyOperations.getBoolean(linkAccessT, "aggregation"))) {
+        isGood = false;
+      }
+    }
+    // ----
+    if (!(isGood)) {
+      BaseIntentionProvider intentionProvider = null;
+      IErrorTarget errorTarget = new NodeErrorTarget();
+      typeCheckingContext.reportTypeError(op, "operation is not applicable to reference-link-access", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1230333667606", intentionProvider, errorTarget);
     }
   }
 

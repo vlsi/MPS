@@ -38,7 +38,7 @@
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)" version="-1" />
-  <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
+  <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="14" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
@@ -227,6 +227,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1138757943608">
+    <property name="package" value="operation.link.child" />
     <link role="conceptDeclaration" targetNodeId="1.1138757581985" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1139880110903">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1206487847415">
@@ -263,6 +264,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1139184505217">
+    <property name="package" value="operation.linkList" />
     <link role="conceptDeclaration" targetNodeId="1.1139184414036" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1139877768037">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1206487762220">
@@ -404,6 +406,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1139870425549">
+    <property name="package" value="operation.linkList" />
     <link role="conceptDeclaration" targetNodeId="1.1139870260207" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1139870427663">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1206487753718">
@@ -423,6 +426,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1140029629081">
+    <property name="package" value="operation.linkList" />
     <link role="conceptDeclaration" targetNodeId="1.1140029532506" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1140029629082">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1206487836132">
@@ -442,6 +446,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1140129701012">
+    <property name="package" value="operation.link.child" />
     <link role="conceptDeclaration" targetNodeId="1.1140129518788" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1140129710123">
       <property name="text" value="remove" />
@@ -550,6 +555,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1140725455179">
+    <property name="package" value="operation.link" />
     <link role="conceptDeclaration" targetNodeId="1.1140725362528" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1140725455180">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1206487883216">
@@ -945,6 +951,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1145468780047">
+    <property name="package" value="operation.linkList" />
     <link role="conceptDeclaration" targetNodeId="1.1145468686058" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1145468793690">
       <property name="text" value="count" />
@@ -1388,6 +1395,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1172244086685">
+    <property name="package" value="operation.linkList" />
     <link role="conceptDeclaration" targetNodeId="1.1172244025706" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1172244089058">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1206487728793">
