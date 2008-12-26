@@ -34,7 +34,10 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.typesystem.inference.InequationSystem;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.List;
 import java.util.Collections;
@@ -48,7 +51,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   private LinkDeclaration myLinkDeclaration;
   private SNode myCurrentReferent;
 
-  public DefaultReferenceSubstituteInfo(final SNode sourceNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {    
+  public DefaultReferenceSubstituteInfo(final SNode sourceNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
 
     NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
@@ -76,20 +79,37 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   public InequationSystem getInequationSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
     SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(mySourceNode.getContainingRoot()), mapping).get(0);
-    SModel auxModel = nodeCopyRoot.getModel();
-    if (!nodeCopyRoot.isRoot()) {
-      auxModel.addRoot(nodeCopyRoot);
+    boolean wasLoading = auxModel.isLoading();
+    auxModel.setLoading(true);
+    try {
+      if (!nodeCopyRoot.isRoot()) {
+        auxModel.addRoot(nodeCopyRoot);
+      }
+      String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
+      SNode sourceNode = mapping.get(mySourceNode);
+      SNode nodeToEquatePeer = mySourceNode;
+      TypeChecker typeChecker = TypeChecker.getInstance();
+      while (nodeToEquatePeer != null && typeChecker.getTypeOf(nodeToEquatePeer) == null) {
+        nodeToEquatePeer = nodeToEquatePeer.getParent();
+      }
+      if (nodeToEquatePeer == null) {
+        return null;
+      }
+      SNode nodeToEquate = mapping.get(nodeToEquatePeer);
+      SNode parent = nodeToEquate.getParent();
+      if (parent == null) {
+        return null;
+      }
+      SNode hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
+      parent.replaceChild(nodeToEquate, hole);
+      InequationSystem inequationsForHole = TypeChecker.getInstance().getInequationsForHole(hole);
+      auxModel.removeRoot(nodeCopyRoot);
+      return inequationsForHole;
+    } finally {
+      auxModel.setLoading(wasLoading);
     }
-    String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
-    RuntimeTypeVariable var = RuntimeTypeVariable.newInstance(auxModel);
-
-    //mySourceNode
-
-    auxModel.removeRoot(nodeCopyRoot);
-
-    //todo
-    return null;
   }
 
   public List<INodeSubstituteAction> createActions() {
@@ -100,7 +120,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     EditorComponent editor = getEditorContext().getNodeEditorComponent();
     EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, SModelUtil_new.getGenuineLinkRole(myLinkDeclaration));
 
-    if (referenceCell != null && referenceCell.getContainingBigCell().getFirstLeaf() == referenceCell &&      
+    if (referenceCell != null && referenceCell.getContainingBigCell().getFirstLeaf() == referenceCell &&
       ReferenceConceptUtil.getCharacteristicReference(mySourceNode.getConceptDeclarationAdapter()) == myLinkDeclaration &&
       mySourceNode.getParent() != null && mySourceNode.getChildren().isEmpty()) {
 

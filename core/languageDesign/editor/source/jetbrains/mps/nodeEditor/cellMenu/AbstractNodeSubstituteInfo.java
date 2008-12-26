@@ -100,7 +100,7 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     TypeChecker.getInstance().enableTypesComputingForCompletion();
     for (INodeSubstituteAction nodeSubstituteAction : substituteActionList) {
-      SNode type = nodeSubstituteAction.getActionType(pattern);
+      SNode type = nodeSubstituteAction.getActionType(pattern, contextCell);
       if (type != null && inequationSystem.satisfies(type)) {
         result.add(nodeSubstituteAction);
       }

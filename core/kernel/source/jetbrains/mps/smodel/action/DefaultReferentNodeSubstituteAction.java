@@ -19,9 +19,19 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.InequationSystem;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.Icon;
+
+import com.intellij.util.containers.HashMap;
 
 /**
  * Igor Alshannikov
@@ -68,8 +78,38 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   }
 
   @Override
-  public SNode getActionType(String pattern) {
-    SNode parameterNode = (SNode) getParameterObject();
-    return TypeChecker.getInstance().getTypeOf(parameterNode);
+  public SNode getActionType(String pattern, EditorCell contextCell) {
+     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
+    SNode sourceNodePeer = getSourceNode();
+    SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(sourceNodePeer.getContainingRoot()), mapping).get(0);
+    boolean wasLoading = auxModel.isLoading();
+    auxModel.setLoading(true);
+    try {
+      if (!nodeCopyRoot.isRoot()) {
+        auxModel.addRoot(nodeCopyRoot);
+      }
+      String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
+      SNode sourceNode = mapping.get(sourceNodePeer);
+      SNode nodeToEquatePeer = sourceNodePeer;
+      TypeChecker typeChecker = TypeChecker.getInstance();
+      while (nodeToEquatePeer != null && typeChecker.getTypeOf(nodeToEquatePeer) == null) {
+        nodeToEquatePeer = nodeToEquatePeer.getParent();
+      }
+      if (nodeToEquatePeer == null) {
+        return null;
+      }
+      SNode nodeToEquate = mapping.get(nodeToEquatePeer);
+      SNode parent = nodeToEquate.getParent();
+      if (parent == null) {
+        return null;
+      }
+      sourceNode.setReferent(role, (SNode)getParameterObject());
+      SNode type = TypeChecker.getInstance().getTypeOf(nodeToEquate);
+      auxModel.removeRoot(nodeCopyRoot);
+      return type;
+    } finally {
+      auxModel.setLoading(wasLoading);
+    }
   }
 }

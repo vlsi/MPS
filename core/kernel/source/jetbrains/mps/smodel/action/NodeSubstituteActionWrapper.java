@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import javax.swing.Icon;
 
@@ -75,5 +76,9 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
 
   public int getSortPriority(String pattern) {
     return mySubstituteAction.getSortPriority(pattern);
+  }
+
+  public SNode getActionType(String pattern, EditorCell contextCell) {
+    return mySubstituteAction.getActionType(pattern, contextCell);
   }
 }

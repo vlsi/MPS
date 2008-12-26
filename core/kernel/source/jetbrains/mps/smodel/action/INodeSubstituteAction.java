@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import javax.swing.Icon;
 
@@ -28,6 +29,7 @@ public interface INodeSubstituteAction {
   SNode getOutputConcept();
 
   SNode getActionType(String pattern);
+  SNode getActionType(String pattern, EditorCell contextCell);
 
   String getMatchingText(String pattern);
   String getVisibleMatchingText(String pattern);

@@ -342,7 +342,7 @@ public class QueriesGenerated {
         public String getMatchingText(String pattern) {
           return "[";
         }
-
+                                                                                                             
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
