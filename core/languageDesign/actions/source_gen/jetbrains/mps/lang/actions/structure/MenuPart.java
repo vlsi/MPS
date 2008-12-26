@@ -10,10 +10,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MenuPart extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.actions.structure.MenuPart";
+  public static final String ACTION_TYPE = "actionType";
 
   public MenuPart(SNode node) {
     super(node);
   }
+
+  public QueryFunction_ActionType getActionType() {
+    return (QueryFunction_ActionType)this.getChild(MenuPart.ACTION_TYPE);
+  }
+
+  public void setActionType(QueryFunction_ActionType node) {
+    super.setChild(MenuPart.ACTION_TYPE, node);
+  }
+
 
   public static MenuPart newInstance(SModel sm, boolean init) {
     return (MenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.MenuPart", sm, GlobalScope.getInstance(), init).getAdapter();

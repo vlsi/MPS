@@ -38,13 +38,35 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
+  <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="11" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1151703690959">
     <property name="name" value="BLC_rtansform" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1197932848431">
       <link role="applicableConcept" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <node role="variable" type="jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration" id="1230303479282">
+        <property name="name" value="mapType" />
+        <node role="initializerBlock" type="jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer" id="1230303479283">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230303479284">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230303505944">
+              <node role="expression" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" id="1230303547246">
+                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1230303563442">
+                  <property name="name" value="mapType" />
+                  <link role="concept" targetNodeId="1.1197683403723" resolveInfo="MapType" />
+                </node>
+                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230303554078">
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1230303553093" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1230303554925" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1230303487849">
+          <link role="concept" targetNodeId="1.1197683403723" resolveInfo="MapType" />
+        </node>
+      </node>
       <node role="precondition" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" id="1197932868400">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197932868401">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197932910362">
@@ -116,6 +138,20 @@
           </node>
           <node role="matchingText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1197933261228">
             <property name="text" value="[" />
+          </node>
+          <node role="actionType" type="jetbrains.mps.lang.actions.structure.QueryFunction_ActionType" id="1230304904707">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230304904708">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230304907928">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230304908867">
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.SideTransformVariableReference" id="1230304907929">
+                    <link role="variableDeclaration" targetNodeId="1230303479282" resolveInfo="mapType" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230304941118">
+                    <link role="link" targetNodeId="1.1197683475734" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

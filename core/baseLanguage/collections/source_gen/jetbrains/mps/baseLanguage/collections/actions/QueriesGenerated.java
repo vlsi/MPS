@@ -318,6 +318,17 @@ public class QueriesGenerated {
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1197932848431(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    final SNode mapType;
+    {
+      Calculable calculable = new Calculable() {
+
+        public Object calculate() {
+          return TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), false);
+        }
+
+      };
+      mapType = (SNode)calculable.calculate();
+    }
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapElement");
       result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -334,6 +345,10 @@ public class QueriesGenerated {
 
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
+        }
+
+        public SNode getActionType(String pattern) {
+          return SLinkOperations.getTarget(mapType, "valueType", true);
         }
 
       });

@@ -1287,6 +1287,11 @@
     <property name="package" value="menuParts" />
     <property name="name" value="MenuPart" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230300823443">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="actionType" />
+      <link role="target" targetNodeId="1230300670420" resolveInfo="QueryFunction_ActionType" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1177495789097">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
@@ -2268,6 +2273,19 @@
       <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221634980556">
         <link role="concept" targetNodeId="2.1071489288298" resolveInfo="LinkDeclaration" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230300670420">
+    <property name="package" value="queryFunctions" />
+    <property name="name" value="QueryFunction_ActionType" />
+    <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1230300736594">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1230300736595" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1230300765410">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1177327274449" resolveInfo="ConceptFunctionParameter_pattern" />
     </node>
   </node>
 </model>

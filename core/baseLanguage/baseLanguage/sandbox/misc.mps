@@ -126,6 +126,35 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1230303587948">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1230303587949">
+            <property name="name" value="mymap" />
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1230303587950">
+              <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230303603453">
+                <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+              </node>
+              <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230303606564">
+                <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230303717962">
+          <node role="expression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1230303718902">
+            <node role="key" type="jetbrains.mps.baseLanguage.structure.Expression" id="1230303718904" />
+            <node role="map" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230303717963">
+              <link role="variableDeclaration" targetNodeId="1230303587949" resolveInfo="mymap" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230303760268">
+          <node role="expression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1230305151482">
+            <node role="key" type="jetbrains.mps.baseLanguage.structure.Expression" id="1230305151484" />
+            <node role="map" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230303760269">
+              <link role="variableDeclaration" targetNodeId="1230303587949" resolveInfo="mymap" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227257103095">
         <property name="name" value="s" />
