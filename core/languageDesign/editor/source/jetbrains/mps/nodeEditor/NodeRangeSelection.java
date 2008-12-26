@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
 
@@ -111,16 +112,17 @@ public class NodeRangeSelection implements KeyboardHandler {
     String role = null;
     while (parentNode != null) {
       role = childNode.getRole_();
-      LinkDeclaration childDeclaration = parentNode.getLinkDeclaration(role);
+      LinkDeclaration childDeclaration = parentNode.getLinkDeclaration(role);      
 
       if (childDeclaration == null) {
-        //it might have happened if we found a annotation macro
-        break;
-      }
-
-      Cardinality cardinality = childDeclaration.getSourceCardinality();
-      if (cardinality == Cardinality._0__n || cardinality == Cardinality._1__n) {
-        break;
+        if (! AttributesRolesUtil.isAttributeRole(role)) {
+          break;
+        }
+      } else {
+        Cardinality cardinality = childDeclaration.getSourceCardinality();
+        if (cardinality == Cardinality._0__n || cardinality == Cardinality._1__n) {
+          break;
+        }
       }
       childNode = parentNode;
       parentNode = childNode.getParent();

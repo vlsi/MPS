@@ -9,6 +9,7 @@
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -747,6 +748,50 @@
           <property name="value" value="" />
           <node role="mockAnnotation$attribute" type="jetbrains.mps.lang.test.structure.MockAnnotation" id="1230225066154" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230298429981">
+    <property name="package" value="selection" />
+    <property name="name" value="ListSelectionWithAnnotation" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230298450812">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230298450813" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230298450814" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230298450815" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1230298460395">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1230298460396" />
+        <node role="mockAnnotation$attribute" type="jetbrains.mps.lang.test.structure.MockAnnotation" id="1230298497973">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1230301201865">
+            <property name="isLastPosition" value="true" />
+            <property name="cellId" value="Constant_3037_0" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1230298462429">
+        <property name="name" value="b" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1230298463618" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230298476104">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230298476105" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230298476106" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230298476107" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1230298523725">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1230298525180" />
+        <node role="mockAnnotation$attribute" type="jetbrains.mps.lang.test.structure.MockAnnotation" id="1230301194521">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1230301233290">
+            <property name="isLastPosition" value="true" />
+            <property name="cellId" value="Constant_3037_0" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1230298482516">
+        <property name="name" value="b" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1230298483456" />
       </node>
     </node>
   </node>
