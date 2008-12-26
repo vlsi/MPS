@@ -29,21 +29,27 @@ public class MessageViewLoggingHandler implements ILoggingHandler {
   }
 
   public void info(LogEntry e) {
-    myMessagesView.add(new Message(MessageKind.INFORMATION, e.getMessage(), e.getHintObject()),e.getSourceClass());
+    add(MessageKind.INFORMATION,e);
   }
 
   public void warning(LogEntry e) {
-    myMessagesView.add(new Message(MessageKind.WARNING, e.getMessage(), e.getHintObject()),e.getSourceClass());
+    add(MessageKind.WARNING,e);
   }
 
   public void debug(LogEntry e) {
   }
 
   public void error(LogEntry e) {
-    myMessagesView.add(new Message(MessageKind.ERROR, e.getMessage(), e.getHintObject(), e.getThrowable()),e.getSourceClass());
+    add(MessageKind.ERROR,e);
   }
 
   public void fatal(LogEntry e) {
-    myMessagesView.add(new Message(MessageKind.ERROR, e.getMessage(), e.getHintObject(), e.getThrowable()),e.getSourceClass());
+    add(MessageKind.ERROR,e);
+  }
+
+  private void add(MessageKind kind, LogEntry e){
+    Message message = new Message(kind,e.getSourceClass(), e.getMessage());
+    message.setHintObject(e.getHintObject());
+    myMessagesView.add(message);
   }
 }

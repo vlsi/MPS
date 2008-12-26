@@ -89,7 +89,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     }
   });
 
-  private Queue<PostedMessage> myMessages = new LinkedList<PostedMessage>();
+  private Queue<Message> myMessages = new LinkedList<Message>();
   private DefaultListModel myModel = new DefaultListModel();
   private JPanel myComponent = new JPanel();
   private JList myList = new JList(myModel);
@@ -179,12 +179,12 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       public void mouseMoved(MouseEvent e) {
         int index = myList.locationToIndex(e.getPoint());
 
-        PostedMessage item = null;
+        Message item = null;
         if (index != -1) {
-          item = (PostedMessage) myModel.get(index);
+          item = (Message) myModel.get(index);
         }
 
-        if (item != null && item.getFirst().getHintObject() != null && myAutoscrollToSourceAction.isSelected(null)) {
+        if (item != null && item.getHintObject() != null && myAutoscrollToSourceAction.isSelected(null)) {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         } else {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
@@ -228,32 +228,32 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   //------------MESSAGES STUFF---------------
 
   public boolean hasErrors() {
-    for (PostedMessage m : myMessages) {
-      if (m.getFirst().getKind() == MessageKind.ERROR) return true;
+    for (Message m : myMessages) {
+      if (m.getKind() == MessageKind.ERROR) return true;
     }
 
     return false;
   }
 
   public boolean hasWarnings() {
-    for (PostedMessage m : myMessages) {
-      if (m.getFirst().getKind() == MessageKind.WARNING) return true;
+    for (Message m : myMessages) {
+      if (m.getKind() == MessageKind.WARNING) return true;
     }
 
     return false;
   }
 
   public boolean hasInfo() {
-    for (PostedMessage m : myMessages) {
-      if (m.getFirst().getKind() == MessageKind.INFORMATION) return true;
+    for (Message m : myMessages) {
+      if (m.getKind() == MessageKind.INFORMATION) return true;
     }
 
     return false;
   }
 
   public boolean hasHintObjects() {
-    for (PostedMessage m : myMessages) {
-      if (m.getFirst().getHintObject() != null) return true;
+    for (Message m : myMessages) {
+      if (m.getHintObject() != null) return true;
     }
 
     return false;
@@ -281,7 +281,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         protected void doExecute(AnActionEvent e) {
           StringBuilder sb = new StringBuilder();
           for (Object o : myList.getSelectedValues()) {
-            sb.append(((PostedMessage) o).getFirst().getText());
+            sb.append(((Message) o).getText());
             sb.append("\n");
           }
           Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.toString()), null);
@@ -302,8 +302,8 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     });
 
     if (myList.getSelectedIndices().length == 1) {
-      final PostedMessage message = (PostedMessage) myList.getSelectedValue();
-      if (message.getFirst().getKind() == MessageKind.ERROR) {
+      final Message message = (Message) myList.getSelectedValue();
+      if (message.getKind() == MessageKind.ERROR) {
         group.addSeparator();
         group.add(new BaseAction("Submit to Issue tracker") {
           {
@@ -311,7 +311,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
           }
 
           protected void doExecute(AnActionEvent e) {
-            submitToTracker(message.getFirst());
+            submitToTracker(message);
           }
         });
       }
@@ -338,12 +338,12 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   private void openCurrentMessageNodeIfPossible() {
-    final PostedMessage selectedMessage = (PostedMessage) myList.getSelectedValue();
-    if (selectedMessage == null || selectedMessage.getFirst().getHintObject() == null) return;
+    final Message selectedMessage = (Message) myList.getSelectedValue();
+    if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        NavigationManager.getInstance().navigateTo(getMPSProject(), selectedMessage.getFirst().getHintObject());
+        NavigationManager.getInstance().navigateTo(getMPSProject(), selectedMessage.getHintObject());
       }
     });
   }
@@ -363,17 +363,17 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private void rebuildModel() {
     myModel.clear();
     myList.setFixedCellWidth(myList.getWidth());
-    List<PostedMessage> messagesToAdd = new ArrayList<PostedMessage>();
+    List<Message> messagesToAdd = new ArrayList<Message>();
     int width = 0;
-    for (PostedMessage m : myMessages) {
-      if (isVisible(m.getFirst())) {
+    for (Message m : myMessages) {
+      if (isVisible(m)) {
         width = Math.max(width, getMessageWidth(m));
         messagesToAdd.add(m);
       }
     }
     myList.setFixedCellWidth(width);
 
-    for (PostedMessage m : messagesToAdd) {
+    for (Message m : messagesToAdd) {
       myModel.addElement(m);
     }
   }
@@ -390,14 +390,6 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   public void add(final Message message) {
-    add(message,(String)null);
-  }
-
-  public void add(final Message message,@NotNull Class poster) {
-    add(message,poster.getName());
-  }
-
-  public void add(final Message message,@Nullable final String poster) {
     if (IdeMain.isTestMode()) {
       return;
     }
@@ -409,24 +401,23 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         int messages = myMessagesInProgress.decrementAndGet();
 
         if (myMessages.size() >= MAX_MESSAGES_SIZE) {
-          PostedMessage toRemove = myMessages.remove();
-          if (isVisible(toRemove.getFirst())) {
+          Message toRemove = myMessages.remove();
+          if (isVisible(toRemove)) {
             myModel.removeElement(toRemove);
           }
         }
 
-        PostedMessage postedMessage = new PostedMessage(message, NameUtil.shortNameFromLongName(poster));
         if (isVisible(message)) {
-          myModel.addElement(postedMessage);
+          myModel.addElement(message);
           int index = myModel.size() - 1;
           myList.getSelectionModel().setSelectionInterval(index, index);
           if (messages == 0) {
             myList.ensureIndexIsVisible(index);
           }
         }
-        myMessages.add(postedMessage);
+        myMessages.add(message);
 
-        int width = getMessageWidth(postedMessage);
+        int width = getMessageWidth(message);
         if (width > myList.getFixedCellWidth()) {
           myList.setFixedCellWidth(width);
         }
@@ -439,7 +430,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     myToolbar.updateActionsImmediately();
   }
 
-  private int getMessageWidth(PostedMessage message) {
+  private int getMessageWidth(Message message) {
     Component renderer = myList.getCellRenderer().getListCellRendererComponent(myList, message, 0, false, false);
     int width = renderer.getPreferredSize().width;
     return width;
@@ -533,18 +524,6 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         Icon icon = enabled ? myIcon : UIManager.getLookAndFeel().getDisabledIcon(null, myIcon);
         e.getPresentation().setIcon(icon);
       }
-    }
-  }
-
-  public class PostedMessage extends Pair<Message,String>{
-    public PostedMessage(Message first, String second) {
-      super(first, second);
-    }
-
-    @Override
-    public String toString() {
-      String prefix = ((getSecond() == null) ? "" : "[" + getSecond() + "] ");
-      return prefix+getFirst().toString();
     }
   }
 }

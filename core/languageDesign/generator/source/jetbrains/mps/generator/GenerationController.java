@@ -105,7 +105,7 @@ public class GenerationController {
     }
     long totalJob = estimateGenerationTime();
     long startJobTime = System.currentTimeMillis();
-    myMesssages.handle(new Message(MessageKind.INFORMATION, myGenerationType.getStartText()));
+    myMesssages.handle(new Message(MessageKind.INFORMATION,GenerationController.class, myGenerationType.getStartText()));
     try {
       boolean generationOK = true;
       for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
@@ -157,7 +157,7 @@ public class GenerationController {
       LOG.error(t);
       final String text = t.toString();
       // myProgress.setText(text);
-      myMesssages.handle(new Message(MessageKind.ERROR, text));
+      myMesssages.handle(new Message(MessageKind.ERROR,GenerationController.class, text));
     } finally {
       if (myProgress.isRunning()) {
         myProgress.stop();
@@ -210,11 +210,11 @@ public class GenerationController {
       try {
         getProjectHandler().addSourceRoot(outputFolder);
       } catch (Exception e) {
-        myMesssages.handle(new Message(MessageKind.WARNING, "Can't add output folder to IDEA as sources"));
+        myMesssages.handle(new Message(MessageKind.WARNING,GenerationController.class, "Can't add output folder to IDEA as sources"));
       }
     }
 
-    myMesssages.handle(new Message(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\""));
+    myMesssages.handle(new Message(MessageKind.INFORMATION,GenerationController.class, "    target root folder: \"" + outputFolder + "\""));
 
     //++ generation
     Statistics.setEnabled(Statistics.TPL, myManager.isDumpStatistics());
@@ -380,17 +380,17 @@ public class GenerationController {
 
   private void info(String text) {
     // myProgress.addText(text);
-    myMesssages.handle(new Message(MessageKind.INFORMATION, text));
+    myMesssages.handle(new Message(MessageKind.INFORMATION,GenerationController.class, text));
   }
 
   private void warning(String text) {
     // myProgress.addText(text);
-    myMesssages.handle(new Message(MessageKind.WARNING, text));
+    myMesssages.handle(new Message(MessageKind.WARNING,GenerationController.class, text));
   }
 
   private void error(String text) {
     // myProgress.addText(text);
-    myMesssages.handle(new Message(MessageKind.ERROR, text));
+    myMesssages.handle(new Message(MessageKind.ERROR,GenerationController.class, text));
   }
 
   private void setText2(String text, long estimatedTime, long startJobTime) {

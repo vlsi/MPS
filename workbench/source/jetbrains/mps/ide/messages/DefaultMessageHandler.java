@@ -24,11 +24,9 @@ import jetbrains.mps.project.MPSProject;
  */
 public class DefaultMessageHandler implements IMessageHandler {
   private MPSProject myProject;
-  private String myPoster;
 
-  public DefaultMessageHandler(MPSProject project,Class poster) {
+  public DefaultMessageHandler(MPSProject project) {
     myProject = project;
-    myPoster = poster.getSimpleName();
   }
 
 
@@ -36,7 +34,7 @@ public class DefaultMessageHandler implements IMessageHandler {
     MessagesViewTool messagesView = myProject.getComponent(Project.class).getComponent(MessagesViewTool.class);
     if (messagesView != null) {
       //it might happen if we haven't opened IDE yet
-      messagesView.add(msg,myPoster);
+      messagesView.add(msg);
     }
   }
 }

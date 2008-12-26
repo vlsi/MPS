@@ -353,7 +353,9 @@ public class GenerationSession implements IGenerationSession {
   }
 
   private void addMessage(MessageKind kind, String text, Object hintObject) {
-    addMessage(new Message(kind, text, hintObject));
+    Message message = new Message(kind, text);
+    message.setHintObject(hintObject);
+    addMessage(message);
   }
 
   private void addProgressMessage(MessageKind kind, String text) {

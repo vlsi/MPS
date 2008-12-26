@@ -64,22 +64,23 @@ public class ShowMappingsPartitioningAction extends BaseAction {
       List<MappingPriorityRule> rules = ((GeneratorDescriptor) generator.getModuleDescriptor()).getPriorityRules();
       List<Pair<MappingPriorityRule, String>> strings = GenerationPartitioningUtil.toStrings(rules, true);
       for (Pair<MappingPriorityRule, String> string : strings) {
-        messagesView.add(new Message(MessageKind.INFORMATION, " " + string.second, generator));
+        Message msg = new Message(MessageKind.INFORMATION, " " + string.second);
+        msg.setHintObject(generator);
+        messagesView.add(msg);
       }
     }
     messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     if (partitioner.hasConflictingPriorityRules()) {
       // message view
       messagesView.openToolLater(true);
-      messagesView.add(new Message(MessageKind.ERROR, "Conflicting mapping priority rules encountered:"),ShowMappingsPartitioningAction.class);
+      messagesView.add(new Message(MessageKind.ERROR,ShowMappingsPartitioningAction.class, "Conflicting mapping priority rules encountered:"));
       List<Pair<MappingPriorityRule, String>> messagesFull = GenerationPartitioningUtil.toStrings(partitioner.getConflictingPriorityRules(), true);
       for (Pair<MappingPriorityRule, String> message : messagesFull) {
-        MappingPriorityRule rule = message.first;
-        String text = message.second;
-        GeneratorDescriptor generatorDescriptor = rule.findParent(GeneratorDescriptor.class);
+        Message msg = new Message(MessageKind.ERROR, ShowMappingsPartitioningAction.class, message.second);
+        GeneratorDescriptor generatorDescriptor = message.first.findParent(GeneratorDescriptor.class);
         Generator generatorModule = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorDescriptor.getGeneratorUID());
-
-        messagesView.add(new Message(MessageKind.ERROR, text, generatorModule),ShowMappingsPartitioningAction.class);
+        msg.setHintObject(generatorModule);
+        messagesView.add(msg);
       }
       messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
 

@@ -15,31 +15,42 @@
  */
 package jetbrains.mps.ide.messages;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.Date;
 
 /**
  * @author Kostik
  */
 public class Message {
+  private String mySender;
   private MessageKind myKind;
   private String myText;
   private Object myHintObject;
   private Throwable myException;
   private long myCreationTime = System.currentTimeMillis();
 
-  public Message(MessageKind kind, String text, Object hintObject, Throwable exception) {
+  public Message(MessageKind kind, @Nullable String sender, String text) {
     myKind = kind;
+    mySender = sender;
     myText = text;
-    myHintObject = hintObject;
-    myException = exception;
   }
 
-  public Message(MessageKind kind, String text, Object hintObject) {
-    this(kind, text, hintObject,null);
+  public Message(MessageKind kind, @NotNull Class sender, String text) {
+    this(kind, sender.getSimpleName(), text);
   }
 
   public Message(MessageKind kind, String text) {
-    this(kind, text, null);
+    this(kind,(String)null,text);
+  }
+
+  public void setHintObject(Object hintObject) {
+    myHintObject = hintObject;
+  }
+
+  public void setException(Throwable exception) {
+    myException = exception;
   }
 
   public MessageKind getKind() {
@@ -58,8 +69,13 @@ public class Message {
     return myText;
   }
 
+  public String getSender() {
+    return mySender;
+  }
+
   public String toString() {
-    return getText();
+    String prefix = ((mySender == null) ? "" : "[" + mySender + "] ");
+    return prefix + getText();
   }
 
   public String getCreationTimeString() {

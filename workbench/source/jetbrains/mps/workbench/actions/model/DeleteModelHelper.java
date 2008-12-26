@@ -52,7 +52,8 @@ public class DeleteModelHelper {
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
 
     if (aspect == LanguageAspect.STRUCTURE) {
-      project.getComponent(MessagesViewTool.class).add(new Message(MessageKind.WARNING, "Can't delete structure model " + modelDescriptor.getLongName()),DeleteModelHelper.class);
+      Message msg = new Message(MessageKind.WARNING,DeleteModelHelper.class, "Can't delete structure model " + modelDescriptor.getLongName());
+      project.getComponent(MessagesViewTool.class).add(msg);
       return;
     }
 
