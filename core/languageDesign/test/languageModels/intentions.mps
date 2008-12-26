@@ -546,5 +546,52 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1230224371548">
+    <property name="name" value="AddMockAnnoatation" />
+    <link role="forConcept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1230224371549">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230224371550">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230224704769">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230224704770">
+            <property name="value" value="Add mock annotation" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1230224371551">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230224371552">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1230224597307">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1230224597308">
+            <property name="name" value="newAnnotation" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1230224597309">
+              <link role="concept" targetNodeId="1.1230224281548" resolveInfo="MockAnnotation" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1230224616435">
+              <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1230224659686">
+                <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1230224659687">
+                  <link role="concept" targetNodeId="1.1230224281548" resolveInfo="MockAnnotation" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230224672973">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1230224682824">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230224684920">
+              <link role="variableDeclaration" targetNodeId="1230224597308" resolveInfo="newAnnotation" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230224673897">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1230224672974" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1230224675822">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="1230224679838">
+                  <link role="annotationLink" targetNodeId="1.1230224342814" resolveInfo="mockAnnotation" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -793,5 +793,19 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1230224860032">
+    <property name="package" value="mock" />
+    <link role="conceptDeclaration" targetNodeId="1.1230224281548" resolveInfo="MockAnnotation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230224865909">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230224875676">
+        <property name="text" value="&lt;mock" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" id="1230224899038" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230224906353">
+        <property name="text" value="&gt;" />
+      </node>
+    </node>
+  </node>
 </model>
 

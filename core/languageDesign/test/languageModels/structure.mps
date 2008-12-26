@@ -593,5 +593,16 @@
       <link role="intfc" targetNodeId="1228584180295" resolveInfo="INodeAnnotattion" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230224281548">
+    <property name="name" value="MockAnnotation" />
+    <property name="package" value="mock" />
+    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="1230224342814">
+    <property name="package" value="mock" />
+    <property name="role" value="mockAnnotation" />
+    <link role="source" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+    <link role="target" targetNodeId="1230224281548" resolveInfo="MockAnnotation" />
+  </node>
 </model>
 

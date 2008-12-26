@@ -7911,7 +7911,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724022" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229351767970">
-      <property name="name" value="getExecuteCommandStatementSync" />
+      <property name="name" value="getReturnJumpTarget" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1229351806187">
         <link role="concept" targetNodeId="1.1199653749349" resolveInfo="IStatementListContainer" />
       </node>

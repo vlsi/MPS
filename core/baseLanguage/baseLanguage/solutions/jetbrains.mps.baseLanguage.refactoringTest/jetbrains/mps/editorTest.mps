@@ -8,6 +8,7 @@
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
+  <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -32,7 +33,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <maxImportIndex value="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
@@ -42,6 +46,8 @@
   <import index="7" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
   <import index="9" modelUID="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)" version="-1" />
+  <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" version="-1" />
+  <import index="11" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635633">
     <property name="name" value="AnonymousClassTest" />
     <property name="package" value="bugTest" />
@@ -707,6 +713,40 @@
     <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230137788645">
       <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1230137788646">
         <property name="keys" value="*2" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230223594759">
+    <property name="package" value="bugTest" />
+    <property name="name" value="RightTransformInAnnotation" />
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230223594770">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1230223594771">
+        <property name="keys" value="+1" />
+      </node>
+    </node>
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230224846076">
+      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230224846077">
+        <property name="value" value="" />
+        <node role="mockAnnotation$attribute" type="jetbrains.mps.lang.test.structure.MockAnnotation" id="1230225025952" />
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1230225049603">
+          <property name="isLastPosition" value="true" />
+          <property name="cellId" value="Constant_3246_1" />
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230225066152">
+      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230225072625">
+        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1230225072878">
+          <property name="value" value="1" />
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1230225074441">
+            <property name="isLastPosition" value="true" />
+            <property name="cellId" value="property_value" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230225066153">
+          <property name="value" value="" />
+          <node role="mockAnnotation$attribute" type="jetbrains.mps.lang.test.structure.MockAnnotation" id="1230225066154" />
+        </node>
       </node>
     </node>
   </node>
