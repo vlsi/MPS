@@ -27,6 +27,8 @@
       <solutionPath path="${project}/solutions/collections/unittest/collections_unittest.msd" />
       <solutionPath path="${project}/solutions/collections/sandbox/collections_sandbox.msd" />
       <solutionPath path="${mps_home}/core/baseLanguage/closures/solutions/closures.test/closures.test.msd" />
+      <solutionPath path="${mps_home}/core/baseLanguage/closures/solutions/closures.sandbox/closures.sandbox.msd" />
+      <solutionPath path="${mps_home}/core/baseLanguage/closures/runtime/closures.runtime.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/collections.mpl" />

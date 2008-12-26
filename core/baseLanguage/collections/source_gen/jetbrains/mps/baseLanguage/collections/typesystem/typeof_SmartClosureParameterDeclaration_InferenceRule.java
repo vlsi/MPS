@@ -7,10 +7,8 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SmartClosureParameterDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -19,22 +17,17 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
   }
 
   public void applyRule(final SNode scpd, final TypeCheckingContext typeCheckingContext) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(scpd), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
-      List<SNode> paramTypes = new ArrayList<SNode>();
-      for(SNode p : SLinkOperations.getTargets(SNodeOperations.getParent(scpd), "parameter", true)) {
-        final SNode pt_typevar_1225884676703 = typeCheckingContext.createNewRuntimeTypesVariable();
-        paramTypes.add(typeCheckingContext.getEquationManager().getRepresentator(pt_typevar_1225884676703));
-      }
-      final SNode resType_typevar_1225884601347 = typeCheckingContext.createNewRuntimeTypesVariable();
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(scpd), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(scpd)), "jetbrains.mps.baseLanguage.structure.IOperation")) {
+      final SNode paramType_typevar_1230315924141 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
         SNode _nodeToCheck_1029348928467 = scpd;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(SNodeOperations.getParent(scpd), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1227182076310", true), new _Quotations.QuotationClass_89().createNode(paramTypes, typeCheckingContext.getEquationManager().getRepresentator(resType_typevar_1225884601347), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1227182076308", intentionProvider);
+        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(SNodeOperations.getParent(SNodeOperations.getParent(scpd))), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1230315907236", true), new _Quotations.QuotationClass_89().createNode(typeCheckingContext.getEquationManager().getRepresentator(paramType_typevar_1230315924141), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1230315907234", false, 0, intentionProvider);
       }
       {
         SNode _nodeToCheck_1029348928467 = scpd;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(scpd, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225884710431", true), paramTypes.get(SNodeOperations.getIndexInParent(scpd)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225884718404", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(scpd, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1230315969555", true), typeCheckingContext.getEquationManager().getRepresentator(paramType_typevar_1230315924141), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1230315977451", intentionProvider);
       }
     }
   }

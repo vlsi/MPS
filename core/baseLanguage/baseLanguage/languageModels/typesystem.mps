@@ -1781,6 +1781,7 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203030907645">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203030907646">
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1203026955244">
+            <property name="inequationPriority" value="500" />
             <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1203026960431">
               <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1203026960432">
                 <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1203026962378">
