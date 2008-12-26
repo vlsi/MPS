@@ -7,6 +7,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import junit.framework.Assert;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 
 public class ForEachTest_Test extends BaseTransformationTest {
 
@@ -17,7 +18,7 @@ public class ForEachTest_Test extends BaseTransformationTest {
   }
 
   public static class TestBody extends BaseEditorTestBody {
-
+    
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1230058635764", "");
       BaseEditorTestBody.typeString(editor, "foreach");
