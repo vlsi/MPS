@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionEventData;
 
+import javax.swing.SwingUtilities;
 import java.awt.Frame;
 import java.util.List;
 
@@ -53,8 +54,7 @@ public class DeleteGeneratorHelper {
     SearchQuery searchQuery = new SearchQuery(generator, GlobalScope.getInstance());
     SearchResults results = FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), searchQuery, new DependentGeneratorsFinder());
     if (!results.getSearchResults().isEmpty()) {
-      Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
-      StringBuilder report = new StringBuilder();
+      final StringBuilder report = new StringBuilder();
       report.append("Can't delete generator ").append(generator.getModuleFqName()).append(".\n");
       report.append("The following generators depend on it:\n\n");
       for (SearchResult result : (List<SearchResult>) results.getSearchResults()) {
@@ -62,7 +62,12 @@ public class DeleteGeneratorHelper {
         report.append(g.getModuleFqName()).append("\n");
       }
 
-      new MessageDialog(frame, report.toString());
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
+          new MessageDialog(frame, report.toString()).showDialog();
+        }
+      });
       return;
     }
 
