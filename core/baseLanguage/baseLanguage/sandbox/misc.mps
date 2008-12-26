@@ -79,7 +79,12 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1230221398092">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.AbstractCreator" id="1230221398093" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1230291150397">
+                <link role="baseMethodDeclaration" targetNodeId="1.~AbstractMethodError.&lt;init&gt;(java.lang.String)" resolveInfo="AbstractMethodError" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230291167242">
+                  <property name="value" value="" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -93,6 +98,17 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1230048448794">
                 <link role="variableDeclaration" targetNodeId="1227257103095" resolveInfo="s" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1230295774098">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1230295774099">
+            <property name="name" value="md" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1230295774100">
+              <link role="concept" targetNodeId="138.1068580123132" resolveInfo="BaseMethodDeclaration" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1230295784149">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.AbstractCreator" id="1230295784150" />
             </node>
           </node>
         </node>
