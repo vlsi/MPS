@@ -180,6 +180,7 @@ public class DeleteModelHelper {
         modelDescriptor.delete();
       }
 
+      //todo: check correctness-thay are not ALL model owners
       for (ModelOwner modelOwner : owners) {
         if (modelOwner instanceof IModule) {
           ((IModule) modelOwner).save();

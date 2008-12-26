@@ -15,11 +15,23 @@
  */
 package jetbrains.mps.workbench.actions.language;
 
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.dialogs.MessageDialog;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.ActionEventData;
+
+import java.awt.Frame;
+import java.util.List;
 
 public class DeleteGeneratorHelper {
   public static void deleteGenerator(Project project, Language sourceLanguage, Generator generator, GeneratorDescriptor generatorDescriptor, boolean safeDelete, boolean deleteFiles) {
@@ -38,26 +50,29 @@ public class DeleteGeneratorHelper {
   }
 
   private static void safeDelete(final Project project, Language sourceLanguage, final Generator generator, GeneratorDescriptor generatorDescriptor, boolean deleteFiles) {
-    /*
-    GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(new SafeDeleteGeneratorRefactoring(deleteFiles));
-
-    DataContext dc = new DataContext() {
-      private DataContext myRealContext = DataManager.getInstance().getDataContext();
-
-      @Nullable
-      public Object getData(@NonNls String dataId) {
-        if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName())) return project.getComponent(MPSProjectHolder.class).getMPSProject();
-        else if (dataId.equals(MPSDataKeys.MODULE.getName())) return generator;
-        else return myRealContext.getData(dataId);
+    SearchQuery searchQuery = new SearchQuery(generator, GlobalScope.getInstance());
+    SearchResults results = FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), searchQuery, new DependentGeneratorsFinder());
+    if (!results.getSearchResults().isEmpty()) {
+      Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
+      StringBuilder report = new StringBuilder();
+      report.append("Can't delete generator ").append(generator.getModuleFqName()).append(".\n");
+      report.append("The following generators depend on it:\n\n");
+      for (SearchResult result : (List<SearchResult>) results.getSearchResults()) {
+        Generator g = (Generator) result.getObject();
+        report.append(g.getModuleFqName()).append("\n");
       }
-    };
 
-    AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, dc);
-    safeDeleteAction.update(event);
-    if (event.getPresentation().isEnabled()) {
-      safeDeleteAction.actionPerformed(event);
+      new MessageDialog(frame, report.toString());
+      return;
     }
-    */
+
+    LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
+    generator.getGeneratorDescriptor().delete();
+    sourceLanguage.setLanguageDescriptor(languageDescriptor);
+    if (deleteFiles) {
+      //todo
+    }
+    sourceLanguage.save();
   }
 }
 

@@ -91,16 +91,16 @@ public class GenericRefactoringAction extends BaseAction {
 
   protected void doUpdate(AnActionEvent e) {
     ActionEventData data = new ActionEventData(e);
-    boolean enabled = false;
-    if (myRefactoring.getRefactoringTarget() == RefactoringTarget.MODEL) {
-      SModelDescriptor modelDescriptor = data.getModelDescriptor();
-      if (modelDescriptor != null) {
-        enabled = myRefactoring.isApplicableToModel(modelDescriptor);
-      }
-    } else {
+    boolean enabled = true;
+    if (myRefactoring.getRefactoringTarget() == RefactoringTarget.NODE) {
       SNode node = getNode(data);
       if (node != null) {
         enabled = myRefactoring.isApplicableWRTConcept(node);
+      }
+    } else if (myRefactoring.getRefactoringTarget() == RefactoringTarget.MODEL) {
+      SModelDescriptor modelDescriptor = data.getModelDescriptor();
+      if (modelDescriptor != null) {
+        enabled = myRefactoring.isApplicableToModel(modelDescriptor);
       }
     }
     setEnabledState(e.getPresentation(), enabled);
