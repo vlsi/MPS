@@ -329,13 +329,8 @@ public class RefactoringContext {
       if (exactConceptFeatures != null) {
         allConceptFeatures.addAll(exactConceptFeatures);
       }
-      Language l;
-      l = SModelUtil_new.getDeclaringLanguage(node.getConceptFqName(), GlobalScope.getInstance());
-      if (l == null) {
-        //todo add warning
-        continue;
-      }
-      for (String parentConceptFQName : l.getAncestorsNames(conceptFQName)) {
+
+      for (String parentConceptFQName : LanguageHierarchyCache.getInstance().getAncestorsNames(conceptFQName)) {
         Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(parentConceptFQName);
         if (conceptFeatures != null) {
           allConceptFeatures.addAll(conceptFeatures);

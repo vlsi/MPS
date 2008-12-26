@@ -61,15 +61,11 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
     myRepository.addModuleRepositoryListener(myListener);
 
-    SwingUtilities.invokeLater(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            for (Language l : myRepository.getAllLanguages()) {
-              registerLanguageKeyMaps(l);
-            }
-          }
-        });
+        for (Language l : myRepository.getAllLanguages()) {
+          registerLanguageKeyMaps(l);
+        }
       }
     });
   }

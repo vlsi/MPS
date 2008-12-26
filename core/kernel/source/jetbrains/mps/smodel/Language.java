@@ -64,9 +64,6 @@ public class Language extends AbstractModule {
 
   private List<Language> myAllExtendedLanguages = new ArrayList<Language>();
 
-  private Map<String, Set<String>> myAncestorsNamesMap = new HashMap<String, Set<String>>();
-  private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
-
   public static Language createLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
     SModel descriptorModel = ProjectModels.createDescriptorFor(language).getSModel();
@@ -574,16 +571,10 @@ public class Language extends AbstractModule {
 
   public void invalidateCaches() {
     super.invalidateCaches();
-    invalidateHierarchyCaches();
     myNameToConceptCache.clear();
     myNotFoundRefactorings.clear();
     myCachedRefactorings = null;
     myAllExtendedLanguages = null;
-  }
-
-  private void invalidateHierarchyCaches() {
-    myParentsNamesMap.clear();
-    myAncestorsNamesMap.clear();
   }
 
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
@@ -602,94 +593,6 @@ public class Language extends AbstractModule {
       });
     }
     return myNameToConceptCache.get(conceptName);
-  }
-
-  public Set<String> getParentsNames(String conceptFqName) {
-    if (myParentsNamesMap.containsKey(conceptFqName)) {
-      return new HashSet<String>(myParentsNamesMap.get(conceptFqName));
-    }
-    Set<String> result = new HashSet<String>();
-    AbstractConceptDeclaration declaration = findConceptDeclaration(NameUtil.shortNameFromLongName(conceptFqName));
-    if (declaration == null) {
-      return result;
-    }
-    if (declaration instanceof ConceptDeclaration) {
-      ConceptDeclaration cd = (ConceptDeclaration) declaration;
-      if (cd.getExtends() != null) {
-        result.add(NameUtil.nodeFQName(cd.getExtends()));
-      }
-      for (InterfaceConceptReference icr : cd.getImplementses()) {
-        result.add(NameUtil.nodeFQName(icr.getIntfc()));
-      }
-    }
-    if (declaration instanceof InterfaceConceptDeclaration) {
-      InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
-      for (InterfaceConceptReference icr : icd.getExtendses()) {
-        result.add(NameUtil.nodeFQName(icr.getIntfc()));
-      }
-    }
-    myParentsNamesMap.put(conceptFqName, result);
-    return result;
-  }
-
-  public Set<String> getAncestorsNames(final String conceptFqName) {
-    if (myAncestorsNamesMap.containsKey(conceptFqName)) {
-      //return new HashSet<String>(myParentsNamesMap.get(conceptFqName));
-      return myAncestorsNamesMap.get(conceptFqName);
-    } else {
-
-      return NodeReadAccessCaster.runReadTransparentAction(new Computable<Set<String>>() {
-        public Set<String> compute() {
-          Set<String> result = new HashSet<String>();
-          Set<String> parents = new HashSet<String>();
-          AbstractConceptDeclaration declaration = findConceptDeclaration(NameUtil.shortNameFromLongName(conceptFqName));
-          if (declaration == null) {
-            return result;
-          }
-
-          result.add(conceptFqName);
-
-          if (declaration instanceof ConceptDeclaration) {
-            ConceptDeclaration cd = (ConceptDeclaration) declaration;
-            ConceptDeclaration extendedConcept = cd.getExtends();
-            if (extendedConcept != null) {
-              String fqName = NameUtil.nodeFQName(extendedConcept);
-              Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
-              if (declaringLanguage != null) {
-                parents.add(fqName);
-                result.addAll(declaringLanguage.getAncestorsNames(fqName));
-              }
-            }
-
-            for (InterfaceConceptReference icr : cd.getImplementses()) {
-              InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
-              if (interfaceConcept == null) continue;
-              String fqName = NameUtil.nodeFQName(interfaceConcept);
-              Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
-              if (declaringLanguage == null) continue;
-              parents.add(fqName);
-              result.addAll(declaringLanguage.getAncestorsNames(fqName));
-            }
-          }
-
-          if (declaration instanceof InterfaceConceptDeclaration) {
-            InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
-            for (InterfaceConceptReference icr : icd.getExtendses()) {
-              InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
-              if (interfaceConcept == null) continue;
-              String fqName = NameUtil.nodeFQName(interfaceConcept);
-              Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
-              if (declaringLanguage == null) continue;
-              parents.add(fqName);
-              result.addAll(declaringLanguage.getAncestorsNames(fqName));
-            }
-          }
-          myParentsNamesMap.put(conceptFqName, parents);
-          myAncestorsNamesMap.put(conceptFqName, result);
-          return result;
-        }
-      });
-    }
   }
 
   public void save() {

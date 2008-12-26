@@ -75,7 +75,7 @@ public class ClasspathCollector {
 
       if (myVisited.contains(current)) {
         return;
-      }
+      }                           
 
       myVisited.add(current);
       addPart(current.getClassPathItem());

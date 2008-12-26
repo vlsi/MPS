@@ -270,6 +270,10 @@
     <component>
       <implementation-class>jetbrains.mps.ide.blame.dialog.BlameDialogComponent</implementation-class>
     </component>
+
+    <component>
+        <implementation-class>jetbrains.mps.smodel.LanguageHierarchyCache</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
