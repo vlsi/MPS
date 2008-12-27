@@ -428,9 +428,9 @@ public class NodeEditorActions {
       EditorCell result = first;
       while (result != null) {
         if (result.isSelectable()) {
-          boolean common = result.isAncestorOf(first);
+          boolean common = true;
           for (EditorCell cell : cells) {
-            if (!result.isAncestorOf(cell)) {
+            if (!result.isAncestorOf(cell) && result != cell) {
               common = false;
               break;
             }
