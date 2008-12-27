@@ -16,6 +16,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 
 public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNodeEditor {
 
@@ -160,6 +162,15 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
 
   private static void setupBasic_Property_9629_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_9629_0(EditorCell editorCell, SNode node, EditorContext context) {
