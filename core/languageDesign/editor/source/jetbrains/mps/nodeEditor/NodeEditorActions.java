@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.util.Condition;
 
 import java.awt.*;
 
@@ -390,41 +391,78 @@ public class NodeEditorActions {
 
     public void execute(EditorContext context) {
       EditorComponent editor = context.getNodeEditorComponent();
-      EditorCell deepestSelected = editor.getDeepestSelectedCell();
+      final EditorCell deepestSelected = editor.getDeepestSelectedCell();
       EditorCell selected = context.getSelectedCell();
       EditorCell nextLeaf = getNextLeaf(deepestSelected);
 
       editor.clearSelectionStack();
 
-      EditorCell commonAncestor = getCommonSelectableAncestor(deepestSelected, selected, nextLeaf);
+      EditorCell newSelection = getCommonSelectableAncestor(deepestSelected, selected, nextLeaf);
+      
       EditorCell deepestSelection;
-      if (mySide == CellSide.LEFT) {
-        deepestSelection = commonAncestor.getFirstLeaf(CellConditions.SELECTABLE);
-      } else {
-        deepestSelection = commonAncestor.getLastLeaf(CellConditions.SELECTABLE);
-      }
-
-      if (deepestSelection instanceof EditorCell_Label) {
-        EditorCell_Label label = (EditorCell_Label) deepestSelection;
+      if (newSelection != selected) {
         if (mySide == CellSide.LEFT) {
-          label.home();
+          deepestSelection = newSelection.getFirstLeaf(CellConditions.SELECTABLE);
         } else {
-          label.end();
+          deepestSelection = newSelection.getLastLeaf(CellConditions.SELECTABLE);
+        }
+
+        if (deepestSelection instanceof EditorCell_Label) {
+          EditorCell_Label label = (EditorCell_Label) deepestSelection;
+          if (mySide == CellSide.LEFT) {
+            label.home();
+          } else {
+            label.end();
+          }
+        }
+      } else {
+        if (mySide == CellSide.LEFT) {
+          newSelection = newSelection.getLastDescendant(new Condition<EditorCell>() {
+            public boolean met(EditorCell object) {
+              return object.isSelectable() && !deepestSelected.isAncestorOf(object) && deepestSelected != object;
+            }
+          });
+        } else {
+          newSelection = newSelection.getFirstDescendant(new Condition<EditorCell>() {
+            public boolean met(EditorCell object) {
+              return object.isSelectable() && !deepestSelected.isAncestorOf(object) && deepestSelected != object;
+            }
+          });
+        }
+
+        if (mySide == CellSide.LEFT) {
+          deepestSelection = newSelection.getLastLeaf(CellConditions.SELECTABLE);
+        } else {
+          deepestSelection = newSelection.getFirstLeaf(CellConditions.SELECTABLE);
+        }
+
+        if (deepestSelection instanceof EditorCell_Label) {
+          EditorCell_Label label = (EditorCell_Label) deepestSelection;
+          if (mySide == CellSide.LEFT) {
+            label.end();
+          } else {
+            label.home();
+          }
+        }
+
+        if (newSelection instanceof EditorCell_Label) {
+          ((EditorCell_Label) newSelection).selectAll();          
         }
       }
-            
+
+
       EditorCell current = deepestSelection;
-      while (current != commonAncestor) {
+      while (current != newSelection) {
         if (current.isSelectable()) {
           editor.pushSelection(current);
         }
         current = current.getParent();
       }
 
-      editor.setSelectionDontClearStack(commonAncestor, true);
+      editor.setSelectionDontClearStack(newSelection, true);
     }
 
-    protected EditorCell getCommonSelectableAncestor(EditorCell first, EditorCell... cells) {
+    private EditorCell getCommonSelectableAncestor(EditorCell first, EditorCell... cells) {
       EditorCell result = first;
       while (result != null) {
         if (result.isSelectable()) {
@@ -441,7 +479,7 @@ public class NodeEditorActions {
         result = result.getParent();
       }
       return null;
-    }
+    }        
   }
 
   public static class Complete extends EditorCellAction {

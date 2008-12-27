@@ -227,6 +227,9 @@ public interface EditorCell extends Cloneable {
   EditorCell getLastLeaf();
   EditorCell getLastLeaf(Condition<EditorCell> condition);
 
+  EditorCell getFirstDescendant(Condition<EditorCell> condition);
+  EditorCell getLastDescendant(Condition<EditorCell> condition);
+
   EditorCell getLastChild();
   EditorCell getFirstChild();
 

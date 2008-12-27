@@ -1214,6 +1214,42 @@ public abstract class EditorCell_Basic implements EditorCell {
     return this;
   }
 
+  public EditorCell getFirstDescendant(Condition<EditorCell> condition) {
+    EditorCell current = getFirstChild();
+
+    if (current == this) return null;
+
+    while (current != null) {
+      if (condition.met(current)) return current;
+
+      EditorCell result = current.getFirstDescendant(condition);
+      if (result != null) {
+        return result;
+      }
+
+      current = current.getNextSibling();
+    }
+    return null;
+  }
+
+  public EditorCell getLastDescendant(Condition<EditorCell> condition) {
+    EditorCell current = getLastChild();
+
+    if (current == this) return null;
+
+    while (current != null) {
+      if (condition.met(current)) return current;
+
+      EditorCell result = current.getLastDescendant(condition);
+      if (result != null) {
+        return result;
+      }
+
+      current = current.getPrevSibling();
+    }
+    return null;
+  }
+
   public Style getStyle() {
     return myStyle;
   }
