@@ -276,6 +276,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_4085_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4085_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_RefNode_4085_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -1673,6 +1673,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188212252092">
           <property name="text" value="final" />
           <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+          <link role="actionMap" targetNodeId="1221569820786" resolveInfo="VariableDeclaration_RemoveFinalOnDelete" />
           <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1188212252093">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188212252094">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1188212252095">
