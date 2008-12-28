@@ -39,7 +39,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <maxImportIndex value="13" />
+  <maxImportIndex value="14" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -53,6 +53,7 @@
   <import index="11" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <import index="14" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877173053">
     <property name="package" value="variables" />
     <link role="concept" targetNodeId="1.1205339194346" resolveInfo="IStringExpression" />
@@ -2923,7 +2924,7 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222444532259">
-                      <link role="baseMethodDeclaration" targetNodeId="6.~ModuleReference.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
+                      <link role="baseMethodDeclaration" targetNodeId="14.~ModuleReference.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                     </node>
                   </node>
                 </node>
@@ -2961,7 +2962,7 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222444532275">
-                      <link role="baseMethodDeclaration" targetNodeId="6.~ModuleReference.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
+                      <link role="baseMethodDeclaration" targetNodeId="14.~ModuleReference.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                     </node>
                   </node>
                 </node>
@@ -2999,7 +3000,7 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222444532290">
-                      <link role="baseMethodDeclaration" targetNodeId="6.~ModuleReference.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
+                      <link role="baseMethodDeclaration" targetNodeId="14.~ModuleReference.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                     </node>
                   </node>
                 </node>
