@@ -2403,7 +2403,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222950820977">
-              <link role="baseMethodDeclaration" targetNodeId="4.~SModel.addLanguage(jetbrains.mps.project.ModuleReference):void" resolveInfo="addLanguage" />
+              <link role="baseMethodDeclaration" targetNodeId="4.~SModel.addLanguage(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addLanguage" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1224874910035">
                 <link role="baseMethodDeclaration" targetNodeId="1224874899540" resolveInfo="getPackagingLanguageReference" />
               </node>
@@ -2620,7 +2620,7 @@
               <link role="variableDeclaration" targetNodeId="1222950592439" resolveInfo="solution" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222950592483">
-              <link role="baseMethodDeclaration" targetNodeId="2.~AbstractModule.addDependency(jetbrains.mps.project.ModuleReference,boolean):void" resolveInfo="addDependency" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~AbstractModule.addDependency(jetbrains.mps.project.structure.modules.ModuleReference,boolean):void" resolveInfo="addDependency" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224874876903">
                 <link role="variableDeclaration" targetNodeId="1224874876897" resolveInfo="packagingLanguageRef" />
               </node>
@@ -2636,7 +2636,7 @@
               <link role="variableDeclaration" targetNodeId="1222950592439" resolveInfo="solution" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222950592491">
-              <link role="baseMethodDeclaration" targetNodeId="2.~AbstractModule.addUsedLangauge(jetbrains.mps.project.ModuleReference):void" resolveInfo="addUsedLangauge" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~AbstractModule.addUsedLangauge(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addUsedLangauge" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224874886249">
                 <link role="variableDeclaration" targetNodeId="1224874876897" resolveInfo="packagingLanguageRef" />
               </node>
@@ -2932,7 +2932,7 @@
               <link role="variableDeclaration" targetNodeId="1224874899545" resolveInfo="packagingLanguage" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224874899556">
-              <link role="baseMethodDeclaration" targetNodeId="2.~AbstractModule.getModuleReference():jetbrains.mps.project.ModuleReference" resolveInfo="getModuleReference" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~AbstractModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
             </node>
           </node>
         </node>
