@@ -13,17 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.IModule;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.jetbrains.annotations.Nullable;
 
 public class ModuleReference {
   private static Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");

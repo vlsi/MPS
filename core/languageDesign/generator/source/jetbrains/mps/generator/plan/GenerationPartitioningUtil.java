@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.lang.generator.structure.TemplateDeclaration;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.project.ModuleReference;
 
 import java.util.*;
 
@@ -46,7 +45,7 @@ public class GenerationPartitioningUtil {
     collectedGenerators.add(editedGenerator);
     List<GeneratorReference> generatorRefs = descriptorWorkingCopy.getGeneratorReferences();
     for (GeneratorReference generatorRef : generatorRefs) {
-      Generator refGenerator = (Generator) MPSModuleRepository.getInstance().getModule(ModuleReference.fromString(generatorRef.getGeneratorUID()));
+      Generator refGenerator = (Generator) MPSModuleRepository.getInstance().getModule(jetbrains.mps.project.structure.modules.ModuleReference.fromString(generatorRef.getGeneratorUID()));
       collectGenerators(refGenerator, true, collectedGenerators, processedLanguages);
     }
     for (SModelDescriptor model : editedGenerator.getOwnTemplateModels()) {
@@ -108,12 +107,12 @@ public class GenerationPartitioningUtil {
 
 
   private static List<Language> getUsedLanguages(SModel model, boolean excludeTLBase, IScope scope) {
-    Set<ModuleReference> namespaces = new HashSet<ModuleReference>(model.getEngagedOnGenerationLanguages());
+    Set<jetbrains.mps.project.structure.modules.ModuleReference> namespaces = new HashSet<jetbrains.mps.project.structure.modules.ModuleReference>(model.getEngagedOnGenerationLanguages());
     for (SNode root : model.getRoots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
     }
     List<Language> result = new ArrayList<Language>();
-    for (ModuleReference namespace : namespaces) {
+    for (jetbrains.mps.project.structure.modules.ModuleReference namespace : namespaces) {
       Language language = scope.getLanguage(namespace);
       if (language != null) {
         result.add(language);
@@ -124,16 +123,16 @@ public class GenerationPartitioningUtil {
     return result;
   }
 
-  public static List<ModuleReference> getUsedLanguageNamespaces(SModel model, boolean excludeTLBase) {
-    Set<ModuleReference> namespaces = new HashSet<ModuleReference>(model.getEngagedOnGenerationLanguages());
+  public static List<jetbrains.mps.project.structure.modules.ModuleReference> getUsedLanguageNamespaces(SModel model, boolean excludeTLBase) {
+    Set<jetbrains.mps.project.structure.modules.ModuleReference> namespaces = new HashSet<jetbrains.mps.project.structure.modules.ModuleReference>(model.getEngagedOnGenerationLanguages());
     for (SNode root : model.getRoots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
     }
     return CollectionUtil.asList(namespaces);
   }
 
-  private static void collectLanguageNamespaces(SNode node, Set<ModuleReference> namespaces, boolean excludeTLBase) {
-    ModuleReference namespace = node.getConceptLanguage();
+  private static void collectLanguageNamespaces(SNode node, Set<jetbrains.mps.project.structure.modules.ModuleReference> namespaces, boolean excludeTLBase) {
+    jetbrains.mps.project.structure.modules.ModuleReference namespace = node.getConceptLanguage();
     if (!namespace.getModuleFqName().equals("jetbrains.mps.lang.generator")) {
       namespaces.add(namespace);
       for (SNode child : node.getChildren()) {
@@ -282,13 +281,13 @@ public class GenerationPartitioningUtil {
   }
 
   private static String asString(GeneratorReference generatorRef) {
-    ModuleReference genRef = ModuleReference.fromString(generatorRef.getGeneratorUID());
+    jetbrains.mps.project.structure.modules.ModuleReference genRef = jetbrains.mps.project.structure.modules.ModuleReference.fromString(generatorRef.getGeneratorUID());
     Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
     return generator.getAlias();
   }
 
   private static String asString(GeneratorDescriptor generatorDescriptor) {
-    ModuleReference genRef = ModuleReference.fromString(generatorDescriptor.getGeneratorUID());
+    jetbrains.mps.project.structure.modules.ModuleReference genRef = jetbrains.mps.project.structure.modules.ModuleReference.fromString(generatorDescriptor.getGeneratorUID());
     Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
     return generator.getAlias();
   }

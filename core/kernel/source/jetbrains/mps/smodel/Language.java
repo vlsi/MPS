@@ -16,15 +16,14 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.refactoring.structure.Refactoring;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.util.Condition;
@@ -35,10 +34,8 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -189,7 +186,7 @@ public class Language extends AbstractModule {
 
   public List<Language> getExtendedLanguages() {
     List<Language> result = new ArrayList<Language>();
-    for (ModuleReference ref : getExtendedLanguageNamespaces()) {
+    for (jetbrains.mps.project.structure.modules.ModuleReference ref : getExtendedLanguageNamespaces()) {
       Language language = GlobalScope.getInstance().getLanguage(ref);
       if (language != null) {
         result.add(language);

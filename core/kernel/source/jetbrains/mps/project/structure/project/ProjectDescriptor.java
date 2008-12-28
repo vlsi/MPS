@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.structure;
+package jetbrains.mps.project.structure.project;
 
-import jetbrains.mps.project.structure.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 
 import java.util.ArrayList;
 import java.util.Comparator;

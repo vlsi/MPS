@@ -20,6 +20,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.runtime.BytecodeLocator;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 
 import java.io.File;
 import java.util.List;

@@ -25,7 +25,7 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;

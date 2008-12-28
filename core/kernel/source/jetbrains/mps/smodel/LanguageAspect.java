@@ -17,7 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.structure.structure.Structure_Language;
 import jetbrains.mps.lang.editor.structure.Editor_Language;
 import jetbrains.mps.lang.actions.structure.Actions_Language;

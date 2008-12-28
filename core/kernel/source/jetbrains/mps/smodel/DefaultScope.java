@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.projectLanguage.structure.ProjectLanguage_Language;
 import jetbrains.mps.library.LibraryManager;

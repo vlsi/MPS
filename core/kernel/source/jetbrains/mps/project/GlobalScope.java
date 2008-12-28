@@ -16,6 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 
 import java.util.List;
 import java.util.Set;

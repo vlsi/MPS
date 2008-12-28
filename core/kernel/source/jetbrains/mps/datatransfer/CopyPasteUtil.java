@@ -19,12 +19,8 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.IMethodCall;
 import jetbrains.mps.ide.dialogs.AddRequiredModelImportsDialog;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.text.Parser;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.Toolkit;

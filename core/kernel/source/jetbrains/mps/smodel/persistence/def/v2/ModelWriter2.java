@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 
 import java.util.*;
 

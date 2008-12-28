@@ -17,7 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.util.CollectionUtil;
 

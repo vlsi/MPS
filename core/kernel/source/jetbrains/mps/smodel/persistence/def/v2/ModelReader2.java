@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jdom.Element;
 import org.jdom.Document;
 import org.jetbrains.annotations.Nullable;

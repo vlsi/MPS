@@ -17,16 +17,13 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.projectLanguage.structure.Root;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.cleanup.CleanupListener;
 
 import java.io.File;
 import java.util.*;

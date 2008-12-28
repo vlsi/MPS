@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;

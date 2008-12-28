@@ -78,7 +78,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209384006437">
-              <link role="baseMethodDeclaration" targetNodeId="4.~IModule.addUsedLangauge(jetbrains.mps.project.ModuleReference):void" resolveInfo="addUsedLangauge" />
+              <link role="baseMethodDeclaration" targetNodeId="4.~IModule.addUsedLangauge(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addUsedLangauge" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222268400854">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209384011866">
                   <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1209384010708">
@@ -95,7 +95,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222268403809">
-                  <link role="baseMethodDeclaration" targetNodeId="4.~AbstractModule.getModuleReference():jetbrains.mps.project.ModuleReference" resolveInfo="getModuleReference" />
+                  <link role="baseMethodDeclaration" targetNodeId="4.~AbstractModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
                 </node>
               </node>
             </node>
@@ -375,7 +375,7 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209385319386">
-                      <link role="baseMethodDeclaration" targetNodeId="4.~IModule.addDependency(jetbrains.mps.project.ModuleReference,boolean):void" resolveInfo="addDependency" />
+                      <link role="baseMethodDeclaration" targetNodeId="4.~IModule.addDependency(jetbrains.mps.project.structure.modules.ModuleReference,boolean):void" resolveInfo="addDependency" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209385322361">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209385320247">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209385319934">
@@ -386,7 +386,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222268327592">
-                          <link role="baseMethodDeclaration" targetNodeId="4.~IModule.getModuleReference():jetbrains.mps.project.ModuleReference" resolveInfo="getModuleReference" />
+                          <link role="baseMethodDeclaration" targetNodeId="4.~IModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
                         </node>
                       </node>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1209385326319">

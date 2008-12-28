@@ -20,7 +20,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.projectLanguage.structure.CloneModelProperties;
 import jetbrains.mps.projectLanguage.structure.DevKit;

@@ -17,7 +17,6 @@ package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.project.ModuleReference;
 
 import java.util.List;
 import java.util.HashMap;

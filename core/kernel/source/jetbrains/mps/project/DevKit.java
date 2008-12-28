@@ -18,9 +18,9 @@ package jetbrains.mps.project;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -106,7 +106,7 @@ public class DevKit extends AbstractModule {
     myDescriptor.getModel().setLoading(true);
 
     if (myDescriptor.getName() != null) {
-      ModuleReference mp = new ModuleReference(myDescriptor.getName(), myDescriptor.getModuleUUID());
+      jetbrains.mps.project.structure.modules.ModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myDescriptor.getName(), myDescriptor.getModuleUUID());
       setModulePointer(mp);
     }
 
@@ -134,7 +134,7 @@ public class DevKit extends AbstractModule {
   public List<Language> getExportedLanguages() {
     List<Language> langs = new ArrayList<Language>();
     for (LanguageReference l : myDescriptor.getExportedLanguages()) {
-      ModuleReference ref = ModuleReference.fromString(l.getName());
+      jetbrains.mps.project.structure.modules.ModuleReference ref = jetbrains.mps.project.structure.modules.ModuleReference.fromString(l.getName());
       Language lang = MPSModuleRepository.getInstance().getLanguage(ref);
       if (lang != null) {
         langs.add(lang);

@@ -7971,7 +7971,7 @@
         <link role="classifier" targetNodeId="24.~ModuleReference" resolveInfo="ModuleReference" />
       </node>
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225099630137">
-        <link role="baseMethodDeclaration" targetNodeId="24.~ModuleReference.fromString(java.lang.String):jetbrains.mps.project.ModuleReference" resolveInfo="fromString" />
+        <link role="baseMethodDeclaration" targetNodeId="24.~ModuleReference.fromString(java.lang.String):jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="fromString" />
         <link role="classConcept" targetNodeId="24.~ModuleReference" resolveInfo="ModuleReference" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225099631044">
           <property name="value" value="module.reference" />
@@ -7990,7 +7990,7 @@
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225099631055">
-                        <link role="baseMethodDeclaration" targetNodeId="24.~AbstractModule.getModuleReference():jetbrains.mps.project.ModuleReference" resolveInfo="getModuleReference" />
+                        <link role="baseMethodDeclaration" targetNodeId="24.~AbstractModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225099631056">
@@ -8022,7 +8022,7 @@
                 <link role="classConcept" targetNodeId="5.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225099336944">
-                <link role="baseMethodDeclaration" targetNodeId="5.~MPSModuleRepository.getModule(jetbrains.mps.project.ModuleReference):jetbrains.mps.project.IModule" resolveInfo="getModule" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~MPSModuleRepository.getModule(jetbrains.mps.project.structure.modules.ModuleReference):jetbrains.mps.project.IModule" resolveInfo="getModule" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1225099336945">
                   <link role="variableDeclaration" targetNodeId="1225099242888" resolveInfo="MODULE_REFERENCE" />
                 </node>

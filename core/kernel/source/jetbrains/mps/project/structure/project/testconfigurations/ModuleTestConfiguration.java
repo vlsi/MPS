@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.structure.testconfigurations;
+package jetbrains.mps.project.structure.project.testconfigurations;
 
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
@@ -22,7 +22,7 @@ import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;

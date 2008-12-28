@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.structure.testconfigurations;
+package jetbrains.mps.project.structure.project.testconfigurations;
 
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.project.MPSProject;

@@ -23,6 +23,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 
 import java.io.File;
 import java.util.*;

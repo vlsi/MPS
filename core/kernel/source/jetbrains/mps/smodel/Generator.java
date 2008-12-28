@@ -17,8 +17,9 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
@@ -54,7 +55,7 @@ public class Generator extends AbstractModule {
       myGeneratorDescriptor.setModuleUUID(uuid);
       save();
     }
-    ModuleReference mp = new ModuleReference(myGeneratorDescriptor.getGeneratorUID(), ModuleId.fromString(uuid));
+    jetbrains.mps.project.structure.modules.ModuleReference mp = new ModuleReference(myGeneratorDescriptor.getGeneratorUID(), ModuleId.fromString(uuid));
     setModulePointer(mp);
 
     upgradeGeneratorDescriptor();
@@ -218,7 +219,7 @@ public class Generator extends AbstractModule {
     List<Dependency> result = super.getDependOn();
     result.add(new Dependency(mySourceLanguage.getModuleReference(), false));
 
-    for (ModuleReference refGenerator : getReferencedGeneratorUIDs()) {
+    for (jetbrains.mps.project.structure.modules.ModuleReference refGenerator : getReferencedGeneratorUIDs()) {
       result.add(new Dependency(refGenerator, false));
     }
 
@@ -226,10 +227,10 @@ public class Generator extends AbstractModule {
     return result;
   }
 
-  public List<ModuleReference> getReferencedGeneratorUIDs() {
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
+  public List<jetbrains.mps.project.structure.modules.ModuleReference> getReferencedGeneratorUIDs() {
+    List<jetbrains.mps.project.structure.modules.ModuleReference> result = new ArrayList<jetbrains.mps.project.structure.modules.ModuleReference>();
     for (GeneratorReference generatorReference : myGeneratorDescriptor.getGeneratorReferences()) {
-      result.add(ModuleReference.fromString(generatorReference.getGeneratorUID()));
+      result.add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(generatorReference.getGeneratorUID()));
     }
     return result;
 
@@ -237,7 +238,7 @@ public class Generator extends AbstractModule {
 
   public List<Generator> getReferencedGenerators() {
     List<Generator> result = new ArrayList<Generator>();
-    for (ModuleReference guid : getReferencedGeneratorUIDs()) {
+    for (jetbrains.mps.project.structure.modules.ModuleReference guid : getReferencedGeneratorUIDs()) {
       IModule module = MPSModuleRepository.getInstance().getModule(guid);
       if (module instanceof Generator) {
         result.add((Generator) module);
@@ -259,8 +260,8 @@ public class Generator extends AbstractModule {
     return home.getAbsoluteFile();
   }
 
-  public List<ModuleReference> getUsedLanguagesReferences() {
-    List<ModuleReference> result = super.getUsedLanguagesReferences();
+  public List<jetbrains.mps.project.structure.modules.ModuleReference> getUsedLanguagesReferences() {
+    List<jetbrains.mps.project.structure.modules.ModuleReference> result = super.getUsedLanguagesReferences();
     for (Language l : LibraryManager.getInstance().getBootstrapModules(Language.class)) {
       if (!result.contains(l.getModuleReference())) {
         result.add(l.getModuleReference());

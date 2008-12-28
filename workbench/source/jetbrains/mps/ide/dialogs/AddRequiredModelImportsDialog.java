@@ -18,7 +18,7 @@ package jetbrains.mps.ide.dialogs;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 
 import javax.swing.*;
 import javax.swing.event.TableModelEvent;
