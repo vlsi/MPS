@@ -46,7 +46,7 @@ public final class Path {
   }
 
   public boolean isSamePath(Path p) {
-    if (myPath == p.myPath) return true;
+    if (myPath.equals(p.myPath)) return true;
     if (myPath == null || p.myPath == null) return false;
     try {
       String canonicalPath = new File(myPath).getCanonicalPath();
