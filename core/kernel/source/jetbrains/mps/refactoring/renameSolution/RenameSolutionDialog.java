@@ -30,7 +30,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
 
 import javax.swing.*;
 
