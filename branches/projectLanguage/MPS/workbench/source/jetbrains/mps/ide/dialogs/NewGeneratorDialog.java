@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.dialogs;
 
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
@@ -25,6 +24,10 @@ import jetbrains.mps.lang.generator.generationContext.structure.GenerationContex
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.library.LanguageDesign_DevKit;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.model.ModelRoot;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -197,20 +200,17 @@ public class NewGeneratorDialog extends BaseDialog {
 
   protected Generator createNewGenerator(Language sourceLanguage, File templateModelsDir, String name) {
     LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
-    SModel model = languageDescriptor.getModel();
-    model.setLoading(true);
-
-    GeneratorDescriptor generatorDescriptor = GeneratorDescriptor.newInstance(model);
+    GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(sourceLanguage));
     generatorDescriptor.setName(name);
 
     // add "template models" model root
     String templateModelNamePrefix = getTemplateModelPrefix(sourceLanguage);
-    ModelRoot templateModelsRoot = ModelRoot.newInstance(model);
+    ModelRoot templateModelsRoot = new ModelRoot();
     templateModelsRoot.setPrefix(templateModelNamePrefix);
 
     templateModelsRoot.setPath(templateModelsDir.getAbsolutePath());
-    generatorDescriptor.addModelRoot(templateModelsRoot);
+    generatorDescriptor.getModelRoots().add(templateModelsRoot);
 
     // add generator dependencies
 //    ModuleReference ref = ModuleReference.newInstance(model);
@@ -218,12 +218,11 @@ public class NewGeneratorDialog extends BaseDialog {
 //    generatorDescriptor.addDependency(ref);
 
     // generator uses 'language-design' devkit
-    DevKitReference devkitRef = DevKitReference.newInstance(model);
-    devkitRef.setName(LanguageDesign_DevKit.MODULE_REFERENCE.toString());
-    generatorDescriptor.addUsedDevKit(devkitRef);
+    ModuleReference ref = ModuleReference.fromString(LanguageDesign_DevKit.MODULE_REFERENCE.toString());
+    generatorDescriptor.getUsedDevkits().add(ref);
 
     // add new generator to language
-    languageDescriptor.addGenerator(generatorDescriptor);
+    languageDescriptor.getGenerators().add(generatorDescriptor);
     sourceLanguage.setLanguageDescriptor(languageDescriptor);
     sourceLanguage.save();
 
