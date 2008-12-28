@@ -16492,5 +16492,22 @@
       <link role="concept" targetNodeId="1.1172058436953" resolveInfo="LocalStaticMethodCall" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1230476723779">
+    <property name="name" value="Class_Void_weak_supertypeof_void" />
+    <property name="isWeak" value="true" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230476723780">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230476822592">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1230476823561">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230476823562">
+            <link role="classifier" targetNodeId="4.~Void" resolveInfo="Void" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1230476731353">
+      <property name="name" value="voidType" />
+      <link role="concept" targetNodeId="1.1068581517677" resolveInfo="VoidType" />
+    </node>
+  </node>
 </model>
 

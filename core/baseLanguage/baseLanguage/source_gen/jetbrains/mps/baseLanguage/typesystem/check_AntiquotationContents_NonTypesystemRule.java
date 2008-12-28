@@ -26,7 +26,7 @@ public class check_AntiquotationContents_NonTypesystemRule extends AbstractNonTy
       if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(contentsType, "concept", false), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         {
           BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("r:d0fb6e38-80b1-42a8-8bcb-ce20474674bd(jetbrains.mps.baseLanguage.typesystem@16_0).ReplaceClassAntiquotationWithClassifierType_QuickFix");
+          intentionProvider = new BaseIntentionProvider("r:b950c2ea-4a02-4406-bfba-8e47c05b8398(jetbrains.mps.baseLanguage.typesystem@3_0).ReplaceClassAntiquotationWithClassifierType_QuickFix");
           intentionProvider.putArgument("antiquotation", antiquotation);
           IErrorTarget errorTarget = new NodeErrorTarget();
           typeCheckingContext.reportWarning(SLinkOperations.getTarget(antiquotation, "expression", true), "Substitution of a classifier here is probably an error", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1228301999219", intentionProvider, errorTarget);
