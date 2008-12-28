@@ -55,7 +55,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="81" />
+  <maxImportIndex value="82" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
@@ -120,6 +120,7 @@
   <import index="79" modelUID="f:java_stub#com.intellij.openapi.options(com.intellij.openapi.options@java_stub)" version="-1" />
   <import index="80" modelUID="f:java_stub#com.intellij.util.xmlb.annotations(com.intellij.util.xmlb.annotations@java_stub)" version="-1" />
   <import index="81" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
+  <import index="82" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1218726094600">
     <property name="name" value="ProjectPaneModelAddition" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1218726094601">
@@ -2604,8 +2605,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224874876896">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224874876897">
             <property name="name" value="packagingLanguageRef" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224874876898">
-              <link role="classifier" targetNodeId="2.~ModuleReference" resolveInfo="ModuleReference" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230484355913">
+              <link role="classifier" targetNodeId="82.~ModuleReference" resolveInfo="ModuleReference" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1224874899560">
               <link role="classConcept" targetNodeId="1222950292812" resolveInfo="BuildGeneratorUtil" />
@@ -2901,8 +2902,8 @@
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1224874899540">
       <property name="name" value="getPackagingLanguageReference" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1224874899541" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224874899542">
-        <link role="classifier" targetNodeId="2.~ModuleReference" resolveInfo="ModuleReference" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230484360601">
+        <link role="classifier" targetNodeId="82.~ModuleReference" resolveInfo="ModuleReference" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224874899543">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224874899544">
