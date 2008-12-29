@@ -17,6 +17,9 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 
 public class RegexpDeclaration_Editor extends DefaultNodeEditor {
 
@@ -235,10 +238,21 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4843_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4843_1");
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_4843_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4843_2");
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_4843_2(EditorCell editorCell, SNode node, EditorContext context) {

@@ -26,6 +26,16 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1175254967081" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230544192242">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230544198056">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1230544194901">
+              <property name="value" value="3" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation" id="1230544200526">
+              <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression" id="1230544200527" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1175254959727">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222417481656">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1175254959728" />
