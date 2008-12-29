@@ -7,6 +7,7 @@ public enum NullableVariableState {
   NOT_INIT(),
   NULL(),
   UNKNOWN(),
+  NOT_NULL(),
   NULLABLE();
 
   NullableVariableState() {
@@ -21,6 +22,12 @@ public enum NullableVariableState {
     }
     if (this.equals(state)) {
       return this;
+    }
+    if (state.equals(NullableVariableState.UNKNOWN) && this.equals(NullableVariableState.NOT_NULL)) {
+      return NullableVariableState.UNKNOWN;
+    }
+    if (state.equals(NullableVariableState.NOT_NULL) && this.equals(NullableVariableState.UNKNOWN)) {
+      return NullableVariableState.UNKNOWN;
     }
     return NullableVariableState.NULLABLE;
   }

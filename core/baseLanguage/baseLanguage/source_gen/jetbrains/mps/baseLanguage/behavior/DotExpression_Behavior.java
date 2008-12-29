@@ -10,6 +10,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.lang.reflect.Method;
 import jetbrains.mps.reloading.ReflectionUtil;
+import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 
 public class DotExpression_Behavior {
 
@@ -37,6 +38,10 @@ public class DotExpression_Behavior {
       return ReflectionUtil.invoke(method, instance, actualArguments);
     }
     return Expression_Behavior.callSuper_eval_1213877519769(thisNode, "jetbrains.mps.baseLanguage.structure.DotExpression", module);
+  }
+
+  public static NullableVariableState virtual_getNullableState_1230540989695(SNode thisNode) {
+    return IOperation_Behavior.call_getNullableState_1230555106620(SLinkOperations.getTarget(thisNode, "operation", true));
   }
 
 }

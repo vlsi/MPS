@@ -3120,6 +3120,33 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723968" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230553280318">
+      <property name="name" value="getNullableState" />
+      <link role="overriddenMethod" targetNodeId="1230540989695" resolveInfo="getNullableState" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230553280320">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230554289005">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1230554296399">
+            <link role="baseMethodDeclaration" targetNodeId="26.1230553645870" resolveInfo="getVariableStateByAnnotation" />
+            <link role="classConcept" targetNodeId="26.1230553634583" resolveInfo="NullableUtil" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230554302447">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230554302448">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230554302449" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230554302450">
+                  <link role="link" targetNodeId="1.1068499141037" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1230554302451">
+                <link role="link" targetNodeId="1.1188208488637" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230553287142">
+        <link role="classifier" targetNodeId="26.1230466569958" resolveInfo="NullableVariableState" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230554311108" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877339232">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877339233" />
     </node>
@@ -5846,6 +5873,22 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724560" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230555106620">
+      <property name="name" value="getNullableState" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230556146158">
+        <link role="classifier" targetNodeId="26.1230466569958" resolveInfo="NullableVariableState" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230555106622">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230556182222">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1230556198647">
+            <link role="enumConstantDeclaration" targetNodeId="26.1230466696500" resolveInfo="UNKNOWN" />
+            <link role="enumClass" targetNodeId="26.1230466569958" resolveInfo="NullableVariableState" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230556071172" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877410092">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877410093" />
     </node>
@@ -6072,6 +6115,29 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219275073971">
         <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230556347326">
+      <property name="name" value="getNullableState" />
+      <link role="overriddenMethod" targetNodeId="1230540989695" resolveInfo="getNullableState" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230556347328">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230556369955">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230556437714">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230556398132">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230556386661" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230556434229">
+                <link role="link" targetNodeId="1.1197027833540" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230556441936">
+              <link role="baseMethodDeclaration" targetNodeId="1230555106620" resolveInfo="getNullableState" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230556354438">
+        <link role="classifier" targetNodeId="26.1230466569958" resolveInfo="NullableVariableState" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230556390162" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877410719">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877410720" />
@@ -7298,6 +7364,33 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724451" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230557687194">
+      <property name="name" value="getNullableState" />
+      <link role="overriddenMethod" targetNodeId="1230555106620" resolveInfo="getNullableState" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230557687196">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230557696887">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1230557720350">
+            <link role="baseMethodDeclaration" targetNodeId="26.1230553645870" resolveInfo="getVariableStateByAnnotation" />
+            <link role="classConcept" targetNodeId="26.1230553634583" resolveInfo="NullableUtil" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230557745278">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230557724368">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230557722726" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230557743402">
+                  <link role="link" targetNodeId="1.1202948736718" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1230557748688">
+                <link role="link" targetNodeId="1.1188208488637" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230557691666">
+        <link role="classifier" targetNodeId="26.1230466569958" resolveInfo="NullableVariableState" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230557694573" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877484416">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877484417" />
     </node>
@@ -8278,6 +8371,33 @@
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724517" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230557286626">
+      <property name="name" value="getNullableState" />
+      <link role="overriddenMethod" targetNodeId="1230555106620" resolveInfo="getNullableState" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230557286628">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230557342806">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1230557356137">
+            <link role="baseMethodDeclaration" targetNodeId="26.1230553645870" resolveInfo="getVariableStateByAnnotation" />
+            <link role="classConcept" targetNodeId="26.1230553634583" resolveInfo="NullableUtil" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230557383065">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230557362530">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230557360685" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230557380924">
+                  <link role="link" targetNodeId="1.1197029500499" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1230557392865">
+                <link role="link" targetNodeId="1.1188208488637" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230557301207">
+        <link role="classifier" targetNodeId="26.1230466569958" resolveInfo="NullableVariableState" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230557306818" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877520987">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877520988" />

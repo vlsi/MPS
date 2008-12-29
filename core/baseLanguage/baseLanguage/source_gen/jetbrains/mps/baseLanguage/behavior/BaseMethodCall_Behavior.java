@@ -9,6 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.dataFlow.runtime.NullableVariableState;
+import jetbrains.mps.dataFlow.runtime.NullableUtil;
 
 public class BaseMethodCall_Behavior {
 
@@ -40,6 +42,10 @@ public class BaseMethodCall_Behavior {
       }
     }
     return NameUtil.decapitalize(variableExpectedName);
+  }
+
+  public static NullableVariableState virtual_getNullableState_1230540989695(SNode thisNode) {
+    return NullableUtil.getVariableStateByAnnotation(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "annotation", true));
   }
 
 }

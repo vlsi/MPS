@@ -168,8 +168,9 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
             context.flushEvents();
 
             EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
-
-            selectedCell.getContainingBigCell().synchronizeViewWithModel();
+            if (selectedCell != null) {
+              selectedCell.getContainingBigCell().synchronizeViewWithModel();
+            }
             context.getNodeEditorComponent().relayout();
 
             // put caret at the end of text

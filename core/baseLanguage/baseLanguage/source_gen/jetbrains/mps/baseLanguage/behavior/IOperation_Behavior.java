@@ -6,11 +6,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IOperation_Behavior {
   private static Class[] PARAMETERS_1213877410080 = {SNode.class};
   private static Class[] PARAMETERS_1213877410087 = {SNode.class};
+  private static Class[] PARAMETERS_1230555106620 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -31,6 +33,10 @@ public class IOperation_Behavior {
     return null;
   }
 
+  public static NullableVariableState virtual_getNullableState_1230555106620(SNode thisNode) {
+    return NullableVariableState.UNKNOWN;
+  }
+
   public static boolean call_isLValue_1213877410080(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080);
   }
@@ -39,12 +45,20 @@ public class IOperation_Behavior {
     return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getVariableExpectedName_1213877410087", PARAMETERS_1213877410087);
   }
 
+  public static NullableVariableState call_getNullableState_1230555106620(SNode thisNode) {
+    return (NullableVariableState)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getNullableState_1230555106620", PARAMETERS_1230555106620);
+  }
+
   public static boolean callSuper_isLValue_1213877410080(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080);
   }
 
   public static String callSuper_getVariableExpectedName_1213877410087(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getVariableExpectedName_1213877410087", PARAMETERS_1213877410087);
+  }
+
+  public static NullableVariableState callSuper_getNullableState_1230555106620(SNode thisNode, String callerConceptFqName) {
+    return (NullableVariableState)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getNullableState_1230555106620", PARAMETERS_1230555106620);
   }
 
 }
