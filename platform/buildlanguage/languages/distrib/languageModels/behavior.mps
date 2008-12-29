@@ -8,6 +8,7 @@
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
@@ -40,9 +41,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="16" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="-1" />
   <import index="3" modelUID="r:0bb4a036-fad4-4002-a23a-c39abe15fba3(jetbrains.mps.build.distrib.behavior)" version="-1" />
+  <import index="4" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230059208734">
     <property name="package" value="classpath" />
     <link role="concept" targetNodeId="1.1230059161512" resolveInfo="ClassPathItem" />
@@ -89,12 +91,12 @@
         <link role="concept" targetNodeId="1.1230056066379" resolveInfo="DistribConfiguration" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230207861623">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230207882744">
-          <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1230207888370">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230563466776">
+          <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1230563475487">
             <link role="concept" targetNodeId="1.1230056066379" resolveInfo="DistribConfiguration" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230207884861">
-              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230207884572" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1230207886110" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230563472407">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230563472239" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1230563473588" />
             </node>
           </node>
         </node>
@@ -400,6 +402,31 @@
           <link role="concept" targetNodeId="4v.1203598512427" resolveInfo="Folder" />
         </node>
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230295546376">
+      <property name="name" value="getProjectFolderAntName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1230295554366" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230295546378">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230295599678">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230300474781">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230300471201">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230300465237">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230300464982" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230300470021">
+                  <link role="link" targetNodeId="1.1230293684459" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230300473898">
+                <link role="baseMethodDeclaration" targetNodeId="2v.1213877333777" resolveInfo="getPath" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230300478110">
+              <link role="baseMethodDeclaration" targetNodeId="4.~File.getPath():java.lang.String" resolveInfo="getPath" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230295595792" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1230292819376">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230292819377" />

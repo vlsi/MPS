@@ -14,8 +14,14 @@ import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.build.distrib.behavior.UnixConfig_Behavior;
+import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.MappingScriptContext;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class QueriesGenerated {
 
@@ -23,16 +29,8 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.distrib.structure.DistribConfiguration");
   }
 
-  public static boolean baseMappingRule_Condition_1230234578161(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildlanguage.structure.Project");
-  }
-
   public static boolean baseMappingRule_Condition_1230293388595(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.distrib.structure.DistribConfiguration");
-  }
-
-  public static boolean baseMappingRule_Condition_1230293506967(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildlanguage.structure.Project");
   }
 
   public static Object propertyMacro_GetPropertyValue_1230058399222(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -79,20 +77,28 @@ public class QueriesGenerated {
     return SConceptPropertyOperations.getString(_context.getNode(), "operatingSystem") + ".dist";
   }
 
+  public static Object propertyMacro_GetPropertyValue_1230296315989(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return UnixConfig_Behavior.call_getStartupScriptName_1230292766208(_context.getNode()) + "." + UnixConfig_Behavior.call_getStartupScriptExtension_1230292961412(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230565019437(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230565061534(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getProjectName_1230292821821(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode())) + ".zip";
+  }
+
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
   }
 
-  public static Object referenceMacro_GetReferent_1230234404392(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1230564502576(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true);
-  }
-
-  public static Iterable sourceNodesQuery_1230234307156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "systemSpecificConfig", true);
   }
 
   public static Iterable sourceNodesQuery_1230234413536(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -101,6 +107,19 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1230293101939(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true);
+  }
+
+  public static Iterable sourceNodesQuery_1230564253749(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "systemSpecificConfig", true);
+  }
+
+  public static void mappingScript_CodeBlock_1230300513163(final IOperationContext operationContext, final MappingScriptContext _context) {
+    List<SNode> distribConfigurations = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.distrib.structure.DistribConfiguration");
+    for(SNode distribConfig : ListSequence.fromList(distribConfigurations)) {
+      for(SNode systemSpecificConfig : ListSequence.fromList(SLinkOperations.getTargets(distribConfig, "systemSpecificConfig", true))) {
+        SLinkOperations.setTarget(systemSpecificConfig, "distribConfiguration", distribConfig, false);
+      }
+    }
   }
 
 }

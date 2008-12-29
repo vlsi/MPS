@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.build.distrib" uuid="02824ec0-c6a4-4517-a484-12d85172bbaa" java-stubs-enabled="false" compileInMPS="false">
+<language namespace="jetbrains.mps.build.distrib" uuid="02824ec0-c6a4-4517-a484-12d85172bbaa" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="false" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.build.distrib" />
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.build.distrib" />
@@ -38,7 +38,9 @@
     <entry path="${mps_home}/platform/buildlanguage/classes" />
   </classPath>
   <languageRuntimeClassPath />
-  <sourcePath />
+  <sourcePath>
+    <source path="${language_descriptor}/source_gen" />
+  </sourcePath>
   <dependencies>
     <dependency reexport="false">a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)</dependency>
   </dependencies>

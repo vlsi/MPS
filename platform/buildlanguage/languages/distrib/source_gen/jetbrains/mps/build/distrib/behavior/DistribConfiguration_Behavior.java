@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 
 public class DistribConfiguration_Behavior {
 
@@ -46,6 +47,10 @@ public class DistribConfiguration_Behavior {
       }
 
     }).toListSequence();
+  }
+
+  public static String call_getProjectFolderAntName_1230295546376(SNode thisNode) {
+    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(SLinkOperations.getTarget(thisNode, "projectFolder", false)).getPath();
   }
 
 }

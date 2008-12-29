@@ -115,6 +115,12 @@
       <property name="name" value="operatingSystem" />
       <property name="inheritable" value="true" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230300326596">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="distribConfiguration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1230056066379" resolveInfo="DistribConfiguration" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230207753430">
     <property name="name" value="WindowsConfig" />

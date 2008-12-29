@@ -11,10 +11,20 @@ import jetbrains.mps.project.GlobalScope;
 public class SystemSpecificConfig extends BaseConcept {
   public static final String concept = "jetbrains.mps.build.distrib.structure.SystemSpecificConfig";
   public static final String CPR_OperatingSystem = "operatingSystem";
+  public static final String DISTRIB_CONFIGURATION = "distribConfiguration";
 
   public SystemSpecificConfig(SNode node) {
     super(node);
   }
+
+  public DistribConfiguration getDistribConfiguration() {
+    return (DistribConfiguration)this.getReferent(SystemSpecificConfig.DISTRIB_CONFIGURATION);
+  }
+
+  public void setDistribConfiguration(DistribConfiguration node) {
+    super.setReferent(SystemSpecificConfig.DISTRIB_CONFIGURATION, node);
+  }
+
 
   public static SystemSpecificConfig newInstance(SModel sm, boolean init) {
     return (SystemSpecificConfig)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.SystemSpecificConfig", sm, GlobalScope.getInstance(), init).getAdapter();
