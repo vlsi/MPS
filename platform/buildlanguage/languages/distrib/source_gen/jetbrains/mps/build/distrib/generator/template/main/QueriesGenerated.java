@@ -16,6 +16,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.build.distrib.behavior.UnixConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.template.IfMacroContext;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.List;
@@ -89,12 +91,36 @@ public class QueriesGenerated {
     return DistribConfiguration_Behavior.call_getProjectName_1230292821821(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode())) + ".zip";
   }
 
+  public static Object propertyMacro_GetPropertyValue_1230566262669(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230566774446(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getProjectName_1230292821821(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode())) + "-windows.zip";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230567611860(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getScriptsFolder_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230568537559(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getScriptsFolder_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230568551733(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return WindowsConfig_Behavior.call_getStartupFileName_1230208021944(_context.getNode()) + "." + WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(_context.getNode());
+  }
+
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
   }
 
   public static Object referenceMacro_GetReferent_1230564502576(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
+  }
+
+  public static boolean ifMacro_Condition_1230567183522(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(DistribConfiguration_Behavior.call_getScriptsFolder_1230566454921(_context.getNode()));
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

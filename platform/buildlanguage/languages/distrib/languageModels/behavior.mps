@@ -428,6 +428,31 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230295595792" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230566454921">
+      <property name="name" value="getScriptsFolder" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1230566457220" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230566454923">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230566492241">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230566506697">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230566499914">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230566497787">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230566497338" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230566498500">
+                  <link role="link" targetNodeId="1.1230216533585" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230566505715">
+                <link role="baseMethodDeclaration" targetNodeId="2v.1213877261819" resolveInfo="getLayout" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1230566517548">
+              <link role="property" targetNodeId="4v.1229522370639" resolveInfo="scriptsFolder" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230566476610" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1230292819376">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230292819377" />
     </node>

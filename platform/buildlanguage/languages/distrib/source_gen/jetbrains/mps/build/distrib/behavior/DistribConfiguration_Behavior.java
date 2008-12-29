@@ -53,4 +53,8 @@ public class DistribConfiguration_Behavior {
     return AbstractProjectComponent_Behavior.call_getPath_1213877333777(SLinkOperations.getTarget(thisNode, "projectFolder", false)).getPath();
   }
 
+  public static String call_getScriptsFolder_1230566454921(SNode thisNode) {
+    return SPropertyOperations.getString(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(thisNode, "buildScriptConfiguration", false)), "scriptsFolder");
+  }
+
 }
