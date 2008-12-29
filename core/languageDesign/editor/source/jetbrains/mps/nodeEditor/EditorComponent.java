@@ -135,10 +135,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private int myLastCaretX;
   private boolean myReadOnly = false;
 
+  @NotNull
   private JScrollPane myScrollPane;
-  private JComponent myContainer;
-
+  @NotNull
+  private JComponent myContainer;  
   protected EditorCell myRootCell;
+  @Nullable
   protected EditorCell mySelectedCell;
   private boolean myCellSwapInProgress;
   private static final int MIN_SHIFT_X = 30;
@@ -146,12 +148,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private int myShiftX = MIN_SHIFT_X + ADDITIONAL_SHIFT_X;
   private int myShiftY = 10;
 
+  @NotNull
   private NodeRangeSelection myNodeRangeSelection;
 
   private Stack<EditorCell> mySelectedStack = new Stack<EditorCell>();
   private Stack<KeyboardHandler> myKbdHandlersStack;
   private HashMap<CellActionType, EditorCellAction> myActionMap;
-
+  
   private NodeSubstituteChooser myNodeSubstituteChooser;
   private HashMap myUserDataMap = new HashMap();
 
@@ -167,6 +170,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
   private LeftEditorHighlighter myLeftHighlighter;
+  @Nullable
   protected SNodePointer myNodePointer;
   private EditorContext myEditorContext;
   private List<RebuildListener> myRebuildListeners;
@@ -374,9 +378,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
 
       public void mouseClicked(MouseEvent e) {
-        if (e.getClickCount() == 2 && myRootCell.findLeaf(e.getX(), e.getY()) == getSelectedCell() &&
-          getSelectedCell() instanceof EditorCell_Label) {
-          ((EditorCell_Label) getSelectedCell()).selectAll();
+        EditorCell selectedCell = getSelectedCell();
+        if (e.getClickCount() == 2 && myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell &&
+          selectedCell instanceof EditorCell_Label) {
+          ((EditorCell_Label) selectedCell).selectAll();
           repaint();
         }
       }
@@ -549,10 +554,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public SNode getEditedNode() {
-    if (myNodePointer != null) {
+    final SNodePointer nodePointer = myNodePointer;
+    if (nodePointer != null) {
       return ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
-          return myNodePointer.getNode();
+          return nodePointer.getNode();
         }
       });
     }
@@ -703,7 +709,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected Set<EditorMessage> getMessages() {
     return new LinkedHashSet<EditorMessage>(myHighlightManager.getMessages());
   }
-
+  
   public IOperationContext getOperationContext() {
     return myOperationContext;
   }
@@ -1753,6 +1759,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return mySelectedStack.get(0);
   }
 
+  @Nullable
   public EditorCell getSelectedCell() {
     return mySelectedCell;
   }
@@ -1939,6 +1946,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  @NotNull
   public NodeRangeSelection getNodeRangeSelection() {
     return myNodeRangeSelection;
   }
@@ -2175,8 +2183,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE.getName())) {
       return ModelAccess.instance().runReadAction(new Computable<Object>() {
         public Object compute() {
-          if (myNodePointer == null || myNodePointer.getNode() == null) return null;
-          SNode node = myNodePointer.getNode();
+          SNodePointer nodePointer = myNodePointer;
+          if (nodePointer == null || nodePointer.getNode() == null) return null;
+          SNode node = nodePointer.getNode();
           return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
         }
       });
@@ -2184,8 +2193,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       return ModelAccess.instance().runReadAction(new Computable<Object>() {
         public Object compute() {
-          if (myNodePointer == null || myNodePointer.getNode() == null) return null;
-          SModelDescriptor sModelDescriptor = myNodePointer.getNode().getModel().getModelDescriptor();
+          SNodePointer nodePointer = myNodePointer;
+          if (nodePointer == null || nodePointer.getNode() == null) return null;
+          SModelDescriptor sModelDescriptor = nodePointer.getNode().getModel().getModelDescriptor();
           IFile ifile = sModelDescriptor.getModelFile();
           if (ifile == null || !ifile.exists()) return null;
           VirtualFile vfile = VFileSystem.getFile(ifile);
@@ -2628,7 +2638,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void performCut(DataContext dataContext) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          getSelectedCell().executeAction(CellActionType.CUT);
+          EditorCell selectedCell = getSelectedCell();
+          assert selectedCell != null;
+          selectedCell.executeAction(CellActionType.CUT);
         }
       });
     }
@@ -2648,7 +2660,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void performCopy(DataContext dataContext) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          getSelectedCell().executeAction(CellActionType.COPY);
+          EditorCell selectedCell = getSelectedCell();
+          assert selectedCell != null;
+          selectedCell.executeAction(CellActionType.COPY);
         }
       });
     }
@@ -2668,7 +2682,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void performPaste(DataContext dataContext) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          getSelectedCell().executeAction(CellActionType.PASTE);
+          EditorCell selectedCell = getSelectedCell();
+          assert selectedCell != null;
+          selectedCell.executeAction(CellActionType.PASTE);
         }
       });
     }
