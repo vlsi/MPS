@@ -124,6 +124,9 @@ public class FunctionType_Behavior {
   }
 
   public static SNode call_getNormalizedReturnType_1213877405252(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
+      return SLinkOperations.getTarget(thisNode, "resultType", true);
+    }
     return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(thisNode, "resultType", true));
   }
 

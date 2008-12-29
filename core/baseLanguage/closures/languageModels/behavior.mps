@@ -1291,6 +1291,31 @@
         <link role="concept" targetNodeId="8.1068431790189" resolveInfo="Type" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877405254">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1230564460747">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230564460748">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230564478293">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230564481238">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230564481026" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230564481886">
+                  <link role="link" targetNodeId="1.1199542457201" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230564473091">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230564471070">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230564470707" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230564472001">
+                <link role="link" targetNodeId="1.1199542457201" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1230564474326">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1230564476664">
+                <link role="conceptDeclaration" targetNodeId="8.1068581517677" resolveInfo="VoidType" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877405255">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213877405256">
             <link role="baseMethodDeclaration" targetNodeId="11.1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
