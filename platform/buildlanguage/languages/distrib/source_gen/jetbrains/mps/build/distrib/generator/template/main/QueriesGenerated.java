@@ -100,15 +100,39 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1230567611860(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getScriptsFolder_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1230568537559(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getScriptsFolder_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1230568551733(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return WindowsConfig_Behavior.call_getStartupFileName_1230208021944(_context.getNode()) + "." + WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230570246891(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "pathToNsisZip");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230570281835(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "pathToNsisScript");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230577420054(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230577742650(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "token");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230577899453(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "value", false), "antName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230579835433(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
   }
 
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -119,8 +143,12 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
   }
 
+  public static Object referenceMacro_GetReferent_1230577930415(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "TokeValuePairToExternalPropertyDeclaration");
+  }
+
   public static boolean ifMacro_Condition_1230567183522(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(DistribConfiguration_Behavior.call_getScriptsFolder_1230566454921(_context.getNode()));
+    return StringUtils.isNotEmpty(DistribConfiguration_Behavior.call_getScriptsFolder_1230570100269(_context.getNode()));
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -137,6 +165,14 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1230564253749(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "systemSpecificConfig", true);
+  }
+
+  public static Iterable sourceNodesQuery_1230577704795(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "tokenValuePair", true);
+  }
+
+  public static Iterable sourceNodesQuery_1230577870076(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "tokenValuePair", true);
   }
 
   public static void mappingScript_CodeBlock_1230300513163(final IOperationContext operationContext, final MappingScriptContext _context) {

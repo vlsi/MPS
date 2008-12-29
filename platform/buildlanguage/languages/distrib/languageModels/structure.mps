@@ -134,6 +134,32 @@
       <property name="value" value="windows" />
       <link role="conceptPropertyDeclaration" targetNodeId="1230207324294" resolveInfo="operatingSystem" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230569120073">
+      <property name="name" value="pathToNsisZip" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230569127052">
+      <property name="name" value="pathToNsisScript" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230570754983">
+      <property name="name" value="generateInstallUninstallLists" />
+      <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230570775309">
+      <property name="name" value="installNshName" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230570794373">
+      <property name="name" value="uninstallNshName" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230576840098">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="tokenValuePair" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1230576552358" resolveInfo="TokenValuePair" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230292331281">
     <property name="package" value="systemSpecific" />
@@ -146,6 +172,21 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230292555791">
       <property name="value" value="unix" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230576552358">
+    <property name="package" value="systemSpecific" />
+    <property name="name" value="TokenValuePair" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230576589108">
+      <property name="name" value="token" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230576594202">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="value" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.1205335290326" resolveInfo="Variable" />
     </node>
   </node>
 </model>

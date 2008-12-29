@@ -212,9 +212,185 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1230208353028">
     <property name="package" value="systemSpecific" />
     <link role="conceptDeclaration" targetNodeId="1.1230207753430" resolveInfo="WindowsConfig" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1230208362256">
-      <link role="relationDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
-      <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230568934793">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1230568937690">
+        <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+        <link role="relationDeclaration" targetNodeId="2v.1156235010670" resolveInfo="alias" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230568944248">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230568944249">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1230568947789" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230568952067">
+          <property name="vertical" value="true" />
+          <property name="usesBraces" value="true" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230568952068">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230568962485">
+            <property name="text" value="nsis configuration" />
+            <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230569003629">
+            <property name="vertical" value="false" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230569003630">
+              <property name="flag" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1230569006434" />
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230569011870">
+              <property name="vertical" value="true" />
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230569011871">
+                <property name="flag" value="false" />
+              </node>
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230569017340">
+                <property name="vertical" value="false" />
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230569017341">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230569017343">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230569021495">
+                  <property name="text" value="path to nsis zip file" />
+                  <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230569153703">
+                  <link role="relationDeclaration" targetNodeId="1.1230569120073" resolveInfo="pathToNsisZip" />
+                </node>
+              </node>
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230569040645">
+                <property name="vertical" value="false" />
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230569040646">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230569042220">
+                  <property name="text" value="path to nsis script" />
+                  <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230569160570">
+                  <link role="relationDeclaration" targetNodeId="1.1230569127052" resolveInfo="pathToNsisScript" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230576897685">
+                  <property name="text" value="replace" />
+                  <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1230576919462">
+                  <property name="vertical" value="true" />
+                  <link role="relationDeclaration" targetNodeId="1.1230576840098" />
+                  <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230576919463">
+                    <property name="flag" value="false" />
+                  </node>
+                </node>
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230569040648">
+                  <property name="flag" value="false" />
+                </node>
+              </node>
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230570841458">
+                <property name="vertical" value="false" />
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230570841459">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230570847799">
+                  <property name="text" value="generate install/uninstall files list" />
+                  <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230570881787">
+                  <link role="relationDeclaration" targetNodeId="1.1230570754983" resolveInfo="generateInstallUninstallLists" />
+                </node>
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230570841461">
+                  <property name="flag" value="false" />
+                </node>
+              </node>
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230570896021">
+                <property name="vertical" value="true" />
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230570896022">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230570899654">
+                  <property name="vertical" value="false" />
+                  <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230570899655">
+                    <property name="flag" value="false" />
+                  </node>
+                  <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230570903220">
+                    <property name="text" value="install files list name" />
+                    <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+                  </node>
+                  <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230570917187">
+                    <link role="relationDeclaration" targetNodeId="1.1230570775309" resolveInfo="installNshName" />
+                    <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1230576822512">
+                      <property name="value" value="0.1" />
+                    </node>
+                  </node>
+                  <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230570929327">
+                    <property name="text" value=".nsh" />
+                    <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1230573455653">
+                      <property name="value" value="0.1" />
+                    </node>
+                  </node>
+                  <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230570899658">
+                    <property name="flag" value="false" />
+                  </node>
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230570936775">
+                  <property name="vertical" value="false" />
+                  <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230570936776">
+                    <property name="flag" value="false" />
+                  </node>
+                  <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230570941373">
+                    <property name="text" value="uninstall files list name" />
+                    <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+                  </node>
+                  <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230570959828">
+                    <link role="relationDeclaration" targetNodeId="1.1230570794373" resolveInfo="uninstallNshName" />
+                    <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1230573537433">
+                      <property name="value" value="0.1" />
+                    </node>
+                  </node>
+                  <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230570962277">
+                    <property name="text" value=".nsh" />
+                    <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1230573467622">
+                      <property name="value" value="0.1" />
+                    </node>
+                  </node>
+                  <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230570936778">
+                    <property name="flag" value="false" />
+                  </node>
+                </node>
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230570896024">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1230570980857">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230570980858">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230570982345">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230570982417">
+                        <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1230570982346" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1230570986434">
+                          <link role="property" targetNodeId="1.1230570754983" resolveInfo="generateInstallUninstallLists" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230569011873">
+                <property name="flag" value="false" />
+              </node>
+            </node>
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230569003632">
+              <property name="flag" value="false" />
+            </node>
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230568952070">
+            <property name="flag" value="false" />
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230568944251">
+          <property name="flag" value="false" />
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.StyleSheet" id="1230217813665">
@@ -234,6 +410,29 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1230292476337">
       <link role="relationDeclaration" targetNodeId="1.1230207324294" resolveInfo="operatingSystem" />
       <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1230576609297">
+    <property name="package" value="systemSpecific" />
+    <link role="conceptDeclaration" targetNodeId="1.1230576552358" resolveInfo="TokenValuePair" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230576614465">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230576618989">
+        <link role="relationDeclaration" targetNodeId="1.1230576589108" resolveInfo="token" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230576621887">
+        <property name="text" value="-&gt;" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1230576627386">
+        <link role="relationDeclaration" targetNodeId="1.1230576594202" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1230576627387">
+          <link role="conceptDeclaration" targetNodeId="3v.1205335290326" resolveInfo="Variable" />
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230576635122">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
