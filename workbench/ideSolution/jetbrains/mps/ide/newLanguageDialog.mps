@@ -26,7 +26,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <maxImportIndex value="24" />
+  <maxImportIndex value="25" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -46,6 +46,7 @@
   <import index="22" modelUID="f:java_stub#jetbrains.mps.library(jetbrains.mps.library@java_stub)" version="-1" />
   <import index="23" modelUID="f:java_stub#jetbrains.mps.vcs(jetbrains.mps.vcs@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" />
+  <import index="25" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="1203684597238">
     <property name="name" value="NewLanguageDialog" />
     <node role="root" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialog" id="1203684615537">
@@ -716,7 +717,7 @@
                 <link role="variableDeclaration" targetNodeId="22.~LanguageDesign_DevKit.MODULE_REFERENCE" resolveInfo="MODULE_REFERENCE" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225111225443">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ModuleReference.toString():java.lang.String" resolveInfo="toString" />
+                <link role="baseMethodDeclaration" targetNodeId="25.~ModuleReference.toString():java.lang.String" resolveInfo="toString" />
               </node>
             </node>
           </node>
