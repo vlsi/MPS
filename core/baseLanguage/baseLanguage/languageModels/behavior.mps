@@ -382,6 +382,22 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723805" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230545283858">
+      <property name="name" value="getNullableState" />
+      <link role="overriddenMethod" targetNodeId="1230540989695" resolveInfo="getNullableState" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230545283860">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230545391402">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1230545409501">
+            <link role="enumConstantDeclaration" targetNodeId="26.1230466608293" resolveInfo="NULL" />
+            <link role="enumClass" targetNodeId="26.1230466569958" resolveInfo="NullableVariableState" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230545349663">
+        <link role="classifier" targetNodeId="26.1230466569958" resolveInfo="NullableVariableState" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230545349664" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877236059">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877236060" />
     </node>
@@ -8186,6 +8202,7 @@
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230540989695">
       <property name="name" value="getNullableState" />
+      <property name="isVirtual" value="true" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230541296711">
         <link role="classifier" targetNodeId="26.1230466569958" resolveInfo="NullableVariableState" />
       </node>

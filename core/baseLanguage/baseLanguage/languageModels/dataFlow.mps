@@ -495,10 +495,15 @@
                       <link role="link" targetNodeId="1.1068581517664" />
                     </node>
                   </node>
-                  <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230540720035">
-                    <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1230540715127" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230540733819">
-                      <link role="link" targetNodeId="1.1068498886297" />
+                  <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230545241166">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230540720035">
+                      <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1230540715127" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230540733819">
+                        <link role="link" targetNodeId="1.1068498886297" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230547163326">
+                      <link role="baseMethodDeclaration" targetNodeId="6.1230540989695" resolveInfo="getNullableState" />
                     </node>
                   </node>
                 </node>

@@ -79,6 +79,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "codeFor", true);
   }
 
+  public static SNode sourceNodeQuery_1230548357391(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "value", true);
+  }
+
   public static Iterable sourceNodesQuery_1206456525472(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration");
   }

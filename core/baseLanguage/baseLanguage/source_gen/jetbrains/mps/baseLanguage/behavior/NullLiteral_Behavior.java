@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 
 public class NullLiteral_Behavior {
 
@@ -12,6 +13,10 @@ public class NullLiteral_Behavior {
 
   public static Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
     return null;
+  }
+
+  public static NullableVariableState virtual_getNullableState_1230540989695(SNode thisNode) {
+    return NullableVariableState.NULL;
   }
 
 }

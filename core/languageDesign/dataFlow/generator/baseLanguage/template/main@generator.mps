@@ -594,7 +594,22 @@
                   </node>
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1230496045591" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1230496045591">
+                <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1230548357390">
+                  <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1230548357391">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230548357392">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230548373059">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230548379019">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1230548373060" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230548382256">
+                            <link role="link" targetNodeId="1.1230468250683" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206457029681">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206457029682">

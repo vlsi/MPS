@@ -12,6 +12,7 @@ public class Expression_Behavior {
   private static Class[] PARAMETERS_1213877519769 = {SNode.class ,IModule.class};
   private static Class[] PARAMETERS_1213877519781 = {SNode.class};
   private static Class[] PARAMETERS_1213877519786 = {SNode.class};
+  private static Class[] PARAMETERS_1230540989695 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -28,7 +29,7 @@ public class Expression_Behavior {
     return SConceptPropertyOperations.getBoolean(thisNode, "lvalue");
   }
 
-  public static NullableVariableState call_getNullableState_1230540989695(SNode thisNode) {
+  public static NullableVariableState virtual_getNullableState_1230540989695(SNode thisNode) {
     return NullableVariableState.UNKNOWN;
   }
 
@@ -44,6 +45,10 @@ public class Expression_Behavior {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isLValue_1213877519786", PARAMETERS_1213877519786);
   }
 
+  public static NullableVariableState call_getNullableState_1230540989695(SNode thisNode) {
+    return (NullableVariableState)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getNullableState_1230540989695", PARAMETERS_1230540989695);
+  }
+
   public static Object callSuper_eval_1213877519769(SNode thisNode, String callerConceptFqName, IModule module) {
     return (Object)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_eval_1213877519769", PARAMETERS_1213877519769, module);
   }
@@ -54,6 +59,10 @@ public class Expression_Behavior {
 
   public static boolean callSuper_isLValue_1213877519786(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isLValue_1213877519786", PARAMETERS_1213877519786);
+  }
+
+  public static NullableVariableState callSuper_getNullableState_1230540989695(SNode thisNode, String callerConceptFqName) {
+    return (NullableVariableState)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getNullableState_1230540989695", PARAMETERS_1230540989695);
   }
 
 }

@@ -21,7 +21,7 @@ public class BaseAssignmentExpression_DataFlow extends DataFlowBuilder {
         _context.getBuilder().emitRead(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "variableDeclaration", false));
       }
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "rValue", true));
-      _context.getBuilder().emitWrite(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "variableDeclaration", false), null);
+      _context.getBuilder().emitWrite(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "variableDeclaration", false));
     } else
     {
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "lValue", true));
