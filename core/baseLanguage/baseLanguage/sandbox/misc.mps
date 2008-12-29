@@ -45,7 +45,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="145" />
+  <maxImportIndex value="146" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="124" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
@@ -62,6 +62,7 @@
   <import index="143" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="144" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="145" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="146" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1227257059348">
     <property name="name" value="Test" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1227257098731">
@@ -155,6 +156,7 @@
             <link role="variableDeclaration" targetNodeId="1230303587949" resolveInfo="mymap" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1230576909866" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227257103095">
         <property name="name" value="s" />
@@ -371,6 +373,22 @@
         </node>
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228404842719" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.ExperimentalSubtypingRulesContainer" id="1230576942431">
+    <node role="rule" type="jetbrains.mps.lang.typesystem.structure.ExperimentalSubtypingRule" id="1230577044654">
+      <link role="subtypeConcept" targetNodeId="146.1199542442495" resolveInfo="FunctionType" />
+      <link role="supertypeConcept" targetNodeId="146.1199542442495" resolveInfo="FunctionType" />
+      <node role="linkAssociation" type="jetbrains.mps.lang.typesystem.structure.LinkAssociation" id="1230577151830">
+        <link role="subtypeLink" targetNodeId="146.1199542501692" />
+        <link role="supertypeLink" targetNodeId="146.1199542501692" />
+        <node role="associationKind" type="jetbrains.mps.lang.typesystem.structure.LinkAssociationKind_contravariant" id="1230577223920" />
+      </node>
+      <node role="linkAssociation" type="jetbrains.mps.lang.typesystem.structure.LinkAssociation" id="1230577204723">
+        <link role="subtypeLink" targetNodeId="146.1199542457201" />
+        <link role="supertypeLink" targetNodeId="146.1199542457201" />
+        <node role="associationKind" type="jetbrains.mps.lang.typesystem.structure.LinkAssociationKind_covariant" id="1230577215084" />
+      </node>
     </node>
   </node>
 </model>

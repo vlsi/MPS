@@ -2150,5 +2150,91 @@
     <property name="name" value="RuntimeHoleType" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230554163368">
+    <property name="name" value="ExperimentalSubtypingRulesContainer" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230554226455">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="rule" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1230554202040" resolveInfo="ExperimentalSubtypingRule" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230554202040">
+    <property name="name" value="ExperimentalSubtypingRule" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230558896440">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="linkAssociation" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1230554361641" resolveInfo="LinkAssociation" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230558876059">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="subtypeConcept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230558885001">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="supertypeConcept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230554361641">
+    <property name="name" value="LinkAssociation" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230560961413">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="associationKind" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1230560224148" resolveInfo="LinkAssociationKind" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230554396851">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="subtypeLink" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230560176540">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="supertypeLink" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230560224148">
+    <property name="name" value="LinkAssociationKind" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1230560451657">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230560508546">
+    <property name="name" value="LinkAssociationKind_exact" />
+    <link role="extends" targetNodeId="1230560224148" resolveInfo="LinkAssociationKind" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230560575153">
+      <property name="value" value="exact" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230560588607">
+    <property name="name" value="LinkAssociationKind_covariant" />
+    <link role="extends" targetNodeId="1230560224148" resolveInfo="LinkAssociationKind" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230560607189">
+      <property name="value" value="covariant" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230560616568">
+    <property name="name" value="LinkAssociationKind_contravariant" />
+    <link role="extends" targetNodeId="1230560224148" resolveInfo="LinkAssociationKind" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230560671162">
+      <property name="value" value="contravariant" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
