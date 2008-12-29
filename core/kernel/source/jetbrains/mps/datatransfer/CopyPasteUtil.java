@@ -337,6 +337,8 @@ public class CopyPasteUtil {
       if (!dialog.isCanceled()) {
         onOk.run();
         return;
+      } else {
+        return;
       }
     }
 
