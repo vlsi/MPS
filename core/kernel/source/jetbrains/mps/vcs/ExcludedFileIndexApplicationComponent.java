@@ -59,14 +59,16 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
     @Override
     public void moduleAdded(IModule module) {
-      addModuleFile(module, false);
+      addModuleFile(module);
     }
-
+/*
+    // work only after MPS restart, since on-line update is too complicated
     @Override
     public void moduleInitialized(IModule module) {
       ((AbstractModule)module).updateExcludes();
-      addModuleFile(module, true);
+      addModuleFile(module);
     }
+*/
 
     @Override
     public void moduleRemoved(IModule module) {
@@ -87,7 +89,7 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   public void initComponent() {
     List<IModule> moduleList = myModuleRepository.getAllModules();
     for (IModule module : moduleList) {
-      addModuleFile(module, false);
+      addModuleFile(module);
     }
     myModuleRepository.addModuleRepositoryListener(myModuleRepositoryListener);
   }
@@ -104,21 +106,21 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     }
   }
 
-  private void addModuleFile(IModule module, boolean update) {
+  private void addModuleFile(IModule module) {
     IFile classesGen = module.getClassesGen();
     if (classesGen == null) return;
     VirtualFile classesGenVirtual = VFileSystem.getFile(classesGen);
     if (classesGenVirtual != null) {
       myExcludedFiles.add(classesGenVirtual);
     }
-    excludeClassPath(module, module.getClassPathItem(), update);
+    excludeClassPath(module, module.getClassPathItem());
   }
 
-  private void excludeClassPath(IModule module, IClassPathItem item, boolean update) {
+  private void excludeClassPath(IModule module, IClassPathItem item) {
     if (item instanceof CompositeClassPathItem) {
       List<IClassPathItem> children = ((CompositeClassPathItem) item).getChildren();
       for (IClassPathItem child : children) {
-        excludeClassPath(module, child, update);
+        excludeClassPath(module, child);
       }
     } else if (item instanceof FileClassPathItem) {
       String classPath = ((FileClassPathItem) item).getClassPath();
@@ -126,8 +128,6 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
       if (classPathFile != null && classPathFile.isDirectory()) {
         if (module.isClassPathExcluded(classPath)) {
           myExcludedFiles.add(classPathFile);
-        } else if (update) {
-          myExcludedFiles.remove(classPathFile);
         }
       }
     }
