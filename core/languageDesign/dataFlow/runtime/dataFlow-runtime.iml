@@ -11,6 +11,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="unitTest" />
+    <orderEntry type="module" module-name="dataFlow" />
   </component>
 </module>
 

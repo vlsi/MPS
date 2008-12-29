@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Expression_Behavior {
@@ -25,6 +26,10 @@ public class Expression_Behavior {
 
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return SConceptPropertyOperations.getBoolean(thisNode, "lvalue");
+  }
+
+  public static NullableVariableState call_getNullableState_1230540989695(SNode thisNode) {
+    return NullableVariableState.UNKNOWN;
   }
 
   public static Object call_eval_1213877519769(SNode thisNode, IModule module) {

@@ -577,7 +577,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206457029669">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206457029670">
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206457029672">
-              <link role="baseMethodDeclaration" targetNodeId="12.~StructuralProgramBuilder.emitWrite(java.lang.Object):void" resolveInfo="emitWrite" />
+              <link role="baseMethodDeclaration" targetNodeId="12.~StructuralProgramBuilder.emitWrite(java.lang.Object,java.lang.Object):void" resolveInfo="emitWrite" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206457029673">
                 <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1206457029674">
                   <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1206457029675">
@@ -594,6 +594,7 @@
                   </node>
                 </node>
               </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1230496045591" />
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206457029681">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206457029682">

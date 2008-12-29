@@ -91,7 +91,13 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   public void emitWrite(Object var) {
-    WriteInstruction instruction = new WriteInstruction(var);
+    WriteInstruction instruction = new WriteInstruction(var, null);
+    onInstructionEmitted(instruction);
+    myProgram.add(instruction);
+  }
+
+  public void emitWrite(Object var, Object value) {
+    WriteInstruction instruction = new WriteInstruction(var, value);
     onInstructionEmitted(instruction);
     myProgram.add(instruction);
   }

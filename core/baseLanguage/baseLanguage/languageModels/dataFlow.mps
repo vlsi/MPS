@@ -29,7 +29,7 @@
   <import index="5" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
-  <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
+  <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1206454554507">
     <property name="package" value="if" />
     <link role="conceptDeclaration" targetNodeId="1.1068580123159" resolveInfo="IfStatement" />
@@ -493,6 +493,12 @@
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225456606801">
                       <link role="link" targetNodeId="1.1068581517664" />
+                    </node>
+                  </node>
+                  <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230540720035">
+                    <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1230540715127" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230540733819">
+                      <link role="link" targetNodeId="1.1068498886297" />
                     </node>
                   </node>
                 </node>

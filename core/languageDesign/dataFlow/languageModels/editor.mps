@@ -316,5 +316,30 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1230468316202">
+    <property name="package" value="Instructions.Variable" />
+    <link role="conceptDeclaration" targetNodeId="1.1206444349662" resolveInfo="EmitWriteStatement" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230468339095">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1230468339096">
+        <link role="relationDeclaration" targetNodeId="4.1156235010670" resolveInfo="alias" />
+        <link role="styleClass" targetNodeId="1206443699820" resolveInfo="Instruction" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1230468339097">
+        <property name="noTargetText" value="unknown" />
+        <link role="relationDeclaration" targetNodeId="1.1206444629799" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230468843035">
+        <property name="text" value="=" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1230468854333">
+          <property name="value" value="1.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1230468664927">
+        <property name="noTargetText" value="&lt;unknown&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1230468250683" />
+      </node>
+    </node>
+  </node>
 </model>
 

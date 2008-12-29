@@ -202,6 +202,11 @@
     <property name="package" value="Instructions.Variable" />
     <property name="name" value="EmitWriteStatement" />
     <link role="extends" targetNodeId="1206444622344" resolveInfo="EmitVariableStatement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230468250683">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="value" />
+      <link role="target" targetNodeId="3.1068431790191" resolveInfo="Expression" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1206444399445">
       <property name="value" value="write" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />

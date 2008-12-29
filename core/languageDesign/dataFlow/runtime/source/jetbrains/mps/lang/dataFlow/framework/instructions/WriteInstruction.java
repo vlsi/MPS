@@ -17,16 +17,22 @@ package jetbrains.mps.lang.dataFlow.framework.instructions;
 
 public class WriteInstruction extends Instruction {
   private Object myVar;
+  private Object myValue;
 
-  public WriteInstruction(Object var) {
+  public WriteInstruction(Object var, Object value) {
     myVar = var;
+    myValue = value;
   }
 
   public Object getVariable() {
     return myVar;
   }
 
+  public Object getValue() {
+    return myValue;
+  }
+
   String commandPresentation() {
-    return "write " + myVar;
+    return "write " + myVar + " " + myValue;
   }
 }
