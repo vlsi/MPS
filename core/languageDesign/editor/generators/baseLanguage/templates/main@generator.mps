@@ -14965,6 +14965,7 @@
         <link role="template" targetNodeId="1227875493717" resolveInfo="NavigatableReferenceStyleClassItem" />
       </node>
     </node>
+    <node role="defaultConsequence" type="jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence" id="1230567891550" />
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1186405163329">
     <property name="package" value="styleSheet.Switch" />

@@ -4,18 +4,17 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\jetbrains.mps.regexp.examples\jetbrains.mps.regexp.examples.msd" />
-      <solutionPath path="${project}\solutions\jetbrains.mps.regexp.sandbox\jetbrains.mps.regexp.sandbox.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.regexp.examples.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.regexp.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\regexp.mpl" />
+      <languagePath path="${project}/regexp.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
-      <genConfLanguage name="regexp" language="jetbrains.mps.baseLanguage.regexp" />
+      <genConfModule name="regexp" moduleRef="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
