@@ -135,12 +135,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1230207324294" resolveInfo="operatingSystem" />
     </node>
   </node>
-  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230219976109">
-    <property name="package" value="systemSpecific" />
-    <property name="name" value="ImportWindowsConfig" />
-    <link role="extends" targetNodeId="4v.1230209993244" resolveInfo="AbstractImportProject" />
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230292331281">
     <property name="package" value="systemSpecific" />
     <property name="name" value="UnixConfig" />
