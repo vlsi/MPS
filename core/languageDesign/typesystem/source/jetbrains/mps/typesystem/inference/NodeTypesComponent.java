@@ -390,7 +390,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
-    frontier.add(node);
+    frontier.add(node);                           
     frontier.addAll(additionalNodes);
     if (myIsSmartCompletion) {
       myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager);

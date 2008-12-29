@@ -105,7 +105,10 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
         return null;
       }
       sourceNode.setReferent(role, (SNode)getParameterObject());
-      SNode type = TypeChecker.getInstance().getTypeOf(nodeToEquate);
+      SNode nodeToEquateCopy = CopyUtil.copy(nodeToEquate);
+      auxModel.addRoot(nodeToEquateCopy);
+      SNode type = TypeChecker.getInstance().getTypeOf(nodeToEquateCopy);
+      auxModel.removeRoot(nodeToEquateCopy);
       auxModel.removeRoot(nodeCopyRoot);
       return type;
     } finally {
