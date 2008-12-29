@@ -29,7 +29,7 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   public ModelDifferenceDialog(Frame parent, SModel oldModel, SModel newModel, String windowTitle) throws HeadlessException {
     super(parent, windowTitle);
-    setModal(false);
+//    setModal(false);
     myDifferenceComponent = new ModelDifferenceComponent();
     myDifferenceComponent.showDifference(oldModel, newModel);
   }
