@@ -123,7 +123,7 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     } else if (item instanceof FileClassPathItem) {
       String classPath = ((FileClassPathItem) item).getClassPath();
       VirtualFile classPathFile = VFileSystem.getFile(classPath);
-      if (classPathFile != null) {
+      if (classPathFile != null && classPathFile.isDirectory()) {
         if (module.isClassPathExcluded(classPath)) {
           myExcludedFiles.add(classPathFile);
         } else if (update) {
