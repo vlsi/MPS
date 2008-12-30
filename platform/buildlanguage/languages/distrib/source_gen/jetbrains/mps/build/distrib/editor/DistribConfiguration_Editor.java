@@ -104,6 +104,7 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createCollection_7701_10(context, node));
     editorCell.addEditorCell(this.createCollection_7701_6(context, node));
     editorCell.addEditorCell(this.createCollection_7701_7(context, node));
     return editorCell;
@@ -150,6 +151,17 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7701_5(context, node, "project folder"));
     editorCell.addEditorCell(this.createRefCell_7701_3(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection_7701_10(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_7701_10(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant_7701_7(context, node, "base directory"));
+    editorCell.addEditorCell(this.createProperty_7701_9(context, node));
     return editorCell;
   }
 
@@ -205,6 +217,14 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7701_6(editorCell, node, context);
     setupLabel_Constant_7701_6(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_7701_7(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_7701_7(editorCell, node, context);
+    setupLabel_Constant_7701_7(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -396,6 +416,35 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_7701_2_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createProperty_7701_8_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_Property_7701_4(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_Property_7701_4((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createProperty_7701_9(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("startupDir");
+    provider.setNoTargetText("<no startupDir>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createProperty_7701_8_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -614,6 +663,29 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_7701_6");
   }
 
+  private static void setupBasic_Collection_7701_10(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_7701_10");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_7701_7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_7701_7");
+    DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+  }
+
+  private static void setupBasic_Property_7701_4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("property_startupDir");
+  }
+
   private static void setupLabel_Constant_7701_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -654,6 +726,12 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_7701_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_7701_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Property_7701_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline7701_0 extends AbstractCellProvider {

@@ -16,6 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 public class DistribConfiguration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.build.distrib.structure.DistribConfiguration";
   public static final String STARTUP_CLASS = "startupClass";
+  public static final String STARTUP_DIR = "startupDir";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -35,6 +36,14 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
 
   public void setStartupClass(String value) {
     this.setProperty(DistribConfiguration.STARTUP_CLASS, value);
+  }
+
+  public String getStartupDir() {
+    return this.getProperty(DistribConfiguration.STARTUP_DIR);
+  }
+
+  public void setStartupDir(String value) {
+    this.setProperty(DistribConfiguration.STARTUP_DIR, value);
   }
 
   public String getName() {

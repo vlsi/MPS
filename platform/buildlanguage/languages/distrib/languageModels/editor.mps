@@ -130,6 +130,22 @@
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230058075551">
               <property name="flag" value="false" />
             </node>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230660855213">
+              <property name="vertical" value="false" />
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230660855214">
+                <property name="flag" value="false" />
+              </node>
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230660858016">
+                <property name="text" value="base directory" />
+                <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+              </node>
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230660885079">
+                <link role="relationDeclaration" targetNodeId="1.1230660802400" resolveInfo="startupDir" />
+              </node>
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230660855216">
+                <property name="flag" value="false" />
+              </node>
+            </node>
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230058174615">
               <property name="vertical" value="false" />
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230058174616">

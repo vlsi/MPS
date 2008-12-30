@@ -41,10 +41,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="16" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="-1" />
   <import index="3" modelUID="r:0bb4a036-fad4-4002-a23a-c39abe15fba3(jetbrains.mps.build.distrib.behavior)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230059208734">
     <property name="package" value="classpath" />
     <link role="concept" targetNodeId="1.1230059161512" resolveInfo="ClassPathItem" />
@@ -532,7 +533,23 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230570100295" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1230292819376">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230292819377" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230292819377">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230661038610">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230661047951">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230661043835">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230661041270" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1230661046902">
+                <link role="property" targetNodeId="1.1230660802400" resolveInfo="startupDir" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1230661048360">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230661050113">
+                <property name="value" value="." />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

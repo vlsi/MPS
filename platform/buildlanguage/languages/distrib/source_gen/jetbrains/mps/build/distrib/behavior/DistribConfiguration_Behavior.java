@@ -19,6 +19,7 @@ import org.apache.commons.lang.StringUtils;
 public class DistribConfiguration_Behavior {
 
   public static void init(SNode thisNode) {
+    SPropertyOperations.set(thisNode, "startupDir", ".");
   }
 
   public static String call_getProjectName_1230292821821(SNode thisNode) {

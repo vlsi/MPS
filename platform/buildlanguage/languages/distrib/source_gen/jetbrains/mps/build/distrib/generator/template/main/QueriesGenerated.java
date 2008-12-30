@@ -189,6 +189,14 @@ public class QueriesGenerated {
     return !(SPropertyOperations.getString(SLinkOperations.getTarget(baseDirectory, "macro", true), "name").equals(MPSLayout_Behavior.getMPSHomeName_1226508944077()));
   }
 
+  public static boolean ifMacro_Condition_1230661197597(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDir").equals("."));
+  }
+
+  public static boolean ifMacro_Condition_1230662902499(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDir").equals("."));
+  }
+
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true)).skip(1);
   }
