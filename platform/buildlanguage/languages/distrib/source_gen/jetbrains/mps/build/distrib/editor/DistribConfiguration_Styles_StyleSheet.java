@@ -4,20 +4,50 @@ package jetbrains.mps.build.distrib.editor;
 
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.build.packaging.editor.MPSLayoutStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 public class DistribConfiguration_Styles_StyleSheet {
 
   public static Style getKeyword(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        this.putAll(MPSLayoutStyles_StyleSheet.getProjectComponent(null));
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       }
 
     };
+  }
+
+  public static Style getReallyImportantKeyword(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.putAll(DistribConfiguration_Styles_StyleSheet.getKeyword(null));
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return DistribConfiguration_Styles_StyleSheet._StyleParameter_QueryFunction_1230640044409((cell == null ?
+              null :
+              cell.getSNode()
+            ), (cell == null ?
+              null :
+              cell.getEditorContext()
+            ));
+          }
+
+        });
+      }
+
+    };
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1230640044409(SNode node, EditorContext editorContext) {
+    return true;
   }
 
 }
