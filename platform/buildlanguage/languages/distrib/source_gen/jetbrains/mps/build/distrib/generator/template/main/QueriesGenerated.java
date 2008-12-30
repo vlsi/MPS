@@ -15,15 +15,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.build.distrib.behavior.UnixConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
+import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.generator.template.MappingScriptContext;
-import java.util.List;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
 
@@ -103,10 +103,6 @@ public class QueriesGenerated {
     return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1230568537559(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1230568551733(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return WindowsConfig_Behavior.call_getStartupFileName_1230208021944(_context.getNode()) + "." + WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(_context.getNode());
   }
@@ -119,10 +115,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "pathToNsisScript");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1230577420054(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1230577742650(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "token");
   }
@@ -131,8 +123,32 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "value", false), "antName");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1230579835433(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1230642371372(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSLayout_Behavior.getMPSHomeName_1226508944077();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230642678733(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230642844320(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "installNshName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230642855766(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "uninstallNshName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230650061631(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "${basedir}";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230650823092(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSLayout_Behavior.getMPSHomeName_1226508944077();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1230657768605(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ClassPathItem_Behavior.call_getFullPath_1230059208735(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true)).first()).replace("/", "\\");
   }
 
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -147,12 +163,34 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "TokeValuePairToExternalPropertyDeclaration");
   }
 
+  public static Object referenceMacro_GetReferent_1230650252582(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
+  }
+
+  public static Object referenceMacro_GetReferent_1230650270986(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
+  }
+
   public static boolean ifMacro_Condition_1230567183522(final IOperationContext operationContext, final IfMacroContext _context) {
     return StringUtils.isNotEmpty(DistribConfiguration_Behavior.call_getScriptsFolder_1230570100269(_context.getNode()));
   }
 
+  public static boolean ifMacro_Condition_1230642866220(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "generateInstallUninstallLists");
+  }
+
+  public static boolean ifMacro_Condition_1230645373261(final IOperationContext operationContext, final IfMacroContext _context) {
+    Language distLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.distrib");
+    return distLanguage.isPackaged();
+  }
+
+  public static boolean ifMacro_Condition_1230649526198(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode baseDirectory = SLinkOperations.getTarget(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildScriptConfiguration", false)), "baseDirectory", true);
+    return !(SPropertyOperations.getString(SLinkOperations.getTarget(baseDirectory, "macro", true), "name").equals(MPSLayout_Behavior.getMPSHomeName_1226508944077()));
+  }
+
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true);
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true)).skip(1);
   }
 
   public static Iterable sourceNodesQuery_1230234413536(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -173,15 +211,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1230577870076(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "tokenValuePair", true);
-  }
-
-  public static void mappingScript_CodeBlock_1230300513163(final IOperationContext operationContext, final MappingScriptContext _context) {
-    List<SNode> distribConfigurations = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.distrib.structure.DistribConfiguration");
-    for(SNode distribConfig : ListSequence.fromList(distribConfigurations)) {
-      for(SNode systemSpecificConfig : ListSequence.fromList(SLinkOperations.getTargets(distribConfig, "systemSpecificConfig", true))) {
-        SLinkOperations.setTarget(systemSpecificConfig, "distribConfiguration", distribConfig, false);
-      }
-    }
   }
 
 }
