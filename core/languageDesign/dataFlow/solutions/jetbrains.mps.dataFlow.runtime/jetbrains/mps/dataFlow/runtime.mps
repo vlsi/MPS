@@ -28,7 +28,7 @@
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="7" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1230465993863">
-    <property name="name" value="NullableAnalyser" />
+    <property name="name" value="NullableAnalyzer" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230465993864" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1230465993865">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230465993866" />
@@ -73,7 +73,7 @@
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1230466518114">
-        <property name="name" value="programm" />
+        <property name="name" value="program" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230466518115">
           <link role="classifier" targetNodeId="1.~Program" resolveInfo="Program" />
         </node>
@@ -151,7 +151,7 @@
       <property name="name" value="merge" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230466520790" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1230466520793">
-        <property name="name" value="programm" />
+        <property name="name" value="program" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230466520794">
           <link role="classifier" targetNodeId="1.~Program" resolveInfo="Program" />
         </node>
