@@ -14,7 +14,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import java.util.Map;
 import jetbrains.mps.dataFlow.runtime.NullableVariableState;
-import jetbrains.mps.dataFlow.runtime.NullableAnalyser;
+import jetbrains.mps.dataFlow.runtime.NullableAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -66,7 +66,7 @@ public class PrintNullableInformation_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       Program program = DataFlowManager.getInstance().buildProgramFor(PrintNullableInformation_Action.this.node);
-      AnalysisResult<Map<SNode, NullableVariableState>> result = program.analyze(new NullableAnalyser<SNode>());
+      AnalysisResult<Map<SNode, NullableVariableState>> result = program.analyze(new NullableAnalyzer<SNode>());
       for(Instruction instruction : ListSequence.fromList(program.getInstructions())) {
         System.out.println(instruction.toString());
         for(SNode key : Sequence.fromIterable(MapSequence.fromMap(result.get(instruction)).keySet())) {

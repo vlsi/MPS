@@ -5,8 +5,8 @@ import org.junit.Assert;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.SimpleProgramBuilder;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
-import jetbrains.mps.dataFlow.runtime.NullableAnalyser;
 import jetbrains.mps.dataFlow.runtime.NullableVariableState;
+import jetbrains.mps.dataFlow.runtime.NullableAnalyzer;
 
 import java.util.Set;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class NullableTest {
       .emitWrite("x")
       .buildProgram();
 
-    AnalysisResult<Map<String, NullableVariableState>> result = p.analyze(new NullableAnalyser<String>());
+    AnalysisResult<Map<String, NullableVariableState>> result = p.analyze(new NullableAnalyzer<String>());
 
     Assert.assertEquals(NullableVariableState.UNKNOWN, result.get(p.get(0)).get("x"));
     Assert.assertEquals(NullableVariableState.UNKNOWN, result.get(p.get(1)).get("x"));
@@ -41,7 +41,7 @@ public class NullableTest {
       .emitNop()
       .buildProgram();
 
-    AnalysisResult<Map<String, NullableVariableState>> result = p.analyze(new NullableAnalyser<String>());
+    AnalysisResult<Map<String, NullableVariableState>> result = p.analyze(new NullableAnalyzer<String>());
 
     Assert.assertEquals(NullableVariableState.NOT_INIT, result.get(p.get(0)).get("x"));
     Assert.assertEquals(NullableVariableState.NULL, result.get(p.get(1)).get("x"));

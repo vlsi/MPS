@@ -425,6 +425,9 @@ public class EditorManager {
     }
 
     private void setAnchor(EditorCell anchorCell) {
+      for (StackTraceElement e: Thread.currentThread().getStackTrace()) {
+        System.out.println(e);
+      }
       myAnchorCell = anchorCell;
     }
 

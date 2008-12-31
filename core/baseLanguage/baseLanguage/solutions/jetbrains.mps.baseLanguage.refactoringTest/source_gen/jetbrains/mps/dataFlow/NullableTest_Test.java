@@ -11,7 +11,7 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.dataFlow.runtime.NullableVariableState;
-import jetbrains.mps.dataFlow.runtime.NullableAnalyser;
+import jetbrains.mps.dataFlow.runtime.NullableAnalyzer;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
@@ -28,7 +28,7 @@ public class NullableTest_Test extends BaseTransformationTest {
     public void test_DataFlow() throws Exception {
       this.addNodeById("1230538064114");
       Program p = DataFlowManager.getInstance().buildProgramFor(this.getNodeById("1230538345793"));
-      AnalysisResult<Map<SNode, NullableVariableState>> result = p.analyze(new NullableAnalyser());
+      AnalysisResult<Map<SNode, NullableVariableState>> result = p.analyze(new NullableAnalyzer());
       Map<SNode, NullableVariableState> analysResult = result.get(p.getInstructionsFor(this.getNodeById("1230538435440")).get(0));
       Assert.assertEquals(NullableVariableState.NULLABLE, MapSequence.fromMap(analysResult).get(this.getNodeById("1230538388437")));
     }
