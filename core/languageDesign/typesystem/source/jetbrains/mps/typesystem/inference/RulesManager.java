@@ -94,7 +94,7 @@ public class RulesManager {
     if (myLoadedLanguages.contains(l.getNamespace())) {
       return true;
     }
-    SModelDescriptor helginsModelDescriptor = l.getHelginsTypesystemModelDescriptor();
+    SModelDescriptor helginsModelDescriptor = l.getTypesystemModelDescriptor();
     if (helginsModelDescriptor == null) return false;
     String packageName = helginsModelDescriptor.getLongName();
     String classname = "HelginsDescriptor";

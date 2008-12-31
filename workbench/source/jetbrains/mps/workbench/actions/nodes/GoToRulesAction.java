@@ -95,8 +95,8 @@ public class GoToRulesAction extends BaseAction {
   public static List<SNode> getHelginsRules(final AbstractConceptDeclaration conceptDeclaration, final IOperationContext operationContext) {
     Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, operationContext.getScope());
     List<SNode> rules = new ArrayList<SNode>();
-    if (language != null && language.getHelginsTypesystemModelDescriptor() != null) {
-      SModelDescriptor helginsDescriptor = language.getHelginsTypesystemModelDescriptor();
+    if (language != null && language.getTypesystemModelDescriptor() != null) {
+      SModelDescriptor helginsDescriptor = language.getTypesystemModelDescriptor();
       if (helginsDescriptor != null) {
         rules.addAll(helginsDescriptor.getSModel().getRoots(new Condition<SNode>() {
           public boolean met(SNode n) {
