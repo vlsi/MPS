@@ -2588,6 +2588,9 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1231268448397">
+      <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1207665819089">
     <property name="name" value="Closureoid" />

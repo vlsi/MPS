@@ -2022,16 +2022,11 @@
                 <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1217425886169" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1217425951938">
                   <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="1217425961191">
-                    <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1217425964053">
-                      <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
-                    </node>
-                    <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1217425967774">
-                      <link role="concept" targetNodeId="1.1068580123140" resolveInfo="ConstructorDeclaration" />
-                    </node>
-                    <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1217425976823">
-                      <link role="concept" targetNodeId="1.1206629501431" resolveInfo="InstanceInitializer" />
+                    <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1231268461904">
+                      <link role="concept" targetNodeId="1.1178285077437" resolveInfo="ClassifierMember" />
                     </node>
                   </node>
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1231268613985" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1217425981389" />
@@ -2386,16 +2381,11 @@
                 <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1217426014458" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1217426014459">
                   <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="1217426014460">
-                    <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1217426014461">
-                      <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
-                    </node>
-                    <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1217426014462">
-                      <link role="concept" targetNodeId="1.1068580123140" resolveInfo="ConstructorDeclaration" />
-                    </node>
-                    <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1217426014463">
-                      <link role="concept" targetNodeId="1.1206629501431" resolveInfo="InstanceInitializer" />
+                    <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1231268470149">
+                      <link role="concept" targetNodeId="1.1178285077437" resolveInfo="ClassifierMember" />
                     </node>
                   </node>
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1231268609780" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1217426014464" />

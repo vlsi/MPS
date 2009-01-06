@@ -8,12 +8,40 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class InstanceInitializer extends BaseConcept {
+public class InstanceInitializer extends BaseConcept implements ClassifierMember {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.InstanceInitializer";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String STATEMENT_LIST = "statementList";
+  public static final String VISIBILITY = "visibility";
 
   public InstanceInitializer(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(InstanceInitializer.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(InstanceInitializer.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(InstanceInitializer.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(InstanceInitializer.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(InstanceInitializer.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(InstanceInitializer.VIRTUAL_PACKAGE, value);
   }
 
   public StatementList getStatementList() {
@@ -22,6 +50,14 @@ public class InstanceInitializer extends BaseConcept {
 
   public void setStatementList(StatementList node) {
     super.setChild(InstanceInitializer.STATEMENT_LIST, node);
+  }
+
+  public Visibility getVisibility() {
+    return (Visibility)this.getChild(InstanceInitializer.VISIBILITY);
+  }
+
+  public void setVisibility(Visibility node) {
+    super.setChild(InstanceInitializer.VISIBILITY, node);
   }
 
 
