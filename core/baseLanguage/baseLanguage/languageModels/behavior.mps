@@ -1502,8 +1502,8 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877306357">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877306358">
               <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877306359" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213877306360">
-                <link role="link" targetNodeId="1.1178549650460" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1231312561193">
+                <link role="link" targetNodeId="1.1178549979242" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="1213877306361">
@@ -5033,8 +5033,8 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877367076">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877367077">
               <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877367078" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213877367079">
-                <link role="link" targetNodeId="1.1178549650460" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1231312553783">
+                <link role="link" targetNodeId="1.1178549979242" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="1213877367080">

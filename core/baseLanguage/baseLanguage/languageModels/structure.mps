@@ -1224,11 +1224,6 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1178549650460">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="visibility" />
-      <link role="target" targetNodeId="1146644584814" resolveInfo="Visibility" />
-    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1188208561367">
       <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
     </node>
@@ -1240,6 +1235,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1212170319804">
       <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1231312520232">
+      <link role="intfc" targetNodeId="1178549954367" resolveInfo="IVisible" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1107535904670">
