@@ -799,18 +799,21 @@
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1163455919777" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1163455930325">
           <property name="name" value="referenceNode" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1163455930326">
             <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
           </node>
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1163455932483">
           <property name="name" value="oldReferentNode" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1163455940422">
             <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
           </node>
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1163455943064">
           <property name="name" value="newReferentNode" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1163455946003">
             <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
           </node>
@@ -1655,20 +1658,24 @@
         <property name="name" value="execPropertySet" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1164677893650">
           <property name="name" value="node" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1164677893651">
             <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
           </node>
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1164677893652">
           <property name="name" value="propertyName" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195655612" />
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1164677893654">
           <property name="name" value="propertyValue" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195655471" />
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1164677893656">
           <property name="name" value="scope" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1164677893657">
             <link role="classifier" targetNodeId="3.~IScope" resolveInfo="IScope" />
           </node>
@@ -2439,20 +2446,24 @@
         <property name="name" value="checkPropertyValue" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1212101471548">
           <property name="name" value="node" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212101471549">
             <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
           </node>
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1212101471550">
           <property name="name" value="propertyName" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195654193" />
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1212101471552">
           <property name="name" value="propertyValue" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195653958" />
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1212101471554">
           <property name="name" value="scope" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212101471555">
             <link role="classifier" targetNodeId="3.~IScope" resolveInfo="IScope" />
           </node>
