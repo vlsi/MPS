@@ -151,6 +151,27 @@ public class QueriesGenerated {
     return ClassPathItem_Behavior.call_getFullPath_1230059208735(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true)).first()).replace("/", "\\");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1231683866212(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDir");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1231685737416(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDir");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1231685934125(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String startupDir = SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDir");
+    if (startupDir.endsWith("/")) {
+      startupDir = startupDir.substring(0, startupDir.length() - 1);
+    }
+    String[] path = startupDir.split("/");
+    String pathFromStartupDir = "..";
+    for(int i = 0 ; i < path.length - 1 ; i++ ) {
+      pathFromStartupDir += "/..";
+    }
+    return pathFromStartupDir;
+  }
+
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
   }
@@ -194,6 +215,10 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1230662902499(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDir").equals("."));
+  }
+
+  public static boolean ifMacro_Condition_1231685674769(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDir").equals("."));
   }
 
