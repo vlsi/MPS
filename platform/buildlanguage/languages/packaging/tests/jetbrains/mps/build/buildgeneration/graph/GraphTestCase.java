@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.buildlanguage.buildgeneration.graph;
+package jetbrains.mps.build.buildgeneration.graph;
 
-import jetbrains.mps.buildlanguage.buildgeneration.graph.Graph.IDFSWalker;
-import jetbrains.mps.buildlanguage.buildgeneration.graph.IntGraph.IntVertex;
+import jetbrains.mps.build.buildgeneration.graph.IntGraph.IntVertex;
+import jetbrains.mps.build.buildgeneration.graph.Graph.IDFSWalker;
 import junit.framework.TestCase;
 
 import java.util.Comparator;
@@ -113,7 +113,7 @@ public class GraphTestCase extends TestCase {
     assertTrue(components.get(1).contains(new IntVertex(3)));
   }
 
-  private class TestWalker implements IDFSWalker<IntVertex>{
+  private class TestWalker implements IDFSWalker<IntVertex> {
 
     private int myLastTreeRoot = -1;
     private final List<Integer> myStack = new LinkedList<Integer>();
