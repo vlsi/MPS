@@ -44,7 +44,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="12" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
@@ -56,6 +56,7 @@
   <import index="9" modelUID="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)" version="-1" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" version="-1" />
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
+  <import index="12" modelUID="f:java_stub#jetbrains.mps.baseLanguage.editor(jetbrains.mps.baseLanguage.editor@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635633">
     <property name="name" value="AnonymousClassTest" />
     <property name="package" value="bugTest" />
@@ -839,6 +840,70 @@
     <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230306776479">
       <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1230306776480">
         <property name="keys" value=" [" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1231671247278">
+    <property name="package" value="bugTest" />
+    <property name="name" value="EditorRebuildTest" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1231671293234">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1231671293235" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231671293236" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231671293237">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1231671294144">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1231671342871">
+            <property name="isLastPosition" value="true" />
+            <property name="cellId" value="Error_3869_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1231671312975">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1231671312976" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231671312977" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231671312978">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1231671331507">
+          <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231671331508">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1231671333431">
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1231671340073">
+                <property name="isLastPosition" value="true" />
+                <property name="cellId" value="property_value" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231671553066">
+      <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" id="1231673354821">
+        <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1231673354822">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231673354823">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231673358481">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231673358482">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1231673358483">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1231673358484">
+                    <link role="baseMethodDeclaration" targetNodeId="12.~Statement_KeyMap$Statement_KeyMap_Action10.&lt;init&gt;()" resolveInfo="Statement_KeyMap.Statement_KeyMap_Action10" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1231673358485">
+                  <link role="baseMethodDeclaration" targetNodeId="12.~Statement_KeyMap$Statement_KeyMap_Action10.execute(java.awt.event.KeyEvent,jetbrains.mps.nodeEditor.EditorContext):void" resolveInfo="execute" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1231673358486" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231673358487">
+                    <node role="operand" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1231673358488" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1231673358489">
+                      <link role="baseMethodDeclaration" targetNodeId="8.~IEditor.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolveInfo="getEditorContext" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1231672822157">
+        <property name="keys" value="//" />
       </node>
     </node>
   </node>
