@@ -199,7 +199,9 @@ public class GeneratorUtil {
         return (List<SNode>) result;
       }
       return CollectionUtil.asList((Iterable<SNode>) result);
-
+    } catch (NoSuchMethodException e) {
+      generator.showWarningMessage(macroNode, "couldn't find nodes query '" + methodName + "' : evaluate to empty list");
+      return new ArrayList<SNode>();
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
       LOG.error(e);
@@ -218,6 +220,9 @@ public class GeneratorUtil {
         generator.getGeneratorSessionContext(),
         new SourceSubstituteMacroNodeContext(inputNode, macroNode, generator),
         query.getModel());
+    } catch (NoSuchMethodException e) {
+      generator.showWarningMessage(macroNode, "couldn't find nodes quer '" + methodName + "' : evaluate to null");
+      return null;
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
       LOG.error(e);
@@ -359,6 +364,9 @@ public class GeneratorUtil {
           generator.getGeneratorSessionContext(),
           new WeavingMappingRuleContext(inputNode, rule.getNode(), generator),
           query.getModel());
+      } catch (NoSuchMethodException e) {
+        generator.showWarningMessage(BaseAdapter.fromAdapter(rule), "couldn't find context node query '" + methodName + "' : evaluate to null");
+        return null;
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't evaluate rule context query");
         LOG.error(e);
@@ -503,6 +511,9 @@ public class GeneratorUtil {
           generator.getGeneratorSessionContext(),
           new TemplateFragmentContext(inputNode, mainContextNode, templateFragmentNode, generator),
           query.getModel());
+      } catch (NoSuchMethodException e) {
+        generator.showWarningMessage(templateFragmentNode, "couldn't find context node method for template fragment '" + methodName + "' : evaluate to null");
+        return null;
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, null, templateFragmentNode, "couldn't evaluate template fragment context query");
         LOG.error(e);
