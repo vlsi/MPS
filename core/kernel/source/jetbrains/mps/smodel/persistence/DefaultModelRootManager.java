@@ -39,6 +39,11 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.*;
 
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.roots.ContentIterator;
+import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.util.indexing.IndexableFileSet;
+
 /**
  * @author Kostik
  */
@@ -191,6 +196,10 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       String fileName = file.getName();
       boolean isMPSModel = fileName.endsWith(MPSExtentions.DOT_MODEL);
       if (!(isMPSModel)) continue;
+      
+      VirtualFile virtualFile = file.toVirtualFile();
+      virtualFile.refresh(false, false);
+
       SModelReference modelReference = PathManager.getModelUID(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
 
       if (modelReference.getSModelId() == null) {

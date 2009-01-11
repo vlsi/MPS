@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.vfs.VirtualFile;
 
 public class FileSystemFile implements IFile {
   private File myFile;
@@ -152,6 +153,10 @@ public class FileSystemFile implements IFile {
 
   public File toFile() {
     return myFile;
+  }
+
+  public VirtualFile toVirtualFile() {
+    return VFileSystem.getFile(this); 
   }
 
   public long length() {

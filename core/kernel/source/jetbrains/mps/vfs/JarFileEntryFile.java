@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.intellij.openapi.vfs.VirtualFile;
+
 public class JarFileEntryFile implements IFile {
   private JarFileData myJarFileData;
   private File myJarFile;
@@ -166,6 +168,10 @@ public class JarFileEntryFile implements IFile {
 
   public File toFile() {
     throw new UnsupportedOperationException();
+  }
+
+  public VirtualFile toVirtualFile() {
+    return VFileSystem.getFile(this);
   }
 
   public long length() {

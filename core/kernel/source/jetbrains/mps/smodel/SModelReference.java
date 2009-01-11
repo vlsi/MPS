@@ -30,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * To change this template use File | Settings | File Templates.
  */
 public class SModelReference {
-  private static Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
+  private static final Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
 
   @Nullable
   public static SModelReference fromString(String s) {

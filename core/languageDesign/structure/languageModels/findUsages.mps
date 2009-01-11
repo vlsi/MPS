@@ -72,7 +72,7 @@
                     <link role="classConcept" targetNodeId="5.~FindUsagesManager" resolveInfo="FindUsagesManager" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210514234983">
-                    <link role="baseMethodDeclaration" targetNodeId="5.~FindUsagesManager.findInstances(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope):java.util.List" resolveInfo="findInstances" />
+                    <link role="baseMethodDeclaration" targetNodeId="5.~FindUsagesManager.findInstances(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.progress.IAdaptiveProgressMonitor,boolean):java.util.Set" resolveInfo="findInstances" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1210514536858">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210514544817">
                         <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1210514536859" />
@@ -108,7 +108,7 @@
             <node role="statement" type="jetbrains.mps.lang.findUsages.structure.ResultStatement" id="1200268665345">
               <node role="foundResult" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888353583">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888353585">
-                  <link role="baseMethodDeclaration" targetNodeId="11.~SearchResult.&lt;init&gt;()" resolveInfo="SearchResult" />
+                  <link role="baseMethodDeclaration" targetNodeId="11.~SearchResult.&lt;init&gt;(java.lang.Object,java.lang.String)" resolveInfo="SearchResult" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888351687">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888351689">
                       <link role="baseMethodDeclaration" targetNodeId="7.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />

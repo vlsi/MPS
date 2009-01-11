@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.vfs;
 
+import com.intellij.openapi.vfs.VirtualFile;
+
 import java.io.*;
 import java.util.List;
 
@@ -60,6 +62,8 @@ public interface IFile {
   boolean isReadOnly();
 
   File toFile();
+
+  VirtualFile toVirtualFile();
 
   long length();
 }
