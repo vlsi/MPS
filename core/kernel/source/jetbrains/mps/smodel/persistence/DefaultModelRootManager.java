@@ -196,10 +196,6 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       String fileName = file.getName();
       boolean isMPSModel = fileName.endsWith(MPSExtentions.DOT_MODEL);
       if (!(isMPSModel)) continue;
-      
-      VirtualFile virtualFile = file.toVirtualFile();
-      virtualFile.refresh(false, false);
-
       SModelReference modelReference = PathManager.getModelUID(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
 
       if (modelReference.getSModelId() == null) {
