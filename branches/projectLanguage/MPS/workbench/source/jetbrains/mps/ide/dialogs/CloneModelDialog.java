@@ -21,11 +21,9 @@ import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.model.RootReference;
+import jetbrains.mps.project.structure.model.ModelProperties;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.projectLanguage.structure.CloneModelProperties;
-import jetbrains.mps.projectLanguage.structure.DevKit;
-import jetbrains.mps.projectLanguage.structure.Model;
-import jetbrains.mps.projectLanguage.structure.RootReference;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.SwingUtilities;
@@ -36,13 +34,12 @@ import java.util.Set;
 public class CloneModelDialog extends BaseNodeDialog {
 
   private static final DialogDimensionsSettings.DialogDimensions ourDefaultDialogSettings = new DialogDimensionsSettings.DialogDimensions(100, 100, 500, 400);
-  private CloneModelProperties myCloneModelProperties;
+  private ModelProperties myCloneModelProperties;
 
-  private SModel myProjectModel;
   private SModel mySModel;
 
   protected SNode getNode() {
-    return BaseAdapter.fromAdapter(myCloneModelProperties);
+    return null;//todo BaseAdapter.fromAdapter(myCloneModelProperties);
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
@@ -54,8 +51,6 @@ public class CloneModelDialog extends BaseNodeDialog {
     super("Clone Model", operationContext);
     IModule module = operationContext.getModule();
     assert module != null;
-    SModelDescriptor workingModel = ProjectModels.createDescriptorFor(module);
-    myProjectModel = workingModel.getSModel();
     mySModel = modelDescriptor.getSModel();
 
     initNode();
@@ -75,9 +70,7 @@ public class CloneModelDialog extends BaseNodeDialog {
       public void run() {
         Language l = getOperationContext().getScope().getLanguage("jetbrains.mps.projectLanguage");
         assert l != null;
-        myProjectModel.addLanguage(l);
-        myCloneModelProperties = CloneModelProperties.newInstance(myProjectModel);
-        myProjectModel.addRoot(myCloneModelProperties);
+        myCloneModelProperties = new ModelProperties();
 
         String longName = mySModel.getLongName();
         myCloneModelProperties.setLongName(createNameForCopy(longName, mySModel.getStereotype()));
@@ -85,12 +78,13 @@ public class CloneModelDialog extends BaseNodeDialog {
         Set<SModelRoot> modelRoots = mySModel.getModelDescriptor().collectSModelRoots();
         if (!modelRoots.isEmpty()) {
           SModelRoot root = modelRoots.iterator().next();
-          RootReference rootReference = RootReference.newInstance(myProjectModel);
+          RootReference rootReference = new RootReference();
           rootReference.setPath(root.getPath());
           rootReference.setPrefix(root.getPrefix());
           myCloneModelProperties.setRoot(rootReference);
         }
 
+/*    todo
         for (ModuleReference language : mySModel.getExplicitlyImportedLanguages()) {
           jetbrains.mps.projectLanguage.structure.Language lang = jetbrains.mps.projectLanguage.structure.Language.newInstance(myProjectModel);
           lang.setName(language.toString());
@@ -114,6 +108,7 @@ public class CloneModelDialog extends BaseNodeDialog {
           lang.setName(language.toString());
           myCloneModelProperties.addEngagedOnGenerationLanguage(lang);
         }
+*/
       }
     });
   }
@@ -126,7 +121,7 @@ public class CloneModelDialog extends BaseNodeDialog {
       return "Incorrect namespace for specified root";
     if (myCloneModelProperties.getLongName().equals(myCloneModelProperties.getRoot().getPrefix()))
       return "Model fqName is the same as prefix. Can't import";
-    if (myCloneModelProperties.getLanguagesCount() < 1) return "Model must have at least one language";
+    if (myCloneModelProperties.getImportedLanguages().size() < 1) return "Model must have at least one language";
     return null;
   }
 
@@ -168,6 +163,7 @@ public class CloneModelDialog extends BaseNodeDialog {
           }
         }
 
+        /*todo
         for (jetbrains.mps.projectLanguage.structure.Language l : myCloneModelProperties.getLanguages()) {
           String name = l.getName();
           assert name != null;
@@ -194,7 +190,7 @@ public class CloneModelDialog extends BaseNodeDialog {
           String name = l.getName();
           assert name != null;
           model.addEngagedOnGenerationLanguage(ModuleReference.fromString(name));
-        }
+        }*/
       }
     });
 
@@ -214,11 +210,13 @@ public class CloneModelDialog extends BaseNodeDialog {
   }
 
   private Set<String> getModelsInProperties() {
+    /* todo
     Set<String> result = new HashSet<String>();
     Iterator<Model> models = myCloneModelProperties.importedModels();
     while (models.hasNext()) {
       result.add(models.next().getModelRef());
     }
-    return result;
+    return result;*/
+    return null;
   }
 }
