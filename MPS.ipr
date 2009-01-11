@@ -894,7 +894,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/behavior/behavior.iml" filepath="$PROJECT_DIR$/core/languageDesign/behavior/behavior.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/blTypes/blTypes.iml" filepath="$PROJECT_DIR$/core/baseLanguage/blTypes/blTypes.iml" group="core/baseLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/buildLanguageMain.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/buildLanguageMain.iml" group="platform/build" />
+      <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/buildLanguage.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/buildLanguage.iml" group="platform/build" />
       <module fileurl="file://$PROJECT_DIR$/samples/calculator/calculator.iml" filepath="$PROJECT_DIR$/samples/calculator/calculator.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/classifiers/classifiers.iml" filepath="$PROJECT_DIR$/core/baseLanguage/classifiers/classifiers.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/languages/classpath/classpath.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/languages/classpath/classpath.iml" group="platform/build" />
@@ -974,7 +974,7 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="buildLanguageMain" />
+      <module name="buildLanguage" />
       <envs />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="1062" />

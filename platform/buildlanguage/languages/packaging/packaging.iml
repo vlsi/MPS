@@ -12,7 +12,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
-    <orderEntry type="module" module-name="buildLanguageMain" />
+    <orderEntry type="module" module-name="buildLanguage" />
     <orderEntry type="module" module-name="dependency" />
   </component>
 </module>
