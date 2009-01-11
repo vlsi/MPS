@@ -34,6 +34,7 @@ public class MPSExcludedFileIndex extends ExcludedFileIndex {
   private final Project myProject;
 
   public MPSExcludedFileIndex(Project project) {
+    super(project);
     myProject = project;
   }
 
