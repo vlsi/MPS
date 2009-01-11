@@ -251,6 +251,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.classifiers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.test" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.actions" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.annotations" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.behavior" />
@@ -260,6 +261,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.intentions" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.dataFlow" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.dataFlow.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mpslite" />
     <antcall target="MPS-languages.pack.jetbrains.mps.nanoj" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern" />
