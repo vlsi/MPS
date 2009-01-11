@@ -20,115 +20,150 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.model.RootReference;
-import jetbrains.mps.project.structure.model.ModelProperties;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.structure.model.RootReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.dialogs.projectoptions.ProjectDescriptorPresenter;
+import org.jdesktop.beansbinding.AutoBinding;
+import org.jdesktop.beansbinding.Bindings;
+import org.jdesktop.beansbinding.Property;
+import org.jdesktop.beansbinding.BeanProperty;
+import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
 
-import javax.swing.SwingUtilities;
-import java.util.HashSet;
-import java.util.Iterator;
+import javax.swing.*;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.util.Set;
 
-public class CloneModelDialog extends BaseNodeDialog {
+public class CloneModelDialog extends BaseProjectDialog {
+  private ModelProperties myModelProperties;
+  private SModel myCloningModel;
+  private JPanel myContentPanel;
 
-  private static final DialogDimensionsSettings.DialogDimensions ourDefaultDialogSettings = new DialogDimensionsSettings.DialogDimensions(100, 100, 500, 400);
-  private ModelProperties myCloneModelProperties;
+  public CloneModelDialog(SModelDescriptor modelDescriptor, IOperationContext operationContext) {
+    super("Clone Model " + modelDescriptor.getLongName(), operationContext);
+    myCloningModel = modelDescriptor.getSModel();
 
-  private SModel mySModel;
+    collectModelProps();
+    initUI();
+  }
 
-  protected SNode getNode() {
-    return null;//todo BaseAdapter.fromAdapter(myCloneModelProperties);
+  protected JComponent getMainComponent() {
+    return myContentPanel;
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return ourDefaultDialogSettings;
+    return new DialogDimensionsSettings.DialogDimensions(100, 100, 400, 200);
   }
 
+  private void initUI() {
+    myContentPanel = new JPanel(new GridBagLayout());
 
-  public CloneModelDialog(SModelDescriptor modelDescriptor, IOperationContext operationContext) {
-    super("Clone Model", operationContext);
-    IModule module = operationContext.getModule();
-    assert module != null;
-    mySModel = modelDescriptor.getSModel();
+    GridBagConstraints cPathLabel = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+    myContentPanel.add(new JLabel("Path:"), cPathLabel);
+    GridBagConstraints cPath = new GridBagConstraints(1, 0, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
+    JTextField tfPath = new JTextField();
+    tfPath.setEditable(false);
+    myContentPanel.add(tfPath, cPath);
 
-    initNode();
+    Property pPath = BeanProperty.create(ModelProperties.PROPERTY_PATH);
+    Property pPathVar = BeanProperty.create("text");
+    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ, myModelProperties, pPath, tfPath, pPathVar));
+
+    GridBagConstraints cNameLabel = new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+    myContentPanel.add(new JLabel("Name:"), cNameLabel);
+    GridBagConstraints cName = new GridBagConstraints(1, 1, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
+    JTextField tfName = new JTextField();
+    myContentPanel.add(tfName, cName);
+
+    Property pName = BeanProperty.create(ModelProperties.PROPERTY_NAME);
+    Property pNameVar = BeanProperty.create("text");
+    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pName, tfName, pNameVar));
+
+    GridBagConstraints cStereotypeLabel = new GridBagConstraints(0, 2, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+    myContentPanel.add(new JLabel("Stereotype:"), cStereotypeLabel);
+    GridBagConstraints cStereotype = new GridBagConstraints(1, 2, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+    JComboBox cbStereotype = new JComboBox(SModelStereotype.values);
+    myContentPanel.add(cbStereotype, cStereotype);
+
+    Property pStereotype = BeanProperty.create(ModelProperties.PROPERTY_STEREOTYPE);
+    Property pStereotypeVar = BeanProperty.create("selectedItem");
+    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pStereotype, cbStereotype, pStereotypeVar));
+
+    GridBagConstraints cLog = new GridBagConstraints(0, 3, 2, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+    JCheckBox cbLog = new JCheckBox("Use log");
+    myContentPanel.add(cbLog, cLog);
+
+    Property pLog = BeanProperty.create(ModelProperties.PROPERTY_LOG);
+    Property pLogVar = BeanProperty.create("selected");
+    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pLog, cbLog, pLogVar));
+
+    GridBagConstraints cSpacer = new GridBagConstraints(0, 4, 2, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+    myContentPanel.add(new JPanel(), cSpacer);
+  }
+
+  private void collectModelProps() {
+    myModelProperties = new ModelProperties();
+
+    String longName = myCloningModel.getLongName();
+    myModelProperties.setLongName(createNameForCopy(longName, myCloningModel.getStereotype()));
+
+    myModelProperties.setStereotype(myCloningModel.getStereotype());
+    Set<SModelRoot> modelRoots = myCloningModel.getModelDescriptor().collectSModelRoots();
+    if (!modelRoots.isEmpty()) {
+      SModelRoot root = modelRoots.iterator().next();
+      RootReference rootReference = new RootReference();
+      rootReference.setPath(root.getPath());
+      rootReference.setPrefix(root.getPrefix());
+      myModelProperties.setRoot(rootReference);
+    }
+
+    for (ModuleReference language : myCloningModel.getExplicitlyImportedLanguages()) {
+      myModelProperties.getImportedLanguages().add(language.getCopy());
+    }
+
+    for (SModelReference importedModelReference : myCloningModel.getImportedModelUIDs()) {
+      myModelProperties.getImportedModels().add(importedModelReference.getCopy());
+    }
+
+    for (ModuleReference devKit : myCloningModel.getDevKitRefs()) {
+      myModelProperties.getImportedDevkits().add(devKit.getCopy());
+    }
+
+    for (ModuleReference language : myCloningModel.getEngagedOnGenerationLanguages()) {
+      myModelProperties.getLanguagesInGeneration().add(language.getCopy());
+    }
   }
 
   private String createNameForCopy(String longName, String stereotype) {
     String result = longName + "_copy";
     int i;
     for (i = 1; ; i++) {
-      if (getOperationContext().getScope().getModelDescriptor(new SModelFqName(result + i, stereotype)) == null) break;
+      SModelFqName name = new SModelFqName(result + i, stereotype);
+      SModelDescriptor model = getOperationContext().getScope().getModelDescriptor(name);
+      if (model == null) break;
     }
     return result + i;
   }
 
-  private void initNode() {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        Language l = getOperationContext().getScope().getLanguage("jetbrains.mps.projectLanguage");
-        assert l != null;
-        myCloneModelProperties = new ModelProperties();
-
-        String longName = mySModel.getLongName();
-        myCloneModelProperties.setLongName(createNameForCopy(longName, mySModel.getStereotype()));
-        myCloneModelProperties.setStereotype(mySModel.getStereotype());
-        Set<SModelRoot> modelRoots = mySModel.getModelDescriptor().collectSModelRoots();
-        if (!modelRoots.isEmpty()) {
-          SModelRoot root = modelRoots.iterator().next();
-          RootReference rootReference = new RootReference();
-          rootReference.setPath(root.getPath());
-          rootReference.setPrefix(root.getPrefix());
-          myCloneModelProperties.setRoot(rootReference);
-        }
-
-/*    todo
-        for (ModuleReference language : mySModel.getExplicitlyImportedLanguages()) {
-          jetbrains.mps.projectLanguage.structure.Language lang = jetbrains.mps.projectLanguage.structure.Language.newInstance(myProjectModel);
-          lang.setName(language.toString());
-          myCloneModelProperties.addLanguage(lang);
-        }
-
-        for (SModelReference importedModelReference : mySModel.getImportedModelUIDs()) {
-          Model m = Model.newInstance(myProjectModel);
-          m.setModelRef(importedModelReference.toString());
-          myCloneModelProperties.addImportedModel(m);
-        }
-
-        for (ModuleReference devKit : mySModel.getDevKitRefs()) {
-          DevKit dk = DevKit.newInstance(myProjectModel);
-          dk.setName(devKit.toString());
-          myCloneModelProperties.addDevKit(dk);
-        }
-
-        for (ModuleReference language : mySModel.getEngagedOnGenerationLanguages()) {
-          jetbrains.mps.projectLanguage.structure.Language lang = jetbrains.mps.projectLanguage.structure.Language.newInstance(myProjectModel);
-          lang.setName(language.toString());
-          myCloneModelProperties.addEngagedOnGenerationLanguage(lang);
-        }
-*/
-      }
-    });
-  }
-
   protected String getErrorString() {
-    if (myCloneModelProperties.getRoot() == null) return "Please specify root";
-    if (myCloneModelProperties.getLongName() == null || myCloneModelProperties.getLongName().length() == 0)
+    if (myModelProperties.getRoot() == null) return "Please specify root";
+    if (myModelProperties.getLongName() == null || myModelProperties.getLongName().length() == 0)
       return "Please specify name";
-    if (!myCloneModelProperties.getLongName().startsWith(myCloneModelProperties.getRoot().getPrefix()))
+    if (!myModelProperties.getLongName().startsWith(myModelProperties.getRoot().getPrefix()))
       return "Incorrect namespace for specified root";
-    if (myCloneModelProperties.getLongName().equals(myCloneModelProperties.getRoot().getPrefix()))
+    if (myModelProperties.getLongName().equals(myModelProperties.getRoot().getPrefix()))
       return "Model fqName is the same as prefix. Can't import";
-    if (myCloneModelProperties.getImportedLanguages().size() < 1) return "Model must have at least one language";
+    if (myModelProperties.getImportedLanguages().size() < 1) return "Model must have at least one language";
     return null;
   }
 
   protected boolean saveChanges() {
-    final String stereotype = myCloneModelProperties.getStereotype();
-    final String modelName = myCloneModelProperties.getLongName();
-    RootReference reference = myCloneModelProperties.getRoot();
+    final String stereotype = myModelProperties.getStereotype();
+    final String modelName = myModelProperties.getLongName();
+    RootReference reference = myModelProperties.getRoot();
 
     IOperationContext operationContext = getOperationContext();
     final IModule module = operationContext.getModule();
@@ -155,46 +190,25 @@ public class CloneModelDialog extends BaseNodeDialog {
     final SModel model = modelDescriptor.getSModel();
     model.runLoadingAction(new Runnable() {
       public void run() {
-        Set<String> modelsInProps = getModelsInProperties();
-        for (String modelUID : modelsInProps) {
-          SModelReference ref = SModelReference.fromString(modelUID);
-          if (ref!=null){
-            model.addImportedModel(ref);
-          }
+        for (SModelReference ref : myModelProperties.getImportedModels()) {
+          model.addImportedModel(ref);
         }
 
-        /*todo
-        for (jetbrains.mps.projectLanguage.structure.Language l : myCloneModelProperties.getLanguages()) {
-          String name = l.getName();
-          assert name != null;
-          Language language = getOperationContext().getScope().getLanguage(name);
-          if (language != null) {
-            model.addLanguage(language);
-          } else {
-            model.addLanguage(ModuleReference.fromString(name));
-          }
+        for (ModuleReference mr : myModelProperties.getImportedLanguages()) {
+          model.addLanguage(mr);
         }
 
-        for (DevKit d : myCloneModelProperties.getDevKits()) {
-          String name = d.getName();
-          assert name != null;
-          jetbrains.mps.project.DevKit devKit = getOperationContext().getScope().getDevKit(name);
-          if (devKit != null) {
-            model.addDevKit(devKit);
-          } else {
-            model.addDevKit(ModuleReference.fromString(name));
-          }
+        for (ModuleReference mr : myModelProperties.getImportedDevkits()) {
+          model.addDevKit(mr);
         }
 
-        for (jetbrains.mps.projectLanguage.structure.Language l : myCloneModelProperties.getEngagedOnGenerationLanguages()) {
-          String name = l.getName();
-          assert name != null;
-          model.addEngagedOnGenerationLanguage(ModuleReference.fromString(name));
-        }*/
+        for (ModuleReference mr : myModelProperties.getLanguagesInGeneration()) {
+          model.addEngagedOnGenerationLanguage(mr);
+        }
       }
     });
 
-    CloneModelUtil.cloneModel(mySModel, modelDescriptor.getSModel(), getScope());
+    CloneModelUtil.cloneModel(myCloningModel, modelDescriptor.getSModel(), getOperationContext().getScope());
 
     Project project = getOperationContext().getProject();
     assert project != null;
@@ -207,16 +221,5 @@ public class CloneModelDialog extends BaseNodeDialog {
       }
     });
     return true;
-  }
-
-  private Set<String> getModelsInProperties() {
-    /* todo
-    Set<String> result = new HashSet<String>();
-    Iterator<Model> models = myCloneModelProperties.importedModels();
-    while (models.hasNext()) {
-      result.add(models.next().getModelRef());
-    }
-    return result;*/
-    return null;
   }
 }

@@ -1,11 +1,18 @@
-package jetbrains.mps.project.structure.model;
+package jetbrains.mps.ide.dialogs;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.smodel.SModelReference;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class ModelProperties {
+  public static final String PROPERTY_NAME = "longName";
+  public static final String PROPERTY_PATH = "root";
+  public static final String PROPERTY_STEREOTYPE = "stereotype";
+  public static final String PROPERTY_LOG = "usesLog";
+
   private String myLongName;
   private String myStereotype;
   private boolean myUsesLog;
@@ -17,6 +24,13 @@ public class ModelProperties {
   private List<SModelReference> myImportedModels;
   private List<ModuleReference> myImportedDevkits;
   private List <ModuleReference> myLanguagesInGeneration;
+
+  public ModelProperties() {
+    myImportedLanguages = new ArrayList<ModuleReference>();
+    myImportedModels = new ArrayList<SModelReference>();
+    myImportedDevkits = new ArrayList<ModuleReference>();
+    myLanguagesInGeneration = new ArrayList<ModuleReference>(); 
+  }
 
   public String getLongName() {
     return myLongName;
