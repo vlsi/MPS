@@ -25,10 +25,7 @@ import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.dialogs.projectoptions.ProjectDescriptorPresenter;
-import org.jdesktop.beansbinding.AutoBinding;
-import org.jdesktop.beansbinding.Bindings;
-import org.jdesktop.beansbinding.Property;
-import org.jdesktop.beansbinding.BeanProperty;
+import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
 
 import javax.swing.*;
@@ -42,9 +39,14 @@ public class CloneModelDialog extends BaseProjectDialog {
   private SModel myCloningModel;
   private JPanel myContentPanel;
 
-  public CloneModelDialog(SModelDescriptor modelDescriptor, IOperationContext operationContext) {
+  public CloneModelDialog(final SModelDescriptor modelDescriptor, IOperationContext operationContext) {
     super("Clone Model " + modelDescriptor.getLongName(), operationContext);
-    myCloningModel = modelDescriptor.getSModel();
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myCloningModel = modelDescriptor.getSModel();
+      }
+    });
 
     collectModelProps();
     initUI();
@@ -70,7 +72,20 @@ public class CloneModelDialog extends BaseProjectDialog {
 
     Property pPath = BeanProperty.create(ModelProperties.PROPERTY_PATH);
     Property pPathVar = BeanProperty.create("text");
-    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ, myModelProperties, pPath, tfPath, pPathVar));
+    AutoBinding binding = Bindings.createAutoBinding(UpdateStrategy.READ, myModelProperties, pPath, tfPath, pPathVar);
+    binding.setConverter(new Converter() {
+      @Override
+      public Object convertForward(Object value) {
+        RootReference rr = (RootReference) value;
+        return rr.getPath()+" ("+rr.getPrefix()+")"; 
+      }
+
+      @Override
+      public Object convertReverse(Object value) {
+        return null;
+      }
+    });
+    addBinding(binding);
 
     GridBagConstraints cNameLabel = new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
     myContentPanel.add(new JLabel("Name:"), cNameLabel);
