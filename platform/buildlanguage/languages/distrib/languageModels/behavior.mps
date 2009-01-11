@@ -116,15 +116,20 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1230208026760" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230208021946">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230208038940">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230218300115">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230208042876">
-              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230208048841" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230208042878">
-                <link role="baseMethodDeclaration" targetNodeId="1230207861621" resolveInfo="getDistribConfiguration" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231692664918">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230218300115">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230208042876">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230208048841" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230208042878">
+                  <link role="baseMethodDeclaration" targetNodeId="1230207861621" resolveInfo="getDistribConfiguration" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230292891005">
+                <link role="baseMethodDeclaration" targetNodeId="1230292821821" resolveInfo="getProjectName" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230292891005">
-              <link role="baseMethodDeclaration" targetNodeId="1230292821821" resolveInfo="getProjectName" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1231692668870">
+              <link role="baseMethodDeclaration" targetNodeId="5.~String.toLowerCase():java.lang.String" resolveInfo="toLowerCase" />
             </node>
           </node>
         </node>
@@ -186,15 +191,20 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1230292771596" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230292766210">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230292786057">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230292793710">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230292788710">
-              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230292788257" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230292792662">
-                <link role="baseMethodDeclaration" targetNodeId="1230207861621" resolveInfo="getDistribConfiguration" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231692637768">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230292793710">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230292788710">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230292788257" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230292792662">
+                  <link role="baseMethodDeclaration" targetNodeId="1230207861621" resolveInfo="getDistribConfiguration" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230292868502">
+                <link role="baseMethodDeclaration" targetNodeId="1230292821821" resolveInfo="getProjectName" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230292868502">
-              <link role="baseMethodDeclaration" targetNodeId="1230292821821" resolveInfo="getProjectName" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1231692641347">
+              <link role="baseMethodDeclaration" targetNodeId="5.~String.toLowerCase():java.lang.String" resolveInfo="toLowerCase" />
             </node>
           </node>
         </node>
@@ -531,6 +541,18 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230570100295" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1231692561653">
+      <property name="name" value="getVMOptionsExt" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1231692563967" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231692561655">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1231692579698">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1231692580927">
+            <property name="value" value="vmoptions" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231692576673" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1230292819376">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230292819377">

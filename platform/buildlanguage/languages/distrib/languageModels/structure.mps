@@ -75,6 +75,14 @@
       <property name="name" value="startupDir" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1231691563959">
+      <property name="name" value="useVMOptionsFile" />
+      <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1231691593776">
+      <property name="name" value="defaultVMOptions" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230059161510">
     <property name="name" value="ClassPath" />

@@ -566,10 +566,12 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_1449_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_pathToNsisZip");
+    DistribConfiguration_Styles_StyleSheet.getPathString(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_1449_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_pathToNsisScript");
+    DistribConfiguration_Styles_StyleSheet.getPathString(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_1449_7(EditorCell editorCell, SNode node, EditorContext context) {

@@ -8,6 +8,7 @@ import jetbrains.mps.build.packaging.editor.MPSLayoutStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 
@@ -41,6 +42,16 @@ public class DistribConfiguration_Styles_StyleSheet {
           }
 
         });
+      }
+
+    };
+  }
+
+  public static Style getPathString(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
 
     };

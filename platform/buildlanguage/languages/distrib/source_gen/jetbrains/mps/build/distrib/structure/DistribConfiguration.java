@@ -17,10 +17,12 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.build.distrib.structure.DistribConfiguration";
   public static final String STARTUP_CLASS = "startupClass";
   public static final String STARTUP_DIR = "startupDir";
+  public static final String DEFAULT_V_M_OPTIONS = "defaultVMOptions";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String USE_V_M_OPTIONS_FILE = "useVMOptionsFile";
   public static final String BUILD_SCRIPT_CONFIGURATION = "buildScriptConfiguration";
   public static final String PROJECT_FOLDER = "projectFolder";
   public static final String CLASS_PATH = "classPath";
@@ -44,6 +46,14 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
 
   public void setStartupDir(String value) {
     this.setProperty(DistribConfiguration.STARTUP_DIR, value);
+  }
+
+  public String getDefaultVMOptions() {
+    return this.getProperty(DistribConfiguration.DEFAULT_V_M_OPTIONS);
+  }
+
+  public void setDefaultVMOptions(String value) {
+    this.setProperty(DistribConfiguration.DEFAULT_V_M_OPTIONS, value);
   }
 
   public String getName() {
@@ -76,6 +86,14 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(DistribConfiguration.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getUseVMOptionsFile() {
+    return this.getBooleanProperty(DistribConfiguration.USE_V_M_OPTIONS_FILE);
+  }
+
+  public void setUseVMOptionsFile(boolean value) {
+    this.setBooleanProperty(DistribConfiguration.USE_V_M_OPTIONS_FILE, value);
   }
 
   public Configuration getBuildScriptConfiguration() {

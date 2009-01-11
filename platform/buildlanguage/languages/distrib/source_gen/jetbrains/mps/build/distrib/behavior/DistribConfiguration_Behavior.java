@@ -67,4 +67,8 @@ public class DistribConfiguration_Behavior {
     return SPropertyOperations.getString(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(thisNode, "buildScriptConfiguration", false)), "scriptsFolder");
   }
 
+  public static String call_getVMOptionsExt_1231692561653(SNode thisNode) {
+    return "vmoptions";
+  }
+
 }

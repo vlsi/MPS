@@ -5,9 +5,9 @@ package jetbrains.mps.build.distrib.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.distrib.behavior.WindowsConfig_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.ClassPathItem_Behavior;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
@@ -24,6 +24,9 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesGenerated {
 
@@ -33,6 +36,10 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1230293388595(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.distrib.structure.DistribConfiguration");
+  }
+
+  public static boolean baseMappingRule_Condition_1231694520855(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "useVMOptionsFile");
   }
 
   public static Object propertyMacro_GetPropertyValue_1230058399222(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -172,6 +179,14 @@ public class QueriesGenerated {
     return pathFromStartupDir;
   }
 
+  public static Object propertyMacro_GetPropertyValue_1231692535562(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getVMOptionsExt_1231692561653(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1231692592753(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getProjectName_1230292821821(_context.getNode()).toLowerCase();
+  }
+
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
   }
@@ -244,6 +259,19 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1230577870076(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "tokenValuePair", true);
+  }
+
+  public static Iterable sourceNodesQuery_1231694345955(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    String[] options = SPropertyOperations.getString(_context.getNode(), "defaultVMOptions").split("\\s");
+    List<SNode> lines = new ArrayList<SNode>();
+    for(String option : options) {
+      SNode line = SConceptOperations.createNewNode("jetbrains.mps.gtext.structure.GLine", null);
+      SNode text = SConceptOperations.createNewNode("jetbrains.mps.gtext.structure.GText", null);
+      SPropertyOperations.set(text, "text", option);
+      SLinkOperations.addChild(line, "item", text);
+      ListSequence.fromList(lines).addElement(line);
+    }
+    return lines;
   }
 
 }
