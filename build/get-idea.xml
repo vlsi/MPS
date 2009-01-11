@@ -60,7 +60,7 @@
     </copy>
     <replaceregexp match="${idea.platform.build.property}=(.*)" file="build.number" replace="${idea.platform.build.property}=" byline="true" />
     <concat append="true" destfile="build.number">
-      <filelist files="${tmp}/idea/build.txt" />
+      <filelist files="${basedir}/${tmp}/idea/build.txt" />
     </concat>
   </target>
   <target name="unpack.sources" depends="download">
