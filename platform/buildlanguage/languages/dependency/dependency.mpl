@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.build.dependency" uuid="500e32a4-ab9e-46a4-ae29-127ae883d208" java-stubs-enabled="false" compileInMPS="true">
+<language namespace="jetbrains.mps.build.dependency" uuid="500e32a4-ab9e-46a4-ae29-127ae883d208" java-stubs-enabled="false" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.build.dependency" />
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.build.dependency" />
@@ -46,10 +46,10 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <classPath />
-  <languageRuntimeClassPath>
-    <entry path="${mps_home}/platform/buildlanguage/classes" />
-  </languageRuntimeClassPath>
+  <classPath>
+    <entry path="${language_descriptor}/classes" include="false" />
+  </classPath>
+  <languageRuntimeClassPath />
   <sourcePath />
   <usedLanguages>
     <usedLanguages>0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</usedLanguages>

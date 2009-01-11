@@ -67,11 +67,11 @@ public class WindowsConfig extends SystemSpecificConfig {
   }
 
   public Iterator<TokenValuePair> tokenValuePairs() {
-    return this.children(TokenValuePair.class, WindowsConfig.TOKEN_VALUE_PAIR);
+    return this.children(WindowsConfig.TOKEN_VALUE_PAIR);
   }
 
   public List<TokenValuePair> getTokenValuePairs() {
-    return this.getChildren(TokenValuePair.class, WindowsConfig.TOKEN_VALUE_PAIR);
+    return this.getChildren(WindowsConfig.TOKEN_VALUE_PAIR);
   }
 
   public void addTokenValuePair(TokenValuePair node) {

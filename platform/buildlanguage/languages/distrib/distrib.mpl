@@ -35,7 +35,7 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}/platform/buildlanguage/classes" />
+    <entry path="${language_descriptor}/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath>

@@ -948,7 +948,7 @@
   <target name="pack.jetbrains.mps.buildlanguage">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.buildlanguage.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.buildlanguage.tmp/module" />
-    <mkdir dir="platform/buildlanguage/classes" />
+    <mkdir dir="platform/buildlanguage/languages/buildlanguage/classes" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.buildlanguage.tmp/module">
       <fileset file="platform/buildlanguage/languages/buildlanguage/buildlanguage.mpl" />
     </copy>
@@ -956,20 +956,20 @@
       <fileset dir="platform/buildlanguage/languages/buildlanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.buildlanguage.tmp">
-      <fileset dir="platform/buildlanguage/classes" />
+      <fileset dir="platform/buildlanguage/languages/buildlanguage/classes" />
     </copy>
     <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.buildlanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.buildlanguage.tmp" />
     </jar>
     <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.buildlanguage.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="platform/buildlanguage/classes" />
+      <fileset dir="platform/buildlanguage/languages/buildlanguage/classes" />
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.buildlanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.build.packaging">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.packaging.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.packaging.tmp/module" />
-    <mkdir dir="platform/buildlanguage/classes" />
+    <mkdir dir="platform/buildlanguage/languages/packaging/classes" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.packaging.tmp/module">
       <fileset file="platform/buildlanguage/languages/packaging/packaging.mpl" />
     </copy>
@@ -977,7 +977,7 @@
       <fileset dir="platform/buildlanguage/languages/packaging" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.packaging.tmp">
-      <fileset dir="platform/buildlanguage/classes" />
+      <fileset dir="platform/buildlanguage/languages/packaging/classes" />
     </copy>
     <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.packaging.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.packaging.tmp" />
@@ -988,6 +988,7 @@
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.dependency.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.dependency.tmp/module" />
     <mkdir dir="platform/buildlanguage/languages/dependency/classes_gen" />
+    <mkdir dir="platform/buildlanguage/languages/dependency/classes" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.dependency.tmp/module">
       <fileset file="platform/buildlanguage/languages/dependency/dependency.mpl" />
     </copy>
@@ -996,19 +997,20 @@
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.dependency.tmp">
       <fileset dir="platform/buildlanguage/languages/dependency/classes_gen" />
+      <fileset dir="platform/buildlanguage/languages/dependency/classes" />
     </copy>
     <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.dependency.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.dependency.tmp" />
     </jar>
     <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.dependency.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="platform/buildlanguage/classes" />
+      <fileset dir="platform/buildlanguage/languages/dependency/classes" />
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.dependency.tmp" />
   </target>
   <target name="pack.jetbrains.mps.build.property">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.property.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.property.tmp/module" />
-    <mkdir dir="platform/buildlanguage/classes" />
+    <mkdir dir="platform/buildlanguage/languages/property/classes" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.property.tmp/module">
       <fileset file="platform/buildlanguage/languages/property/property.mpl" />
     </copy>
@@ -1016,7 +1018,7 @@
       <fileset dir="platform/buildlanguage/languages/property" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.property.tmp">
-      <fileset dir="platform/buildlanguage/classes" />
+      <fileset dir="platform/buildlanguage/languages/property/classes" />
     </copy>
     <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.property.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.property.tmp" />

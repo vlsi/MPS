@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module relativePaths="false" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <output url="file://$MODULE_DIR$/classes" />
-    <output-test url="file://$MODULE_DIR$/classes" />
+    <output url="file://$MODULE_DIR$/languages/buildlanguage/classes" />
+    <output-test url="file://$MODULE_DIR$/languages/buildlanguage/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/languages/buildlanguage/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/buildlanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/classpath/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/dependency/source_gen" isTestSource="false" />
@@ -35,6 +36,7 @@
     <orderEntry type="module" module-name="plugin" />
     <orderEntry type="module" module-name="xml" />
     <orderEntry type="module" module-name="xmlInternal" />
+    <orderEntry type="module" module-name="property" />
   </component>
 </module>
 

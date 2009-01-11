@@ -49,9 +49,11 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}/platform/buildlanguage/classes" include="false" />
+    <entry path="${language_descriptor}/classes" include="false" />
   </classPath>
-  <languageRuntimeClassPath />
+  <languageRuntimeClassPath>
+    <entry path="${language_descriptor}/classes" />
+  </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>
     <dependency reexport="true">0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</dependency>

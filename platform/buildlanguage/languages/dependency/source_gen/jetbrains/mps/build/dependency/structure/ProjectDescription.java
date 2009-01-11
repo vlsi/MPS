@@ -62,11 +62,11 @@ public class ProjectDescription extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<Cycle> cycles() {
-    return this.children(Cycle.class, ProjectDescription.CYCLE);
+    return this.children(ProjectDescription.CYCLE);
   }
 
   public List<Cycle> getCycles() {
-    return this.getChildren(Cycle.class, ProjectDescription.CYCLE);
+    return this.getChildren(ProjectDescription.CYCLE);
   }
 
   public void addCycle(Cycle node) {
@@ -82,11 +82,11 @@ public class ProjectDescription extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<PathHolder> commonClasspaths() {
-    return this.children(PathHolder.class, ProjectDescription.COMMON_CLASSPATH);
+    return this.children(ProjectDescription.COMMON_CLASSPATH);
   }
 
   public List<PathHolder> getCommonClasspaths() {
-    return this.getChildren(PathHolder.class, ProjectDescription.COMMON_CLASSPATH);
+    return this.getChildren(ProjectDescription.COMMON_CLASSPATH);
   }
 
   public void addCommonClasspath(PathHolder node) {
@@ -102,11 +102,11 @@ public class ProjectDescription extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<Macros> macros() {
-    return this.children(Macros.class, ProjectDescription.MACRO);
+    return this.children(ProjectDescription.MACRO);
   }
 
   public List<Macros> getMacros() {
-    return this.getChildren(Macros.class, ProjectDescription.MACRO);
+    return this.getChildren(ProjectDescription.MACRO);
   }
 
   public void addMacro(Macros node) {

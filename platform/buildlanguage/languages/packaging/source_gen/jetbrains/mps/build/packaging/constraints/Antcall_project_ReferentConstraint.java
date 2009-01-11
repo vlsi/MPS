@@ -22,7 +22,7 @@ public class Antcall_project_ReferentConstraint implements IModelConstraints, IN
     manager.unRegisterNodeReferentSetEventHandler("jetbrains.mps.build.packaging.structure.Antcall", "project");
   }
 
-  public void processReferentSetEvent(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
+  public void processReferentSetEvent(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
     if (oldReferentNode != newReferentNode) {
       SLinkOperations.setTarget(referenceNode, "targetDeclaration", null, false);
     }

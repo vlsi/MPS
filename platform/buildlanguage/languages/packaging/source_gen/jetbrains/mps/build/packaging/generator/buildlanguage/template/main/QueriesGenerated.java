@@ -44,7 +44,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.buildlanguage.buildgeneration.StronglyConnectedModules;
+import jetbrains.mps.build.buildgeneration.StronglyConnectedModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesGenerated {
