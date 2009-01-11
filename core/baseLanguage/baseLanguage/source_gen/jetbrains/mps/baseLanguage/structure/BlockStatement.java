@@ -16,7 +16,7 @@ public class BlockStatement extends Statement {
   }
 
   public StatementList getStatements() {
-    return (StatementList)this.getChild(BlockStatement.STATEMENTS);
+    return (StatementList)this.getChild(StatementList.class, BlockStatement.STATEMENTS);
   }
 
   public void setStatements(StatementList node) {

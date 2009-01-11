@@ -17,7 +17,7 @@ public class ContainsKeyOperation extends MapOperation {
   }
 
   public Expression getKey() {
-    return (Expression)this.getChild(ContainsKeyOperation.KEY);
+    return (Expression)this.getChild(Expression.class, ContainsKeyOperation.KEY);
   }
 
   public void setKey(Expression node) {

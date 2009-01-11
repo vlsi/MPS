@@ -16,7 +16,7 @@ public class Concept_IsSuperConceptOfOperation extends SNodeOperation {
   }
 
   public IRefConceptArg getConceptArgument() {
-    return (IRefConceptArg)this.getChild(Concept_IsSuperConceptOfOperation.CONCEPT_ARGUMENT);
+    return (IRefConceptArg)this.getChild(IRefConceptArg.class, Concept_IsSuperConceptOfOperation.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(IRefConceptArg node) {

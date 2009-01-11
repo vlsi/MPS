@@ -62,7 +62,7 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(FieldDeclaration.VISIBILITY);
+    return (Visibility)this.getChild(Visibility.class, FieldDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {

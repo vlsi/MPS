@@ -57,7 +57,7 @@ public class EventDeclaration extends BaseConcept implements IMember {
   }
 
   public ParameterDeclaration getParameter() {
-    return (ParameterDeclaration)this.getChild(EventDeclaration.PARAMETER);
+    return (ParameterDeclaration)this.getChild(ParameterDeclaration.class, EventDeclaration.PARAMETER);
   }
 
   public void setParameter(ParameterDeclaration node) {
@@ -65,7 +65,7 @@ public class EventDeclaration extends BaseConcept implements IMember {
   }
 
   public StatementList getInitializer() {
-    return (StatementList)this.getChild(EventDeclaration.INITIALIZER);
+    return (StatementList)this.getChild(StatementList.class, EventDeclaration.INITIALIZER);
   }
 
   public void setInitializer(StatementList node) {

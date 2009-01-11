@@ -16,7 +16,7 @@ public class ParensRegexp extends Regexp {
   }
 
   public Regexp getExpr() {
-    return (Regexp)this.getChild(ParensRegexp.EXPR);
+    return (Regexp)this.getChild(Regexp.class, ParensRegexp.EXPR);
   }
 
   public void setExpr(Regexp node) {

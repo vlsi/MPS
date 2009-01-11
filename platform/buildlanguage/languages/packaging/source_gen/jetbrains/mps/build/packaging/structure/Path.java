@@ -19,7 +19,7 @@ public class Path extends BaseConcept {
   }
 
   public MacroReference getMacro() {
-    return (MacroReference)this.getChild(Path.MACRO);
+    return (MacroReference)this.getChild(MacroReference.class, Path.MACRO);
   }
 
   public void setMacro(MacroReference node) {
@@ -27,7 +27,7 @@ public class Path extends BaseConcept {
   }
 
   public CompositePathComponent getCompositePathComponent() {
-    return (CompositePathComponent)this.getChild(Path.COMPOSITE_PATH_COMPONENT);
+    return (CompositePathComponent)this.getChild(CompositePathComponent.class, Path.COMPOSITE_PATH_COMPONENT);
   }
 
   public void setCompositePathComponent(CompositePathComponent node) {

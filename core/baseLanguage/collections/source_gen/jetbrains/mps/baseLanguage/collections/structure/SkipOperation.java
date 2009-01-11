@@ -17,7 +17,7 @@ public class SkipOperation extends SequenceOperation {
   }
 
   public Expression getElementsToSkip() {
-    return (Expression)this.getChild(SkipOperation.ELEMENTS_TO_SKIP);
+    return (Expression)this.getChild(Expression.class, SkipOperation.ELEMENTS_TO_SKIP);
   }
 
   public void setElementsToSkip(Expression node) {

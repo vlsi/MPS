@@ -28,7 +28,7 @@ public class Root_MappingRule extends BaseMappingRule {
   }
 
   public INamedConcept getTemplate() {
-    return (INamedConcept)this.getReferent(Root_MappingRule.TEMPLATE);
+    return (INamedConcept)this.getReferent(INamedConcept.class, Root_MappingRule.TEMPLATE);
   }
 
   public void setTemplate(INamedConcept node) {

@@ -17,7 +17,7 @@ public class Model_AddRootOperation extends SNodeOperation {
   }
 
   public Expression getNodeArgument() {
-    return (Expression)this.getChild(Model_AddRootOperation.NODE_ARGUMENT);
+    return (Expression)this.getChild(Expression.class, Model_AddRootOperation.NODE_ARGUMENT);
   }
 
   public void setNodeArgument(Expression node) {

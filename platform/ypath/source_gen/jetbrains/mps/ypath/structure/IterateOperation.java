@@ -36,7 +36,7 @@ public class IterateOperation extends TreePathOperation {
   }
 
   public IFeature getUsedFeature() {
-    return (IFeature)this.getReferent(IterateOperation.USED_FEATURE);
+    return (IFeature)this.getReferent(IFeature.class, IterateOperation.USED_FEATURE);
   }
 
   public void setUsedFeature(IFeature node) {
@@ -44,7 +44,7 @@ public class IterateOperation extends TreePathOperation {
   }
 
   public ParameterWrapper getParamObject() {
-    return (ParameterWrapper)this.getChild(IterateOperation.PARAM_OBJECT);
+    return (ParameterWrapper)this.getChild(ParameterWrapper.class, IterateOperation.PARAM_OBJECT);
   }
 
   public void setParamObject(ParameterWrapper node) {

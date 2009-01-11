@@ -17,7 +17,7 @@ public class GExpressionItem extends GItem {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(GExpressionItem.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, GExpressionItem.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

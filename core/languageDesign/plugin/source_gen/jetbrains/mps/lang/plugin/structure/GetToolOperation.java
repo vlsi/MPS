@@ -16,7 +16,7 @@ public class GetToolOperation extends ProjectOperation {
   }
 
   public ToolDeclaration getTool() {
-    return (ToolDeclaration)this.getReferent(GetToolOperation.TOOL);
+    return (ToolDeclaration)this.getReferent(ToolDeclaration.class, GetToolOperation.TOOL);
   }
 
   public void setTool(ToolDeclaration node) {

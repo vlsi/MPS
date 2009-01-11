@@ -53,7 +53,7 @@ public class CellModel_WithRole extends CellModel_AbstractLabel {
   }
 
   public BaseConcept getRelationDeclaration() {
-    return (BaseConcept)this.getReferent(CellModel_WithRole.RELATION_DECLARATION);
+    return (BaseConcept)this.getReferent(BaseConcept.class, CellModel_WithRole.RELATION_DECLARATION);
   }
 
   public void setRelationDeclaration(BaseConcept node) {

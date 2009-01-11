@@ -20,7 +20,7 @@ public class TryStatement extends Statement {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(TryStatement.BODY);
+    return (StatementList)this.getChild(StatementList.class, TryStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -28,7 +28,7 @@ public class TryStatement extends Statement {
   }
 
   public StatementList getFinallyBody() {
-    return (StatementList)this.getChild(TryStatement.FINALLY_BODY);
+    return (StatementList)this.getChild(StatementList.class, TryStatement.FINALLY_BODY);
   }
 
   public void setFinallyBody(StatementList node) {
@@ -40,11 +40,11 @@ public class TryStatement extends Statement {
   }
 
   public Iterator<CatchClause> catchClauses() {
-    return this.children(TryStatement.CATCH_CLAUSE);
+    return this.children(CatchClause.class, TryStatement.CATCH_CLAUSE);
   }
 
   public List<CatchClause> getCatchClauses() {
-    return this.getChildren(TryStatement.CATCH_CLAUSE);
+    return this.getChildren(CatchClause.class, TryStatement.CATCH_CLAUSE);
   }
 
   public void addCatchClause(CatchClause node) {

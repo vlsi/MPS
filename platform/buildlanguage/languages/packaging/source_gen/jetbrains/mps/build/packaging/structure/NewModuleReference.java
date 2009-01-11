@@ -17,7 +17,7 @@ public class NewModuleReference extends BaseConcept {
   }
 
   public Module getModule() {
-    return (Module)this.getReferent(NewModuleReference.MODULE);
+    return (Module)this.getReferent(Module.class, NewModuleReference.MODULE);
   }
 
   public void setModule(Module node) {

@@ -17,7 +17,7 @@ public class AddLastElementOperation extends AbstractListOperation {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(AddLastElementOperation.ARGUMENT);
+    return (Expression)this.getChild(Expression.class, AddLastElementOperation.ARGUMENT);
   }
 
   public void setArgument(Expression node) {

@@ -55,7 +55,7 @@ public class CellModel_Collection extends EditorCellModel {
   }
 
   public CellLayout getCellLayout() {
-    return (CellLayout)this.getChild(CellModel_Collection.CELL_LAYOUT);
+    return (CellLayout)this.getChild(CellLayout.class, CellModel_Collection.CELL_LAYOUT);
   }
 
   public void setCellLayout(CellLayout node) {
@@ -67,11 +67,11 @@ public class CellModel_Collection extends EditorCellModel {
   }
 
   public Iterator<EditorCellModel> childCellModels() {
-    return this.children(CellModel_Collection.CHILD_CELL_MODEL);
+    return this.children(EditorCellModel.class, CellModel_Collection.CHILD_CELL_MODEL);
   }
 
   public List<EditorCellModel> getChildCellModels() {
-    return this.getChildren(CellModel_Collection.CHILD_CELL_MODEL);
+    return this.getChildren(EditorCellModel.class, CellModel_Collection.CHILD_CELL_MODEL);
   }
 
   public void addChildCellModel(EditorCellModel node) {

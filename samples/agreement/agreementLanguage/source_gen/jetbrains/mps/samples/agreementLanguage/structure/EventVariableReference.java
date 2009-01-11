@@ -17,7 +17,7 @@ public class EventVariableReference extends Expression {
   }
 
   public EventVariable getEventVariable() {
-    return (EventVariable)this.getReferent(EventVariableReference.EVENT_VARIABLE);
+    return (EventVariable)this.getReferent(EventVariable.class, EventVariableReference.EVENT_VARIABLE);
   }
 
   public void setEventVariable(EventVariable node) {

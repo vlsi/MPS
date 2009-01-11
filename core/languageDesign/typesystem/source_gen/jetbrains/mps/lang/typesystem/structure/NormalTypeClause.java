@@ -17,7 +17,7 @@ public class NormalTypeClause extends TypeClause {
   }
 
   public Expression getNormalType() {
-    return (Expression)this.getChild(NormalTypeClause.NORMAL_TYPE);
+    return (Expression)this.getChild(Expression.class, NormalTypeClause.NORMAL_TYPE);
   }
 
   public void setNormalType(Expression node) {

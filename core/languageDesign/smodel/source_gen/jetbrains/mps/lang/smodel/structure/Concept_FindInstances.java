@@ -17,7 +17,7 @@ public class Concept_FindInstances extends SNodeOperation {
   }
 
   public Expression getScope() {
-    return (Expression)this.getChild(Concept_FindInstances.SCOPE);
+    return (Expression)this.getChild(Expression.class, Concept_FindInstances.SCOPE);
   }
 
   public void setScope(Expression node) {

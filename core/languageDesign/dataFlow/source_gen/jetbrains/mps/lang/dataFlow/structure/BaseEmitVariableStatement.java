@@ -17,7 +17,7 @@ public class BaseEmitVariableStatement extends EmitStatement {
   }
 
   public Expression getVariable() {
-    return (Expression)this.getChild(BaseEmitVariableStatement.VARIABLE);
+    return (Expression)this.getChild(Expression.class, BaseEmitVariableStatement.VARIABLE);
   }
 
   public void setVariable(Expression node) {

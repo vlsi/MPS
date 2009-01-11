@@ -103,7 +103,7 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
   }
 
   public GroupContents getContents() {
-    return (GroupContents)this.getChild(ActionGroupDeclaration.CONTENTS);
+    return (GroupContents)this.getChild(GroupContents.class, ActionGroupDeclaration.CONTENTS);
   }
 
   public void setContents(GroupContents node) {
@@ -115,11 +115,11 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
   }
 
   public Iterator<ModificationStatement> modifiers() {
-    return this.children(ActionGroupDeclaration.MODIFIER);
+    return this.children(ModificationStatement.class, ActionGroupDeclaration.MODIFIER);
   }
 
   public List<ModificationStatement> getModifiers() {
-    return this.getChildren(ActionGroupDeclaration.MODIFIER);
+    return this.getChildren(ModificationStatement.class, ActionGroupDeclaration.MODIFIER);
   }
 
   public void addModifier(ModificationStatement node) {

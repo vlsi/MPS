@@ -17,7 +17,7 @@ public class Model_RootsOperation extends SNodeOperation {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(Model_RootsOperation.CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, Model_RootsOperation.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {

@@ -16,7 +16,7 @@ public class DefaultClassifierType extends BaseClassifierType {
   }
 
   public IClassifier getClassifier() {
-    return (IClassifier)this.getReferent(DefaultClassifierType.CLASSIFIER);
+    return (IClassifier)this.getReferent(IClassifier.class, DefaultClassifierType.CLASSIFIER);
   }
 
   public void setClassifier(IClassifier node) {

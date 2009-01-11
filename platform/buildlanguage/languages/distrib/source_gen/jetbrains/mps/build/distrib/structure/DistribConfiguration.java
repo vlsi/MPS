@@ -79,7 +79,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
   }
 
   public Configuration getBuildScriptConfiguration() {
-    return (Configuration)this.getReferent(DistribConfiguration.BUILD_SCRIPT_CONFIGURATION);
+    return (Configuration)this.getReferent(Configuration.class, DistribConfiguration.BUILD_SCRIPT_CONFIGURATION);
   }
 
   public void setBuildScriptConfiguration(Configuration node) {
@@ -87,7 +87,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
   }
 
   public Folder getProjectFolder() {
-    return (Folder)this.getReferent(DistribConfiguration.PROJECT_FOLDER);
+    return (Folder)this.getReferent(Folder.class, DistribConfiguration.PROJECT_FOLDER);
   }
 
   public void setProjectFolder(Folder node) {
@@ -95,7 +95,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
   }
 
   public ClassPath getClassPath() {
-    return (ClassPath)this.getChild(DistribConfiguration.CLASS_PATH);
+    return (ClassPath)this.getChild(ClassPath.class, DistribConfiguration.CLASS_PATH);
   }
 
   public void setClassPath(ClassPath node) {
@@ -107,11 +107,11 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<SystemSpecificConfig> systemSpecificConfigs() {
-    return this.children(DistribConfiguration.SYSTEM_SPECIFIC_CONFIG);
+    return this.children(SystemSpecificConfig.class, DistribConfiguration.SYSTEM_SPECIFIC_CONFIG);
   }
 
   public List<SystemSpecificConfig> getSystemSpecificConfigs() {
-    return this.getChildren(DistribConfiguration.SYSTEM_SPECIFIC_CONFIG);
+    return this.getChildren(SystemSpecificConfig.class, DistribConfiguration.SYSTEM_SPECIFIC_CONFIG);
   }
 
   public void addSystemSpecificConfig(SystemSpecificConfig node) {

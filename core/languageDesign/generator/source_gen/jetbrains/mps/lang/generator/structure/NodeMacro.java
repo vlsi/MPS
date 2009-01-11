@@ -16,7 +16,7 @@ public class NodeMacro extends AbstractMacro {
   }
 
   public MappingLabelDeclaration getMappingLabel() {
-    return (MappingLabelDeclaration)this.getReferent(NodeMacro.MAPPING_LABEL);
+    return (MappingLabelDeclaration)this.getReferent(MappingLabelDeclaration.class, NodeMacro.MAPPING_LABEL);
   }
 
   public void setMappingLabel(MappingLabelDeclaration node) {

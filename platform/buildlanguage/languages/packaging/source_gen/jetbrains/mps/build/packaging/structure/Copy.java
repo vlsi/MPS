@@ -34,7 +34,7 @@ public class Copy extends AbstractProjectComponent {
   }
 
   public Path getSourcePath() {
-    return (Path)this.getChild(Copy.SOURCE_PATH);
+    return (Path)this.getChild(Path.class, Copy.SOURCE_PATH);
   }
 
   public void setSourcePath(Path node) {

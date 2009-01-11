@@ -23,11 +23,11 @@ public class CompositePathComponent extends BaseConcept {
   }
 
   public Iterator<PathComponent> pathComponents() {
-    return this.children(CompositePathComponent.PATH_COMPONENT);
+    return this.children(PathComponent.class, CompositePathComponent.PATH_COMPONENT);
   }
 
   public List<PathComponent> getPathComponents() {
-    return this.getChildren(CompositePathComponent.PATH_COMPONENT);
+    return this.getChildren(PathComponent.class, CompositePathComponent.PATH_COMPONENT);
   }
 
   public void addPathComponent(PathComponent node) {

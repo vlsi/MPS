@@ -17,7 +17,7 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput extends Generati
   }
 
   public Expression getOutputNode() {
-    return (Expression)this.getChild(GenerationContextOp_GetOriginalCopiedInputByOutput.OUTPUT_NODE);
+    return (Expression)this.getChild(Expression.class, GenerationContextOp_GetOriginalCopiedInputByOutput.OUTPUT_NODE);
   }
 
   public void setOutputNode(Expression node) {

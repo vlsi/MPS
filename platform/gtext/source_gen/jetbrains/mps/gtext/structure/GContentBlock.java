@@ -59,11 +59,11 @@ public class GContentBlock extends GItem implements INamedConcept {
   }
 
   public Iterator<GItem> items() {
-    return this.children(GContentBlock.ITEM);
+    return this.children(GItem.class, GContentBlock.ITEM);
   }
 
   public List<GItem> getItems() {
-    return this.getChildren(GContentBlock.ITEM);
+    return this.getChildren(GItem.class, GContentBlock.ITEM);
   }
 
   public void addItem(GItem node) {

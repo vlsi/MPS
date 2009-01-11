@@ -63,11 +63,11 @@ public class PropertyNode extends BaseConcept implements INamedConcept, IPropert
   }
 
   public Iterator<PropertyDeclaration> declarations() {
-    return this.children(PropertyNode.DECLARATION);
+    return this.children(PropertyDeclaration.class, PropertyNode.DECLARATION);
   }
 
   public List<PropertyDeclaration> getDeclarations() {
-    return this.getChildren(PropertyNode.DECLARATION);
+    return this.getChildren(PropertyDeclaration.class, PropertyNode.DECLARATION);
   }
 
   public void addDeclaration(PropertyDeclaration node) {

@@ -16,7 +16,7 @@ public class GenericSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_GenericSubstituteMenuPart getQuery() {
-    return (QueryFunction_GenericSubstituteMenuPart)this.getChild(GenericSubstituteMenuPart.QUERY);
+    return (QueryFunction_GenericSubstituteMenuPart)this.getChild(QueryFunction_GenericSubstituteMenuPart.class, GenericSubstituteMenuPart.QUERY);
   }
 
   public void setQuery(QueryFunction_GenericSubstituteMenuPart node) {

@@ -23,11 +23,11 @@ public class Element extends ElementPart {
   }
 
   public Iterator<Attribute> attributes() {
-    return this.children(Element.ATTRIBUTE);
+    return this.children(Attribute.class, Element.ATTRIBUTE);
   }
 
   public List<Attribute> getAttributes() {
-    return this.getChildren(Element.ATTRIBUTE);
+    return this.getChildren(Attribute.class, Element.ATTRIBUTE);
   }
 
   public void addAttribute(Attribute node) {
@@ -43,11 +43,11 @@ public class Element extends ElementPart {
   }
 
   public Iterator<ElementPart> contents() {
-    return this.children(Element.CONTENT);
+    return this.children(ElementPart.class, Element.CONTENT);
   }
 
   public List<ElementPart> getContents() {
-    return this.getChildren(Element.CONTENT);
+    return this.getChildren(ElementPart.class, Element.CONTENT);
   }
 
   public void addContent(ElementPart node) {

@@ -17,7 +17,7 @@ public class ComponentReference extends Expression {
   }
 
   public ComponentInstance getComponent() {
-    return (ComponentInstance)this.getReferent(ComponentReference.COMPONENT);
+    return (ComponentInstance)this.getReferent(ComponentInstance.class, ComponentReference.COMPONENT);
   }
 
   public void setComponent(ComponentInstance node) {

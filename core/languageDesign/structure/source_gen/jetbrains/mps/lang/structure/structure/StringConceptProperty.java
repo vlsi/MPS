@@ -24,7 +24,7 @@ public class StringConceptProperty extends ConceptProperty {
   }
 
   public StringConceptPropertyDeclaration getStringConceptPropertyDeclaration() {
-    return (StringConceptPropertyDeclaration)this.getConceptPropertyDeclaration();
+    return this.ensureAdapter(StringConceptPropertyDeclaration.class, "conceptPropertyDeclaration", this.getConceptPropertyDeclaration());
   }
 
   public void setStringConceptPropertyDeclaration(StringConceptPropertyDeclaration node) {

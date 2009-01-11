@@ -45,7 +45,7 @@ public class TreePathOperationExpression extends Expression implements ITreePath
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(TreePathOperationExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, TreePathOperationExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -53,7 +53,7 @@ public class TreePathOperationExpression extends Expression implements ITreePath
   }
 
   public TreePathOperation getOperation() {
-    return (TreePathOperation)this.getChild(TreePathOperationExpression.OPERATION);
+    return (TreePathOperation)this.getChild(TreePathOperation.class, TreePathOperationExpression.OPERATION);
   }
 
   public void setOperation(TreePathOperation node) {

@@ -17,7 +17,7 @@ public class Link_SetTargetOperation extends SNodeOperation {
   }
 
   public Expression getLinkTarget() {
-    return (Expression)this.getChild(Link_SetTargetOperation.LINK_TARGET);
+    return (Expression)this.getChild(Expression.class, Link_SetTargetOperation.LINK_TARGET);
   }
 
   public void setLinkTarget(Expression node) {

@@ -19,7 +19,7 @@ public class StaticConceptMethodCall extends BaseMethodCall {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(StaticConceptMethodCall.CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, StaticConceptMethodCall.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -27,7 +27,7 @@ public class StaticConceptMethodCall extends BaseMethodCall {
   }
 
   public StaticConceptMethodDeclaration getMethodDeclaration() {
-    return (StaticConceptMethodDeclaration)this.getBaseMethodDeclaration();
+    return this.ensureAdapter(StaticConceptMethodDeclaration.class, "baseMethodDeclaration", this.getBaseMethodDeclaration());
   }
 
   public void setMethodDeclaration(StaticConceptMethodDeclaration node) {

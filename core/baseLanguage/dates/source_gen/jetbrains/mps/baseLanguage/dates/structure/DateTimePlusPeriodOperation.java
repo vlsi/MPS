@@ -18,7 +18,7 @@ public class DateTimePlusPeriodOperation extends Expression {
   }
 
   public Expression getLeftValue() {
-    return (Expression)this.getChild(DateTimePlusPeriodOperation.LEFT_VALUE);
+    return (Expression)this.getChild(Expression.class, DateTimePlusPeriodOperation.LEFT_VALUE);
   }
 
   public void setLeftValue(Expression node) {
@@ -26,7 +26,7 @@ public class DateTimePlusPeriodOperation extends Expression {
   }
 
   public Expression getRightValue() {
-    return (Expression)this.getChild(DateTimePlusPeriodOperation.RIGHT_VALUE);
+    return (Expression)this.getChild(Expression.class, DateTimePlusPeriodOperation.RIGHT_VALUE);
   }
 
   public void setRightValue(Expression node) {

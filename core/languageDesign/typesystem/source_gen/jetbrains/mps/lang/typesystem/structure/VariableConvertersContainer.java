@@ -23,11 +23,11 @@ public class VariableConvertersContainer extends BaseConcept {
   }
 
   public Iterator<VariableConverterItem> converterItems() {
-    return this.children(VariableConvertersContainer.CONVERTER_ITEM);
+    return this.children(VariableConverterItem.class, VariableConvertersContainer.CONVERTER_ITEM);
   }
 
   public List<VariableConverterItem> getConverterItems() {
-    return this.getChildren(VariableConvertersContainer.CONVERTER_ITEM);
+    return this.getChildren(VariableConverterItem.class, VariableConvertersContainer.CONVERTER_ITEM);
   }
 
   public void addConverterItem(VariableConverterItem node) {

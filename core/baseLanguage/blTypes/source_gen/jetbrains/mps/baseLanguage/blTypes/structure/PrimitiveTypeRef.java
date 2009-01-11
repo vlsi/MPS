@@ -17,7 +17,7 @@ public class PrimitiveTypeRef extends BaseConcept {
   }
 
   public PrimitiveTypeDescriptor getDescriptor() {
-    return (PrimitiveTypeDescriptor)this.getReferent(PrimitiveTypeRef.DESCRIPTOR);
+    return (PrimitiveTypeDescriptor)this.getReferent(PrimitiveTypeDescriptor.class, PrimitiveTypeRef.DESCRIPTOR);
   }
 
   public void setDescriptor(PrimitiveTypeDescriptor node) {

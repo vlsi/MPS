@@ -44,7 +44,7 @@ public class PropertyReference extends BaseConcept implements IOperation {
   }
 
   public Property getProperty() {
-    return (Property)this.getReferent(PropertyReference.PROPERTY);
+    return (Property)this.getReferent(Property.class, PropertyReference.PROPERTY);
   }
 
   public void setProperty(Property node) {

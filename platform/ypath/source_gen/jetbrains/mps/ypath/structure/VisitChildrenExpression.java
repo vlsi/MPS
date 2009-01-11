@@ -23,11 +23,11 @@ public class VisitChildrenExpression extends Expression {
   }
 
   public Iterator<Expression> actualArguments() {
-    return this.children(VisitChildrenExpression.ACTUAL_ARGUMENT);
+    return this.children(Expression.class, VisitChildrenExpression.ACTUAL_ARGUMENT);
   }
 
   public List<Expression> getActualArguments() {
-    return this.getChildren(VisitChildrenExpression.ACTUAL_ARGUMENT);
+    return this.getChildren(Expression.class, VisitChildrenExpression.ACTUAL_ARGUMENT);
   }
 
   public void addActualArgument(Expression node) {

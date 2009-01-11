@@ -39,7 +39,7 @@ public class InternalStaticMethodCall extends BaseMethodCall {
   }
 
   public Type getReturnType() {
-    return (Type)this.getChild(InternalStaticMethodCall.RETURN_TYPE);
+    return (Type)this.getChild(Type.class, InternalStaticMethodCall.RETURN_TYPE);
   }
 
   public void setReturnType(Type node) {
@@ -51,11 +51,11 @@ public class InternalStaticMethodCall extends BaseMethodCall {
   }
 
   public Iterator<Type> typeParameters() {
-    return this.children(InternalStaticMethodCall.TYPE_PARAMETER);
+    return this.children(Type.class, InternalStaticMethodCall.TYPE_PARAMETER);
   }
 
   public List<Type> getTypeParameters() {
-    return this.getChildren(InternalStaticMethodCall.TYPE_PARAMETER);
+    return this.getChildren(Type.class, InternalStaticMethodCall.TYPE_PARAMETER);
   }
 
   public void addTypeParameter(Type node) {

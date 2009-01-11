@@ -20,7 +20,7 @@ public class ConceptPart extends MenuBuilderPart {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(ConceptPart.CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptPart.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -32,11 +32,11 @@ public class ConceptPart extends MenuBuilderPart {
   }
 
   public Iterator<MenuPart> parts() {
-    return this.children(ConceptPart.PART);
+    return this.children(MenuPart.class, ConceptPart.PART);
   }
 
   public List<MenuPart> getParts() {
-    return this.getChildren(ConceptPart.PART);
+    return this.getChildren(MenuPart.class, ConceptPart.PART);
   }
 
   public void addPart(MenuPart node) {

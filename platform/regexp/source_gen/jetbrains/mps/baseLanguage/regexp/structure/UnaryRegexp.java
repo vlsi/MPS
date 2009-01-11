@@ -16,7 +16,7 @@ public class UnaryRegexp extends Regexp {
   }
 
   public Regexp getRegexp() {
-    return (Regexp)this.getChild(UnaryRegexp.REGEXP);
+    return (Regexp)this.getChild(Regexp.class, UnaryRegexp.REGEXP);
   }
 
   public void setRegexp(Regexp node) {

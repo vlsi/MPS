@@ -29,7 +29,7 @@ public class InlineFormatExpression extends UnaryDateTimeOperation {
   }
 
   public Locale getLocale() {
-    return (Locale)this.getReferent(InlineFormatExpression.LOCALE);
+    return (Locale)this.getReferent(Locale.class, InlineFormatExpression.LOCALE);
   }
 
   public void setLocale(Locale node) {
@@ -41,11 +41,11 @@ public class InlineFormatExpression extends UnaryDateTimeOperation {
   }
 
   public Iterator<FormatToken> formatTokens() {
-    return this.children(InlineFormatExpression.FORMAT_TOKEN);
+    return this.children(FormatToken.class, InlineFormatExpression.FORMAT_TOKEN);
   }
 
   public List<FormatToken> getFormatTokens() {
-    return this.getChildren(InlineFormatExpression.FORMAT_TOKEN);
+    return this.getChildren(FormatToken.class, InlineFormatExpression.FORMAT_TOKEN);
   }
 
   public void addFormatToken(FormatToken node) {

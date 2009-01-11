@@ -16,7 +16,7 @@ public class DoWhileStatement extends AbstractLoopStatement {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(DoWhileStatement.CONDITION);
+    return (Expression)this.getChild(Expression.class, DoWhileStatement.CONDITION);
   }
 
   public void setCondition(Expression node) {

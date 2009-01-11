@@ -77,11 +77,11 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public Iterator<Root_MappingRule> rootMappingRules() {
-    return this.children(MappingConfiguration.ROOT_MAPPING_RULE);
+    return this.children(Root_MappingRule.class, MappingConfiguration.ROOT_MAPPING_RULE);
   }
 
   public List<Root_MappingRule> getRootMappingRules() {
-    return this.getChildren(MappingConfiguration.ROOT_MAPPING_RULE);
+    return this.getChildren(Root_MappingRule.class, MappingConfiguration.ROOT_MAPPING_RULE);
   }
 
   public void addRootMappingRule(Root_MappingRule node) {
@@ -97,11 +97,11 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public Iterator<Weaving_MappingRule> weavingMappingRules() {
-    return this.children(MappingConfiguration.WEAVING_MAPPING_RULE);
+    return this.children(Weaving_MappingRule.class, MappingConfiguration.WEAVING_MAPPING_RULE);
   }
 
   public List<Weaving_MappingRule> getWeavingMappingRules() {
-    return this.getChildren(MappingConfiguration.WEAVING_MAPPING_RULE);
+    return this.getChildren(Weaving_MappingRule.class, MappingConfiguration.WEAVING_MAPPING_RULE);
   }
 
   public void addWeavingMappingRule(Weaving_MappingRule node) {
@@ -117,11 +117,11 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public Iterator<Reduction_MappingRule> reductionMappingRules() {
-    return this.children(MappingConfiguration.REDUCTION_MAPPING_RULE);
+    return this.children(Reduction_MappingRule.class, MappingConfiguration.REDUCTION_MAPPING_RULE);
   }
 
   public List<Reduction_MappingRule> getReductionMappingRules() {
-    return this.getChildren(MappingConfiguration.REDUCTION_MAPPING_RULE);
+    return this.getChildren(Reduction_MappingRule.class, MappingConfiguration.REDUCTION_MAPPING_RULE);
   }
 
   public void addReductionMappingRule(Reduction_MappingRule node) {
@@ -137,11 +137,11 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public Iterator<CreateRootRule> createRootRules() {
-    return this.children(MappingConfiguration.CREATE_ROOT_RULE);
+    return this.children(CreateRootRule.class, MappingConfiguration.CREATE_ROOT_RULE);
   }
 
   public List<CreateRootRule> getCreateRootRules() {
-    return this.getChildren(MappingConfiguration.CREATE_ROOT_RULE);
+    return this.getChildren(CreateRootRule.class, MappingConfiguration.CREATE_ROOT_RULE);
   }
 
   public void addCreateRootRule(CreateRootRule node) {
@@ -157,11 +157,11 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public Iterator<DropRootRule> dropRootRules() {
-    return this.children(MappingConfiguration.DROP_ROOT_RULE);
+    return this.children(DropRootRule.class, MappingConfiguration.DROP_ROOT_RULE);
   }
 
   public List<DropRootRule> getDropRootRules() {
-    return this.getChildren(MappingConfiguration.DROP_ROOT_RULE);
+    return this.getChildren(DropRootRule.class, MappingConfiguration.DROP_ROOT_RULE);
   }
 
   public void addDropRootRule(DropRootRule node) {
@@ -177,11 +177,11 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public Iterator<MappingScriptReference> preMappingScripts() {
-    return this.children(MappingConfiguration.PRE_MAPPING_SCRIPT);
+    return this.children(MappingScriptReference.class, MappingConfiguration.PRE_MAPPING_SCRIPT);
   }
 
   public List<MappingScriptReference> getPreMappingScripts() {
-    return this.getChildren(MappingConfiguration.PRE_MAPPING_SCRIPT);
+    return this.getChildren(MappingScriptReference.class, MappingConfiguration.PRE_MAPPING_SCRIPT);
   }
 
   public void addPreMappingScript(MappingScriptReference node) {
@@ -197,11 +197,11 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public Iterator<MappingScriptReference> postMappingScripts() {
-    return this.children(MappingConfiguration.POST_MAPPING_SCRIPT);
+    return this.children(MappingScriptReference.class, MappingConfiguration.POST_MAPPING_SCRIPT);
   }
 
   public List<MappingScriptReference> getPostMappingScripts() {
-    return this.getChildren(MappingConfiguration.POST_MAPPING_SCRIPT);
+    return this.getChildren(MappingScriptReference.class, MappingConfiguration.POST_MAPPING_SCRIPT);
   }
 
   public void addPostMappingScript(MappingScriptReference node) {
@@ -217,11 +217,11 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public Iterator<MappingLabelDeclaration> mappingLabels() {
-    return this.children(MappingConfiguration.MAPPING_LABEL);
+    return this.children(MappingLabelDeclaration.class, MappingConfiguration.MAPPING_LABEL);
   }
 
   public List<MappingLabelDeclaration> getMappingLabels() {
-    return this.getChildren(MappingConfiguration.MAPPING_LABEL);
+    return this.getChildren(MappingLabelDeclaration.class, MappingConfiguration.MAPPING_LABEL);
   }
 
   public void addMappingLabel(MappingLabelDeclaration node) {

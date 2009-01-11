@@ -67,7 +67,7 @@ public class CellKeyMapDeclaration extends BaseConcept implements INamedConcept 
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(CellKeyMapDeclaration.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, CellKeyMapDeclaration.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -79,11 +79,11 @@ public class CellKeyMapDeclaration extends BaseConcept implements INamedConcept 
   }
 
   public Iterator<CellKeyMapItem> items() {
-    return this.children(CellKeyMapDeclaration.ITEM);
+    return this.children(CellKeyMapItem.class, CellKeyMapDeclaration.ITEM);
   }
 
   public List<CellKeyMapItem> getItems() {
-    return this.getChildren(CellKeyMapDeclaration.ITEM);
+    return this.getChildren(CellKeyMapItem.class, CellKeyMapDeclaration.ITEM);
   }
 
   public void addItem(CellKeyMapItem node) {

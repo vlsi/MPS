@@ -21,7 +21,7 @@ public class ForEachMatrixElement extends AbstractLoopStatement {
   }
 
   public MatrixIndexVariableDeclaration getRow() {
-    return (MatrixIndexVariableDeclaration)this.getChild(ForEachMatrixElement.ROW);
+    return (MatrixIndexVariableDeclaration)this.getChild(MatrixIndexVariableDeclaration.class, ForEachMatrixElement.ROW);
   }
 
   public void setRow(MatrixIndexVariableDeclaration node) {
@@ -29,7 +29,7 @@ public class ForEachMatrixElement extends AbstractLoopStatement {
   }
 
   public MatrixIndexVariableDeclaration getColumn() {
-    return (MatrixIndexVariableDeclaration)this.getChild(ForEachMatrixElement.COLUMN);
+    return (MatrixIndexVariableDeclaration)this.getChild(MatrixIndexVariableDeclaration.class, ForEachMatrixElement.COLUMN);
   }
 
   public void setColumn(MatrixIndexVariableDeclaration node) {
@@ -37,7 +37,7 @@ public class ForEachMatrixElement extends AbstractLoopStatement {
   }
 
   public MatrixElementVariableDeclaration getElement() {
-    return (MatrixElementVariableDeclaration)this.getChild(ForEachMatrixElement.ELEMENT);
+    return (MatrixElementVariableDeclaration)this.getChild(MatrixElementVariableDeclaration.class, ForEachMatrixElement.ELEMENT);
   }
 
   public void setElement(MatrixElementVariableDeclaration node) {
@@ -45,7 +45,7 @@ public class ForEachMatrixElement extends AbstractLoopStatement {
   }
 
   public Expression getMatrix() {
-    return (Expression)this.getChild(ForEachMatrixElement.MATRIX);
+    return (Expression)this.getChild(Expression.class, ForEachMatrixElement.MATRIX);
   }
 
   public void setMatrix(Expression node) {

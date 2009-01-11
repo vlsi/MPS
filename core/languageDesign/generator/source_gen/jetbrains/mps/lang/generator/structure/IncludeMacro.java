@@ -17,7 +17,7 @@ public class IncludeMacro extends SourceSubstituteMacro {
   }
 
   public TemplateDeclaration getIncludeTemplate() {
-    return (TemplateDeclaration)this.getReferent(IncludeMacro.INCLUDE_TEMPLATE);
+    return (TemplateDeclaration)this.getReferent(TemplateDeclaration.class, IncludeMacro.INCLUDE_TEMPLATE);
   }
 
   public void setIncludeTemplate(TemplateDeclaration node) {
@@ -25,7 +25,7 @@ public class IncludeMacro extends SourceSubstituteMacro {
   }
 
   public SourceSubstituteMacro_SourceNodeQuery getSourceNodeQuery() {
-    return (SourceSubstituteMacro_SourceNodeQuery)this.getChild(IncludeMacro.SOURCE_NODE_QUERY);
+    return (SourceSubstituteMacro_SourceNodeQuery)this.getChild(SourceSubstituteMacro_SourceNodeQuery.class, IncludeMacro.SOURCE_NODE_QUERY);
   }
 
   public void setSourceNodeQuery(SourceSubstituteMacro_SourceNodeQuery node) {

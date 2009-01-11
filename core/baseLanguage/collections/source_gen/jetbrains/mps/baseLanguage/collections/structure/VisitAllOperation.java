@@ -16,7 +16,7 @@ public class VisitAllOperation extends InternalSequenceOperation {
   }
 
   public Expression getVisitor() {
-    return (Expression)this.getClosure();
+    return this.ensureAdapter(Expression.class, "closure", this.getClosure());
   }
 
   public void setVisitor(Expression node) {

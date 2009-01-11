@@ -45,7 +45,7 @@ public class CompositeString extends BaseConcept implements IStringExpression {
   }
 
   public IStringExpression getLeft() {
-    return (IStringExpression)this.getChild(CompositeString.LEFT);
+    return (IStringExpression)this.getChild(IStringExpression.class, CompositeString.LEFT);
   }
 
   public void setLeft(IStringExpression node) {
@@ -53,7 +53,7 @@ public class CompositeString extends BaseConcept implements IStringExpression {
   }
 
   public IStringExpression getRight() {
-    return (IStringExpression)this.getChild(CompositeString.RIGHT);
+    return (IStringExpression)this.getChild(IStringExpression.class, CompositeString.RIGHT);
   }
 
   public void setRight(IStringExpression node) {

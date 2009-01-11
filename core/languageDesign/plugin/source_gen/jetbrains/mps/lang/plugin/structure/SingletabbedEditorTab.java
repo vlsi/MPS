@@ -16,7 +16,7 @@ public class SingletabbedEditorTab extends AbstractEditorTab {
   }
 
   public GetNodeBlock getGetNodeBlock() {
-    return (GetNodeBlock)this.getChild(SingletabbedEditorTab.GET_NODE_BLOCK);
+    return (GetNodeBlock)this.getChild(GetNodeBlock.class, SingletabbedEditorTab.GET_NODE_BLOCK);
   }
 
   public void setGetNodeBlock(GetNodeBlock node) {

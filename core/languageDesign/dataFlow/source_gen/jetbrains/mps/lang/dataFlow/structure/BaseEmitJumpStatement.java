@@ -16,7 +16,7 @@ public class BaseEmitJumpStatement extends EmitStatement {
   }
 
   public Position getJumpTo() {
-    return (Position)this.getChild(BaseEmitJumpStatement.JUMP_TO);
+    return (Position)this.getChild(Position.class, BaseEmitJumpStatement.JUMP_TO);
   }
 
   public void setJumpTo(Position node) {

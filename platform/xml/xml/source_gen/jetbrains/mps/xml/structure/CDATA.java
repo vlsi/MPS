@@ -16,7 +16,7 @@ public class CDATA extends Content {
   }
 
   public ContentList getContentList() {
-    return (ContentList)this.getChild(CDATA.CONTENT_LIST);
+    return (ContentList)this.getChild(ContentList.class, CDATA.CONTENT_LIST);
   }
 
   public void setContentList(ContentList node) {

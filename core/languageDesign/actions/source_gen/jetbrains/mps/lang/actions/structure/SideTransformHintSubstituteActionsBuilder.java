@@ -53,7 +53,7 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(SideTransformHintSubstituteActionsBuilder.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, SideTransformHintSubstituteActionsBuilder.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -61,7 +61,7 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   }
 
   public SideTransformHintSubstitutePreconditionFunction getPrecondition() {
-    return (SideTransformHintSubstitutePreconditionFunction)this.getChild(SideTransformHintSubstituteActionsBuilder.PRECONDITION);
+    return (SideTransformHintSubstitutePreconditionFunction)this.getChild(SideTransformHintSubstitutePreconditionFunction.class, SideTransformHintSubstituteActionsBuilder.PRECONDITION);
   }
 
   public void setPrecondition(SideTransformHintSubstitutePreconditionFunction node) {
@@ -69,7 +69,7 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   }
 
   public QueryFunction_ST_CommonInitializer getCommonInitializer() {
-    return (QueryFunction_ST_CommonInitializer)this.getChild(SideTransformHintSubstituteActionsBuilder.COMMON_INITIALIZER);
+    return (QueryFunction_ST_CommonInitializer)this.getChild(QueryFunction_ST_CommonInitializer.class, SideTransformHintSubstituteActionsBuilder.COMMON_INITIALIZER);
   }
 
   public void setCommonInitializer(QueryFunction_ST_CommonInitializer node) {
@@ -81,11 +81,11 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   }
 
   public Iterator<MenuBuilderPart> parts() {
-    return this.children(SideTransformHintSubstituteActionsBuilder.PART);
+    return this.children(MenuBuilderPart.class, SideTransformHintSubstituteActionsBuilder.PART);
   }
 
   public List<MenuBuilderPart> getParts() {
-    return this.getChildren(SideTransformHintSubstituteActionsBuilder.PART);
+    return this.getChildren(MenuBuilderPart.class, SideTransformHintSubstituteActionsBuilder.PART);
   }
 
   public void addPart(MenuBuilderPart node) {
@@ -101,11 +101,11 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   }
 
   public Iterator<SideTransformVariableDeclaration> variables() {
-    return this.children(SideTransformHintSubstituteActionsBuilder.VARIABLE);
+    return this.children(SideTransformVariableDeclaration.class, SideTransformHintSubstituteActionsBuilder.VARIABLE);
   }
 
   public List<SideTransformVariableDeclaration> getVariables() {
-    return this.getChildren(SideTransformHintSubstituteActionsBuilder.VARIABLE);
+    return this.getChildren(SideTransformVariableDeclaration.class, SideTransformHintSubstituteActionsBuilder.VARIABLE);
   }
 
   public void addVariable(SideTransformVariableDeclaration node) {

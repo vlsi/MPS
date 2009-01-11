@@ -55,7 +55,7 @@ public class DefaultClassifierMethodDeclaration extends BaseMethodDeclaration im
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(DefaultClassifierMethodDeclaration.VISIBILITY);
+    return (Visibility)this.getChild(Visibility.class, DefaultClassifierMethodDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {

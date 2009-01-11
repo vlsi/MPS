@@ -75,7 +75,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptBehavior.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -83,7 +83,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public ConceptDeclaration getDefaultConcreteConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT);
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, ConceptBehavior.DEFAULT_CONCRETE_CONCEPT);
   }
 
   public void setDefaultConcreteConcept(ConceptDeclaration node) {
@@ -91,7 +91,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public ConceptConstructorDeclaration getConstructor() {
-    return (ConceptConstructorDeclaration)this.getChild(ConceptBehavior.CONSTRUCTOR);
+    return (ConceptConstructorDeclaration)this.getChild(ConceptConstructorDeclaration.class, ConceptBehavior.CONSTRUCTOR);
   }
 
   public void setConstructor(ConceptConstructorDeclaration node) {
@@ -99,7 +99,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public NodeDefaultSearchScope getDefaultScope() {
-    return (NodeDefaultSearchScope)this.getChild(ConceptBehavior.DEFAULT_SCOPE);
+    return (NodeDefaultSearchScope)this.getChild(NodeDefaultSearchScope.class, ConceptBehavior.DEFAULT_SCOPE);
   }
 
   public void setDefaultScope(NodeDefaultSearchScope node) {
@@ -107,7 +107,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public ConstraintFunction_CanBeAChild getCanBeAChild() {
-    return (ConstraintFunction_CanBeAChild)this.getChild(ConceptBehavior.CAN_BE_A_CHILD);
+    return (ConstraintFunction_CanBeAChild)this.getChild(ConstraintFunction_CanBeAChild.class, ConceptBehavior.CAN_BE_A_CHILD);
   }
 
   public void setCanBeAChild(ConstraintFunction_CanBeAChild node) {
@@ -115,7 +115,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public ConstraintFunction_CanBeAParent getCanBeAParent() {
-    return (ConstraintFunction_CanBeAParent)this.getChild(ConceptBehavior.CAN_BE_A_PARENT);
+    return (ConstraintFunction_CanBeAParent)this.getChild(ConstraintFunction_CanBeAParent.class, ConceptBehavior.CAN_BE_A_PARENT);
   }
 
   public void setCanBeAParent(ConstraintFunction_CanBeAParent node) {
@@ -127,11 +127,11 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public Iterator<NodePropertyConstraint> propertieses() {
-    return this.children(ConceptBehavior.PROPERTIES);
+    return this.children(NodePropertyConstraint.class, ConceptBehavior.PROPERTIES);
   }
 
   public List<NodePropertyConstraint> getPropertieses() {
-    return this.getChildren(ConceptBehavior.PROPERTIES);
+    return this.getChildren(NodePropertyConstraint.class, ConceptBehavior.PROPERTIES);
   }
 
   public void addProperties(NodePropertyConstraint node) {
@@ -147,11 +147,11 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public Iterator<NodeReferentConstraint> referenceses() {
-    return this.children(ConceptBehavior.REFERENCES);
+    return this.children(NodeReferentConstraint.class, ConceptBehavior.REFERENCES);
   }
 
   public List<NodeReferentConstraint> getReferenceses() {
-    return this.getChildren(ConceptBehavior.REFERENCES);
+    return this.getChildren(NodeReferentConstraint.class, ConceptBehavior.REFERENCES);
   }
 
   public void addReferences(NodeReferentConstraint node) {
@@ -167,11 +167,11 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public Iterator<ConceptMethodDeclaration> methods() {
-    return this.children(ConceptBehavior.METHOD);
+    return this.children(ConceptMethodDeclaration.class, ConceptBehavior.METHOD);
   }
 
   public List<ConceptMethodDeclaration> getMethods() {
-    return this.getChildren(ConceptBehavior.METHOD);
+    return this.getChildren(ConceptMethodDeclaration.class, ConceptBehavior.METHOD);
   }
 
   public void addMethod(ConceptMethodDeclaration node) {
@@ -187,11 +187,11 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public Iterator<StaticConceptMethodDeclaration> staticMethods() {
-    return this.children(ConceptBehavior.STATIC_METHOD);
+    return this.children(StaticConceptMethodDeclaration.class, ConceptBehavior.STATIC_METHOD);
   }
 
   public List<StaticConceptMethodDeclaration> getStaticMethods() {
-    return this.getChildren(ConceptBehavior.STATIC_METHOD);
+    return this.getChildren(StaticConceptMethodDeclaration.class, ConceptBehavior.STATIC_METHOD);
   }
 
   public void addStaticMethod(StaticConceptMethodDeclaration node) {

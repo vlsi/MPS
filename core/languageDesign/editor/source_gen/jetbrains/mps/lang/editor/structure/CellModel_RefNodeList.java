@@ -28,7 +28,7 @@ public class CellModel_RefNodeList extends CellModel_ListWithRole {
   }
 
   public CellActionMapDeclaration getElementActionMap() {
-    return (CellActionMapDeclaration)this.getReferent(CellModel_RefNodeList.ELEMENT_ACTION_MAP);
+    return (CellActionMapDeclaration)this.getReferent(CellActionMapDeclaration.class, CellModel_RefNodeList.ELEMENT_ACTION_MAP);
   }
 
   public void setElementActionMap(CellActionMapDeclaration node) {
@@ -36,7 +36,7 @@ public class CellModel_RefNodeList extends CellModel_ListWithRole {
   }
 
   public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration)this.getRelationDeclaration();
+    return this.ensureAdapter(LinkDeclaration.class, "relationDeclaration", this.getRelationDeclaration());
   }
 
   public void setLinkDeclaration(LinkDeclaration node) {
@@ -44,7 +44,7 @@ public class CellModel_RefNodeList extends CellModel_ListWithRole {
   }
 
   public CellMenuDescriptor getElementMenuDescriptor() {
-    return (CellMenuDescriptor)this.getChild(CellModel_RefNodeList.ELEMENT_MENU_DESCRIPTOR);
+    return (CellMenuDescriptor)this.getChild(CellMenuDescriptor.class, CellModel_RefNodeList.ELEMENT_MENU_DESCRIPTOR);
   }
 
   public void setElementMenuDescriptor(CellMenuDescriptor node) {
@@ -52,7 +52,7 @@ public class CellModel_RefNodeList extends CellModel_ListWithRole {
   }
 
   public QueryFunction_NodeListFilter getFilter() {
-    return (QueryFunction_NodeListFilter)this.getChild(CellModel_RefNodeList.FILTER);
+    return (QueryFunction_NodeListFilter)this.getChild(QueryFunction_NodeListFilter.class, CellModel_RefNodeList.FILTER);
   }
 
   public void setFilter(QueryFunction_NodeListFilter node) {

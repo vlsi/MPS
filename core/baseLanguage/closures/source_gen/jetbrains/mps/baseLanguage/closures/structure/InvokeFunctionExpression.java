@@ -48,7 +48,7 @@ public class InvokeFunctionExpression extends Expression implements IDeprecatabl
   }
 
   public Expression getFunction() {
-    return (Expression)this.getChild(InvokeFunctionExpression.FUNCTION);
+    return (Expression)this.getChild(Expression.class, InvokeFunctionExpression.FUNCTION);
   }
 
   public void setFunction(Expression node) {
@@ -60,11 +60,11 @@ public class InvokeFunctionExpression extends Expression implements IDeprecatabl
   }
 
   public Iterator<Expression> parameters() {
-    return this.children(InvokeFunctionExpression.PARAMETER);
+    return this.children(Expression.class, InvokeFunctionExpression.PARAMETER);
   }
 
   public List<Expression> getParameters() {
-    return this.getChildren(InvokeFunctionExpression.PARAMETER);
+    return this.getChildren(Expression.class, InvokeFunctionExpression.PARAMETER);
   }
 
   public void addParameter(Expression node) {

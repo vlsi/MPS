@@ -16,7 +16,7 @@ public class LowerBoundType extends Type {
   }
 
   public Type getBound() {
-    return (Type)this.getChild(LowerBoundType.BOUND);
+    return (Type)this.getChild(Type.class, LowerBoundType.BOUND);
   }
 
   public void setBound(Type node) {

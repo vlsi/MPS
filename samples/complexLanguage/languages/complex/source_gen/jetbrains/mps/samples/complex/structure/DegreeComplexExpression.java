@@ -17,7 +17,7 @@ public class DegreeComplexExpression extends SingleComplexExpression {
   }
 
   public IntegerLiteral getDegree() {
-    return (IntegerLiteral)this.getChild(DegreeComplexExpression.DEGREE);
+    return (IntegerLiteral)this.getChild(IntegerLiteral.class, DegreeComplexExpression.DEGREE);
   }
 
   public void setDegree(IntegerLiteral node) {

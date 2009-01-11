@@ -17,7 +17,7 @@ public class MultitabbedEditorTab extends AbstractEditorTab {
   }
 
   public GetNodesBlock getGetNodesBlock() {
-    return (GetNodesBlock)this.getChild(MultitabbedEditorTab.GET_NODES_BLOCK);
+    return (GetNodesBlock)this.getChild(GetNodesBlock.class, MultitabbedEditorTab.GET_NODES_BLOCK);
   }
 
   public void setGetNodesBlock(GetNodesBlock node) {
@@ -25,7 +25,7 @@ public class MultitabbedEditorTab extends AbstractEditorTab {
   }
 
   public GetInnerTabCaptionBlock getGetInnerTabNameBlock() {
-    return (GetInnerTabCaptionBlock)this.getChild(MultitabbedEditorTab.GET_INNER_TAB_NAME_BLOCK);
+    return (GetInnerTabCaptionBlock)this.getChild(GetInnerTabCaptionBlock.class, MultitabbedEditorTab.GET_INNER_TAB_NAME_BLOCK);
   }
 
   public void setGetInnerTabNameBlock(GetInnerTabCaptionBlock node) {

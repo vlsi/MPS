@@ -18,7 +18,7 @@ public class AConcept extends BaseConcept {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(AConcept.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, AConcept.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

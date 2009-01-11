@@ -17,7 +17,7 @@ public class MapRemoveOperation extends MapOperation {
   }
 
   public Expression getKey() {
-    return (Expression)this.getChild(MapRemoveOperation.KEY);
+    return (Expression)this.getChild(Expression.class, MapRemoveOperation.KEY);
   }
 
   public void setKey(Expression node) {

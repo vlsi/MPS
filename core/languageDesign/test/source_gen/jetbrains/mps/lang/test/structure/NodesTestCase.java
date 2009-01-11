@@ -65,11 +65,11 @@ public class NodesTestCase extends BaseConcept implements ITestCase, INamedConce
   }
 
   public Iterator<TestNode> nodesToChecks() {
-    return this.children(NodesTestCase.NODES_TO_CHECK);
+    return this.children(TestNode.class, NodesTestCase.NODES_TO_CHECK);
   }
 
   public List<TestNode> getNodesToChecks() {
-    return this.getChildren(NodesTestCase.NODES_TO_CHECK);
+    return this.getChildren(TestNode.class, NodesTestCase.NODES_TO_CHECK);
   }
 
   public void addNodesToCheck(TestNode node) {
@@ -85,11 +85,11 @@ public class NodesTestCase extends BaseConcept implements ITestCase, INamedConce
   }
 
   public Iterator<NodesTestMethod> testMethodses() {
-    return this.children(NodesTestCase.TEST_METHODS);
+    return this.children(NodesTestMethod.class, NodesTestCase.TEST_METHODS);
   }
 
   public List<NodesTestMethod> getTestMethodses() {
-    return this.getChildren(NodesTestCase.TEST_METHODS);
+    return this.getChildren(NodesTestMethod.class, NodesTestCase.TEST_METHODS);
   }
 
   public void addTestMethods(NodesTestMethod node) {
@@ -105,11 +105,11 @@ public class NodesTestCase extends BaseConcept implements ITestCase, INamedConce
   }
 
   public Iterator<DefaultClassifierMethodDeclaration> methodses() {
-    return this.children(NodesTestCase.METHODS);
+    return this.children(DefaultClassifierMethodDeclaration.class, NodesTestCase.METHODS);
   }
 
   public List<DefaultClassifierMethodDeclaration> getMethodses() {
-    return this.getChildren(NodesTestCase.METHODS);
+    return this.getChildren(DefaultClassifierMethodDeclaration.class, NodesTestCase.METHODS);
   }
 
   public void addMethods(DefaultClassifierMethodDeclaration node) {

@@ -20,7 +20,7 @@ public class AnonymousClass extends ClassConcept {
   }
 
   public Classifier getClassifier() {
-    return (Classifier)this.getReferent(AnonymousClass.CLASSIFIER);
+    return (Classifier)this.getReferent(Classifier.class, AnonymousClass.CLASSIFIER);
   }
 
   public void setClassifier(Classifier node) {
@@ -32,11 +32,11 @@ public class AnonymousClass extends ClassConcept {
   }
 
   public Iterator<Expression> parameters() {
-    return this.children(AnonymousClass.PARAMETER);
+    return this.children(Expression.class, AnonymousClass.PARAMETER);
   }
 
   public List<Expression> getParameters() {
-    return this.getChildren(AnonymousClass.PARAMETER);
+    return this.getChildren(Expression.class, AnonymousClass.PARAMETER);
   }
 
   public void addParameter(Expression node) {
@@ -52,11 +52,11 @@ public class AnonymousClass extends ClassConcept {
   }
 
   public Iterator<Type> typeParameters() {
-    return this.children(AnonymousClass.TYPE_PARAMETER);
+    return this.children(Type.class, AnonymousClass.TYPE_PARAMETER);
   }
 
   public List<Type> getTypeParameters() {
-    return this.getChildren(AnonymousClass.TYPE_PARAMETER);
+    return this.getChildren(Type.class, AnonymousClass.TYPE_PARAMETER);
   }
 
   public void addTypeParameter(Type node) {

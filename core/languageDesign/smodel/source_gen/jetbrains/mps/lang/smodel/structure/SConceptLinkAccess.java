@@ -17,7 +17,7 @@ public class SConceptLinkAccess extends SNodeOperation {
   }
 
   public ConceptLinkDeclaration getConceptLinkDeclaration() {
-    return (ConceptLinkDeclaration)this.getReferent(SConceptLinkAccess.CONCEPT_LINK_DECLARATION);
+    return (ConceptLinkDeclaration)this.getReferent(ConceptLinkDeclaration.class, SConceptLinkAccess.CONCEPT_LINK_DECLARATION);
   }
 
   public void setConceptLinkDeclaration(ConceptLinkDeclaration node) {

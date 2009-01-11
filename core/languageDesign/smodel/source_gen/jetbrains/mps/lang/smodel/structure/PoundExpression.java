@@ -45,7 +45,7 @@ public class PoundExpression extends BaseConcept implements IPropertyAccessQuali
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(PoundExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, PoundExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

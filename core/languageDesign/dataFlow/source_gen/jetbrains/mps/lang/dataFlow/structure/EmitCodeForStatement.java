@@ -17,7 +17,7 @@ public class EmitCodeForStatement extends EmitStatement {
   }
 
   public Expression getCodeFor() {
-    return (Expression)this.getChild(EmitCodeForStatement.CODE_FOR);
+    return (Expression)this.getChild(Expression.class, EmitCodeForStatement.CODE_FOR);
   }
 
   public void setCodeFor(Expression node) {

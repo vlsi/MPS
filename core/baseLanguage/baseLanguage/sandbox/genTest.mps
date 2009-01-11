@@ -36,14 +36,6 @@
   <import index="15" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c89590393(jetbrains.mps.baseLanguage.sandbox.genTest)" version="-1" />
   <import index="17" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1215176056885">
-    <property name="name" value="ABC" />
-    <node role="method" type="jetbrains.mps.nanoj.structure.InstanceMethod" id="1215176060108">
-      <property name="name" value="abcdef" />
-      <node role="type" type="jetbrains.mps.nanoj.structure.VoidType" id="1215176060109" />
-      <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1215176060110" />
-    </node>
-  </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface" id="1217333605644">
     <property name="name" value="ABC" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217333605645" />
@@ -63,6 +55,21 @@
     </node>
     <node role="extendedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221637757666">
       <link role="classifier" targetNodeId="17.~Map$Entry" resolveInfo="Map.Entry" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1231680781312">
+    <property name="name" value="ABC" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231680781313" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1231680781314">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1231680781315" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231680781316" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231680781317" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1231680797598">
+      <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1231680798633">
+        <property name="value" value="true" />
+      </node>
+      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231680797600" />
     </node>
   </node>
 </model>

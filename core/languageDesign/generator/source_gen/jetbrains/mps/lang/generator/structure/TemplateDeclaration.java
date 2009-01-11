@@ -56,7 +56,7 @@ public class TemplateDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(TemplateDeclaration.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, TemplateDeclaration.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -64,7 +64,7 @@ public class TemplateDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public BaseConcept getContentNode() {
-    return (BaseConcept)this.getChild(TemplateDeclaration.CONTENT_NODE);
+    return (BaseConcept)this.getChild(BaseConcept.class, TemplateDeclaration.CONTENT_NODE);
   }
 
   public void setContentNode(BaseConcept node) {

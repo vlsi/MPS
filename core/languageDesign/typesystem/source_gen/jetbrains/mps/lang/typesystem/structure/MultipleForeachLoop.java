@@ -23,11 +23,11 @@ public class MultipleForeachLoop extends AbstractLoopStatement {
   }
 
   public Iterator<MultipleForeachLoopVariable> loopVariables() {
-    return this.children(MultipleForeachLoop.LOOP_VARIABLE);
+    return this.children(MultipleForeachLoopVariable.class, MultipleForeachLoop.LOOP_VARIABLE);
   }
 
   public List<MultipleForeachLoopVariable> getLoopVariables() {
-    return this.getChildren(MultipleForeachLoop.LOOP_VARIABLE);
+    return this.getChildren(MultipleForeachLoopVariable.class, MultipleForeachLoop.LOOP_VARIABLE);
   }
 
   public void addLoopVariable(MultipleForeachLoopVariable node) {

@@ -16,7 +16,7 @@ public class ElementWithContent extends ElementDeclaration {
   }
 
   public ComplexType getComplexType() {
-    return (ComplexType)this.getChild(ElementWithContent.COMPLEX_TYPE);
+    return (ComplexType)this.getChild(ComplexType.class, ElementWithContent.COMPLEX_TYPE);
   }
 
   public void setComplexType(ComplexType node) {

@@ -17,7 +17,7 @@ public class ImmediateSupertypesExpression extends Expression {
   }
 
   public Expression getSubtypeExpression() {
-    return (Expression)this.getChild(ImmediateSupertypesExpression.SUBTYPE_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, ImmediateSupertypesExpression.SUBTYPE_EXPRESSION);
   }
 
   public void setSubtypeExpression(Expression node) {

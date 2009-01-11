@@ -48,7 +48,7 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
   }
 
   public Expression getErrorString() {
-    return (Expression)this.getChild(ReportErrorStatement.ERROR_STRING);
+    return (Expression)this.getChild(Expression.class, ReportErrorStatement.ERROR_STRING);
   }
 
   public void setErrorString(Expression node) {
@@ -56,7 +56,7 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
   }
 
   public Expression getNodeToReport() {
-    return (Expression)this.getChild(ReportErrorStatement.NODE_TO_REPORT);
+    return (Expression)this.getChild(Expression.class, ReportErrorStatement.NODE_TO_REPORT);
   }
 
   public void setNodeToReport(Expression node) {
@@ -64,7 +64,7 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
   }
 
   public HelginsIntention getHelginsIntention() {
-    return (HelginsIntention)this.getChild(ReportErrorStatement.HELGINS_INTENTION);
+    return (HelginsIntention)this.getChild(HelginsIntention.class, ReportErrorStatement.HELGINS_INTENTION);
   }
 
   public void setHelginsIntention(HelginsIntention node) {
@@ -72,7 +72,7 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
   }
 
   public MessageTarget getMessageTarget() {
-    return (MessageTarget)this.getChild(ReportErrorStatement.MESSAGE_TARGET);
+    return (MessageTarget)this.getChild(MessageTarget.class, ReportErrorStatement.MESSAGE_TARGET);
   }
 
   public void setMessageTarget(MessageTarget node) {

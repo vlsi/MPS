@@ -58,7 +58,7 @@ public class CellKeyMapItem extends BaseConcept {
   }
 
   public CellKeyMap_IsApplicableFunction getIsApplicableFunction() {
-    return (CellKeyMap_IsApplicableFunction)this.getChild(CellKeyMapItem.IS_APPLICABLE_FUNCTION);
+    return (CellKeyMap_IsApplicableFunction)this.getChild(CellKeyMap_IsApplicableFunction.class, CellKeyMapItem.IS_APPLICABLE_FUNCTION);
   }
 
   public void setIsApplicableFunction(CellKeyMap_IsApplicableFunction node) {
@@ -66,7 +66,7 @@ public class CellKeyMapItem extends BaseConcept {
   }
 
   public CellKeyMap_ExecuteFunction getExecuteFunction() {
-    return (CellKeyMap_ExecuteFunction)this.getChild(CellKeyMapItem.EXECUTE_FUNCTION);
+    return (CellKeyMap_ExecuteFunction)this.getChild(CellKeyMap_ExecuteFunction.class, CellKeyMapItem.EXECUTE_FUNCTION);
   }
 
   public void setExecuteFunction(CellKeyMap_ExecuteFunction node) {
@@ -78,11 +78,11 @@ public class CellKeyMapItem extends BaseConcept {
   }
 
   public Iterator<CellKeyMapKeystroke> keystrokes() {
-    return this.children(CellKeyMapItem.KEYSTROKE);
+    return this.children(CellKeyMapKeystroke.class, CellKeyMapItem.KEYSTROKE);
   }
 
   public List<CellKeyMapKeystroke> getKeystrokes() {
-    return this.getChildren(CellKeyMapItem.KEYSTROKE);
+    return this.getChildren(CellKeyMapKeystroke.class, CellKeyMapItem.KEYSTROKE);
   }
 
   public void addKeystroke(CellKeyMapKeystroke node) {

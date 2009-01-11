@@ -23,11 +23,11 @@ public class Line extends BaseConcept {
   }
 
   public Iterator<LinePart> lineParts() {
-    return this.children(Line.LINE_PART);
+    return this.children(LinePart.class, Line.LINE_PART);
   }
 
   public List<LinePart> getLineParts() {
-    return this.getChildren(Line.LINE_PART);
+    return this.getChildren(LinePart.class, Line.LINE_PART);
   }
 
   public void addLinePart(LinePart node) {

@@ -45,7 +45,7 @@ public class SplitOperation extends BaseConcept implements IOperation, RegexpUsi
   }
 
   public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(SplitOperation.REGEXP);
+    return (RegexpExpression)this.getChild(RegexpExpression.class, SplitOperation.REGEXP);
   }
 
   public void setRegexp(RegexpExpression node) {

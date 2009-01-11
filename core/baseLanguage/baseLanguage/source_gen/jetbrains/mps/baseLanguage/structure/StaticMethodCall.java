@@ -16,7 +16,7 @@ public class StaticMethodCall extends BaseMethodCall {
   }
 
   public ClassConcept getClassConcept() {
-    return (ClassConcept)this.getReferent(StaticMethodCall.CLASS_CONCEPT);
+    return (ClassConcept)this.getReferent(ClassConcept.class, StaticMethodCall.CLASS_CONCEPT);
   }
 
   public void setClassConcept(ClassConcept node) {
@@ -24,7 +24,7 @@ public class StaticMethodCall extends BaseMethodCall {
   }
 
   public StaticMethodDeclaration getStaticMethodDeclaration() {
-    return (StaticMethodDeclaration)this.getBaseMethodDeclaration();
+    return this.ensureAdapter(StaticMethodDeclaration.class, "baseMethodDeclaration", this.getBaseMethodDeclaration());
   }
 
   public void setStaticMethodDeclaration(StaticMethodDeclaration node) {

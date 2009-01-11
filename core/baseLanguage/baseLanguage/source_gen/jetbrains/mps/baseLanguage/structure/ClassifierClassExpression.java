@@ -16,7 +16,7 @@ public class ClassifierClassExpression extends Expression {
   }
 
   public Classifier getClassifier() {
-    return (Classifier)this.getReferent(ClassifierClassExpression.CLASSIFIER);
+    return (Classifier)this.getReferent(Classifier.class, ClassifierClassExpression.CLASSIFIER);
   }
 
   public void setClassifier(Classifier node) {

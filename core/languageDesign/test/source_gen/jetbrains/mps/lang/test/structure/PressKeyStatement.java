@@ -24,11 +24,11 @@ public class PressKeyStatement extends Statement {
   }
 
   public Iterator<KeyMapKeystroke> keyStrokeses() {
-    return this.children(PressKeyStatement.KEY_STROKES);
+    return this.children(KeyMapKeystroke.class, PressKeyStatement.KEY_STROKES);
   }
 
   public List<KeyMapKeystroke> getKeyStrokeses() {
-    return this.getChildren(PressKeyStatement.KEY_STROKES);
+    return this.getChildren(KeyMapKeystroke.class, PressKeyStatement.KEY_STROKES);
   }
 
   public void addKeyStrokes(KeyMapKeystroke node) {

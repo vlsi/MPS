@@ -65,7 +65,7 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
   }
 
   public StaticMethodDeclaration getJodaDateTimeFieldType() {
-    return (StaticMethodDeclaration)this.getReferent(DateTimeProperty.JODA_DATE_TIME_FIELD_TYPE);
+    return (StaticMethodDeclaration)this.getReferent(StaticMethodDeclaration.class, DateTimeProperty.JODA_DATE_TIME_FIELD_TYPE);
   }
 
   public void setJodaDateTimeFieldType(StaticMethodDeclaration node) {
@@ -73,7 +73,7 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
   }
 
   public StaticMethodDeclaration getJodaPeriodType() {
-    return (StaticMethodDeclaration)this.getReferent(DateTimeProperty.JODA_PERIOD_TYPE);
+    return (StaticMethodDeclaration)this.getReferent(StaticMethodDeclaration.class, DateTimeProperty.JODA_PERIOD_TYPE);
   }
 
   public void setJodaPeriodType(StaticMethodDeclaration node) {

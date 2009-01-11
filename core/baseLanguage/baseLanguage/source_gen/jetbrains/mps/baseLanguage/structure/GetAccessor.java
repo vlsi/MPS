@@ -17,7 +17,7 @@ public class GetAccessor extends BaseConcept {
   }
 
   public StatementList getStatementList() {
-    return (StatementList)this.getChild(GetAccessor.STATEMENT_LIST);
+    return (StatementList)this.getChild(StatementList.class, GetAccessor.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {

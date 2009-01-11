@@ -45,7 +45,7 @@ public class NodeAttributeAccessQualifier extends BaseConcept implements IAttrib
   }
 
   public AnnotationLinkDeclaration getAnnotationLink() {
-    return (AnnotationLinkDeclaration)this.getReferent(NodeAttributeAccessQualifier.ANNOTATION_LINK);
+    return (AnnotationLinkDeclaration)this.getReferent(AnnotationLinkDeclaration.class, NodeAttributeAccessQualifier.ANNOTATION_LINK);
   }
 
   public void setAnnotationLink(AnnotationLinkDeclaration node) {

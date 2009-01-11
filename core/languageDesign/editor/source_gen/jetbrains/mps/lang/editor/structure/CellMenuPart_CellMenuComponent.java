@@ -16,7 +16,7 @@ public class CellMenuPart_CellMenuComponent extends CellMenuPart_Abstract {
   }
 
   public CellMenuComponent getCellMenuComponent() {
-    return (CellMenuComponent)this.getReferent(CellMenuPart_CellMenuComponent.CELL_MENU_COMPONENT);
+    return (CellMenuComponent)this.getReferent(CellMenuComponent.class, CellMenuPart_CellMenuComponent.CELL_MENU_COMPONENT);
   }
 
   public void setCellMenuComponent(CellMenuComponent node) {

@@ -18,7 +18,7 @@ public class BinaryOperation extends PropertyValueExpression {
   }
 
   public PropertyValueExpression getLeft() {
-    return (PropertyValueExpression)this.getChild(BinaryOperation.LEFT);
+    return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, BinaryOperation.LEFT);
   }
 
   public void setLeft(PropertyValueExpression node) {
@@ -26,7 +26,7 @@ public class BinaryOperation extends PropertyValueExpression {
   }
 
   public PropertyValueExpression getRight() {
-    return (PropertyValueExpression)this.getChild(BinaryOperation.RIGHT);
+    return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, BinaryOperation.RIGHT);
   }
 
   public void setRight(PropertyValueExpression node) {

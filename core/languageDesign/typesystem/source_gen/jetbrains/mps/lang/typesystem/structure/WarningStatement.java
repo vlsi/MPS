@@ -48,7 +48,7 @@ public class WarningStatement extends Statement implements MessageStatement {
   }
 
   public Expression getWarningText() {
-    return (Expression)this.getChild(WarningStatement.WARNING_TEXT);
+    return (Expression)this.getChild(Expression.class, WarningStatement.WARNING_TEXT);
   }
 
   public void setWarningText(Expression node) {
@@ -56,7 +56,7 @@ public class WarningStatement extends Statement implements MessageStatement {
   }
 
   public Expression getNodeToReport() {
-    return (Expression)this.getChild(WarningStatement.NODE_TO_REPORT);
+    return (Expression)this.getChild(Expression.class, WarningStatement.NODE_TO_REPORT);
   }
 
   public void setNodeToReport(Expression node) {
@@ -64,7 +64,7 @@ public class WarningStatement extends Statement implements MessageStatement {
   }
 
   public HelginsIntention getHelginsIntention() {
-    return (HelginsIntention)this.getChild(WarningStatement.HELGINS_INTENTION);
+    return (HelginsIntention)this.getChild(HelginsIntention.class, WarningStatement.HELGINS_INTENTION);
   }
 
   public void setHelginsIntention(HelginsIntention node) {
@@ -72,7 +72,7 @@ public class WarningStatement extends Statement implements MessageStatement {
   }
 
   public MessageTarget getMessageTarget() {
-    return (MessageTarget)this.getChild(WarningStatement.MESSAGE_TARGET);
+    return (MessageTarget)this.getChild(MessageTarget.class, WarningStatement.MESSAGE_TARGET);
   }
 
   public void setMessageTarget(MessageTarget node) {

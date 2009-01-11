@@ -63,7 +63,7 @@ public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
   }
 
   public PropertyGetter getGetter() {
-    return (PropertyGetter)this.getChild(TreeNodeKindProperty.GETTER);
+    return (PropertyGetter)this.getChild(PropertyGetter.class, TreeNodeKindProperty.GETTER);
   }
 
   public void setGetter(PropertyGetter node) {

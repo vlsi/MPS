@@ -18,7 +18,7 @@ public class ContentStatement extends Statement {
   }
 
   public Content getContent() {
-    return (Content)this.getChild(ContentStatement.CONTENT);
+    return (Content)this.getChild(Content.class, ContentStatement.CONTENT);
   }
 
   public void setContent(Content node) {

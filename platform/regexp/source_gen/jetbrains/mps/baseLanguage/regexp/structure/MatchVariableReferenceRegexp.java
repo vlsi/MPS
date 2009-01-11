@@ -16,7 +16,7 @@ public class MatchVariableReferenceRegexp extends Regexp {
   }
 
   public MatchParensRegexp getMatch() {
-    return (MatchParensRegexp)this.getReferent(MatchVariableReferenceRegexp.MATCH);
+    return (MatchParensRegexp)this.getReferent(MatchParensRegexp.class, MatchVariableReferenceRegexp.MATCH);
   }
 
   public void setMatch(MatchParensRegexp node) {

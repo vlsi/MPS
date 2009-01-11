@@ -17,7 +17,7 @@ public class EmitWriteStatement extends BaseEmitVariableStatement {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(EmitWriteStatement.VALUE);
+    return (Expression)this.getChild(Expression.class, EmitWriteStatement.VALUE);
   }
 
   public void setValue(Expression node) {

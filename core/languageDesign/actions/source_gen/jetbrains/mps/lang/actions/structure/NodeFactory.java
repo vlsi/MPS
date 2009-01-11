@@ -28,7 +28,7 @@ public class NodeFactory extends BaseConcept {
   }
 
   public ConceptDeclaration getApplicableConcept() {
-    return (ConceptDeclaration)this.getReferent(NodeFactory.APPLICABLE_CONCEPT);
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, NodeFactory.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(ConceptDeclaration node) {
@@ -36,7 +36,7 @@ public class NodeFactory extends BaseConcept {
   }
 
   public NodeSetupFunction getSetupFunction() {
-    return (NodeSetupFunction)this.getChild(NodeFactory.SETUP_FUNCTION);
+    return (NodeSetupFunction)this.getChild(NodeSetupFunction.class, NodeFactory.SETUP_FUNCTION);
   }
 
   public void setSetupFunction(NodeSetupFunction node) {

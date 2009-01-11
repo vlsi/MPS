@@ -17,7 +17,7 @@ public class ListType extends Type {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(ListType.ELEMENT_TYPE);
+    return (Type)this.getChild(Type.class, ListType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {

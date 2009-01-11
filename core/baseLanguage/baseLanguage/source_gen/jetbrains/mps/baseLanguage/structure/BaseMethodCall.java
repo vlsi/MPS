@@ -46,7 +46,7 @@ public class BaseMethodCall extends Expression implements IMethodCall {
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodCall.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, BaseMethodCall.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -58,11 +58,11 @@ public class BaseMethodCall extends Expression implements IMethodCall {
   }
 
   public Iterator<Expression> actualArguments() {
-    return this.children(BaseMethodCall.ACTUAL_ARGUMENT);
+    return this.children(Expression.class, BaseMethodCall.ACTUAL_ARGUMENT);
   }
 
   public List<Expression> getActualArguments() {
-    return this.getChildren(BaseMethodCall.ACTUAL_ARGUMENT);
+    return this.getChildren(Expression.class, BaseMethodCall.ACTUAL_ARGUMENT);
   }
 
   public void addActualArgument(Expression node) {

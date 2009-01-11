@@ -18,7 +18,7 @@ public class TemporalProperty extends BaseConcept {
   }
 
   public Date getDate() {
-    return (Date)this.getChild(TemporalProperty.DATE);
+    return (Date)this.getChild(Date.class, TemporalProperty.DATE);
   }
 
   public void setDate(Date node) {
@@ -26,7 +26,7 @@ public class TemporalProperty extends BaseConcept {
   }
 
   public BaseConcept getValue() {
-    return (BaseConcept)this.getChild(TemporalProperty.VALUE);
+    return (BaseConcept)this.getChild(BaseConcept.class, TemporalProperty.VALUE);
   }
 
   public void setValue(BaseConcept node) {

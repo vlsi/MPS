@@ -17,7 +17,7 @@ public class GetIndexOfOperation extends SequenceOperation {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(GetIndexOfOperation.ARGUMENT);
+    return (Expression)this.getChild(Expression.class, GetIndexOfOperation.ARGUMENT);
   }
 
   public void setArgument(Expression node) {

@@ -60,11 +60,11 @@ public class EventType extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<EventVariable> variables() {
-    return this.children(EventType.VARIABLE);
+    return this.children(EventVariable.class, EventType.VARIABLE);
   }
 
   public List<EventVariable> getVariables() {
-    return this.getChildren(EventType.VARIABLE);
+    return this.getChildren(EventVariable.class, EventType.VARIABLE);
   }
 
   public void addVariable(EventVariable node) {

@@ -17,7 +17,7 @@ public class DeterminantExpression extends Expression {
   }
 
   public Expression getLiteral() {
-    return (Expression)this.getChild(DeterminantExpression.LITERAL);
+    return (Expression)this.getChild(Expression.class, DeterminantExpression.LITERAL);
   }
 
   public void setLiteral(Expression node) {

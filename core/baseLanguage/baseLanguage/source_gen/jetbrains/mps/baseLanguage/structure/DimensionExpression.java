@@ -17,7 +17,7 @@ public class DimensionExpression extends BaseConcept {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(DimensionExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, DimensionExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

@@ -19,7 +19,7 @@ public class Model_RootsIncludingImportedOperation extends SNodeOperation {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(Model_RootsIncludingImportedOperation.CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, Model_RootsIncludingImportedOperation.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -27,7 +27,7 @@ public class Model_RootsIncludingImportedOperation extends SNodeOperation {
   }
 
   public Expression getScope() {
-    return (Expression)this.getChild(Model_RootsIncludingImportedOperation.SCOPE);
+    return (Expression)this.getChild(Expression.class, Model_RootsIncludingImportedOperation.SCOPE);
   }
 
   public void setScope(Expression node) {

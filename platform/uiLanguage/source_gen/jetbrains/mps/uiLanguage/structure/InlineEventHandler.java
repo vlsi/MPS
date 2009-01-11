@@ -46,7 +46,7 @@ public class InlineEventHandler extends BaseConcept implements IComponentPart {
   }
 
   public EventDeclaration getEvent() {
-    return (EventDeclaration)this.getReferent(InlineEventHandler.EVENT);
+    return (EventDeclaration)this.getReferent(EventDeclaration.class, InlineEventHandler.EVENT);
   }
 
   public void setEvent(EventDeclaration node) {
@@ -54,7 +54,7 @@ public class InlineEventHandler extends BaseConcept implements IComponentPart {
   }
 
   public Statement getHandler() {
-    return (Statement)this.getChild(InlineEventHandler.HANDLER);
+    return (Statement)this.getChild(Statement.class, InlineEventHandler.HANDLER);
   }
 
   public void setHandler(Statement node) {

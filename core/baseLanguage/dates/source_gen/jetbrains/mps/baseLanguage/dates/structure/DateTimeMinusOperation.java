@@ -20,7 +20,7 @@ public class DateTimeMinusOperation extends Expression {
   }
 
   public DateTimeProperty getDatetimeProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimeMinusOperation.DATETIME_PROPERTY);
+    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, DateTimeMinusOperation.DATETIME_PROPERTY);
   }
 
   public void setDatetimeProperty(DateTimeProperty node) {
@@ -28,7 +28,7 @@ public class DateTimeMinusOperation extends Expression {
   }
 
   public Expression getLeftValue() {
-    return (Expression)this.getChild(DateTimeMinusOperation.LEFT_VALUE);
+    return (Expression)this.getChild(Expression.class, DateTimeMinusOperation.LEFT_VALUE);
   }
 
   public void setLeftValue(Expression node) {
@@ -36,7 +36,7 @@ public class DateTimeMinusOperation extends Expression {
   }
 
   public Expression getRightValue() {
-    return (Expression)this.getChild(DateTimeMinusOperation.RIGHT_VALUE);
+    return (Expression)this.getChild(Expression.class, DateTimeMinusOperation.RIGHT_VALUE);
   }
 
   public void setRightValue(Expression node) {

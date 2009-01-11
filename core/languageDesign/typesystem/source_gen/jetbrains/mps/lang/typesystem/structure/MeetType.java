@@ -23,11 +23,11 @@ public class MeetType extends BaseConcept {
   }
 
   public Iterator<BaseConcept> arguments() {
-    return this.children(MeetType.ARGUMENT);
+    return this.children(BaseConcept.class, MeetType.ARGUMENT);
   }
 
   public List<BaseConcept> getArguments() {
-    return this.getChildren(MeetType.ARGUMENT);
+    return this.getChildren(BaseConcept.class, MeetType.ARGUMENT);
   }
 
   public void addArgument(BaseConcept node) {

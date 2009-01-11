@@ -16,7 +16,7 @@ public class DismissTopMappingRule extends RuleConsequence {
   }
 
   public GeneratorMessage getGeneratorMessage() {
-    return (GeneratorMessage)this.getChild(DismissTopMappingRule.GENERATOR_MESSAGE);
+    return (GeneratorMessage)this.getChild(GeneratorMessage.class, DismissTopMappingRule.GENERATOR_MESSAGE);
   }
 
   public void setGeneratorMessage(GeneratorMessage node) {

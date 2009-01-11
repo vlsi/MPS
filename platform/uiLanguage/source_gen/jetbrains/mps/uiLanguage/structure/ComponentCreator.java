@@ -17,7 +17,7 @@ public class ComponentCreator extends AbstractCreator {
   }
 
   public ComponentDeclaration getComponentDeclaration() {
-    return (ComponentDeclaration)this.getReferent(ComponentCreator.COMPONENT_DECLARATION);
+    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.class, ComponentCreator.COMPONENT_DECLARATION);
   }
 
   public void setComponentDeclaration(ComponentDeclaration node) {

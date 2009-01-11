@@ -81,7 +81,7 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public ClassifierType getSuperclass() {
-    return (ClassifierType)this.getChild(ClassConcept.SUPERCLASS);
+    return (ClassifierType)this.getChild(ClassifierType.class, ClassConcept.SUPERCLASS);
   }
 
   public void setSuperclass(ClassifierType node) {
@@ -89,7 +89,7 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public InstanceInitializer getInstanceInitializer() {
-    return (InstanceInitializer)this.getChild(ClassConcept.INSTANCE_INITIALIZER);
+    return (InstanceInitializer)this.getChild(InstanceInitializer.class, ClassConcept.INSTANCE_INITIALIZER);
   }
 
   public void setInstanceInitializer(InstanceInitializer node) {
@@ -97,7 +97,7 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public StaticInitializer getClassInitializer() {
-    return (StaticInitializer)this.getChild(ClassConcept.CLASS_INITIALIZER);
+    return (StaticInitializer)this.getChild(StaticInitializer.class, ClassConcept.CLASS_INITIALIZER);
   }
 
   public void setClassInitializer(StaticInitializer node) {
@@ -105,7 +105,7 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public StatementList getStaticInitializer() {
-    return (StatementList)this.getChild(ClassConcept.STATIC_INITIALIZER);
+    return (StatementList)this.getChild(StatementList.class, ClassConcept.STATIC_INITIALIZER);
   }
 
   public void setStaticInitializer(StatementList node) {
@@ -117,11 +117,11 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public Iterator<FieldDeclaration> fields() {
-    return this.children(ClassConcept.FIELD);
+    return this.children(FieldDeclaration.class, ClassConcept.FIELD);
   }
 
   public List<FieldDeclaration> getFields() {
-    return this.getChildren(ClassConcept.FIELD);
+    return this.getChildren(FieldDeclaration.class, ClassConcept.FIELD);
   }
 
   public void addField(FieldDeclaration node) {
@@ -137,11 +137,11 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public Iterator<ConstructorDeclaration> constructors() {
-    return this.children(ClassConcept.CONSTRUCTOR);
+    return this.children(ConstructorDeclaration.class, ClassConcept.CONSTRUCTOR);
   }
 
   public List<ConstructorDeclaration> getConstructors() {
-    return this.getChildren(ClassConcept.CONSTRUCTOR);
+    return this.getChildren(ConstructorDeclaration.class, ClassConcept.CONSTRUCTOR);
   }
 
   public void addConstructor(ConstructorDeclaration node) {
@@ -157,11 +157,11 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public Iterator<StaticMethodDeclaration> staticMethods() {
-    return this.children(ClassConcept.STATIC_METHOD);
+    return this.children(StaticMethodDeclaration.class, ClassConcept.STATIC_METHOD);
   }
 
   public List<StaticMethodDeclaration> getStaticMethods() {
-    return this.getChildren(ClassConcept.STATIC_METHOD);
+    return this.getChildren(StaticMethodDeclaration.class, ClassConcept.STATIC_METHOD);
   }
 
   public void addStaticMethod(StaticMethodDeclaration node) {
@@ -177,11 +177,11 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public Iterator<ClassifierType> implementedInterfaces() {
-    return this.children(ClassConcept.IMPLEMENTED_INTERFACE);
+    return this.children(ClassifierType.class, ClassConcept.IMPLEMENTED_INTERFACE);
   }
 
   public List<ClassifierType> getImplementedInterfaces() {
-    return this.getChildren(ClassConcept.IMPLEMENTED_INTERFACE);
+    return this.getChildren(ClassifierType.class, ClassConcept.IMPLEMENTED_INTERFACE);
   }
 
   public void addImplementedInterface(ClassifierType node) {
@@ -197,11 +197,11 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public Iterator<Classifier> staticInnerClassifierses() {
-    return this.children(ClassConcept.STATIC_INNER_CLASSIFIERS);
+    return this.children(Classifier.class, ClassConcept.STATIC_INNER_CLASSIFIERS);
   }
 
   public List<Classifier> getStaticInnerClassifierses() {
-    return this.getChildren(ClassConcept.STATIC_INNER_CLASSIFIERS);
+    return this.getChildren(Classifier.class, ClassConcept.STATIC_INNER_CLASSIFIERS);
   }
 
   public void addStaticInnerClassifiers(Classifier node) {
@@ -217,11 +217,11 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public Iterator<Property> properties() {
-    return this.children(ClassConcept.PROPERTY);
+    return this.children(Property.class, ClassConcept.PROPERTY);
   }
 
   public List<Property> getProperties() {
-    return this.getChildren(ClassConcept.PROPERTY);
+    return this.getChildren(Property.class, ClassConcept.PROPERTY);
   }
 
   public void addProperty(Property node) {

@@ -18,7 +18,7 @@ public class CoerceExpression extends Expression {
   }
 
   public ApplicableNodeCondition getPattern() {
-    return (ApplicableNodeCondition)this.getChild(CoerceExpression.PATTERN);
+    return (ApplicableNodeCondition)this.getChild(ApplicableNodeCondition.class, CoerceExpression.PATTERN);
   }
 
   public void setPattern(ApplicableNodeCondition node) {
@@ -26,7 +26,7 @@ public class CoerceExpression extends Expression {
   }
 
   public Expression getNodeToCoerce() {
-    return (Expression)this.getChild(CoerceExpression.NODE_TO_COERCE);
+    return (Expression)this.getChild(Expression.class, CoerceExpression.NODE_TO_COERCE);
   }
 
   public void setNodeToCoerce(Expression node) {

@@ -16,7 +16,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept extends CellMenuPart_A
   }
 
   public CellMenuPart_ReplaceChild_CustomChildConcept_Query getChildConceptFunction() {
-    return (CellMenuPart_ReplaceChild_CustomChildConcept_Query)this.getChild(CellMenuPart_ReplaceChild_CustomChildConcept.CHILD_CONCEPT_FUNCTION);
+    return (CellMenuPart_ReplaceChild_CustomChildConcept_Query)this.getChild(CellMenuPart_ReplaceChild_CustomChildConcept_Query.class, CellMenuPart_ReplaceChild_CustomChildConcept.CHILD_CONCEPT_FUNCTION);
   }
 
   public void setChildConceptFunction(CellMenuPart_ReplaceChild_CustomChildConcept_Query node) {

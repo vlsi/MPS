@@ -19,7 +19,7 @@ public class AssertSame extends Statement {
   }
 
   public Expression getExpected() {
-    return (Expression)this.getChild(AssertSame.EXPECTED);
+    return (Expression)this.getChild(Expression.class, AssertSame.EXPECTED);
   }
 
   public void setExpected(Expression node) {
@@ -27,7 +27,7 @@ public class AssertSame extends Statement {
   }
 
   public Expression getActual() {
-    return (Expression)this.getChild(AssertSame.ACTUAL);
+    return (Expression)this.getChild(Expression.class, AssertSame.ACTUAL);
   }
 
   public void setActual(Expression node) {

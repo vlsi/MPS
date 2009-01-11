@@ -45,7 +45,7 @@ public class ListElements extends BaseConcept implements IComponentPart {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(ListElements.VALUE);
+    return (Expression)this.getChild(Expression.class, ListElements.VALUE);
   }
 
   public void setValue(Expression node) {

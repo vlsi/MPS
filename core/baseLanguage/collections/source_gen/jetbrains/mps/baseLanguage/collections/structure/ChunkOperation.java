@@ -17,7 +17,7 @@ public class ChunkOperation extends SequenceOperation {
   }
 
   public Expression getLength() {
-    return (Expression)this.getChild(ChunkOperation.LENGTH);
+    return (Expression)this.getChild(Expression.class, ChunkOperation.LENGTH);
   }
 
   public void setLength(Expression node) {

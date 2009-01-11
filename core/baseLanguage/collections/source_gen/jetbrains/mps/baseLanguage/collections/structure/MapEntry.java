@@ -19,7 +19,7 @@ public class MapEntry extends BaseConcept {
   }
 
   public Expression getKey() {
-    return (Expression)this.getChild(MapEntry.KEY);
+    return (Expression)this.getChild(Expression.class, MapEntry.KEY);
   }
 
   public void setKey(Expression node) {
@@ -27,7 +27,7 @@ public class MapEntry extends BaseConcept {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(MapEntry.VALUE);
+    return (Expression)this.getChild(Expression.class, MapEntry.VALUE);
   }
 
   public void setValue(Expression node) {

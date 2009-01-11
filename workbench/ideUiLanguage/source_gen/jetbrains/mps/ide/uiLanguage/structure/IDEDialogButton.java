@@ -36,7 +36,7 @@ public class IDEDialogButton extends BaseConcept {
   }
 
   public Expression getHandler() {
-    return (Expression)this.getChild(IDEDialogButton.HANDLER);
+    return (Expression)this.getChild(Expression.class, IDEDialogButton.HANDLER);
   }
 
   public void setHandler(Expression node) {

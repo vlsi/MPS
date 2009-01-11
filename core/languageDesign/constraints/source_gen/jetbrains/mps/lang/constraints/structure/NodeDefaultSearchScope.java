@@ -26,7 +26,7 @@ public class NodeDefaultSearchScope extends BaseConcept {
   }
 
   public ConstraintFunction_ReferentSearchScope_Factory getSearchScopeFactory() {
-    return (ConstraintFunction_ReferentSearchScope_Factory)this.getChild(NodeDefaultSearchScope.SEARCH_SCOPE_FACTORY);
+    return (ConstraintFunction_ReferentSearchScope_Factory)this.getChild(ConstraintFunction_ReferentSearchScope_Factory.class, NodeDefaultSearchScope.SEARCH_SCOPE_FACTORY);
   }
 
   public void setSearchScopeFactory(ConstraintFunction_ReferentSearchScope_Factory node) {

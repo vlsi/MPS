@@ -64,7 +64,7 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
   }
 
   public Type getArgumentType() {
-    return (Type)this.getChild(RequiredAdditionalArgument.ARGUMENT_TYPE);
+    return (Type)this.getChild(Type.class, RequiredAdditionalArgument.ARGUMENT_TYPE);
   }
 
   public void setArgumentType(Type node) {

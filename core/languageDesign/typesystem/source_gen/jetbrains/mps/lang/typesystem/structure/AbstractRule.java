@@ -54,7 +54,7 @@ public class AbstractRule extends BaseConcept implements INamedConcept {
   }
 
   public ApplicableNodeCondition getApplicableNode() {
-    return (ApplicableNodeCondition)this.getChild(AbstractRule.APPLICABLE_NODE);
+    return (ApplicableNodeCondition)this.getChild(ApplicableNodeCondition.class, AbstractRule.APPLICABLE_NODE);
   }
 
   public void setApplicableNode(ApplicableNodeCondition node) {

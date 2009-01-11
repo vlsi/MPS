@@ -17,7 +17,7 @@ public class BinaryRegexp extends Regexp {
   }
 
   public Regexp getLeft() {
-    return (Regexp)this.getChild(BinaryRegexp.LEFT);
+    return (Regexp)this.getChild(Regexp.class, BinaryRegexp.LEFT);
   }
 
   public void setLeft(Regexp node) {
@@ -25,7 +25,7 @@ public class BinaryRegexp extends Regexp {
   }
 
   public Regexp getRight() {
-    return (Regexp)this.getChild(BinaryRegexp.RIGHT);
+    return (Regexp)this.getChild(Regexp.class, BinaryRegexp.RIGHT);
   }
 
   public void setRight(Regexp node) {

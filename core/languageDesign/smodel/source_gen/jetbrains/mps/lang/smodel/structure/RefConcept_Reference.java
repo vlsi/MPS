@@ -45,7 +45,7 @@ public class RefConcept_Reference extends BaseConcept implements IRefConceptArg 
   }
 
   public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(RefConcept_Reference.CONCEPT_DECLARATION);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, RefConcept_Reference.CONCEPT_DECLARATION);
   }
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {

@@ -16,7 +16,7 @@ public class PropertyMacro extends AbstractMacro {
   }
 
   public PropertyMacro_GetPropertyValue getPropertyValueFunction() {
-    return (PropertyMacro_GetPropertyValue)this.getChild(PropertyMacro.PROPERTY_VALUE_FUNCTION);
+    return (PropertyMacro_GetPropertyValue)this.getChild(PropertyMacro_GetPropertyValue.class, PropertyMacro.PROPERTY_VALUE_FUNCTION);
   }
 
   public void setPropertyValueFunction(PropertyMacro_GetPropertyValue node) {

@@ -17,7 +17,7 @@ public class SNodeListCreator extends AbstractCreator {
   }
 
   public SNodeListType getCreatedType() {
-    return (SNodeListType)this.getChild(SNodeListCreator.CREATED_TYPE);
+    return (SNodeListType)this.getChild(SNodeListType.class, SNodeListCreator.CREATED_TYPE);
   }
 
   public void setCreatedType(SNodeListType node) {

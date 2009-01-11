@@ -43,7 +43,7 @@ public class InlineRegexpExpression extends RegexpExpression {
   }
 
   public Regexp getRegexp() {
-    return (Regexp)this.getChild(InlineRegexpExpression.REGEXP);
+    return (Regexp)this.getChild(Regexp.class, InlineRegexpExpression.REGEXP);
   }
 
   public void setRegexp(Regexp node) {

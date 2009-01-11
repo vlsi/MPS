@@ -17,7 +17,7 @@ public class IfMacro extends NodeMacro {
   }
 
   public IfMacro_Condition getConditionFunction() {
-    return (IfMacro_Condition)this.getChild(IfMacro.CONDITION_FUNCTION);
+    return (IfMacro_Condition)this.getChild(IfMacro_Condition.class, IfMacro.CONDITION_FUNCTION);
   }
 
   public void setConditionFunction(IfMacro_Condition node) {
@@ -25,7 +25,7 @@ public class IfMacro extends NodeMacro {
   }
 
   public RuleConsequence getAlternativeConsequence() {
-    return (RuleConsequence)this.getChild(IfMacro.ALTERNATIVE_CONSEQUENCE);
+    return (RuleConsequence)this.getChild(RuleConsequence.class, IfMacro.ALTERNATIVE_CONSEQUENCE);
   }
 
   public void setAlternativeConsequence(RuleConsequence node) {

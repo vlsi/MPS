@@ -60,11 +60,11 @@ public class ReaderConfiguration extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<Mapping> mappings() {
-    return this.children(ReaderConfiguration.MAPPING);
+    return this.children(Mapping.class, ReaderConfiguration.MAPPING);
   }
 
   public List<Mapping> getMappings() {
-    return this.getChildren(ReaderConfiguration.MAPPING);
+    return this.getChildren(Mapping.class, ReaderConfiguration.MAPPING);
   }
 
   public void addMapping(Mapping node) {

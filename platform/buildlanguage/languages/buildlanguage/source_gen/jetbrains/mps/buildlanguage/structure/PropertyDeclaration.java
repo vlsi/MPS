@@ -54,7 +54,7 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
   }
 
   public PropertyType getType() {
-    return (PropertyType)this.getChild(PropertyDeclaration.TYPE);
+    return (PropertyType)this.getChild(PropertyType.class, PropertyDeclaration.TYPE);
   }
 
   public void setType(PropertyType node) {
@@ -62,7 +62,7 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
   }
 
   public PropertyValueExpression getPropertyValue() {
-    return (PropertyValueExpression)this.getChild(PropertyDeclaration.PROPERTY_VALUE);
+    return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, PropertyDeclaration.PROPERTY_VALUE);
   }
 
   public void setPropertyValue(PropertyValueExpression node) {

@@ -44,7 +44,7 @@ public class FieldReferenceOperation extends BaseConcept implements IOperation {
   }
 
   public FieldDeclaration getFieldDeclaration() {
-    return (FieldDeclaration)this.getReferent(FieldReferenceOperation.FIELD_DECLARATION);
+    return (FieldDeclaration)this.getReferent(FieldDeclaration.class, FieldReferenceOperation.FIELD_DECLARATION);
   }
 
   public void setFieldDeclaration(FieldDeclaration node) {

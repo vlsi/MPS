@@ -16,7 +16,7 @@ public class CellModel_Property extends CellModel_WithRole {
   }
 
   public PropertyDeclaration getPropertyDeclaration() {
-    return (PropertyDeclaration)this.getRelationDeclaration();
+    return this.ensureAdapter(PropertyDeclaration.class, "relationDeclaration", this.getRelationDeclaration());
   }
 
   public void setPropertyDeclaration(PropertyDeclaration node) {

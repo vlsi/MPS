@@ -18,7 +18,7 @@ public class AnnotationInstanceValue extends BaseConcept {
   }
 
   public AnnotationMethodDeclaration getKey() {
-    return (AnnotationMethodDeclaration)this.getReferent(AnnotationInstanceValue.KEY);
+    return (AnnotationMethodDeclaration)this.getReferent(AnnotationMethodDeclaration.class, AnnotationInstanceValue.KEY);
   }
 
   public void setKey(AnnotationMethodDeclaration node) {
@@ -26,7 +26,7 @@ public class AnnotationInstanceValue extends BaseConcept {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(AnnotationInstanceValue.VALUE);
+    return (Expression)this.getChild(Expression.class, AnnotationInstanceValue.VALUE);
   }
 
   public void setValue(Expression node) {

@@ -46,7 +46,7 @@ public class SearchScope_ContainsOperation extends BaseConcept implements IOpera
   }
 
   public Expression getNodeToCheck() {
-    return (Expression)this.getChild(SearchScope_ContainsOperation.NODE_TO_CHECK);
+    return (Expression)this.getChild(Expression.class, SearchScope_ContainsOperation.NODE_TO_CHECK);
   }
 
   public void setNodeToCheck(Expression node) {

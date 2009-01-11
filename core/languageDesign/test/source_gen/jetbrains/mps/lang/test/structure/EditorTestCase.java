@@ -59,7 +59,7 @@ public class EditorTestCase extends BaseConcept implements INamedConcept, ITestM
   }
 
   public BaseConcept getNodeToEdit() {
-    return (BaseConcept)this.getChild(EditorTestCase.NODE_TO_EDIT);
+    return (BaseConcept)this.getChild(BaseConcept.class, EditorTestCase.NODE_TO_EDIT);
   }
 
   public void setNodeToEdit(BaseConcept node) {
@@ -67,7 +67,7 @@ public class EditorTestCase extends BaseConcept implements INamedConcept, ITestM
   }
 
   public BaseConcept getResult() {
-    return (BaseConcept)this.getChild(EditorTestCase.RESULT);
+    return (BaseConcept)this.getChild(BaseConcept.class, EditorTestCase.RESULT);
   }
 
   public void setResult(BaseConcept node) {
@@ -75,7 +75,7 @@ public class EditorTestCase extends BaseConcept implements INamedConcept, ITestM
   }
 
   public StatementList getCode() {
-    return (StatementList)this.getChild(EditorTestCase.CODE);
+    return (StatementList)this.getChild(StatementList.class, EditorTestCase.CODE);
   }
 
   public void setCode(StatementList node) {

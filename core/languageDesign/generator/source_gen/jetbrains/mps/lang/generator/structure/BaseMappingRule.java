@@ -29,7 +29,7 @@ public class BaseMappingRule extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(BaseMappingRule.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, BaseMappingRule.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -37,7 +37,7 @@ public class BaseMappingRule extends BaseConcept {
   }
 
   public MappingLabelDeclaration getLabelDeclaration() {
-    return (MappingLabelDeclaration)this.getReferent(BaseMappingRule.LABEL_DECLARATION);
+    return (MappingLabelDeclaration)this.getReferent(MappingLabelDeclaration.class, BaseMappingRule.LABEL_DECLARATION);
   }
 
   public void setLabelDeclaration(MappingLabelDeclaration node) {
@@ -45,7 +45,7 @@ public class BaseMappingRule extends BaseConcept {
   }
 
   public BaseMappingRule_Condition getConditionFunction() {
-    return (BaseMappingRule_Condition)this.getChild(BaseMappingRule.CONDITION_FUNCTION);
+    return (BaseMappingRule_Condition)this.getChild(BaseMappingRule_Condition.class, BaseMappingRule.CONDITION_FUNCTION);
   }
 
   public void setConditionFunction(BaseMappingRule_Condition node) {

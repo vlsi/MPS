@@ -73,7 +73,7 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
   }
 
   public QueryFunction_NodeFactory getNodeFactory() {
-    return (QueryFunction_NodeFactory)this.getChild(CellModel_ListWithRole.NODE_FACTORY);
+    return (QueryFunction_NodeFactory)this.getChild(QueryFunction_NodeFactory.class, CellModel_ListWithRole.NODE_FACTORY);
   }
 
   public void setNodeFactory(QueryFunction_NodeFactory node) {
@@ -81,7 +81,7 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
   }
 
   public EditorCellModel getEmptyCellModel() {
-    return (EditorCellModel)this.getChild(CellModel_ListWithRole.EMPTY_CELL_MODEL);
+    return (EditorCellModel)this.getChild(EditorCellModel.class, CellModel_ListWithRole.EMPTY_CELL_MODEL);
   }
 
   public void setEmptyCellModel(EditorCellModel node) {
@@ -89,7 +89,7 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
   }
 
   public CellLayout getCellLayout() {
-    return (CellLayout)this.getChild(CellModel_ListWithRole.CELL_LAYOUT);
+    return (CellLayout)this.getChild(CellLayout.class, CellModel_ListWithRole.CELL_LAYOUT);
   }
 
   public void setCellLayout(CellLayout node) {

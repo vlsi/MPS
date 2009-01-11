@@ -15,7 +15,7 @@ public class LocalStaticMethodCall extends BaseMethodCall {
   }
 
   public StaticMethodDeclaration getStaticMethodDeclaration() {
-    return (StaticMethodDeclaration)this.getBaseMethodDeclaration();
+    return this.ensureAdapter(StaticMethodDeclaration.class, "baseMethodDeclaration", this.getBaseMethodDeclaration());
   }
 
   public void setStaticMethodDeclaration(StaticMethodDeclaration node) {

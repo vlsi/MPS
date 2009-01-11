@@ -45,7 +45,7 @@ public class ActionHandler extends BaseConcept implements IComponentPart {
   }
 
   public Expression getHandler() {
-    return (Expression)this.getChild(ActionHandler.HANDLER);
+    return (Expression)this.getChild(Expression.class, ActionHandler.HANDLER);
   }
 
   public void setHandler(Expression node) {

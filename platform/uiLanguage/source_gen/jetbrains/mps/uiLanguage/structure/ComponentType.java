@@ -17,7 +17,7 @@ public class ComponentType extends BaseClassifierType {
   }
 
   public ComponentDeclaration getComponent() {
-    return (ComponentDeclaration)this.getReferent(ComponentType.COMPONENT);
+    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.class, ComponentType.COMPONENT);
   }
 
   public void setComponent(ComponentDeclaration node) {

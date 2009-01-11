@@ -48,7 +48,7 @@ public class InfoStatement extends Statement implements MessageStatement {
   }
 
   public Expression getInfoText() {
-    return (Expression)this.getChild(InfoStatement.INFO_TEXT);
+    return (Expression)this.getChild(Expression.class, InfoStatement.INFO_TEXT);
   }
 
   public void setInfoText(Expression node) {
@@ -56,7 +56,7 @@ public class InfoStatement extends Statement implements MessageStatement {
   }
 
   public Expression getNodeToReport() {
-    return (Expression)this.getChild(InfoStatement.NODE_TO_REPORT);
+    return (Expression)this.getChild(Expression.class, InfoStatement.NODE_TO_REPORT);
   }
 
   public void setNodeToReport(Expression node) {
@@ -64,7 +64,7 @@ public class InfoStatement extends Statement implements MessageStatement {
   }
 
   public HelginsIntention getHelginsIntention() {
-    return (HelginsIntention)this.getChild(InfoStatement.HELGINS_INTENTION);
+    return (HelginsIntention)this.getChild(HelginsIntention.class, InfoStatement.HELGINS_INTENTION);
   }
 
   public void setHelginsIntention(HelginsIntention node) {
@@ -72,7 +72,7 @@ public class InfoStatement extends Statement implements MessageStatement {
   }
 
   public MessageTarget getMessageTarget() {
-    return (MessageTarget)this.getChild(InfoStatement.MESSAGE_TARGET);
+    return (MessageTarget)this.getChild(MessageTarget.class, InfoStatement.MESSAGE_TARGET);
   }
 
   public void setMessageTarget(MessageTarget node) {

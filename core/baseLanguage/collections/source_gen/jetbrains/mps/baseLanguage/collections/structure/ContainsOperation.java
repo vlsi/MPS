@@ -17,7 +17,7 @@ public class ContainsOperation extends SequenceOperation {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(ContainsOperation.ARGUMENT);
+    return (Expression)this.getChild(Expression.class, ContainsOperation.ARGUMENT);
   }
 
   public void setArgument(Expression node) {

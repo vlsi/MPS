@@ -18,7 +18,7 @@ public class DurationTypeReference extends BaseConcept {
   }
 
   public DurationType getDurationType() {
-    return (DurationType)this.getReferent(DurationTypeReference.DURATION_TYPE);
+    return (DurationType)this.getReferent(DurationType.class, DurationTypeReference.DURATION_TYPE);
   }
 
   public void setDurationType(DurationType node) {

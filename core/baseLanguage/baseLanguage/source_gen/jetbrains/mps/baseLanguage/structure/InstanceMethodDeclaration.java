@@ -62,7 +62,7 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(InstanceMethodDeclaration.VISIBILITY);
+    return (Visibility)this.getChild(Visibility.class, InstanceMethodDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {

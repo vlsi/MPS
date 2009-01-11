@@ -23,11 +23,11 @@ public class ModuleCycle extends BaseConcept {
   }
 
   public Iterator<NewModuleReference> moduleReferences() {
-    return this.children(ModuleCycle.MODULE_REFERENCE);
+    return this.children(NewModuleReference.class, ModuleCycle.MODULE_REFERENCE);
   }
 
   public List<NewModuleReference> getModuleReferences() {
-    return this.getChildren(ModuleCycle.MODULE_REFERENCE);
+    return this.getChildren(NewModuleReference.class, ModuleCycle.MODULE_REFERENCE);
   }
 
   public void addModuleReference(NewModuleReference node) {

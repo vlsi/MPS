@@ -47,7 +47,7 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(ClassCreator.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, ClassCreator.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -55,7 +55,7 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
   }
 
   public ConstructorDeclaration getConstructorDeclaration() {
-    return (ConstructorDeclaration)this.getBaseMethodDeclaration();
+    return this.ensureAdapter(ConstructorDeclaration.class, "baseMethodDeclaration", this.getBaseMethodDeclaration());
   }
 
   public void setConstructorDeclaration(ConstructorDeclaration node) {
@@ -67,11 +67,11 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
   }
 
   public Iterator<Type> typeParameters() {
-    return this.children(ClassCreator.TYPE_PARAMETER);
+    return this.children(Type.class, ClassCreator.TYPE_PARAMETER);
   }
 
   public List<Type> getTypeParameters() {
-    return this.getChildren(ClassCreator.TYPE_PARAMETER);
+    return this.getChildren(Type.class, ClassCreator.TYPE_PARAMETER);
   }
 
   public void addTypeParameter(Type node) {
@@ -87,11 +87,11 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
   }
 
   public Iterator<Expression> actualArguments() {
-    return this.children(ClassCreator.ACTUAL_ARGUMENT);
+    return this.children(Expression.class, ClassCreator.ACTUAL_ARGUMENT);
   }
 
   public List<Expression> getActualArguments() {
-    return this.getChildren(ClassCreator.ACTUAL_ARGUMENT);
+    return this.getChildren(Expression.class, ClassCreator.ACTUAL_ARGUMENT);
   }
 
   public void addActualArgument(Expression node) {

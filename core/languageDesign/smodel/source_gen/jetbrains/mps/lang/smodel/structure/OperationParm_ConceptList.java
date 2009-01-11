@@ -22,11 +22,11 @@ public class OperationParm_ConceptList extends AbstractOperationParameter {
   }
 
   public Iterator<ConceptReference> concepts() {
-    return this.children(OperationParm_ConceptList.CONCEPT);
+    return this.children(ConceptReference.class, OperationParm_ConceptList.CONCEPT);
   }
 
   public List<ConceptReference> getConcepts() {
-    return this.getChildren(OperationParm_ConceptList.CONCEPT);
+    return this.getChildren(ConceptReference.class, OperationParm_ConceptList.CONCEPT);
   }
 
   public void addConcept(ConceptReference node) {

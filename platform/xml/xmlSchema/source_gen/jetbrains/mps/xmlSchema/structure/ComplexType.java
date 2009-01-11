@@ -26,7 +26,7 @@ public class ComplexType extends Declaration {
   }
 
   public TypeExpressionList getTypeExpressionList() {
-    return (TypeExpressionList)this.getChild(ComplexType.TYPE_EXPRESSION_LIST);
+    return (TypeExpressionList)this.getChild(TypeExpressionList.class, ComplexType.TYPE_EXPRESSION_LIST);
   }
 
   public void setTypeExpressionList(TypeExpressionList node) {
@@ -34,7 +34,7 @@ public class ComplexType extends Declaration {
   }
 
   public MixedAttribute getMixedAttribute() {
-    return (MixedAttribute)this.getChild(ComplexType.MIXED_ATTRIBUTE);
+    return (MixedAttribute)this.getChild(MixedAttribute.class, ComplexType.MIXED_ATTRIBUTE);
   }
 
   public void setMixedAttribute(MixedAttribute node) {

@@ -26,7 +26,7 @@ public class AbstractSubtypingRule extends AbstractRule {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(AbstractSubtypingRule.BODY);
+    return (StatementList)this.getChild(StatementList.class, AbstractSubtypingRule.BODY);
   }
 
   public void setBody(StatementList node) {

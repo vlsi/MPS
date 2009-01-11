@@ -26,7 +26,7 @@ public class TypeOfExpression extends Expression {
   }
 
   public Expression getTerm() {
-    return (Expression)this.getChild(TypeOfExpression.TERM);
+    return (Expression)this.getChild(Expression.class, TypeOfExpression.TERM);
   }
 
   public void setTerm(Expression node) {

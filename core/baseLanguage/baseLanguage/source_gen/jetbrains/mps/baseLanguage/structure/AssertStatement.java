@@ -17,7 +17,7 @@ public class AssertStatement extends Statement {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(AssertStatement.CONDITION);
+    return (Expression)this.getChild(Expression.class, AssertStatement.CONDITION);
   }
 
   public void setCondition(Expression node) {
@@ -25,7 +25,7 @@ public class AssertStatement extends Statement {
   }
 
   public Expression getMessage() {
-    return (Expression)this.getChild(AssertStatement.MESSAGE);
+    return (Expression)this.getChild(Expression.class, AssertStatement.MESSAGE);
   }
 
   public void setMessage(Expression node) {

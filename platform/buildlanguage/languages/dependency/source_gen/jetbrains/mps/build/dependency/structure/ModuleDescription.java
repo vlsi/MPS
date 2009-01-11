@@ -58,7 +58,7 @@ public class ModuleDescription extends BaseConcept implements INamedConcept {
   }
 
   public PathHolder getClasses() {
-    return (PathHolder)this.getChild(ModuleDescription.CLASSES);
+    return (PathHolder)this.getChild(PathHolder.class, ModuleDescription.CLASSES);
   }
 
   public void setClasses(PathHolder node) {
@@ -70,11 +70,11 @@ public class ModuleDescription extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<PathHolder> sourceses() {
-    return this.children(ModuleDescription.SOURCES);
+    return this.children(PathHolder.class, ModuleDescription.SOURCES);
   }
 
   public List<PathHolder> getSourceses() {
-    return this.getChildren(ModuleDescription.SOURCES);
+    return this.getChildren(PathHolder.class, ModuleDescription.SOURCES);
   }
 
   public void addSources(PathHolder node) {
@@ -90,11 +90,11 @@ public class ModuleDescription extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<PathHolder> classpaths() {
-    return this.children(ModuleDescription.CLASSPATH);
+    return this.children(PathHolder.class, ModuleDescription.CLASSPATH);
   }
 
   public List<PathHolder> getClasspaths() {
-    return this.getChildren(ModuleDescription.CLASSPATH);
+    return this.getChildren(PathHolder.class, ModuleDescription.CLASSPATH);
   }
 
   public void addClasspath(PathHolder node) {

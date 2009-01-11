@@ -17,7 +17,7 @@ public class IntersectionSymbolClassPart extends SymbolClassPart {
   }
 
   public SymbolClassRegexpAndPart getLeft() {
-    return (SymbolClassRegexpAndPart)this.getChild(IntersectionSymbolClassPart.LEFT);
+    return (SymbolClassRegexpAndPart)this.getChild(SymbolClassRegexpAndPart.class, IntersectionSymbolClassPart.LEFT);
   }
 
   public void setLeft(SymbolClassRegexpAndPart node) {
@@ -25,7 +25,7 @@ public class IntersectionSymbolClassPart extends SymbolClassPart {
   }
 
   public SymbolClassRegexpAndPart getRight() {
-    return (SymbolClassRegexpAndPart)this.getChild(IntersectionSymbolClassPart.RIGHT);
+    return (SymbolClassRegexpAndPart)this.getChild(SymbolClassRegexpAndPart.class, IntersectionSymbolClassPart.RIGHT);
   }
 
   public void setRight(SymbolClassRegexpAndPart node) {

@@ -17,7 +17,7 @@ public class AddFirstElementOperation extends AbstractListOperation {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(AddFirstElementOperation.ARGUMENT);
+    return (Expression)this.getChild(Expression.class, AddFirstElementOperation.ARGUMENT);
   }
 
   public void setArgument(Expression node) {

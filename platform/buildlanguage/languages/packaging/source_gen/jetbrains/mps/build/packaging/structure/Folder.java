@@ -73,7 +73,7 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
   }
 
   public Path getSourcePath() {
-    return (Path)this.getChild(Folder.SOURCE_PATH);
+    return (Path)this.getChild(Path.class, Folder.SOURCE_PATH);
   }
 
   public void setSourcePath(Path node) {
@@ -85,11 +85,11 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
   }
 
   public Iterator<AbstractProjectComponent> entries() {
-    return this.children(Folder.ENTRY);
+    return this.children(AbstractProjectComponent.class, Folder.ENTRY);
   }
 
   public List<AbstractProjectComponent> getEntries() {
-    return this.getChildren(Folder.ENTRY);
+    return this.getChildren(AbstractProjectComponent.class, Folder.ENTRY);
   }
 
   public void addEntry(AbstractProjectComponent node) {

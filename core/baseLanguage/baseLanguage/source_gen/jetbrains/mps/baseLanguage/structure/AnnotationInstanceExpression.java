@@ -16,7 +16,7 @@ public class AnnotationInstanceExpression extends Expression {
   }
 
   public AnnotationInstance getAnnotationInstance() {
-    return (AnnotationInstance)this.getChild(AnnotationInstanceExpression.ANNOTATION_INSTANCE);
+    return (AnnotationInstance)this.getChild(AnnotationInstance.class, AnnotationInstanceExpression.ANNOTATION_INSTANCE);
   }
 
   public void setAnnotationInstance(AnnotationInstance node) {

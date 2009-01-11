@@ -18,7 +18,7 @@ public class AddDependencyStatement extends Statement {
   }
 
   public Expression getDependency() {
-    return (Expression)this.getChild(AddDependencyStatement.DEPENDENCY);
+    return (Expression)this.getChild(Expression.class, AddDependencyStatement.DEPENDENCY);
   }
 
   public void setDependency(Expression node) {

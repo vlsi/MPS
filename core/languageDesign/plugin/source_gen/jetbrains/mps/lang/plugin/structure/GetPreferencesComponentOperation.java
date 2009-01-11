@@ -16,7 +16,7 @@ public class GetPreferencesComponentOperation extends ProjectOperation {
   }
 
   public PreferencesComponentDeclaration getComponentDeclaration() {
-    return (PreferencesComponentDeclaration)this.getReferent(GetPreferencesComponentOperation.COMPONENT_DECLARATION);
+    return (PreferencesComponentDeclaration)this.getReferent(PreferencesComponentDeclaration.class, GetPreferencesComponentOperation.COMPONENT_DECLARATION);
   }
 
   public void setComponentDeclaration(PreferencesComponentDeclaration node) {

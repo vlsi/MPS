@@ -17,7 +17,7 @@ public class MappingScriptReference extends BaseConcept {
   }
 
   public MappingScript getMappingScript() {
-    return (MappingScript)this.getReferent(MappingScriptReference.MAPPING_SCRIPT);
+    return (MappingScript)this.getReferent(MappingScript.class, MappingScriptReference.MAPPING_SCRIPT);
   }
 
   public void setMappingScript(MappingScript node) {

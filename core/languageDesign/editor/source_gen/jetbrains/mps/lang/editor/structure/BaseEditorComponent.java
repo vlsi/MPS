@@ -16,7 +16,7 @@ public class BaseEditorComponent extends AbstractComponent {
   }
 
   public EditorCellModel getCellModel() {
-    return (EditorCellModel)this.getChild(BaseEditorComponent.CELL_MODEL);
+    return (EditorCellModel)this.getChild(EditorCellModel.class, BaseEditorComponent.CELL_MODEL);
   }
 
   public void setCellModel(EditorCellModel node) {

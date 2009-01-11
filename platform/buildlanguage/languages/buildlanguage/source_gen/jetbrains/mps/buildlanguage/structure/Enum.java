@@ -24,11 +24,11 @@ public class Enum extends BaseConcept {
   }
 
   public Iterator<PropertyValueExpression> constantses() {
-    return this.children(Enum.CONSTANTS);
+    return this.children(PropertyValueExpression.class, Enum.CONSTANTS);
   }
 
   public List<PropertyValueExpression> getConstantses() {
-    return this.getChildren(Enum.CONSTANTS);
+    return this.getChildren(PropertyValueExpression.class, Enum.CONSTANTS);
   }
 
   public void addConstants(PropertyValueExpression node) {

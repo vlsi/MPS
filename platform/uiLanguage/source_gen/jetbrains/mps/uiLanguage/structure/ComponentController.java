@@ -63,7 +63,7 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   }
 
   public ComponentDeclaration getComponent() {
-    return (ComponentDeclaration)this.getReferent(ComponentController.COMPONENT);
+    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.class, ComponentController.COMPONENT);
   }
 
   public void setComponent(ComponentDeclaration node) {
@@ -71,7 +71,7 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   }
 
   public AfterConstructionBlock getAfterConstruction() {
-    return (AfterConstructionBlock)this.getChild(ComponentController.AFTER_CONSTRUCTION);
+    return (AfterConstructionBlock)this.getChild(AfterConstructionBlock.class, ComponentController.AFTER_CONSTRUCTION);
   }
 
   public void setAfterConstruction(AfterConstructionBlock node) {
@@ -79,7 +79,7 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   }
 
   public BeforeConstructionBlock getBeforeConstruction() {
-    return (BeforeConstructionBlock)this.getChild(ComponentController.BEFORE_CONSTRUCTION);
+    return (BeforeConstructionBlock)this.getChild(BeforeConstructionBlock.class, ComponentController.BEFORE_CONSTRUCTION);
   }
 
   public void setBeforeConstruction(BeforeConstructionBlock node) {
@@ -91,11 +91,11 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   }
 
   public Iterator<AttributeDeclaration> attributes() {
-    return this.children(ComponentController.ATTRIBUTE);
+    return this.children(AttributeDeclaration.class, ComponentController.ATTRIBUTE);
   }
 
   public List<AttributeDeclaration> getAttributes() {
-    return this.getChildren(ComponentController.ATTRIBUTE);
+    return this.getChildren(AttributeDeclaration.class, ComponentController.ATTRIBUTE);
   }
 
   public void addAttribute(AttributeDeclaration node) {
@@ -111,11 +111,11 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   }
 
   public Iterator<EventDeclaration> events() {
-    return this.children(ComponentController.EVENT);
+    return this.children(EventDeclaration.class, ComponentController.EVENT);
   }
 
   public List<EventDeclaration> getEvents() {
-    return this.getChildren(ComponentController.EVENT);
+    return this.getChildren(EventDeclaration.class, ComponentController.EVENT);
   }
 
   public void addEvent(EventDeclaration node) {
@@ -131,11 +131,11 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   }
 
   public Iterator<DefaultClassifierMethodDeclaration> componentMethods() {
-    return this.children(ComponentController.COMPONENT_METHOD);
+    return this.children(DefaultClassifierMethodDeclaration.class, ComponentController.COMPONENT_METHOD);
   }
 
   public List<DefaultClassifierMethodDeclaration> getComponentMethods() {
-    return this.getChildren(ComponentController.COMPONENT_METHOD);
+    return this.getChildren(DefaultClassifierMethodDeclaration.class, ComponentController.COMPONENT_METHOD);
   }
 
   public void addComponentMethod(DefaultClassifierMethodDeclaration node) {

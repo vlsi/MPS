@@ -16,7 +16,7 @@ public class LabelPosition extends Position {
   }
 
   public EmitLabelStatement getLabel() {
-    return (EmitLabelStatement)this.getReferent(LabelPosition.LABEL);
+    return (EmitLabelStatement)this.getReferent(EmitLabelStatement.class, LabelPosition.LABEL);
   }
 
   public void setLabel(EmitLabelStatement node) {

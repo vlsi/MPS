@@ -55,7 +55,7 @@ public class FinderReference extends BaseConcept implements IResolveInfo {
   }
 
   public FinderDeclaration getFinderDeclaration() {
-    return (FinderDeclaration)this.getReferent(FinderReference.FINDER_DECLARATION);
+    return (FinderDeclaration)this.getReferent(FinderDeclaration.class, FinderReference.FINDER_DECLARATION);
   }
 
   public void setFinderDeclaration(FinderDeclaration node) {

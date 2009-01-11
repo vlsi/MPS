@@ -26,7 +26,7 @@ public class OccursAttribute extends BaseConcept {
   }
 
   public MaxOccursExpression getMaxOccurs() {
-    return (MaxOccursExpression)this.getChild(OccursAttribute.MAX_OCCURS);
+    return (MaxOccursExpression)this.getChild(MaxOccursExpression.class, OccursAttribute.MAX_OCCURS);
   }
 
   public void setMaxOccurs(MaxOccursExpression node) {

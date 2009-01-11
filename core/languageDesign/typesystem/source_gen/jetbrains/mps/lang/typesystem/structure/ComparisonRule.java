@@ -16,7 +16,7 @@ public class ComparisonRule extends AbstractSubtypingRule {
   }
 
   public ApplicableNodeCondition getAnotherNode() {
-    return (ApplicableNodeCondition)this.getChild(ComparisonRule.ANOTHER_NODE);
+    return (ApplicableNodeCondition)this.getChild(ApplicableNodeCondition.class, ComparisonRule.ANOTHER_NODE);
   }
 
   public void setAnotherNode(ApplicableNodeCondition node) {

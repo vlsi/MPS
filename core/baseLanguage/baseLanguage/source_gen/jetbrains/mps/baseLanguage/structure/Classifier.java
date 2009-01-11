@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Classifier extends GenericDeclaration implements HasAnnotation, IMemberContainer, IResolveInfo, IValidIdentifier {
+public class Classifier extends GenericDeclaration implements HasAnnotation, IMemberContainer, IResolveInfo, IValidIdentifier, IVisible {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Classifier";
   public static final String NESTED_NAME = "nestedName";
   public static final String SHORT_DESCRIPTION = "shortDescription";
@@ -85,7 +85,7 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Classifier.VISIBILITY);
+    return (Visibility)this.getChild(Visibility.class, Classifier.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -97,11 +97,11 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   }
 
   public Iterator<StaticFieldDeclaration> staticFields() {
-    return this.children(Classifier.STATIC_FIELD);
+    return this.children(StaticFieldDeclaration.class, Classifier.STATIC_FIELD);
   }
 
   public List<StaticFieldDeclaration> getStaticFields() {
-    return this.getChildren(Classifier.STATIC_FIELD);
+    return this.getChildren(StaticFieldDeclaration.class, Classifier.STATIC_FIELD);
   }
 
   public void addStaticField(StaticFieldDeclaration node) {
@@ -117,11 +117,11 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   }
 
   public Iterator<InstanceMethodDeclaration> methods() {
-    return this.children(Classifier.METHOD);
+    return this.children(InstanceMethodDeclaration.class, Classifier.METHOD);
   }
 
   public List<InstanceMethodDeclaration> getMethods() {
-    return this.getChildren(Classifier.METHOD);
+    return this.getChildren(InstanceMethodDeclaration.class, Classifier.METHOD);
   }
 
   public void addMethod(InstanceMethodDeclaration node) {
@@ -137,11 +137,11 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   }
 
   public Iterator<AnnotationInstance> annotations() {
-    return this.children(Classifier.ANNOTATION);
+    return this.children(AnnotationInstance.class, Classifier.ANNOTATION);
   }
 
   public List<AnnotationInstance> getAnnotations() {
-    return this.getChildren(Classifier.ANNOTATION);
+    return this.getChildren(AnnotationInstance.class, Classifier.ANNOTATION);
   }
 
   public void addAnnotation(AnnotationInstance node) {

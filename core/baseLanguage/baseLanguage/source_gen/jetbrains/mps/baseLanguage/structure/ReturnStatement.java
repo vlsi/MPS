@@ -43,7 +43,7 @@ public class ReturnStatement extends Statement implements TypeDerivable {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(ReturnStatement.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, ReturnStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

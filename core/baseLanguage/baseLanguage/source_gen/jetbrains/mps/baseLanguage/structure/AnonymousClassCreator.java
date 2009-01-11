@@ -16,7 +16,7 @@ public class AnonymousClassCreator extends AbstractCreator {
   }
 
   public AnonymousClass getCls() {
-    return (AnonymousClass)this.getChild(AnonymousClassCreator.CLS);
+    return (AnonymousClass)this.getChild(AnonymousClass.class, AnonymousClassCreator.CLS);
   }
 
   public void setCls(AnonymousClass node) {

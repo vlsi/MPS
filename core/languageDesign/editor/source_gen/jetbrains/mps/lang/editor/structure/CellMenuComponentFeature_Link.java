@@ -16,7 +16,7 @@ public class CellMenuComponentFeature_Link extends CellMenuComponentFeature {
   }
 
   public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration)this.getRelationDeclaration();
+    return this.ensureAdapter(LinkDeclaration.class, "relationDeclaration", this.getRelationDeclaration());
   }
 
   public void setLinkDeclaration(LinkDeclaration node) {

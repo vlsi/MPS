@@ -46,7 +46,7 @@ public class RaiseOperation extends BaseConcept implements IOperation {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(RaiseOperation.ARGUMENT);
+    return (Expression)this.getChild(Expression.class, RaiseOperation.ARGUMENT);
   }
 
   public void setArgument(Expression node) {

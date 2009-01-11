@@ -16,7 +16,7 @@ public class Extension extends ContentItem {
   }
 
   public TypeExpressionList getTypeExpressionList() {
-    return (TypeExpressionList)this.getChild(Extension.TYPE_EXPRESSION_LIST);
+    return (TypeExpressionList)this.getChild(TypeExpressionList.class, Extension.TYPE_EXPRESSION_LIST);
   }
 
   public void setTypeExpressionList(TypeExpressionList node) {

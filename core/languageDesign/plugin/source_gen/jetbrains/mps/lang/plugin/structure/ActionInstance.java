@@ -48,7 +48,7 @@ public class ActionInstance extends BaseConcept implements ActionGroupMember {
   }
 
   public ActionDeclaration getAction() {
-    return (ActionDeclaration)this.getReferent(ActionInstance.ACTION);
+    return (ActionDeclaration)this.getReferent(ActionDeclaration.class, ActionInstance.ACTION);
   }
 
   public void setAction(ActionDeclaration node) {
@@ -60,11 +60,11 @@ public class ActionInstance extends BaseConcept implements ActionGroupMember {
   }
 
   public Iterator<Expression> actualParameters() {
-    return this.children(ActionInstance.ACTUAL_PARAMETER);
+    return this.children(Expression.class, ActionInstance.ACTUAL_PARAMETER);
   }
 
   public List<Expression> getActualParameters() {
-    return this.getChildren(ActionInstance.ACTUAL_PARAMETER);
+    return this.getChildren(Expression.class, ActionInstance.ACTUAL_PARAMETER);
   }
 
   public void addActualParameter(Expression node) {

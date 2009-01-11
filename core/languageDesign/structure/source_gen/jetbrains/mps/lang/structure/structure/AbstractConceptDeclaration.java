@@ -65,11 +65,11 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   }
 
   public Iterator<LinkDeclaration> linkDeclarations() {
-    return this.children(AbstractConceptDeclaration.LINK_DECLARATION);
+    return this.children(LinkDeclaration.class, AbstractConceptDeclaration.LINK_DECLARATION);
   }
 
   public List<LinkDeclaration> getLinkDeclarations() {
-    return this.getChildren(AbstractConceptDeclaration.LINK_DECLARATION);
+    return this.getChildren(LinkDeclaration.class, AbstractConceptDeclaration.LINK_DECLARATION);
   }
 
   public void addLinkDeclaration(LinkDeclaration node) {
@@ -85,11 +85,11 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   }
 
   public Iterator<PropertyDeclaration> propertyDeclarations() {
-    return this.children(AbstractConceptDeclaration.PROPERTY_DECLARATION);
+    return this.children(PropertyDeclaration.class, AbstractConceptDeclaration.PROPERTY_DECLARATION);
   }
 
   public List<PropertyDeclaration> getPropertyDeclarations() {
-    return this.getChildren(AbstractConceptDeclaration.PROPERTY_DECLARATION);
+    return this.getChildren(PropertyDeclaration.class, AbstractConceptDeclaration.PROPERTY_DECLARATION);
   }
 
   public void addPropertyDeclaration(PropertyDeclaration node) {
@@ -105,11 +105,11 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   }
 
   public Iterator<ConceptProperty> conceptProperties() {
-    return this.children(AbstractConceptDeclaration.CONCEPT_PROPERTY);
+    return this.children(ConceptProperty.class, AbstractConceptDeclaration.CONCEPT_PROPERTY);
   }
 
   public List<ConceptProperty> getConceptProperties() {
-    return this.getChildren(AbstractConceptDeclaration.CONCEPT_PROPERTY);
+    return this.getChildren(ConceptProperty.class, AbstractConceptDeclaration.CONCEPT_PROPERTY);
   }
 
   public void addConceptProperty(ConceptProperty node) {
@@ -125,11 +125,11 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   }
 
   public Iterator<ConceptLink> conceptLinks() {
-    return this.children(AbstractConceptDeclaration.CONCEPT_LINK);
+    return this.children(ConceptLink.class, AbstractConceptDeclaration.CONCEPT_LINK);
   }
 
   public List<ConceptLink> getConceptLinks() {
-    return this.getChildren(AbstractConceptDeclaration.CONCEPT_LINK);
+    return this.getChildren(ConceptLink.class, AbstractConceptDeclaration.CONCEPT_LINK);
   }
 
   public void addConceptLink(ConceptLink node) {
@@ -145,11 +145,11 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   }
 
   public Iterator<ConceptPropertyDeclaration> conceptPropertyDeclarations() {
-    return this.children(AbstractConceptDeclaration.CONCEPT_PROPERTY_DECLARATION);
+    return this.children(ConceptPropertyDeclaration.class, AbstractConceptDeclaration.CONCEPT_PROPERTY_DECLARATION);
   }
 
   public List<ConceptPropertyDeclaration> getConceptPropertyDeclarations() {
-    return this.getChildren(AbstractConceptDeclaration.CONCEPT_PROPERTY_DECLARATION);
+    return this.getChildren(ConceptPropertyDeclaration.class, AbstractConceptDeclaration.CONCEPT_PROPERTY_DECLARATION);
   }
 
   public void addConceptPropertyDeclaration(ConceptPropertyDeclaration node) {
@@ -165,11 +165,11 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   }
 
   public Iterator<ConceptLinkDeclaration> conceptLinkDeclarations() {
-    return this.children(AbstractConceptDeclaration.CONCEPT_LINK_DECLARATION);
+    return this.children(ConceptLinkDeclaration.class, AbstractConceptDeclaration.CONCEPT_LINK_DECLARATION);
   }
 
   public List<ConceptLinkDeclaration> getConceptLinkDeclarations() {
-    return this.getChildren(AbstractConceptDeclaration.CONCEPT_LINK_DECLARATION);
+    return this.getChildren(ConceptLinkDeclaration.class, AbstractConceptDeclaration.CONCEPT_LINK_DECLARATION);
   }
 
   public void addConceptLinkDeclaration(ConceptLinkDeclaration node) {

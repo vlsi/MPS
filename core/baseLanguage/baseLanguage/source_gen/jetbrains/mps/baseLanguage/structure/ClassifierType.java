@@ -19,7 +19,7 @@ public class ClassifierType extends Type {
   }
 
   public Classifier getClassifier() {
-    return (Classifier)this.getReferent(ClassifierType.CLASSIFIER);
+    return (Classifier)this.getReferent(Classifier.class, ClassifierType.CLASSIFIER);
   }
 
   public void setClassifier(Classifier node) {
@@ -31,11 +31,11 @@ public class ClassifierType extends Type {
   }
 
   public Iterator<Type> parameters() {
-    return this.children(ClassifierType.PARAMETER);
+    return this.children(Type.class, ClassifierType.PARAMETER);
   }
 
   public List<Type> getParameters() {
-    return this.getChildren(ClassifierType.PARAMETER);
+    return this.getChildren(Type.class, ClassifierType.PARAMETER);
   }
 
   public void addParameter(Type node) {

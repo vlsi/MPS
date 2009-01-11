@@ -23,11 +23,11 @@ public class GridRow extends BaseConcept {
   }
 
   public Iterator<IComponentInstance> components() {
-    return this.children(GridRow.COMPONENT);
+    return this.children(IComponentInstance.class, GridRow.COMPONENT);
   }
 
   public List<IComponentInstance> getComponents() {
-    return this.getChildren(GridRow.COMPONENT);
+    return this.getChildren(IComponentInstance.class, GridRow.COMPONENT);
   }
 
   public void addComponent(IComponentInstance node) {

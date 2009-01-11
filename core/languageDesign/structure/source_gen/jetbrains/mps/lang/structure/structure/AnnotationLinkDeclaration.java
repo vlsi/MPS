@@ -84,7 +84,7 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
   }
 
   public AbstractConceptDeclaration getSource() {
-    return (AbstractConceptDeclaration)this.getReferent(AnnotationLinkDeclaration.SOURCE);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, AnnotationLinkDeclaration.SOURCE);
   }
 
   public void setSource(AbstractConceptDeclaration node) {
@@ -92,7 +92,7 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
   }
 
   public AbstractConceptDeclaration getTarget() {
-    return (AbstractConceptDeclaration)this.getReferent(AnnotationLinkDeclaration.TARGET);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, AnnotationLinkDeclaration.TARGET);
   }
 
   public void setTarget(AbstractConceptDeclaration node) {

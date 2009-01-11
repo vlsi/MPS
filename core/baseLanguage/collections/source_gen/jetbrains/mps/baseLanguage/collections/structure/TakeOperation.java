@@ -17,7 +17,7 @@ public class TakeOperation extends SequenceOperation {
   }
 
   public Expression getElementsToTake() {
-    return (Expression)this.getChild(TakeOperation.ELEMENTS_TO_TAKE);
+    return (Expression)this.getChild(Expression.class, TakeOperation.ELEMENTS_TO_TAKE);
   }
 
   public void setElementsToTake(Expression node) {

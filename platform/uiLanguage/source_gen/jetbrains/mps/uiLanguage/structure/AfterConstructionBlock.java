@@ -18,7 +18,7 @@ public class AfterConstructionBlock extends BaseConcept {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(AfterConstructionBlock.BODY);
+    return (StatementList)this.getChild(StatementList.class, AfterConstructionBlock.BODY);
   }
 
   public void setBody(StatementList node) {

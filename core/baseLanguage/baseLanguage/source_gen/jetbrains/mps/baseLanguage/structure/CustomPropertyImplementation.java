@@ -17,7 +17,7 @@ public class CustomPropertyImplementation extends PropertyImplementation {
   }
 
   public GetAccessor getGetAccessor() {
-    return (GetAccessor)this.getChild(CustomPropertyImplementation.GET_ACCESSOR);
+    return (GetAccessor)this.getChild(GetAccessor.class, CustomPropertyImplementation.GET_ACCESSOR);
   }
 
   public void setGetAccessor(GetAccessor node) {
@@ -25,7 +25,7 @@ public class CustomPropertyImplementation extends PropertyImplementation {
   }
 
   public SetAccessor getSetAccessor() {
-    return (SetAccessor)this.getChild(CustomPropertyImplementation.SET_ACCESSOR);
+    return (SetAccessor)this.getChild(SetAccessor.class, CustomPropertyImplementation.SET_ACCESSOR);
   }
 
   public void setSetAccessor(SetAccessor node) {

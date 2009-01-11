@@ -63,7 +63,7 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public Regexp getRegexp() {
-    return (Regexp)this.getChild(RegexpDeclaration.REGEXP);
+    return (Regexp)this.getChild(Regexp.class, RegexpDeclaration.REGEXP);
   }
 
   public void setRegexp(Regexp node) {

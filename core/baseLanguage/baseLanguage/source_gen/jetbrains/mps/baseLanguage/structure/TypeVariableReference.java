@@ -16,7 +16,7 @@ public class TypeVariableReference extends Type {
   }
 
   public TypeVariableDeclaration getTypeVariableDeclaration() {
-    return (TypeVariableDeclaration)this.getReferent(TypeVariableReference.TYPE_VARIABLE_DECLARATION);
+    return (TypeVariableDeclaration)this.getReferent(TypeVariableDeclaration.class, TypeVariableReference.TYPE_VARIABLE_DECLARATION);
   }
 
   public void setTypeVariableDeclaration(TypeVariableDeclaration node) {

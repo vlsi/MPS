@@ -26,7 +26,7 @@ public class GenerationContextOp_GetPrevInputByLabel extends GenerationContextOp
   }
 
   public MappingLabelDeclaration getLabel() {
-    return (MappingLabelDeclaration)this.getReferent(GenerationContextOp_GetPrevInputByLabel.LABEL);
+    return (MappingLabelDeclaration)this.getReferent(MappingLabelDeclaration.class, GenerationContextOp_GetPrevInputByLabel.LABEL);
   }
 
   public void setLabel(MappingLabelDeclaration node) {

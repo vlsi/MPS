@@ -17,7 +17,7 @@ public class VisitNodesStatement extends Statement {
   }
 
   public VisitBlock getVisitBlock() {
-    return (VisitBlock)this.getChild(VisitNodesStatement.VISIT_BLOCK);
+    return (VisitBlock)this.getChild(VisitBlock.class, VisitNodesStatement.VISIT_BLOCK);
   }
 
   public void setVisitBlock(VisitBlock node) {

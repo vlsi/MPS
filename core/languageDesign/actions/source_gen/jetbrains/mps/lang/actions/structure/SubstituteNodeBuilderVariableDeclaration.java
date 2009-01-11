@@ -17,7 +17,7 @@ public class SubstituteNodeBuilderVariableDeclaration extends VariableDeclaratio
   }
 
   public QueryFunction_SubstituteVariableInitializer getInitializerBlock() {
-    return (QueryFunction_SubstituteVariableInitializer)this.getChild(SubstituteNodeBuilderVariableDeclaration.INITIALIZER_BLOCK);
+    return (QueryFunction_SubstituteVariableInitializer)this.getChild(QueryFunction_SubstituteVariableInitializer.class, SubstituteNodeBuilderVariableDeclaration.INITIALIZER_BLOCK);
   }
 
   public void setInitializerBlock(QueryFunction_SubstituteVariableInitializer node) {

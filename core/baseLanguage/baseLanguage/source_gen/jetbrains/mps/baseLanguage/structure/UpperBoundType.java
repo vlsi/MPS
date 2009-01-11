@@ -16,7 +16,7 @@ public class UpperBoundType extends Type {
   }
 
   public Type getBound() {
-    return (Type)this.getChild(UpperBoundType.BOUND);
+    return (Type)this.getChild(Type.class, UpperBoundType.BOUND);
   }
 
   public void setBound(Type node) {

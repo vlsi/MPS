@@ -38,7 +38,7 @@ public class LogStatement extends Statement {
   }
 
   public Expression getLogExpression() {
-    return (Expression)this.getChild(LogStatement.LOG_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, LogStatement.LOG_EXPRESSION);
   }
 
   public void setLogExpression(Expression node) {
@@ -46,7 +46,7 @@ public class LogStatement extends Statement {
   }
 
   public Expression getException() {
-    return (Expression)this.getChild(LogStatement.EXCEPTION);
+    return (Expression)this.getChild(Expression.class, LogStatement.EXCEPTION);
   }
 
   public void setException(Expression node) {

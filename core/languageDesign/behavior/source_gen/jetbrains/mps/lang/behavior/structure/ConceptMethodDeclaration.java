@@ -74,7 +74,7 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
   }
 
   public ConceptMethodDeclaration getOverriddenMethod() {
-    return (ConceptMethodDeclaration)this.getReferent(ConceptMethodDeclaration.OVERRIDDEN_METHOD);
+    return (ConceptMethodDeclaration)this.getReferent(ConceptMethodDeclaration.class, ConceptMethodDeclaration.OVERRIDDEN_METHOD);
   }
 
   public void setOverriddenMethod(ConceptMethodDeclaration node) {
@@ -82,7 +82,7 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(ConceptMethodDeclaration.VISIBILITY);
+    return (Visibility)this.getChild(Visibility.class, ConceptMethodDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {

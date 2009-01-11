@@ -27,7 +27,7 @@ public class InternalNewExpression extends BaseMethodCall {
   }
 
   public Type getType() {
-    return (Type)this.getChild(InternalNewExpression.TYPE);
+    return (Type)this.getChild(Type.class, InternalNewExpression.TYPE);
   }
 
   public void setType(Type node) {

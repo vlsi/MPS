@@ -16,7 +16,7 @@ public class AbstractForStatement extends AbstractLoopStatement {
   }
 
   public LocalVariableDeclaration getVariable() {
-    return (LocalVariableDeclaration)this.getChild(AbstractForStatement.VARIABLE);
+    return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, AbstractForStatement.VARIABLE);
   }
 
   public void setVariable(LocalVariableDeclaration node) {

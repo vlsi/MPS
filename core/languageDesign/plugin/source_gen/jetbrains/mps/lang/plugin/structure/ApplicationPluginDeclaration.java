@@ -59,7 +59,7 @@ public class ApplicationPluginDeclaration extends BaseConcept implements IClassi
   }
 
   public ApplicationPluginInitBlock getInitBlock() {
-    return (ApplicationPluginInitBlock)this.getChild(ApplicationPluginDeclaration.INIT_BLOCK);
+    return (ApplicationPluginInitBlock)this.getChild(ApplicationPluginInitBlock.class, ApplicationPluginDeclaration.INIT_BLOCK);
   }
 
   public void setInitBlock(ApplicationPluginInitBlock node) {
@@ -67,7 +67,7 @@ public class ApplicationPluginDeclaration extends BaseConcept implements IClassi
   }
 
   public ApplicationPluginDisposeBlock getDisposeBlock() {
-    return (ApplicationPluginDisposeBlock)this.getChild(ApplicationPluginDeclaration.DISPOSE_BLOCK);
+    return (ApplicationPluginDisposeBlock)this.getChild(ApplicationPluginDisposeBlock.class, ApplicationPluginDeclaration.DISPOSE_BLOCK);
   }
 
   public void setDisposeBlock(ApplicationPluginDisposeBlock node) {
@@ -79,11 +79,11 @@ public class ApplicationPluginDeclaration extends BaseConcept implements IClassi
   }
 
   public Iterator<DefaultClassifierFieldDeclaration> fieldDeclarations() {
-    return this.children(ApplicationPluginDeclaration.FIELD_DECLARATION);
+    return this.children(DefaultClassifierFieldDeclaration.class, ApplicationPluginDeclaration.FIELD_DECLARATION);
   }
 
   public List<DefaultClassifierFieldDeclaration> getFieldDeclarations() {
-    return this.getChildren(ApplicationPluginDeclaration.FIELD_DECLARATION);
+    return this.getChildren(DefaultClassifierFieldDeclaration.class, ApplicationPluginDeclaration.FIELD_DECLARATION);
   }
 
   public void addFieldDeclaration(DefaultClassifierFieldDeclaration node) {

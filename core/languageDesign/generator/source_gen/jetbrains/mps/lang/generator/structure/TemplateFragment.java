@@ -18,7 +18,7 @@ public class TemplateFragment extends BaseConcept {
   }
 
   public MappingLabelDeclaration getLabelDeclaration() {
-    return (MappingLabelDeclaration)this.getReferent(TemplateFragment.LABEL_DECLARATION);
+    return (MappingLabelDeclaration)this.getReferent(MappingLabelDeclaration.class, TemplateFragment.LABEL_DECLARATION);
   }
 
   public void setLabelDeclaration(MappingLabelDeclaration node) {
@@ -26,7 +26,7 @@ public class TemplateFragment extends BaseConcept {
   }
 
   public TemplateFragment_ContextNodeQuery getContextNodeQuery() {
-    return (TemplateFragment_ContextNodeQuery)this.getChild(TemplateFragment.CONTEXT_NODE_QUERY);
+    return (TemplateFragment_ContextNodeQuery)this.getChild(TemplateFragment_ContextNodeQuery.class, TemplateFragment.CONTEXT_NODE_QUERY);
   }
 
   public void setContextNodeQuery(TemplateFragment_ContextNodeQuery node) {

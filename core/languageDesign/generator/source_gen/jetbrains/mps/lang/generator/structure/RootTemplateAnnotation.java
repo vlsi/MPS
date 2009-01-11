@@ -18,7 +18,7 @@ public class RootTemplateAnnotation extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(RootTemplateAnnotation.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, RootTemplateAnnotation.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {

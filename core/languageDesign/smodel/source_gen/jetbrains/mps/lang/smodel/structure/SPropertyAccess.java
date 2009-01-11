@@ -17,7 +17,7 @@ public class SPropertyAccess extends SNodeOperation {
   }
 
   public PropertyDeclaration getProperty() {
-    return (PropertyDeclaration)this.getReferent(SPropertyAccess.PROPERTY);
+    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, SPropertyAccess.PROPERTY);
   }
 
   public void setProperty(PropertyDeclaration node) {

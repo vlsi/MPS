@@ -44,7 +44,7 @@ public class InlineRenderer extends BaseConcept implements IComponentPart {
   }
 
   public ComponentInstance getRenderer() {
-    return (ComponentInstance)this.getChild(InlineRenderer.RENDERER);
+    return (ComponentInstance)this.getChild(ComponentInstance.class, InlineRenderer.RENDERER);
   }
 
   public void setRenderer(ComponentInstance node) {

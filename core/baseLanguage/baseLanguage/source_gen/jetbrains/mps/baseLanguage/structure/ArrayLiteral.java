@@ -22,11 +22,11 @@ public class ArrayLiteral extends Expression {
   }
 
   public Iterator<Expression> items() {
-    return this.children(ArrayLiteral.ITEM);
+    return this.children(Expression.class, ArrayLiteral.ITEM);
   }
 
   public List<Expression> getItems() {
-    return this.getChildren(ArrayLiteral.ITEM);
+    return this.getChildren(Expression.class, ArrayLiteral.ITEM);
   }
 
   public void addItem(Expression node) {

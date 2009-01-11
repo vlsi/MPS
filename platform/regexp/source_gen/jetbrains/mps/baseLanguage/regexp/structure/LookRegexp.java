@@ -16,7 +16,7 @@ public class LookRegexp extends Regexp {
   }
 
   public Regexp getRegexp() {
-    return (Regexp)this.getChild(LookRegexp.REGEXP);
+    return (Regexp)this.getChild(Regexp.class, LookRegexp.REGEXP);
   }
 
   public void setRegexp(Regexp node) {

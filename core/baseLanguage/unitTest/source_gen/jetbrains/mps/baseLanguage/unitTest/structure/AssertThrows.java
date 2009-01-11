@@ -47,7 +47,7 @@ public class AssertThrows extends Statement implements MessageHolder {
   }
 
   public Statement getStatement() {
-    return (Statement)this.getChild(AssertThrows.STATEMENT);
+    return (Statement)this.getChild(Statement.class, AssertThrows.STATEMENT);
   }
 
   public void setStatement(Statement node) {
@@ -55,7 +55,7 @@ public class AssertThrows extends Statement implements MessageHolder {
   }
 
   public ClassifierType getExceptionType() {
-    return (ClassifierType)this.getChild(AssertThrows.EXCEPTION_TYPE);
+    return (ClassifierType)this.getChild(ClassifierType.class, AssertThrows.EXCEPTION_TYPE);
   }
 
   public void setExceptionType(ClassifierType node) {
@@ -63,7 +63,7 @@ public class AssertThrows extends Statement implements MessageHolder {
   }
 
   public Message getMessage() {
-    return (Message)this.getChild(AssertThrows.MESSAGE);
+    return (Message)this.getChild(Message.class, AssertThrows.MESSAGE);
   }
 
   public void setMessage(Message node) {

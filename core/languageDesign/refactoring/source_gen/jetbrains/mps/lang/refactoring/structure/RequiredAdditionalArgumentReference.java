@@ -17,7 +17,7 @@ public class RequiredAdditionalArgumentReference extends Expression {
   }
 
   public RequiredAdditionalArgument getArgument() {
-    return (RequiredAdditionalArgument)this.getReferent(RequiredAdditionalArgumentReference.ARGUMENT);
+    return (RequiredAdditionalArgument)this.getReferent(RequiredAdditionalArgument.class, RequiredAdditionalArgumentReference.ARGUMENT);
   }
 
   public void setArgument(RequiredAdditionalArgument node) {

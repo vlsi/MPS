@@ -46,7 +46,7 @@ public class PersistentPropertyReference extends BaseConcept implements IMemberO
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(PersistentPropertyReference.MEMBER);
+    return (IMember)this.getReferent(IMember.class, PersistentPropertyReference.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -54,7 +54,7 @@ public class PersistentPropertyReference extends BaseConcept implements IMemberO
   }
 
   public PersistentPropertyDeclaration getPropertyDeclaration() {
-    return (PersistentPropertyDeclaration)this.getMember();
+    return this.ensureAdapter(PersistentPropertyDeclaration.class, "member", this.getMember());
   }
 
   public void setPropertyDeclaration(PersistentPropertyDeclaration node) {

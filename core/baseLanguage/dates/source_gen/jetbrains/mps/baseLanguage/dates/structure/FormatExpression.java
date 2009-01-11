@@ -19,7 +19,7 @@ public class FormatExpression extends Expression {
   }
 
   public IDateFormat getDateFormat() {
-    return (IDateFormat)this.getReferent(FormatExpression.DATE_FORMAT);
+    return (IDateFormat)this.getReferent(IDateFormat.class, FormatExpression.DATE_FORMAT);
   }
 
   public void setDateFormat(IDateFormat node) {
@@ -27,7 +27,7 @@ public class FormatExpression extends Expression {
   }
 
   public Expression getDateExpression() {
-    return (Expression)this.getChild(FormatExpression.DATE_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, FormatExpression.DATE_EXPRESSION);
   }
 
   public void setDateExpression(Expression node) {

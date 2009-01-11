@@ -23,11 +23,11 @@ public class GItemStatement extends Statement {
   }
 
   public Iterator<GItem> items() {
-    return this.children(GItemStatement.ITEM);
+    return this.children(GItem.class, GItemStatement.ITEM);
   }
 
   public List<GItem> getItems() {
-    return this.getChildren(GItemStatement.ITEM);
+    return this.getChildren(GItem.class, GItemStatement.ITEM);
   }
 
   public void addItem(GItem node) {

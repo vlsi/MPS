@@ -19,7 +19,7 @@ public class Quotation extends Expression {
   }
 
   public BaseConcept getQuotedNode() {
-    return (BaseConcept)this.getChild(Quotation.QUOTED_NODE);
+    return (BaseConcept)this.getChild(BaseConcept.class, Quotation.QUOTED_NODE);
   }
 
   public void setQuotedNode(BaseConcept node) {
@@ -27,7 +27,7 @@ public class Quotation extends Expression {
   }
 
   public Expression getModelToCreate() {
-    return (Expression)this.getChild(Quotation.MODEL_TO_CREATE);
+    return (Expression)this.getChild(Expression.class, Quotation.MODEL_TO_CREATE);
   }
 
   public void setModelToCreate(Expression node) {

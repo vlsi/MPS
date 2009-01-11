@@ -29,7 +29,7 @@ public class SwitchStatement extends Statement {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(SwitchStatement.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, SwitchStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -37,7 +37,7 @@ public class SwitchStatement extends Statement {
   }
 
   public StatementList getDefaultBlock() {
-    return (StatementList)this.getChild(SwitchStatement.DEFAULT_BLOCK);
+    return (StatementList)this.getChild(StatementList.class, SwitchStatement.DEFAULT_BLOCK);
   }
 
   public void setDefaultBlock(StatementList node) {
@@ -49,11 +49,11 @@ public class SwitchStatement extends Statement {
   }
 
   public Iterator<SwitchCase> cases() {
-    return this.children(SwitchStatement.CASE);
+    return this.children(SwitchCase.class, SwitchStatement.CASE);
   }
 
   public List<SwitchCase> getCases() {
-    return this.getChildren(SwitchStatement.CASE);
+    return this.getChildren(SwitchCase.class, SwitchStatement.CASE);
   }
 
   public void addCase(SwitchCase node) {

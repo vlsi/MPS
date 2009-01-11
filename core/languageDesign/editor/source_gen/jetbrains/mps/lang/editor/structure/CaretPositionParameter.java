@@ -17,7 +17,7 @@ public class CaretPositionParameter extends SelectParameter {
   }
 
   public Expression getPosition() {
-    return (Expression)this.getChild(CaretPositionParameter.POSITION);
+    return (Expression)this.getChild(Expression.class, CaretPositionParameter.POSITION);
   }
 
   public void setPosition(Expression node) {

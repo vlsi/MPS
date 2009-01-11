@@ -60,11 +60,11 @@ public class PasteWrappers extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<PasteWrapper> wrappers() {
-    return this.children(PasteWrappers.WRAPPER);
+    return this.children(PasteWrapper.class, PasteWrappers.WRAPPER);
   }
 
   public List<PasteWrapper> getWrappers() {
-    return this.getChildren(PasteWrappers.WRAPPER);
+    return this.getChildren(PasteWrapper.class, PasteWrappers.WRAPPER);
   }
 
   public void addWrapper(PasteWrapper node) {

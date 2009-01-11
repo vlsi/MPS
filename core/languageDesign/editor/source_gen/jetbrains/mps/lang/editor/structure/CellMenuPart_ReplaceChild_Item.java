@@ -34,7 +34,7 @@ public class CellMenuPart_ReplaceChild_Item extends CellMenuPart_Abstract {
   }
 
   public CellMenuPart_ReplaceChild_Item_Create getCreateFunction() {
-    return (CellMenuPart_ReplaceChild_Item_Create)this.getChild(CellMenuPart_ReplaceChild_Item.CREATE_FUNCTION);
+    return (CellMenuPart_ReplaceChild_Item_Create)this.getChild(CellMenuPart_ReplaceChild_Item_Create.class, CellMenuPart_ReplaceChild_Item.CREATE_FUNCTION);
   }
 
   public void setCreateFunction(CellMenuPart_ReplaceChild_Item_Create node) {

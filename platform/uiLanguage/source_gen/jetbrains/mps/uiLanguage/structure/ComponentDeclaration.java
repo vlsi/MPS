@@ -85,7 +85,7 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   }
 
   public ComponentDeclaration getExtendedComponent() {
-    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.EXTENDED_COMPONENT);
+    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.class, ComponentDeclaration.EXTENDED_COMPONENT);
   }
 
   public void setExtendedComponent(ComponentDeclaration node) {
@@ -93,7 +93,7 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   }
 
   public ClassConcept getMapTo() {
-    return (ClassConcept)this.getReferent(ComponentDeclaration.MAP_TO);
+    return (ClassConcept)this.getReferent(ClassConcept.class, ComponentDeclaration.MAP_TO);
   }
 
   public void setMapTo(ClassConcept node) {
@@ -101,7 +101,7 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   }
 
   public IComponentInstance getRoot() {
-    return (IComponentInstance)this.getChild(ComponentDeclaration.ROOT);
+    return (IComponentInstance)this.getChild(IComponentInstance.class, ComponentDeclaration.ROOT);
   }
 
   public void setRoot(IComponentInstance node) {
@@ -109,7 +109,7 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   }
 
   public StubCellRendererInfo getRendererInfo() {
-    return (StubCellRendererInfo)this.getChild(ComponentDeclaration.RENDERER_INFO);
+    return (StubCellRendererInfo)this.getChild(StubCellRendererInfo.class, ComponentDeclaration.RENDERER_INFO);
   }
 
   public void setRendererInfo(StubCellRendererInfo node) {

@@ -17,7 +17,7 @@ public class InlineTemplate_RuleConsequence extends RuleConsequence {
   }
 
   public BaseConcept getTemplateNode() {
-    return (BaseConcept)this.getChild(InlineTemplate_RuleConsequence.TEMPLATE_NODE);
+    return (BaseConcept)this.getChild(BaseConcept.class, InlineTemplate_RuleConsequence.TEMPLATE_NODE);
   }
 
   public void setTemplateNode(BaseConcept node) {

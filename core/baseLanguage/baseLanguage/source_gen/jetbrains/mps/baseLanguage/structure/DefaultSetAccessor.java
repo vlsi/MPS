@@ -17,7 +17,7 @@ public class DefaultSetAccessor extends BaseConcept {
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(DefaultSetAccessor.VISIBILITY);
+    return (Visibility)this.getChild(Visibility.class, DefaultSetAccessor.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {

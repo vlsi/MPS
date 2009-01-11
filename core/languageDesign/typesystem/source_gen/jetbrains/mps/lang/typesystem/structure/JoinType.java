@@ -23,11 +23,11 @@ public class JoinType extends BaseConcept {
   }
 
   public Iterator<BaseConcept> arguments() {
-    return this.children(JoinType.ARGUMENT);
+    return this.children(BaseConcept.class, JoinType.ARGUMENT);
   }
 
   public List<BaseConcept> getArguments() {
-    return this.getChildren(JoinType.ARGUMENT);
+    return this.getChildren(BaseConcept.class, JoinType.ARGUMENT);
   }
 
   public void addArgument(BaseConcept node) {

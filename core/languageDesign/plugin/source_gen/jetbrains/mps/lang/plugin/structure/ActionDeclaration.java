@@ -116,7 +116,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
   }
 
   public UpdateBlock getUpdateBlock() {
-    return (UpdateBlock)this.getChild(ActionDeclaration.UPDATE_BLOCK);
+    return (UpdateBlock)this.getChild(UpdateBlock.class, ActionDeclaration.UPDATE_BLOCK);
   }
 
   public void setUpdateBlock(UpdateBlock node) {
@@ -124,7 +124,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
   }
 
   public ExecuteBlock getExecuteFunction() {
-    return (ExecuteBlock)this.getChild(ActionDeclaration.EXECUTE_FUNCTION);
+    return (ExecuteBlock)this.getChild(ExecuteBlock.class, ActionDeclaration.EXECUTE_FUNCTION);
   }
 
   public void setExecuteFunction(ExecuteBlock node) {
@@ -132,7 +132,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
   }
 
   public KeyMapKeystroke getKeystroke() {
-    return (KeyMapKeystroke)this.getChild(ActionDeclaration.KEYSTROKE);
+    return (KeyMapKeystroke)this.getChild(KeyMapKeystroke.class, ActionDeclaration.KEYSTROKE);
   }
 
   public void setKeystroke(KeyMapKeystroke node) {
@@ -144,11 +144,11 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
   }
 
   public Iterator<DefaultClassifierMethodDeclaration> methodDeclarations() {
-    return this.children(ActionDeclaration.METHOD_DECLARATION);
+    return this.children(DefaultClassifierMethodDeclaration.class, ActionDeclaration.METHOD_DECLARATION);
   }
 
   public List<DefaultClassifierMethodDeclaration> getMethodDeclarations() {
-    return this.getChildren(ActionDeclaration.METHOD_DECLARATION);
+    return this.getChildren(DefaultClassifierMethodDeclaration.class, ActionDeclaration.METHOD_DECLARATION);
   }
 
   public void addMethodDeclaration(DefaultClassifierMethodDeclaration node) {
@@ -164,11 +164,11 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
   }
 
   public Iterator<ActionParameter> parameters() {
-    return this.children(ActionDeclaration.PARAMETER);
+    return this.children(ActionParameter.class, ActionDeclaration.PARAMETER);
   }
 
   public List<ActionParameter> getParameters() {
-    return this.getChildren(ActionDeclaration.PARAMETER);
+    return this.getChildren(ActionParameter.class, ActionDeclaration.PARAMETER);
   }
 
   public void addParameter(ActionParameter node) {
@@ -184,11 +184,11 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
   }
 
   public Iterator<ActionConstructionParameterDeclaration> constructionParameters() {
-    return this.children(ActionDeclaration.CONSTRUCTION_PARAMETER);
+    return this.children(ActionConstructionParameterDeclaration.class, ActionDeclaration.CONSTRUCTION_PARAMETER);
   }
 
   public List<ActionConstructionParameterDeclaration> getConstructionParameters() {
-    return this.getChildren(ActionDeclaration.CONSTRUCTION_PARAMETER);
+    return this.getChildren(ActionConstructionParameterDeclaration.class, ActionDeclaration.CONSTRUCTION_PARAMETER);
   }
 
   public void addConstructionParameter(ActionConstructionParameterDeclaration node) {

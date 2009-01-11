@@ -17,7 +17,7 @@ public class AggregationConceptLink extends ConceptLink {
   }
 
   public AggregationConceptLinkDeclaration getAggregationConceptLinkDeclaration() {
-    return (AggregationConceptLinkDeclaration)this.getConceptLinkDeclaration();
+    return this.ensureAdapter(AggregationConceptLinkDeclaration.class, "conceptLinkDeclaration", this.getConceptLinkDeclaration());
   }
 
   public void setAggregationConceptLinkDeclaration(AggregationConceptLinkDeclaration node) {
@@ -25,7 +25,7 @@ public class AggregationConceptLink extends ConceptLink {
   }
 
   public BaseConcept getTarget() {
-    return (BaseConcept)this.getChild(AggregationConceptLink.TARGET);
+    return (BaseConcept)this.getChild(BaseConcept.class, AggregationConceptLink.TARGET);
   }
 
   public void setTarget(BaseConcept node) {

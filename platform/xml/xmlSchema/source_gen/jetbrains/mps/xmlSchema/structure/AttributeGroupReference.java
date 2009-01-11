@@ -16,7 +16,7 @@ public class AttributeGroupReference extends AttributeExpression {
   }
 
   public AttributeGroup getAttributeGroup() {
-    return (AttributeGroup)this.getReferent(AttributeGroupReference.ATTRIBUTE_GROUP);
+    return (AttributeGroup)this.getReferent(AttributeGroup.class, AttributeGroupReference.ATTRIBUTE_GROUP);
   }
 
   public void setAttributeGroup(AttributeGroup node) {

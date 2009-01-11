@@ -16,7 +16,7 @@ public class ElementReference extends TypeExpression {
   }
 
   public ElementDeclaration getElementDeclaration() {
-    return (ElementDeclaration)this.getReferent(ElementReference.ELEMENT_DECLARATION);
+    return (ElementDeclaration)this.getReferent(ElementDeclaration.class, ElementReference.ELEMENT_DECLARATION);
   }
 
   public void setElementDeclaration(ElementDeclaration node) {

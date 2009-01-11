@@ -16,7 +16,7 @@ public class ConceptsSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_ParameterizedSubstitute_Query getQuery() {
-    return (QueryFunction_ParameterizedSubstitute_Query)this.getChild(ConceptsSubstituteMenuPart.QUERY);
+    return (QueryFunction_ParameterizedSubstitute_Query)this.getChild(QueryFunction_ParameterizedSubstitute_Query.class, ConceptsSubstituteMenuPart.QUERY);
   }
 
   public void setQuery(QueryFunction_ParameterizedSubstitute_Query node) {

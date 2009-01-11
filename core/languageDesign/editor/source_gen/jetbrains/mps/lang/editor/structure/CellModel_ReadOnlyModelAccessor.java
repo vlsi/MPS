@@ -16,7 +16,7 @@ public class CellModel_ReadOnlyModelAccessor extends CellModel_AbstractLabel {
   }
 
   public ReadOnlyModelAccessor getModelAccessor() {
-    return (ReadOnlyModelAccessor)this.getChild(CellModel_ReadOnlyModelAccessor.MODEL_ACCESSOR);
+    return (ReadOnlyModelAccessor)this.getChild(ReadOnlyModelAccessor.class, CellModel_ReadOnlyModelAccessor.MODEL_ACCESSOR);
   }
 
   public void setModelAccessor(ReadOnlyModelAccessor node) {

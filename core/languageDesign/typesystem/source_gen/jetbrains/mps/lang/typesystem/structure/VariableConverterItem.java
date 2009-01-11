@@ -18,7 +18,7 @@ public class VariableConverterItem extends BaseConcept {
   }
 
   public VariableConverterItem_ApplicableBlock getApplicableBlock() {
-    return (VariableConverterItem_ApplicableBlock)this.getChild(VariableConverterItem.APPLICABLE_BLOCK);
+    return (VariableConverterItem_ApplicableBlock)this.getChild(VariableConverterItem_ApplicableBlock.class, VariableConverterItem.APPLICABLE_BLOCK);
   }
 
   public void setApplicableBlock(VariableConverterItem_ApplicableBlock node) {
@@ -26,7 +26,7 @@ public class VariableConverterItem extends BaseConcept {
   }
 
   public VariableConverterItem_ConvertBlock getConvertBlock() {
-    return (VariableConverterItem_ConvertBlock)this.getChild(VariableConverterItem.CONVERT_BLOCK);
+    return (VariableConverterItem_ConvertBlock)this.getChild(VariableConverterItem_ConvertBlock.class, VariableConverterItem.CONVERT_BLOCK);
   }
 
   public void setConvertBlock(VariableConverterItem_ConvertBlock node) {

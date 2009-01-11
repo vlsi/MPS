@@ -33,7 +33,7 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -41,7 +41,7 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
 
   public NodeSubstitutePreconditionFunction getPrecondition() {
-    return (NodeSubstitutePreconditionFunction)this.getChild(NodeSubstituteActionsBuilder.PRECONDITION);
+    return (NodeSubstitutePreconditionFunction)this.getChild(NodeSubstitutePreconditionFunction.class, NodeSubstituteActionsBuilder.PRECONDITION);
   }
 
   public void setPrecondition(NodeSubstitutePreconditionFunction node) {
@@ -49,7 +49,7 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
 
   public QueryFunction_Substitute_CommonInitializer getCommonInitializer() {
-    return (QueryFunction_Substitute_CommonInitializer)this.getChild(NodeSubstituteActionsBuilder.COMMON_INITIALIZER);
+    return (QueryFunction_Substitute_CommonInitializer)this.getChild(QueryFunction_Substitute_CommonInitializer.class, NodeSubstituteActionsBuilder.COMMON_INITIALIZER);
   }
 
   public void setCommonInitializer(QueryFunction_Substitute_CommonInitializer node) {
@@ -61,11 +61,11 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
 
   public Iterator<MenuBuilderPart> parts() {
-    return this.children(NodeSubstituteActionsBuilder.PART);
+    return this.children(MenuBuilderPart.class, NodeSubstituteActionsBuilder.PART);
   }
 
   public List<MenuBuilderPart> getParts() {
-    return this.getChildren(NodeSubstituteActionsBuilder.PART);
+    return this.getChildren(MenuBuilderPart.class, NodeSubstituteActionsBuilder.PART);
   }
 
   public void addPart(MenuBuilderPart node) {
@@ -81,11 +81,11 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
 
   public Iterator<SubstituteNodeBuilderVariableDeclaration> variables() {
-    return this.children(NodeSubstituteActionsBuilder.VARIABLE);
+    return this.children(SubstituteNodeBuilderVariableDeclaration.class, NodeSubstituteActionsBuilder.VARIABLE);
   }
 
   public List<SubstituteNodeBuilderVariableDeclaration> getVariables() {
-    return this.getChildren(NodeSubstituteActionsBuilder.VARIABLE);
+    return this.getChildren(SubstituteNodeBuilderVariableDeclaration.class, NodeSubstituteActionsBuilder.VARIABLE);
   }
 
   public void addVariable(SubstituteNodeBuilderVariableDeclaration node) {

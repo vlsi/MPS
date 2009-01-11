@@ -46,7 +46,7 @@ public class EventAccessOperation extends BaseConcept implements IMemberOperatio
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(EventAccessOperation.MEMBER);
+    return (IMember)this.getReferent(IMember.class, EventAccessOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -54,7 +54,7 @@ public class EventAccessOperation extends BaseConcept implements IMemberOperatio
   }
 
   public EventDeclaration getEvent() {
-    return (EventDeclaration)this.getMember();
+    return this.ensureAdapter(EventDeclaration.class, "member", this.getMember());
   }
 
   public void setEvent(EventDeclaration node) {

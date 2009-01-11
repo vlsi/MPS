@@ -45,7 +45,7 @@ public class LayoutConstraint extends BaseConcept implements IComponentPart {
   }
 
   public Expression getConstraint() {
-    return (Expression)this.getChild(LayoutConstraint.CONSTRAINT);
+    return (Expression)this.getChild(Expression.class, LayoutConstraint.CONSTRAINT);
   }
 
   public void setConstraint(Expression node) {

@@ -17,7 +17,7 @@ public class StyleSheetClassReference extends BaseConcept {
   }
 
   public StyleSheetClass getStyleSheetClass() {
-    return (StyleSheetClass)this.getReferent(StyleSheetClassReference.STYLE_SHEET_CLASS);
+    return (StyleSheetClass)this.getReferent(StyleSheetClass.class, StyleSheetClassReference.STYLE_SHEET_CLASS);
   }
 
   public void setStyleSheetClass(StyleSheetClass node) {

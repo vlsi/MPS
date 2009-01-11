@@ -17,7 +17,7 @@ public class ReportErrorExpression extends Expression {
   }
 
   public Expression getErrorText() {
-    return (Expression)this.getChild(ReportErrorExpression.ERROR_TEXT);
+    return (Expression)this.getChild(Expression.class, ReportErrorExpression.ERROR_TEXT);
   }
 
   public void setErrorText(Expression node) {

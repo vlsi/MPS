@@ -55,7 +55,7 @@ public class DurationType extends BaseConcept implements INamedConcept {
   }
 
   public StaticMethodCall getJodaDurationFieldType() {
-    return (StaticMethodCall)this.getChild(DurationType.JODA_DURATION_FIELD_TYPE);
+    return (StaticMethodCall)this.getChild(StaticMethodCall.class, DurationType.JODA_DURATION_FIELD_TYPE);
   }
 
   public void setJodaDurationFieldType(StaticMethodCall node) {

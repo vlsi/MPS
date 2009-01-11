@@ -46,7 +46,7 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(AttributeReferenceOperation.MEMBER);
+    return (IMember)this.getReferent(IMember.class, AttributeReferenceOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -54,7 +54,7 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
   }
 
   public AttributeDeclaration getAttributeDeclaration() {
-    return (AttributeDeclaration)this.getMember();
+    return this.ensureAdapter(AttributeDeclaration.class, "member", this.getMember());
   }
 
   public void setAttributeDeclaration(AttributeDeclaration node) {

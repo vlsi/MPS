@@ -24,11 +24,11 @@ public class DeclarationBlock extends BaseConcept {
   }
 
   public Iterator<TextLine> textLines() {
-    return this.children(DeclarationBlock.TEXT_LINE);
+    return this.children(TextLine.class, DeclarationBlock.TEXT_LINE);
   }
 
   public List<TextLine> getTextLines() {
-    return this.getChildren(DeclarationBlock.TEXT_LINE);
+    return this.getChildren(TextLine.class, DeclarationBlock.TEXT_LINE);
   }
 
   public void addTextLine(TextLine node) {
@@ -44,11 +44,11 @@ public class DeclarationBlock extends BaseConcept {
   }
 
   public Iterator<Declaration> declarations() {
-    return this.children(DeclarationBlock.DECLARATION);
+    return this.children(Declaration.class, DeclarationBlock.DECLARATION);
   }
 
   public List<Declaration> getDeclarations() {
-    return this.getChildren(DeclarationBlock.DECLARATION);
+    return this.getChildren(Declaration.class, DeclarationBlock.DECLARATION);
   }
 
   public void addDeclaration(Declaration node) {

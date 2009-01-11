@@ -17,7 +17,7 @@ public class ChildTypeRestrictionReference extends Expression {
   }
 
   public ChildTypeRestriction getTypeRestriction() {
-    return (ChildTypeRestriction)this.getReferent(ChildTypeRestrictionReference.TYPE_RESTRICTION);
+    return (ChildTypeRestriction)this.getReferent(ChildTypeRestriction.class, ChildTypeRestrictionReference.TYPE_RESTRICTION);
   }
 
   public void setTypeRestriction(ChildTypeRestriction node) {

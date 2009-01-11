@@ -26,7 +26,7 @@ public class FontStyleStyleClassItem extends StyleClassItem {
   }
 
   public QueryFunction_FontStyle getQuery() {
-    return (QueryFunction_FontStyle)this.getChild(FontStyleStyleClassItem.QUERY);
+    return (QueryFunction_FontStyle)this.getChild(QueryFunction_FontStyle.class, FontStyleStyleClassItem.QUERY);
   }
 
   public void setQuery(QueryFunction_FontStyle node) {

@@ -19,7 +19,7 @@ public class SNodeCreator extends AbstractCreator {
   }
 
   public SNodeType getCreatedType() {
-    return (SNodeType)this.getChild(SNodeCreator.CREATED_TYPE);
+    return (SNodeType)this.getChild(SNodeType.class, SNodeCreator.CREATED_TYPE);
   }
 
   public void setCreatedType(SNodeType node) {
@@ -27,7 +27,7 @@ public class SNodeCreator extends AbstractCreator {
   }
 
   public Expression getPrototypeNode() {
-    return (Expression)this.getChild(SNodeCreator.PROTOTYPE_NODE);
+    return (Expression)this.getChild(Expression.class, SNodeCreator.PROTOTYPE_NODE);
   }
 
   public void setPrototypeNode(Expression node) {

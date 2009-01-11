@@ -17,7 +17,7 @@ public class LinkList_AddChildOperation extends SNodeOperation {
   }
 
   public Expression getChildNode() {
-    return (Expression)this.getChild(LinkList_AddChildOperation.CHILD_NODE);
+    return (Expression)this.getChild(Expression.class, LinkList_AddChildOperation.CHILD_NODE);
   }
 
   public void setChildNode(Expression node) {

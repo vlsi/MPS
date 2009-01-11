@@ -17,7 +17,7 @@ public class Property_SetOperation extends SNodeOperation {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Property_SetOperation.VALUE);
+    return (Expression)this.getChild(Expression.class, Property_SetOperation.VALUE);
   }
 
   public void setValue(Expression node) {

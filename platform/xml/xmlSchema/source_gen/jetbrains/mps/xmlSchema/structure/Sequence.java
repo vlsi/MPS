@@ -16,7 +16,7 @@ public class Sequence extends GroupExpression {
   }
 
   public TypeExpressionList getTypeExpressionList() {
-    return (TypeExpressionList)this.getChild(Sequence.TYPE_EXPRESSION_LIST);
+    return (TypeExpressionList)this.getChild(TypeExpressionList.class, Sequence.TYPE_EXPRESSION_LIST);
   }
 
   public void setTypeExpressionList(TypeExpressionList node) {

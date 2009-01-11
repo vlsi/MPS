@@ -16,7 +16,7 @@ public class GenericNewExpression extends Expression {
   }
 
   public AbstractCreator getCreator() {
-    return (AbstractCreator)this.getChild(GenericNewExpression.CREATOR);
+    return (AbstractCreator)this.getChild(AbstractCreator.class, GenericNewExpression.CREATOR);
   }
 
   public void setCreator(AbstractCreator node) {

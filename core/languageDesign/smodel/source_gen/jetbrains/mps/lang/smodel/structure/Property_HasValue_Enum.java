@@ -16,7 +16,7 @@ public class Property_HasValue_Enum extends SNodeOperation {
   }
 
   public EnumMemberReference getValue() {
-    return (EnumMemberReference)this.getChild(Property_HasValue_Enum.VALUE);
+    return (EnumMemberReference)this.getChild(EnumMemberReference.class, Property_HasValue_Enum.VALUE);
   }
 
   public void setValue(EnumMemberReference node) {

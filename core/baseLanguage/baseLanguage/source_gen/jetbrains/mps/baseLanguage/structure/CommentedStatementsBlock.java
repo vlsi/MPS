@@ -22,11 +22,11 @@ public class CommentedStatementsBlock extends Statement {
   }
 
   public Iterator<Statement> statements() {
-    return this.children(CommentedStatementsBlock.STATEMENT);
+    return this.children(Statement.class, CommentedStatementsBlock.STATEMENT);
   }
 
   public List<Statement> getStatements() {
-    return this.getChildren(CommentedStatementsBlock.STATEMENT);
+    return this.getChildren(Statement.class, CommentedStatementsBlock.STATEMENT);
   }
 
   public void addStatement(Statement node) {

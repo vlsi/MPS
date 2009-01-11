@@ -17,7 +17,7 @@ public class Prolog extends BaseConcept {
   }
 
   public DocumentTypeDeclaration getDocumentTypeDeclaration() {
-    return (DocumentTypeDeclaration)this.getChild(Prolog.DOCUMENT_TYPE_DECLARATION);
+    return (DocumentTypeDeclaration)this.getChild(DocumentTypeDeclaration.class, Prolog.DOCUMENT_TYPE_DECLARATION);
   }
 
   public void setDocumentTypeDeclaration(DocumentTypeDeclaration node) {

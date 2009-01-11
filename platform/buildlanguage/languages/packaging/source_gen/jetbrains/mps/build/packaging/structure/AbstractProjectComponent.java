@@ -66,7 +66,7 @@ public class AbstractProjectComponent extends BaseConcept implements INamedConce
   }
 
   public IStringExpression getTitle() {
-    return (IStringExpression)this.getChild(AbstractProjectComponent.TITLE);
+    return (IStringExpression)this.getChild(IStringExpression.class, AbstractProjectComponent.TITLE);
   }
 
   public void setTitle(IStringExpression node) {
@@ -78,11 +78,11 @@ public class AbstractProjectComponent extends BaseConcept implements INamedConce
   }
 
   public Iterator<ConfigurationReference> configurations() {
-    return this.children(AbstractProjectComponent.CONFIGURATION);
+    return this.children(ConfigurationReference.class, AbstractProjectComponent.CONFIGURATION);
   }
 
   public List<ConfigurationReference> getConfigurations() {
-    return this.getChildren(AbstractProjectComponent.CONFIGURATION);
+    return this.getChildren(ConfigurationReference.class, AbstractProjectComponent.CONFIGURATION);
   }
 
   public void addConfiguration(ConfigurationReference node) {

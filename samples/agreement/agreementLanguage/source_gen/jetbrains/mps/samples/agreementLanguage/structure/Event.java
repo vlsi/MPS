@@ -30,7 +30,7 @@ public class Event extends BaseConcept {
   }
 
   public EventType getType() {
-    return (EventType)this.getReferent(Event.TYPE);
+    return (EventType)this.getReferent(EventType.class, Event.TYPE);
   }
 
   public void setType(EventType node) {
@@ -42,11 +42,11 @@ public class Event extends BaseConcept {
   }
 
   public Iterator<PostingRuleTemporalProperty> postingRules() {
-    return this.children(Event.POSTING_RULE);
+    return this.children(PostingRuleTemporalProperty.class, Event.POSTING_RULE);
   }
 
   public List<PostingRuleTemporalProperty> getPostingRules() {
-    return this.getChildren(Event.POSTING_RULE);
+    return this.getChildren(PostingRuleTemporalProperty.class, Event.POSTING_RULE);
   }
 
   public void addPostingRule(PostingRuleTemporalProperty node) {

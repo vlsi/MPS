@@ -50,11 +50,11 @@ public class Scroller extends BaseConcept implements IComponentInstance {
   }
 
   public Iterator<IComponentPart> contents() {
-    return this.children(Scroller.CONTENT);
+    return this.children(IComponentPart.class, Scroller.CONTENT);
   }
 
   public List<IComponentPart> getContents() {
-    return this.getChildren(Scroller.CONTENT);
+    return this.getChildren(IComponentPart.class, Scroller.CONTENT);
   }
 
   public void addContent(IComponentPart node) {

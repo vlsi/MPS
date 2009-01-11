@@ -16,7 +16,7 @@ public class SubstituteNodeBuilderVariableReference extends VariableReference {
   }
 
   public SubstituteNodeBuilderVariableDeclaration getNodeBuilderVariableDeclaration() {
-    return (SubstituteNodeBuilderVariableDeclaration)this.getVariableDeclaration();
+    return this.ensureAdapter(SubstituteNodeBuilderVariableDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
 
   public void setNodeBuilderVariableDeclaration(SubstituteNodeBuilderVariableDeclaration node) {

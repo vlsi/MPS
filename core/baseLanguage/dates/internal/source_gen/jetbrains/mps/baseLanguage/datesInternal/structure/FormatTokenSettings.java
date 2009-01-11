@@ -25,11 +25,11 @@ public class FormatTokenSettings extends BaseConcept {
   }
 
   public Iterator<PredefinedDateFormat> predefinedDateFormats() {
-    return this.children(FormatTokenSettings.PREDEFINED_DATE_FORMAT);
+    return this.children(PredefinedDateFormat.class, FormatTokenSettings.PREDEFINED_DATE_FORMAT);
   }
 
   public List<PredefinedDateFormat> getPredefinedDateFormats() {
-    return this.getChildren(FormatTokenSettings.PREDEFINED_DATE_FORMAT);
+    return this.getChildren(PredefinedDateFormat.class, FormatTokenSettings.PREDEFINED_DATE_FORMAT);
   }
 
   public void addPredefinedDateFormat(PredefinedDateFormat node) {
@@ -45,11 +45,11 @@ public class FormatTokenSettings extends BaseConcept {
   }
 
   public Iterator<DateTimePropertyCardinality> dateTimePropertyCardinalities() {
-    return this.children(FormatTokenSettings.DATE_TIME_PROPERTY_CARDINALITY);
+    return this.children(DateTimePropertyCardinality.class, FormatTokenSettings.DATE_TIME_PROPERTY_CARDINALITY);
   }
 
   public List<DateTimePropertyCardinality> getDateTimePropertyCardinalities() {
-    return this.getChildren(FormatTokenSettings.DATE_TIME_PROPERTY_CARDINALITY);
+    return this.getChildren(DateTimePropertyCardinality.class, FormatTokenSettings.DATE_TIME_PROPERTY_CARDINALITY);
   }
 
   public void addDateTimePropertyCardinality(DateTimePropertyCardinality node) {
@@ -65,11 +65,11 @@ public class FormatTokenSettings extends BaseConcept {
   }
 
   public Iterator<DateTimePropertyConfiguration> dateTimePropertyFormatConfigurations() {
-    return this.children(FormatTokenSettings.DATE_TIME_PROPERTY_FORMAT_CONFIGURATION);
+    return this.children(DateTimePropertyConfiguration.class, FormatTokenSettings.DATE_TIME_PROPERTY_FORMAT_CONFIGURATION);
   }
 
   public List<DateTimePropertyConfiguration> getDateTimePropertyFormatConfigurations() {
-    return this.getChildren(FormatTokenSettings.DATE_TIME_PROPERTY_FORMAT_CONFIGURATION);
+    return this.getChildren(DateTimePropertyConfiguration.class, FormatTokenSettings.DATE_TIME_PROPERTY_FORMAT_CONFIGURATION);
   }
 
   public void addDateTimePropertyFormatConfiguration(DateTimePropertyConfiguration node) {

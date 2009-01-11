@@ -19,7 +19,7 @@ public class BaseElement extends Content {
   }
 
   public ContentList getContentList() {
-    return (ContentList)this.getChild(BaseElement.CONTENT_LIST);
+    return (ContentList)this.getChild(ContentList.class, BaseElement.CONTENT_LIST);
   }
 
   public void setContentList(ContentList node) {
@@ -31,11 +31,11 @@ public class BaseElement extends Content {
   }
 
   public Iterator<BaseAttribute> attributes() {
-    return this.children(BaseElement.ATTRIBUTE);
+    return this.children(BaseAttribute.class, BaseElement.ATTRIBUTE);
   }
 
   public List<BaseAttribute> getAttributes() {
-    return this.getChildren(BaseElement.ATTRIBUTE);
+    return this.getChildren(BaseAttribute.class, BaseElement.ATTRIBUTE);
   }
 
   public void addAttribute(BaseAttribute node) {

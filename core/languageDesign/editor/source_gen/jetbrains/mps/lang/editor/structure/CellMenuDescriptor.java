@@ -23,11 +23,11 @@ public class CellMenuDescriptor extends BaseConcept {
   }
 
   public Iterator<CellMenuPart_Abstract> cellMenuParts() {
-    return this.children(CellMenuDescriptor.CELL_MENU_PART);
+    return this.children(CellMenuPart_Abstract.class, CellMenuDescriptor.CELL_MENU_PART);
   }
 
   public List<CellMenuPart_Abstract> getCellMenuParts() {
-    return this.getChildren(CellMenuDescriptor.CELL_MENU_PART);
+    return this.getChildren(CellMenuPart_Abstract.class, CellMenuDescriptor.CELL_MENU_PART);
   }
 
   public void addCellMenuPart(CellMenuPart_Abstract node) {

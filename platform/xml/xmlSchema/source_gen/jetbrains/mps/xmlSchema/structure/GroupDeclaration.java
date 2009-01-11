@@ -25,7 +25,7 @@ public class GroupDeclaration extends Declaration {
   }
 
   public GroupExpression getGroupExpression() {
-    return (GroupExpression)this.getChild(GroupDeclaration.GROUP_EXPRESSION);
+    return (GroupExpression)this.getChild(GroupExpression.class, GroupDeclaration.GROUP_EXPRESSION);
   }
 
   public void setGroupExpression(GroupExpression node) {

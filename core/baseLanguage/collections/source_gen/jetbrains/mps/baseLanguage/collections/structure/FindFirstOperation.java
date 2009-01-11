@@ -16,7 +16,7 @@ public class FindFirstOperation extends InternalSequenceOperation {
   }
 
   public Expression getFilter() {
-    return (Expression)this.getClosure();
+    return this.ensureAdapter(Expression.class, "closure", this.getClosure());
   }
 
   public void setFilter(Expression node) {

@@ -60,11 +60,11 @@ public class Regexps extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<RegexpDeclaration> regexps() {
-    return this.children(Regexps.REGEXP);
+    return this.children(RegexpDeclaration.class, Regexps.REGEXP);
   }
 
   public List<RegexpDeclaration> getRegexps() {
-    return this.getChildren(Regexps.REGEXP);
+    return this.getChildren(RegexpDeclaration.class, Regexps.REGEXP);
   }
 
   public void addRegexp(RegexpDeclaration node) {

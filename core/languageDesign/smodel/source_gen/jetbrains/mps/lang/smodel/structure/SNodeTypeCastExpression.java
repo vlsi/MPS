@@ -19,7 +19,7 @@ public class SNodeTypeCastExpression extends Expression {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(SNodeTypeCastExpression.CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, SNodeTypeCastExpression.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -27,7 +27,7 @@ public class SNodeTypeCastExpression extends Expression {
   }
 
   public Expression getLeftExpression() {
-    return (Expression)this.getChild(SNodeTypeCastExpression.LEFT_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, SNodeTypeCastExpression.LEFT_EXPRESSION);
   }
 
   public void setLeftExpression(Expression node) {

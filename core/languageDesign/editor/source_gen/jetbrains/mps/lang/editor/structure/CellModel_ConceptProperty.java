@@ -16,7 +16,7 @@ public class CellModel_ConceptProperty extends CellModel_WithRole {
   }
 
   public ConceptPropertyDeclaration getPropertyDeclaration() {
-    return (ConceptPropertyDeclaration)this.getRelationDeclaration();
+    return this.ensureAdapter(ConceptPropertyDeclaration.class, "relationDeclaration", this.getRelationDeclaration());
   }
 
   public void setPropertyDeclaration(ConceptPropertyDeclaration node) {

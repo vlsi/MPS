@@ -16,7 +16,7 @@ public class RegexpDeclarationReferenceRegexp extends Regexp {
   }
 
   public RegexpDeclaration getRegexp() {
-    return (RegexpDeclaration)this.getReferent(RegexpDeclarationReferenceRegexp.REGEXP);
+    return (RegexpDeclaration)this.getReferent(RegexpDeclaration.class, RegexpDeclarationReferenceRegexp.REGEXP);
   }
 
   public void setRegexp(RegexpDeclaration node) {

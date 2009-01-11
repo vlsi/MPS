@@ -18,7 +18,7 @@ public class InlineSwitch_Case extends BaseConcept {
   }
 
   public BaseMappingRule_Condition getConditionFunction() {
-    return (BaseMappingRule_Condition)this.getChild(InlineSwitch_Case.CONDITION_FUNCTION);
+    return (BaseMappingRule_Condition)this.getChild(BaseMappingRule_Condition.class, InlineSwitch_Case.CONDITION_FUNCTION);
   }
 
   public void setConditionFunction(BaseMappingRule_Condition node) {
@@ -26,7 +26,7 @@ public class InlineSwitch_Case extends BaseConcept {
   }
 
   public RuleConsequence getCaseConsequence() {
-    return (RuleConsequence)this.getChild(InlineSwitch_Case.CASE_CONSEQUENCE);
+    return (RuleConsequence)this.getChild(RuleConsequence.class, InlineSwitch_Case.CASE_CONSEQUENCE);
   }
 
   public void setCaseConsequence(RuleConsequence node) {

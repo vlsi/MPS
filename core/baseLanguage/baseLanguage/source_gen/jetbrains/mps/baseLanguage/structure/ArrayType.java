@@ -16,7 +16,7 @@ public class ArrayType extends Type {
   }
 
   public Type getComponentType() {
-    return (Type)this.getChild(ArrayType.COMPONENT_TYPE);
+    return (Type)this.getChild(Type.class, ArrayType.COMPONENT_TYPE);
   }
 
   public void setComponentType(Type node) {

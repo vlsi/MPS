@@ -17,7 +17,7 @@ public class EntityReference extends BaseText {
   }
 
   public EntityDeclaration getEntityDeclaration() {
-    return (EntityDeclaration)this.getReferent(EntityReference.ENTITY_DECLARATION);
+    return (EntityDeclaration)this.getReferent(EntityDeclaration.class, EntityReference.ENTITY_DECLARATION);
   }
 
   public void setEntityDeclaration(EntityDeclaration node) {

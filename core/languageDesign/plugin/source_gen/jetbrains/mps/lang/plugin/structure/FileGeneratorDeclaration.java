@@ -64,7 +64,7 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   }
 
   public ClassConcept getExtendedClass() {
-    return (ClassConcept)this.getReferent(FileGeneratorDeclaration.EXTENDED_CLASS);
+    return (ClassConcept)this.getReferent(ClassConcept.class, FileGeneratorDeclaration.EXTENDED_CLASS);
   }
 
   public void setExtendedClass(ClassConcept node) {
@@ -72,7 +72,7 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   }
 
   public GenerateFileBlock getGenerateBlock() {
-    return (GenerateFileBlock)this.getChild(FileGeneratorDeclaration.GENERATE_BLOCK);
+    return (GenerateFileBlock)this.getChild(GenerateFileBlock.class, FileGeneratorDeclaration.GENERATE_BLOCK);
   }
 
   public void setGenerateBlock(GenerateFileBlock node) {
@@ -80,7 +80,7 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   }
 
   public IsDefaultBlock getIsDefaultBlock() {
-    return (IsDefaultBlock)this.getChild(FileGeneratorDeclaration.IS_DEFAULT_BLOCK);
+    return (IsDefaultBlock)this.getChild(IsDefaultBlock.class, FileGeneratorDeclaration.IS_DEFAULT_BLOCK);
   }
 
   public void setIsDefaultBlock(IsDefaultBlock node) {
@@ -88,7 +88,7 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   }
 
   public OverridesDefaultBlock getOverridesDefaultBlock() {
-    return (OverridesDefaultBlock)this.getChild(FileGeneratorDeclaration.OVERRIDES_DEFAULT_BLOCK);
+    return (OverridesDefaultBlock)this.getChild(OverridesDefaultBlock.class, FileGeneratorDeclaration.OVERRIDES_DEFAULT_BLOCK);
   }
 
   public void setOverridesDefaultBlock(OverridesDefaultBlock node) {
@@ -100,11 +100,11 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   }
 
   public Iterator<DefaultClassifierMethodDeclaration> methods() {
-    return this.children(FileGeneratorDeclaration.METHOD);
+    return this.children(DefaultClassifierMethodDeclaration.class, FileGeneratorDeclaration.METHOD);
   }
 
   public List<DefaultClassifierMethodDeclaration> getMethods() {
-    return this.getChildren(FileGeneratorDeclaration.METHOD);
+    return this.getChildren(DefaultClassifierMethodDeclaration.class, FileGeneratorDeclaration.METHOD);
   }
 
   public void addMethod(DefaultClassifierMethodDeclaration node) {
@@ -120,11 +120,11 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   }
 
   public Iterator<DefaultClassifierFieldDeclaration> fields() {
-    return this.children(FileGeneratorDeclaration.FIELD);
+    return this.children(DefaultClassifierFieldDeclaration.class, FileGeneratorDeclaration.FIELD);
   }
 
   public List<DefaultClassifierFieldDeclaration> getFields() {
-    return this.getChildren(FileGeneratorDeclaration.FIELD);
+    return this.getChildren(DefaultClassifierFieldDeclaration.class, FileGeneratorDeclaration.FIELD);
   }
 
   public void addField(DefaultClassifierFieldDeclaration node) {

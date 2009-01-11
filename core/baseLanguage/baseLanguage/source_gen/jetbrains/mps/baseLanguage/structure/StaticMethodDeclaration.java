@@ -53,7 +53,7 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(StaticMethodDeclaration.VISIBILITY);
+    return (Visibility)this.getChild(Visibility.class, StaticMethodDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {

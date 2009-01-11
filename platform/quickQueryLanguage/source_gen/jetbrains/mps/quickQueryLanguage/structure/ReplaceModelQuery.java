@@ -16,7 +16,7 @@ public class ReplaceModelQuery extends BaseQuery {
   }
 
   public QueryReplace getReplace() {
-    return (QueryReplace)this.getChild(ReplaceModelQuery.REPLACE);
+    return (QueryReplace)this.getChild(QueryReplace.class, ReplaceModelQuery.REPLACE);
   }
 
   public void setReplace(QueryReplace node) {

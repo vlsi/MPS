@@ -25,7 +25,7 @@ public class CellModel_ModelAccess extends CellModel_AbstractLabel {
   }
 
   public ModelAccessor getModelAcessor() {
-    return (ModelAccessor)this.getChild(CellModel_ModelAccess.MODEL_ACESSOR);
+    return (ModelAccessor)this.getChild(ModelAccessor.class, CellModel_ModelAccess.MODEL_ACESSOR);
   }
 
   public void setModelAcessor(ModelAccessor node) {

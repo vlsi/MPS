@@ -17,7 +17,7 @@ public class EmitMayBeUnreachable extends Statement {
   }
 
   public EmitStatement getEmitStatement() {
-    return (EmitStatement)this.getChild(EmitMayBeUnreachable.EMIT_STATEMENT);
+    return (EmitStatement)this.getChild(EmitStatement.class, EmitMayBeUnreachable.EMIT_STATEMENT);
   }
 
   public void setEmitStatement(EmitStatement node) {

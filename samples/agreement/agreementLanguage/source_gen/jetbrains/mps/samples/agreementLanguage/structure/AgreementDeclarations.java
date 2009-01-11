@@ -24,11 +24,11 @@ public class AgreementDeclarations extends BaseConcept {
   }
 
   public Iterator<EventType> eventTypes() {
-    return this.children(AgreementDeclarations.EVENT_TYPE);
+    return this.children(EventType.class, AgreementDeclarations.EVENT_TYPE);
   }
 
   public List<EventType> getEventTypes() {
-    return this.getChildren(AgreementDeclarations.EVENT_TYPE);
+    return this.getChildren(EventType.class, AgreementDeclarations.EVENT_TYPE);
   }
 
   public void addEventType(EventType node) {
@@ -44,11 +44,11 @@ public class AgreementDeclarations extends BaseConcept {
   }
 
   public Iterator<AccountType> accountTypes() {
-    return this.children(AgreementDeclarations.ACCOUNT_TYPE);
+    return this.children(AccountType.class, AgreementDeclarations.ACCOUNT_TYPE);
   }
 
   public List<AccountType> getAccountTypes() {
-    return this.getChildren(AgreementDeclarations.ACCOUNT_TYPE);
+    return this.getChildren(AccountType.class, AgreementDeclarations.ACCOUNT_TYPE);
   }
 
   public void addAccountType(AccountType node) {

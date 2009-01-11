@@ -17,7 +17,7 @@ public class BeanType extends BaseClassifierType {
   }
 
   public BeanDeclaration getBean() {
-    return (BeanDeclaration)this.getReferent(BeanType.BEAN);
+    return (BeanDeclaration)this.getReferent(BeanDeclaration.class, BeanType.BEAN);
   }
 
   public void setBean(BeanDeclaration node) {

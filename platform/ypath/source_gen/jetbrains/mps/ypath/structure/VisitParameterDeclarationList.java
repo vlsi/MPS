@@ -23,11 +23,11 @@ public class VisitParameterDeclarationList extends BaseConcept {
   }
 
   public Iterator<VisitParameterDeclaration> visitParameterDeclarations() {
-    return this.children(VisitParameterDeclarationList.VISIT_PARAMETER_DECLARATION);
+    return this.children(VisitParameterDeclaration.class, VisitParameterDeclarationList.VISIT_PARAMETER_DECLARATION);
   }
 
   public List<VisitParameterDeclaration> getVisitParameterDeclarations() {
-    return this.getChildren(VisitParameterDeclarationList.VISIT_PARAMETER_DECLARATION);
+    return this.getChildren(VisitParameterDeclaration.class, VisitParameterDeclarationList.VISIT_PARAMETER_DECLARATION);
   }
 
   public void addVisitParameterDeclaration(VisitParameterDeclaration node) {

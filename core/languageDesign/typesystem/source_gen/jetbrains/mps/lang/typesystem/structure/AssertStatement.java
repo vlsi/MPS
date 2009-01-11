@@ -17,7 +17,7 @@ public class AssertStatement extends ReportErrorStatement {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(AssertStatement.CONDITION);
+    return (Expression)this.getChild(Expression.class, AssertStatement.CONDITION);
   }
 
   public void setCondition(Expression node) {

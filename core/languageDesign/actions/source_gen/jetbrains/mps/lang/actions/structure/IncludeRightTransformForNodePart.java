@@ -16,7 +16,7 @@ public class IncludeRightTransformForNodePart extends MenuBuilderPart {
   }
 
   public QueryFunction_SideTransform_NodeQuery getNodeBlock() {
-    return (QueryFunction_SideTransform_NodeQuery)this.getChild(IncludeRightTransformForNodePart.NODE_BLOCK);
+    return (QueryFunction_SideTransform_NodeQuery)this.getChild(QueryFunction_SideTransform_NodeQuery.class, IncludeRightTransformForNodePart.NODE_BLOCK);
   }
 
   public void setNodeBlock(QueryFunction_SideTransform_NodeQuery node) {

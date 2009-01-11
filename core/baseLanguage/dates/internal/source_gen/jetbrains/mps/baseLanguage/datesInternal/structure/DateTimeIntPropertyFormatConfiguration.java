@@ -16,7 +16,7 @@ public class DateTimeIntPropertyFormatConfiguration extends DateTimePropertyConf
   }
 
   public DateTimeProperty getDateTimeProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimeIntPropertyFormatConfiguration.DATE_TIME_PROPERTY);
+    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, DateTimeIntPropertyFormatConfiguration.DATE_TIME_PROPERTY);
   }
 
   public void setDateTimeProperty(DateTimeProperty node) {

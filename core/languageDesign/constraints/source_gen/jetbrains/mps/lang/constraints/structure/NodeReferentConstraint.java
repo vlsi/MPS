@@ -20,7 +20,7 @@ public class NodeReferentConstraint extends BaseConcept {
   }
 
   public LinkDeclaration getApplicableLink() {
-    return (LinkDeclaration)this.getReferent(NodeReferentConstraint.APPLICABLE_LINK);
+    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, NodeReferentConstraint.APPLICABLE_LINK);
   }
 
   public void setApplicableLink(LinkDeclaration node) {
@@ -28,7 +28,7 @@ public class NodeReferentConstraint extends BaseConcept {
   }
 
   public ConstraintFunction_ReferentSearchScope_Factory getSearchScopeFactory() {
-    return (ConstraintFunction_ReferentSearchScope_Factory)this.getChild(NodeReferentConstraint.SEARCH_SCOPE_FACTORY);
+    return (ConstraintFunction_ReferentSearchScope_Factory)this.getChild(ConstraintFunction_ReferentSearchScope_Factory.class, NodeReferentConstraint.SEARCH_SCOPE_FACTORY);
   }
 
   public void setSearchScopeFactory(ConstraintFunction_ReferentSearchScope_Factory node) {
@@ -36,7 +36,7 @@ public class NodeReferentConstraint extends BaseConcept {
   }
 
   public ConstraintFunction_ReferentSetHandler getReferentSetHandler() {
-    return (ConstraintFunction_ReferentSetHandler)this.getChild(NodeReferentConstraint.REFERENT_SET_HANDLER);
+    return (ConstraintFunction_ReferentSetHandler)this.getChild(ConstraintFunction_ReferentSetHandler.class, NodeReferentConstraint.REFERENT_SET_HANDLER);
   }
 
   public void setReferentSetHandler(ConstraintFunction_ReferentSetHandler node) {

@@ -66,7 +66,7 @@ public class ScheduleLiteral extends BaseConcept {
   }
 
   public SchedulePeriod getSchedulePeriod() {
-    return (SchedulePeriod)this.getReferent(ScheduleLiteral.SCHEDULE_PERIOD);
+    return (SchedulePeriod)this.getReferent(SchedulePeriod.class, ScheduleLiteral.SCHEDULE_PERIOD);
   }
 
   public void setSchedulePeriod(SchedulePeriod node) {
@@ -74,7 +74,7 @@ public class ScheduleLiteral extends BaseConcept {
   }
 
   public Month getMonth() {
-    return (Month)this.getReferent(ScheduleLiteral.MONTH);
+    return (Month)this.getReferent(Month.class, ScheduleLiteral.MONTH);
   }
 
   public void setMonth(Month node) {

@@ -18,7 +18,7 @@ public class DeleteFeatureOperation extends Statement {
   }
 
   public Expression getFeature() {
-    return (Expression)this.getChild(DeleteFeatureOperation.FEATURE);
+    return (Expression)this.getChild(Expression.class, DeleteFeatureOperation.FEATURE);
   }
 
   public void setFeature(Expression node) {

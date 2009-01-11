@@ -22,7 +22,7 @@ public class BeanCreator extends AbstractCreator {
   }
 
   public ConstructorDeclaration getConstructor() {
-    return (ConstructorDeclaration)this.getReferent(BeanCreator.CONSTRUCTOR);
+    return (ConstructorDeclaration)this.getReferent(ConstructorDeclaration.class, BeanCreator.CONSTRUCTOR);
   }
 
   public void setConstructor(ConstructorDeclaration node) {
@@ -34,11 +34,11 @@ public class BeanCreator extends AbstractCreator {
   }
 
   public Iterator<Expression> parameters() {
-    return this.children(BeanCreator.PARAMETER);
+    return this.children(Expression.class, BeanCreator.PARAMETER);
   }
 
   public List<Expression> getParameters() {
-    return this.getChildren(BeanCreator.PARAMETER);
+    return this.getChildren(Expression.class, BeanCreator.PARAMETER);
   }
 
   public void addParameter(Expression node) {

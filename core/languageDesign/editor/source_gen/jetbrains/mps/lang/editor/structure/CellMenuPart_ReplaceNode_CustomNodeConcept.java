@@ -17,7 +17,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept extends CellMenuPart_Abs
   }
 
   public ConceptDeclaration getReplacementConcept() {
-    return (ConceptDeclaration)this.getReferent(CellMenuPart_ReplaceNode_CustomNodeConcept.REPLACEMENT_CONCEPT);
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, CellMenuPart_ReplaceNode_CustomNodeConcept.REPLACEMENT_CONCEPT);
   }
 
   public void setReplacementConcept(ConceptDeclaration node) {

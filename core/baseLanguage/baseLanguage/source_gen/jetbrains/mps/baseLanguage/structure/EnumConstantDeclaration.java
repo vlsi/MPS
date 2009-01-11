@@ -66,7 +66,7 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(EnumConstantDeclaration.VISIBILITY);
+    return (Visibility)this.getChild(Visibility.class, EnumConstantDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -78,11 +78,11 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
   }
 
   public Iterator<Expression> actualArguments() {
-    return this.children(EnumConstantDeclaration.ACTUAL_ARGUMENT);
+    return this.children(Expression.class, EnumConstantDeclaration.ACTUAL_ARGUMENT);
   }
 
   public List<Expression> getActualArguments() {
-    return this.getChildren(EnumConstantDeclaration.ACTUAL_ARGUMENT);
+    return this.getChildren(Expression.class, EnumConstantDeclaration.ACTUAL_ARGUMENT);
   }
 
   public void addActualArgument(Expression node) {

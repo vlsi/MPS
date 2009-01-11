@@ -12,7 +12,7 @@ public enum Taxable {
   private String myName;
   private boolean myValue;
 
-Taxable(String name, boolean value) {
+  Taxable(String name, boolean value) {
     this.myName = name;
     this.myValue = value;
   }

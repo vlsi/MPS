@@ -34,7 +34,7 @@ public class CellModel_Image extends EditorCellModel {
   }
 
   public QueryFunction_ImagePath getImagePathProvider() {
-    return (QueryFunction_ImagePath)this.getChild(CellModel_Image.IMAGE_PATH_PROVIDER);
+    return (QueryFunction_ImagePath)this.getChild(QueryFunction_ImagePath.class, CellModel_Image.IMAGE_PATH_PROVIDER);
   }
 
   public void setImagePathProvider(QueryFunction_ImagePath node) {

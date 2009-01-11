@@ -17,7 +17,7 @@ public class AssertType extends AbstractNodeAssert {
   }
 
   public Type getTypeToCheck() {
-    return (Type)this.getChild(AssertType.TYPE_TO_CHECK);
+    return (Type)this.getChild(Type.class, AssertType.TYPE_TO_CHECK);
   }
 
   public void setTypeToCheck(Type node) {

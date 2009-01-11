@@ -17,7 +17,7 @@ public class VariableLive extends NodeProperty {
   }
 
   public LocalVariableReference getVar() {
-    return (LocalVariableReference)this.getChild(VariableLive.VAR);
+    return (LocalVariableReference)this.getChild(LocalVariableReference.class, VariableLive.VAR);
   }
 
   public void setVar(LocalVariableReference node) {

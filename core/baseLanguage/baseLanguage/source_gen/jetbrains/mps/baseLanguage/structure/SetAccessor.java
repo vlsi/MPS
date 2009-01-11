@@ -17,7 +17,7 @@ public class SetAccessor extends BaseConcept {
   }
 
   public StatementList getStatementList() {
-    return (StatementList)this.getChild(SetAccessor.STATEMENT_LIST);
+    return (StatementList)this.getChild(StatementList.class, SetAccessor.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {

@@ -26,7 +26,7 @@ public class AbstractCheckingRule extends AbstractRule {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(AbstractCheckingRule.BODY);
+    return (StatementList)this.getChild(StatementList.class, AbstractCheckingRule.BODY);
   }
 
   public void setBody(StatementList node) {

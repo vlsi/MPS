@@ -17,7 +17,7 @@ public class ArrayAccessExpression extends Expression {
   }
 
   public Expression getArray() {
-    return (Expression)this.getChild(ArrayAccessExpression.ARRAY);
+    return (Expression)this.getChild(Expression.class, ArrayAccessExpression.ARRAY);
   }
 
   public void setArray(Expression node) {
@@ -25,7 +25,7 @@ public class ArrayAccessExpression extends Expression {
   }
 
   public Expression getIndex() {
-    return (Expression)this.getChild(ArrayAccessExpression.INDEX);
+    return (Expression)this.getChild(Expression.class, ArrayAccessExpression.INDEX);
   }
 
   public void setIndex(Expression node) {

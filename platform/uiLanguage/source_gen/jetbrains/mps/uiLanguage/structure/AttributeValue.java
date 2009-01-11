@@ -46,7 +46,7 @@ public class AttributeValue extends BaseConcept implements IComponentPart {
   }
 
   public AttributeDeclaration getAttribute() {
-    return (AttributeDeclaration)this.getReferent(AttributeValue.ATTRIBUTE);
+    return (AttributeDeclaration)this.getReferent(AttributeDeclaration.class, AttributeValue.ATTRIBUTE);
   }
 
   public void setAttribute(AttributeDeclaration node) {
@@ -54,7 +54,7 @@ public class AttributeValue extends BaseConcept implements IComponentPart {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(AttributeValue.VALUE);
+    return (Expression)this.getChild(Expression.class, AttributeValue.VALUE);
   }
 
   public void setValue(Expression node) {

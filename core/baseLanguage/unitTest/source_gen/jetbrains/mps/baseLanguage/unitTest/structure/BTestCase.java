@@ -62,7 +62,7 @@ public class BTestCase extends ClassConcept implements ITestCase {
   }
 
   public TestMethodList getTestMethodList() {
-    return (TestMethodList)this.getChild(BTestCase.TEST_METHOD_LIST);
+    return (TestMethodList)this.getChild(TestMethodList.class, BTestCase.TEST_METHOD_LIST);
   }
 
   public void setTestMethodList(TestMethodList node) {

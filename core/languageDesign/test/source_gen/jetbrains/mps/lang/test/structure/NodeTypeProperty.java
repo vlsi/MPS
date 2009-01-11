@@ -17,7 +17,7 @@ public class NodeTypeProperty extends NodeProperty {
   }
 
   public Type getType() {
-    return (Type)this.getChild(NodeTypeProperty.TYPE);
+    return (Type)this.getChild(Type.class, NodeTypeProperty.TYPE);
   }
 
   public void setType(Type node) {

@@ -16,7 +16,7 @@ public class CellModel_JComponent extends EditorCellModel {
   }
 
   public QueryFunction_JComponent getComponentProvider() {
-    return (QueryFunction_JComponent)this.getChild(CellModel_JComponent.COMPONENT_PROVIDER);
+    return (QueryFunction_JComponent)this.getChild(QueryFunction_JComponent.class, CellModel_JComponent.COMPONENT_PROVIDER);
   }
 
   public void setComponentProvider(QueryFunction_JComponent node) {

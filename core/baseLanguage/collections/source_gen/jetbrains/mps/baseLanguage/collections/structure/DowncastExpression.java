@@ -17,7 +17,7 @@ public class DowncastExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(DowncastExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, DowncastExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

@@ -17,7 +17,7 @@ public class AddSetElementOperation extends AbstractSetOperation {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(AddSetElementOperation.ARGUMENT);
+    return (Expression)this.getChild(Expression.class, AddSetElementOperation.ARGUMENT);
   }
 
   public void setArgument(Expression node) {

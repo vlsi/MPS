@@ -17,7 +17,7 @@ public class ActionType extends BaseClassifierType {
   }
 
   public ActionDeclaration getAction() {
-    return (ActionDeclaration)this.getReferent(ActionType.ACTION);
+    return (ActionDeclaration)this.getReferent(ActionDeclaration.class, ActionType.ACTION);
   }
 
   public void setAction(ActionDeclaration node) {

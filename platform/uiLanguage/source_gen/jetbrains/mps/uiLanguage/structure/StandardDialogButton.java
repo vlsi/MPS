@@ -36,7 +36,7 @@ public class StandardDialogButton extends BaseConcept {
   }
 
   public Expression getHandler() {
-    return (Expression)this.getChild(StandardDialogButton.HANDLER);
+    return (Expression)this.getChild(Expression.class, StandardDialogButton.HANDLER);
   }
 
   public void setHandler(Expression node) {

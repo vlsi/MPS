@@ -19,7 +19,7 @@ public class SuperConstructorInvocation extends Statement {
   }
 
   public ConstructorDeclaration getConstructorDeclaration() {
-    return (ConstructorDeclaration)this.getReferent(SuperConstructorInvocation.CONSTRUCTOR_DECLARATION);
+    return (ConstructorDeclaration)this.getReferent(ConstructorDeclaration.class, SuperConstructorInvocation.CONSTRUCTOR_DECLARATION);
   }
 
   public void setConstructorDeclaration(ConstructorDeclaration node) {
@@ -31,11 +31,11 @@ public class SuperConstructorInvocation extends Statement {
   }
 
   public Iterator<Expression> actualArguments() {
-    return this.children(SuperConstructorInvocation.ACTUAL_ARGUMENT);
+    return this.children(Expression.class, SuperConstructorInvocation.ACTUAL_ARGUMENT);
   }
 
   public List<Expression> getActualArguments() {
-    return this.getChildren(SuperConstructorInvocation.ACTUAL_ARGUMENT);
+    return this.getChildren(Expression.class, SuperConstructorInvocation.ACTUAL_ARGUMENT);
   }
 
   public void addActualArgument(Expression node) {

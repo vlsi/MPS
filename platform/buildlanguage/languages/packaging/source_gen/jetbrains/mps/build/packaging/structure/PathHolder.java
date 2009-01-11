@@ -27,7 +27,7 @@ public class PathHolder extends BaseConcept {
   }
 
   public Macro getMacro() {
-    return (Macro)this.getReferent(PathHolder.MACRO);
+    return (Macro)this.getReferent(Macro.class, PathHolder.MACRO);
   }
 
   public void setMacro(Macro node) {
@@ -35,7 +35,7 @@ public class PathHolder extends BaseConcept {
   }
 
   public Module getModule() {
-    return (Module)this.getReferent(PathHolder.MODULE);
+    return (Module)this.getReferent(Module.class, PathHolder.MODULE);
   }
 
   public void setModule(Module node) {

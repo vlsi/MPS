@@ -65,11 +65,11 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
   }
 
   public Iterator<AttributeDeclaration> attributes() {
-    return this.children(BeanDeclaration.ATTRIBUTE);
+    return this.children(AttributeDeclaration.class, BeanDeclaration.ATTRIBUTE);
   }
 
   public List<AttributeDeclaration> getAttributes() {
-    return this.getChildren(BeanDeclaration.ATTRIBUTE);
+    return this.getChildren(AttributeDeclaration.class, BeanDeclaration.ATTRIBUTE);
   }
 
   public void addAttribute(AttributeDeclaration node) {
@@ -85,11 +85,11 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
   }
 
   public Iterator<DefaultClassifierMethodDeclaration> methods() {
-    return this.children(BeanDeclaration.METHOD);
+    return this.children(DefaultClassifierMethodDeclaration.class, BeanDeclaration.METHOD);
   }
 
   public List<DefaultClassifierMethodDeclaration> getMethods() {
-    return this.getChildren(BeanDeclaration.METHOD);
+    return this.getChildren(DefaultClassifierMethodDeclaration.class, BeanDeclaration.METHOD);
   }
 
   public void addMethod(DefaultClassifierMethodDeclaration node) {
@@ -105,11 +105,11 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
   }
 
   public Iterator<ConstructorDeclaration> constructors() {
-    return this.children(BeanDeclaration.CONSTRUCTOR);
+    return this.children(ConstructorDeclaration.class, BeanDeclaration.CONSTRUCTOR);
   }
 
   public List<ConstructorDeclaration> getConstructors() {
-    return this.getChildren(BeanDeclaration.CONSTRUCTOR);
+    return this.getChildren(ConstructorDeclaration.class, BeanDeclaration.CONSTRUCTOR);
   }
 
   public void addConstructor(ConstructorDeclaration node) {

@@ -16,7 +16,7 @@ public class CellMenuComponentFeature_Property extends CellMenuComponentFeature 
   }
 
   public PropertyDeclaration getPropertyDeclaration() {
-    return (PropertyDeclaration)this.getRelationDeclaration();
+    return this.ensureAdapter(PropertyDeclaration.class, "relationDeclaration", this.getRelationDeclaration());
   }
 
   public void setPropertyDeclaration(PropertyDeclaration node) {

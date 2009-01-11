@@ -17,7 +17,7 @@ public class ConceptLink extends BaseConcept {
   }
 
   public ConceptLinkDeclaration getConceptLinkDeclaration() {
-    return (ConceptLinkDeclaration)this.getReferent(ConceptLink.CONCEPT_LINK_DECLARATION);
+    return (ConceptLinkDeclaration)this.getReferent(ConceptLinkDeclaration.class, ConceptLink.CONCEPT_LINK_DECLARATION);
   }
 
   public void setConceptLinkDeclaration(ConceptLinkDeclaration node) {

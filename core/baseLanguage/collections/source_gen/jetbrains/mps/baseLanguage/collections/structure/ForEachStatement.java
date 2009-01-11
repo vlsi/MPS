@@ -19,7 +19,7 @@ public class ForEachStatement extends AbstractLoopStatement {
   }
 
   public ForEachVariable getVariable() {
-    return (ForEachVariable)this.getChild(ForEachStatement.VARIABLE);
+    return (ForEachVariable)this.getChild(ForEachVariable.class, ForEachStatement.VARIABLE);
   }
 
   public void setVariable(ForEachVariable node) {
@@ -27,7 +27,7 @@ public class ForEachStatement extends AbstractLoopStatement {
   }
 
   public Expression getInputSequence() {
-    return (Expression)this.getChild(ForEachStatement.INPUT_SEQUENCE);
+    return (Expression)this.getChild(Expression.class, ForEachStatement.INPUT_SEQUENCE);
   }
 
   public void setInputSequence(Expression node) {

@@ -16,7 +16,7 @@ public class SideTransformVariableReference extends VariableReference {
   }
 
   public SideTransformVariableDeclaration getRightTransformVariableDeclaration() {
-    return (SideTransformVariableDeclaration)this.getVariableDeclaration();
+    return this.ensureAdapter(SideTransformVariableDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
 
   public void setRightTransformVariableDeclaration(SideTransformVariableDeclaration node) {

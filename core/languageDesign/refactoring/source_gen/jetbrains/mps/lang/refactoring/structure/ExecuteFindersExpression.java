@@ -21,7 +21,7 @@ public class ExecuteFindersExpression extends Expression {
   }
 
   public Expression getSearchNode() {
-    return (Expression)this.getChild(ExecuteFindersExpression.SEARCH_NODE);
+    return (Expression)this.getChild(Expression.class, ExecuteFindersExpression.SEARCH_NODE);
   }
 
   public void setSearchNode(Expression node) {
@@ -29,7 +29,7 @@ public class ExecuteFindersExpression extends Expression {
   }
 
   public Expression getSearchScope() {
-    return (Expression)this.getChild(ExecuteFindersExpression.SEARCH_SCOPE);
+    return (Expression)this.getChild(Expression.class, ExecuteFindersExpression.SEARCH_SCOPE);
   }
 
   public void setSearchScope(Expression node) {
@@ -41,11 +41,11 @@ public class ExecuteFindersExpression extends Expression {
   }
 
   public Iterator<FinderReference> finderses() {
-    return this.children(ExecuteFindersExpression.FINDERS);
+    return this.children(FinderReference.class, ExecuteFindersExpression.FINDERS);
   }
 
   public List<FinderReference> getFinderses() {
-    return this.getChildren(ExecuteFindersExpression.FINDERS);
+    return this.getChildren(FinderReference.class, ExecuteFindersExpression.FINDERS);
   }
 
   public void addFinders(FinderReference node) {

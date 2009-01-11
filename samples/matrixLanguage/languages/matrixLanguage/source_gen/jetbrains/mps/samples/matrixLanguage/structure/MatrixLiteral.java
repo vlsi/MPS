@@ -21,7 +21,7 @@ public class MatrixLiteral extends Expression {
   }
 
   public Type getScalarType() {
-    return (Type)this.getChild(MatrixLiteral.SCALAR_TYPE);
+    return (Type)this.getChild(Type.class, MatrixLiteral.SCALAR_TYPE);
   }
 
   public void setScalarType(Type node) {
@@ -33,11 +33,11 @@ public class MatrixLiteral extends Expression {
   }
 
   public Iterator<MatrixRow> rows() {
-    return this.children(MatrixLiteral.ROW);
+    return this.children(MatrixRow.class, MatrixLiteral.ROW);
   }
 
   public List<MatrixRow> getRows() {
-    return this.getChildren(MatrixLiteral.ROW);
+    return this.getChildren(MatrixRow.class, MatrixLiteral.ROW);
   }
 
   public void addRow(MatrixRow node) {

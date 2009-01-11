@@ -17,7 +17,7 @@ public class BindExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(BindExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, BindExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

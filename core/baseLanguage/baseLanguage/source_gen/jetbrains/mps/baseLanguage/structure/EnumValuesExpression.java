@@ -16,7 +16,7 @@ public class EnumValuesExpression extends Expression {
   }
 
   public EnumClass getEnumClass() {
-    return (EnumClass)this.getReferent(EnumValuesExpression.ENUM_CLASS);
+    return (EnumClass)this.getReferent(EnumClass.class, EnumValuesExpression.ENUM_CLASS);
   }
 
   public void setEnumClass(EnumClass node) {

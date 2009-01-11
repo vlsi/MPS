@@ -16,7 +16,7 @@ public class GroupReference extends TypeExpression {
   }
 
   public GroupDeclaration getGroupDeclaration() {
-    return (GroupDeclaration)this.getReferent(GroupReference.GROUP_DECLARATION);
+    return (GroupDeclaration)this.getReferent(GroupDeclaration.class, GroupReference.GROUP_DECLARATION);
   }
 
   public void setGroupDeclaration(GroupDeclaration node) {

@@ -22,11 +22,11 @@ public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
   }
 
   public Iterator<InterfaceConceptReference> extendses() {
-    return this.children(InterfaceConceptDeclaration.EXTENDS);
+    return this.children(InterfaceConceptReference.class, InterfaceConceptDeclaration.EXTENDS);
   }
 
   public List<InterfaceConceptReference> getExtendses() {
-    return this.getChildren(InterfaceConceptDeclaration.EXTENDS);
+    return this.getChildren(InterfaceConceptReference.class, InterfaceConceptDeclaration.EXTENDS);
   }
 
   public void addExtends(InterfaceConceptReference node) {

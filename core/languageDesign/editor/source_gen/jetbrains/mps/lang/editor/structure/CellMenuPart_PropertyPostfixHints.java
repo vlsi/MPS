@@ -16,7 +16,7 @@ public class CellMenuPart_PropertyPostfixHints extends CellMenuPart_Abstract {
   }
 
   public CellMenuPart_PropertyPostfixHints_GetPostfixes getPostfixesFunction() {
-    return (CellMenuPart_PropertyPostfixHints_GetPostfixes)this.getChild(CellMenuPart_PropertyPostfixHints.POSTFIXES_FUNCTION);
+    return (CellMenuPart_PropertyPostfixHints_GetPostfixes)this.getChild(CellMenuPart_PropertyPostfixHints_GetPostfixes.class, CellMenuPart_PropertyPostfixHints.POSTFIXES_FUNCTION);
   }
 
   public void setPostfixesFunction(CellMenuPart_PropertyPostfixHints_GetPostfixes node) {

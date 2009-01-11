@@ -19,7 +19,7 @@ public class TokenConditionalPair extends BaseConcept {
   }
 
   public IDateFormat getFormat() {
-    return (IDateFormat)this.getReferent(TokenConditionalPair.FORMAT);
+    return (IDateFormat)this.getReferent(IDateFormat.class, TokenConditionalPair.FORMAT);
   }
 
   public void setFormat(IDateFormat node) {
@@ -27,7 +27,7 @@ public class TokenConditionalPair extends BaseConcept {
   }
 
   public TokenCondition getCondition() {
-    return (TokenCondition)this.getChild(TokenConditionalPair.CONDITION);
+    return (TokenCondition)this.getChild(TokenCondition.class, TokenConditionalPair.CONDITION);
   }
 
   public void setCondition(TokenCondition node) {

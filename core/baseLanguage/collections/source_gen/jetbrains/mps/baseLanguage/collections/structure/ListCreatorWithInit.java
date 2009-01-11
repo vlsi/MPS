@@ -22,7 +22,7 @@ public class ListCreatorWithInit extends AbstractCreator {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(ListCreatorWithInit.ELEMENT_TYPE);
+    return (Type)this.getChild(Type.class, ListCreatorWithInit.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -34,11 +34,11 @@ public class ListCreatorWithInit extends AbstractCreator {
   }
 
   public Iterator<Expression> initValues() {
-    return this.children(ListCreatorWithInit.INIT_VALUE);
+    return this.children(Expression.class, ListCreatorWithInit.INIT_VALUE);
   }
 
   public List<Expression> getInitValues() {
-    return this.getChildren(ListCreatorWithInit.INIT_VALUE);
+    return this.getChildren(Expression.class, ListCreatorWithInit.INIT_VALUE);
   }
 
   public void addInitValue(Expression node) {

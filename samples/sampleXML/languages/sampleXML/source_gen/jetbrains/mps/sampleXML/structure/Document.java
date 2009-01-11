@@ -54,7 +54,7 @@ public class Document extends BaseConcept implements INamedConcept {
   }
 
   public Element getRootElement() {
-    return (Element)this.getChild(Document.ROOT_ELEMENT);
+    return (Element)this.getChild(Element.class, Document.ROOT_ELEMENT);
   }
 
   public void setRootElement(Element node) {

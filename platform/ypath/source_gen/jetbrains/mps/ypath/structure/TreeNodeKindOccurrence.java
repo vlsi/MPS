@@ -17,7 +17,7 @@ public class TreeNodeKindOccurrence extends BaseConcept {
   }
 
   public TreeNodeKind getNodeKind() {
-    return (TreeNodeKind)this.getReferent(TreeNodeKindOccurrence.NODE_KIND);
+    return (TreeNodeKind)this.getReferent(TreeNodeKind.class, TreeNodeKindOccurrence.NODE_KIND);
   }
 
   public void setNodeKind(TreeNodeKind node) {

@@ -15,7 +15,7 @@ public class ParameterReference extends VariableReference {
   }
 
   public ParameterDeclaration getParameterDeclaration() {
-    return (ParameterDeclaration)this.getVariableDeclaration();
+    return this.ensureAdapter(ParameterDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
 
   public void setParameterDeclaration(ParameterDeclaration node) {

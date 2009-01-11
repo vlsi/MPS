@@ -17,7 +17,7 @@ public class RemoveElementOperation extends AbstractListOperation {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(RemoveElementOperation.ARGUMENT);
+    return (Expression)this.getChild(Expression.class, RemoveElementOperation.ARGUMENT);
   }
 
   public void setArgument(Expression node) {

@@ -17,7 +17,7 @@ public class LambdaMethod extends Closure {
   }
 
   public LambdaMethodParameter getParameter() {
-    return (LambdaMethodParameter)this.getChild(LambdaMethod.PARAMETER);
+    return (LambdaMethodParameter)this.getChild(LambdaMethodParameter.class, LambdaMethod.PARAMETER);
   }
 
   public void setParameter(LambdaMethodParameter node) {

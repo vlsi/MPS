@@ -52,11 +52,11 @@ public class InvokeFunctionOperation extends BaseConcept implements IOperation {
   }
 
   public Iterator<Expression> parameters() {
-    return this.children(InvokeFunctionOperation.PARAMETER);
+    return this.children(Expression.class, InvokeFunctionOperation.PARAMETER);
   }
 
   public List<Expression> getParameters() {
-    return this.getChildren(InvokeFunctionOperation.PARAMETER);
+    return this.getChildren(Expression.class, InvokeFunctionOperation.PARAMETER);
   }
 
   public void addParameter(Expression node) {

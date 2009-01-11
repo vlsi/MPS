@@ -16,7 +16,7 @@ public class ImportProject extends AbstractImportProject {
   }
 
   public Project getProject() {
-    return (Project)this.getReferent(ImportProject.PROJECT);
+    return (Project)this.getReferent(Project.class, ImportProject.PROJECT);
   }
 
   public void setProject(Project node) {

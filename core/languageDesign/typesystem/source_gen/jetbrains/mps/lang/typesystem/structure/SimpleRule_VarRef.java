@@ -19,7 +19,7 @@ public class SimpleRule_VarRef extends SimpleRule {
   }
 
   public LinkDeclaration getLink() {
-    return (LinkDeclaration)this.getReferent(SimpleRule_VarRef.LINK);
+    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_VarRef.LINK);
   }
 
   public void setLink(LinkDeclaration node) {
@@ -27,7 +27,7 @@ public class SimpleRule_VarRef extends SimpleRule {
   }
 
   public ConceptReference getConceptReference() {
-    return (ConceptReference)this.getChild(SimpleRule_VarRef.CONCEPT_REFERENCE);
+    return (ConceptReference)this.getChild(ConceptReference.class, SimpleRule_VarRef.CONCEPT_REFERENCE);
   }
 
   public void setConceptReference(ConceptReference node) {

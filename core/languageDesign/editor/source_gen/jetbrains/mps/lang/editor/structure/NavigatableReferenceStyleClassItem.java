@@ -17,7 +17,7 @@ public class NavigatableReferenceStyleClassItem extends StyleClassItem {
   }
 
   public LinkDeclaration getLink() {
-    return (LinkDeclaration)this.getReferent(NavigatableReferenceStyleClassItem.LINK);
+    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, NavigatableReferenceStyleClassItem.LINK);
   }
 
   public void setLink(LinkDeclaration node) {

@@ -44,7 +44,7 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
   }
 
   public IAttributeAccessQualifier getAttributeQualifier() {
-    return (IAttributeAccessQualifier)this.getChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER);
+    return (IAttributeAccessQualifier)this.getChild(IAttributeAccessQualifier.class, AttributeAccessOperation.ATTRIBUTE_QUALIFIER);
   }
 
   public void setAttributeQualifier(IAttributeAccessQualifier node) {

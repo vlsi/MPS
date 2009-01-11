@@ -22,11 +22,11 @@ public class ComplexText extends BaseText {
   }
 
   public Iterator<BaseText> texts() {
-    return this.children(ComplexText.TEXT);
+    return this.children(BaseText.class, ComplexText.TEXT);
   }
 
   public List<BaseText> getTexts() {
-    return this.getChildren(ComplexText.TEXT);
+    return this.getChildren(BaseText.class, ComplexText.TEXT);
   }
 
   public void addText(BaseText node) {

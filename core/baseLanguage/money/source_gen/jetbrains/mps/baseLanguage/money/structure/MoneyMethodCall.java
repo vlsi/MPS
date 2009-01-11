@@ -17,7 +17,7 @@ public class MoneyMethodCall extends Expression {
   }
 
   public Expression getInstance() {
-    return (Expression)this.getChild(MoneyMethodCall.INSTANCE);
+    return (Expression)this.getChild(Expression.class, MoneyMethodCall.INSTANCE);
   }
 
   public void setInstance(Expression node) {

@@ -78,7 +78,7 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   }
 
   public Project getProject() {
-    return (Project)this.getReferent(Antcall.PROJECT);
+    return (Project)this.getReferent(Project.class, Antcall.PROJECT);
   }
 
   public void setProject(Project node) {
@@ -86,7 +86,7 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   }
 
   public TargetDeclaration getTargetDeclaration() {
-    return (TargetDeclaration)this.getReferent(Antcall.TARGET_DECLARATION);
+    return (TargetDeclaration)this.getReferent(TargetDeclaration.class, Antcall.TARGET_DECLARATION);
   }
 
   public void setTargetDeclaration(TargetDeclaration node) {
@@ -94,7 +94,7 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   }
 
   public BuildLanguageTargetReference getTargetReference() {
-    return (BuildLanguageTargetReference)this.getChild(Antcall.TARGET_REFERENCE);
+    return (BuildLanguageTargetReference)this.getChild(BuildLanguageTargetReference.class, Antcall.TARGET_REFERENCE);
   }
 
   public void setTargetReference(BuildLanguageTargetReference node) {
@@ -102,7 +102,7 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   }
 
   public Delete getDelete() {
-    return (Delete)this.getChild(Antcall.DELETE);
+    return (Delete)this.getChild(Delete.class, Antcall.DELETE);
   }
 
   public void setDelete(Delete node) {
@@ -114,11 +114,11 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   }
 
   public Iterator<AbstractProjectComponent> entries() {
-    return this.children(Antcall.ENTRY);
+    return this.children(AbstractProjectComponent.class, Antcall.ENTRY);
   }
 
   public List<AbstractProjectComponent> getEntries() {
-    return this.getChildren(Antcall.ENTRY);
+    return this.getChildren(AbstractProjectComponent.class, Antcall.ENTRY);
   }
 
   public void addEntry(AbstractProjectComponent node) {

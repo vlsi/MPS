@@ -22,11 +22,11 @@ public class GItemList extends GItem {
   }
 
   public Iterator<GItem> items() {
-    return this.children(GItemList.ITEM);
+    return this.children(GItem.class, GItemList.ITEM);
   }
 
   public List<GItem> getItems() {
-    return this.getChildren(GItemList.ITEM);
+    return this.getChildren(GItem.class, GItemList.ITEM);
   }
 
   public void addItem(GItem node) {

@@ -17,7 +17,7 @@ public class FromOperation extends TreePathOperation {
   }
 
   public Expression getFromExpression() {
-    return (Expression)this.getChild(FromOperation.FROM_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, FromOperation.FROM_EXPRESSION);
   }
 
   public void setFromExpression(Expression node) {

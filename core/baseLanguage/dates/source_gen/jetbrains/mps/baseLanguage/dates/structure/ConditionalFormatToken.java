@@ -22,11 +22,11 @@ public class ConditionalFormatToken extends FormatToken {
   }
 
   public Iterator<TokenConditionalPair> conditionPairs() {
-    return this.children(ConditionalFormatToken.CONDITION_PAIR);
+    return this.children(TokenConditionalPair.class, ConditionalFormatToken.CONDITION_PAIR);
   }
 
   public List<TokenConditionalPair> getConditionPairs() {
-    return this.getChildren(ConditionalFormatToken.CONDITION_PAIR);
+    return this.getChildren(TokenConditionalPair.class, ConditionalFormatToken.CONDITION_PAIR);
   }
 
   public void addConditionPair(TokenConditionalPair node) {

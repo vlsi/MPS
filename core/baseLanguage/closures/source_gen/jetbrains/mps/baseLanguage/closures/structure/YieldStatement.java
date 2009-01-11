@@ -18,7 +18,7 @@ public class YieldStatement extends Statement {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(YieldStatement.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, YieldStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

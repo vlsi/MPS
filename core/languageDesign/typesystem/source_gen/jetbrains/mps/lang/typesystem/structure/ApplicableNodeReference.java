@@ -17,7 +17,7 @@ public class ApplicableNodeReference extends Expression {
   }
 
   public ApplicableNodeCondition getApplicableNode() {
-    return (ApplicableNodeCondition)this.getReferent(ApplicableNodeReference.APPLICABLE_NODE);
+    return (ApplicableNodeCondition)this.getReferent(ApplicableNodeCondition.class, ApplicableNodeReference.APPLICABLE_NODE);
   }
 
   public void setApplicableNode(ApplicableNodeCondition node) {

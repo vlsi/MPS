@@ -18,7 +18,7 @@ public class EmitTryFinallyStatement extends EmitStatement {
   }
 
   public StatementList getTryPart() {
-    return (StatementList)this.getChild(EmitTryFinallyStatement.TRY_PART);
+    return (StatementList)this.getChild(StatementList.class, EmitTryFinallyStatement.TRY_PART);
   }
 
   public void setTryPart(StatementList node) {
@@ -26,7 +26,7 @@ public class EmitTryFinallyStatement extends EmitStatement {
   }
 
   public StatementList getFinallyPart() {
-    return (StatementList)this.getChild(EmitTryFinallyStatement.FINALLY_PART);
+    return (StatementList)this.getChild(StatementList.class, EmitTryFinallyStatement.FINALLY_PART);
   }
 
   public void setFinallyPart(StatementList node) {

@@ -60,11 +60,11 @@ public class DateFormatsTable extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<DateFormat> dateFormats() {
-    return this.children(DateFormatsTable.DATE_FORMAT);
+    return this.children(DateFormat.class, DateFormatsTable.DATE_FORMAT);
   }
 
   public List<DateFormat> getDateFormats() {
-    return this.getChildren(DateFormatsTable.DATE_FORMAT);
+    return this.getChildren(DateFormat.class, DateFormatsTable.DATE_FORMAT);
   }
 
   public void addDateFormat(DateFormat node) {

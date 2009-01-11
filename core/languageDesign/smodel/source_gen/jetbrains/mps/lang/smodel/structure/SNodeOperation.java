@@ -60,11 +60,11 @@ public class SNodeOperation extends BaseConcept implements IOperation {
   }
 
   public Iterator<AbstractOperationParameter> parameters() {
-    return this.children(SNodeOperation.PARAMETER);
+    return this.children(AbstractOperationParameter.class, SNodeOperation.PARAMETER);
   }
 
   public List<AbstractOperationParameter> getParameters() {
-    return this.getChildren(SNodeOperation.PARAMETER);
+    return this.getChildren(AbstractOperationParameter.class, SNodeOperation.PARAMETER);
   }
 
   public void addParameter(AbstractOperationParameter node) {

@@ -17,7 +17,7 @@ public class ReferenceRoleTarget extends MessageTarget {
   }
 
   public Expression getReferenceRole() {
-    return (Expression)this.getChild(ReferenceRoleTarget.REFERENCE_ROLE);
+    return (Expression)this.getChild(Expression.class, ReferenceRoleTarget.REFERENCE_ROLE);
   }
 
   public void setReferenceRole(Expression node) {

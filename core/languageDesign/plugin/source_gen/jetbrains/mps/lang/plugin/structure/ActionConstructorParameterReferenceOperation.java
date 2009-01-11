@@ -46,7 +46,7 @@ public class ActionConstructorParameterReferenceOperation extends BaseConcept im
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(ActionConstructorParameterReferenceOperation.MEMBER);
+    return (IMember)this.getReferent(IMember.class, ActionConstructorParameterReferenceOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -54,7 +54,7 @@ public class ActionConstructorParameterReferenceOperation extends BaseConcept im
   }
 
   public ActionConstructionParameterDeclaration getDeclaration() {
-    return (ActionConstructionParameterDeclaration)this.getMember();
+    return this.ensureAdapter(ActionConstructionParameterDeclaration.class, "member", this.getMember());
   }
 
   public void setDeclaration(ActionConstructionParameterDeclaration node) {

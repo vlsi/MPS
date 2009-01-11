@@ -81,7 +81,7 @@ public class DateTimePropertyFormatType extends BaseConcept implements INamedCon
   }
 
   public DateTimePropertyCardinality getDateTimePropertyCardinality() {
-    return (DateTimePropertyCardinality)this.getReferent(DateTimePropertyFormatType.DATE_TIME_PROPERTY_CARDINALITY);
+    return (DateTimePropertyCardinality)this.getReferent(DateTimePropertyCardinality.class, DateTimePropertyFormatType.DATE_TIME_PROPERTY_CARDINALITY);
   }
 
   public void setDateTimePropertyCardinality(DateTimePropertyCardinality node) {

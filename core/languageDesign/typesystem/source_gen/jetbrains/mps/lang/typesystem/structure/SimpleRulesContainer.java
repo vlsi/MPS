@@ -23,11 +23,11 @@ public class SimpleRulesContainer extends BaseConcept {
   }
 
   public Iterator<SimpleRule> simpleRules() {
-    return this.children(SimpleRulesContainer.SIMPLE_RULE);
+    return this.children(SimpleRule.class, SimpleRulesContainer.SIMPLE_RULE);
   }
 
   public List<SimpleRule> getSimpleRules() {
-    return this.getChildren(SimpleRulesContainer.SIMPLE_RULE);
+    return this.getChildren(SimpleRule.class, SimpleRulesContainer.SIMPLE_RULE);
   }
 
   public void addSimpleRule(SimpleRule node) {

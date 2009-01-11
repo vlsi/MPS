@@ -91,7 +91,7 @@ public class Jar extends AbstractProjectComponent implements ICompositeComponent
   }
 
   public Delete getDelete() {
-    return (Delete)this.getChild(Jar.DELETE);
+    return (Delete)this.getChild(Delete.class, Jar.DELETE);
   }
 
   public void setDelete(Delete node) {
@@ -103,11 +103,11 @@ public class Jar extends AbstractProjectComponent implements ICompositeComponent
   }
 
   public Iterator<AbstractProjectComponent> entries() {
-    return this.children(Jar.ENTRY);
+    return this.children(AbstractProjectComponent.class, Jar.ENTRY);
   }
 
   public List<AbstractProjectComponent> getEntries() {
-    return this.getChildren(Jar.ENTRY);
+    return this.getChildren(AbstractProjectComponent.class, Jar.ENTRY);
   }
 
   public void addEntry(AbstractProjectComponent node) {

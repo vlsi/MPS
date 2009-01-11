@@ -20,7 +20,7 @@ public class LinkRefExpression extends Expression {
   }
 
   public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(LinkRefExpression.CONCEPT_DECLARATION);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, LinkRefExpression.CONCEPT_DECLARATION);
   }
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {
@@ -28,7 +28,7 @@ public class LinkRefExpression extends Expression {
   }
 
   public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration)this.getReferent(LinkRefExpression.LINK_DECLARATION);
+    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, LinkRefExpression.LINK_DECLARATION);
   }
 
   public void setLinkDeclaration(LinkDeclaration node) {

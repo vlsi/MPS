@@ -16,7 +16,7 @@ public class PredefinedSymbolClassSymbolClassPart extends SymbolClassPart {
   }
 
   public PredefinedSymbolClassDeclaration getDeclaration() {
-    return (PredefinedSymbolClassDeclaration)this.getReferent(PredefinedSymbolClassSymbolClassPart.DECLARATION);
+    return (PredefinedSymbolClassDeclaration)this.getReferent(PredefinedSymbolClassDeclaration.class, PredefinedSymbolClassSymbolClassPart.DECLARATION);
   }
 
   public void setDeclaration(PredefinedSymbolClassDeclaration node) {

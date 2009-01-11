@@ -20,7 +20,7 @@ public class AnnotationInstance extends BaseConcept {
   }
 
   public Annotation getAnnotation() {
-    return (Annotation)this.getReferent(AnnotationInstance.ANNOTATION);
+    return (Annotation)this.getReferent(Annotation.class, AnnotationInstance.ANNOTATION);
   }
 
   public void setAnnotation(Annotation node) {
@@ -32,11 +32,11 @@ public class AnnotationInstance extends BaseConcept {
   }
 
   public Iterator<AnnotationInstanceValue> values() {
-    return this.children(AnnotationInstance.VALUE);
+    return this.children(AnnotationInstanceValue.class, AnnotationInstance.VALUE);
   }
 
   public List<AnnotationInstanceValue> getValues() {
-    return this.getChildren(AnnotationInstance.VALUE);
+    return this.getChildren(AnnotationInstanceValue.class, AnnotationInstance.VALUE);
   }
 
   public void addValue(AnnotationInstanceValue node) {

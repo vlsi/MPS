@@ -18,7 +18,7 @@ public class CatchClause extends BaseConcept {
   }
 
   public LocalVariableDeclaration getThrowable() {
-    return (LocalVariableDeclaration)this.getChild(CatchClause.THROWABLE);
+    return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, CatchClause.THROWABLE);
   }
 
   public void setThrowable(LocalVariableDeclaration node) {
@@ -26,7 +26,7 @@ public class CatchClause extends BaseConcept {
   }
 
   public StatementList getCatchBody() {
-    return (StatementList)this.getChild(CatchClause.CATCH_BODY);
+    return (StatementList)this.getChild(StatementList.class, CatchClause.CATCH_BODY);
   }
 
   public void setCatchBody(StatementList node) {

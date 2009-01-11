@@ -18,7 +18,7 @@ public class InvokeIntentionStatement extends Statement {
   }
 
   public IntentionDeclaration getIntention() {
-    return (IntentionDeclaration)this.getReferent(InvokeIntentionStatement.INTENTION);
+    return (IntentionDeclaration)this.getReferent(IntentionDeclaration.class, InvokeIntentionStatement.INTENTION);
   }
 
   public void setIntention(IntentionDeclaration node) {

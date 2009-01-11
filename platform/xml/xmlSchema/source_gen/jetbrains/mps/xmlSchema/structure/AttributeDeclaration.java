@@ -62,7 +62,7 @@ public class AttributeDeclaration extends AttributeExpression implements INamedC
   }
 
   public UseAttribute getUseAttribute() {
-    return (UseAttribute)this.getChild(AttributeDeclaration.USE_ATTRIBUTE);
+    return (UseAttribute)this.getChild(UseAttribute.class, AttributeDeclaration.USE_ATTRIBUTE);
   }
 
   public void setUseAttribute(UseAttribute node) {

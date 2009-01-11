@@ -18,7 +18,7 @@ public class SNodeType extends Type {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(SNodeType.CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, SNodeType.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {

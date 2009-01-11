@@ -17,7 +17,7 @@ public class Operation extends Expression {
   }
 
   public Expression getLeftOperand() {
-    return (Expression)this.getChild(Operation.LEFT_OPERAND);
+    return (Expression)this.getChild(Expression.class, Operation.LEFT_OPERAND);
   }
 
   public void setLeftOperand(Expression node) {
@@ -25,7 +25,7 @@ public class Operation extends Expression {
   }
 
   public Expression getRightOperand() {
-    return (Expression)this.getChild(Operation.RIGHT_OPERAND);
+    return (Expression)this.getChild(Expression.class, Operation.RIGHT_OPERAND);
   }
 
   public void setRightOperand(Expression node) {

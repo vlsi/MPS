@@ -50,11 +50,11 @@ public class ElementListContents extends BaseConcept implements GroupContents {
   }
 
   public Iterator<ActionGroupMember> references() {
-    return this.children(ElementListContents.REFERENCE);
+    return this.children(ActionGroupMember.class, ElementListContents.REFERENCE);
   }
 
   public List<ActionGroupMember> getReferences() {
-    return this.getChildren(ElementListContents.REFERENCE);
+    return this.getChildren(ActionGroupMember.class, ElementListContents.REFERENCE);
   }
 
   public void addReference(ActionGroupMember node) {

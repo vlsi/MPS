@@ -18,7 +18,7 @@ public class AbstractAntiquotation extends BaseConcept {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(AbstractAntiquotation.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, AbstractAntiquotation.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

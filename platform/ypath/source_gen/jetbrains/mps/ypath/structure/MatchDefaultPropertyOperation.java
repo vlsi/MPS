@@ -17,7 +17,7 @@ public class MatchDefaultPropertyOperation extends TreePathOperation {
   }
 
   public Expression getMatchExpression() {
-    return (Expression)this.getChild(MatchDefaultPropertyOperation.MATCH_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, MatchDefaultPropertyOperation.MATCH_EXPRESSION);
   }
 
   public void setMatchExpression(Expression node) {

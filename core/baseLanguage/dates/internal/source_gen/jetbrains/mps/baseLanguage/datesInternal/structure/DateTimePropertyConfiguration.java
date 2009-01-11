@@ -60,11 +60,11 @@ public class DateTimePropertyConfiguration extends BaseConcept implements INamed
   }
 
   public Iterator<DateTimePropertyFormatType> dateTimePropertyFormatTypes() {
-    return this.children(DateTimePropertyConfiguration.DATE_TIME_PROPERTY_FORMAT_TYPE);
+    return this.children(DateTimePropertyFormatType.class, DateTimePropertyConfiguration.DATE_TIME_PROPERTY_FORMAT_TYPE);
   }
 
   public List<DateTimePropertyFormatType> getDateTimePropertyFormatTypes() {
-    return this.getChildren(DateTimePropertyConfiguration.DATE_TIME_PROPERTY_FORMAT_TYPE);
+    return this.getChildren(DateTimePropertyFormatType.class, DateTimePropertyConfiguration.DATE_TIME_PROPERTY_FORMAT_TYPE);
   }
 
   public void addDateTimePropertyFormatType(DateTimePropertyFormatType node) {

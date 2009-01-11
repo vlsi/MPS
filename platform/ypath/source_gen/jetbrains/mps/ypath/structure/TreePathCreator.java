@@ -50,7 +50,7 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
   }
 
   public IFeature getDefaultFeature() {
-    return (IFeature)this.getReferent(TreePathCreator.DEFAULT_FEATURE);
+    return (IFeature)this.getReferent(IFeature.class, TreePathCreator.DEFAULT_FEATURE);
   }
 
   public void setDefaultFeature(IFeature node) {
@@ -58,7 +58,7 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
   }
 
   public TreePathType getTreePathType() {
-    return (TreePathType)this.getChild(TreePathCreator.TREE_PATH_TYPE);
+    return (TreePathType)this.getChild(TreePathType.class, TreePathCreator.TREE_PATH_TYPE);
   }
 
   public void setTreePathType(TreePathType node) {
@@ -66,7 +66,7 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
   }
 
   public ParentBlock getParentBlock() {
-    return (ParentBlock)this.getChild(TreePathCreator.PARENT_BLOCK);
+    return (ParentBlock)this.getChild(ParentBlock.class, TreePathCreator.PARENT_BLOCK);
   }
 
   public void setParentBlock(ParentBlock node) {
@@ -74,7 +74,7 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
   }
 
   public ChildrenBlock getChildrenBlock() {
-    return (ChildrenBlock)this.getChild(TreePathCreator.CHILDREN_BLOCK);
+    return (ChildrenBlock)this.getChild(ChildrenBlock.class, TreePathCreator.CHILDREN_BLOCK);
   }
 
   public void setChildrenBlock(ChildrenBlock node) {
@@ -86,11 +86,11 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
   }
 
   public Iterator<IFeature> featureses() {
-    return this.children(TreePathCreator.FEATURES);
+    return this.children(IFeature.class, TreePathCreator.FEATURES);
   }
 
   public List<IFeature> getFeatureses() {
-    return this.getChildren(TreePathCreator.FEATURES);
+    return this.getChildren(IFeature.class, TreePathCreator.FEATURES);
   }
 
   public void addFeatures(IFeature node) {

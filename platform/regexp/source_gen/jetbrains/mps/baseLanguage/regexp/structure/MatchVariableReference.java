@@ -17,7 +17,7 @@ public class MatchVariableReference extends Expression {
   }
 
   public MatchParensRegexp getMatch() {
-    return (MatchParensRegexp)this.getReferent(MatchVariableReference.MATCH);
+    return (MatchParensRegexp)this.getReferent(MatchParensRegexp.class, MatchVariableReference.MATCH);
   }
 
   public void setMatch(MatchParensRegexp node) {

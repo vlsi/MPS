@@ -50,7 +50,7 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(Node_ConceptMethodCall.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, Node_ConceptMethodCall.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -58,7 +58,7 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
   }
 
   public ConceptMethodDeclaration getConceptMethodDeclaration() {
-    return (ConceptMethodDeclaration)this.getBaseMethodDeclaration();
+    return this.ensureAdapter(ConceptMethodDeclaration.class, "baseMethodDeclaration", this.getBaseMethodDeclaration());
   }
 
   public void setConceptMethodDeclaration(ConceptMethodDeclaration node) {
@@ -70,11 +70,11 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
   }
 
   public Iterator<Expression> actualArguments() {
-    return this.children(Node_ConceptMethodCall.ACTUAL_ARGUMENT);
+    return this.children(Expression.class, Node_ConceptMethodCall.ACTUAL_ARGUMENT);
   }
 
   public List<Expression> getActualArguments() {
-    return this.getChildren(Node_ConceptMethodCall.ACTUAL_ARGUMENT);
+    return this.getChildren(Expression.class, Node_ConceptMethodCall.ACTUAL_ARGUMENT);
   }
 
   public void addActualArgument(Expression node) {

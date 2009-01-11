@@ -45,7 +45,7 @@ public class CellRendererAttribute extends BaseConcept implements IComponentPart
   }
 
   public Expression getRenderer() {
-    return (Expression)this.getChild(CellRendererAttribute.RENDERER);
+    return (Expression)this.getChild(Expression.class, CellRendererAttribute.RENDERER);
   }
 
   public void setRenderer(Expression node) {

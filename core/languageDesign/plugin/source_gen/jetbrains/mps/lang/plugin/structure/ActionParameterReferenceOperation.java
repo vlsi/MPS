@@ -46,7 +46,7 @@ public class ActionParameterReferenceOperation extends BaseConcept implements IM
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(ActionParameterReferenceOperation.MEMBER);
+    return (IMember)this.getReferent(IMember.class, ActionParameterReferenceOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -54,7 +54,7 @@ public class ActionParameterReferenceOperation extends BaseConcept implements IM
   }
 
   public ActionParameterDeclaration getParameterDeclaration() {
-    return (ActionParameterDeclaration)this.getMember();
+    return this.ensureAdapter(ActionParameterDeclaration.class, "member", this.getMember());
   }
 
   public void setParameterDeclaration(ActionParameterDeclaration node) {

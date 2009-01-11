@@ -37,7 +37,7 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
   }
 
   public ConceptDeclaration getExtends() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.EXTENDS);
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, ConceptDeclaration.EXTENDS);
   }
 
   public void setExtends(ConceptDeclaration node) {
@@ -49,11 +49,11 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
   }
 
   public Iterator<InterfaceConceptReference> implementses() {
-    return this.children(ConceptDeclaration.IMPLEMENTS);
+    return this.children(InterfaceConceptReference.class, ConceptDeclaration.IMPLEMENTS);
   }
 
   public List<InterfaceConceptReference> getImplementses() {
-    return this.getChildren(ConceptDeclaration.IMPLEMENTS);
+    return this.getChildren(InterfaceConceptReference.class, ConceptDeclaration.IMPLEMENTS);
   }
 
   public void addImplements(InterfaceConceptReference node) {

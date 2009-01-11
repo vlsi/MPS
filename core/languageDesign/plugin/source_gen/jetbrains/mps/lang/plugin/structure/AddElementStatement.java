@@ -17,7 +17,7 @@ public class AddElementStatement extends ExpressionStatement {
   }
 
   public Expression getElement() {
-    return (Expression)this.getExpression();
+    return this.ensureAdapter(Expression.class, "expression", this.getExpression());
   }
 
   public void setElement(Expression node) {

@@ -17,7 +17,7 @@ public class RemovePart extends MenuBuilderPart {
   }
 
   public ConceptDeclaration getConceptToRemove() {
-    return (ConceptDeclaration)this.getReferent(RemovePart.CONCEPT_TO_REMOVE);
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, RemovePart.CONCEPT_TO_REMOVE);
   }
 
   public void setConceptToRemove(ConceptDeclaration node) {

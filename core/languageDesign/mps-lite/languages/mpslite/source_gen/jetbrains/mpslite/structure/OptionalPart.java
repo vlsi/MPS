@@ -22,11 +22,11 @@ public class OptionalPart extends LinePart {
   }
 
   public Iterator<LinePart> parts() {
-    return this.children(OptionalPart.PART);
+    return this.children(LinePart.class, OptionalPart.PART);
   }
 
   public List<LinePart> getParts() {
-    return this.getChildren(OptionalPart.PART);
+    return this.getChildren(LinePart.class, OptionalPart.PART);
   }
 
   public void addPart(LinePart node) {

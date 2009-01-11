@@ -17,7 +17,7 @@ public class SemanticDowncastExpression extends Expression {
   }
 
   public Expression getLeftExpression() {
-    return (Expression)this.getChild(SemanticDowncastExpression.LEFT_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, SemanticDowncastExpression.LEFT_EXPRESSION);
   }
 
   public void setLeftExpression(Expression node) {

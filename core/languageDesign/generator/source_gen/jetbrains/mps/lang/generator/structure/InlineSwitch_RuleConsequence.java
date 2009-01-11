@@ -19,7 +19,7 @@ public class InlineSwitch_RuleConsequence extends RuleConsequence {
   }
 
   public RuleConsequence getDefaultConsequence() {
-    return (RuleConsequence)this.getChild(InlineSwitch_RuleConsequence.DEFAULT_CONSEQUENCE);
+    return (RuleConsequence)this.getChild(RuleConsequence.class, InlineSwitch_RuleConsequence.DEFAULT_CONSEQUENCE);
   }
 
   public void setDefaultConsequence(RuleConsequence node) {
@@ -31,11 +31,11 @@ public class InlineSwitch_RuleConsequence extends RuleConsequence {
   }
 
   public Iterator<InlineSwitch_Case> cases() {
-    return this.children(InlineSwitch_RuleConsequence.CASE);
+    return this.children(InlineSwitch_Case.class, InlineSwitch_RuleConsequence.CASE);
   }
 
   public List<InlineSwitch_Case> getCases() {
-    return this.getChildren(InlineSwitch_RuleConsequence.CASE);
+    return this.getChildren(InlineSwitch_Case.class, InlineSwitch_RuleConsequence.CASE);
   }
 
   public void addCase(InlineSwitch_Case node) {

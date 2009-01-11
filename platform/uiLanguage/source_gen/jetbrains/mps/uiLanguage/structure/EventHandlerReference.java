@@ -18,7 +18,7 @@ public class EventHandlerReference extends Expression {
   }
 
   public DefaultClassifierMethodDeclaration getHandler() {
-    return (DefaultClassifierMethodDeclaration)this.getReferent(EventHandlerReference.HANDLER);
+    return (DefaultClassifierMethodDeclaration)this.getReferent(DefaultClassifierMethodDeclaration.class, EventHandlerReference.HANDLER);
   }
 
   public void setHandler(DefaultClassifierMethodDeclaration node) {

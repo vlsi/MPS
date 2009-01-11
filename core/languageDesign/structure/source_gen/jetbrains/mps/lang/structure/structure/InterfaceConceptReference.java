@@ -17,7 +17,7 @@ public class InterfaceConceptReference extends BaseConcept {
   }
 
   public InterfaceConceptDeclaration getIntfc() {
-    return (InterfaceConceptDeclaration)this.getReferent(InterfaceConceptReference.INTFC);
+    return (InterfaceConceptDeclaration)this.getReferent(InterfaceConceptDeclaration.class, InterfaceConceptReference.INTFC);
   }
 
   public void setIntfc(InterfaceConceptDeclaration node) {

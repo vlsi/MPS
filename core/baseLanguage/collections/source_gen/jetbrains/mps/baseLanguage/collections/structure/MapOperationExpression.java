@@ -18,7 +18,7 @@ public class MapOperationExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(MapOperationExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, MapOperationExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -26,7 +26,7 @@ public class MapOperationExpression extends Expression {
   }
 
   public MapOperation getMapOperation() {
-    return (MapOperation)this.getChild(MapOperationExpression.MAP_OPERATION);
+    return (MapOperation)this.getChild(MapOperation.class, MapOperationExpression.MAP_OPERATION);
   }
 
   public void setMapOperation(MapOperation node) {

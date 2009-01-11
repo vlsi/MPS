@@ -17,7 +17,7 @@ public class InterfaceGroup extends ActionGroupDeclaration {
   }
 
   public Expression getGroupID() {
-    return (Expression)this.getChild(InterfaceGroup.GROUP_I_D);
+    return (Expression)this.getChild(Expression.class, InterfaceGroup.GROUP_I_D);
   }
 
   public void setGroupID(Expression node) {

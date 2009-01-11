@@ -75,7 +75,7 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
   }
 
   public Type getBound() {
-    return (Type)this.getChild(TypeVariableDeclaration.BOUND);
+    return (Type)this.getChild(Type.class, TypeVariableDeclaration.BOUND);
   }
 
   public void setBound(Type node) {
@@ -87,11 +87,11 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
   }
 
   public Iterator<ClassifierType> auxBoundses() {
-    return this.children(TypeVariableDeclaration.AUX_BOUNDS);
+    return this.children(ClassifierType.class, TypeVariableDeclaration.AUX_BOUNDS);
   }
 
   public List<ClassifierType> getAuxBoundses() {
-    return this.getChildren(TypeVariableDeclaration.AUX_BOUNDS);
+    return this.getChildren(ClassifierType.class, TypeVariableDeclaration.AUX_BOUNDS);
   }
 
   public void addAuxBounds(ClassifierType node) {

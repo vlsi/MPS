@@ -17,7 +17,7 @@ public class MoveNodesToNodeExpression extends AbstractMoveNodesExpression {
   }
 
   public Expression getRoleInTarget() {
-    return (Expression)this.getChild(MoveNodesToNodeExpression.ROLE_IN_TARGET);
+    return (Expression)this.getChild(Expression.class, MoveNodesToNodeExpression.ROLE_IN_TARGET);
   }
 
   public void setRoleInTarget(Expression node) {

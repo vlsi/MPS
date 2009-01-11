@@ -17,7 +17,7 @@ public class ReferenceMessageTarget extends MessageTarget {
   }
 
   public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration)this.getReferent(ReferenceMessageTarget.LINK_DECLARATION);
+    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, ReferenceMessageTarget.LINK_DECLARATION);
   }
 
   public void setLinkDeclaration(LinkDeclaration node) {

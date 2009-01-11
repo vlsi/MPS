@@ -16,7 +16,7 @@ public class ClosureParameterReference extends Expression {
   }
 
   public ClosureParameter getClosureParameter() {
-    return (ClosureParameter)this.getReferent(ClosureParameterReference.CLOSURE_PARAMETER);
+    return (ClosureParameter)this.getReferent(ClosureParameter.class, ClosureParameterReference.CLOSURE_PARAMETER);
   }
 
   public void setClosureParameter(ClosureParameter node) {

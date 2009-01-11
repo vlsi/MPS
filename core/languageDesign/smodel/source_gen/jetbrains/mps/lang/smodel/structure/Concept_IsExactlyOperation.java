@@ -16,7 +16,7 @@ public class Concept_IsExactlyOperation extends SNodeOperation {
   }
 
   public IRefConceptArg getConceptArgument() {
-    return (IRefConceptArg)this.getChild(Concept_IsExactlyOperation.CONCEPT_ARGUMENT);
+    return (IRefConceptArg)this.getChild(IRefConceptArg.class, Concept_IsExactlyOperation.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(IRefConceptArg node) {

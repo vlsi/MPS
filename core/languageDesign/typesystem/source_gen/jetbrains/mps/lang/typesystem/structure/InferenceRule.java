@@ -23,11 +23,11 @@ public class InferenceRule extends AbstractCheckingRule {
   }
 
   public Iterator<Dependency> dependencies() {
-    return this.children(InferenceRule.DEPENDENCY);
+    return this.children(Dependency.class, InferenceRule.DEPENDENCY);
   }
 
   public List<Dependency> getDependencies() {
-    return this.getChildren(InferenceRule.DEPENDENCY);
+    return this.getChildren(Dependency.class, InferenceRule.DEPENDENCY);
   }
 
   public void addDependency(Dependency node) {
@@ -43,11 +43,11 @@ public class InferenceRule extends AbstractCheckingRule {
   }
 
   public Iterator<ChildTypeRestriction> childTypeRestrictions() {
-    return this.children(InferenceRule.CHILD_TYPE_RESTRICTION);
+    return this.children(ChildTypeRestriction.class, InferenceRule.CHILD_TYPE_RESTRICTION);
   }
 
   public List<ChildTypeRestriction> getChildTypeRestrictions() {
-    return this.getChildren(InferenceRule.CHILD_TYPE_RESTRICTION);
+    return this.getChildren(ChildTypeRestriction.class, InferenceRule.CHILD_TYPE_RESTRICTION);
   }
 
   public void addChildTypeRestriction(ChildTypeRestriction node) {

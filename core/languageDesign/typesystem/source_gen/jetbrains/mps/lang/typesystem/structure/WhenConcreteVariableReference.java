@@ -17,7 +17,7 @@ public class WhenConcreteVariableReference extends Expression {
   }
 
   public WhenConcreteVariableDeclaration getWhenConcreteVar() {
-    return (WhenConcreteVariableDeclaration)this.getReferent(WhenConcreteVariableReference.WHEN_CONCRETE_VAR);
+    return (WhenConcreteVariableDeclaration)this.getReferent(WhenConcreteVariableDeclaration.class, WhenConcreteVariableReference.WHEN_CONCRETE_VAR);
   }
 
   public void setWhenConcreteVar(WhenConcreteVariableDeclaration node) {

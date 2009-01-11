@@ -18,7 +18,7 @@ public class IfFunction extends Function {
   }
 
   public Expression getLogicalTest() {
-    return (Expression)this.getChild(IfFunction.LOGICAL_TEST);
+    return (Expression)this.getChild(Expression.class, IfFunction.LOGICAL_TEST);
   }
 
   public void setLogicalTest(Expression node) {
@@ -26,7 +26,7 @@ public class IfFunction extends Function {
   }
 
   public Expression getValueIfTrue() {
-    return (Expression)this.getChild(IfFunction.VALUE_IF_TRUE);
+    return (Expression)this.getChild(Expression.class, IfFunction.VALUE_IF_TRUE);
   }
 
   public void setValueIfTrue(Expression node) {
@@ -34,7 +34,7 @@ public class IfFunction extends Function {
   }
 
   public Expression getValueIfFalse() {
-    return (Expression)this.getChild(IfFunction.VALUE_IF_FALSE);
+    return (Expression)this.getChild(Expression.class, IfFunction.VALUE_IF_FALSE);
   }
 
   public void setValueIfFalse(Expression node) {

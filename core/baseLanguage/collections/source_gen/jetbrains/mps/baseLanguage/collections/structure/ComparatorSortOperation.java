@@ -17,7 +17,7 @@ public class ComparatorSortOperation extends InternalSequenceOperation {
   }
 
   public Expression getAscending() {
-    return (Expression)this.getChild(ComparatorSortOperation.ASCENDING);
+    return (Expression)this.getChild(Expression.class, ComparatorSortOperation.ASCENDING);
   }
 
   public void setAscending(Expression node) {
@@ -25,7 +25,7 @@ public class ComparatorSortOperation extends InternalSequenceOperation {
   }
 
   public Expression getComparator() {
-    return (Expression)this.getClosure();
+    return this.ensureAdapter(Expression.class, "closure", this.getClosure());
   }
 
   public void setComparator(Expression node) {

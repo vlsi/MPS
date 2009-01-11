@@ -17,7 +17,7 @@ public class PatternExpression extends BaseConcept {
   }
 
   public BaseConcept getPatternNode() {
-    return (BaseConcept)this.getChild(PatternExpression.PATTERN_NODE);
+    return (BaseConcept)this.getChild(BaseConcept.class, PatternExpression.PATTERN_NODE);
   }
 
   public void setPatternNode(BaseConcept node) {

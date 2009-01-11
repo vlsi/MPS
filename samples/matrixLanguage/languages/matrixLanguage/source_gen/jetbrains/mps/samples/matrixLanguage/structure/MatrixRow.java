@@ -24,11 +24,11 @@ public class MatrixRow extends BaseConcept {
   }
 
   public Iterator<Expression> itemses() {
-    return this.children(MatrixRow.ITEMS);
+    return this.children(Expression.class, MatrixRow.ITEMS);
   }
 
   public List<Expression> getItemses() {
-    return this.getChildren(MatrixRow.ITEMS);
+    return this.getChildren(Expression.class, MatrixRow.ITEMS);
   }
 
   public void addItems(Expression node) {

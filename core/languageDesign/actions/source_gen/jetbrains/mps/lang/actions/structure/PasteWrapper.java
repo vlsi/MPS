@@ -20,7 +20,7 @@ public class PasteWrapper extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getSourceConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(PasteWrapper.SOURCE_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, PasteWrapper.SOURCE_CONCEPT);
   }
 
   public void setSourceConcept(AbstractConceptDeclaration node) {
@@ -28,7 +28,7 @@ public class PasteWrapper extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getTargetConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(PasteWrapper.TARGET_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, PasteWrapper.TARGET_CONCEPT);
   }
 
   public void setTargetConcept(AbstractConceptDeclaration node) {
@@ -36,7 +36,7 @@ public class PasteWrapper extends BaseConcept {
   }
 
   public QueryFunction_PasteWrapper getWrapperFunction() {
-    return (QueryFunction_PasteWrapper)this.getChild(PasteWrapper.WRAPPER_FUNCTION);
+    return (QueryFunction_PasteWrapper)this.getChild(QueryFunction_PasteWrapper.class, PasteWrapper.WRAPPER_FUNCTION);
   }
 
   public void setWrapperFunction(QueryFunction_PasteWrapper node) {

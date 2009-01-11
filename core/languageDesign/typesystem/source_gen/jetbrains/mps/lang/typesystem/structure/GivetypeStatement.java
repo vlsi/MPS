@@ -19,7 +19,7 @@ public class GivetypeStatement extends Statement {
   }
 
   public Expression getTypeExpression() {
-    return (Expression)this.getChild(GivetypeStatement.TYPE_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, GivetypeStatement.TYPE_EXPRESSION);
   }
 
   public void setTypeExpression(Expression node) {
@@ -27,7 +27,7 @@ public class GivetypeStatement extends Statement {
   }
 
   public Expression getTermExpression() {
-    return (Expression)this.getChild(GivetypeStatement.TERM_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, GivetypeStatement.TERM_EXPRESSION);
   }
 
   public void setTermExpression(Expression node) {

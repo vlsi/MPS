@@ -35,7 +35,7 @@ public class CellModel_Block extends EditorCellModel {
   }
 
   public EditorCellModel getHeader() {
-    return (EditorCellModel)this.getChild(CellModel_Block.HEADER);
+    return (EditorCellModel)this.getChild(EditorCellModel.class, CellModel_Block.HEADER);
   }
 
   public void setHeader(EditorCellModel node) {
@@ -43,7 +43,7 @@ public class CellModel_Block extends EditorCellModel {
   }
 
   public EditorCellModel getBody() {
-    return (EditorCellModel)this.getChild(CellModel_Block.BODY);
+    return (EditorCellModel)this.getChild(EditorCellModel.class, CellModel_Block.BODY);
   }
 
   public void setBody(EditorCellModel node) {

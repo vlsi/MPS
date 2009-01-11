@@ -16,7 +16,7 @@ public class PredefinedSymbolClassRegexp extends Regexp {
   }
 
   public PredefinedSymbolClassDeclaration getSymbolClass() {
-    return (PredefinedSymbolClassDeclaration)this.getReferent(PredefinedSymbolClassRegexp.SYMBOL_CLASS);
+    return (PredefinedSymbolClassDeclaration)this.getReferent(PredefinedSymbolClassDeclaration.class, PredefinedSymbolClassRegexp.SYMBOL_CLASS);
   }
 
   public void setSymbolClass(PredefinedSymbolClassDeclaration node) {

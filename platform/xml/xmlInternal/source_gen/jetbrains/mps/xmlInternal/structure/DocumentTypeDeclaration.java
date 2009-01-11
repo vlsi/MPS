@@ -26,7 +26,7 @@ public class DocumentTypeDeclaration extends BaseConcept {
   }
 
   public ExternalId getExternalId() {
-    return (ExternalId)this.getChild(DocumentTypeDeclaration.EXTERNAL_ID);
+    return (ExternalId)this.getChild(ExternalId.class, DocumentTypeDeclaration.EXTERNAL_ID);
   }
 
   public void setExternalId(ExternalId node) {

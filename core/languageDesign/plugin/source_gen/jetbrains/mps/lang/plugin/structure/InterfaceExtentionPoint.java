@@ -17,7 +17,7 @@ public class InterfaceExtentionPoint extends ExtentionPoint {
   }
 
   public Expression getPointID() {
-    return (Expression)this.getChild(InterfaceExtentionPoint.POINT_I_D);
+    return (Expression)this.getChild(Expression.class, InterfaceExtentionPoint.POINT_I_D);
   }
 
   public void setPointID(Expression node) {

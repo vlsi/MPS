@@ -61,11 +61,11 @@ public class Plan extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<Value> values() {
-    return this.children(Plan.VALUE);
+    return this.children(Value.class, Plan.VALUE);
   }
 
   public List<Value> getValues() {
-    return this.getChildren(Plan.VALUE);
+    return this.getChildren(Value.class, Plan.VALUE);
   }
 
   public void addValue(Value node) {
@@ -81,11 +81,11 @@ public class Plan extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<Event> events() {
-    return this.children(Plan.EVENT);
+    return this.children(Event.class, Plan.EVENT);
   }
 
   public List<Event> getEvents() {
-    return this.getChildren(Plan.EVENT);
+    return this.getChildren(Event.class, Plan.EVENT);
   }
 
   public void addEvent(Event node) {

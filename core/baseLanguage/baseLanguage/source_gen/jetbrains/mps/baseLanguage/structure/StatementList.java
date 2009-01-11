@@ -23,11 +23,11 @@ public class StatementList extends BaseConcept {
   }
 
   public Iterator<Statement> statements() {
-    return this.children(StatementList.STATEMENT);
+    return this.children(Statement.class, StatementList.STATEMENT);
   }
 
   public List<Statement> getStatements() {
-    return this.getChildren(StatementList.STATEMENT);
+    return this.getChildren(Statement.class, StatementList.STATEMENT);
   }
 
   public void addStatement(Statement node) {

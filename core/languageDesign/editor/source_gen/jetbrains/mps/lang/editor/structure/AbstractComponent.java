@@ -18,7 +18,7 @@ public class AbstractComponent extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractComponent.CONCEPT_DECLARATION);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, AbstractComponent.CONCEPT_DECLARATION);
   }
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {

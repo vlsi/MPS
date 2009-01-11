@@ -16,7 +16,7 @@ public class ReferenceMacro extends AbstractMacro {
   }
 
   public ReferenceMacro_GetReferent getReferentFunction() {
-    return (ReferenceMacro_GetReferent)this.getChild(ReferenceMacro.REFERENT_FUNCTION);
+    return (ReferenceMacro_GetReferent)this.getChild(ReferenceMacro_GetReferent.class, ReferenceMacro.REFERENT_FUNCTION);
   }
 
   public void setReferentFunction(ReferenceMacro_GetReferent node) {

@@ -17,7 +17,7 @@ public class ConceptSubstitutePart extends MenuBuilderPart {
   }
 
   public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptSubstitutePart.CONCEPT);
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, ConceptSubstitutePart.CONCEPT);
   }
 
   public void setConcept(ConceptDeclaration node) {

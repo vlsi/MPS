@@ -17,7 +17,7 @@ public class Node_ReplaceWithAnotherOperation extends SNodeOperation {
   }
 
   public Expression getReplacementNode() {
-    return (Expression)this.getChild(Node_ReplaceWithAnotherOperation.REPLACEMENT_NODE);
+    return (Expression)this.getChild(Expression.class, Node_ReplaceWithAnotherOperation.REPLACEMENT_NODE);
   }
 
   public void setReplacementNode(Expression node) {

@@ -67,7 +67,7 @@ public class StateMachine extends BaseConcept implements INamedConcept {
   }
 
   public State getStartState() {
-    return (State)this.getReferent(StateMachine.START_STATE);
+    return (State)this.getReferent(State.class, StateMachine.START_STATE);
   }
 
   public void setStartState(State node) {
@@ -79,11 +79,11 @@ public class StateMachine extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<Event> events() {
-    return this.children(StateMachine.EVENT);
+    return this.children(Event.class, StateMachine.EVENT);
   }
 
   public List<Event> getEvents() {
-    return this.getChildren(StateMachine.EVENT);
+    return this.getChildren(Event.class, StateMachine.EVENT);
   }
 
   public void addEvent(Event node) {
@@ -99,11 +99,11 @@ public class StateMachine extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<State> states() {
-    return this.children(StateMachine.STATE);
+    return this.children(State.class, StateMachine.STATE);
   }
 
   public List<State> getStates() {
-    return this.getChildren(StateMachine.STATE);
+    return this.getChildren(State.class, StateMachine.STATE);
   }
 
   public void addState(State node) {

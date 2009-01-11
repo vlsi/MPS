@@ -16,7 +16,7 @@ public class PostfixDecrementExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(PostfixDecrementExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, PostfixDecrementExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

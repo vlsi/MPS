@@ -24,11 +24,11 @@ public class Comment extends Content {
   }
 
   public Iterator<BaseText> texts() {
-    return this.children(Comment.TEXT);
+    return this.children(BaseText.class, Comment.TEXT);
   }
 
   public List<BaseText> getTexts() {
-    return this.getChildren(Comment.TEXT);
+    return this.getChildren(BaseText.class, Comment.TEXT);
   }
 
   public void addText(BaseText node) {

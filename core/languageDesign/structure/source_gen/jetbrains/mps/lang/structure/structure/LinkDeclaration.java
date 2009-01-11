@@ -74,7 +74,7 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
   }
 
   public LinkDeclaration getSpecializedLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.SPECIALIZED_LINK);
+    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, LinkDeclaration.SPECIALIZED_LINK);
   }
 
   public void setSpecializedLink(LinkDeclaration node) {
@@ -82,7 +82,7 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
   }
 
   public AbstractConceptDeclaration getTarget() {
-    return (AbstractConceptDeclaration)this.getReferent(LinkDeclaration.TARGET);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, LinkDeclaration.TARGET);
   }
 
   public void setTarget(AbstractConceptDeclaration node) {

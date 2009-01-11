@@ -19,7 +19,7 @@ public class EntityLine extends BaseConcept {
   }
 
   public EntityDeclaration getEntityDeclaration() {
-    return (EntityDeclaration)this.getChild(EntityLine.ENTITY_DECLARATION);
+    return (EntityDeclaration)this.getChild(EntityDeclaration.class, EntityLine.ENTITY_DECLARATION);
   }
 
   public void setEntityDeclaration(EntityDeclaration node) {
@@ -27,7 +27,7 @@ public class EntityLine extends BaseConcept {
   }
 
   public Comment getComment() {
-    return (Comment)this.getChild(EntityLine.COMMENT);
+    return (Comment)this.getChild(Comment.class, EntityLine.COMMENT);
   }
 
   public void setComment(Comment node) {

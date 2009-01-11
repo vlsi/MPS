@@ -16,7 +16,7 @@ public class ParenthisizedExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(ParenthisizedExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, ParenthisizedExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

@@ -17,7 +17,7 @@ public class ConceptReference extends ApplicableNodeCondition {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(ConceptReference.CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptReference.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {

@@ -17,7 +17,7 @@ public class PostingRule extends Formula {
   }
 
   public AccountType getAccount() {
-    return (AccountType)this.getReferent(PostingRule.ACCOUNT);
+    return (AccountType)this.getReferent(AccountType.class, PostingRule.ACCOUNT);
   }
 
   public void setAccount(AccountType node) {

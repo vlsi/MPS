@@ -36,7 +36,7 @@ public class CellActionMapItem extends BaseConcept {
   }
 
   public CellActionMap_ExecuteFunction getExecuteFunction() {
-    return (CellActionMap_ExecuteFunction)this.getChild(CellActionMapItem.EXECUTE_FUNCTION);
+    return (CellActionMap_ExecuteFunction)this.getChild(CellActionMap_ExecuteFunction.class, CellActionMapItem.EXECUTE_FUNCTION);
   }
 
   public void setExecuteFunction(CellActionMap_ExecuteFunction node) {

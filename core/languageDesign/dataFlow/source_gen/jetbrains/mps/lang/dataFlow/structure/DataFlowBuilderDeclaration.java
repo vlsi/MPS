@@ -56,7 +56,7 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
   }
 
   public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(DataFlowBuilderDeclaration.CONCEPT_DECLARATION);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, DataFlowBuilderDeclaration.CONCEPT_DECLARATION);
   }
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {
@@ -64,7 +64,7 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
   }
 
   public BuilderBlock getBuilderBlock() {
-    return (BuilderBlock)this.getChild(DataFlowBuilderDeclaration.BUILDER_BLOCK);
+    return (BuilderBlock)this.getChild(BuilderBlock.class, DataFlowBuilderDeclaration.BUILDER_BLOCK);
   }
 
   public void setBuilderBlock(BuilderBlock node) {

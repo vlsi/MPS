@@ -16,7 +16,7 @@ public class VisitParameterReference extends VariableReference {
   }
 
   public VisitParameterDeclaration getVisitParameterDeclaration() {
-    return (VisitParameterDeclaration)this.getVariableDeclaration();
+    return this.ensureAdapter(VisitParameterDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
 
   public void setVisitParameterDeclaration(VisitParameterDeclaration node) {

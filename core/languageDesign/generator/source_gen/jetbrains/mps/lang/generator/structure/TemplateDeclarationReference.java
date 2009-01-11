@@ -16,7 +16,7 @@ public class TemplateDeclarationReference extends RuleConsequence {
   }
 
   public TemplateDeclaration getTemplate() {
-    return (TemplateDeclaration)this.getReferent(TemplateDeclarationReference.TEMPLATE);
+    return (TemplateDeclaration)this.getReferent(TemplateDeclaration.class, TemplateDeclarationReference.TEMPLATE);
   }
 
   public void setTemplate(TemplateDeclaration node) {

@@ -60,11 +60,11 @@ public class StyleSheet extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<StyleSheetClass> styleClasses() {
-    return this.children(StyleSheet.STYLE_CLASS);
+    return this.children(StyleSheetClass.class, StyleSheet.STYLE_CLASS);
   }
 
   public List<StyleSheetClass> getStyleClasses() {
-    return this.getChildren(StyleSheet.STYLE_CLASS);
+    return this.getChildren(StyleSheetClass.class, StyleSheet.STYLE_CLASS);
   }
 
   public void addStyleClass(StyleSheetClass node) {

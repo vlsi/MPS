@@ -28,7 +28,7 @@ public class Quantity extends Constant {
   }
 
   public FloatingPointConstant getAmount() {
-    return (FloatingPointConstant)this.getChild(Quantity.AMOUNT);
+    return (FloatingPointConstant)this.getChild(FloatingPointConstant.class, Quantity.AMOUNT);
   }
 
   public void setAmount(FloatingPointConstant node) {

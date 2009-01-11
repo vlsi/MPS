@@ -71,7 +71,7 @@ public class FinderDeclaration extends AbstractFinderDeclaration implements INam
   }
 
   public IsVisibleBlock getIsVisibleBlock() {
-    return (IsVisibleBlock)this.getChild(FinderDeclaration.IS_VISIBLE_BLOCK);
+    return (IsVisibleBlock)this.getChild(IsVisibleBlock.class, FinderDeclaration.IS_VISIBLE_BLOCK);
   }
 
   public void setIsVisibleBlock(IsVisibleBlock node) {

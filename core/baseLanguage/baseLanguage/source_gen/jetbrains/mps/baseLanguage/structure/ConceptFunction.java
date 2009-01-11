@@ -22,7 +22,7 @@ public class ConceptFunction extends BaseConcept {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(ConceptFunction.BODY);
+    return (StatementList)this.getChild(StatementList.class, ConceptFunction.BODY);
   }
 
   public void setBody(StatementList node) {

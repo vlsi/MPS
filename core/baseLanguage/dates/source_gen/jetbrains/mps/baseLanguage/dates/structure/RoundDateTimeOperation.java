@@ -17,7 +17,7 @@ public class RoundDateTimeOperation extends UnaryDateTimeOperation {
   }
 
   public DateTimeProperty getPrecision() {
-    return (DateTimeProperty)this.getReferent(RoundDateTimeOperation.PRECISION);
+    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, RoundDateTimeOperation.PRECISION);
   }
 
   public void setPrecision(DateTimeProperty node) {

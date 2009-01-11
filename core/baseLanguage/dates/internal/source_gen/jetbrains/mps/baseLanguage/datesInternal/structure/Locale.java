@@ -55,7 +55,7 @@ public class Locale extends BaseConcept implements INamedConcept {
   }
 
   public Expression getJavaLocale() {
-    return (Expression)this.getChild(Locale.JAVA_LOCALE);
+    return (Expression)this.getChild(Expression.class, Locale.JAVA_LOCALE);
   }
 
   public void setJavaLocale(Expression node) {

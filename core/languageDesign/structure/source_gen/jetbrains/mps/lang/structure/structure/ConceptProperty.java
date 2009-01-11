@@ -17,7 +17,7 @@ public class ConceptProperty extends BaseConcept {
   }
 
   public ConceptPropertyDeclaration getConceptPropertyDeclaration() {
-    return (ConceptPropertyDeclaration)this.getReferent(ConceptProperty.CONCEPT_PROPERTY_DECLARATION);
+    return (ConceptPropertyDeclaration)this.getReferent(ConceptPropertyDeclaration.class, ConceptProperty.CONCEPT_PROPERTY_DECLARATION);
   }
 
   public void setConceptPropertyDeclaration(ConceptPropertyDeclaration node) {

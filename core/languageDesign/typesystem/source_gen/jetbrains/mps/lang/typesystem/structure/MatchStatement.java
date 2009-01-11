@@ -22,7 +22,7 @@ public class MatchStatement extends Statement {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(MatchStatement.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, MatchStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -30,7 +30,7 @@ public class MatchStatement extends Statement {
   }
 
   public Statement getIfFalseStatement() {
-    return (Statement)this.getChild(MatchStatement.IF_FALSE_STATEMENT);
+    return (Statement)this.getChild(Statement.class, MatchStatement.IF_FALSE_STATEMENT);
   }
 
   public void setIfFalseStatement(Statement node) {
@@ -42,11 +42,11 @@ public class MatchStatement extends Statement {
   }
 
   public Iterator<MatchStatementItem> items() {
-    return this.children(MatchStatement.ITEM);
+    return this.children(MatchStatementItem.class, MatchStatement.ITEM);
   }
 
   public List<MatchStatementItem> getItems() {
-    return this.getChildren(MatchStatement.ITEM);
+    return this.getChildren(MatchStatementItem.class, MatchStatement.ITEM);
   }
 
   public void addItem(MatchStatementItem node) {

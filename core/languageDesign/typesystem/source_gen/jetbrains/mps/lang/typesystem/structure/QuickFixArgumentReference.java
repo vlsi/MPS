@@ -17,7 +17,7 @@ public class QuickFixArgumentReference extends Expression {
   }
 
   public QuickFixArgument getQuickFixArgument() {
-    return (QuickFixArgument)this.getReferent(QuickFixArgumentReference.QUICK_FIX_ARGUMENT);
+    return (QuickFixArgument)this.getReferent(QuickFixArgument.class, QuickFixArgumentReference.QUICK_FIX_ARGUMENT);
   }
 
   public void setQuickFixArgument(QuickFixArgument node) {

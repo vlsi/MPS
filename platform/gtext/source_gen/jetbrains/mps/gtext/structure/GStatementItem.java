@@ -17,7 +17,7 @@ public class GStatementItem extends GItem {
   }
 
   public StatementList getStatementList() {
-    return (StatementList)this.getChild(GStatementItem.STATEMENT_LIST);
+    return (StatementList)this.getChild(StatementList.class, GStatementItem.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {

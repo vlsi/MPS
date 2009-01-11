@@ -60,11 +60,11 @@ public class PrimitiveTypeDescriptor extends BaseConcept implements INamedConcep
   }
 
   public Iterator<PrimitiveTypeRef> extendses() {
-    return this.children(PrimitiveTypeDescriptor.EXTENDS);
+    return this.children(PrimitiveTypeRef.class, PrimitiveTypeDescriptor.EXTENDS);
   }
 
   public List<PrimitiveTypeRef> getExtendses() {
-    return this.getChildren(PrimitiveTypeDescriptor.EXTENDS);
+    return this.getChildren(PrimitiveTypeRef.class, PrimitiveTypeDescriptor.EXTENDS);
   }
 
   public void addExtends(PrimitiveTypeRef node) {

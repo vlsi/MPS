@@ -55,7 +55,7 @@ public class QuickFixArgument extends BaseConcept implements INamedConcept {
   }
 
   public Type getArgumentType() {
-    return (Type)this.getChild(QuickFixArgument.ARGUMENT_TYPE);
+    return (Type)this.getChild(Type.class, QuickFixArgument.ARGUMENT_TYPE);
   }
 
   public void setArgumentType(Type node) {

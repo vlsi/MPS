@@ -19,7 +19,7 @@ public class PeriodConstant extends Expression {
   }
 
   public DateTimeProperty getDateTimeProperty() {
-    return (DateTimeProperty)this.getReferent(PeriodConstant.DATE_TIME_PROPERTY);
+    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, PeriodConstant.DATE_TIME_PROPERTY);
   }
 
   public void setDateTimeProperty(DateTimeProperty node) {
@@ -27,7 +27,7 @@ public class PeriodConstant extends Expression {
   }
 
   public Expression getCount() {
-    return (Expression)this.getChild(PeriodConstant.COUNT);
+    return (Expression)this.getChild(Expression.class, PeriodConstant.COUNT);
   }
 
   public void setCount(Expression node) {

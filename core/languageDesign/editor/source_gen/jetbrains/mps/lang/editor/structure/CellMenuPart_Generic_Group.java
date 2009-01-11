@@ -17,7 +17,7 @@ public class CellMenuPart_Generic_Group extends CellMenuPart_AbstractGroup {
   }
 
   public CellMenuPart_AbstractGroup_Query getParametersFunction() {
-    return (CellMenuPart_AbstractGroup_Query)this.getChild(CellMenuPart_Generic_Group.PARAMETERS_FUNCTION);
+    return (CellMenuPart_AbstractGroup_Query)this.getChild(CellMenuPart_AbstractGroup_Query.class, CellMenuPart_Generic_Group.PARAMETERS_FUNCTION);
   }
 
   public void setParametersFunction(CellMenuPart_AbstractGroup_Query node) {
@@ -25,7 +25,7 @@ public class CellMenuPart_Generic_Group extends CellMenuPart_AbstractGroup {
   }
 
   public CellMenuPart_Generic_Group_Handler getHandlerFunction() {
-    return (CellMenuPart_Generic_Group_Handler)this.getChild(CellMenuPart_Generic_Group.HANDLER_FUNCTION);
+    return (CellMenuPart_Generic_Group_Handler)this.getChild(CellMenuPart_Generic_Group_Handler.class, CellMenuPart_Generic_Group.HANDLER_FUNCTION);
   }
 
   public void setHandlerFunction(CellMenuPart_Generic_Group_Handler node) {

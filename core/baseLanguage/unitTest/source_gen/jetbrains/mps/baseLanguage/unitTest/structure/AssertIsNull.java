@@ -18,7 +18,7 @@ public class AssertIsNull extends Statement {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(AssertIsNull.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, AssertIsNull.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

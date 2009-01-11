@@ -48,7 +48,7 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
   }
 
   public IComponentInstance getRootComponent() {
-    return (IComponentInstance)this.getChild(StandardDialog.ROOT_COMPONENT);
+    return (IComponentInstance)this.getChild(IComponentInstance.class, StandardDialog.ROOT_COMPONENT);
   }
 
   public void setRootComponent(IComponentInstance node) {
@@ -60,11 +60,11 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
   }
 
   public Iterator<StandardDialogButton> buttons() {
-    return this.children(StandardDialog.BUTTON);
+    return this.children(StandardDialogButton.class, StandardDialog.BUTTON);
   }
 
   public List<StandardDialogButton> getButtons() {
-    return this.getChildren(StandardDialog.BUTTON);
+    return this.getChildren(StandardDialogButton.class, StandardDialog.BUTTON);
   }
 
   public void addButton(StandardDialogButton node) {
@@ -80,11 +80,11 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
   }
 
   public Iterator<IComponentPart> contents() {
-    return this.children(StandardDialog.CONTENT);
+    return this.children(IComponentPart.class, StandardDialog.CONTENT);
   }
 
   public List<IComponentPart> getContents() {
-    return this.getChildren(StandardDialog.CONTENT);
+    return this.getChildren(IComponentPart.class, StandardDialog.CONTENT);
   }
 
   public void addContent(IComponentPart node) {

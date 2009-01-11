@@ -27,7 +27,7 @@ public class SimpleAttribute extends BaseAttribute {
   }
 
   public BaseText getValue() {
-    return (BaseText)this.getChild(SimpleAttribute.VALUE);
+    return (BaseText)this.getChild(BaseText.class, SimpleAttribute.VALUE);
   }
 
   public void setValue(BaseText node) {

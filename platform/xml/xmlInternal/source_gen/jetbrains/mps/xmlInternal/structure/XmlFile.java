@@ -75,7 +75,7 @@ public class XmlFile extends BaseConcept implements INamedConcept, XmlRoot {
   }
 
   public Schema getSchema() {
-    return (Schema)this.getReferent(XmlFile.SCHEMA);
+    return (Schema)this.getReferent(Schema.class, XmlFile.SCHEMA);
   }
 
   public void setSchema(Schema node) {
@@ -83,7 +83,7 @@ public class XmlFile extends BaseConcept implements INamedConcept, XmlRoot {
   }
 
   public Document getDocument() {
-    return (Document)this.getChild(XmlFile.DOCUMENT);
+    return (Document)this.getChild(Document.class, XmlFile.DOCUMENT);
   }
 
   public void setDocument(Document node) {

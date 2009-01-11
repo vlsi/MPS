@@ -26,7 +26,7 @@ public class Element extends BaseElement {
   }
 
   public ElementDeclaration getElementDeclaration() {
-    return (ElementDeclaration)this.getReferent(Element.ELEMENT_DECLARATION);
+    return (ElementDeclaration)this.getReferent(ElementDeclaration.class, Element.ELEMENT_DECLARATION);
   }
 
   public void setElementDeclaration(ElementDeclaration node) {

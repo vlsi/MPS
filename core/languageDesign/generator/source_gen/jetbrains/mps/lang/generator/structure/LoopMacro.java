@@ -16,7 +16,7 @@ public class LoopMacro extends SourceSubstituteMacro {
   }
 
   public SourceSubstituteMacro_SourceNodesQuery getSourceNodesQuery() {
-    return (SourceSubstituteMacro_SourceNodesQuery)this.getChild(LoopMacro.SOURCE_NODES_QUERY);
+    return (SourceSubstituteMacro_SourceNodesQuery)this.getChild(SourceSubstituteMacro_SourceNodesQuery.class, LoopMacro.SOURCE_NODES_QUERY);
   }
 
   public void setSourceNodesQuery(SourceSubstituteMacro_SourceNodesQuery node) {

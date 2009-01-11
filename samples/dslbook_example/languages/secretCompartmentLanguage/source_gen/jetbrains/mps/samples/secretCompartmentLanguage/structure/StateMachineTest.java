@@ -57,7 +57,7 @@ public class StateMachineTest extends BaseConcept implements INamedConcept {
   }
 
   public StateMachine getStateMachine() {
-    return (StateMachine)this.getReferent(StateMachineTest.STATE_MACHINE);
+    return (StateMachine)this.getReferent(StateMachine.class, StateMachineTest.STATE_MACHINE);
   }
 
   public void setStateMachine(StateMachine node) {
@@ -69,11 +69,11 @@ public class StateMachineTest extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<StateMachineTestMethod> testMethods() {
-    return this.children(StateMachineTest.TEST_METHOD);
+    return this.children(StateMachineTestMethod.class, StateMachineTest.TEST_METHOD);
   }
 
   public List<StateMachineTestMethod> getTestMethods() {
-    return this.getChildren(StateMachineTest.TEST_METHOD);
+    return this.getChildren(StateMachineTestMethod.class, StateMachineTest.TEST_METHOD);
   }
 
   public void addTestMethod(StateMachineTestMethod node) {

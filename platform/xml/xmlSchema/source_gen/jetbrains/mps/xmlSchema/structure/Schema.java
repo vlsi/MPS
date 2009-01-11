@@ -85,7 +85,7 @@ public class Schema extends BaseConcept implements INamedConcept {
   }
 
   public ElementReference getRootElementReference() {
-    return (ElementReference)this.getChild(Schema.ROOT_ELEMENT_REFERENCE);
+    return (ElementReference)this.getChild(ElementReference.class, Schema.ROOT_ELEMENT_REFERENCE);
   }
 
   public void setRootElementReference(ElementReference node) {
@@ -93,7 +93,7 @@ public class Schema extends BaseConcept implements INamedConcept {
   }
 
   public NamespaceDeclaration getDefaultNamespaceDeclaration() {
-    return (NamespaceDeclaration)this.getChild(Schema.DEFAULT_NAMESPACE_DECLARATION);
+    return (NamespaceDeclaration)this.getChild(NamespaceDeclaration.class, Schema.DEFAULT_NAMESPACE_DECLARATION);
   }
 
   public void setDefaultNamespaceDeclaration(NamespaceDeclaration node) {
@@ -105,11 +105,11 @@ public class Schema extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<DeclarationBlock> declarationBlocks() {
-    return this.children(Schema.DECLARATION_BLOCK);
+    return this.children(DeclarationBlock.class, Schema.DECLARATION_BLOCK);
   }
 
   public List<DeclarationBlock> getDeclarationBlocks() {
-    return this.getChildren(Schema.DECLARATION_BLOCK);
+    return this.getChildren(DeclarationBlock.class, Schema.DECLARATION_BLOCK);
   }
 
   public void addDeclarationBlock(DeclarationBlock node) {

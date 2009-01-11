@@ -44,7 +44,7 @@ public class LocalVariableDeclarationStatement extends Statement implements IWra
   }
 
   public LocalVariableDeclaration getLocalVariableDeclaration() {
-    return (LocalVariableDeclaration)this.getChild(LocalVariableDeclarationStatement.LOCAL_VARIABLE_DECLARATION);
+    return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, LocalVariableDeclarationStatement.LOCAL_VARIABLE_DECLARATION);
   }
 
   public void setLocalVariableDeclaration(LocalVariableDeclaration node) {

@@ -18,7 +18,7 @@ public class MapType extends Type {
   }
 
   public Type getKeyType() {
-    return (Type)this.getChild(MapType.KEY_TYPE);
+    return (Type)this.getChild(Type.class, MapType.KEY_TYPE);
   }
 
   public void setKeyType(Type node) {
@@ -26,7 +26,7 @@ public class MapType extends Type {
   }
 
   public Type getValueType() {
-    return (Type)this.getChild(MapType.VALUE_TYPE);
+    return (Type)this.getChild(Type.class, MapType.VALUE_TYPE);
   }
 
   public void setValueType(Type node) {

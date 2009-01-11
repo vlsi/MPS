@@ -18,7 +18,7 @@ public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
   }
 
   public PropertyDeclaration getProperty() {
-    return (PropertyDeclaration)this.getReferent(CellModel_TransactionalProperty.PROPERTY);
+    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, CellModel_TransactionalProperty.PROPERTY);
   }
 
   public void setProperty(PropertyDeclaration node) {
@@ -26,7 +26,7 @@ public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
   }
 
   public TransactionalPropertyHandler getHandlerBlock() {
-    return (TransactionalPropertyHandler)this.getChild(CellModel_TransactionalProperty.HANDLER_BLOCK);
+    return (TransactionalPropertyHandler)this.getChild(TransactionalPropertyHandler.class, CellModel_TransactionalProperty.HANDLER_BLOCK);
   }
 
   public void setHandlerBlock(TransactionalPropertyHandler node) {

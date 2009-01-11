@@ -16,7 +16,7 @@ public class Node_IsInstanceOfOperation extends SNodeOperation {
   }
 
   public IRefConceptArg getConceptArgument() {
-    return (IRefConceptArg)this.getChild(Node_IsInstanceOfOperation.CONCEPT_ARGUMENT);
+    return (IRefConceptArg)this.getChild(IRefConceptArg.class, Node_IsInstanceOfOperation.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(IRefConceptArg node) {

@@ -21,7 +21,7 @@ public class SelectOperation extends SNodeOperation {
   }
 
   public Expression getEditorContext() {
-    return (Expression)this.getChild(SelectOperation.EDITOR_CONTEXT);
+    return (Expression)this.getChild(Expression.class, SelectOperation.EDITOR_CONTEXT);
   }
 
   public void setEditorContext(Expression node) {
@@ -33,11 +33,11 @@ public class SelectOperation extends SNodeOperation {
   }
 
   public Iterator<SelectParameter> selectLaterParameters() {
-    return this.children(SelectOperation.SELECT_LATER_PARAMETER);
+    return this.children(SelectParameter.class, SelectOperation.SELECT_LATER_PARAMETER);
   }
 
   public List<SelectParameter> getSelectLaterParameters() {
-    return this.getChildren(SelectOperation.SELECT_LATER_PARAMETER);
+    return this.getChildren(SelectParameter.class, SelectOperation.SELECT_LATER_PARAMETER);
   }
 
   public void addSelectLaterParameter(SelectParameter node) {

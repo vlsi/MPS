@@ -17,7 +17,7 @@ public class ComplexTypeReference extends BaseConcept {
   }
 
   public ComplexType getComplextType() {
-    return (ComplexType)this.getReferent(ComplexTypeReference.COMPLEXT_TYPE);
+    return (ComplexType)this.getReferent(ComplexType.class, ComplexTypeReference.COMPLEXT_TYPE);
   }
 
   public void setComplextType(ComplexType node) {

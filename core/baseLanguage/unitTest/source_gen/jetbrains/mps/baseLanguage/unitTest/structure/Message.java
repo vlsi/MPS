@@ -18,7 +18,7 @@ public class Message extends BaseConcept {
   }
 
   public Expression getMessage() {
-    return (Expression)this.getChild(Message.MESSAGE);
+    return (Expression)this.getChild(Expression.class, Message.MESSAGE);
   }
 
   public void setMessage(Expression node) {

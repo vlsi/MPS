@@ -79,11 +79,11 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
   }
 
   public Iterator<Call> taskCalls() {
-    return this.children(TargetDeclaration.TASK_CALL);
+    return this.children(Call.class, TargetDeclaration.TASK_CALL);
   }
 
   public List<Call> getTaskCalls() {
-    return this.getChildren(TargetDeclaration.TASK_CALL);
+    return this.getChildren(Call.class, TargetDeclaration.TASK_CALL);
   }
 
   public void addTaskCall(Call node) {
@@ -99,11 +99,11 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
   }
 
   public Iterator<TargetReference> dependses() {
-    return this.children(TargetDeclaration.DEPENDS);
+    return this.children(TargetReference.class, TargetDeclaration.DEPENDS);
   }
 
   public List<TargetReference> getDependses() {
-    return this.getChildren(TargetDeclaration.DEPENDS);
+    return this.getChildren(TargetReference.class, TargetDeclaration.DEPENDS);
   }
 
   public void addDepends(TargetReference node) {
@@ -119,11 +119,11 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
   }
 
   public Iterator<PropertyDeclaration> propertyLists() {
-    return this.children(TargetDeclaration.PROPERTY_LIST);
+    return this.children(PropertyDeclaration.class, TargetDeclaration.PROPERTY_LIST);
   }
 
   public List<PropertyDeclaration> getPropertyLists() {
-    return this.getChildren(TargetDeclaration.PROPERTY_LIST);
+    return this.getChildren(PropertyDeclaration.class, TargetDeclaration.PROPERTY_LIST);
   }
 
   public void addPropertyList(PropertyDeclaration node) {

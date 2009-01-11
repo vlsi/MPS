@@ -19,7 +19,7 @@ public class TryCatchStatement extends Statement {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(TryCatchStatement.BODY);
+    return (StatementList)this.getChild(StatementList.class, TryCatchStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -31,11 +31,11 @@ public class TryCatchStatement extends Statement {
   }
 
   public Iterator<CatchClause> catchClauses() {
-    return this.children(TryCatchStatement.CATCH_CLAUSE);
+    return this.children(CatchClause.class, TryCatchStatement.CATCH_CLAUSE);
   }
 
   public List<CatchClause> getCatchClauses() {
-    return this.getChildren(TryCatchStatement.CATCH_CLAUSE);
+    return this.getChildren(CatchClause.class, TryCatchStatement.CATCH_CLAUSE);
   }
 
   public void addCatchClause(CatchClause node) {

@@ -26,7 +26,7 @@ public class UnderlinedStyleClassItem extends StyleClassItem {
   }
 
   public QueryFunction_Underlined getQuery() {
-    return (QueryFunction_Underlined)this.getChild(UnderlinedStyleClassItem.QUERY);
+    return (QueryFunction_Underlined)this.getChild(QueryFunction_Underlined.class, UnderlinedStyleClassItem.QUERY);
   }
 
   public void setQuery(QueryFunction_Underlined node) {

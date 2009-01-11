@@ -18,7 +18,7 @@ public class SubstringExpression extends Expression {
   }
 
   public Expression getOperand() {
-    return (Expression)this.getChild(SubstringExpression.OPERAND);
+    return (Expression)this.getChild(Expression.class, SubstringExpression.OPERAND);
   }
 
   public void setOperand(Expression node) {
@@ -26,7 +26,7 @@ public class SubstringExpression extends Expression {
   }
 
   public Expression getStartIndex() {
-    return (Expression)this.getChild(SubstringExpression.START_INDEX);
+    return (Expression)this.getChild(Expression.class, SubstringExpression.START_INDEX);
   }
 
   public void setStartIndex(Expression node) {
@@ -34,7 +34,7 @@ public class SubstringExpression extends Expression {
   }
 
   public Expression getEndIndex() {
-    return (Expression)this.getChild(SubstringExpression.END_INDEX);
+    return (Expression)this.getChild(Expression.class, SubstringExpression.END_INDEX);
   }
 
   public void setEndIndex(Expression node) {

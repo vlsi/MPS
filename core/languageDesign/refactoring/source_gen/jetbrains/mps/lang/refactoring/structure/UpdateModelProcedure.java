@@ -18,7 +18,7 @@ public class UpdateModelProcedure extends Statement {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(UpdateModelProcedure.ARGUMENT);
+    return (Expression)this.getChild(Expression.class, UpdateModelProcedure.ARGUMENT);
   }
 
   public void setArgument(Expression node) {

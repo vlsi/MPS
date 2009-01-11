@@ -16,7 +16,7 @@ public class CellMenuPart_PropertyValues extends CellMenuPart_Abstract {
   }
 
   public CellMenuPart_PropertyValues_GetValues getValuesFunction() {
-    return (CellMenuPart_PropertyValues_GetValues)this.getChild(CellMenuPart_PropertyValues.VALUES_FUNCTION);
+    return (CellMenuPart_PropertyValues_GetValues)this.getChild(CellMenuPart_PropertyValues_GetValues.class, CellMenuPart_PropertyValues.VALUES_FUNCTION);
   }
 
   public void setValuesFunction(CellMenuPart_PropertyValues_GetValues node) {

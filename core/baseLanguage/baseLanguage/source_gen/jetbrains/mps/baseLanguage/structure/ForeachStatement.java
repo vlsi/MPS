@@ -16,7 +16,7 @@ public class ForeachStatement extends AbstractForStatement {
   }
 
   public Expression getIterable() {
-    return (Expression)this.getChild(ForeachStatement.ITERABLE);
+    return (Expression)this.getChild(Expression.class, ForeachStatement.ITERABLE);
   }
 
   public void setIterable(Expression node) {

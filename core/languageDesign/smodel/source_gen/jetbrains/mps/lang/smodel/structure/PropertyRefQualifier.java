@@ -45,7 +45,7 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
   }
 
   public PropertyDeclaration getProperty() {
-    return (PropertyDeclaration)this.getReferent(PropertyRefQualifier.PROPERTY);
+    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, PropertyRefQualifier.PROPERTY);
   }
 
   public void setProperty(PropertyDeclaration node) {

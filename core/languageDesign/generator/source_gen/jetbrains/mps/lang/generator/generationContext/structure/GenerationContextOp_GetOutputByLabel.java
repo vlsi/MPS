@@ -26,7 +26,7 @@ public class GenerationContextOp_GetOutputByLabel extends GenerationContextOp_Ba
   }
 
   public MappingLabelDeclaration getLabel() {
-    return (MappingLabelDeclaration)this.getReferent(GenerationContextOp_GetOutputByLabel.LABEL);
+    return (MappingLabelDeclaration)this.getReferent(MappingLabelDeclaration.class, GenerationContextOp_GetOutputByLabel.LABEL);
   }
 
   public void setLabel(MappingLabelDeclaration node) {

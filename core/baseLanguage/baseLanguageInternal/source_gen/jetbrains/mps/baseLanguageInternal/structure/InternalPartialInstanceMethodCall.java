@@ -59,7 +59,7 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   }
 
   public Type getReturnType() {
-    return (Type)this.getChild(InternalPartialInstanceMethodCall.RETURN_TYPE);
+    return (Type)this.getChild(Type.class, InternalPartialInstanceMethodCall.RETURN_TYPE);
   }
 
   public void setReturnType(Type node) {
@@ -67,7 +67,7 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   }
 
   public Expression getInstance() {
-    return (Expression)this.getChild(InternalPartialInstanceMethodCall.INSTANCE);
+    return (Expression)this.getChild(Expression.class, InternalPartialInstanceMethodCall.INSTANCE);
   }
 
   public void setInstance(Expression node) {
@@ -79,11 +79,11 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   }
 
   public Iterator<Expression> actualArguments() {
-    return this.children(InternalPartialInstanceMethodCall.ACTUAL_ARGUMENT);
+    return this.children(Expression.class, InternalPartialInstanceMethodCall.ACTUAL_ARGUMENT);
   }
 
   public List<Expression> getActualArguments() {
-    return this.getChildren(InternalPartialInstanceMethodCall.ACTUAL_ARGUMENT);
+    return this.getChildren(Expression.class, InternalPartialInstanceMethodCall.ACTUAL_ARGUMENT);
   }
 
   public void addActualArgument(Expression node) {

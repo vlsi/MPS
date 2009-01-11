@@ -20,7 +20,7 @@ public class HashMapCreator extends AbstractCreator {
   }
 
   public Type getKeyType() {
-    return (Type)this.getChild(HashMapCreator.KEY_TYPE);
+    return (Type)this.getChild(Type.class, HashMapCreator.KEY_TYPE);
   }
 
   public void setKeyType(Type node) {
@@ -28,7 +28,7 @@ public class HashMapCreator extends AbstractCreator {
   }
 
   public Type getValueType() {
-    return (Type)this.getChild(HashMapCreator.VALUE_TYPE);
+    return (Type)this.getChild(Type.class, HashMapCreator.VALUE_TYPE);
   }
 
   public void setValueType(Type node) {
@@ -36,7 +36,7 @@ public class HashMapCreator extends AbstractCreator {
   }
 
   public MapInitializer getInitializer() {
-    return (MapInitializer)this.getChild(HashMapCreator.INITIALIZER);
+    return (MapInitializer)this.getChild(MapInitializer.class, HashMapCreator.INITIALIZER);
   }
 
   public void setInitializer(MapInitializer node) {

@@ -21,7 +21,7 @@ public class IfStatement extends Statement {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(IfStatement.CONDITION);
+    return (Expression)this.getChild(Expression.class, IfStatement.CONDITION);
   }
 
   public void setCondition(Expression node) {
@@ -29,7 +29,7 @@ public class IfStatement extends Statement {
   }
 
   public Statement getIfFalseStatement() {
-    return (Statement)this.getChild(IfStatement.IF_FALSE_STATEMENT);
+    return (Statement)this.getChild(Statement.class, IfStatement.IF_FALSE_STATEMENT);
   }
 
   public void setIfFalseStatement(Statement node) {
@@ -37,7 +37,7 @@ public class IfStatement extends Statement {
   }
 
   public StatementList getIfTrue() {
-    return (StatementList)this.getChild(IfStatement.IF_TRUE);
+    return (StatementList)this.getChild(StatementList.class, IfStatement.IF_TRUE);
   }
 
   public void setIfTrue(StatementList node) {
@@ -49,11 +49,11 @@ public class IfStatement extends Statement {
   }
 
   public Iterator<ElsifClause> elsifClauseses() {
-    return this.children(IfStatement.ELSIF_CLAUSES);
+    return this.children(ElsifClause.class, IfStatement.ELSIF_CLAUSES);
   }
 
   public List<ElsifClause> getElsifClauseses() {
-    return this.getChildren(IfStatement.ELSIF_CLAUSES);
+    return this.getChildren(ElsifClause.class, IfStatement.ELSIF_CLAUSES);
   }
 
   public void addElsifClauses(ElsifClause node) {

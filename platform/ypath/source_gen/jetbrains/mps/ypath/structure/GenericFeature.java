@@ -85,7 +85,7 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   }
 
   public IFeature getOpposite() {
-    return (IFeature)this.getReferent(GenericFeature.OPPOSITE);
+    return (IFeature)this.getReferent(IFeature.class, GenericFeature.OPPOSITE);
   }
 
   public void setOpposite(IFeature node) {
@@ -93,7 +93,7 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   }
 
   public GFGetterFun getGetter() {
-    return (GFGetterFun)this.getChild(GenericFeature.GETTER);
+    return (GFGetterFun)this.getChild(GFGetterFun.class, GenericFeature.GETTER);
   }
 
   public void setGetter(GFGetterFun node) {
@@ -105,11 +105,11 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   }
 
   public Iterator<GenericFeatureFunHolder> funHolderses() {
-    return this.children(GenericFeature.FUN_HOLDERS);
+    return this.children(GenericFeatureFunHolder.class, GenericFeature.FUN_HOLDERS);
   }
 
   public List<GenericFeatureFunHolder> getFunHolderses() {
-    return this.getChildren(GenericFeature.FUN_HOLDERS);
+    return this.getChildren(GenericFeatureFunHolder.class, GenericFeature.FUN_HOLDERS);
   }
 
   public void addFunHolders(GenericFeatureFunHolder node) {

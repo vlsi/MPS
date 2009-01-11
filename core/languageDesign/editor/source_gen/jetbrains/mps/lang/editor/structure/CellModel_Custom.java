@@ -16,7 +16,7 @@ public class CellModel_Custom extends EditorCellModel {
   }
 
   public QueryFunction_CellProvider getCellProvider() {
-    return (QueryFunction_CellProvider)this.getChild(CellModel_Custom.CELL_PROVIDER);
+    return (QueryFunction_CellProvider)this.getChild(QueryFunction_CellProvider.class, CellModel_Custom.CELL_PROVIDER);
   }
 
   public void setCellProvider(QueryFunction_CellProvider node) {

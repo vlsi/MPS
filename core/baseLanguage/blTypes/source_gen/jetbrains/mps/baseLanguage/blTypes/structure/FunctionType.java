@@ -20,7 +20,7 @@ public class FunctionType extends BaseConcept {
   }
 
   public BaseConcept getResult() {
-    return (BaseConcept)this.getChild(FunctionType.RESULT);
+    return (BaseConcept)this.getChild(BaseConcept.class, FunctionType.RESULT);
   }
 
   public void setResult(BaseConcept node) {
@@ -32,11 +32,11 @@ public class FunctionType extends BaseConcept {
   }
 
   public Iterator<BaseConcept> params() {
-    return this.children(FunctionType.PARAM);
+    return this.children(BaseConcept.class, FunctionType.PARAM);
   }
 
   public List<BaseConcept> getParams() {
-    return this.getChildren(FunctionType.PARAM);
+    return this.getChildren(BaseConcept.class, FunctionType.PARAM);
   }
 
   public void addParam(BaseConcept node) {

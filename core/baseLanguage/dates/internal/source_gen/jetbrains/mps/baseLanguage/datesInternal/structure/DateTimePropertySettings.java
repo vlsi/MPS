@@ -27,11 +27,11 @@ public class DateTimePropertySettings extends BaseConcept {
   }
 
   public Iterator<DateTimeProperty> dateTimeProperties() {
-    return this.children(DateTimePropertySettings.DATE_TIME_PROPERTY);
+    return this.children(DateTimeProperty.class, DateTimePropertySettings.DATE_TIME_PROPERTY);
   }
 
   public List<DateTimeProperty> getDateTimeProperties() {
-    return this.getChildren(DateTimePropertySettings.DATE_TIME_PROPERTY);
+    return this.getChildren(DateTimeProperty.class, DateTimePropertySettings.DATE_TIME_PROPERTY);
   }
 
   public void addDateTimeProperty(DateTimeProperty node) {
@@ -47,11 +47,11 @@ public class DateTimePropertySettings extends BaseConcept {
   }
 
   public Iterator<DurationType> durationTypes() {
-    return this.children(DateTimePropertySettings.DURATION_TYPE);
+    return this.children(DurationType.class, DateTimePropertySettings.DURATION_TYPE);
   }
 
   public List<DurationType> getDurationTypes() {
-    return this.getChildren(DateTimePropertySettings.DURATION_TYPE);
+    return this.getChildren(DurationType.class, DateTimePropertySettings.DURATION_TYPE);
   }
 
   public void addDurationType(DurationType node) {
@@ -67,11 +67,11 @@ public class DateTimePropertySettings extends BaseConcept {
   }
 
   public Iterator<Locale> locales() {
-    return this.children(DateTimePropertySettings.LOCALE);
+    return this.children(Locale.class, DateTimePropertySettings.LOCALE);
   }
 
   public List<Locale> getLocales() {
-    return this.getChildren(DateTimePropertySettings.LOCALE);
+    return this.getChildren(Locale.class, DateTimePropertySettings.LOCALE);
   }
 
   public void addLocale(Locale node) {
@@ -87,11 +87,11 @@ public class DateTimePropertySettings extends BaseConcept {
   }
 
   public Iterator<Month> months() {
-    return this.children(DateTimePropertySettings.MONTH);
+    return this.children(Month.class, DateTimePropertySettings.MONTH);
   }
 
   public List<Month> getMonths() {
-    return this.getChildren(DateTimePropertySettings.MONTH);
+    return this.getChildren(Month.class, DateTimePropertySettings.MONTH);
   }
 
   public void addMonth(Month node) {
@@ -107,11 +107,11 @@ public class DateTimePropertySettings extends BaseConcept {
   }
 
   public Iterator<SchedulePeriod> schedulePeriods() {
-    return this.children(DateTimePropertySettings.SCHEDULE_PERIOD);
+    return this.children(SchedulePeriod.class, DateTimePropertySettings.SCHEDULE_PERIOD);
   }
 
   public List<SchedulePeriod> getSchedulePeriods() {
-    return this.getChildren(DateTimePropertySettings.SCHEDULE_PERIOD);
+    return this.getChildren(SchedulePeriod.class, DateTimePropertySettings.SCHEDULE_PERIOD);
   }
 
   public void addSchedulePeriod(SchedulePeriod node) {

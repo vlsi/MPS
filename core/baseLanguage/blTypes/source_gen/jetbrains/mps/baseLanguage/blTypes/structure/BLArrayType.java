@@ -54,7 +54,7 @@ public class BLArrayType extends BaseConcept implements INamedConcept {
   }
 
   public INamedConcept getComponentType() {
-    return (INamedConcept)this.getReferent(BLArrayType.COMPONENT_TYPE);
+    return (INamedConcept)this.getReferent(INamedConcept.class, BLArrayType.COMPONENT_TYPE);
   }
 
   public void setComponentType(INamedConcept node) {

@@ -18,7 +18,7 @@ public class Attribute extends BaseAttribute {
   }
 
   public AttributeDeclaration getAttributeDeclaration() {
-    return (AttributeDeclaration)this.getReferent(Attribute.ATTRIBUTE_DECLARATION);
+    return (AttributeDeclaration)this.getReferent(AttributeDeclaration.class, Attribute.ATTRIBUTE_DECLARATION);
   }
 
   public void setAttributeDeclaration(AttributeDeclaration node) {
@@ -26,7 +26,7 @@ public class Attribute extends BaseAttribute {
   }
 
   public BaseText getValue() {
-    return (BaseText)this.getChild(Attribute.VALUE);
+    return (BaseText)this.getChild(BaseText.class, Attribute.VALUE);
   }
 
   public void setValue(BaseText node) {

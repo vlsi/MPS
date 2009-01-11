@@ -15,7 +15,7 @@ public class SuperMethodCall extends BaseMethodCall {
   }
 
   public InstanceMethodDeclaration getInstanceMethodDeclaration() {
-    return (InstanceMethodDeclaration)this.getBaseMethodDeclaration();
+    return this.ensureAdapter(InstanceMethodDeclaration.class, "baseMethodDeclaration", this.getBaseMethodDeclaration());
   }
 
   public void setInstanceMethodDeclaration(InstanceMethodDeclaration node) {

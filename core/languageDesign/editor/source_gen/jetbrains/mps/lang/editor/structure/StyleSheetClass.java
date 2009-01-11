@@ -58,7 +58,7 @@ public class StyleSheetClass extends BaseConcept implements INamedConcept, IVali
   }
 
   public StyleSheetClassReference getExtendedClass() {
-    return (StyleSheetClassReference)this.getChild(StyleSheetClass.EXTENDED_CLASS);
+    return (StyleSheetClassReference)this.getChild(StyleSheetClassReference.class, StyleSheetClass.EXTENDED_CLASS);
   }
 
   public void setExtendedClass(StyleSheetClassReference node) {
@@ -70,11 +70,11 @@ public class StyleSheetClass extends BaseConcept implements INamedConcept, IVali
   }
 
   public Iterator<StyleClassItem> styleItems() {
-    return this.children(StyleSheetClass.STYLE_ITEM);
+    return this.children(StyleClassItem.class, StyleSheetClass.STYLE_ITEM);
   }
 
   public List<StyleClassItem> getStyleItems() {
-    return this.getChildren(StyleSheetClass.STYLE_ITEM);
+    return this.getChildren(StyleClassItem.class, StyleSheetClass.STYLE_ITEM);
   }
 
   public void addStyleItem(StyleClassItem node) {

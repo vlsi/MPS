@@ -17,7 +17,7 @@ public class ApplicationPluginType extends BaseClassifierType {
   }
 
   public ApplicationPluginDeclaration getPlugin() {
-    return (ApplicationPluginDeclaration)this.getReferent(ApplicationPluginType.PLUGIN);
+    return (ApplicationPluginDeclaration)this.getReferent(ApplicationPluginDeclaration.class, ApplicationPluginType.PLUGIN);
   }
 
   public void setPlugin(ApplicationPluginDeclaration node) {

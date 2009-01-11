@@ -66,7 +66,7 @@ public class VariableDeclaration extends BaseConcept implements IValidIdentifier
   }
 
   public Type getType() {
-    return (Type)this.getChild(VariableDeclaration.TYPE);
+    return (Type)this.getChild(Type.class, VariableDeclaration.TYPE);
   }
 
   public void setType(Type node) {
@@ -74,7 +74,7 @@ public class VariableDeclaration extends BaseConcept implements IValidIdentifier
   }
 
   public Expression getInitializer() {
-    return (Expression)this.getChild(VariableDeclaration.INITIALIZER);
+    return (Expression)this.getChild(Expression.class, VariableDeclaration.INITIALIZER);
   }
 
   public void setInitializer(Expression node) {
@@ -86,11 +86,11 @@ public class VariableDeclaration extends BaseConcept implements IValidIdentifier
   }
 
   public Iterator<AnnotationInstance> annotations() {
-    return this.children(VariableDeclaration.ANNOTATION);
+    return this.children(AnnotationInstance.class, VariableDeclaration.ANNOTATION);
   }
 
   public List<AnnotationInstance> getAnnotations() {
-    return this.getChildren(VariableDeclaration.ANNOTATION);
+    return this.getChildren(AnnotationInstance.class, VariableDeclaration.ANNOTATION);
   }
 
   public void addAnnotation(AnnotationInstance node) {

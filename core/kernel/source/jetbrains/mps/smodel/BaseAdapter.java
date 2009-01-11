@@ -21,12 +21,15 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptLink;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
 public abstract class BaseAdapter implements INodeAdapter {
+  private static final Logger LOG = Logger.getLogger(BaseAdapter.class);
+
   private SNode myNode;
 
   public BaseAdapter(SNode node) {
@@ -213,12 +216,18 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public INodeAdapter getChild(@NotNull String role) {
+  public <C extends INodeAdapter> INodeAdapter getChild(Class<C> requiredClass, @NotNull String role) {
     SNode result = myNode.getChild(role);
     if (result == null) {
       return null;
     }
-    return result.getAdapter();
+    return ensureAdapter(requiredClass, role, result.getAdapter());
+  }
+
+
+  @Deprecated
+  public INodeAdapter getChild(@NotNull String role) {
+    return getChild(BaseAdapter.class, role);
   }
 
   public void removeChild(@NotNull INodeAdapter child) {
@@ -263,22 +272,51 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
 
+  @Deprecated
   public <T extends INodeAdapter> List<T> getChildren(@NotNull String role) {
-    List<T> result = toAdapters(myNode.getChildren(role));
+    return (List<T>) getChildren(INodeAdapter.class, role);
+  }
+  
+
+  public <T extends INodeAdapter> List<T> getChildren(Class<T> requiredClass, @NotNull String role) {
+    List<T> result = new ArrayList<T>();
+    for (INodeAdapter na : toAdapters(myNode.getChildren(role))) {
+      T t = ensureAdapter(requiredClass, role, na);
+      if (t != null) {
+        result.add(t);
+      }
+    }
     return result;
   }
 
+  @Deprecated
   public <T extends INodeAdapter> Iterator<T> children(@NotNull String role) {
-    List<T> children = getChildren(role);
-    return children.iterator();
+    return (Iterator<T>) children(INodeAdapter.class, role);
   }
 
+  public <T extends INodeAdapter> Iterator<T> children(Class<T> requiredClass, @NotNull String role) {
+    return getChildren(requiredClass, role).iterator();
+  }
+
+  @Deprecated
   protected INodeAdapter getReferent(String role) {
+    return getReferent(INodeAdapter.class, role);
+  }
+
+  protected <C extends INodeAdapter> INodeAdapter getReferent(Class<C> requiredClass, String role) {
     SNode result = myNode.getReferent(role);
     if (result == null) {
       return null;
     }
-    return result.getAdapter();
+    return ensureAdapter(requiredClass, role, result.getAdapter());
+  }
+
+  protected <C extends INodeAdapter> C ensureAdapter(Class<C> requiredClass, String role, INodeAdapter adapter) {
+    if (!requiredClass.isInstance(adapter)) {
+      LOG.error("Incorrect type in role " + role + ". " + requiredClass.getName() + " required", adapter);
+      return null;
+    }
+    return (C) adapter;
   }
 
   protected void setReferent(@NotNull String role, INodeAdapter newValue) {

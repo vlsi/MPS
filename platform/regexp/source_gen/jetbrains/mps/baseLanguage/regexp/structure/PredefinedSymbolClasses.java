@@ -60,11 +60,11 @@ public class PredefinedSymbolClasses extends BaseConcept implements INamedConcep
   }
 
   public Iterator<PredefinedSymbolClassDeclaration> symbolClasses() {
-    return this.children(PredefinedSymbolClasses.SYMBOL_CLASS);
+    return this.children(PredefinedSymbolClassDeclaration.class, PredefinedSymbolClasses.SYMBOL_CLASS);
   }
 
   public List<PredefinedSymbolClassDeclaration> getSymbolClasses() {
-    return this.getChildren(PredefinedSymbolClasses.SYMBOL_CLASS);
+    return this.getChildren(PredefinedSymbolClassDeclaration.class, PredefinedSymbolClasses.SYMBOL_CLASS);
   }
 
   public void addSymbolClass(PredefinedSymbolClassDeclaration node) {

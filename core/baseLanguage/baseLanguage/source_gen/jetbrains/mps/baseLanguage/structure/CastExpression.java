@@ -17,7 +17,7 @@ public class CastExpression extends Expression {
   }
 
   public Type getType() {
-    return (Type)this.getChild(CastExpression.TYPE);
+    return (Type)this.getChild(Type.class, CastExpression.TYPE);
   }
 
   public void setType(Type node) {
@@ -25,7 +25,7 @@ public class CastExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(CastExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, CastExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

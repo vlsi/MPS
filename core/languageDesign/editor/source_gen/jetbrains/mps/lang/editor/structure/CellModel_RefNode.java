@@ -16,7 +16,7 @@ public class CellModel_RefNode extends CellModel_WithRole {
   }
 
   public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration)this.getRelationDeclaration();
+    return this.ensureAdapter(LinkDeclaration.class, "relationDeclaration", this.getRelationDeclaration());
   }
 
   public void setLinkDeclaration(LinkDeclaration node) {

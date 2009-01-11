@@ -54,7 +54,7 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
   }
 
   public DataTypeDeclaration getDataType() {
-    return (DataTypeDeclaration)this.getReferent(PropertyDeclaration.DATA_TYPE);
+    return (DataTypeDeclaration)this.getReferent(DataTypeDeclaration.class, PropertyDeclaration.DATA_TYPE);
   }
 
   public void setDataType(DataTypeDeclaration node) {

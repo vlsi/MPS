@@ -89,7 +89,7 @@ public class ToolDeclaration extends BaseConcept implements IClassifier {
   }
 
   public ProjectPluginInitBlock getInitBlock() {
-    return (ProjectPluginInitBlock)this.getChild(ToolDeclaration.INIT_BLOCK);
+    return (ProjectPluginInitBlock)this.getChild(ProjectPluginInitBlock.class, ToolDeclaration.INIT_BLOCK);
   }
 
   public void setInitBlock(ProjectPluginInitBlock node) {
@@ -97,7 +97,7 @@ public class ToolDeclaration extends BaseConcept implements IClassifier {
   }
 
   public ProjectPluginDisposeBlock getDisposeBlock() {
-    return (ProjectPluginDisposeBlock)this.getChild(ToolDeclaration.DISPOSE_BLOCK);
+    return (ProjectPluginDisposeBlock)this.getChild(ProjectPluginDisposeBlock.class, ToolDeclaration.DISPOSE_BLOCK);
   }
 
   public void setDisposeBlock(ProjectPluginDisposeBlock node) {
@@ -105,7 +105,7 @@ public class ToolDeclaration extends BaseConcept implements IClassifier {
   }
 
   public GetComponentBlock getGetComponentBlock() {
-    return (GetComponentBlock)this.getChild(ToolDeclaration.GET_COMPONENT_BLOCK);
+    return (GetComponentBlock)this.getChild(GetComponentBlock.class, ToolDeclaration.GET_COMPONENT_BLOCK);
   }
 
   public void setGetComponentBlock(GetComponentBlock node) {
@@ -117,11 +117,11 @@ public class ToolDeclaration extends BaseConcept implements IClassifier {
   }
 
   public Iterator<DefaultClassifierMethodDeclaration> methodDeclarations() {
-    return this.children(ToolDeclaration.METHOD_DECLARATION);
+    return this.children(DefaultClassifierMethodDeclaration.class, ToolDeclaration.METHOD_DECLARATION);
   }
 
   public List<DefaultClassifierMethodDeclaration> getMethodDeclarations() {
-    return this.getChildren(ToolDeclaration.METHOD_DECLARATION);
+    return this.getChildren(DefaultClassifierMethodDeclaration.class, ToolDeclaration.METHOD_DECLARATION);
   }
 
   public void addMethodDeclaration(DefaultClassifierMethodDeclaration node) {
@@ -137,11 +137,11 @@ public class ToolDeclaration extends BaseConcept implements IClassifier {
   }
 
   public Iterator<DefaultClassifierFieldDeclaration> fieldDeclarations() {
-    return this.children(ToolDeclaration.FIELD_DECLARATION);
+    return this.children(DefaultClassifierFieldDeclaration.class, ToolDeclaration.FIELD_DECLARATION);
   }
 
   public List<DefaultClassifierFieldDeclaration> getFieldDeclarations() {
-    return this.getChildren(ToolDeclaration.FIELD_DECLARATION);
+    return this.getChildren(DefaultClassifierFieldDeclaration.class, ToolDeclaration.FIELD_DECLARATION);
   }
 
   public void addFieldDeclaration(DefaultClassifierFieldDeclaration node) {

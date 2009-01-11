@@ -18,7 +18,7 @@ public class SingleComplexExpression extends Expression {
   }
 
   public Expression getComplexExpression() {
-    return (Expression)this.getChild(SingleComplexExpression.COMPLEX_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, SingleComplexExpression.COMPLEX_EXPRESSION);
   }
 
   public void setComplexExpression(Expression node) {

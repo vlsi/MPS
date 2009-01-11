@@ -16,7 +16,7 @@ public class FileName extends PropertyValueExpression {
   }
 
   public PropertyValueExpression getValue() {
-    return (PropertyValueExpression)this.getChild(FileName.VALUE);
+    return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, FileName.VALUE);
   }
 
   public void setValue(PropertyValueExpression node) {

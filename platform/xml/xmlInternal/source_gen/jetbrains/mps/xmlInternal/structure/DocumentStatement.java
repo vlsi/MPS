@@ -17,7 +17,7 @@ public class DocumentStatement extends Statement {
   }
 
   public Document getDocument() {
-    return (Document)this.getChild(DocumentStatement.DOCUMENT);
+    return (Document)this.getChild(Document.class, DocumentStatement.DOCUMENT);
   }
 
   public void setDocument(Document node) {

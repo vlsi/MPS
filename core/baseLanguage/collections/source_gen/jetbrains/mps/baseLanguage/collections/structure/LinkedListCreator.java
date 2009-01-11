@@ -22,7 +22,7 @@ public class LinkedListCreator extends AbstractCreator {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(LinkedListCreator.ELEMENT_TYPE);
+    return (Type)this.getChild(Type.class, LinkedListCreator.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -34,11 +34,11 @@ public class LinkedListCreator extends AbstractCreator {
   }
 
   public Iterator<Expression> initValues() {
-    return this.children(LinkedListCreator.INIT_VALUE);
+    return this.children(Expression.class, LinkedListCreator.INIT_VALUE);
   }
 
   public List<Expression> getInitValues() {
-    return this.getChildren(LinkedListCreator.INIT_VALUE);
+    return this.getChildren(Expression.class, LinkedListCreator.INIT_VALUE);
   }
 
   public void addInitValue(Expression node) {

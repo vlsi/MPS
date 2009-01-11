@@ -18,7 +18,7 @@ public class LinkPatternVariableReference extends Expression {
   }
 
   public LinkPatternVariableDeclaration getPatternVarDecl() {
-    return (LinkPatternVariableDeclaration)this.getReferent(LinkPatternVariableReference.PATTERN_VAR_DECL);
+    return (LinkPatternVariableDeclaration)this.getReferent(LinkPatternVariableDeclaration.class, LinkPatternVariableReference.PATTERN_VAR_DECL);
   }
 
   public void setPatternVarDecl(LinkPatternVariableDeclaration node) {

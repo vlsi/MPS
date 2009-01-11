@@ -17,7 +17,7 @@ public class ReferenceFormatToken extends FormatToken {
   }
 
   public IDateFormat getDateFormat() {
-    return (IDateFormat)this.getReferent(ReferenceFormatToken.DATE_FORMAT);
+    return (IDateFormat)this.getReferent(IDateFormat.class, ReferenceFormatToken.DATE_FORMAT);
   }
 
   public void setDateFormat(IDateFormat node) {

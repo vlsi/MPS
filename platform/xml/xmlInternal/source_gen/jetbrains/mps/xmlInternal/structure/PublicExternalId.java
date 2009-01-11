@@ -17,7 +17,7 @@ public class PublicExternalId extends ExternalId {
   }
 
   public Literal getPubidLiteral() {
-    return (Literal)this.getChild(PublicExternalId.PUBID_LITERAL);
+    return (Literal)this.getChild(Literal.class, PublicExternalId.PUBID_LITERAL);
   }
 
   public void setPubidLiteral(Literal node) {
@@ -25,7 +25,7 @@ public class PublicExternalId extends ExternalId {
   }
 
   public Literal getSystemLiteral() {
-    return (Literal)this.getChild(PublicExternalId.SYSTEM_LITERAL);
+    return (Literal)this.getChild(Literal.class, PublicExternalId.SYSTEM_LITERAL);
   }
 
   public void setSystemLiteral(Literal node) {

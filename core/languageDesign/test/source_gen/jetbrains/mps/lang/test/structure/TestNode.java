@@ -17,7 +17,7 @@ public class TestNode extends BaseConcept {
   }
 
   public BaseConcept getNodeToCheck() {
-    return (BaseConcept)this.getChild(TestNode.NODE_TO_CHECK);
+    return (BaseConcept)this.getChild(BaseConcept.class, TestNode.NODE_TO_CHECK);
   }
 
   public void setNodeToCheck(BaseConcept node) {

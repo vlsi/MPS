@@ -85,7 +85,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   }
 
   public IFeature getOpposite() {
-    return (IFeature)this.getReferent(SequenceFeature.OPPOSITE);
+    return (IFeature)this.getReferent(IFeature.class, SequenceFeature.OPPOSITE);
   }
 
   public void setOpposite(IFeature node) {
@@ -93,7 +93,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   }
 
   public FeatureSequenceFun getSequenceFunction() {
-    return (FeatureSequenceFun)this.getChild(SequenceFeature.SEQUENCE_FUNCTION);
+    return (FeatureSequenceFun)this.getChild(FeatureSequenceFun.class, SequenceFeature.SEQUENCE_FUNCTION);
   }
 
   public void setSequenceFunction(FeatureSequenceFun node) {
@@ -101,7 +101,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   }
 
   public FeatureSizeFun getSizeFunction() {
-    return (FeatureSizeFun)this.getChild(SequenceFeature.SIZE_FUNCTION);
+    return (FeatureSizeFun)this.getChild(FeatureSizeFun.class, SequenceFeature.SIZE_FUNCTION);
   }
 
   public void setSizeFunction(FeatureSizeFun node) {
@@ -109,7 +109,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   }
 
   public FeatureAddFun getAddFunction() {
-    return (FeatureAddFun)this.getChild(SequenceFeature.ADD_FUNCTION);
+    return (FeatureAddFun)this.getChild(FeatureAddFun.class, SequenceFeature.ADD_FUNCTION);
   }
 
   public void setAddFunction(FeatureAddFun node) {
@@ -117,7 +117,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   }
 
   public FeatureRemoveFun getRemoveFunction() {
-    return (FeatureRemoveFun)this.getChild(SequenceFeature.REMOVE_FUNCTION);
+    return (FeatureRemoveFun)this.getChild(FeatureRemoveFun.class, SequenceFeature.REMOVE_FUNCTION);
   }
 
   public void setRemoveFunction(FeatureRemoveFun node) {

@@ -46,7 +46,7 @@ public class ActionDataParameterReferenceOperation extends BaseConcept implement
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(ActionDataParameterReferenceOperation.MEMBER);
+    return (IMember)this.getReferent(IMember.class, ActionDataParameterReferenceOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -54,7 +54,7 @@ public class ActionDataParameterReferenceOperation extends BaseConcept implement
   }
 
   public ActionDataParameterDeclaration getParameterDeclaration() {
-    return (ActionDataParameterDeclaration)this.getMember();
+    return this.ensureAdapter(ActionDataParameterDeclaration.class, "member", this.getMember());
   }
 
   public void setParameterDeclaration(ActionDataParameterDeclaration node) {

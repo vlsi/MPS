@@ -17,7 +17,7 @@ public class ConfigurationReference extends BaseConcept {
   }
 
   public Configuration getConfiguration() {
-    return (Configuration)this.getReferent(ConfigurationReference.CONFIGURATION);
+    return (Configuration)this.getReferent(Configuration.class, ConfigurationReference.CONFIGURATION);
   }
 
   public void setConfiguration(Configuration node) {

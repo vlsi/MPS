@@ -16,7 +16,7 @@ public class PropertyPart extends LinePart {
   }
 
   public Getter_ConceptFunction getGetterFunction() {
-    return (Getter_ConceptFunction)this.getChild(PropertyPart.GETTER_FUNCTION);
+    return (Getter_ConceptFunction)this.getChild(Getter_ConceptFunction.class, PropertyPart.GETTER_FUNCTION);
   }
 
   public void setGetterFunction(Getter_ConceptFunction node) {

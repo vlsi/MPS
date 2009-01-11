@@ -18,7 +18,7 @@ public class Pair extends BaseConcept {
   }
 
   public IStringExpression getFirst() {
-    return (IStringExpression)this.getChild(Pair.FIRST);
+    return (IStringExpression)this.getChild(IStringExpression.class, Pair.FIRST);
   }
 
   public void setFirst(IStringExpression node) {
@@ -26,7 +26,7 @@ public class Pair extends BaseConcept {
   }
 
   public IStringExpression getSecond() {
-    return (IStringExpression)this.getChild(Pair.SECOND);
+    return (IStringExpression)this.getChild(IStringExpression.class, Pair.SECOND);
   }
 
   public void setSecond(IStringExpression node) {

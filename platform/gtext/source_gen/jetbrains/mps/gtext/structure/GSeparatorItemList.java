@@ -19,7 +19,7 @@ public class GSeparatorItemList extends GItem {
   }
 
   public GItem getSeparator() {
-    return (GItem)this.getChild(GSeparatorItemList.SEPARATOR);
+    return (GItem)this.getChild(GItem.class, GSeparatorItemList.SEPARATOR);
   }
 
   public void setSeparator(GItem node) {
@@ -31,11 +31,11 @@ public class GSeparatorItemList extends GItem {
   }
 
   public Iterator<GItem> items() {
-    return this.children(GSeparatorItemList.ITEM);
+    return this.children(GItem.class, GSeparatorItemList.ITEM);
   }
 
   public List<GItem> getItems() {
-    return this.getChildren(GSeparatorItemList.ITEM);
+    return this.getChildren(GItem.class, GSeparatorItemList.ITEM);
   }
 
   public void addItem(GItem node) {

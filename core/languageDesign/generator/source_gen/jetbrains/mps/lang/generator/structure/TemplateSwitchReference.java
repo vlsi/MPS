@@ -17,7 +17,7 @@ public class TemplateSwitchReference extends BaseConcept {
   }
 
   public TemplateSwitch getTemplateSwitch() {
-    return (TemplateSwitch)this.getReferent(TemplateSwitchReference.TEMPLATE_SWITCH);
+    return (TemplateSwitch)this.getReferent(TemplateSwitch.class, TemplateSwitchReference.TEMPLATE_SWITCH);
   }
 
   public void setTemplateSwitch(TemplateSwitch node) {

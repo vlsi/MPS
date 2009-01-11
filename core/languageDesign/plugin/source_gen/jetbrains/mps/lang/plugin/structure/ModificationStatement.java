@@ -18,7 +18,7 @@ public class ModificationStatement extends BaseConcept {
   }
 
   public ActionGroupDeclaration getModifiedGroup() {
-    return (ActionGroupDeclaration)this.getReferent(ModificationStatement.MODIFIED_GROUP);
+    return (ActionGroupDeclaration)this.getReferent(ActionGroupDeclaration.class, ModificationStatement.MODIFIED_GROUP);
   }
 
   public void setModifiedGroup(ActionGroupDeclaration node) {
@@ -26,7 +26,7 @@ public class ModificationStatement extends BaseConcept {
   }
 
   public ExtentionPoint getPoint() {
-    return (ExtentionPoint)this.getReferent(ModificationStatement.POINT);
+    return (ExtentionPoint)this.getReferent(ExtentionPoint.class, ModificationStatement.POINT);
   }
 
   public void setPoint(ExtentionPoint node) {

@@ -80,7 +80,7 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   }
 
   public BaseDirPath getBaseDirectory() {
-    return (BaseDirPath)this.getChild(MPSLayout.BASE_DIRECTORY);
+    return (BaseDirPath)this.getChild(BaseDirPath.class, MPSLayout.BASE_DIRECTORY);
   }
 
   public void setBaseDirectory(BaseDirPath node) {
@@ -92,11 +92,11 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   }
 
   public Iterator<Configuration> configurations() {
-    return this.children(MPSLayout.CONFIGURATION);
+    return this.children(Configuration.class, MPSLayout.CONFIGURATION);
   }
 
   public List<Configuration> getConfigurations() {
-    return this.getChildren(MPSLayout.CONFIGURATION);
+    return this.getChildren(Configuration.class, MPSLayout.CONFIGURATION);
   }
 
   public void addConfiguration(Configuration node) {
@@ -112,11 +112,11 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   }
 
   public Iterator<AbstractProjectComponent> components() {
-    return this.children(MPSLayout.COMPONENT);
+    return this.children(AbstractProjectComponent.class, MPSLayout.COMPONENT);
   }
 
   public List<AbstractProjectComponent> getComponents() {
-    return this.getChildren(MPSLayout.COMPONENT);
+    return this.getChildren(AbstractProjectComponent.class, MPSLayout.COMPONENT);
   }
 
   public void addComponent(AbstractProjectComponent node) {
@@ -132,11 +132,11 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   }
 
   public Iterator<Variable> variables() {
-    return this.children(MPSLayout.VARIABLE);
+    return this.children(Variable.class, MPSLayout.VARIABLE);
   }
 
   public List<Variable> getVariables() {
-    return this.getChildren(MPSLayout.VARIABLE);
+    return this.getChildren(Variable.class, MPSLayout.VARIABLE);
   }
 
   public void addVariable(Variable node) {
@@ -152,11 +152,11 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   }
 
   public Iterator<Variable> builtInVariables() {
-    return this.children(MPSLayout.BUILT_IN_VARIABLE);
+    return this.children(Variable.class, MPSLayout.BUILT_IN_VARIABLE);
   }
 
   public List<Variable> getBuiltInVariables() {
-    return this.getChildren(MPSLayout.BUILT_IN_VARIABLE);
+    return this.getChildren(Variable.class, MPSLayout.BUILT_IN_VARIABLE);
   }
 
   public void addBuiltInVariable(Variable node) {
@@ -172,11 +172,11 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   }
 
   public Iterator<ModuleCycle> cycles() {
-    return this.children(MPSLayout.CYCLE);
+    return this.children(ModuleCycle.class, MPSLayout.CYCLE);
   }
 
   public List<ModuleCycle> getCycles() {
-    return this.getChildren(MPSLayout.CYCLE);
+    return this.getChildren(ModuleCycle.class, MPSLayout.CYCLE);
   }
 
   public void addCycle(ModuleCycle node) {
@@ -192,11 +192,11 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   }
 
   public Iterator<Macro> macros() {
-    return this.children(MPSLayout.MACRO);
+    return this.children(Macro.class, MPSLayout.MACRO);
   }
 
   public List<Macro> getMacros() {
-    return this.getChildren(MPSLayout.MACRO);
+    return this.getChildren(Macro.class, MPSLayout.MACRO);
   }
 
   public void addMacro(Macro node) {

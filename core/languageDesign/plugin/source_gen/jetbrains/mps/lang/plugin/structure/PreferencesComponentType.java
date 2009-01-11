@@ -17,7 +17,7 @@ public class PreferencesComponentType extends BaseClassifierType {
   }
 
   public PreferencesComponentDeclaration getComponentDeclaration() {
-    return (PreferencesComponentDeclaration)this.getReferent(PreferencesComponentType.COMPONENT_DECLARATION);
+    return (PreferencesComponentDeclaration)this.getReferent(PreferencesComponentDeclaration.class, PreferencesComponentType.COMPONENT_DECLARATION);
   }
 
   public void setComponentDeclaration(PreferencesComponentDeclaration node) {

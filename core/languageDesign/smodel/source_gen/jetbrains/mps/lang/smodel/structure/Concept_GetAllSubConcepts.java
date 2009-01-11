@@ -18,7 +18,7 @@ public class Concept_GetAllSubConcepts extends SNodeOperation {
   }
 
   public Expression getSmodel() {
-    return (Expression)this.getChild(Concept_GetAllSubConcepts.SMODEL);
+    return (Expression)this.getChild(Expression.class, Concept_GetAllSubConcepts.SMODEL);
   }
 
   public void setSmodel(Expression node) {
@@ -26,7 +26,7 @@ public class Concept_GetAllSubConcepts extends SNodeOperation {
   }
 
   public Expression getScope() {
-    return (Expression)this.getChild(Concept_GetAllSubConcepts.SCOPE);
+    return (Expression)this.getChild(Expression.class, Concept_GetAllSubConcepts.SCOPE);
   }
 
   public void setScope(Expression node) {

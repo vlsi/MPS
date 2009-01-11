@@ -44,7 +44,7 @@ public class DefaultClassifierFieldAccessOperation extends BaseConcept implement
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(DefaultClassifierFieldAccessOperation.MEMBER);
+    return (IMember)this.getReferent(IMember.class, DefaultClassifierFieldAccessOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -52,7 +52,7 @@ public class DefaultClassifierFieldAccessOperation extends BaseConcept implement
   }
 
   public DefaultClassifierFieldDeclaration getField() {
-    return (DefaultClassifierFieldDeclaration)this.getMember();
+    return this.ensureAdapter(DefaultClassifierFieldDeclaration.class, "member", this.getMember());
   }
 
   public void setField(DefaultClassifierFieldDeclaration node) {

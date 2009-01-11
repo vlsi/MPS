@@ -50,7 +50,7 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(ClosureLiteral.BODY);
+    return (StatementList)this.getChild(StatementList.class, ClosureLiteral.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -62,11 +62,11 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
   }
 
   public Iterator<ParameterDeclaration> parameters() {
-    return this.children(ClosureLiteral.PARAMETER);
+    return this.children(ParameterDeclaration.class, ClosureLiteral.PARAMETER);
   }
 
   public List<ParameterDeclaration> getParameters() {
-    return this.getChildren(ClosureLiteral.PARAMETER);
+    return this.getChildren(ParameterDeclaration.class, ClosureLiteral.PARAMETER);
   }
 
   public void addParameter(ParameterDeclaration node) {

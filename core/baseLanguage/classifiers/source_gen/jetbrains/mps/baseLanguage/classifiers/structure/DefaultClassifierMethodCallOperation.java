@@ -48,7 +48,7 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(DefaultClassifierMethodCallOperation.MEMBER);
+    return (IMember)this.getReferent(IMember.class, DefaultClassifierMethodCallOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -56,7 +56,7 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
   }
 
   public DefaultClassifierMethodDeclaration getMethod() {
-    return (DefaultClassifierMethodDeclaration)this.getMember();
+    return this.ensureAdapter(DefaultClassifierMethodDeclaration.class, "member", this.getMember());
   }
 
   public void setMethod(DefaultClassifierMethodDeclaration node) {
@@ -68,11 +68,11 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
   }
 
   public Iterator<Expression> actualArguments() {
-    return this.children(DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT);
+    return this.children(Expression.class, DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT);
   }
 
   public List<Expression> getActualArguments() {
-    return this.getChildren(DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT);
+    return this.getChildren(Expression.class, DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT);
   }
 
   public void addActualArgument(Expression node) {

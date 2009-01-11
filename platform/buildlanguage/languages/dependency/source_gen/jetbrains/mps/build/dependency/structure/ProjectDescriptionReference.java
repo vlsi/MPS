@@ -17,7 +17,7 @@ public class ProjectDescriptionReference extends ImportProject {
   }
 
   public ProjectDescription getDescription() {
-    return (ProjectDescription)this.getReferent(ProjectDescriptionReference.DESCRIPTION);
+    return (ProjectDescription)this.getReferent(ProjectDescription.class, ProjectDescriptionReference.DESCRIPTION);
   }
 
   public void setDescription(ProjectDescription node) {

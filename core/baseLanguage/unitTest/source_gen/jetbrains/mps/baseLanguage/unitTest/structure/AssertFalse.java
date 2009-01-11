@@ -18,7 +18,7 @@ public class AssertFalse extends Statement {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(AssertFalse.CONDITION);
+    return (Expression)this.getChild(Expression.class, AssertFalse.CONDITION);
   }
 
   public void setCondition(Expression node) {

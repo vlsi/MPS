@@ -17,7 +17,7 @@ public class GenerationContextOp_UserObjectAccessBase extends GenerationContextO
   }
 
   public Expression getUserKey() {
-    return (Expression)this.getChild(GenerationContextOp_UserObjectAccessBase.USER_KEY);
+    return (Expression)this.getChild(Expression.class, GenerationContextOp_UserObjectAccessBase.USER_KEY);
   }
 
   public void setUserKey(Expression node) {

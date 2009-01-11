@@ -53,7 +53,7 @@ public class PropertyReference extends PropertyValueExpression implements INamed
   }
 
   public PropertyDeclaration getPropertyDeclaration() {
-    return (PropertyDeclaration)this.getReferent(PropertyReference.PROPERTY_DECLARATION);
+    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, PropertyReference.PROPERTY_DECLARATION);
   }
 
   public void setPropertyDeclaration(PropertyDeclaration node) {

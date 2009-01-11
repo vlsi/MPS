@@ -16,7 +16,7 @@ public class InequationReplacementRule extends AbstractSubtypingRule {
   }
 
   public ApplicableNodeCondition getSupertypeNode() {
-    return (ApplicableNodeCondition)this.getChild(InequationReplacementRule.SUPERTYPE_NODE);
+    return (ApplicableNodeCondition)this.getChild(ApplicableNodeCondition.class, InequationReplacementRule.SUPERTYPE_NODE);
   }
 
   public void setSupertypeNode(ApplicableNodeCondition node) {

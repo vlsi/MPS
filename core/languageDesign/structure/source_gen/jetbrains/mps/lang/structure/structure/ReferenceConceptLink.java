@@ -17,7 +17,7 @@ public class ReferenceConceptLink extends ConceptLink {
   }
 
   public BaseConcept getTarget() {
-    return (BaseConcept)this.getReferent(ReferenceConceptLink.TARGET);
+    return (BaseConcept)this.getReferent(BaseConcept.class, ReferenceConceptLink.TARGET);
   }
 
   public void setTarget(BaseConcept node) {
@@ -25,7 +25,7 @@ public class ReferenceConceptLink extends ConceptLink {
   }
 
   public ReferenceConceptLinkDeclaration getReferenceConceptLinkDeclaration() {
-    return (ReferenceConceptLinkDeclaration)this.getConceptLinkDeclaration();
+    return this.ensureAdapter(ReferenceConceptLinkDeclaration.class, "conceptLinkDeclaration", this.getConceptLinkDeclaration());
   }
 
   public void setReferenceConceptLinkDeclaration(ReferenceConceptLinkDeclaration node) {

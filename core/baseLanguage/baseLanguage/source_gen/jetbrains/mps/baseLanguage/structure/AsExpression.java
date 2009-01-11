@@ -17,7 +17,7 @@ public class AsExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(AsExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, AsExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -25,7 +25,7 @@ public class AsExpression extends Expression {
   }
 
   public ClassifierType getClassifierType() {
-    return (ClassifierType)this.getChild(AsExpression.CLASSIFIER_TYPE);
+    return (ClassifierType)this.getChild(ClassifierType.class, AsExpression.CLASSIFIER_TYPE);
   }
 
   public void setClassifierType(ClassifierType node) {

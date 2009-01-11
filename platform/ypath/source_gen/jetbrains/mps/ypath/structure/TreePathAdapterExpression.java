@@ -18,7 +18,7 @@ public class TreePathAdapterExpression extends Expression {
   }
 
   public TreePathAspect getTreepathAspect() {
-    return (TreePathAspect)this.getReferent(TreePathAdapterExpression.TREEPATH_ASPECT);
+    return (TreePathAspect)this.getReferent(TreePathAspect.class, TreePathAdapterExpression.TREEPATH_ASPECT);
   }
 
   public void setTreepathAspect(TreePathAspect node) {
@@ -26,7 +26,7 @@ public class TreePathAdapterExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(TreePathAdapterExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, TreePathAdapterExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

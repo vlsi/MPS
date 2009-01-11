@@ -12,7 +12,7 @@ public enum ValueType {
   private String myName;
   private String myValue;
 
-ValueType(String name, String value) {
+  ValueType(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

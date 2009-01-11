@@ -48,7 +48,7 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   }
 
   public PrimitiveDataTypeDeclaration getMemberDataType() {
-    return (PrimitiveDataTypeDeclaration)this.getReferent(EnumerationDataTypeDeclaration.MEMBER_DATA_TYPE);
+    return (PrimitiveDataTypeDeclaration)this.getReferent(PrimitiveDataTypeDeclaration.class, EnumerationDataTypeDeclaration.MEMBER_DATA_TYPE);
   }
 
   public void setMemberDataType(PrimitiveDataTypeDeclaration node) {
@@ -56,7 +56,7 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   }
 
   public EnumerationMemberDeclaration getDefaultMember() {
-    return (EnumerationMemberDeclaration)this.getReferent(EnumerationDataTypeDeclaration.DEFAULT_MEMBER);
+    return (EnumerationMemberDeclaration)this.getReferent(EnumerationMemberDeclaration.class, EnumerationDataTypeDeclaration.DEFAULT_MEMBER);
   }
 
   public void setDefaultMember(EnumerationMemberDeclaration node) {
@@ -68,11 +68,11 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   }
 
   public Iterator<EnumerationMemberDeclaration> members() {
-    return this.children(EnumerationDataTypeDeclaration.MEMBER);
+    return this.children(EnumerationMemberDeclaration.class, EnumerationDataTypeDeclaration.MEMBER);
   }
 
   public List<EnumerationMemberDeclaration> getMembers() {
-    return this.getChildren(EnumerationDataTypeDeclaration.MEMBER);
+    return this.getChildren(EnumerationMemberDeclaration.class, EnumerationDataTypeDeclaration.MEMBER);
   }
 
   public void addMember(EnumerationMemberDeclaration node) {

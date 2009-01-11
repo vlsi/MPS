@@ -78,11 +78,11 @@ public class GDocument extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<GItem> items() {
-    return this.children(GDocument.ITEM);
+    return this.children(GItem.class, GDocument.ITEM);
   }
 
   public List<GItem> getItems() {
-    return this.getChildren(GDocument.ITEM);
+    return this.getChildren(GItem.class, GDocument.ITEM);
   }
 
   public void addItem(GItem node) {

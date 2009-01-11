@@ -62,7 +62,7 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   }
 
   public TargetReference getDefault() {
-    return (TargetReference)this.getChild(Project.DEFAULT);
+    return (TargetReference)this.getChild(TargetReference.class, Project.DEFAULT);
   }
 
   public void setDefault(TargetReference node) {
@@ -70,7 +70,7 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   }
 
   public FileName getBasedir() {
-    return (FileName)this.getChild(Project.BASEDIR);
+    return (FileName)this.getChild(FileName.class, Project.BASEDIR);
   }
 
   public void setBasedir(FileName node) {
@@ -82,11 +82,11 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   }
 
   public Iterator<TargetDeclaration> targets() {
-    return this.children(Project.TARGET);
+    return this.children(TargetDeclaration.class, Project.TARGET);
   }
 
   public List<TargetDeclaration> getTargets() {
-    return this.getChildren(Project.TARGET);
+    return this.getChildren(TargetDeclaration.class, Project.TARGET);
   }
 
   public void addTarget(TargetDeclaration node) {
@@ -102,11 +102,11 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   }
 
   public Iterator<AbstractImportProject> importProjects() {
-    return this.children(Project.IMPORT_PROJECT);
+    return this.children(AbstractImportProject.class, Project.IMPORT_PROJECT);
   }
 
   public List<AbstractImportProject> getImportProjects() {
-    return this.getChildren(Project.IMPORT_PROJECT);
+    return this.getChildren(AbstractImportProject.class, Project.IMPORT_PROJECT);
   }
 
   public void addImportProject(AbstractImportProject node) {
@@ -122,11 +122,11 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   }
 
   public Iterator<GenericCall> pathses() {
-    return this.children(Project.PATHS);
+    return this.children(GenericCall.class, Project.PATHS);
   }
 
   public List<GenericCall> getPathses() {
-    return this.getChildren(Project.PATHS);
+    return this.getChildren(GenericCall.class, Project.PATHS);
   }
 
   public void addPaths(GenericCall node) {
@@ -142,11 +142,11 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   }
 
   public Iterator<ImportProperties> importPropertieses() {
-    return this.children(Project.IMPORT_PROPERTIES);
+    return this.children(ImportProperties.class, Project.IMPORT_PROPERTIES);
   }
 
   public List<ImportProperties> getImportPropertieses() {
-    return this.getChildren(Project.IMPORT_PROPERTIES);
+    return this.getChildren(ImportProperties.class, Project.IMPORT_PROPERTIES);
   }
 
   public void addImportProperties(ImportProperties node) {
@@ -162,11 +162,11 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   }
 
   public Iterator<PropertyDeclaration> properties() {
-    return this.children(Project.PROPERTY);
+    return this.children(PropertyDeclaration.class, Project.PROPERTY);
   }
 
   public List<PropertyDeclaration> getProperties() {
-    return this.getChildren(Project.PROPERTY);
+    return this.getChildren(PropertyDeclaration.class, Project.PROPERTY);
   }
 
   public void addProperty(PropertyDeclaration node) {

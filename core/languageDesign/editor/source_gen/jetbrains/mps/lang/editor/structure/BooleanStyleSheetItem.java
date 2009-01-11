@@ -25,7 +25,7 @@ public class BooleanStyleSheetItem extends StyleClassItem {
   }
 
   public QueryFunction_Boolean getQuery() {
-    return (QueryFunction_Boolean)this.getChild(BooleanStyleSheetItem.QUERY);
+    return (QueryFunction_Boolean)this.getChild(QueryFunction_Boolean.class, BooleanStyleSheetItem.QUERY);
   }
 
   public void setQuery(QueryFunction_Boolean node) {

@@ -16,7 +16,7 @@ public class MatrixIndexVariableRefirence extends VariableReference {
   }
 
   public MatrixIndexVariableDeclaration getIndexVariable() {
-    return (MatrixIndexVariableDeclaration)this.getVariableDeclaration();
+    return this.ensureAdapter(MatrixIndexVariableDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
 
   public void setIndexVariable(MatrixIndexVariableDeclaration node) {

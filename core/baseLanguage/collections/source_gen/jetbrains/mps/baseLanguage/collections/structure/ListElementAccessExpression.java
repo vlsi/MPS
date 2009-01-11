@@ -18,7 +18,7 @@ public class ListElementAccessExpression extends Expression {
   }
 
   public Expression getList() {
-    return (Expression)this.getChild(ListElementAccessExpression.LIST);
+    return (Expression)this.getChild(Expression.class, ListElementAccessExpression.LIST);
   }
 
   public void setList(Expression node) {
@@ -26,7 +26,7 @@ public class ListElementAccessExpression extends Expression {
   }
 
   public Expression getIndex() {
-    return (Expression)this.getChild(ListElementAccessExpression.INDEX);
+    return (Expression)this.getChild(Expression.class, ListElementAccessExpression.INDEX);
   }
 
   public void setIndex(Expression node) {

@@ -19,7 +19,7 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public ConceptDeclaration getWrappedConcept() {
-    return (ConceptDeclaration)this.getReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT);
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, WrapperSubstituteMenuPart.WRAPPED_CONCEPT);
   }
 
   public void setWrappedConcept(ConceptDeclaration node) {
@@ -27,7 +27,7 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_SubstituteWrapper getWrapperBlock() {
-    return (QueryFunction_SubstituteWrapper)this.getChild(WrapperSubstituteMenuPart.WRAPPER_BLOCK);
+    return (QueryFunction_SubstituteWrapper)this.getChild(QueryFunction_SubstituteWrapper.class, WrapperSubstituteMenuPart.WRAPPER_BLOCK);
   }
 
   public void setWrapperBlock(QueryFunction_SubstituteWrapper node) {
@@ -35,7 +35,7 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_ReturnSmallPart getReturnSmallPart() {
-    return (QueryFunction_ReturnSmallPart)this.getChild(WrapperSubstituteMenuPart.RETURN_SMALL_PART);
+    return (QueryFunction_ReturnSmallPart)this.getChild(QueryFunction_ReturnSmallPart.class, WrapperSubstituteMenuPart.RETURN_SMALL_PART);
   }
 
   public void setReturnSmallPart(QueryFunction_ReturnSmallPart node) {

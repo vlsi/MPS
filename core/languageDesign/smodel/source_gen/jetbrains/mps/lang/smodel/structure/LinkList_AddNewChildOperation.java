@@ -17,7 +17,7 @@ public class LinkList_AddNewChildOperation extends SNodeOperation {
   }
 
   public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(LinkList_AddNewChildOperation.CONCEPT);
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, LinkList_AddNewChildOperation.CONCEPT);
   }
 
   public void setConcept(ConceptDeclaration node) {

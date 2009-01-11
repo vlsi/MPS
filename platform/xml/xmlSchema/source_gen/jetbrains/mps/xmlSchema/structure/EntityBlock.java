@@ -21,7 +21,7 @@ public class EntityBlock extends BaseConcept {
   }
 
   public Comment getComment() {
-    return (Comment)this.getChild(EntityBlock.COMMENT);
+    return (Comment)this.getChild(Comment.class, EntityBlock.COMMENT);
   }
 
   public void setComment(Comment node) {
@@ -33,11 +33,11 @@ public class EntityBlock extends BaseConcept {
   }
 
   public Iterator<EntityLine> entityLines() {
-    return this.children(EntityBlock.ENTITY_LINE);
+    return this.children(EntityLine.class, EntityBlock.ENTITY_LINE);
   }
 
   public List<EntityLine> getEntityLines() {
-    return this.getChildren(EntityBlock.ENTITY_LINE);
+    return this.getChildren(EntityLine.class, EntityBlock.ENTITY_LINE);
   }
 
   public void addEntityLine(EntityLine node) {

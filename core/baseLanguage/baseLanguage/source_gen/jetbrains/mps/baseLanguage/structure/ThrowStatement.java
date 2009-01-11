@@ -16,7 +16,7 @@ public class ThrowStatement extends Statement {
   }
 
   public Expression getThrowable() {
-    return (Expression)this.getChild(ThrowStatement.THROWABLE);
+    return (Expression)this.getChild(Expression.class, ThrowStatement.THROWABLE);
   }
 
   public void setThrowable(Expression node) {

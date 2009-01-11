@@ -18,7 +18,7 @@ public class RaiseInternalStatement extends Statement {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(RaiseInternalStatement.ARGUMENT);
+    return (Expression)this.getChild(Expression.class, RaiseInternalStatement.ARGUMENT);
   }
 
   public void setArgument(Expression node) {

@@ -17,7 +17,7 @@ public class ForStatement extends AbstractForStatement {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(ForStatement.CONDITION);
+    return (Expression)this.getChild(Expression.class, ForStatement.CONDITION);
   }
 
   public void setCondition(Expression node) {
@@ -25,7 +25,7 @@ public class ForStatement extends AbstractForStatement {
   }
 
   public Expression getIteration() {
-    return (Expression)this.getChild(ForStatement.ITERATION);
+    return (Expression)this.getChild(Expression.class, ForStatement.ITERATION);
   }
 
   public void setIteration(Expression node) {

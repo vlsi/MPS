@@ -17,7 +17,7 @@ public class ReadOnlyModelAccessor extends BaseConcept {
   }
 
   public QueryFunction_ModelAccess_Getter getGetter() {
-    return (QueryFunction_ModelAccess_Getter)this.getChild(ReadOnlyModelAccessor.GETTER);
+    return (QueryFunction_ModelAccess_Getter)this.getChild(QueryFunction_ModelAccess_Getter.class, ReadOnlyModelAccessor.GETTER);
   }
 
   public void setGetter(QueryFunction_ModelAccess_Getter node) {

@@ -18,7 +18,7 @@ public class StatementElement extends Content {
   }
 
   public StatementList getStatementList() {
-    return (StatementList)this.getChild(StatementElement.STATEMENT_LIST);
+    return (StatementList)this.getChild(StatementList.class, StatementElement.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {

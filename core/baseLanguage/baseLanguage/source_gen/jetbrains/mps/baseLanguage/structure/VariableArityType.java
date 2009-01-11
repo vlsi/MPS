@@ -16,7 +16,7 @@ public class VariableArityType extends Type {
   }
 
   public Type getComponentType() {
-    return (Type)this.getChild(VariableArityType.COMPONENT_TYPE);
+    return (Type)this.getChild(Type.class, VariableArityType.COMPONENT_TYPE);
   }
 
   public void setComponentType(Type node) {

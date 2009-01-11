@@ -15,7 +15,7 @@ public class LocalVariableReference extends VariableReference {
   }
 
   public LocalVariableDeclaration getLocalVariableDeclaration() {
-    return (LocalVariableDeclaration)this.getVariableDeclaration();
+    return this.ensureAdapter(LocalVariableDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
 
   public void setLocalVariableDeclaration(LocalVariableDeclaration node) {

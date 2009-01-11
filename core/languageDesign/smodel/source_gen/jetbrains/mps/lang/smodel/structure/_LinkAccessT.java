@@ -64,7 +64,7 @@ public class _LinkAccessT extends Type implements IInternalType {
   }
 
   public AbstractConceptDeclaration getTargetConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(_LinkAccessT.TARGET_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, _LinkAccessT.TARGET_CONCEPT);
   }
 
   public void setTargetConcept(AbstractConceptDeclaration node) {

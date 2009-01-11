@@ -18,7 +18,7 @@ public class SConceptType extends Type {
   }
 
   public AbstractConceptDeclaration getConceptDeclaraton() {
-    return (AbstractConceptDeclaration)this.getReferent(SConceptType.CONCEPT_DECLARATON);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, SConceptType.CONCEPT_DECLARATON);
   }
 
   public void setConceptDeclaraton(AbstractConceptDeclaration node) {

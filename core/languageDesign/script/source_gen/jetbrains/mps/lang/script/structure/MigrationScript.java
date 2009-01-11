@@ -87,11 +87,11 @@ public class MigrationScript extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<MigrationScriptPart_Instance> parts() {
-    return this.children(MigrationScript.PART);
+    return this.children(MigrationScriptPart_Instance.class, MigrationScript.PART);
   }
 
   public List<MigrationScriptPart_Instance> getParts() {
-    return this.getChildren(MigrationScript.PART);
+    return this.getChildren(MigrationScriptPart_Instance.class, MigrationScript.PART);
   }
 
   public void addPart(MigrationScriptPart_Instance node) {

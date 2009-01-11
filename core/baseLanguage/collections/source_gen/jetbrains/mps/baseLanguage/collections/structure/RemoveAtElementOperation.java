@@ -17,7 +17,7 @@ public class RemoveAtElementOperation extends AbstractListOperation {
   }
 
   public Expression getIndex() {
-    return (Expression)this.getChild(RemoveAtElementOperation.INDEX);
+    return (Expression)this.getChild(Expression.class, RemoveAtElementOperation.INDEX);
   }
 
   public void setIndex(Expression node) {

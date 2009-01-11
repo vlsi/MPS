@@ -16,7 +16,7 @@ public class Concept_IsSubConceptOfOperation extends SNodeOperation {
   }
 
   public IRefConceptArg getConceptArgument() {
-    return (IRefConceptArg)this.getChild(Concept_IsSubConceptOfOperation.CONCEPT_ARGUMENT);
+    return (IRefConceptArg)this.getChild(IRefConceptArg.class, Concept_IsSubConceptOfOperation.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(IRefConceptArg node) {

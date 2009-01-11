@@ -17,7 +17,7 @@ public class Concept_NewInstance extends SNodeOperation {
   }
 
   public Expression getPrototypeNode() {
-    return (Expression)this.getChild(Concept_NewInstance.PROTOTYPE_NODE);
+    return (Expression)this.getChild(Expression.class, Concept_NewInstance.PROTOTYPE_NODE);
   }
 
   public void setPrototypeNode(Expression node) {

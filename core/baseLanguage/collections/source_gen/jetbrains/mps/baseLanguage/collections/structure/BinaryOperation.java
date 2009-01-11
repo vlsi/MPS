@@ -17,7 +17,7 @@ public class BinaryOperation extends SequenceOperation {
   }
 
   public Expression getRightExpression() {
-    return (Expression)this.getChild(BinaryOperation.RIGHT_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, BinaryOperation.RIGHT_EXPRESSION);
   }
 
   public void setRightExpression(Expression node) {

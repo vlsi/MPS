@@ -17,7 +17,7 @@ public class InstanceOfExpression extends Expression {
   }
 
   public Expression getLeftExpression() {
-    return (Expression)this.getChild(InstanceOfExpression.LEFT_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, InstanceOfExpression.LEFT_EXPRESSION);
   }
 
   public void setLeftExpression(Expression node) {
@@ -25,7 +25,7 @@ public class InstanceOfExpression extends Expression {
   }
 
   public ClassifierType getClassType() {
-    return (ClassifierType)this.getChild(InstanceOfExpression.CLASS_TYPE);
+    return (ClassifierType)this.getChild(ClassifierType.class, InstanceOfExpression.CLASS_TYPE);
   }
 
   public void setClassType(ClassifierType node) {

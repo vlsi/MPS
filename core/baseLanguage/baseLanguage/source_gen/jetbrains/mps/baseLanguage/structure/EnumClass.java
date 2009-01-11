@@ -22,11 +22,11 @@ public class EnumClass extends ClassConcept {
   }
 
   public Iterator<EnumConstantDeclaration> enumConstants() {
-    return this.children(EnumClass.ENUM_CONSTANT);
+    return this.children(EnumConstantDeclaration.class, EnumClass.ENUM_CONSTANT);
   }
 
   public List<EnumConstantDeclaration> getEnumConstants() {
-    return this.getChildren(EnumClass.ENUM_CONSTANT);
+    return this.getChildren(EnumConstantDeclaration.class, EnumClass.ENUM_CONSTANT);
   }
 
   public void addEnumConstant(EnumConstantDeclaration node) {

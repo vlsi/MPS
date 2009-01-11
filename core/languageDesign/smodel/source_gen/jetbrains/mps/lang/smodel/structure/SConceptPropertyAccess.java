@@ -17,7 +17,7 @@ public class SConceptPropertyAccess extends SNodeOperation {
   }
 
   public ConceptPropertyDeclaration getConceptProperty() {
-    return (ConceptPropertyDeclaration)this.getReferent(SConceptPropertyAccess.CONCEPT_PROPERTY);
+    return (ConceptPropertyDeclaration)this.getReferent(ConceptPropertyDeclaration.class, SConceptPropertyAccess.CONCEPT_PROPERTY);
   }
 
   public void setConceptProperty(ConceptPropertyDeclaration node) {

@@ -26,7 +26,7 @@ public class ColorStyleClassItem extends StyleClassItem {
   }
 
   public IQueryFunction_Color getQuery() {
-    return (IQueryFunction_Color)this.getChild(ColorStyleClassItem.QUERY);
+    return (IQueryFunction_Color)this.getChild(IQueryFunction_Color.class, ColorStyleClassItem.QUERY);
   }
 
   public void setQuery(IQueryFunction_Color node) {

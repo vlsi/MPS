@@ -43,7 +43,7 @@ public class ThisExpression extends Expression implements IThisExpression {
   }
 
   public Classifier getClassConcept() {
-    return (Classifier)this.getReferent(ThisExpression.CLASS_CONCEPT);
+    return (Classifier)this.getReferent(Classifier.class, ThisExpression.CLASS_CONCEPT);
   }
 
   public void setClassConcept(Classifier node) {

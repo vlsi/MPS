@@ -25,7 +25,7 @@ public class Module extends AbstractProjectComponent {
   }
 
   public ModuleCycle getCycle() {
-    return (ModuleCycle)this.getReferent(Module.CYCLE);
+    return (ModuleCycle)this.getReferent(ModuleCycle.class, Module.CYCLE);
   }
 
   public void setCycle(ModuleCycle node) {

@@ -17,7 +17,7 @@ public class DateTimePropetyReferenceOperation extends DateTimeOperation {
   }
 
   public DateTimeProperty getDateTimeProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimePropetyReferenceOperation.DATE_TIME_PROPERTY);
+    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, DateTimePropetyReferenceOperation.DATE_TIME_PROPERTY);
   }
 
   public void setDateTimeProperty(DateTimeProperty node) {

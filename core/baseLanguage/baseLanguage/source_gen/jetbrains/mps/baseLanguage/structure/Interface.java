@@ -58,11 +58,11 @@ public class Interface extends Classifier implements IBLDeprecatable {
   }
 
   public Iterator<ClassifierType> extendedInterfaces() {
-    return this.children(Interface.EXTENDED_INTERFACE);
+    return this.children(ClassifierType.class, Interface.EXTENDED_INTERFACE);
   }
 
   public List<ClassifierType> getExtendedInterfaces() {
-    return this.getChildren(Interface.EXTENDED_INTERFACE);
+    return this.getChildren(ClassifierType.class, Interface.EXTENDED_INTERFACE);
   }
 
   public void addExtendedInterface(ClassifierType node) {

@@ -23,11 +23,11 @@ public class TestMethodList extends BaseConcept {
   }
 
   public Iterator<TestMethod> testMethods() {
-    return this.children(TestMethodList.TEST_METHOD);
+    return this.children(TestMethod.class, TestMethodList.TEST_METHOD);
   }
 
   public List<TestMethod> getTestMethods() {
-    return this.getChildren(TestMethodList.TEST_METHOD);
+    return this.getChildren(TestMethod.class, TestMethodList.TEST_METHOD);
   }
 
   public void addTestMethod(TestMethod node) {

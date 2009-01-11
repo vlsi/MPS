@@ -17,7 +17,7 @@ public class GetGroupOperation extends Expression {
   }
 
   public ActionGroupDeclaration getGroup() {
-    return (ActionGroupDeclaration)this.getReferent(GetGroupOperation.GROUP);
+    return (ActionGroupDeclaration)this.getReferent(ActionGroupDeclaration.class, GetGroupOperation.GROUP);
   }
 
   public void setGroup(ActionGroupDeclaration node) {

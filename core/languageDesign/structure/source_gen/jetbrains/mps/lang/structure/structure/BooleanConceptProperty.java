@@ -15,7 +15,7 @@ public class BooleanConceptProperty extends ConceptProperty {
   }
 
   public BooleanConceptPropertyDeclaration getBooleanConceptPropertyDeclaration() {
-    return (BooleanConceptPropertyDeclaration)this.getConceptPropertyDeclaration();
+    return this.ensureAdapter(BooleanConceptPropertyDeclaration.class, "conceptPropertyDeclaration", this.getConceptPropertyDeclaration());
   }
 
   public void setBooleanConceptPropertyDeclaration(BooleanConceptPropertyDeclaration node) {

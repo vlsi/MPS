@@ -17,7 +17,7 @@ public class CellMenuComponentFeature extends BaseConcept {
   }
 
   public BaseConcept getRelationDeclaration() {
-    return (BaseConcept)this.getReferent(CellMenuComponentFeature.RELATION_DECLARATION);
+    return (BaseConcept)this.getReferent(BaseConcept.class, CellMenuComponentFeature.RELATION_DECLARATION);
   }
 
   public void setRelationDeclaration(BaseConcept node) {

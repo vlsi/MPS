@@ -31,11 +31,11 @@ public class ContentList extends Content {
   }
 
   public Iterator<Content> contents() {
-    return this.children(ContentList.CONTENT);
+    return this.children(Content.class, ContentList.CONTENT);
   }
 
   public List<Content> getContents() {
-    return this.getChildren(ContentList.CONTENT);
+    return this.getChildren(Content.class, ContentList.CONTENT);
   }
 
   public void addContent(Content node) {

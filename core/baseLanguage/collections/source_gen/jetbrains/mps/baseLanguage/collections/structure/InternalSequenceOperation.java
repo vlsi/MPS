@@ -17,7 +17,7 @@ public class InternalSequenceOperation extends SequenceOperation {
   }
 
   public Expression getClosure() {
-    return (Expression)this.getChild(InternalSequenceOperation.CLOSURE);
+    return (Expression)this.getChild(Expression.class, InternalSequenceOperation.CLOSURE);
   }
 
   public void setClosure(Expression node) {

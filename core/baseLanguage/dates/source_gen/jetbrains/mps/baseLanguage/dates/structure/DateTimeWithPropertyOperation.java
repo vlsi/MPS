@@ -19,7 +19,7 @@ public class DateTimeWithPropertyOperation extends UnaryDateTimeOperation {
   }
 
   public DateTimeProperty getDateTimeProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimeWithPropertyOperation.DATE_TIME_PROPERTY);
+    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, DateTimeWithPropertyOperation.DATE_TIME_PROPERTY);
   }
 
   public void setDateTimeProperty(DateTimeProperty node) {
@@ -27,7 +27,7 @@ public class DateTimeWithPropertyOperation extends UnaryDateTimeOperation {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(DateTimeWithPropertyOperation.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, DateTimeWithPropertyOperation.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

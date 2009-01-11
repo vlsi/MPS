@@ -43,7 +43,7 @@ public class QueryMethodIdEditorProviderExpression extends Expression {
   }
 
   public PropertyDeclaration getQueryIdProperty() {
-    return (PropertyDeclaration)this.getReferent(QueryMethodIdEditorProviderExpression.QUERY_ID_PROPERTY);
+    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, QueryMethodIdEditorProviderExpression.QUERY_ID_PROPERTY);
   }
 
   public void setQueryIdProperty(PropertyDeclaration node) {
@@ -51,7 +51,7 @@ public class QueryMethodIdEditorProviderExpression extends Expression {
   }
 
   public Type getReturnType() {
-    return (Type)this.getChild(QueryMethodIdEditorProviderExpression.RETURN_TYPE);
+    return (Type)this.getChild(Type.class, QueryMethodIdEditorProviderExpression.RETURN_TYPE);
   }
 
   public void setReturnType(Type node) {
@@ -63,11 +63,11 @@ public class QueryMethodIdEditorProviderExpression extends Expression {
   }
 
   public Iterator<ParameterDeclaration> parameters() {
-    return this.children(QueryMethodIdEditorProviderExpression.PARAMETER);
+    return this.children(ParameterDeclaration.class, QueryMethodIdEditorProviderExpression.PARAMETER);
   }
 
   public List<ParameterDeclaration> getParameters() {
-    return this.getChildren(QueryMethodIdEditorProviderExpression.PARAMETER);
+    return this.getChildren(ParameterDeclaration.class, QueryMethodIdEditorProviderExpression.PARAMETER);
   }
 
   public void addParameter(ParameterDeclaration node) {
@@ -83,11 +83,11 @@ public class QueryMethodIdEditorProviderExpression extends Expression {
   }
 
   public Iterator<Type> additionalImports() {
-    return this.children(QueryMethodIdEditorProviderExpression.ADDITIONAL_IMPORT);
+    return this.children(Type.class, QueryMethodIdEditorProviderExpression.ADDITIONAL_IMPORT);
   }
 
   public List<Type> getAdditionalImports() {
-    return this.getChildren(QueryMethodIdEditorProviderExpression.ADDITIONAL_IMPORT);
+    return this.getChildren(Type.class, QueryMethodIdEditorProviderExpression.ADDITIONAL_IMPORT);
   }
 
   public void addAdditionalImport(Type node) {

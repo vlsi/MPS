@@ -78,11 +78,11 @@ public class Mapping extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<Field> fields() {
-    return this.children(Mapping.FIELD);
+    return this.children(Field.class, Mapping.FIELD);
   }
 
   public List<Field> getFields() {
-    return this.getChildren(Mapping.FIELD);
+    return this.getChildren(Field.class, Mapping.FIELD);
   }
 
   public void addField(Field node) {

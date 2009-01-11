@@ -44,7 +44,7 @@ public class Fail extends Statement implements MessageHolder {
   }
 
   public Message getMessage() {
-    return (Message)this.getChild(Fail.MESSAGE);
+    return (Message)this.getChild(Message.class, Fail.MESSAGE);
   }
 
   public void setMessage(Message node) {

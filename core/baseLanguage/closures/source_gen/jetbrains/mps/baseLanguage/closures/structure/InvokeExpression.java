@@ -23,11 +23,11 @@ public class InvokeExpression extends Expression {
   }
 
   public Iterator<Expression> parameters() {
-    return this.children(InvokeExpression.PARAMETER);
+    return this.children(Expression.class, InvokeExpression.PARAMETER);
   }
 
   public List<Expression> getParameters() {
-    return this.getChildren(InvokeExpression.PARAMETER);
+    return this.getChildren(Expression.class, InvokeExpression.PARAMETER);
   }
 
   public void addParameter(Expression node) {

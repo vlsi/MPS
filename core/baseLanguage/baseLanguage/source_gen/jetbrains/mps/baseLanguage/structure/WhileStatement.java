@@ -16,7 +16,7 @@ public class WhileStatement extends AbstractLoopStatement {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(WhileStatement.CONDITION);
+    return (Expression)this.getChild(Expression.class, WhileStatement.CONDITION);
   }
 
   public void setCondition(Expression node) {

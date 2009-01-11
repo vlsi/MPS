@@ -16,7 +16,7 @@ public class Reduction_MappingRule extends BaseMappingRule {
   }
 
   public RuleConsequence getRuleConsequence() {
-    return (RuleConsequence)this.getChild(Reduction_MappingRule.RULE_CONSEQUENCE);
+    return (RuleConsequence)this.getChild(RuleConsequence.class, Reduction_MappingRule.RULE_CONSEQUENCE);
   }
 
   public void setRuleConsequence(RuleConsequence node) {

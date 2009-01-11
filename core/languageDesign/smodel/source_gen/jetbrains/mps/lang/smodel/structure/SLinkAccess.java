@@ -17,7 +17,7 @@ public class SLinkAccess extends SNodeOperation {
   }
 
   public LinkDeclaration getLink() {
-    return (LinkDeclaration)this.getReferent(SLinkAccess.LINK);
+    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, SLinkAccess.LINK);
   }
 
   public void setLink(LinkDeclaration node) {

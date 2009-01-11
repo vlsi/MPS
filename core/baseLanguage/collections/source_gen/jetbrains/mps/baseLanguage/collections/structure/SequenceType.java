@@ -17,7 +17,7 @@ public class SequenceType extends Type {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(SequenceType.ELEMENT_TYPE);
+    return (Type)this.getChild(Type.class, SequenceType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {

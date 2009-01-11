@@ -17,7 +17,7 @@ public class PatternCondition extends ApplicableNodeCondition {
   }
 
   public PatternExpression getPattern() {
-    return (PatternExpression)this.getChild(PatternCondition.PATTERN);
+    return (PatternExpression)this.getChild(PatternExpression.class, PatternCondition.PATTERN);
   }
 
   public void setPattern(PatternExpression node) {

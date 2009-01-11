@@ -19,7 +19,7 @@ public class FixedLocaleFormatToken extends FormatToken {
   }
 
   public Locale getLocale() {
-    return (Locale)this.getReferent(FixedLocaleFormatToken.LOCALE);
+    return (Locale)this.getReferent(Locale.class, FixedLocaleFormatToken.LOCALE);
   }
 
   public void setLocale(Locale node) {
@@ -27,7 +27,7 @@ public class FixedLocaleFormatToken extends FormatToken {
   }
 
   public IDateFormat getDateFormat() {
-    return (IDateFormat)this.getReferent(FixedLocaleFormatToken.DATE_FORMAT);
+    return (IDateFormat)this.getReferent(IDateFormat.class, FixedLocaleFormatToken.DATE_FORMAT);
   }
 
   public void setDateFormat(IDateFormat node) {

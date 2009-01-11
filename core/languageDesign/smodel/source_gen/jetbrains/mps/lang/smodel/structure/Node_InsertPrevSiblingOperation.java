@@ -17,7 +17,7 @@ public class Node_InsertPrevSiblingOperation extends SNodeOperation {
   }
 
   public Expression getInsertedNode() {
-    return (Expression)this.getChild(Node_InsertPrevSiblingOperation.INSERTED_NODE);
+    return (Expression)this.getChild(Expression.class, Node_InsertPrevSiblingOperation.INSERTED_NODE);
   }
 
   public void setInsertedNode(Expression node) {

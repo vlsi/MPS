@@ -16,7 +16,7 @@ public class NotExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(NotExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, NotExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

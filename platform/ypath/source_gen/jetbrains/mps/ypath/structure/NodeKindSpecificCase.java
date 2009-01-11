@@ -16,7 +16,7 @@ public class NodeKindSpecificCase extends NodeKindCase {
   }
 
   public TreeNodeKind getTreeNodeKind() {
-    return (TreeNodeKind)this.getReferent(NodeKindSpecificCase.TREE_NODE_KIND);
+    return (TreeNodeKind)this.getReferent(TreeNodeKind.class, NodeKindSpecificCase.TREE_NODE_KIND);
   }
 
   public void setTreeNodeKind(TreeNodeKind node) {

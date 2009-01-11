@@ -51,11 +51,11 @@ public class Form extends BaseConcept implements IComponentPart, IComponentInsta
   }
 
   public Iterator<FormPart> parts() {
-    return this.children(Form.PART);
+    return this.children(FormPart.class, Form.PART);
   }
 
   public List<FormPart> getParts() {
-    return this.getChildren(Form.PART);
+    return this.getChildren(FormPart.class, Form.PART);
   }
 
   public void addPart(FormPart node) {
@@ -71,11 +71,11 @@ public class Form extends BaseConcept implements IComponentPart, IComponentInsta
   }
 
   public Iterator<IComponentPart> contents() {
-    return this.children(Form.CONTENT);
+    return this.children(IComponentPart.class, Form.CONTENT);
   }
 
   public List<IComponentPart> getContents() {
-    return this.getChildren(Form.CONTENT);
+    return this.getChildren(IComponentPart.class, Form.CONTENT);
   }
 
   public void addContent(IComponentPart node) {

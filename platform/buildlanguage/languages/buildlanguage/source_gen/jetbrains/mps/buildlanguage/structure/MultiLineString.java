@@ -59,11 +59,11 @@ public class MultiLineString extends PropertyValueExpression implements INamedCo
   }
 
   public Iterator<PropertyValueExpression> stringExpressions() {
-    return this.children(MultiLineString.STRING_EXPRESSION);
+    return this.children(PropertyValueExpression.class, MultiLineString.STRING_EXPRESSION);
   }
 
   public List<PropertyValueExpression> getStringExpressions() {
-    return this.getChildren(MultiLineString.STRING_EXPRESSION);
+    return this.getChildren(PropertyValueExpression.class, MultiLineString.STRING_EXPRESSION);
   }
 
   public void addStringExpression(PropertyValueExpression node) {

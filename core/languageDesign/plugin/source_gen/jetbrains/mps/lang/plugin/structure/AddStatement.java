@@ -17,7 +17,7 @@ public class AddStatement extends ExpressionStatement {
   }
 
   public ActionGroupMember getItem() {
-    return (ActionGroupMember)this.getChild(AddStatement.ITEM);
+    return (ActionGroupMember)this.getChild(ActionGroupMember.class, AddStatement.ITEM);
   }
 
   public void setItem(ActionGroupMember node) {

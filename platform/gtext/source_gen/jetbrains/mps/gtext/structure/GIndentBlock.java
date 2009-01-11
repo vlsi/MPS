@@ -16,7 +16,7 @@ public class GIndentBlock extends GItem {
   }
 
   public GItemList getItemList() {
-    return (GItemList)this.getChild(GIndentBlock.ITEM_LIST);
+    return (GItemList)this.getChild(GItemList.class, GIndentBlock.ITEM_LIST);
   }
 
   public void setItemList(GItemList node) {

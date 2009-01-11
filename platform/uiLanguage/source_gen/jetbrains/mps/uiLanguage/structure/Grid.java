@@ -51,11 +51,11 @@ public class Grid extends BaseConcept implements IComponentInstance {
   }
 
   public Iterator<GridRow> rows() {
-    return this.children(Grid.ROW);
+    return this.children(GridRow.class, Grid.ROW);
   }
 
   public List<GridRow> getRows() {
-    return this.getChildren(Grid.ROW);
+    return this.getChildren(GridRow.class, Grid.ROW);
   }
 
   public void addRow(GridRow node) {
@@ -71,11 +71,11 @@ public class Grid extends BaseConcept implements IComponentInstance {
   }
 
   public Iterator<IComponentPart> contents() {
-    return this.children(Grid.CONTENT);
+    return this.children(IComponentPart.class, Grid.CONTENT);
   }
 
   public List<IComponentPart> getContents() {
-    return this.getChildren(Grid.CONTENT);
+    return this.getChildren(IComponentPart.class, Grid.CONTENT);
   }
 
   public void addContent(IComponentPart node) {

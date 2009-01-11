@@ -17,7 +17,7 @@ public class Property_HasValue_Simple extends SNodeOperation {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Property_HasValue_Simple.VALUE);
+    return (Expression)this.getChild(Expression.class, Property_HasValue_Simple.VALUE);
   }
 
   public void setValue(Expression node) {

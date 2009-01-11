@@ -26,7 +26,7 @@ public class FormPart extends BaseConcept {
   }
 
   public IComponentPart getContent() {
-    return (IComponentPart)this.getChild(FormPart.CONTENT);
+    return (IComponentPart)this.getChild(IComponentPart.class, FormPart.CONTENT);
   }
 
   public void setContent(IComponentPart node) {

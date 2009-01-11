@@ -17,7 +17,7 @@ public class BaseExecuteCommandStatement extends Statement {
   }
 
   public CommandClosureLiteral getCommandClosureLiteral() {
-    return (CommandClosureLiteral)this.getChild(BaseExecuteCommandStatement.COMMAND_CLOSURE_LITERAL);
+    return (CommandClosureLiteral)this.getChild(CommandClosureLiteral.class, BaseExecuteCommandStatement.COMMAND_CLOSURE_LITERAL);
   }
 
   public void setCommandClosureLiteral(CommandClosureLiteral node) {

@@ -57,7 +57,7 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
   }
 
   public ComponentDeclaration getComponentDeclaration() {
-    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT_DECLARATION);
+    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.class, ComponentInstance.COMPONENT_DECLARATION);
   }
 
   public void setComponentDeclaration(ComponentDeclaration node) {
@@ -69,11 +69,11 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
   }
 
   public Iterator<IComponentPart> contents() {
-    return this.children(ComponentInstance.CONTENT);
+    return this.children(IComponentPart.class, ComponentInstance.CONTENT);
   }
 
   public List<IComponentPart> getContents() {
-    return this.getChildren(ComponentInstance.CONTENT);
+    return this.getChildren(IComponentPart.class, ComponentInstance.CONTENT);
   }
 
   public void addContent(IComponentPart node) {

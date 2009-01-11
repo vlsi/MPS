@@ -64,7 +64,7 @@ public class ActionDataParameterDeclaration extends BaseConcept implements IMemb
   }
 
   public StaticFieldDeclaration getKey() {
-    return (StaticFieldDeclaration)this.getReferent(ActionDataParameterDeclaration.KEY);
+    return (StaticFieldDeclaration)this.getReferent(StaticFieldDeclaration.class, ActionDataParameterDeclaration.KEY);
   }
 
   public void setKey(StaticFieldDeclaration node) {

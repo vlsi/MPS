@@ -18,7 +18,7 @@ public class AbstractNodeAssert extends Statement {
   }
 
   public Expression getNodeToCheck() {
-    return (Expression)this.getChild(AbstractNodeAssert.NODE_TO_CHECK);
+    return (Expression)this.getChild(Expression.class, AbstractNodeAssert.NODE_TO_CHECK);
   }
 
   public void setNodeToCheck(Expression node) {

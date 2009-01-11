@@ -16,7 +16,7 @@ public class CellModel_Component extends EditorCellModel {
   }
 
   public EditorComponentDeclaration getEditorComponent() {
-    return (EditorComponentDeclaration)this.getReferent(CellModel_Component.EDITOR_COMPONENT);
+    return (EditorComponentDeclaration)this.getReferent(EditorComponentDeclaration.class, CellModel_Component.EDITOR_COMPONENT);
   }
 
   public void setEditorComponent(EditorComponentDeclaration node) {

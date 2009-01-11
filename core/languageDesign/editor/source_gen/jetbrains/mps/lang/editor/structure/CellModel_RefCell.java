@@ -17,7 +17,7 @@ public class CellModel_RefCell extends CellModel_WithRole {
   }
 
   public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration)this.getRelationDeclaration();
+    return this.ensureAdapter(LinkDeclaration.class, "relationDeclaration", this.getRelationDeclaration());
   }
 
   public void setLinkDeclaration(LinkDeclaration node) {
@@ -25,7 +25,7 @@ public class CellModel_RefCell extends CellModel_WithRole {
   }
 
   public InlineEditorComponent getEditorComponent() {
-    return (InlineEditorComponent)this.getChild(CellModel_RefCell.EDITOR_COMPONENT);
+    return (InlineEditorComponent)this.getChild(InlineEditorComponent.class, CellModel_RefCell.EDITOR_COMPONENT);
   }
 
   public void setEditorComponent(InlineEditorComponent node) {

@@ -31,7 +31,7 @@ public class DateTimeCompareOperation extends Expression {
   }
 
   public DateTimeProperty getDatetimeProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimeCompareOperation.DATETIME_PROPERTY);
+    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, DateTimeCompareOperation.DATETIME_PROPERTY);
   }
 
   public void setDatetimeProperty(DateTimeProperty node) {
@@ -39,7 +39,7 @@ public class DateTimeCompareOperation extends Expression {
   }
 
   public Expression getOp1() {
-    return (Expression)this.getChild(DateTimeCompareOperation.OP1);
+    return (Expression)this.getChild(Expression.class, DateTimeCompareOperation.OP1);
   }
 
   public void setOp1(Expression node) {
@@ -47,7 +47,7 @@ public class DateTimeCompareOperation extends Expression {
   }
 
   public Expression getOp2() {
-    return (Expression)this.getChild(DateTimeCompareOperation.OP2);
+    return (Expression)this.getChild(Expression.class, DateTimeCompareOperation.OP2);
   }
 
   public void setOp2(Expression node) {

@@ -54,7 +54,7 @@ public class FooConcept extends BaseConcept implements INamedConcept {
   }
 
   public BarConcept getBar() {
-    return (BarConcept)this.getReferent(FooConcept.BAR);
+    return (BarConcept)this.getReferent(BarConcept.class, FooConcept.BAR);
   }
 
   public void setBar(BarConcept node) {

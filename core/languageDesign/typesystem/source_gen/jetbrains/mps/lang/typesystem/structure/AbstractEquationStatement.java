@@ -31,7 +31,7 @@ public class AbstractEquationStatement extends Statement {
   }
 
   public TypeClause getLeftExpression() {
-    return (TypeClause)this.getChild(AbstractEquationStatement.LEFT_EXPRESSION);
+    return (TypeClause)this.getChild(TypeClause.class, AbstractEquationStatement.LEFT_EXPRESSION);
   }
 
   public void setLeftExpression(TypeClause node) {
@@ -39,7 +39,7 @@ public class AbstractEquationStatement extends Statement {
   }
 
   public TypeClause getRightExpression() {
-    return (TypeClause)this.getChild(AbstractEquationStatement.RIGHT_EXPRESSION);
+    return (TypeClause)this.getChild(TypeClause.class, AbstractEquationStatement.RIGHT_EXPRESSION);
   }
 
   public void setRightExpression(TypeClause node) {
@@ -47,7 +47,7 @@ public class AbstractEquationStatement extends Statement {
   }
 
   public Expression getNodeToCheck() {
-    return (Expression)this.getChild(AbstractEquationStatement.NODE_TO_CHECK);
+    return (Expression)this.getChild(Expression.class, AbstractEquationStatement.NODE_TO_CHECK);
   }
 
   public void setNodeToCheck(Expression node) {
@@ -55,7 +55,7 @@ public class AbstractEquationStatement extends Statement {
   }
 
   public Expression getErrorString() {
-    return (Expression)this.getChild(AbstractEquationStatement.ERROR_STRING);
+    return (Expression)this.getChild(Expression.class, AbstractEquationStatement.ERROR_STRING);
   }
 
   public void setErrorString(Expression node) {
@@ -63,7 +63,7 @@ public class AbstractEquationStatement extends Statement {
   }
 
   public HelginsIntention getHelginsIntention() {
-    return (HelginsIntention)this.getChild(AbstractEquationStatement.HELGINS_INTENTION);
+    return (HelginsIntention)this.getChild(HelginsIntention.class, AbstractEquationStatement.HELGINS_INTENTION);
   }
 
   public void setHelginsIntention(HelginsIntention node) {

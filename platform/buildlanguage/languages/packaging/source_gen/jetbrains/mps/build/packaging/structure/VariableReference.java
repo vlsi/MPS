@@ -44,7 +44,7 @@ public class VariableReference extends BaseConcept implements IStringExpression 
   }
 
   public Variable getVariable() {
-    return (Variable)this.getReferent(VariableReference.VARIABLE);
+    return (Variable)this.getReferent(Variable.class, VariableReference.VARIABLE);
   }
 
   public void setVariable(Variable node) {

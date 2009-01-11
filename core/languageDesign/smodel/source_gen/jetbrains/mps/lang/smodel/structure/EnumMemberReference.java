@@ -18,7 +18,7 @@ public class EnumMemberReference extends Expression {
   }
 
   public EnumerationMemberDeclaration getEnumMember() {
-    return (EnumerationMemberDeclaration)this.getReferent(EnumMemberReference.ENUM_MEMBER);
+    return (EnumerationMemberDeclaration)this.getReferent(EnumerationMemberDeclaration.class, EnumMemberReference.ENUM_MEMBER);
   }
 
   public void setEnumMember(EnumerationMemberDeclaration node) {

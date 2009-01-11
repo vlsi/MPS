@@ -25,11 +25,11 @@ public class AssertMatch extends Statement {
   }
 
   public Iterator<Expression> befores() {
-    return this.children(AssertMatch.BEFORE);
+    return this.children(Expression.class, AssertMatch.BEFORE);
   }
 
   public List<Expression> getBefores() {
-    return this.getChildren(AssertMatch.BEFORE);
+    return this.getChildren(Expression.class, AssertMatch.BEFORE);
   }
 
   public void addBefore(Expression node) {
@@ -45,11 +45,11 @@ public class AssertMatch extends Statement {
   }
 
   public Iterator<Expression> afters() {
-    return this.children(AssertMatch.AFTER);
+    return this.children(Expression.class, AssertMatch.AFTER);
   }
 
   public List<Expression> getAfters() {
-    return this.getChildren(AssertMatch.AFTER);
+    return this.getChildren(Expression.class, AssertMatch.AFTER);
   }
 
   public void addAfter(Expression node) {

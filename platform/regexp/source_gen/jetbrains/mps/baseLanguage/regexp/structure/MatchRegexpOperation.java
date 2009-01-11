@@ -45,7 +45,7 @@ public class MatchRegexpOperation extends BaseConcept implements IOperation, Reg
   }
 
   public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(MatchRegexpOperation.REGEXP);
+    return (RegexpExpression)this.getChild(RegexpExpression.class, MatchRegexpOperation.REGEXP);
   }
 
   public void setRegexp(RegexpExpression node) {

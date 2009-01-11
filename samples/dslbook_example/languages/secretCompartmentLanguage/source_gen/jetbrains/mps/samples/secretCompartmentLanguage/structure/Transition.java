@@ -18,7 +18,7 @@ public class Transition extends BaseConcept {
   }
 
   public Event getTrigger() {
-    return (Event)this.getReferent(Transition.TRIGGER);
+    return (Event)this.getReferent(Event.class, Transition.TRIGGER);
   }
 
   public void setTrigger(Event node) {
@@ -26,7 +26,7 @@ public class Transition extends BaseConcept {
   }
 
   public State getTarget() {
-    return (State)this.getReferent(Transition.TARGET);
+    return (State)this.getReferent(State.class, Transition.TARGET);
   }
 
   public void setTarget(State node) {

@@ -19,7 +19,7 @@ public class Node_GetReferentSearchScopeOperation extends SNodeOperation {
   }
 
   public LinkDeclaration getReferenceLink() {
-    return (LinkDeclaration)this.getReferent(Node_GetReferentSearchScopeOperation.REFERENCE_LINK);
+    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, Node_GetReferentSearchScopeOperation.REFERENCE_LINK);
   }
 
   public void setReferenceLink(LinkDeclaration node) {
@@ -27,7 +27,7 @@ public class Node_GetReferentSearchScopeOperation extends SNodeOperation {
   }
 
   public Expression getOperationContext() {
-    return (Expression)this.getChild(Node_GetReferentSearchScopeOperation.OPERATION_CONTEXT);
+    return (Expression)this.getChild(Expression.class, Node_GetReferentSearchScopeOperation.OPERATION_CONTEXT);
   }
 
   public void setOperationContext(Expression node) {

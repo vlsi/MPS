@@ -16,7 +16,7 @@ public class BitwiseNotExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(BitwiseNotExpression.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, BitwiseNotExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

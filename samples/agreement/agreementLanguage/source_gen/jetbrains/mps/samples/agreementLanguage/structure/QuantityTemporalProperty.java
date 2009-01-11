@@ -15,7 +15,7 @@ public class QuantityTemporalProperty extends TemporalProperty {
   }
 
   public Quantity getQuantity() {
-    return (Quantity)this.getValue();
+    return this.ensureAdapter(Quantity.class, "value", this.getValue());
   }
 
   public void setQuantity(Quantity node) {

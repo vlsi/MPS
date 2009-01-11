@@ -16,7 +16,7 @@ public class StaticFieldReference extends VariableReference {
   }
 
   public Classifier getClassifier() {
-    return (Classifier)this.getReferent(StaticFieldReference.CLASSIFIER);
+    return (Classifier)this.getReferent(Classifier.class, StaticFieldReference.CLASSIFIER);
   }
 
   public void setClassifier(Classifier node) {
@@ -24,7 +24,7 @@ public class StaticFieldReference extends VariableReference {
   }
 
   public StaticFieldDeclaration getStaticFieldDeclaration() {
-    return (StaticFieldDeclaration)this.getVariableDeclaration();
+    return this.ensureAdapter(StaticFieldDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
 
   public void setStaticFieldDeclaration(StaticFieldDeclaration node) {

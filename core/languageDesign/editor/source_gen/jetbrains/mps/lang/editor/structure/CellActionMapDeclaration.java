@@ -58,7 +58,7 @@ public class CellActionMapDeclaration extends BaseConcept implements INamedConce
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(CellActionMapDeclaration.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, CellActionMapDeclaration.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -70,11 +70,11 @@ public class CellActionMapDeclaration extends BaseConcept implements INamedConce
   }
 
   public Iterator<CellActionMapItem> items() {
-    return this.children(CellActionMapDeclaration.ITEM);
+    return this.children(CellActionMapItem.class, CellActionMapDeclaration.ITEM);
   }
 
   public List<CellActionMapItem> getItems() {
-    return this.getChildren(CellActionMapDeclaration.ITEM);
+    return this.getChildren(CellActionMapItem.class, CellActionMapDeclaration.ITEM);
   }
 
   public void addItem(CellActionMapItem node) {

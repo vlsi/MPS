@@ -22,7 +22,7 @@ public class HashSetCreator extends AbstractCreator {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(HashSetCreator.ELEMENT_TYPE);
+    return (Type)this.getChild(Type.class, HashSetCreator.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -34,11 +34,11 @@ public class HashSetCreator extends AbstractCreator {
   }
 
   public Iterator<Expression> initValues() {
-    return this.children(HashSetCreator.INIT_VALUE);
+    return this.children(Expression.class, HashSetCreator.INIT_VALUE);
   }
 
   public List<Expression> getInitValues() {
-    return this.getChildren(HashSetCreator.INIT_VALUE);
+    return this.getChildren(Expression.class, HashSetCreator.INIT_VALUE);
   }
 
   public void addInitValue(Expression node) {

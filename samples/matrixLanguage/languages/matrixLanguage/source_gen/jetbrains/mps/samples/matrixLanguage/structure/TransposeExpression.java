@@ -17,7 +17,7 @@ public class TransposeExpression extends Expression {
   }
 
   public Expression getMatrix() {
-    return (Expression)this.getChild(TransposeExpression.MATRIX);
+    return (Expression)this.getChild(Expression.class, TransposeExpression.MATRIX);
   }
 
   public void setMatrix(Expression node) {

@@ -17,7 +17,7 @@ public class ValueReference extends Expression {
   }
 
   public Value getValue() {
-    return (Value)this.getReferent(ValueReference.VALUE);
+    return (Value)this.getReferent(Value.class, ValueReference.VALUE);
   }
 
   public void setValue(Value node) {

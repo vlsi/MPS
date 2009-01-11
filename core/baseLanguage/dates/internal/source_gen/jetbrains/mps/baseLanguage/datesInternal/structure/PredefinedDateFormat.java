@@ -63,7 +63,7 @@ public class PredefinedDateFormat extends BaseConcept implements IDateFormat {
   }
 
   public StaticMethodCall getFormatter() {
-    return (StaticMethodCall)this.getChild(PredefinedDateFormat.FORMATTER);
+    return (StaticMethodCall)this.getChild(StaticMethodCall.class, PredefinedDateFormat.FORMATTER);
   }
 
   public void setFormatter(StaticMethodCall node) {

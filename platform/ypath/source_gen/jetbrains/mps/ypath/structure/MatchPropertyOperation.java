@@ -18,7 +18,7 @@ public class MatchPropertyOperation extends MatchKindOperation {
   }
 
   public TreeNodeKindProperty getProperty() {
-    return (TreeNodeKindProperty)this.getReferent(MatchPropertyOperation.PROPERTY);
+    return (TreeNodeKindProperty)this.getReferent(TreeNodeKindProperty.class, MatchPropertyOperation.PROPERTY);
   }
 
   public void setProperty(TreeNodeKindProperty node) {
@@ -26,7 +26,7 @@ public class MatchPropertyOperation extends MatchKindOperation {
   }
 
   public Expression getMatchExpression() {
-    return (Expression)this.getChild(MatchPropertyOperation.MATCH_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, MatchPropertyOperation.MATCH_EXPRESSION);
   }
 
   public void setMatchExpression(Expression node) {

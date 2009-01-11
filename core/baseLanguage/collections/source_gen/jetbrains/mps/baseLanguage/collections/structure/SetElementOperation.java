@@ -18,7 +18,7 @@ public class SetElementOperation extends AbstractListOperation {
   }
 
   public Expression getIndex() {
-    return (Expression)this.getChild(SetElementOperation.INDEX);
+    return (Expression)this.getChild(Expression.class, SetElementOperation.INDEX);
   }
 
   public void setIndex(Expression node) {
@@ -26,7 +26,7 @@ public class SetElementOperation extends AbstractListOperation {
   }
 
   public Expression getElement() {
-    return (Expression)this.getChild(SetElementOperation.ELEMENT);
+    return (Expression)this.getChild(Expression.class, SetElementOperation.ELEMENT);
   }
 
   public void setElement(Expression node) {

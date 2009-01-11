@@ -54,7 +54,7 @@ public class TreePathType extends Type implements INamedConcept {
   }
 
   public Type getNodeType() {
-    return (Type)this.getChild(TreePathType.NODE_TYPE);
+    return (Type)this.getChild(Type.class, TreePathType.NODE_TYPE);
   }
 
   public void setNodeType(Type node) {

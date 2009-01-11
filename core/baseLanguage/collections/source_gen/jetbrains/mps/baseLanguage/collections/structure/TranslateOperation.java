@@ -16,7 +16,7 @@ public class TranslateOperation extends InternalSequenceOperation {
   }
 
   public Expression getMapper() {
-    return (Expression)this.getClosure();
+    return this.ensureAdapter(Expression.class, "closure", this.getClosure());
   }
 
   public void setMapper(Expression node) {

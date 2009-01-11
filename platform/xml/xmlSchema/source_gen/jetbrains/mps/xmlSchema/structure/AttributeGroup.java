@@ -31,11 +31,11 @@ public class AttributeGroup extends Declaration {
   }
 
   public Iterator<AttributeExpression> attributeExpressions() {
-    return this.children(AttributeGroup.ATTRIBUTE_EXPRESSION);
+    return this.children(AttributeExpression.class, AttributeGroup.ATTRIBUTE_EXPRESSION);
   }
 
   public List<AttributeExpression> getAttributeExpressions() {
-    return this.getChildren(AttributeGroup.ATTRIBUTE_EXPRESSION);
+    return this.getChildren(AttributeExpression.class, AttributeGroup.ATTRIBUTE_EXPRESSION);
   }
 
   public void addAttributeExpression(AttributeExpression node) {

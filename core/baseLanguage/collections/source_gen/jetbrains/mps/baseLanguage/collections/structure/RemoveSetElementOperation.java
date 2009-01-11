@@ -17,7 +17,7 @@ public class RemoveSetElementOperation extends AbstractSetOperation {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(RemoveSetElementOperation.ARGUMENT);
+    return (Expression)this.getChild(Expression.class, RemoveSetElementOperation.ARGUMENT);
   }
 
   public void setArgument(Expression node) {

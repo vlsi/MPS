@@ -60,11 +60,11 @@ public class SideTransformHintSubstituteActions extends BaseConcept implements I
   }
 
   public Iterator<SideTransformHintSubstituteActionsBuilder> actionsBuilders() {
-    return this.children(SideTransformHintSubstituteActions.ACTIONS_BUILDER);
+    return this.children(SideTransformHintSubstituteActionsBuilder.class, SideTransformHintSubstituteActions.ACTIONS_BUILDER);
   }
 
   public List<SideTransformHintSubstituteActionsBuilder> getActionsBuilders() {
-    return this.getChildren(SideTransformHintSubstituteActions.ACTIONS_BUILDER);
+    return this.getChildren(SideTransformHintSubstituteActionsBuilder.class, SideTransformHintSubstituteActions.ACTIONS_BUILDER);
   }
 
   public void addActionsBuilder(SideTransformHintSubstituteActionsBuilder node) {

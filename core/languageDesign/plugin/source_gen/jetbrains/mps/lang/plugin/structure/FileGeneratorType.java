@@ -17,7 +17,7 @@ public class FileGeneratorType extends BaseClassifierType {
   }
 
   public FileGeneratorDeclaration getGenerator() {
-    return (FileGeneratorDeclaration)this.getReferent(FileGeneratorType.GENERATOR);
+    return (FileGeneratorDeclaration)this.getReferent(FileGeneratorDeclaration.class, FileGeneratorType.GENERATOR);
   }
 
   public void setGenerator(FileGeneratorDeclaration node) {

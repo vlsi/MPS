@@ -18,7 +18,7 @@ public class PatternVariableReference extends Expression {
   }
 
   public PatternVariableDeclaration getPatternVarDecl() {
-    return (PatternVariableDeclaration)this.getReferent(PatternVariableReference.PATTERN_VAR_DECL);
+    return (PatternVariableDeclaration)this.getReferent(PatternVariableDeclaration.class, PatternVariableReference.PATTERN_VAR_DECL);
   }
 
   public void setPatternVarDecl(PatternVariableDeclaration node) {

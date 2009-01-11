@@ -16,7 +16,7 @@ public class VariableReference extends Expression {
   }
 
   public VariableDeclaration getVariableDeclaration() {
-    return (VariableDeclaration)this.getReferent(VariableReference.VARIABLE_DECLARATION);
+    return (VariableDeclaration)this.getReferent(VariableDeclaration.class, VariableReference.VARIABLE_DECLARATION);
   }
 
   public void setVariableDeclaration(VariableDeclaration node) {

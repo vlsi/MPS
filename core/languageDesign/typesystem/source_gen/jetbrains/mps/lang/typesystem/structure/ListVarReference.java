@@ -17,7 +17,7 @@ public class ListVarReference extends Expression {
   }
 
   public ListVarDeclaration getListVarDeclaration() {
-    return (ListVarDeclaration)this.getReferent(ListVarReference.LIST_VAR_DECLARATION);
+    return (ListVarDeclaration)this.getReferent(ListVarDeclaration.class, ListVarReference.LIST_VAR_DECLARATION);
   }
 
   public void setListVarDeclaration(ListVarDeclaration node) {

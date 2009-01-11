@@ -62,7 +62,7 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(ConstructorDeclaration.VISIBILITY);
+    return (Visibility)this.getChild(Visibility.class, ConstructorDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {

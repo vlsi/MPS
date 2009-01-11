@@ -45,7 +45,7 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
   }
 
   public LinkDeclaration getLink() {
-    return (LinkDeclaration)this.getReferent(LinkRefQualifier.LINK);
+    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, LinkRefQualifier.LINK);
   }
 
   public void setLink(LinkDeclaration node) {

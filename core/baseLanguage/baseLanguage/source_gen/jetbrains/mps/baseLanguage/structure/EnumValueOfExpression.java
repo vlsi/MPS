@@ -17,7 +17,7 @@ public class EnumValueOfExpression extends Expression {
   }
 
   public EnumClass getEnumClass() {
-    return (EnumClass)this.getReferent(EnumValueOfExpression.ENUM_CLASS);
+    return (EnumClass)this.getReferent(EnumClass.class, EnumValueOfExpression.ENUM_CLASS);
   }
 
   public void setEnumClass(EnumClass node) {
@@ -25,7 +25,7 @@ public class EnumValueOfExpression extends Expression {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(EnumValueOfExpression.VALUE);
+    return (Expression)this.getChild(Expression.class, EnumValueOfExpression.VALUE);
   }
 
   public void setValue(Expression node) {

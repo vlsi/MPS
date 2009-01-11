@@ -27,7 +27,7 @@ public class InternalVariableReference extends Expression {
   }
 
   public Type getType() {
-    return (Type)this.getChild(InternalVariableReference.TYPE);
+    return (Type)this.getChild(Type.class, InternalVariableReference.TYPE);
   }
 
   public void setType(Type node) {

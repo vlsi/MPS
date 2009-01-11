@@ -67,7 +67,7 @@ public class ChildTypeRestriction extends BaseConcept implements INamedConcept {
   }
 
   public LinkDeclaration getChildLinkDeclaration() {
-    return (LinkDeclaration)this.getReferent(ChildTypeRestriction.CHILD_LINK_DECLARATION);
+    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, ChildTypeRestriction.CHILD_LINK_DECLARATION);
   }
 
   public void setChildLinkDeclaration(LinkDeclaration node) {
@@ -75,7 +75,7 @@ public class ChildTypeRestriction extends BaseConcept implements INamedConcept {
   }
 
   public Expression getType() {
-    return (Expression)this.getChild(ChildTypeRestriction.TYPE);
+    return (Expression)this.getChild(Expression.class, ChildTypeRestriction.TYPE);
   }
 
   public void setType(Expression node) {

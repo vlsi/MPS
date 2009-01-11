@@ -55,7 +55,7 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration implem
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(StaticConceptMethodDeclaration.VISIBILITY);
+    return (Visibility)this.getChild(Visibility.class, StaticConceptMethodDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {

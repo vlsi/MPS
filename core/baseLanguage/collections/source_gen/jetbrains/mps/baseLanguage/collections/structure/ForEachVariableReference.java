@@ -17,7 +17,7 @@ public class ForEachVariableReference extends Expression {
   }
 
   public ForEachVariable getVariable() {
-    return (ForEachVariable)this.getReferent(ForEachVariableReference.VARIABLE);
+    return (ForEachVariable)this.getReferent(ForEachVariable.class, ForEachVariableReference.VARIABLE);
   }
 
   public void setVariable(ForEachVariable node) {

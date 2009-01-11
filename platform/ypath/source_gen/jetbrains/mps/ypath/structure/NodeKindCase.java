@@ -18,7 +18,7 @@ public class NodeKindCase extends BaseConcept {
   }
 
   public StatementList getStatementList() {
-    return (StatementList)this.getChild(NodeKindCase.STATEMENT_LIST);
+    return (StatementList)this.getChild(StatementList.class, NodeKindCase.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {

@@ -70,11 +70,11 @@ public class Value extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<QuantityTemporalProperty> quantities() {
-    return this.children(Value.QUANTITY);
+    return this.children(QuantityTemporalProperty.class, Value.QUANTITY);
   }
 
   public List<QuantityTemporalProperty> getQuantities() {
-    return this.getChildren(Value.QUANTITY);
+    return this.getChildren(QuantityTemporalProperty.class, Value.QUANTITY);
   }
 
   public void addQuantity(QuantityTemporalProperty node) {

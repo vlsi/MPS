@@ -49,11 +49,11 @@ public class SymbolClassRegexp extends Regexp implements SymbolClassRegexpAndPar
   }
 
   public Iterator<SymbolClassPart> parts() {
-    return this.children(SymbolClassRegexp.PART);
+    return this.children(SymbolClassPart.class, SymbolClassRegexp.PART);
   }
 
   public List<SymbolClassPart> getParts() {
-    return this.getChildren(SymbolClassRegexp.PART);
+    return this.getChildren(SymbolClassPart.class, SymbolClassRegexp.PART);
   }
 
   public void addPart(SymbolClassPart node) {

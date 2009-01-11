@@ -59,7 +59,7 @@ public class TabbedEditorDeclaration extends BaseConcept implements INamedConcep
   }
 
   public AbstractConceptDeclaration getMainConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(TabbedEditorDeclaration.MAIN_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, TabbedEditorDeclaration.MAIN_CONCEPT);
   }
 
   public void setMainConcept(AbstractConceptDeclaration node) {
@@ -67,7 +67,7 @@ public class TabbedEditorDeclaration extends BaseConcept implements INamedConcep
   }
 
   public GetBaseNodeBlock getGetMainConceptBlock() {
-    return (GetBaseNodeBlock)this.getChild(TabbedEditorDeclaration.GET_MAIN_CONCEPT_BLOCK);
+    return (GetBaseNodeBlock)this.getChild(GetBaseNodeBlock.class, TabbedEditorDeclaration.GET_MAIN_CONCEPT_BLOCK);
   }
 
   public void setGetMainConceptBlock(GetBaseNodeBlock node) {
@@ -79,11 +79,11 @@ public class TabbedEditorDeclaration extends BaseConcept implements INamedConcep
   }
 
   public Iterator<AbstractEditorTab> tabses() {
-    return this.children(TabbedEditorDeclaration.TABS);
+    return this.children(AbstractEditorTab.class, TabbedEditorDeclaration.TABS);
   }
 
   public List<AbstractEditorTab> getTabses() {
-    return this.getChildren(TabbedEditorDeclaration.TABS);
+    return this.getChildren(AbstractEditorTab.class, TabbedEditorDeclaration.TABS);
   }
 
   public void addTabs(AbstractEditorTab node) {

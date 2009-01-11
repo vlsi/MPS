@@ -18,7 +18,7 @@ public class StubCellRendererInfo extends BaseConcept {
   }
 
   public InstanceMethodDeclaration getCellRendererSetter() {
-    return (InstanceMethodDeclaration)this.getReferent(StubCellRendererInfo.CELL_RENDERER_SETTER);
+    return (InstanceMethodDeclaration)this.getReferent(InstanceMethodDeclaration.class, StubCellRendererInfo.CELL_RENDERER_SETTER);
   }
 
   public void setCellRendererSetter(InstanceMethodDeclaration node) {

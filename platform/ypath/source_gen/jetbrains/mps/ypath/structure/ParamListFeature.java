@@ -85,7 +85,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public IFeature getOpposite() {
-    return (IFeature)this.getReferent(ParamListFeature.OPPOSITE);
+    return (IFeature)this.getReferent(IFeature.class, ParamListFeature.OPPOSITE);
   }
 
   public void setOpposite(IFeature node) {
@@ -93,7 +93,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public Type getParameterType() {
-    return (Type)this.getChild(ParamListFeature.PARAMETER_TYPE);
+    return (Type)this.getChild(Type.class, ParamListFeature.PARAMETER_TYPE);
   }
 
   public void setParameterType(Type node) {
@@ -101,7 +101,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public ParameterQueryFun getParameterQueryFunction() {
-    return (ParameterQueryFun)this.getChild(ParamListFeature.PARAMETER_QUERY_FUNCTION);
+    return (ParameterQueryFun)this.getChild(ParameterQueryFun.class, ParamListFeature.PARAMETER_QUERY_FUNCTION);
   }
 
   public void setParameterQueryFunction(ParameterQueryFun node) {
@@ -109,7 +109,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public TargetTypeFun getTargetTypeFunction() {
-    return (TargetTypeFun)this.getChild(ParamListFeature.TARGET_TYPE_FUNCTION);
+    return (TargetTypeFun)this.getChild(TargetTypeFun.class, ParamListFeature.TARGET_TYPE_FUNCTION);
   }
 
   public void setTargetTypeFunction(TargetTypeFun node) {
@@ -117,7 +117,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public ToStringFun getToStringFunction() {
-    return (ToStringFun)this.getChild(ParamListFeature.TO_STRING_FUNCTION);
+    return (ToStringFun)this.getChild(ToStringFun.class, ParamListFeature.TO_STRING_FUNCTION);
   }
 
   public void setToStringFunction(ToStringFun node) {
@@ -125,7 +125,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public GFCardinalParamFun getCardinal() {
-    return (GFCardinalParamFun)this.getChild(ParamListFeature.CARDINAL);
+    return (GFCardinalParamFun)this.getChild(GFCardinalParamFun.class, ParamListFeature.CARDINAL);
   }
 
   public void setCardinal(GFCardinalParamFun node) {
@@ -133,7 +133,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public ParamFeatureGetFun getParamGetFunction() {
-    return (ParamFeatureGetFun)this.getGetFunction();
+    return this.ensureAdapter(ParamFeatureGetFun.class, "getFunction", this.getGetFunction());
   }
 
   public void setParamGetFunction(ParamFeatureGetFun node) {
@@ -141,7 +141,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public ParamFeatureSizeFun getParamSizeFunction() {
-    return (ParamFeatureSizeFun)this.getSizeFunction();
+    return this.ensureAdapter(ParamFeatureSizeFun.class, "sizeFunction", this.getSizeFunction());
   }
 
   public void setParamSizeFunction(ParamFeatureSizeFun node) {
@@ -149,7 +149,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public ParamFeatureSetFun getParamSetFunction() {
-    return (ParamFeatureSetFun)this.getSetFunction();
+    return this.ensureAdapter(ParamFeatureSetFun.class, "setFunction", this.getSetFunction());
   }
 
   public void setParamSetFunction(ParamFeatureSetFun node) {
@@ -157,7 +157,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public ParamFeatureInsertFun getParamInsertFunction() {
-    return (ParamFeatureInsertFun)this.getInsertFunction();
+    return this.ensureAdapter(ParamFeatureInsertFun.class, "insertFunction", this.getInsertFunction());
   }
 
   public void setParamInsertFunction(ParamFeatureInsertFun node) {
@@ -165,7 +165,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public ParamFeatureDeleteFun getParamDeleteFunction() {
-    return (ParamFeatureDeleteFun)this.getDeleteFunction();
+    return this.ensureAdapter(ParamFeatureDeleteFun.class, "deleteFunction", this.getDeleteFunction());
   }
 
   public void setParamDeleteFunction(ParamFeatureDeleteFun node) {

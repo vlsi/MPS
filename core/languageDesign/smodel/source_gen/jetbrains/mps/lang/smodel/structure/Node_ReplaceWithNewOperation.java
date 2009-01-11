@@ -17,7 +17,7 @@ public class Node_ReplaceWithNewOperation extends SNodeOperation {
   }
 
   public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(Node_ReplaceWithNewOperation.CONCEPT);
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, Node_ReplaceWithNewOperation.CONCEPT);
   }
 
   public void setConcept(ConceptDeclaration node) {

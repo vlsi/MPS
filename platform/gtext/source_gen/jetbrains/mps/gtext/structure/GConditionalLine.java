@@ -31,11 +31,11 @@ public class GConditionalLine extends GItem {
   }
 
   public Iterator<GItem> items() {
-    return this.children(GConditionalLine.ITEM);
+    return this.children(GItem.class, GConditionalLine.ITEM);
   }
 
   public List<GItem> getItems() {
-    return this.getChildren(GConditionalLine.ITEM);
+    return this.getChildren(GItem.class, GConditionalLine.ITEM);
   }
 
   public void addItem(GItem node) {

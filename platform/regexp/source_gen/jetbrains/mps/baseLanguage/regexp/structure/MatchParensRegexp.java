@@ -54,7 +54,7 @@ public class MatchParensRegexp extends Regexp implements INamedConcept, IVariabl
   }
 
   public Regexp getRegexp() {
-    return (Regexp)this.getChild(MatchParensRegexp.REGEXP);
+    return (Regexp)this.getChild(Regexp.class, MatchParensRegexp.REGEXP);
   }
 
   public void setRegexp(Regexp node) {

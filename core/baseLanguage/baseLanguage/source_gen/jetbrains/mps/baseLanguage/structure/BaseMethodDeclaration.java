@@ -76,7 +76,7 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   }
 
   public Type getReturnType() {
-    return (Type)this.getChild(BaseMethodDeclaration.RETURN_TYPE);
+    return (Type)this.getChild(Type.class, BaseMethodDeclaration.RETURN_TYPE);
   }
 
   public void setReturnType(Type node) {
@@ -84,7 +84,7 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(BaseMethodDeclaration.BODY);
+    return (StatementList)this.getChild(StatementList.class, BaseMethodDeclaration.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -96,11 +96,11 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   }
 
   public Iterator<ParameterDeclaration> parameters() {
-    return this.children(BaseMethodDeclaration.PARAMETER);
+    return this.children(ParameterDeclaration.class, BaseMethodDeclaration.PARAMETER);
   }
 
   public List<ParameterDeclaration> getParameters() {
-    return this.getChildren(BaseMethodDeclaration.PARAMETER);
+    return this.getChildren(ParameterDeclaration.class, BaseMethodDeclaration.PARAMETER);
   }
 
   public void addParameter(ParameterDeclaration node) {
@@ -116,11 +116,11 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   }
 
   public Iterator<Type> throwsItems() {
-    return this.children(BaseMethodDeclaration.THROWS_ITEM);
+    return this.children(Type.class, BaseMethodDeclaration.THROWS_ITEM);
   }
 
   public List<Type> getThrowsItems() {
-    return this.getChildren(BaseMethodDeclaration.THROWS_ITEM);
+    return this.getChildren(Type.class, BaseMethodDeclaration.THROWS_ITEM);
   }
 
   public void addThrowsItem(Type node) {
@@ -136,11 +136,11 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   }
 
   public Iterator<AnnotationInstance> annotations() {
-    return this.children(BaseMethodDeclaration.ANNOTATION);
+    return this.children(AnnotationInstance.class, BaseMethodDeclaration.ANNOTATION);
   }
 
   public List<AnnotationInstance> getAnnotations() {
-    return this.getChildren(BaseMethodDeclaration.ANNOTATION);
+    return this.getChildren(AnnotationInstance.class, BaseMethodDeclaration.ANNOTATION);
   }
 
   public void addAnnotation(AnnotationInstance node) {

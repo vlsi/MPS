@@ -17,7 +17,7 @@ public class PropertyMessageTarget extends MessageTarget {
   }
 
   public PropertyDeclaration getPropertyDeclaration() {
-    return (PropertyDeclaration)this.getReferent(PropertyMessageTarget.PROPERTY_DECLARATION);
+    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, PropertyMessageTarget.PROPERTY_DECLARATION);
   }
 
   public void setPropertyDeclaration(PropertyDeclaration node) {

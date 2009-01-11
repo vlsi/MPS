@@ -20,7 +20,7 @@ public class SwitchNodeKindStatement extends Statement {
   }
 
   public TreePathAdapterExpression getNodeExpression() {
-    return (TreePathAdapterExpression)this.getChild(SwitchNodeKindStatement.NODE_EXPRESSION);
+    return (TreePathAdapterExpression)this.getChild(TreePathAdapterExpression.class, SwitchNodeKindStatement.NODE_EXPRESSION);
   }
 
   public void setNodeExpression(TreePathAdapterExpression node) {
@@ -32,11 +32,11 @@ public class SwitchNodeKindStatement extends Statement {
   }
 
   public Iterator<NodeKindCase> nodeKindCases() {
-    return this.children(SwitchNodeKindStatement.NODE_KIND_CASE);
+    return this.children(NodeKindCase.class, SwitchNodeKindStatement.NODE_KIND_CASE);
   }
 
   public List<NodeKindCase> getNodeKindCases() {
-    return this.getChildren(SwitchNodeKindStatement.NODE_KIND_CASE);
+    return this.getChildren(NodeKindCase.class, SwitchNodeKindStatement.NODE_KIND_CASE);
   }
 
   public void addNodeKindCase(NodeKindCase node) {

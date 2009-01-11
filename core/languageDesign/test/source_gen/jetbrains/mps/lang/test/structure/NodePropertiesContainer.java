@@ -23,11 +23,11 @@ public class NodePropertiesContainer extends BaseConcept {
   }
 
   public Iterator<NodeProperty> propertieses() {
-    return this.children(NodePropertiesContainer.PROPERTIES);
+    return this.children(NodeProperty.class, NodePropertiesContainer.PROPERTIES);
   }
 
   public List<NodeProperty> getPropertieses() {
-    return this.getChildren(NodePropertiesContainer.PROPERTIES);
+    return this.getChildren(NodeProperty.class, NodePropertiesContainer.PROPERTIES);
   }
 
   public void addProperties(NodeProperty node) {

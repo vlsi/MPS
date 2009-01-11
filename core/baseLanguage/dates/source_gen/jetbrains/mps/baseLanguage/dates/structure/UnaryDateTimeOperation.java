@@ -18,7 +18,7 @@ public class UnaryDateTimeOperation extends Expression {
   }
 
   public Expression getDatetime() {
-    return (Expression)this.getChild(UnaryDateTimeOperation.DATETIME);
+    return (Expression)this.getChild(Expression.class, UnaryDateTimeOperation.DATETIME);
   }
 
   public void setDatetime(Expression node) {

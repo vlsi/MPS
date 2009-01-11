@@ -57,7 +57,7 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
   }
 
   public KindBlock getTrigger() {
-    return (KindBlock)this.getChild(TreeNodeKind.TRIGGER);
+    return (KindBlock)this.getChild(KindBlock.class, TreeNodeKind.TRIGGER);
   }
 
   public void setTrigger(KindBlock node) {
@@ -69,11 +69,11 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<TreeNodeKindProperty> propertieses() {
-    return this.children(TreeNodeKind.PROPERTIES);
+    return this.children(TreeNodeKindProperty.class, TreeNodeKind.PROPERTIES);
   }
 
   public List<TreeNodeKindProperty> getPropertieses() {
-    return this.getChildren(TreeNodeKind.PROPERTIES);
+    return this.getChildren(TreeNodeKindProperty.class, TreeNodeKind.PROPERTIES);
   }
 
   public void addProperties(TreeNodeKindProperty node) {

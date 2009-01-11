@@ -58,7 +58,7 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
   }
 
   public Type getType() {
-    return (Type)this.getChild(AttributeDeclaration.TYPE);
+    return (Type)this.getChild(Type.class, AttributeDeclaration.TYPE);
   }
 
   public void setType(Type node) {
@@ -66,7 +66,7 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
   }
 
   public Expression getInitializer() {
-    return (Expression)this.getChild(AttributeDeclaration.INITIALIZER);
+    return (Expression)this.getChild(Expression.class, AttributeDeclaration.INITIALIZER);
   }
 
   public void setInitializer(Expression node) {
@@ -74,7 +74,7 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
   }
 
   public Expression getOnChange() {
-    return (Expression)this.getChild(AttributeDeclaration.ON_CHANGE);
+    return (Expression)this.getChild(Expression.class, AttributeDeclaration.ON_CHANGE);
   }
 
   public void setOnChange(Expression node) {

@@ -16,7 +16,7 @@ public class CopySrcNodeMacro extends SourceSubstituteMacro {
   }
 
   public SourceSubstituteMacro_SourceNodeQuery getSourceNodeQuery() {
-    return (SourceSubstituteMacro_SourceNodeQuery)this.getChild(CopySrcNodeMacro.SOURCE_NODE_QUERY);
+    return (SourceSubstituteMacro_SourceNodeQuery)this.getChild(SourceSubstituteMacro_SourceNodeQuery.class, CopySrcNodeMacro.SOURCE_NODE_QUERY);
   }
 
   public void setSourceNodeQuery(SourceSubstituteMacro_SourceNodeQuery node) {

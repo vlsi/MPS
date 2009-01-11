@@ -28,7 +28,7 @@ public class AttributeConcept extends BaseConcept {
   }
 
   public BaseConcept getAttributedNode() {
-    return (BaseConcept)this.getReferent(AttributeConcept.ATTRIBUTED_NODE);
+    return (BaseConcept)this.getReferent(BaseConcept.class, AttributeConcept.ATTRIBUTED_NODE);
   }
 
   public void setAttributedNode(BaseConcept node) {

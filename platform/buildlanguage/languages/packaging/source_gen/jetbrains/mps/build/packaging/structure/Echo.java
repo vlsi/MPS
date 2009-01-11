@@ -16,7 +16,7 @@ public class Echo extends File {
   }
 
   public IStringExpression getMessage() {
-    return (IStringExpression)this.getChild(Echo.MESSAGE);
+    return (IStringExpression)this.getChild(IStringExpression.class, Echo.MESSAGE);
   }
 
   public void setMessage(IStringExpression node) {

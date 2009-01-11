@@ -17,7 +17,7 @@ public class SetType extends Type {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(SetType.ELEMENT_TYPE);
+    return (Type)this.getChild(Type.class, SetType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {

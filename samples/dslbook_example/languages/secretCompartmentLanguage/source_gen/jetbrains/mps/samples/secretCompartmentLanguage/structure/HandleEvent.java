@@ -17,7 +17,7 @@ public class HandleEvent extends BaseConcept {
   }
 
   public Event getEvent() {
-    return (Event)this.getReferent(HandleEvent.EVENT);
+    return (Event)this.getReferent(Event.class, HandleEvent.EVENT);
   }
 
   public void setEvent(Event node) {

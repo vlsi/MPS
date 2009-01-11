@@ -69,11 +69,11 @@ public class State extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<Transition> transitions() {
-    return this.children(State.TRANSITION);
+    return this.children(Transition.class, State.TRANSITION);
   }
 
   public List<Transition> getTransitions() {
-    return this.getChildren(State.TRANSITION);
+    return this.getChildren(Transition.class, State.TRANSITION);
   }
 
   public void addTransition(Transition node) {

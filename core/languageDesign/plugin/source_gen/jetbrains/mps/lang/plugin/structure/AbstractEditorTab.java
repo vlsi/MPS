@@ -63,7 +63,7 @@ public class AbstractEditorTab extends BaseConcept implements INamedConcept {
   }
 
   public CreateBlock getCreateBlock() {
-    return (CreateBlock)this.getChild(AbstractEditorTab.CREATE_BLOCK);
+    return (CreateBlock)this.getChild(CreateBlock.class, AbstractEditorTab.CREATE_BLOCK);
   }
 
   public void setCreateBlock(CreateBlock node) {

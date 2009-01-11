@@ -17,7 +17,7 @@ public class TestNodeReference extends Expression {
   }
 
   public TestNodeAnnotation getDeclaration() {
-    return (TestNodeAnnotation)this.getReferent(TestNodeReference.DECLARATION);
+    return (TestNodeAnnotation)this.getReferent(TestNodeAnnotation.class, TestNodeReference.DECLARATION);
   }
 
   public void setDeclaration(TestNodeAnnotation node) {

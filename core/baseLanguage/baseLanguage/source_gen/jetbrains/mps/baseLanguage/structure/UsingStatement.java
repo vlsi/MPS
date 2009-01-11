@@ -19,7 +19,7 @@ public class UsingStatement extends Statement {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(UsingStatement.BODY);
+    return (StatementList)this.getChild(StatementList.class, UsingStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -31,11 +31,11 @@ public class UsingStatement extends Statement {
   }
 
   public Iterator<Expression> resources() {
-    return this.children(UsingStatement.RESOURCE);
+    return this.children(Expression.class, UsingStatement.RESOURCE);
   }
 
   public List<Expression> getResources() {
-    return this.getChildren(UsingStatement.RESOURCE);
+    return this.getChildren(Expression.class, UsingStatement.RESOURCE);
   }
 
   public void addResource(Expression node) {

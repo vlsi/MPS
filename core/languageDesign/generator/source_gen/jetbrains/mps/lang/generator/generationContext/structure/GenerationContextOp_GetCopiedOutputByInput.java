@@ -17,7 +17,7 @@ public class GenerationContextOp_GetCopiedOutputByInput extends GenerationContex
   }
 
   public Expression getInputNode() {
-    return (Expression)this.getChild(GenerationContextOp_GetCopiedOutputByInput.INPUT_NODE);
+    return (Expression)this.getChild(Expression.class, GenerationContextOp_GetCopiedOutputByInput.INPUT_NODE);
   }
 
   public void setInputNode(Expression node) {

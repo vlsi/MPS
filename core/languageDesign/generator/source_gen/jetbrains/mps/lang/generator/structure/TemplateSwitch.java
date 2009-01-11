@@ -59,7 +59,7 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept {
   }
 
   public TemplateSwitch getModifiedSwitch() {
-    return (TemplateSwitch)this.getReferent(TemplateSwitch.MODIFIED_SWITCH);
+    return (TemplateSwitch)this.getReferent(TemplateSwitch.class, TemplateSwitch.MODIFIED_SWITCH);
   }
 
   public void setModifiedSwitch(TemplateSwitch node) {
@@ -67,7 +67,7 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept {
   }
 
   public RuleConsequence getDefaultConsequence() {
-    return (RuleConsequence)this.getChild(TemplateSwitch.DEFAULT_CONSEQUENCE);
+    return (RuleConsequence)this.getChild(RuleConsequence.class, TemplateSwitch.DEFAULT_CONSEQUENCE);
   }
 
   public void setDefaultConsequence(RuleConsequence node) {
@@ -75,7 +75,7 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept {
   }
 
   public GeneratorMessage getNullInputMessage() {
-    return (GeneratorMessage)this.getChild(TemplateSwitch.NULL_INPUT_MESSAGE);
+    return (GeneratorMessage)this.getChild(GeneratorMessage.class, TemplateSwitch.NULL_INPUT_MESSAGE);
   }
 
   public void setNullInputMessage(GeneratorMessage node) {
@@ -87,11 +87,11 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<Reduction_MappingRule> reductionMappingRules() {
-    return this.children(TemplateSwitch.REDUCTION_MAPPING_RULE);
+    return this.children(Reduction_MappingRule.class, TemplateSwitch.REDUCTION_MAPPING_RULE);
   }
 
   public List<Reduction_MappingRule> getReductionMappingRules() {
-    return this.getChildren(TemplateSwitch.REDUCTION_MAPPING_RULE);
+    return this.getChildren(Reduction_MappingRule.class, TemplateSwitch.REDUCTION_MAPPING_RULE);
   }
 
   public void addReductionMappingRule(Reduction_MappingRule node) {

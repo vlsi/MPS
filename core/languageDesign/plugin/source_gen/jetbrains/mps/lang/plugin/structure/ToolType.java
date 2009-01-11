@@ -17,7 +17,7 @@ public class ToolType extends BaseClassifierType {
   }
 
   public ToolDeclaration getTool() {
-    return (ToolDeclaration)this.getReferent(ToolType.TOOL);
+    return (ToolDeclaration)this.getReferent(ToolDeclaration.class, ToolType.TOOL);
   }
 
   public void setTool(ToolDeclaration node) {

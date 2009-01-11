@@ -20,7 +20,7 @@ public class MultipleForeachLoopVariable extends BaseConcept {
   }
 
   public LocalVariableDeclaration getVariable() {
-    return (LocalVariableDeclaration)this.getChild(MultipleForeachLoopVariable.VARIABLE);
+    return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, MultipleForeachLoopVariable.VARIABLE);
   }
 
   public void setVariable(LocalVariableDeclaration node) {
@@ -28,7 +28,7 @@ public class MultipleForeachLoopVariable extends BaseConcept {
   }
 
   public Expression getIterable() {
-    return (Expression)this.getChild(MultipleForeachLoopVariable.ITERABLE);
+    return (Expression)this.getChild(Expression.class, MultipleForeachLoopVariable.ITERABLE);
   }
 
   public void setIterable(Expression node) {

@@ -20,7 +20,7 @@ public class ChangeFeatureNameOperation extends Statement {
   }
 
   public Expression getFeature() {
-    return (Expression)this.getChild(ChangeFeatureNameOperation.FEATURE);
+    return (Expression)this.getChild(Expression.class, ChangeFeatureNameOperation.FEATURE);
   }
 
   public void setFeature(Expression node) {
@@ -28,7 +28,7 @@ public class ChangeFeatureNameOperation extends Statement {
   }
 
   public Expression getNewConceptFQName() {
-    return (Expression)this.getChild(ChangeFeatureNameOperation.NEW_CONCEPT_F_Q_NAME);
+    return (Expression)this.getChild(Expression.class, ChangeFeatureNameOperation.NEW_CONCEPT_F_Q_NAME);
   }
 
   public void setNewConceptFQName(Expression node) {
@@ -36,7 +36,7 @@ public class ChangeFeatureNameOperation extends Statement {
   }
 
   public Expression getNewFeatureName() {
-    return (Expression)this.getChild(ChangeFeatureNameOperation.NEW_FEATURE_NAME);
+    return (Expression)this.getChild(Expression.class, ChangeFeatureNameOperation.NEW_FEATURE_NAME);
   }
 
   public void setNewFeatureName(Expression node) {

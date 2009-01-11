@@ -50,11 +50,11 @@ public class NodeOperationsContainer extends BaseConcept implements INodeAnnotat
   }
 
   public Iterator<NodeOperation> operationses() {
-    return this.children(NodeOperationsContainer.OPERATIONS);
+    return this.children(NodeOperation.class, NodeOperationsContainer.OPERATIONS);
   }
 
   public List<NodeOperation> getOperationses() {
-    return this.getChildren(NodeOperationsContainer.OPERATIONS);
+    return this.getChildren(NodeOperation.class, NodeOperationsContainer.OPERATIONS);
   }
 
   public void addOperations(NodeOperation node) {

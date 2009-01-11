@@ -17,7 +17,7 @@ public class PropertyNameTarget extends MessageTarget {
   }
 
   public Expression getPropertyName() {
-    return (Expression)this.getChild(PropertyNameTarget.PROPERTY_NAME);
+    return (Expression)this.getChild(Expression.class, PropertyNameTarget.PROPERTY_NAME);
   }
 
   public void setPropertyName(Expression node) {

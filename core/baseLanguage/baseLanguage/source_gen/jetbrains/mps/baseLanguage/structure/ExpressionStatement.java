@@ -44,7 +44,7 @@ public class ExpressionStatement extends Statement implements IWrapper {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(ExpressionStatement.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, ExpressionStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

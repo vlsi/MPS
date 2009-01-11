@@ -65,7 +65,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(ConceptConstraints.CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptConstraints.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -73,7 +73,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   }
 
   public ConceptDeclaration getDefaultConcreteConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptConstraints.DEFAULT_CONCRETE_CONCEPT);
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, ConceptConstraints.DEFAULT_CONCRETE_CONCEPT);
   }
 
   public void setDefaultConcreteConcept(ConceptDeclaration node) {
@@ -81,7 +81,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   }
 
   public NodeDefaultSearchScope getDefaultScope() {
-    return (NodeDefaultSearchScope)this.getChild(ConceptConstraints.DEFAULT_SCOPE);
+    return (NodeDefaultSearchScope)this.getChild(NodeDefaultSearchScope.class, ConceptConstraints.DEFAULT_SCOPE);
   }
 
   public void setDefaultScope(NodeDefaultSearchScope node) {
@@ -89,7 +89,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   }
 
   public ConstraintFunction_CanBeAChild getCanBeChild() {
-    return (ConstraintFunction_CanBeAChild)this.getChild(ConceptConstraints.CAN_BE_CHILD);
+    return (ConstraintFunction_CanBeAChild)this.getChild(ConstraintFunction_CanBeAChild.class, ConceptConstraints.CAN_BE_CHILD);
   }
 
   public void setCanBeChild(ConstraintFunction_CanBeAChild node) {
@@ -97,7 +97,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   }
 
   public ConstraintFunction_CanBeARoot getCanBeRoot() {
-    return (ConstraintFunction_CanBeARoot)this.getChild(ConceptConstraints.CAN_BE_ROOT);
+    return (ConstraintFunction_CanBeARoot)this.getChild(ConstraintFunction_CanBeARoot.class, ConceptConstraints.CAN_BE_ROOT);
   }
 
   public void setCanBeRoot(ConstraintFunction_CanBeARoot node) {
@@ -105,7 +105,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   }
 
   public ConstraintFunction_CanBeAParent getCanBeParent() {
-    return (ConstraintFunction_CanBeAParent)this.getChild(ConceptConstraints.CAN_BE_PARENT);
+    return (ConstraintFunction_CanBeAParent)this.getChild(ConstraintFunction_CanBeAParent.class, ConceptConstraints.CAN_BE_PARENT);
   }
 
   public void setCanBeParent(ConstraintFunction_CanBeAParent node) {
@@ -117,11 +117,11 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<NodePropertyConstraint> properties() {
-    return this.children(ConceptConstraints.PROPERTY);
+    return this.children(NodePropertyConstraint.class, ConceptConstraints.PROPERTY);
   }
 
   public List<NodePropertyConstraint> getProperties() {
-    return this.getChildren(ConceptConstraints.PROPERTY);
+    return this.getChildren(NodePropertyConstraint.class, ConceptConstraints.PROPERTY);
   }
 
   public void addProperty(NodePropertyConstraint node) {
@@ -137,11 +137,11 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<NodeReferentConstraint> referents() {
-    return this.children(ConceptConstraints.REFERENT);
+    return this.children(NodeReferentConstraint.class, ConceptConstraints.REFERENT);
   }
 
   public List<NodeReferentConstraint> getReferents() {
-    return this.getChildren(ConceptConstraints.REFERENT);
+    return this.getChildren(NodeReferentConstraint.class, ConceptConstraints.REFERENT);
   }
 
   public void addReferent(NodeReferentConstraint node) {

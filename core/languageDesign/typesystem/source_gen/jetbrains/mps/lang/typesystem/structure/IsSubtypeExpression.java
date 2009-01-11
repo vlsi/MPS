@@ -18,7 +18,7 @@ public class IsSubtypeExpression extends Expression {
   }
 
   public Expression getSubtypeExpression() {
-    return (Expression)this.getChild(IsSubtypeExpression.SUBTYPE_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, IsSubtypeExpression.SUBTYPE_EXPRESSION);
   }
 
   public void setSubtypeExpression(Expression node) {
@@ -26,7 +26,7 @@ public class IsSubtypeExpression extends Expression {
   }
 
   public Expression getSupertypeExpression() {
-    return (Expression)this.getChild(IsSubtypeExpression.SUPERTYPE_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, IsSubtypeExpression.SUPERTYPE_EXPRESSION);
   }
 
   public void setSupertypeExpression(Expression node) {

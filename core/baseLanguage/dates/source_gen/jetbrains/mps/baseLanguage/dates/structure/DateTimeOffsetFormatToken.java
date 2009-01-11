@@ -22,11 +22,11 @@ public class DateTimeOffsetFormatToken extends FormatToken {
   }
 
   public Iterator<DurationTypeReference> durationTypeReferences() {
-    return this.children(DateTimeOffsetFormatToken.DURATION_TYPE_REFERENCE);
+    return this.children(DurationTypeReference.class, DateTimeOffsetFormatToken.DURATION_TYPE_REFERENCE);
   }
 
   public List<DurationTypeReference> getDurationTypeReferences() {
-    return this.getChildren(DateTimeOffsetFormatToken.DURATION_TYPE_REFERENCE);
+    return this.getChildren(DurationTypeReference.class, DateTimeOffsetFormatToken.DURATION_TYPE_REFERENCE);
   }
 
   public void addDurationTypeReference(DurationTypeReference node) {

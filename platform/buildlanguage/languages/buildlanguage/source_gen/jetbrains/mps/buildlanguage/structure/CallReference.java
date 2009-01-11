@@ -17,7 +17,7 @@ public class CallReference extends PropertyValueExpression {
   }
 
   public GenericCall getCall() {
-    return (GenericCall)this.getReferent(CallReference.CALL);
+    return (GenericCall)this.getReferent(GenericCall.class, CallReference.CALL);
   }
 
   public void setCall(GenericCall node) {

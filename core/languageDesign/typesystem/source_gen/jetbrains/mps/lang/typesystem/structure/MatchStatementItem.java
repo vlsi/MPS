@@ -19,7 +19,7 @@ public class MatchStatementItem extends BaseConcept {
   }
 
   public ApplicableNodeCondition getCondition() {
-    return (ApplicableNodeCondition)this.getChild(MatchStatementItem.CONDITION);
+    return (ApplicableNodeCondition)this.getChild(ApplicableNodeCondition.class, MatchStatementItem.CONDITION);
   }
 
   public void setCondition(ApplicableNodeCondition node) {
@@ -27,7 +27,7 @@ public class MatchStatementItem extends BaseConcept {
   }
 
   public StatementList getIfTrue() {
-    return (StatementList)this.getChild(MatchStatementItem.IF_TRUE);
+    return (StatementList)this.getChild(StatementList.class, MatchStatementItem.IF_TRUE);
   }
 
   public void setIfTrue(StatementList node) {

@@ -78,11 +78,11 @@ public class EntitySet extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<EntityBlock> entityBlocks() {
-    return this.children(EntitySet.ENTITY_BLOCK);
+    return this.children(EntityBlock.class, EntitySet.ENTITY_BLOCK);
   }
 
   public List<EntityBlock> getEntityBlocks() {
-    return this.getChildren(EntitySet.ENTITY_BLOCK);
+    return this.getChildren(EntityBlock.class, EntitySet.ENTITY_BLOCK);
   }
 
   public void addEntityBlock(EntityBlock node) {

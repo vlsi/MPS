@@ -17,7 +17,7 @@ public class ProjectPluginType extends BaseClassifierType {
   }
 
   public ProjectPluginDeclaration getPlugin() {
-    return (ProjectPluginDeclaration)this.getReferent(ProjectPluginType.PLUGIN);
+    return (ProjectPluginDeclaration)this.getReferent(ProjectPluginDeclaration.class, ProjectPluginType.PLUGIN);
   }
 
   public void setPlugin(ProjectPluginDeclaration node) {

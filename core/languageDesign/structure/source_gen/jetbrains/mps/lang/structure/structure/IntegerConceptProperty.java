@@ -24,7 +24,7 @@ public class IntegerConceptProperty extends ConceptProperty {
   }
 
   public IntegerConceptPropertyDeclaration getIntegerConceptPropertyDeclaration() {
-    return (IntegerConceptPropertyDeclaration)this.getConceptPropertyDeclaration();
+    return this.ensureAdapter(IntegerConceptPropertyDeclaration.class, "conceptPropertyDeclaration", this.getConceptPropertyDeclaration());
   }
 
   public void setIntegerConceptPropertyDeclaration(IntegerConceptPropertyDeclaration node) {

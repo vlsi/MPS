@@ -32,11 +32,11 @@ public class TypeExpressionList extends BaseConcept {
   }
 
   public Iterator<TypeExpression> typeExpressions() {
-    return this.children(TypeExpressionList.TYPE_EXPRESSION);
+    return this.children(TypeExpression.class, TypeExpressionList.TYPE_EXPRESSION);
   }
 
   public List<TypeExpression> getTypeExpressions() {
-    return this.getChildren(TypeExpressionList.TYPE_EXPRESSION);
+    return this.getChildren(TypeExpression.class, TypeExpressionList.TYPE_EXPRESSION);
   }
 
   public void addTypeExpression(TypeExpression node) {

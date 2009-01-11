@@ -28,7 +28,7 @@ public class GenerationContextOp_GetOutputListByLabelAndInput extends Generation
   }
 
   public MappingLabelDeclaration getLabel() {
-    return (MappingLabelDeclaration)this.getReferent(GenerationContextOp_GetOutputListByLabelAndInput.LABEL);
+    return (MappingLabelDeclaration)this.getReferent(MappingLabelDeclaration.class, GenerationContextOp_GetOutputListByLabelAndInput.LABEL);
   }
 
   public void setLabel(MappingLabelDeclaration node) {
@@ -36,7 +36,7 @@ public class GenerationContextOp_GetOutputListByLabelAndInput extends Generation
   }
 
   public Expression getInputNode() {
-    return (Expression)this.getChild(GenerationContextOp_GetOutputListByLabelAndInput.INPUT_NODE);
+    return (Expression)this.getChild(Expression.class, GenerationContextOp_GetOutputListByLabelAndInput.INPUT_NODE);
   }
 
   public void setInputNode(Expression node) {

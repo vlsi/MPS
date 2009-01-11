@@ -18,7 +18,7 @@ public class SwitchCase extends BaseConcept {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(SwitchCase.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, SwitchCase.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -26,7 +26,7 @@ public class SwitchCase extends BaseConcept {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(SwitchCase.BODY);
+    return (StatementList)this.getChild(StatementList.class, SwitchCase.BODY);
   }
 
   public void setBody(StatementList node) {

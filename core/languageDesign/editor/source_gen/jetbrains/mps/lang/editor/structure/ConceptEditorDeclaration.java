@@ -53,7 +53,7 @@ public class ConceptEditorDeclaration extends BaseEditorComponent implements INa
   }
 
   public EditorCellModel getInspectedCellModel() {
-    return (EditorCellModel)this.getChild(ConceptEditorDeclaration.INSPECTED_CELL_MODEL);
+    return (EditorCellModel)this.getChild(EditorCellModel.class, ConceptEditorDeclaration.INSPECTED_CELL_MODEL);
   }
 
   public void setInspectedCellModel(EditorCellModel node) {

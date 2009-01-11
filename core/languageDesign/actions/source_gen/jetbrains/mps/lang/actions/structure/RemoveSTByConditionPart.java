@@ -16,7 +16,7 @@ public class RemoveSTByConditionPart extends MenuBuilderPart {
   }
 
   public QueryFunction_ST_RemoveBy_Condition getCondition() {
-    return (QueryFunction_ST_RemoveBy_Condition)this.getChild(RemoveSTByConditionPart.CONDITION);
+    return (QueryFunction_ST_RemoveBy_Condition)this.getChild(QueryFunction_ST_RemoveBy_Condition.class, RemoveSTByConditionPart.CONDITION);
   }
 
   public void setCondition(QueryFunction_ST_RemoveBy_Condition node) {

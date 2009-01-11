@@ -17,7 +17,7 @@ public class BaseAssignmentExpression extends Expression {
   }
 
   public Expression getLValue() {
-    return (Expression)this.getChild(BaseAssignmentExpression.L_VALUE);
+    return (Expression)this.getChild(Expression.class, BaseAssignmentExpression.L_VALUE);
   }
 
   public void setLValue(Expression node) {
@@ -25,7 +25,7 @@ public class BaseAssignmentExpression extends Expression {
   }
 
   public Expression getRValue() {
-    return (Expression)this.getChild(BaseAssignmentExpression.R_VALUE);
+    return (Expression)this.getChild(Expression.class, BaseAssignmentExpression.R_VALUE);
   }
 
   public void setRValue(Expression node) {

@@ -60,11 +60,11 @@ public class NodeFactories extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<NodeFactory> nodeFactories() {
-    return this.children(NodeFactories.NODE_FACTORY);
+    return this.children(NodeFactory.class, NodeFactories.NODE_FACTORY);
   }
 
   public List<NodeFactory> getNodeFactories() {
-    return this.getChildren(NodeFactories.NODE_FACTORY);
+    return this.getChildren(NodeFactory.class, NodeFactories.NODE_FACTORY);
   }
 
   public void addNodeFactory(NodeFactory node) {

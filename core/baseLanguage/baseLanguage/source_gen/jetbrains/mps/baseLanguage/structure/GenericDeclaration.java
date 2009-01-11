@@ -60,11 +60,11 @@ public class GenericDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<TypeVariableDeclaration> typeVariableDeclarations() {
-    return this.children(GenericDeclaration.TYPE_VARIABLE_DECLARATION);
+    return this.children(TypeVariableDeclaration.class, GenericDeclaration.TYPE_VARIABLE_DECLARATION);
   }
 
   public List<TypeVariableDeclaration> getTypeVariableDeclarations() {
-    return this.getChildren(GenericDeclaration.TYPE_VARIABLE_DECLARATION);
+    return this.getChildren(TypeVariableDeclaration.class, GenericDeclaration.TYPE_VARIABLE_DECLARATION);
   }
 
   public void addTypeVariableDeclaration(TypeVariableDeclaration node) {

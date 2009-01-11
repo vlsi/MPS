@@ -59,7 +59,7 @@ public class PreferencesComponentDeclaration extends BaseConcept implements ICla
   }
 
   public OnAfterReadBlock getAfterReadBlock() {
-    return (OnAfterReadBlock)this.getChild(PreferencesComponentDeclaration.AFTER_READ_BLOCK);
+    return (OnAfterReadBlock)this.getChild(OnAfterReadBlock.class, PreferencesComponentDeclaration.AFTER_READ_BLOCK);
   }
 
   public void setAfterReadBlock(OnAfterReadBlock node) {
@@ -67,7 +67,7 @@ public class PreferencesComponentDeclaration extends BaseConcept implements ICla
   }
 
   public OnBeforeWriteBlock getBeforeWriteBlock() {
-    return (OnBeforeWriteBlock)this.getChild(PreferencesComponentDeclaration.BEFORE_WRITE_BLOCK);
+    return (OnBeforeWriteBlock)this.getChild(OnBeforeWriteBlock.class, PreferencesComponentDeclaration.BEFORE_WRITE_BLOCK);
   }
 
   public void setBeforeWriteBlock(OnBeforeWriteBlock node) {
@@ -79,11 +79,11 @@ public class PreferencesComponentDeclaration extends BaseConcept implements ICla
   }
 
   public Iterator<PersistentPropertyDeclaration> persistenPropertyDeclarations() {
-    return this.children(PreferencesComponentDeclaration.PERSISTEN_PROPERTY_DECLARATION);
+    return this.children(PersistentPropertyDeclaration.class, PreferencesComponentDeclaration.PERSISTEN_PROPERTY_DECLARATION);
   }
 
   public List<PersistentPropertyDeclaration> getPersistenPropertyDeclarations() {
-    return this.getChildren(PreferencesComponentDeclaration.PERSISTEN_PROPERTY_DECLARATION);
+    return this.getChildren(PersistentPropertyDeclaration.class, PreferencesComponentDeclaration.PERSISTEN_PROPERTY_DECLARATION);
   }
 
   public void addPersistenPropertyDeclaration(PersistentPropertyDeclaration node) {
@@ -99,11 +99,11 @@ public class PreferencesComponentDeclaration extends BaseConcept implements ICla
   }
 
   public Iterator<PreferencePage> preferencePages() {
-    return this.children(PreferencesComponentDeclaration.PREFERENCE_PAGE);
+    return this.children(PreferencePage.class, PreferencesComponentDeclaration.PREFERENCE_PAGE);
   }
 
   public List<PreferencePage> getPreferencePages() {
-    return this.getChildren(PreferencesComponentDeclaration.PREFERENCE_PAGE);
+    return this.getChildren(PreferencePage.class, PreferencesComponentDeclaration.PREFERENCE_PAGE);
   }
 
   public void addPreferencePage(PreferencePage node) {

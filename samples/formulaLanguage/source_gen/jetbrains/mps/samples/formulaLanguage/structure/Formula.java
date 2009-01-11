@@ -17,7 +17,7 @@ public class Formula extends BaseConcept {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Formula.EXPRESSION);
+    return (Expression)this.getChild(Expression.class, Formula.EXPRESSION);
   }
 
   public void setExpression(Expression node) {

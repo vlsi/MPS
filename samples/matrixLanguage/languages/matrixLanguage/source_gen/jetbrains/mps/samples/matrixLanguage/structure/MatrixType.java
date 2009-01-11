@@ -17,7 +17,7 @@ public class MatrixType extends Type {
   }
 
   public Type getScalarType() {
-    return (Type)this.getChild(MatrixType.SCALAR_TYPE);
+    return (Type)this.getChild(Type.class, MatrixType.SCALAR_TYPE);
   }
 
   public void setScalarType(Type node) {

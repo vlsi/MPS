@@ -18,7 +18,7 @@ public class InternalClassExpression extends Expression {
   }
 
   public Type getType() {
-    return (Type)this.getChild(InternalClassExpression.TYPE);
+    return (Type)this.getChild(Type.class, InternalClassExpression.TYPE);
   }
 
   public void setType(Type node) {

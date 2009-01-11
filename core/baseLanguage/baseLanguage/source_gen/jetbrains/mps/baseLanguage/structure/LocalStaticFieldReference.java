@@ -15,7 +15,7 @@ public class LocalStaticFieldReference extends VariableReference {
   }
 
   public StaticFieldDeclaration getStaticFieldDeclaration() {
-    return (StaticFieldDeclaration)this.getVariableDeclaration();
+    return this.ensureAdapter(StaticFieldDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
 
   public void setStaticFieldDeclaration(StaticFieldDeclaration node) {

@@ -19,7 +19,7 @@ public class SimpleRule_Annotated extends SimpleRule {
   }
 
   public ConceptReference getConceptReference() {
-    return (ConceptReference)this.getChild(SimpleRule_Annotated.CONCEPT_REFERENCE);
+    return (ConceptReference)this.getChild(ConceptReference.class, SimpleRule_Annotated.CONCEPT_REFERENCE);
   }
 
   public void setConceptReference(ConceptReference node) {
@@ -27,7 +27,7 @@ public class SimpleRule_Annotated extends SimpleRule {
   }
 
   public Expression getPathExpression() {
-    return (Expression)this.getChild(SimpleRule_Annotated.PATH_EXPRESSION);
+    return (Expression)this.getChild(Expression.class, SimpleRule_Annotated.PATH_EXPRESSION);
   }
 
   public void setPathExpression(Expression node) {

@@ -16,7 +16,7 @@ public class WhereOperation extends TreePathOperation {
   }
 
   public WhereBlock getWhereBlock() {
-    return (WhereBlock)this.getChild(WhereOperation.WHERE_BLOCK);
+    return (WhereBlock)this.getChild(WhereBlock.class, WhereOperation.WHERE_BLOCK);
   }
 
   public void setWhereBlock(WhereBlock node) {

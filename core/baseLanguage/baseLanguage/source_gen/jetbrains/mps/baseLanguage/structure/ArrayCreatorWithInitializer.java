@@ -19,7 +19,7 @@ public class ArrayCreatorWithInitializer extends AbstractCreator {
   }
 
   public Type getComponentType() {
-    return (Type)this.getChild(ArrayCreatorWithInitializer.COMPONENT_TYPE);
+    return (Type)this.getChild(Type.class, ArrayCreatorWithInitializer.COMPONENT_TYPE);
   }
 
   public void setComponentType(Type node) {
@@ -31,11 +31,11 @@ public class ArrayCreatorWithInitializer extends AbstractCreator {
   }
 
   public Iterator<Expression> initValues() {
-    return this.children(ArrayCreatorWithInitializer.INIT_VALUE);
+    return this.children(Expression.class, ArrayCreatorWithInitializer.INIT_VALUE);
   }
 
   public List<Expression> getInitValues() {
-    return this.getChildren(ArrayCreatorWithInitializer.INIT_VALUE);
+    return this.getChildren(Expression.class, ArrayCreatorWithInitializer.INIT_VALUE);
   }
 
   public void addInitValue(Expression node) {

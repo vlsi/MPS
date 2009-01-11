@@ -17,7 +17,7 @@ public class MenuPart extends BaseConcept {
   }
 
   public QueryFunction_ActionType getActionType() {
-    return (QueryFunction_ActionType)this.getChild(MenuPart.ACTION_TYPE);
+    return (QueryFunction_ActionType)this.getChild(QueryFunction_ActionType.class, MenuPart.ACTION_TYPE);
   }
 
   public void setActionType(QueryFunction_ActionType node) {

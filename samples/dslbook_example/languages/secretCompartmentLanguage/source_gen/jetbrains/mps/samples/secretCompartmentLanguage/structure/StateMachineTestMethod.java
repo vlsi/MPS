@@ -29,7 +29,7 @@ public class StateMachineTestMethod extends BaseConcept {
   }
 
   public State getFinalState() {
-    return (State)this.getReferent(StateMachineTestMethod.FINAL_STATE);
+    return (State)this.getReferent(State.class, StateMachineTestMethod.FINAL_STATE);
   }
 
   public void setFinalState(State node) {
@@ -41,11 +41,11 @@ public class StateMachineTestMethod extends BaseConcept {
   }
 
   public Iterator<HandleEvent> handleEvents() {
-    return this.children(StateMachineTestMethod.HANDLE_EVENT);
+    return this.children(HandleEvent.class, StateMachineTestMethod.HANDLE_EVENT);
   }
 
   public List<HandleEvent> getHandleEvents() {
-    return this.getChildren(StateMachineTestMethod.HANDLE_EVENT);
+    return this.getChildren(HandleEvent.class, StateMachineTestMethod.HANDLE_EVENT);
   }
 
   public void addHandleEvent(HandleEvent node) {

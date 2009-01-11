@@ -17,7 +17,7 @@ public class RelativePosition extends Position {
   }
 
   public Expression getRelativeTo() {
-    return (Expression)this.getChild(RelativePosition.RELATIVE_TO);
+    return (Expression)this.getChild(Expression.class, RelativePosition.RELATIVE_TO);
   }
 
   public void setRelativeTo(Expression node) {

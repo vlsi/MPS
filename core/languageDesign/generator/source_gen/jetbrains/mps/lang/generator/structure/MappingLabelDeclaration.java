@@ -56,7 +56,7 @@ public class MappingLabelDeclaration extends BaseConcept implements INamedConcep
   }
 
   public AbstractConceptDeclaration getSourceConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(MappingLabelDeclaration.SOURCE_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, MappingLabelDeclaration.SOURCE_CONCEPT);
   }
 
   public void setSourceConcept(AbstractConceptDeclaration node) {
@@ -64,7 +64,7 @@ public class MappingLabelDeclaration extends BaseConcept implements INamedConcep
   }
 
   public AbstractConceptDeclaration getTargetConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(MappingLabelDeclaration.TARGET_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, MappingLabelDeclaration.TARGET_CONCEPT);
   }
 
   public void setTargetConcept(AbstractConceptDeclaration node) {

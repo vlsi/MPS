@@ -18,7 +18,7 @@ public class NodeRefExpression extends Expression {
   }
 
   public INamedConcept getReferentNode() {
-    return (INamedConcept)this.getReferent(NodeRefExpression.REFERENT_NODE);
+    return (INamedConcept)this.getReferent(INamedConcept.class, NodeRefExpression.REFERENT_NODE);
   }
 
   public void setReferentNode(INamedConcept node) {

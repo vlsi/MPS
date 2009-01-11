@@ -54,7 +54,7 @@ public class ActionConstructionParameterDeclaration extends DefaultClassifierFie
   }
 
   public ToStringConceptFunction getToStringFunction() {
-    return (ToStringConceptFunction)this.getChild(ActionConstructionParameterDeclaration.TO_STRING_FUNCTION);
+    return (ToStringConceptFunction)this.getChild(ToStringConceptFunction.class, ActionConstructionParameterDeclaration.TO_STRING_FUNCTION);
   }
 
   public void setToStringFunction(ToStringConceptFunction node) {

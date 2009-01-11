@@ -17,7 +17,7 @@ public class ContentItem extends BaseConcept {
   }
 
   public ComplexTypeReference getComplexTypeReference() {
-    return (ComplexTypeReference)this.getChild(ContentItem.COMPLEX_TYPE_REFERENCE);
+    return (ComplexTypeReference)this.getChild(ComplexTypeReference.class, ContentItem.COMPLEX_TYPE_REFERENCE);
   }
 
   public void setComplexTypeReference(ComplexTypeReference node) {

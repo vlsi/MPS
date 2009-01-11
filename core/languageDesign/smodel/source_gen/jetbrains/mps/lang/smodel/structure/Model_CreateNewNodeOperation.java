@@ -19,7 +19,7 @@ public class Model_CreateNewNodeOperation extends SNodeOperation {
   }
 
   public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(Model_CreateNewNodeOperation.CONCEPT);
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, Model_CreateNewNodeOperation.CONCEPT);
   }
 
   public void setConcept(ConceptDeclaration node) {
@@ -27,7 +27,7 @@ public class Model_CreateNewNodeOperation extends SNodeOperation {
   }
 
   public Expression getPrototypeNode() {
-    return (Expression)this.getChild(Model_CreateNewNodeOperation.PROTOTYPE_NODE);
+    return (Expression)this.getChild(Expression.class, Model_CreateNewNodeOperation.PROTOTYPE_NODE);
   }
 
   public void setPrototypeNode(Expression node) {

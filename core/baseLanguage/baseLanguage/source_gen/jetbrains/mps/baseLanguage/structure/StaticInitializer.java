@@ -17,7 +17,7 @@ public class StaticInitializer extends BaseConcept {
   }
 
   public StatementList getStatementList() {
-    return (StatementList)this.getChild(StaticInitializer.STATEMENT_LIST);
+    return (StatementList)this.getChild(StatementList.class, StaticInitializer.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {

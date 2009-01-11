@@ -25,7 +25,7 @@ public class FontSizeStyleClassItem extends StyleClassItem {
   }
 
   public QueryFunction_Integer getQuery() {
-    return (QueryFunction_Integer)this.getChild(FontSizeStyleClassItem.QUERY);
+    return (QueryFunction_Integer)this.getChild(QueryFunction_Integer.class, FontSizeStyleClassItem.QUERY);
   }
 
   public void setQuery(QueryFunction_Integer node) {

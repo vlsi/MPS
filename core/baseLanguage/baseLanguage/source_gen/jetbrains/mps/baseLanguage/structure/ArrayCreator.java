@@ -19,7 +19,7 @@ public class ArrayCreator extends AbstractCreator {
   }
 
   public Type getComponentType() {
-    return (Type)this.getChild(ArrayCreator.COMPONENT_TYPE);
+    return (Type)this.getChild(Type.class, ArrayCreator.COMPONENT_TYPE);
   }
 
   public void setComponentType(Type node) {
@@ -31,11 +31,11 @@ public class ArrayCreator extends AbstractCreator {
   }
 
   public Iterator<DimensionExpression> dimensionExpressions() {
-    return this.children(ArrayCreator.DIMENSION_EXPRESSION);
+    return this.children(DimensionExpression.class, ArrayCreator.DIMENSION_EXPRESSION);
   }
 
   public List<DimensionExpression> getDimensionExpressions() {
-    return this.getChildren(ArrayCreator.DIMENSION_EXPRESSION);
+    return this.getChildren(DimensionExpression.class, ArrayCreator.DIMENSION_EXPRESSION);
   }
 
   public void addDimensionExpression(DimensionExpression node) {

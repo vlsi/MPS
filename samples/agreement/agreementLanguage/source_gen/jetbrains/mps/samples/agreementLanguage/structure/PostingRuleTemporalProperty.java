@@ -15,7 +15,7 @@ public class PostingRuleTemporalProperty extends TemporalProperty {
   }
 
   public PostingRule getPostingRule() {
-    return (PostingRule)this.getValue();
+    return this.ensureAdapter(PostingRule.class, "value", this.getValue());
   }
 
   public void setPostingRule(PostingRule node) {

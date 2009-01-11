@@ -18,7 +18,7 @@ public class ResultStatement extends Statement {
   }
 
   public Expression getFoundNode() {
-    return (Expression)this.getChild(ResultStatement.FOUND_NODE);
+    return (Expression)this.getChild(Expression.class, ResultStatement.FOUND_NODE);
   }
 
   public void setFoundNode(Expression node) {

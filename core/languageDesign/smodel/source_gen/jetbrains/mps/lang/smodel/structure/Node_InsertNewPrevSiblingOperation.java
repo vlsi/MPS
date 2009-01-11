@@ -17,7 +17,7 @@ public class Node_InsertNewPrevSiblingOperation extends SNodeOperation {
   }
 
   public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(Node_InsertNewPrevSiblingOperation.CONCEPT);
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, Node_InsertNewPrevSiblingOperation.CONCEPT);
   }
 
   public void setConcept(ConceptDeclaration node) {

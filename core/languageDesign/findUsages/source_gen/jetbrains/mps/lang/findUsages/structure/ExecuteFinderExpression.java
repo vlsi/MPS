@@ -19,7 +19,7 @@ public class ExecuteFinderExpression extends Expression {
   }
 
   public FinderDeclaration getFinder() {
-    return (FinderDeclaration)this.getReferent(ExecuteFinderExpression.FINDER);
+    return (FinderDeclaration)this.getReferent(FinderDeclaration.class, ExecuteFinderExpression.FINDER);
   }
 
   public void setFinder(FinderDeclaration node) {
@@ -27,7 +27,7 @@ public class ExecuteFinderExpression extends Expression {
   }
 
   public Expression getQueryNode() {
-    return (Expression)this.getChild(ExecuteFinderExpression.QUERY_NODE);
+    return (Expression)this.getChild(Expression.class, ExecuteFinderExpression.QUERY_NODE);
   }
 
   public void setQueryNode(Expression node) {
@@ -35,7 +35,7 @@ public class ExecuteFinderExpression extends Expression {
   }
 
   public Expression getQueryScope() {
-    return (Expression)this.getChild(ExecuteFinderExpression.QUERY_SCOPE);
+    return (Expression)this.getChild(Expression.class, ExecuteFinderExpression.QUERY_SCOPE);
   }
 
   public void setQueryScope(Expression node) {

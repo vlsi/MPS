@@ -24,11 +24,11 @@ public class PrintStatement extends Statement {
   }
 
   public Iterator<Expression> textExpressions() {
-    return this.children(PrintStatement.TEXT_EXPRESSION);
+    return this.children(Expression.class, PrintStatement.TEXT_EXPRESSION);
   }
 
   public List<Expression> getTextExpressions() {
-    return this.getChildren(PrintStatement.TEXT_EXPRESSION);
+    return this.getChildren(Expression.class, PrintStatement.TEXT_EXPRESSION);
   }
 
   public void addTextExpression(Expression node) {

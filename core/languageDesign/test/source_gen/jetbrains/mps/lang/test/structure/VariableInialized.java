@@ -17,7 +17,7 @@ public class VariableInialized extends NodeProperty {
   }
 
   public LocalVariableReference getVar() {
-    return (LocalVariableReference)this.getChild(VariableInialized.VAR);
+    return (LocalVariableReference)this.getChild(LocalVariableReference.class, VariableInialized.VAR);
   }
 
   public void setVar(LocalVariableReference node) {

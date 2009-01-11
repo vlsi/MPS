@@ -79,11 +79,11 @@ public class DateFormat extends BaseConcept implements IDateFormat {
   }
 
   public Iterator<FormatToken> tokens() {
-    return this.children(DateFormat.TOKEN);
+    return this.children(FormatToken.class, DateFormat.TOKEN);
   }
 
   public List<FormatToken> getTokens() {
-    return this.getChildren(DateFormat.TOKEN);
+    return this.getChildren(FormatToken.class, DateFormat.TOKEN);
   }
 
   public void addToken(FormatToken node) {

@@ -22,7 +22,7 @@ public class FunctionType extends Type {
   }
 
   public Type getResultType() {
-    return (Type)this.getChild(FunctionType.RESULT_TYPE);
+    return (Type)this.getChild(Type.class, FunctionType.RESULT_TYPE);
   }
 
   public void setResultType(Type node) {
@@ -34,11 +34,11 @@ public class FunctionType extends Type {
   }
 
   public Iterator<Type> parameterTypes() {
-    return this.children(FunctionType.PARAMETER_TYPE);
+    return this.children(Type.class, FunctionType.PARAMETER_TYPE);
   }
 
   public List<Type> getParameterTypes() {
-    return this.getChildren(FunctionType.PARAMETER_TYPE);
+    return this.getChildren(Type.class, FunctionType.PARAMETER_TYPE);
   }
 
   public void addParameterType(Type node) {
@@ -54,11 +54,11 @@ public class FunctionType extends Type {
   }
 
   public Iterator<ClassifierType> throwsTypes() {
-    return this.children(FunctionType.THROWS_TYPE);
+    return this.children(ClassifierType.class, FunctionType.THROWS_TYPE);
   }
 
   public List<ClassifierType> getThrowsTypes() {
-    return this.getChildren(FunctionType.THROWS_TYPE);
+    return this.getChildren(ClassifierType.class, FunctionType.THROWS_TYPE);
   }
 
   public void addThrowsType(ClassifierType node) {

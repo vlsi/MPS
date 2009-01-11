@@ -18,7 +18,7 @@ public class SimpleElement extends BaseElement {
   }
 
   public BaseText getElementName() {
-    return (BaseText)this.getChild(SimpleElement.ELEMENT_NAME);
+    return (BaseText)this.getChild(BaseText.class, SimpleElement.ELEMENT_NAME);
   }
 
   public void setElementName(BaseText node) {

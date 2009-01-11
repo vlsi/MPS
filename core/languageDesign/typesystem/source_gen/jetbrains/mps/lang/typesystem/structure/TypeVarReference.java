@@ -17,7 +17,7 @@ public class TypeVarReference extends Expression {
   }
 
   public TypeVarDeclaration getTypeVarDeclaration() {
-    return (TypeVarDeclaration)this.getReferent(TypeVarReference.TYPE_VAR_DECLARATION);
+    return (TypeVarDeclaration)this.getReferent(TypeVarDeclaration.class, TypeVarReference.TYPE_VAR_DECLARATION);
   }
 
   public void setTypeVarDeclaration(TypeVarDeclaration node) {

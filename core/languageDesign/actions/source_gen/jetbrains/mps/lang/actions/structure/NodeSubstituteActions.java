@@ -60,11 +60,11 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept 
   }
 
   public Iterator<NodeSubstituteActionsBuilder> actionsBuilders() {
-    return this.children(NodeSubstituteActions.ACTIONS_BUILDER);
+    return this.children(NodeSubstituteActionsBuilder.class, NodeSubstituteActions.ACTIONS_BUILDER);
   }
 
   public List<NodeSubstituteActionsBuilder> getActionsBuilders() {
-    return this.getChildren(NodeSubstituteActions.ACTIONS_BUILDER);
+    return this.getChildren(NodeSubstituteActionsBuilder.class, NodeSubstituteActions.ACTIONS_BUILDER);
   }
 
   public void addActionsBuilder(NodeSubstituteActionsBuilder node) {

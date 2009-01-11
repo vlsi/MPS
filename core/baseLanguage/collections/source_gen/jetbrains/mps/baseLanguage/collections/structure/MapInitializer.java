@@ -23,11 +23,11 @@ public class MapInitializer extends BaseConcept {
   }
 
   public Iterator<MapEntry> entrieses() {
-    return this.children(MapInitializer.ENTRIES);
+    return this.children(MapEntry.class, MapInitializer.ENTRIES);
   }
 
   public List<MapEntry> getEntrieses() {
-    return this.getChildren(MapInitializer.ENTRIES);
+    return this.getChildren(MapEntry.class, MapInitializer.ENTRIES);
   }
 
   public void addEntries(MapEntry node) {

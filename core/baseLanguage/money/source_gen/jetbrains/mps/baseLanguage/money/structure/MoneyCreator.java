@@ -19,7 +19,7 @@ public class MoneyCreator extends AbstractCreator {
   }
 
   public Expression getAmount() {
-    return (Expression)this.getChild(MoneyCreator.AMOUNT);
+    return (Expression)this.getChild(Expression.class, MoneyCreator.AMOUNT);
   }
 
   public void setAmount(Expression node) {
@@ -27,7 +27,7 @@ public class MoneyCreator extends AbstractCreator {
   }
 
   public Expression getCurrency() {
-    return (Expression)this.getChild(MoneyCreator.CURRENCY);
+    return (Expression)this.getChild(Expression.class, MoneyCreator.CURRENCY);
   }
 
   public void setCurrency(Expression node) {

@@ -76,7 +76,7 @@ public class IntentionDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public AbstractConceptDeclaration getForConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(IntentionDeclaration.FOR_CONCEPT);
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, IntentionDeclaration.FOR_CONCEPT);
   }
 
   public void setForConcept(AbstractConceptDeclaration node) {
@@ -84,7 +84,7 @@ public class IntentionDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public DescriptionBlock getDescriptionFunction() {
-    return (DescriptionBlock)this.getChild(IntentionDeclaration.DESCRIPTION_FUNCTION);
+    return (DescriptionBlock)this.getChild(DescriptionBlock.class, IntentionDeclaration.DESCRIPTION_FUNCTION);
   }
 
   public void setDescriptionFunction(DescriptionBlock node) {
@@ -92,7 +92,7 @@ public class IntentionDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public IsApplicableBlock getIsApplicableFunction() {
-    return (IsApplicableBlock)this.getChild(IntentionDeclaration.IS_APPLICABLE_FUNCTION);
+    return (IsApplicableBlock)this.getChild(IsApplicableBlock.class, IntentionDeclaration.IS_APPLICABLE_FUNCTION);
   }
 
   public void setIsApplicableFunction(IsApplicableBlock node) {
@@ -100,7 +100,7 @@ public class IntentionDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public ExecuteBlock getExecuteFunction() {
-    return (ExecuteBlock)this.getChild(IntentionDeclaration.EXECUTE_FUNCTION);
+    return (ExecuteBlock)this.getChild(ExecuteBlock.class, IntentionDeclaration.EXECUTE_FUNCTION);
   }
 
   public void setExecuteFunction(ExecuteBlock node) {

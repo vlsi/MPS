@@ -17,7 +17,7 @@ public class CycleReference extends BaseConcept {
   }
 
   public Cycle getCycle() {
-    return (Cycle)this.getReferent(CycleReference.CYCLE);
+    return (Cycle)this.getReferent(Cycle.class, CycleReference.CYCLE);
   }
 
   public void setCycle(Cycle node) {

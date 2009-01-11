@@ -63,7 +63,7 @@ public class ParameterWrapper extends BaseConcept implements INamedConcept {
   }
 
   public BaseConcept getParamRef() {
-    return (BaseConcept)this.getReferent(ParameterWrapper.PARAM_REF);
+    return (BaseConcept)this.getReferent(BaseConcept.class, ParameterWrapper.PARAM_REF);
   }
 
   public void setParamRef(BaseConcept node) {

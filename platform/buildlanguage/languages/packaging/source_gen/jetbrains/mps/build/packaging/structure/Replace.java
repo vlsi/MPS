@@ -22,11 +22,11 @@ public class Replace extends File {
   }
 
   public Iterator<Pair> replacingPairs() {
-    return this.children(Replace.REPLACING_PAIR);
+    return this.children(Pair.class, Replace.REPLACING_PAIR);
   }
 
   public List<Pair> getReplacingPairs() {
-    return this.getChildren(Replace.REPLACING_PAIR);
+    return this.getChildren(Pair.class, Replace.REPLACING_PAIR);
   }
 
   public void addReplacingPair(Pair node) {

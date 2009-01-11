@@ -62,7 +62,7 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(StaticFieldDeclaration.VISIBILITY);
+    return (Visibility)this.getChild(Visibility.class, StaticFieldDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {

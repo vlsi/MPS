@@ -25,7 +25,7 @@ public class AbstractLoopStatement extends Statement {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(AbstractLoopStatement.BODY);
+    return (StatementList)this.getChild(StatementList.class, AbstractLoopStatement.BODY);
   }
 
   public void setBody(StatementList node) {

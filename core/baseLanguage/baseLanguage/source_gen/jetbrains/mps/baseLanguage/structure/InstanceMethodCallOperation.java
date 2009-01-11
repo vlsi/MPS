@@ -47,7 +47,7 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(InstanceMethodCallOperation.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, InstanceMethodCallOperation.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -55,7 +55,7 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
   }
 
   public InstanceMethodDeclaration getInstanceMethodDeclaration() {
-    return (InstanceMethodDeclaration)this.getBaseMethodDeclaration();
+    return this.ensureAdapter(InstanceMethodDeclaration.class, "baseMethodDeclaration", this.getBaseMethodDeclaration());
   }
 
   public void setInstanceMethodDeclaration(InstanceMethodDeclaration node) {
@@ -67,11 +67,11 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
   }
 
   public Iterator<Expression> actualArguments() {
-    return this.children(InstanceMethodCallOperation.ACTUAL_ARGUMENT);
+    return this.children(Expression.class, InstanceMethodCallOperation.ACTUAL_ARGUMENT);
   }
 
   public List<Expression> getActualArguments() {
-    return this.getChildren(InstanceMethodCallOperation.ACTUAL_ARGUMENT);
+    return this.getChildren(Expression.class, InstanceMethodCallOperation.ACTUAL_ARGUMENT);
   }
 
   public void addActualArgument(Expression node) {
