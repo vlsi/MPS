@@ -41,6 +41,7 @@ import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.ActionCallback;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -231,8 +232,8 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     return new JScrollPane(myTree);
   }
 
-  public void updateFromRoot(boolean restoreExpandedPaths) {
-
+  public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
+    return new ActionCallback();
   }
 
   public void select(Object element, VirtualFile file, boolean requestFocus) {

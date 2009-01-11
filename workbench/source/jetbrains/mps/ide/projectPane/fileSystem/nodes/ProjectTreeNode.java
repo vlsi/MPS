@@ -19,13 +19,14 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
+import com.intellij.ide.ui.customization.CustomActionsSchema;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.vfs.VFileSystem;
 

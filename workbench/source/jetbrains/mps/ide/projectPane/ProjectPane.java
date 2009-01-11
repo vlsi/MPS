@@ -36,6 +36,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.wm.IdeFocusManager;
+import com.intellij.openapi.util.ActionCallback;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
@@ -333,8 +334,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return Icons.CLOSED_FOLDER;
   }
 
-  public void updateFromRoot(boolean restoreExpandedPaths) {
+  public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
     getTree().rebuildLater();
+    return new ActionCallback(); // todo
   }
 
   public void select(Object element, final VirtualFile file, final boolean requestFocus) {
