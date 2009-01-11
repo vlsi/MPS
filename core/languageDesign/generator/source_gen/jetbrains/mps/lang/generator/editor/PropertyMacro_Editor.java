@@ -157,7 +157,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_9323_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9323_1");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
-    MacroSymbol_Actions.setCellActions(editorCell, node, context);
+    PropertyMacroActions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_AttributedPropertyCell_9323_0(EditorCell editorCell, SNode node, EditorContext context) {
