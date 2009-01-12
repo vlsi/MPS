@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.UndoUtil;
 import jetbrains.mps.smodel.SNodeUndoableAction;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
@@ -46,7 +47,7 @@ import com.intellij.util.ui.UIUtil;
 public abstract class EditorCell_Label extends EditorCell_Basic {
   protected boolean myNoTextSet;
   protected TextLine myTextLine;
-  protected TextLine myNullTextLine; 
+  protected TextLine myNullTextLine;
   protected boolean myCaretIsVisible = true;
 
   protected EditorCell_Label(@NotNull EditorContext editorContext, SNode node, String text) {
@@ -93,7 +94,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     getStyle().set(StyleAttributes.DEFAULT_CARET_POSITON, defaultCaretPosition);
   }
 
-  public boolean canPasteText () {
+  public boolean canPasteText() {
     return true;
   }
 
@@ -168,7 +169,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public void setCaretPosition(int position, boolean selection) {
-    assert isCaretPositionAllowed(position);    
+    assert isCaretPositionAllowed(position);
     myTextLine.setCaretPosition(position, selection);
   }
 
@@ -205,7 +206,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       return isFirstPositionAllowed() || isLastPositionAllowed();
     }
 
-    return true;    
+    return true;
   }
 
   public boolean isFirstCaretPosition() {
@@ -268,7 +269,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     } else {
       textLineWidth = myTextLine.getEffectiveWidth();
     }
-    if (isDrawBrackets()) textLineWidth += 2*BRACKET_WIDTH;
+    if (isDrawBrackets()) textLineWidth += 2 * BRACKET_WIDTH;
     return textLineWidth;
   }
 
@@ -325,7 +326,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     } else {
       textLine.paint(g, myX, myY, myWidth, myHeight, selected, toShowCaret);
     }
-  }  
+  }
 
   protected boolean toShowCaret() {
     return myCaretIsVisible && isWithinSelection() && getEditor().hasFocus();
@@ -383,10 +384,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   protected boolean doProcessKeyPressed(KeyEvent keyEvent, boolean allowErrors) {
     myCaretIsVisible = true;
 
-    if (isNotApplicableKeyEvent(keyEvent)) return false;                                               
+    if (isNotApplicableKeyEvent(keyEvent)) return false;
 
     if (processMutableKeyPressed(keyEvent, allowErrors)) {
-      getEditorContext().flushEvents();      
+      getEditorContext().flushEvents();
 
       getEditor().relayout();
       return true;
@@ -394,7 +395,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return false;
   }
 
-  protected boolean doProcessKeyTyped(KeyEvent keyEvent, boolean allowErrors) {
+  protected boolean doProcessKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
     int wasPosition = getCaretPosition();
     CellSide side;
     if (wasPosition == 0) {
@@ -406,23 +407,32 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myCaretIsVisible = true;
 
 
-    if (isEditable() && processMutableKeyTyped(keyEvent, allowErrors)) {
-      getEditorContext().flushEvents();
 
-      getEditor().relayout();
-
-      if (isErrorState()) {
-        if (allowsIntelligentInputKeyStroke(keyEvent)) {
-          String pattern = this.getRenderedText();
-          IntelligentInputUtil.processCell(this, getEditorContext(), pattern, side);
+    if (isEditable()) {
+      final boolean result[] = new boolean[1];
+      getEditorContext().executeCommand(new Runnable() {
+        public void run() {
+          result[0] = processMutableKeyTyped(keyEvent, allowErrors);
         }
-      }
+      });
+      if (result[0]) {
+        getEditorContext().flushEvents();
 
-      return true;
+        getEditor().relayout();
+
+        if (isErrorState()) {
+          if (allowsIntelligentInputKeyStroke(keyEvent)) {
+            String pattern = this.getRenderedText();
+            IntelligentInputUtil.processCell(this, getEditorContext(), pattern, side);
+          }
+        }
+
+        return true;
+      }
     }
     if (!isEditable() && allowsIntelligentInputKeyStroke(keyEvent)) {
       String pattern = getRenderedTextOn(keyEvent);
-      if (!pattern.equals(getRenderedText())) {       
+      if (!pattern.equals(getRenderedText())) {
         return IntelligentInputUtil.processCell(this, getEditorContext(), pattern, side);
       }
     }
@@ -546,40 +556,30 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   private boolean processMutableKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
-    final boolean[] result = new boolean[1];
+    String oldText = myTextLine.getText();
+    EditorComponent editor = getEditorContext().getNodeEditorComponent();
 
-    getEditorContext().executeCommand(new Runnable() {
-      public void run() {
-        String oldText = myTextLine.getText();
-        EditorComponent editor = getEditorContext().getNodeEditorComponent();
+    int startSelection = myTextLine.getStartTextSelectionPosition();
+    int endSelection = myTextLine.getEndTextSelectionPosition();
 
-        int startSelection = myTextLine.getStartTextSelectionPosition();
-        int endSelection = myTextLine.getEndTextSelectionPosition();
+    char keyChar = keyEvent.getKeyChar();
+    if (UIUtil.isReallyTypedEvent(keyEvent)) {
+      String newText = oldText.substring(0, startSelection) + keyChar + oldText.substring(endSelection);
 
-        char keyChar = keyEvent.getKeyChar();
-        if (UIUtil.isReallyTypedEvent(keyEvent)) {
-          String newText = oldText.substring(0, startSelection) + keyChar + oldText.substring(endSelection);
-
-          if (!allowErrors && !isValidText(newText)) {
-            result[0] = false;
-            return;
-          }
-
-          changeText(newText);
-          setCaretPositionIfPossible(startSelection + 1);
-          myTextLine.resetSelection();
-          editor.resetLastCaretX();
-          ensureCaretVisible();
-          result[0] = true;
-          return;
-        }
-        result[0] = false;
-        return;
+      if (!allowErrors && !isValidText(newText)) {
+        return false;
       }
-    });
 
-    return result[0];
+      changeText(newText);
+      setCaretPositionIfPossible(startSelection + 1);
+      myTextLine.resetSelection();
+      editor.resetLastCaretX();
+      ensureCaretVisible();
+      return true;
+    }
+    return false;
   }
+
 
   private boolean canDeleteFrom(EditorCell cell) {
     if (getText().length() == 0) return false;
@@ -596,7 +596,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         LinkDeclaration link = getSNode().getRoleLink();
         String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(link.getTarget()), getOperationContext().getScope());
         SNode newNode = new SNode(getSNode().getModel(), concreteConceptFqName);
-        getSNode().getParent().replaceChild(getSNode(), newNode);        
+        getSNode().getParent().replaceChild(getSNode(), newNode);
       }
     }
   }
@@ -608,7 +608,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   private boolean isNotApplicableKeyEvent(KeyEvent keyEvent) {
     return (keyEvent.isControlDown() &&
-      !(keyEvent.getKeyCode() == KeyEvent.VK_LEFT || keyEvent.getKeyCode() == KeyEvent.VK_RIGHT)) 
+      !(keyEvent.getKeyCode() == KeyEvent.VK_LEFT || keyEvent.getKeyCode() == KeyEvent.VK_RIGHT))
       || keyEvent.isAltDown();
   }
 
@@ -803,7 +803,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     public boolean canExecute(EditorContext context) {
       if (context.getNodeEditorComponent().getNodeRangeSelection().isActive()) return false;
       return (context.getSelectedCell() instanceof EditorCell_Label) &&
-        ((EditorCell_Label)context.getSelectedCell()).getSelectedText().length() > 0;
+        ((EditorCell_Label) context.getSelectedCell()).getSelectedText().length() > 0;
     }
 
     public void execute(EditorContext context) {
@@ -866,7 +866,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     public boolean canExecute(EditorContext context) {
       if (context.getNodeEditorComponent().getNodeRangeSelection().isActive()) return false;
       return (context.getSelectedCell() instanceof EditorCell_Label) &&
-        ((EditorCell_Label)context.getSelectedCell()).getSelectedText().length() > 0;
+        ((EditorCell_Label) context.getSelectedCell()).getSelectedText().length() > 0;
     }
 
     public void execute(EditorContext context) {
