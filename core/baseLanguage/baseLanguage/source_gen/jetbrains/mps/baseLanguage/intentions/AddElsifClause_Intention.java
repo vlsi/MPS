@@ -31,7 +31,10 @@ public class AddElsifClause_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
+    SNode ifFalse = SLinkOperations.getTarget(node, "ifFalseStatement", true);
+    SLinkOperations.setTarget(node, "ifFalseStatement", null, true);
     SLinkOperations.addNewChild(node, "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
+    SLinkOperations.setTarget(node, "ifFalseStatement", ifFalse, true);
   }
 
   public String getLocationString() {
