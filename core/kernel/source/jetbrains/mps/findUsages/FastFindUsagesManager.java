@@ -158,7 +158,7 @@ class FastFindUsagesManager extends FindUsagesManager {
     for (SModelDescriptor sm : scope.getModelDescriptors()) {
       if (sm.isInitialized()) {
         IFile modelFile = sm.getModelFile();
-        if (modelFile == null || result.contains(modelFile.toVirtualFile())) continue;
+        if (modelFile == null) continue;
         sm.getSModel();
         result.addAll(sm.findUsages(nodes));
       }
