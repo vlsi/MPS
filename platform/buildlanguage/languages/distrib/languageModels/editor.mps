@@ -207,6 +207,37 @@
               <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1231691747696">
                 <link role="relationDeclaration" targetNodeId="1.1231691563959" resolveInfo="useVMOptions" />
               </node>
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1231768819579">
+                <property name="vertical" value="false" />
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1231768819580">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1231768820427">
+                  <property name="text" value="path to vmoptions file" />
+                  <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1231768820428">
+                  <property name="allowEmptyText" value="true" />
+                  <property name="emptyNoTargetText" value="false" />
+                  <link role="styleClass" targetNodeId="1231691932747" resolveInfo="pathString" />
+                  <link role="relationDeclaration" targetNodeId="1.1231768725104" resolveInfo="pathToVMOptions" />
+                </node>
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1231768819582">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1231768824492">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231768824493">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231768853802">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231768854929">
+                        <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1231768853803" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1231768857510">
+                          <link role="property" targetNodeId="1.1231691563959" resolveInfo="useVMOptionsFile" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1231691719163">
                 <property name="flag" value="false" />
               </node>

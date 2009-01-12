@@ -4,6 +4,9 @@ package jetbrains.mps.build.distrib.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class SystemSpecificConfig_Behavior {
 
@@ -16,6 +19,14 @@ public class SystemSpecificConfig_Behavior {
 
   public static String call_getVMOptionfFileName_1231748960223(SNode thisNode) {
     return DistribConfiguration_Behavior.call_getVMOptionsFileName_1231749012626(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode)) + "." + DistribConfiguration_Behavior.call_getVMOptionsExt_1231692561653(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode));
+  }
+
+  public static String call_getVMOptionsFilePath_1231769123888(SNode thisNode) {
+    SNode distConf = SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode);
+    if (StringUtils.isEmpty(SPropertyOperations.getString(distConf, "pathToVMOptions")) || SPropertyOperations.getString(distConf, "pathToVMOptions").equals(".")) {
+      return SystemSpecificConfig_Behavior.call_getVMOptionfFileName_1231748960223(thisNode);
+    }
+    return SPropertyOperations.getString(distConf, "pathToVMOptions") + SConceptPropertyOperations.getString(thisNode, "pathSeparator") + SystemSpecificConfig_Behavior.call_getVMOptionfFileName_1231748960223(thisNode);
   }
 
 }

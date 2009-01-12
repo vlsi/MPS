@@ -22,21 +22,23 @@ import java.io.IOException;
 import java.util.*;
 
 public class GenerateNSI {
-  private final File myBaseDir;
+  private final List<File> myBaseDirs = new ArrayList<File>();
   private final File myCurrentDir;
   private final String myInput;
   private final String myOutput;
 
   public static void main(String[] args) throws IOException {
-    new GenerateNSI(args[0], args[1], args[2]).generate();
+    new GenerateNSI(args).generate();
   }
 
-  public GenerateNSI(String basedir, String input, String output) {
-    myBaseDir = new File(basedir);
+  public GenerateNSI(String[] args) {
+    for (int i = 2; i < args.length; i++) {
+      myBaseDirs.add(new File(args[i]));
+    }
     myCurrentDir = new File("");
     System.out.println(myCurrentDir.getAbsolutePath());
-    myInput = input;
-    myOutput = output;
+    myInput = args[0];
+    myOutput = args[1];
   }
 
   public void generate() throws IOException {
@@ -50,13 +52,16 @@ public class GenerateNSI {
     }
   }
 
-  private String getRelativePath(String path) {
-    return getRelativePath(path, myBaseDir.getAbsolutePath());
+  private String getRelativePath(String path, File basedir) {
+    return getRelativePath(path, basedir.getAbsolutePath());
   }
 
   private String getRelativePath(String path, String basePath) {
+    if (!path.startsWith(basePath)) {
+      return path;
+    }
     String rPath = path.substring(basePath.length(), path.length());
-    if (rPath.startsWith(File.separator)){
+    if (rPath.startsWith(File.separator)) {
       rPath = rPath.substring(1, rPath.length());
     }
     return rPath;
@@ -65,52 +70,53 @@ public class GenerateNSI {
   private void generateUninstFile() throws IOException {
     BufferedWriter uninstWriter = new BufferedWriter(new FileWriter(myOutput));
     try {
-      List<File> allFiles = getAllFiles();
-
-      Collections.sort(allFiles, new FileComparator());
-      for (File file : allFiles) {
-        uninstWriter.newLine();
-        uninstWriter.write("Delete \"$INSTDIR\\" + getRelativePath(file.getAbsolutePath()) + "\"");
-      }
-
-      uninstWriter.newLine();
-      List<File> dirs = getAllDirs();
-      Collections.sort(dirs, new FileComparator());
-      for (int i = dirs.size() - 1; i >= 0; i--) {
-        final File dir = dirs.get(i);
-        if (dir.getAbsolutePath().length() == 0) continue;
-        uninstWriter.newLine();
-        uninstWriter.write("RmDir \"$INSTDIR\\" + getRelativePath(dir.getAbsolutePath()) + "\"");
+      for (File basedir : myBaseDirs) {
+        if (basedir.isDirectory()) {
+          generateUninstFilePart(uninstWriter, basedir);
+        } else {
+          generateUninstFilePartForFile(uninstWriter, basedir);
+        }
       }
       uninstWriter.newLine();
       uninstWriter.write("RmDir \"$INSTDIR\"");
-    }
-    finally{
+    } finally {
       uninstWriter.close();
+    }
+  }
+
+  private void generateUninstFilePartForFile(BufferedWriter uninstWriter, File file) throws IOException {
+    uninstWriter.newLine();
+    uninstWriter.write("Delete \"$INSTDIR\\" + file.getName() + "\"");
+  }
+
+  private void generateUninstFilePart(BufferedWriter uninstWriter, File basedir) throws IOException {
+    List<File> allFiles = getAllFiles(basedir);
+
+    Collections.sort(allFiles, new FileComparator());
+    for (File file : allFiles) {
+      uninstWriter.newLine();
+      uninstWriter.write("Delete \"$INSTDIR\\" + getRelativePath(file.getAbsolutePath(), basedir) + "\"");
+    }
+
+    uninstWriter.newLine();
+    List<File> dirs = getAllDirs(basedir);
+    Collections.sort(dirs, new FileComparator());
+    for (int i = dirs.size() - 1; i >= 0; i--) {
+      final File dir = dirs.get(i);
+      if (dir.getAbsolutePath().length() == 0) continue;
+      uninstWriter.newLine();
+      uninstWriter.write("RmDir \"$INSTDIR\\" + getRelativePath(dir.getAbsolutePath(), basedir) + "\"");
     }
   }
 
   private void generateInstFile() throws IOException {
     BufferedWriter instWriter = new BufferedWriter(new FileWriter(myInput));
     try {
-      Collection<File> dirs = getAllDirs();
-      for (File dir : dirs) {
-        final File[] files = dir.listFiles();
-        if (files.length == 0) continue;
-        instWriter.newLine();
-        instWriter.newLine();
-        if (dir.getAbsolutePath().length() > myBaseDir.getAbsolutePath().length()) {
-          instWriter.write("SetOutPath \"$INSTDIR\\" + getRelativePath(dir.getAbsolutePath()) + "\"");
-        }
-        else {
-          instWriter.write("SetOutPath $INSTDIR");
-        }
-
-        for (File file : files) {
-          if (!file.isDirectory()){
-            instWriter.newLine();
-            instWriter.write("File \"" + getRelativePath(file.getAbsolutePath(), myCurrentDir.getAbsolutePath()) + "\"");
-          }
+      for (File basedir : myBaseDirs) {
+        if (basedir.isDirectory()) {
+          generateInstFilePart(instWriter, basedir);
+        } else {
+          generateInstFilePartForAFile(instWriter, basedir);
         }
       }
     }
@@ -119,8 +125,38 @@ public class GenerateNSI {
     }
   }
 
-  private List<File> getAllFiles() {
-    return getAllFiles(myBaseDir, new LinkedList<File>());
+  private void generateInstFilePartForAFile(BufferedWriter instWriter, File file) throws IOException {
+    instWriter.newLine();
+    instWriter.newLine();
+    instWriter.write("SetOutPath $INSTDIR");
+    instWriter.newLine();
+    instWriter.write("File \"" + getRelativePath(file.getAbsolutePath(), myCurrentDir.getAbsolutePath()) + "\"");
+  }
+
+  private void generateInstFilePart(BufferedWriter instWriter, File basedir) throws IOException {
+    Collection<File> dirs = getAllDirs(basedir);
+    for (File dir : dirs) {
+      final File[] files = dir.listFiles();
+      if (files.length == 0) continue;
+      instWriter.newLine();
+      instWriter.newLine();
+      if (dir.getAbsolutePath().length() > basedir.getAbsolutePath().length()) {
+        instWriter.write("SetOutPath \"$INSTDIR\\" + getRelativePath(dir.getAbsolutePath(), basedir) + "\"");
+      } else {
+        instWriter.write("SetOutPath $INSTDIR");
+      }
+
+      for (File file : files) {
+        if (!file.isDirectory()) {
+          instWriter.newLine();
+          instWriter.write("File \"" + getRelativePath(file.getAbsolutePath(), myCurrentDir.getAbsolutePath()) + "\"");
+        }
+      }
+    }
+  }
+
+  private List<File> getAllFiles(File basedir) {
+    return getAllFiles(basedir, new LinkedList<File>());
   }
 
   private List<File> getAllFiles(File dir, List<File> list) {
@@ -136,8 +172,8 @@ public class GenerateNSI {
     return list;
   }
 
-  private ArrayList<File> getAllDirs() {
-    return getAllDirs(myBaseDir, new ArrayList<File>());
+  private ArrayList<File> getAllDirs(File basedir) {
+    return getAllDirs(basedir, new ArrayList<File>());
   }
 
   private ArrayList<File> getAllDirs(File dir, ArrayList<File> list) {

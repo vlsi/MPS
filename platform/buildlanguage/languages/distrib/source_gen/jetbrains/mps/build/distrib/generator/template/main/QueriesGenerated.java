@@ -192,7 +192,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1231748469358(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getProjectName_1230292821821(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode())).toLowerCase() + "." + DistribConfiguration_Behavior.call_getVMOptionsExt_1231692561653(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+    return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1231748819942(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -208,11 +208,27 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1231750861493(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SystemSpecificConfig_Behavior.call_getVMOptionfFileName_1231748960223(_context.getNode());
+    return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1231760312435(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SystemSpecificConfig_Behavior.call_getVMOptionfFileName_1231748960223(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1231769511901(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "pathToVMOptions").replace("\\", "/");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1231782294388(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(_context.getNode()) + "/" + DistribConfiguration_Behavior.call_getVMOptionsFileName_1231749012626(_context.getNode()) + "." + DistribConfiguration_Behavior.call_getVMOptionsExt_1231692561653(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1231782344957(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1231782395899(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "pathToVMOptions");
   }
 
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -282,10 +298,6 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1231760206565(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
-  }
-
-  public static boolean ifMacro_Condition_1231760247366(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
   }
 

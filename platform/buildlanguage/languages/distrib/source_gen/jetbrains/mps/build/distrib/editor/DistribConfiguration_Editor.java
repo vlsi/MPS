@@ -21,6 +21,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.build.packaging.editor.MPSLayoutStyles_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -186,6 +188,20 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7701_9(context, node, "use .vmoptions file"));
     editorCell.addEditorCell(this.createProperty_7701_13(context, node));
+    if (renderingCondition7701_0(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_7701_13(context, node));
+    }
+    return editorCell;
+  }
+
+  public EditorCell createCollection_7701_13(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_7701_13(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant_7701_10(context, node, "path to vmoptions file"));
+    editorCell.addEditorCell(this.createProperty_7701_15(context, node));
     return editorCell;
   }
 
@@ -265,6 +281,14 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7701_9(editorCell, node, context);
     setupLabel_Constant_7701_9(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_7701_10(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_7701_10(editorCell, node, context);
+    setupLabel_Constant_7701_10(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -553,6 +577,35 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public EditorCell createProperty_7701_14_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_Property_7701_7(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_Property_7701_7((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createProperty_7701_15(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("pathToVMOptions");
+    provider.setNoTargetText("<no pathToVMOptions>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(true);
+    EditorCell cellWithRole = this.createProperty_7701_14_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
 
   private static void setupBasic_Collection_7701_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_7701_0");
@@ -831,6 +884,30 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_useVMOptionsFile");
   }
 
+  private static void setupBasic_Collection_7701_13(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_7701_13");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_7701_10(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_7701_10");
+    DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+  }
+
+  private static void setupBasic_Property_7701_7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("property_pathToVMOptions");
+    DistribConfiguration_Styles_StyleSheet.getPathString(editorCell).apply(editorCell);
+  }
+
   private static void setupLabel_Constant_7701_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -889,6 +966,16 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Property_7701_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_7701_10(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Property_7701_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean renderingCondition7701_0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "useVMOptionsFile");
   }
 
   public static class _Inline7701_0 extends AbstractCellProvider {

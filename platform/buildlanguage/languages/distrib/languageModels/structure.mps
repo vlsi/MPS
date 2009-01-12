@@ -83,6 +83,10 @@
       <property name="name" value="defaultVMOptions" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1231768725104">
+      <property name="name" value="pathToVMOptions" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230059161510">
     <property name="name" value="ClassPath" />
@@ -127,6 +131,10 @@
       <property name="name" value="operatingSystem" />
       <property name="inheritable" value="true" />
     </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1231769310934">
+      <property name="name" value="pathSeparator" />
+      <property name="inheritable" value="true" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230207753430">
     <property name="name" value="WindowsConfig" />
@@ -139,6 +147,10 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230207768490">
       <property name="value" value="windows" />
       <link role="conceptPropertyDeclaration" targetNodeId="1230207324294" resolveInfo="operatingSystem" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1231769745334">
+      <property name="value" value="\" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1231769310934" resolveInfo="pathSeparator" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230569120073">
       <property name="name" value="pathToNsisZip" />
@@ -178,6 +190,10 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230292555791">
       <property name="value" value="unix" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1231769761796">
+      <property name="value" value="/" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1231769310934" resolveInfo="pathSeparator" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230576552358">

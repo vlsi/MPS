@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class SystemSpecificConfig extends BaseConcept {
   public static final String concept = "jetbrains.mps.build.distrib.structure.SystemSpecificConfig";
   public static final String CPR_OperatingSystem = "operatingSystem";
+  public static final String CPR_PathSeparator = "pathSeparator";
 
   public SystemSpecificConfig(SNode node) {
     super(node);

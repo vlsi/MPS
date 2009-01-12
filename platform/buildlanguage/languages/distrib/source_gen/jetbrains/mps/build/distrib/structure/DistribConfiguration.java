@@ -18,6 +18,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
   public static final String STARTUP_CLASS = "startupClass";
   public static final String STARTUP_DIR = "startupDir";
   public static final String DEFAULT_V_M_OPTIONS = "defaultVMOptions";
+  public static final String PATH_TO_V_M_OPTIONS = "pathToVMOptions";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -54,6 +55,14 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
 
   public void setDefaultVMOptions(String value) {
     this.setProperty(DistribConfiguration.DEFAULT_V_M_OPTIONS, value);
+  }
+
+  public String getPathToVMOptions() {
+    return this.getProperty(DistribConfiguration.PATH_TO_V_M_OPTIONS);
+  }
+
+  public void setPathToVMOptions(String value) {
+    this.setProperty(DistribConfiguration.PATH_TO_V_M_OPTIONS, value);
   }
 
   public String getName() {
