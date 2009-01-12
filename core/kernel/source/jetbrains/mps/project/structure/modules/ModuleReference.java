@@ -24,7 +24,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ModuleReference {
-  private static Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
+  private static final Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
 
   public static ModuleReference fromString(String text) {
     Matcher m = MODULE_REFERENCE.matcher(text);
