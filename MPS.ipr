@@ -139,15 +139,7 @@
     </wildcardResourcePatterns>
   </component>
   <component name="CopyrightManager" default="">
-    <copyright>
-      <option name="notice" value="Copyright (c) &amp;#36;today.year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. &#10;Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan. &#10;Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna. &#10;Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus. &#10;Vestibulum commodo. Ut rhoncus gravida arcu. " />
-      <option name="keyword" value="Copyright" />
-      <option name="myName" value="Apache 2.0" />
-      <option name="myLocal" value="true" />
-    </copyright>
-    <module2copyright>
-      <element module="All" copyright="Apache 2.0" />
-    </module2copyright>
+    <module2copyright />
   </component>
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
@@ -1217,12 +1209,38 @@
             </SvnBranchConfiguration>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/platform/buildlanguage/languages/distrib">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://svn.jetbrains.org/mps/branches" />
+                  <option value="http://svn.jetbrains.org/mps/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/platform/gtext">
           <value>
             <SvnBranchConfiguration>
               <option name="branchUrls">
                 <list>
                   <option value="http://svn.jetbrains.org/mps/41013" />
+                  <option value="http://svn.jetbrains.org/mps/branches" />
+                  <option value="http://svn.jetbrains.org/mps/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/platform/quickQueryLanguage">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
                   <option value="http://svn.jetbrains.org/mps/branches" />
                   <option value="http://svn.jetbrains.org/mps/tags" />
                 </list>
@@ -1273,6 +1291,7 @@
       </map>
     </option>
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="TeamCityRootDirectoryHolder">
     <option name="myRelativeRootDirectory" />
