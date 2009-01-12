@@ -71,4 +71,8 @@ public class DistribConfiguration_Behavior {
     return "vmoptions";
   }
 
+  public static String call_getVMOptionsFileName_1231749012626(SNode thisNode) {
+    return DistribConfiguration_Behavior.call_getProjectName_1230292821821(thisNode).toLowerCase();
+  }
+
 }
