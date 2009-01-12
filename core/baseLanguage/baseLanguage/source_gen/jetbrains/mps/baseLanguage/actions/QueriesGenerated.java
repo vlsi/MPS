@@ -400,6 +400,13 @@ __switch__:
     }
   }
 
+  public static void nodeFactory_NodeSetup_BaseAssignmentExpression_1231770721118(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "lValue", SLinkOperations.getTarget(_context.getSampleNode(), "lValue", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "rValue", SLinkOperations.getTarget(_context.getSampleNode(), "rValue", true), true);
+    }
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {

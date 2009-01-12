@@ -12,9 +12,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
 
@@ -101,13 +104,14 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
       setupLabel_ConceptProperty_1878_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new BaseAssignmentExpression_Editor.BaseAssignmentExpression_Editor_replaceWith_BaseAssignmentExpression_cellMenu0()}));
     return editorCell;
   }
 
   public EditorCell createConceptProperty_1878_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
+    provider.setNoTargetText("<no operation>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConceptProperty_1878_0_internal(context, node, provider);
@@ -174,5 +178,16 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConceptProperty_1878_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
+  public static class BaseAssignmentExpression_Editor_replaceWith_BaseAssignmentExpression_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public BaseAssignmentExpression_Editor_replaceWith_BaseAssignmentExpression_cellMenu0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression";
+    }
+
+}
 
 }

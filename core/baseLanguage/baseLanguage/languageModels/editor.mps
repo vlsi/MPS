@@ -1961,8 +1961,15 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1215694331196">
+        <property name="emptyNoTargetText" value="false" />
+        <property name="noTargetText" value="&lt;no operation&gt;" />
         <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
         <link role="styleClass" targetNodeId="1215010940130" resolveInfo="Operator" />
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1231769359151">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1231769368668">
+            <link role="replacementConcept" targetNodeId="17.1215693861676" resolveInfo="BaseAssignmentExpression" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1075310480286">
         <property name="actionSet" value="RightExpression" />

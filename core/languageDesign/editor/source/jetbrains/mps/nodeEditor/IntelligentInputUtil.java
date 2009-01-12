@@ -288,8 +288,7 @@ public class IntelligentInputUtil {
       if (newNode == null) return true;
 
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
-    } else if (canCompleteTheWholeStringImmediately(info, head + smallPattern) ||
-      canCompleteTheWholeStringImmediately(info, head + smallPattern)) {
+    } else if (canCompleteTheWholeStringImmediately(info, head + smallPattern)) {
 
       List<INodeSubstituteAction> matchingActions = info.getMatchingActions(head + smallPattern, true);
       INodeSubstituteAction item = matchingActions.get(0);

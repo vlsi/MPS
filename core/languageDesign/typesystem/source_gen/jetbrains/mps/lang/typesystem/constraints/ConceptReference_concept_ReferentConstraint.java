@@ -24,7 +24,7 @@ public class ConceptReference_concept_ReferentConstraint implements IModelConstr
     manager.unRegisterNodeReferentSetEventHandler("jetbrains.mps.lang.typesystem.structure.ConceptReference", "concept");
   }
 
-  public void processReferentSetEvent(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
+  public void processReferentSetEvent(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
     if ((newReferentNode != null) && newReferentNode != oldReferentNode) {
       SPropertyOperations.set(referenceNode, "name", NameUtil.decapitalize(SPropertyOperations.getString(newReferentNode, "name")));
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(referenceNode), "jetbrains.mps.lang.typesystem.structure.InferenceRule")) {
