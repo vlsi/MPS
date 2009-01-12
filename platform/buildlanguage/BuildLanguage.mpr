@@ -43,6 +43,10 @@
   <component name="ProjectDetails">
     <option name="projectName" value="BuildLanguage" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="Shalom">
     <subPane>
       <PATH>
