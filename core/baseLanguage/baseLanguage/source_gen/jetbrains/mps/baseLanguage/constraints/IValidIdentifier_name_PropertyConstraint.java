@@ -22,7 +22,7 @@ public class IValidIdentifier_name_PropertyConstraint implements IModelConstrain
     manager.unRegisterNodePropertyValidator("jetbrains.mps.baseLanguage.structure.IValidIdentifier", "name");
   }
 
-  public boolean checkPropertyValue(SNode node, String propertyName, String propertyValue, IScope scope) {
+  public boolean checkPropertyValue(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
     return (SPropertyOperations.getString(propertyValue)).matches("[a-zA-Z[_]][a-zA-Z0-9[_]]*");
   }
 

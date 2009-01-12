@@ -10,11 +10,11 @@ public class BooleanType_Behavior {
   }
 
   public static SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
-    return new _Quotations.QuotationClass_10().createNode();
+    return new _Quotations.QuotationClass_11().createNode();
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_11().createNode();
+    return new _Quotations.QuotationClass_12().createNode();
   }
 
 }

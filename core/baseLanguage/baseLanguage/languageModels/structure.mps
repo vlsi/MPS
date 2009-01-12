@@ -301,6 +301,9 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068580123157" resolveInfo="Statement" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1231760741190">
+      <link role="intfc" targetNodeId="1231758709942" resolveInfo="IStatementList" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123137">
     <property name="name" value="BooleanConstant" />
@@ -466,6 +469,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1223988934029">
       <link role="intfc" targetNodeId="1223985693348" resolveInfo="IVariableAssignment" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1231764211369">
+      <link role="intfc" targetNodeId="1231760123645" resolveInfo="IVariableDeclaration" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068581242864">
@@ -3091,6 +3097,33 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1231758709942">
+    <property name="package" value="refactoring" />
+    <property name="name" value="IStatementList" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1231758812390">
+    <property name="package" value="refactoring" />
+    <property name="name" value="IExpression" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1231760021559">
+    <property name="package" value="refactoring" />
+    <property name="name" value="IExpressionStatement" />
+    <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1231760604280">
+      <link role="intfc" targetNodeId="1231760582267" resolveInfo="IStatement" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1231760123645">
+    <property name="package" value="refactoring" />
+    <property name="name" value="IVariableDeclaration" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1231760582267">
+    <property name="package" value="refactoring" />
+    <property name="name" value="IStatement" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1231761629592">
+    <property name="package" value="refactoring" />
+    <property name="name" value="IVariableReference" />
   </node>
 </model>
 
