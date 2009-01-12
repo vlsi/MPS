@@ -151,7 +151,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     if (myCreatedProject == null) return;
     myCreatedProject.save();
 
-    if (exitCode==1){
+    if ((exitCode==1) && (myProject != null)){
       ProjectUtil.closeProject(myProject);
     }
 
