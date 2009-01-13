@@ -592,6 +592,25 @@
         </node>
       </node>
     </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1231857807899">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231857807900">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231857808667">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1231857808668">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1231857808669" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231857808670">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1231857808671" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1231857808672">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1231857808673">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1231857808674">
+                    <link role="conceptDeclaration" targetNodeId="1.1229187653856" resolveInfo="EditorTestCase" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

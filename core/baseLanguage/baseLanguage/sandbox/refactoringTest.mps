@@ -189,11 +189,31 @@
         <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
       </node>
     </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1231855940102">
+      <property name="name" value="integer" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1231855940103" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1231855943261">
+        <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224153941793" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1224153941794">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224153941795" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1224171641026" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231779519821" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231779519821">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1231855987051">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1231855987052">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1231855987053" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231857226567">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1231857226568">
+            <property name="value" value="2" />
+            <property name="right_transfrom_hint" value="true" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
