@@ -28971,6 +28971,18 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231853289737">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231853294083">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1231853289738">
+                    <link role="variableDeclaration" targetNodeId="1225356416838" resolveInfo="parentStatement" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" id="1231853304525">
+                    <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1231853309027">
+                      <link role="variableDeclaration" targetNodeId="1231848203944" resolveInfo="var" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225103188969">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225103188970">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225103188971">
