@@ -32,11 +32,4 @@ public class StatementList_Behavior {
     return declarations;
   }
 
-  public static SNode virtual_addVariableDeclarationBefore_1231760097557(SNode thisNode, SNode statement, SNode type, String name, SNode expression) {
-    assert SNodeOperations.getParent(statement) == thisNode;
-    SNode newStatement = new _Quotations.QuotationClass_10().createNode(type, expression, name);
-    SNodeOperations.insertPrevSiblingChild(statement, newStatement);
-    return SLinkOperations.getTarget(newStatement, "localVariableDeclaration", true);
-  }
-
 }
