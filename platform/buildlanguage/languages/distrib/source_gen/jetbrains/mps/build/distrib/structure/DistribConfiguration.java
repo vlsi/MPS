@@ -16,9 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 public class DistribConfiguration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.build.distrib.structure.DistribConfiguration";
   public static final String STARTUP_CLASS = "startupClass";
-  public static final String STARTUP_DIR = "startupDir";
   public static final String DEFAULT_V_M_OPTIONS = "defaultVMOptions";
-  public static final String PATH_TO_V_M_OPTIONS = "pathToVMOptions";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -27,6 +25,8 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
   public static final String BUILD_SCRIPT_CONFIGURATION = "buildScriptConfiguration";
   public static final String PROJECT_FOLDER = "projectFolder";
   public static final String CLASS_PATH = "classPath";
+  public static final String STARTUP_DIRECTORY = "startupDirectory";
+  public static final String VM_OPTIONS_DIR = "vmOptionsDir";
   public static final String SYSTEM_SPECIFIC_CONFIG = "systemSpecificConfig";
 
   public DistribConfiguration(SNode node) {
@@ -41,28 +41,12 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
     this.setProperty(DistribConfiguration.STARTUP_CLASS, value);
   }
 
-  public String getStartupDir() {
-    return this.getProperty(DistribConfiguration.STARTUP_DIR);
-  }
-
-  public void setStartupDir(String value) {
-    this.setProperty(DistribConfiguration.STARTUP_DIR, value);
-  }
-
   public String getDefaultVMOptions() {
     return this.getProperty(DistribConfiguration.DEFAULT_V_M_OPTIONS);
   }
 
   public void setDefaultVMOptions(String value) {
     this.setProperty(DistribConfiguration.DEFAULT_V_M_OPTIONS, value);
-  }
-
-  public String getPathToVMOptions() {
-    return this.getProperty(DistribConfiguration.PATH_TO_V_M_OPTIONS);
-  }
-
-  public void setPathToVMOptions(String value) {
-    this.setProperty(DistribConfiguration.PATH_TO_V_M_OPTIONS, value);
   }
 
   public String getName() {
@@ -127,6 +111,22 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
 
   public void setClassPath(ClassPath node) {
     super.setChild(DistribConfiguration.CLASS_PATH, node);
+  }
+
+  public AbstractPath getStartupDirectory() {
+    return (AbstractPath)this.getChild(AbstractPath.class, DistribConfiguration.STARTUP_DIRECTORY);
+  }
+
+  public void setStartupDirectory(AbstractPath node) {
+    super.setChild(DistribConfiguration.STARTUP_DIRECTORY, node);
+  }
+
+  public AbstractPath getVmOptionsDir() {
+    return (AbstractPath)this.getChild(AbstractPath.class, DistribConfiguration.VM_OPTIONS_DIR);
+  }
+
+  public void setVmOptionsDir(AbstractPath node) {
+    super.setChild(DistribConfiguration.VM_OPTIONS_DIR, node);
   }
 
   public int getSystemSpecificConfigsCount() {

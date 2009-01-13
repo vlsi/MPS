@@ -22,19 +22,19 @@ public class ClassPath extends BaseConcept {
     return this.getChildCount(ClassPath.CLASS_PATH_ITEM);
   }
 
-  public Iterator<ClassPathItem> classPathItems() {
-    return this.children(ClassPathItem.class, ClassPath.CLASS_PATH_ITEM);
+  public Iterator<AbstractPath> classPathItems() {
+    return this.children(AbstractPath.class, ClassPath.CLASS_PATH_ITEM);
   }
 
-  public List<ClassPathItem> getClassPathItems() {
-    return this.getChildren(ClassPathItem.class, ClassPath.CLASS_PATH_ITEM);
+  public List<AbstractPath> getClassPathItems() {
+    return this.getChildren(AbstractPath.class, ClassPath.CLASS_PATH_ITEM);
   }
 
-  public void addClassPathItem(ClassPathItem node) {
+  public void addClassPathItem(AbstractPath node) {
     this.addChild(ClassPath.CLASS_PATH_ITEM, node);
   }
 
-  public void insertClassPathItem(ClassPathItem prev, ClassPathItem node) {
+  public void insertClassPathItem(AbstractPath prev, AbstractPath node) {
     this.insertChild(prev, ClassPath.CLASS_PATH_ITEM, node);
   }
 

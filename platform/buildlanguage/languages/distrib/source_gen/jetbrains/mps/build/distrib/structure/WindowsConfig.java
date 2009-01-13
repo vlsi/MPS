@@ -11,31 +11,15 @@ import jetbrains.mps.project.GlobalScope;
 
 public class WindowsConfig extends SystemSpecificConfig {
   public static final String concept = "jetbrains.mps.build.distrib.structure.WindowsConfig";
-  public static final String PATH_TO_NSIS_ZIP = "pathToNsisZip";
-  public static final String PATH_TO_NSIS_SCRIPT = "pathToNsisScript";
   public static final String INSTALL_NSH_NAME = "installNshName";
   public static final String UNINSTALL_NSH_NAME = "uninstallNshName";
   public static final String GENERATE_INSTALL_UNINSTALL_LISTS = "generateInstallUninstallLists";
+  public static final String PATH_TO_NSIS_ZIP_FILE = "pathToNsisZipFile";
+  public static final String PATH_TO_NSIS_CONFIGURATION_FILE = "pathToNsisConfigurationFile";
   public static final String TOKEN_VALUE_PAIR = "tokenValuePair";
 
   public WindowsConfig(SNode node) {
     super(node);
-  }
-
-  public String getPathToNsisZip() {
-    return this.getProperty(WindowsConfig.PATH_TO_NSIS_ZIP);
-  }
-
-  public void setPathToNsisZip(String value) {
-    this.setProperty(WindowsConfig.PATH_TO_NSIS_ZIP, value);
-  }
-
-  public String getPathToNsisScript() {
-    return this.getProperty(WindowsConfig.PATH_TO_NSIS_SCRIPT);
-  }
-
-  public void setPathToNsisScript(String value) {
-    this.setProperty(WindowsConfig.PATH_TO_NSIS_SCRIPT, value);
   }
 
   public String getInstallNshName() {
@@ -60,6 +44,22 @@ public class WindowsConfig extends SystemSpecificConfig {
 
   public void setGenerateInstallUninstallLists(boolean value) {
     this.setBooleanProperty(WindowsConfig.GENERATE_INSTALL_UNINSTALL_LISTS, value);
+  }
+
+  public AbstractPath getPathToNsisZipFile() {
+    return (AbstractPath)this.getChild(AbstractPath.class, WindowsConfig.PATH_TO_NSIS_ZIP_FILE);
+  }
+
+  public void setPathToNsisZipFile(AbstractPath node) {
+    super.setChild(WindowsConfig.PATH_TO_NSIS_ZIP_FILE, node);
+  }
+
+  public AbstractPath getPathToNsisConfigurationFile() {
+    return (AbstractPath)this.getChild(AbstractPath.class, WindowsConfig.PATH_TO_NSIS_CONFIGURATION_FILE);
+  }
+
+  public void setPathToNsisConfigurationFile(AbstractPath node) {
+    super.setChild(WindowsConfig.PATH_TO_NSIS_CONFIGURATION_FILE, node);
   }
 
   public int getTokenValuePairsCount() {

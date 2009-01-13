@@ -60,6 +60,17 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1230207207601" resolveInfo="SystemSpecificConfig" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231848554347">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="startupDirectory" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231848671127">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="vmOptionsDir" />
+      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230056405379">
       <property name="value" value="distribution configuration" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
@@ -71,20 +82,12 @@
       <property name="name" value="startupClass" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230660802400">
-      <property name="name" value="startupDir" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1231691563959">
       <property name="name" value="useVMOptionsFile" />
       <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1231691593776">
       <property name="name" value="defaultVMOptions" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1231768725104">
-      <property name="name" value="pathToVMOptions" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
   </node>
@@ -101,7 +104,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230059161512">
-    <property name="name" value="ClassPathItem" />
+    <property name="name" value="AbstractPath" />
     <property name="package" value="classpath" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1230059161513">
@@ -152,14 +155,6 @@
       <property name="value" value="\" />
       <link role="conceptPropertyDeclaration" targetNodeId="1231769310934" resolveInfo="pathSeparator" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230569120073">
-      <property name="name" value="pathToNsisZip" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230569127052">
-      <property name="name" value="pathToNsisScript" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230570754983">
       <property name="name" value="generateInstallUninstallLists" />
       <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
@@ -177,6 +172,18 @@
       <property name="role" value="tokenValuePair" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1230576552358" resolveInfo="TokenValuePair" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231848713325">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="pathToNsisZipFile" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231848729089">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="pathToNsisConfigurationFile" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230292331281">
@@ -210,6 +217,11 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="3v.1205335290326" resolveInfo="Variable" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1231848405646">
+    <property name="package" value="systemSpecific" />
+    <property name="name" value="DigitalSignatureWindowsConfiguration" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
   </node>
 </model>
 

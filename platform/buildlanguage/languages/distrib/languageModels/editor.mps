@@ -139,9 +139,8 @@
                 <property name="text" value="base directory" />
                 <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
               </node>
-              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230660885079">
-                <link role="relationDeclaration" targetNodeId="1.1230660802400" resolveInfo="startupDir" />
-                <link role="styleClass" targetNodeId="1231691932747" resolveInfo="pathString" />
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1231848809709">
+                <link role="relationDeclaration" targetNodeId="1.1231848554347" />
               </node>
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230660855216">
                 <property name="flag" value="false" />
@@ -213,14 +212,11 @@
                   <property name="flag" value="false" />
                 </node>
                 <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1231768820427">
-                  <property name="text" value="path to vmoptions file" />
+                  <property name="text" value="put vmoptions into directory" />
                   <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
                 </node>
-                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1231768820428">
-                  <property name="allowEmptyText" value="true" />
-                  <property name="emptyNoTargetText" value="false" />
-                  <link role="styleClass" targetNodeId="1231691932747" resolveInfo="pathString" />
-                  <link role="relationDeclaration" targetNodeId="1.1231768725104" resolveInfo="pathToVMOptions" />
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1231848823162">
+                  <link role="relationDeclaration" targetNodeId="1.1231848671127" />
                 </node>
                 <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1231768819582">
                   <property name="flag" value="false" />
@@ -345,9 +341,8 @@
                   <property name="text" value="path to nsis zip file" />
                   <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
                 </node>
-                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230569153703">
-                  <link role="relationDeclaration" targetNodeId="1.1230569120073" resolveInfo="pathToNsisZip" />
-                  <link role="styleClass" targetNodeId="1231691932747" resolveInfo="pathString" />
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1231854187154">
+                  <link role="relationDeclaration" targetNodeId="1.1231848713325" />
                 </node>
               </node>
               <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230569040645">
@@ -359,9 +354,8 @@
                   <property name="text" value="path to nsis script" />
                   <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
                 </node>
-                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230569160570">
-                  <link role="relationDeclaration" targetNodeId="1.1230569127052" resolveInfo="pathToNsisScript" />
-                  <link role="styleClass" targetNodeId="1231691932747" resolveInfo="pathString" />
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1231854199895">
+                  <link role="relationDeclaration" targetNodeId="1.1231848729089" />
                 </node>
                 <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230576897685">
                   <property name="text" value="replace" />

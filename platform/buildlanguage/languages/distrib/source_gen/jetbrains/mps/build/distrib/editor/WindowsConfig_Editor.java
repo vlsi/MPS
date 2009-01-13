@@ -17,6 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
@@ -106,7 +107,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1449_1(context, node, "path to nsis zip file"));
-    editorCell.addEditorCell(this.createProperty_1449_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_1449_1(context, node));
     return editorCell;
   }
 
@@ -117,7 +118,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1449_2(context, node, "path to nsis script"));
-    editorCell.addEditorCell(this.createProperty_1449_3(context, node));
+    editorCell.addEditorCell(this.createRefNode_1449_3(context, node));
     editorCell.addEditorCell(this.createConstant_1449_8(context, node, "replace"));
     editorCell.addEditorCell(this.createRefNodeList_1449_0(context, node));
     return editorCell;
@@ -130,7 +131,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1449_3(context, node, "generate install/uninstall files list"));
-    editorCell.addEditorCell(this.createProperty_1449_5(context, node));
+    editorCell.addEditorCell(this.createProperty_1449_1(context, node));
     return editorCell;
   }
 
@@ -152,7 +153,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1449_4(context, node, "install files list name"));
-    editorCell.addEditorCell(this.createProperty_1449_7(context, node));
+    editorCell.addEditorCell(this.createProperty_1449_3(context, node));
     editorCell.addEditorCell(this.createConstant_1449_5(context, node, ".nsh"));
     return editorCell;
   }
@@ -164,7 +165,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1449_6(context, node, "uninstall files list name"));
-    editorCell.addEditorCell(this.createProperty_1449_9(context, node));
+    editorCell.addEditorCell(this.createProperty_1449_5(context, node));
     editorCell.addEditorCell(this.createConstant_1449_7(context, node, ".nsh"));
     return editorCell;
   }
@@ -291,8 +292,8 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_1449_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("pathToNsisZip");
-    provider.setNoTargetText("<no pathToNsisZip>");
+    provider.setRole("generateInstallUninstallLists");
+    provider.setNoTargetText("<no generateInstallUninstallLists>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_1449_0_internal(context, node, provider);
@@ -320,8 +321,8 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_1449_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("pathToNsisScript");
-    provider.setNoTargetText("<no pathToNsisScript>");
+    provider.setRole("installNshName");
+    provider.setNoTargetText("<no installNshName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_1449_2_internal(context, node, provider);
@@ -349,69 +350,11 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_1449_5(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("generateInstallUninstallLists");
-    provider.setNoTargetText("<no generateInstallUninstallLists>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty_1449_4_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
-  public EditorCell createProperty_1449_6_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_1449_3(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_1449_3((EditorCell_Label)editorCell, node, context);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_1449_7(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("installNshName");
-    provider.setNoTargetText("<no installNshName>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty_1449_6_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
-  public EditorCell createProperty_1449_8_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_1449_4(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_1449_4((EditorCell_Label)editorCell, node, context);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_1449_9(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("uninstallNshName");
     provider.setNoTargetText("<no uninstallNshName>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty_1449_8_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_1449_4_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -441,6 +384,64 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConceptProperty_1449_0_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createRefNode_1449_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_RefNode_1449_0(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_RefNode_1449_0((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createRefNode_1449_1(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("pathToNsisZipFile");
+    provider.setNoTargetText("<no pathToNsisZipFile>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode_1449_0_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createRefNode_1449_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_RefNode_1449_1(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_RefNode_1449_1((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createRefNode_1449_3(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("pathToNsisConfigurationFile");
+    provider.setNoTargetText("<no pathToNsisConfigurationFile>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode_1449_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -564,16 +565,6 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Property_1449_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_pathToNsisZip");
-    DistribConfiguration_Styles_StyleSheet.getPathString(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Property_1449_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_pathToNsisScript");
-    DistribConfiguration_Styles_StyleSheet.getPathString(editorCell).apply(editorCell);
-  }
-
   private static void setupBasic_Collection_1449_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1449_7");
     {
@@ -593,7 +584,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Property_1449_2(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_1449_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_generateInstallUninstallLists");
   }
 
@@ -630,7 +621,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Property_1449_3(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_1449_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_installNshName");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -675,7 +666,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Property_1449_4(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_1449_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_uninstallNshName");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -732,6 +723,12 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1449_9");
   }
 
+  private static void setupBasic_RefNode_1449_0(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_RefNode_1449_1(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_Constant_1449_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -741,22 +738,16 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1449_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Property_1449_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_1449_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_Constant_1449_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Property_1449_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_1449_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1449_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Property_1449_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_1449_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1449_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -765,7 +756,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1449_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Property_1449_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_1449_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1449_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -781,6 +772,12 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1449_9(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_RefNode_1449_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_RefNode_1449_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition1449_0(SNode node, EditorContext editorContext, IScope scope) {

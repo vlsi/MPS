@@ -165,7 +165,7 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7701_7(context, node, "base directory"));
-    editorCell.addEditorCell(this.createProperty_7701_9(context, node));
+    editorCell.addEditorCell(this.createRefNode_7701_3(context, node));
     return editorCell;
   }
 
@@ -176,7 +176,7 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7701_8(context, node, "JVM options"));
-    editorCell.addEditorCell(this.createProperty_7701_11(context, node));
+    editorCell.addEditorCell(this.createProperty_7701_9(context, node));
     return editorCell;
   }
 
@@ -187,7 +187,7 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7701_9(context, node, "use .vmoptions file"));
-    editorCell.addEditorCell(this.createProperty_7701_13(context, node));
+    editorCell.addEditorCell(this.createProperty_7701_11(context, node));
     if (renderingCondition7701_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_7701_13(context, node));
     }
@@ -200,8 +200,8 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_7701_10(context, node, "path to vmoptions file"));
-    editorCell.addEditorCell(this.createProperty_7701_15(context, node));
+    editorCell.addEditorCell(this.createConstant_7701_10(context, node, "put vmoptions into directory"));
+    editorCell.addEditorCell(this.createRefNode_7701_5(context, node));
     return editorCell;
   }
 
@@ -504,8 +504,8 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_7701_9(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("startupDir");
-    provider.setNoTargetText("<no startupDir>");
+    provider.setRole("defaultVMOptions");
+    provider.setNoTargetText("<no defaultVMOptions>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_7701_8_internal(context, node, provider);
@@ -533,8 +533,8 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_7701_11(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("defaultVMOptions");
-    provider.setNoTargetText("<no defaultVMOptions>");
+    provider.setRole("useVMOptionsFile");
+    provider.setNoTargetText("<no useVMOptionsFile>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_7701_10_internal(context, node, provider);
@@ -548,25 +548,25 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty_7701_12_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_7701_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_7701_6(editorCell, node, context);
+    setupBasic_RefNode_7701_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_7701_6((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_7701_1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty_7701_13(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("useVMOptionsFile");
-    provider.setNoTargetText("<no useVMOptionsFile>");
+  public EditorCell createRefNode_7701_3(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("startupDirectory");
+    provider.setNoTargetText("<no startupDirectory>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty_7701_12_internal(context, node, provider);
+    EditorCell cellWithRole = this.createRefNode_7701_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -577,25 +577,25 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty_7701_14_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createRefNode_7701_4_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_7701_7(editorCell, node, context);
+    setupBasic_RefNode_7701_2(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_7701_7((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_7701_2((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty_7701_15(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("pathToVMOptions");
-    provider.setNoTargetText("<no pathToVMOptions>");
+  public EditorCell createRefNode_7701_5(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("vmOptionsDir");
+    provider.setNoTargetText("<no vmOptionsDir>");
     provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(true);
-    EditorCell cellWithRole = this.createProperty_7701_14_internal(context, node, provider);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode_7701_4_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -833,11 +833,6 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Property_7701_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_startupDir");
-    DistribConfiguration_Styles_StyleSheet.getPathString(editorCell).apply(editorCell);
-  }
-
   private static void setupBasic_Collection_7701_11(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_7701_11");
     {
@@ -857,7 +852,7 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Property_7701_5(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_7701_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_defaultVMOptions");
   }
 
@@ -880,7 +875,7 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Property_7701_6(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_7701_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_useVMOptionsFile");
   }
 
@@ -903,9 +898,10 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Property_7701_7(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_pathToVMOptions");
-    DistribConfiguration_Styles_StyleSheet.getPathString(editorCell).apply(editorCell);
+  private static void setupBasic_RefNode_7701_1(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_RefNode_7701_2(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_7701_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -953,25 +949,25 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_7701_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Property_7701_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_Constant_7701_8(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Property_7701_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_7701_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_7701_9(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Property_7701_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_7701_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_7701_10(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Property_7701_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_7701_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_RefNode_7701_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition7701_0(SNode node, EditorContext editorContext, IScope scope) {
