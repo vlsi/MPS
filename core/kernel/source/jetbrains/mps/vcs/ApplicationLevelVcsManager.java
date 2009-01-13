@@ -126,7 +126,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     return false;
   }
 
-  private boolean isInConflict(Project project, final VirtualFile vfile, boolean synchronously) {
+  private boolean isInConflict(@NotNull Project project, final VirtualFile vfile, boolean synchronously) {
     if (MPSVCSManager.getInstance(project).isChangeListManagerInitialized() && !synchronously) {
       return ChangeListManager.getInstance(project).getStatus(vfile).equals(FileStatus.MERGED_WITH_CONFLICTS);
     }
@@ -183,16 +183,21 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     // collect
     Map<MPSVCSManager, List<VirtualFile>> vcsManagerToFile = new HashMap<MPSVCSManager, List<VirtualFile>>();
     for (VirtualFile file : files) {
-      MPSVCSManager mpsVcsManager = MPSVCSManager.getInstance(getProjectForFile(file));
-      if (mpsVcsManager != null) {
-        List<VirtualFile> filesForManager = vcsManagerToFile.get(mpsVcsManager);
-        if (filesForManager == null) {
-          filesForManager = new LinkedList<VirtualFile>();
-          vcsManagerToFile.put(mpsVcsManager, filesForManager);
+      Project projectForFile = getProjectForFile(file);
+      if (projectForFile != null) {
+        MPSVCSManager mpsVcsManager = MPSVCSManager.getInstance(projectForFile);
+        if (mpsVcsManager != null) {
+          List<VirtualFile> filesForManager = vcsManagerToFile.get(mpsVcsManager);
+          if (filesForManager == null) {
+            filesForManager = new LinkedList<VirtualFile>();
+            vcsManagerToFile.put(mpsVcsManager, filesForManager);
+          }
+          filesForManager.add(file);
+        } else {
+          LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
         }
-        filesForManager.add(file);
       } else {
-        LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
+        LOG.debug("Can not find " + Project.class.getName() + " instance for file " + file + ".");
       }
     }
 
@@ -220,16 +225,21 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     // collect
     Map<MPSVCSManager, List<File>> vcsManagerToFile = new HashMap<MPSVCSManager, List<File>>();
     for (FilePath file : files) {
-      MPSVCSManager mpsVcsManager = MPSVCSManager.getInstance(getProjectForFilePath(file));
-      if (mpsVcsManager != null) {
-        List<File> filesForManager = vcsManagerToFile.get(mpsVcsManager);
-        if (filesForManager == null) {
-          filesForManager = new LinkedList<File>();
-          vcsManagerToFile.put(mpsVcsManager, filesForManager);
+      Project project = getProjectForFilePath(file);
+      if (project != null) {
+        MPSVCSManager mpsVcsManager = MPSVCSManager.getInstance(project);
+        if (mpsVcsManager != null) {
+          List<File> filesForManager = vcsManagerToFile.get(mpsVcsManager);
+          if (filesForManager == null) {
+            filesForManager = new LinkedList<File>();
+            vcsManagerToFile.put(mpsVcsManager, filesForManager);
+          }
+          filesForManager.add(file.getIOFile());
+        } else {
+          LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
         }
-        filesForManager.add(file.getIOFile());
       } else {
-        LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
+        LOG.debug("Can not find " + Project.class.getName() + " instance for file " + file + ".");
       }
     }
 

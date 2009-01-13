@@ -347,7 +347,9 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     IFile newFile = createFileForModelUID(root, modelFqName);
     ((BaseSModelDescriptor) sm).changeModelFile(newFile);
     sm.save();
-    oldFile.delete();
+    if (oldFile != null) {
+      oldFile.delete();
+    }
     renameFile(oldFile, newFile);
   }
 
@@ -356,7 +358,9 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     IFile newFile = createFileForModelUID(modelRoot, sm.getSModelFqName());
     ((BaseSModelDescriptor) sm).changeModelFile(newFile);
     sm.save();
-    oldFile.delete();
+    if (oldFile != null) {
+      oldFile.delete();
+    }
     renameFile(oldFile, newFile);
   }
 

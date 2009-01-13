@@ -38,11 +38,12 @@ import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.components.ProjectComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class MPSVCSManager implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
 
-  public static MPSVCSManager getInstance(Project project) {
+  public static MPSVCSManager getInstance(@NotNull Project project) {
     return project.getComponent(MPSVCSManager.class);
   }
 
