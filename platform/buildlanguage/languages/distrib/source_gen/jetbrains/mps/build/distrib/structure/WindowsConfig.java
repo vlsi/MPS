@@ -16,6 +16,7 @@ public class WindowsConfig extends SystemSpecificConfig {
   public static final String GENERATE_INSTALL_UNINSTALL_LISTS = "generateInstallUninstallLists";
   public static final String PATH_TO_NSIS_ZIP_FILE = "pathToNsisZipFile";
   public static final String PATH_TO_NSIS_CONFIGURATION_FILE = "pathToNsisConfigurationFile";
+  public static final String SIGNATURE_CONFIGURATION = "signatureConfiguration";
   public static final String TOKEN_VALUE_PAIR = "tokenValuePair";
 
   public WindowsConfig(SNode node) {
@@ -60,6 +61,14 @@ public class WindowsConfig extends SystemSpecificConfig {
 
   public void setPathToNsisConfigurationFile(AbstractPath node) {
     super.setChild(WindowsConfig.PATH_TO_NSIS_CONFIGURATION_FILE, node);
+  }
+
+  public DigitalSignatureWindowsConfiguration getSignatureConfiguration() {
+    return (DigitalSignatureWindowsConfiguration)this.getChild(DigitalSignatureWindowsConfiguration.class, WindowsConfig.SIGNATURE_CONFIGURATION);
+  }
+
+  public void setSignatureConfiguration(DigitalSignatureWindowsConfiguration node) {
+    super.setChild(WindowsConfig.SIGNATURE_CONFIGURATION, node);
   }
 
   public int getTokenValuePairsCount() {

@@ -20,7 +20,7 @@ import org.apache.commons.lang.StringUtils;
 public class DistribConfiguration_Behavior {
 
   public static void init(SNode thisNode) {
-    SNode path = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.SimpleClassPathItem", null);
+    SNode path = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.SimplePath", null);
     SPropertyOperations.set(path, "path", ".");
     SLinkOperations.setTarget(thisNode, "startupDirectory", path, true);
   }

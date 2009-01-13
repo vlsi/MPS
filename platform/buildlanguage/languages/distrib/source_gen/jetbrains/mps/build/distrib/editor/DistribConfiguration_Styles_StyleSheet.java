@@ -47,6 +47,15 @@ public class DistribConfiguration_Styles_StyleSheet {
     };
   }
 
+  public static Style getHint(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+      }
+
+    };
+  }
+
   public static Style getPathString(final EditorCell cell) {
     return new Style(cell) {
       {

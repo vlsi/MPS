@@ -35,9 +35,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="16" />
+  <languageAspect modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="9" />
-  <import index="1" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="-1" />
+  <import index="1" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
@@ -467,6 +468,70 @@
               <property name="flag" value="false" />
             </node>
           </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Alternation" id="1231856085297">
+            <property name="vertical" value="true" />
+            <node role="ifTrueCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1231856097423">
+              <link role="relationDeclaration" targetNodeId="1.1231856017880" />
+            </node>
+            <node role="alternationCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1231856085299">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231856085300">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231856139132">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231856146800">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231856139265">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1231856139133" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1231856145754">
+                        <link role="link" targetNodeId="1.1231856017880" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1231856149042" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="ifFalseCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1231856100755">
+              <property name="text" value="do not digitally sign" />
+              <link role="styleClass" targetNodeId="1231856186555" resolveInfo="hint" />
+              <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1231856299313">
+                <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item" id="1231856319833">
+                  <property name="matchingText" value="digital signature configuration" />
+                  <node role="handlerFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler" id="1231856319834">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231856319835">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1231856399899">
+                        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1231856399900">
+                          <property name="name" value="signConfig" />
+                          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1231856399901">
+                            <link role="concept" targetNodeId="1.1231848405646" resolveInfo="DigitalSignatureWindowsConfiguration" />
+                          </node>
+                          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1231856416292">
+                            <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1231856416293">
+                              <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1231856416294">
+                                <link role="concept" targetNodeId="1.1231848405646" resolveInfo="DigitalSignatureWindowsConfiguration" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231856421251">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231856433380">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231856421356">
+                            <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="1231856421252" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1231856432372">
+                              <link role="link" targetNodeId="1.1231856017880" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1231856435674">
+                            <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1231856437904">
+                              <link role="variableDeclaration" targetNodeId="1231856399900" resolveInfo="signConfig" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230568952070">
             <property name="flag" value="false" />
           </node>
@@ -511,6 +576,12 @@
         <link role="styleSheetClass" targetNodeId="1230217833302" resolveInfo="keyword" />
       </node>
     </node>
+    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1231856186555">
+      <property name="name" value="hint" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1231856198511">
+        <property name="color" value="lightGray" />
+      </node>
+    </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1231691932747">
       <property name="name" value="pathString" />
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1231691961852">
@@ -550,6 +621,79 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1231856505015">
+    <property name="package" value="systemSpecific" />
+    <link role="conceptDeclaration" targetNodeId="1.1231848405646" resolveInfo="DigitalSignatureWindowsConfiguration" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1231856511966">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1231856516731">
+        <property name="text" value="digital signature configuration" />
+        <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1231859220699">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1231859220700">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1231859225099" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1231859235976">
+          <property name="vertical" value="true" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1231859235977">
+            <property name="flag" value="false" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1231859235979">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1231859263581">
+            <property name="vertical" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1231859264465">
+              <property name="text" value="path to executable" />
+              <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1231859266838">
+              <link role="relationDeclaration" targetNodeId="1.1231859196186" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1231859263582">
+              <property name="flag" value="false" />
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1231859288065">
+            <property name="vertical" value="false" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1231859288066">
+              <property name="flag" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1231859291156">
+              <property name="text" value="command line" />
+              <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1231861790172">
+              <link role="relationDeclaration" targetNodeId="1.1231859334762" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1231859288068">
+              <property name="flag" value="false" />
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1231859220702">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1231861646567">
+    <property name="package" value="systemSpecific" />
+    <link role="conceptDeclaration" targetNodeId="1.1231859958652" resolveInfo="StringCommandLinePart" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1231861656192">
+      <link role="relationDeclaration" targetNodeId="1.1231861633100" resolveInfo="text" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1231861738058">
+    <property name="package" value="systemSpecific" />
+    <link role="conceptDeclaration" targetNodeId="1.1231860019901" resolveInfo="ArtifactReferenceCommandLinePart" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1231861743880">
+      <property name="text" value="installer.exe" />
     </node>
   </node>
 </model>

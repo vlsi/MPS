@@ -9,6 +9,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -24,12 +27,16 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class WindowsConfig_Editor extends DefaultNodeEditor {
 
@@ -37,6 +44,20 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1449_0(context, node);
+  }
+
+  public EditorCell createAlternation_1449_0(EditorContext context, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = WindowsConfig_Editor.renderingCondition1449_1(node, context, context.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createRefNode_1449_5(context, node);
+    } else
+    {
+      editorCell = this.createConstant_1449_10(context, node, "do not digitally sign");
+    }
+    setupBasic_Alternation_1449_0(editorCell, node, context);
+    return editorCell;
   }
 
   public EditorCell createCollection_1449_0(EditorContext context, SNode node) {
@@ -71,6 +92,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1449_0(context, node, "nsis configuration"));
     editorCell.addEditorCell(this.createCollection_1449_3(context, node));
+    editorCell.addEditorCell(this.createAlternation_1449_0(context, node));
     return editorCell;
   }
 
@@ -247,6 +269,15 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     setupBasic_Constant_1449_9(editorCell, node, context);
     setupLabel_Constant_1449_9(editorCell, node, context);
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_1449_10(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_1449_10(editorCell, node, context);
+    setupLabel_Constant_1449_10(editorCell, node, context);
+    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new WindowsConfig_Editor.WindowsConfig_generic_cellMenu0()}));
     return editorCell;
   }
 
@@ -442,6 +473,35 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_1449_2_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createRefNode_1449_4_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_RefNode_1449_2(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_RefNode_1449_2((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createRefNode_1449_5(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("signatureConfiguration");
+    provider.setNoTargetText("<no signatureConfiguration>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode_1449_4_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -729,6 +789,17 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNode_1449_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_Alternation_1449_0(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_RefNode_1449_2(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_Constant_1449_10(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1449_10");
+    DistribConfiguration_Styles_StyleSheet.getHint(editorCell).apply(editorCell);
+  }
+
   private static void setupLabel_Constant_1449_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -780,8 +851,18 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
   private static void setupLabel_RefNode_1449_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_RefNode_1449_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1449_10(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static boolean renderingCondition1449_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "generateInstallUninstallLists");
+  }
+
+  public static boolean renderingCondition1449_1(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "signatureConfiguration", true) != null);
   }
 
   public static class tokenValuePairListHandler_1449_0 extends RefNodeListHandler {
@@ -824,6 +905,21 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
 
     public EditorCell createSeparatorCell(EditorContext context) {
       return super.createSeparatorCell(context);
+    }
+
+}
+  public static class WindowsConfig_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
+
+    public WindowsConfig_generic_cellMenu0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNode signConfig = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration", null);
+      SLinkOperations.setTarget(node, "signatureConfiguration", signConfig, true);
+    }
+
+    public String getMatchingText() {
+      return "digital signature configuration";
     }
 
 }

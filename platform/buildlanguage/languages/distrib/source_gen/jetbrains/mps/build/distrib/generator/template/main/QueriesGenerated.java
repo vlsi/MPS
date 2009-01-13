@@ -17,12 +17,14 @@ import jetbrains.mps.build.distrib.behavior.UnixConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
@@ -231,6 +233,22 @@ public class QueriesGenerated {
     return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "vmOptionsDir", true));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1231864177374(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "pathToExecutable", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1231864483288(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ArtifactReferenceCommandLinePart_Behavior.getExecutableFilePropertyName_1231864298769();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1231869446305(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String commandLine = "";
+    for(SNode commandLinePart : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "commandLine", true))) {
+      commandLine += AbstractCommandLinePart_Behavior.call_getText_1231864533228(commandLinePart) + " ";
+    }
+    return commandLine;
+  }
+
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
   }
@@ -303,6 +321,14 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1231760326149(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
+  }
+
+  public static boolean ifMacro_Condition_1231863969703(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1231864147687(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true) != null);
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

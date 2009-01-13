@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="SimpleClassPathItem" conceptFQName="jetbrains.mps.build.distrib.structure.SimpleClassPathItem" featureKind="CONCEPT" />
+          <value featureName="SimplePath" conceptFQName="jetbrains.mps.build.distrib.structure.SimplePath" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -27,9 +38,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="16" />
+  <languageAspect modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="-1" />
+  <import index="1" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230056066379">
@@ -112,7 +124,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230059161514">
-    <property name="name" value="SimpleClassPathItem" />
+    <property name="name" value="SimplePath" />
     <property name="package" value="classpath" />
     <link role="extends" targetNodeId="1230059161512" resolveInfo="ClassPathItem" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230059161515">
@@ -185,6 +197,11 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231856017880">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="signatureConfiguration" />
+      <link role="target" targetNodeId="1231848405646" resolveInfo="DigitalSignatureWindowsConfiguration" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230292331281">
     <property name="package" value="systemSpecific" />
@@ -222,6 +239,52 @@
     <property name="package" value="systemSpecific" />
     <property name="name" value="DigitalSignatureWindowsConfiguration" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231859196186">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="pathToExecutable" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231859334762">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="commandLine" />
+      <property name="sourceCardinality" value="1..n" />
+      <link role="target" targetNodeId="1231859852975" resolveInfo="AbstractCommandLinePart" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1231859852975">
+    <property name="package" value="systemSpecific" />
+    <property name="name" value="AbstractCommandLinePart" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1231859948220">
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1231859958652">
+    <property name="package" value="systemSpecific" />
+    <property name="name" value="StringCommandLinePart" />
+    <link role="extends" targetNodeId="1231859852975" resolveInfo="AbstractCommandLinePart" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1231861633100">
+      <property name="name" value="text" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1231862317747">
+      <property name="value" value="simple text" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1231860019901">
+    <property name="package" value="systemSpecific" />
+    <property name="name" value="ArtifactReferenceCommandLinePart" />
+    <link role="extends" targetNodeId="1231859852975" resolveInfo="AbstractCommandLinePart" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1231861683501">
+      <property name="value" value="artifact reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1231861704471">
+      <property name="value" value="reference to file, generated by nsis" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473914776" resolveInfo="shortDescription" />
+    </node>
   </node>
 </model>
 
