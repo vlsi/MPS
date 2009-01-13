@@ -48,9 +48,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -236,7 +234,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
       boolean wasSaveTransientModels = isSaveTransientModels();
       myGeneratingRequirements = true;
       try {
-        final List<SModelDescriptor> requirements = new ArrayList<SModelDescriptor>();
+        final Set<SModelDescriptor> requirements = new LinkedHashSet<SModelDescriptor>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             for (Pair<SModelDescriptor, IOperationContext> inputModel : inputModels) {
@@ -254,7 +252,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
 
           int result = Messages.showYesNoDialog(myProject, message, "Generate Required Models", Messages.getWarningIcon());
           if (result == 0) { //idea don't have constants for YES/NO
-            generateModelsFromDifferentModules(invocationContext, requirements, IGenerationType.FILES);            
+            generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), IGenerationType.FILES);            
           }
         }
       } finally {
