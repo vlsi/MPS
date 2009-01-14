@@ -243,6 +243,10 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
           }
         });
 
+        for (Pair<SModelDescriptor, IOperationContext> inputModel : inputModels) {
+          requirements.remove(inputModel.o1);
+        }
+
         if (!requirements.isEmpty()) {
           String message = "The following models might be required for generation\n" +
                             "but aren't generated. Do you want to generate them?\n";
