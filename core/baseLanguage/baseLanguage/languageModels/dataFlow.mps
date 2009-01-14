@@ -1385,6 +1385,17 @@
             </node>
             <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement" id="1206987180651">
               <node role="variable" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1206987184622" />
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231935705036">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231935702688">
+                  <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1231935701531" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1231935704316">
+                    <link role="link" targetNodeId="1.1068431790190" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1231935709305">
+                  <link role="baseMethodDeclaration" targetNodeId="6.1230540989695" resolveInfo="getNullableState" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

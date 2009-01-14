@@ -15,6 +15,7 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
+import jetbrains.mps.dataFlow.runtime.NullableAnalysisResult;
 
 public class DataFlowUtil {
 
@@ -27,6 +28,7 @@ public class DataFlowUtil {
     checkUninitializedReads(typeCheckingContext, statementList);
     checkUnusedAssignments(typeCheckingContext, statementList);
     checkUnusedVariables(typeCheckingContext, statementList);
+    checkNullable(typeCheckingContext, statementList);
   }
 
   @CheckingMethod()
@@ -137,6 +139,18 @@ public class DataFlowUtil {
           IErrorTarget errorTarget = new NodeErrorTarget();
           typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223642399966", intentionProvider, errorTarget);
         }
+      }
+    }
+  }
+
+  @CheckingMethod()
+  public static void checkNullable(final TypeCheckingContext typeCheckingContext, SNode statementList) {
+    NullableAnalysisResult result = new NullableAnalysisResult(statementList);
+    for(SNode problemNode : ListSequence.fromList(result.checkNodes(statementList))) {
+      {
+        BaseIntentionProvider intentionProvider = null;
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportWarning(problemNode, "Assign nullable value to not nullable.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1231940297398", intentionProvider, errorTarget);
       }
     }
   }

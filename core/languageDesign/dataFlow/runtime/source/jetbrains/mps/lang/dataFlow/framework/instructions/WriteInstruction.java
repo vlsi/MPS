@@ -33,6 +33,10 @@ public class WriteInstruction extends Instruction {
   }
 
   String commandPresentation() {
-    return "write " + myVar + " " + myValue;
+    if (myValue == null) {
+      return "write " + myVar;
+    } else {
+      return "write " + myVar + " " + myValue;
+    }
   }
 }
