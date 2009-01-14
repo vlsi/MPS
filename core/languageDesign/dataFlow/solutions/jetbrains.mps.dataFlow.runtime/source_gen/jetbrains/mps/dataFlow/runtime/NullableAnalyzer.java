@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
+import jetbrains.mps.lang.dataFlow.framework.instructions.VariableValueInstruction;
 
 public class NullableAnalyzer <T> implements DataFlowAnalyzer<Map<T, NullableVariableState>> {
 
@@ -48,6 +49,17 @@ public class NullableAnalyzer <T> implements DataFlowAnalyzer<Map<T, NullableVar
       WriteInstruction write = (WriteInstruction)state.getInstruction();
       NullableVariableState value = ((NullableVariableState)write.getValue());
       T variable = (T)write.getVariable();
+      if (value == null) {
+        MapSequence.fromMap(result).put(variable, NullableVariableState.UNKNOWN);
+      } else
+      {
+        MapSequence.fromMap(result).put(variable, value);
+      }
+    }
+    if (state.getInstruction() instanceof VariableValueInstruction) {
+      VariableValueInstruction varValue = (VariableValueInstruction)state.getInstruction();
+      NullableVariableState value = varValue.getValue();
+      T variable = (T)varValue.getVariable();
       if (value == null) {
         MapSequence.fromMap(result).put(variable, NullableVariableState.UNKNOWN);
       } else

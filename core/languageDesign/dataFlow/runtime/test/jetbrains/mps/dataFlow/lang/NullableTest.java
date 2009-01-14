@@ -50,5 +50,28 @@ public class NullableTest {
     Assert.assertEquals(NullableVariableState.NULLABLE, result.get(p.get(4)).get("x"));
   }
 
+  @Test
+  public void jumbByTrue() {
+    Program p = new SimpleProgramBuilder()
+      .emitWrite("x", NullableVariableState.NULLABLE)
+      .emitIfJump(5)
+      .emitVarEqulas("x", NullableVariableState.NULL)
+      .emitNop()
+      .emitJump(6)
+      .emitVarEqulas("x", NullableVariableState.NOT_NULL)
+      .emitNop()
+      .buildProgram();
+
+    AnalysisResult<Map<String, NullableVariableState>> result = p.analyze(new NullableAnalyzer<String>());
+
+    Assert.assertEquals(NullableVariableState.NULLABLE, result.get(p.get(0)).get("x"));
+    Assert.assertEquals(NullableVariableState.NULLABLE, result.get(p.get(1)).get("x"));
+    Assert.assertEquals(NullableVariableState.NULL, result.get(p.get(2)).get("x"));
+    Assert.assertEquals(NullableVariableState.NULL, result.get(p.get(3)).get("x"));
+    Assert.assertEquals(NullableVariableState.NULL, result.get(p.get(4)).get("x"));
+    Assert.assertEquals(NullableVariableState.NOT_NULL, result.get(p.get(5)).get("x"));
+    Assert.assertEquals(NullableVariableState.NULLABLE, result.get(p.get(6)).get("x"));
+  }
+
 
 }

@@ -83,4 +83,13 @@ public class SimpleProgramBuilder {
     myProgram.init();
     return myProgram;
   }
+
+  public SimpleProgramBuilder emitVarEqulas(Object var, NullableVariableState value) {
+    VariableValueInstruction instruction = new VariableValueInstruction();    
+    instruction.setVariable(var);
+    instruction.setValue(value);
+    myProgram.add(instruction);
+    return this;
+  }
+
 }
