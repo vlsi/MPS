@@ -1274,7 +1274,13 @@
                     <link role="concept" targetNodeId="16.1133920641626" resolveInfo="BaseConcept" />
                   </node>
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1222443299195" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1232024189049">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1232024189050">
+                    <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1232024189051">
+                      <link role="concept" targetNodeId="16.1133920641626" resolveInfo="BaseConcept" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222443299196">
