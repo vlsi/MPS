@@ -119,6 +119,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     if (generationRequired()) {
       setAdditionalText("generation required");
+    } else if (isPackaged()) {
+      setAdditionalText("packaged");
+    } else if (isDoNotGenerate()) {
+      setAdditionalText("do not generate");
     } else {
       setAdditionalText(null);
     }
@@ -332,6 +336,22 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     return ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor());
+  }
+
+  public boolean isPackaged() {
+    if (getSModelDescriptor() == null) {
+      return false;
+    }
+
+    return getSModelDescriptor().isPackaged();
+  }
+
+  public boolean isDoNotGenerate() {
+    if (getSModelDescriptor() == null) {
+      return false;
+    }
+
+    return ModelGenerationStatusManager.isDoNotGenerate(getSModelDescriptor());
   }
 
   public void updateNodePresentationInTree() {

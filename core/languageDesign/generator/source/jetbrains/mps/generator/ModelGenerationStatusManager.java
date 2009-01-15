@@ -29,6 +29,16 @@ import java.util.*;
 public class ModelGenerationStatusManager {
   private static final Logger LOG = Logger.getLogger(ModelGenerationStatusManager.class);
 
+  private static final String DO_NOT_GENERATE = "doNotGenerate";
+
+  public static boolean isDoNotGenerate(SModelDescriptor sm) {
+    return Boolean.parseBoolean(sm.getAttribute(DO_NOT_GENERATE));
+  }
+
+  public static void setDoNotGenerate(SModelDescriptor sm, boolean value) {
+    sm.setAttribute(DO_NOT_GENERATE, "" + value);
+  }
+
   public static ModelGenerationStatusManager getInstance() {
     return ApplicationManager.getApplication().getComponent(ModelGenerationStatusManager.class);
   }
@@ -52,7 +62,7 @@ public class ModelGenerationStatusManager {
       return false;
     }
 
-    if (Language.isLanguageOwnedAccessoryModel(sm)) {
+    if (isDoNotGenerate(sm)) {
       return false;
     }
 
