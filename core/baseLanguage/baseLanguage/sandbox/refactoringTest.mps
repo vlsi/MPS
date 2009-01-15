@@ -185,24 +185,14 @@
     <property name="name" value="Test" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1231932954766">
       <property name="name" value="method" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1231932954767" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1232033769684" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231932954768" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231934402206">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1231934407616">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1231934407617">
-            <property name="name" value="str" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1231934407618">
-              <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231941675906">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1231941675907">
-                <link role="fieldDeclaration" targetNodeId="1228738397217" resolveInfo="a" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1231941675908" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232034539142" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1232034531670">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1232034531671" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232034531672" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232034531673" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1231941598849">
       <property name="name" value="m" />
