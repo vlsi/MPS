@@ -673,7 +673,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected void editNode(final SNode node) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         IOperationContext operationContext = getOperationContext();
         myNodePointer = new SNodePointer(node);
