@@ -58,7 +58,7 @@ public class NullableTest {
       .emitVarEqulas("x", NullableVariableState.NULL)
       .emitNop()
       .emitJump(6)
-      .emitVarEqulas("x", NullableVariableState.NOT_NULL)
+      .emitVarNotEqulas("x", NullableVariableState.NULL)
       .emitNop()
       .buildProgram();
 

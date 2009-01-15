@@ -32,4 +32,14 @@ public enum NullableVariableState {
     return NullableVariableState.NULLABLE;
   }
 
+  public NullableVariableState not() {
+    if (this == NullableVariableState.NOT_NULL) {
+      return NullableVariableState.NULL;
+    }
+    if (this == NullableVariableState.NULL) {
+      return NullableVariableState.NOT_NULL;
+    }
+    return this;
+  }
+
 }

@@ -92,4 +92,11 @@ public class SimpleProgramBuilder {
     return this;
   }
 
+  public SimpleProgramBuilder emitVarNotEqulas(String var, NullableVariableState value) {
+    VariableValueInstruction instruction = new VariableValueInstruction();
+    instruction.setVariable(var);
+    instruction.setValue(value.not());
+    myProgram.add(instruction);
+    return this;
+  }
 }

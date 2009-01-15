@@ -60,10 +60,7 @@ public class NullableAnalyzer <T> implements DataFlowAnalyzer<Map<T, NullableVar
       VariableValueInstruction varValue = (VariableValueInstruction)state.getInstruction();
       NullableVariableState value = varValue.getValue();
       T variable = (T)varValue.getVariable();
-      if (value == null) {
-        MapSequence.fromMap(result).put(variable, NullableVariableState.UNKNOWN);
-      } else
-      {
+      if (value != null) {
         MapSequence.fromMap(result).put(variable, value);
       }
     }
