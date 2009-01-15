@@ -257,6 +257,7 @@ public class IntelligentInputUtil {
         editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
       }
     } else {
+      assert false;
       editorContext.flushEvents();
       EditorCell_Label rtCell = prepareRTCell(editorContext, newNode, tail);
       if (rtCell != null) {
@@ -283,7 +284,7 @@ public class IntelligentInputUtil {
       sourceCellRemains = true;
     } else if (canCompleteSmallPatternImmediately(info, smallPattern, "") &&
       info.getMatchingActions(head, false).isEmpty()) {
-      
+      assert false;
       newNode = info.getMatchingActions(smallPattern, true).get(0).substitute(editorContext, smallPattern);
       if (newNode == null) return true;
 
