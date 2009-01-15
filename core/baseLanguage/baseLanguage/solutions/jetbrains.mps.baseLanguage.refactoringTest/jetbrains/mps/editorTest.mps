@@ -84,7 +84,7 @@
                   </node>
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635648" />
                 </node>
-                <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1230058635649">
+                <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232027800605">
                   <property name="isLastPosition" value="true" />
                   <property name="cellId" value="property_name" />
                 </node>
@@ -118,8 +118,8 @@
                   </node>
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635664" />
                 </node>
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1230058635665">
-                  <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1230058635666">
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1232027859118">
+                  <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232027861869">
                     <property name="isLastPosition" value="true" />
                     <property name="cellId" value="Error_9010_0" />
                   </node>
@@ -1074,6 +1074,66 @@
     <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231856275213">
       <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1231856275214">
         <property name="keys" value="inta" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1232031307006">
+    <property name="package" value="bugTest" />
+    <property name="name" value="AssigningToField" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1232031357067">
+      <property name="name" value="C" />
+      <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1232031382524">
+        <property name="name" value="a" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1232031382525" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1232031414921" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232031357068" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1232031357069">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1232031357070" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232031357071" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232031357072">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232031435380">
+            <property name="isLastPosition" value="true" />
+            <property name="cellId" value="Constant_6577_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1232031361307">
+      <property name="name" value="C" />
+      <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1232031419203">
+        <property name="name" value="a" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1232031419204" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1232031420269" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232031361308" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1232031361309">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1232031361310" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232031361311" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232031361312">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232031449045">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1232031450346">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232031450412">
+                <property name="value" value="0" />
+                <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232031452475">
+                  <property name="isLastPosition" value="true" />
+                  <property name="cellId" value="property_value" />
+                </node>
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232031449046">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1232031449047">
+                  <link role="fieldDeclaration" targetNodeId="1232031419203" resolveInfo="a" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1232031449048" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232031456664">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1232031456665">
+        <property name="keys" value="a=0" />
       </node>
     </node>
   </node>

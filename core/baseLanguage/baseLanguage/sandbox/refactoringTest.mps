@@ -202,55 +202,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1231943402727">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231943402728">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231943438909">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231943439130">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1231943438910">
-                  <link role="variableDeclaration" targetNodeId="1231934407617" resolveInfo="str" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1231943445493">
-                  <link role="baseMethodDeclaration" targetNodeId="10.~String.hashCode():int" resolveInfo="hashCode" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1231944723590">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231944727485">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1231944726640">
-                <link role="variableDeclaration" targetNodeId="1231934407617" resolveInfo="str" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1231944730113">
-                <link role="baseMethodDeclaration" targetNodeId="10.~String.getBytes():byte[]" resolveInfo="getBytes" />
-              </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1231943430546">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1231943407825">
-                <link role="variableDeclaration" targetNodeId="1231934407617" resolveInfo="str" />
-              </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1231943433158" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232021112048">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1232023473616">
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232021112049">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1232021112050">
-                <link role="fieldDeclaration" targetNodeId="1228738397217" resolveInfo="a" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1232021112051" />
-            </node>
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232023476495">
-              <property name="value" value="2" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232023217391">
-        <property name="name" value="a" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232023217392">
-          <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
-        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1231941598849">
@@ -282,7 +233,7 @@
       </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1231855940102">
-      <property name="name" value="integer" />
+      <property name="name" value="eger" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1231855940103" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1231855943261">
         <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />

@@ -163,7 +163,9 @@ public class IntelligentInputUtil {
 
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
       INodeSubstituteAction item = matchingActions.get(0);
-      newNode = item.substitute(editorContext, smallPattern);
+      item.substitute(editorContext, smallPattern);
+
+      newNode = editorContext.getSelectedCell().getSNode();
 
       if (newNode == null) return true;
       
@@ -256,7 +258,8 @@ public class IntelligentInputUtil {
         EditorCell errorOrEditableCell = yetNewNodeCell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE), true);
         editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
       }
-    } else {      
+    } else {
+      assert false;
       editorContext.flushEvents();
       EditorCell_Label rtCell = prepareRTCell(editorContext, newNode, tail);
       if (rtCell != null) {
