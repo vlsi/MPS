@@ -232,6 +232,25 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232021112048">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1232023473616">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232021112049">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1232021112050">
+                <link role="fieldDeclaration" targetNodeId="1228738397217" resolveInfo="a" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1232021112051" />
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232023476495">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232023217391">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232023217392">
+          <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1231941598849">

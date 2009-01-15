@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
@@ -37,8 +37,11 @@ public class NullableAnalysisResult {
   }
 
   private void checkAssignment(@NotNull() SNode assignment) {
-    if (this.badAssignment(Expression_Behavior.call_getNullableState_1230540989695(SLinkOperations.getTarget(assignment, "lValue", true)), this.getNodeState(SLinkOperations.getTarget(assignment, "rValue", true)))) {
-      ListSequence.fromList(this.myCheckResults).addElement(assignment);
+    SNode rValue = SLinkOperations.getTarget(assignment, "rValue", true);
+    if (rValue != null) {
+      if (this.badAssignment(Expression_Behavior.call_getNullableState_1230540989695(SLinkOperations.getTarget(assignment, "lValue", true)), this.getNodeState(rValue))) {
+        ListSequence.fromList(this.myCheckResults).addElement(assignment);
+      }
     }
   }
 
