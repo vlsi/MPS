@@ -27,7 +27,8 @@ import java.awt.GridLayout;
 
 class GenerationSettingsPreferencesPage {
   private JPanel myPage;
-  private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
+  private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");  
+  private JCheckBox myGenerateRequirements = new JCheckBox("Generate requirements");
   private JCheckBox myDumpQueriesStatisticsCheckBox = new JCheckBox("Dump query execution statistic in console");
   private JCheckBox myShowErrorsOnlyCheckBox = new JCheckBox("Log errors only (no info and warnings)");
   private GenerationSettings myGenerationSettings;
@@ -35,11 +36,13 @@ class GenerationSettingsPreferencesPage {
   public GenerationSettingsPreferencesPage(GenerationSettings settings) {
     myGenerationSettings = settings;
     mySaveTransientModelsCheckBox.setSelected(myGenerationSettings.isSaveTransientModels());
+    myGenerateRequirements.setSelected(myGenerationSettings.isGenerateRequirements());
     myDumpQueriesStatisticsCheckBox.setSelected(myGenerationSettings.isDumpStatistics());
     myShowErrorsOnlyCheckBox.setSelected(myGenerationSettings.isShowErrorsOnly());
 
     JPanel optionsPanel = new JPanel(new GridLayout(0, 1));
     optionsPanel.add(mySaveTransientModelsCheckBox);
+    optionsPanel.add(myGenerateRequirements);
     optionsPanel.add(myDumpQueriesStatisticsCheckBox);
     optionsPanel.add(myShowErrorsOnlyCheckBox);
 

@@ -200,7 +200,7 @@ public class GeneratorManager implements SearchableConfigurable {
       saveTransientModels = false;
     }
 
-    if (!myGeneratingRequirements) {
+    if (!myGeneratingRequirements && mySettings.isGenerateRequirements()) {
       boolean wasSaveTransientModels = mySettings.isSaveTransientModels();
       myGeneratingRequirements = true;
       try {

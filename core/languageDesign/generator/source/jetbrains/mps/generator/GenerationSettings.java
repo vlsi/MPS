@@ -131,6 +131,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.mySaveTransientModels = saveTransientModels;
   }
 
+  public boolean isGenerateRequirements() {
+    return myState.myGenerateRequirements;
+  }
+
+  public void setGenerateRequirements(boolean generateRequirements) {
+    myState.myGenerateRequirements = generateRequirements;
+  }
+
   public boolean isShowErrorsOnly() {
     return myState.myShowErrorsOnly;
   }
@@ -150,8 +158,9 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
   public static class MyState {
     private boolean mySaveTransientModels;
-    private boolean myDumpStatistics = false;
+    private boolean myDumpStatistics;
     private boolean myShowErrorsOnly;
+    private boolean myGenerateRequirements = true;
 
     public boolean isSaveTransientModels() {
       return mySaveTransientModels;
@@ -175,6 +184,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
     public void setShowErrorsOnly(boolean showErrorsOnly) {
       myShowErrorsOnly = showErrorsOnly;
+    }
+
+    public boolean isGenerateRequirements() {
+      return myGenerateRequirements;
+    }
+
+    public void setGenerateRequirements(boolean generateRequirements) {
+      myGenerateRequirements = generateRequirements;
     }
   }
 }
