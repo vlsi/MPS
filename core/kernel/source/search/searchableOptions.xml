@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <options>
-  <configurable id="project.options.prefs.page" configurable_name="Project Settings">
-    <option name="devkits" hit="Devkits" />
-    <option name="languages" hit="Languages" />
-    <option name="project" hit="Project Settings" />
-    <option name="settings" hit="Project Settings" />
-    <option name="solutions" hit="Solutions" />
-    <option name="configurations" hit="Test Configurations" />
-    <option name="test" hit="Test Configurations" />
-  </configurable>
   <configurable id="preferences.lookFeel" configurable_name="Appearance">
     <option name="automatically" hit=" Automatically position mouse cursor  on default button " />
     <option name="br" hit=" Automatically position mouse cursor  on default button " />
@@ -69,28 +60,9 @@
     <option name="options" hit="Window Options" />
     <option name="window" hit="Window Options" />
   </configurable>
-  <configurable id="mps.typesystem.preferences.component" configurable_name="Typesystem Preferences">
-    <option name="preferences" hit="Typesystem Preferences" />
-    <option name="typesystem" hit="Typesystem Preferences" />
-    <option name="debug" hit="Use debug highlighting" />
-    <option name="highlighting" hit="Use debug highlighting" />
-    <option name="generation" hit="Use optimization for generation" />
-    <option name="optimization" hit="Use optimization for generation" />
-    <option name="advanced" hit="cache for coersion enabled (advanced)" />
-    <option name="cache" hit="cache for coersion enabled (advanced)" />
-    <option name="coersion" hit="cache for coersion enabled (advanced)" />
-    <option name="enabled" hit="cache for coersion enabled (advanced)" />
-    <option name="advanced" hit="cache for coersion w/patterns enabled (advanced)" />
-    <option name="cache" hit="cache for coersion w/patterns enabled (advanced)" />
-    <option name="coersion" hit="cache for coersion w/patterns enabled (advanced)" />
-    <option name="enabled" hit="cache for coersion w/patterns enabled (advanced)" />
-    <option name="patterns" hit="cache for coersion w/patterns enabled (advanced)" />
-    <option name="advanced" hit="cache for subtyping enabled (advanced)" />
-    <option name="cache" hit="cache for subtyping enabled (advanced)" />
-    <option name="enabled" hit="cache for subtyping enabled (advanced)" />
-    <option name="subtyping" hit="cache for subtyping enabled (advanced)" />
-    <option name="timeout" hit="typechecker timeout" />
-    <option name="typechecker" hit="typechecker timeout" />
+  <configurable id="project.propVCSSupport.Mappings" configurable_name="Version Control">
+    <option name="control" hit="Version Control" />
+    <option name="version" hit="Version Control" />
   </configurable>
   <configurable id="preferences.pluginManager" configurable_name="Plugins">
     <option name="specified" hit="(not specified)" />
@@ -115,90 +87,9 @@
     <option name="vendor" hit="Vendor" />
     <option name="version" hit="Version:" />
   </configurable>
-  <configurable id="project.propVCSSupport.Mappings" configurable_name="Version Control">
-    <option name="control" hit="Version Control" />
-    <option name="version" hit="Version Control" />
-  </configurable>
-  <configurable id="preferences.general" configurable_name="General">
-    <option name="application" hit="Confirm application exit" />
-    <option name="confirm" hit="Confirm application exit" />
-    <option name="exit" hit="Confirm application exit" />
-    <option name="general" hit="General" />
-    <option name="last" hit="Reopen last project on startup" />
-    <option name="project" hit="Reopen last project on startup" />
-    <option name="reopen" hit="Reopen last project on startup" />
-    <option name="startup" hit="Reopen last project on startup" />
-    <option name="application" hit="Save files automatically if application is idle for" />
-    <option name="automatically" hit="Save files automatically if application is idle for" />
-    <option name="files" hit="Save files automatically if application is idle for" />
-    <option name="idle" hit="Save files automatically if application is idle for" />
-    <option name="if" hit="Save files automatically if application is idle for" />
-    <option name="save" hit="Save files automatically if application is idle for" />
-    <option name="deactivation" hit="Save files on frame deactivation" />
-    <option name="files" hit="Save files on frame deactivation" />
-    <option name="frame" hit="Save files on frame deactivation" />
-    <option name="save" hit="Save files on frame deactivation" />
-    <option name="shutdown" hit="Startup/Shutdown" />
-    <option name="startup" hit="Startup/Shutdown" />
-    <option name="synchronization" hit="Synchronization" />
-    <option name="activation" hit="Synchronize files on frame activation" />
-    <option name="files" hit="Synchronize files on frame activation" />
-    <option name="frame" hit="Synchronize files on frame activation" />
-    <option name="synchronize" hit="Synchronize files on frame activation" />
-    <option name="sec" hit="sec." />
-  </configurable>
-  <configurable id="preferences.customizations" configurable_name="Menus and Toolbars">
-    <option name="separator" hit="Add Separator" />
-    <option name="description" hit="Description:" />
-    <option name="action" hit="Edit Action Icon" />
-    <option name="icon" hit="Edit Action Icon" />
-    <option name="menus" hit="Menus and Toolbars" />
-    <option name="toolbars" hit="Menus and Toolbars" />
-    <option name="name" hit="Scheme Name:" />
-    <option name="scheme" hit="Scheme Name:" />
-  </configurable>
-  <configurable id="generator.manager" configurable_name="Generator Settings">
-    <option name="console" hit="Dump query execution statistic in console" />
-    <option name="dump" hit="Dump query execution statistic in console" />
-    <option name="execution" hit="Dump query execution statistic in console" />
-    <option name="query" hit="Dump query execution statistic in console" />
-    <option name="statistic" hit="Dump query execution statistic in console" />
-    <option name="generator" hit="Generator Settings" />
-    <option name="settings" hit="Generator Settings" />
-    <option name="errors" hit="Log errors only (no info and warnings)" />
-    <option name="info" hit="Log errors only (no info and warnings)" />
-    <option name="log" hit="Log errors only (no info and warnings)" />
-    <option name="warnings" hit="Log errors only (no info and warnings)" />
-    <option name="generation" hit="Save transient models on generation" />
-    <option name="models" hit="Save transient models on generation" />
-    <option name="save" hit="Save transient models on generation" />
-    <option name="transient" hit="Save transient models on generation" />
-  </configurable>
-  <configurable id="preferences.pathVariables" configurable_name="Path Variables">
-    <option name="description" hit="Description:" />
-    <option name="path" hit="Path Variables" />
-    <option name="variables" hit="Path Variables" />
-  </configurable>
-  <configurable id="project.propVCSSupport.vcses" configurable_name="VCSs" />
-  <configurable id="preferences.keymap" configurable_name="Keymap">
-    <option name="copy" hit=" Copy" />
-    <option name="reset" hit=" Reset" />
-    <option name="action" hit="Action Description:" />
-    <option name="description" hit="Action Description:" />
-    <option name="keyboard" hit="Add  Keyboard Shortcut..." />
-    <option name="shortcut" hit="Add  Keyboard Shortcut..." />
-    <option name="mouse" hit="Add  Mouse Shortcut..." />
-    <option name="shortcut" hit="Add  Mouse Shortcut..." />
-    <option name="de" hit="De lete" />
-    <option name="lete" hit="De lete" />
-    <option name="keymap" hit="Keymap" />
-    <option name="keymaps" hit="Keymaps" />
-    <option name="keymap" hit="Parent keymap:" />
-    <option name="parent" hit="Parent keymap:" />
-    <option name="shortc" hit="Shortc uts:" />
-    <option name="uts" hit="Shortc uts:" />
-  </configurable>
   <configurable id="preferences.keymap.keymap" configurable_name="Keymap">
+    <option name="abort" hit="Abort Rebasing" />
+    <option name="rebasing" hit="Abort Rebasing" />
     <option name="actions" hit="Actions on Pairs of Files" />
     <option name="files" hit="Actions on Pairs of Files" />
     <option name="pairs" hit="Actions on Pairs of Files" />
@@ -312,10 +203,6 @@
     <option name="capture" hit="Capture memory snapshot" />
     <option name="memory" hit="Capture memory snapshot" />
     <option name="snapshot" hit="Capture memory snapshot" />
-    <option name="change" hit="Change Current Customization Scheme" />
-    <option name="current" hit="Change Current Customization Scheme" />
-    <option name="customization" hit="Change Current Customization Scheme" />
-    <option name="scheme" hit="Change Current Customization Scheme" />
     <option name="change" hit="Change File Encoding" />
     <option name="encoding" hit="Change File Encoding" />
     <option name="file" hit="Change File Encoding" />
@@ -553,6 +440,8 @@
     <option name="settings" hit="Configure global CVS settings" />
     <option name="context" hit="Context Help" />
     <option name="help" hit="Context Help" />
+    <option name="continue" hit="Continue Rebasing" />
+    <option name="rebasing" hit="Continue Rebasing" />
     <option name="copy" hit="Copy" />
     <option name="copy" hit="Copy Paths" />
     <option name="paths" hit="Copy Paths" />
@@ -625,6 +514,9 @@
     <option name="copy" hit="Cut/Copy/Paste Actions" />
     <option name="cut" hit="Cut/Copy/Paste Actions" />
     <option name="paste" hit="Cut/Copy/Paste Actions" />
+    <option name="default" hit="Default Keymap Reference" />
+    <option name="keymap" hit="Default Keymap Reference" />
+    <option name="reference" hit="Default Keymap Reference" />
     <option name="applied" hit="Delete Applied Shelved Changes" />
     <option name="changes" hit="Delete Applied Shelved Changes" />
     <option name="shelved" hit="Delete Applied Shelved Changes" />
@@ -692,6 +584,10 @@
     <option name="actions" hit="Editor Select Actions" />
     <option name="editor" hit="Editor Select Actions" />
     <option name="select" hit="Editor Select Actions" />
+    <option name="editor" hit="Editor Tab Popup Menu" />
+    <option name="menu" hit="Editor Tab Popup Menu" />
+    <option name="popup" hit="Editor Tab Popup Menu" />
+    <option name="tab" hit="Editor Tab Popup Menu" />
     <option name="enter" hit="Enter" />
     <option name="escape" hit="Escape" />
     <option name="exit" hit="Exit" />
@@ -783,6 +679,8 @@
     <option name="get" hit="Get from cvs repository" />
     <option name="repository" hit="Get from cvs repository" />
     <option name="git" hit="Git" />
+    <option name="git" hit="Git Init ..." />
+    <option name="init" hit="Git Init ..." />
     <option name="cvs" hit="Global CVS" />
     <option name="global" hit="Global CVS" />
     <option name="global" hit="Global Settings..." />
@@ -898,9 +796,24 @@
     <option name="lock" hit="Lock the file in external VCS" />
     <option name="vcs" hit="Lock the file in external VCS" />
     <option name="lock" hit="Lock..." />
+    <option name="blog" hit="MPS Blog" />
+    <option name="mps" hit="MPS Blog" />
+    <option name="documentation" hit="MPS Documentation" />
+    <option name="mps" hit="MPS Documentation" />
+    <option name="forum" hit="MPS Forum" />
+    <option name="mps" hit="MPS Forum" />
+    <option name="home" hit="MPS Home" />
+    <option name="mps" hit="MPS Home" />
+    <option name="issue" hit="MPS Issue Tracker" />
+    <option name="mps" hit="MPS Issue Tracker" />
+    <option name="tracker" hit="MPS Issue Tracker" />
+    <option name="mps" hit="MPS Tutorials" />
+    <option name="tutorials" hit="MPS Tutorials" />
     <option name="macros" hit="Macros" />
     <option name="main" hit="Main Toolbar" />
     <option name="toolbar" hit="Main Toolbar" />
+    <option name="main" hit="Main menu" />
+    <option name="menu" hit="Main menu" />
     <option name="mark" hit="Mark Resolved..." />
     <option name="resolved" hit="Mark Resolved..." />
     <option name="conflicts" hit="Mark text and properties conflicts as resolved" />
@@ -1159,6 +1072,7 @@
     <option name="switch" hit="Quick Switch Scheme" />
     <option name="idea" hit="Quit IDEA" />
     <option name="quit" hit="Quit IDEA" />
+    <option name="rebase" hit="Rebase ..." />
     <option name="baselines" hit="Rebase project along baselines" />
     <option name="project" hit="Rebase project along baselines" />
     <option name="rebase" hit="Rebase project along baselines" />
@@ -1435,9 +1349,6 @@
     <option name="documentation" hit="Show MPS Documentation" />
     <option name="mps" hit="Show MPS Documentation" />
     <option name="show" hit="Show MPS Documentation" />
-    <option name="graph" hit="Show Revision Graph" />
-    <option name="revision" hit="Show Revision Graph" />
-    <option name="show" hit="Show Revision Graph" />
     <option name="show" hit="Show Source" />
     <option name="source" hit="Show Source" />
     <option name="language" hit="Show The Simplest Language Screencast" />
@@ -1533,6 +1444,9 @@
     <option name="hide" hit="Show/hide the status bar" />
     <option name="show" hit="Show/hide the status bar" />
     <option name="status" hit="Show/hide the status bar" />
+    <option name="commit" hit="Skip Commit in Rebasing" />
+    <option name="rebasing" hit="Skip Commit in Rebasing" />
+    <option name="skip" hit="Skip Commit in Rebasing" />
     <option name="sourcesafe" hit="SourceSafe" />
     <option name="horizontally" hit="Split Horizontally" />
     <option name="split" hit="Split Horizontally" />
@@ -1611,9 +1525,6 @@
     <option name="color" hit="Switch Color Scheme" />
     <option name="scheme" hit="Switch Color Scheme" />
     <option name="switch" hit="Switch Color Scheme" />
-    <option name="customization" hit="Switch Customization Scheme" />
-    <option name="scheme" hit="Switch Customization Scheme" />
-    <option name="switch" hit="Switch Customization Scheme" />
     <option name="keymap" hit="Switch Keymap" />
     <option name="switch" hit="Switch Keymap" />
     <option name="feel" hit="Switch Look&amp;Feel" />
@@ -1814,6 +1725,143 @@
     <option name="sebastien" hit="You can watch how a simple language is created. (Thanks to Sebastien Arbogast)" />
     <option name="simple" hit="You can watch how a simple language is created. (Thanks to Sebastien Arbogast)" />
     <option name="watch" hit="You can watch how a simple language is created. (Thanks to Sebastien Arbogast)" />
+  </configurable>
+  <configurable id="preferences.keymap" configurable_name="Keymap">
+    <option name="copy" hit=" Copy" />
+    <option name="reset" hit=" Reset" />
+    <option name="action" hit="Action Description:" />
+    <option name="description" hit="Action Description:" />
+    <option name="keyboard" hit="Add  Keyboard Shortcut..." />
+    <option name="shortcut" hit="Add  Keyboard Shortcut..." />
+    <option name="mouse" hit="Add  Mouse Shortcut..." />
+    <option name="shortcut" hit="Add  Mouse Shortcut..." />
+    <option name="de" hit="De lete" />
+    <option name="lete" hit="De lete" />
+    <option name="keymap" hit="Keymap" />
+    <option name="keymaps" hit="Keymaps" />
+    <option name="keymap" hit="Parent keymap:" />
+    <option name="parent" hit="Parent keymap:" />
+    <option name="shortc" hit="Shortc uts:" />
+    <option name="uts" hit="Shortc uts:" />
+  </configurable>
+  <configurable id="generator.manager" configurable_name="Generator Settings">
+    <option name="console" hit="Dump query execution statistic in console" />
+    <option name="dump" hit="Dump query execution statistic in console" />
+    <option name="execution" hit="Dump query execution statistic in console" />
+    <option name="query" hit="Dump query execution statistic in console" />
+    <option name="statistic" hit="Dump query execution statistic in console" />
+    <option name="generator" hit="Generator Settings" />
+    <option name="settings" hit="Generator Settings" />
+    <option name="errors" hit="Log errors only (no info and warnings)" />
+    <option name="info" hit="Log errors only (no info and warnings)" />
+    <option name="log" hit="Log errors only (no info and warnings)" />
+    <option name="warnings" hit="Log errors only (no info and warnings)" />
+    <option name="generation" hit="Save transient models on generation" />
+    <option name="models" hit="Save transient models on generation" />
+    <option name="save" hit="Save transient models on generation" />
+    <option name="transient" hit="Save transient models on generation" />
+  </configurable>
+  <configurable id="mps.typesystem.preferences.component" configurable_name="Typesystem Preferences">
+    <option name="preferences" hit="Typesystem Preferences" />
+    <option name="typesystem" hit="Typesystem Preferences" />
+    <option name="debug" hit="Use debug highlighting" />
+    <option name="highlighting" hit="Use debug highlighting" />
+    <option name="generation" hit="Use optimization for generation" />
+    <option name="optimization" hit="Use optimization for generation" />
+    <option name="advanced" hit="cache for coersion enabled (advanced)" />
+    <option name="cache" hit="cache for coersion enabled (advanced)" />
+    <option name="coersion" hit="cache for coersion enabled (advanced)" />
+    <option name="enabled" hit="cache for coersion enabled (advanced)" />
+    <option name="advanced" hit="cache for coersion w/patterns enabled (advanced)" />
+    <option name="cache" hit="cache for coersion w/patterns enabled (advanced)" />
+    <option name="coersion" hit="cache for coersion w/patterns enabled (advanced)" />
+    <option name="enabled" hit="cache for coersion w/patterns enabled (advanced)" />
+    <option name="patterns" hit="cache for coersion w/patterns enabled (advanced)" />
+    <option name="advanced" hit="cache for subtyping enabled (advanced)" />
+    <option name="cache" hit="cache for subtyping enabled (advanced)" />
+    <option name="enabled" hit="cache for subtyping enabled (advanced)" />
+    <option name="subtyping" hit="cache for subtyping enabled (advanced)" />
+    <option name="timeout" hit="typechecker timeout" />
+    <option name="typechecker" hit="typechecker timeout" />
+  </configurable>
+  <configurable id="preferences.customizations" configurable_name="Menus and Toolbars">
+    <option name="separator" hit="Add Separator" />
+    <option name="action" hit="Edit Action Icon" />
+    <option name="icon" hit="Edit Action Icon" />
+    <option name="menus" hit="Menus and Toolbars" />
+    <option name="toolbars" hit="Menus and Toolbars" />
+    <option name="default" hit="Restore Default" />
+    <option name="restore" hit="Restore Default" />
+  </configurable>
+  <configurable id="preferences.general" configurable_name="General">
+    <option name="application" hit="Confirm application exit" />
+    <option name="confirm" hit="Confirm application exit" />
+    <option name="exit" hit="Confirm application exit" />
+    <option name="general" hit="General" />
+    <option name="last" hit="Reopen last project on startup" />
+    <option name="project" hit="Reopen last project on startup" />
+    <option name="reopen" hit="Reopen last project on startup" />
+    <option name="startup" hit="Reopen last project on startup" />
+    <option name="application" hit="Save files automatically if application is idle for" />
+    <option name="automatically" hit="Save files automatically if application is idle for" />
+    <option name="files" hit="Save files automatically if application is idle for" />
+    <option name="idle" hit="Save files automatically if application is idle for" />
+    <option name="if" hit="Save files automatically if application is idle for" />
+    <option name="save" hit="Save files automatically if application is idle for" />
+    <option name="deactivation" hit="Save files on frame deactivation" />
+    <option name="files" hit="Save files on frame deactivation" />
+    <option name="frame" hit="Save files on frame deactivation" />
+    <option name="save" hit="Save files on frame deactivation" />
+    <option name="shutdown" hit="Startup/Shutdown" />
+    <option name="startup" hit="Startup/Shutdown" />
+    <option name="synchronization" hit="Synchronization" />
+    <option name="activation" hit="Synchronize files on frame activation" />
+    <option name="files" hit="Synchronize files on frame activation" />
+    <option name="frame" hit="Synchronize files on frame activation" />
+    <option name="synchronize" hit="Synchronize files on frame activation" />
+    <option name="sec" hit="sec." />
+  </configurable>
+  <configurable id="reference.settings.ide.settings.web.browsers" configurable_name="Web Browsers">
+    <option name="browser" hit="Default Web Browser" />
+    <option name="default" hit="Default Web Browser" />
+    <option name="web" hit="Default Web Browser" />
+    <option name="browser" hit="Use system default browser" />
+    <option name="default" hit="Use system default browser" />
+    <option name="system" hit="Use system default browser" />
+    <option name="browsers" hit="Web Browsers" />
+    <option name="web" hit="Web Browsers" />
+  </configurable>
+  <configurable id="preferences.pathVariables" configurable_name="Path Variables">
+    <option name="description" hit="Description:" />
+    <option name="path" hit="Path Variables" />
+    <option name="variables" hit="Path Variables" />
+  </configurable>
+  <configurable id="project.options.prefs.page" configurable_name="Project Settings">
+    <option name="devkits" hit="Devkits" />
+    <option name="languages" hit="Languages" />
+    <option name="project" hit="Project Settings" />
+    <option name="settings" hit="Project Settings" />
+    <option name="solutions" hit="Solutions" />
+    <option name="configurations" hit="Test Configurations" />
+    <option name="test" hit="Test Configurations" />
+  </configurable>
+  <configurable id="project.propVCSSupport.vcses" configurable_name="VCSs" />
+  <configurable id="generator.manager" configurable_name="Generator Settings">
+    <option name="console" hit="Dump query execution statistic in console" />
+    <option name="dump" hit="Dump query execution statistic in console" />
+    <option name="execution" hit="Dump query execution statistic in console" />
+    <option name="query" hit="Dump query execution statistic in console" />
+    <option name="statistic" hit="Dump query execution statistic in console" />
+    <option name="generator" hit="Generator Settings" />
+    <option name="settings" hit="Generator Settings" />
+    <option name="errors" hit="Log errors only (no info and warnings)" />
+    <option name="info" hit="Log errors only (no info and warnings)" />
+    <option name="log" hit="Log errors only (no info and warnings)" />
+    <option name="warnings" hit="Log errors only (no info and warnings)" />
+    <option name="generation" hit="Save transient models on generation" />
+    <option name="models" hit="Save transient models on generation" />
+    <option name="save" hit="Save transient models on generation" />
+    <option name="transient" hit="Save transient models on generation" />
   </configurable>
   <configurable id="mps.editor.settings" configurable_name="MPS Editor Settings">
     <option name="choose" hit="Choose" />

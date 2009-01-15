@@ -51,6 +51,7 @@ public class GenerationController {
   private static final int TIMER_DELAY = 100; //milliseconds
 
   private GeneratorManager myManager;
+  private GenerationSettings mySettings;
   private List<Pair<SModelDescriptor, IOperationContext>> myInputModels;
   private IGenerationType myGenerationType;
   private ProgressIndicator myProgress;
@@ -63,6 +64,7 @@ public class GenerationController {
   private Map<IModule, IOperationContext> myModulesToContexts = new HashMap<IModule, IOperationContext>();
 
   public GenerationController(GeneratorManager generatorManager,
+                              GenerationSettings settings,
                               List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
                               IGenerationType generationType,
                               ProgressIndicator progress,
@@ -70,6 +72,7 @@ public class GenerationController {
                               boolean saveTransientModels) {
 
     myManager = generatorManager;
+    mySettings = settings;
     myInputModels = _inputModels;
     myGenerationType = generationType;
     myProgress = progress;
@@ -217,11 +220,11 @@ public class GenerationController {
     myMesssages.handle(new Message(MessageKind.INFORMATION,GenerationController.class, "    target root folder: \"" + outputFolder + "\""));
 
     //++ generation
-    Statistics.setEnabled(Statistics.TPL, myManager.isDumpStatistics());
+    Statistics.setEnabled(Statistics.TPL, mySettings.isDumpStatistics());
     String wasLoggingThreshold = null;
     IGenerationSession generationSession = new GenerationSession(invocationContext, mySaveTransientModels, myProgress, myMesssages);
     try {
-      if (myManager.isShowErrorsOnly()) {
+      if (mySettings.isShowErrorsOnly()) {
         wasLoggingThreshold = Logger.setThreshold("ERROR");
       }
       Logger.addLoggingHandler(generationSession.getLoggingHandler());
@@ -243,7 +246,7 @@ public class GenerationController {
 
         GenerationStatus status = generationSession.generateModel(inputModel);
         currentGenerationOK = currentGenerationOK && status.isOk();
-        if (myManager.isDumpStatistics()) {
+        if (mySettings.isDumpStatistics()) {
           Statistics.dumpAll();
         }
 

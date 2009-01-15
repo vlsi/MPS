@@ -23,6 +23,7 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
@@ -226,7 +227,7 @@ public class RefactoringProcessor {
               descriptors.add(model.getModelDescriptor());
             }
 
-            new GeneratorManager(operationContext.getComponent(Project.class)).generateModels(descriptors,
+            new GeneratorManager(operationContext.getComponent(Project.class), new GenerationSettings()).generateModels(descriptors,
               operationContext,
               IGenerationType.FILES,
               progressIndicator,

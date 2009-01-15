@@ -281,7 +281,11 @@
     </component>
 
     <component>
-        <implementation-class>jetbrains.mps.smodel.LanguageHierarchyCache</implementation-class>
+      <implementation-class>jetbrains.mps.smodel.LanguageHierarchyCache</implementation-class>
+    </component>
+
+    <component>
+        <implementation-class>jetbrains.mps.generator.GenerationSettings</implementation-class>
     </component>
   </application-components>
 

@@ -16,10 +16,8 @@
 package jetbrains.mps.generator;
 
 import com.intellij.ide.IdeEventQueue;
-import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -27,9 +25,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
-import com.yourkit.api.ControllerImpl.GenerationType;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.generator.GeneratorManager.MyState;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.messages.*;
@@ -38,7 +34,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
@@ -49,8 +44,6 @@ import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 
 @State(
@@ -62,7 +55,7 @@ import java.util.concurrent.Executors;
   )
     }
 )
-public class GeneratorManager implements PersistentStateComponent<MyState>, SearchableConfigurable {
+public class GeneratorManager implements SearchableConfigurable {
   public static final int AMOUNT_PER_MODEL = 100;
   public static final int AMOUNT_PER_COMPILATION = 100;
 
@@ -71,14 +64,15 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
   private final List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
   private final List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
   private final List<CompilationListener> myCompilationListeners = new ArrayList<CompilationListener>();
-  private MyState myState = new MyState();
 
-  private GeneratorManagerPreferencesPage myPreferences;
+  private GenerationSettings mySettings;
+  private GenerationSettingsPreferencesPage myPreferences;
   private Project myProject;
   private boolean myGeneratingRequirements;
 
-  public GeneratorManager(Project project) {
+  public GeneratorManager(Project project, GenerationSettings settings) {
     myProject = project;
+    mySettings = settings;
   }
 
   public void addFileGenerator(IFileGenerator fileGenerator) {
@@ -87,30 +81,6 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
 
   public void removeFileGenerator(IFileGenerator fileGenerator) {
     myFileGenerators.remove(fileGenerator);
-  }
-
-  public boolean isSaveTransientModels() {
-    return myState.mySaveTransientModels;
-  }
-
-  public void setSaveTransientModels(boolean saveTransientModels) {
-    myState.mySaveTransientModels = saveTransientModels;
-  }
-
-  public boolean isShowErrorsOnly() {
-    return myState.myShowErrorsOnly;
-  }
-
-  public void setShowErrorsOnly(boolean showErrorsOnly) {
-    myState.myShowErrorsOnly = showErrorsOnly;
-  }
-
-  public boolean isDumpStatistics() {
-    return myState.myDumpStatistics;
-  }
-
-  public void setDumpStatistics(boolean dumpStatistics) {
-    myState.myDumpStatistics = dumpStatistics;
   }
 
   public IGenerationType getDefaultModuleGenerationType() {
@@ -205,7 +175,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
 
     // confirm saving transient models
     final boolean saveTransientModels;
-    if (isSaveTransientModels()) {
+    if (mySettings.isSaveTransientModels()) {
       Object[] options = {"Yes",
         "Not this time",
         "No, and cancel saving"};
@@ -223,7 +193,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
       } else {
         saveTransientModels = false;
         if (option == JOptionPane.CANCEL_OPTION) {
-          setSaveTransientModels(false);
+          mySettings.setSaveTransientModels(false);
         }
       }
     } else {
@@ -231,7 +201,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
     }
 
     if (!myGeneratingRequirements) {
-      boolean wasSaveTransientModels = isSaveTransientModels();
+      boolean wasSaveTransientModels = mySettings.isSaveTransientModels();
       myGeneratingRequirements = true;
       try {
         final Set<SModelDescriptor> requirements = new LinkedHashSet<SModelDescriptor>();
@@ -260,7 +230,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
           }
         }
       } finally {
-        setSaveTransientModels(wasSaveTransientModels);
+        mySettings.setSaveTransientModels(wasSaveTransientModels);
         myGeneratingRequirements = false;
       }
     }
@@ -342,7 +312,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
           project.getComponentSafe(GenerationTracer.class).startTracing();
         }
         fireBeforeGeneration(inputModels);
-        GenerationController gc = new GenerationController(GeneratorManager.this, inputModels, generationType, progress, messages, saveTransientModels);
+        GenerationController gc = new GenerationController(GeneratorManager.this, mySettings, inputModels, generationType, progress, messages, saveTransientModels);
         result[0] = gc.generate();
         project.getComponentSafe(GenerationTracer.class).finishTracing();
         fireAfterGeneration(inputModels);
@@ -423,17 +393,9 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
     myCompilationListeners.remove(l);
   }
 
-  public MyState getState() {
-    return myState;
-  }
-
-  public void loadState(MyState state) {
-    myState = state;
-  }
-
-  private GeneratorManagerPreferencesPage getPreferences() {
+  private GenerationSettingsPreferencesPage getPreferences() {
     if (myPreferences == null) {
-      myPreferences = new GeneratorManagerPreferencesPage(this);
+      myPreferences = new GenerationSettingsPreferencesPage(mySettings);
     }
     return myPreferences;
   }
@@ -480,35 +442,5 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Sear
 
   public Runnable enableSearch(String option) {
     return null;
-  }
-
-  public static class MyState {
-    private boolean mySaveTransientModels;
-    private boolean myDumpStatistics = false;
-    private boolean myShowErrorsOnly;
-
-    public boolean isSaveTransientModels() {
-      return mySaveTransientModels;
-    }
-
-    public void setSaveTransientModels(boolean saveTransientModels) {
-      mySaveTransientModels = saveTransientModels;
-    }
-
-    public boolean isDumpStatistics() {
-      return myDumpStatistics;
-    }
-
-    public void setDumpStatistics(boolean dumpStatistics) {
-      myDumpStatistics = dumpStatistics;
-    }
-
-    public boolean isShowErrorsOnly() {
-      return myShowErrorsOnly;
-    }
-
-    public void setShowErrorsOnly(boolean showErrorsOnly) {
-      myShowErrorsOnly = showErrorsOnly;
-    }
   }
 }

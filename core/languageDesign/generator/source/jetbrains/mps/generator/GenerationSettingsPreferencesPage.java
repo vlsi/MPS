@@ -25,18 +25,18 @@ import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
-class GeneratorManagerPreferencesPage {
+class GenerationSettingsPreferencesPage {
   private JPanel myPage;
   private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
   private JCheckBox myDumpQueriesStatisticsCheckBox = new JCheckBox("Dump query execution statistic in console");
   private JCheckBox myShowErrorsOnlyCheckBox = new JCheckBox("Log errors only (no info and warnings)");
-  private GeneratorManager myGeneratorManager;
+  private GenerationSettings myGenerationSettings;
 
-  public GeneratorManagerPreferencesPage(GeneratorManager generatorManager) {
-    myGeneratorManager = generatorManager;
-    mySaveTransientModelsCheckBox.setSelected(myGeneratorManager.isSaveTransientModels());
-    myDumpQueriesStatisticsCheckBox.setSelected(myGeneratorManager.isDumpStatistics());
-    myShowErrorsOnlyCheckBox.setSelected(myGeneratorManager.isShowErrorsOnly());
+  public GenerationSettingsPreferencesPage(GenerationSettings settings) {
+    myGenerationSettings = settings;
+    mySaveTransientModelsCheckBox.setSelected(myGenerationSettings.isSaveTransientModels());
+    myDumpQueriesStatisticsCheckBox.setSelected(myGenerationSettings.isDumpStatistics());
+    myShowErrorsOnlyCheckBox.setSelected(myGenerationSettings.isShowErrorsOnly());
 
     JPanel optionsPanel = new JPanel(new GridLayout(0, 1));
     optionsPanel.add(mySaveTransientModelsCheckBox);
@@ -65,14 +65,14 @@ class GeneratorManagerPreferencesPage {
   }
 
   public void commit() {
-    myGeneratorManager.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
-    myGeneratorManager.setDumpStatistics(myDumpQueriesStatisticsCheckBox.isSelected());
-    myGeneratorManager.setShowErrorsOnly(myShowErrorsOnlyCheckBox.isSelected());
+    myGenerationSettings.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
+    myGenerationSettings.setDumpStatistics(myDumpQueriesStatisticsCheckBox.isSelected());
+    myGenerationSettings.setShowErrorsOnly(myShowErrorsOnlyCheckBox.isSelected());
   }
 
   public boolean isModified() {
-    return !(myGeneratorManager.isSaveTransientModels()==mySaveTransientModelsCheckBox.isSelected()&&
-           myGeneratorManager.isDumpStatistics()==myDumpQueriesStatisticsCheckBox.isSelected()&&
-           myGeneratorManager.isShowErrorsOnly()==myShowErrorsOnlyCheckBox.isSelected());
+    return !(myGenerationSettings.isSaveTransientModels()==mySaveTransientModelsCheckBox.isSelected()&&
+           myGenerationSettings.isDumpStatistics()==myDumpQueriesStatisticsCheckBox.isSelected()&&
+           myGenerationSettings.isShowErrorsOnly()==myShowErrorsOnlyCheckBox.isSelected());
   }
 }
