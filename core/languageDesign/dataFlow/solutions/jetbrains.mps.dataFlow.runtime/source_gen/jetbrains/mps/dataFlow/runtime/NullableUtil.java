@@ -36,7 +36,9 @@ public class NullableUtil {
     for(SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false))) {
       if (!(p.getInstructionsFor(reference).isEmpty())) {
         Instruction instruction = p.getInstructionsFor(reference).get(0);
-        MapSequence.fromMap(result).put(reference, MapSequence.fromMap(analysisResult.get(instruction)).get(SLinkOperations.getTarget(reference, "variableDeclaration", false)));
+        NullableVariableState state = MapSequence.fromMap(analysisResult.get(instruction)).get(SLinkOperations.getTarget(reference, "variableDeclaration", false));
+        assert state != null;
+        MapSequence.fromMap(result).put(reference, state);
       }
     }
     return result;

@@ -22,6 +22,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import java.util.List;
@@ -278,6 +279,10 @@ __switch__:
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1225276664062(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new _Quotations.QuotationClass_4().createNode());
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1232018524538(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return ExpressionStatement_Behavior.isLeftmostDescendantOfExpressionStatement_1232019446678(_context.getSourceNode());
   }
 
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -2821,6 +2826,33 @@ __switch__:
 
         });
       }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1232016045892(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
+          SNode expression = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false, false), "expression", true);
+          SNodeOperations.replaceWithAnother(SNodeOperations.getParent(expression), result);
+          SLinkOperations.setTarget(result, "expression", expression, true);
+          return result;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "return";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+      });
     }
     return result;
   }

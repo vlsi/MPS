@@ -23,9 +23,9 @@ public class NullableAnalyzer <T> implements DataFlowAnalyzer<Map<T, NullableVar
     return AnalysisDirection.FORWARD;
   }
 
-  public Map<T, NullableVariableState> initial(Program program) {
+  public Map<T, NullableVariableState> initial(Program p) {
     Map<T, NullableVariableState> result = MapSequence.fromMap(new HashMap<T, NullableVariableState>());
-    for(Object var : SetSequence.fromSet(program.getVariables())) {
+    for(Object var : SetSequence.fromSet(p.getVariables())) {
       MapSequence.fromMap(result).put(((T)var), NullableVariableState.NOT_INIT);
     }
     return result;

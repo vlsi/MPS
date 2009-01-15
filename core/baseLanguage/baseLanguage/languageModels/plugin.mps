@@ -28888,11 +28888,15 @@
                       </node>
                     </node>
                   </node>
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231848203954">
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1231848203955">
-                      <link role="baseMethodDeclaration" targetNodeId="1225103189205" resolveInfo="getExpression" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.Expression" id="1232016240498">
+                    <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1232016257050">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232016262724">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232016262725">
+                          <link role="baseMethodDeclaration" targetNodeId="1225103189205" resolveInfo="getExpression" />
+                        </node>
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1232016262726" />
+                      </node>
                     </node>
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1231848203956" />
                   </node>
                   <node role="propertyAntiquotation$property_attribute$name" type="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" id="1231848203957">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231848203958">
