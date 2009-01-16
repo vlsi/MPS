@@ -5929,7 +5929,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1231850060043">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1231850060044">
-                <link role="baseMethodDeclaration" targetNodeId="98.~ModelDifferenceDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,java.lang.String)" resolveInfo="ModelDifferenceDialog" />
+                <link role="baseMethodDeclaration" targetNodeId="98.~ModelDifferenceDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,java.lang.String,boolean)" resolveInfo="ModelDifferenceDialog" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231850060045">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1231850060046" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1231850060047">
@@ -5944,6 +5944,9 @@
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1231850060050">
                   <property name="value" value="Model Difference" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1232133132356">
+                  <property name="value" value="true" />
                 </node>
               </node>
             </node>
