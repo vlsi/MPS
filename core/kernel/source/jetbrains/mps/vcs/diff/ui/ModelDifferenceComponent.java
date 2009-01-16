@@ -21,6 +21,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -76,6 +77,24 @@ class ModelDifferenceComponent extends JPanel {
     setLayout(new BorderLayout());
 
     myToolBar = new MPSToolBar(JToolBar.HORIZONTAL);
+    AbstractAction expandAllAction = new AbstractAction("Expand Model Tree", IconLoader.getIcon("/actions/expandall.png")) {
+      public void actionPerformed(ActionEvent e) {
+        myModelTree.expandAll();
+      }
+    };
+    AbstractAction collapseAllAction = new AbstractAction("Collapse Model Tree", IconLoader.getIcon("/actions/collapseall.png")) {
+      public void actionPerformed(ActionEvent e) {
+        MPSTreeNode root = myModelTree.getRootNode();
+        int childCount = root.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+          myModelTree.collapseAll((MPSTreeNode) root.getChildAt(i));
+        }
+      }
+    };
+    expandAllAction.putValue(Action.SHORT_DESCRIPTION, "Expand Model Tree");
+    collapseAllAction.putValue(Action.SHORT_DESCRIPTION, "Collapse Model Tree");
+    myToolBar.add(expandAllAction);
+    myToolBar.add(collapseAllAction);
     myToolBar.setFloatable(false);
 
     JSplitPane splitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
