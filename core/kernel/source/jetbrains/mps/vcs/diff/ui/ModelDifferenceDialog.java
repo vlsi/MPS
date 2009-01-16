@@ -20,6 +20,7 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.SModel;
 
 import javax.swing.JComponent;
+import javax.swing.Action;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 
@@ -27,11 +28,15 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   private ModelDifferenceComponent myDifferenceComponent;
 
-  public ModelDifferenceDialog(Frame parent, SModel oldModel, SModel newModel, String windowTitle) throws HeadlessException {
+  public ModelDifferenceDialog(Frame parent, SModel oldModel, SModel newModel, String windowTitle, boolean modal) throws HeadlessException {
     super(parent, windowTitle);
-//    setModal(false);
+    setModal(modal);
     myDifferenceComponent = new ModelDifferenceComponent();
     myDifferenceComponent.showDifference(oldModel, newModel);
+  }
+
+  public void addAction(Action action) {
+    myDifferenceComponent.addAction(action);
   }
 
   public DialogDimensions getDefaultDimensionSettings() {

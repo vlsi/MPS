@@ -64,7 +64,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
     try {
       final SModel memory = ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getSModel();
       final SModel disk = ModelPersistence.readModel(ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getModelFile());
-      final BaseDialog dialog = new ModelDifferenceDialog(ShowDifferencesWithModelOnDisk_Action.this.frame, disk, memory, "Model Difference");
+      final BaseDialog dialog = new ModelDifferenceDialog(ShowDifferencesWithModelOnDisk_Action.this.frame, disk, memory, "Model Difference", true);
       ApplicationManager.getApplication().invokeLater(new Runnable() {
 
         public void run() {

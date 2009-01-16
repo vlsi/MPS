@@ -27,6 +27,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -69,15 +70,20 @@ class ModelDifferenceComponent extends JPanel {
   private SModel myNewModel;
   private List<Change> myChanges;
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
+  private MPSToolBar myToolBar;
 
   public ModelDifferenceComponent() {
     setLayout(new BorderLayout());
+
+    myToolBar = new MPSToolBar(JToolBar.HORIZONTAL);
+    myToolBar.setFloatable(false);
 
     JSplitPane splitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
       new JScrollPane(myModelTree),
       new JScrollPane(myChangesTree));
     splitter.setDividerLocation(500);
 
+    add(myToolBar, BorderLayout.NORTH);
     add(splitter, BorderLayout.CENTER);
     updateView();
   }
@@ -251,6 +257,10 @@ class ModelDifferenceComponent extends JPanel {
       }
     });
 
+  }
+
+  public void addAction(Action action) {
+    myToolBar.add(action);
   }
 
   private class MySModelTreeNode extends SModelTreeNode {

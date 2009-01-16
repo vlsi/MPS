@@ -24,6 +24,7 @@ import com.intellij.openapi.fileTypes.FileType;
 
 import java.io.IOException;
 import java.io.ByteArrayInputStream;
+import java.awt.event.ActionEvent;
 
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -32,9 +33,13 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.ide.projectPane.Icons;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 public class ModelDiffTool implements DiffTool {
   private final static Logger LOG = Logger.getLogger(ModelDiffTool.class);
@@ -46,11 +51,22 @@ public class ModelDiffTool implements DiffTool {
       final SModel oldModel = readModel(contents[0], getFilePath(request));
       final SModel newModel = readModel(contents[1], getFilePath(request));
 
-      ModelDifferenceDialog d = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
+      final ModelDifferenceDialog d = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
         public ModelDifferenceDialog compute() {
-          return new ModelDifferenceDialog(null, oldModel, newModel, request.getWindowTitle());
+          return new ModelDifferenceDialog(null, oldModel, newModel, request.getWindowTitle(), !request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
         }
       });
+      AbstractAction action = new AbstractAction("View As Text", Icons.TEXT_ICON) {
+        public void actionPerformed(ActionEvent e) {
+          DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
+          if (ideaDiffTool.canShow(request)) {
+            d.dispose();
+            ideaDiffTool.show(request);
+          }
+        }
+      };
+      action.putValue(Action.SHORT_DESCRIPTION, "View Difference As Text");
+      d.addAction(action);
       d.showDialog();
 
     } catch (IOException e) {
@@ -60,7 +76,7 @@ public class ModelDiffTool implements DiffTool {
       // we try to use idea diff tool instead
       LOG.warning("Can't read models. Using text based merge...", e);
       DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
-      if (ideaDiffTool.canShow(request)){
+      if (ideaDiffTool.canShow(request)) {
         ideaDiffTool.show(request);
       }
     }

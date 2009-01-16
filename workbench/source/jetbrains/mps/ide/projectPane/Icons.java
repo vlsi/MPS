@@ -24,6 +24,7 @@ public class Icons {
   public static final Icon LANGUAGE_ICON = new ImageIcon(Icons.class.getResource("nodes/language.png"));
   public static final Icon PROJECT_LANGUAGE_ICON = new ImageIcon(Icons.class.getResource("nodes/projectLanguage.png"));
   public static final Icon JAVA_ICON = new ImageIcon(Icons.class.getResource("nodes/java.png"));
+  public static final Icon TEXT_ICON = new ImageIcon(Icons.class.getResource("nodes/text.png"));
   public static final Icon LIB_ICON = new ImageIcon(Icons.class.getResource("nodes/ppLib.png"));
   public static final Icon PROJECT_ICON = new ImageIcon(Icons.class.getResource("nodes/project.png"));
   public static final Icon PROJECT_LANGUAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/projectLanguages.png"));
