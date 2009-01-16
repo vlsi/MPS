@@ -428,6 +428,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         }
 
         return true;
+      } else if (isErrorState() && wasPosition == 0 && keyEvent.getKeyChar() == ' '){
+        return true;
       }
     }
     if (!isEditable() && allowsIntelligentInputKeyStroke(keyEvent)) {

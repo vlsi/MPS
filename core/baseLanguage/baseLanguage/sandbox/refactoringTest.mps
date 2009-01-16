@@ -187,12 +187,7 @@
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1232033769684" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231932954768" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232034539142" />
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1232034531670">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1232034531671" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232034531672" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232034531673" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232108202842" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1231941598849">
       <property name="name" value="m" />
@@ -223,7 +218,7 @@
       </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1231855940102">
-      <property name="name" value="eger" />
+      <property name="name" value="iqq" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1231855940103" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1231855943261">
         <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />

@@ -1293,5 +1293,42 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1232110128465">
+    <property name="package" value="bugTest" />
+    <property name="name" value="IntSpaceA" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1232110144683">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1232110144684" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232110144685" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232110144686">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232110197400">
+          <property name="isLastPosition" value="true" />
+          <property name="cellId" value="Constant_6577_0" />
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1232110185754">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1232110185755" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232110185756" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232110185757">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232110185758">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232110185759">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1232110185760" />
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232110193400">
+              <property name="isLastPosition" value="true" />
+              <property name="cellId" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232110200932">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1232110200933">
+        <property name="keys" value="int a" />
+      </node>
+    </node>
+  </node>
 </model>
 
