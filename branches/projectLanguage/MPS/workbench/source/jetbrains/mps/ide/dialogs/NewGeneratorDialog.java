@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.dialogs;
 
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.ide.dialogs.base.BaseDialog;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
@@ -30,7 +31,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.model.ModelRoot;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;

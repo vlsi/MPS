@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.ide.dialogs.base.BaseDialog;
 
 import javax.swing.*;
 import javax.swing.event.TableModelEvent;
@@ -31,12 +32,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 01.09.2005
- * Time: 12:42:23
- */
 public class AddRequiredModelImportsDialog extends BaseDialog {
 
   private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 600, 300);

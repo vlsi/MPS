@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.dialogs;
+package jetbrains.mps.ide.dialogs.base;
 
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -93,7 +94,7 @@ public abstract class BaseDialog extends JDialog {
     getRootPane().setDefaultButton(button);
   }
 
-  protected DialogDimensionsSettings.DialogDimensions myDialogDimensions;
+  protected DialogDimensions myDialogDimensions;
 
   protected static void saveDimensionSettings(int left, int top, int width, int height, Class<? extends BaseDialog> cls) {
     DialogDimensionsSettings.getInstance().saveDimensionSettings(left, top, width, height, cls);
@@ -189,6 +190,7 @@ public abstract class BaseDialog extends JDialog {
   }
 
   public void setErrorText(String errorText) {
+    //todo we can't guarantee that this method is called from Dispatch Thread
     if (errorText != null) {
       StringTokenizer tokenizer = new StringTokenizer(errorText, "\n");
       errorText = "";

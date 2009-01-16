@@ -19,12 +19,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.dialogs.base.BaseProjectDialog;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.dialogs.projectoptions.ProjectDescriptorPresenter;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
 
@@ -115,7 +115,7 @@ public class CloneModelDialog extends BaseProjectDialog {
     Property pLogVar = BeanProperty.create("selected");
     addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pLog, cbLog, pLogVar));
 
-    GridBagConstraints cSpacer = new GridBagConstraints(0, 4, 2, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+    GridBagConstraints cSpacer = new GridBagConstraints(0, 4, 2, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
     myContentPanel.add(new JPanel(), cSpacer);
   }
 
@@ -163,7 +163,7 @@ public class CloneModelDialog extends BaseProjectDialog {
     return result + i;
   }
 
-  protected String getErrorString() {
+  private String getErrorString() {
     if (myModelProperties.getRoot() == null) return "Please specify root";
     if (myModelProperties.getLongName() == null || myModelProperties.getLongName().length() == 0)
       return "Please specify name";
@@ -176,6 +176,12 @@ public class CloneModelDialog extends BaseProjectDialog {
   }
 
   protected boolean saveChanges() {
+    String errorString = getErrorString();
+    if (errorString!=null){
+      setErrorText(errorString);
+      return false;
+    }
+
     final String stereotype = myModelProperties.getStereotype();
     final String modelName = myModelProperties.getLongName();
     RootReference reference = myModelProperties.getRoot();
@@ -223,7 +229,13 @@ public class CloneModelDialog extends BaseProjectDialog {
       }
     });
 
-    CloneModelUtil.cloneModel(myCloningModel, modelDescriptor.getSModel(), getOperationContext().getScope());
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        SModel smodel = modelDescriptor.getSModel();
+        IScope scope = getOperationContext().getScope();
+        CloneModelUtil.cloneModel(myCloningModel, smodel, scope);
+      }
+    });
 
     Project project = getOperationContext().getProject();
     assert project != null;
