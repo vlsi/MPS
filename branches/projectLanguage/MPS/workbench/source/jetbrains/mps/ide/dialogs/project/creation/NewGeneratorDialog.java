@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.dialogs;
+package jetbrains.mps.ide.dialogs.project.creation;
 
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.ide.dialogs.base.BaseDialog;
+import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
@@ -45,7 +46,7 @@ import com.intellij.ide.DataManager;
 import org.jetbrains.annotations.NotNull;
 
 public class NewGeneratorDialog extends BaseDialog {
-  private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 400, 200);
+  private static final DialogDimensions ourDefaultDimensionSettings = new DialogDimensions(200, 200, 400, 200);
 
   private JPanel myContenetPane;
   private JTextField myTemplateModelsDir;
@@ -67,7 +68,7 @@ public class NewGeneratorDialog extends BaseDialog {
     super.setVisible(b);
   }
 
-  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
+  public DialogDimensions getDefaultDimensionSettings() {
     return ourDefaultDimensionSettings;
   }
 

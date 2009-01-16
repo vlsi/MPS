@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.dialogs;
+package jetbrains.mps.ide.dialogs.project.properties;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.model.RootReference;

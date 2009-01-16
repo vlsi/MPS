@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.dialogs;
+package jetbrains.mps.ide.dialogs.project;
 
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.dialogs.base.BaseDialog;
+import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings;
 
 import javax.swing.*;
 import javax.swing.event.TableModelEvent;
@@ -33,9 +34,6 @@ import java.util.List;
 import java.util.Set;
 
 public class AddRequiredModelImportsDialog extends BaseDialog {
-
-  private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 600, 300);
-
   private SModel myModel;
 
   private List<ModuleReference> myLanguages;
@@ -107,7 +105,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return ourDefaultDimensionSettings;
+    return new DialogDimensionsSettings.DialogDimensions(200, 200, 600, 300);
   }
 
   private JPanel myMainComponent;

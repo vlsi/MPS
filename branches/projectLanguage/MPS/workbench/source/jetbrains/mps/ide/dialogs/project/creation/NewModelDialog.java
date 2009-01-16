@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.dialogs;
+package jetbrains.mps.ide.dialogs.project.creation;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.dialogs.base.BaseDialog;
 import jetbrains.mps.ide.modelProperties.ModelPropertiesDialog;
 import jetbrains.mps.project.IModule;
