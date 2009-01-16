@@ -113,6 +113,9 @@
     <!-- Web Browser-->
     <applicationConfigurable implementation="com.intellij.ide.BrowserSettings"/>
 
+    <!--Vcs Ide Settings-->
+    <applicationConfigurable implementation="jetbrains.mps.vcs.ui.VcsSettingsConfigurable"/>
+
     <!-- Plugins -->
     <applicationConfigurable implementation="com.intellij.ide.plugins.PluginManagerConfigurable"/>
 

@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
@@ -113,6 +114,8 @@ public class ModelDiffTool implements DiffTool {
   }
 
   public boolean canShow(DiffRequest request) {
+    if (ApplicationLevelVcsManager.instance().getSettings().getTextModeEnabled()) return false;
+
     DiffContent[] contents = request.getContents();
     return (contents.length == 2) && isModelFile(contents[0]) && isModelFile(contents[1]);
   }

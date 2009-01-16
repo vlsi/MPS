@@ -16,6 +16,9 @@
 package jetbrains.mps.vcs;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
@@ -33,11 +36,21 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vcs.ui.VcsIdeSettings;
 
 import java.util.*;
 import java.io.File;
 
-public class ApplicationLevelVcsManager implements ApplicationComponent {
+@State(
+  name = "ApplicationLevelVcsConfiguration",
+  storages = {
+    @Storage(
+      id = "other",
+      file = "$APP_CONFIG$/other.xml"
+    )
+  }
+)
+public class ApplicationLevelVcsManager implements ApplicationComponent, PersistentStateComponent<VcsIdeSettings> {
   public static final Logger LOG = Logger.getLogger(ApplicationLevelVcsManager.class);
 
   public static ApplicationLevelVcsManager instance() {
@@ -48,6 +61,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
   private final TaskQueue<File> myFilesToAddQueue = new AddTaskQueue();
   private final TaskQueue<File> myFilesToRemoveQueue = new RemoveTaskQueue();
   private final ProjectManagerListener myListener = new MyProjectManagerListener();
+  private VcsIdeSettings mySettings;
 
   public ApplicationLevelVcsManager(ProjectManager projectManager) {
     myProjectManager = projectManager;
@@ -259,6 +273,21 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
 
   public void removeFromVcsLater(File file) {
     myFilesToRemoveQueue.invokeLater(file);
+  }
+
+  public VcsIdeSettings getSettings() {
+    if (mySettings == null) {
+      mySettings = new VcsIdeSettings();
+    }
+    return mySettings;
+  }
+
+  public VcsIdeSettings getState() {
+    return mySettings;
+  }
+
+  public void loadState(VcsIdeSettings state) {
+    mySettings = state;
   }
 
   private class MyProjectManagerListener implements ProjectManagerListener {
