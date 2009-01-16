@@ -187,7 +187,19 @@
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1232033769684" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231932954768" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232108202842" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232108202842">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1232110568197">
+          <property name="value" value="12345" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1232112000404">
+          <property name="value" value="67890" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232112012232">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1232112018157">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1231941598849">
       <property name="name" value="m" />

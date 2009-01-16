@@ -140,6 +140,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Alternation_6285_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.addKeyMap(new RemarkStatement_KeyMap());
   }
 
   private static void setupBasic_Property_6285_0(EditorCell editorCell, SNode node, EditorContext context) {
