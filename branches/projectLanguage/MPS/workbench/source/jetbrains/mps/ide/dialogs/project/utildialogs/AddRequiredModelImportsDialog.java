@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.dialogs.project;
+package jetbrains.mps.ide.dialogs.project.utildialogs;
 
+import jetbrains.mps.ide.dialogs.base.BaseDialog;
+import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.ide.dialogs.base.BaseDialog;
-import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings;
 
 import javax.swing.*;
 import javax.swing.event.TableModelEvent;

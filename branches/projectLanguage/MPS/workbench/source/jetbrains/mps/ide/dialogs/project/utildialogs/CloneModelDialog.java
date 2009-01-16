@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.dialogs.project;
+package jetbrains.mps.ide.dialogs.project.utildialogs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.datatransfer.CloneModelUtil;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.dialogs.base.BaseProjectDialog;
+import jetbrains.mps.ide.dialogs.project.BaseProjectDialog;
 import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings;
 import jetbrains.mps.ide.dialogs.project.properties.presenters.CloneModelProperties;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
