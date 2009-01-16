@@ -21,6 +21,8 @@ import com.intellij.openapi.diff.DiffContent;
 import com.intellij.openapi.diff.DiffManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 
 import java.io.IOException;
 import java.io.ByteArrayInputStream;
@@ -56,8 +58,8 @@ public class ModelDiffTool implements DiffTool {
           return new ModelDifferenceDialog(null, oldModel, newModel, request.getWindowTitle(), !request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
         }
       });
-      AbstractAction action = new AbstractAction("View As Text", Icons.TEXT_ICON) {
-        public void actionPerformed(ActionEvent e) {
+      AnAction action = new AnAction("View As Text", "View As Text", Icons.TEXT_ICON){
+        public void actionPerformed(AnActionEvent e) {
           DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
           if (ideaDiffTool.canShow(request)) {
             d.dispose();
@@ -65,7 +67,6 @@ public class ModelDiffTool implements DiffTool {
           }
         }
       };
-      action.putValue(Action.SHORT_DESCRIPTION, "View Difference As Text");
       d.addAction(action);
       d.showDialog();
 

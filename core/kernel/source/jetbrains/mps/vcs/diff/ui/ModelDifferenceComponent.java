@@ -15,13 +15,17 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.IconLoader;
+import com.intellij.ui.treeStructure.actions.ExpandAllAction;
+import com.intellij.ide.actions.CollapseAllToolbarAction;
+import com.intellij.ide.actions.ExpandAllToolbarAction;
+import com.intellij.ide.TreeExpander;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -71,38 +75,27 @@ class ModelDifferenceComponent extends JPanel {
   private SModel myNewModel;
   private List<Change> myChanges;
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
-  private MPSToolBar myToolBar;
+  private ActionToolbar myToolBar;
+  private DefaultActionGroup myActionGroup;
 
   public ModelDifferenceComponent() {
     setLayout(new BorderLayout());
 
-    myToolBar = new MPSToolBar(JToolBar.HORIZONTAL);
-    AbstractAction expandAllAction = new AbstractAction("Expand Model Tree", IconLoader.getIcon("/actions/expandall.png")) {
-      public void actionPerformed(ActionEvent e) {
-        myModelTree.expandAll();
-      }
-    };
-    AbstractAction collapseAllAction = new AbstractAction("Collapse Model Tree", IconLoader.getIcon("/actions/collapseall.png")) {
-      public void actionPerformed(ActionEvent e) {
-        MPSTreeNode root = myModelTree.getRootNode();
-        int childCount = root.getChildCount();
-        for (int i = 0; i < childCount; i++) {
-          myModelTree.collapseAll((MPSTreeNode) root.getChildAt(i));
-        }
-      }
-    };
-    expandAllAction.putValue(Action.SHORT_DESCRIPTION, "Expand Model Tree");
-    collapseAllAction.putValue(Action.SHORT_DESCRIPTION, "Collapse Model Tree");
-    myToolBar.add(expandAllAction);
-    myToolBar.add(collapseAllAction);
-    myToolBar.setFloatable(false);
+    myActionGroup = new DefaultActionGroup();
+    myToolBar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myActionGroup, true);
+
+    MyTreeExpander treeExpander = new MyTreeExpander();
+    AnAction expandAllAction = new ExpandAllToolbarAction(treeExpander, "Expand Model Tree");
+    AnAction collapseAllAction = new CollapseAllToolbarAction(treeExpander, "Collapse Model Tree");
+    myActionGroup.add(expandAllAction);
+    myActionGroup.add(collapseAllAction);
 
     JSplitPane splitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
       new JScrollPane(myModelTree),
       new JScrollPane(myChangesTree));
     splitter.setDividerLocation(500);
 
-    add(myToolBar, BorderLayout.NORTH);
+    add(myToolBar.getComponent(), BorderLayout.NORTH);
     add(splitter, BorderLayout.CENTER);
     updateView();
   }
@@ -278,8 +271,8 @@ class ModelDifferenceComponent extends JPanel {
 
   }
 
-  public void addAction(Action action) {
-    myToolBar.add(action);
+  public void addAction(AnAction action) {
+    myActionGroup.add(action);
   }
 
   private class MySModelTreeNode extends SModelTreeNode {
@@ -399,6 +392,28 @@ class ModelDifferenceComponent extends JPanel {
           }
         });
       }
+    }
+  }
+
+  private class MyTreeExpander implements TreeExpander {
+    public void expandAll() {
+      myModelTree.expandAll();
+    }
+
+    public boolean canExpand() {
+      return true;
+    }
+
+    public void collapseAll() {
+      MPSTreeNode root = myModelTree.getRootNode();
+      int childCount = root.getChildCount();
+      for (int i = 0; i < childCount; i++) {
+        myModelTree.collapseAll((MPSTreeNode) root.getChildAt(i));
+      }
+    }
+
+    public boolean canCollapse() {
+      return true;
     }
   }
 }

@@ -24,6 +24,8 @@ import javax.swing.Action;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 
+import com.intellij.openapi.actionSystem.AnAction;
+
 public class ModelDifferenceDialog extends BaseDialog {
 
   private ModelDifferenceComponent myDifferenceComponent;
@@ -35,7 +37,7 @@ public class ModelDifferenceDialog extends BaseDialog {
     myDifferenceComponent.showDifference(oldModel, newModel);
   }
 
-  public void addAction(Action action) {
+  public void addAction(AnAction action) {
     myDifferenceComponent.addAction(action);
   }
 
