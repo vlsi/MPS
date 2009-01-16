@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.dialogs.project.properties;
+package jetbrains.mps.ide.dialogs.project.properties.presenters;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.model.RootReference;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class ModelProperties {
+public class CloneModelProperties {
   public static final String PROPERTY_NAME = "longName";
   public static final String PROPERTY_PATH = "root";
   public static final String PROPERTY_STEREOTYPE = "stereotype";
@@ -27,7 +27,7 @@ public class ModelProperties {
   private List<ModuleReference> myImportedDevkits;
   private List <ModuleReference> myLanguagesInGeneration;
 
-  public ModelProperties() {
+  public CloneModelProperties() {
     myImportedLanguages = new ArrayList<ModuleReference>();
     myImportedModels = new ArrayList<SModelReference>();
     myImportedDevkits = new ArrayList<ModuleReference>();
@@ -91,33 +91,31 @@ public class ModelProperties {
   }
 
   public void loadFrom(SModel model) {
-    String longName = model.getLongName();
-    setLongName(longName);
+    myLongName = model.getLongName();
 
-    setStereotype(model.getStereotype());
+    myStereotype = model.getStereotype();
     Set<SModelRoot> modelRoots = model.getModelDescriptor().collectSModelRoots();
     if (!modelRoots.isEmpty()) {
       SModelRoot root = modelRoots.iterator().next();
-      RootReference rootReference = new RootReference();
-      rootReference.setPath(root.getPath());
-      rootReference.setPrefix(root.getPrefix());
-      setRoot(rootReference);
+      myRoot = new RootReference();
+      myRoot.setPath(root.getPath());
+      myRoot.setPrefix(root.getPrefix());
     }
 
     for (ModuleReference language : model.getExplicitlyImportedLanguages()) {
-      getImportedLanguages().add(language.getCopy());
+      myImportedLanguages.add(language.getCopy());
     }
 
     for (SModelReference importedModelReference : model.getImportedModelUIDs()) {
-      getImportedModels().add(importedModelReference.getCopy());
+      myImportedModels.add(importedModelReference.getCopy());
     }
 
     for (ModuleReference devKit : model.getDevKitRefs()) {
-      getImportedDevkits().add(devKit.getCopy());
+      myImportedDevkits.add(devKit.getCopy());
     }
 
     for (ModuleReference language : model.getEngagedOnGenerationLanguages()) {
-      getLanguagesInGeneration().add(language.getCopy());
+      myLanguagesInGeneration.add(language.getCopy());
     }
   }
 }

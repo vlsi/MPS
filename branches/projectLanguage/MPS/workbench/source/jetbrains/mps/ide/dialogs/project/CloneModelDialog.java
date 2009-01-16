@@ -21,7 +21,7 @@ import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.dialogs.base.BaseProjectDialog;
 import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings;
-import jetbrains.mps.ide.dialogs.project.properties.ModelProperties;
+import jetbrains.mps.ide.dialogs.project.properties.presenters.CloneModelProperties;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
@@ -36,7 +36,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 public class CloneModelDialog extends BaseProjectDialog {
-  private ModelProperties myModelProperties;
+  private CloneModelProperties myModelProperties;
   private SModel myCloningModel;
   private JPanel myContentPanel;
 
@@ -71,7 +71,7 @@ public class CloneModelDialog extends BaseProjectDialog {
     tfPath.setEditable(false);
     myContentPanel.add(tfPath, cPath);
 
-    Property pPath = BeanProperty.create(ModelProperties.PROPERTY_PATH);
+    Property pPath = BeanProperty.create(CloneModelProperties.PROPERTY_PATH);
     Property pPathVar = BeanProperty.create("text");
     AutoBinding binding = Bindings.createAutoBinding(UpdateStrategy.READ, myModelProperties, pPath, tfPath, pPathVar);
     binding.setConverter(new Converter() {
@@ -94,7 +94,7 @@ public class CloneModelDialog extends BaseProjectDialog {
     JTextField tfName = new JTextField();
     myContentPanel.add(tfName, cName);
 
-    Property pName = BeanProperty.create(ModelProperties.PROPERTY_NAME);
+    Property pName = BeanProperty.create(CloneModelProperties.PROPERTY_NAME);
     Property pNameVar = BeanProperty.create("text");
     addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pName, tfName, pNameVar));
 
@@ -104,7 +104,7 @@ public class CloneModelDialog extends BaseProjectDialog {
     JComboBox cbStereotype = new JComboBox(SModelStereotype.values);
     myContentPanel.add(cbStereotype, cStereotype);
 
-    Property pStereotype = BeanProperty.create(ModelProperties.PROPERTY_STEREOTYPE);
+    Property pStereotype = BeanProperty.create(CloneModelProperties.PROPERTY_STEREOTYPE);
     Property pStereotypeVar = BeanProperty.create("selectedItem");
     addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pStereotype, cbStereotype, pStereotypeVar));
 
@@ -112,7 +112,7 @@ public class CloneModelDialog extends BaseProjectDialog {
     JCheckBox cbLog = new JCheckBox("Use log");
     myContentPanel.add(cbLog, cLog);
 
-    Property pLog = BeanProperty.create(ModelProperties.PROPERTY_LOG);
+    Property pLog = BeanProperty.create(CloneModelProperties.PROPERTY_LOG);
     Property pLogVar = BeanProperty.create("selected");
     addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pLog, cbLog, pLogVar));
 
@@ -121,7 +121,7 @@ public class CloneModelDialog extends BaseProjectDialog {
   }
 
   private void collectModelProps() {
-    myModelProperties = new ModelProperties();
+    myModelProperties = new CloneModelProperties();
     myModelProperties.loadFrom(myCloningModel);
     
     String newName = createNameForCopy(myCloningModel.getLongName(), myCloningModel.getStereotype());
