@@ -188,7 +188,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1232033769684" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231932954768" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232108202842">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1232123379027" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232112012232">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1232112018157">
             <property name="value" value="false" />
