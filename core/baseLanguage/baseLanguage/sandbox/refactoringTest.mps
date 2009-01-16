@@ -194,6 +194,24 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1232112000404">
           <property name="value" value="67890" />
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232117139939">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232117139940">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1232117139941">
+              <link role="fieldDeclaration" targetNodeId="1228738397217" resolveInfo="a" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1232117139942" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232117576376">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1232117574326">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232117574454">
+              <property name="value" value="2" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232117573372">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232112012232">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1232112018157">
             <property name="value" value="false" />
