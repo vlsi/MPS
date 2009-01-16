@@ -121,35 +121,10 @@ public class CloneModelDialog extends BaseProjectDialog {
 
   private void collectModelProps() {
     myModelProperties = new ModelProperties();
-
-    String longName = myCloningModel.getLongName();
-    myModelProperties.setLongName(createNameForCopy(longName, myCloningModel.getStereotype()));
-
-    myModelProperties.setStereotype(myCloningModel.getStereotype());
-    Set<SModelRoot> modelRoots = myCloningModel.getModelDescriptor().collectSModelRoots();
-    if (!modelRoots.isEmpty()) {
-      SModelRoot root = modelRoots.iterator().next();
-      RootReference rootReference = new RootReference();
-      rootReference.setPath(root.getPath());
-      rootReference.setPrefix(root.getPrefix());
-      myModelProperties.setRoot(rootReference);
-    }
-
-    for (ModuleReference language : myCloningModel.getExplicitlyImportedLanguages()) {
-      myModelProperties.getImportedLanguages().add(language.getCopy());
-    }
-
-    for (SModelReference importedModelReference : myCloningModel.getImportedModelUIDs()) {
-      myModelProperties.getImportedModels().add(importedModelReference.getCopy());
-    }
-
-    for (ModuleReference devKit : myCloningModel.getDevKitRefs()) {
-      myModelProperties.getImportedDevkits().add(devKit.getCopy());
-    }
-
-    for (ModuleReference language : myCloningModel.getEngagedOnGenerationLanguages()) {
-      myModelProperties.getLanguagesInGeneration().add(language.getCopy());
-    }
+    myModelProperties.loadFrom(myCloningModel);
+    
+    String newName = createNameForCopy(myCloningModel.getLongName(), myCloningModel.getStereotype());
+    myModelProperties.setLongName(newName);
   }
 
   private String createNameForCopy(String longName, String stereotype) {

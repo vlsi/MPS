@@ -2,10 +2,12 @@ package jetbrains.mps.ide.dialogs;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.model.RootReference;
-import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.smodel.*;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class ModelProperties {
   public static final String PROPERTY_NAME = "longName";
@@ -86,5 +88,36 @@ public class ModelProperties {
 
   public List<ModuleReference> getLanguagesInGeneration() {
     return myLanguagesInGeneration;
+  }
+
+  public void loadFrom(SModel model) {
+    String longName = model.getLongName();
+    setLongName(longName);
+
+    setStereotype(model.getStereotype());
+    Set<SModelRoot> modelRoots = model.getModelDescriptor().collectSModelRoots();
+    if (!modelRoots.isEmpty()) {
+      SModelRoot root = modelRoots.iterator().next();
+      RootReference rootReference = new RootReference();
+      rootReference.setPath(root.getPath());
+      rootReference.setPrefix(root.getPrefix());
+      setRoot(rootReference);
+    }
+
+    for (ModuleReference language : model.getExplicitlyImportedLanguages()) {
+      getImportedLanguages().add(language.getCopy());
+    }
+
+    for (SModelReference importedModelReference : model.getImportedModelUIDs()) {
+      getImportedModels().add(importedModelReference.getCopy());
+    }
+
+    for (ModuleReference devKit : model.getDevKitRefs()) {
+      getImportedDevkits().add(devKit.getCopy());
+    }
+
+    for (ModuleReference language : model.getEngagedOnGenerationLanguages()) {
+      getLanguagesInGeneration().add(language.getCopy());
+    }
   }
 }
