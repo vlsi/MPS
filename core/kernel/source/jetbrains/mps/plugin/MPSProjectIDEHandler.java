@@ -147,7 +147,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     SearchQuery searchQuery = new SearchQuery(GlobalScope.getInstance());
     BaseFinder finder = new AspectMethodsFinder(applicableModelDescriptors, name);
     BaseFinder[] finders = new BaseFinder[]{finder};
-    myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), searchQuery, false, true, true, "No usages for that method");
+    myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), searchQuery, false, true, false, "No usages for that method");
   }
 
   public void showConceptNode(final String fqName) throws RemoteException {
@@ -212,7 +212,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         });
 
         BaseFinder[] finders = new BaseFinder[]{finder};
-        myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), query, true, true, true, "No usages for that node");
+        myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), query, true, true, false, "No usages for that node");
       }
     }.start();
   }

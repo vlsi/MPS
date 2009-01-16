@@ -120,6 +120,17 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     contentManager.removeContent(content, true);
   }
 
+  private void closeLastUnpinnedTab(int index) {
+    if (index != -1) {
+      ContentManager contentManager = getContentManager();
+      Content content = contentManager.getContent(index);
+      assert content != null;
+      if (!content.isPinned()){
+        contentManager.removeContent(content, true);
+      }
+    }
+  }
+
   private int currentTabIndex() {
     ContentManager contentManager = getContentManager();
     return contentManager.getIndexOfContent(contentManager.getSelectedContent());
@@ -173,7 +184,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
 
   //---FIND USAGES STUFF----
 
-  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab, final String notFoundMsg) {
+  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean forceNewTab, final String notFoundMsg) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final SearchResults[] searchResults = new SearchResults[1];
@@ -186,7 +197,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
           }
         });
         if (!isCancelled[0]) {
-          showResults(searchResults[0], showOne, newTab, provider, query, isRerunnable, notFoundMsg);
+          showResults(searchResults[0], showOne, forceNewTab, provider, query, isRerunnable, notFoundMsg);
         }
       }
     });
@@ -196,7 +207,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     showResults(searchResults, false, false, FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults())), query, false, "No usages for that node");
   }
 
-  private void showResults(final SearchResults searchResults, final boolean showOne, final boolean newTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final String notFoundMsg) {
+  private void showResults(final SearchResults searchResults, final boolean showOne, final boolean forceNewTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final String notFoundMsg) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         int resCount = searchResults.getSearchResults().size();
@@ -229,10 +240,8 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
             }
           });
 
-          if (!newTab) {
-            if (index != -1) {
-              closeTab(index);
-            }
+          if (!forceNewTab) {
+            closeLastUnpinnedTab(index);
           }
           openTool(true);
         }
