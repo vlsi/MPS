@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.dialogs.base;
+package jetbrains.mps.ide.dialogs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -23,7 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.dialogs.base.BaseDialog;
+import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;

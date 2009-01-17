@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.dialogs.base;
+package jetbrains.mps.ide.dialogs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings.MyState;
-import jetbrains.mps.ide.dialogs.base.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.MyState;
+import jetbrains.mps.ide.dialogs.BaseDialog;
 
 import java.awt.Dimension;
 import java.util.HashMap;

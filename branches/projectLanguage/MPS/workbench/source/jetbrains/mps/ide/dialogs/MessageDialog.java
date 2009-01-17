@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.dialogs.base;
+package jetbrains.mps.ide.dialogs;
 
-import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.dialogs.base.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.dialogs.BaseDialog;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;

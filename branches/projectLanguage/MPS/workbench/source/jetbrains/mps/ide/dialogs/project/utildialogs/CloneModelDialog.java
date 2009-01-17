@@ -19,7 +19,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.dialogs.project.BaseProjectDialog;
-import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.dialogs.project.properties.presenters.CloneModelProperties;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
@@ -38,7 +38,6 @@ import java.awt.Insets;
 public class CloneModelDialog extends BaseProjectDialog {
   private CloneModelProperties myModelProperties;
   private SModel myCloningModel;
-  private JPanel myContentPanel;
 
   public CloneModelDialog(final SModelDescriptor modelDescriptor, IOperationContext operationContext) {
     super("Clone Model " + modelDescriptor.getLongName(), operationContext);
@@ -51,10 +50,6 @@ public class CloneModelDialog extends BaseProjectDialog {
 
     collectModelProps();
     initUI();
-  }
-
-  protected JComponent getMainComponent() {
-    return myContentPanel;
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
