@@ -377,6 +377,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.ExperimentalSubtypingRulesContainer" id="1230576942431">
     <node role="rule" type="jetbrains.mps.lang.typesystem.structure.ExperimentalSubtypingRule" id="1230577044654">
+      <property name="name" value="functionSubtyping" />
       <link role="subtypeConcept" targetNodeId="146.1199542442495" resolveInfo="FunctionType" />
       <link role="supertypeConcept" targetNodeId="146.1199542442495" resolveInfo="FunctionType" />
       <node role="linkAssociation" type="jetbrains.mps.lang.typesystem.structure.LinkAssociation" id="1230577151830">
