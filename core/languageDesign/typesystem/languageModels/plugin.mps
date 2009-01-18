@@ -8,6 +8,9 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -33,6 +36,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <maxImportIndex value="38" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.typesystem.uiActions(jetbrains.mps.typesystem.uiActions@java_stub)" version="-1" />
@@ -122,6 +127,9 @@
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1230216511092">
         <link role="action" targetNodeId="1230214426481" resolveInfo="ShowInequationsForCell" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1232296044963">
+        <link role="action" targetNodeId="1232294286916" resolveInfo="TestSubtypingGraph" />
       </node>
     </node>
   </node>
@@ -1835,6 +1843,163 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1232294286916">
+    <property name="package" value="Actions" />
+    <property name="name" value="TestSubtypingGraph" />
+    <property name="caption" value="Test Subtyping Graph" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1232294286917">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232294286918">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232294392258">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232294392259">
+            <property name="name" value="rule1" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1232294392260">
+              <link role="concept" targetNodeId="1.1230554202040" resolveInfo="ExperimentalSubtypingRule" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1232295771790">
+              <node role="quotedNode" type="jetbrains.mps.lang.typesystem.structure.ExperimentalSubtypingRule" id="1232295776684">
+                <property name="name" value="rule1" />
+                <link role="subtypeConcept" targetNodeId="2v.1164118113764" resolveInfo="PrimitiveType" />
+                <link role="supertypeConcept" targetNodeId="2v.1164118113764" resolveInfo="PrimitiveType" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232294411991">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232294411992">
+            <property name="name" value="rule2" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1232294411993">
+              <link role="concept" targetNodeId="1.1230554202040" resolveInfo="ExperimentalSubtypingRule" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1232295733974">
+              <node role="quotedNode" type="jetbrains.mps.lang.typesystem.structure.ExperimentalSubtypingRule" id="1232295739352">
+                <property name="name" value="rule2" />
+                <link role="supertypeConcept" targetNodeId="2v.1107796713796" resolveInfo="Interface" />
+                <link role="subtypeConcept" targetNodeId="2v.1164118113764" resolveInfo="PrimitiveType" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232295670224">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232295670225">
+            <property name="name" value="rule3" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1232295670226">
+              <link role="concept" targetNodeId="1.1230554202040" resolveInfo="ExperimentalSubtypingRule" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1232295697646">
+              <node role="quotedNode" type="jetbrains.mps.lang.typesystem.structure.ExperimentalSubtypingRule" id="1232295702552">
+                <property name="name" value="rule3" />
+                <link role="subtypeConcept" targetNodeId="2v.1107796713796" resolveInfo="Interface" />
+                <link role="supertypeConcept" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232295831584">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232295831585">
+            <property name="name" value="graph" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232295831586">
+              <link role="classifier" targetNodeId="21.~SubtypingGraph" resolveInfo="SubtypingGraph" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1232295837613">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1232295837614">
+                <link role="baseMethodDeclaration" targetNodeId="21.~SubtypingGraph.&lt;init&gt;()" resolveInfo="SubtypingGraph" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232295840339">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232295841438">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232295840340">
+              <link role="variableDeclaration" targetNodeId="1232295831585" resolveInfo="graph" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232295842965">
+              <link role="baseMethodDeclaration" targetNodeId="21.~SubtypingGraph.addSubtypingRule(jetbrains.mps.lang.typesystem.structure.ExperimentalSubtypingRule):void" resolveInfo="addSubtypingRule" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232295855821">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232295846559">
+                  <link role="variableDeclaration" targetNodeId="1232294392259" resolveInfo="rule1" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1232295856683" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232295858748">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232295858749">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232295858750">
+              <link role="variableDeclaration" targetNodeId="1232295831585" resolveInfo="graph" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232295858751">
+              <link role="baseMethodDeclaration" targetNodeId="21.~SubtypingGraph.addSubtypingRule(jetbrains.mps.lang.typesystem.structure.ExperimentalSubtypingRule):void" resolveInfo="addSubtypingRule" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232295858752">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232295865385">
+                  <link role="variableDeclaration" targetNodeId="1232294411992" resolveInfo="rule2" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1232295858754" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232295859117">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232295859118">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232295859119">
+              <link role="variableDeclaration" targetNodeId="1232295831585" resolveInfo="graph" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232295859120">
+              <link role="baseMethodDeclaration" targetNodeId="21.~SubtypingGraph.addSubtypingRule(jetbrains.mps.lang.typesystem.structure.ExperimentalSubtypingRule):void" resolveInfo="addSubtypingRule" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232295859121">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232295866706">
+                  <link role="variableDeclaration" targetNodeId="1232295670225" resolveInfo="rule3" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1232295859123" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232295872897">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232295874073">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232295872898">
+              <link role="variableDeclaration" targetNodeId="1232295831585" resolveInfo="graph" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232295876507">
+              <link role="baseMethodDeclaration" targetNodeId="21.~SubtypingGraph.calculatePaths():void" resolveInfo="calculatePaths" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232295881766">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232295881767">
+            <property name="name" value="path" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232295881768">
+              <link role="classifier" targetNodeId="22.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232295911208">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232295887976">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232295886971">
+                  <link role="variableDeclaration" targetNodeId="1232295831585" resolveInfo="graph" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232295909890">
+                  <link role="baseMethodDeclaration" targetNodeId="21.~SubtypingGraph.printPaths():java.lang.StringBuilder" resolveInfo="printPaths" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232295918422">
+                <link role="baseMethodDeclaration" targetNodeId="22.~StringBuilder.toString():java.lang.String" resolveInfo="toString" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232295935468">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1232295956306">
+            <link role="baseMethodDeclaration" targetNodeId="20.~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolveInfo="showMessageDialog" />
+            <link role="classConcept" targetNodeId="20.~JOptionPane" resolveInfo="JOptionPane" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1232295957904" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232295960406">
+              <link role="variableDeclaration" targetNodeId="1232295881767" resolveInfo="path" />
             </node>
           </node>
         </node>
