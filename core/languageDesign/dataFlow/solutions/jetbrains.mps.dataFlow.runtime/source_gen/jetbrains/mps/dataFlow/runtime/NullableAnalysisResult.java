@@ -46,6 +46,9 @@ public class NullableAnalysisResult {
   }
 
   private void checkMethodCall(@NotNull() SNode call) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(call, "baseMethodDeclaration", false), "parameter", true)).count()) {
+      return;
+    }
     for(int i = 0 ; i < ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).count() ; i++ ) {
       SNode parameter = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(call, "baseMethodDeclaration", false), "parameter", true)).toListSequence()).getElement(i);
       SNode expression = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).toListSequence()).getElement(i);

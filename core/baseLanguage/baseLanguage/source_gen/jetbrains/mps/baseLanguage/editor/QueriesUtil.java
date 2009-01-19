@@ -47,6 +47,10 @@ public class QueriesUtil {
           SLinkOperations.addChild(newNode, "actualArgument", SNodeOperations.copyNode(arg));
         }
       }
+      for(SNode attrigute : ListSequence.fromList(oldNode.getAllAttributes())) {
+        String role = oldNode.getRoleOf(attrigute);
+        newNode.addChild(role, SNodeOperations.copyNode(((SNode)attrigute)));
+      }
       return newNode;
     }
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
