@@ -156,7 +156,23 @@
             <link role="variableDeclaration" targetNodeId="1230303587949" resolveInfo="mymap" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1230576909866" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232371229088">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232371229089">
+            <property name="name" value="attrNode" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1232371229090" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232371236699">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232371584666">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232371237763">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232371236700">
+                <link role="variableDeclaration" targetNodeId="1232371229089" resolveInfo="attrNode" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="1232371238781" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.AbstractOperation" id="1232371584668" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232369034996">
         <property name="name" value="s" />
