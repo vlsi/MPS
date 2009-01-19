@@ -121,9 +121,6 @@ public class Resolver {
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
 
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(referenceNode);
-    if (typeCheckingContext == null) {
-      return false;
-    }
     typeCheckingContext.setInEditorQueriesMode();
     try {
       SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
