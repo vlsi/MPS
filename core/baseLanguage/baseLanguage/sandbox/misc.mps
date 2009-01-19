@@ -90,7 +90,7 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229429553362">
               <link role="baseMethodDeclaration" targetNodeId="3.~List.add(java.lang.Object):boolean" resolveInfo="add" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1230048448794">
-                <link role="variableDeclaration" targetNodeId="1227257103095" resolveInfo="s" />
+                <link role="variableDeclaration" targetNodeId="1232369034996" resolveInfo="s" />
               </node>
             </node>
           </node>
@@ -158,9 +158,9 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1230576909866" />
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227257103095">
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232369034996">
         <property name="name" value="s" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227257103096">
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232369034997">
           <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
         </node>
       </node>

@@ -112,6 +112,7 @@ public class Resolver {
   public static boolean resolve1(final SReference reference, final IOperationContext operationContext, List<ResolveResult> results, boolean forceResolve) {
     // search scope
     SNode referenceNode = reference.getSourceNode();
+    if (referenceNode == null) return false;
     ConceptDeclaration referenceNodeConcept = (ConceptDeclaration) referenceNode.getConceptDeclarationAdapter();
     LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, reference.getRole());
     if (linkDeclaration == null) {
@@ -121,6 +122,7 @@ public class Resolver {
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
 
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(referenceNode);
+    if (typeCheckingContext == null) return false;
     typeCheckingContext.setInEditorQueriesMode();
     try {
       SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
