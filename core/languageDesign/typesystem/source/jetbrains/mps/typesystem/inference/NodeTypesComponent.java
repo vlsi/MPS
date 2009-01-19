@@ -368,14 +368,18 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
           if (node.isRoot()) {
             computeTypes(node, refreshTypes, true, new ArrayList<SNode>()); //the last possibility: check the whole root
             type = getType(initialNode);
-            continuation.run();
+            if (continuation != null) {
+              continuation.run();
+            }
             return type;
           }
           prevNode = node;
           node = node.getParent();
         } else {
           if (node.isRoot()) {
-            continuation.run();
+            if (continuation != null) {
+              continuation.run();
+            }
           }
           return type;
         }
