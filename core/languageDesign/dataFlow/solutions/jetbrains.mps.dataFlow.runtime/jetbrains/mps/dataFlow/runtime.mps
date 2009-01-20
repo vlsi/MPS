@@ -1561,7 +1561,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1231942285378">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1231942285379">
-            <property name="name" value="operand" />
+            <property name="name" value="operandState" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1231942285380">
               <link role="classifier" targetNodeId="1230466569958" resolveInfo="NullableVariableState" />
             </node>

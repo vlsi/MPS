@@ -63,8 +63,8 @@ public class NullableAnalysisResult {
     if (operand == null) {
       return;
     }
-    NullableVariableState operand = this.getNodeState(operand);
-    if (operand == NullableVariableState.NULLABLE || operand == NullableVariableState.NULL) {
+    NullableVariableState operandState = this.getNodeState(operand);
+    if (operandState == NullableVariableState.NULLABLE || operandState == NullableVariableState.NULL) {
       ListSequence.fromList(this.myCheckResults).addElement(SLinkOperations.getTarget(call, "operand", true));
     }
   }
