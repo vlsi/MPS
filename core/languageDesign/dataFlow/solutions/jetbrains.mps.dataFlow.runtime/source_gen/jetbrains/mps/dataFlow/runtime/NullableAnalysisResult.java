@@ -59,7 +59,11 @@ public class NullableAnalysisResult {
   }
 
   public void checkDotExpression(@NotNull() SNode call) {
-    NullableVariableState operand = this.getNodeState(SLinkOperations.getTarget(call, "operand", true));
+    SNode operand = SLinkOperations.getTarget(call, "operand", true);
+    if (operand == null) {
+      return;
+    }
+    NullableVariableState operand = this.getNodeState(operand);
     if (operand == NullableVariableState.NULLABLE || operand == NullableVariableState.NULL) {
       ListSequence.fromList(this.myCheckResults).addElement(SLinkOperations.getTarget(call, "operand", true));
     }
