@@ -345,7 +345,6 @@ public class Merger {
           myUnresolded.add(conflict.getC2());
         }
       }
-      System.out.println(myUnresolded);
 
       applyImportLanguages();
       applyImportModels();
