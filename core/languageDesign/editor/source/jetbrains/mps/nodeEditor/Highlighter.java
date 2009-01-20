@@ -31,12 +31,15 @@ import jetbrains.mps.workbench.highlighter.EditorsProvider;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 
 import java.util.*;
+import java.lang.reflect.InvocationTargetException;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.command.CommandProcessor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.SwingUtilities;
 
 public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Logger LOG = Logger.getLogger(Highlighter.class);
@@ -169,13 +172,25 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     boolean isUpdated = false;
     List<IEditor> allEditors = getAllEditors();
 
-    for (IEditor editor : allEditors) {
-      EditorComponent component = editor.getCurrentEditorComponent();
-      if (component != null) {
-        if (updateEditorComponent(component, events, checkers, checkersToRemove)) {
+    for (final IEditor editor : allEditors) {
+      final EditorComponent component[] = new EditorComponent[1];
+      try {
+        SwingUtilities.invokeAndWait(new Runnable() {
+
+          public void run() {
+            component[0] = editor.getCurrentEditorComponent();
+          }
+        });
+      } catch (InterruptedException e) {
+        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+      } catch (InvocationTargetException e) {
+        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+      }
+      if (component[0] != null) {
+        if (updateEditorComponent(component[0], events, checkers, checkersToRemove)) {
           isUpdated = true;
         }
-      }
+      }      
     }
 
     if (myInspectorTool != null && myInspectorTool.getInspector() != null) {
