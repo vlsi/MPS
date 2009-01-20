@@ -8290,6 +8290,7 @@
     <property name="package" value="sideTransforms.expression" />
     <property name="name" value="expressionStatement" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1232463815953">
+      <property name="side" value="left" />
       <link role="applicableConcept" targetNodeId="1.1068580123157" resolveInfo="Statement" />
       <node role="part" type="jetbrains.mps.lang.actions.structure.ConceptRightTransformPart" id="1232463860582">
         <link role="concept" targetNodeId="1.1232461062092" resolveInfo="CommentedStatement" />

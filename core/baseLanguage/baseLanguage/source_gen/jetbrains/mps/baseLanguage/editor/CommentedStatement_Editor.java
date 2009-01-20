@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CommentedStatement_Editor extends DefaultNodeEditor {
 
@@ -84,6 +85,7 @@ public class CommentedStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
         }
 
       };
@@ -93,6 +95,15 @@ public class CommentedStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_6389_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_6389_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

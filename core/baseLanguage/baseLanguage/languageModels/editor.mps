@@ -15025,9 +15025,13 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1232462732426">
           <property name="value" value="0.0" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1232465705004" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1232461230923">
         <link role="relationDeclaration" targetNodeId="17.1232461075566" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem" id="1232464965533">
+          <property name="color" value="lightGray" />
+        </node>
       </node>
     </node>
   </node>
