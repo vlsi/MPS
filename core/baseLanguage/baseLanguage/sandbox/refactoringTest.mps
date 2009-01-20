@@ -216,7 +216,13 @@
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1231941622151">
         <link role="annotation" targetNodeId="15.~NotNull" resolveInfo="NotNull" />
       </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232464057267" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232464057267">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232476541085">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232476541086">
+            <property name="value" value="3" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1228738397217">
       <property name="name" value="a" />
