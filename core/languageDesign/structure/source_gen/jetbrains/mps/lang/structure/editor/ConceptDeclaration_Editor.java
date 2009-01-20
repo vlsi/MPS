@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
 import javax.swing.JOptionPane;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -411,20 +412,27 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     setupBasic_TransactionalProperty_0886_0(editorCell, node, context);
     setupLabel_TransactionalProperty_0886_0(editorCell, node, context);
     editorCell.setDefaultText("<no name>");
+    editorCell.setCommitInCommand(false);
     return editorCell;
   }
 
   public ModelAccessor _modelAcessorFactory_1216387022150(final EditorContext editorContext, final SNode node) {
     return new TransactionalPropertyAccessor(node, "name", false, true, editorContext) {
 
-      public void doCommit(String oldValue, String newValue) {
+      public void doCommit(final String oldValue, final String newValue) {
         if (oldValue != null) {
           int result = JOptionPane.showConfirmDialog(editorContext.getNodeEditorComponent(), "Renaming concept can break your model. It's advised to use rename refactoring instead. Are you sure?", "Rename concept", JOptionPane.YES_NO_OPTION);
           if (result == JOptionPane.NO_OPTION) {
             return;
           }
         }
-        SPropertyOperations.set(node, "name", newValue);
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+          public void run() {
+            SPropertyOperations.set(node, "name", newValue);
+          }
+
+        });
       }
 
     };

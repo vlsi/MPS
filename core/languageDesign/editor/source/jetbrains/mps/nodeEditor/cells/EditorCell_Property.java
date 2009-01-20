@@ -31,6 +31,7 @@ import com.intellij.openapi.util.Computable;
 public class EditorCell_Property extends EditorCell_Label {
   private ModelAccessor myModelAccessor;
   private boolean myCommitInProgress;
+  private boolean myCommitInCommand = true;
 
   private EditorCell_Property(EditorContext editorContext, ModelAccessor accessor, SNode node) {
     super(editorContext, node, accessor.getText());
@@ -59,11 +60,15 @@ public class EditorCell_Property extends EditorCell_Label {
     if (oldSelected && !selected && myModelAccessor instanceof TransactionalModelAccessor) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              commit();
-            }
-          });
+          if (myCommitInCommand) {
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                commit();
+              }
+            });
+          } else {
+            commit();
+          }
         }
       });
     }
@@ -75,8 +80,12 @@ public class EditorCell_Property extends EditorCell_Label {
     try {
       if (myModelAccessor instanceof TransactionalModelAccessor) {
         ((TransactionalModelAccessor) myModelAccessor).commit();
-        synchronizeViewWithModel();
-        getEditorContext().getNodeEditorComponent().relayout();
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                synchronizeViewWithModel();
+                getEditorContext().getNodeEditorComponent().relayout();
+              }
+        });
       }
     } finally {
       myCommitInProgress = false;
@@ -120,8 +129,13 @@ public class EditorCell_Property extends EditorCell_Label {
     return myModelAccessor;
   }
 
+  public void setCommitInCommand(boolean commit) {
+    myCommitInCommand = commit;
+  }
+
 
   public static interface SynchronizationListener {
     public void cellSynchronizedViewWithModel(EditorCell_Property editorCell_property);
   }
+
 }

@@ -7825,6 +7825,22 @@
             <property name="flag" value="true" />
           </node>
         </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1232439904515">
+          <property name="vertical" value="false" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1232439904516">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1232439907800">
+            <property name="text" value="run in command" />
+            <link role="styleClass" targetNodeId="1214480913160" resolveInfo="property" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1232439978453">
+            <link role="relationDeclaration" targetNodeId="2.1232439938817" resolveInfo="runInCommand" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1232439904518">
+            <property name="flag" value="false" />
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1216382040443">
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1216382040444">
             <property name="text" value="handler:" />

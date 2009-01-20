@@ -17986,6 +17986,33 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232441100577">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232441103095">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232441100578">
+                <link role="variableDeclaration" targetNodeId="1216382671543" resolveInfo="editorCell" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232441108489">
+                <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Property.setCommitInCommand(boolean):void" resolveInfo="setCommitInCommand" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1232441113255">
+                  <property name="value" value="true" />
+                  <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1232441118241">
+                    <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1232441118242">
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232441118243">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232441136339">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232441137623">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1232441136340" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1232441142204">
+                              <link role="property" targetNodeId="38.1232439938817" resolveInfo="runInCommand" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216382671682">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216382671683">
               <link role="variableDeclaration" targetNodeId="1216382671543" resolveInfo="editorCell" />
@@ -18100,10 +18127,12 @@
                     </node>
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216382873034">
                       <property name="name" value="oldValue" />
+                      <property name="isFinal" value="true" />
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191498791" />
                     </node>
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216382886467">
                       <property name="name" value="newValue" />
+                      <property name="isFinal" value="true" />
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191484725" />
                     </node>
                   </node>

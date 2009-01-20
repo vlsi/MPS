@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.EditorContext;
 
 public class TransactionalPropertyAccessor extends PropertyAccessor implements TransactionalModelAccessor {
@@ -47,7 +48,11 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
     if (myUncommitedValue != null) {
       doCommit(myOldValue, myUncommitedValue);
       myUncommitedValue = null;
-      myOldValue = doGetValue();
+      ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                myOldValue = doGetValue();
+              }
+      });
     }
   }
   

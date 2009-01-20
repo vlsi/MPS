@@ -652,6 +652,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "link", false), "role");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1232441118242(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "runInCommand");
+  }
+
   public static Object referenceMacro_GetReferent_1176478910892(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "componentProvider", true), "jcomponent_query_method");
   }

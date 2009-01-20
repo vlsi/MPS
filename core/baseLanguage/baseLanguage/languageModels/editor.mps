@@ -6928,7 +6928,7 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1232383299645">
               <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1232383299646">
-                <property name="name" value="attrigute" />
+                <property name="name" value="attribute" />
               </node>
               <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232383327396">
                 <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1232383326002">

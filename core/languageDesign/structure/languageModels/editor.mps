@@ -929,6 +929,7 @@
           <property name="text" value="concept" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty" id="1216387022150">
+          <property name="runInCommand" value="false" />
           <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
           <node role="handlerBlock" type="jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler" id="1216387022151">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387022152">
@@ -980,16 +981,43 @@
                   <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue" id="1216387041311" />
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216387031856">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387034234">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387032872">
-                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1216387031857" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1216387033718">
-                      <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
-                    </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232442023520">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232442049030">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1232442047607">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
+                    <link role="classConcept" targetNodeId="5.~ModelAccess" resolveInfo="ModelAccess" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1216387034798">
-                    <node role="value" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue" id="1216387037000" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232442057096">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~ModelAccess.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1232442060331">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1232442065145">
+                        <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1232442065146">
+                          <link role="classifier" targetNodeId="6.~Runnable" resolveInfo="Runnable" />
+                          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232442065147" />
+                          <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1232442065148">
+                            <property name="isAbstract" value="false" />
+                            <property name="name" value="run" />
+                            <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232442065149" />
+                            <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1232442065150" />
+                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232442065151">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232442070215">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232442070216">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232442070217">
+                                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1232442070218" />
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1232442070219">
+                                      <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
+                                    </node>
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1232442070220">
+                                    <node role="value" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue" id="1232442070221" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

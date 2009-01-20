@@ -289,13 +289,14 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     setupBasic_TransactionalProperty_8145_0(editorCell, node, context);
     setupLabel_TransactionalProperty_8145_0(editorCell, node, context);
     editorCell.setDefaultText("<no name>");
+    editorCell.setCommitInCommand(false);
     return editorCell;
   }
 
   public ModelAccessor _modelAcessorFactory_1216387630008(final EditorContext editorContext, final SNode node) {
     return new TransactionalPropertyAccessor(node, "name", false, true, editorContext) {
 
-      public void doCommit(String oldValue, String newValue) {
+      public void doCommit(final String oldValue, final String newValue) {
         if (oldValue != null) {
           int result = JOptionPane.showConfirmDialog(editorContext.getNodeEditorComponent(), "Renaming concept can break your model. It's advised to use rename refactoring instead. Are you sure?", "Rename concept", JOptionPane.YES_NO_OPTION);
           if (result == JOptionPane.NO_OPTION) {

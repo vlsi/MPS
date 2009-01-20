@@ -15,13 +15,13 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
@@ -69,6 +69,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_3190_4(context, node));
+    editorCell.addEditorCell(this.createCollection_3190_5(context, node));
     editorCell.addEditorCell(this.createCollection_3190_3(context, node));
     return editorCell;
   }
@@ -92,6 +93,17 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_3190_3(context, node, "property"));
     editorCell.addEditorCell(this.createRefCell_3190_3(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection_3190_5(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_3190_5(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant_3190_4(context, node, "run in command"));
+    editorCell.addEditorCell(this.createProperty_3190_5(context, node));
     return editorCell;
   }
 
@@ -150,6 +162,14 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3190_3(editorCell, node, context);
     setupLabel_Constant_3190_3(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_3190_4(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_3190_4(editorCell, node, context);
+    setupLabel_Constant_3190_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -231,6 +251,35 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_3190_2_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createProperty_3190_4_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_Property_3190_2(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_Property_3190_2((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createProperty_3190_5(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("runInCommand");
+    provider.setNoTargetText("<no runInCommand>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createProperty_3190_4_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -482,6 +531,29 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static void setupBasic_Collection_3190_5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_3190_5");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_3190_4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_3190_4");
+    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
+  }
+
+  private static void setupBasic_Property_3190_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("property_runInCommand");
+  }
+
   private static void setupLabel_RefCell_3190_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -501,6 +573,12 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_RefCell_3190_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_3190_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Property_3190_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static Color _StyleParameter_QueryFunction_1221237741110(SNode node, EditorContext editorContext) {

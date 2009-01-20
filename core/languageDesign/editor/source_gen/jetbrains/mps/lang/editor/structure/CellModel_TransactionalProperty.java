@@ -10,11 +10,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty";
+  public static final String RUN_IN_COMMAND = "runInCommand";
   public static final String PROPERTY = "property";
   public static final String HANDLER_BLOCK = "handlerBlock";
 
   public CellModel_TransactionalProperty(SNode node) {
     super(node);
+  }
+
+  public boolean getRunInCommand() {
+    return this.getBooleanProperty(CellModel_TransactionalProperty.RUN_IN_COMMAND);
+  }
+
+  public void setRunInCommand(boolean value) {
+    this.setBooleanProperty(CellModel_TransactionalProperty.RUN_IN_COMMAND, value);
   }
 
   public PropertyDeclaration getProperty() {

@@ -3564,6 +3564,10 @@
     <property name="package" value="CellModel" />
     <property name="name" value="CellModel_TransactionalProperty" />
     <link role="extends" targetNodeId="1079353555532" resolveInfo="CellModel_AbstractLabel" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1232439938817">
+      <property name="name" value="runInCommand" />
+      <link role="dataType" targetNodeId="3.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1216385453572">
       <property name="value" value="{T &lt;{property}&gt; T}" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
