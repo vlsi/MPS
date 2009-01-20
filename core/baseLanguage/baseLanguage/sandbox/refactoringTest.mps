@@ -136,6 +136,7 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1232460669025" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213016331242">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213016331243">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213016331244">
@@ -185,10 +186,14 @@
     <property name="name" value="Test" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1231932954766">
       <property name="name" value="method" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232458235955">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1232458237145" />
+      </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1232033769684" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231932954768" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232108202842">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232112012232">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232458127609">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1232112018157">
             <property name="value" value="false" />
           </node>
@@ -208,9 +213,15 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1231941598850" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231941598851" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231941598852" />
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1231941622151">
         <link role="annotation" targetNodeId="15.~NotNull" resolveInfo="NotNull" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232464057267">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232464057268">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232464060078">
+            <property name="value" value="3" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1228738397217">

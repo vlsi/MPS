@@ -2848,25 +2848,52 @@ __switch__:
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement");
-      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
-        public SNode doSubstitute(String pattern) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
-          SNode expression = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false, false), "expression", true);
-          SNodeOperations.replaceWithAnother(SNodeOperations.getParent(expression), result);
-          SLinkOperations.setTarget(result, "expression", expression, true);
-          return result;
+      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
+      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      for(final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          continue;
         }
-
-        public String getMatchingText(String pattern) {
-          return "return";
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
         }
+        result.add(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNodeOperations.replaceWithAnother(SNodeOperations.getParent(_context.getSourceNode()), result);
+            SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
+            return result;
+          }
+
+        });
+      }
+    }
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement");
+      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
+      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      for(final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          continue;
         }
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
+        }
+        result.add(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
 
-      });
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            {
+              SNode statement = SNodeOperations.getParent(_context.getSourceNode());
+              SNodeOperations.replaceWithAnother(statement, result);
+              SLinkOperations.setTarget(result, "statement", statement, true);
+              return result;
+            }
+          }
+
+        });
+      }
     }
     return result;
   }
@@ -2951,6 +2978,34 @@ __switch__:
 
           public String getVisibleMatchingText(String text) {
             return this.getMatchingText(text);
+          }
+
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Statement_1232463815953(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement");
+      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
+      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      for(final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          continue;
+        }
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
+        }
+        result.add(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
+
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+            SLinkOperations.setTarget(result, "statement", _context.getSourceNode(), true);
+            return result;
           }
 
         });
