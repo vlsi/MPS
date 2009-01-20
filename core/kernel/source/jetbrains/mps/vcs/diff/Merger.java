@@ -37,6 +37,8 @@ public class Merger {
   private Set<Change> myExcludedChanges = new HashSet<Change>();
   private List<Conflict> myConflicts = new ArrayList<Conflict>();
   private List<Warning> myWarnings = new ArrayList<Warning>();
+  private Set<Change> myUnresolded;
+  private Set<Change> myConflicted = new HashSet<Change>();
 
   public Merger(SModel base, SModel myne, SModel repo) {
     mySourceModels[VERSION.BASE.ordinal()] = base;
@@ -132,6 +134,8 @@ public class Merger {
         AddLanguageAspectChange last = changeList.get(1);
         if (!first.equals(last)) {
           myConflicts.add(new Conflict(first, last));
+          myConflicted.add(first);
+          myConflicted.add(last);
         }
       }
     }
@@ -157,6 +161,8 @@ public class Merger {
         ChangeConceptChange last = changeList.get(1);
         if (!first.equals(last)) {
           myConflicts.add(new Conflict(first, last));
+          myConflicted.add(first);
+          myConflicted.add(last);
         }
       }
     }
@@ -193,6 +199,8 @@ public class Merger {
         List<SetPropertyChange> cs = new ArrayList<SetPropertyChange>(changes.get(p));
         assert cs.size() == 2;
         myConflicts.add(new Conflict(cs.get(0), cs.get(1)));
+        myConflicted.add(cs.get(0));
+        myConflicted.add(cs.get(1));
       }
     }
   }
@@ -215,6 +223,8 @@ public class Merger {
         List<SetReferenceChange> cs = new ArrayList<SetReferenceChange>(changes.get(p));
         assert cs.size() == 2;
         myConflicts.add(new Conflict(cs.get(0), cs.get(1)));
+        myConflicted.add(cs.get(0));
+        myConflicted.add(cs.get(1));
       }
     }
   }
@@ -241,6 +251,8 @@ public class Merger {
           if (changes.containsKey(new Pair(newParent.getId(), newRole))) {
             List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(new Pair(newParent.getId(), newRole)));
             myConflicts.add(new Conflict(cs.get(0), mnc));
+            myConflicted.add(cs.get(0));
+            myConflicted.add(mnc);
           }
           newRole = newParent.getRole_();
           newParent = newParent.getParent();
@@ -253,6 +265,8 @@ public class Merger {
         List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(p));
         assert cs.size() == 2;
         myConflicts.add(new Conflict(cs.get(0), cs.get(1)));
+        myConflicted.add(cs.get(0));
+        myConflicted.add(cs.get(1));
       }
     }
   }
@@ -262,6 +276,8 @@ public class Merger {
       for (DeleteNodeChange d : getChanges(DeleteNodeChange.class)) {
         if (d.getAffectedNodeId().equals(c.getNodeParent())) {
           myConflicts.add(new Conflict(c, d));
+          myConflicted.add(c);
+          myConflicted.add(d);
         }
       }
     }
@@ -279,6 +295,8 @@ public class Merger {
       for (AddNodeChange ac : getChanges(AddNodeChange.class)) {
         if (ac.getNodeParent().equals(prevId)) {
           myConflicts.add(new Conflict(c, ac));
+          myConflicted.add(c);
+          myConflicted.add(ac);
         }
       }
     }
@@ -292,6 +310,8 @@ public class Merger {
         MoveNodeChange mnc2 = moves.get(j);
         if (mnc1.getNode().equals(mnc2.getNode())) {
           myConflicts.add(new Conflict(mnc1, mnc2));
+          myConflicted.add(mnc1);
+          myConflicted.add(mnc2);
         }
       }
     }
@@ -299,8 +319,8 @@ public class Merger {
 
   private <C extends Change> List<C> getChanges(Class<C> changeClass) {
     List<C> result = new ArrayList<C>();
-    result.addAll(CollectionUtil.filter(changeClass, myBaseMyneChange));
     result.addAll(CollectionUtil.filter(changeClass, myBaseRepoChange));
+    result.addAll(CollectionUtil.filter(changeClass, myBaseMyneChange));
     return result;
   }
 
@@ -316,6 +336,16 @@ public class Merger {
         notRemoveLanguage = true;
       }
       myResultModel.addRoot(tmp);
+
+      // colleact changes which are involved in unresolved conflicts
+      myUnresolded = new LinkedHashSet<Change>();
+      for (Conflict conflict : myConflicts) {
+        if (!myExcludedChanges.contains(conflict.getC1()) && !myExcludedChanges.contains(conflict.getC2())) {
+          myUnresolded.add(conflict.getC1());
+          myUnresolded.add(conflict.getC2());
+        }
+      }
+      System.out.println(myUnresolded);
 
       applyImportLanguages();
       applyImportModels();
@@ -352,6 +382,7 @@ public class Merger {
   private void applyImportModels() {
     List<ModelImportChange> importChangeList = getChanges(ModelImportChange.class);
     for (ModelImportChange ch : importChangeList) {
+      if (isChangeUnResolved(ch)) continue;
       ch.apply(myResultModel);
     }
   }
@@ -359,7 +390,8 @@ public class Merger {
   private void applyLanguageAspectChange() {
     List<AddLanguageAspectChange> aspectChangeList = getChanges(AddLanguageAspectChange.class);
     for (AddLanguageAspectChange ch : aspectChangeList) {
-      if (!myExcludedChanges.contains(ch)){
+      if (!myExcludedChanges.contains(ch)) {
+        if (isChangeUnResolved(ch)) continue;
         ch.apply(myResultModel);
       }
     }
@@ -369,6 +401,7 @@ public class Merger {
     List<ChangeConceptChange> conceptChangeList = getChanges(ChangeConceptChange.class);
     for (ChangeConceptChange ch : conceptChangeList) {
       if (!myExcludedChanges.contains(ch)) {
+        if (isChangeUnResolved(ch)) continue;
         ch.apply(myResultModel);
       }
     }
@@ -378,6 +411,7 @@ public class Merger {
     List<ImportLanguageChange> importLanguageChanges = getChanges(ImportLanguageChange.class);
 
     for (ImportLanguageChange ch : importLanguageChanges) {
+      if (isChangeUnResolved(ch)) continue;
       ch.apply(myResultModel);
     }
   }
@@ -396,7 +430,7 @@ public class Merger {
   }
 
   private void applyNewNodeChange(NewNodeChange c, Map<SNodeId, NewNodeChange> map) {
-    if (myExcludedChanges.contains(c)) {
+    if (myExcludedChanges.contains(c) || isChangeUnResolved(c)) {
       return;
     }
 
@@ -444,6 +478,7 @@ public class Merger {
     List<SetPropertyChange> sets = getChanges(SetPropertyChange.class);
     for (SetPropertyChange sp : sets) {
       if (myExcludedChanges.contains(sp)) continue;
+      if (isChangeUnResolved(sp)) continue;
       sp.apply(myResultModel);
     }
   }
@@ -452,6 +487,7 @@ public class Merger {
     List<SetReferenceChange> refs = getChanges(SetReferenceChange.class);
     for (SetReferenceChange ref : refs) {
       if (myExcludedChanges.contains(ref)) continue;
+      if (isChangeUnResolved(ref)) continue;
       ref.apply(myResultModel);
     }
 
@@ -460,10 +496,12 @@ public class Merger {
   private void applyDeletes() {
     for (DeleteNodeChange del : getChanges(DeleteNodeChange.class)) {
       if (myExcludedChanges.contains(del)) continue;
+      if (isChangeUnResolved(del)) continue;
       del.apply(myResultModel);
     }
 
     for (SetNodeChange snc : getChanges(SetNodeChange.class)) {
+      if (isChangeUnResolved(snc)) continue;
       snc.secondApply(myResultModel);
     }
   }
@@ -487,6 +525,12 @@ public class Merger {
       executeMove(map.get(current.getPrevSibling()), notExecuted, map);
     }
     current.apply(myResultModel);
+  }
+
+  private boolean isChangeUnResolved(Change ch) {
+    // we allow changes which are not involved in unresolved conflicts
+    // or, if involved, are outgoing changes
+    return myConflicted.contains(ch) && myUnresolded.contains(ch) && myBaseRepoChange.contains(ch);
   }
 
   public static enum VERSION {

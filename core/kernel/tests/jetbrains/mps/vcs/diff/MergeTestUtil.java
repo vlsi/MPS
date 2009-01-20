@@ -21,6 +21,10 @@ import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.vcs.diff.Merger.VERSION;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
 
 import java.io.File;
 import java.io.IOException;
@@ -58,6 +62,10 @@ public class MergeTestUtil {
     }
 
     return models;
+  }
+
+  public static void saveTestModel(final SModel model, final File file) {
+    ModelPersistence.saveModel(model, FileSystem.getFile(file));
   }
 
   public static enum TEST_VERSION {

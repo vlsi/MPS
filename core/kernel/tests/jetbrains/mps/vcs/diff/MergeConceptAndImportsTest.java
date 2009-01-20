@@ -24,10 +24,10 @@ import java.io.IOException;
  */
 public class MergeConceptAndImportsTest extends MergeTestCase{
   public void testConceptsAndLanguageImports() throws IOException, ReadException {
-    testZip("resources/help.mps.zip");
+    testZip("resources/help.mps.zip", false);
   }
 
   public void testModelImports() throws IOException, ReadException {
-    testZip("resources/structure.2.mps.zip");
+    testZip("resources/structure.2.mps.zip", false);
   }
 }

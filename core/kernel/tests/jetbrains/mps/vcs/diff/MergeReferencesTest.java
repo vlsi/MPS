@@ -18,15 +18,39 @@ package jetbrains.mps.vcs.diff;
 import java.io.IOException;
 
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
+import jetbrains.mps.logging.Logger;
 
 public class MergeReferencesTest extends MergeTestCase {
 
   public void testSimpleStructure() throws IOException, ReadException {
-    testZip("resources/structure.mps.zip");
+    testZip("resources/structure.mps.zip", false);
   }
 
   public void testEditorWithNewConcepts() throws IOException, ReadException {
-    testZip("resources/editor.mps.zip");
+    testZip("resources/editor.mps.zip", false);
   }
 
+  public void testConflictInternalReferencesInNewNodesChange() throws IOException, ReadException {
+    testZip("resources/conflictInternalRefNew.mps.zip", true);
+  }
+
+  public void testNonConflictInternalReferencesInNewNodesChange() throws IOException, ReadException {
+    testZip("resources/nonConflictInternalRefNew.mps.zip", true);
+  }
+
+  public void testConflictInternalReferencesChange() throws IOException, ReadException {
+    testZip("resources/conflictInternalRef.mps.zip", true);
+  }
+
+  public void testConflictExternalReferencesChange() throws IOException, ReadException {
+    testZip("resources/conflictExternalRef.mps.zip", true);
+  }
+
+  public void testNonConflictExternalReferencesChange() throws IOException, ReadException {
+    testZip("resources/nonConflictExternalRef.mps.zip", true);
+  }
+
+  public void testNonConflictExternalReferencesChange3() throws IOException, ReadException {
+    testZip("resources/nonConflictExternalRef2.mps.zip", true);
+  }
 }

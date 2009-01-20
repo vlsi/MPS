@@ -270,8 +270,10 @@ public class DiffBuilder {
   private String getTargetId(SReference ref) {
     if (ref == null) return null;
     SNode tn = ref.getTargetNode();
-    if (tn == null) return null;
-    return tn.getId();
+    if (tn != null) return tn.getId();
+    SNodeId id = ref.getTargetNodeId();
+    if (id == null) return null;
+    return id.toString();    
   }
 
   private boolean isToManyCardinality(String fqName, String role) {

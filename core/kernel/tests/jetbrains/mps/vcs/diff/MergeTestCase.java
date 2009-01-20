@@ -28,12 +28,12 @@ import java.net.URL;
 import junit.framework.TestCase;
 
 public class MergeTestCase extends TestCase {
-  protected void testZip(String pathToZip) throws IOException, ReadException {
+  protected void testZip(String pathToZip, final boolean saveResult) throws IOException, ReadException {
     IdeMain.setTestMode(true);
     jetbrains.mps.TestMain.configureMPS();
 
     URL resource = MergeReferencesTest.class.getResource(pathToZip);
-    File zipfile = new File(resource.getFile());
+    final File zipfile = new File(resource.getFile());
     final SModel[] models = MergeTestUtil.loadTestModels(zipfile);
     Merger merger = new Merger(getBase(models), getMyne(models), getRepo(models));
     merger.doRebuild(new Runnable() {
@@ -44,6 +44,10 @@ public class MergeTestCase extends TestCase {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        if (saveResult) {
+          String fileToSave = zipfile.getParent() + File.separator + zipfile.getName() + ".result";
+          MergeTestUtil.saveTestModel(resultModel, new File(fileToSave));
+        }
         ModelAssert.assertDeepModelEquals(getExpected(models), resultModel);
       }
     });
