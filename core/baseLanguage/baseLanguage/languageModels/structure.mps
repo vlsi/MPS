@@ -2040,6 +2040,10 @@
       <property name="role" value="statement" />
       <link role="target" targetNodeId="1068580123157" resolveInfo="Statement" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1232457225151">
+      <property name="value" value="/*" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1177666668936">
     <property name="name" value="DoWhileStatement" />
