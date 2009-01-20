@@ -29,16 +29,17 @@ import org.jetbrains.annotations.Nullable;
 import java.io.InputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.lang.ref.WeakReference;
 
 public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
-  private SNode myNode;
+  private WeakReference<SNode> myNode;
   private String myPath;
   private String myName;
   private long myModificationStamp = LocalTimeCounter.currentTime();
   private long myTimeStamp;
 
   MPSNodeVirtualFile(@NotNull SNode node) {
-    myNode = node;
+    myNode = new WeakReference<SNode>(node);
     myTimeStamp = node.getModel().getModelDescriptor().lastChangeTime();
     updateFields();
   }
@@ -46,14 +47,14 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   void updateFields() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myName = "" + myNode.getPresentation();
-        myPath = myNode.getModel().getSModelFqName() + "/" + myName;
+        myName = "" + myNode.get().getPresentation();
+        myPath = myNode.get().getModel().getSModelFqName() + "/" + myName;
       }
     });
   }
 
   public SNode getNode() {
-    return myNode;
+    return myNode.get();
   }
 
   public String getPath() {
@@ -82,10 +83,12 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
     throw new UnsupportedOperationException();
   }
 
+  @NotNull
   public OutputStream getOutputStream(Object requestor, long newModificationStamp, long newTimeStamp) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @NotNull
   public byte[] contentsToByteArray() throws IOException {
     throw new UnsupportedOperationException();
   }
@@ -110,7 +113,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   }
 
   public boolean isValid() {
-    return myNode.isRegistered();
+    return myNode.get().isRegistered();
   }
 
   public long getTimeStamp() {
