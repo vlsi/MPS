@@ -1134,7 +1134,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1177402731616">
       <property name="role" value="wrappedConcept" />
-      <link role="target" targetNodeId="2.1071489090640" />
+      <link role="target" targetNodeId="2.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1177402719158">
       <property name="metaClass" value="aggregation" />
