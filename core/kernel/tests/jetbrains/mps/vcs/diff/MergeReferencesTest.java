@@ -31,26 +31,26 @@ public class MergeReferencesTest extends MergeTestCase {
   }
 
   public void testConflictInternalReferencesInNewNodesChange() throws IOException, ReadException {
-    testZip("resources/conflictInternalRefNew.mps.zip", true);
+    testZip("resources/conflictInternalRefNew.mps.zip", false);
   }
 
   public void testNonConflictInternalReferencesInNewNodesChange() throws IOException, ReadException {
-    testZip("resources/nonConflictInternalRefNew.mps.zip", true);
+    testZip("resources/nonConflictInternalRefNew.mps.zip", false);
   }
 
   public void testConflictInternalReferencesChange() throws IOException, ReadException {
-    testZip("resources/conflictInternalRef.mps.zip", true);
+    testZip("resources/conflictInternalRef.mps.zip", false);
   }
 
   public void testConflictExternalReferencesChange() throws IOException, ReadException {
-    testZip("resources/conflictExternalRef.mps.zip", true);
+    testZip("resources/conflictExternalRef.mps.zip", false);
   }
 
   public void testNonConflictExternalReferencesChange() throws IOException, ReadException {
-    testZip("resources/nonConflictExternalRef.mps.zip", true);
+    testZip("resources/nonConflictExternalRef.mps.zip", false);
   }
 
   public void testNonConflictExternalReferencesChange3() throws IOException, ReadException {
-    testZip("resources/nonConflictExternalRef2.mps.zip", true);
+    testZip("resources/nonConflictExternalRef2.mps.zip", false);
   }
 }
