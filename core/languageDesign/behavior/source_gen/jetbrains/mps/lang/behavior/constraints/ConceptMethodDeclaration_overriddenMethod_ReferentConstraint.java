@@ -31,7 +31,7 @@ public class ConceptMethodDeclaration_overriddenMethod_ReferentConstraint extend
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "overriddenMethod");
   }
 
-  public void processReferentSetEvent(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
+  public void processReferentSetEvent(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
     if (newReferentNode != null && referenceNode != null) {
       for(SNode p : SLinkOperations.getTargets(referenceNode, "parameter", true)) {
         SNodeOperations.deleteNode(p);
@@ -45,7 +45,7 @@ public class ConceptMethodDeclaration_overriddenMethod_ReferentConstraint extend
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode concept = SLinkOperations.getTarget(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "concept", false);
+    SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false), "concept", false);
     List<SNode> methods = AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(concept, operationContext.getScope());
     return methods;
   }

@@ -33,9 +33,9 @@ public class AddTestAnnotation_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode newAnootation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.TestNodeAnnotation", null);
-    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("testNode"), newAnootation, true);
-    editorContext.select(newAnootation);
+    SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.TestNodeAnnotation", null);
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("testNode"), newAnnotation, true);
+    editorContext.select(newAnnotation);
   }
 
   public String getLocationString() {

@@ -58,7 +58,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210673906865">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1210674410577">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1210674410578">
-            <property name="name" value="newAnootation" />
+            <property name="name" value="newAnnotation" />
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1210674410579">
               <link role="concept" targetNodeId="1.1210673684636" resolveInfo="TestNodeAnnotation" />
             </node>
@@ -126,7 +126,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215508253868">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215508304161">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215508304162">
-            <property name="name" value="newAnootation" />
+            <property name="name" value="newAnnotation" />
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215508304163">
               <link role="concept" targetNodeId="1.1215507532627" resolveInfo="NodePropertiesContainer" />
             </node>

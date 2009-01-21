@@ -191,11 +191,15 @@
               <property name="name" value="concept" />
               <node role="type" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1225194475684" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225194475685">
-                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1225194475686">
-                  <link role="concept" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225194475687">
-                    <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1225194475688" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" id="1225194475689" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225194475687">
+                  <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1225194475688" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1232554542603">
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1232554542604">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1232555622478">
+                        <link role="conceptDeclaration" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
+                      </node>
+                    </node>
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1232555624402" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225194475690">

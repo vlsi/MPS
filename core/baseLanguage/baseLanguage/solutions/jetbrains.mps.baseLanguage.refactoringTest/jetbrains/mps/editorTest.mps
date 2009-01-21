@@ -13,6 +13,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
+  <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -45,7 +46,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="15" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
@@ -58,6 +59,9 @@
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" version="-1" />
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.baseLanguage.editor(jetbrains.mps.baseLanguage.editor@java_stub)" version="-1" />
+  <import index="13" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="14" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="15" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635633">
     <property name="name" value="AnonymousClassTest" />
     <property name="package" value="bugTest" />
@@ -1458,6 +1462,101 @@
         <node role="iteration" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1232550147340">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232550147341">
             <link role="variableDeclaration" targetNodeId="1232550124551" resolveInfo="i" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1232554293720">
+    <property name="package" value="selection" />
+    <property name="name" value="DeleteOverridenMethodInBehavior" />
+    <node role="nodeToEdit" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1232554649248">
+      <link role="concept" targetNodeId="15.1068581242875" resolveInfo="PlusExpression" />
+      <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1232554649249">
+        <property name="name" value="eval" />
+        <property name="isPrivate" value="false" />
+        <link role="overriddenMethod" targetNodeId="13.1213877519769" resolveInfo="eval" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232554649292">
+          <property name="name" value="module" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232554649293">
+            <link role="classifier" targetNodeId="14.~IModule" resolveInfo="IModule" />
+          </node>
+        </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232554649294">
+          <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+        </node>
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232554649295" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232555470454">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232555470455">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1232555472863" />
+          </node>
+        </node>
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232557528076">
+          <property name="isLastPosition" value="true" />
+          <property name="cellId" value="ReadOnlyModelAccessor_6299_0" />
+        </node>
+      </node>
+      <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1232554649296">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232554649297" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1232555746044">
+      <link role="concept" targetNodeId="15.1068581242875" resolveInfo="PlusExpression" />
+      <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1232555746045">
+        <property name="name" value="eval" />
+        <property name="isPrivate" value="false" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232555746049" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232555746050">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232555746051">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1232555746052" />
+          </node>
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232556540654">
+          <property name="name" value="module" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232556540655">
+            <link role="classifier" targetNodeId="14.~IModule" resolveInfo="IModule" />
+          </node>
+        </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232556540656">
+          <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+        </node>
+      </node>
+      <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1232555746053">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232555746054" />
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232555810958">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1232557553681">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1232557553682">
+          <property name="keycode" value="VK_RIGHT" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="1232555810959">
+        <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232555810960">
+          <property name="name" value="i" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1232555812166" />
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232555814903">
+            <property name="value" value="0" />
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1232555817873">
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232555818111">
+            <property name="value" value="5" />
+          </node>
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232555816904">
+            <link role="variableDeclaration" targetNodeId="1232555810960" resolveInfo="i" />
+          </node>
+        </node>
+        <node role="iteration" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1232555819925">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232555819926">
+            <link role="variableDeclaration" targetNodeId="1232555810960" resolveInfo="i" />
+          </node>
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232555834147">
+          <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1232555834148">
+            <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1232555834149">
+              <property name="keycode" value="VK_DELETE" />
+            </node>
           </node>
         </node>
       </node>
