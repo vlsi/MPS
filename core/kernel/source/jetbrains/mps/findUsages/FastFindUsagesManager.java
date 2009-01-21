@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
@@ -23,22 +22,21 @@ import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.CollectionUtil;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdTableBuilding;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
-import com.intellij.psi.impl.cache.impl.id.IdTableBuilding.ScanWordProcessor;
-import com.intellij.psi.search.UsageSearchContext;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.IdDataConsumer;
-import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
+import com.intellij.util.indexing.UnindexedFilesUpdater;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileFilter;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.ide.startup.FileSystemSynchronizer;
 
 import java.util.*;
 import java.util.regex.Pattern;
@@ -90,7 +88,7 @@ class FastFindUsagesManager extends FindUsagesManager {
     for (SModelDescriptor model : scope.getModelDescriptors()) {
       String taskName = ModelsProgressUtil.findInstancesModelTaskName(model);
       if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
-      if (model.isInitialized()) {
+      if (SModelRepository.getInstance().isChanged(model)) {
         result.addAll(model.findInstances(concept, scope));
       }
       if (progress.isCanceled()) {
@@ -114,7 +112,7 @@ class FastFindUsagesManager extends FindUsagesManager {
     for (SModelDescriptor model : scope.getModelDescriptors()) {
       String taskName = ModelsProgressUtil.findExactInstancesModelTaskName(model);
       if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_EXACT_INSTANCES);
-      if (model.isInitialized() ) {
+      if (SModelRepository.getInstance().isChanged(model)) {
         result.addAll(model.findExactInstances(concept, scope));
       }
       if (progress.isCanceled()) {
@@ -211,6 +209,8 @@ class FastFindUsagesManager extends FindUsagesManager {
   }
 
   private Set<SNode> findInstancesOfNodeInCache(AbstractConceptDeclaration concept, final IScope scope, boolean isExact) {
+    ensureCachesAreUpToDate();
+
     Set<VirtualFile> candidates = new HashSet<VirtualFile>();
     final Set<VirtualFile> scopeFiles = getScopeFiles(scope);
     candidates.addAll(getCandidates(scopeFiles, NameUtil.nodeFQName(concept)));
@@ -235,6 +235,8 @@ class FastFindUsagesManager extends FindUsagesManager {
   }
 
   private Set<SReference> findUsagesOfNodeInCache(SNode node, final IScope scope) {
+    ensureCachesAreUpToDate();
+
     final Set<VirtualFile> scopeFiles = getScopeFiles(scope);
     String nodeId = node.getId();
     final Set<VirtualFile> candidates = getCandidates(scopeFiles, nodeId);
@@ -246,5 +248,14 @@ class FastFindUsagesManager extends FindUsagesManager {
       result.addAll(sm.findUsages(node));
     }
     return result;
+  }
+
+  //todo this is a workaround for IDEA's bug. Remove it as soon as IDEA will fix the bug.
+  private void ensureCachesAreUpToDate() {
+    ProjectManager projectManager = ProjectManager.getInstance();
+    FileSystemSynchronizer synchronizer = new FileSystemSynchronizer();
+    Project defaultProject = projectManager.getDefaultProject();
+    synchronizer.registerCacheUpdater(new UnindexedFilesUpdater(defaultProject, defaultProject.getComponent(ProjectRootManager.class), FileBasedIndex.getInstance()));
+    synchronizer.execute();
   }
 }

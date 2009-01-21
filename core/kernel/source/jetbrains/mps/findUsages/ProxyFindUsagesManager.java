@@ -65,9 +65,13 @@ public class ProxyFindUsagesManager extends FindUsagesManager implements Configu
   }
 
   public void initComponent() {
+    myFastFindUsagesManager.initComponent();
+    myDefaultFindUsagesManager.initComponent();
   }
 
   public void disposeComponent() {
+    myFastFindUsagesManager.disposeComponent();
+    myDefaultFindUsagesManager.disposeComponent();
   }
 
   public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope) {

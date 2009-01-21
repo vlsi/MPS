@@ -36,6 +36,7 @@
     <property name="title" value="Delete Old Links" />
     <property name="migrationFromBuild" value="936" />
     <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1217599097846">
+      <property name="description" value="test" />
       <link role="affectedInstanceConcept" targetNodeId="1.1203071646776" resolveInfo="ActionDeclaration" />
       <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1217599097847">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217599097848">
@@ -203,6 +204,10 @@
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1232530503586">
+    <property name="migrationFromBuild" value="1193" />
+    <property name="name" value="ABCEF" />
   </node>
 </model>
 
