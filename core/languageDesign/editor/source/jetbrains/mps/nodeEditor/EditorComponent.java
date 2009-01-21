@@ -55,6 +55,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -1381,6 +1382,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         for (RebuildListener listener : myRebuildListeners) {
           listener.editorRebuilt(EditorComponent.this);
         }
+
+        updateMessages();
       }
     });
   }
