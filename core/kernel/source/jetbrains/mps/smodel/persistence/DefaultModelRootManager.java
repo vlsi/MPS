@@ -184,7 +184,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
 
   public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
-    ModelPersistence.saveModel(modelDescriptor.getSModel(), modelDescriptor.getModelFile());
+    ModelPersistence.saveModel(modelDescriptor.getSModel(), modelDescriptor.getModelFile());    
   }
 
   private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, IFile dir, SModelRoot modelRoot, ModelOwner owner) {

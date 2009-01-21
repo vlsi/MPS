@@ -198,8 +198,6 @@ public class ModelPersistence {
     } catch (IOException e) {
       LOG.error("Error in file " + file, e);
     }
-
-    file.toVirtualFile().refresh(false, false);
   }
 
   @NotNull

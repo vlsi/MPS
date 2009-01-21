@@ -304,6 +304,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
     SModelRepository.getInstance().markUnchanged(mySModel);
     myModelRootManager.saveModel(this);
+
+    IFile modelFile = getModelFile();
+    if (modelFile != null) {
+      modelFile.toVirtualFile().refresh(false, false);
+    }
+
     myDiskTimestamp = fileTimestamp();
 
     mySModel.fireModelSaved();
