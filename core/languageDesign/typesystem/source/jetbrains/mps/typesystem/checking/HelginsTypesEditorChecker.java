@@ -66,7 +66,7 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
     //non-typesystem checks
     if (!wasCheckedOnce || hasDramaticalEvent(events)) {
       try {
-        typesComponent.applyNonTypesystemRulesToRoot();
+        typesComponent.applyNonTypesystemRulesToRoot(events);
       } catch (Throwable t) {
         LOG.error(t);
       }
