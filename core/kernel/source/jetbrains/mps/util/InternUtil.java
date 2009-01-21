@@ -28,11 +28,13 @@ public class InternUtil {
     if (s == null) {
       return null;
     }
-    String result = internCache.tryKey(s);
-    if(result != null) {
-      return result;
+    synchronized (internCache) {
+      String result = internCache.tryKey(s);
+      if(result != null) {
+        return result;
+      }
+      internCache.cacheObject(s, s);
     }
-    internCache.cacheObject(s, s);
     return s;
   }
 }
