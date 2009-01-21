@@ -193,6 +193,11 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1232033769684" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231932954768" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232108202842">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232549186006">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1232549186007">
+            <link role="classifier" targetNodeId="10.~Enum" resolveInfo="Enum" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232458127609">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1232112018157">
             <property name="value" value="false" />
@@ -216,13 +221,7 @@
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1231941622151">
         <link role="annotation" targetNodeId="15.~NotNull" resolveInfo="NotNull" />
       </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232464057267">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232476541085">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232476541086">
-            <property name="value" value="3" />
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232548995674" />
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1228738397217">
       <property name="name" value="a" />

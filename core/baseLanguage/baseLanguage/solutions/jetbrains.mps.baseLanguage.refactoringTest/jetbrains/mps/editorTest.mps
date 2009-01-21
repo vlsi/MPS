@@ -12,6 +12,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
+  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -1411,6 +1412,53 @@
       <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1232458365771">
         <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1232458365772">
           <property name="keycode" value="VK_DELETE" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1232549383269">
+    <property name="package" value="selection" />
+    <property name="name" value="ExtendsInConceptDeclaration" />
+    <node role="nodeToEdit" type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1232549453172">
+      <property name="name" value="TestConcept" />
+      <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+      <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232550796340">
+        <property name="caretPosition" value="0" />
+        <property name="cellId" value="property_name" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1232549505425">
+      <property name="name" value="TestConcept" />
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232549542687">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="1232550124548">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232550124549">
+          <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1232550151217">
+            <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1232550151218">
+              <property name="keycode" value="VK_DELETE" />
+            </node>
+          </node>
+        </node>
+        <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232550124551">
+          <property name="name" value="i" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1232550126990" />
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232550130367">
+            <property name="value" value="0" />
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1232550143757">
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232550143979">
+            <property name="value" value="12" />
+          </node>
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232550137556">
+            <link role="variableDeclaration" targetNodeId="1232550124551" resolveInfo="i" />
+          </node>
+        </node>
+        <node role="iteration" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1232550147340">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232550147341">
+            <link role="variableDeclaration" targetNodeId="1232550124551" resolveInfo="i" />
+          </node>
         </node>
       </node>
     </node>

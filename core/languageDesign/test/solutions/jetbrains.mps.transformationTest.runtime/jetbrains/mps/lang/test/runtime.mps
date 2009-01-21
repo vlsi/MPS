@@ -3066,57 +3066,70 @@
                       </node>
                     </node>
                   </node>
-                  <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="1230130819609">
-                    <node role="expected" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230130825925">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230130825926">
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1230130825927">
-                          <link role="fieldDeclaration" targetNodeId="1229267001166" resolveInfo="myFinish" />
-                        </node>
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1230130825928" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230130825929">
-                        <link role="baseMethodDeclaration" targetNodeId="1227009788555" resolveInfo="getNode" />
-                      </node>
-                    </node>
-                    <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230130830227">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230130830228">
-                        <link role="variableDeclaration" targetNodeId="1229434316101" resolveInfo="map" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230130830229">
-                        <link role="baseMethodDeclaration" targetNodeId="8.~Map.get(java.lang.Object):java.lang.Object" resolveInfo="get" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230130830230">
-                          <link role="variableDeclaration" targetNodeId="1229434316088" resolveInfo="selectedNode" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1229434316133">
-                    <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229434316134">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229434316135">
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1229434316136">
-                          <link role="fieldDeclaration" targetNodeId="1229267001166" resolveInfo="myFinish" />
-                        </node>
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1229434316137" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229530001226">
-                        <link role="baseMethodDeclaration" targetNodeId="1229529415415" resolveInfo="getCellId" />
-                      </node>
-                    </node>
-                    <node role="expected" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229434316139">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229434316140">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229434316141">
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1229434316142">
-                            <link role="fieldDeclaration" targetNodeId="1229266543141" resolveInfo="editor" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1232551388716">
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232551388717">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="1232551406764">
+                        <node role="expected" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232551406765">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232551406766">
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1232551406767">
+                              <link role="fieldDeclaration" targetNodeId="1229267001166" resolveInfo="myFinish" />
+                            </node>
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1232551406768" />
                           </node>
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1229434316143" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232551406769">
+                            <link role="baseMethodDeclaration" targetNodeId="1227009788555" resolveInfo="getNode" />
+                          </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229434316144">
-                          <link role="baseMethodDeclaration" targetNodeId="13.~IEditor.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getSelectedCell" />
+                        <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232551406770">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232551406771">
+                            <link role="variableDeclaration" targetNodeId="1229434316101" resolveInfo="map" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232551406772">
+                            <link role="baseMethodDeclaration" targetNodeId="8.~Map.get(java.lang.Object):java.lang.Object" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232551406773">
+                              <link role="variableDeclaration" targetNodeId="1229434316088" resolveInfo="selectedNode" />
+                            </node>
+                          </node>
                         </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229434316145">
-                        <link role="baseMethodDeclaration" targetNodeId="35.~EditorCell.getCellId():java.lang.String" resolveInfo="getCellId" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1232551406774">
+                        <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232551406775">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232551406776">
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1232551406777">
+                              <link role="fieldDeclaration" targetNodeId="1229267001166" resolveInfo="myFinish" />
+                            </node>
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1232551406778" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232551406779">
+                            <link role="baseMethodDeclaration" targetNodeId="1229529415415" resolveInfo="getCellId" />
+                          </node>
+                        </node>
+                        <node role="expected" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232551406780">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232551406781">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232551406782">
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1232551406783">
+                                <link role="fieldDeclaration" targetNodeId="1229266543141" resolveInfo="editor" />
+                              </node>
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1232551406784" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232551406785">
+                              <link role="baseMethodDeclaration" targetNodeId="13.~IEditor.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getSelectedCell" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232551406786">
+                            <link role="baseMethodDeclaration" targetNodeId="35.~EditorCell.getCellId():java.lang.String" resolveInfo="getCellId" />
+                          </node>
+                        </node>
                       </node>
+                    </node>
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1232551401665">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232551401666">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1232551401667">
+                          <link role="fieldDeclaration" targetNodeId="1229267001166" resolveInfo="myFinish" />
+                        </node>
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1232551401668" />
+                      </node>
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1232551401669" />
                     </node>
                   </node>
                 </node>
