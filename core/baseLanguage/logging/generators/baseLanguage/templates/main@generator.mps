@@ -1214,19 +1214,7 @@
             </node>
             <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1232621574487" />
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232620885030">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232620886610">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1232620885031">
-                <link role="variableDeclaration" targetNodeId="1232620786310" resolveInfo="LOG" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232620888302">
-                <link role="baseMethodDeclaration" targetNodeId="21.~Logger.info(java.lang.String):void" resolveInfo="info" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1232620889584">
-                  <property name="value" value="msg" />
-                </node>
-              </node>
-            </node>
-          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1232622723667" />
         </node>
       </node>
     </node>

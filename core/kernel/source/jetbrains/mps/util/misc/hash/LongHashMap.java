@@ -2,40 +2,43 @@ package jetbrains.mps.util.misc.hash;
 
 import java.util.*;
 
-public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
+public class LongHashMap<V> extends AbstractHashMap<Long, V> implements Map<Long, V> {
 
-  private Entry<K, V>[] table;
+  private Entry<V>[] table;
   private int capacity;
   private final float loadFactor;
   private int shift;
   private int mask;
 
-  public HashMap() {
+  public LongHashMap() {
     this(0);
   }
 
-  public HashMap(int capacity) {
+  public LongHashMap(int capacity) {
     this(capacity, HashUtil.DEFAULT_LOAD_FACTOR);
   }
 
-  public HashMap(int capacity, float loadFactor) {
+  public LongHashMap(int capacity, float loadFactor) {
     this.loadFactor = loadFactor;
     init(capacity);
   }
 
-  public V put(final K key, final V value) {
-    final Entry<K, V>[] table = this.table;
-    final int hash = key.hashCode();
-    final int index = HashUtil.indexFor(hash, table.length, shift, mask);
+  public V get(final long key) {
+    Entry<V> e = getEntry(key);
+    return e == null ? null : e.value;
+  }
 
-    for (Entry<K, V> e = table[index]; e != null; e = e.hashNext) {
-      final K entryKey;
-      if (e.keyHash == hash && ((entryKey = e.key) == key || entryKey.equals(key))) {
+  public V put(final long key, final V value) {
+    final Entry<V>[] table = this.table;
+    final int index = HashUtil.indexFor(key, table.length, shift, mask);
+
+    for (Entry<V> e = table[index]; e != null; e = e.hashNext) {
+      if (e.key == key) {
         return e.setValue(value);
       }
     }
 
-    final Entry<K, V> e = new Entry<K, V>(key, value);
+    final Entry<V> e = new Entry<V>(key, value);
     e.hashNext = table[index];
     table[index] = e;
     size = size + 1;
@@ -46,23 +49,29 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
     return null;
   }
 
-  public V remove(final Object key) {
-    final Entry<K, V>[] table = this.table;
-    final int hash = key.hashCode();
-    final int index = HashUtil.indexFor(hash, table.length, shift, mask);
-    Entry<K, V> e = table[index];
+  public V put(final Long key, final V value) {
+    return put(key.longValue(), value);
+  }
+
+  public boolean containsKey(final long key) {
+    return get(key) != null;
+  }
+
+  public V remove(final long key) {
+    final Entry<V>[] table = this.table;
+    final int index = HashUtil.indexFor(key, table.length, shift, mask);
+    Entry<V> e = table[index];
 
     if (e == null) return null;
 
-    K entryKey;
-    if (e.keyHash == hash && ((entryKey = e.key) == key || entryKey.equals(key))) {
+    if (e.key == key) {
       table[index] = e.hashNext;
     } else {
       for (; ;) {
-        final Entry<K, V> last = e;
+        final Entry<V> last = e;
         e = e.hashNext;
         if (e == null) return null;
-        if (e.keyHash == hash && ((entryKey = e.key) == key || entryKey.equals(key))) {
+        if (e.key == key) {
           last.hashNext = e.hashNext;
           break;
         }
@@ -72,19 +81,12 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
     return e.value;
   }
 
-  protected Map.Entry<K, V> getEntry(final Object key) {
-    final Entry<K, V>[] table = this.table;
-    final int hash = key.hashCode();
-    final int index = HashUtil.indexFor(hash, table.length, shift, mask);
+  public V remove(Object key) {
+    return remove(((Long) key).longValue());
+  }
 
-    for (Entry<K, V> e = table[index]; e != null; e = e.hashNext) {
-      final K entryKey;
-      if (e.keyHash == hash && ((entryKey = e.key) == key || entryKey.equals(key))) {
-        return e;
-      }
-    }
-
-    return null;
+  protected Map.Entry<Long, V> getEntry(Object key) {
+    return getEntry(((Long) key).longValue());
   }
 
   protected void init(int capacity) {
@@ -100,6 +102,19 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
     return new HashIterator();
   }
 
+  private Entry<V> getEntry(final long key) {
+    final Entry<V>[] table = this.table;
+    final int index = HashUtil.indexFor(key, table.length, shift, mask);
+
+    for (Entry<V> e = table[index]; e != null; e = e.hashNext) {
+      if (e.key == key) {
+        return e;
+      }
+    }
+
+    return null;
+  }
+
   private void allocateTable(int length) {
     table = new Entry[length];
     shift = HashUtil.shift(table.length);
@@ -110,14 +125,14 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
     final int length = HashUtil.adjustTableLength((int) (capacity / loadFactor));
     this.capacity = capacity;
     if (length != table.length) {
-      final Iterator<Map.Entry<K, V>> entries = entrySet().iterator();
+      final Iterator<Map.Entry<Long, V>> entries = entrySet().iterator();
       allocateTable(length);
-      final Entry<K, V>[] table = this.table;
+      final Entry<V>[] table = this.table;
       final int shift = this.shift;
       final int mask = this.mask;
       while (entries.hasNext()) {
-        final Entry<K, V> e = (Entry<K, V>) entries.next();
-        final int index = HashUtil.indexFor(e.keyHash, length, shift, mask);
+        final Entry<V> e = (Entry<V>) entries.next();
+        final int index = HashUtil.indexFor(e.key, length, shift, mask);
         e.hashNext = table[index];
         table[index] = e;
       }
@@ -125,20 +140,18 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
   }
 
 
-  private static class Entry<K, V> implements Map.Entry<K, V> {
+  private static class Entry<V> implements Map.Entry<Long, V> {
 
-    private final K key;
-    private final int keyHash;
+    private final long key;
     private V value;
-    private Entry<K, V> hashNext;
+    private Entry<V> hashNext;
 
-    public Entry(final K key, final V value) {
+    public Entry(final long key, final V value) {
       this.key = key;
-      keyHash = key.hashCode();
       this.value = value;
     }
 
-    public K getKey() {
+    public Long getKey() {
       return key;
     }
 
@@ -155,39 +168,39 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
 
   private final class HashIterator extends HashMapIterator {
 
-    private final Entry<K, V>[] table = HashMap.this.table;
+    private final Entry<V>[] table = LongHashMap.this.table;
     private int index = 0;
-    private Entry<K, V> e = null;
-    private Entry<K, V> last;
+    private Entry<V> e = null;
+    private Entry<V> last;
 
     HashIterator() {
       initNextEntry();
     }
 
-    protected boolean hasNext() {
+    public boolean hasNext() {
       return e != null;
     }
 
-    protected void remove() {
+    public void remove() {
       if (last == null) {
         throw new IllegalStateException();
       }
-      HashMap.this.remove(last.key);
+      LongHashMap.this.remove(last.key);
       last = null;
     }
 
-    protected Entry<K, V> nextEntry() {
-      final Entry<K, V> result = last = e;
+    protected Entry<V> nextEntry() {
+      final Entry<V> result = last = e;
       initNextEntry();
       return result;
     }
 
     private void initNextEntry() {
-      Entry<K, V> result = e;
+      Entry<V> result = e;
       if (result != null) {
         result = result.hashNext;
       }
-      final Entry<K, V>[] table = this.table;
+      final Entry<V>[] table = this.table;
       while (result == null && index < table.length) {
         result = table[index++];
       }

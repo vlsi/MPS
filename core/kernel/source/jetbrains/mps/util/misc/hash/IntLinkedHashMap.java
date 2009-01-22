@@ -2,46 +2,49 @@ package jetbrains.mps.util.misc.hash;
 
 import java.util.*;
 
-public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
+public class IntLinkedHashMap<V> extends AbstractHashMap<Integer, V> implements Map<Integer, V> {
 
-  private Entry<K, V>[] table;
-  private Entry<K, V> top;
-  private Entry<K, V> back;
+  private Entry<V>[] table;
+  private Entry<V> top;
+  private Entry<V> back;
   private int capacity;
   private final float loadFactor;
   private int shift;
   private int mask;
 
-  public LinkedHashMap() {
+  public IntLinkedHashMap() {
     this(0);
   }
 
-  public LinkedHashMap(int capacity) {
+  public IntLinkedHashMap(int capacity) {
     this(capacity, HashUtil.DEFAULT_LOAD_FACTOR);
   }
 
-  public LinkedHashMap(int capacity, float loadFactor) {
+  public IntLinkedHashMap(int capacity, float loadFactor) {
     this.loadFactor = loadFactor;
     init(capacity);
   }
 
-  public V put(final K key, final V value) {
-    final Entry<K, V>[] table = this.table;
-    final int hash = key.hashCode();
-    final int index = HashUtil.indexFor(hash, table.length, shift, mask);
+  public V get(final int key) {
+    Entry<V> e = getEntry(key);
+    return e == null ? null : e.value;
+  }
 
-    for (Entry<K, V> e = table[index]; e != null; e = e.hashNext) {
-      final K entryKey;
-      if (e.keyHash == hash && ((entryKey = e.key) == key || entryKey.equals(key))) {
+  public V put(final int key, final V value) {
+    final Entry<V>[] table = this.table;
+    final int index = HashUtil.indexFor(key, table.length, shift, mask);
+
+    for (Entry<V> e = table[index]; e != null; e = e.hashNext) {
+      if (e.key == key) {
         moveToTop(e);
         return e.setValue(value);
       }
     }
 
-    final Entry<K, V> e = new Entry<K, V>(key, value);
+    final Entry<V> e = new Entry<V>(key, value);
     e.hashNext = table[index];
     table[index] = e;
-    final Entry<K, V> top = this.top;
+    final Entry<V> top = this.top;
     e.next = top;
     if (top != null) {
       top.previous = e;
@@ -59,23 +62,29 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
     return null;
   }
 
-  public V remove(final Object key) {
-    final Entry<K, V>[] table = this.table;
-    final int hash = key.hashCode();
-    final int index = HashUtil.indexFor(hash, table.length, shift, mask);
-    Entry<K, V> e = table[index];
+  public V put(final Integer key, final V value) {
+    return put(key.intValue(), value);
+  }
+
+  public boolean containsKey(final int key) {
+    return getEntry(key) != null;
+  }
+
+  public V remove(final int key) {
+    final Entry<V>[] table = this.table;
+    final int index = HashUtil.indexFor(key, table.length, shift, mask);
+    Entry<V> e = table[index];
 
     if (e == null) return null;
 
-    K entryKey;
-    if (e.keyHash == hash && ((entryKey = e.key) == key || entryKey.equals(key))) {
+    if (e.key == key) {
       table[index] = e.hashNext;
     } else {
       for (; ;) {
-        final Entry<K, V> last = e;
+        final Entry<V> last = e;
         e = e.hashNext;
         if (e == null) return null;
-        if (e.keyHash == hash && ((entryKey = e.key) == key || entryKey.equals(key))) {
+        if (e.key == key) {
           last.hashNext = e.hashNext;
           break;
         }
@@ -86,24 +95,17 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
     return e.value;
   }
 
-  protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
+  public V remove(Object key) {
+    return remove(((Integer) key).intValue());
+  }
+
+
+  protected boolean removeEldestEntry(Map.Entry<Integer, V> eldest) {
     return false;
   }
 
-  protected Map.Entry<K, V> getEntry(Object key) {
-    final Entry<K, V>[] table = this.table;
-    final int hash = key.hashCode();
-    final int index = HashUtil.indexFor(hash, table.length, shift, mask);
-
-    for (Entry<K, V> e = table[index]; e != null; e = e.hashNext) {
-      final K entryKey;
-      if (e.keyHash == hash && ((entryKey = e.key) == key || entryKey.equals(key))) {
-        moveToTop(e);
-        return e;
-      }
-    }
-
-    return null;
+  protected Map.Entry<Integer, V> getEntry(Object key) {
+    return getEntry(((Integer) key).intValue());
   }
 
   protected void init(int capacity) {
@@ -120,17 +122,31 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
     return new HashIterator();
   }
 
+  private Entry<V> getEntry(final int key) {
+    final Entry<V>[] table = this.table;
+    final int index = HashUtil.indexFor(key, table.length, shift, mask);
+
+    for (Entry<V> e = table[index]; e != null; e = e.hashNext) {
+      if (e.key == key) {
+        moveToTop(e);
+        return e;
+      }
+    }
+
+    return null;
+  }
+
   private void allocateTable(int length) {
     table = new Entry[length];
     shift = HashUtil.shift(table.length);
     mask = (1 << shift) - 1;
   }
 
-  private void moveToTop(final Entry<K, V> e) {
-    final Entry<K, V> top = this.top;
+  private void moveToTop(final Entry<V> e) {
+    final Entry<V> top = this.top;
     if (top != e) {
-      final Entry<K, V> prev = e.previous;
-      final Entry<K, V> next = e.next;
+      final Entry<V> prev = e.previous;
+      final Entry<V> next = e.next;
       prev.next = next;
       if (next != null) {
         next.previous = prev;
@@ -144,9 +160,9 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
     }
   }
 
-  private void unlink(final Entry<K, V> e) {
-    final Entry<K, V> prev = e.previous;
-    final Entry<K, V> next = e.next;
+  private void unlink(final Entry<V> e) {
+    final Entry<V> prev = e.previous;
+    final Entry<V> next = e.next;
     if (prev != null) {
       prev.next = next;
     } else {
@@ -164,11 +180,11 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
     this.capacity = capacity;
     if (length != table.length) {
       allocateTable(length);
-      final Entry<K, V>[] table = this.table;
+      final Entry<V>[] table = this.table;
       final int shift = this.shift;
       final int mask = this.mask;
-      for (Entry<K, V> e = back; e != null; e = e.previous) {
-        final int index = HashUtil.indexFor(e.keyHash, length, shift, mask);
+      for (Entry<V> e = back; e != null; e = e.previous) {
+        final int index = HashUtil.indexFor(e.key, length, shift, mask);
         e.hashNext = table[index];
         table[index] = e;
       }
@@ -176,22 +192,20 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
   }
 
 
-  private static class Entry<K, V> implements Map.Entry<K, V> {
+  private static class Entry<V> implements Map.Entry<Integer, V> {
 
-    private final K key;
-    private final int keyHash;
+    private final int key;
     private V value;
-    private Entry<K, V> next;
-    private Entry<K, V> previous;
-    private Entry<K, V> hashNext;
+    private Entry<V> next;
+    private Entry<V> previous;
+    private Entry<V> hashNext;
 
-    public Entry(final K key, final V value) {
+    public Entry(final int key, final V value) {
       this.key = key;
-      keyHash = key.hashCode();
       this.value = value;
     }
 
-    public K getKey() {
+    public Integer getKey() {
       return key;
     }
 
@@ -208,8 +222,8 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
 
   private final class HashIterator extends HashMapIterator {
 
-    private Entry<K, V> e = top;
-    private Entry<K, V> last;
+    private Entry<V> e = top;
+    private Entry<V> last;
 
     public boolean hasNext() {
       return e != null;
@@ -219,12 +233,12 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
       if (last == null) {
         throw new IllegalStateException();
       }
-      LinkedHashMap.this.remove(last.key);
+      IntLinkedHashMap.this.remove(last.key);
       last = null;
     }
 
-    protected Entry<K, V> nextEntry() {
-      final Entry<K, V> result = last = e;
+    protected Entry<V> nextEntry() {
+      final Entry<V> result = last = e;
       e = result.next;
       return result;
     }

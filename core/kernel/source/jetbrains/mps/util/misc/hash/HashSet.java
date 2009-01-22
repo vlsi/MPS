@@ -1,23 +1,8 @@
-/*
- * Copyright 2003-2008 JetBrains s.r.o.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package jetbrains.mps.util.misc.hash;
 
 import java.util.AbstractSet;
-import java.util.Set;
 import java.util.Iterator;
+import java.util.Set;
 
 public class HashSet<E> extends AbstractSet<E> implements Set<E> {
 
@@ -88,7 +73,7 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E> {
     size = size + 1;
 
     if (size > capacity) {
-      rehash((int) (capacity * HashUtil.CAPACITY_MULTIPLE));
+      rehash(HashUtil.nextCapacity(capacity));
     }
     return true;
   }
@@ -138,10 +123,6 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E> {
 
   public int size() {
     return size;
-  }
-
-  public boolean isEmpty() {
-    return size() == 0;
   }
 
   private void allocateTable(int length) {
