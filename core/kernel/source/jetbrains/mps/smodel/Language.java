@@ -717,6 +717,14 @@ public class Language extends AbstractModule {
     return false;
   }
 
+  public static boolean isLanguageModel(SModelDescriptor sm) {
+    return getLanguageFor(sm) != null;
+  }
+
+  public static boolean isLanguageModel(SModel sm) {
+    return isLanguageModel(sm.getModelDescriptor());
+  }
+
   public static Language getLanguageFor(SModelDescriptor sm) {
     Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(sm);
     for (ModelOwner modelOwner : owners) {

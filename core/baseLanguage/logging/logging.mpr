@@ -19,18 +19,21 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions />
     <projectLanguages>
-      <languagePath path="${mps_home}\platform\webr\languages\logging\logging.mpl" />
+      <languagePath path="${project}/logging.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs />
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="logging.mpr" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="Shalom">
     <subPane>
       <PATH>
@@ -42,10 +45,13 @@
     </subPane>
   </component>
   <component name="SvnBranchConfigurationManager">
-    <option name="myVersion" value="123" />
+    <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
   <component name="masterDetails">
     <option name="states">

@@ -6,6 +6,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
+  <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -42,6 +43,12 @@
         <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart" id="1178200228686">
           <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" id="1178200228688">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178200228689">
+              <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1232621537225">
+                <property name="severity" value="info" />
+                <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1232621537226">
+                  <property name="value" value="test info" />
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178200307875">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1178200310146">
                   <link role="classConcept" targetNodeId="4.~Severity" resolveInfo="Severity" />

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.actions" uuid="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" generatorOutputPath="${language_descriptor}\source_gen" java-stubs-enabled="false" compileInMPS="false">
+<language namespace="jetbrains.mps.lang.actions" uuid="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="false" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.lang.actions" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.actions" />
   </models>
   <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.lang.actions#1154466409006" uuid="018659ff-d3ef-4215-97e0-bcfeeb111145">
       <models>
-        <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.lang.actions.generator.baseLanguage.template" />
+        <modelRoot path="${language_descriptor}/generators/baseLanguage/templates" namespacePrefix="jetbrains.mps.lang.actions.generator.baseLanguage.template" />
       </models>
       <external-templates>
         <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
@@ -48,11 +48,22 @@
             <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" nodeID="1221137101806" />
           </lesser-priority-mapping>
         </mapping-priority-rule>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" nodeID="*" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
       </mapping-priorities>
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}\classes" />
+    <entry path="${language_descriptor}/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />

@@ -31,8 +31,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="22" />
+  <maxImportIndex value="23" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <import index="23" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1210176650661">
     <property name="name" value="LoggingGenerationUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1210176660531">
@@ -135,6 +136,26 @@
         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1210176685776">
           <link role="elementConcept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
         </node>
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1232620450176">
+      <property name="name" value="isDesignTimeModel" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1232620452869" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232620450178" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232620450179">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232620462439">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1232620635920">
+            <link role="baseMethodDeclaration" targetNodeId="23.~Language.isLanguageModel(jetbrains.mps.smodel.SModel):boolean" resolveInfo="isLanguageModel" />
+            <link role="classConcept" targetNodeId="23.~Language" resolveInfo="Language" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1232620635921">
+              <link role="variableDeclaration" targetNodeId="1232620459891" resolveInfo="sm" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232620459891">
+        <property name="name" value="sm" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1232620459892" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210176650662" />

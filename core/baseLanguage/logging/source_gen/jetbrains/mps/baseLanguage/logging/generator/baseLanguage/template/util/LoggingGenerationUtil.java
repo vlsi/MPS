@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.Language;
 
 public class LoggingGenerationUtil {
 
@@ -18,6 +20,10 @@ public class LoggingGenerationUtil {
       }
     }
     return result;
+  }
+
+  public static boolean isDesignTimeModel(SModel sm) {
+    return Language.isLanguageModel(sm);
   }
 
 }
