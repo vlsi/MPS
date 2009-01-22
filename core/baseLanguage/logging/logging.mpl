@@ -25,7 +25,7 @@
             <mapping-node modelUID="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" nodeID="1167240570149" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
+            <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
             <external-mapping>
               <all-local-mappings />
             </external-mapping>
