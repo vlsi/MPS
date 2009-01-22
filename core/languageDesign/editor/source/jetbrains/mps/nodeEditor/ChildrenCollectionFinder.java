@@ -55,7 +55,7 @@ public class ChildrenCollectionFinder {
               (linkDeclaration.getSourceCardinality() == Cardinality._0__n || linkDeclaration.getSourceCardinality() == Cardinality._1__n)) {
               return current;
             } else {
-              return null;
+              return new ChildrenCollectionFinder(current, true).find();
             }
           }
 

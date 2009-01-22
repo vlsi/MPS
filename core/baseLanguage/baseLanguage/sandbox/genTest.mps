@@ -63,7 +63,12 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1231680781314">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1231680781315" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231680781316" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231680781317" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231680781317">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1232614971763">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1232614971764" />
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232614971765" />
+        </node>
+      </node>
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1231680797598">
       <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1231680798633">

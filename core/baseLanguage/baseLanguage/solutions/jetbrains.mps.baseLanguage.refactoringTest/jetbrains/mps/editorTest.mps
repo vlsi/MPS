@@ -1562,5 +1562,48 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1232614612246">
+    <property name="name" value="smartStatementsInsert" />
+    <property name="package" value="smartStatements" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1232614669178">
+      <property name="name" value="m" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1232614669179" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232614669180" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232614669181">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1232614677959">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1232614681415">
+            <property name="value" value="true" />
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232614677961" />
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232614685963">
+            <property name="isLastPosition" value="true" />
+            <property name="cellId" value="Constant_1754_9" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1232614696183">
+      <property name="name" value="m" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1232614696184" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232614696185" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232614696186">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1232614696187">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1232614696188">
+            <property name="value" value="true" />
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232614696189">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1232614700409" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232614704551">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1232614706130">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1232614706131">
+          <property name="keycode" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

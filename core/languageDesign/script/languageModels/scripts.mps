@@ -26,5 +26,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1232538134397">
+    <property name="migrationFromBuild" value="1193" />
+    <property name="name" value="ABCDEF" />
+  </node>
 </model>
 
