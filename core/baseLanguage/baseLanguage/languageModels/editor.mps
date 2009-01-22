@@ -102,6 +102,7 @@
           <property name="position" value="next-line" />
         </node>
       </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1232615336070" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1074794490343">

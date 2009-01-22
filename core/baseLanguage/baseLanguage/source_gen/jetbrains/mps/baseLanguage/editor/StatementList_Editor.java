@@ -56,6 +56,15 @@ public class StatementList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_6577_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6577_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNodeList_6577_0(EditorCell editorCell, SNode node, EditorContext context) {

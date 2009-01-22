@@ -266,15 +266,20 @@ public final class SNode {
   public SNode getContainingRoot() {
     ModelAccess.assertLegalRead(this);
 
-    fireNodeReadAccess();
-    if (myParent == null) {
-      if (getModel().getRoots().contains(this)) {
-        return this;
+    SNode current = this;
+
+    while (true) {
+      current.fireNodeReadAccess();
+      if (current.myParent == null) {
+        if (getModel().getRoots().contains(current)) {
+          return current;
+        } else {
+          return null;
+        }
       } else {
-        return null;
+        current = current.myParent;
       }
     }
-    return myParent.getContainingRoot();
   }
 
   public List<SNode> getAncestors(boolean includeThis) {
