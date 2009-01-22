@@ -64,14 +64,6 @@ public class TypeChecker implements ApplicationComponent {
 
   private Map<SNode, SNode> myComputedTypesForCompletion = null;
 
-  @ForDebug
-  private Set<SNode> myResolveModeNodesBeingChecked = new HashSet<SNode>();
-  @ForDebug
-  private boolean myResolveModeInProgress;
-  @ForDebug
-  private Object myResolveModeStartedFrame;
-
-
   private ClassLoaderManager myClassLoaderManager;
 
   private boolean myIsGeneration = false;
@@ -103,34 +95,6 @@ public class TypeChecker implements ApplicationComponent {
 
   public static TypeChecker getInstance() {
     return ApplicationManager.getApplication().getComponent(TypeChecker.class);
-  }
-
-  @ForDebug
-  public void startResolveMode(Object frame, SNode nodeToCheck) {
-    if (myResolveModeInProgress) {
-      return;
-    } else {
-      myResolveModeInProgress = true;
-      myResolveModeStartedFrame = frame;
-      myResolveModeNodesBeingChecked.add(nodeToCheck);
-    }
-  }
-
-  @ForDebug
-  public void finishResolveMode(Object frame) {
-    if (!myResolveModeInProgress) {
-      return;
-    }
-    if (frame != myResolveModeStartedFrame) {
-      return;
-    }
-    myResolveModeStartedFrame = null;
-    myResolveModeInProgress = false;
-    myResolveModeNodesBeingChecked.clear();
-  }
-
-  public boolean isNodeBeingCheckedInResolveMode(SNode node) {
-    return myResolveModeNodesBeingChecked.contains(node);
   }
 
   public SubtypingManager getSubtypingManager() {
@@ -310,22 +274,16 @@ public class TypeChecker implements ApplicationComponent {
         }
         return computedType;
       }
-      final NodeTypesComponent temporaryComponent;
-      temporaryComponent = typeCheckingContext.createTemporaryTypesComponent();
-      try {
-        checkWithinRoot(node, new Runnable() {
-          public void run() {
-            result[0] = temporaryComponent.computeTypesForNodeDuringResolving(node, new Runnable() {
-              public void run() {
-                myCheckedRoots.add(node);
-              }
-            });
-          }
-        });
-      } finally {
-        temporaryComponent.clearListeners(); //I added it in order to fix memory leak. (Kostik)
-        typeCheckingContext.popTemporaryTypesComponent();
-      }
+      final TypeCheckingContext finalTypeCheckingContext = typeCheckingContext;
+      checkWithinRoot(node, new Runnable() {
+        public void run() {
+          result[0] = finalTypeCheckingContext.computeTypeForResolve(node, new Runnable() {
+            public void run() {
+              myCheckedRoots.add(node);
+            }
+          });
+        }
+      });
       SNode resultType = result[0];
       if (myComputedTypesForCompletion != null) {
         myComputedTypesForCompletion.put(node, resultType);

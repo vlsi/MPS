@@ -46,6 +46,7 @@ public class TypeCheckingContext {
 
   private Stack<Boolean> myIsInEditorQueriesStack = new Stack<Boolean>();
   private Stack<NodeTypesComponent> myTemporaryComponentsStack = new Stack<NodeTypesComponent>();
+  private Stack<SNode> myNodesToComputeDuringResolve = new Stack<SNode>();
 
   private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
 
@@ -382,6 +383,24 @@ public class TypeCheckingContext {
 
   public void popTemporaryTypesComponent() {
     myTemporaryComponentsStack.pop();
+  }
+
+  public SNode computeTypeForResolve(SNode node, Runnable continuation) {
+    if (myNodesToComputeDuringResolve.contains(node)) {
+     // LOG.error("the same node is checked more than once on a stack. StackOverFlow is inevitable");
+      return null;
+    }
+    final NodeTypesComponent temporaryComponent;
+    temporaryComponent = this.createTemporaryTypesComponent();
+    myNodesToComputeDuringResolve.push(node);
+    try {
+      return temporaryComponent.computeTypesForNodeDuringResolving(node, continuation);
+    } finally {
+      temporaryComponent.clearListeners(); //in order to prevent memory leaks.
+      this.popTemporaryTypesComponent();
+      SNode poppedNode = myNodesToComputeDuringResolve.pop();
+      assert poppedNode == node;
+    }
   }
 
   public static class NodeInfo {

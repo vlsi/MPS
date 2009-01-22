@@ -329,15 +329,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   public SNode computeTypesForNodeDuringResolving(SNode initialNode, Runnable continuation) {
-    Object frame = new Object();
-    if (myTypeChecker.isNodeBeingCheckedInResolveMode(initialNode)) {
-      LOG.error("the same node is checked more than once on a stack. StackOverFlow is inevitable");
-      return null;
-    }
-    myTypeChecker.startResolveMode(frame, initialNode);
-    SNode result = computeTypesForNode_special(initialNode, continuation, false);
-    myTypeChecker.finishResolveMode(frame);
-    return result;
+    return computeTypesForNode_special(initialNode, continuation, false);
   }
 
   public InequationSystem computeInequationsForHole(SNode hole) {
