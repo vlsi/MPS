@@ -66,7 +66,6 @@ public class IconManager {
         if (node == null) return Icons.DEFAULT_ICON;
 
         if (!(node.getConceptDeclarationAdapter() instanceof ConceptDeclaration)) {
-          LOG.error("Instance of concept interface found", node);
           return Icons.DEFAULT_ICON;
         }
 
