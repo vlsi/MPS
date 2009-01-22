@@ -458,6 +458,14 @@ public class TypeChecker implements ApplicationComponent {
       if (CommandProcessor.getInstance().getCurrentCommand() != null) return;
       event.accept(myVisitor);
     }
+
+    public void modelReloaded(SModelDescriptor sm) {
+      for (SNode root : new ArrayList<SNode>(myCheckedRoots)) {
+        if (root.getModel().getModelDescriptor() == sm) {
+          myCheckedRoots.remove(root);
+        }
+      }
+    }
   }
 
 }

@@ -17,11 +17,10 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.nodeEditor.IEditorChecker;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -72,6 +71,16 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       }
     }
   };
+  private SModelListener myModelReloadListener = new SModelAdapter() {
+    public void modelReloaded(SModelDescriptor sm) {
+      for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
+        SNode sNode = editorComponent.getEditedNode();
+        if (sNode != null && sNode.getModel().getModelDescriptor() == sm) {
+          myCheckedOnceEditors.remove(editorComponent);
+        }
+      }
+    }
+  };
 
   private Project myProject;
 
@@ -92,6 +101,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
     myClassLoaderManager.addReloadHandler(myReloadListener);
     myGlobalSModelEventsManager.addGlobalCommandListener(myCommandListener);
+    myGlobalSModelEventsManager.addGlobalModelListener(myModelReloadListener);
 
     myInspectorTool = myProject.getComponent(InspectorTool.class);
 
@@ -102,6 +112,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   public void projectClosed() {
     myClassLoaderManager.removeReloadHandler(myReloadListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myCommandListener);
+    myGlobalSModelEventsManager.removeGlobalModelListener(myModelReloadListener);
 
   }
 

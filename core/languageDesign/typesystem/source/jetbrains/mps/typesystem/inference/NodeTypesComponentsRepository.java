@@ -16,13 +16,11 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.*;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
@@ -40,6 +38,16 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
   public static NodeTypesComponentsRepository getInstance() {
     return ApplicationManager.getApplication().getComponent(NodeTypesComponentsRepository.class);
   }
+
+  private SModelListener myModelListener = new SModelAdapter() {
+    public void modelReloaded(SModelDescriptor sm) {
+      for (SNode node : new ArrayList<SNode>(myNodesToContexts.keySet())) {
+        if (sm == node.getModel().getModelDescriptor()) {
+          myNodesToContexts.remove(node);
+        }
+      }
+    }
+  };
 
   private SModelRepositoryAdapter myModelRepositoryListener = new SModelRepositoryAdapter() {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
@@ -107,6 +115,10 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
         myNodesToContexts.put(typeCheckingContext.getNode(), typeCheckingContext);
         SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
         SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
+        SModel sModel = root.getModel();
+        if (!sModel.hasModelListener(myModelListener)) {
+          sModel.addWeakSModelListener(myModelListener);
+        }
         return typeCheckingContext;
       }
     });
