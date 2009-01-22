@@ -933,7 +933,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1174998489630(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "pattern", true), "patternClass").getChild("constructor");
+    SNode patternClass = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "pattern", true), "patternClass");
+    if (patternClass == null) {
+      return null;
+    }
+    return (SNode)(patternClass.getChild("constructor"));
   }
 
   public static Object referenceMacro_GetReferent_1174999318513(final IOperationContext operationContext, final ReferenceMacroContext _context) {
