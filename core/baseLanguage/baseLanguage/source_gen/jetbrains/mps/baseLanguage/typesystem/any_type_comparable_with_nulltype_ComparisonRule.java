@@ -13,7 +13,7 @@ public class any_type_comparable_with_nulltype_ComparisonRule extends Comparison
   }
 
   public boolean areComparable(SNode node1, SNode node2) {
-    if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+    if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(node1, "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor")) {
       return false;
     }
     return true;

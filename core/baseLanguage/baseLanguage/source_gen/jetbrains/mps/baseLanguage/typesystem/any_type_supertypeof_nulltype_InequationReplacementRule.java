@@ -18,7 +18,7 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Abs
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext) {
-    if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+    if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor")) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
@@ -29,7 +29,7 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Abs
 
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     boolean result_14532009 = true;
-    if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+    if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor")) {
       result_14532009 = false;
     }
     return result_14532009;
