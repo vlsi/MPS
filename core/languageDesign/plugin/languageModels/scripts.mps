@@ -205,9 +205,5 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1232530503586">
-    <property name="migrationFromBuild" value="1193" />
-    <property name="name" value="ABCEF" />
-  </node>
 </model>
 
