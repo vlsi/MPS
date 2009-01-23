@@ -3146,8 +3146,8 @@
                                               </node>
                                               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224163399456">
                                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1224163399457">
-                                                  <link role="baseMethodDeclaration" targetNodeId="23.~BaseConcept.newInstance(jetbrains.mps.smodel.SModel,boolean):jetbrains.mps.lang.core.structure.BaseConcept" resolveInfo="newInstance" />
                                                   <link role="classConcept" targetNodeId="23.~BaseConcept" resolveInfo="BaseConcept" />
+                                                  <link role="baseMethodDeclaration" targetNodeId="23.~BaseConcept.newInstance(jetbrains.mps.smodel.SModel):jetbrains.mps.lang.core.structure.BaseConcept" resolveInfo="newInstance" />
                                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224163399458">
                                                     <link role="variableDeclaration" targetNodeId="1224163399383" resolveInfo="model" />
                                                   </node>

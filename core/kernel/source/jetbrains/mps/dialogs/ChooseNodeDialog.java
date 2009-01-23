@@ -23,12 +23,11 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.refactoring.common.move.MoveNodeRefactoring;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -102,7 +101,7 @@ public final class ChooseNodeDialog extends BaseDialog {
           JOptionPane.showMessageDialog(myContext.getMainFrame(), "Can't refactor node onto itself");
           return;
         }
-        String role = MoveNodeRefactoring.getRoleInTarget(mySourceNodes.get(0), sNode, myContext.getScope());
+        String role = getRoleInTarget(mySourceNodes.get(0), sNode, myContext.getScope());
         if (role == null) {
           JOptionPane.showMessageDialog(myContext.getMainFrame(), "Can't find suitable role");
           return;
@@ -114,6 +113,23 @@ public final class ChooseNodeDialog extends BaseDialog {
     if (node instanceof SModelTreeNode) {
       myResult = ((SModelTreeNode) node).getSModelDescriptor();
     }
+  }
+
+  public static String getRoleInTarget(SNode nodeToMove, SNode targetNode, IScope scope) {
+    AbstractConceptDeclaration nodeToMoveDeclaration = SModelUtil_new.findConceptDeclaration(nodeToMove.getConceptFqName(), scope);
+    AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(targetNode.getConceptFqName(), scope);
+    String roleInParent = null;
+    for (AbstractConceptDeclaration abstractConceptDeclaration : SModelUtil_new.getConceptAndSuperConcepts(conceptDeclaration)) {
+      for (LinkDeclaration linkDeclaration : abstractConceptDeclaration.getLinkDeclarations()) {
+        if (linkDeclaration.getMetaClass() == LinkMetaclass.reference) continue;
+        AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
+        if (SModelUtil_new.isAssignableConcept(nodeToMoveDeclaration, targetConcept)) {
+          roleInParent = linkDeclaration.getRole();
+          break;
+        }
+      }
+    }
+    return roleInParent;
   }
 
   public Object getResult() {
