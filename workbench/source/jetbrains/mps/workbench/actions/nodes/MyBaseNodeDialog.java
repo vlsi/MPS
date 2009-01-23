@@ -23,6 +23,7 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.JSplitPaneWithoutBorders;
 import jetbrains.mps.logging.Logger;
 
@@ -37,6 +38,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
   private static Logger LOG = Logger.getLogger(MyBaseNodeDialog.class);
 
   private final SNode myType;
+  private final SModel myModel;
   private final IErrorReporter myError;
   private boolean myWasRegistered = true;
   private JSplitPane myMainComponent;
@@ -51,11 +53,18 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     myMainComponent.setResizeWeight(0.8);
 
     myType = type;
+    myModel = myType.getModel();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         if (!myType.isRegistered()) {
-          myWasRegistered = false;
-          myType.getModel().addRoot(myType.getTopmostAncestor());
+          boolean wasLoading = myModel.isLoading();
+          try {
+            myModel.setLoading(true);
+            myWasRegistered = false;
+            myModel.addRoot(myType.getTopmostAncestor());
+          } finally {
+            myModel.setLoading(wasLoading);
+          }
         }
       }
     });
@@ -111,8 +120,14 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         if (!myWasRegistered) {
-          myType.getModel().removeRoot(myType.getTopmostAncestor());
-          myWasRegistered = true;
+          boolean wasLoading = myModel.isLoading();
+          try {
+            myModel.setLoading(true);
+            myModel.removeRoot(myType.getTopmostAncestor());
+            myWasRegistered = true;
+          } finally {
+            myModel.setLoading(wasLoading);
+          }
         }
         callSuperDispose();
       }
