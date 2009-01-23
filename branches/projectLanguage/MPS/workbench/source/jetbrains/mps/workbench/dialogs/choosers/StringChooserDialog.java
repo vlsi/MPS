@@ -27,7 +27,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
-import jetbrains.mps.workbench.choose.models.BaseModelModel;
+import jetbrains.mps.workbench.choose.string.BaseStringModel;
+import jetbrains.mps.workbench.choose.string.BaseStringItem;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
@@ -37,57 +38,48 @@ import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.List;
 
-class ModelChooserDialog extends BaseDialog {
-  private List<SModelDescriptor> myModels = new ArrayList<SModelDescriptor>();
-  private List<SModelDescriptor> myNonProjectModels = new ArrayList<SModelDescriptor>();
+class StringChooserDialog extends BaseDialog {
+  private List<String> myValues = new ArrayList<String>();
   private SmartChooseByNamePanel myChooser;
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
 
-  ModelChooserDialog(Frame owner, List<SModelDescriptor> models,@Nullable List<SModelDescriptor> nonProjectModels) throws HeadlessException {
-    super(owner, "Choose Model");
-    doInit(models,nonProjectModels);
+  StringChooserDialog(Frame owner, List<String> values,String entity) throws HeadlessException {
+    super(owner, "Choose "+entity);
+    doInit(values);
   }
 
-  ModelChooserDialog(Dialog owner, List<SModelDescriptor> models,@Nullable  List<SModelDescriptor> nonProjectModels) throws HeadlessException {
-    super(owner, "Choose Model");
-    doInit(models,nonProjectModels);
+  StringChooserDialog(Dialog owner, List<String> values,String entity) throws HeadlessException {
+    super(owner, "Choose Model"+entity);
+    doInit(values);
   }
 
-  private void doInit(final List<SModelDescriptor> options,@Nullable  List<SModelDescriptor> nonProjectModels) {
+  private void doInit(final List<String> options) {
     setModal(true);
-    myModels.addAll(options);
-    if (nonProjectModels!=null){
-      myNonProjectModels.addAll(nonProjectModels);
-    }
-
+    myValues.addAll(options);
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
-    BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
-      public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
-        return new BaseModelItem(modelDescriptor) {
+    BaseStringModel goToStringModel = new BaseStringModel(mpsProject) {
+      public NavigationItem doGetNavigationItem(final String string) {
+        return new BaseStringItem(string) {
           public void navigate(boolean requestFocus) {
           }
         };
       }
 
       @Override
-      public SModelDescriptor[] find(boolean checkboxState) {
-        if (checkboxState){
-          return myNonProjectModels.toArray(new SModelDescriptor[myNonProjectModels.size()]);
-        } else{
-          return myModels.toArray(new SModelDescriptor[myModels.size()]);
-        }
+      public String[] find(boolean checkboxState) {
+        return myValues.toArray(new String[myValues.size()]);
       }
 
-      public SModelDescriptor[] find(IScope scope) {
+      public String[] find(IScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
 
       @Nullable
       public String getPromptText() {
-        return "Model name:";
+        return "Select:";
       }
 
       @Override
@@ -96,7 +88,7 @@ class ModelChooserDialog extends BaseDialog {
       }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToModelModel,!myNonProjectModels.isEmpty());
+    myChooser = new SmartChooseByNamePanel(goToStringModel, false);
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {
@@ -119,11 +111,11 @@ class ModelChooserDialog extends BaseDialog {
     return myChooser.getPanel();
   }
 
-  public SModelDescriptor getResult() {
+  public String getResult() {
     if (myIsCancelled) return null;
-    BaseModelItem modelItem = (BaseModelItem) myChooser.getChosenElement();
-    if (modelItem == null) return null;
-    return modelItem.getModelDescriptor();
+    BaseStringItem item = (BaseStringItem) myChooser.getChosenElement();
+    if (item == null) return null;
+    return item.getString();
   }
 
   @Button(position = 0, name = "OK", defaultButton = true)
@@ -136,5 +128,4 @@ class ModelChooserDialog extends BaseDialog {
   public void onCancel() {
     dispose();
   }
-
 }
