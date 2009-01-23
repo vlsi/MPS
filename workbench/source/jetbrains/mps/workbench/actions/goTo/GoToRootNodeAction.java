@@ -23,21 +23,25 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
+import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
 public class GoToRootNodeAction extends BaseAction {
+
+  private static boolean myUseCache = false;
+
   public GoToRootNodeAction() {
     super("Go To Root Node");
   }
@@ -45,6 +49,10 @@ public class GoToRootNodeAction extends BaseAction {
   @NotNull
   protected String getKeyStroke() {
     return "ctrl N";
+  }
+
+  public void setUseCache(boolean useCache) {
+    myUseCache = useCache;
   }
 
   public void doExecute(AnActionEvent e) {
@@ -55,27 +63,34 @@ public class GoToRootNodeAction extends BaseAction {
     //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
-    BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject) {
-      public SNode[] find(IScope scope) {
-        final List<SNode> nodes = new ArrayList<SNode>();
-        List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
-        for (SModelDescriptor modelDescriptor : modelDescriptors) {
-          if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
+    ChooseByNamePopup popup;
 
-          for (SNode node : modelDescriptor.getSModel().getRoots()) {
-            nodes.add(node);
+    if (!myUseCache) {
+      BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject) {
+        public SNode[] find(IScope scope) {
+          final List<SNode> nodes = new ArrayList<SNode>();
+          List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
+          for (SModelDescriptor modelDescriptor : modelDescriptors) {
+            if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
+
+            for (SNode node : modelDescriptor.getSModel().getRoots()) {
+              nodes.add(node);
+            }
           }
+          return nodes.toArray(new SNode[0]);
         }
-        return nodes.toArray(new SNode[0]);
-      }
 
-      @Nullable
-      public String getPromptText() {
-        //return IdeBundle.message("prompt.gotoclass.enter.class.name");
-        return "Node name:";
-      }
-    };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, baseNodeModel, new FakePsiContext());
+        @Nullable
+        public String getPromptText() {
+          //return IdeBundle.message("prompt.gotoclass.enter.class.name");
+          return "Node name:";
+        }
+      };
+      popup = ChooseByNamePopup.createPopup(project, baseNodeModel, new FakePsiContext());
+    } else {
+      MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(mpsProject);
+      popup = ChooseByNamePopup.createPopup(project, chooseSNodeResult, new FakePsiContext());
+    }
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

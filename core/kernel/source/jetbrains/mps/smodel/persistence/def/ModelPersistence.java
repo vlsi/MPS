@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.persistence.def.v2.ModelReader2;
 import jetbrains.mps.smodel.persistence.def.v3.ModelReader3;
 import jetbrains.mps.smodel.persistence.def.v3.ModelWriter3;
 import jetbrains.mps.util.JDOMUtil;
+import static jetbrains.mps.util.JDOMUtil.loadDocument;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -33,8 +34,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
+import java.io.ByteArrayInputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+import com.intellij.util.indexing.FileContent;
 
 
 /**
@@ -79,6 +85,8 @@ public class ModelPersistence {
   private static final Map<Integer, IModelWriter> modelWriters = new HashMap<Integer, IModelWriter>();
   private static final int currentPersistenceVersion = 3;
 
+  private static final Pattern myModelPattern = Pattern.compile("model modelUID=\"([a-zA-Z0-9:-]+[(]([a-zA-Z0-9.]+)[)])\"");
+
   static {
     modelReaders.put(0, new ModelReader0());
 //    modelWriters.put(0, new ModelWriter0());
@@ -97,7 +105,7 @@ public class ModelPersistence {
   private static Document loadModelDocument(@NotNull IFile file) {
     Document document;
     try {
-      document = JDOMUtil.loadDocument(file);
+      document = loadDocument(file);
     } catch (JDOMException e) {
       throw new ModelFileReadException("Exception in file " + file, e);
     } catch (IOException e) {
@@ -135,6 +143,17 @@ public class ModelPersistence {
       }
     }
     return model;
+  }
+
+  public static SModel readModel(FileContent fileContent) throws JDOMException, IOException {
+    byte [] content = fileContent.getContent();
+    Document doc = loadDocument(new ByteArrayInputStream(content));
+    int modelPersistenceVersion = getModelPersistenceVersion(doc);
+    Matcher matcher = myModelPattern.matcher(fileContent.getContentAsText());
+    if (!matcher.find()) return null;
+    SModelReference modelReference = SModelReference.fromString(matcher.group(1));
+    String modelStereotype = modelReference.getStereotype();
+    return modelReaders.get(modelPersistenceVersion).readModel(doc, matcher.group(2), modelStereotype);
   }
 
   private static SModel upgradeModelPersistence(SModel model, int fromVersion) {
