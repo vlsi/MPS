@@ -20,9 +20,10 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.refactoring.plugin.RefactoringActionGroup;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
+import java.util.*;
 
 public class GenericRefactoringAction extends BaseAction {
   private ILoggableRefactoring myRefactoring;
@@ -33,6 +34,8 @@ public class GenericRefactoringAction extends BaseAction {
     setExecuteOutsideCommand(true);
     setIsAlwaysVisible(false);
   }
+
+
 
   protected void doExecute(AnActionEvent e) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -92,8 +95,9 @@ public class GenericRefactoringAction extends BaseAction {
   protected void doUpdate(AnActionEvent e) {
     ActionEventData data = new ActionEventData(e);
     boolean enabled = true;
+    SNode node = getNode(data);
+
     if (myRefactoring.getRefactoringTarget() == RefactoringTarget.NODE) {
-      SNode node = getNode(data);
       if (node != null) {
         enabled = myRefactoring.isApplicableWRTConcept(node);
       }
@@ -103,6 +107,17 @@ public class GenericRefactoringAction extends BaseAction {
         enabled = myRefactoring.isApplicableToModel(modelDescriptor);
       }
     }
+
+    RefactoringTarget refactoringTarget = myRefactoring.getRefactoringTarget();
+
+    Map<Class, ILoggableRefactoring> allRefactorings = RefactoringActionGroup.getAvailableRefactorings(node, refactoringTarget);
+
+    if (!allRefactorings.containsKey(myRefactoring.getClass())) {
+      enabled = false;
+    }
+
     setEnabledState(e.getPresentation(), enabled);
   }
+
+
 }
