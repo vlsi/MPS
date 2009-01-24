@@ -29527,7 +29527,7 @@
       <property name="name" value="component" />
       <link role="key" targetNodeId="54.~MPSDataKeys.EDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
     </node>
-    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1225382293686">
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1232815292101">
       <property name="name" value="frame" />
       <link role="key" targetNodeId="54.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
     </node>
@@ -29606,10 +29606,15 @@
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1228834808122">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1228834808123">
                     <link role="baseMethodDeclaration" targetNodeId="1225384499166" resolveInfo="IntroduceLocalVariableDialog" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228834808124">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1228834808125" />
-                      <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1228834808126">
-                        <link role="member" targetNodeId="1225382293686" resolveInfo="frame" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232816096101">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232815303962">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1232814280003" />
+                        <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1232815319328">
+                          <link role="member" targetNodeId="1225382279996" resolveInfo="component" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232816116133">
+                        <link role="baseMethodDeclaration" targetNodeId="35.~EditorComponent.getConainingJFrame():javax.swing.JFrame" resolveInfo="getConainingJFrame" />
                       </node>
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228834808127">

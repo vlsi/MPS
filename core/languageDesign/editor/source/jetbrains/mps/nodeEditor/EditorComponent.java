@@ -253,7 +253,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myKbdHandlersStack = new Stack<KeyboardHandler>();
     myKbdHandlersStack.push(new EditorComponentKeyboardHandler());
 
-    // --- init action map --
+    // --- init action map --   
     myActionMap = new HashMap<CellActionType, EditorCellAction>();
     // -- navigation
     myActionMap.put(CellActionType.LEFT, new NodeEditorActions.MoveLeft());
@@ -2500,6 +2500,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public static interface CellSynchronizationWithModelListener {
     public void cellSynchronizedWithModel(EditorCell cell);
+  }
+
+  public JFrame getConainingJFrame() {
+    Component comp = this;
+    while (comp != null && !(comp instanceof JFrame)) {
+      comp = comp.getParent();
+    }
+
+    return (JFrame)comp;
   }
 
   private class MPSActionProxy extends AbstractAction {
