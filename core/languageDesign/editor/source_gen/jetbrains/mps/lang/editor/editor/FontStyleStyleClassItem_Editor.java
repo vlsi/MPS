@@ -18,15 +18,16 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.editor.structure._FontStyle_Enum;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.lang.editor.structure._FontStyle_Enum;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 
 public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
@@ -162,11 +163,11 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition0528_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "query", true) == null;
+    return !(ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", null), _FontStyle_Enum.query.getValue()));
   }
 
   public static boolean renderingCondition0528_1(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "query", true) != null;
+    return ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", null), _FontStyle_Enum.query.getValue());
   }
 
   public static class FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
@@ -216,7 +217,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText() {
-      return "query";
+      return "query body";
     }
 
 }

@@ -6352,12 +6352,20 @@
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1220975716954">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220975716955">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220975737191">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1220975741337">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220975743903" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" id="1232812555787">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232812577012">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1232812575339">
+                    <link role="enumConstantDeclaration" targetNodeId="36.~_FontStyle_Enum.query" resolveInfo="query" />
+                    <link role="enumClass" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232812584110">
+                    <link role="baseMethodDeclaration" targetNodeId="36.~_FontStyle_Enum.getValue():java.lang.String" resolveInfo="getValue" />
+                  </node>
+                </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220975738833">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1220975737192" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1220975739930">
-                    <link role="link" targetNodeId="2.1220975211821" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1232812536797">
+                    <link role="property" targetNodeId="2.1186403771423" resolveInfo="style" />
                   </node>
                 </node>
               </node>
@@ -6369,13 +6377,21 @@
         <link role="relationDeclaration" targetNodeId="2.1220975211821" />
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1220975770016">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220975770017">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221475071260">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1221475075470">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1221475077004" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221475072215">
-                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1221475071261" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1221475073453">
-                    <link role="link" targetNodeId="2.1220975211821" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232812593501">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" id="1232812600556">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232812600557">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1232812600558" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1232812600559">
+                    <link role="property" targetNodeId="2.1186403771423" resolveInfo="style" />
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232812600560">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1232812600561">
+                    <link role="enumClass" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
+                    <link role="enumConstantDeclaration" targetNodeId="36.~_FontStyle_Enum.query" resolveInfo="query" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232812600562">
+                    <link role="baseMethodDeclaration" targetNodeId="36.~_FontStyle_Enum.getValue():java.lang.String" resolveInfo="getValue" />
                   </node>
                 </node>
               </node>
@@ -6384,7 +6400,7 @@
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1221475093708">
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item" id="1221475097538">
-            <property name="matchingText" value="query" />
+            <property name="matchingText" value="query body" />
             <node role="handlerFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler" id="1221475097539">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221475097540">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221475105807">
