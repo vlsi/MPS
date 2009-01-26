@@ -45,7 +45,7 @@ import java.util.regex.Matcher;
 import org.jetbrains.annotations.NotNull;
 
 class FastFindUsagesManager extends FindUsagesManager {
-  private final Pattern myPatternNode = Pattern.compile(" targetNodeId=\"[0-9]+\\.([0-9]+)");
+  private final Pattern myPatternNode = Pattern.compile(" targetNodeId=\"(?:[0-9]+\\.)?([0-9]+)");
   private final Pattern myPatternInstance = Pattern.compile(" type=\"([A-Za-z0-9_.]+)\" id=\"[.0-9]+");
 
   @NotNull
