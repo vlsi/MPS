@@ -1060,8 +1060,8 @@ public abstract class EditorCell_Basic implements EditorCell {
     EditorCell current = this;
     while (current.getLeafToRight(condition) != null) {
       current = current.getLeafToRight(condition);
-    }
-    return current;
+    }   
+    return current.getLastChild();
   }
 
   public EditorCell getHomeCell(Condition<EditorCell> condition) {
