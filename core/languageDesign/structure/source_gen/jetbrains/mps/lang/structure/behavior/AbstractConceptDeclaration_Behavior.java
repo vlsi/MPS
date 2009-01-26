@@ -30,6 +30,9 @@ import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.nodeEditor.EditorContext;
+import javax.swing.JOptionPane;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class AbstractConceptDeclaration_Behavior {
   private static Class[] PARAMETERS_1222430305282 = {SNode.class};
@@ -239,6 +242,23 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static List<SNode> callSuper_getImmediateSuperconcepts_1222430305282(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
+  }
+
+  public static void commitNameProperty_1232962485892(EditorContext editorContext, String oldValue, final SNode node, final String newValue) {
+    if (oldValue != null) {
+      int result = JOptionPane.showConfirmDialog(editorContext.getNodeEditorComponent(), "Renaming concept can break your model. It's advised to use rename refactoring instead. Are you sure?", "Rename concept", JOptionPane.YES_NO_OPTION);
+      if (result == JOptionPane.NO_OPTION) {
+        return;
+      }
+    }
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      public void run() {
+        SPropertyOperations.set(node, "name", newValue);
+      }
+
+    });
+    return;
   }
 
 }

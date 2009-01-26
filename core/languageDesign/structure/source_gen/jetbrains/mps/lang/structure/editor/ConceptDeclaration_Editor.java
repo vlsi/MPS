@@ -16,9 +16,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
-import javax.swing.JOptionPane;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -29,6 +27,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -420,19 +419,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return new TransactionalPropertyAccessor(node, "name", false, true, editorContext) {
 
       public void doCommit(final String oldValue, final String newValue) {
-        if (oldValue != null) {
-          int result = JOptionPane.showConfirmDialog(editorContext.getNodeEditorComponent(), "Renaming concept can break your model. It's advised to use rename refactoring instead. Are you sure?", "Rename concept", JOptionPane.YES_NO_OPTION);
-          if (result == JOptionPane.NO_OPTION) {
-            return;
-          }
-        }
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
-          public void run() {
-            SPropertyOperations.set(node, "name", newValue);
-          }
-
-        });
+        AbstractConceptDeclaration_Behavior.commitNameProperty_1232962485892(editorContext, oldValue, node, newValue);
       }
 
     };

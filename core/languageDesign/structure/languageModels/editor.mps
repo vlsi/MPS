@@ -933,92 +933,14 @@
           <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
           <node role="handlerBlock" type="jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler" id="1216387022151">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387022152">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216387039092">
-                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387039093">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216387268556">
-                    <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216387268557">
-                      <property name="name" value="result" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1216387268558" />
-                      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216387268559">
-                        <link role="classConcept" targetNodeId="32.~JOptionPane" resolveInfo="JOptionPane" />
-                        <link role="baseMethodDeclaration" targetNodeId="32.~JOptionPane.showConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int):int" resolveInfo="showConfirmDialog" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387268560">
-                          <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1216387268561" />
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216387268562">
-                            <link role="baseMethodDeclaration" targetNodeId="33.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getNodeEditorComponent" />
-                          </node>
-                        </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216387268563">
-                          <property name="value" value="Renaming concept can break your model. It's advised to use rename refactoring instead. Are you sure?" />
-                        </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216387268564">
-                          <property name="value" value="Rename concept" />
-                        </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1216387268565">
-                          <link role="classifier" targetNodeId="32.~JOptionPane" resolveInfo="JOptionPane" />
-                          <link role="variableDeclaration" targetNodeId="32.~JOptionPane.YES_NO_OPTION" resolveInfo="YES_NO_OPTION" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216387284346">
-                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387284347">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216387292995" />
-                    </node>
-                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1216387286191">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1216387290545">
-                        <link role="classifier" targetNodeId="32.~JOptionPane" resolveInfo="JOptionPane" />
-                        <link role="variableDeclaration" targetNodeId="32.~JOptionPane.NO_OPTION" resolveInfo="NO_OPTION" />
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216387285255">
-                        <link role="variableDeclaration" targetNodeId="1216387268557" resolveInfo="result" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1216387041858">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1216387042859" />
-                  <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue" id="1216387041311" />
-                </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232442023520">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232442049030">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1232442047607">
-                    <link role="baseMethodDeclaration" targetNodeId="5.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
-                    <link role="classConcept" targetNodeId="5.~ModelAccess" resolveInfo="ModelAccess" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232442057096">
-                    <link role="baseMethodDeclaration" targetNodeId="5.~ModelAccess.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1232442060331">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1232442065145">
-                        <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1232442065146">
-                          <link role="classifier" targetNodeId="6.~Runnable" resolveInfo="Runnable" />
-                          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232442065147" />
-                          <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1232442065148">
-                            <property name="isAbstract" value="false" />
-                            <property name="name" value="run" />
-                            <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232442065149" />
-                            <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1232442065150" />
-                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232442065151">
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232442070215">
-                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232442070216">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232442070217">
-                                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1232442070218" />
-                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1232442070219">
-                                      <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
-                                    </node>
-                                  </node>
-                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1232442070220">
-                                    <node role="value" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue" id="1232442070221" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232962608792">
+                <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1232962608793">
+                  <link role="baseMethodDeclaration" targetNodeId="34.1232962485892" resolveInfo="commitNameProperty" />
+                  <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1232962608794" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue" id="1232962608795" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1232962608796" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue" id="1232962608797" />
                 </node>
               </node>
             </node>
@@ -2204,65 +2126,14 @@
           <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
           <node role="handlerBlock" type="jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler" id="1216387630009">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387630010">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216387630011">
-                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387630012">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216387630013">
-                    <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216387630014">
-                      <property name="name" value="result" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1216387630015" />
-                      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216387630016">
-                        <link role="classConcept" targetNodeId="32.~JOptionPane" resolveInfo="JOptionPane" />
-                        <link role="baseMethodDeclaration" targetNodeId="32.~JOptionPane.showConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int):int" resolveInfo="showConfirmDialog" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387630017">
-                          <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1216387630018" />
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216387630019">
-                            <link role="baseMethodDeclaration" targetNodeId="33.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getNodeEditorComponent" />
-                          </node>
-                        </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216387630020">
-                          <property name="value" value="Renaming concept can break your model. It's advised to use rename refactoring instead. Are you sure?" />
-                        </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216387630021">
-                          <property name="value" value="Rename concept" />
-                        </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1216387630022">
-                          <link role="classifier" targetNodeId="32.~JOptionPane" resolveInfo="JOptionPane" />
-                          <link role="variableDeclaration" targetNodeId="32.~JOptionPane.YES_NO_OPTION" resolveInfo="YES_NO_OPTION" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216387630023">
-                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216387630024">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216387630025" />
-                    </node>
-                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1216387630026">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1216387630027">
-                        <link role="classifier" targetNodeId="32.~JOptionPane" resolveInfo="JOptionPane" />
-                        <link role="variableDeclaration" targetNodeId="32.~JOptionPane.NO_OPTION" resolveInfo="NO_OPTION" />
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216387630028">
-                        <link role="variableDeclaration" targetNodeId="1216387630014" resolveInfo="result" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1216387630029">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1216387630030" />
-                  <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue" id="1216387630031" />
-                </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216387630032">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387630033">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216387630034">
-                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1216387630035" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1216387630036">
-                      <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1216387630037">
-                    <node role="value" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue" id="1216387630038" />
-                  </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232962560583">
+                <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1232962560584">
+                  <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+                  <link role="baseMethodDeclaration" targetNodeId="34.1232962485892" resolveInfo="commitNameProperty" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1232962560585" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue" id="1232962560586" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1232962560587" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue" id="1232962560588" />
                 </node>
               </node>
             </node>

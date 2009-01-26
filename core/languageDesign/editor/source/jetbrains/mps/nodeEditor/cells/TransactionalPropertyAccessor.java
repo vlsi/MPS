@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 public class TransactionalPropertyAccessor extends PropertyAccessor implements TransactionalModelAccessor {
   private String myOldValue;
   private String myUncommitedValue;
+  private boolean myHasValueToCommit = false;
 
   public  TransactionalPropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     super(node, propertyName, readOnly, allowEmptyText, editorContext);
@@ -33,21 +34,23 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
   }
 
   protected String doGetValue() {
-    if (myUncommitedValue != null) {
+    if (myHasValueToCommit) {
       return myUncommitedValue;
     }
     return super.doGetValue();
   }
 
   protected void doSetValue(String newText) {
+    myHasValueToCommit = true;
     myUncommitedValue = newText;
     myOldValue = super.doGetValue();
   }
 
   public void commit() {
-    if (myUncommitedValue != null) {
+    if (myHasValueToCommit) {
       doCommit(myOldValue, myUncommitedValue);
       myUncommitedValue = null;
+      myHasValueToCommit = false;
       ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 myOldValue = doGetValue();
