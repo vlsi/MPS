@@ -122,7 +122,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
   protected void doOKAction() {
     super.doOKAction();
     int exitCode = Messages.showDialog(IdeBundle.message("prompt.open.project.in.new.frame"), IdeBundle.message("title.open.project"),
-                                       new String[]{IdeBundle.message("button.newframe"), IdeBundle.message("button.existingframe")}, 1, Messages.getQuestionIcon());
+      new String[]{IdeBundle.message("button.newframe"), IdeBundle.message("button.existingframe")}, 1, Messages.getQuestionIcon());
 
     final String[] error = new String[]{null};
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Creating", false) {
@@ -151,7 +151,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     if (myCreatedProject == null) return;
     myCreatedProject.save();
 
-    if ((exitCode==1) && (myProject != null)){
+    if ((exitCode == 1) && (myProject != null)) {
       ProjectUtil.closeProject(myProject);
     }
 
@@ -164,7 +164,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
           public void run() {
             myCreatedProject.getComponent(ProjectPane.class).activate();
           }
-        }, ModalityState.NON_MODAL);            
+        }, ModalityState.NON_MODAL);
       }
     }, ModalityState.NON_MODAL);
   }
@@ -174,17 +174,21 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     //noinspection ConstantConditions
     final MPSProject mpsProject = myCreatedProject.getComponent(MPSProjectHolder.class).getMPSProject();
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        if (myOptions.getCreateNewLanguage()) {
-          myCreatedLanguage = createNewLanguage(mpsProject);
-          mpsProject.addProjectLanguage(myCreatedLanguage);
-        }
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            if (myOptions.getCreateNewLanguage()) {
+              myCreatedLanguage = createNewLanguage(mpsProject);
+              mpsProject.addProjectLanguage(myCreatedLanguage);
+            }
 
-        if (myOptions.getCreateNewSolution()) {
-          IFile solutionDescriptorFile = createNewSolution();
-          myCreatedSolution = mpsProject.addProjectSolution(solutionDescriptorFile.toFile());
-        }
+            if (myOptions.getCreateNewSolution()) {
+              IFile solutionDescriptorFile = createNewSolution();
+              myCreatedSolution = mpsProject.addProjectSolution(solutionDescriptorFile.toFile());
+            }
+          }
+        });
       }
     });
   }
@@ -196,14 +200,14 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
       if (!projectDirFile.mkdirs()) return "Project directory creation failed";
     }
 
-    if (myOptions.getCreateNewLanguage()){
+    if (myOptions.getCreateNewLanguage()) {
       File languageDirFile = new File(myOptions.getLanguagePath());
       if (!(languageDirFile.exists())) {
         if (!languageDirFile.mkdirs()) return "Language directory creation failed";
       }
     }
 
-    if (myOptions.getCreateNewSolution()){
+    if (myOptions.getCreateNewSolution()) {
       String path = getSolutionFileName();
       File solutionDescriptorFile = new File(path);
       File dir = solutionDescriptorFile.getParentFile();

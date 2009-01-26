@@ -35,6 +35,9 @@ import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
 
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
+
 public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private static final String VERSION = "version";
   private static final String NAME_VERSION = "nameVersion";
@@ -298,6 +301,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   public void save() {
     if (mySModel == null) return;
+
+    if (!ApplicationManager.getApplication().isDispatchThread()) {
+      throw new IllegalStateException();
+    }
 
     //we must be in command since model save might change model by adding model/language imports
     if (!mySModel.isLoading()) LOG.assertInCommand();
