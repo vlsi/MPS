@@ -407,7 +407,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myCaretIsVisible = true;
 
 
-
     if (isEditable()) {
       final boolean result[] = new boolean[1];
       getEditorContext().executeCommand(new Runnable() {
@@ -428,7 +427,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         }
 
         return true;
-      } else if (isErrorState() && wasPosition == 0 && keyEvent.getKeyChar() == ' '){
+      } else if (isErrorState() && wasPosition == 0 && keyEvent.getKeyChar() == ' ') {
         return true;
       }
     }
@@ -607,6 +606,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return myTextLine.getTextuallySelectedText();
   }
 
+  public int getSelectionStart() {
+    return myTextLine.getStartTextSelectionPosition();
+  }
+
+  public int getSelectionEnd() {
+    return myTextLine.getEndTextSelectionPosition();
+  }
 
   private boolean isNotApplicableKeyEvent(KeyEvent keyEvent) {
     return (keyEvent.isControlDown() &&
