@@ -2618,6 +2618,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1232962539877" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232962485895">
         <property name="name" value="editorContext" />
+        <property name="isFinal" value="false" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232962485896">
           <link role="classifier" targetNodeId="19.~EditorContext" resolveInfo="EditorContext" />
         </node>
@@ -2626,17 +2627,17 @@
         <property name="name" value="oldValue" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1232962485898" />
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232962485899">
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232965947820">
         <property name="name" value="node" />
         <property name="isFinal" value="true" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1232962485900">
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1232965955872">
           <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232962485901">
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232965981688">
         <property name="name" value="newValue" />
         <property name="isFinal" value="true" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1232962485902" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1232965983315" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232962485903">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1232962485904">
@@ -2644,6 +2645,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232962485906">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232962485907">
                 <property name="name" value="result" />
+                <property name="isFinal" value="false" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1232962485908" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1232962485909">
                   <link role="classConcept" targetNodeId="20.~JOptionPane" resolveInfo="JOptionPane" />
@@ -2713,8 +2715,8 @@
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232962485938">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232962485939">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232962485940">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1232962742159">
-                                <link role="variableDeclaration" targetNodeId="1232962485899" resolveInfo="node" />
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1232965969389">
+                                <link role="variableDeclaration" targetNodeId="1232965947820" resolveInfo="node" />
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1232962485942">
                                 <link role="property" targetNodeId="16.1169194664001" resolveInfo="name" />
@@ -2722,7 +2724,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1232962485943">
                               <node role="value" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1232962744739">
-                                <link role="variableDeclaration" targetNodeId="1232962485901" resolveInfo="newValue" />
+                                <link role="variableDeclaration" targetNodeId="1232965981688" resolveInfo="newValue" />
                               </node>
                             </node>
                           </node>
@@ -2735,7 +2737,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232962485945" />
       </node>
     </node>
   </node>
