@@ -23,7 +23,7 @@ public class EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstrain
     manager.unRegisterNodePropertySetter("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "hasNoDefaultMember");
   }
 
-  public void execPropertySet(SNode node, String propertyName, String propertyValue, IScope scope) {
+  public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
     SPropertyOperations.set(node, "hasNoDefaultMember", "" + (SPropertyOperations.getBoolean(propertyValue)));
     if ((SPropertyOperations.getBoolean(propertyValue)) == true) {
       SLinkOperations.setTarget(node, "defaultMember", null, false);

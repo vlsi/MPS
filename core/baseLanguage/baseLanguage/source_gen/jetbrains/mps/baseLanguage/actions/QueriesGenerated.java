@@ -58,8 +58,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.search.VisibleThrowablesScope;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
 import jetbrains.mps.nodeEditor.CellSide;
@@ -1653,8 +1652,8 @@ __switch__:
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation");
-      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
-      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;
@@ -1717,8 +1716,8 @@ __switch__:
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
-      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
-      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;
@@ -2179,7 +2178,7 @@ __switch__:
         result.add(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
-            SPropertyOperations.set(_context.getSourceNode(), "label", (item));
+            SPropertyOperations.set(_context.getSourceNode(), "label", "" + ((item)));
             return _context.getSourceNode();
           }
 
@@ -2270,7 +2269,7 @@ __switch__:
         result.add(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
-            SPropertyOperations.set(_context.getSourceNode(), "label", (item));
+            SPropertyOperations.set(_context.getSourceNode(), "label", "" + ((item)));
             return _context.getSourceNode();
           }
 
@@ -2536,8 +2535,8 @@ __switch__:
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation");
-      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
-      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;
@@ -2617,8 +2616,8 @@ __switch__:
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
-      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
-      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;
@@ -2765,8 +2764,8 @@ __switch__:
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AsExpression");
-      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
-      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;
@@ -2815,8 +2814,8 @@ __switch__:
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SubstringExpression");
-      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
-      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;
@@ -2867,8 +2866,8 @@ __switch__:
     }
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement");
-      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
-      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;
@@ -2927,8 +2926,8 @@ __switch__:
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
-      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
-      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;
@@ -2961,8 +2960,8 @@ __switch__:
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement");
-      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
-      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;

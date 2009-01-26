@@ -275,7 +275,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221310280172">
           <property name="text" value="{" />
           <link role="styleClass" targetNodeId="4.1215091279307" resolveInfo="LeftBrace" />
-          <link role="keyMap" targetNodeId="4.1197577144239" resolveInfo="InsertFirstStatement_KeyMap" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1221310280173">
           <property name="flag" value="true" />

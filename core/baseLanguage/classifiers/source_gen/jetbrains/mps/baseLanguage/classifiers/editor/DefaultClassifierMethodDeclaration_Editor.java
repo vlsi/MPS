@@ -29,7 +29,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.baseLanguage.editor._BaseMethodDeclaration_Actions;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.baseLanguage.editor.InsertFirstStatement_KeyMap;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -490,7 +489,6 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   private static void setupBasic_Constant_7205_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7205_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
-    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_Collection_7205_5(EditorCell editorCell, SNode node, EditorContext context) {

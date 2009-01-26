@@ -584,7 +584,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_5704_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5704_6");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
-    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_Component_5704_0(EditorCell editorCell, SNode node, EditorContext context) {

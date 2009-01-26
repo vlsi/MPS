@@ -161,7 +161,6 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupLabel_Constant_6106_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
