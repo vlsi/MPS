@@ -741,8 +741,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       setSelectable(enabled);
     }
 
-    public void paintContent(Graphics g) {
-      if (!myIsEnabled) return;
+    public void paintContent(Graphics g) {      
       TextLine textLine = getRenderedTextLine();
       boolean toShowCaret = toShowCaret();
       int overlapping = getOverlapping();
