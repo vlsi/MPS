@@ -4124,6 +4124,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724906" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1232982539764">
+      <property name="name" value="isAbstract" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1232982552715" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232982539766">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232982568280">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1232982569766">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232982625276" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877351133">
     <link role="concept" targetNodeId="1.1070462154015" resolveInfo="StaticFieldDeclaration" />

@@ -1318,6 +1318,22 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225196404065" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1232982689938">
+      <property name="name" value="isAbstract" />
+      <link role="overriddenMethod" targetNodeId="4.1232982539764" resolveInfo="isAbstract" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232982689940">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232982707904">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232982712657">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1232982711422" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1232982716224">
+              <link role="property" targetNodeId="1.1225194472834" resolveInfo="isAbstract" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1232982698926" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232982704193" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1225196404066">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225196404067" />
     </node>
