@@ -26,7 +26,7 @@ public class CellAction_InsertIntoCollection extends EditorCellAction {
   private boolean myInsertBefore;
 
   public CellAction_InsertIntoCollection(AbstractCellListHandler listHandler, boolean insertBefore) {
-    this.myListHandler = listHandler;
+   this.myListHandler = listHandler;
     myInsertBefore = insertBefore;
   }
 
@@ -36,10 +36,7 @@ public class CellAction_InsertIntoCollection extends EditorCellAction {
 
   public void execute(EditorContext context) {
     boolean before = myInsertBefore;
-    EditorCell contextCell = context.getContextCell();
-    if (!before && contextCell.isFirstPositionInBigCell() && !(contextCell.isLastPositionInBigCell())) {
-      before = true;
-    }
+    EditorCell contextCell = context.getContextCell();    
     myListHandler.startInsertMode(context, contextCell, before);
   }
 }
