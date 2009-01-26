@@ -448,7 +448,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1754_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1754_0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
-    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_Constant_1754_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -472,7 +471,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1754_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1754_4");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
-    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_Collection_1754_3(EditorCell editorCell, SNode node, EditorContext context) {
@@ -548,7 +546,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1754_7");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     IfStatement_elseBlockStatement_delete.setCellActions(editorCell, node, context);
-    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_Collection_1754_6(EditorCell editorCell, SNode node, EditorContext context) {

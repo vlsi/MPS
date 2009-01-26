@@ -2289,7 +2289,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177555034649">
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177555034650">
             <property name="text" value="}" />
-            <link role="keyMap" targetNodeId="1197577144239" resolveInfo="InsertFirstStatement_KeyMap" />
             <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177555034651">
@@ -2355,7 +2354,6 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177555034675">
           <property name="text" value=")" />
-          <link role="keyMap" targetNodeId="1197577144239" resolveInfo="InsertFirstStatement_KeyMap" />
           <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215011012522">
@@ -2525,7 +2523,6 @@
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177555034710">
               <property name="text" value="{" />
               <link role="actionMap" targetNodeId="1177552860488" resolveInfo="IfStatement_elseBlockStatement_delete" />
-              <link role="keyMap" targetNodeId="1197577144239" resolveInfo="InsertFirstStatement_KeyMap" />
               <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
               <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1177555034711">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177555034712">
