@@ -656,6 +656,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "runInCommand");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1233007778005(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString_def(_context.getNode(), "separatorLayoutConstraint", null);
+  }
+
   public static Object referenceMacro_GetReferent_1176478910892(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "componentProvider", true), "jcomponent_query_method");
   }

@@ -11801,6 +11801,42 @@
                     </node>
                   </node>
                 </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233007715112">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233007742838">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233007717567">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1233007715113">
+                        <link role="variableDeclaration" targetNodeId="1184142273602" resolveInfo="editorCell" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233007741275">
+                        <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Basic.getStyle():jetbrains.mps.nodeEditor.style.Style" resolveInfo="getStyle" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233007749295">
+                      <link role="baseMethodDeclaration" targetNodeId="64.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void" resolveInfo="set" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1233007762359">
+                        <link role="classifier" targetNodeId="64.~StyleAttributes" resolveInfo="StyleAttributes" />
+                        <link role="variableDeclaration" targetNodeId="64.~StyleAttributes.LAYOUT_CONSTRAINT" resolveInfo="LAYOUT_CONSTRAINT" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233007778003">
+                        <property name="value" value="_layout_constraint_" />
+                        <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233007778004">
+                          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233007778005">
+                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233007778006">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233007778007">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233007778008">
+                                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233007778009" />
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1233007793934">
+                                    <link role="property" targetNodeId="38.1156252885376" resolveInfo="separatorLayoutConstraint" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1184142273624">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184142273625">
                     <link role="variableDeclaration" targetNodeId="1184142273602" resolveInfo="editorCell" />
