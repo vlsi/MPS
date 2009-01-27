@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.GenerationFailueException;
+import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.smodel.IScope;
@@ -46,9 +46,9 @@ public interface ITemplateGenerator {
    */
   SModel getTargetModel();
 
-  boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException, GenerationCanceledException;
+  boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException;
 
-  boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException, GenerationCanceledException;
+  boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException;
 
   SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName);
 
@@ -58,7 +58,7 @@ public interface ITemplateGenerator {
 
   SNode getPreviousInputNodeByMappingName(String mappingName);
 
-  RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) throws GenerationFailueException;
+  RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) throws GenerationFailureException;
 
   void showInformationMessage(SNode node, String message);
 

@@ -156,6 +156,9 @@ public class GenerationController {
       warning("generation canceled");
       myProgress.stop();
       return false;
+    } catch (GenerationFailureException e) {
+      error(e.getMessage());
+      return false;
     } catch (Throwable t) {
       LOG.error(t);
       final String text = t.toString();

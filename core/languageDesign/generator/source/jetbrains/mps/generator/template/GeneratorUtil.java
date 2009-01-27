@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailueException;
+import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
@@ -82,7 +82,7 @@ public class GeneratorUtil {
     return mappingName;
   }
 
-  public static boolean checkPremiseForBaseMappingRule(SNode inputNode, ConceptDeclaration sourceNodeConcept, BaseMappingRule rule, ITemplateGenerator generator) throws GenerationFailueException {
+  public static boolean checkPremiseForBaseMappingRule(SNode inputNode, ConceptDeclaration sourceNodeConcept, BaseMappingRule rule, ITemplateGenerator generator) throws GenerationFailureException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept != null) {
       if (rule.getApplyToConceptInheritors()) {
@@ -94,7 +94,7 @@ public class GeneratorUtil {
     return checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator);
   }
 
-  public static boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws GenerationFailueException {
+  public static boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws GenerationFailureException {
     if (condition == null) {
       if (required) {
         generator.showErrorMessage(inputNode, null, ruleNode, "rule condition required");
@@ -119,14 +119,14 @@ public class GeneratorUtil {
     } catch (NoSuchMethodException e) {
       generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
-      throw new GenerationFailueException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
+      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
     } finally {
       Statistics.getStatistic(Statistics.TPL).add(ruleNode.getModel(), methodName, startTime, res);
     }
     return false;
   }
 
-  public static boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode, ITemplateGenerator generator) throws GenerationFailueException {
+  public static boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode, ITemplateGenerator generator) throws GenerationFailureException {
     if (condition == null) {
       // condition is not required
       return true;
@@ -148,7 +148,7 @@ public class GeneratorUtil {
     } catch (NoSuchMethodException e) {
       generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to TRUE");
     } catch (Throwable t) {
-      throw new GenerationFailueException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
+      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
     } finally {
       Statistics.getStatistic(Statistics.TPL).add(ruleNode.getModel(), methodName, startTime, res);
     }
@@ -156,7 +156,7 @@ public class GeneratorUtil {
     return true;
   }
 
-  public static void executeMappingScript(MappingScript mappingScript, SModel model, ITemplateGenerator generator) throws GenerationFailueException {
+  public static void executeMappingScript(MappingScript mappingScript, SModel model, ITemplateGenerator generator) throws GenerationFailureException {
     MappingScript_CodeBlock codeBlock = mappingScript.getCodeBlock();
     if (codeBlock == null) {
       generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no code-block");
@@ -177,7 +177,7 @@ public class GeneratorUtil {
     } catch (NoSuchMethodException e) {
       generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no generated code found");
     } catch (Throwable t) {
-      throw new GenerationFailueException("error executing script '" + mappingScript.getName() + "'", codeBlock.getNode(), t);
+      throw new GenerationFailureException("error executing script '" + mappingScript.getName() + "'", codeBlock.getNode(), t);
     } finally {
       Statistics.getStatistic(Statistics.TPL).add(mappingScript.getModel(), methodName, startTime);
     }
@@ -233,7 +233,7 @@ public class GeneratorUtil {
   }
 
 
-  public static void applyCreateRootRule(CreateRootRule createRootRule, TemplateGenerator generator) throws GenerationFailueException, GenerationCanceledException {
+  public static void applyCreateRootRule(CreateRootRule createRootRule, TemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
     if (checkCondition(createRootRule, generator)) {
       INamedConcept templateNode = createRootRule.getTemplateNode();
       if (templateNode == null) {
@@ -255,7 +255,7 @@ public class GeneratorUtil {
     }
   }
 
-  private static boolean checkCondition(CreateRootRule createRootRule, ITemplateGenerator generator) throws GenerationFailueException {
+  private static boolean checkCondition(CreateRootRule createRootRule, ITemplateGenerator generator) throws GenerationFailureException {
     CreateRootRule_Condition conditionFunction = createRootRule.getConditionFunction();
     if (conditionFunction == null) {
       return true;
@@ -273,12 +273,12 @@ public class GeneratorUtil {
     } catch (NoSuchMethodException e) {
       generator.showWarningMessage(BaseAdapter.fromAdapter(createRootRule), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
-      throw new GenerationFailueException("error executing condition ", BaseAdapter.fromAdapter(createRootRule), t);
+      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(createRootRule), t);
     }
     return false;
   }
 
-  public static void applyRoot_MappingRule(Root_MappingRule rule, TemplateGenerator generator) throws GenerationFailueException, GenerationCanceledException {
+  public static void applyRoot_MappingRule(Root_MappingRule rule, TemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       generator.showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
@@ -318,7 +318,7 @@ public class GeneratorUtil {
     }
   }
 
-  public static boolean isApplicableDropRootRule(SNode inputRootNode, DropRootRule rule, TemplateGenerator generator) throws GenerationFailueException {
+  public static boolean isApplicableDropRootRule(SNode inputRootNode, DropRootRule rule, TemplateGenerator generator) throws GenerationFailureException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       generator.showErrorMessage(null, null, rule.getNode(), "rule has no applicable concept defined");
@@ -341,7 +341,7 @@ public class GeneratorUtil {
   private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator)
     throws
     DismissTopMappingRuleException,
-    GenerationFailueException,
+    GenerationFailureException,
     GenerationCanceledException {
 
     try {
@@ -377,7 +377,7 @@ public class GeneratorUtil {
 
   private static void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateGenerator generator)
     throws
-    GenerationFailueException,
+    GenerationFailureException,
     GenerationCanceledException {
 
     generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
@@ -390,7 +390,7 @@ public class GeneratorUtil {
 
   private static void weaveTemplateDeclaration_intern(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateGenerator generator)
     throws
-    GenerationFailueException,
+    GenerationFailureException,
     GenerationCanceledException {
 
     if (template == null) {
@@ -525,7 +525,7 @@ public class GeneratorUtil {
     return mainContextNode;
   }
 
-  public static void applyWeaving_MappingRule(Weaving_MappingRule rule, TemplateGenerator generator) throws GenerationFailueException, GenerationCanceledException {
+  public static void applyWeaving_MappingRule(Weaving_MappingRule rule, TemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       generator.showErrorMessage(null, rule.getNode(), "rule has no applicable concept defined");
@@ -587,7 +587,7 @@ public class GeneratorUtil {
 
 
   @Nullable
-  /*package*/ static Pair<SNode, String> getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailueException {
+  /*package*/ static Pair<SNode, String> getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
     if (ruleConsequence == null) {
       generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
       return null;
@@ -654,7 +654,7 @@ public class GeneratorUtil {
 
   /*package*/
   @Nullable
-  static List<SNode> applyReductionRule(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException, GenerationFailueException, GenerationCanceledException {
+  static List<SNode> applyReductionRule(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
     try {
       return applyReductionRule_internal(inputNode, rule, generator);
@@ -669,7 +669,7 @@ public class GeneratorUtil {
   private static List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator)
     throws DismissTopMappingRuleException,
     AbandonRuleInputException,
-    GenerationFailueException,
+    GenerationFailureException,
     GenerationCanceledException {
 
     String ruleMappingName = getMappingName(rule, null);
@@ -698,7 +698,7 @@ public class GeneratorUtil {
       throw e;
     } catch (TemplateProcessingFailureException e) {
       generator.showErrorMessage(inputNode, reductionTemplateNode, rule.getNode(), "error processing reduction rule");
-    } catch (GenerationFailueException e) {
+    } catch (GenerationFailureException e) {
       throw e;
     } catch (GenerationCanceledException e) {
       throw e;

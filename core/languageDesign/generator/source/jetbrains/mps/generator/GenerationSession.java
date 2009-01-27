@@ -31,7 +31,6 @@ import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -177,7 +176,7 @@ public class GenerationSession implements IGenerationSession {
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + inputModel.getSModelFqName() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
     } catch (GenerationCanceledException gce) {
       throw gce;
-    } catch (GenerationFailueException gfe) {
+    } catch (GenerationFailureException gfe) {
       LOG.error(gfe);
       // myProgressMonitor.addText(gfe.toString());
       addMessage(MessageKind.ERROR, "model \"" + inputModel.getSModelFqName() + "\" generation failed : " + gfe);
@@ -192,7 +191,7 @@ public class GenerationSession implements IGenerationSession {
     return status;
   }
 
-  private SModel generateModel_stepIntern(SModel inputModel, ITemplateGenerator generator) throws GenerationFailueException, GenerationCanceledException {
+  private SModel generateModel_stepIntern(SModel inputModel, ITemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
     String modelsLongName = inputModel.getLongName();
     SModel currentInputModel = inputModel;
 
@@ -288,7 +287,7 @@ public class GenerationSession implements IGenerationSession {
         } else {
           LOG.error("to get more diagnostic generate model with the 'save transient models' option");
         }
-        throw new GenerationFailueException("failed to generate output after 10 repeated mappings");
+        throw new GenerationFailureException("failed to generate output after 10 repeated mappings");
       }
 
       // next iteration ...

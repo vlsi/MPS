@@ -17,7 +17,7 @@ package jetbrains.mps.generator.template;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailueException;
+import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.lang.generator.structure.RuleConsequence;
@@ -62,13 +62,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myRuleManager;
   }
 
-  public boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException, GenerationCanceledException {
+  public boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException {
     reset(inputModel, outputModel);
     doMapping(true);
     return isChanged();
   }
 
-  public boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailueException, GenerationCanceledException {
+  public boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException {
     reset(inputModel, outputModel);
     doMapping(false);
     return isChanged();
@@ -89,7 +89,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myRuleManager = null;
   }
 
-  private void doMapping(boolean isPrimary) throws GenerationFailueException, GenerationCanceledException {
+  private void doMapping(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
     checkMonitorCanceled();
     myRuleManager = new RuleManager(this);
 
@@ -130,7 +130,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     checkMonitorCanceled();
   }
 
-  private List<SNode> copyRootsFromInputModel(RuleManager ruleManager) throws GenerationFailueException {
+  private List<SNode> copyRootsFromInputModel(RuleManager ruleManager) throws GenerationFailureException {
     List<SNode> rootsToCopy = new ArrayList<SNode>(myInputModel.getRoots());
     for (SNode rootNode : myRootsNotToCopy) {
       rootsToCopy.remove(rootNode);
@@ -368,7 +368,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myCurrentPreviousInputNodesByMappingName.get(mappingName);
   }
 
-  public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) throws GenerationFailueException {
+  public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) throws GenerationFailureException {
     ConceptDeclaration nodeConcept = (ConceptDeclaration) inputNode.getConceptDeclarationAdapter();
 
     if (myTemplateSwitchGraph == null) {
