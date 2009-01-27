@@ -45,8 +45,8 @@ import java.util.regex.Matcher;
 import org.jetbrains.annotations.NotNull;
 
 class FastFindUsagesManager extends FindUsagesManager {
-  private final Pattern myPatternNode = Pattern.compile(" targetNodeId=\"(?:[0-9]+\\.)?([0-9]+)");
-  private final Pattern myPatternInstance = Pattern.compile(" type=\"([A-Za-z0-9_.]+)\" id=\"[.0-9]+");
+  private static final Pattern REFERENCE_PATTERN = Pattern.compile(" targetNodeId=\"(?:[0-9]+\\.)?([0-9]+)\"");
+  private static final Pattern INSTANCE_PATTERN = Pattern.compile(" type=\"([A-Za-z0-9_.]+)\" id=\"[.0-9]+");
 
   @NotNull
   public String getComponentName() {
@@ -58,8 +58,8 @@ class FastFindUsagesManager extends FindUsagesManager {
       @NotNull
       public Map<IdIndexEntry, Integer> map(FileContent inputData) {
         String content = inputData.getContentAsText().toString();
-        Matcher matcherNode = myPatternNode.matcher(content);
-        Matcher matcherInstance = myPatternInstance.matcher(content);
+        Matcher matcherNode = REFERENCE_PATTERN.matcher(content);
+        Matcher matcherInstance = INSTANCE_PATTERN.matcher(content);
         HashMap<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
         while (matcherNode.find()) {
           String node = matcherNode.group(1);
@@ -69,6 +69,7 @@ class FastFindUsagesManager extends FindUsagesManager {
           String instance = matcherInstance.group(1);
           result.put(new IdIndexEntry(instance, true), matcherInstance.start(1));
         }
+
         return result;
       }
     });
