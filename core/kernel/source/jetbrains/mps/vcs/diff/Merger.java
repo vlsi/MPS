@@ -319,8 +319,8 @@ public class Merger {
 
   private <C extends Change> List<C> getChanges(Class<C> changeClass) {
     List<C> result = new ArrayList<C>();
-    result.addAll(CollectionUtil.filter(changeClass, myBaseRepoChange));
     result.addAll(CollectionUtil.filter(changeClass, myBaseMyneChange));
+    result.addAll(CollectionUtil.filter(changeClass, myBaseRepoChange));
     return result;
   }
 
@@ -420,6 +420,7 @@ public class Merger {
 
     Map<SNodeId, NewNodeChange> changesMap = new HashMap<SNodeId, NewNodeChange>();
     for (NewNodeChange c : newNodeChanges) {
+      if (myExcludedChanges.contains(c) || isChangeUnResolved(c)) continue;
       changesMap.put(c.getNodeId(), c);
     }
 
@@ -530,6 +531,14 @@ public class Merger {
     // we allow changes which are not involved in unresolved conflicts
     // or, if involved, are outgoing changes
     return myConflicted.contains(ch) && myUnresolded.contains(ch) && myBaseRepoChange.contains(ch);
+  }
+
+  public boolean isResolved() {
+    return myUnresolded.isEmpty();
+  }
+
+  public boolean isMyne(Change change) {
+    return myBaseMyneChange.contains(change);
   }
 
   public static enum VERSION {

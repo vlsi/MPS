@@ -17,7 +17,6 @@ package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -125,6 +124,10 @@ class MergeResultView extends JPanel {
     return myMerger.getResultModel();
   }
 
+  public boolean isResolved(){
+    return myMerger.isResolved();
+  }
+
   private class MySNodeTreeNode extends SNodeTreeNode {
     public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
       super(node, role, operationContext);
@@ -182,11 +185,15 @@ class MergeResultView extends JPanel {
     public ConflictNode(Conflict conflict) {
       super(null);
 
-      add(new ChangeNode(conflict.getC1(), "mine"));
-      add(new ChangeNode(conflict.getC2(), "theirs"));
+      addNode(conflict.getC1());
+      addNode(conflict.getC2());
 
       setNodeIdentifier("Conflict" + ((getParent() != null) ? getParent().getIndex(this) : ""));
       setText("Conflict");
+    }
+
+    private void addNode(Change change) {
+      add(new ChangeNode(change, myMerger.isMyne(change) ? "mine" : "theirs"));
     }
   }
 

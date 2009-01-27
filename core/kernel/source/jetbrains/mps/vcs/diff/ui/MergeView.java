@@ -40,4 +40,8 @@ class MergeView extends JPanel {
   public SModel getResultModel() {
     return myMergeResult.getResult();
   }
+
+  public boolean isResolved() {
+    return myMergeResult.isResolved();
+  }
 }

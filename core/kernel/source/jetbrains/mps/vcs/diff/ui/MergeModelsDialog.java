@@ -20,8 +20,14 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.SModel;
 
 import javax.swing.JComponent;
+import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.awt.HeadlessException;
+
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
 
 class MergeModelsDialog extends BaseDialog {
   private MergeView myMergeView;
@@ -44,6 +50,20 @@ class MergeModelsDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void ok() {
+    if (!myMergeView.isResolved()) {
+      int result;
+      String message = "You have unresolved conflicts.\n" +
+        "Do you want to exit and let MPS resolve them automatically\n(conflicted changes from server would be biscarded)?";
+      String title = "Exit And Resolve Conflicts Automatically?";
+      if (ApplicationManager.getApplication().isUnitTestMode()) {
+        result = JOptionPane.showConfirmDialog(myMergeView, message, title, JOptionPane.OK_CANCEL_OPTION | JOptionPane.WARNING_MESSAGE);
+      } else {
+        result = Messages.showOkCancelDialog(message, title, Messages.getWarningIcon());
+      }
+      if (result != DialogWrapper.OK_EXIT_CODE) {
+        return;
+      }
+    }
     dispose();
   }
 

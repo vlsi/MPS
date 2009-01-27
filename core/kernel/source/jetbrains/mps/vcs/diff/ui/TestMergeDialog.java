@@ -26,6 +26,8 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
 
 import javax.swing.SwingUtilities;
 
@@ -40,7 +42,7 @@ public class TestMergeDialog {
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(false);
     configureMPS();
-
+    
     final SModel baseModel = readModel(args[0]);
     final SModel mineModel = readModel(args[1]);
     final SModel newModel = readModel(args[2]);
