@@ -60,22 +60,26 @@ public class InequationSystem {
       }
     }
     for (IWrapper supertype : mySupertypes) {
-      if (!subtypingManager.isSubtype(typeWrapper, supertype, null, null, true)) {
+    //  if (!subtypingManager.isSubtype(typeWrapper, supertype, null, null, true)) {
+      if (!subtypingManager.isSubtype(type, supertype.getNode(), true)) {
         return false;
       }
     }
     for (IWrapper supertype : myStrongSupertypes) {
-      if (!subtypingManager.isSubtype(typeWrapper, supertype, null, null, false)) {
+   //   if (!subtypingManager.isSubtype(typeWrapper, supertype, null, null, false)) {
+      if (!subtypingManager.isSubtype(type, supertype.getNode(), false)) {
         return false;
       }
     }
     for (IWrapper subtype : mySubtypes) {
-      if (!subtypingManager.isSubtype(subtype, typeWrapper, null, null, true)) {
+    //  if (!subtypingManager.isSubtype(subtype, typeWrapper, null, null, true)) {
+      if (!subtypingManager.isSubtype(subtype.getNode(), type, true)) {
         return false;
       }
     }
     for (IWrapper subtype : myStrongSubtypes) {
-      if (!subtypingManager.isSubtype(subtype, typeWrapper, null, null, false)) {
+  //    if (!subtypingManager.isSubtype(subtype, typeWrapper, null, null, false)) {
+      if (!subtypingManager.isSubtype(subtype.getNode(), type, false)) {
         return false;
       }
     }
