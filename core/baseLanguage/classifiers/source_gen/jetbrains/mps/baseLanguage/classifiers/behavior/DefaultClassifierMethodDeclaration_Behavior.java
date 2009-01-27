@@ -14,4 +14,8 @@ public class DefaultClassifierMethodDeclaration_Behavior {
     return SLinkOperations.getTarget(thisNode, "visibility", true);
   }
 
+  public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
+    return true;
+  }
+
 }

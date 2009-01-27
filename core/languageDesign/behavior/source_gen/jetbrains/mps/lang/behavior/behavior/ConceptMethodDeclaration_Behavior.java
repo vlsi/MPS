@@ -18,6 +18,10 @@ public class ConceptMethodDeclaration_Behavior {
     return SNodeOperations.getContainingRoot(thisNode);
   }
 
+  public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
+    return true;
+  }
+
   public static SNode call_getOverridenMethod_1225196403956(SNode thisNode) {
     if (SLinkOperations.getTarget(thisNode, "overriddenMethod", false) != null) {
       return SLinkOperations.getTarget(thisNode, "overriddenMethod", false);

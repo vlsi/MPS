@@ -655,14 +655,22 @@
     <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1195647285036">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647285037">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195647285038">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205320414492">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956443">
-              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1195647285047" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1195647285048">
-                <link role="link" targetNodeId="1.1188208488637" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1233078639234">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233078648237">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1233078647299" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1233078650897">
+                <link role="baseMethodDeclaration" targetNodeId="29.1233076312117" resolveInfo="canBeAnnotated" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1195647285049" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205320414492">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956443">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1195647285047" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1195647285048">
+                  <link role="link" targetNodeId="1.1188208488637" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1195647285049" />
+            </node>
           </node>
         </node>
       </node>

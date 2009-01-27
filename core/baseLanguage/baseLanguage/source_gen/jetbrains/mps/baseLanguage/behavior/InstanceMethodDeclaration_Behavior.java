@@ -14,4 +14,8 @@ public class InstanceMethodDeclaration_Behavior {
     return !(SPropertyOperations.getBoolean(thisNode, "isAbstract"));
   }
 
+  public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
+    return true;
+  }
+
 }

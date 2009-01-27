@@ -810,6 +810,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1219653381251">
     <property name="name" value="EditorGenerateType" />
+    <property name="isDeprecated" value="false" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1219653640877">
       <property name="name" value="isPutClassesOnTheDisk" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219653640878" />

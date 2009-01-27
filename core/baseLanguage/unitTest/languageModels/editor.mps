@@ -36,6 +36,9 @@
     <link role="conceptDeclaration" targetNodeId="1.1171931690126" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1171931690896">
       <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1233068478214">
+        <link role="editorComponent" targetNodeId="5.1223637210494" resolveInfo="_DeprecatedPart" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1171931690897">
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1171931690898">
           <property name="text" value="test" />

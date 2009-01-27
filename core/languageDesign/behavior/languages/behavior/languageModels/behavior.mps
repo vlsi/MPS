@@ -853,6 +853,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225196403934" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233076514716">
+      <property name="name" value="canBeAnnotated" />
+      <link role="overriddenMethod" targetNodeId="4.1233076312117" resolveInfo="canBeAnnotated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233076514718">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1233076518799">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233076520192">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233076516781" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076516782" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1225196403935">
       <property name="name" value="getBehavior" />
       <property name="isPrivate" value="false" />
@@ -897,6 +910,19 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225196403955" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233076466767">
+      <property name="name" value="canBeAnnotated" />
+      <link role="overriddenMethod" targetNodeId="4.1233076312117" resolveInfo="canBeAnnotated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233076466769">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1233076471069">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233076475073">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233076469052" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076469053" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1225196403956">
       <property name="name" value="getOverridenMethod" />

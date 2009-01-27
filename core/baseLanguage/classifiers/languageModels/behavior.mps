@@ -376,6 +376,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155725022" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233077650940">
+      <property name="name" value="canBeAnnotated" />
+      <link role="overriddenMethod" targetNodeId="7.1233076312117" resolveInfo="canBeAnnotated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233077650942">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1233077655320">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233077656322">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233077653568" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233077653569" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877480563">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877480564" />
     </node>

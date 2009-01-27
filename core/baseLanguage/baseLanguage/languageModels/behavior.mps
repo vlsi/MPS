@@ -3426,6 +3426,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227714110022" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233076446203">
+      <property name="name" value="canBeAnnotated" />
+      <link role="overriddenMethod" targetNodeId="1233076312117" resolveInfo="canBeAnnotated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233076446205">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1233076451248">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233076452890">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233076448980" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076448981" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877350304">
       <property name="name" value="getParametersPresentation" />
       <property name="isPrivate" value="false" />
@@ -4499,6 +4512,7 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877355812">
       <property name="name" value="isDescendant" />
       <property name="isPrivate" value="false" />
+      <property name="isDeprecated" value="true" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1213877355813" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877355814">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877355815">
@@ -4656,6 +4670,7 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724059" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1233067431572" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877355884">
       <property name="name" value="getMainMethod" />
@@ -4699,6 +4714,7 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723950" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1233067471982" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1214840497917">
       <property name="name" value="hasStaticMemebers" />
@@ -6683,6 +6699,19 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1228406330060" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233076663370">
+      <property name="name" value="canBeAnnotated" />
+      <link role="overriddenMethod" targetNodeId="1233076312117" resolveInfo="canBeAnnotated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233076663372">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1233076668125">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233076669502">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233076666326" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076666327" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877435148">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877435149" />
     </node>
@@ -6759,6 +6788,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224865758908" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1227266291342" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233076530821">
+      <property name="name" value="canBeAnnotated" />
+      <link role="overriddenMethod" targetNodeId="1233076312117" resolveInfo="canBeAnnotated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233076530823">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1233076540611">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233076543738">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233076532809" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076532810" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877436333">
       <property name="name" value="getPresentation" />
@@ -9357,6 +9399,20 @@
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877536668">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877536669" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233076577710">
+      <property name="name" value="canBeAnnotated" />
+      <property name="isDeprecated" value="false" />
+      <link role="overriddenMethod" targetNodeId="1233076312117" resolveInfo="canBeAnnotated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233076577712">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1233076584153">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233076585890">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233076579573" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076579574" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877536670">
       <property name="name" value="isMainMethod" />
       <property name="isPrivate" value="false" />
@@ -9985,6 +10041,44 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1229429530508">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229429530509" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233076309785">
+    <link role="concept" targetNodeId="1.1188208481402" resolveInfo="HasAnnotation" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1233076309786">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233076309787" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233076312117">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="canBeAnnotated" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233076363789" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233076312119">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1233076433982">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233076436328">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076319010" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233077629853">
+    <link role="concept" targetNodeId="1.1188206574119" resolveInfo="AnnotationMethodDeclaration" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233077632574">
+      <property name="name" value="canBeAnnotated" />
+      <link role="overriddenMethod" targetNodeId="1233076312117" resolveInfo="canBeAnnotated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233077632576">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1233077636907">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233077638050">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233077634530" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233077634531" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1233077629854">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233077629855" />
     </node>
   </node>
 </model>

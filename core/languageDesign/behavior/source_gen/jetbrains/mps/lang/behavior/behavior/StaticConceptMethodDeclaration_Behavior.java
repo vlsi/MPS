@@ -15,6 +15,10 @@ public class StaticConceptMethodDeclaration_Behavior {
     return SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getId();
   }
 
+  public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
+    return true;
+  }
+
   public static SNode call_getBehavior_1225196403935(SNode thisNode) {
     return SNodeOperations.getParent(thisNode);
   }

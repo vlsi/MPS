@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior;
 
 public class AddAnnotation_Intention extends BaseIntention {
 
@@ -27,7 +28,7 @@ public class AddAnnotation_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isEmpty() && HasAnnotation_Behavior.call_canBeAnnotated_1233076312117(node);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

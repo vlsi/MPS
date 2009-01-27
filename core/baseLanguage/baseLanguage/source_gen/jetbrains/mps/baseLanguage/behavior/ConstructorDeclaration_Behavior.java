@@ -18,6 +18,10 @@ public class ConstructorDeclaration_Behavior {
     return IDeprecatable_Behavior.callSuper_isDeprecated_1224609060727(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.IDeprecatable") && IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.getParent(thisNode)));
   }
 
+  public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
+    return true;
+  }
+
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder result = new StringBuilder();
     result.append(SPropertyOperations.getString(thisNode, "nestedName"));

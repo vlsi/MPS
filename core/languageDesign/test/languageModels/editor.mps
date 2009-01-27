@@ -528,6 +528,9 @@
     <link role="conceptDeclaration" targetNodeId="1.1225978065297" resolveInfo="SimpleNodeTest" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225978122957">
       <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1233068436142">
+        <link role="editorComponent" targetNodeId="3.1223637210494" resolveInfo="_DeprecatedPart" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225978122958">
         <property name="vertical" value="false" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225978122959">

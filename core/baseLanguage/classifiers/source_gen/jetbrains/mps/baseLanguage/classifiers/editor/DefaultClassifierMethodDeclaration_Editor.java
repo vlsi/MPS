@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.baseLanguage.editor._Component_Visibility;
 import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component;
 import jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_NameCellComponent;
+import jetbrains.mps.baseLanguage.editor._DeprecatedPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
@@ -45,6 +46,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   /* package */AbstractCellProvider my_Component_Visibility7205_0;
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component7205_0;
   /* package */AbstractCellProvider myBaseMethodDeclaration_NameCellComponent7205_0;
+  /* package */AbstractCellProvider my_DeprecatedPart7205_0;
   /* package */AbstractCellListHandler myListHandler_7205_0;
   /* package */AbstractCellListHandler myListHandler_7205_1;
   /* package */AbstractCellListHandler myListHandler_7205_2;
@@ -64,6 +66,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createComponent_7205_3(context, node));
     if (renderingCondition7205_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_7205_1(context, node));
     }
@@ -182,6 +185,15 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     }
     EditorCell editorCell = this.myBaseMethodDeclaration_NameCellComponent7205_0.createEditorCell(context);
     setupBasic_Component_7205_2(editorCell, node, context);
+    return editorCell;
+  }
+
+  public EditorCell createComponent_7205_3(EditorContext context, SNode node) {
+    if (this.my_DeprecatedPart7205_0 == null) {
+      this.my_DeprecatedPart7205_0 = new _DeprecatedPart(node);
+    }
+    EditorCell editorCell = this.my_DeprecatedPart7205_0.createEditorCell(context);
+    setupBasic_Component_7205_3(editorCell, node, context);
     return editorCell;
   }
 
@@ -553,6 +565,9 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     editorCell.setCellId("refNodeList_annotation");
   }
 
+  private static void setupBasic_Component_7205_3(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_RefNodeList_7205_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -691,6 +706,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
       {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
+        editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
         return editorCell;
       }
     }
@@ -767,6 +783,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
       {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
+        editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
         return editorCell;
       }
     }

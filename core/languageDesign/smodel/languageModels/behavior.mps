@@ -1416,6 +1416,7 @@
     <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1213877485028">
       <property name="name" value="getClassifiersWithStaticMethods" />
       <property name="isPrivate" value="false" />
+      <property name="isDeprecated" value="false" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1213877485029">
         <link role="elementConcept" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       </node>

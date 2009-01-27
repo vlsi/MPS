@@ -25,6 +25,10 @@ public class BaseMethodDeclaration_Behavior {
     return true;
   }
 
+  public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
+    return false;
+  }
+
   public static String call_getParametersPresentation_1213877350304(SNode thisNode) {
     StringBuilder result = new StringBuilder();
     result.append("(");
