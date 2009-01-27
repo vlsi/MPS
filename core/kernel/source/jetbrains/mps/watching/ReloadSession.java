@@ -20,6 +20,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.graph.util.pq.NodePQ;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -43,6 +44,7 @@ class ReloadSession {
   private final Set<VirtualFile> myNewModuleVFiles = new LinkedHashSet<VirtualFile>();
   private final Set<Project> myChangedProjects = new LinkedHashSet<Project>();
   private Set<String> myDeletedModels = new HashSet<String>();
+  private final Set<IModule> myDeletedModules = new HashSet<IModule>();
 
   public void doReload() {
     if (hasAnythingToDo()) {
@@ -93,6 +95,15 @@ class ReloadSession {
         }
       });
     }
+
+    for (final IModule module : myDeletedModules) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          MPSModuleRepository.getInstance().removeModule(module);
+          progressIndicator.setText2("Unloading removed module " + module.getModuleFqName());
+        }
+      });
+    }
   }
 
   private void preprocess() {
@@ -132,7 +143,8 @@ class ReloadSession {
 
   private boolean hasAnythingToDo() {
     return !(myChangedModels.isEmpty() && myChangedModules.isEmpty() && myChangedProjects.isEmpty()
-      && myNewModelVFiles.isEmpty() && myNewModuleVFiles.isEmpty() && myDeletedModels.isEmpty());
+      && myNewModelVFiles.isEmpty() && myNewModuleVFiles.isEmpty() && myDeletedModels.isEmpty()
+      && myDeletedModules.isEmpty());
   }
 
   public void addChangedModel(SModelDescriptor model) {
@@ -157,5 +169,9 @@ class ReloadSession {
 
   public void addDeletedModelFilePath(String path) {
     myDeletedModels.add(path);
+  }
+
+  public void addDeletedModule(IModule module) {
+    myDeletedModules.add(module);
   }
 }

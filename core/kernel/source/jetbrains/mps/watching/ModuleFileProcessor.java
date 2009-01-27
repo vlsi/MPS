@@ -56,4 +56,12 @@ class ModuleFileProcessor extends EventProcessor {
       reloadSession.addNewModuleFile(vfile);
     }
   }
+
+  @Override
+  protected void processDelete(VFileEvent event, ReloadSession reloadSession) {
+    IModule module = MPSModuleRepository.getInstance().getModuleByFile(new File(event.getPath()));
+    if (module != null) {
+      reloadSession.addDeletedModule(module);
+    }
+  }
 }

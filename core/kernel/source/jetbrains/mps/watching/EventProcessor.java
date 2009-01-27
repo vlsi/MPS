@@ -33,6 +33,21 @@ abstract class EventProcessor {
       processMove(event, reloadSession);
     } else if (event instanceof VFilePropertyChangeEvent) {
       processPropertyChanged(event, reloadSession);
+    } else if (event instanceof VFileEventDecorator) {
+      VFileEventDecorator eventDecorator = (VFileEventDecorator)event;
+      if (eventDecorator.undecorate() instanceof VFileContentChangeEvent) {
+        processContentChanged(event, reloadSession);
+      } else if (eventDecorator.undecorate() instanceof VFileCopyEvent) {
+        processCopy(event, reloadSession);
+      } else if (eventDecorator.undecorate() instanceof VFileCreateEvent) {
+        processCreate(event, reloadSession);
+      } else if (eventDecorator.undecorate() instanceof VFileDeleteEvent) {
+        processDelete(event, reloadSession);
+      } else if (eventDecorator.undecorate() instanceof VFileMoveEvent) {
+        processMove(event, reloadSession);
+      } else if (eventDecorator.undecorate() instanceof VFilePropertyChangeEvent) {
+        processPropertyChanged(event, reloadSession);
+      }
     }
   }
 

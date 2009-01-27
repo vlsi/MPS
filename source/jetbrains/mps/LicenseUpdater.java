@@ -74,6 +74,6 @@ public class LicenseUpdater {
 
 
   public static void main(String[] args) {
-    updateLicense(new File("C:/MPS"), false);
+    updateLicense(new File(System.getProperty("user.dir")), false);
   }
 }
