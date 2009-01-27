@@ -37,8 +37,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.projectLanguage.DescriptorsPersistence;
-import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.watching.ReloadSession;
 import jetbrains.mps.vfs.IFile;

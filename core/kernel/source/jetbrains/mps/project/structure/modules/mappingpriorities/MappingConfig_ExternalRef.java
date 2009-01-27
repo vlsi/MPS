@@ -4,7 +4,7 @@ import jetbrains.mps.project.structure.modules.GeneratorReference;
 
 public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef{
   private GeneratorReference myGenerator;
-  private MappingConfig_AbstractRef myRef;
+  private MappingConfig_AbstractRef myMappingConfig;
 
   public GeneratorReference getGenerator() {
     return myGenerator;
@@ -15,17 +15,17 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef{
   }
 
   public MappingConfig_AbstractRef getMappingConfig() {
-    return myRef;
+    return myMappingConfig;
   }
 
-  public void setRef(MappingConfig_AbstractRef ref) {
-    myRef = ref;
+  public void setMappingConfig(MappingConfig_AbstractRef ref) {
+    myMappingConfig = ref;
   }
 
   public MappingConfig_ExternalRef getCopy() {
     MappingConfig_ExternalRef result = new MappingConfig_ExternalRef();
     result.myGenerator = myGenerator.getCopy();
-    result.myRef = myRef.getCopy();
+    result.myMappingConfig = myMappingConfig.getCopy();
     return result;
   }
 }

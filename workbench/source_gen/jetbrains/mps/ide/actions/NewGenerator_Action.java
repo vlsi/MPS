@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.ide.dialogs.NewGeneratorDialog;
+import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.ide.projectPane.ProjectPane;

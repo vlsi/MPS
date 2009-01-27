@@ -68,7 +68,7 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   }
 
   protected String getModulePresentation() {
-    String name = mySolution.getSolutionDescriptor().getName();
+    String name = mySolution.getSolutionDescriptor().getNamespace();
 
     if (myShortNameOnly) {
       name = NameUtil.shortNameFromLongName(name);

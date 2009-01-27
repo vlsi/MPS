@@ -275,7 +275,6 @@ public class IDEDialogButton_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_8408_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_handler");
   }
 
   private static void setupLabel_Constant_8408_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

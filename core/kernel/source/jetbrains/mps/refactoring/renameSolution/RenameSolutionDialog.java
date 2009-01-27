@@ -17,23 +17,12 @@ package jetbrains.mps.refactoring.renameSolution;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.refactoring.renameLanguage.LanguageRenamer;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationType;
 
 import javax.swing.*;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 
 import java.awt.Frame;

@@ -1,12 +1,13 @@
 package jetbrains.mps.ide.dialogs.project.properties.presenters;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.structure.model.RootReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class CloneModelProperties {

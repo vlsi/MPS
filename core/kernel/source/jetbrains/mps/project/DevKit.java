@@ -16,14 +16,15 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.projectLanguage.DescriptorsPersistence;
-import jetbrains.mps.projectLanguage.structure.*;
-import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,23 +39,18 @@ public class DevKit extends AbstractModule {
   public static DevKit newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     DevKit result = new DevKit();
 
-    SModel model = ProjectModels.createDescriptorFor(result).getSModel();
-
-    model.setLoading(true);
-    DevKitDescriptor devKitDescriptor;
+    DevkitDescriptor devKitDescriptor;
     if (descriptorFile.exists()) {
-      devKitDescriptor = DescriptorsPersistence.loadDevKitDescriptor(descriptorFile, model);
-      if (devKitDescriptor.getModuleUUID() == null) {
-        devKitDescriptor.setModuleUUID(UUID.randomUUID().toString());
-        DescriptorsPersistence.saveDevKitDescriptor(devKitDescriptor, descriptorFile);
+      devKitDescriptor = DevkitDescriptorPersistence.loadDevKitDescriptor(descriptorFile);
+      if (devKitDescriptor.getUUID() == null) {
+        devKitDescriptor.setUUID(UUID.randomUUID().toString());
+        DevkitDescriptorPersistence.saveDevKitDescriptor(devKitDescriptor, descriptorFile);
       }
     } else {
-      devKitDescriptor = DevKitDescriptor.newInstance(model);
-      devKitDescriptor.setModuleUUID(UUID.randomUUID().toString());
+      devKitDescriptor = new DevkitDescriptor();
+      devKitDescriptor.setUUID(UUID.randomUUID().toString());
     }
 
-
-    model.addRoot(devKitDescriptor);
 
     result.myDescriptorFile = descriptorFile;
     result.setDevKitDescriptor(devKitDescriptor, false);
@@ -63,7 +59,7 @@ public class DevKit extends AbstractModule {
     return result;
   }
 
-  private DevKitDescriptor myDescriptor;
+  private DevkitDescriptor myDescriptor;
   private IFile myDescriptorFile;
   private MPSModuleOwner myGenerationOnlyModelsModelOwner = this;
 
@@ -74,14 +70,14 @@ public class DevKit extends AbstractModule {
     return myDescriptorFile;
   }
 
-  public DevKitDescriptor getModuleDescriptor() {
+  public DevkitDescriptor getModuleDescriptor() {
     return myDescriptor;
   }
 
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
-    if (moduleDescriptor instanceof DevKitDescriptor) {
-      setDevKitDescriptor((DevKitDescriptor) moduleDescriptor);
+    if (moduleDescriptor instanceof DevkitDescriptor) {
+      setDevKitDescriptor((DevkitDescriptor) moduleDescriptor);
     } else {
       LOG.error("not a devkit descriptor", new Throwable());
     }
@@ -92,21 +88,18 @@ public class DevKit extends AbstractModule {
   }
 
 
-  public void setDevKitDescriptor(DevKitDescriptor descriptor) {
+  public void setDevKitDescriptor(DevkitDescriptor descriptor) {
     setDevKitDescriptor(descriptor, true);
   }
 
-  public void setDevKitDescriptor(DevKitDescriptor descriptor, boolean reloadClasses) {
+  public void setDevKitDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
     MPSModuleRepository.getInstance().unRegisterModules(this);
     MPSModuleRepository.getInstance().unRegisterModules(myGenerationOnlyModelsModelOwner);
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    SModelRepository.getInstance().registerModelDescriptor(descriptor.getModel().getModelDescriptor(), this);
 
     myDescriptor = descriptor;
-    myDescriptor.getModel().setLoading(true);
 
-    if (myDescriptor.getName() != null) {
-      jetbrains.mps.project.structure.modules.ModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myDescriptor.getName(), myDescriptor.getModuleUUID());
+    if (myDescriptor.getNamespace() != null) {
+      ModuleReference mp = new ModuleReference(myDescriptor.getNamespace(), myDescriptor.getUUID());
       setModulePointer(mp);
     }
 
@@ -127,14 +120,14 @@ public class DevKit extends AbstractModule {
   }
 
   @Override
-  protected DevKitDescriptor loadDescriptor() {
-    return DescriptorsPersistence.loadDevKitDescriptor(getDescriptorFile(), getModuleDescriptor().getModel());
+  protected DevkitDescriptor loadDescriptor() {
+    return DevkitDescriptorPersistence.loadDevKitDescriptor(getDescriptorFile());
   }
 
   public List<Language> getExportedLanguages() {
     List<Language> langs = new ArrayList<Language>();
-    for (LanguageReference l : myDescriptor.getExportedLanguages()) {
-      jetbrains.mps.project.structure.modules.ModuleReference ref = jetbrains.mps.project.structure.modules.ModuleReference.fromString(l.getName());
+    for (ModuleReference l : myDescriptor.getExportedLanguages()) {
+      ModuleReference ref = ModuleReference.fromString(l.getModuleFqName());
       Language lang = MPSModuleRepository.getInstance().getLanguage(ref);
       if (lang != null) {
         langs.add(lang);
@@ -158,8 +151,8 @@ public class DevKit extends AbstractModule {
 
   public List<DevKit> getExtendedDevKits() {
     List<DevKit> result = new ArrayList<DevKit>();
-    for (DevKitReference ref : myDescriptor.getExtendedDevKits()) {
-      String uid = ref.getName();
+    for (ModuleReference ref : myDescriptor.getExtendedDevkits()) {
+      String uid = ref.getModuleFqName();
       DevKit devKit = MPSModuleRepository.getInstance().getDevKit(uid);
       if (devKit != null) {
         result.add(devKit);
@@ -186,8 +179,8 @@ public class DevKit extends AbstractModule {
 
   public List<Solution> getExportedSolutions() {
     List<Solution> result = new ArrayList<Solution>();
-    for (SolutionReference ref : myDescriptor.getExportedSolutions()) {
-      String uid = ref.getName();
+    for (ModuleReference ref : myDescriptor.getExportedSolutions()) {
+      String uid = ref.getModuleFqName();
       Solution solution = MPSModuleRepository.getInstance().getSolution(uid);
       if (solution != null) {
         result.add(solution);
@@ -242,7 +235,7 @@ public class DevKit extends AbstractModule {
   }
 
   public void save() {
-    DescriptorsPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
+    DevkitDescriptorPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
   }
 
   public void onModuleLoad() {
@@ -250,7 +243,7 @@ public class DevKit extends AbstractModule {
   }
 
   public String getName() {
-    return myDescriptor.getName();
+    return myDescriptor.getNamespace();
   }
 
   public String toString() {
@@ -258,6 +251,6 @@ public class DevKit extends AbstractModule {
   }
 
   public String getDevKitPluginClass() {
-    return myDescriptor.getDevKitPlugin();
+    return myDescriptor.getPlugin();
   }
 }

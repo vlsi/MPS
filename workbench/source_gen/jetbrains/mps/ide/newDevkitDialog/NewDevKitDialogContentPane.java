@@ -27,13 +27,9 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.vfs.FileSystemFile;
-import jetbrains.mps.projectLanguage.DescriptorsPersistence;
-import jetbrains.mps.projectLanguage.structure.DevKitDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vfs.VFileSystem;
@@ -257,10 +253,10 @@ public class NewDevKitDialogContentPane extends JPanel {
   }
 
   /* package */DevKit createNewDevKit(final File devkitPath) {
-    SNode descriptor = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.DevKitDescriptor", null);
-    SPropertyOperations.set(descriptor, "name", myThis.getDevkitName());
+    DevkitDescriptor descriptor = new DevkitDescriptor();
+    descriptor.setNamespace(myThis.getDevkitName());
     FileSystemFile devkitFile = new FileSystemFile(devkitPath);
-    DescriptorsPersistence.saveDevKitDescriptor(((DevKitDescriptor)SNodeOperations.getAdapter(descriptor)), devkitFile);
+    DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, devkitFile);
     DevKit devkit = myThis.getProject().addProjectDevKit(devkitFile);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
 

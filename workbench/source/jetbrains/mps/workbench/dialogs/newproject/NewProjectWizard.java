@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.dialogs.newproject;
 
 import com.intellij.ide.wizard.AbstractWizard;
 import com.intellij.ide.wizard.CommitStepException;
-import com.intellij.ide.DataManager;
 import com.intellij.ide.IdeBundle;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -26,24 +25,18 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.CommonBundle;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.library.LanguageDesign_DevKit;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.projectLanguage.DescriptorsPersistence;
-import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
-import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
+import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystemFile;
@@ -54,7 +47,6 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import java.io.File;
 import java.awt.Frame;
 
@@ -235,33 +227,36 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
       dir.mkdirs();
     }
     Language language = Language.createLanguage(myOptions.getLanguageNamespace(), new FileSystemFile(descriptorFile), mpsProject);
-    SNode languageDescriptor = (SNode) language.getLanguageDescriptor().getNode();
-    SNode devkitRef = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.DevKitReference", null);
-    SPropertyOperations.set(devkitRef, "name", LanguageDesign_DevKit.MODULE_REFERENCE.toString());
-    SLinkOperations.addChild(languageDescriptor, "usedDevKit", devkitRef);
-    SPropertyOperations.set(languageDescriptor, "compileInMPS", "" + true);
+    LanguageDescriptor languageDescriptor = language.getLanguageDescriptor();
+    String name = LanguageDesign_DevKit.MODULE_REFERENCE.toString();
+    String uid = "jetbrains.mps.projectLanguage.structure.DevKitReference";
+    ModuleReference ref = new ModuleReference(name,uid);
+    languageDescriptor.getUsedDevkits().add(ref);
     LanguageAspect.STRUCTURE.createNew(language);
     LanguageAspect.EDITOR.createNew(language);
     LanguageAspect.CONSTRAINTS.createNew(language);
     LanguageAspect.TYPESYSTEM.createNew(language);
-    language.setLanguageDescriptor((LanguageDescriptor) ((LanguageDescriptor) SNodeOperations.getAdapter(languageDescriptor)));
+    language.setLanguageDescriptor(languageDescriptor);
     language.save();
 
     return language;
   }
 
   private IFile createNewSolution() {
-    SNode solutionDescriptor = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.SolutionDescriptor", null);
-    SPropertyOperations.set(solutionDescriptor, "externallyVisible", "" + (true));
-    SPropertyOperations.set(solutionDescriptor, "compileInMPS", "" + true);
     FileSystemFile solutionFile = new FileSystemFile(getSolutionFileName());
     String fileName = solutionFile.getName();
-    SPropertyOperations.set(solutionDescriptor, "name", fileName.substring(0, fileName.length() - 4));
-    SNode modelRoot = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.ModelRoot", null);
-    SPropertyOperations.set(modelRoot, "prefix", "");
-    SPropertyOperations.set(modelRoot, "path", solutionFile.getParent().getAbsolutePath());
-    SLinkOperations.addChild(solutionDescriptor, "modelRoot", modelRoot);
-    DescriptorsPersistence.saveSolutionDescriptor(solutionFile, (SolutionDescriptor) SNodeOperations.getAdapter(solutionDescriptor));
+
+    SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
+    solutionDescriptor.setExternallyVisible(true);
+    String name = fileName.substring(0, fileName.length() - 4);
+    solutionDescriptor.setNamespace(name);
+
+    ModelRoot modelRoot = new ModelRoot();
+    modelRoot.setPrefix("");
+    modelRoot.setPath(solutionFile.getParent().getAbsolutePath());
+
+    solutionDescriptor.getModelRoots().add(modelRoot);
+    SolutionDescriptorPersistence.saveSolutionDescriptor(solutionFile, solutionDescriptor);
 
     return solutionFile;
   }

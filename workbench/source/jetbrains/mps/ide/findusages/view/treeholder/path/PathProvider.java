@@ -85,7 +85,7 @@ public class PathProvider {
       Iterator<IModule> it = owningModules.iterator();
       while (it.hasNext()) {
         IModule m = it.next();
-        if (m instanceof Solution && "outputModels".equals(((Solution) m).getSolutionDescriptor().getName())) {
+        if (m instanceof Solution && "outputModels".equals(((Solution) m).getSolutionDescriptor().getNamespace())) {
           it.remove();
         }
       }

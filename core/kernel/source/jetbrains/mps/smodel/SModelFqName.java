@@ -98,4 +98,8 @@ public class SModelFqName implements Comparable<Object> {
     if (compareStereotypes != 0) return compareStereotypes;
     return this.toString().compareTo(o.toString());
   }
+
+  public SModelFqName getCopy() {
+    return new SModelFqName(myLongName,myStereotype);
+  }
 }

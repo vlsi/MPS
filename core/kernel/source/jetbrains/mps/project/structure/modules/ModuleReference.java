@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.IModule;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -58,12 +58,19 @@ public class ModuleReference {
     return myModuleId;
   }
 
-  public ModuleReference update() {
+  public boolean update() {
     IModule module = MPSModuleRepository.getInstance().getModule(this);
-    if (module == null) {
-      return this;
-    }
-    return module.getModuleReference();
+    if (module == null) return false;
+    ModuleReference newRef = module.getModuleReference();
+
+    myModuleFqName = newRef.myModuleFqName;
+    myModuleId = newRef.myModuleId;
+
+    return differs(newRef);
+  }
+
+  protected boolean differs(ModuleReference ref) {
+    return !(EqualUtil.equals(myModuleFqName, ref.myModuleFqName) && EqualUtil.equals(myModuleId, ref.myModuleId));
   }
 
   public int hashCode() {
@@ -102,5 +109,8 @@ public class ModuleReference {
     return myModuleFqName;
   }
 
+  public ModuleReference getCopy() {
+    return new ModuleReference(myModuleFqName,myModuleId);
+  }
 }
 

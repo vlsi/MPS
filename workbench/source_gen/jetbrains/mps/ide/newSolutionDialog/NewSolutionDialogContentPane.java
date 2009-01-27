@@ -29,13 +29,9 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.projectLanguage.DescriptorsPersistence;
-import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vfs.VFileSystem;
@@ -276,16 +272,16 @@ public class NewSolutionDialogContentPane extends JPanel {
   }
 
   /* package */Solution createNewSolution(String solutionName, final IFile solutionDescriptorFile) {
-    SNode solutionDescriptor = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.SolutionDescriptor", null);
-    SPropertyOperations.set(solutionDescriptor, "externallyVisible", "" + (true));
-    SPropertyOperations.set(solutionDescriptor, "compileInMPS", "" + (myThis.getCompileInMPS()));
+    SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
+    solutionDescriptor.setExternallyVisible(true);
+    solutionDescriptor.setCompileInMPS(myThis.getCompileInMPS());
     String fileName = solutionDescriptorFile.getName();
-    SPropertyOperations.set(solutionDescriptor, "name", fileName.substring(0, fileName.length() - 4));
-    SNode modelRoot = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.ModelRoot", null);
-    SPropertyOperations.set(modelRoot, "prefix", "");
-    SPropertyOperations.set(modelRoot, "path", solutionDescriptorFile.getParent().getAbsolutePath());
-    SLinkOperations.addChild(solutionDescriptor, "modelRoot", modelRoot);
-    DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, ((SolutionDescriptor)SNodeOperations.getAdapter(solutionDescriptor)));
+    solutionDescriptor.setNamespace(fileName.substring(0, fileName.length() - 4));
+    ModelRoot modelRoot = new ModelRoot();
+    modelRoot.setPrefix("");
+    modelRoot.setPath(solutionDescriptorFile.getParent().getAbsolutePath());
+    solutionDescriptor.getModelRoots().add(modelRoot);
+    SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, solutionDescriptor);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
 
       public void run() {

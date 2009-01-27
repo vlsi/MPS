@@ -16,9 +16,9 @@
 package jetbrains.mps.ide.dialogs.project.creation;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.dialogs.base.BaseDialog;
-import jetbrains.mps.ide.modelProperties.ModelPropertiesDialog;
+import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.dialogs.ModelPropertiesDialog;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;

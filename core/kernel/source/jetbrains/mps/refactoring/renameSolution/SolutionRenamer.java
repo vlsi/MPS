@@ -16,7 +16,7 @@
 package jetbrains.mps.refactoring.renameSolution;
 
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class SolutionRenamer {
@@ -30,7 +30,7 @@ public class SolutionRenamer {
 
   public void rename() {
     SolutionDescriptor solutionDescriptor = mySolution.getSolutionDescriptor();
-    solutionDescriptor.setName(myNewName);
+    solutionDescriptor.setNamespace(myNewName);
     mySolution.setSolutionDescriptor(solutionDescriptor);
     mySolution.save();
 

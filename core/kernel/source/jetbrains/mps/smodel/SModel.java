@@ -1405,24 +1405,22 @@ public class SModel implements Iterable<SNode> {
       for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
         if (oldReference == null) continue;
-        SModelReference newReference = oldReference.update();
-        changed = changed || changed(oldReference, newReference);
-        reference.setTargetSModelReference(newReference);
+        boolean newChange = oldReference.update();
+        changed = changed || newChange;
+        reference.setTargetSModelReference(oldReference);
       }
     }
 
     for (ImportElement e : myImports) {
       SModelReference oldReference = e.myModelDescriptor;
-      SModelReference newReference = oldReference.update();
-      changed = changed || changed(oldReference, newReference);
-      e.myModelDescriptor = newReference;
+      boolean newChange = oldReference.update();
+      changed = changed || newChange;
     }
 
     for (ImportElement e : myAdditionalModelsVersions) {
       SModelReference oldReference = e.myModelDescriptor;
-      SModelReference newReference = oldReference.update();
-      changed = changed || changed(oldReference, newReference);
-      e.myModelDescriptor = newReference;
+      boolean newChange = oldReference.update();
+      changed = changed || newChange;
     }
 
     return changed;

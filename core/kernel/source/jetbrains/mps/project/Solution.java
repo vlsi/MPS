@@ -15,20 +15,24 @@
  */
 package jetbrains.mps.project;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.projectLanguage.DescriptorsPersistence;
-import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
-import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
+import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 
 import java.io.File;
-import java.util.*;
-
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
 
 /**
  * Igor Alshannikov
@@ -47,34 +51,22 @@ public class Solution extends AbstractModule {
 
   public static Solution newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
-    SModel model = ProjectModels.createDescriptorFor(solution).getSModel();
-    model.setLoading(true);
     SolutionDescriptor solutionDescriptor;
     if (descriptorFile.exists()) {
-      solutionDescriptor = DescriptorsPersistence.loadSolutionDescriptor(descriptorFile, model);
-      if (solutionDescriptor.getModuleUUID() == null) {
-        solutionDescriptor.setModuleUUID(UUID.randomUUID().toString());
-        DescriptorsPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor);
+      solutionDescriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(descriptorFile);
+      if (solutionDescriptor.getUUID() == null) {
+        solutionDescriptor.setUUID(UUID.randomUUID().toString());
+        SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor);
       }
     } else {
-      solutionDescriptor = SolutionDescriptor.newInstance(model);
-      solutionDescriptor.setModuleUUID(UUID.randomUUID().toString());
+      solutionDescriptor = new SolutionDescriptor();
+      solutionDescriptor.setUUID(UUID.randomUUID().toString());
     }
     solution.myDescriptorFile = descriptorFile;
     solution.setSolutionDescriptor(solutionDescriptor, false);
     MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
     return solution;
   }
-
-  protected void reload() {
-    super.reload();
-    SModelRepository.getInstance().registerModelDescriptor(mySolutionDescriptor.getModel().getModelDescriptor(), this);
-  }
-
-  public void onModuleLoad() {
-    super.onModuleLoad();
-  }
-
 
   protected void readModels() {
     if (!isInitialized()) {
@@ -87,11 +79,7 @@ public class Solution extends AbstractModule {
   }
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
-    if (moduleDescriptor instanceof SolutionDescriptor) {
-      setSolutionDescriptor((SolutionDescriptor) moduleDescriptor);
-    } else {
-      LOG.error("not a solution descriptor", new Throwable());
-    }
+    setSolutionDescriptor((SolutionDescriptor) moduleDescriptor);
   }
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
@@ -101,15 +89,13 @@ public class Solution extends AbstractModule {
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
     mySolutionDescriptor = newDescriptor;
-    
-    newDescriptor.getModel().setLoading(true);
 
     ModuleReference mp;
-    if (isExternallyVisible() && mySolutionDescriptor.getName() != null) {
-      mp = new ModuleReference(mySolutionDescriptor.getName(), mySolutionDescriptor.getModuleUUID());
+    if (isExternallyVisible() && mySolutionDescriptor.getNamespace() != null) {
+      mp = new ModuleReference(mySolutionDescriptor.getNamespace(), mySolutionDescriptor.getUUID());
     } else {
-      mp = new ModuleReference(FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath()), mySolutionDescriptor.getModuleUUID());
-    }    
+      mp = new ModuleReference(FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath()), mySolutionDescriptor.getUUID());
+    }
 
     setModulePointer(mp);
 
@@ -127,19 +113,19 @@ public class Solution extends AbstractModule {
   }
 
   public void save() {
-    DescriptorsPersistence.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
+    SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
   }
 
   public SolutionDescriptor getSolutionDescriptor() {
     return mySolutionDescriptor;
   }
 
-  public ModuleDescriptor getModuleDescriptor() {
+  public SolutionDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
   }
 
   public String toString() {
-    String text = mySolutionDescriptor.getName();
+    String text = mySolutionDescriptor.getNamespace();
     if (text == null || text.length() == 0) {
       text = myDescriptorFile.getName();
     }
@@ -147,11 +133,11 @@ public class Solution extends AbstractModule {
   }
 
   public boolean isExternallyVisible() {
-    return mySolutionDescriptor.getExternallyVisible();
+    return mySolutionDescriptor.isExternallyVisible();
   }
 
   public String getGeneratorOutputPath() {
-    String generatorOutputPath = mySolutionDescriptor.getGeneratorOutputPath();
+    String generatorOutputPath = mySolutionDescriptor.getOutputPath();
     if (generatorOutputPath == null) {
       generatorOutputPath = myDescriptorFile.getParent().getCanonicalPath() + File.separatorChar + "source_gen";
     }
@@ -182,9 +168,8 @@ public class Solution extends AbstractModule {
 
   @Override
   protected SolutionDescriptor loadDescriptor() {
-    SModel model = ProjectModels.createDescriptorFor(this).getSModel();
     IFile file = getDescriptorFile();
     assert file != null;
-    return DescriptorsPersistence.loadSolutionDescriptor(file, model);
+    return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
   }
 }

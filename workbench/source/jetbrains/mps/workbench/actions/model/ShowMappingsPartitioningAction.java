@@ -24,8 +24,8 @@ import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
-import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -34,6 +34,8 @@ import jetbrains.mps.workbench.output.OutputViewTool;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Igor Alshannikov
@@ -44,6 +46,7 @@ public class ShowMappingsPartitioningAction extends BaseAction {
   private MPSProject myProject;
   private Frame myFrame;
   private IScope myScope;
+  private Map<MappingPriorityRule,GeneratorDescriptor> myRule2Generator;
 
   public ShowMappingsPartitioningAction() {
     super("Show mappings partitioning");
@@ -56,6 +59,14 @@ public class ShowMappingsPartitioningAction extends BaseAction {
     List<Generator> generators = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, myScope);
     GenerationPartitioner partitioner = new GenerationPartitioner();
     List<List<MappingConfiguration>> mappingSets = partitioner.createMappingSets(generators);
+
+    myRule2Generator = new HashMap<MappingPriorityRule, GeneratorDescriptor>();
+    for (Generator generator:generators){
+      GeneratorDescriptor generatorDescriptor = generator.getGeneratorDescriptor();
+      for (MappingPriorityRule rule: generatorDescriptor.getPriorityRules()){
+        myRule2Generator.put(rule,generatorDescriptor);
+      }
+    }
 
     MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
     // print all rules
@@ -77,7 +88,7 @@ public class ShowMappingsPartitioningAction extends BaseAction {
       List<Pair<MappingPriorityRule, String>> messagesFull = GenerationPartitioningUtil.toStrings(partitioner.getConflictingPriorityRules(), true);
       for (Pair<MappingPriorityRule, String> message : messagesFull) {
         Message msg = new Message(MessageKind.ERROR, ShowMappingsPartitioningAction.class, message.second);
-        GeneratorDescriptor generatorDescriptor = message.first.findParent(GeneratorDescriptor.class);
+        GeneratorDescriptor generatorDescriptor = myRule2Generator.get(message.first);
         Generator generatorModule = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorDescriptor.getGeneratorUID());
         msg.setHintObject(generatorModule);
         messagesView.add(msg);

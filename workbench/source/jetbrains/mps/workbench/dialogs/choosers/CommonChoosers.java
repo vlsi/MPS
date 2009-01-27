@@ -68,6 +68,18 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
+  public static String showDialogStringChooser(final Component parent, String entityString, final List<String> values) {
+    Window window = SwingUtilities.getWindowAncestor(parent);
+    StringChooserDialog dialog;
+    if (window instanceof Frame) {
+      dialog = new StringChooserDialog((Frame) window, values,entityString);
+    } else {
+      dialog = new StringChooserDialog((Dialog) window, values,  entityString);
+    }
+    dialog.showDialog();
+    return dialog.getResult();
+  }
+
   public static void showSimpleModelChooser(final List<SModelDescriptor> models, final ChooserCallback<SModelDescriptor> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);

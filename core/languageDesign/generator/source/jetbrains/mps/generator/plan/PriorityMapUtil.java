@@ -22,7 +22,7 @@ import java.util.*;
 import jetbrains.mps.generator.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.plan.GenerationPartitioner.PriorityData;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 
 /**
  * Igor Alshannikov

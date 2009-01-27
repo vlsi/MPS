@@ -15,35 +15,33 @@
  */
 package jetbrains.mps.ide.dialogs.project.creation;
 
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.ide.dialogs.base.BaseDialog;
-import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.generator.structure.MappingConfiguration;
-import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
-import jetbrains.mps.vfs.FileSystemFile;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.lang.generator.structure.Generator_Language;
+import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.library.LanguageDesign_DevKit;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.util.List;
-
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.ide.DataManager;
-import org.jetbrains.annotations.NotNull;
 
 public class NewGeneratorDialog extends BaseDialog {
   private static final DialogDimensions ourDefaultDimensionSettings = new DialogDimensions(200, 200, 400, 200);
@@ -203,7 +201,7 @@ public class NewGeneratorDialog extends BaseDialog {
     LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
     GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(sourceLanguage));
-    generatorDescriptor.setName(name);
+    generatorDescriptor.setNamespace(name);
 
     // add "template models" model root
     String templateModelNamePrefix = getTemplateModelPrefix(sourceLanguage);

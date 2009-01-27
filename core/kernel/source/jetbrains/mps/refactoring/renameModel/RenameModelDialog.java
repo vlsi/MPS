@@ -25,8 +25,6 @@ import jetbrains.mps.project.SModelRoot;
 import javax.swing.*;
 import java.awt.*;
 
-import com.intellij.openapi.command.CommandProcessor;
-
 public class RenameModelDialog extends BaseDialog {
   private JPanel myMainPanel;
   private JTextField myModelNameField;

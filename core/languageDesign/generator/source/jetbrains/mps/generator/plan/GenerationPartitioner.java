@@ -19,7 +19,9 @@ import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.GeneratorReference;
+import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -202,16 +204,14 @@ public class GenerationPartitioner {
     return mappingSet;
   }
 
-
   private void processRule(MappingPriorityRule rule, Generator generator) {
+    MappingConfig_AbstractRef left = rule.getLeft();
+    MappingConfig_AbstractRef right = rule.getRight();
+    if (left == null || right == null) return;
 
-    MappingConfig_AbstractRef greaterPriMappingRef = rule.getGreaterPriorityMapping();
-    MappingConfig_AbstractRef lesserPriMappingRef = rule.getLesserPriorityMapping();
-    if (greaterPriMappingRef == null || lesserPriMappingRef == null) return;
-
-    List<MappingConfiguration> greaterPriMappings = getMappingsFromRef(greaterPriMappingRef, generator);
-    List<MappingConfiguration> lesserPriMappings = getMappingsFromRef(lesserPriMappingRef, generator);
-    if (rule.getKind() == MappingPriorityRuleKind.strictly_together) {
+    List<MappingConfiguration> greaterPriMappings = getMappingsFromRef(left, generator);
+    List<MappingConfiguration> lesserPriMappings = getMappingsFromRef(right, generator);
+    if (rule.getType() == RuleType.STRICTLY_TOGETHER) {
       Set<MappingConfiguration> coherentMappings = new HashSet<MappingConfiguration>(lesserPriMappings);
       coherentMappings.addAll(greaterPriMappings);
       myCoherentMappings.add(new CoherentSetData(coherentMappings, rule));
@@ -223,7 +223,7 @@ public class GenerationPartitioner {
       for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
         Map<MappingConfiguration, PriorityData> grtPriMappingsFromMap = myPriorityMap.get(lesserPriMapping);
         for (MappingConfiguration grtPriMapping : greaterPriMappings) {
-          boolean isStrict = (rule.getKind() == MappingPriorityRuleKind.strictly_before);
+          boolean isStrict = (rule.getType() == RuleType.STRICTLY_BEFORE);
           if (!grtPriMappingsFromMap.containsKey(grtPriMapping)) {
             grtPriMappingsFromMap.put(grtPriMapping, new PriorityData(isStrict, rule));
           } else {
@@ -245,23 +245,23 @@ public class GenerationPartitioner {
       return refGenerator.getOwnMappings();
     }
 
-    if (mappingRef instanceof MappingConfig_SimpleRefSet) {
+    if (mappingRef instanceof MappingConfig_RefSet) {
       List<MappingConfiguration> result = new ArrayList<MappingConfiguration>();
-      MappingConfig_SimpleRefSet simpleRefSet = ((MappingConfig_SimpleRefSet) mappingRef);
-      for (MappingConfig_SimpleRef simpleRef : simpleRefSet.getMappingConfigs()) {
+      MappingConfig_RefSet refSet = ((MappingConfig_RefSet) mappingRef);
+      for (MappingConfig_AbstractRef simpleRef : refSet.getMappingConfigs()) {
         result.addAll(getMappingsFromRef(simpleRef, refGenerator));
       }
       return result;
     }
 
-    if (mappingRef instanceof MappingConfig_ExtRef) {
-      GeneratorReference generatorRef = ((MappingConfig_ExtRef) mappingRef).getGenerator();
+    if (mappingRef instanceof MappingConfig_ExternalRef) {
+      GeneratorReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
       if (generatorRef != null) {
         jetbrains.mps.project.structure.modules.ModuleReference genRef = ModuleReference.fromString(generatorRef.getGeneratorUID());
         if (genRef != null) {
           Generator newRefGenerator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
           if (newRefGenerator != null) {
-            return getMappingsFromRef(((MappingConfig_ExtRef) mappingRef).getMappingConfig(), newRefGenerator);
+            return getMappingsFromRef(((MappingConfig_ExternalRef) mappingRef).getMappingConfig(), newRefGenerator);
           } else {
             LOG.error("couldn't get generator by uid: '" + genRef + "'");
           }

@@ -83,13 +83,15 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
 
         public void run() {
           ListSequence.fromList(models.value).addSequence(ListSequence.fromList(TemplateLanguageGenerationUtil.getGeneratorModels((Generator)GenerateTemplateQueries_Action.this.module)));
-          models.value = ListSequence.fromList(models.value).where(new IWhereFilter <SModelDescriptor>() {
+          if (!(GenerateTemplateQueries_Action.this.regenerate)) {
+            models.value = ListSequence.fromList(models.value).where(new IWhereFilter <SModelDescriptor>() {
 
-            public boolean accept(SModelDescriptor it) {
-              return GenerateTemplateQueries_Action.this.regenerate || ModelGenerationStatusManager.getInstance().generationRequired(it);
-            }
+              public boolean accept(SModelDescriptor it) {
+                return ModelGenerationStatusManager.getInstance().generationRequired(it);
+              }
 
-          }).toListSequence();
+            }).toListSequence();
+          }
         }
 
       });

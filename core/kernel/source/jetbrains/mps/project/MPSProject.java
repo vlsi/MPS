@@ -164,7 +164,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   @Nullable
   public Solution findSolution(String name) {
     for (Solution s : mySolutions) {
-      if (name.equals(s.getSolutionDescriptor().getName())) return s;
+      if (name.equals(s.getSolutionDescriptor().getNamespace())) return s;
     }
     return null;
   }

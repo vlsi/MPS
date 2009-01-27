@@ -31,8 +31,8 @@ import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
-import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -370,9 +370,11 @@ public class GenerationSession implements IGenerationSession {
         MappingPriorityRule rule = error.first;
         String text = error.second;
 
-        GeneratorDescriptor generatorDescriptor = rule.findParent(GeneratorDescriptor.class);
+        /* todo
+         GeneratorDescriptor generatorDescriptor = rule.findParent(GeneratorDescriptor.class);
         Generator generatorModule = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorDescriptor.getGeneratorUID());
         addMessage(MessageKind.ERROR, text, generatorModule);
+          */
       }
       addMessage(MessageKind.ERROR, "-----------------------------------------------");
       return false;

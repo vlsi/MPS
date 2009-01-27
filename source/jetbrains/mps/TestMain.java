@@ -21,14 +21,14 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.TestResult;
 import jetbrains.mps.project.ProjectTester;
+import jetbrains.mps.project.structure.modules.ClassPathEntry;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
-import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
-import jetbrains.mps.projectLanguage.structure.ClassPathEntry;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.vfs.MPSExtentions;
 
@@ -238,14 +238,14 @@ public class TestMain {
             LanguageDescriptor testRefactoringDescriptor = testRefactoringLanguage[0].getLanguageDescriptor();
             LanguageDescriptor testRefactoringTargetDescriptor = testRefactoringTargetLanguage[0].getLanguageDescriptor();
 
-            ClassPathEntry cpEntry1 = ClassPathEntry.newInstance(testRefactoringDescriptor.getModel());
-            ClassPathEntry cpEntry2 = ClassPathEntry.newInstance(testRefactoringTargetDescriptor.getModel());
+            ClassPathEntry cpEntry1 = new ClassPathEntry();
+            ClassPathEntry cpEntry2 = new ClassPathEntry();
             String classPath = destination.getAbsolutePath() + "/classes";
             cpEntry1.setPath(classPath);
             cpEntry2.setPath(classPath);
 
-            testRefactoringDescriptor.replaceChild(testRefactoringDescriptor.getClassPathEntries().get(0), cpEntry1);
-            testRefactoringTargetDescriptor.replaceChild(testRefactoringTargetDescriptor.getClassPathEntries().get(0), cpEntry2);
+            testRefactoringDescriptor.getClassPaths().set(0,cpEntry1);
+            testRefactoringTargetDescriptor.getClassPaths().set(0,cpEntry2);
 
             testRefactoringLanguage[0].setLanguageDescriptor(testRefactoringDescriptor);
             testRefactoringTargetLanguage[0].setLanguageDescriptor(testRefactoringTargetDescriptor);

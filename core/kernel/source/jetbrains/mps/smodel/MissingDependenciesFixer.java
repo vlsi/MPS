@@ -18,7 +18,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.ArrayList;
@@ -39,7 +40,6 @@ public class MissingDependenciesFixer {
     final boolean[] wereChanges = new boolean[]{false};
 
     final ModuleDescriptor[] md = new ModuleDescriptor[1];
-    final SModel[] model = new SModel[1];
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -47,7 +47,6 @@ public class MissingDependenciesFixer {
         assert module[0] != null;
         moduleScope[0] = module[0].getScope();
         md[0] = module[0].getModuleDescriptor();
-        model[0] = md[0].getModel();
       }
     });
 
@@ -69,9 +68,9 @@ public class MissingDependenciesFixer {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         for (IModule module : newImports) {
-          jetbrains.mps.projectLanguage.structure.ModuleReference ref = jetbrains.mps.projectLanguage.structure.ModuleReference.newInstance(model[0]);
-          ref.setName(module.getModuleReference().toString());
-          md[0].addDependency(ref);
+          Dependency dep = new Dependency();
+          dep.setModuleRef(module.getModuleReference());
+          md[0].getDependencies().add(dep);
         }
 
         for (ModuleReference namespace : CollectionUtil.union(
@@ -80,9 +79,8 @@ public class MissingDependenciesFixer {
           if (moduleScope[0].getLanguage(namespace) == null) {
             Language lang = GlobalScope.getInstance().getLanguage(namespace);
             if (lang != null) {
-              LanguageReference ref = LanguageReference.newInstance(model[0]);
-              ref.setName(namespace.toString());
-              md[0].addUsedLanguage(ref);
+              ModuleReference ref = ModuleReference.fromString(namespace.toString());
+              md[0].getUsedLanguages().add(ref);
               wereChanges[0] = true;
             }
           }
@@ -92,9 +90,8 @@ public class MissingDependenciesFixer {
           if (moduleScope[0].getDevKit(devKitNamespace) == null) {
             DevKit devKit = GlobalScope.getInstance().getDevKit(devKitNamespace);
             if (devKit != null) {
-              DevKitReference ref = DevKitReference.newInstance(model[0]);
-              ref.setName(devKitNamespace.toString());
-              md[0].addUsedDevKit(ref);
+              ModuleReference ref = ModuleReference.fromString(devKitNamespace.toString());
+              md[0].getUsedDevkits().add(ref);
               wereChanges[0] = true;
             }
           }

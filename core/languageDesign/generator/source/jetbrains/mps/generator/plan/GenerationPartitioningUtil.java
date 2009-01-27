@@ -15,19 +15,19 @@
  */
 package jetbrains.mps.generator.plan;
 
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.projectLanguage.structure.*;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.lang.generator.structure.TemplateDeclaration;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.GeneratorReference;
+import jetbrains.mps.project.structure.modules.mappingpriorities.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
-
-import com.intellij.openapi.util.Pair;
 
 /**
  * Igor Alshannikov
@@ -43,7 +43,7 @@ public class GenerationPartitioningUtil {
     // generator edited in 'property dialog'
     Generator editedGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(descriptorWorkingCopy.getGeneratorUID());
     collectedGenerators.add(editedGenerator);
-    List<GeneratorReference> generatorRefs = descriptorWorkingCopy.getGeneratorReferences();
+    List<GeneratorReference> generatorRefs = descriptorWorkingCopy.getDepGenerators();
     for (GeneratorReference generatorRef : generatorRefs) {
       Generator refGenerator = (Generator) MPSModuleRepository.getInstance().getModule(jetbrains.mps.project.structure.modules.ModuleReference.fromString(generatorRef.getGeneratorUID()));
       collectGenerators(refGenerator, true, collectedGenerators, processedLanguages);
@@ -205,13 +205,12 @@ public class GenerationPartitioningUtil {
     return strings;
   }
 
-  public static List<Pair<MappingPriorityRule,String>> toStrings(Iterable<MappingPriorityRule> priorityRules, boolean moreDetails) {
-    List<Pair<MappingPriorityRule,String>> list = new ArrayList<Pair<MappingPriorityRule,String>>();
+  public static List<Pair<MappingPriorityRule, String>> toStrings(Iterable<MappingPriorityRule> priorityRules, boolean moreDetails) {
+    List<Pair<MappingPriorityRule, String>> list = new ArrayList<Pair<MappingPriorityRule, String>>();
     for (MappingPriorityRule rule : priorityRules) {
-      GeneratorDescriptor enclosingGenerator = rule.findParent(GeneratorDescriptor.class);
       String text = asString(rule, moreDetails);
       if (moreDetails) {
-        text = asString(enclosingGenerator) + ": " + text;
+        //todo text = asString(rule.findParent(GeneratorDescriptor.class)) + ": " + text;
       } else {
         if (text.length() > 120) {
           text = text.substring(0, 120) + "...";
@@ -228,7 +227,7 @@ public class GenerationPartitioningUtil {
   }
 
   private static String asString(MappingPriorityRule rule, boolean moreDetails) {
-    return asString(rule.getGreaterPriorityMapping(), moreDetails) + " " + rule.getKind().getName() + " " + asString(rule.getLesserPriorityMapping(), moreDetails);
+    return asString(rule.getLeft(), moreDetails) + " " + rule.getType().getName() + " " + asString(rule.getRight(), moreDetails);
   }
 
   private static String asString(MappingConfig_AbstractRef mappingRef, boolean moreDetails) {
@@ -240,10 +239,10 @@ public class GenerationPartitioningUtil {
 
     }
 
-    if (mappingRef instanceof MappingConfig_SimpleRefSet) {
+    if (mappingRef instanceof MappingConfig_RefSet) {
       String s = "{";
-      int count = ((MappingConfig_SimpleRefSet) mappingRef).getMappingConfigsCount();
-      for (MappingConfig_SimpleRef mappingSimpleRef : ((MappingConfig_SimpleRefSet) mappingRef).getMappingConfigs()) {
+      int count = ((MappingConfig_RefSet) mappingRef).getMappingConfigs().size();
+      for (MappingConfig_AbstractRef mappingSimpleRef : ((MappingConfig_RefSet) mappingRef).getMappingConfigs()) {
         count--;
         s = s + asString(mappingSimpleRef, moreDetails);
         if (count > 0) s += ", ";
@@ -271,9 +270,9 @@ public class GenerationPartitioningUtil {
       return s + nodeID + "!unresolved!";
     }
 
-    if (mappingRef instanceof MappingConfig_ExtRef) {
-      GeneratorReference generatorRef = ((MappingConfig_ExtRef) mappingRef).getGenerator();
-      MappingConfig_AbstractRef extMappingRef = ((MappingConfig_ExtRef) mappingRef).getMappingConfig();
+    if (mappingRef instanceof MappingConfig_ExternalRef) {
+      GeneratorReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
+      MappingConfig_AbstractRef extMappingRef = ((MappingConfig_ExternalRef) mappingRef).getMappingConfig();
       return "[" + asString(generatorRef) + ":" + asString(extMappingRef, moreDetails) + "]";
     }
 
@@ -282,12 +281,6 @@ public class GenerationPartitioningUtil {
 
   private static String asString(GeneratorReference generatorRef) {
     jetbrains.mps.project.structure.modules.ModuleReference genRef = jetbrains.mps.project.structure.modules.ModuleReference.fromString(generatorRef.getGeneratorUID());
-    Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
-    return generator.getAlias();
-  }
-
-  private static String asString(GeneratorDescriptor generatorDescriptor) {
-    jetbrains.mps.project.structure.modules.ModuleReference genRef = jetbrains.mps.project.structure.modules.ModuleReference.fromString(generatorDescriptor.getGeneratorUID());
     Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
     return generator.getAlias();
   }

@@ -16,11 +16,11 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.structure.model.ModelRoot;
 
 import java.io.File;
 import java.io.IOException;

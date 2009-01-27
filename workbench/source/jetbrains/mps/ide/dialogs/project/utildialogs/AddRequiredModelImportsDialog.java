@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.ide.dialogs.project.utildialogs;
 
-import jetbrains.mps.ide.dialogs.base.BaseDialog;
-import jetbrains.mps.ide.dialogs.base.DialogDimensionsSettings;
+import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;

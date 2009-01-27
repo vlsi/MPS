@@ -60,6 +60,10 @@ public abstract class SModelId {
   private SModelId() {
   }
 
+  public SModelId getCopy() {
+    return fromString(toString());
+  }
+
   private static class RegularSModelId extends SModelId {
     private UUID myId;
 

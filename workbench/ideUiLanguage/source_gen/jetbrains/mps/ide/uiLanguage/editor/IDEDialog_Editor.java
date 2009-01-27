@@ -354,7 +354,6 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_1434_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_contentPane");
   }
 
   private static void setupBasic_Constant_1434_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -442,7 +441,6 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_1434_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_dimensions");
   }
 
   private static void setupLabel_Constant_1434_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

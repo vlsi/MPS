@@ -17,8 +17,8 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Igor Alshannikov
@@ -52,7 +52,7 @@ public class SNodePointer {
     myTimestamp = createPointerTimestamp();
   }
 
-  public SNode getNode() {    
+  public SNode getNode() {
     if (myNodeId == null) return null;
     SModelDescriptor model = getModel();
     if (model != null) {
@@ -132,5 +132,9 @@ public class SNodePointer {
       ourPointersTimestamp = ourModelsTimestamp;
     }
     return ourPointersTimestamp;
+  }
+
+  public SNodePointer getCopy() {
+    return new SNodePointer(myModelReference.toString(), myNodeId.toString());
   }
 }

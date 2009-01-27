@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.projectLanguage.structure.Root;
+import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.FileSystem;
@@ -357,9 +357,9 @@ public class MPSModuleRepository implements ApplicationComponent {
     fireModuleRemoved(module);
   }
 
-  public void readModuleDescriptors(Iterator<? extends Root> roots, MPSModuleOwner owner) {
+  public void readModuleDescriptors(Iterator<? extends RootReference> roots, MPSModuleOwner owner) {
     while (roots.hasNext()) {
-      Root root = roots.next();
+      RootReference root = roots.next();
       IFile moduleRoot = FileSystem.getFile(root.getPath());
 
       if (moduleRoot.exists()) {

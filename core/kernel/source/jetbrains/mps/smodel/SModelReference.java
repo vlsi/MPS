@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.util.EqualUtil;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -121,16 +122,29 @@ public class SModelReference {
     return myModelFqName.hasStereotype();
   }
 
-  public SModelReference update() {
+  public boolean update() {
     SModelDescriptor sm;
     if (myModelId != null) {
       sm = GlobalScope.getInstance().getModelDescriptor(myModelId);
     } else {
       sm = GlobalScope.getInstance().getModelDescriptor(myModelFqName);
     }
-    if (sm == null) {
-      return this;
-    }
-    return sm.getSModelReference();
+    if (sm == null) return false;
+    SModelReference newRef = sm.getSModelReference();
+
+    myModelFqName = newRef.myModelFqName;
+    myModelId = newRef.myModelId;
+
+    return differs(newRef);
+  }
+
+  protected boolean differs(SModelReference ref) {
+    return !(EqualUtil.equals(myModelId, ref.myModelId) && EqualUtil.equals(myModelFqName, ref.myModelFqName));
+  }
+
+  public SModelReference getCopy() {
+    SModelFqName modelFqName = myModelFqName==null?null:myModelFqName.getCopy();
+    SModelId modelId = myModelId==null?null:myModelId.getCopy();
+    return new SModelReference(modelFqName, modelId);
   }
 }

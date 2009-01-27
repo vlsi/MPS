@@ -16,8 +16,6 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.Language;
@@ -68,7 +66,7 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   protected String getModulePresentation() {
-    String name = myDevKit.getModuleDescriptor().getName();
+    String name = myDevKit.getModuleDescriptor().getNamespace();
 
     if (myShortNameOnly) {
       name = NameUtil.shortNameFromLongName(name);

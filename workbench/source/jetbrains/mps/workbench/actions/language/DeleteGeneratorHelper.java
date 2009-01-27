@@ -18,12 +18,12 @@ package jetbrains.mps.workbench.actions.language;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.MessageDialog;
-import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
-import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
@@ -41,7 +41,7 @@ public class DeleteGeneratorHelper {
 
   public static void delete(Language sourceLanguage, GeneratorDescriptor generatorDescriptor, boolean deleteFiles) {
     LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
-    generatorDescriptor.delete();
+    languageDescriptor.getGenerators().remove(generatorDescriptor);
     sourceLanguage.setLanguageDescriptor(languageDescriptor);
     sourceLanguage.save();
   }
@@ -71,7 +71,7 @@ public class DeleteGeneratorHelper {
     }
 
     LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
-    generator.getGeneratorDescriptor().delete();
+    languageDescriptor.getGenerators().remove(generator.getGeneratorDescriptor());
     sourceLanguage.setLanguageDescriptor(languageDescriptor);
     if (deleteFiles) {
       //todo
