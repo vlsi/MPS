@@ -28,6 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -45,7 +46,7 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
 
   @Override
   public MergeRequest createMergeRequest(String leftText, String rightText, String originalContent, @NotNull VirtualFile file, Project project, @Nullable ActionButtonPresentation actionButtonPresentation) {
-    if (!file.getFileType().equals(MPSFileTypesManager.MODEL_FILE_TYPE)) {
+    if (!file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE)) {
       return super.createMergeRequest(leftText, rightText, originalContent, file, project, actionButtonPresentation);
     }
     MergeRequest request = new ModelMergeRequest(leftText, rightText, originalContent, file, project, actionButtonPresentation);

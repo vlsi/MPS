@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -142,7 +143,7 @@ public class ModelDiffTool implements DiffTool {
     if (type == null) {
       return false;
     }
-    return type.equals(MPSFileTypesManager.MODEL_FILE_TYPE);
+    return type.equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
   }
 
   public static class ReadException extends Throwable {

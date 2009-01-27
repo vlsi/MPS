@@ -23,6 +23,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
@@ -112,7 +113,7 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
 
   private static class MyInputFilter implements FileBasedIndex.InputFilter {
     public boolean acceptInput(VirtualFile file) {
-      return (file.getFileType().equals(MPSFileTypesManager.MODEL_FILE_TYPE));
+      return (file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE));
     }
   }
 

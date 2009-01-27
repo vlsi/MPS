@@ -16,6 +16,7 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
@@ -54,7 +55,7 @@ class FastFindUsagesManager extends FindUsagesManager {
   }
 
   public void initComponent() {
-    IdTableBuilding.registerIdIndexer(MPSFileTypesManager.MODEL_FILE_TYPE, new FileTypeIdIndexer() {
+    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new FileTypeIdIndexer() {
       @NotNull
       public Map<IdIndexEntry, Integer> map(FileContent inputData) {
         String content = inputData.getContentAsText().toString();

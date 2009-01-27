@@ -24,6 +24,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
+import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
 import com.intellij.openapi.Disposable;
 import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.IdeMain;
@@ -217,8 +218,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   void myMousePressed(final MouseEvent e) {
     Project p = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext(this));
-    if (p==null) return;
-    IdeFocusManager focusManager = IdeFocusManager.getInstance(p);
+    IdeFocusManager focusManager;
+    if (p != null) {
+      focusManager = IdeFocusManager.getInstance(p);
+    } else {
+      focusManager = IdeFocusManagerHeadless.INSTANCE;
+    }
 
     focusManager.requestFocus(this,true);
 
