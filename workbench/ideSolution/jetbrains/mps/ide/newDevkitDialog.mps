@@ -33,7 +33,6 @@
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="9" modelUID="r:00000000-0000-4000-0000-011c895902f7(jetbrains.mps.projectLanguage.structure)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.projectLanguage(jetbrains.mps.projectLanguage@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
