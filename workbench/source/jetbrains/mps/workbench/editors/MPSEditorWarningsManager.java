@@ -29,6 +29,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
@@ -91,7 +92,13 @@ public class MPSEditorWarningsManager implements ProjectComponent {
           myWarnings.remove(editor);
         }
 
-        SModelDescriptor model = editor.getFile().getNode().getModel().getModelDescriptor();
+        SModel smodel = editor.getFile().getNode().getModel();
+
+        if (smodel == null) {
+          return;
+        }
+
+        SModelDescriptor model = smodel.getModelDescriptor();
 
         if (model == null) {
           return;
