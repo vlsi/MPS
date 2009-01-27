@@ -2504,16 +2504,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public static interface CellSynchronizationWithModelListener {
     public void cellSynchronizedWithModel(EditorCell cell);
-  }
-
-  public JFrame getConainingJFrame() {
-    Component comp = this;
-    while (comp != null && !(comp instanceof JFrame)) {
-      comp = comp.getParent();
-    }
-
-    return (JFrame)comp;
-  }
+  }  
 
   private class MPSActionProxy extends AbstractAction {
     private List<BaseAction> myActions = new ArrayList<BaseAction>();

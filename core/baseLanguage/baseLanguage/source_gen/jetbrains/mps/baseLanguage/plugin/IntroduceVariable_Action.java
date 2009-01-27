@@ -94,7 +94,7 @@ public class IntroduceVariable_Action extends GeneratedAction {
 
       });
       if (error.value == null) {
-        IntroduceLocalVariableDialog dialog = new IntroduceLocalVariableDialog(IntroduceVariable_Action.this.component.getConainingJFrame(), refactoring.value, IntroduceVariable_Action.this.context);
+        IntroduceLocalVariableDialog dialog = new IntroduceLocalVariableDialog(IntroduceVariable_Action.this.frame, refactoring.value, IntroduceVariable_Action.this.context);
         dialog.showDialog();
       } else
       {
