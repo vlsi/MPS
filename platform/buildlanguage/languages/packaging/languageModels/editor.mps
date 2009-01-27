@@ -48,7 +48,6 @@
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="16" />
   <import index="14" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
-  <import index="19" modelUID="r:00000000-0000-4000-0000-011c895902f7(jetbrains.mps.projectLanguage.structure)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1202917336768">
     <link role="conceptDeclaration" targetNodeId="1.1202916958754" resolveInfo="MPS" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1202917360631">
@@ -441,21 +440,6 @@
             </node>
             <node role="handlerFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler" id="1222444932160">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222444932161">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1222445090289">
-                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1222445090290">
-                    <property name="name" value="ref" />
-                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1222445090291">
-                      <link role="concept" targetNodeId="19.1192449917687" resolveInfo="ModuleReference" />
-                    </node>
-                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1222445101741">
-                      <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1222445101742">
-                        <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1222445101743">
-                          <link role="concept" targetNodeId="19.1192449917687" resolveInfo="ModuleReference" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222447273027">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222447288029">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222447273095">
