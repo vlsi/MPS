@@ -295,6 +295,10 @@ __switch__:
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1233075127616(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.DotExpression"));
+  }
+
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface")) {
       SPropertyOperations.set(_context.getNewNode(), "isAbstract", "" + (true));
@@ -2550,9 +2554,6 @@ __switch__:
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode nodeToProcess = _context.getSourceNode();
-              while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-                nodeToProcess = SNodeOperations.getParent(nodeToProcess);
-              }
               SNodeOperations.replaceWithAnother(nodeToProcess, result);
               SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
               if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
