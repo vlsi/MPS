@@ -4,14 +4,14 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\jetbrains.mps.ide.msd" />
+      <solutionPath path="${project}/jetbrains.mps.ide.msd" />
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />
     <genConfs>
-      <genConfModule name="test ide solution" moduleUID="jetbrains.mps.ide" />
+      <genConfModule name="test ide solution" moduleRef="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
@@ -20,11 +20,14 @@
   <component name="ProjectModuleManager">
     <modules />
   </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
     <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
 </project>
