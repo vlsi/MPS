@@ -303,7 +303,18 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (mySModel == null) return;
 
     if (!ApplicationManager.getApplication().isDispatchThread()) {
-      throw new IllegalStateException();
+      /*
+      * This was added because of the line modelFile.toVirtualFile().refresh(false, false) few lines later.
+      * Calling save not from EDT may cause this sequence of events:
+      *
+      * VirtualFile.refresh calls Semaphore.down and since we are not in EDT
+      * call Semaphore.waitFor inside of invokeLater.
+      *
+      * At the same time somebody calls runReadAction in EDT and
+      * since method save works only in writeAction, this somebody has to wait.
+      * So we have EDT blocked and Semaphore.waitFor can not be called. Deadlock.
+      * */
+      throw new IllegalStateException("DefaultSModelDescriptor.Save sould only be called from EDT.");
     }
 
     //we must be in command since model save might change model by adding model/language imports
