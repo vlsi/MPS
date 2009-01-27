@@ -83,8 +83,7 @@ public class MPSFileTypesManager implements ApplicationComponent {
     }
   };
   private final FileType[] myFileTypes = {PROJECT_FILE_TYPE, MODEL_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE, CLASS_FILE_TYPE, JAVA_FILE_TYPE, XML_FILE_TYPE};
-  private static final String[] XML_EXTENSIONS = {MPSExtentions.MPS_PROJECT,
-    MPSExtentions.IDEAWORKSPACE,
+  private static final String[] XML_EXTENSIONS = {MPSExtentions.IDEAWORKSPACE,
     MPSExtentions.WORKSPACE,
     MPSExtentions.IDEAMODULE};
 
@@ -93,7 +92,7 @@ public class MPSFileTypesManager implements ApplicationComponent {
   private final FileTypeManager myFileTypeManager;
   private final DiffManager myDiffManager;
 
-  public static MPSFileTypesManager instance(){
+  public static MPSFileTypesManager instance() {
     return ApplicationManager.getApplication().getComponent(MPSFileTypesManager.class);
   }
 
@@ -114,7 +113,7 @@ public class MPSFileTypesManager implements ApplicationComponent {
     for (FileType f : myFileTypes) {
       myFileTypeManager.associateExtension(f, f.getDefaultExtension());
     }
-    for (String xmlExt : XML_EXTENSIONS){
+    for (String xmlExt : XML_EXTENSIONS) {
       myFileTypeManager.associateExtension(XML_FILE_TYPE, xmlExt);
     }
   }
@@ -125,7 +124,7 @@ public class MPSFileTypesManager implements ApplicationComponent {
     for (FileType f : myFileTypes) {
       myFileTypeManager.removeAssociatedExtension(f, f.getDefaultExtension());
     }
-    for (String xmlExt : XML_EXTENSIONS){
+    for (String xmlExt : XML_EXTENSIONS) {
       myFileTypeManager.removeAssociatedExtension(XML_FILE_TYPE, xmlExt);
     }
   }
