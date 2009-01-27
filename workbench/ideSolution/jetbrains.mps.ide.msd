@@ -6,7 +6,6 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">efeeac01-e569-4878-a3cb-bd0362259b3a(jetbrains.mps.projectLanguage)</dependency>
     <dependency reexport="false">3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)</dependency>
     <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
     <dependency reexport="false">985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)</dependency>
