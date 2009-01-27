@@ -1214,7 +1214,6 @@
             </node>
             <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1232621574487" />
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1232622723667" />
         </node>
       </node>
     </node>

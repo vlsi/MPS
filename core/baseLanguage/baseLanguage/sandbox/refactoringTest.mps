@@ -35,7 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <maxImportIndex value="15" />
+  <maxImportIndex value="17" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590398(jetbrains.mps.baseLanguage.sandbox.refactoringTest)" version="-1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="10" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -44,6 +44,8 @@
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="14" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
+  <import index="16" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
+  <import index="17" modelUID="f:java_stub#jetbrains.mps.lang.plugin.structure(jetbrains.mps.lang.plugin.structure@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1211992713279">
     <property name="name" value="A" />
@@ -198,16 +200,6 @@
             <link role="classifier" targetNodeId="10.~Enum" resolveInfo="Enum" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232979276450">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1232979277421">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232979277564">
-              <property name="value" value="3" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232979276451">
-              <property name="value" value="3" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232458127609">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1232112018157">
             <property name="value" value="false" />
@@ -233,18 +225,8 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232548995674" />
     </node>
-    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1228738397217">
-      <property name="name" value="a" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1228738397218" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228738401778">
-        <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
-      </node>
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1231934512874">
-        <link role="annotation" targetNodeId="15.~Nullable" resolveInfo="Nullable" />
-      </node>
-    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1231855940102">
-      <property name="name" value="iqq" />
+      <property name="name" value="i" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1231855940103" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1231855943261">
         <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
@@ -254,6 +236,20 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224153941793" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1233065377149">
+      <property name="name" value="LOG" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1233065377150" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1233065402925">
+        <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1233065485256">
+      <property name="name" value="n" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1233065485257" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1233065496340">
+        <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
+      </node>
+    </node>
   </node>
 </model>
 
