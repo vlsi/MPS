@@ -91,15 +91,17 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
                     root.getName();
                   }
                 });
+                String nodeName = NameUtil.nodeFQName(root);
+                if (nodeName == null || root.getName() == null) continue;
+                String conceptFqName = root.getConceptFqName();
+                SModelReference modelRef = model.getSModelReference();
+
                 boolean dependOnOtherModel = false;
                 for (SNode node : recorder.getDependencies(root)) {
                   if (node.getModel() != model) {
                     dependOnOtherModel = true;
                   }
                 }
-                String nodeName = NameUtil.nodeFQName(root);
-                String conceptFqName = root.getConceptFqName();
-                SModelReference modelRef = model.getSModelReference();
                 result.put(new SNodeDescriptor((nodeName == null)? "null" : nodeName, conceptFqName, modelRef, dependOnOtherModel), null);
               }
             } catch (JDOMException e) {
