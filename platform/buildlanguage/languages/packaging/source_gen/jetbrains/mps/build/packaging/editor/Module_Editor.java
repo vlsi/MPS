@@ -168,7 +168,6 @@ public class Module_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction_impl(IModule parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNode ref = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.ModuleReference", null);
       SPropertyOperations.set(node, "id", parameterObject.getModuleId().toString());
       SPropertyOperations.set(node, "name", parameterObject.getModuleReference().getModuleFqName());
     }

@@ -238,9 +238,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
       && !node.getConceptFQName().equals("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration")) {
       return null;
     }
-    if (namespace.equals("jetbrains.mps.projectLanguage")) {
-      return null;
-    }
     if (node instanceof RuntimeTypeVariable) {
       // helgins ku-ku!
       return null;

@@ -228,9 +228,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     }
     Language language = Language.createLanguage(myOptions.getLanguageNamespace(), new FileSystemFile(descriptorFile), mpsProject);
     LanguageDescriptor languageDescriptor = language.getLanguageDescriptor();
-    String name = LanguageDesign_DevKit.MODULE_REFERENCE.toString();
-    String uid = "jetbrains.mps.projectLanguage.structure.DevKitReference";
-    ModuleReference ref = new ModuleReference(name,uid);
+    ModuleReference ref = LanguageDesign_DevKit.MODULE_REFERENCE.getCopy();
     languageDescriptor.getUsedDevkits().add(ref);
     LanguageAspect.STRUCTURE.createNew(language);
     LanguageAspect.EDITOR.createNew(language);

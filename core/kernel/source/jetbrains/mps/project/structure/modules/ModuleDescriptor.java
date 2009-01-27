@@ -106,7 +106,7 @@ public class ModuleDescriptor {
     /*todo
     boolean changed = false;
 
-    for (jetbrains.mps.projectLanguage.structure.ModuleReference ref : getModuleDescriptor().getDescendants(jetbrains.mps.projectLanguage.structure.ModuleReference.class)) {
+    for (jetbrains.mps.projectLanguage.structure.ModuleReference ref : getModuleDescriptor().getDescendants(ModuleReference.class)) {
       ModuleReference oldRef = ModuleReference.fromString(ref.getName());
       ModuleReference newRef = oldRef.update();
       changed = changed || changed(oldRef, newRef);
