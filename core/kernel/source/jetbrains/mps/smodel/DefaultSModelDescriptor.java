@@ -32,11 +32,14 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 
 import java.util.*;
 
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileSystem;
 
 public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private static final String VERSION = "version";
@@ -304,7 +307,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
     if (!ApplicationManager.getApplication().isDispatchThread()) {
       /*
-      * This was added because of the line modelFile.toVirtualFile().refresh(false, false) few lines later.
+      * This was added because of the line VFileSystem.refreshFileSynchronously(modelFile) few lines later.
       * Calling save not from EDT may cause this sequence of events:
       *
       * VirtualFile.refresh calls Semaphore.down and since we are not in EDT
@@ -327,7 +330,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     
     IFile modelFile = getModelFile();
     if (modelFile != null) {
-      modelFile.toVirtualFile().refresh(false, false);
+      VFileSystem.refreshFileSynchronously(modelFile);
     }
 
     mySModel.fireModelSaved();
