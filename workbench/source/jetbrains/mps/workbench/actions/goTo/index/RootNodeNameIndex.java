@@ -32,6 +32,8 @@ import org.jdom.JDOMException;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 import java.io.IOException;
 import java.io.DataOutput;
 import java.io.DataInput;
@@ -119,29 +121,39 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
 
   private static class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
     private final byte[] myBuffer = IOUtil.allocReadWriteUTFBuffer();
+    private final Pattern myPattern = Pattern.compile("(.*)#(.*)#(.*)");
+
+    private String nodeDescriptorToString(SNodeDescriptor node) {
+      return node.getNodeName() + "#" + node.getConceptFqName() + "#" + node.getModelReference();
+    }
+
+    private SNodeDescriptor stringToNodeDescriptor(String value) {
+      Matcher matcher = myPattern.matcher(value);
+      if (matcher.matches()) {
+        String nodeName = matcher.group(1);
+        String conceptFqName = matcher.group(2);
+        String model = matcher.group(3);
+        SNodeDescriptor nodeResult = new SNodeDescriptor(nodeName, conceptFqName, SModelReference.fromString(model));
+        return nodeResult;
+      }
+      return null;
+    }
 
     public int getHashCode(SNodeDescriptor value) {
-      String concept = value.getConceptFqName();
-      return (concept == null)? 0 : concept.hashCode();
+      return nodeDescriptorToString(value).hashCode();
     }
 
     public boolean isEqual(SNodeDescriptor val1, SNodeDescriptor val2) {
-      return val1.getNodeName().equals(val2.getNodeName())
-        && val1.getConceptFqName().equals(val2.getConceptFqName())
-        && val1.getModelReference().equals(val2.getModelReference());
+      return nodeDescriptorToString(val1).equals(nodeDescriptorToString(val2));
     }
 
     public void save(DataOutput out, SNodeDescriptor value) throws IOException {
-      IOUtil.writeUTFFast(myBuffer, out, value.getNodeName());
-      IOUtil.writeUTFFast(myBuffer, out, value.getConceptFqName());
-      IOUtil.writeUTFFast(myBuffer, out, value.getModelReference().toString());
+      IOUtil.writeUTFFast(myBuffer, out, nodeDescriptorToString(value));
     }
 
     public SNodeDescriptor read(DataInput in) throws IOException {
-      String nodeName = IOUtil.readUTFFast(myBuffer, in),
-       conceptFqName = IOUtil.readUTFFast(myBuffer, in),
-       modelRef = IOUtil.readUTFFast(myBuffer, in);
-      return new SNodeDescriptor(nodeName, conceptFqName, SModelReference.fromString(modelRef));
+      String value = IOUtil.readUTFFast(myBuffer, in);
+      return stringToNodeDescriptor(value);
     }
   }
 }

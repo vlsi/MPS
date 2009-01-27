@@ -44,13 +44,12 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
   }
 
   public SNodeDescriptor[] find(IScope scope) {
-   // java.util.Date date = new Date(System.currentTimeMillis());
+    final java.util.Date date = new Date(System.currentTimeMillis());
 
     ensureCachesAreUpToDate();
 
     final Set<SNodeDescriptor> keys = new HashSet<SNodeDescriptor>();
     final Set<SModelReference> hasToLoad = new HashSet<SModelReference>();
-
 
     final Set<SModelReference> changedModels = new HashSet<SModelReference>();
     for (SModelDescriptor sm : SModelRepository.getInstance().getChangedModels()) {
@@ -74,7 +73,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
         keys.add(new SNodeDescriptor(NameUtil.nodeFQName(root), root.getConceptFqName(), root.getModel().getSModelReference(), true));
       }
     }
-    // System.out.println((new Date(System.currentTimeMillis()).getTime() - date.getTime()) + " ms");
+    System.out.println((new Date(System.currentTimeMillis()).getTime() - date.getTime()) + " ms");
 
     return keys.toArray(new SNodeDescriptor[keys.size()]);
   }
@@ -86,17 +85,17 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       public void navigate(boolean requestFocus) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            myProject.getComponentSafe(MPSEditorOpener.class).openNode(
-              SModelUtil_new.findNodeByFQName(object.getNodeName(), BaseAdapter.class, GlobalScope.getInstance()).getNode()
-            );  
+            BaseAdapter nodeAdapter = SModelUtil_new.findNodeByFQName(object.getNodeName(), BaseAdapter.class, GlobalScope.getInstance());
+            if (nodeAdapter == null) return;
+            myProject.getComponentSafe(MPSEditorOpener.class).openNode(nodeAdapter.getNode());
           }
         });
       }
     };
   }
 
-  public String doGetObjectName(SNodeDescriptor object) {
-    return object.getNodeName();
+  public String doGetObjectName(SNodeDescriptor object) {        
+    return NameUtil.shortNameFromLongName(object.getNodeName());
   }
 
   public String doGetFullName(Object element) {
