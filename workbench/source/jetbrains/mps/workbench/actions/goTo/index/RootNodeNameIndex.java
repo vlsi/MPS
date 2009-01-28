@@ -92,7 +92,7 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
                   }
                 });
                 String nodeName = NameUtil.nodeFQName(root);
-                if (nodeName == null || root.getName() == null) continue;
+             //   if (nodeName == null || root.getName() == null) continue;
                 String conceptFqName = root.getConceptFqName();
                 SModelReference modelRef = model.getSModelReference();
 
@@ -102,7 +102,9 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
                     dependOnOtherModel = true;
                   }
                 }
-                result.put(new SNodeDescriptor((nodeName == null)? "null" : nodeName, conceptFqName, modelRef, dependOnOtherModel), null);
+                int number = roots.indexOf(root);
+                SNodeDescriptor key = new SNodeDescriptor((nodeName == null)? "null" : nodeName, conceptFqName, modelRef, dependOnOtherModel, number);
+                result.put(key, null);
               }
             } catch (JDOMException e) {
               e.printStackTrace();
@@ -123,10 +125,10 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
 
   private static class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
     private final byte[] myBuffer = IOUtil.allocReadWriteUTFBuffer();
-    private final Pattern myPattern = Pattern.compile("(.*)#(.*)#(.*)");
+    private final Pattern myPattern = Pattern.compile("(.*)#(.*)#(.*)#(.*)");
 
     private String nodeDescriptorToString(SNodeDescriptor node) {
-      return node.getNodeName() + "#" + node.getConceptFqName() + "#" + node.getModelReference();
+      return node.getNodeName() + "#" + node.getConceptFqName() + "#" + node.getModelReference() + "#" + node.getNumberInModel();
     }
 
     private SNodeDescriptor stringToNodeDescriptor(String value) {
@@ -135,7 +137,8 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
         String nodeName = matcher.group(1);
         String conceptFqName = matcher.group(2);
         String model = matcher.group(3);
-        SNodeDescriptor nodeResult = new SNodeDescriptor(nodeName, conceptFqName, SModelReference.fromString(model));
+        int number = Integer.valueOf(matcher.group(4));
+        SNodeDescriptor nodeResult = new SNodeDescriptor(nodeName, conceptFqName, SModelReference.fromString(model), false, number);
         return nodeResult;
       }
       return null;

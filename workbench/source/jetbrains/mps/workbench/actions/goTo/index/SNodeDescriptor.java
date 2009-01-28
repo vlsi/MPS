@@ -22,16 +22,14 @@ public class SNodeDescriptor {
   private String myConceptFqName;
   private SModelReference myModelReference;
   private Boolean myIsDependOnOtherModel;
+  private int myNumberInModel;
 
-  public SNodeDescriptor(String nodeName, String fqName, SModelReference model, Boolean dependOnOtherModel) {
+  public SNodeDescriptor(String nodeName, String fqName, SModelReference model, Boolean dependOnOtherModel, int number) {
     myNodeName = nodeName;
     myConceptFqName = fqName;
     myModelReference = model;
     myIsDependOnOtherModel = dependOnOtherModel;
-  }
-
-  public SNodeDescriptor(String nodeName, String fqName, SModelReference model) {
-    this(nodeName, fqName, model, false);
+    myNumberInModel = number;
   }
 
   public String getConceptFqName() {
@@ -48,5 +46,9 @@ public class SNodeDescriptor {
 
   public Boolean isDependOnOtherModel() {
     return myIsDependOnOtherModel;
+  }
+
+  public int getNumberInModel() {
+    return myNumberInModel;
   }
 }

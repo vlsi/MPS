@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.actions.goTo.index;
 
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
@@ -35,6 +36,7 @@ import com.intellij.ide.startup.FileSystemSynchronizer;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -69,11 +71,14 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
     for (SModelReference ref : hasToLoad) {
       SModelDescriptor sm = scope.getModelDescriptor(ref);
-      for (SNode root : sm.getSModel().getRoots()) {
-        keys.add(new SNodeDescriptor(NameUtil.nodeFQName(root), root.getConceptFqName(), root.getModel().getSModelReference(), true));
+      List<SNode> roots = sm.getSModel().getRoots();
+      for (SNode root : roots) {
+        int number = roots.indexOf(root);
+        keys.add(new SNodeDescriptor(NameUtil.nodeFQName(root), root.getConceptFqName(), root.getModel().getSModelReference(), true, number));
       }
     }
-    System.out.println((new Date(System.currentTimeMillis()).getTime() - date.getTime()) + " ms");
+    System.out.println(keys.size());
+    System.out.println("Use caches. " + (new Date(System.currentTimeMillis()).getTime() - date.getTime()) + " ms");
 
     return keys.toArray(new SNodeDescriptor[keys.size()]);
   }
@@ -85,9 +90,20 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       public void navigate(boolean requestFocus) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            BaseAdapter nodeAdapter = SModelUtil_new.findNodeByFQName(object.getNodeName(), BaseAdapter.class, GlobalScope.getInstance());
-            if (nodeAdapter == null) return;
-            myProject.getComponentSafe(MPSEditorOpener.class).openNode(nodeAdapter.getNode());
+            String nodeFQName = object.getNodeName();
+            String modelName = NameUtil.namespaceFromLongName(nodeFQName);
+            final String name = NameUtil.shortNameFromLongName(nodeFQName);
+
+            for (SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
+              if (!modelName.equals(descriptor.getLongName())) continue;
+
+              SModel model = descriptor.getSModel();
+              List<SNode> roots = model.getRoots();
+              SNode node = roots.get(object.getNumberInModel());
+              if (name.equals(node.getName())) {
+                myProject.getComponentSafe(MPSEditorOpener.class).openNode(node);
+              }
+            }
           }
         });
       }
