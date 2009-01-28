@@ -27,6 +27,7 @@ public class MPSExtentions {
   public static final String MPS_ARCH = "mpsarch";
   public static final String JAVAFILE = "java";
   public static final String CLASSFILE = "class";
+  public static final String IDEA_PROJECT = "ipr";
 
   public static final String DOT_MPS_PROJECT = "." + MPS_PROJECT;
   public static final String DOT_LANGUAGE = "." + LANGUAGE;
