@@ -299,6 +299,18 @@ __switch__:
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.DotExpression"));
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Visibility_1233154633204(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_1233156475695(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Visibility_1233161089025(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+  }
+
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface")) {
       SPropertyOperations.set(_context.getNewNode(), "isAbstract", "" + (true));
@@ -2981,6 +2993,80 @@ __switch__:
 
         });
       }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Visibility_1233154549223(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode method = SNodeOperations.getParent(_context.getSourceNode());
+          SLinkOperations.addNewChild(method, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+          return method;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "<";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Type_1233156433392(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode method = SNodeOperations.getParent(_context.getSourceNode());
+          SLinkOperations.addNewChild(method, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+          return method;
+        }
+
+        public String getMatchingText(String pattern) {
+          return ">";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Visibility_1233161052644(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SPropertyOperations.set(SNodeOperations.getParent(_context.getSourceNode()), "isAbstract", "" + true);
+          return SNodeOperations.getParent(_context.getSourceNode());
+        }
+
+        public String getMatchingText(String pattern) {
+          return "abstract";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+      });
     }
     return result;
   }

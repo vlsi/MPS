@@ -8904,28 +8904,6 @@
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="1178609533048">
     <property name="name" value="_InstanceMethodDeclaration_AddAbstract" />
     <link role="applicableConcept" targetNodeId="17.1068580123165" />
-    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="1178609570297">
-      <property name="description" value="add abstract attribute" />
-      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="1178609570298">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178609570299">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178609581857">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977953889">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977954500">
-                <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1178609581858" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1178609584223">
-                  <link role="property" targetNodeId="17.1178608670077" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1178609586617">
-                <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1178609587350">
-                  <property name="value" value="true" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="1178609859861">
     <property name="name" value="_InstanceMethodDeclaration_RemoveAbstract" />
