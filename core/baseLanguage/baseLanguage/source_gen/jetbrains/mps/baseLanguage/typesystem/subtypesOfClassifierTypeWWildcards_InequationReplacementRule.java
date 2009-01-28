@@ -75,12 +75,17 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
             } else
             {
               SNode nodeWithError = equationInfo.getNodeWithError();
-              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-                SNode methodCall = SNodeOperations.getParent(nodeWithError);
+              SNode methodCall = null;
+              if (SNodeOperations.isInstanceOf(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+                methodCall = nodeWithError;
+              } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+                methodCall = SNodeOperations.getParent(nodeWithError);
+              }
+              if (methodCall != null) {
                 SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
                 {
                   BaseIntentionProvider intentionProvider = null;
-                  intentionProvider = new BaseIntentionProvider("r:498ae934-e55c-4ef4-8232-fd0d8e936cf8(jetbrains.mps.baseLanguage.typesystem@17_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+                  intentionProvider = new BaseIntentionProvider("r:58fcfb36-5bfc-4104-9533-a88538f8703e(jetbrains.mps.baseLanguage.typesystem@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
                   intentionProvider.putArgument("methodCall", methodCall);
                   intentionProvider.putArgument("classifier", classifier);
                   IErrorTarget errorTarget = new NodeErrorTarget();
@@ -139,8 +144,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
         } else
         {
           SNode nodeWithError = equationInfo.getNodeWithError();
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-            SNode methodCall = SNodeOperations.getParent(nodeWithError);
+          SNode methodCall = null;
+          if (SNodeOperations.isInstanceOf(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+            methodCall = nodeWithError;
+          } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+            methodCall = SNodeOperations.getParent(nodeWithError);
+          }
+          if (methodCall != null) {
             SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
             result_14532009 = false;
           } else
