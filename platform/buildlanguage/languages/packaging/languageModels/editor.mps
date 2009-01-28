@@ -257,24 +257,8 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1203598578375">
-        <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1203598580877" />
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1203598588660">
-          <property name="vertical" value="true" />
-          <property name="usesFolding" value="true" />
-          <link role="relationDeclaration" targetNodeId="1.1203617897549" />
-          <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1203599011357">
-            <property name="text" value="&lt;entries&gt;" />
-            <link role="styleClass" targetNodeId="1203012208595" resolveInfo="hint" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994666">
-            <property name="flag" value="false" />
-          </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995318">
-          <property name="flag" value="false" />
-        </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1233152421810">
+        <link role="editorComponent" targetNodeId="1233152376761" resolveInfo="CompositecomponentEntriesEditorComponent" />
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1204116827310">
@@ -928,7 +912,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" id="1206440283018">
     <property name="package" value="projectComponents" />
-    <property name="name" value="ICompositeComponentEditorComponenmt" />
+    <property name="name" value="IncludeExcludeInInspector" />
     <link role="conceptDeclaration" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1206440330708">
       <property name="vertical" value="true" />
@@ -1523,6 +1507,30 @@
           <link role="relationDeclaration" targetNodeId="1.1230216579521" resolveInfo="fullName" />
           <link role="styleClass" targetNodeId="1204115710587" resolveInfo="configuration" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" id="1233152376761">
+    <property name="package" value="projectComponents" />
+    <property name="name" value="CompositecomponentEntriesEditorComponent" />
+    <link role="conceptDeclaration" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233152407657">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1233152407658" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1233152407659">
+        <property name="vertical" value="true" />
+        <property name="usesFolding" value="true" />
+        <link role="relationDeclaration" targetNodeId="1.1203617897549" />
+        <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233152407660">
+          <property name="text" value="&lt;entries&gt;" />
+          <link role="styleClass" targetNodeId="1203012208595" resolveInfo="hint" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1233152407661">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1233152407662">
+        <property name="flag" value="false" />
       </node>
     </node>
   </node>

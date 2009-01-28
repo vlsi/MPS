@@ -33,7 +33,7 @@ public class Folder_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myConfigurationReferencesEditorComponent5234_0;
   /* package */AbstractCellProvider myConfigurationReferencesEditorComponent5234_1;
-  /* package */AbstractCellProvider myICompositeComponentEditorComponenmt5234_0;
+  /* package */AbstractCellProvider myIncludeExcludeInInspector5234_0;
   /* package */AbstractCellProvider myIncludeExcludeEditorComponent5234_0;
   /* package */AbstractCellListHandler myListHandler_5234_0;
 
@@ -112,10 +112,10 @@ public class Folder_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent_5234_2(EditorContext context, SNode node) {
-    if (this.myICompositeComponentEditorComponenmt5234_0 == null) {
-      this.myICompositeComponentEditorComponenmt5234_0 = new ICompositeComponentEditorComponenmt(node);
+    if (this.myIncludeExcludeInInspector5234_0 == null) {
+      this.myIncludeExcludeInInspector5234_0 = new IncludeExcludeInInspector(node);
     }
-    EditorCell editorCell = this.myICompositeComponentEditorComponenmt5234_0.createEditorCell(context);
+    EditorCell editorCell = this.myIncludeExcludeInInspector5234_0.createEditorCell(context);
     setupBasic_Component_5234_2(editorCell, node, context);
     return editorCell;
   }
