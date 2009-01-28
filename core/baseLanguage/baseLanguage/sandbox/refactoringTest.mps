@@ -192,6 +192,9 @@
         <property name="name" value="a" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1232458237145" />
       </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1233152900091">
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1233152900092" />
+      </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1232033769684" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231932954768" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232108202842">

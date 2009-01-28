@@ -1687,8 +1687,8 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233141163694">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="separatorStyleClass" />
-      <link role="target" targetNodeId="1198252130653" resolveInfo="StyleSheetClassReference" />
+      <property name="role" value="separatorStyle" />
+      <link role="target" targetNodeId="1233148810477" resolveInfo="InlineStyleDeclaration" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1140524450554">
       <property name="name" value="vertical" />
@@ -3907,6 +3907,18 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227874655665">
       <property name="value" value="navigatable-reference" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233148810477">
+    <property name="name" value="InlineStyleDeclaration" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233148881323">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="parentClass" />
+      <link role="target" targetNodeId="1186402373407" resolveInfo="StyleSheetClass" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233148918310">
+      <link role="intfc" targetNodeId="1219418625346" resolveInfo="IStyleContainer" />
     </node>
   </node>
 </model>

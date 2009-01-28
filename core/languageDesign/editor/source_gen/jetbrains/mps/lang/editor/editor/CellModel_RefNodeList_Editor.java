@@ -1064,8 +1064,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_6321_13(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("separatorStyleClass");
-    provider.setNoTargetText("<no separatorStyleClass>");
+    provider.setRole("separatorStyle");
+    provider.setNoTargetText("default");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_6321_12_internal(context, node, provider);
