@@ -26,10 +26,11 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
+import java.util.List;
+import java.util.ArrayList;
 
 public class NewRefactoringView extends BaseProjectTool {
-  private RefactoringViewItem myRefactoringViewItem;
-  public JLabel myLabel;
+  private List<RefactoringViewItem> myRefactoringViewItems = new ArrayList<RefactoringViewItem>();
 
   protected NewRefactoringView(Project project) {
     super(project, "RefactoringView", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
@@ -50,19 +51,22 @@ public class NewRefactoringView extends BaseProjectTool {
 
   public void showRefactoringView(@NotNull RefactoringViewAction refactoringViewAction,
                                   SearchResults searchResults) {
-    myRefactoringViewItem = new RefactoringViewItem(refactoringViewAction, searchResults, this);
-    addContent(myRefactoringViewItem.getComponent(), "refactoring", null, false);
-    myRefactoringViewItem.initUsagesView();
+    RefactoringViewItem refactoringViewItem = new RefactoringViewItem(refactoringViewAction, searchResults, this);
+    myRefactoringViewItems.add(refactoringViewItem);
+    addContent(refactoringViewItem.getComponent(), "refactoring", null, false);
+    refactoringViewItem.initUsagesView();
     openTool(true);
   }
 
-  void closeRefactoringView() {
+  void closeRefactoringView(final RefactoringViewItem refactoringViewItem) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         ContentManager manager = getContentManager();
-        manager.removeContent(manager.getContent(myRefactoringViewItem.getComponent()), true);
-        myRefactoringViewItem = null;
-        close();
+        manager.removeContent(manager.getContent(refactoringViewItem.getComponent()), true);
+        myRefactoringViewItems.remove(refactoringViewItem);
+        if (myRefactoringViewItems.isEmpty()) {
+          close();
+        }
       }
     });
   }

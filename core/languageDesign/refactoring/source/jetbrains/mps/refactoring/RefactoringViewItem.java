@@ -119,11 +119,20 @@ public class RefactoringViewItem {
   }
 
   private void cancel() {
-    myNewRefactoringView.closeRefactoringView();
+    close();
   }
 
+
   private void doRefactor() {
-    myRefactoringViewAction.performAction(myNewRefactoringView);
+    myRefactoringViewAction.performAction(this);
+  }
+
+  public NewRefactoringView getRefactoringView() {
+    return myNewRefactoringView;
+  }
+
+  public void close() {
+    myNewRefactoringView.closeRefactoringView(this);
   }
 
 }

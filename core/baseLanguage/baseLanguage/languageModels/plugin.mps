@@ -22432,31 +22432,18 @@
                     <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224077049270" />
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1224077049271">
                       <property name="name" value="p0" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224077049272">
-                        <link role="classifier" targetNodeId="84.~NewRefactoringView" resolveInfo="NewRefactoringView" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1233154484815">
+                        <link role="classifier" targetNodeId="84.~RefactoringViewItem" resolveInfo="RefactoringViewItem" />
                       </node>
                     </node>
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224077049273">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224077049274">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224077049275">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224077049276">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224077049277">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1224077049278">
-                                <link role="classConcept" targetNodeId="1224070198854" resolveInfo="InlineMethodDialogModel" />
-                              </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1224077049279">
-                                <link role="fieldDeclaration" targetNodeId="1224076220000" resolveInfo="myOperationCotext" />
-                              </node>
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224077049280">
-                              <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1224077049281">
-                                <link role="classifier" targetNodeId="84.~NewRefactoringView" resolveInfo="NewRefactoringView" />
-                              </node>
-                            </node>
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1233155053947">
+                            <link role="variableDeclaration" targetNodeId="1224077049271" resolveInfo="p0" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224077049282">
-                            <link role="baseMethodDeclaration" targetNodeId="39.~BaseTool.close():void" resolveInfo="close" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233155173888">
+                            <link role="baseMethodDeclaration" targetNodeId="84.~RefactoringViewItem.close():void" resolveInfo="close" />
                           </node>
                         </node>
                       </node>
