@@ -111,5 +111,8 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1224608834445">
     <property name="name" value="IDeprecatable" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1233160296597">
+    <property name="name" value="IContainer" />
+  </node>
 </model>
 

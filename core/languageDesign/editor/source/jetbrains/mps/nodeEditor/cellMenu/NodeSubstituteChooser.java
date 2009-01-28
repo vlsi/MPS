@@ -18,6 +18,8 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.WindowsUtil;
@@ -26,6 +28,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 import javax.swing.*;
 import javax.swing.event.ListDataListener;
@@ -202,9 +206,14 @@ public class NodeSubstituteChooser implements KeyboardHandler {
               return comparisonResult;
             }
           });
+
+          if (myIsSmart /*&& false*/) {
+            sortSmartActions(matchingActions);
+          }
         } catch (Exception e) {
           LOG.error(e, e);
         }
+
         mySubstituteActions = matchingActions;
         if (mySubstituteActions.size() == 0) {
           myMenuEmpty = true;
@@ -231,6 +240,85 @@ public class NodeSubstituteChooser implements KeyboardHandler {
             descriptionLength = Math.max(descriptionLength, getDescriptionLength(item, pattern));
           } catch(Throwable t) {
             LOG.error(t, t);
+          }
+        }
+      }
+    });
+  }
+
+  private void sortSmartActions(List<INodeSubstituteAction> matchingActions) {
+    Collections.sort(matchingActions, new Comparator<INodeSubstituteAction>(){
+      public int compare(INodeSubstituteAction o1, INodeSubstituteAction o2) {
+        Object parameter1 = o1.getParameterObject();
+        Object parameter2 = o2.getParameterObject();
+        if (parameter1 instanceof SNode) {
+          if (parameter2 instanceof SNode) {
+            //both parameter objects are nodes
+            SNode node1 = (SNode) parameter1;
+            SNode node2 = (SNode) parameter2;
+
+            String conceptConcept = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
+
+            if (node1.isInstanceOfConcept(conceptConcept)) {
+              if (node2.isInstanceOfConcept(conceptConcept)) {
+                return 0;
+              } else {
+                return 1;
+              }
+            } else {
+              if (node2.isInstanceOfConcept(conceptConcept)) {
+                return -1;
+              }
+            }
+
+            SNode thisRoot = myContextCell.getSNode().getContainingRoot();
+            SModel thisModel = thisRoot.getModel();
+
+            //other models
+            if (node1.getModel() != thisModel) {
+              if (node2.getModel() != thisModel) {
+                return 0;
+              } else {
+                return 1;
+              }
+            } else {
+              if (node2.getModel() != thisModel) {
+                return -1;
+              }
+            }
+
+            //other roots
+            if (node1.getContainingRoot() != thisRoot) {
+              if (node2.getContainingRoot() != thisRoot) {
+                return 0;
+              } else {
+                return 1;
+              }
+            } else {
+              if (node2.getContainingRoot() != thisRoot) {
+                return -1;
+              }
+            }
+
+            String conceptFqName = "jetbrains.mps.lang.core.structure.IContainer";
+            SNode container1 = SNodeOperations.getAncestor(node1, conceptFqName, true, false);
+            SNode container2 = SNodeOperations.getAncestor(node2, conceptFqName, true, false);
+
+            if (container1 == container2) return 0;
+
+            while (container1 != null) {
+              container1 = SNodeOperations.getAncestor(container1, conceptFqName, false, false);
+              if (container1 == container2) return -1;
+            }
+            return 1;
+          } else {
+            return -1;
+          }
+        } else {
+          if (parameter2 instanceof SNode) {
+            return 1;
+          } else {
+            return 0;
           }
         }
       }
@@ -432,7 +520,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     private final Color BACKGROUND_COLOR = new Color(235, 244, 254);
     private final Color FOREGROUND_COLOR = Color.black;
     private final Color SELECTED_BACKGROUND_COLOR = new Color(0, 82, 164);
-    private final Color SELECTED_FOREGROUND_COLOR = Color.white;    
+    private final Color SELECTED_FOREGROUND_COLOR = Color.white;
     private JList myList = new JList(new DefaultListModel());
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
     private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);

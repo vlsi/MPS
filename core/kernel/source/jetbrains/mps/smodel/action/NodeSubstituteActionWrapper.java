@@ -81,4 +81,8 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
   public SNode getActionType(String pattern, EditorCell contextCell) {
     return mySubstituteAction.getActionType(pattern, contextCell);
   }
+
+  public Object getParameterObject() {
+    return mySubstituteAction.getParameterObject();
+  }
 }

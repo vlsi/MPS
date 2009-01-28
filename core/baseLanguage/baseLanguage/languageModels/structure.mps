@@ -291,6 +291,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229351221060">
       <link role="intfc" targetNodeId="1199653749349" resolveInfo="IStatementListContainer" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233160363482">
+      <link role="intfc" targetNodeId="4.1233160296597" resolveInfo="IContainer" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123136">
     <property name="name" value="StatementList" />
@@ -300,6 +303,9 @@
       <property name="role" value="statement" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068580123157" resolveInfo="Statement" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233160344371">
+      <link role="intfc" targetNodeId="4.1233160296597" resolveInfo="IContainer" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123137">
@@ -1239,6 +1245,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1231312520232">
       <link role="intfc" targetNodeId="1178549954367" resolveInfo="IVisible" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233160516871">
+      <link role="intfc" targetNodeId="4.1233160296597" resolveInfo="IContainer" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1107535904670">
     <property name="name" value="ClassifierType" />
@@ -1662,6 +1671,9 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="body" />
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233160450472">
+      <link role="intfc" targetNodeId="4.1233160296597" resolveInfo="IContainer" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1154542696413">

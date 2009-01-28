@@ -41,5 +41,7 @@ public interface INodeSubstituteAction {
   boolean canSubstituteStrictly(String pattern);
   boolean canSubstitute(String pattern);
 
+  public Object getParameterObject();
+
   SNode substitute(@Nullable EditorContext context, String pattern);
 }
