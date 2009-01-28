@@ -277,7 +277,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationContext" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.projectLanguage" />
     <antcall target="MPS-languages.pack.ypath.main" />
     <antcall target="MPS-languages.pack.ypath.test" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ypath" />

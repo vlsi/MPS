@@ -868,24 +868,6 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.generator.generationContext.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.projectLanguage">
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/jetbrains.mps.projectLanguage.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/jetbrains.mps.projectLanguage.tmp/module" />
-    <mkdir dir="core/projectLanguage/classes" />
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/jetbrains.mps.projectLanguage.tmp/module">
-      <fileset file="core/projectLanguage/languageDescriptor.mpl" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/jetbrains.mps.projectLanguage.tmp/module">
-      <fileset dir="core/projectLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/jetbrains.mps.projectLanguage.tmp">
-      <fileset dir="core/projectLanguage/classes" />
-    </copy>
-    <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/core/jetbrains.mps.projectLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/core/jetbrains.mps.projectLanguage.tmp" />
-    </jar>
-    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/jetbrains.mps.projectLanguage.tmp" />
-  </target>
   <target name="pack.ypath.main">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/ypath.main.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/ypath.main.tmp/module" />
