@@ -30,11 +30,11 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Calculable;
-import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
+import jetbrains.mps.util.Calculable;
+import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
@@ -429,6 +429,46 @@ __switch__:
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant");
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode intConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+            try {
+              SPropertyOperations.set(intConst, "value", "" + (Integer.parseInt(pattern)));
+            } catch (NumberFormatException e) {
+              SPropertyOperations.set(intConst, "value", "" + (0));
+            }
+            return intConst;
+          }
+
+          public boolean hasSubstitute() {
+            return true;
+          }
+
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            if (strictly) {
+              return _PrecompiledPatterns.REGEXP0.matcher(pattern).matches();
+            } else
+            {
+              return _PrecompiledPatterns.REGEXP1.matcher(pattern).matches();
+            }
+          }
+
+          public String getMatchingText(String pattern) {
+            return pattern;
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
+        });
+      }
+    }
+    {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant");
       SNode childConcept = (SNode)_context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
@@ -480,7 +520,7 @@ __switch__:
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return _PrecompiledPatterns.REGEXP0.matcher(pattern).matches();
+            return _PrecompiledPatterns.REGEXP2.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -503,7 +543,7 @@ __switch__:
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode stringLiteral = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
             {
-              Pattern _pattern_0 = _PrecompiledPatterns.REGEXP1;
+              Pattern _pattern_0 = _PrecompiledPatterns.REGEXP3;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.matches()) {
                 SPropertyOperations.set(stringLiteral, "value", _matcher_0.group(1));
@@ -517,7 +557,7 @@ __switch__:
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return _PrecompiledPatterns.REGEXP2.matcher(pattern).matches();
+            return _PrecompiledPatterns.REGEXP4.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
