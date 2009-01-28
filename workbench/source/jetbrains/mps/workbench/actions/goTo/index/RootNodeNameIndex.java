@@ -80,7 +80,7 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             try {
-              SModel model = ModelPersistence.readModel(inputData);
+              SModel model = ModelPersistence.readModel(inputData.getContent());
               if (model == null) return;
 
               DependencyRecorder<SNode> recorder = new DependencyRecorder<SNode>();

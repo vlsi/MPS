@@ -85,7 +85,7 @@ public class ModelPersistence {
   private static final Map<Integer, IModelWriter> modelWriters = new HashMap<Integer, IModelWriter>();
   private static final int currentPersistenceVersion = 3;
 
-  private static final Pattern myModelPattern = Pattern.compile("model modelUID=\"([a-zA-Z0-9:-]+[(]([a-zA-Z0-9.]+)[)])\"");
+  private static final Pattern myModelPattern = Pattern.compile("model modelUID=\"(.*?)\"");
 
   static {
     modelReaders.put(0, new ModelReader0());
@@ -145,15 +145,15 @@ public class ModelPersistence {
     return model;
   }
 
-  public static SModel readModel(FileContent fileContent) throws JDOMException, IOException {
-    byte [] content = fileContent.getContent();
-    Document doc = loadDocument(new ByteArrayInputStream(content));
+  public static SModel readModel(byte[] bytes) throws JDOMException, IOException {
+    Document doc = loadDocument(new ByteArrayInputStream(bytes));
     int modelPersistenceVersion = getModelPersistenceVersion(doc);
-    Matcher matcher = myModelPattern.matcher(fileContent.getContentAsText());
+    Matcher matcher = myModelPattern.matcher(new String(bytes));
     if (!matcher.find()) return null;
     SModelReference modelReference = SModelReference.fromString(matcher.group(1));
     String modelStereotype = modelReference.getStereotype();
-    return modelReaders.get(modelPersistenceVersion).readModel(doc, matcher.group(2), modelStereotype);
+    String modelShortName = modelReference.getShortName();
+    return modelReaders.get(modelPersistenceVersion).readModel(doc, modelShortName, modelStereotype);
   }
 
   private static SModel upgradeModelPersistence(SModel model, int fromVersion) {
