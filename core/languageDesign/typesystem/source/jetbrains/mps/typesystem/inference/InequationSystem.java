@@ -131,7 +131,15 @@ public class InequationSystem {
 
   }
 
+  public boolean isEmpty() {
+    return myEquals.isEmpty() && mySubtypes.isEmpty() && mySupertypes.isEmpty()
+      && myStrongSubtypes.isEmpty() && myStrongSupertypes.isEmpty();
+  }
+
   public String[] getPresentation() {
+    if (isEmpty()) {
+      return new String[]{"empty"};
+    }
     String[] result = new String[myEquals.size() + mySubtypes.size() + mySupertypes.size() + myStrongSubtypes.size() + myStrongSupertypes.size()];
     int i = 0;
     for (IWrapper wrapper : myEquals) {
