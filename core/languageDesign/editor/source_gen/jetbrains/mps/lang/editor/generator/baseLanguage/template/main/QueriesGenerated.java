@@ -660,6 +660,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString_def(_context.getNode(), "separatorLayoutConstraint", null);
   }
 
+  public static Object propertyMacro_GetPropertyValue_1233145825494(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return StyleSheet_Behavior.call_getClassFqName_1213877515585(StyleSheetClass_Behavior.call_getStyleSheet_1213877260644(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "separatorStyleClass", true), "styleSheetClass", false)));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1233145825505(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return StyleSheetClass_Behavior.call_getGetterMethodName_1221829967694(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "separatorStyleClass", true), "styleSheetClass", false));
+  }
+
   public static Object referenceMacro_GetReferent_1176478910892(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "componentProvider", true), "jcomponent_query_method");
   }
@@ -1354,6 +1362,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1227082862047(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "attractsFocus", "3", "0");
+  }
+
+  public static boolean ifMacro_Condition_1233145825516(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "separatorStyleClass", true) != null);
   }
 
   public static SNode sourceNodeQuery_1168383269962(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

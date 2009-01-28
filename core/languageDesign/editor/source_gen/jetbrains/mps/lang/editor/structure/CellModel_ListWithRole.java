@@ -18,6 +18,7 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
   public static final String NODE_FACTORY = "nodeFactory";
   public static final String EMPTY_CELL_MODEL = "emptyCellModel";
   public static final String CELL_LAYOUT = "cellLayout";
+  public static final String SEPARATOR_STYLE_CLASS = "separatorStyleClass";
 
   public CellModel_ListWithRole(SNode node) {
     super(node);
@@ -94,6 +95,14 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
 
   public void setCellLayout(CellLayout node) {
     super.setChild(CellModel_ListWithRole.CELL_LAYOUT, node);
+  }
+
+  public StyleSheetClassReference getSeparatorStyleClass() {
+    return (StyleSheetClassReference)this.getChild(StyleSheetClassReference.class, CellModel_ListWithRole.SEPARATOR_STYLE_CLASS);
+  }
+
+  public void setSeparatorStyleClass(StyleSheetClassReference node) {
+    super.setChild(CellModel_ListWithRole.SEPARATOR_STYLE_CLASS, node);
   }
 
 

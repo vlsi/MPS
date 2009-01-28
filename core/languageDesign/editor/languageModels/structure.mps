@@ -1685,6 +1685,11 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1106270491082" resolveInfo="CellLayout" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233141163694">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="separatorStyleClass" />
+      <link role="target" targetNodeId="1198252130653" resolveInfo="StyleSheetClassReference" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1140524450554">
       <property name="name" value="vertical" />
       <property name="propertyType" value="boolean" />
