@@ -68,14 +68,18 @@ public class ModelConstraintsUtil {
           contextNode = referenceNode;
         }
         TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(contextNode);
-        typeCheckingContext.setInEditorQueriesMode();
+        if (typeCheckingContext != null) {
+          typeCheckingContext.setInEditorQueriesMode();
+        }
         try {
           status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, context);
         } catch (Throwable t) {
           LOG.error(t);
           status[0] = new SearchScopeStatus.ERROR("can't create search scope for role '" + linkRole + "' in '" + referenceNodeConcept.getName() + "'");
         } finally {
-          typeCheckingContext.resetIsInEditorQueriesMode();
+          if (typeCheckingContext != null) {
+            typeCheckingContext.resetIsInEditorQueriesMode();
+          }
         }
       }
     });
