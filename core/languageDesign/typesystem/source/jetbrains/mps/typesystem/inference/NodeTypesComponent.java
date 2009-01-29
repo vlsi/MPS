@@ -400,7 +400,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     frontier.add(node);
     frontier.addAll(additionalNodes);
     if (myIsSmartCompletion) {
-      myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager);
+      myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager, myHoleTypeWrapper);
       myNodesToTypesMap.put(myHole, myHoleTypeWrapper.getNode());
     }
     while (!(frontier.isEmpty())) {

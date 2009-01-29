@@ -16,21 +16,27 @@ public class HoleWrapper extends NodeWrapper {
 
   private EquationManager myEquationManager = null;
 
-  public static HoleWrapper createHoleWrapper(EquationManager equationManager) {
+  public static HoleWrapper createHoleWrapper(EquationManager equationManager, HoleWrapper pattern) {
     SModel model = equationManager.getTypeCheckingContext().getRuntimeTypesModel();
     SNode node = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType",  model, GlobalScope.getInstance());
-    return new HoleWrapper(node, equationManager);
+    return new HoleWrapper(node, equationManager, pattern);
   }
 
-  protected HoleWrapper(SNode node, EquationManager equationManager) {
+  protected HoleWrapper(SNode node, EquationManager equationManager, HoleWrapper pattern) {
     super(node);
     myEquationManager = equationManager;
+    InequationSystem inequationSystem = null;
+    if (pattern != null) {
+      inequationSystem = pattern.getInequationSystem();
+    }
     if (myEquationManager != null) {
-      InequationSystem inequationSystem = myEquationManager.getInequationSystem(this);
+      if (inequationSystem == null) {
+        inequationSystem = myEquationManager.getInequationSystem(this);
+      }
       if (inequationSystem == null) {
         inequationSystem = new InequationSystem(equationManager, this);
-        myEquationManager.putInequationSystem(this, inequationSystem);
       }
+      myEquationManager.putInequationSystem(this, inequationSystem);
     }
   }
 

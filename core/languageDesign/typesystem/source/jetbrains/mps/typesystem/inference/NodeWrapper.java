@@ -52,7 +52,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     if ("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable".equals(conceptFqName)) {
       result = new VariableWrapper(node, equationManager, equationManagerNullable);
     } else if ("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType".equals(conceptFqName)) {
-      result = new HoleWrapper(node, equationManager);
+      result = new HoleWrapper(node, equationManager, null);
     } else {
       result = new NodeWrapper(node);
     }
