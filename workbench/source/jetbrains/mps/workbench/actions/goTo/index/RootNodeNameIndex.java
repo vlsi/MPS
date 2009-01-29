@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import org.jdom.JDOMException;
@@ -44,6 +45,7 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
   private final MyDataIndexer myDataIndexer = new MyDataIndexer();
   private final MyInputFilter myInputFilter = new MyInputFilter();
   private final EnumeratorSNodeDescriptor myKeyDescriptor = new EnumeratorSNodeDescriptor();
+  private static final Logger LOG = Logger.getLogger("jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex");
 
   public ID<SNodeDescriptor, Void> getName() {
     return NAME;
@@ -92,7 +94,6 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
                   }
                 });
                 String nodeName = NameUtil.nodeFQName(root);
-             //   if (nodeName == null || root.getName() == null) continue;
                 String conceptFqName = root.getConceptFqName();
                 SModelReference modelRef = model.getSModelReference();
 
@@ -100,6 +101,7 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
                 for (SNode node : recorder.getDependencies(root)) {
                   if (node.getModel() != model) {
                     dependOnOtherModel = true;
+                    break;
                   }
                 }
                 int number = roots.indexOf(root);
@@ -107,9 +109,9 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
                 result.put(key, null);
               }
             } catch (JDOMException e) {
-              e.printStackTrace();
+              LOG.error(e);
             } catch (IOException e) {
-              e.printStackTrace();
+              LOG.error(e);
             }
           }
         });

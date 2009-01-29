@@ -77,9 +77,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
         keys.add(new SNodeDescriptor(NameUtil.nodeFQName(root), root.getConceptFqName(), root.getModel().getSModelReference(), true, number));
       }
     }
-    System.out.println(keys.size());
-    System.out.println("Use caches. " + (new Date(System.currentTimeMillis()).getTime() - date.getTime()) + " ms");
-
     return keys.toArray(new SNodeDescriptor[keys.size()]);
   }
 
