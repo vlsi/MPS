@@ -33,7 +33,6 @@ import org.jetbrains.annotations.Nullable;
 public class SModelReference {
   private static final Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
 
-  @Nullable
   public static SModelReference fromString(String s) {
     if (s == null) return null;
     Matcher matcher = MODEL_UID_PATTERN.matcher(s);
