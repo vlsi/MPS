@@ -37,6 +37,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -44,6 +45,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.BorderLayout;
+import java.awt.Frame;
 import java.util.*;
 
 /**
@@ -230,7 +232,7 @@ public class CellExplorerView extends BaseProjectTool {
       };
       BaseAction propertiesAction = new BaseAction("Properties") {
         protected void doExecute(AnActionEvent e) {
-          new CellPropertiesWindow(myCell, null);
+          new CellPropertiesWindow(myCell, e.getData(MPSDataKeys.FRAME));
         }
       };
       return ActionUtils.groupFromActions(selectInEditorAction,propertiesAction);
