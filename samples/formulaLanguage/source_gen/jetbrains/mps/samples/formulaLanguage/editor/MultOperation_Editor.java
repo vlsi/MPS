@@ -111,7 +111,6 @@ public class MultOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_0165_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_leftOperand");
     Operation_leftOperand_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -130,7 +129,6 @@ public class MultOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_0165_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_rightOperand");
     Operation_rightOperand_Actions.setCellActions(editorCell, node, context);
   }
 

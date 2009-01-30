@@ -780,7 +780,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_8529_2(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_role");
+      editorCell.setCellId("property_role_1");
       {
         Style inlineStyle = new Style(editorCell) {
           {

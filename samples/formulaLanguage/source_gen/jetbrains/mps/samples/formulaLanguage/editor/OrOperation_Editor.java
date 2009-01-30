@@ -111,7 +111,6 @@ public class OrOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_0584_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_leftOperand");
     Operation_leftOperand_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -130,7 +129,6 @@ public class OrOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_0584_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_rightOperand");
     Operation_rightOperand_Actions.setCellActions(editorCell, node, context);
   }
 

@@ -451,7 +451,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_8968_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_comment");
+    editorCell.setCellId("property_comment_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -483,7 +483,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_8968_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_build");
+    editorCell.setCellId("property_build_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {

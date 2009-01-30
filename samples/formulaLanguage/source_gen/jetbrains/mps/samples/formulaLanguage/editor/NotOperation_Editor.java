@@ -96,7 +96,6 @@ public class NotOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_9256_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_leftOperand");
   }
 
   private static void setupBasic_Constant_9256_1(EditorCell editorCell, SNode node, EditorContext context) {

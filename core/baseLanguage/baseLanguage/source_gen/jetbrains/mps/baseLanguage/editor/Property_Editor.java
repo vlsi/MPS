@@ -372,7 +372,7 @@ public class Property_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_8551_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_propertyName");
+    editorCell.setCellId("property_propertyName_1");
     BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
   }
 

@@ -562,7 +562,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   }
 
   private static void setupBasic_RefNodeList_7205_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_annotation");
+    editorCell.setCellId("refNodeList_annotation_1");
   }
 
   private static void setupBasic_Component_7205_3(EditorCell editorCell, SNode node, EditorContext context) {

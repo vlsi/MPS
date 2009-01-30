@@ -445,7 +445,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_6130_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_annotation");
+    editorCell.setCellId("refNodeList_annotation_1");
   }
 
   private static void setupBasic_Component_6130_2(EditorCell editorCell, SNode node, EditorContext context) {

@@ -26,6 +26,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class InternalClassifierType_Editor extends DefaultNodeEditor {
 
@@ -313,7 +314,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_7316_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_fqClassName");
+    editorCell.setCellId("property_fqClassName_1");
   }
 
   private static void setupBasic_Constant_7316_4(EditorCell editorCell, SNode node, EditorContext context) {
@@ -481,7 +482,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_7316_3(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_1");
     }
 
     private static void setupLabel_Property_7316_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -531,6 +532,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
       {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
+        editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
         return editorCell;
       }
     }

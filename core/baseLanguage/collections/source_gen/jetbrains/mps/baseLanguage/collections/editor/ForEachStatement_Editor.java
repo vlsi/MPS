@@ -478,7 +478,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_7497_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_label");
+    editorCell.setCellId("property_label_1");
   }
 
   private static void setupBasic_Indent_7497_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -993,7 +993,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_6299_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_annotation");
+    editorCell.setCellId("refNodeList_annotation_1");
   }
 
   private static void setupLabel_RefNode_6299_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -1173,7 +1173,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_6299_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_1");
     }
 
     private static void setupLabel_Property_6299_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -1225,7 +1225,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_6299_5(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_2");
     }
 
     private static void setupLabel_Property_6299_5(EditorCell_Label editorCell, SNode node, EditorContext context) {

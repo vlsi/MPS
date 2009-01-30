@@ -387,7 +387,7 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_6270_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
+    editorCell.setCellId("property_name_1");
   }
 
   private static void setupBasic_Constant_6270_4(EditorCell editorCell, SNode node, EditorContext context) {

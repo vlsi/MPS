@@ -78,7 +78,6 @@ public class DeterminantExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_5023_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_literal");
   }
 
   private static void setupLabel_Constant_5023_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

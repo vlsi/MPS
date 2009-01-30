@@ -586,7 +586,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_5645_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_annotation");
+    editorCell.setCellId("refNodeList_annotation_1");
   }
 
   private static void setupLabel_RefNode_5645_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

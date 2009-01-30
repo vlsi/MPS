@@ -288,7 +288,6 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_7701_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_row");
     BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
   }
 
@@ -297,7 +296,6 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_7701_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_column");
     BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
   }
 
@@ -306,7 +304,6 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_7701_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_element");
     BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
   }
 
@@ -316,7 +313,6 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_7701_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_matrix");
     BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
   }
 
@@ -339,7 +335,6 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_7701_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_body");
   }
 
   private static void setupBasic_Collection_7701_3(EditorCell editorCell, SNode node, EditorContext context) {

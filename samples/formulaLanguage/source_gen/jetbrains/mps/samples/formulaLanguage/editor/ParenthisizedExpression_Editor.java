@@ -87,7 +87,6 @@ public class ParenthisizedExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_8860_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_expression");
   }
 
   private static void setupBasic_Constant_8860_1(EditorCell editorCell, SNode node, EditorContext context) {

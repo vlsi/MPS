@@ -133,7 +133,6 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_3502_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_scalarType");
   }
 
   private static void setupLabel_RefNodeList_3502_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

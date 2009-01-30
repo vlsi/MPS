@@ -715,7 +715,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_3190_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_1");
       {
         Style inlineStyle = new Style(editorCell) {
           {

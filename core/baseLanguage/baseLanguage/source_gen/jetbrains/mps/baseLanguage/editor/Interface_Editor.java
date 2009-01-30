@@ -513,7 +513,7 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_8963_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_annotation");
+    editorCell.setCellId("refNodeList_annotation_1");
   }
 
   private static void setupBasic_Indent_8963_0(EditorCell editorCell, SNode node, EditorContext context) {

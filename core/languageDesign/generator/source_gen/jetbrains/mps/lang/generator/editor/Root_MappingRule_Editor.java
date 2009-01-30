@@ -864,7 +864,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_1377_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_1");
       {
         Style inlineStyle = new Style(editorCell) {
           {
@@ -925,7 +925,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_1377_4(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_2");
       {
         Style inlineStyle = new Style(editorCell) {
           {
@@ -986,7 +986,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_1377_5(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_3");
       {
         Style inlineStyle = new Style(editorCell) {
           {

@@ -103,7 +103,6 @@ public class MatrixType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_2303_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_scalarType");
   }
 
   private static void setupBasic_Constant_2303_2(EditorCell editorCell, SNode node, EditorContext context) {

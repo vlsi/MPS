@@ -167,7 +167,6 @@ public class IfFunction_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_8841_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_logicalTest");
   }
 
   private static void setupBasic_Constant_8841_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -184,7 +183,6 @@ public class IfFunction_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_8841_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_valueIfTrue");
   }
 
   private static void setupBasic_Constant_8841_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -201,7 +199,6 @@ public class IfFunction_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_8841_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_valueIfFalse");
   }
 
   private static void setupBasic_Constant_8841_3(EditorCell editorCell, SNode node, EditorContext context) {

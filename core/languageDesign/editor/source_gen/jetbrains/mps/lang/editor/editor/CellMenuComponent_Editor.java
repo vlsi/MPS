@@ -420,7 +420,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_4976_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_1");
       {
         Style inlineStyle = new Style(editorCell) {
           {

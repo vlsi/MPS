@@ -91,7 +91,6 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_7734_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_leftOperand");
   }
 
   private static void setupBasic_Constant_7734_0(EditorCell editorCell, SNode node, EditorContext context) {

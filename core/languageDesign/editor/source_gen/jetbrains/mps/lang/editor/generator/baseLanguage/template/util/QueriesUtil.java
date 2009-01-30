@@ -16,6 +16,8 @@ import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class QueriesUtil {
   private static Object CELL_READABLE_ID = new Object();
@@ -120,6 +122,23 @@ __switch__:
       index = index + 1;
     }
     return SPropertyOperations.getString(keyMapDeclaration, "name") + "_Action" + index;
+  }
+
+  public static String getUnicName(String name, SNode root, TemplateQueryContext context) {
+    SNode bigCell = root;
+    Set<String> namesSet = ((Set<String>)context.getStepObject(bigCell));
+    if (namesSet == null) {
+      namesSet = SetSequence.<String>fromArray();
+      context.putStepObject(bigCell, namesSet);
+    }
+    String result = name;
+    int index = 1;
+    while (SetSequence.fromSet(namesSet).contains(result)) {
+      result = name + "_" + index;
+      index++ ;
+    }
+    SetSequence.fromSet(namesSet).addElement(result);
+    return result;
   }
 
 }

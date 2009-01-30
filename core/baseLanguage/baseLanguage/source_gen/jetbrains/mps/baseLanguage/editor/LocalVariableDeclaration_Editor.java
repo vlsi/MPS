@@ -403,7 +403,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_2231_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_annotation");
+    editorCell.setCellId("refNodeList_annotation_1");
   }
 
   private static void setupLabel_Constant_2231_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

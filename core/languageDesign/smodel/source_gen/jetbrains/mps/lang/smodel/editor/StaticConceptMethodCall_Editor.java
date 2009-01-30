@@ -303,7 +303,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_5843_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_1");
       {
         Style inlineStyle = new Style(editorCell) {
           {
@@ -367,6 +367,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
       {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
+        editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
         return editorCell;
       }
     }

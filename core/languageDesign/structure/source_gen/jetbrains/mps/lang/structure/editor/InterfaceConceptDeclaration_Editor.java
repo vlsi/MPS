@@ -714,7 +714,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_8145_6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_linkDeclaration");
+    editorCell.setCellId("refNodeList_linkDeclaration_1");
   }
 
   private static void setupBasic_Constant_8145_17(EditorCell editorCell, SNode node, EditorContext context) {

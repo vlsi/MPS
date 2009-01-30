@@ -324,7 +324,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_9248_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_inequationPriority");
+    editorCell.setCellId("property_inequationPriority_1");
   }
 
   private static void setupBasic_Constant_9248_1(EditorCell editorCell, SNode node, EditorContext context) {

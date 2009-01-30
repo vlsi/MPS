@@ -144,7 +144,6 @@ public class SingleComplexExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_9028_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_complexExpression");
   }
 
   private static void setupBasic_Constant_9028_1(EditorCell editorCell, SNode node, EditorContext context) {

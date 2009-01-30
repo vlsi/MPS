@@ -365,7 +365,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_6732_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_annotation");
+    editorCell.setCellId("refNodeList_annotation_1");
   }
 
   private static void setupBasic_Constant_6732_3(EditorCell editorCell, SNode node, EditorContext context) {

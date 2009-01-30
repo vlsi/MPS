@@ -126,7 +126,6 @@ public class DegreeComplexExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_0960_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_complexExpression");
   }
 
   private static void setupBasic_Constant_0960_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -138,7 +137,6 @@ public class DegreeComplexExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_0960_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_degree");
   }
 
   private static void setupLabel_Constant_0960_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

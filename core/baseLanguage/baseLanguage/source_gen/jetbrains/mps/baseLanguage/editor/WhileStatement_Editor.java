@@ -447,7 +447,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_8658_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_label");
+    editorCell.setCellId("property_label_1");
   }
 
   private static void setupBasic_Constant_8658_7(EditorCell editorCell, SNode node, EditorContext context) {

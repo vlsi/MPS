@@ -509,7 +509,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_0809_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_label");
+    editorCell.setCellId("property_label_1");
   }
 
   private static void setupBasic_Indent_0809_0(EditorCell editorCell, SNode node, EditorContext context) {

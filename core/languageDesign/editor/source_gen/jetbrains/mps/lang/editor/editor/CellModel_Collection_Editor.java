@@ -564,7 +564,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_2102_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_childCellModel");
+    editorCell.setCellId("refNodeList_childCellModel_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {

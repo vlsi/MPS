@@ -977,7 +977,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_0886_6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_linkDeclaration");
+    editorCell.setCellId("refNodeList_linkDeclaration_1");
   }
 
   private static void setupBasic_Constant_0886_19(EditorCell editorCell, SNode node, EditorContext context) {

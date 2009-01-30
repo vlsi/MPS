@@ -158,7 +158,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_6285_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_value");
+    editorCell.setCellId("property_value_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {

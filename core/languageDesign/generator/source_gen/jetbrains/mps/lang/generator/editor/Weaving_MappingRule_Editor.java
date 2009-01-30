@@ -656,7 +656,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_8866_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_1");
       {
         Style inlineStyle = new Style(editorCell) {
           {

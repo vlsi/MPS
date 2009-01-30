@@ -388,7 +388,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_9459_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_annotation");
+    editorCell.setCellId("refNodeList_annotation_1");
   }
 
   private static void setupBasic_Indent_9459_0(EditorCell editorCell, SNode node, EditorContext context) {

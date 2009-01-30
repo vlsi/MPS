@@ -1665,7 +1665,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_9012_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_1");
       BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
     }
 

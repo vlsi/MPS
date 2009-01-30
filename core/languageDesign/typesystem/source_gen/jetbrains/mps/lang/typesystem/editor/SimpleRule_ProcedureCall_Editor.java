@@ -419,7 +419,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_0652_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_role");
+      editorCell.setCellId("property_role_1");
       SharedStyles_StyleSheet.getReferenceOnConceptualFeature(editorCell).apply(editorCell);
     }
 
@@ -472,7 +472,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_0652_2(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_role");
+      editorCell.setCellId("property_role_2");
       SharedStyles_StyleSheet.getReferenceOnConceptualFeature(editorCell).apply(editorCell);
     }
 

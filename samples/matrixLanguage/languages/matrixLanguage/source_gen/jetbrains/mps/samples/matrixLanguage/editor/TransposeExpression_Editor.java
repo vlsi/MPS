@@ -77,7 +77,6 @@ public class TransposeExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_8379_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_matrix");
   }
 
   private static void setupBasic_Constant_8379_0(EditorCell editorCell, SNode node, EditorContext context) {

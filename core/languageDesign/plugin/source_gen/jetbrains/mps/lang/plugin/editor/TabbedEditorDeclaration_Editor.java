@@ -465,7 +465,7 @@ public class TabbedEditorDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_9269_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_1");
     }
 
     private static void setupLabel_Property_9269_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -515,6 +515,7 @@ public class TabbedEditorDeclaration_Editor extends DefaultNodeEditor {
       {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), " ");
         editorCell.setSelectable(false);
+        editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
         return editorCell;
       }
     }

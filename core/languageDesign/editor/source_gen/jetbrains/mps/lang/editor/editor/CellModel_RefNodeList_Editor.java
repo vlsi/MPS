@@ -1424,7 +1424,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_6321_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_vertical");
+    editorCell.setCellId("property_vertical_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -2018,7 +2018,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_6321_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_role");
+      editorCell.setCellId("property_role_1");
       {
         Style inlineStyle = new Style(editorCell) {
           {
@@ -2079,7 +2079,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_6321_2(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_role");
+      editorCell.setCellId("property_role_2");
       {
         Style inlineStyle = new Style(editorCell) {
           {

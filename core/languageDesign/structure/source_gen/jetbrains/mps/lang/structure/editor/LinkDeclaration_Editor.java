@@ -399,7 +399,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_5916_2(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_role");
+      editorCell.setCellId("property_role_1");
     }
 
     private static void setupLabel_Property_5916_2(EditorCell_Label editorCell, SNode node, EditorContext context) {

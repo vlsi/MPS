@@ -193,7 +193,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_5641_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_1");
     }
 
     private static void setupLabel_Property_5641_1(EditorCell_Label editorCell, SNode node, EditorContext context) {

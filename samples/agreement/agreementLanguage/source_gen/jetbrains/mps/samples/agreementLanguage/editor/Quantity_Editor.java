@@ -152,7 +152,7 @@ public class Quantity_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_8785_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_unit");
+    editorCell.setCellId("property_unit_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {

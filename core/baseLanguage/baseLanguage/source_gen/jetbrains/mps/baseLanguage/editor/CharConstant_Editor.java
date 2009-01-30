@@ -168,7 +168,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_2322_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_charConstant");
+    editorCell.setCellId("property_charConstant_1");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
   }
 

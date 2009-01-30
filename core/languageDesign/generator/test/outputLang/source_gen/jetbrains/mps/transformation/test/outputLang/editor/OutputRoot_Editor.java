@@ -271,7 +271,6 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_4617_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNode_specialChild");
   }
 
   private static void setupBasic_Constant_4617_4(EditorCell editorCell, SNode node, EditorContext context) {
