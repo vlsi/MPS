@@ -16,14 +16,9 @@
 package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.keymap.KeymapManager;
-import com.intellij.ui.treeStructure.actions.ExpandAllAction;
 import com.intellij.ide.actions.CollapseAllToolbarAction;
 import com.intellij.ide.actions.ExpandAllToolbarAction;
 import com.intellij.ide.TreeExpander;
@@ -33,7 +28,6 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -76,35 +70,52 @@ class ModelDifferenceComponent extends JPanel {
   private SModel myNewModel;
   private List<Change> myChanges;
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
-  private ActionToolbar myToolBar;
-  private DefaultActionGroup myActionGroup;
+  private ActionToolbar myModelTreeToolBar;
+  private DefaultActionGroup myModelTreeActionGroup;
+  private ActionToolbar myChangesTreeToolBar;
+  private DefaultActionGroup myChangesTreeActionGroup;
 
   public ModelDifferenceComponent() {
     setLayout(new BorderLayout());
 
-    myActionGroup = new DefaultActionGroup();
-    myToolBar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myActionGroup, true);
+    myModelTreeActionGroup = new DefaultActionGroup();
+    myModelTreeToolBar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myModelTreeActionGroup, true);
 
-    MyTreeExpander treeExpander = new MyTreeExpander();
-    AnAction expandAllAction = new ExpandAllToolbarAction(treeExpander, "Expand Model Tree");
-    AnAction collapseAllAction = new CollapseAllToolbarAction(treeExpander, "Collapse Model Tree");
-    collapseAllAction.registerCustomShortcutSet(
-      new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_COLLAPSE_ALL)),
-      myModelTree);
-    expandAllAction.registerCustomShortcutSet(
-      new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_EXPAND_ALL)),
-      myModelTree);
-    myActionGroup.add(expandAllAction);
-    myActionGroup.add(collapseAllAction);
+    myChangesTreeActionGroup = new DefaultActionGroup();
+    myChangesTreeToolBar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myChangesTreeActionGroup, true);
+
+    createToolBarAndActions(myModelTree, myModelTreeActionGroup, "Model");
+    createToolBarAndActions(myChangesTree, myChangesTreeActionGroup, "Changes");
+
+    JPanel modelPanel = new JPanel(new BorderLayout());
+    modelPanel.add(myModelTreeToolBar.getComponent(), BorderLayout.NORTH);
+    modelPanel.add(new JScrollPane(myModelTree), BorderLayout.CENTER);
+
+    JPanel changesPanel = new JPanel(new BorderLayout());
+    changesPanel.add(myChangesTreeToolBar.getComponent(), BorderLayout.NORTH);
+    changesPanel.add(new JScrollPane(myChangesTree), BorderLayout.CENTER);
 
     JSplitPane splitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
-      new JScrollPane(myModelTree),
-      new JScrollPane(myChangesTree));
+      modelPanel,
+      changesPanel);
     splitter.setDividerLocation(500);
 
-    add(myToolBar.getComponent(), BorderLayout.NORTH);
     add(splitter, BorderLayout.CENTER);
     updateView();
+  }
+
+  private void createToolBarAndActions(MPSTree tree, DefaultActionGroup actionGroup, String name) {
+    MyTreeExpander treeExpander = new MyTreeExpander(tree);
+    AnAction expandAllAction = new ExpandAllToolbarAction(treeExpander, "Expand " + name + " Tree");
+    AnAction collapseAllAction = new CollapseAllToolbarAction(treeExpander, "Collapse " + name + " Tree");
+    collapseAllAction.registerCustomShortcutSet(
+      new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_COLLAPSE_ALL)),
+      tree);
+    expandAllAction.registerCustomShortcutSet(
+      new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_EXPAND_ALL)),
+      tree);
+    actionGroup.add(expandAllAction);
+    actionGroup.add(collapseAllAction);
   }
 
   public ModelDifferenceComponent showDifference(SModel oldModel, SModel newModel) {
@@ -297,7 +308,7 @@ class ModelDifferenceComponent extends JPanel {
   }
 
   public void addAction(AnAction action) {
-    myActionGroup.add(action);
+    myModelTreeActionGroup.add(action);
   }
 
   private class MySModelTreeNode extends SModelTreeNode {
@@ -421,8 +432,14 @@ class ModelDifferenceComponent extends JPanel {
   }
 
   private class MyTreeExpander implements TreeExpander {
+    private MPSTree myTree;
+
+    public MyTreeExpander(MPSTree tree) {
+      myTree = tree;
+    }
+
     public void expandAll() {
-      myModelTree.expandAll();
+      myTree.expandAll();
     }
 
     public boolean canExpand() {
