@@ -1679,6 +1679,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void addCellSelectionListener(CellSelectionListener l) {
     assert l != null;
+    assert !mySelectionListeners.contains(l);
     mySelectionListeners.add(l);
   }
 

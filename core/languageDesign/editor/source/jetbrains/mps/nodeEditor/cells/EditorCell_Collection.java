@@ -668,9 +668,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     for (EditorCell child : myEditorCells) {
       ((EditorCell_Basic) child).onAdd();
     }
-    if (myUsesBraces) {
-      getEditor().addCellSelectionListener(myLastCellSelectionListener);
-    }
   }
 
   public void onRemove() {
@@ -678,7 +675,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       ((EditorCell_Basic) child).onRemove();
     }
     super.onRemove();
-    getEditor().removeCellSelectionListener(myLastCellSelectionListener);
   }
 
   private class SelectFirstChild extends EditorCellAction {
@@ -704,7 +700,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
 
-  private class EditorCell_Brace extends EditorCell_Constant {
+  class EditorCell_Brace extends EditorCell_Constant {
     public static final String OPENING_TEXT = "(";
     public static final String CLOSING_TEXT = ")";
     private boolean myIsOpening = false;
@@ -741,7 +737,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       setSelectable(enabled);
     }
 
-    public void paintContent(Graphics g) {      
+    public void paintContent(Graphics g) {
+      if (!myIsEnabled) return;
       TextLine textLine = getRenderedTextLine();
       boolean toShowCaret = toShowCaret();
       int overlapping = getOverlapping();
