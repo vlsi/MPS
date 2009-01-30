@@ -262,7 +262,7 @@ public class Folder_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5234_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5234_0");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -306,7 +306,7 @@ public class Folder_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_5234_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-    MPSLayoutStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_5234_3(EditorCell editorCell, SNode node, EditorContext context) {
@@ -403,7 +403,7 @@ public class Folder_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_5234_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_5234_1");
-      MPSLayoutStyles_StyleSheet.getHint(editorCell).apply(editorCell);
+      PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Constant_5234_1(EditorCell_Label editorCell, SNode node, EditorContext context) {

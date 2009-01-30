@@ -62,11 +62,11 @@ public class Cycle extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<ModuleDescription> moduleDescriptions() {
-    return this.children(Cycle.MODULE_DESCRIPTION);
+    return this.children(ModuleDescription.class, Cycle.MODULE_DESCRIPTION);
   }
 
   public List<ModuleDescription> getModuleDescriptions() {
-    return this.getChildren(Cycle.MODULE_DESCRIPTION);
+    return this.getChildren(ModuleDescription.class, Cycle.MODULE_DESCRIPTION);
   }
 
   public void addModuleDescription(ModuleDescription node) {
@@ -82,11 +82,11 @@ public class Cycle extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<CycleReference> dependencies() {
-    return this.children(Cycle.DEPENDENCY);
+    return this.children(CycleReference.class, Cycle.DEPENDENCY);
   }
 
   public List<CycleReference> getDependencies() {
-    return this.getChildren(Cycle.DEPENDENCY);
+    return this.getChildren(CycleReference.class, Cycle.DEPENDENCY);
   }
 
   public void addDependency(CycleReference node) {
@@ -102,11 +102,11 @@ public class Cycle extends BaseConcept implements INamedConcept {
   }
 
   public Iterator<PathHolder> classpaths() {
-    return this.children(Cycle.CLASSPATH);
+    return this.children(PathHolder.class, Cycle.CLASSPATH);
   }
 
   public List<PathHolder> getClasspaths() {
-    return this.getChildren(Cycle.CLASSPATH);
+    return this.getChildren(PathHolder.class, Cycle.CLASSPATH);
   }
 
   public void addClasspath(PathHolder node) {

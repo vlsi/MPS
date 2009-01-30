@@ -134,7 +134,7 @@ public class Module_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_6816_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-    MPSLayoutStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_6816_0(EditorCell editorCell, SNode node, EditorContext context) {

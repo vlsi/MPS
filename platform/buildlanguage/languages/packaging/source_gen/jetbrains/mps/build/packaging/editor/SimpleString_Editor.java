@@ -54,7 +54,7 @@ public class SimpleString_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_4553_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
-    MPSLayoutStyles_StyleSheet.getString(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getString(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -385,8 +385,8 @@
                         <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1220978677273" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1220978677274">
-                      <link role="property" targetNodeId="1.1203602403405" resolveInfo="file" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1233309268785">
+                      <link role="conceptProperty" targetNodeId="1.1233309050521" resolveInfo="acceptFiles" />
                     </node>
                   </node>
                 </node>

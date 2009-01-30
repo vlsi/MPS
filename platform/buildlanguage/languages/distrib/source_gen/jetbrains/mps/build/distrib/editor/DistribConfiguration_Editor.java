@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.build.packaging.editor.MPSLayoutStyles_StyleSheet;
+import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -1020,7 +1020,7 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_7701_2(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-      MPSLayoutStyles_StyleSheet.getConfiguration(editorCell).apply(editorCell);
+      PackagingStyles_StyleSheet.getConfiguration(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Property_7701_2(EditorCell_Label editorCell, SNode node, EditorContext context) {

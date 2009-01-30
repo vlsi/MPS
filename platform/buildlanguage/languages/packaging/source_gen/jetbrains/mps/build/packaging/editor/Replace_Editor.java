@@ -232,7 +232,7 @@ public class Replace_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1160_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1160_0");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Component_1160_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -277,7 +277,7 @@ public class Replace_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_1160_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-    MPSLayoutStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_1160_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -355,7 +355,7 @@ public class Replace_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_1160_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_1160_1");
-      MPSLayoutStyles_StyleSheet.getHint(editorCell).apply(editorCell);
+      PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Constant_1160_1(EditorCell_Label editorCell, SNode node, EditorContext context) {

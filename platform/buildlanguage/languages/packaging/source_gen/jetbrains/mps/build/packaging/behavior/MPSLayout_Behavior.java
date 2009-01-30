@@ -57,19 +57,10 @@ public class MPSLayout_Behavior {
     );
   }
 
-  public static void call_proceedAbstractProjectComponent_1213877228237(SNode thisNode, SNode component, List<SNode> list) {
-    if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-      for(SNode entry : ListSequence.fromList(SLinkOperations.getTargets(((SNode)component), "entry", true))) {
-        MPSLayout_Behavior.call_proceedAbstractProjectComponent_1213877228237(thisNode, entry, list);
-      }
-    }
-    ListSequence.fromList(list).addElement(component);
-  }
-
   public static List<SNode> call_getTopologicalSortedComponents_1213877228271(SNode thisNode) {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(SNode component : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "component", true))) {
-      MPSLayout_Behavior.call_proceedAbstractProjectComponent_1213877228237(thisNode, component, result);
+      MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(component, result);
     }
     return result;
   }
@@ -141,6 +132,25 @@ public class MPSLayout_Behavior {
 
   public static String getBasedirName_1226509010730() {
     return "basedir";
+  }
+
+  public static void proceesAbstractProjectComponent_1233317260545(SNode component, List<SNode> list) {
+    if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
+      for(SNode entry : ListSequence.fromList(SLinkOperations.getTargets(((SNode)component), "entry", true))) {
+        MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(entry, list);
+      }
+    } else if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.IfProjectComponent")) {
+      SNode toDo;
+      if (ICondition_Behavior.call_isTrueWhileGeneration_1233161599461(SLinkOperations.getTarget(component, "condition", true))) {
+        toDo = SLinkOperations.getTarget(component, "ifTrue", true);
+      } else
+      {
+        toDo = SLinkOperations.getTarget(component, "ifTrue", true);
+      }
+      MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(toDo, list);
+      return;
+    }
+    ListSequence.fromList(list).addElement(component);
   }
 
 }

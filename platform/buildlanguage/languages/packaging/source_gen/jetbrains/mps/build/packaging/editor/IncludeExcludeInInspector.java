@@ -146,7 +146,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
 
   private static void setupBasic_Constant_2096_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2096_0");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_2096_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -159,7 +159,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
 
   private static void setupBasic_Constant_2096_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2096_1");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_2096_1(EditorCell editorCell, SNode node, EditorContext context) {

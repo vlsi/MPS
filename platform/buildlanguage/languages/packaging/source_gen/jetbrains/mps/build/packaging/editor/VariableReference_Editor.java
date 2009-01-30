@@ -117,7 +117,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_9453_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-      MPSLayoutStyles_StyleSheet.getVariable(editorCell).apply(editorCell);
+      PackagingStyles_StyleSheet.getVariable(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Property_9453_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

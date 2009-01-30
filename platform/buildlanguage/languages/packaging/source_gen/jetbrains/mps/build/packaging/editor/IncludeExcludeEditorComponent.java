@@ -166,7 +166,7 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
 
   private static void setupBasic_Constant_0446_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0446_0");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -188,7 +188,7 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
 
   private static void setupBasic_Constant_0446_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0446_1");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_0446_1(EditorCell editorCell, SNode node, EditorContext context) {

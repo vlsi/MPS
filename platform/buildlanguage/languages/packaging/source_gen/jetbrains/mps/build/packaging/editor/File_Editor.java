@@ -177,7 +177,7 @@ public class File_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3696_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3696_0");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -191,7 +191,7 @@ public class File_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_3696_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-    MPSLayoutStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Component_3696_0(EditorCell editorCell, SNode node, EditorContext context) {

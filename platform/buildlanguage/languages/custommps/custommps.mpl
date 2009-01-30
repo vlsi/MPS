@@ -11,6 +11,7 @@
         <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.build.custommps.generator.template" />
       </models>
       <external-templates>
+        <generator generatorUID="jetbrains.mps.build.distrib#1230058167282" />
         <generator generatorUID="jetbrains.mps.build.packaging###1203014923802" />
       </external-templates>
       <usedDevKits>

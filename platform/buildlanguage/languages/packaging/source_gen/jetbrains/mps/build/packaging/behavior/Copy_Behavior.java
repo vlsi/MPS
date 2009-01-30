@@ -14,7 +14,6 @@ import jetbrains.mps.util.EqualUtil;
 public class Copy_Behavior {
 
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "file", "" + (false));
     SPropertyOperations.set(thisNode, "name", "");
     SPropertyOperations.set(thisNode, "excludes", "");
     SLinkOperations.setTarget(thisNode, "sourcePath", SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Path", null), true);

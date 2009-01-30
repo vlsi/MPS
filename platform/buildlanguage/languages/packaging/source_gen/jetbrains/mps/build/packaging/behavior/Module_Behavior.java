@@ -27,7 +27,6 @@ import jetbrains.mps.project.Solution;
 public class Module_Behavior {
 
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "file", "" + (true));
   }
 
   public static String call_getTemporalDir_1213877514765(SNode thisNode) {

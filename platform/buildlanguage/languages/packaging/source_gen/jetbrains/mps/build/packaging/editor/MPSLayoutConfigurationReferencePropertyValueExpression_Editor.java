@@ -102,7 +102,7 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
 
     private static void setupBasic_Property_2583_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_fullName");
-      MPSLayoutStyles_StyleSheet.getConfiguration(editorCell).apply(editorCell);
+      PackagingStyles_StyleSheet.getConfiguration(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Property_2583_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

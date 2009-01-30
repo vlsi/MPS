@@ -102,7 +102,7 @@ public class ConfigurationReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_6215_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-      MPSLayoutStyles_StyleSheet.getConfiguration(editorCell).apply(editorCell);
+      PackagingStyles_StyleSheet.getConfiguration(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Property_6215_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

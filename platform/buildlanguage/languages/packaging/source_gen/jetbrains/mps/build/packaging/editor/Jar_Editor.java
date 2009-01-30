@@ -293,7 +293,7 @@ public class Jar_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_1697_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-    MPSLayoutStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_1697_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -336,7 +336,7 @@ public class Jar_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1697_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1697_0");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_1697_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -358,7 +358,7 @@ public class Jar_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1697_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1697_1");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_1697_1(EditorCell editorCell, SNode node, EditorContext context) {

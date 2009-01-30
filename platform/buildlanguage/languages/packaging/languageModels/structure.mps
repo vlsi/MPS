@@ -551,9 +551,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1203599618523">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" resolveInfo="abstract" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1203602403405">
-      <property name="name" value="file" />
-      <link role="dataType" targetNodeId="3.1082983657063" resolveInfo="boolean" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1233309050521">
+      <property name="name" value="acceptFiles" />
+      <property name="inheritable" value="true" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203598322527">
@@ -568,6 +568,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1203598778756">
       <property name="value" value="file" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1233309097362">
+      <link role="conceptPropertyDeclaration" targetNodeId="1233309050521" resolveInfo="acceptFiles" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203598417283">
@@ -586,6 +589,9 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1203619962416">
       <link role="conceptPropertyDeclaration" targetNodeId="1203619938976" resolveInfo="cleanAfterTheJob" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1233309117576">
+      <link role="conceptPropertyDeclaration" targetNodeId="1233309050521" resolveInfo="acceptFiles" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1203617962317">
       <link role="intfc" targetNodeId="1203617883391" resolveInfo="ICompositComponent" />
@@ -623,6 +629,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1203599818361">
       <property name="value" value="module" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1233309143635">
+      <link role="conceptPropertyDeclaration" targetNodeId="1233309050521" resolveInfo="acceptFiles" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1222447189012">
       <property name="name" value="id" />
@@ -1022,6 +1031,84 @@
       <property name="role" value="configuration" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1204115658627" resolveInfo="Configuration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233159190548">
+    <property name="name" value="IfProjectComponent" />
+    <property name="package" value="conditions" />
+    <link role="extends" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233159308698">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="condition" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1233159299625" resolveInfo="ICondition" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233159215203">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="ifTrue" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233159231309">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="ifFaulse" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233159464071">
+      <property name="value" value="if" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1233309321847">
+      <link role="conceptPropertyDeclaration" targetNodeId="1233309050521" resolveInfo="acceptFiles" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1233159299625">
+    <property name="package" value="conditions" />
+    <property name="name" value="ICondition" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233159325466">
+    <property name="package" value="conditions" />
+    <property name="name" value="FileExistsCondition" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233159379892">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="pathToFile" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1220973916698" resolveInfo="Path" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233159347850">
+      <link role="intfc" targetNodeId="1233159299625" resolveInfo="ICondition" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233159626829">
+      <property name="value" value="exists" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233159676273">
+      <property name="value" value="file exists condition" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233159354124">
+    <property name="package" value="conditions" />
+    <property name="name" value="NotCondition" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233159365757">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="condition" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1233159299625" resolveInfo="ICondition" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233159363117">
+      <link role="intfc" targetNodeId="1233159299625" resolveInfo="ICondition" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233159658536">
+      <property name="value" value="!" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233159662777">
+      <property name="value" value="not condition" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>
 </model>

@@ -360,12 +360,12 @@ public class Copy_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_2873_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-    MPSLayoutStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_2873_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2873_0");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_2873_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -378,7 +378,7 @@ public class Copy_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2873_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2873_1");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_2873_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -397,7 +397,7 @@ public class Copy_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2873_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2873_2");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_2873_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -427,7 +427,7 @@ public class Copy_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2873_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2873_3");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -449,7 +449,7 @@ public class Copy_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2873_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2873_4");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_2873_3(EditorCell editorCell, SNode node, EditorContext context) {

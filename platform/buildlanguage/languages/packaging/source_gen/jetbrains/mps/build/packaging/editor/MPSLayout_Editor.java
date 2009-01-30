@@ -442,7 +442,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_8098_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_8098_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -464,7 +464,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8098_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8098_2");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_8098_3(EditorCell editorCell, SNode node, EditorContext context) {
@@ -495,7 +495,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8098_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8098_4");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_8098_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -543,7 +543,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8098_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8098_7");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_8098_5(EditorCell editorCell, SNode node, EditorContext context) {
@@ -605,7 +605,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8098_9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8098_9");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_8098_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -617,7 +617,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8098_10(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8098_10");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_8098_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -735,7 +735,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_8098_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_8098_1");
-      MPSLayoutStyles_StyleSheet.getHint(editorCell).apply(editorCell);
+      PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Constant_8098_1(EditorCell_Label editorCell, SNode node, EditorContext context) {

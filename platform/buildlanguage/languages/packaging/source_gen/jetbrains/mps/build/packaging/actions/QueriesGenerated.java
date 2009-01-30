@@ -21,8 +21,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.io.File;
-import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 
 public class QueriesGenerated {
 
@@ -91,7 +91,7 @@ public class QueriesGenerated {
                 suggestFiles = suggestFiles[0].listFiles();
               }
             }
-            boolean isFile = SPropertyOperations.getBoolean(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", true, false), "file");
+            boolean isFile = SConceptPropertyOperations.getBoolean(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", true, false), "acceptFiles");
             List<String> suggestStrings = ListSequence.<String>fromArray();
             for(File f : suggestFiles) {
               if (f.exists() && (isFile || f.isDirectory())) {

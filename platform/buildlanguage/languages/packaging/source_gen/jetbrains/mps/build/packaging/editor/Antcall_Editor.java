@@ -354,7 +354,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5497_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5497_1");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_5497_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -367,7 +367,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5497_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5497_2");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_5497_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -412,7 +412,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_5497_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-    MPSLayoutStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
+    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefCell_5497_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -609,7 +609,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_5497_3(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_5497_3");
-      MPSLayoutStyles_StyleSheet.getHint(editorCell).apply(editorCell);
+      PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Constant_5497_3(EditorCell_Label editorCell, SNode node, EditorContext context) {

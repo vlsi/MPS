@@ -4,7 +4,7 @@ package jetbrains.mps.build.distrib.editor;
 
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.build.packaging.editor.MPSLayoutStyles_StyleSheet;
+import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
@@ -17,7 +17,7 @@ public class DistribConfiguration_Styles_StyleSheet {
   public static Style getKeyword(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.putAll(MPSLayoutStyles_StyleSheet.getProjectComponent(null));
+        this.putAll(PackagingStyles_StyleSheet.getProjectComponent(null));
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       }
 

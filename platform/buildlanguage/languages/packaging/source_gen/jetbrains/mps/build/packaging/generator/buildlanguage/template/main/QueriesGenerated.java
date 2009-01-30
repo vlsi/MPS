@@ -324,6 +324,10 @@ public class QueriesGenerated {
     return MPSLayout_Behavior.call_getDefaultTargetName_1230209625713(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1233320407385(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Util.SEPARATOR + AbstractProjectComponent_Behavior.call_getPath_1213877333777(_context.getNode()).getPath().replace(File.separator, Util.SEPARATOR);
+  }
+
   public static Object referenceMacro_GetReferent_1204022248333(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "LanguageTargets");
   }

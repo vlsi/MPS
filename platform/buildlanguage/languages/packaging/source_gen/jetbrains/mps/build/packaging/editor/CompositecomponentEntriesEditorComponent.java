@@ -157,7 +157,7 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
 
     private static void setupBasic_Constant_1434_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_1434_0");
-      MPSLayoutStyles_StyleSheet.getHint(editorCell).apply(editorCell);
+      PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Constant_1434_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
