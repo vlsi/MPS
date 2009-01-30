@@ -78,6 +78,7 @@
 
     <indexedRootsProvider implementation="jetbrains.mps.findUsages.MPSIndexedRootsProvider" />
 
-    <fileBasedIndex implementation="com.intellij.psi.impl.cache.impl.id.IdIndex"/>      
+    <fileBasedIndex implementation="com.intellij.psi.impl.cache.impl.id.IdIndex"/>   
+    <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
   </extensions>
 </idea-plugin>
