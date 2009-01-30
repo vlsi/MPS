@@ -172,67 +172,85 @@ class ModelDifferenceComponent extends JPanel {
     TextTreeNode changes = new TextTreeNode("Changes");
 
     List<ImportLanguageChange> importLanguageChanges = CollectionUtil.filter(ImportLanguageChange.class, myChanges);
-    TextTreeNode addImport = new TextTreeNode("Add Import (" + importLanguageChanges.size() + ")");
-    for (ImportLanguageChange change : importLanguageChanges) {
-      addImport.add(new ChangeNode(change));
+    if (!importLanguageChanges.isEmpty()) {
+      TextTreeNode addImport = new TextTreeNode("Add Import (" + importLanguageChanges.size() + ")");
+      for (ImportLanguageChange change : importLanguageChanges) {
+        addImport.add(new ChangeNode(change));
+      }
+      changes.add(addImport);
     }
-    changes.add(addImport);
 
     List<AddNodeChange> addNodeChanges = CollectionUtil.filter(AddNodeChange.class, myChanges);
-    TextTreeNode addNode = new TextTreeNode("Add Node (" + addNodeChanges.size() + ")");
-    for (AddNodeChange change : addNodeChanges) {
-      addNode.add(new ChangeNode(change));
+    if (!addNodeChanges.isEmpty()) {
+      TextTreeNode addNode = new TextTreeNode("Add Node (" + addNodeChanges.size() + ")");
+      for (AddNodeChange change : addNodeChanges) {
+        addNode.add(new ChangeNode(change));
+      }
+      changes.add(addNode);
     }
-    changes.add(addNode);
 
     List<AddRootChange> addRootChanges = CollectionUtil.filter(AddRootChange.class, myChanges);
-    TextTreeNode addRoot = new TextTreeNode("Add Root (" + addRootChanges.size() + ")");
-    for (AddRootChange change : addRootChanges) {
-      addRoot.add(new ChangeNode(change));
+    if (!addRootChanges.isEmpty()) {
+      TextTreeNode addRoot = new TextTreeNode("Add Root (" + addRootChanges.size() + ")");
+      for (AddRootChange change : addRootChanges) {
+        addRoot.add(new ChangeNode(change));
+      }
+      changes.add(addRoot);
     }
-    changes.add(addRoot);
 
     List<DeleteNodeChange> deleteNodeChanges = CollectionUtil.filter(DeleteNodeChange.class, myChanges);
-    TextTreeNode deleteNode = new TextTreeNode("Delete Node (" + deleteNodeChanges.size() + ")");
-    for (DeleteNodeChange change : deleteNodeChanges) {
-      deleteNode.add(new ChangeNode(change));
+    if (!deleteNodeChanges.isEmpty()) {
+      TextTreeNode deleteNode = new TextTreeNode("Delete Node (" + deleteNodeChanges.size() + ")");
+      for (DeleteNodeChange change : deleteNodeChanges) {
+        deleteNode.add(new ChangeNode(change));
+      }
+      changes.add(deleteNode);
     }
-    changes.add(deleteNode);
 
     List<MoveNodeChange> moveNodeChanges = CollectionUtil.filter(MoveNodeChange.class, myChanges);
-    TextTreeNode moveNode = new TextTreeNode("Move Node (" + moveNodeChanges.size() + ")");
-    for (MoveNodeChange change : moveNodeChanges) {
-      moveNode.add(new ChangeNode(change));
+    if (!moveNodeChanges.isEmpty()) {
+      TextTreeNode moveNode = new TextTreeNode("Move Node (" + moveNodeChanges.size() + ")");
+      for (MoveNodeChange change : moveNodeChanges) {
+        moveNode.add(new ChangeNode(change));
+      }
+      changes.add(moveNode);
     }
-    changes.add(moveNode);
 
     List<SetNodeChange> setNodeChanges = CollectionUtil.filter(SetNodeChange.class, myChanges);
-    TextTreeNode setNode = new TextTreeNode("Set Node (" + setNodeChanges.size() + ")");
-    for (SetNodeChange change : setNodeChanges) {
-      setNode.add(new ChangeNode(change));
+    if (!setNodeChanges.isEmpty()) {
+      TextTreeNode setNode = new TextTreeNode("Set Node (" + setNodeChanges.size() + ")");
+      for (SetNodeChange change : setNodeChanges) {
+        setNode.add(new ChangeNode(change));
+      }
+      changes.add(setNode);
     }
-    changes.add(setNode);
 
     List<SetPropertyChange> setPropertyChanges = CollectionUtil.filter(SetPropertyChange.class, myChanges);
-    TextTreeNode setProperty = new TextTreeNode("Set Property (" + setPropertyChanges.size() + ")");
-    for (SetPropertyChange change : setPropertyChanges) {
-      setProperty.add(new ChangeNode(change));
+    if (!setPropertyChanges.isEmpty()) {
+      TextTreeNode setProperty = new TextTreeNode("Set Property (" + setPropertyChanges.size() + ")");
+      for (SetPropertyChange change : setPropertyChanges) {
+        setProperty.add(new ChangeNode(change));
+      }
+      changes.add(setProperty);
     }
-    changes.add(setProperty);
 
     List<SetReferenceChange> setReferenceChanges = CollectionUtil.filter(SetReferenceChange.class, myChanges);
-    TextTreeNode setReference = new TextTreeNode("Set Reference (" + setReferenceChanges.size() + ")");
-    for (SetReferenceChange change : setReferenceChanges) {
-      setReference.add(new ChangeNode(change));
+    if (!setReferenceChanges.isEmpty()) {
+      TextTreeNode setReference = new TextTreeNode("Set Reference (" + setReferenceChanges.size() + ")");
+      for (SetReferenceChange change : setReferenceChanges) {
+        setReference.add(new ChangeNode(change));
+      }
+      changes.add(setReference);
     }
-    changes.add(setReference);
 
     List<ChangeConceptChange> changeConceptChanges = CollectionUtil.filter(ChangeConceptChange.class, myChanges);
-    TextTreeNode changeConceptNode = new TextTreeNode("Change Concept (" + changeConceptChanges.size() + ")");
-    for (ChangeConceptChange change : changeConceptChanges) {
-      changeConceptNode.add(new ChangeNode(change));
+    if (!changeConceptChanges.isEmpty()) {
+      TextTreeNode changeConceptNode = new TextTreeNode("Change Concept (" + changeConceptChanges.size() + ")");
+      for (ChangeConceptChange change : changeConceptChanges) {
+        changeConceptNode.add(new ChangeNode(change));
+      }
+      changes.add(changeConceptNode);
     }
-    changes.add(changeConceptNode);
 
     return changes;
   }

@@ -22,6 +22,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.vcs.diff.*;
@@ -205,6 +206,12 @@ class MergeResultView extends JPanel {
       myWarning = w;
 
       setNodeIdentifier(myWarning.toString());
+      setIcon(Icons.DEFAULT_ICON);
+    }
+
+    @Override
+    public boolean isLeaf() {
+      return true;
     }
 
     public void doubleClick() {
@@ -231,6 +238,7 @@ class MergeResultView extends JPanel {
 
       setNodeIdentifier(myChange + "");
       setText(calculateText());
+      setIcon(Icons.DEFAULT_ICON);
     }
 
     public ActionGroup getActionGroup() {

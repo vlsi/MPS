@@ -42,7 +42,7 @@ public class TestMergeDialog {
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(false);
     configureMPS();
-    
+
     final SModel baseModel = readModel(args[0]);
     final SModel mineModel = readModel(args[1]);
     final SModel newModel = readModel(args[2]);
@@ -58,12 +58,18 @@ public class TestMergeDialog {
         dialog.showDialog();
 
         final SModel result = dialog.getResultModel();
-        if (result == null) System.exit(0);
+        if (result == null) {
+          dialog.dispose();
+          System.exit(0);
+        }
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            ModelPersistence.saveModel(result, FileSystem.getFile(args[3]));
+            IFile iFile = FileSystem.getFile(args[3]);
+            if (!iFile.exists()) iFile.createNewFile();
+            ModelPersistence.saveModel(result, iFile);
           }
         });
+        dialog.dispose();
         System.exit(0);
       }
     });
