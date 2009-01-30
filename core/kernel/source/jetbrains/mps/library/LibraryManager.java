@@ -65,6 +65,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   private MPSModuleRepository myRepository;
   private LibraryManagerPreferences myPreferences;
   private boolean myInitializing = false;
+  private final Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
 
   public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm) {
     myRepository = repo;
@@ -78,6 +79,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           updatePredefinedLibraries();
+          updateCustomBuiltInLibraries();
           update();
         }
       });
@@ -151,6 +153,8 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
         return PathManager.getSamplesPath();
       }
     });
+
+    result.addAll(myCustomBuiltInLibraries.values());
     return result;
   }
 
@@ -176,6 +180,10 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
 
     fireOnLoad(myBootstrapLibrariesOwner);
     fireOnLoad(myPredefinedLibrariesOwner);
+  }
+
+  private void updateCustomBuiltInLibraries() {
+    BuiltInLibrariesReader.readBuiltInLibraries(myCustomBuiltInLibraries);
   }
 
   public void update() {
