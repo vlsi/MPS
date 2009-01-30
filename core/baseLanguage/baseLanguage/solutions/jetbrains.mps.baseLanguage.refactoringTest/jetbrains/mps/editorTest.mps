@@ -14,6 +14,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
+  <language namespace="a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -46,6 +47,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590571(jetbrains.mps.gtext.constraints)" version="8" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="-1" />
@@ -2010,6 +2013,55 @@
     <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233066826537">
       <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1233066826538">
         <property name="keys" value="LOG." />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1233333241782">
+    <property name="package" value="bugTest" />
+    <property name="name" value="BracesTest" />
+    <node role="nodeToEdit" type="jetbrains.mps.gtext.structure.GDocument" id="1233333313960">
+      <property name="documentName" value="a" />
+      <property name="extension" value="b" />
+      <node role="item" type="jetbrains.mps.gtext.structure.GItemList" id="1233333327056">
+        <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1233333333183">
+          <property name="text" value="text" />
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1233333362831">
+            <property name="isLastPosition" value="true" />
+            <property name="cellId" value="property_text" />
+          </node>
+        </node>
+        <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1233333350422">
+          <property name="text" value="r" />
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.gtext.structure.GDocument" id="1233333372707">
+      <property name="documentName" value="a" />
+      <property name="extension" value="b" />
+      <node role="item" type="jetbrains.mps.gtext.structure.GItemList" id="1233333372708">
+        <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1233333372709">
+          <property name="text" value="text" />
+        </node>
+        <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1233333372711">
+          <property name="text" value="r" />
+        </node>
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1233333383368">
+          <property name="caretPosition" value="0" />
+          <property name="cellId" value="Collection_9588_0" />
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233333428757">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1233333428758">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1233333428759">
+          <property name="keycode" value="VK_RIGHT" />
+        </node>
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1233333455029">
+          <property name="keycode" value="VK_RIGHT" />
+        </node>
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1233333458858">
+          <property name="keycode" value="VK_RIGHT" />
+        </node>
       </node>
     </node>
   </node>

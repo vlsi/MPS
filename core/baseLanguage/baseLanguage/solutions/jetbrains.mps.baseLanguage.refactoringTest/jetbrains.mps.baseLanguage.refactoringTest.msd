@@ -22,6 +22,7 @@
     <usedLanguages>jetbrains.mps.lang.plugin</usedLanguages>
     <usedLanguages>jetbrains.mps.lang.intentions</usedLanguages>
     <usedLanguages>jetbrains.mps.lang.generator</usedLanguages>
+    <usedLanguages>jetbrains.mps.gtext</usedLanguages>
   </usedLanguages>
 </solution>
 
