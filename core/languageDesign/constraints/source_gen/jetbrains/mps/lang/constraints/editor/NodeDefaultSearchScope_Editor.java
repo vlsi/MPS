@@ -27,7 +27,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_7999_0(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
+    editorCell.setUsesBraces(true);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_7999_1(context, node));
     editorCell.addEditorCell(this.createConstant_7999_3(context, node, ""));
