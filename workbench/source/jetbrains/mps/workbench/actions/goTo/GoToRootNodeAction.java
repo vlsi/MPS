@@ -40,7 +40,7 @@ import java.util.ArrayList;
 
 public class GoToRootNodeAction extends BaseAction {
 
-  private static boolean myUseCache = false;
+  private static boolean myUseCache = true;
 
   public GoToRootNodeAction() {
     super("Go To Root Node");
