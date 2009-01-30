@@ -16,20 +16,30 @@
 package jetbrains.mps.workbench.actions.goTo.index;
 
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelId;
+
+import java.util.UUID;
 
 public class SNodeDescriptor {
   private String myNodeName;
   private String myConceptFqName;
-  private SModelReference myModelReference;
+  private long myMostSignificantBits;
+  private long myLeastSignificantBits;
   private Boolean myIsDependOnOtherModel;
   private int myNumberInModel;
 
-  public SNodeDescriptor(String nodeName, String fqName, SModelReference model, Boolean dependOnOtherModel, int number) {
+  public SNodeDescriptor(String nodeName, String fqName, long mostSignificantBits, long leastSignificantBits, Boolean dependOnOtherModel, int number) {
     myNodeName = nodeName;
     myConceptFqName = fqName;
-    myModelReference = model;
+    myMostSignificantBits = mostSignificantBits;
+    myLeastSignificantBits = leastSignificantBits;
     myIsDependOnOtherModel = dependOnOtherModel;
     myNumberInModel = number;
+  }
+
+  public static SNodeDescriptor fromModelReference(String nodeName, String fqName, SModelReference ref, Boolean dependOnOtherModel, int number) {
+     UUID uuid = UUID.fromString(ref.getSModelId().toString().substring(2));
+     return new SNodeDescriptor(nodeName, fqName, uuid.getMostSignificantBits(), uuid.getLeastSignificantBits(), dependOnOtherModel, number);
   }
 
   public String getConceptFqName() {
@@ -41,14 +51,27 @@ public class SNodeDescriptor {
   }
 
   public SModelReference getModelReference() {
-    return myModelReference;
+    SModelReference modelRef = new SModelReference(null, SModelId.regular(new UUID(myMostSignificantBits, myLeastSignificantBits)));
+    modelRef.update();
+    return modelRef;
   }
 
   public Boolean isDependOnOtherModel() {
+
+
+
     return myIsDependOnOtherModel;
   }
 
   public int getNumberInModel() {
     return myNumberInModel;
+  }
+
+  public long getLeastSignificantBits() {
+    return myLeastSignificantBits;
+  }
+
+  public long getMostSignificantBits() {
+    return myMostSignificantBits;
   }
 }

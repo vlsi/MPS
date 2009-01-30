@@ -22,17 +22,13 @@ import com.intellij.util.io.IOUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import org.jdom.JDOMException;
 
-import java.util.Map;
-import java.util.List;
-import java.util.HashMap;
+import java.util.*;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.io.IOException;
@@ -93,7 +89,7 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
                     root.getName();
                   }
                 });
-                String nodeName = NameUtil.nodeFQName(root);
+                String nodeName = (root.getName() == null)? "null" : root.getName();
                 String conceptFqName = root.getConceptFqName();
                 SModelReference modelRef = model.getSModelReference();
 
@@ -105,7 +101,8 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
                   }
                 }
                 int number = roots.indexOf(root);
-                SNodeDescriptor key = new SNodeDescriptor((nodeName == null)? "null" : nodeName, conceptFqName, modelRef, dependOnOtherModel, number);
+
+                SNodeDescriptor key = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, dependOnOtherModel, number);
                 result.put(key, null);
               }
             } catch (JDOMException e) {
@@ -126,41 +123,94 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
   }
 
   private static class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
-    private final byte[] myBuffer = IOUtil.allocReadWriteUTFBuffer();
-    private final Pattern myPattern = Pattern.compile("(.*)#(.*)#(.*)#(.*)");
+    private final byte mySizeOfUUID = 16;
 
-    private String nodeDescriptorToString(SNodeDescriptor node) {
-      return node.getNodeName() + "#" + node.getConceptFqName() + "#" + node.getModelReference() + "#" + node.getNumberInModel();
+    private void putLong(byte[] b, int off, long val) {
+	b[off + 7] = (byte) (val >>> 0);
+	b[off + 6] = (byte) (val >>> 8);
+	b[off + 5] = (byte) (val >>> 16);
+	b[off + 4] = (byte) (val >>> 24);
+	b[off + 3] = (byte) (val >>> 32);
+	b[off + 2] = (byte) (val >>> 40);
+	b[off + 1] = (byte) (val >>> 48);
+	b[off + 0] = (byte) (val >>> 56);
     }
 
-    private SNodeDescriptor stringToNodeDescriptor(String value) {
-      Matcher matcher = myPattern.matcher(value);
-      if (matcher.matches()) {
-        String nodeName = matcher.group(1);
-        String conceptFqName = matcher.group(2);
-        String model = matcher.group(3);
-        int number = Integer.valueOf(matcher.group(4));
-        SNodeDescriptor nodeResult = new SNodeDescriptor(nodeName, conceptFqName, SModelReference.fromString(model), false, number);
-        return nodeResult;
+    private long getLong(byte[] b, int off) {
+	return ((b[off + 7] & 0xFFL) << 0) +
+	       ((b[off + 6] & 0xFFL) << 8) +
+	       ((b[off + 5] & 0xFFL) << 16) +
+	       ((b[off + 4] & 0xFFL) << 24) +
+	       ((b[off + 3] & 0xFFL) << 32) +
+	       ((b[off + 2] & 0xFFL) << 40) +
+	       ((b[off + 1] & 0xFFL) << 48) +
+	       (((long) b[off + 0]) << 56);
+    }
+
+    private void putString(byte[] b, int off, String str) {
+      byte[] val = str.getBytes();
+      int i = 0;
+      while (i < val.length) {
+        b[off + i] = val[i];
+        ++i;
       }
-      return null;
+    }
+
+    private String getString(byte[] b, int off, int len) {
+      byte[] bytes = new byte[len];
+      System.arraycopy(b, off, bytes, 0, len);
+      return new String(bytes);
+    }
+
+    private byte[] nodeDescriptorToBytes(SNodeDescriptor node) {
+      int conceptNameLength = node.getConceptFqName().getBytes().length;
+      int nodeNameLength = node.getNodeName().getBytes().length;
+      int len = mySizeOfUUID + conceptNameLength + nodeNameLength + 3;
+      byte[] result = new byte[mySizeOfUUID + conceptNameLength + nodeNameLength + 4];
+      result[0] = (byte) len;
+      putLong(result, 1, node.getMostSignificantBits());
+      putLong(result, mySizeOfUUID / 2 + 1, node.getLeastSignificantBits());
+      result[mySizeOfUUID + 1] = (byte) node.getNumberInModel();
+      result[mySizeOfUUID + 2] = (byte) conceptNameLength;
+      putString(result, mySizeOfUUID + 3, node.getConceptFqName());
+      result[mySizeOfUUID + 3 + conceptNameLength] = (byte) nodeNameLength;
+      putString(result, mySizeOfUUID + 4 + conceptNameLength, node.getNodeName());
+      return result;
+    }
+
+    private SNodeDescriptor bytesToNodeDescriptor(byte[] bytes) {
+      long mostSignificantBits = getLong(bytes, 0);
+      long leastSignificantBits = getLong(bytes, mySizeOfUUID / 2);
+      int numberInModel = 0xFF & (int)bytes[mySizeOfUUID];
+      int conceptNameLength = 0xFF & (int)bytes[mySizeOfUUID + 1];
+      String conceptFqName = getString(bytes, mySizeOfUUID + 2, conceptNameLength);
+      int nodeNameLength = 0xFF & (int)bytes[mySizeOfUUID + conceptNameLength + 2];
+      String nodeName = getString(bytes, mySizeOfUUID + conceptNameLength + 3, nodeNameLength);
+      return new SNodeDescriptor(nodeName, conceptFqName, mostSignificantBits, leastSignificantBits, false, numberInModel);
     }
 
     public int getHashCode(SNodeDescriptor value) {
-      return nodeDescriptorToString(value).hashCode();
+      return value.getModelReference().toString().hashCode() * 10 + value.getNumberInModel();
     }
 
     public boolean isEqual(SNodeDescriptor val1, SNodeDescriptor val2) {
-      return nodeDescriptorToString(val1).equals(nodeDescriptorToString(val2));
+      return val1.getConceptFqName().equals(val2.getConceptFqName())
+        && val1.isDependOnOtherModel().equals(val2.isDependOnOtherModel())
+        && val1.getNodeName().equals(val2.getNodeName())
+        && val1.getNumberInModel() == val2.getNumberInModel()
+        && val1.getLeastSignificantBits() == val2.getLeastSignificantBits()
+        && val1.getMostSignificantBits() == val2.getMostSignificantBits();
     }
 
     public void save(DataOutput out, SNodeDescriptor value) throws IOException {
-      IOUtil.writeUTFFast(myBuffer, out, nodeDescriptorToString(value));
+      out.write(nodeDescriptorToBytes(value));
     }
 
     public SNodeDescriptor read(DataInput in) throws IOException {
-      String value = IOUtil.readUTFFast(myBuffer, in);
-      return stringToNodeDescriptor(value);
+      int len = 0xFF & (int)in.readByte();
+      byte[] bytes = new byte[len];
+      in.readFully(bytes, 0, len);
+      return bytesToNodeDescriptor(bytes);
     }
   }
 }

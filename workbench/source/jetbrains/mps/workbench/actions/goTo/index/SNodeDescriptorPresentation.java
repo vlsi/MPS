@@ -35,7 +35,7 @@ public class SNodeDescriptorPresentation extends BasePresentation {
 
   @NotNull
   public String doGetPresentableText() {
-    return NameUtil.shortNameFromLongName(myNodeResult.getNodeName());
+    return myNodeResult.getNodeName();
   }
 
   public String doGetLocationString() {
