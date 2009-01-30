@@ -145,9 +145,11 @@ public class MPSLayout_Behavior {
         toDo = SLinkOperations.getTarget(component, "ifTrue", true);
       } else
       {
-        toDo = SLinkOperations.getTarget(component, "ifTrue", true);
+        toDo = SLinkOperations.getTarget(component, "ifFaulse", true);
       }
-      MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(toDo, list);
+      if (toDo != null) {
+        MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(toDo, list);
+      }
       return;
     }
     ListSequence.fromList(list).addElement(component);

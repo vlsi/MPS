@@ -1409,14 +1409,14 @@
                     <link role="baseMethodDeclaration" targetNodeId="14.1220980057360" resolveInfo="getAllMacroNames" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226514924196">
                       <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1226514924197">
-                        <link role="concept" targetNodeId="1.1220973916698" resolveInfo="Path" />
+                        <link role="concept" targetNodeId="1.1233321544558" resolveInfo="IPath" />
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226514924198">
                           <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="1226514924199" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1226514924200" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1226514924201">
-                        <link role="conceptProperty" targetNodeId="1.1226494698325" resolveInfo="canStartFromBasedir" />
+                        <link role="conceptProperty" targetNodeId="1.1233321577500" resolveInfo="canStartFromBasedir" />
                       </node>
                     </node>
                   </node>
@@ -1589,7 +1589,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233159636329">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1233159639849">
-        <link role="relationDeclaration" targetNodeId="1.1233159379892" />
+        <link role="relationDeclaration" targetNodeId="1.1233322077948" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1233159643732">
         <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
@@ -1614,6 +1614,31 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233159779159">
         <property name="text" value=")" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1233321459757">
+    <property name="package" value="sourcePaths" />
+    <link role="conceptDeclaration" targetNodeId="1.1233321396603" resolveInfo="NonExistingPath" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233321463241">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233321463242">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1233321463243">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1233321463244">
+          <link role="relationDeclaration" targetNodeId="1.1233321410159" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1233321463245">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233321463246">
+        <property name="text" value="/" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1233321500623">
+        <link role="relationDeclaration" targetNodeId="1.1233321488408" resolveInfo="pathToCheck" />
       </node>
     </node>
   </node>

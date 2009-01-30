@@ -37,7 +37,7 @@ public class Path_Behavior {
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true)).last(), "path");
   }
 
-  public static File call_getFile_1233162038573(SNode thisNode) {
+  public static File virtual_getFile_1233322718999(SNode thisNode) {
     return new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "path") + File.separator + Path_Behavior.call_getFullPathWithoutMacro_1226511495568(thisNode));
   }
 

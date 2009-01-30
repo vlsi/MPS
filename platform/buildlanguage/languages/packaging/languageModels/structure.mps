@@ -960,9 +960,6 @@
     <property name="name" value="Path" />
     <property name="package" value="sourcePaths" />
     <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1226494698325">
-      <property name="name" value="canStartFromBasedir" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1220976095387">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="macro" />
@@ -976,7 +973,10 @@
       <link role="target" targetNodeId="1220973992845" resolveInfo="CompositePathComponent" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1226494702651">
-      <link role="conceptPropertyDeclaration" targetNodeId="1226494698325" resolveInfo="canStartFromBasedir" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1233321577500" resolveInfo="canStartFromBasedir" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233321573470">
+      <link role="intfc" targetNodeId="1233321544558" resolveInfo="IPath" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1220973955905">
@@ -1071,12 +1071,6 @@
     <property name="package" value="conditions" />
     <property name="name" value="FileExistsCondition" />
     <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233159379892">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="pathToFile" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1220973916698" resolveInfo="Path" />
-    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233159347850">
       <link role="intfc" targetNodeId="1233159299625" resolveInfo="ICondition" />
     </node>
@@ -1087,6 +1081,12 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233159676273">
       <property name="value" value="file exists condition" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233322077948">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="pathToCheck" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1233321396603" resolveInfo="NonExistingPath" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233159354124">
@@ -1109,6 +1109,34 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233159662777">
       <property name="value" value="not condition" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233321396603">
+    <property name="package" value="sourcePaths" />
+    <property name="name" value="NonExistingPath" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233321410159">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="macro" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1220976052975" resolveInfo="MacroReference" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1233321488408">
+      <property name="name" value="pathToCheck" />
+      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233321598856">
+      <link role="intfc" targetNodeId="1233321544558" resolveInfo="IPath" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1233321602698">
+      <link role="conceptPropertyDeclaration" targetNodeId="1233321577500" resolveInfo="canStartFromBasedir" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1233321544558">
+    <property name="package" value="sourcePaths" />
+    <property name="name" value="IPath" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1233321577500">
+      <property name="name" value="canStartFromBasedir" />
     </node>
   </node>
 </model>

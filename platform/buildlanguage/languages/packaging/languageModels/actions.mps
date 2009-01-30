@@ -560,11 +560,11 @@
                       <link role="baseMethodDeclaration" targetNodeId="10.1220980057360" resolveInfo="getAllMacroNames" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226514043511">
                         <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1226514043512">
-                          <link role="concept" targetNodeId="1.1220973916698" resolveInfo="Path" />
+                          <link role="concept" targetNodeId="1.1233321544558" resolveInfo="IPath" />
                           <node role="leftExpression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1226514043513" />
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1226514043514">
-                          <link role="conceptProperty" targetNodeId="1.1226494698325" resolveInfo="canStartFromBasedir" />
+                          <link role="conceptProperty" targetNodeId="1.1233321577500" resolveInfo="canStartFromBasedir" />
                         </node>
                       </node>
                     </node>
