@@ -188,12 +188,15 @@ public class GeneratorManager implements SearchableConfigurable {
         options,
         options[0]);
 
-      if (option == JOptionPane.YES_OPTION) {
+      if (option == 0) {
         saveTransientModels = true;
       } else {
         saveTransientModels = false;
-        if (option == JOptionPane.CANCEL_OPTION) {
+        if (option == 2) {
           mySettings.setSaveTransientModels(false);
+        }
+        if (option == -1) {
+          return false;
         }
       }
     } else {
