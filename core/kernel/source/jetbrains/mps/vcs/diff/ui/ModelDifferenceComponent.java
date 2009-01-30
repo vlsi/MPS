@@ -22,6 +22,7 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.IconLoader;
+import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.ui.treeStructure.actions.ExpandAllAction;
 import com.intellij.ide.actions.CollapseAllToolbarAction;
 import com.intellij.ide.actions.ExpandAllToolbarAction;
@@ -87,6 +88,12 @@ class ModelDifferenceComponent extends JPanel {
     MyTreeExpander treeExpander = new MyTreeExpander();
     AnAction expandAllAction = new ExpandAllToolbarAction(treeExpander, "Expand Model Tree");
     AnAction collapseAllAction = new CollapseAllToolbarAction(treeExpander, "Collapse Model Tree");
+    collapseAllAction.registerCustomShortcutSet(
+      new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_COLLAPSE_ALL)),
+      myModelTree);
+    expandAllAction.registerCustomShortcutSet(
+      new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_EXPAND_ALL)),
+      myModelTree);
     myActionGroup.add(expandAllAction);
     myActionGroup.add(collapseAllAction);
 
