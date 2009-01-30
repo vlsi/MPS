@@ -20,6 +20,8 @@ import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.ListSelectionEvent;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.GridLayout;
@@ -35,6 +37,8 @@ public class LibraryManagerPreferences {
   private JList myLibrariesList = new JList(myListModel);
 
   private boolean myChanged;
+  private JButton myRemoveButton;
+  private JButton myEditButton;
 
   public LibraryManagerPreferences(LibraryManager manager) {
     myManager = manager;
@@ -61,16 +65,28 @@ public class LibraryManagerPreferences {
         add();
       }
     }));
-    innerButtonsPanel.add(new JButton(new AbstractAction("Remove") {
+    myRemoveButton = new JButton(new AbstractAction("Remove") {
       public void actionPerformed(ActionEvent e) {
         remove();
       }
-    }));
-    innerButtonsPanel.add(new JButton(new AbstractAction("Edit") {
+    });
+    innerButtonsPanel.add(myRemoveButton);
+    myEditButton = new JButton(new AbstractAction("Edit") {
       public void actionPerformed(ActionEvent e) {
         edit();
       }
-    }));
+    });
+    innerButtonsPanel.add(myEditButton);
+    myLibrariesList.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+      public void valueChanged(ListSelectionEvent e) {
+        int index = myLibrariesList.getSelectedIndex();
+        if (index < 0) return;
+        Library l = (Library) myListModel.get(index);
+        myEditButton.setEnabled(!l.isPredefined());
+        myRemoveButton.setEnabled(!l.isPredefined());
+      }
+    });
+
     myMainPanel.add(buttonsPanel, BorderLayout.SOUTH);
 
     updateModel(false);
