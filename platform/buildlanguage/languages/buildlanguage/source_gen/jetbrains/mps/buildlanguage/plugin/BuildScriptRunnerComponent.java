@@ -8,6 +8,7 @@ import com.intellij.openapi.project.Project;
 import java.awt.BorderLayout;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.ui.ConsoleViewContentType;
+import com.intellij.openapi.util.Disposer;
 
 public class BuildScriptRunnerComponent extends JPanel {
 
@@ -30,6 +31,10 @@ public class BuildScriptRunnerComponent extends JPanel {
 
   public void clean() {
     this.myConsoleView.clear();
+  }
+
+  public void dispose() {
+    Disposer.dispose(this.myConsoleView);
   }
 
 }
