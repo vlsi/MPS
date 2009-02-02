@@ -1040,9 +1040,7 @@
               <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1200912349159">
                 <property name="readOnly" value="true" />
                 <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
-                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="1214407442047">
-                  <property name="color" value="orange" />
-                </node>
+                <link role="styleClass" targetNodeId="1216755869996" resolveInfo="mappingLabelReference" />
               </node>
             </node>
           </node>
@@ -1311,9 +1309,7 @@
               <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1200912276147">
                 <property name="readOnly" value="true" />
                 <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
-                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="1214407441883">
-                  <property name="color" value="orange" />
-                </node>
+                <link role="styleClass" targetNodeId="1216755869996" resolveInfo="mappingLabelReference" />
               </node>
             </node>
           </node>
@@ -1467,9 +1463,7 @@
               <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1200912270593">
                 <property name="readOnly" value="true" />
                 <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
-                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="1214407442007">
-                  <property name="color" value="orange" />
-                </node>
+                <link role="styleClass" targetNodeId="1216755869996" resolveInfo="mappingLabelReference" />
               </node>
             </node>
           </node>
@@ -1591,9 +1585,7 @@
               <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1200912287270">
                 <property name="readOnly" value="true" />
                 <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
-                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="1214407442006">
-                  <property name="color" value="orange" />
-                </node>
+                <link role="styleClass" targetNodeId="1216755869996" resolveInfo="mappingLabelReference" />
               </node>
             </node>
           </node>
@@ -1692,9 +1684,7 @@
               <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1200912323551">
                 <property name="readOnly" value="true" />
                 <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
-                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="1214407441967">
-                  <property name="color" value="orange" />
-                </node>
+                <link role="styleClass" targetNodeId="1216755869996" resolveInfo="mappingLabelReference" />
               </node>
             </node>
           </node>
@@ -1834,9 +1824,7 @@
               <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1200912293387">
                 <property name="readOnly" value="true" />
                 <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
-                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678982">
-                  <property name="color" value="orange" />
-                </node>
+                <link role="styleClass" targetNodeId="1216755869996" resolveInfo="mappingLabelReference" />
               </node>
             </node>
           </node>
@@ -3609,9 +3597,7 @@
               <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1200912247570">
                 <property name="readOnly" value="true" />
                 <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
-                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="1214407442052">
-                  <property name="color" value="orange" />
-                </node>
+                <link role="styleClass" targetNodeId="1216755869996" resolveInfo="mappingLabelReference" />
               </node>
             </node>
           </node>
@@ -3839,9 +3825,7 @@
               <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1200912281138">
                 <property name="readOnly" value="true" />
                 <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
-                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="1214407442079">
-                  <property name="color" value="orange" />
-                </node>
+                <link role="styleClass" targetNodeId="1216755869996" resolveInfo="mappingLabelReference" />
               </node>
             </node>
           </node>

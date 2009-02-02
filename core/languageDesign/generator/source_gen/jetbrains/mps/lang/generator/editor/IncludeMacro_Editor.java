@@ -625,15 +625,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_6568_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name_1");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
+      Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Property_6568_1(EditorCell_Label editorCell, SNode node, EditorContext context) {

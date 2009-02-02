@@ -247,15 +247,41 @@
           </node>
         </node>
       </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1202256579204">
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.MapSrcListMacro" id="1233603475877">
         <link role="mappingLabel" targetNodeId="1202256320043" resolveInfo="LEVEL 1" />
-        <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1202256579205">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202256579206">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202256640585">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227917375">
-                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1202256640586" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1202326594289">
+        <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1233603475878">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233603475879">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233603545474">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233603546746">
+                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1233603545475" />
+                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" id="1233603553348">
+                  <node role="messageText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233603564947">
+                    <property name="value" value="MAP LEVEL1" />
+                  </node>
+                  <node role="referenceNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233603578077" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233603507935">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233603509894">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233603507936" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1233603518568">
                   <link role="link" targetNodeId="2.1195169805620" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="postMapperFunction" type="jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction" id="1233603527948">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233603527949">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233603591895">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233603591896">
+                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1233603591897" />
+                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" id="1233603591898">
+                  <node role="messageText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233603591899">
+                    <property name="value" value="POST-PROC LEVEL1" />
+                  </node>
+                  <node role="referenceNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233603591900" />
                 </node>
               </node>
             </node>
@@ -313,12 +339,23 @@
       <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" id="1202337434278">
         <node role="postMapperFunction" type="jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction" id="1225236165359">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225236165360">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233601644391">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233601646705">
+                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1233601644392" />
+                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" id="1233601648256">
+                  <node role="messageText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233601650274">
+                    <property name="value" value="TEST post-proc (I in)" />
+                  </node>
+                  <node role="referenceNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233601686071" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225236169892">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225236171144">
                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1225236169893" />
                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" id="1225236173554">
                   <node role="messageText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225236175118">
-                    <property name="value" value="TEST post-proc (I)" />
+                    <property name="value" value="TEST post-proc (I out)" />
                   </node>
                   <node role="referenceNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode" id="1225236196291" />
                 </node>
@@ -430,9 +467,20 @@
                   <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1225236110101" />
                   <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" id="1225236118433">
                     <node role="messageText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225236124388">
-                      <property name="value" value="TEST post proc (II)" />
+                      <property name="value" value="TEST post proc (II in)" />
                     </node>
-                    <node role="referenceNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode" id="1225236155296" />
+                    <node role="referenceNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233603157248" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233602256912">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233602256913">
+                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1233602256914" />
+                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" id="1233602256915">
+                    <node role="messageText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233602256916">
+                      <property name="value" value="TEST post proc (II out)" />
+                    </node>
+                    <node role="referenceNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode" id="1233602256917" />
                   </node>
                 </node>
               </node>
