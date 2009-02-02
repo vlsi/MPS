@@ -10591,11 +10591,14 @@
                               <link role="link" targetNodeId="1.1212686240295" />
                             </node>
                           </node>
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228409309237">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228409308002">
-                              <link role="variableDeclaration" targetNodeId="1227260064086" resolveInfo="constructorCall" />
+                          <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1233598387648">
+                            <link role="concept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228409309237">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228409308002">
+                                <link role="variableDeclaration" targetNodeId="1227260064086" resolveInfo="constructorCall" />
+                              </node>
+                              <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1228409310490" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1228409310490" />
                           </node>
                           <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference" id="1228409269839">
                             <link role="quickFixArgument" targetNodeId="1216647908857" resolveInfo="classifier" />
