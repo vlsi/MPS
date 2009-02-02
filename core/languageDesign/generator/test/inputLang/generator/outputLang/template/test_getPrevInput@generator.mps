@@ -702,7 +702,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202338467107">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227925789">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1202338467110" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1202338467109">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1233606494549">
                   <link role="link" targetNodeId="2.1195169805620" />
                 </node>
               </node>
@@ -759,7 +759,9 @@
         </node>
       </node>
     </node>
-    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1202338159193" />
+    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1202338159193">
+      <link role="applicableConcept" targetNodeId="2.1195168316083" resolveInfo="InputRoot" />
+    </node>
   </node>
 </model>
 
