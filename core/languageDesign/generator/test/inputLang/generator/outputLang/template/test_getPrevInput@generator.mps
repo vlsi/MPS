@@ -255,8 +255,16 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233603546746">
                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1233603545475" />
                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" id="1233603553348">
-                  <node role="messageText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233603564947">
-                    <property name="value" value="MAP LEVEL1" />
+                  <node role="messageText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1233604891077">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233604895493">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233604895398" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1233604896126">
+                        <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233603564947">
+                      <property name="value" value="MAP LEVEL1 " />
+                    </node>
                   </node>
                   <node role="referenceNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233603578077" />
                 </node>
@@ -278,8 +286,16 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233603591896">
                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1233603591897" />
                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" id="1233603591898">
-                  <node role="messageText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233603591899">
-                    <property name="value" value="POST-PROC LEVEL1" />
+                  <node role="messageText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1233604905428">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233604907213">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233604907149" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1233604908061">
+                        <link role="property" targetNodeId="7.1169194664001" resolveInfo="name" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233603591899">
+                      <property name="value" value="POST-PROC LEVEL1 " />
+                    </node>
                   </node>
                   <node role="referenceNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233603591900" />
                 </node>

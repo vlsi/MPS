@@ -26,8 +26,8 @@ public class QueriesUtil {
     SNode enclosingMacro = SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.lang.generator.structure.PropertyMacro","jetbrains.mps.lang.generator.structure.ReferenceMacro","jetbrains.mps.lang.generator.structure.NodeMacro"}, false, false);
     if (enclosingMacro != null) {
       if (SNodeOperations.isInstanceOf(enclosingMacro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
-        // inside mapper func?
-        if ((SNodeOperations.getAncestor(contextNode, "jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction", true, false) != null)) {
+        // inside mapper func or post-mapper function?
+        if ((SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction","jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction"}, true, false) != null)) {
           SNode query = SLinkOperations.getTarget(enclosingMacro, "sourceNodeQuery", true);
           if (query != null) {
             QueriesUtil.equate_outputNodeType_fromSourceQuery(typeCheckingContext, query, InputNodeType);
@@ -36,8 +36,8 @@ public class QueriesUtil {
         }
       }
       if (SNodeOperations.isInstanceOf(enclosingMacro, "jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
-        // inside mapper func?
-        if ((SNodeOperations.getAncestor(contextNode, "jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction", true, false) != null)) {
+        // inside mapper func or post-mapper function?
+        if ((SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction","jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction"}, true, false) != null)) {
           SNode query = SLinkOperations.getTarget(enclosingMacro, "sourceNodesQuery", true);
           if (query != null) {
             QueriesUtil.equate_outputNodeType_fromSourceQuery(typeCheckingContext, query, InputNodeType);

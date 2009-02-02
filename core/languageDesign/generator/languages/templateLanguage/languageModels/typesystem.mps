@@ -398,7 +398,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1184800063360">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184800063361">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203116019273">
-                  <property name="value" value="inside mapper func?" />
+                  <property name="value" value="inside mapper func or post-mapper function?" />
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203116192572">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203116192573">
@@ -452,9 +452,12 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1203116256002">
                         <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1203116260690" />
-                        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1203116264505">
-                          <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1207675648309">
-                            <link role="conceptDeclaration" targetNodeId="3.1170725621272" resolveInfo="MapSrcMacro_MapperFunction" />
+                        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="1233605557904">
+                          <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1233605557905">
+                            <link role="concept" targetNodeId="3.1170725621272" resolveInfo="MapSrcMacro_MapperFunction" />
+                          </node>
+                          <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1233605567642">
+                            <link role="concept" targetNodeId="3.1225228973247" resolveInfo="MapSrcMacro_PostMapperFunction" />
                           </node>
                         </node>
                       </node>
@@ -477,7 +480,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1184800575856">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184800575857">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203116379495">
-                  <property name="value" value="inside mapper func?" />
+                  <property name="value" value="inside mapper func or post-mapper function?" />
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203116393387">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203116393388">
@@ -531,9 +534,12 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1203116393407">
                         <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1203116393408" />
-                        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1203116393409">
-                          <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1207675648338">
-                            <link role="conceptDeclaration" targetNodeId="3.1170725621272" resolveInfo="MapSrcMacro_MapperFunction" />
+                        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="1233605583486">
+                          <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1233605583487">
+                            <link role="concept" targetNodeId="3.1170725621272" resolveInfo="MapSrcMacro_MapperFunction" />
+                          </node>
+                          <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1233605591161">
+                            <link role="concept" targetNodeId="3.1225228973247" resolveInfo="MapSrcMacro_PostMapperFunction" />
                           </node>
                         </node>
                       </node>

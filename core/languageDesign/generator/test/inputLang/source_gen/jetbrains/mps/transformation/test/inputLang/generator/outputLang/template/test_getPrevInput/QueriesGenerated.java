@@ -72,7 +72,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1233603475878(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    _context.showInformationMessage(_context.getNode(), "MAP LEVEL1");
+    _context.showInformationMessage(_context.getNode(), "MAP LEVEL1 " + SPropertyOperations.getString(_context.getNode(), "name"));
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
 
@@ -115,7 +115,7 @@ public class QueriesGenerated {
   }
 
   public static void mapSrcMacro_post_mapper_1233603527948(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    _context.showInformationMessage(_context.getNode(), "POST-PROC LEVEL1");
+    _context.showInformationMessage(_context.getNode(), "POST-PROC LEVEL1 " + SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
 }
