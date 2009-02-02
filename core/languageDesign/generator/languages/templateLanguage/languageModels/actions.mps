@@ -41,7 +41,7 @@
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="1169570915271">
-    <property name="name" value="TL_node_substitute" />
+    <property name="name" value="NodeSubstituteActions" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1169570930693">
       <property name="description" value="choice of consequences for weaving rule" />
       <link role="applicableConcept" targetNodeId="1.1168559098955" />
@@ -95,9 +95,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeFactories" id="1198265022560">
-    <property name="name" value="TL_node_factories" />
+    <property name="name" value="NodeFactories" />
     <node role="nodeFactory" type="jetbrains.mps.lang.actions.structure.NodeFactory" id="1207674454116">
-      <link role="applicableConcept" targetNodeId="1.1131073187192" resolveInfo="MapSrcNodeMacro" />
+      <link role="applicableConcept" targetNodeId="1.1087833466690" resolveInfo="NodeMacro" />
       <node role="setupFunction" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction" id="1207674454117">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207674454118">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207674483510">
