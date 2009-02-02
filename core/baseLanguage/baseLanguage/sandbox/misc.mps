@@ -101,6 +101,18 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1233236943656">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1233236943657">
+            <property name="name" value="b" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233236943658" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1233236941500">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233236941501">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1233236941502" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1233236941503" />
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1232369034996">
         <property name="name" value="s" />

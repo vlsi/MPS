@@ -1745,13 +1745,34 @@
         <link role="styleClass" targetNodeId="27.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
-    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227279907533">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227279909644">
-        <property name="text" value="is shallow:" />
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233571263425">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233571263426">
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233571263427">
+          <property name="text" value="is shallow:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1233571263428">
+          <link role="relationDeclaration" targetNodeId="1.1227279857428" resolveInfo="isShallow" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1233571263429">
+          <property name="flag" value="false" />
+        </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1227279917959">
-        <link role="relationDeclaration" targetNodeId="1.1227279857428" resolveInfo="isShallow" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233571267036">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1233571267037">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233571269012">
+          <property name="text" value="skips error:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1233571275013">
+          <link role="relationDeclaration" targetNodeId="1.1233571207619" resolveInfo="reportsError" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1233571267039">
+          <property name="flag" value="false" />
+        </node>
       </node>
     </node>
   </node>
@@ -3044,6 +3065,21 @@
           <link role="relationDeclaration" targetNodeId="1.1227279868398" resolveInfo="isShallow" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1227279937591">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233571443140">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1233571443141">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233571444642">
+          <property name="text" value="skips error:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1233571472207">
+          <link role="relationDeclaration" targetNodeId="1.1233571459078" resolveInfo="reportsError" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1233571443143">
           <property name="flag" value="false" />
         </node>
       </node>

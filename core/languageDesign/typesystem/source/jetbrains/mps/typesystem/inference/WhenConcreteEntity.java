@@ -26,9 +26,15 @@ public class WhenConcreteEntity {
   private Runnable myRunnable;
   private String myNodeModel;
   private String myNodeId;
+  private boolean mySkipError = false;
 
   public WhenConcreteEntity(Runnable runnable) {
     myRunnable = runnable;
+  }
+
+  public WhenConcreteEntity(Runnable runnable, String nodeModel, String nodeId, boolean skipError) {
+    this(runnable, nodeModel, nodeId);
+    mySkipError = skipError;
   }
 
   public WhenConcreteEntity(Runnable runnable, String nodeModel, String nodeId) {
@@ -51,5 +57,9 @@ public class WhenConcreteEntity {
 
   public String getNodeId() {
     return myNodeId;
+  }
+
+  public boolean skipsError() {
+    return mySkipError; 
   }
 }

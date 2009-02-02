@@ -308,10 +308,14 @@ public class TypeCheckingContext {
   }
 
   public void whenConcrete(SNode argument, final Runnable r, String nodeModel, String nodeId, boolean isShallow) {
+    whenConcrete(argument, r, nodeModel, nodeId, isShallow, false);
+  }
+
+  public void whenConcrete(SNode argument, final Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
     if (argument == null) return;
     EquationManager equationManager = getEquationManager();
     equationManager.addNewWhenConcreteEntity(NodeWrapper.createWrapperFromNode(argument, equationManager),
-      new WhenConcreteEntity(r, nodeModel, nodeId), isShallow);
+      new WhenConcreteEntity(r, nodeModel, nodeId, skipError), isShallow);
   }
 
   public void whenConcrete(List<NodeInfo> arguments, final Runnable r) {

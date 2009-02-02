@@ -1172,7 +1172,7 @@ public class EquationManager {
     }
     if (finalExpansion) {
       WhenConcreteEntity whenConcreteEntity = this.getWhenConcreteEntity(wrapper);
-      if (whenConcreteEntity != null) {
+      if (whenConcreteEntity != null && !whenConcreteEntity.skipsError()) {
         RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
         error.setErrorText("argument of WHEN CONCRETE block is never concrete");
         error.setNodeModel(whenConcreteEntity.getNodeModel());

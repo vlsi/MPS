@@ -11776,6 +11776,7 @@
     </node>
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220523233384">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="1220523357849">
+        <property name="skipsError" value="true" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220523357850">
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CoerceStatement" id="1220523357851">
             <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1220523357852">
