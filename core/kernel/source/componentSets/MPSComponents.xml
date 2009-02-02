@@ -506,6 +506,10 @@
       <interface-class>com.intellij.openapi.module.ModuleManager</interface-class>
       <implementation-class>com.intellij.openapi.module.impl.ModuleManagerImpl</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.findUsages.caches.MPSFileBasedIndexProjectHandler</implementation-class>  
+    </component>
   </project-components>
 
 

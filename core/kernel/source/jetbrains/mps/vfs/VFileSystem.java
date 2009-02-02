@@ -27,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 public class VFileSystem {
 
   public static VirtualFile getFile(String path) {
-
     if (path.contains("!")) {
       int index = path.indexOf("!");
       String jarFileName = path.substring(0, index);

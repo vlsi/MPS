@@ -76,8 +76,6 @@
     <getDataRule key="MPS_IScope" implementationClass="jetbrains.mps.workbench.dataExtraction.ScopeRule"/>
     <getDataRule key="MPS_IModule" implementationClass="jetbrains.mps.workbench.dataExtraction.ModuleRule"/>
 
-    <indexedRootsProvider implementation="jetbrains.mps.findUsages.MPSIndexedRootsProvider" />
-
     <fileBasedIndex implementation="com.intellij.psi.impl.cache.impl.id.IdIndex"/>   
     <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
   </extensions>
