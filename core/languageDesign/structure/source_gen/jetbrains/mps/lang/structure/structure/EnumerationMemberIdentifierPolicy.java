@@ -27,7 +27,7 @@ public enum EnumerationMemberIdentifierPolicy {
   }
 
   public static EnumerationMemberIdentifierPolicy getDefault() {
-    return EnumerationMemberIdentifierPolicy.derive_from_presentation;
+    return EnumerationMemberIdentifierPolicy.derive_from_internal_value;
   }
 
   public static EnumerationMemberIdentifierPolicy parseValue(String value) {

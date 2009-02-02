@@ -922,7 +922,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition4339_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation");
+    return SPropertyOperations.hasValue(node, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_internal_value");
   }
 
   public static boolean renderingCondition4339_1(SNode node, EditorContext editorContext, IScope scope) {
