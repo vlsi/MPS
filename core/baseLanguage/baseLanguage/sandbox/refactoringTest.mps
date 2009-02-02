@@ -224,17 +224,17 @@
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1231941622151">
         <link role="annotation" targetNodeId="15.~NotNull" resolveInfo="NotNull" />
       </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232548995674" />
-    </node>
-    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1231855940102">
-      <property name="name" value="i" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1231855943261">
-        <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232548995674">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1233586492049">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1233586492050">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1233586492051" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1233586493634">
+              <property name="value" value="10" />
+            </node>
+          </node>
+        </node>
       </node>
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1231934508529">
-        <link role="annotation" targetNodeId="15.~NotNull" resolveInfo="NotNull" />
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233159454102" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224153941793" />
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1233065377149">

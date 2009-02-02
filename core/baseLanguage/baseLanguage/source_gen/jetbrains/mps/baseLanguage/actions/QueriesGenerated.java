@@ -408,7 +408,11 @@ __switch__:
   }
 
   public static void nodeFactory_NodeSetup_AssignmentExpression_1193750640252(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "rValue", SLinkOperations.getTarget(_context.getSampleNode(), "rValue", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "lValue", SLinkOperations.getTarget(_context.getSampleNode(), "lValue", true), true);
+    } else
+    {
       SLinkOperations.setTarget(_context.getNewNode(), "rValue", _context.getSampleNode(), true);
     }
   }
