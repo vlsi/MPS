@@ -354,7 +354,7 @@
     </node>
     <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635761">
       <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1230058635762">
-        <property name="keys" value="ifa==b" />
+        <property name="keys" value="ifa==b " />
       </node>
     </node>
   </node>
