@@ -21,18 +21,18 @@
     <dependency reexport="false">28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
-    <usedLanguages>jetbrains.mps.lang.smodel</usedLanguages>
-    <usedLanguages>jetbrains.mps.lang.typesystem</usedLanguages>
-    <usedLanguages>jetbrains.mps.lang.quotation</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.blTypes</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.logging</usedLanguages>
-    <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
-    <usedLanguages>jetbrains.mps.xml.deprecated</usedLanguages>
-    <usedLanguages>jetbrains.mps.lang.generator</usedLanguages>
-    <usedLanguages>jetbrains.mps.lang.editor</usedLanguages>
-    <usedLanguages>jetbrains.mps.lang.test</usedLanguages>
+    <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
+    <usedLanguages>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguages>
+    <usedLanguages>7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</usedLanguages>
+    <usedLanguages>3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)</usedLanguages>
+    <usedLanguages>3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)</usedLanguages>
+    <usedLanguages>ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)</usedLanguages>
+    <usedLanguages>760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)</usedLanguages>
+    <usedLanguages>0452c5e6-046a-41b1-a1c2-bfa47ef3ae0b(jetbrains.mps.nanoj)</usedLanguages>
+    <usedLanguages>823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml.deprecated)</usedLanguages>
+    <usedLanguages>b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</usedLanguages>
+    <usedLanguages>18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</usedLanguages>
+    <usedLanguages>8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)</usedLanguages>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>jetbrains.mps.devkit.general-purpose</usedDevKit>

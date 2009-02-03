@@ -934,7 +934,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/constraints/constraints.iml" filepath="$PROJECT_DIR$/core/languageDesign/constraints/constraints.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/core/core.iml" filepath="$PROJECT_DIR$/core/languageDesign/core/core.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/devkits/core-devkits.iml" filepath="$PROJECT_DIR$/core/devkits/core-devkits.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" group="core/baseLanguage/csharp" />
       <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/languages/custommps/customMps.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/languages/custommps/customMps.iml" group="platform/build" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/dataFlow/dataFlow.iml" filepath="$PROJECT_DIR$/core/languageDesign/dataFlow/dataFlow.iml" group="core/languageDesign/dataFlow" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/dataFlow/runtime/dataFlow-runtime.iml" filepath="$PROJECT_DIR$/core/languageDesign/dataFlow/runtime/dataFlow-runtime.iml" group="core/languageDesign/dataFlow" />
@@ -955,6 +954,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/idea-patch/idea-patch.iml" filepath="$PROJECT_DIR$/core/idea-patch/idea-patch.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/intentions/intentions.iml" filepath="$PROJECT_DIR$/core/languageDesign/intentions/intentions.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core/kernel" />
+      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/logging/logging.iml" filepath="$PROJECT_DIR$/core/baseLanguage/logging/logging.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/money.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/money.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" filepath="$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" group="core/languageDesign" />
@@ -973,7 +973,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/script/script.iml" filepath="$PROJECT_DIR$/core/languageDesign/script/script.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/sharedConcepts/sharedConcepts.iml" filepath="$PROJECT_DIR$/core/languageDesign/sharedConcepts/sharedConcepts.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/smodel/smodel.iml" filepath="$PROJECT_DIR$/core/languageDesign/smodel/smodel.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/strings/strings.iml" filepath="$PROJECT_DIR$/core/baseLanguage/strings/strings.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/structure/structure.iml" filepath="$PROJECT_DIR$/core/languageDesign/structure/structure.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/test/test.iml" filepath="$PROJECT_DIR$/core/languageDesign/test/test.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/testMaterial/testRefactoring/testRefactoring.iml" filepath="$PROJECT_DIR$/testMaterial/testRefactoring/testRefactoring.iml" group="core/languageDesign/refactoring" />
@@ -1361,6 +1360,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/core/baseLanguage/logging" vcs="Perforce" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
