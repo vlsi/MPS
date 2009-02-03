@@ -38,6 +38,10 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
     setIcon(Icons.MODULE_GROUP_OPENED, true);
   }
 
+  @Override
+  public boolean isLoadingEnabled() {
+    return true;
+  }
 
   public boolean isInitialized() {
     return myInitialized;

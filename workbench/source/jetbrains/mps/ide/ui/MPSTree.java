@@ -186,7 +186,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     myExpadingNodes.add(node);
     try {
       TextTreeNode progressNode = null;
-      if (!myLoadingDisabled) {
+      if (!myLoadingDisabled && node.isLoadingEnabled()) {
         progressNode = new TextTreeNode("loading...");
         node.add(progressNode);
         ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
@@ -202,7 +202,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
         }
       });
 
-      if (!myLoadingDisabled && node.hasChild(progressNode)) { //node.init() might remove all the children
+      if (!myLoadingDisabled && node.isLoadingEnabled() && node.hasChild(progressNode)) { //node.init() might remove all the children
         node.remove(progressNode);
         ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
       }

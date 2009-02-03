@@ -453,4 +453,8 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   public void autoscroll() {
 
   }
+
+  public boolean isLoadingEnabled() {
+    return false;
+  }
 }
