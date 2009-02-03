@@ -24,9 +24,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.navigation.NavigationItem;
-import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.UnindexedFilesUpdater;
-import com.intellij.util.indexing.IndexingStamp;
+import com.intellij.util.indexing.*;
 import com.intellij.util.Processor;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
@@ -38,27 +36,42 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor> {
-  public MPSChooseSNodeDescriptor(MPSProject project) {
+  public ScalarIndexExtension<SNodeDescriptor> myIndex;
+
+  public MPSChooseSNodeDescriptor(MPSProject project, ScalarIndexExtension<SNodeDescriptor> index) {
     super(project);
+    myIndex = index;
   }
 
-  public SNodeDescriptor[] find(IScope scope) {
+  public SNodeDescriptor[] find(final IScope scope) {
     ensureCachesAreUpToDate();
 
     final Set<SNodeDescriptor> keys = new HashSet<SNodeDescriptor>();
     final Set<SModelReference> hasToLoad = new HashSet<SModelReference>();
-
     final Set<SModelReference> changedModels = new HashSet<SModelReference>();
+
     for (SModelDescriptor sm : SModelRepository.getInstance().getChangedModels()) {
-      changedModels.add(sm.getSModelReference());
+      if (scope instanceof GlobalScope || scope.getModelDescriptors().contains(sm)) {
+        changedModels.add(sm.getSModelReference());
+      }
     }
 
-    FileBasedIndex.getInstance().processAllKeys(RootNodeNameIndex.NAME, new Processor<SNodeDescriptor>() {
+    ID<SNodeDescriptor, Void> indexName;
+    if (myIndex instanceof RootNodeNameIndex) {
+      indexName = RootNodeNameIndex.NAME;
+    } else if (myIndex instanceof NamedNodeIndex) {
+      indexName = NamedNodeIndex.NAME;
+    } else return null;
+
+    FileBasedIndex.getInstance().processAllKeys(indexName, new Processor<SNodeDescriptor>() {
       public boolean process(SNodeDescriptor s) {
-        if (s.isDependOnOtherModel() || changedModels.contains(s.getModelReference())) {
-          hasToLoad.add(s.getModelReference());
-        } else {
-          keys.add(s);
+        if (scope instanceof GlobalScope
+        || scope.getModelDescriptor(s.getModelReference()) != null ) {
+          if (s.isDependOnOtherModel() || changedModels.contains(s.getModelReference())) {
+            hasToLoad.add(s.getModelReference());
+          } else {
+            keys.add(s);
+          }
         }
         return true;
       }
@@ -66,7 +79,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
     for (SModelReference ref : hasToLoad) {
       SModelDescriptor sm = scope.getModelDescriptor(ref);
-      List<SNode> roots = sm.getSModel().getRoots();
+      List<SNode> roots = ((BaseSNodeDescriptorIndexer) myIndex.getIndexer()).getNodes(sm.getSModel());
       for (SNode root : roots) {
         int number = roots.indexOf(root);
         String nodeName = (root.getName() == null)? "null" : root.getName();
@@ -85,7 +98,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
           public void run() {
               SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
               SModel model = descriptor.getSModel();
-              List<SNode> roots = model.getRoots();
+              List<SNode> roots = ((BaseSNodeDescriptorIndexer) myIndex.getIndexer()).getNodes(model);
               SNode node = roots.get(object.getNumberInModel());
               myProject.getComponentSafe(MPSEditorOpener.class).openNode(node);
             }

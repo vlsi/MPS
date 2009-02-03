@@ -57,9 +57,6 @@ public class SNodeDescriptor {
   }
 
   public Boolean isDependOnOtherModel() {
-
-
-
     return myIsDependOnOtherModel;
   }
 

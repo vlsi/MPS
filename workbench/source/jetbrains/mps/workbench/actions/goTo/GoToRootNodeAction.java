@@ -32,6 +32,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
+import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -39,7 +40,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class GoToRootNodeAction extends BaseAction {
-
   private static boolean myUseCache = true;
 
   public GoToRootNodeAction() {
@@ -51,7 +51,7 @@ public class GoToRootNodeAction extends BaseAction {
     return "ctrl N";
   }
 
-  public void setUseCache(boolean useCache) {
+  public static void setUseCache(boolean useCache) {
     myUseCache = useCache;
   }
 
@@ -59,9 +59,6 @@ public class GoToRootNodeAction extends BaseAction {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
     final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
-
-    //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
-    //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
     ChooseByNamePopup popup;
 
@@ -82,19 +79,17 @@ public class GoToRootNodeAction extends BaseAction {
 
         @Nullable
         public String getPromptText() {
-          //return IdeBundle.message("prompt.gotoclass.enter.class.name");
           return "Node name:";
         }
       };
       popup = ChooseByNamePopup.createPopup(project, baseNodeModel, new FakePsiContext());
     } else {
-      MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(mpsProject);
+      MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(mpsProject, new RootNodeNameIndex());
       popup = ChooseByNamePopup.createPopup(project, chooseSNodeResult, new FakePsiContext());
     }
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
-        //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
       }
 
       public void elementChosen(Object element) {

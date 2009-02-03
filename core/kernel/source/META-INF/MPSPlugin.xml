@@ -78,5 +78,6 @@
 
     <fileBasedIndex implementation="com.intellij.psi.impl.cache.impl.id.IdIndex"/>   
     <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
+    <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex"/>
   </extensions>
 </idea-plugin>

@@ -33,6 +33,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
+import jetbrains.mps.workbench.choose.base.FakePsiContext;
+import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
+import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,6 +44,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GoToNamedNodeAction extends BaseAction {
+  private static boolean myUseCache = true;
+
   public GoToNamedNodeAction() {
     super("Go To Symbol");
   }
@@ -49,45 +55,53 @@ public class GoToNamedNodeAction extends BaseAction {
     return "ctrl alt shift N";
   }
 
+  public static void setUseCache(boolean useCache) {
+    myUseCache = useCache;
+  }
+
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
     final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
-    //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
-    //PsiDocumentManager.getInstance(project).commitAllDocuments();
+    ChooseByNamePopup popup;
 
-    FakePsiElement fakePsiContext = new FakePsiElement() {
-      public PsiElement getParent() {
-        return null;
-      }
-    };
-
-    BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject) {
-      public SNode[] find(IScope scope) {
-        final List<SNode> nodes = new ArrayList<SNode>();
-        List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
-        for (SModelDescriptor modelDescriptor : modelDescriptors) {
-          if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
-
-          nodes.addAll(modelDescriptor.getSModel().allNodes(new Condition<SNode>() {
-            public boolean met(SNode node) {
-              String name = node.getName();
-              if (name == null) return false;
-              return name.length() > 0;
-            }
-          }));
+    if (!myUseCache) {
+      FakePsiElement fakePsiContext = new FakePsiElement() {
+        public PsiElement getParent() {
+          return null;
         }
-        return nodes.toArray(new SNode[0]);
-      }
+      };
 
-      @Nullable
-      public String getPromptText() {
-        return "Symbol name:";
-      }
-    };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, baseNodeModel, fakePsiContext);
+      BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject) {
+        public SNode[] find(IScope scope) {
+          final List<SNode> nodes = new ArrayList<SNode>();
+          List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
+          for (SModelDescriptor modelDescriptor : modelDescriptors) {
+            if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
 
+            nodes.addAll(modelDescriptor.getSModel().allNodes(new Condition<SNode>() {
+              public boolean met(SNode node) {
+                String name = node.getName();
+                if (name == null) return false;
+                return name.length() > 0;
+              }
+            }));
+          }
+          return nodes.toArray(new SNode[0]);
+        }
+
+        @Nullable
+        public String getPromptText() {
+          return "Symbol name:";
+        }
+      };
+      popup = ChooseByNamePopup.createPopup(project, baseNodeModel, fakePsiContext);
+    } else {
+      MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(mpsProject, new NamedNodeIndex());
+      popup = ChooseByNamePopup.createPopup(project, chooseSNodeResult, new FakePsiContext());
+    }
+    
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
