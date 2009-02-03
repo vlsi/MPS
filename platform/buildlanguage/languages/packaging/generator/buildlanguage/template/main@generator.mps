@@ -1918,15 +1918,20 @@
         <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1204022349926">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204022349927">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204022354225">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1204025098616">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204025101917">
-                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1204025100666" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1204025106466">
-                    <link role="property" targetNodeId="4.1169194664001" resolveInfo="name" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233682511917">
+                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1233682510803" />
+                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" id="1233682513792">
+                  <node role="baseName" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1233682515094">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233682515095">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233682515096" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1233682515097">
+                        <link role="property" targetNodeId="4.1169194664001" resolveInfo="name" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233682515098">
+                      <property name="value" value="pack." />
+                    </node>
                   </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204022354226">
-                  <property name="value" value="pack." />
                 </node>
               </node>
             </node>

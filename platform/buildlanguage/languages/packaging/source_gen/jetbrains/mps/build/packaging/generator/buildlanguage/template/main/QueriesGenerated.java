@@ -106,7 +106,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1204022349926(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "pack." + SPropertyOperations.getString(_context.getNode(), "name");
+    return _context.createUniqueName("pack." + SPropertyOperations.getString(_context.getNode(), "name"), null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1204107798457(final IOperationContext operationContext, final PropertyMacroContext _context) {

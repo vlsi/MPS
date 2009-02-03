@@ -48,5 +48,19 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233679247700">
+    <property name="name" value="LibraryFolder" />
+    <link role="extends" targetNodeId="2v.1203598512427" resolveInfo="Folder" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233679274643">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="libraryName" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2v.1205339194346" resolveInfo="IStringExpression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233679617947">
+      <property name="value" value="library" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

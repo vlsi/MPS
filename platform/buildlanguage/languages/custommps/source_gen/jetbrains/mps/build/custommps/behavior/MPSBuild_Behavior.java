@@ -4,6 +4,11 @@ package jetbrains.mps.build.custommps.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.LinkedList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MPSBuild_Behavior {
 
@@ -12,6 +17,14 @@ public class MPSBuild_Behavior {
 
   public static String virtual_getChildrenTargetDir_1213877279370(SNode thisNode) {
     return AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode).getPath();
+  }
+
+  public static List<SNode> call_getPathToLibrary_1233680013340(SNode thisNode, SNode folder) {
+    List<SNode> path = ListSequence.fromList(new LinkedList<SNode>());
+    for(SNode currentComponent = folder ; !(SNodeOperations.isInstanceOf(currentComponent, "jetbrains.mps.build.custommps.structure.MPSBuild")) ; currentComponent = SNodeOperations.getParent(currentComponent)) {
+      ListSequence.fromList(path).insertElement(0, SLinkOperations.getTarget(folder, "title", true));
+    }
+    return path;
   }
 
 }

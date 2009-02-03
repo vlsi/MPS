@@ -440,7 +440,7 @@ public class Copy_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_2873_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_excludes");
+    editorCell.setCellId("property_excludes_1");
   }
 
   private static void setupBasic_Collection_2873_6(EditorCell editorCell, SNode node, EditorContext context) {
@@ -453,7 +453,7 @@ public class Copy_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_2873_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_includes");
+    editorCell.setCellId("property_includes_1");
   }
 
   private static void setupLabel_ConceptProperty_2873_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
