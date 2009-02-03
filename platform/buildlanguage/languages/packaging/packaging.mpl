@@ -19,7 +19,6 @@
         <dependency reexport="false">500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
         <usedLanguages>jetbrains.mps.build.dependency</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
@@ -65,7 +64,6 @@
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
     <dependency reexport="false">83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</dependency>
-    <dependency reexport="false">3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)</dependency>
     <dependency reexport="false">df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</dependency>
     <dependency reexport="true">dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc(jetbrains.mps.build.property)</dependency>
     <dependency reexport="true">0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</dependency>
@@ -75,7 +73,6 @@
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.collections</usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.regexp</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
     <usedLanguages>jetbrains.mps.build.property</usedLanguages>
     <usedLanguages>jetbrains.mps.buildlanguage</usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>
