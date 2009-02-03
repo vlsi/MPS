@@ -6122,26 +6122,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1180464433512">
-    <property name="isWeak" value="true" />
-    <property name="name" value="supertypesOf_SNodeListType_ClassifierTypeList" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180464433513">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1180464466611">
-        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196933487667">
-          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196933487668">
-            <link role="classifier" targetNodeId="6.~List" resolveInfo="List" />
-            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196933487669">
-              <link role="classifier" targetNodeId="2.~SNode" resolveInfo="SNode" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1180464453359">
-      <property name="name" value="node" />
-      <link role="concept" targetNodeId="1.1145383075378" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1180547887028">
     <property name="name" value="supertypesOf_SConceptTypeType_SConceptTypeType" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180547887029">
