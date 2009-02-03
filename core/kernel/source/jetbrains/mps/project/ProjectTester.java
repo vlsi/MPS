@@ -59,6 +59,10 @@ public class ProjectTester {
   }
 
   public TestResult testProject() {
+    return testProject(new String[0]);
+  }
+
+  public TestResult testProject(final String[] configurationsGiven) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myProject.getPluginManager().reloadPlugins();
@@ -143,6 +147,19 @@ public class ProjectTester {
 
           for (BaseTestConfiguration t : configurations) {
             System.out.println("completed : " + configurations.indexOf(t) + " / " + configurations.size());
+
+            if (configurationsGiven.length > 0) {
+              boolean exists = false;
+              for (String confName : configurationsGiven) {
+                if (confName.equals(t.getName())) {
+                  exists = true;
+                  break;
+                }
+              }
+              if (!exists) {
+                continue;
+              }
+            }
 
             GenParameters parms;
             try {

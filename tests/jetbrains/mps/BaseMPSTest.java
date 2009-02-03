@@ -44,13 +44,21 @@ public class BaseMPSTest extends TestCase {
     }
   }
 
-  protected void assertGenerates(File project) {
-    String res = testProject(project);
+   protected void assertGenerates(File project, String... configurations) {
+    String res = testProject(project, configurations);
     assertTrue(res, res == null);
   }
 
-  protected String testProject(File project) {    
-    return TestMain.testProject(project);
+  protected void assertGenerates(File project) {
+    assertGenerates(project, new String[0]);
+  }
+
+  protected String testProject(File project, String[] configurations) {
+    return TestMain.testProject(project, configurations);
+  }
+
+  protected String testProject(File project) {
+    return TestMain.testProject(project, new String[0]);
   }
 
   protected String testProject(File project, String message) {

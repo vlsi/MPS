@@ -338,7 +338,15 @@ public class TestMain {
   }
 
   public static String testProject(File projectFile) {
-    return testProject(projectFile, (String) null);
+    return testProject(projectFile, (String) null, new String[0]);
+  }
+
+  public static String testProject(File projectFile, String[] configurations) {
+    return testProject(projectFile, (String) null, configurations);
+  }
+
+  public static String testProject(File projectFile, String treatThisWarningAsError) {
+    return testProject(projectFile, (String) null, new String[0]);
   }
 
   /**
@@ -348,7 +356,7 @@ public class TestMain {
    * @param treatThisWarningAsError
    * @return
    */
-  public static String testProject(File projectFile, String treatThisWarningAsError) {
+  public static String testProject(File projectFile, String treatThisWarningAsError, String[] configurations) {
     IdeMain.setTestMode(true);
     long start = System.currentTimeMillis();
     configureMPS();
@@ -359,7 +367,7 @@ public class TestMain {
     }
 
     final MPSProject project = loadProject(projectFile);
-    TestResult result = new ProjectTester(project).testProject();
+    TestResult result = new ProjectTester(project).testProject(configurations);
 
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
