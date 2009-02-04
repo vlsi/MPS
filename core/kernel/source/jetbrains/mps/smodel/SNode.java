@@ -716,6 +716,8 @@ public final class SNode {
           try {
             setter.execPropertySet(this, propertyName, propertyValue, GlobalScope.getInstance());
             return;
+          } catch (Throwable t) {
+            LOG.error(t);
           } finally {
             ourPropertySettersInProgress.remove(new Pair<SNode, String>(this, propertyName));
           }
