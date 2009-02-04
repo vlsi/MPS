@@ -325,6 +325,15 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_6803_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6803_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConceptProperty_6803_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
