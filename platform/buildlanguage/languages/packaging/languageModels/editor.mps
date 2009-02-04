@@ -1189,6 +1189,9 @@
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1220978901246">
         <property name="value" value="0.0" />
       </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233748147259">
+        <property name="value" value="1.0" />
+      </node>
       <node role="separatorStyle" type="jetbrains.mps.lang.editor.structure.InlineStyleDeclaration" id="1233740911680">
         <link role="parentClass" targetNodeId="1233741672621" resolveInfo="slash" />
       </node>

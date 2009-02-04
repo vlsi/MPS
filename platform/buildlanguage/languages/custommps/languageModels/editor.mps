@@ -132,5 +132,25 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1233749483256">
+    <link role="conceptDeclaration" targetNodeId="1.1233749388045" resolveInfo="CreateIfNotExists" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233749499748">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233749502791">
+        <property name="text" value="if" />
+        <link role="styleClass" targetNodeId="3v.1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1233749511395">
+        <link role="relationDeclaration" targetNodeId="1.1233749468718" resolveInfo="artifactName" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233749515483">
+        <property name="text" value="not exists" />
+        <link role="styleClass" targetNodeId="3v.1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1233749521847">
+        <link role="relationDeclaration" targetNodeId="1.1233749406641" />
+      </node>
+    </node>
+  </node>
 </model>
 

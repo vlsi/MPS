@@ -61,6 +61,7 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
         }
 
       };

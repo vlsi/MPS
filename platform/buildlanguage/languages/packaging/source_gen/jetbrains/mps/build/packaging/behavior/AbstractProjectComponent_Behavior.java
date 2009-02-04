@@ -25,11 +25,17 @@ public class AbstractProjectComponent_Behavior {
     return new File(ILayoutComponent_Behavior.call_getPath_1213877230696(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.MPSLayout", true, true)));
   }
 
-  public static File virtual_getPath_1213877333777(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-      return new File(ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(((SNode)SNodeOperations.getParent(thisNode))) + File.separator + SPropertyOperations.getString(thisNode, "name"));
+  public static File call_getPath_1233752667763(SNode thisNode, SNode parentNode) {
+    if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
+      return new File(ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(((SNode)parentNode)) + File.separator + SPropertyOperations.getString(thisNode, "name"));
+    } else if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.packaging.structure.IfProjectComponent")) {
+      return AbstractProjectComponent_Behavior.call_getPath_1233752667763(thisNode, SNodeOperations.getParent(parentNode));
     }
     return new File(SPropertyOperations.getString(thisNode, "name"));
+  }
+
+  public static File virtual_getPath_1213877333777(SNode thisNode) {
+    return AbstractProjectComponent_Behavior.call_getPath_1233752667763(thisNode, SNodeOperations.getParent(thisNode));
   }
 
   public static boolean call_included_1213877333807(SNode thisNode, SNode config) {
