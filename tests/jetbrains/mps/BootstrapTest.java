@@ -22,10 +22,6 @@ public class BootstrapTest extends BaseMPSTest {
     assertGenerates(new File("core/baseLanguage/baseLanguage/baseLanguage.mpr"));
   }
 
-  public void testBaseLanguageStrings() {
-    assertGenerates(new File("core/baseLanguage/strings/strings.mpr"));
-  }
-
   public void testBaseLanguageInternal() {
     assertGenerates(new File("core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"));
   }
