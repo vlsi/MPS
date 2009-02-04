@@ -217,10 +217,10 @@
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1233741672621">
       <property name="name" value="slash" />
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233741724454">
-        <property name="value" value="0.5" />
+        <property name="value" value="0.3" />
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1233741724456">
-        <property name="value" value="0.7" />
+        <property name="value" value="0.5" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1205337004073">

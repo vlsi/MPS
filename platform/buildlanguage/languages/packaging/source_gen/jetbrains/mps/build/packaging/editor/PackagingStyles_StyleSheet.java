@@ -55,8 +55,8 @@ public class PackagingStyles_StyleSheet {
   public static Style getSlash(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.5, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.7, Measure.SPACES));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.3, Measure.SPACES));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.5, Measure.SPACES));
       }
 
     };
