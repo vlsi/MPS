@@ -4,9 +4,7 @@
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.build.custommps" />
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.build.custommps" />
   </models>
-  <accessoryModels>
-    <model modelUID="jetbrains.mps.build.custommps.mpsbuild" />
-  </accessoryModels>
+  <accessoryModels />
   <generators>
     <generator name="genCustomMPS" generatorUID="jetbrains.mps.build.custommps#1233155119006" uuid="310ad856-d400-4ee5-abc4-1f355bef017b">
       <models>

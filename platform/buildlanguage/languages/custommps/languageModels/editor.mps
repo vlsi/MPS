@@ -91,6 +91,9 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233679652674">
           <property name="text" value="in folder" />
           <link role="styleClass" targetNodeId="3v.1203598923024" resolveInfo="keyword" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1233742521455">
+            <property name="value" value="1.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1233679327792">
           <link role="relationDeclaration" targetNodeId="4v.1205340441197" />
