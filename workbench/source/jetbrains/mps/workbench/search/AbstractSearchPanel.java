@@ -261,7 +261,7 @@ public abstract class AbstractSearchPanel extends JPanel {
         if (added && !myPossibleValues.contains(value) && value.length() != 0) {
           myPossibleValues.add(0, value);
           if (myPossibleValues.size() > myPossibleValuesLimit) {
-            for (int i = myPossibleValues.size(); i >= myPossibleValuesLimit; i--) {
+            for (int i = myPossibleValues.size() - 1; i >= myPossibleValuesLimit; i--) {
               myPossibleValues.remove(i);
             }
           }
