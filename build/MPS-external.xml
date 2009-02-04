@@ -176,6 +176,7 @@
       <fileset dir="core/kernel/classes" excludes="idea/MPSApplicationInfo.xml, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
     <antcall target="MPS-multistep.replace0" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp/idea" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp">
       <fileset dir="core/runtime/classes" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
@@ -222,6 +223,7 @@
     </zip>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp" />
     <copy file="lib/jetbrains-ideframework/idea-external-src.zip" tofile="${deploy.dir}/build-helpers.distrib/MPS/lib/IDEA-src.zip" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/license">
       <fileset dir="license" excludes="**/*.iml, **/*.iws, " />
     </copy>
@@ -231,75 +233,79 @@
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/samples">
       <fileset dir="samples" excludes="**/*.iml, **/*.iws, " />
     </copy>
-    <antcall target="MPS-languages.pack.jetbrains.mps.devkit.general-purpose" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.devkit.language-design" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguageInternal" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.closures" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections" />
-    <antcall target="MPS-languages.pack.collections_samples" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.ext.csharp" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.datesInternal" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.money" />
-    <antcall target="MPS-languages.pack.JDK" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.blTypes" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.strings" />
-    <antcall target="MPS-languages.pack.MPS.Classpath" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.refactoring" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.classifiers" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.test" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.actions" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.annotations" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.behavior" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.constraints" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.findUsages" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.intentions" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.dataFlow" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.dataFlow.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mpslite" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.nanoj" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.quotation" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.plugin" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.sharedConcepts" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodel" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.script" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.structure" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.core" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.refactoring" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.test" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationContext" />
-    <antcall target="MPS-languages.pack.ypath.main" />
-    <antcall target="MPS-languages.pack.ypath.test" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.ypath" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.buildlanguage" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.build.packaging" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.build.dependency" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.build.property" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.examples" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.logging" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.xml" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.gtext" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.xmlInternal" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.xmlSchema" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.gtext.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.quickQueryLanguage" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.devkit.general-purpose0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.devkit.language-design0" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguageInternal0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.closures0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections0" />
+    <antcall target="MPS-languages.pack.collections_samples0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.datesInternal0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates.runtime0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.money0" />
+    <antcall target="MPS-languages.pack.JDK0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.blTypes0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage0" />
+    <antcall target="MPS-languages.pack.MPS.Classpath0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.refactoring0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.classifiers0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.runtime0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.test0" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.actions0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.annotations0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.behavior0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.constraints0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.findUsages0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.intentions0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.dataFlow0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.dataFlow.runtime0" />
+    <antcall target="MPS-languages.pack.jetbrains.mpslite0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.nanoj0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.quotation0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.plugin0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.sharedConcepts0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodel0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.script0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.structure0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.core0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.refactoring0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.test0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationContext0" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core" />
+    <antcall target="MPS-languages.pack.ypath.main0" />
+    <antcall target="MPS-languages.pack.ypath.test0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.ypath0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.buildlanguage0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.build.packaging0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.build.dependency0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.build.property0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.examples0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.logging0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.xml0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.gtext0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.xmlInternal0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.xmlSchema0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.gtext.runtime0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.quickQueryLanguage0" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/plugin">
       <fileset dir="plugin" excludes="**/*.java, **/*.iml, **/*.iws, " />
     </copy>
-    <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.ide0" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/workbench" />
     <echo file="${deploy.dir}/build-helpers.distrib/MPS/build-helpers.append.idea.version/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
     <antcall target="build-helpers.append.idea.version" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
@@ -311,6 +317,7 @@
     <copy file="entryPoints.xml" tofile="${deploy.dir}/build-helpers.distrib/MPS/entryPoints.xml" />
     <copy file="readme.txt" tofile="${deploy.dir}/build-helpers.distrib/MPS/readme.txt" />
     <copy file="about.txt" tofile="${deploy.dir}/build-helpers.distrib/MPS/about.txt" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS" />
     <antcall target="build-helpers.distrib" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/build-helpers.distrib" />
@@ -319,6 +326,7 @@
     </antcall>
     <delete dir="${deploy.dir}/build-helpers.distrib" />
     <copy file="lib/jetbrains-ideframework/idea-platform-src.zip" tofile="${deploy.dir}/debug/idea-platform-src.zip" />
+    <mkdir dir="${deploy.dir}/debug" />
     <antcall target="build-helpers.pack.mps.src" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/build-helpers.pack.mps.src" />

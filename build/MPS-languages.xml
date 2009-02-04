@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="MPS-languages" default="pack.jetbrains.mps.devkit.general-purpose">
+<project name="MPS-languages" default="pack.jetbrains.mps.devkit.general-purpose0">
   <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
-  <target name="pack.jetbrains.mps.devkit.general-purpose">
+  <target name="pack.jetbrains.mps.devkit.general-purpose0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits/jetbrains.mps.devkit.general-purpose.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits/jetbrains.mps.devkit.general-purpose.tmp/module" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits/jetbrains.mps.devkit.general-purpose.tmp/module">
@@ -15,7 +15,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits/jetbrains.mps.devkit.general-purpose.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.devkit.language-design">
+  <target name="pack.jetbrains.mps.devkit.language-design0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits/jetbrains.mps.devkit.language-design.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits/jetbrains.mps.devkit.language-design.tmp/module" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits/jetbrains.mps.devkit.language-design.tmp/module">
@@ -29,7 +29,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits/jetbrains.mps.devkit.language-design.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguageInternal">
+  <target name="pack.jetbrains.mps.baseLanguageInternal0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.tmp/module" />
     <mkdir dir="core/baseLanguage/baseLanguageInternal/classes" />
@@ -47,7 +47,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.closures">
+  <target name="pack.jetbrains.mps.baseLanguage.closures0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.closures.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.closures.tmp/module" />
     <mkdir dir="core/baseLanguage/closures/runtime/classes" />
@@ -70,7 +70,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.closures.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.collections">
+  <target name="pack.jetbrains.mps.baseLanguage.collections0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.tmp/module" />
     <mkdir dir="core/baseLanguage/collections/classes" />
@@ -93,7 +93,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.tmp" />
   </target>
-  <target name="pack.collections_samples">
+  <target name="pack.collections_samples0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/collections_samples.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/collections_samples.tmp/module" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/collections_samples.tmp/module">
@@ -107,25 +107,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/collections_samples.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.ext.csharp">
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.tmp/module" />
-    <mkdir dir="core/baseLanguage/csharp/classes" />
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.tmp/module">
-      <fileset file="core/baseLanguage/csharp/csharp.mpl" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.tmp/module">
-      <fileset dir="core/baseLanguage/csharp" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.tmp">
-      <fileset dir="core/baseLanguage/csharp/classes" />
-    </copy>
-    <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.tmp" />
-    </jar>
-    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.tmp" />
-  </target>
-  <target name="pack.jetbrains.mps.baseLanguage.dates">
+  <target name="pack.jetbrains.mps.baseLanguage.dates0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.tmp/module" />
     <mkdir dir="core/baseLanguage/dates/classes_gen" />
@@ -143,7 +125,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.datesInternal">
+  <target name="pack.jetbrains.mps.baseLanguage.datesInternal0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.datesInternal.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.datesInternal.tmp/module" />
     <mkdir dir="core/baseLanguage/dates/internal/classes_gen" />
@@ -161,7 +143,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.datesInternal.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.dates.runtime">
+  <target name="pack.jetbrains.mps.baseLanguage.dates.runtime0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.tmp/module" />
     <mkdir dir="core/baseLanguage/dates/runtime/classes_gen" />
@@ -183,7 +165,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.money">
+  <target name="pack.jetbrains.mps.baseLanguage.money0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.money.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.money.tmp/module" />
     <mkdir dir="core/baseLanguage/money/classes" />
@@ -204,7 +186,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.money.tmp" />
   </target>
-  <target name="pack.JDK">
+  <target name="pack.JDK0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/JDK.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/JDK.tmp/module" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/JDK.tmp/module">
@@ -218,7 +200,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/JDK.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.blTypes">
+  <target name="pack.jetbrains.mps.baseLanguage.blTypes0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.tmp/module" />
     <mkdir dir="core/baseLanguage/blTypes/classes" />
@@ -236,7 +218,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage">
+  <target name="pack.jetbrains.mps.baseLanguage0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tmp/module" />
     <mkdir dir="core/baseLanguage/baseLanguage/classes" />
@@ -257,27 +239,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.strings">
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.tmp/module" />
-    <mkdir dir="core/baseLanguage/strings/classes_gen" />
-    <mkdir dir="core/baseLanguage/strings/classes" />
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.tmp/module">
-      <fileset file="core/baseLanguage/strings/strings.mpl" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.tmp/module">
-      <fileset dir="core/baseLanguage/strings" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
-    </copy>
-    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.tmp">
-      <fileset dir="core/baseLanguage/strings/classes_gen" />
-      <fileset dir="core/baseLanguage/strings/classes" />
-    </copy>
-    <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.tmp" />
-    </jar>
-    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.strings.tmp" />
-  </target>
-  <target name="pack.MPS.Classpath">
+  <target name="pack.MPS.Classpath0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/MPS.Classpath.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/MPS.Classpath.tmp/module" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/MPS.Classpath.tmp/module">
@@ -291,7 +253,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/MPS.Classpath.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.refactoring">
+  <target name="pack.jetbrains.mps.baseLanguage.refactoring0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.refactoring.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.refactoring.tmp/module" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.refactoring.tmp/module">
@@ -305,7 +267,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.refactoring.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.classifiers">
+  <target name="pack.jetbrains.mps.baseLanguage.classifiers0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.tmp/module" />
     <mkdir dir="core/baseLanguage/classifiers/classes" />
@@ -323,7 +285,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.unitTest">
+  <target name="pack.jetbrains.mps.baseLanguage.unitTest0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.tmp/module" />
     <mkdir dir="core/baseLanguage/unitTest/classes" />
@@ -341,7 +303,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.unitTest.runtime">
+  <target name="pack.jetbrains.mps.baseLanguage.unitTest.runtime0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.tmp/module" />
     <mkdir dir="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
@@ -361,7 +323,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.test">
+  <target name="pack.jetbrains.mps.baseLanguage.test0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.test.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.test.tmp/module" />
     <mkdir dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/classes_gen" />
@@ -381,7 +343,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.test.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.actions">
+  <target name="pack.jetbrains.mps.lang.actions0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.actions.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.actions.tmp/module" />
     <mkdir dir="core/languageDesign/actions/classes" />
@@ -399,7 +361,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.actions.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.annotations">
+  <target name="pack.jetbrains.mps.lang.annotations0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.annotations.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.annotations.tmp/module" />
     <mkdir dir="core/languageDesign/annotations/classes" />
@@ -417,7 +379,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.annotations.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.behavior">
+  <target name="pack.jetbrains.mps.lang.behavior0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.behavior.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.behavior.tmp/module" />
     <mkdir dir="core/languageDesign/behavior/classes" />
@@ -435,7 +397,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.behavior.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.constraints">
+  <target name="pack.jetbrains.mps.lang.constraints0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.constraints.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.constraints.tmp/module" />
     <mkdir dir="core/languageDesign/constraints/classes" />
@@ -453,7 +415,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.constraints.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.editor">
+  <target name="pack.jetbrains.mps.lang.editor0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.editor.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.editor.tmp/module" />
     <mkdir dir="core/languageDesign/editor/classes" />
@@ -474,7 +436,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.editor.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.findUsages">
+  <target name="pack.jetbrains.mps.lang.findUsages0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.findUsages.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.findUsages.tmp/module" />
     <mkdir dir="core/languageDesign/findUsages/classes" />
@@ -492,7 +454,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.findUsages.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.typesystem">
+  <target name="pack.jetbrains.mps.lang.typesystem0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.typesystem.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.typesystem.tmp/module" />
     <mkdir dir="core/languageDesign/typesystem/classes" />
@@ -513,7 +475,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.typesystem.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.intentions">
+  <target name="pack.jetbrains.mps.lang.intentions0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.intentions.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.intentions.tmp/module" />
     <mkdir dir="core/languageDesign/intentions/classes" />
@@ -534,7 +496,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.intentions.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.dataFlow">
+  <target name="pack.jetbrains.mps.lang.dataFlow0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.dataFlow.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.dataFlow.tmp/module" />
     <mkdir dir="core/languageDesign/dataFlow/classes" />
@@ -558,7 +520,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.dataFlow.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.dataFlow.runtime">
+  <target name="pack.jetbrains.mps.dataFlow.runtime0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.dataFlow.runtime.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.dataFlow.runtime.tmp/module" />
     <mkdir dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
@@ -578,7 +540,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.dataFlow.runtime.tmp" />
   </target>
-  <target name="pack.jetbrains.mpslite">
+  <target name="pack.jetbrains.mpslite0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mpslite.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mpslite.tmp/module" />
     <mkdir dir="core/languageDesign/mps-lite/classes" />
@@ -596,7 +558,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mpslite.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.nanoj">
+  <target name="pack.jetbrains.mps.nanoj0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.nanoj.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.nanoj.tmp/module" />
     <mkdir dir="core/languageDesign/mps-lite/classes" />
@@ -614,7 +576,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.nanoj.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.pattern">
+  <target name="pack.jetbrains.mps.lang.pattern0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.pattern.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.pattern.tmp/module" />
     <mkdir dir="core/languageDesign/pattern/classes" />
@@ -635,7 +597,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.pattern.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.quotation">
+  <target name="pack.jetbrains.mps.lang.quotation0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.quotation.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.quotation.tmp/module" />
     <mkdir dir="core/languageDesign/quotation/classes" />
@@ -653,7 +615,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.quotation.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.plugin">
+  <target name="pack.jetbrains.mps.lang.plugin0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.plugin.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.plugin.tmp/module" />
     <mkdir dir="core/languageDesign/plugin/classes" />
@@ -674,7 +636,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.plugin.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.sharedConcepts">
+  <target name="pack.jetbrains.mps.lang.sharedConcepts0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.sharedConcepts.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.sharedConcepts.tmp/module" />
     <mkdir dir="core/languageDesign/sharedConcepts/classes" />
@@ -692,7 +654,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.sharedConcepts.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.smodel">
+  <target name="pack.jetbrains.mps.lang.smodel0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.smodel.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.smodel.tmp/module" />
     <mkdir dir="core/languageDesign/smodel/classes" />
@@ -713,7 +675,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.smodel.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.script">
+  <target name="pack.jetbrains.mps.lang.script0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.script.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.script.tmp/module" />
     <mkdir dir="core/languageDesign/script/classes" />
@@ -734,7 +696,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.script.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.structure">
+  <target name="pack.jetbrains.mps.lang.structure0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.structure.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.structure.tmp/module" />
     <mkdir dir="core/languageDesign/structure/classes" />
@@ -752,7 +714,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.structure.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.core">
+  <target name="pack.jetbrains.mps.lang.core0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.core.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.core.tmp/module" />
     <mkdir dir="core/languageDesign/core/classes" />
@@ -770,7 +732,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.core.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.refactoring">
+  <target name="pack.jetbrains.mps.lang.refactoring0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.refactoring.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.refactoring.tmp/module" />
     <mkdir dir="core/languageDesign/refactoring/classes" />
@@ -791,7 +753,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.refactoring.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.generator">
+  <target name="pack.jetbrains.mps.lang.generator0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.generator.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.generator.tmp/module" />
     <mkdir dir="core/languageDesign/generator/classes" />
@@ -809,7 +771,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.generator.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.test">
+  <target name="pack.jetbrains.mps.lang.test0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.test.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.test.tmp/module" />
     <mkdir dir="core/languageDesign/test/classes" />
@@ -830,7 +792,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.test.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.test.runtime">
+  <target name="pack.jetbrains.mps.lang.test.runtime0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.test.runtime.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.test.runtime.tmp/module" />
     <mkdir dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
@@ -850,7 +812,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.test.runtime.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.lang.generator.generationContext">
+  <target name="pack.jetbrains.mps.lang.generator.generationContext0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.generator.generationContext.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.generator.generationContext.tmp/module" />
     <mkdir dir="core/languageDesign/generator/classes" />
@@ -868,7 +830,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign/jetbrains.mps.lang.generator.generationContext.tmp" />
   </target>
-  <target name="pack.ypath.main">
+  <target name="pack.ypath.main0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/ypath.main.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/ypath.main.tmp/module" />
     <mkdir dir="platform/ypath/solutions/classes" />
@@ -886,7 +848,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/ypath.main.tmp" />
   </target>
-  <target name="pack.ypath.test">
+  <target name="pack.ypath.test0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/ypath.test.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/ypath.test.tmp/module" />
     <mkdir dir="platform/ypath/solutions/classes" />
@@ -904,7 +866,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/ypath.test.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.ypath">
+  <target name="pack.jetbrains.mps.ypath0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.ypath.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.ypath.tmp/module" />
     <mkdir dir="platform/ypath/classes" />
@@ -927,7 +889,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.ypath.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.buildlanguage">
+  <target name="pack.jetbrains.mps.buildlanguage0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.buildlanguage.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.buildlanguage.tmp/module" />
     <mkdir dir="platform/buildlanguage/languages/buildlanguage/classes" />
@@ -948,7 +910,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.buildlanguage.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.build.packaging">
+  <target name="pack.jetbrains.mps.build.packaging0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.packaging.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.packaging.tmp/module" />
     <mkdir dir="platform/buildlanguage/languages/packaging/classes" />
@@ -969,7 +931,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.packaging.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.build.dependency">
+  <target name="pack.jetbrains.mps.build.dependency0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.dependency.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.dependency.tmp/module" />
     <mkdir dir="platform/buildlanguage/languages/dependency/classes" />
@@ -987,7 +949,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.dependency.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.build.property">
+  <target name="pack.jetbrains.mps.build.property0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.property.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.property.tmp/module" />
     <mkdir dir="platform/buildlanguage/languages/property/classes" />
@@ -1005,7 +967,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.build.property.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.regexp">
+  <target name="pack.jetbrains.mps.baseLanguage.regexp0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.regexp.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.regexp.tmp/module" />
     <mkdir dir="platform/regexp/classes" />
@@ -1028,7 +990,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.regexp.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.regexp.examples">
+  <target name="pack.jetbrains.mps.baseLanguage.regexp.examples0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.regexp.examples.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.regexp.examples.tmp/module" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
@@ -1048,7 +1010,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.regexp.examples.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.uiLanguage">
+  <target name="pack.jetbrains.mps.uiLanguage0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.uiLanguage.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.uiLanguage.tmp/module" />
     <mkdir dir="platform/uiLanguage/classes" />
@@ -1071,7 +1033,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.uiLanguage.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.xml.deprecated">
+  <target name="pack.jetbrains.mps.xml.deprecated0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.xml.deprecated.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.xml.deprecated.tmp/module" />
     <mkdir dir="platform/xmlDeprecated/classes" />
@@ -1089,7 +1051,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.xml.deprecated.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.logging">
+  <target name="pack.jetbrains.mps.baseLanguage.logging0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.logging.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.logging.tmp/module" />
     <mkdir dir="core/baseLanguage/logging/classes_gen" />
@@ -1107,7 +1069,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.baseLanguage.logging.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.xml">
+  <target name="pack.jetbrains.mps.xml0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.xml.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.xml.tmp/module" />
     <mkdir dir="platform/xml/xml/classes_gen" />
@@ -1125,7 +1087,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.xml.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.gtext">
+  <target name="pack.jetbrains.mps.gtext0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.gtext.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.gtext.tmp/module" />
     <mkdir dir="platform/gtext/classes_gen" />
@@ -1145,7 +1107,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.gtext.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.xmlInternal">
+  <target name="pack.jetbrains.mps.xmlInternal0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.xmlInternal.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.xmlInternal.tmp/module" />
     <mkdir dir="platform/xml/xmlInternal/classes_gen" />
@@ -1163,7 +1125,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.xmlInternal.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.xmlSchema">
+  <target name="pack.jetbrains.mps.xmlSchema0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.xmlSchema.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.xmlSchema.tmp/module" />
     <mkdir dir="platform/xml/xmlSchema/classes_gen" />
@@ -1181,7 +1143,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.xmlSchema.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.gtext.runtime">
+  <target name="pack.jetbrains.mps.gtext.runtime0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.gtext.runtime.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.gtext.runtime.tmp/module" />
     <mkdir dir="platform/gtext/runtime/classes_gen" />
@@ -1203,7 +1165,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.gtext.runtime.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.quickQueryLanguage">
+  <target name="pack.jetbrains.mps.quickQueryLanguage0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.quickQueryLanguage.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.quickQueryLanguage.tmp/module" />
     <mkdir dir="platform/quickQueryLanguage/classes" />
@@ -1221,7 +1183,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/platform/jetbrains.mps.quickQueryLanguage.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.ide.uiLanguage">
+  <target name="pack.jetbrains.mps.ide.uiLanguage0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/workbench/jetbrains.mps.ide.uiLanguage.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/workbench/jetbrains.mps.ide.uiLanguage.tmp/module" />
     <mkdir dir="workbench/ideUiLanguage/classes" />
@@ -1239,7 +1201,7 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/workbench/jetbrains.mps.ide.uiLanguage.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.ide">
+  <target name="pack.jetbrains.mps.ide0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/workbench/jetbrains.mps.ide.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/workbench/jetbrains.mps.ide.tmp/module" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/workbench/jetbrains.mps.ide.tmp/module">
