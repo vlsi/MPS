@@ -214,6 +214,15 @@
         <property name="value" value="0.3" />
       </node>
     </node>
+    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1233741672621">
+      <property name="name" value="slash" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233741724454">
+        <property name="value" value="0.5" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1233741724456">
+        <property name="value" value="0.7" />
+      </node>
+    </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1205337004073">
       <property name="name" value="variable" />
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1205337015262">
@@ -1180,6 +1189,9 @@
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1220978901246">
         <property name="value" value="0.0" />
       </node>
+      <node role="separatorStyle" type="jetbrains.mps.lang.editor.structure.InlineStyleDeclaration" id="1233740911680">
+        <link role="parentClass" targetNodeId="1233741672621" resolveInfo="slash" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1220974383275">
@@ -1188,6 +1200,12 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1220974414328">
       <property name="readOnly" value="true" />
       <link role="relationDeclaration" targetNodeId="1.1220974398640" resolveInfo="path" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1233740586952">
+        <property name="value" value="0.0" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233741386555">
+        <property name="value" value="0.0" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1220974420626">
@@ -1202,6 +1220,9 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1221145117789">
           <link role="relationDeclaration" targetNodeId="1.1220976095387" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233741642969">
+            <property name="value" value="0.0" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1221145116819">
           <property name="flag" value="false" />
@@ -1209,9 +1230,16 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221145681762">
         <property name="text" value="/" />
+        <link role="styleClass" targetNodeId="1233741672621" resolveInfo="slash" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1220974540492">
         <link role="relationDeclaration" targetNodeId="1.1220974249696" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233741202240">
+          <property name="value" value="1.0" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1233741653228">
+          <property name="value" value="0.0" />
+        </node>
       </node>
     </node>
   </node>
@@ -1243,6 +1271,9 @@
             <link role="cellMenuComponent" targetNodeId="1226514876978" resolveInfo="MacroReference_MenuComponent" />
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233741875794">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1226512776766">
         <property name="text" value="no macro" />
@@ -1266,6 +1297,9 @@
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent" id="1226514945107">
             <link role="cellMenuComponent" targetNodeId="1226514876978" resolveInfo="MacroReference_MenuComponent" />
           </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233741884520">
+          <property name="value" value="0.0" />
         </node>
       </node>
       <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1226513989404">
