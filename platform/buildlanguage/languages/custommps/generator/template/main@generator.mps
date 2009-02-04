@@ -1688,12 +1688,12 @@
             <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233670619637">
               <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233670619638">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233670619639">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233670656411">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233670660381">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1233670656412">
-                        <link role="classifier" targetNodeId="3.~BuiltInLibrariesReader" resolveInfo="BuiltInLibrariesReader" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233746143571">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233746147173">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1233746143572">
+                        <link role="classifier" targetNodeId="3.~BuiltInLibrariesIO" resolveInfo="BuiltInLibrariesIO" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233670669468">
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233746155953">
                         <link role="baseMethodDeclaration" targetNodeId="2.~Class.getName():java.lang.String" resolveInfo="getName" />
                       </node>
                     </node>
@@ -1703,49 +1703,16 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233736680503">
-        <link role="declaration" targetNodeId="4v.1199644186802" resolveInfo="echo" />
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233736683234">
-          <link role="attributeDeclaration" targetNodeId="4v.1199644186812" resolveInfo="file" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1233736697320">
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233736699200">
-              <node role="left" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233736699201">
-                <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233736699202">
-                  <property name="value" value="/" />
-                </node>
-                <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233736699203">
-                  <link role="propertyDeclaration" targetNodeId="1233673278770" resolveInfo="extracted.mps.jar" />
-                </node>
-              </node>
-              <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233736699204">
-                <property name="value" value="library.configuration.file.name" />
-                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233736699205">
-                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233736699206">
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233736699207">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233736699208">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233736699209">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1233736699210">
-                            <link role="classConcept" targetNodeId="3.~BuiltInLibrariesReader" resolveInfo="BuiltInLibrariesReader" />
-                            <link role="baseMethodDeclaration" targetNodeId="3.~BuiltInLibrariesReader.getModifiedConfigurationFile():java.lang.String" resolveInfo="getModifiedConfigurationFile" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233736699211">
-                            <link role="baseMethodDeclaration" targetNodeId="2.~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolveInfo="replace" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1233736699212">
-                              <link role="classifier" targetNodeId="6.~File" resolveInfo="File" />
-                              <link role="variableDeclaration" targetNodeId="6.~File.separator" resolveInfo="separator" />
-                            </node>
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233736699213">
-                              <property name="value" value="/" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
+        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233745798081">
+          <link role="attributeDeclaration" targetNodeId="4v.1199644187235" resolveInfo="dir" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233745809155">
+            <property name="value" value="${basedir}" />
+          </node>
+        </node>
+        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233745906813">
+          <link role="attributeDeclaration" targetNodeId="4v.1199644187251" resolveInfo="fork" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral" id="1233745911453">
+            <property name="value" value="true" />
           </node>
         </node>
       </node>
@@ -1757,35 +1724,25 @@
             <link role="declaration" targetNodeId="4v.1201800722232" resolveInfo="include" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233683013369">
               <link role="attributeDeclaration" targetNodeId="4v.1199644185401" resolveInfo="name" />
-              <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233683018277">
-                <node role="left" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233683018278">
-                  <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233683018279">
-                    <property name="value" value="/" />
-                  </node>
-                  <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233683018280">
-                    <link role="propertyDeclaration" targetNodeId="1233673278770" resolveInfo="extracted.mps.jar" />
-                  </node>
-                </node>
-                <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233683018281">
-                  <property name="value" value="library.configuration.file.name" />
-                  <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233683018282">
-                    <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233683018283">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233683018284">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233683018285">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233683018286">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1233683018287">
-                              <link role="baseMethodDeclaration" targetNodeId="3.~BuiltInLibrariesReader.getModifiedConfigurationFile():java.lang.String" resolveInfo="getModifiedConfigurationFile" />
-                              <link role="classConcept" targetNodeId="3.~BuiltInLibrariesReader" resolveInfo="BuiltInLibrariesReader" />
+              <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233683018281">
+                <property name="value" value="library.configuration.file.name" />
+                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233683018282">
+                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233683018283">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233683018284">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233683018285">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233683018286">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1233683018287">
+                            <link role="classConcept" targetNodeId="3.~BuiltInLibrariesIO" resolveInfo="BuiltInLibrariesIO" />
+                            <link role="baseMethodDeclaration" targetNodeId="3.~BuiltInLibrariesIO.getModifiedConfigurationFile():java.lang.String" resolveInfo="getModifiedConfigurationFile" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233683018288">
+                            <link role="baseMethodDeclaration" targetNodeId="2.~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolveInfo="replace" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1233683018289">
+                              <link role="classifier" targetNodeId="6.~File" resolveInfo="File" />
+                              <link role="variableDeclaration" targetNodeId="6.~File.separator" resolveInfo="separator" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233683018288">
-                              <link role="baseMethodDeclaration" targetNodeId="2.~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolveInfo="replace" />
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1233683018289">
-                                <link role="classifier" targetNodeId="6.~File" resolveInfo="File" />
-                                <link role="variableDeclaration" targetNodeId="6.~File.separator" resolveInfo="separator" />
-                              </node>
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233683018290">
-                                <property name="value" value="/" />
-                              </node>
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233683018290">
+                              <property name="value" value="/" />
                             </node>
                           </node>
                         </node>

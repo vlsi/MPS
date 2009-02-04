@@ -29,8 +29,8 @@ import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.logging.Logger;
 
-public class BuiltInLibrariesReader {
-  private static final Logger LOG = Logger.getLogger(BuiltInLibrariesReader.class);
+public class BuiltInLibrariesIO {
+  private static final Logger LOG = Logger.getLogger(BuiltInLibrariesIO.class);
   private static final String CONFIG_FILE_NAME = "CustomBuiltInLibraries.xml";
   private static final String ROOT_TAG = "libraries";
   private static final String LIBRARY_TAG = "library";
@@ -70,9 +70,9 @@ public class BuiltInLibrariesReader {
 
   public static void addLibraryToConfigurationFile(String name, String path, String sourceHome) {
     try {
-      File sourceFile = new File(sourceHome + File.separator + BuiltInLibrariesReader.class.getName().replace(".", File.separator) + ".java");
+      File sourceFile = new File(sourceHome + File.separator + BuiltInLibrariesIO.class.getName().replace(".", File.separator) + ".class");
       if (sourceFile.exists()) {
-        File configFile = new File(sourceHome + getModifiedConfigurationFile());
+        File configFile = new File(sourceHome + File.separator + getModifiedConfigurationFile());
         configFile.createNewFile();
         write(configFile, name, path);
       }
@@ -106,7 +106,7 @@ public class BuiltInLibrariesReader {
   }
 
   public static String getModifiedConfigurationFile() {
-    return BuiltInLibrariesReader.class.getPackage().getName().replace(".", File.separator) + File.separator + CONFIG_FILE_NAME;
+    return BuiltInLibrariesIO.class.getPackage().getName().replace(".", File.separator) + File.separator + CONFIG_FILE_NAME;
   }
 
   public static void main(String[] args) {
@@ -124,7 +124,7 @@ public class BuiltInLibrariesReader {
       String name = strings[0].substring(1, strings[0].length() - 1);
       String path = Macros.MPS_HOME + File.separator + strings[1].substring(1, strings[1].length() - 1);
 
-      BuiltInLibrariesReader.addLibraryToConfigurationFile(name, path, mpsHome);
+      BuiltInLibrariesIO.addLibraryToConfigurationFile(name, path, mpsHome);
     }
   }
 

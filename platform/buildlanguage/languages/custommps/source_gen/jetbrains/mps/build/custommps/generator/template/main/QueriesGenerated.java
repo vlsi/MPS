@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.library.BuiltInLibrariesReader;
+import jetbrains.mps.library.BuiltInLibrariesIO;
 import java.io.File;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -30,7 +30,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1233670619638(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuiltInLibrariesReader.class.getName();
+    return BuiltInLibrariesIO.class.getName();
   }
 
   public static Object propertyMacro_GetPropertyValue_1233671293016(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -38,11 +38,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1233683018283(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuiltInLibrariesReader.getModifiedConfigurationFile().replace(File.separator, "/");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1233736699206(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuiltInLibrariesReader.getModifiedConfigurationFile().replace(File.separator, "/");
+    return BuiltInLibrariesIO.getModifiedConfigurationFile().replace(File.separator, "/");
   }
 
   public static Object propertyMacro_GetPropertyValue_1233738680554(final IOperationContext operationContext, final PropertyMacroContext _context) {

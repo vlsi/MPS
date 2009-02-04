@@ -183,7 +183,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   }
 
   private void updateCustomBuiltInLibraries() {
-    BuiltInLibrariesReader.readBuiltInLibraries(myCustomBuiltInLibraries);
+    BuiltInLibrariesIO.readBuiltInLibraries(myCustomBuiltInLibraries);
   }
 
   public void update() {
