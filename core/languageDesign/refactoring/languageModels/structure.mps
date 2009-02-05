@@ -652,6 +652,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1209559274358">
     <property name="name" value="RefactoringTargetKind_Enum" />
+    <property name="memberIdentifierPolicy" value="derive_from_presentation" />
     <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1209559274359">
       <property name="externalValue" value="node" />
