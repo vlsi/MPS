@@ -3169,7 +3169,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233828326825">
     <property name="package" value="tuples" />
-    <property name="name" value="TupleMemberAccessExpression" />
+    <property name="name" value="TupleMemberAccessOperation" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233828356717">
       <link role="intfc" targetNodeId="1197027803184" resolveInfo="IOperation" />

@@ -44,11 +44,11 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.TupleType" id="1233829599930">
               <link role="copiedFrom" targetNodeId="1233829599930" />
               <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1233829602623">
-                <property name="name" value="a" />
+                <property name="name" value="aded" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1233829603457" />
               </node>
               <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1233829637219">
-                <property name="name" value="a" />
+                <property name="name" value="aaa" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1233829638303">
                   <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                 </node>
@@ -85,7 +85,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1233829019941">
                 <link role="variableDeclaration" targetNodeId="1233829004943" resolveInfo="v2" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.TupleMemberAccessExpression" id="1233834287141">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation" id="1233838748245">
                 <link role="member" targetNodeId="1233829009601" resolveInfo="first" />
               </node>
             </node>
@@ -139,10 +139,6 @@
         </node>
       </node>
     </node>
-  </node>
-  <node type="jetbrains.mps.baseLanguage.structure.Annotation" id="1233591037175">
-    <property name="name" value="AAAA" />
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233591037176" />
   </node>
 </model>
 
