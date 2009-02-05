@@ -43,7 +43,7 @@ public class MergeReferencesTest extends MergeTestCase {
   }
 
   public void testConflictExternalReferencesChange() throws IOException, ReadException {
-    testZip("resources/conflictExternalRef.mps.zip", false);
+    testZip("resources/conflictExternalRef.mps.zip", true);
   }
 
   public void testNonConflictExternalReferencesChange() throws IOException, ReadException {

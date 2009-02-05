@@ -18,12 +18,10 @@ package jetbrains.mps.vcs.diff;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 
-import java.util.List;
-import java.util.HashMap;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 import static org.junit.Assert.*;
+import org.junit.Assert;
 
 public class ModelAssert {
   public static void assertDeepModelEquals(SModel expectedModel, SModel actualModel) {
@@ -161,10 +159,16 @@ public class ModelAssert {
   }
 
   private static void assertReferenceEquals(SNode expectedNode, SNode actualNode) {
-    HashSet<String> roles = new HashSet<String>();
+    Set<String> roles = new HashSet<String>();
     roles.addAll(expectedNode.getReferenceRoles());
     roles.addAll(actualNode.getReferenceRoles());
+    Map<String, Set<SReference>> expRoleToReferenceMap = createRoleToReferenceMap(expectedNode);
+    Map<String, Set<SReference>> actRoleToReferenceMap = createRoleToReferenceMap(actualNode);
+
     for (String role : roles) {
+      Assert.assertEquals(getErrorString("different number of referents in role " + role, expectedNode, actualNode),
+        expRoleToReferenceMap.get(role).size(), actRoleToReferenceMap.get(role).size());
+
       SReference expectedReference = expectedNode.getReference(role);
       SReference actualReference = actualNode.getReference(role);
 
@@ -172,6 +176,17 @@ public class ModelAssert {
         expectedReference,
         actualReference);
     }
+  }
+
+  private static Map<String, Set<SReference>> createRoleToReferenceMap(SNode expectedNode) {
+    Map<String, Set<SReference>> expRoleToReferenceMap = new HashMap<String, Set<SReference>>();
+    for (SReference ref : expectedNode.getReferences()){
+      if (expRoleToReferenceMap.get(ref.getRole()) == null) {
+        expRoleToReferenceMap.put(ref.getRole(), new HashSet<SReference>());
+      }
+      expRoleToReferenceMap.get(ref.getRole()).add(ref);
+    }
+    return expRoleToReferenceMap;
   }
 
   private static void assertReferenceEquals(String errorString, SReference expectedReference, SReference actualReference) {

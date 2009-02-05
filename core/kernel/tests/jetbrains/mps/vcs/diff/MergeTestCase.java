@@ -29,7 +29,7 @@ import junit.framework.TestCase;
 
 public class MergeTestCase extends TestCase {
   protected void testZip(String pathToZip, final boolean saveResult) throws IOException, ReadException {
-    IdeMain.setTestMode(true);
+//    IdeMain.setTestMode(true);
     jetbrains.mps.TestMain.configureMPS();
 
     URL resource = MergeReferencesTest.class.getResource(pathToZip);
