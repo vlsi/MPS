@@ -89,6 +89,7 @@ public class SetReferenceChange extends Change {
         node.setReferent(getRole(), target);
       } else {
         SReference reference = SReference.create(myRole, node, myTargetModel, myTargetId);
+        node.removeReferent(myRole);
         node.addReference(reference);
         if (reference != null) reference.setResolveInfo(myResolveInfo);
       }
