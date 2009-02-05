@@ -1135,7 +1135,12 @@ public class EquationManager {
 
   /*package*/ IWrapper expandWrapper(SNode term, IWrapper representator, SModel typesModel,
                                      boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
-    return expandNode(term, representator, representator, 0, new HashSet<IWrapper>(), typesModel, finalExpansion, nodeTypesComponent);
+    HashSet<IWrapper> variables = new HashSet<IWrapper>();
+    NodeWrapper result = expandNode(term, representator, representator, 0, variables, typesModel, finalExpansion, nodeTypesComponent);
+    if (variables.isEmpty()) {
+      return representator;
+    }
+    return result;
   }
 
   private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel,
