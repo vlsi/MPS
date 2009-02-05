@@ -81,8 +81,13 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233829016936">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1233829019579">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1233829019941">
-              <link role="variableDeclaration" targetNodeId="1233829004943" resolveInfo="v2" />
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233834283884">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1233829019941">
+                <link role="variableDeclaration" targetNodeId="1233829004943" resolveInfo="v2" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.TupleMemberAccessExpression" id="1233834287141">
+                <link role="member" targetNodeId="1233829009601" resolveInfo="first" />
+              </node>
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1233829016937">
               <link role="variableDeclaration" targetNodeId="1233826593792" resolveInfo="var" />
