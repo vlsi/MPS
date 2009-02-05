@@ -1510,9 +1510,6 @@
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="27.1215088010675" resolveInfo="RightParen" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996324">
-        <property name="flag" value="false" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1179479566870">

@@ -10081,5 +10081,12 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233077629855" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233829680922">
+    <property name="package" value="tuples" />
+    <link role="concept" targetNodeId="1.1233824724035" resolveInfo="TupleType" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1233829680923">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233829680924" />
+    </node>
+  </node>
 </model>
 

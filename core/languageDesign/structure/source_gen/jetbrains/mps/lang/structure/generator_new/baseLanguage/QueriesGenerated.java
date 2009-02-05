@@ -200,10 +200,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1174698110415(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode enumerationType = SNodeOperations.getParent(_context.getNode());
-    if (SPropertyOperations.hasValue(enumerationType, "memberIdentifierPolicy", "derive_from_internal_value", "derive_from_presentation")) {
+    if (SPropertyOperations.hasValue(enumerationType, "memberIdentifierPolicy", "derive_from_internal_value", "derive_from_internal_value")) {
       return NameUtil.toValidIdentifier(SPropertyOperations.getString(_context.getNode(), "internalValue"));
     }
-    if (SPropertyOperations.hasValue(enumerationType, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation")) {
+    if (SPropertyOperations.hasValue(enumerationType, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_internal_value")) {
       return NameUtil.toValidIdentifier(SPropertyOperations.getString(_context.getNode(), "externalValue"));
     }
     return SPropertyOperations.getString(_context.getNode(), "javaIdentifier");

@@ -3115,5 +3115,71 @@
       <link role="target" targetNodeId="1068580123157" resolveInfo="Statement" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233824724035">
+    <property name="package" value="tuples" />
+    <property name="name" value="TupleType" />
+    <link role="extends" targetNodeId="1068431790189" resolveInfo="Type" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233824750334">
+      <property name="value" value="(" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233824763227">
+      <property name="value" value="tuple type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233824939343">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="member" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1233824771431" resolveInfo="TupleMember" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233824771431">
+    <property name="package" value="tuples" />
+    <property name="name" value="TupleMember" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233824783104">
+      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233824786450">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="type" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233829069870">
+    <property name="package" value="tuples" />
+    <property name="name" value="TupleExpression" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233829084761">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="item" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233829623924">
+      <property name="value" value="(" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233829793553">
+      <property name="value" value="tuple constructor" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233828326825">
+    <property name="package" value="tuples" />
+    <property name="name" value="TupleMemberAccessExpression" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233828356717">
+      <link role="intfc" targetNodeId="1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233828358468">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="member" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1233824771431" resolveInfo="TupleMember" />
+    </node>
+  </node>
 </model>
 
