@@ -16,12 +16,16 @@
 package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vcs.diff.changes.*;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.Cardinality;
 
 import java.util.*;
 import java.util.HashMap;
@@ -235,11 +239,13 @@ public class Merger {
     List<SetNodeChange> sets = getChanges(SetNodeChange.class);
 
     for (SetNodeChange spc : sets) {
-      if (changes.get(new Pair<SNodeId, String>(spc.getNodeParent(), spc.getNodeRole())) == null) {
-        changes.put(new Pair<SNodeId, String>(spc.getNodeParent(), spc.getNodeRole()), new HashSet<SetNodeChange>());
-      }
+      if (isOneOrZeroCardinality(getNodeByIdAndChange(spc, spc.getNodeParent()), spc.getNodeRole())) {
+        if (changes.get(new Pair<SNodeId, String>(spc.getNodeParent(), spc.getNodeRole())) == null) {
+          changes.put(new Pair<SNodeId, String>(spc.getNodeParent(), spc.getNodeRole()), new HashSet<SetNodeChange>());
+        }
 
-      changes.get(new Pair<SNodeId, String>(spc.getNodeParent(), spc.getNodeRole())).add(spc);
+        changes.get(new Pair<SNodeId, String>(spc.getNodeParent(), spc.getNodeRole())).add(spc);
+      }
     }
 
     for (MoveNodeChange mnc : getChanges(MoveNodeChange.class)) {
@@ -269,6 +275,19 @@ public class Merger {
         myConflicted.add(cs.get(1));
       }
     }
+  }
+
+  private SNode getNodeByIdAndChange(SetNodeChange spc, SNodeId nodeId) {
+    return isMyne(spc) ? getMyne(mySourceModels).getNodeById(nodeId) :
+      getRepo(mySourceModels).getNodeById(nodeId);
+  }
+
+  private boolean isOneOrZeroCardinality(SNode parent, String role) {
+    LinkDeclaration ld = SModelSearchUtil.findLinkDeclaration(SModelUtil_new.findConceptDeclaration(parent.getConceptFqName(), GlobalScope.getInstance()), role);
+    if (ld == null) {
+      return false;
+    }
+    return ld.getSourceCardinality() != Cardinality._0__1 && ld.getSourceCardinality() != Cardinality._1;
   }
 
   private void collectAddAndDeleteConflicts() {
