@@ -471,34 +471,6 @@
                   <property name="color" value="DARK_MAGENTA" />
                 </node>
               </node>
-              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1197593552141">
-                <property name="text" value="(not recommended)" />
-                <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1197593498320">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197593498321">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197593564049">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648413">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648078">
-                          <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1197593564050" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1197593570538">
-                            <link role="property" targetNodeId="1.1197591154882" resolveInfo="memberIdentifierPolicy" />
-                          </node>
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1197593576526">
-                          <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1197593576527">
-                            <link role="enumMember" targetNodeId="1.1197590884614" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934277">
-                  <property name="style" value="PLAIN" />
-                </node>
-                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678485">
-                  <property name="color" value="red" />
-                </node>
-              </node>
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310998146">
                 <property name="flag" value="false" />
               </node>

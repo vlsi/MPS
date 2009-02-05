@@ -38,7 +38,7 @@ public class MPSAdapter implements ApplicationComponent {
   }
 
   public void initComponent() {
-    CaretBlinker.getInstance().launch();
+    CaretBlinker.getInstance().launch();        
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         //we do this in order to prevent deadlock

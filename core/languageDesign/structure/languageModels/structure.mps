@@ -647,7 +647,7 @@
     <property name="name" value="EnumerationMemberIdentifierPolicy" />
     <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
     <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
-    <link role="defaultMember" targetNodeId="1197591048630" />
+    <link role="defaultMember" targetNodeId="1197590884614" />
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1197590884614">
       <property name="externalValue" value="derive from presentation" />
       <property name="internalValue" value="derive_from_presentation" />

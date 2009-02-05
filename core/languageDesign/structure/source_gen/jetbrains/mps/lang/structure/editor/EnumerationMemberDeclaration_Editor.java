@@ -339,7 +339,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition9117_1(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(SNodeOperations.getParent(node), "memberIdentifierPolicy", "custom", "derive_from_internal_value");
+    return SPropertyOperations.hasValue(SNodeOperations.getParent(node), "memberIdentifierPolicy", "custom", "derive_from_presentation");
   }
 
 }
