@@ -176,7 +176,8 @@ public class GeneratorManager implements SearchableConfigurable {
     // confirm saving transient models
     final boolean saveTransientModels;
     if (mySettings.isSaveTransientModels()) {
-      Object[] options = {"Yes",
+      Object[] options = {
+        "Save Transient Models",
         "Not this time",
         "No, and cancel saving"};
       int option = JOptionPane.showOptionDialog(invocationContext.getMainFrame(),
