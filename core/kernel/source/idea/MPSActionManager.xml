@@ -58,6 +58,12 @@
                     text="Open MPS Project"
                     description="You can open existing MPS project with this action"/>
 
+            <action id="OpenRecenProjectAciton"
+                    class="com.intellij.openapi.wm.impl.welcomeScreen.RecentProjectsAction"
+                    text="Reopen Recent Project"
+                    description="You can open one of the most recent project you were working with. Click the icon or link to select a project from the list."
+                    icon="/general/reopenRecentProject.png"/>
+
             <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
         </group>
 
