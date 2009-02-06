@@ -51,9 +51,7 @@ public class SNodeDescriptor {
   }
 
   public SModelReference getModelReference() {
-    SModelReference modelRef = new SModelReference(null, SModelId.regular(new UUID(myMostSignificantBits, myLeastSignificantBits)));
-    modelRef.update();
-    return modelRef;
+    return new SModelReference(null, SModelId.regular(new UUID(myMostSignificantBits, myLeastSignificantBits))).update();
   }
 
   public Boolean isDependOnOtherModel() {
