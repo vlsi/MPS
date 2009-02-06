@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.structure;
 import java.util.Iterator;
 import java.util.List;
 
-public interface IMethodCall extends TypeDerivable {
+public interface IMethodCall extends TypeDerivable, TypeAnnotable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.IMethodCall";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";

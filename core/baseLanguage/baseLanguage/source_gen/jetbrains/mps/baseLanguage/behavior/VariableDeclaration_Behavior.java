@@ -30,6 +30,10 @@ public class VariableDeclaration_Behavior {
     return type;
   }
 
+  public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "type", true);
+  }
+
   public static SNode call_createReference_1213877517482(SNode thisNode) {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_createReference_1213877517482", PARAMETERS_1213877517482);
   }

@@ -107,6 +107,10 @@ public class BaseMethodDeclaration_Behavior {
     return false;
   }
 
+  public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "returnType", true);
+  }
+
   public static boolean call_isDataFlowChecked_1227714048980(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isDataFlowChecked_1227714048980", PARAMETERS_1227714048980);
   }

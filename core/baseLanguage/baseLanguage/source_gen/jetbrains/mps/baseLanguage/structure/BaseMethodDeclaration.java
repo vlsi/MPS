@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BaseMethodDeclaration extends GenericDeclaration implements IValidIdentifier, HasAnnotation, IBLDeprecatable, IStatementListContainer, IContainer {
+public class BaseMethodDeclaration extends GenericDeclaration implements IValidIdentifier, HasAnnotation, IBLDeprecatable, IStatementListContainer, IContainer, TypeAnnotable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

@@ -224,6 +224,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1201184516476">
       <link role="intfc" targetNodeId="1201183863028" resolveInfo="TypeDerivable" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233921058778">
+      <link role="intfc" targetNodeId="1233920926773" resolveInfo="TypeAnnotable" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068498886296">
     <property name="name" value="VariableReference" />
@@ -239,6 +242,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107223377480">
       <property name="value" value="&lt;VariableReference&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233921336931">
+      <link role="intfc" targetNodeId="1233920926773" resolveInfo="TypeAnnotable" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123132">
@@ -291,6 +297,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233160363482">
       <link role="intfc" targetNodeId="4.1233160296597" resolveInfo="IContainer" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233921171124">
+      <link role="intfc" targetNodeId="1233920926773" resolveInfo="TypeAnnotable" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123136">
@@ -2556,6 +2565,9 @@
     <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1212690967447">
       <link role="intfc" targetNodeId="1201183863028" resolveInfo="TypeDerivable" />
     </node>
+    <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233921266311">
+      <link role="intfc" targetNodeId="1233920926773" resolveInfo="TypeAnnotable" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1204200696010">
     <property name="name" value="NullType" />
@@ -3180,6 +3192,9 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1233824771431" resolveInfo="TupleMember" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1233920926773">
+    <property name="name" value="TypeAnnotable" />
   </node>
 </model>
 

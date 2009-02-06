@@ -1137,9 +1137,9 @@ public class EquationManager {
                                      boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
     HashSet<IWrapper> variables = new HashSet<IWrapper>();
     NodeWrapper result = expandNode(term, representator, representator, 0, variables, typesModel, finalExpansion, nodeTypesComponent);
-    if (variables.isEmpty()) {
+  /*  if (variables.isEmpty()) {
       return representator;
-    }
+    }*/
     return result;
   }
 

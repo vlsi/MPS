@@ -37,4 +37,8 @@ public class IMethodCall_Behavior {
     return null;
   }
 
+  public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
+    return TypeAnnotable_Behavior.call_getTypeAnnotation_1233920952262(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false));
+  }
+
 }

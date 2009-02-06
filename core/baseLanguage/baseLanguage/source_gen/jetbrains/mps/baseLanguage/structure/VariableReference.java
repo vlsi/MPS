@@ -7,12 +7,39 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class VariableReference extends Expression {
+public class VariableReference extends Expression implements TypeAnnotable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.VariableReference";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String VARIABLE_DECLARATION = "variableDeclaration";
 
   public VariableReference(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(VariableReference.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(VariableReference.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(VariableReference.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(VariableReference.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(VariableReference.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(VariableReference.VIRTUAL_PACKAGE, value);
   }
 
   public VariableDeclaration getVariableDeclaration() {

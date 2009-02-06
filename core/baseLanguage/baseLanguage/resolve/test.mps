@@ -94,6 +94,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233922373671">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233922374282">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1233922379098">
+              <link role="variableDeclaration" targetNodeId="1233826593792" resolveInfo="var" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation" id="1233922382638">
+              <link role="member" targetNodeId="1233829637219" resolveInfo="aaa" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1228755492108">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228755492109">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230389755328">
