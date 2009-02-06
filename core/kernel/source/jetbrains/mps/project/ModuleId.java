@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.util.annotation.ValueObject;
+import jetbrains.mps.util.annotation.ImmutableObject;
 
 import java.util.UUID;
 
-@ValueObject
+@ImmutableObject
 public class ModuleId {  
   public static ModuleId generate() {
     return new ModuleId(UUID.randomUUID());

@@ -7,5 +7,5 @@ import java.lang.annotation.ElementType;
 
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.TYPE)
-public @interface ValueObject {
+public @interface ImmutableObject {
 }

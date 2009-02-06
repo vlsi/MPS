@@ -19,12 +19,12 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.annotation.ValueObject;
+import jetbrains.mps.util.annotation.ImmutableObject;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@ValueObject
+@ImmutableObject
 public class ModuleReference {
   private static final Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
 

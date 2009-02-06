@@ -16836,21 +16836,9 @@
                       </node>
                     </node>
                     <node role="propertyAntiquotation$property_attribute$name" type="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" id="1233830304568">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1233830304569">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233830304570">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233830304571">
-                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1233830304572">
-                              <link role="applicableNode" targetNodeId="1233829956512" resolveInfo="tuple" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1233830304573">
-                              <link role="link" targetNodeId="1.1233829084761" />
-                            </node>
-                          </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1233830304574" />
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233830304575">
-                          <property name="value" value="m" />
-                        </node>
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233830304575">
+                        <property name="value" value="m" />
+                        <property name="right_transfrom_hint" value="true" />
                       </node>
                     </node>
                   </node>

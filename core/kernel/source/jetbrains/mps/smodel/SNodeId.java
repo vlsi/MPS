@@ -16,13 +16,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.annotation.ValueObject;
+import jetbrains.mps.util.annotation.ImmutableObject;
 
 /**
  * Created by: Sergey Dmitriev
  * Date: Apr 4, 2007
  */
-@ValueObject
+@ImmutableObject
 public abstract class SNodeId {
 
   public static SNodeId fromString(String idString) {
@@ -42,7 +42,7 @@ public abstract class SNodeId {
   /**
    * regular id
    */
-  @ValueObject
+  @ImmutableObject
   public static class Regular extends SNodeId {
     private final long myId;
 
@@ -71,7 +71,7 @@ public abstract class SNodeId {
   /**
    * foreign id
    */
-  @ValueObject
+  @ImmutableObject
   public static class Foreign extends SNodeId {
     public static final String ID_PREFIX = "~";
 

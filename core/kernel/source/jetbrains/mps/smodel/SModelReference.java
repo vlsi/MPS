@@ -17,14 +17,12 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.annotation.ValueObject;
+import jetbrains.mps.util.annotation.ImmutableObject;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.jetbrains.annotations.Nullable;
-
-@ValueObject
+@ImmutableObject
 public class SModelReference {
   private static final Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
 

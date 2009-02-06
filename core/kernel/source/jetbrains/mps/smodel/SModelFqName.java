@@ -17,9 +17,9 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.annotation.ValueObject;
+import jetbrains.mps.util.annotation.ImmutableObject;
 
-@ValueObject
+@ImmutableObject
 public class SModelFqName implements Comparable<Object> {
   public static SModelFqName fromString(String s) {
     if (s == null) s = "";
