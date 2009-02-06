@@ -78,10 +78,16 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1226493258397">
           <link role="relationDeclaration" targetNodeId="1.1226493152214" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233924583411">
+            <property name="value" value="1.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229522445495">
           <property name="text" value="scripts folder" />
           <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1233924683997">
+            <property name="value" value="1.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1229522457585">
           <property name="allowEmptyText" value="true" />

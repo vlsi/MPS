@@ -22,6 +22,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new MacroReference_path_PropertyConstraint());
     this.myConstraints.add(new Antcall_targetDeclaration_ReferentConstraint());
     this.myConstraints.add(new Antcall_project_ReferentConstraint());
+    this.myConstraints.add(new Variable_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

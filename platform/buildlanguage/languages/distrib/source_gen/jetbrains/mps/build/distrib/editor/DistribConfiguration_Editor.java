@@ -1019,7 +1019,7 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_7701_2(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_1");
       PackagingStyles_StyleSheet.getConfiguration(editorCell).apply(editorCell);
     }
 
@@ -1072,7 +1072,7 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Property_7701_3(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("property_name_2");
     }
 
     private static void setupLabel_Property_7701_3(EditorCell_Label editorCell, SNode node, EditorContext context) {

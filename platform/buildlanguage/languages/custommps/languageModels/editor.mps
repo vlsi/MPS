@@ -152,5 +152,18 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1233929575709">
+    <link role="conceptDeclaration" targetNodeId="1.1233925934806" resolveInfo="UndeclaredVariableReference" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233930730622">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233930733868">
+        <property name="text" value="+" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1233930739849">
+        <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
+        <link role="styleClass" targetNodeId="3v.1205337004073" resolveInfo="variable" />
+      </node>
+    </node>
+  </node>
 </model>
 
