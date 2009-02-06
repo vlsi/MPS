@@ -16882,5 +16882,40 @@
       <link role="concept" targetNodeId="1.1233829069870" resolveInfo="TupleExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1233924523615">
+    <property name="name" value="typeof_TupleMemberAccessOperation" />
+    <property name="package" value="tuples" />
+    <property name="overrides" value="true" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233924523616">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1233924563216">
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1233924567594">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1233924567595">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1233924572877">
+              <link role="applicableNode" targetNodeId="1233924523617" resolveInfo="operation" />
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1233924575439">
+          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233924589606">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233924576822">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1233924575440">
+                <link role="applicableNode" targetNodeId="1233924523617" resolveInfo="operation" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1233924588246">
+                <link role="link" targetNodeId="1.1233828358468" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1233924603683">
+              <link role="link" targetNodeId="1.1233824786450" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1233924523617">
+      <property name="name" value="operation" />
+      <link role="concept" targetNodeId="1.1233828326825" resolveInfo="TupleMemberAccessOperation" />
+    </node>
+  </node>
 </model>
 
