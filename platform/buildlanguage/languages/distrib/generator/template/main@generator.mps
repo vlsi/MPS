@@ -12,6 +12,9 @@
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)" />
+  <language namespace="823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml.deprecated)" />
+  <language namespace="2c55c7ac-60c3-4eea-b9db-0d627bd2dcb9(jetbrains.mps.xml)" />
+  <language namespace="64f62b28-36e3-4052-9f72-f616211ae615(jetbrains.mps.xmlInternal)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
@@ -52,6 +55,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
   <languageAspect modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590585(jetbrains.mps.xml.constraints)" version="6" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590595(jetbrains.mps.xmlSchema.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590598(jetbrains.mps.xmlSchema.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590591(jetbrains.mps.xmlInternal.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="12" />
   <import index="1" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
@@ -99,6 +109,27 @@
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1230293389422">
                 <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1230293389423">
+                  <link role="conceptDeclaration" targetNodeId="1.1230056066379" resolveInfo="DistribConfiguration" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1233940167238">
+      <link role="applicableConcept" targetNodeId="1.1233939045984" resolveInfo="MacConfig" />
+      <link role="template" targetNodeId="1233939573232" resolveInfo="Info.plist" />
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1233940187535">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233940187536">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233940190230">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233940193472">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233940190377">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233940190231" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1233940192513" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1233940195185">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1233940201077">
                   <link role="conceptDeclaration" targetNodeId="1.1230056066379" resolveInfo="DistribConfiguration" />
                 </node>
               </node>
@@ -437,20 +468,48 @@
           <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1231683866212">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231683866213">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231683875248">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231853117963">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231683878522">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231683875375">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1231683875249" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1231683877385">
-                        <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233942882381">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233942861798">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231853117963">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231683878522">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231683875375">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1231683875249" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1231683877385">
+                            <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1231853116967">
+                          <link role="link" targetNodeId="1.1231848554347" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1231853120850">
+                        <link role="baseMethodDeclaration" targetNodeId="8.1230059208735" resolveInfo="getFullPath" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1231853116967">
-                      <link role="link" targetNodeId="1.1231848554347" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233942865200">
+                      <link role="baseMethodDeclaration" targetNodeId="2.~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolveInfo="replace" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233942866395">
+                        <property name="value" value="/" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233942872724">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233942872461" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1233942879486">
+                          <link role="conceptProperty" targetNodeId="1.1231769310934" resolveInfo="pathSeparator" />
+                        </node>
+                      </node>
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1231853120850">
-                    <link role="baseMethodDeclaration" targetNodeId="8.1230059208735" resolveInfo="getFullPath" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233942883976">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolveInfo="replace" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233942884611">
+                      <property name="value" value="\\" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233942888329">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233942888203" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1233942891582">
+                        <link role="conceptProperty" targetNodeId="1.1231769310934" resolveInfo="pathSeparator" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3089,6 +3148,695 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.xmlInternal.structure.XmlFile" id="1233939573232">
+    <property name="fileName" value="Info" />
+    <property name="extension" value="plist" />
+    <node role="document" type="jetbrains.mps.xmlInternal.structure.Document" id="1233939573233">
+      <node role="rootElement" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233939669353">
+        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233939669354">
+          <property name="text" value="plist" />
+        </node>
+        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233939669355">
+          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233939647728" />
+          <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233939911178">
+            <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233939911179">
+              <property name="text" value="dict" />
+            </node>
+            <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233939911180">
+              <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233939911181" />
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233939936774">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233939936775">
+                  <property name="text" value="key" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233939936776">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233939936777">
+                    <property name="text" value="CFBundleDevelopmentRegion" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233939960452">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233939960453">
+                  <property name="text" value="string" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233939960454">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233939960455">
+                    <property name="text" value="English" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940014379">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940014380">
+                  <property name="text" value="key" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940014381">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940014382">
+                    <property name="text" value="CFBundleDocumentTypes" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941973848" />
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940066720">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940066721">
+                  <property name="text" value="array" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940066722">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940082865" />
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940086319">
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940086320">
+                      <property name="text" value="dict" />
+                    </node>
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940086321">
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940097264" />
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940099561">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940099562">
+                          <property name="text" value="key" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940099563">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940099564">
+                            <property name="text" value="CFBundleTypeExtensions" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940132554">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940132555">
+                          <property name="text" value="array" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940132556">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940138260" />
+                          <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940144010">
+                            <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940144011">
+                              <property name="text" value="string" />
+                            </node>
+                            <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940144012">
+                              <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940150508">
+                                <property name="text" value="mpr" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940189451" />
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940192751">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940192752">
+                          <property name="text" value="key" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940192754">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940192755">
+                            <property name="text" value="CFBundleTypeIconFile" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940206829">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940206830">
+                          <property name="text" value="string" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940227766">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940233227">
+                            <property name="text" value="mps.icns" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940259551">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940259552">
+                          <property name="text" value="key" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940259553">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940259554">
+                            <property name="text" value="CFBundleTypeName" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940302902">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940302903">
+                          <property name="text" value="string" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940302904">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940302905">
+                            <property name="text" value="JetBrains MPS Project File" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940330245">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940330246">
+                          <property name="text" value="key" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940330247">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940330248">
+                            <property name="text" value="CFBundleTypeRole" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940386798">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940386799">
+                          <property name="text" value="string" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940386800">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940386801">
+                            <property name="text" value="Editor" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941989843" />
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940425497" />
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940436623">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940436624">
+                  <property name="text" value="key" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940436625">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940436626">
+                    <property name="text" value="CFBundleExecutable" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940449696">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940449697">
+                  <property name="text" value="string" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940449698">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940458569">
+                    <property name="text" value="mps" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940479967">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940479968">
+                  <property name="text" value="key" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940479969">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940479970">
+                    <property name="text" value="CFBundleIconFile" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940500810">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940500811">
+                  <property name="text" value="string" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940500812">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940508329">
+                    <property name="text" value="mps.icns" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940537611">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940537612">
+                  <property name="text" value="key" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940537613">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940537614">
+                    <property name="text" value="CFBundleInfoDictionaryVersion" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940559498">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940559499">
+                  <property name="text" value="string" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940559500">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940559501">
+                    <property name="text" value="6.0" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940944708">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940944709">
+                  <property name="text" value="key" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940944710">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940944711">
+                    <property name="text" value="CFBundleName" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940607050">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940607051">
+                  <property name="text" value="string" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940607052">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940607053">
+                    <property name="text" value="JetBrains MPS" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940648092">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940648093">
+                  <property name="text" value="key" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940648094">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940648095">
+                    <property name="text" value="CFBundlePackageType" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940672536">
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940672538">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940672539">
+                    <property name="text" value="APPL" />
+                  </node>
+                </node>
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940691954">
+                  <property name="text" value="string" />
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940706134">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940706135">
+                  <property name="text" value="key" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940706136">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940706137">
+                    <property name="text" value="CFBundleSignature" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940716832">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940716833">
+                  <property name="text" value="string" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940716834">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940716835">
+                    <property name="text" value="????" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940738883">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940738884">
+                  <property name="text" value="key" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940738885">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940738886">
+                    <property name="text" value="CFBundleGetInfoString" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940768513">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940768514">
+                  <property name="text" value="string" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940768515">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940768516">
+                    <property name="text" value="JetBrains MPS $VERSION$ (build $BUILD_VERSION$)" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940785317">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940785318">
+                  <property name="text" value="key" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940785319">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940785320">
+                    <property name="text" value="CFBundleShortVersionString" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940802881">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940802882">
+                  <property name="text" value="string" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940802883">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940802884">
+                    <property name="text" value="$VERSION$" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940820562">
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940820565">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940820566">
+                    <property name="text" value="CFBundleVersion" />
+                  </node>
+                </node>
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940856241">
+                  <property name="text" value="key" />
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940840777">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940840778">
+                  <property name="text" value="string" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940840779">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940840780">
+                    <property name="text" value="$BUILD_VERSION$" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940873404">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940873405">
+                  <property name="text" value="key" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940873406">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940873407">
+                    <property name="text" value="Java" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941999505" />
+              <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940892371">
+                <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940892372">
+                  <property name="text" value="dict" />
+                </node>
+                <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940892373">
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940892374" />
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233940900443">
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233940900444">
+                      <property name="text" value="key" />
+                    </node>
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233940900445">
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233940900446">
+                        <property name="text" value="ClassPath" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941079774">
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941079775">
+                      <property name="text" value="string" />
+                    </node>
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941079776">
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941079777" />
+                    </node>
+                  </node>
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941094221">
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941094222">
+                      <property name="text" value="key" />
+                    </node>
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941094223">
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941094224">
+                        <property name="text" value="JVMVersion" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941108034">
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941108035">
+                      <property name="text" value="string" />
+                    </node>
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941108036">
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941108037">
+                        <property name="text" value="1.5+" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941126863">
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941126864">
+                      <property name="text" value="key" />
+                    </node>
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941126865">
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941126866">
+                        <property name="text" value="MainClass" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941132117">
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941132118">
+                      <property name="text" value="string" />
+                    </node>
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941132119">
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941132120">
+                        <property name="text" value="jetbrains.mps.Launcher" />
+                        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233943254795">
+                          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233943254796">
+                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233943254797">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233943256092">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233943256093">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233943256094">
+                                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233943256095" />
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1233943256096">
+                                      <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                                    </node>
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1233943256097">
+                                    <link role="property" targetNodeId="1.1230058022109" resolveInfo="startupClass" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941177690">
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941177691">
+                      <property name="text" value="key" />
+                    </node>
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941177692">
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941177693">
+                        <property name="text" value="Properties" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233942010938" />
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941177696">
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941177698">
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941219991">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941219992">
+                          <property name="text" value="key" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941219993">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941219994">
+                            <property name="text" value="apple.laf.useScreenMenuBar" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941219996">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941219997">
+                          <property name="text" value="string" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941219998">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941219999">
+                            <property name="text" value="true" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941285811">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941285812">
+                          <property name="text" value="key" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941285813">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941285814">
+                            <property name="text" value="com.apple.mrj.application.live-resize" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941298726">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941298727">
+                          <property name="text" value="string" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941298728">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941298729">
+                            <property name="text" value="false" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941320856">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941320857">
+                          <property name="text" value="key" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941320858">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941320859">
+                            <property name="text" value="file.encoding" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941320861">
+                        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941320862">
+                          <property name="text" value="string" />
+                        </node>
+                        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941320863">
+                          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941341171">
+                            <property name="text" value="windows-1251" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941208302">
+                      <property name="text" value="dict" />
+                    </node>
+                  </node>
+                  <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233942015597" />
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941369486">
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941369487">
+                      <property name="text" value="key" />
+                    </node>
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941369488">
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941369489">
+                        <property name="text" value="VMOptions" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941385442">
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941385443">
+                      <property name="text" value="string" />
+                    </node>
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941385444">
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941385445">
+                        <property name="text" value="VM Options" />
+                        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233942760189">
+                          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233942760190">
+                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233942760191">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233942761764">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233942761765">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233942761766">
+                                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233942774378" />
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1233942761768">
+                                      <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                                    </node>
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1233942761769">
+                                    <link role="property" targetNodeId="1.1231691593776" resolveInfo="defaultVMOptions" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941416409">
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233941416410">
+                      <property name="text" value="key" />
+                    </node>
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941416411">
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941416412">
+                        <property name="text" value="WorkingDirectory" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="content" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1233941447801">
+                    <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1233941447803">
+                      <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233941447804">
+                        <property name="text" value="$APP_PACKAGE" />
+                        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1233942926107">
+                          <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1233942926108">
+                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233942926109">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233942989156">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1233942989157">
+                                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233942989158">
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233942989159">
+                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233942989160">
+                                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233942989161">
+                                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233942989162" />
+                                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1233942989163">
+                                            <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                                          </node>
+                                        </node>
+                                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1233942989165">
+                                          <link role="link" targetNodeId="1.1231848554347" />
+                                        </node>
+                                      </node>
+                                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1233942989166">
+                                        <link role="baseMethodDeclaration" targetNodeId="8.1230059208735" resolveInfo="getFullPath" />
+                                      </node>
+                                    </node>
+                                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233942989167">
+                                      <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233942989168">
+                                        <property name="value" value="." />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="alternativeConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1233942943642">
+                            <node role="templateNode" type="jetbrains.mps.xml.structure.Text" id="1233942950361">
+                              <property name="text" value="$APP_PACKAGE" />
+                              <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233943028265">
+                                <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233943028266">
+                                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233943028267">
+                                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233943029261">
+                                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233943029262">
+                                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233943029263">
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233943029264">
+                                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233943029265">
+                                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233943029266">
+                                                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233943038471" />
+                                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1233943029268">
+                                                  <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                                                </node>
+                                              </node>
+                                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1233943029269">
+                                                <link role="link" targetNodeId="1.1231848554347" />
+                                              </node>
+                                            </node>
+                                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1233943029270">
+                                              <link role="baseMethodDeclaration" targetNodeId="8.1230059208735" resolveInfo="getFullPath" />
+                                            </node>
+                                          </node>
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233943029271">
+                                            <link role="baseMethodDeclaration" targetNodeId="2.~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolveInfo="replace" />
+                                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233943029272">
+                                              <property name="value" value="/" />
+                                            </node>
+                                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233943029273">
+                                              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233943029274" />
+                                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1233943029275">
+                                                <link role="conceptProperty" targetNodeId="1.1231769310934" resolveInfo="pathSeparator" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233943029276">
+                                          <link role="baseMethodDeclaration" targetNodeId="2.~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolveInfo="replace" />
+                                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233943029277">
+                                            <property name="value" value="\\" />
+                                          </node>
+                                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233943029278">
+                                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233943029279" />
+                                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1233943029280">
+                                              <link role="conceptProperty" targetNodeId="1.1231769310934" resolveInfo="pathSeparator" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1233942191570">
+                      <property name="text" value="string" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233942019194" />
+            </node>
+          </node>
+          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1233942020344" />
+        </node>
+        <node role="attribute" type="jetbrains.mps.xmlInternal.structure.SimpleAttribute" id="1233939680773">
+          <property name="attributeName" value="version" />
+          <node role="value" type="jetbrains.mps.xml.structure.Text" id="1233939680774">
+            <property name="text" value="1.0" />
+          </node>
+        </node>
+      </node>
+      <node role="prolog" type="jetbrains.mps.xmlInternal.structure.Prolog" id="1233939577509">
+        <node role="documentTypeDeclaration" type="jetbrains.mps.xmlInternal.structure.DocumentTypeDeclaration" id="1233939579346">
+          <property name="docTypeName" value="plist" />
+          <node role="externalId" type="jetbrains.mps.xmlInternal.structure.PublicExternalId" id="1233939604898">
+            <node role="pubidLiteral" type="jetbrains.mps.xmlInternal.structure.Literal" id="1233939604899">
+              <property name="value" value="-//Apple Computer//DTD PLIST 1.0//EN" />
+            </node>
+            <node role="systemLiteral" type="jetbrains.mps.xmlInternal.structure.Literal" id="1233939649116">
+              <property name="value" value="http://www.apple.com/DTDs/PropertyList-1.0.dtd" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1233939573241">
+      <link role="applicableConcept" targetNodeId="1.1233939045984" resolveInfo="MacConfig" />
     </node>
   </node>
 </model>
