@@ -12,10 +12,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 
 public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(ShowDifferencesWithModelOnDisk_Action.class);
@@ -62,16 +59,9 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final SModel memory = ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getSModel();
-      final SModel disk = ModelPersistence.readModel(ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getModelFile());
-      final BaseDialog dialog = new ModelDifferenceDialog(ShowDifferencesWithModelOnDisk_Action.this.frame, disk, memory, "Model Difference", true);
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-
-        public void run() {
-          dialog.showDialog();
-        }
-
-      }, ModalityState.NON_MODAL);
+      SModel memory = ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getSModel();
+      SModel disk = ModelPersistence.readModel(ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getModelFile());
+      new ModelDifferenceDialog(ShowDifferencesWithModelOnDisk_Action.this.frame, disk, memory, "Model Difference", true).showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowDifferencesWithModelOnDisk", t);
     }

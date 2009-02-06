@@ -682,14 +682,9 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1233049679719">
               <link role="classifier" targetNodeId="25.~ModuleReference" resolveInfo="ModuleReference" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233049913620">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1233049911603">
-                <link role="classifier" targetNodeId="22.~LanguageDesign_DevKit" resolveInfo="LanguageDesign_DevKit" />
-                <link role="variableDeclaration" targetNodeId="22.~LanguageDesign_DevKit.MODULE_REFERENCE" resolveInfo="MODULE_REFERENCE" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233049916094">
-                <link role="baseMethodDeclaration" targetNodeId="25.~ModuleReference.getCopy():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getCopy" />
-              </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1233049911603">
+              <link role="classifier" targetNodeId="22.~LanguageDesign_DevKit" resolveInfo="LanguageDesign_DevKit" />
+              <link role="variableDeclaration" targetNodeId="22.~LanguageDesign_DevKit.MODULE_REFERENCE" resolveInfo="MODULE_REFERENCE" />
             </node>
           </node>
         </node>

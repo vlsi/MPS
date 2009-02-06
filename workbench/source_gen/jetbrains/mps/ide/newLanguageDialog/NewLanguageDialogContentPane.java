@@ -5,33 +5,22 @@ package jetbrains.mps.ide.newLanguageDialog;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
-
 import java.util.List;
-
 import org.jdesktop.beansbinding.AutoBinding;
-
 import java.util.ArrayList;
-
 import jetbrains.mps.uiLanguage.runtime.events.Events;
-
 import java.awt.GridLayout;
-
 import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
-
 import java.io.File;
-
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.DirectoryUtil;
-
 import java.awt.Frame;
-
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
@@ -123,7 +112,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   }
 
   private void unbind() {
-    for (AutoBinding binding : this.myBindings) {
+    for(AutoBinding binding : this.myBindings) {
       if (binding.isBound()) {
         binding.unbind();
       }
@@ -237,7 +226,7 @@ public class NewLanguageDialogContentPane extends JPanel {
       return;
     }
     if (!(dir.exists())) {
-      if (!(DirectoryUtil.askToCreateNewDirectory((Frame) myThis.getDialog().getOwner(), dir))) {
+      if (!(DirectoryUtil.askToCreateNewDirectory((Frame)myThis.getDialog().getOwner(), dir))) {
         return;
       }
     }
@@ -246,16 +235,12 @@ public class NewLanguageDialogContentPane extends JPanel {
 
       public void run(@NotNull() ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
+
           public void run() {
-            ModelAccess.instance().runWriteAction(new Runnable() {
-
-              public void run() {
-                myThis.createNewLanguage();
-              }
-
-            });
+            myThis.createNewLanguage();
           }
+
         });
       }
 
@@ -285,8 +270,8 @@ public class NewLanguageDialogContentPane extends JPanel {
       dir.mkdirs();
     }
     Language language = Language.createLanguage(myThis.getLanguageNamespace(), new FileSystemFile(descriptorFile), myThis.getProject());
-    LanguageDescriptor languageDescriptor = language.getLanguageDescriptor();
-    ModuleReference devkitRef = new ModuleReference(LanguageDesign_DevKit.MODULE_REFERENCE.toString());
+    LanguageDescriptor languageDescriptor = (LanguageDescriptor)language.getLanguageDescriptor();
+    ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
     languageDescriptor.getUsedDevkits().add(devkitRef);
     languageDescriptor.setCompileInMPS(myThis.getCompileInMPS());
     LanguageAspect.STRUCTURE.createNew(language);

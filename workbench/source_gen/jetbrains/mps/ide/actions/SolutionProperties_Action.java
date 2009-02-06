@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.dialogs.SolutionPropertiesDialog;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
@@ -14,6 +13,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.dialogs.SolutionPropertiesDialog;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class SolutionProperties_Action extends GeneratedAction {
