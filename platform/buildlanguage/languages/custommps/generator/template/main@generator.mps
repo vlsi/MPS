@@ -691,6 +691,7 @@
                       </node>
                       <node role="second" type="jetbrains.mps.build.custommps.structure.UndeclaredVariableReference" id="1233930675836">
                         <property name="name" value="build" />
+                        <property name="antName" value="build.number" />
                       </node>
                     </node>
                     <node role="replacingPair" type="jetbrains.mps.build.packaging.structure.Pair" id="1233857024036">
@@ -763,6 +764,7 @@
                       </node>
                       <node role="second" type="jetbrains.mps.build.custommps.structure.UndeclaredVariableReference" id="1233930699089">
                         <property name="name" value="version" />
+                        <property name="antName" value="version" />
                       </node>
                     </node>
                     <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="1233857024042">
@@ -2631,8 +2633,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233931578359">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233931578419">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233931578360" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1233931582640">
-                    <link role="property" targetNodeId="4v.1169194664001" resolveInfo="name" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1233938622197">
+                    <link role="property" targetNodeId="1.1233937527188" resolveInfo="antName" />
                   </node>
                 </node>
               </node>

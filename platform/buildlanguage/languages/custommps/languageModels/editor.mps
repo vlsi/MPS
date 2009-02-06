@@ -3,6 +3,7 @@
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
+  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -156,12 +157,39 @@
     <link role="conceptDeclaration" targetNodeId="1.1233925934806" resolveInfo="UndeclaredVariableReference" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233930730622">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233930733868">
-        <property name="text" value="+" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1233930739849">
         <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
-        <link role="styleClass" targetNodeId="3v.1205337004073" resolveInfo="variable" />
+        <link role="styleClass" targetNodeId="1233937712403" resolveInfo="keyword" />
+      </node>
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233938132917">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233938135250">
+        <property name="text" value="ant name" />
+        <link role="styleClass" targetNodeId="3v.1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1233938142725">
+        <link role="relationDeclaration" targetNodeId="1.1233937527188" resolveInfo="antName" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.StyleSheet" id="1233937590204">
+    <property name="name" value="CustomMpsStyles" />
+    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1233937712403">
+      <property name="name" value="undeclaredVaribale" />
+      <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1233937717898">
+        <link role="styleSheetClass" targetNodeId="3v.1205337004073" resolveInfo="variable" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem" id="1233937747947">
+        <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Underlined" id="1233937956200">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233937956201">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233937959751">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233937959752">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

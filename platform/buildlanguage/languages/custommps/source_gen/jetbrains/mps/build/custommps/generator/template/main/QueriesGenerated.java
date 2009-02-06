@@ -59,7 +59,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1233931574105(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return SPropertyOperations.getString(_context.getNode(), "antName");
   }
 
   public static Object propertyMacro_GetPropertyValue_1233931591542(final IOperationContext operationContext, final PropertyMacroContext _context) {

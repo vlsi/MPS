@@ -93,6 +93,10 @@
       <property name="value" value="undeclared variable" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1233937527188">
+      <property name="name" value="antName" />
+      <link role="dataType" targetNodeId="3v.1082983041843" resolveInfo="string" />
+    </node>
   </node>
 </model>
 
