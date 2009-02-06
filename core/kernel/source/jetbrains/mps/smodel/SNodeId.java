@@ -16,11 +16,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.annotation.ValueObject;
 
 /**
  * Created by: Sergey Dmitriev
  * Date: Apr 4, 2007
  */
+@ValueObject
 public abstract class SNodeId {
 
   public static SNodeId fromString(String idString) {
@@ -40,8 +42,9 @@ public abstract class SNodeId {
   /**
    * regular id
    */
+  @ValueObject
   public static class Regular extends SNodeId {
-    long myId;
+    private final long myId;
 
     public Regular(long id) {
       myId = id;
@@ -68,10 +71,11 @@ public abstract class SNodeId {
   /**
    * foreign id
    */
+  @ValueObject
   public static class Foreign extends SNodeId {
     public static final String ID_PREFIX = "~";
 
-    private String myId;
+    private final String myId;
 
     public Foreign(String id) {
       if (!id.startsWith(ID_PREFIX)) {

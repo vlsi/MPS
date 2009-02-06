@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.util.annotation.ValueObject;
+
 import java.util.UUID;
 
+@ValueObject
 public class ModuleId {  
   public static ModuleId generate() {
     return new ModuleId(UUID.randomUUID());
@@ -29,7 +32,7 @@ public class ModuleId {
     return new ModuleId(UUID.fromString(text));
   }
 
-  private UUID myUid;
+  private final UUID myUid;
 
   private ModuleId(UUID uid) {
     myUid = uid;

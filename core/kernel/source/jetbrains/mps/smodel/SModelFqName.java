@@ -17,7 +17,9 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.annotation.ValueObject;
 
+@ValueObject
 public class SModelFqName implements Comparable<Object> {
   public static SModelFqName fromString(String s) {
     if (s == null) s = "";
@@ -34,9 +36,9 @@ public class SModelFqName implements Comparable<Object> {
     return new SModelFqName(longName, stereotype);
   }
 
-  private String myLongName;
-  private String myStereotype;
-  private String myUIDString;
+  private final String myLongName;
+  private final String myStereotype;
+  private final String myUIDString;
 
   public SModelFqName(String namePrefix, String shortName, String stereotype) {
     this(namePrefix + "." + shortName, stereotype);
@@ -97,9 +99,5 @@ public class SModelFqName implements Comparable<Object> {
     int compareStereotypes = this.getStereotype().compareTo(((SModelFqName)o).getStereotype());
     if (compareStereotypes != 0) return compareStereotypes;
     return this.toString().compareTo(o.toString());
-  }
-
-  public SModelFqName getCopy() {
-    return new SModelFqName(myLongName,myStereotype);
   }
 }
