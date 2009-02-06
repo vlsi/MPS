@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.behavior" uuid="af65afd8-f0dd-4942-87d9-63a55f2a9db1" generatorOutputPath="${mps_home}\core\languageDesign\behavior\source_gen" java-stubs-enabled="true" compileInMPS="false">
+<language namespace="jetbrains.mps.lang.behavior" uuid="af65afd8-f0dd-4942-87d9-63a55f2a9db1" generatorOutputPath="${mps_home}/core/languageDesign/behavior/source_gen" java-stubs-enabled="true" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.lang.behavior" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.lang.behavior" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.behavior" />
+    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.lang.behavior" />
   </models>
   <accessoryModels />
   <generators>
     <generator name="" generatorUID="jetbrains.mps.lang.behavior#1225195312923" uuid="2ca6a34d-0b96-4602-9cdd-f9e33d51126a">
       <models>
-        <modelRoot path="${language_descriptor}\generator\template" namespacePrefix="jetbrains.mps.lang.behavior.generator.template" />
+        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.lang.behavior.generator.template" />
       </models>
       <external-templates />
       <dependencies>
@@ -21,7 +21,7 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\core\languageDesign\behavior\classes" />
+    <entry path="${mps_home}/core/languageDesign/behavior/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
@@ -30,7 +30,7 @@
     <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
   </dependencies>
   <usedDevKits>
-    <usedDevKit>jetbrains.mps.devkit.language-design</usedDevKit>
+    <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
   <extendedLanguages />
 </language>

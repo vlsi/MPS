@@ -118,20 +118,9 @@ public class CloneModelProperties {
       myRoot.setPrefix(root.getPrefix());
     }
 
-    for (ModuleReference language : model.getExplicitlyImportedLanguages()) {
-      myImportedLanguages.add(language.getCopy());
-    }
-
-    for (SModelReference importedModelReference : model.getImportedModelUIDs()) {
-      myImportedModels.add(importedModelReference.getCopy());
-    }
-
-    for (ModuleReference devKit : model.getDevKitRefs()) {
-      myImportedDevkits.add(devKit.getCopy());
-    }
-
-    for (ModuleReference language : model.getEngagedOnGenerationLanguages()) {
-      myLanguagesInGeneration.add(language.getCopy());
-    }
+    myImportedLanguages.addAll(model.getExplicitlyImportedLanguages());
+    myImportedModels.addAll(model.getImportedModelUIDs());
+    myImportedDevkits.addAll(model.getDevKitRefs());
+    myLanguagesInGeneration.addAll(model.getEngagedOnGenerationLanguages());
   }
 }

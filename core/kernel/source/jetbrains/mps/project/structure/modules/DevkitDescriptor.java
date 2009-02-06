@@ -54,13 +54,11 @@ public class DevkitDescriptor extends ModuleDescriptor {
 
   @Override
   public boolean updateModuleRefs() {
-    boolean res = super.updateModuleRefs();
-
-    boolean changed =
-      RefUpdateUtil.updateModuleRefs(myExportedLanguages) |
-        RefUpdateUtil.updateModuleRefs(myExportedSolutions) |
-        RefUpdateUtil.updateModuleRefs(myExtendedDevkits);
-
-    return res || changed;
+    return RefUpdateUtil.composeUpdates(
+      super.updateModuleRefs(),
+      RefUpdateUtil.updateModuleRefs(myExportedLanguages),
+      RefUpdateUtil.updateModuleRefs(myExportedSolutions),
+      RefUpdateUtil.updateModuleRefs(myExtendedDevkits)
+    );
   }
 }

@@ -77,22 +77,18 @@ public class LanguageDescriptor extends ModuleDescriptor{
 
   @Override
   public boolean updateModelRefs() {
-    boolean res = super.updateModelRefs();
-
-    boolean changed = RefUpdateUtil.updateModelRefs(myAccessoryModels);
-
-    return res || changed;
+    return RefUpdateUtil.composeUpdates(
+      super.updateModelRefs(),
+      RefUpdateUtil.updateModelRefs(myAccessoryModels)
+    );
   }
 
   @Override
   public boolean updateModuleRefs() {
-    boolean res = super.updateModuleRefs();
-
-    boolean changed = RefUpdateUtil.updateModuleRefs(myExtendedLanguages);
-    for (Dependency dep:myRuntimeModules){
-      changed = changed | dep.getModuleRef().update();
-    }
-
-    return res || changed;
+    return RefUpdateUtil.composeUpdates(
+      super.updateModuleRefs(),
+      RefUpdateUtil.updateDependencies(myRuntimeModules),
+      RefUpdateUtil.updateModuleRefs(myExtendedLanguages)
+    );
   }
 }

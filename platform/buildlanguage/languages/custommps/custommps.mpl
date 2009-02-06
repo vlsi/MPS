@@ -41,11 +41,11 @@
   <languageRuntimeClassPath />
   <sourcePath />
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.build.distrib</usedLanguages>
-    <usedLanguages>jetbrains.mps.build.packaging</usedLanguages>
+    <usedLanguages>02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)</usedLanguages>
+    <usedLanguages>4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)</usedLanguages>
   </usedLanguages>
   <extendedLanguages>
-    <extendedLanguage>jetbrains.mps.build.packaging</extendedLanguage>
+    <extendedLanguage>4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)</extendedLanguage>
   </extendedLanguages>
 </language>
 

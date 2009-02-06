@@ -21,7 +21,10 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
-            <all-local-mappings />
+            <generator generatorUID="jetbrains.mps.baseLanguage.regexp#1174510748147" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
@@ -34,15 +37,15 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}/classes" />
-    <entry path="${language_descriptor}/runtime/classes" />
+    <entry path="${language_descriptor}/classes" include="false" />
+    <entry path="${language_descriptor}/runtime/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
     <entry path="${language_descriptor}/runtime/classes" />
   </languageRuntimeClassPath>
   <sourcePath />
   <usedDevKits>
-    <usedDevKit>jetbrains.mps.devkit.language-design</usedDevKit>
+    <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
   <extendedLanguages>
     <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>

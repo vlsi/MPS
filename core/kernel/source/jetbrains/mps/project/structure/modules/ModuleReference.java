@@ -19,10 +19,12 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.annotation.ValueObject;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@ValueObject
 public class ModuleReference {
   private static final Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
 
@@ -34,8 +36,8 @@ public class ModuleReference {
     return new ModuleReference(text);
   }
 
-  private String myModuleFqName;
-  private ModuleId myModuleId;
+  private final String myModuleFqName;
+  private final ModuleId myModuleId;
 
   public ModuleReference(String moduleFqName) {
     this(moduleFqName, (ModuleId) null);
@@ -58,18 +60,13 @@ public class ModuleReference {
     return myModuleId;
   }
 
-  public boolean update() {
+  public ModuleReference update() {
     IModule module = MPSModuleRepository.getInstance().getModule(this);
-    if (module == null) return false;
-    ModuleReference newRef = module.getModuleReference();
-
-    myModuleFqName = newRef.myModuleFqName;
-    myModuleId = newRef.myModuleId;
-
-    return differs(newRef);
+    if (module == null) return this;
+    return module.getModuleReference();
   }
 
-  protected boolean differs(ModuleReference ref) {
+  public boolean differs(ModuleReference ref) {
     return !(EqualUtil.equals(myModuleFqName, ref.myModuleFqName) && EqualUtil.equals(myModuleId, ref.myModuleId));
   }
 
@@ -107,10 +104,6 @@ public class ModuleReference {
       return myModuleId.toString() + "(" + myModuleFqName + ")";
     }
     return myModuleFqName;
-  }
-
-  public ModuleReference getCopy() {
-    return new ModuleReference(myModuleFqName,myModuleId);
   }
 }
 

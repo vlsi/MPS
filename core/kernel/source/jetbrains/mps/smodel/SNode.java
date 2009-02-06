@@ -1477,7 +1477,6 @@ public final class SNode {
 
   public ModuleReference getConceptLanguage() {
     ModuleReference ref = ModuleReference.fromString(getLanguageNamespace());
-    ref.update();
     return ref;
   }
 

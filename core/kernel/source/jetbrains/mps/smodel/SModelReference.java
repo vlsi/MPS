@@ -17,19 +17,14 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.annotation.ValueObject;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 21.07.2005
- * Time: 14:07:53
- * To change this template use File | Settings | File Templates.
- */
+@ValueObject
 public class SModelReference {
   private static final Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
 
@@ -43,8 +38,8 @@ public class SModelReference {
     return new SModelReference(SModelFqName.fromString(s), null);
   }
 
-  private SModelId myModelId;
-  private SModelFqName myModelFqName;
+  private final SModelId myModelId;
+  private final SModelFqName myModelFqName;
 
   public SModelReference(String longName, String stereotype) {
     this(new SModelFqName(longName, stereotype), null);
@@ -121,29 +116,18 @@ public class SModelReference {
     return myModelFqName.hasStereotype();
   }
 
-  public boolean update() {
+  public SModelReference update() {
     SModelDescriptor sm;
     if (myModelId != null) {
       sm = GlobalScope.getInstance().getModelDescriptor(myModelId);
     } else {
       sm = GlobalScope.getInstance().getModelDescriptor(myModelFqName);
     }
-    if (sm == null) return false;
-    SModelReference newRef = sm.getSModelReference();
-
-    myModelFqName = newRef.myModelFqName;
-    myModelId = newRef.myModelId;
-
-    return differs(newRef);
+    if (sm == null) return this;
+    return sm.getSModelReference();
   }
 
-  protected boolean differs(SModelReference ref) {
+  public boolean differs(SModelReference ref) {
     return !(EqualUtil.equals(myModelId, ref.myModelId) && EqualUtil.equals(myModelFqName, ref.myModelFqName));
-  }
-
-  public SModelReference getCopy() {
-    SModelFqName modelFqName = myModelFqName==null?null:myModelFqName.getCopy();
-    SModelId modelId = myModelId==null?null:myModelId.getCopy();
-    return new SModelReference(modelFqName, modelId);
   }
 }

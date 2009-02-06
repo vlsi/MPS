@@ -56,12 +56,12 @@
     <dependency reexport="false">8fffa437-9500-4c6b-abfc-f4cb2335b059(jetbrains.mps.lang.typesystem#1174411220599)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.regexp</usedLanguages>
+    <usedLanguages>443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)</usedLanguages>
+    <usedLanguages>daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)</usedLanguages>
   </usedLanguages>
   <extendedLanguages>
-    <extendedLanguage>jetbrains.mps.baseLanguage.blTypes</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.lang.core</extendedLanguage>
+    <extendedLanguage>ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)</extendedLanguage>
+    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
   </extendedLanguages>
 </language>
 

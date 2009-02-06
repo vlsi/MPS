@@ -42,7 +42,7 @@ public class Dependency {
 
   public Dependency getCopy() {
     Dependency result = new Dependency();
-    result.myModuleRef = myModuleRef.getCopy();
+    result.myModuleRef = myModuleRef;
     result.myReexport = myReexport;
 
     return result;

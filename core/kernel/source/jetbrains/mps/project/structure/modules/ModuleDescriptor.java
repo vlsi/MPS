@@ -16,6 +16,7 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.smodel.SModelReference;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -99,57 +100,15 @@ public class ModuleDescriptor {
   }
 
   public boolean updateModelRefs() {
-/* todo
-    for (SModelReference oldRef : myAccessoryModels) {
-      SModelReference newRef = oldRef.update();
-      changed = changed || changed(oldRef, newRef);
-      oldRef.setModelRef(newRef.toString());
-    }
-
-    for (MappingConfig_SimpleRef ref : getModuleDescriptor().getDescendants(MappingConfig_SimpleRef.class)) {
-      SModelReference oldRef = SModelReference.fromString(ref.getModelUID());
-      assert oldRef != null;
-      SModelReference newRef = oldRef.update();
-      changed = changed || changed(oldRef, newRef);
-      ref.setModelUID(newRef.toString());
-    }
-*/
     return false;
   }
 
   public boolean updateModuleRefs() {
-    /*todo
-    boolean changed = false;
-
-    for (jetbrains.mps.projectLanguage.structure.ModuleReference ref : getModuleDescriptor().getDescendants(ModuleReference.class)) {
-      ModuleReference oldRef = ModuleReference.fromString(ref.getName());
-      ModuleReference newRef = oldRef.update();
-      changed = changed || changed(oldRef, newRef);
-      ref.setName(newRef.toString());
-    }
-
-    for (ModuleReference ref : getModuleDescriptor().getDescendants(ModuleReference.class)) {
-      ModuleReference oldRef = ModuleReference.fromString(ref.getName());
-      ModuleReference newRef = oldRef.update();
-      changed = changed || changed(oldRef, newRef);
-      ref.setName(newRef.toString());
-    }
-
-    for (ModuleReference ref : getModuleDescriptor().getDescendants(ModuleReference.class)) {
-      ModuleReference oldRef = ModuleReference.fromString(ref.getName());
-      ModuleReference newRef = oldRef.update();
-      changed = changed || changed(oldRef, newRef);
-      ref.setName(newRef.toString());
-    }
-
-    for (ModuleReference ref : getModuleDescriptor().getDescendants(ModuleReference.class)) {
-      ModuleReference oldRef = ModuleReference.fromString(ref.getGeneratorUID());
-      ModuleReference newRef = oldRef.update();
-      changed = changed || changed(oldRef, newRef);
-      ref.setGeneratorUID(newRef.toString());
-    }
-    */
-    return false;
+    return RefUpdateUtil.composeUpdates(
+      RefUpdateUtil.updateModuleRefs(myUsedLanguages),
+      RefUpdateUtil.updateModuleRefs(myUsedDevkits),
+      RefUpdateUtil.updateDependencies(myDependencies)
+    );
   }
 
 

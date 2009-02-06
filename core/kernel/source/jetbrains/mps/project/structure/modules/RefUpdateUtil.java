@@ -19,21 +19,53 @@ import jetbrains.mps.smodel.SModelReference;
 
 import java.util.List;
 
-public class RefUpdateUtil {
-  public static boolean updateModelRefs(List<SModelReference> refs) {
+class RefUpdateUtil {
+  static boolean updateModelRefs(List<SModelReference> refs) {
     boolean changed = false;
-    for (SModelReference ref : refs) {
-      boolean newChange = ref.update();
-      changed = changed || newChange;
+    for (int i = 0; i < refs.size(); i++) {
+      SModelReference ref = refs.get(i);
+      SModelReference newRef = ref.update();
+      if (ref.differs(newRef)) {
+        changed = true;
+        ref.update();
+        refs.set(i, newRef);
+      }
     }
     return changed;
   }
 
-  public static boolean updateModuleRefs(List<ModuleReference> refs) {
+  static boolean updateModuleRefs(List<ModuleReference> refs) {
     boolean changed = false;
-    for (ModuleReference ref : refs) {
-      boolean newChange = ref.update();
-      changed = changed || newChange;
+    for (int i = 0; i < refs.size(); i++) {
+      ModuleReference ref = refs.get(i);
+      ModuleReference newRef = ref.update();
+      if (ref.differs(newRef)) {
+        changed = true;
+        ref.update();
+        refs.set(i, newRef);
+      }
+    }
+    return changed;
+  }
+
+  static boolean updateDependencies(List<Dependency> deps) {
+    boolean changed = false;
+    for (Dependency dep : deps) {
+      ModuleReference ref = dep.getModuleRef();
+      ModuleReference newRef = ref.update();
+      if (ref.differs(newRef)) {
+        changed = true;
+        ref.update();
+        dep.setModuleRef(newRef);
+      }
+    }
+    return changed;
+  }
+
+  static boolean composeUpdates(boolean... values) {
+    boolean changed = false;
+    for (boolean v : values) {
+      if (v) changed = true;
     }
     return changed;
   }
