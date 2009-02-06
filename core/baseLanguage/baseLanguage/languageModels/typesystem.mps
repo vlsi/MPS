@@ -16836,9 +16836,16 @@
                       </node>
                     </node>
                     <node role="propertyAntiquotation$property_attribute$name" type="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" id="1233830304568">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233830304575">
-                        <property name="value" value="m" />
-                        <property name="right_transfrom_hint" value="true" />
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1233926085066">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233926107697">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1233926107058">
+                            <link role="variableDeclaration" targetNodeId="1233830132985" resolveInfo="expr" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" id="1233926108932" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233830304575">
+                          <property name="value" value="m" />
+                        </node>
                       </node>
                     </node>
                   </node>
