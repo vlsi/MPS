@@ -17,10 +17,17 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
+import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import java.util.*;
 import java.util.List;
 import java.awt.*;
@@ -53,6 +60,12 @@ public class LeftEditorHighlighter {
   private Map<CellInfo, FoldingButton> myFoldingButtons = new HashMap<CellInfo, FoldingButton>();
   private Set<FoldingButton> myUnresolvedFoldingButtons = new HashSet<FoldingButton>();
 
+  private Map<CellInfo, Bookmark> myBookmarks = new HashMap<CellInfo, Bookmark>();
+  private Set<Bookmark> myUnresolvedBookmarks = new HashSet<Bookmark>();
+
+  private BookmarkListener myListener;
+  private BookmarkManager myBookmarkManager = null;
+
 
   public LeftEditorHighlighter(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -60,9 +73,39 @@ public class LeftEditorHighlighter {
     editorComponent.addMouseMotionListener(new MyMouseEnterListener());
     editorComponent.addRebuildListener(new EditorComponent.RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
+        myBookmarks.clear();
+        myUnresolvedBookmarks.clear();
+        BookmarkManager bookmarkManager = getBookmarkManager();
+        if (bookmarkManager != null) {
+          bookmarkManager.removeBookmarkListener(myListener);
+          SNode editedNode = myEditorComponent.getEditedNode();
+          if (editedNode != null) {
+            for (Pair<SNode, Integer> bookmark : bookmarkManager.getBookmarks(editedNode.getContainingRoot())) {
+              addBookmark(bookmark.o1, bookmark.o2);
+            }
+          }
+          myListener = new BookmarkListener() {
+            public void bookmarkAdded(int number, SNode node) {
+              addBookmark(node, number);
+            }
+
+            public void bookmarkRemoved(int number, SNode node) {
+              removeBookmark(number);
+            }
+          };
+          bookmarkManager.addBookmarkListener(myListener);
+        }
+
         doUpdateCellInfos();
       }
     });
+  }
+
+  public void dispose() {
+    BookmarkManager bookmarkManager = getBookmarkManager();
+    if (bookmarkManager != null) {
+      bookmarkManager.removeBookmarkListener(myListener);
+    }
   }
 
   private void doUpdateCellInfos() {
@@ -83,7 +126,7 @@ public class LeftEditorHighlighter {
       }
     }
 
-    
+
     relayout(true, false);
   }
 
@@ -111,6 +154,9 @@ public class LeftEditorHighlighter {
     for (FoldingButton button : new HashSet<FoldingButton>(myFoldingButtons.values())) {
       button.paint(g);
     }
+    for (Bookmark bookmark : new HashSet<Bookmark>(myBookmarks.values())) {
+      bookmark.paint(g);
+    }
   }
 
 
@@ -126,6 +172,30 @@ public class LeftEditorHighlighter {
   public void markFoldable(EditorCell cell) {
     if (cell.getEditor() != myEditorComponent) throw new IllegalArgumentException("cell must be from my editor");
     myFoldingButtons.put(cell.getCellInfo(), new FoldingButton(cell));
+  }
+
+  public void addBookmark(SNode node, int number) {
+    if (node == null) return;
+    SNode editedNode = myEditorComponent.getEditedNode();
+    if (editedNode == null) return;
+    if (node.getContainingRoot() != editedNode.getContainingRoot()) {
+      return;
+    }
+    EditorCell nodeCell = myEditorComponent.findNodeCell(node);
+    if (nodeCell == null) {
+   //   LOG.error("can't find a cell for node " + node);
+      return;
+    }
+    myBookmarks.put(nodeCell.getCellInfo(), new Bookmark(nodeCell, number));
+  }
+
+  public void removeBookmark(int number) {
+    for (CellInfo cellInfo : new HashSet<CellInfo>(myBookmarks.keySet())) {
+      if (myBookmarks.get(cellInfo).getNumber() == number) {
+        myBookmarks.remove(cellInfo);
+        break;
+      }
+    }
   }
 
   public void setWidth(int width) {
@@ -152,6 +222,14 @@ public class LeftEditorHighlighter {
       }
       deleteUnresolvedFoldingButtons();
     }
+
+    // if (updateFolding) {
+    for (Bookmark bookmark : myBookmarks.values()) {
+      bookmark.relayout();
+      bookmark.setX(myWidth);
+    }
+    deleteUnresolvedBookmarks();
+    // }
 
     myBracketEdges.clear();
     myBracketsLayoutStack.clear();
@@ -216,7 +294,25 @@ public class LeftEditorHighlighter {
     myUnresolvedFoldingButtons.clear();
   }
 
+  private void deleteUnresolvedBookmarks() {
+    for (Bookmark bookmark : myUnresolvedBookmarks) {
+      myBookmarks.remove(bookmark.myCellInfo);
+    }
+    myUnresolvedBookmarks.clear();
+  }
 
+  public BookmarkManager getBookmarkManager() {
+    if (myBookmarkManager != null) {
+      return myBookmarkManager;
+    }
+    IOperationContext context = myEditorComponent.getOperationContext();
+    if (context == null) {
+      return null;
+    }
+    BookmarkManager bookmarkManager = context.getComponent(BookmarkManager.class);
+    myBookmarkManager = bookmarkManager;
+    return bookmarkManager;
+  }
 
 
   private class HighlighterBracket {
@@ -435,14 +531,59 @@ public class LeftEditorHighlighter {
     public boolean isInside(MouseEvent e) {
       if (e.getX() > myX + FoldingButton.WIDTH/2 || e.getX() < myX - FoldingButton.WIDTH/2) return false;
       if (!myIsFolded && ((e.getY() >= myY1 && e.getY() <= myY1 + FoldingButton.WIDTH)
-              || (e.getY() <= myY2 && e.getY() >= myY2 - FoldingButton.WIDTH))) {
+        || (e.getY() <= myY2 && e.getY() >= myY2 - FoldingButton.WIDTH))) {
         return true;
       }
       if (myIsFolded && e.getY() >= (myY1 + myY2 - FoldingButton.WIDTH)/2 &&
-              e.getY() <= (myY1 + myY2 + FoldingButton.WIDTH)/2) {
+        e.getY() <= (myY1 + myY2 + FoldingButton.WIDTH)/2) {
         return true;
       }
       return false;
+    }
+  }
+
+  private class Bookmark {
+    private CellInfo myCellInfo;
+    private EditorComponent myEditor;
+    private int myY;
+    private int myX;
+    private int myNumber;
+
+    public Bookmark(EditorCell cell, int number) {
+      myCellInfo = cell.getCellInfo();
+      myEditor = cell.getEditor();
+      myNumber = number;
+    }
+
+    public void paint(Graphics g) {
+      Icon icon = BookmarkManager.getIcon(myNumber);
+      g.drawImage(((ImageIcon)icon).getImage(), myX - 12, myY - 6, null);
+    }
+
+    public void relayout() {
+      if (myCellInfo == null) return;
+      EditorCell cell = getCell();
+      if (cell != null) {
+        setY(cell.getY() + cell.getHeight() / 2);
+      } else {
+        LeftEditorHighlighter.this.myUnresolvedBookmarks.add(this);
+      }
+    }
+
+    private EditorCell getCell() {
+      return myCellInfo.findCell(myEditor);
+    }
+
+    public void setX(int x) {
+      myX = x;
+    }
+
+    private void setY(int y) {
+      myY = y;
+    }
+
+    public int getNumber() {
+      return myNumber;
     }
   }
 

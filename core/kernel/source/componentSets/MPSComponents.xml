@@ -400,6 +400,11 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.nodeEditor.bookmark.BookmarkManager</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.generator.GeneratorManager</implementation-class>
     </component>
 

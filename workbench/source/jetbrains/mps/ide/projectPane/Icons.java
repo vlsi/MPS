@@ -118,4 +118,15 @@ public class Icons {
 
   public static final Icon MODULE_GROUP_CLOSED = new ImageIcon(Icons.class.getResource("nodes/moduleGroupClosed.png"));
   public static final Icon MODULE_GROUP_OPENED = new ImageIcon(Icons.class.getResource("nodes/moduleGroupOpen.png"));
+  
+  public static final Icon BOOKMARK_0 = new ImageIcon(Icons.class.getResource("other/bookmark0.png"));
+  public static final Icon BOOKMARK_1 = new ImageIcon(Icons.class.getResource("other/bookmark1.png"));
+  public static final Icon BOOKMARK_2 = new ImageIcon(Icons.class.getResource("other/bookmark2.png"));
+  public static final Icon BOOKMARK_3 = new ImageIcon(Icons.class.getResource("other/bookmark3.png"));
+  public static final Icon BOOKMARK_4 = new ImageIcon(Icons.class.getResource("other/bookmark4.png"));
+  public static final Icon BOOKMARK_5 = new ImageIcon(Icons.class.getResource("other/bookmark5.png"));
+  public static final Icon BOOKMARK_6 = new ImageIcon(Icons.class.getResource("other/bookmark6.png"));
+  public static final Icon BOOKMARK_7 = new ImageIcon(Icons.class.getResource("other/bookmark7.png"));
+  public static final Icon BOOKMARK_8 = new ImageIcon(Icons.class.getResource("other/bookmark8.png"));
+  public static final Icon BOOKMARK_9 = new ImageIcon(Icons.class.getResource("other/bookmark9.png"));
 }

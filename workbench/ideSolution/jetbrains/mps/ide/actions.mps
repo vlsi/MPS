@@ -9,6 +9,9 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
+  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -30,7 +33,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="147" />
+  <maxImportIndex value="148" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -106,6 +109,7 @@
   <import index="139" modelUID="f:java_stub#jetbrains.mps.ide.newLanguageDialog(jetbrains.mps.ide.newLanguageDialog@java_stub)" version="-1" />
   <import index="140" modelUID="f:java_stub#jetbrains.mps.transformation(jetbrains.mps.transformation@java_stub)" version="-1" />
   <import index="144" modelUID="f:java_stub#jetbrains.mps.ide.dialogs.project.creation(jetbrains.mps.ide.dialogs.project.creation@java_stub)" version="-1" />
+  <import index="148" modelUID="f:java_stub#jetbrains.mps.nodeEditor.bookmark(jetbrains.mps.nodeEditor.bookmark@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="NodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -9774,6 +9778,1107 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1234013859987">
+    <property name="package" value="Menu.EditorPopup" />
+    <property name="name" value="Bookmarks" />
+    <property name="isPopup" value="true" />
+    <property name="caption" value="Bookmarks" />
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1234013898276">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234018518729">
+        <link role="action" targetNodeId="1234018313905" resolveInfo="GoToBookmark0" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234018519794">
+        <link role="action" targetNodeId="1234018139047" resolveInfo="GoToBookmark1" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234018519963">
+        <link role="action" targetNodeId="1234018318752" resolveInfo="GoToBookmark2" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234018520134">
+        <link role="action" targetNodeId="1234018321914" resolveInfo="GoToBookmark3" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234018520291">
+        <link role="action" targetNodeId="1234018325182" resolveInfo="GoToBookmark4" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234018520463">
+        <link role="action" targetNodeId="1234018327741" resolveInfo="GoToBookmark5" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234018520642">
+        <link role="action" targetNodeId="1234018330753" resolveInfo="GoToBookmark6" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234018520814">
+        <link role="action" targetNodeId="1234018332638" resolveInfo="GoToBookmark7" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234018520972">
+        <link role="action" targetNodeId="1234018333941" resolveInfo="GoToBookmark8" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234018521176">
+        <link role="action" targetNodeId="1234018335409" resolveInfo="GoToBookmark9" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234014449475">
+        <link role="action" targetNodeId="1234013996397" resolveInfo="SetBookmark0" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234014450423">
+        <link role="action" targetNodeId="1234014202126" resolveInfo="SetBookmark1" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234014450604">
+        <link role="action" targetNodeId="1234014205410" resolveInfo="SetBookmark2" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234014450770">
+        <link role="action" targetNodeId="1234014207854" resolveInfo="SetBookmark3" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234014450931">
+        <link role="action" targetNodeId="1234014210026" resolveInfo="SetBookmark4" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234014451097">
+        <link role="action" targetNodeId="1234014212945" resolveInfo="SetBookmark5" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234014451254">
+        <link role="action" targetNodeId="1234014214969" resolveInfo="SetBookmark6" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234014451401">
+        <link role="action" targetNodeId="1234014219459" resolveInfo="SetBookmark7" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234014451569">
+        <link role="action" targetNodeId="1234014224433" resolveInfo="SetBookmark8" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234014465231">
+        <link role="action" targetNodeId="1234014232829" resolveInfo="SetBookmark9" />
+      </node>
+    </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1234013984501">
+      <link role="modifiedGroup" targetNodeId="1204991231476" resolveInfo="EditorPopup" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234013996397">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="SetBookmark0" />
+    <property name="caption" value="Set Bookmark 0" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234013996398">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234013996399">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234014169777">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234014169778">
+            <property name="name" value="bookmarkManager" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234014169779">
+              <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014169780">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014169781">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014169782" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014169783">
+                  <link role="member" targetNodeId="1234014092803" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014169784">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234014169785">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234014174140">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014174639">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234014174141">
+              <link role="variableDeclaration" targetNodeId="1234014169778" resolveInfo="bookmarkManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014178187">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.setBookmark(jetbrains.mps.smodel.SNode,int):void" resolveInfo="setBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014179637">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014179638" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014179639">
+                  <link role="member" targetNodeId="1234014075577" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234014248150">
+                <property name="value" value="0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234014028143">
+      <property name="modifiers" value="ctrl+shift" />
+      <property name="keycode" value="VK_0" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014075577">
+      <property name="name" value="node" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014092803">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234014202126">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="SetBookmark1" />
+    <property name="caption" value="Set Bookmark 1" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234014202127">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234014202128">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234014202129">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234014202130">
+            <property name="name" value="bookmarkManager" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234014202131">
+              <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014202132">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014202133">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014202134" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014202135">
+                  <link role="member" targetNodeId="1234014202148" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014202136">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234014202137">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234014202138">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014202139">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234014202140">
+              <link role="variableDeclaration" targetNodeId="1234014202130" resolveInfo="bookmarkManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014202141">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.setBookmark(jetbrains.mps.smodel.SNode,int):void" resolveInfo="setBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014202142">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014202143" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014202144">
+                  <link role="member" targetNodeId="1234014202147" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234014202145">
+                <property name="value" value="1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234014202146">
+      <property name="modifiers" value="ctrl+shift" />
+      <property name="keycode" value="VK_1" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014202147">
+      <property name="name" value="node" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014202148">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234014205410">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="SetBookmark2" />
+    <property name="caption" value="Set Bookmark 2" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234014205411">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234014205412">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234014205413">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234014205414">
+            <property name="name" value="bookmarkManager" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234014205415">
+              <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014205416">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014205417">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014205418" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014205419">
+                  <link role="member" targetNodeId="1234014205432" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014205420">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234014205421">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234014205422">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014205423">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234014205424">
+              <link role="variableDeclaration" targetNodeId="1234014205414" resolveInfo="bookmarkManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014205425">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.setBookmark(jetbrains.mps.smodel.SNode,int):void" resolveInfo="setBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014205426">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014205427" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014205428">
+                  <link role="member" targetNodeId="1234014205431" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234014205429">
+                <property name="value" value="2" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234014205430">
+      <property name="modifiers" value="ctrl+shift" />
+      <property name="keycode" value="VK_2" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014205431">
+      <property name="name" value="node" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014205432">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234014207854">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="SetBookmark3" />
+    <property name="caption" value="Set Bookmark 3" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234014207855">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234014207856">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234014207857">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234014207858">
+            <property name="name" value="bookmarkManager" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234014207859">
+              <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014207860">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014207861">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014207862" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014207863">
+                  <link role="member" targetNodeId="1234014207876" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014207864">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234014207865">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234014207866">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014207867">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234014207868">
+              <link role="variableDeclaration" targetNodeId="1234014207858" resolveInfo="bookmarkManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014207869">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.setBookmark(jetbrains.mps.smodel.SNode,int):void" resolveInfo="setBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014207870">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014207871" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014207872">
+                  <link role="member" targetNodeId="1234014207875" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234014207873">
+                <property name="value" value="3" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234014207874">
+      <property name="modifiers" value="ctrl+shift" />
+      <property name="keycode" value="VK_3" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014207875">
+      <property name="name" value="node" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014207876">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234014210026">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="SetBookmark4" />
+    <property name="caption" value="Set Bookmark 4" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234014210027">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234014210028">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234014210029">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234014210030">
+            <property name="name" value="bookmarkManager" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234014210031">
+              <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014210032">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014210033">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014210034" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014210035">
+                  <link role="member" targetNodeId="1234014210048" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014210036">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234014210037">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234014210038">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014210039">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234014210040">
+              <link role="variableDeclaration" targetNodeId="1234014210030" resolveInfo="bookmarkManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014210041">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.setBookmark(jetbrains.mps.smodel.SNode,int):void" resolveInfo="setBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014210042">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014210043" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014210044">
+                  <link role="member" targetNodeId="1234014210047" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234014318936">
+                <property name="value" value="4" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234014210046">
+      <property name="modifiers" value="ctrl+shift" />
+      <property name="keycode" value="VK_4" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014210047">
+      <property name="name" value="node" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014210048">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234014212945">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="SetBookmark5" />
+    <property name="caption" value="Set Bookmark 5" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234014212946">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234014212947">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234014212948">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234014212949">
+            <property name="name" value="bookmarkManager" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234014212950">
+              <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014212951">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014212952">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014212953" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014212954">
+                  <link role="member" targetNodeId="1234014212967" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014212955">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234014212956">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234014212957">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014212958">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234014212959">
+              <link role="variableDeclaration" targetNodeId="1234014212949" resolveInfo="bookmarkManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014212960">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.setBookmark(jetbrains.mps.smodel.SNode,int):void" resolveInfo="setBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014212961">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014212962" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014212963">
+                  <link role="member" targetNodeId="1234014212966" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234014212964">
+                <property name="value" value="5" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234014212965">
+      <property name="modifiers" value="ctrl+shift" />
+      <property name="keycode" value="VK_5" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014212966">
+      <property name="name" value="node" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014212967">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234014214969">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="SetBookmark6" />
+    <property name="caption" value="Set Bookmark 6" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234014214970">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234014214971">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234014214972">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234014214973">
+            <property name="name" value="bookmarkManager" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234014214974">
+              <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014214975">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014214976">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014214977" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014214978">
+                  <link role="member" targetNodeId="1234014214991" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014214979">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234014214980">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234014214981">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014214982">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234014214983">
+              <link role="variableDeclaration" targetNodeId="1234014214973" resolveInfo="bookmarkManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014214984">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.setBookmark(jetbrains.mps.smodel.SNode,int):void" resolveInfo="setBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014214985">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014214986" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014214987">
+                  <link role="member" targetNodeId="1234014214990" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234014214988">
+                <property name="value" value="6" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234014214989">
+      <property name="modifiers" value="ctrl+shift" />
+      <property name="keycode" value="VK_6" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014214990">
+      <property name="name" value="node" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014214991">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234014219459">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="SetBookmark7" />
+    <property name="caption" value="Set Bookmark 7" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234014219460">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234014219461">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234014219462">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234014219463">
+            <property name="name" value="bookmarkManager" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234014219464">
+              <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014219465">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014219466">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014219467" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014219468">
+                  <link role="member" targetNodeId="1234014219481" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014219469">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234014219470">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234014219471">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014219472">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234014219473">
+              <link role="variableDeclaration" targetNodeId="1234014219463" resolveInfo="bookmarkManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014219474">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.setBookmark(jetbrains.mps.smodel.SNode,int):void" resolveInfo="setBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014219475">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014219476" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014219477">
+                  <link role="member" targetNodeId="1234014219480" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234014219478">
+                <property name="value" value="7" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234014219479">
+      <property name="modifiers" value="ctrl+shift" />
+      <property name="keycode" value="VK_7" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014219480">
+      <property name="name" value="node" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014219481">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234014224433">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="SetBookmark8" />
+    <property name="caption" value="Set Bookmark 8" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234014224434">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234014224435">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234014224436">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234014224437">
+            <property name="name" value="bookmarkManager" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234014224438">
+              <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014224439">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014224440">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014224441" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014224442">
+                  <link role="member" targetNodeId="1234014224455" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014224443">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234014224444">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234014224445">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014224446">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234014224447">
+              <link role="variableDeclaration" targetNodeId="1234014224437" resolveInfo="bookmarkManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014224448">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.setBookmark(jetbrains.mps.smodel.SNode,int):void" resolveInfo="setBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014224449">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014224450" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014224451">
+                  <link role="member" targetNodeId="1234014224454" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234014224452">
+                <property name="value" value="8" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234014224453">
+      <property name="modifiers" value="ctrl+shift" />
+      <property name="keycode" value="VK_8" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014224454">
+      <property name="name" value="node" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014224455">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234014232829">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="SetBookmark9" />
+    <property name="caption" value="Set Bookmark 9" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234014232830">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234014232831">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234014232832">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234014232833">
+            <property name="name" value="bookmarkManager" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234014232834">
+              <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014232835">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014232836">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014232837" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014232838">
+                  <link role="member" targetNodeId="1234014232851" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014232839">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234014232840">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234014232841">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014232842">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234014232843">
+              <link role="variableDeclaration" targetNodeId="1234014232833" resolveInfo="bookmarkManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234014232844">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.setBookmark(jetbrains.mps.smodel.SNode,int):void" resolveInfo="setBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234014232845">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234014232846" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234014232847">
+                  <link role="member" targetNodeId="1234014232850" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234014232848">
+                <property name="value" value="9" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234014232849">
+      <property name="modifiers" value="ctrl+shift" />
+      <property name="keycode" value="VK_9" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014232850">
+      <property name="name" value="node" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014232851">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234018139047">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="GoToBookmark1" />
+    <property name="caption" value="Go To Bookmark 1" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234018139048">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234018139049">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234018258424">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018296691">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018272771">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018258425">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234018258426" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234018258427">
+                  <link role="member" targetNodeId="1234018176010" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018277426">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234018293562">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018298558">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.navigateToBookmark(int):void" resolveInfo="navigateToBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234018298914">
+                <property name="value" value="1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234018160672">
+      <property name="modifiers" value="ctrl" />
+      <property name="keycode" value="VK_1" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234018176010">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234018313905">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="GoToBookmark0" />
+    <property name="caption" value="Go To Bookmark 0" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234018313906">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234018313907">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234018313908">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018313909">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018313910">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018313911">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234018313912" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234018313913">
+                  <link role="member" targetNodeId="1234018313919" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018313914">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234018313915">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018313916">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.navigateToBookmark(int):void" resolveInfo="navigateToBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234018313917">
+                <property name="value" value="0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234018313918">
+      <property name="modifiers" value="ctrl" />
+      <property name="keycode" value="VK_0" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234018313919">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234018318752">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="GoToBookmark2" />
+    <property name="caption" value="Go To Bookmark 2" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234018318753">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234018318754">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234018318755">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018318756">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018318757">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018318758">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234018318759" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234018318760">
+                  <link role="member" targetNodeId="1234018318766" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018318761">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234018318762">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018318763">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.navigateToBookmark(int):void" resolveInfo="navigateToBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234018318764">
+                <property name="value" value="2" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234018318765">
+      <property name="modifiers" value="ctrl" />
+      <property name="keycode" value="VK_2" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234018318766">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234018321914">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="GoToBookmark3" />
+    <property name="caption" value="Go To Bookmark 3" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234018321915">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234018321916">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234018321917">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018321918">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018321919">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018321920">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234018321921" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234018321922">
+                  <link role="member" targetNodeId="1234018321928" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018321923">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234018321924">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018321925">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.navigateToBookmark(int):void" resolveInfo="navigateToBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234018321926">
+                <property name="value" value="3" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234018321927">
+      <property name="modifiers" value="ctrl" />
+      <property name="keycode" value="VK_3" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234018321928">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234018325182">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="GoToBookmark4" />
+    <property name="caption" value="Go To Bookmark 4" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234018325183">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234018325184">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234018325185">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018325186">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018325187">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018325188">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234018325189" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234018325190">
+                  <link role="member" targetNodeId="1234018325196" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018325191">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234018325192">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018325193">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.navigateToBookmark(int):void" resolveInfo="navigateToBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234018325194">
+                <property name="value" value="4" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234018325195">
+      <property name="modifiers" value="ctrl" />
+      <property name="keycode" value="VK_4" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234018325196">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234018327741">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="GoToBookmark5" />
+    <property name="caption" value="Go To Bookmark 5" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234018327742">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234018327743">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234018327744">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018327745">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018327746">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018327747">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234018327748" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234018327749">
+                  <link role="member" targetNodeId="1234018327755" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018327750">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234018327751">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018327752">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.navigateToBookmark(int):void" resolveInfo="navigateToBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234018327753">
+                <property name="value" value="5" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234018327754">
+      <property name="modifiers" value="ctrl" />
+      <property name="keycode" value="VK_5" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234018327755">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234018330753">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="GoToBookmark6" />
+    <property name="caption" value="Go To Bookmark 6" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234018330754">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234018330755">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234018330756">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018330757">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018330758">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018330759">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234018330760" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234018330761">
+                  <link role="member" targetNodeId="1234018330767" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018330762">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234018330763">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018330764">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.navigateToBookmark(int):void" resolveInfo="navigateToBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234018330765">
+                <property name="value" value="6" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234018330766">
+      <property name="modifiers" value="ctrl" />
+      <property name="keycode" value="VK_6" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234018330767">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234018332638">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="GoToBookmark7" />
+    <property name="caption" value="Go To Bookmark 7" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234018332639">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234018332640">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234018332641">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018332642">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018332643">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018332644">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234018332645" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234018332646">
+                  <link role="member" targetNodeId="1234018332652" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018332647">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234018332648">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018332649">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.navigateToBookmark(int):void" resolveInfo="navigateToBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234018332650">
+                <property name="value" value="7" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234018332651">
+      <property name="modifiers" value="ctrl" />
+      <property name="keycode" value="VK_7" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234018332652">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234018333941">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="GoToBookmark8" />
+    <property name="caption" value="Go To Bookmark 8" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234018333942">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234018333943">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234018333944">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018333945">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018333946">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018333947">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234018333948" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234018333949">
+                  <link role="member" targetNodeId="1234018333955" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018333950">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234018333951">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018333952">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.navigateToBookmark(int):void" resolveInfo="navigateToBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234018333953">
+                <property name="value" value="8" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234018333954">
+      <property name="modifiers" value="ctrl" />
+      <property name="keycode" value="VK_8" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234018333955">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234018335409">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="GoToBookmark9" />
+    <property name="caption" value="Go To Bookmark 9" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234018335410">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234018335411">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234018335412">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018335413">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018335414">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234018335415">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234018335416" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234018335417">
+                  <link role="member" targetNodeId="1234018335423" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018335418">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234018335419">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234018335420">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.navigateToBookmark(int):void" resolveInfo="navigateToBookmark" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1234018335421">
+                <property name="value" value="9" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1234018335422">
+      <property name="modifiers" value="ctrl" />
+      <property name="keycode" value="VK_9" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234018335423">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
 </model>
