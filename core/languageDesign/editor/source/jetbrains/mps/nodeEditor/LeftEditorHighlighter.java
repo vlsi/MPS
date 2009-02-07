@@ -557,7 +557,7 @@ public class LeftEditorHighlighter {
 
     public void paint(Graphics g) {
       Icon icon = BookmarkManager.getIcon(myNumber);
-      g.drawImage(((ImageIcon)icon).getImage(), myX - 12, myY - 6, null);
+      g.drawImage(((ImageIcon)icon).getImage(), /*myX - 12*/1, myY - 6, null);
     }
 
     public void relayout() {
