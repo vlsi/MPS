@@ -79,6 +79,10 @@ public class SNodePointer {
     return getCurrentSModelReference(myModelReference, myTimestamp);
   }
 
+  public SNodeId getNodeId() {
+    return myNodeId;
+  }
+
   public String toString() {
     if (getNode() == null) {
       return "[bad pointer] model=" + getCurrentSModelReference(myModelReference, myTimestamp) + " node id=" + myNodeId;
