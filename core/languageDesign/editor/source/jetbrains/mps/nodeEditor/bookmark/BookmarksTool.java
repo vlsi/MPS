@@ -8,6 +8,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.SNodePointer;
@@ -21,6 +22,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 
 import javax.swing.JScrollPane;
 import javax.swing.JComponent;
@@ -33,10 +37,20 @@ import java.util.List;
  * Time: 16:47:57
  * To change this template use File | Settings | File Templates.
  */
-public class BookmarksTool extends BaseProjectTool {
+@State(
+  name = "BookmarksTool",
+  storages = {
+  @Storage(
+    id = "other",
+    file = "$WORKSPACE_FILE$"
+  )
+    }
+)
+public class BookmarksTool extends BaseProjectTool implements PersistentStateComponent<BookmarksTool.MyState> {
   JScrollPane myComponent;
   private BookmarkManager myBookmarkManager;
-  private MPSTree myTree;
+  private MPSTree myTree = new MyTree();
+  private TreeState myTreeState;
 
   public BookmarksTool(Project project) {
     super(project, "Bookmarks", -1, null, ToolWindowAnchor.BOTTOM, true);
@@ -53,9 +67,15 @@ public class BookmarksTool extends BaseProjectTool {
         rebuildBookmarksTree();
       }
     });
-    myTree = new MyTree();
     myComponent = new JScrollPane(myTree);
-    rebuildBookmarksTree();
+    if (myTreeState != null) {
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          myTree.rebuildNow();
+          myTree.loadState(myTreeState);
+        }
+      });
+    }
   }
 
   private void rebuildBookmarksTree() {
@@ -101,8 +121,14 @@ public class BookmarksTool extends BaseProjectTool {
       }
       return root;
     }
+  }
 
+  public MyState getState() {
+    return new MyState(myTree.saveState(), toolIsOpened());
+  }
 
+  public void loadState(final MyState state) {
+    myTreeState = state.myTreeState;
   }
 
   private class MyTextTreeNode extends TextTreeNode {
@@ -138,6 +164,20 @@ public class BookmarksTool extends BaseProjectTool {
 
     protected SNodeTreeNode createChildTreeNode(SNode childNode, String role, IOperationContext operationContext) {
       return new MySNodeTreeNode(childNode, role, operationContext);
+    }
+  }
+
+  public static class MyState {
+    public TreeState myTreeState;
+    public boolean myIsShown;
+
+    public MyState(TreeState treeState, boolean isShown) {
+      myIsShown = isShown;
+      myTreeState = treeState;
+    }
+
+    public MyState() {
+
     }
   }
 

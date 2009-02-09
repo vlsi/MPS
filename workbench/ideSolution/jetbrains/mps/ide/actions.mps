@@ -9786,9 +9786,14 @@
     <property name="isPopup" value="true" />
     <property name="caption" value="Bookmarks" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1234013898276">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234198626826">
+        <link role="action" targetNodeId="1234190163902" resolveInfo="ShowBookmarks" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1234198631303" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234182029298">
         <link role="action" targetNodeId="1234180771821" resolveInfo="RemoveAllBookmarks" />
       </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1234198635614" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234018518729">
         <link role="action" targetNodeId="1234018313905" resolveInfo="GoToBookmark0" />
       </node>
