@@ -41,10 +41,12 @@ public class BinaryOperation_LeftArgument_Actions {
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getNodeEditorComponent();
       EditorCell cell = editor.findNodeCell(rightExpression);
-      EditorCell firstLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
-      editor.changeSelection(firstLeaf);
-      if (firstLeaf instanceof EditorCell_Label) {
-        ((EditorCell_Label)firstLeaf).home();
+      if (cell != null) {
+        EditorCell firstLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
+        editor.changeSelection(firstLeaf);
+        if (firstLeaf instanceof EditorCell_Label) {
+          ((EditorCell_Label)firstLeaf).home();
+        }
       }
     }
 
