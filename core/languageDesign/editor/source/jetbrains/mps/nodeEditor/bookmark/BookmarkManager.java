@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.util.Pair;
@@ -128,6 +129,16 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     if (!node.equals(oldNode)) {
       myBookmarks[number] = new SNodePointer(node);
       fireBookmarkAdded(number, node);
+    }
+  }
+
+  public void clearBookmarks() {
+    for (int i = 0; i < myBookmarks.length; i++) {
+      SNodePointer pointer = myBookmarks[i];
+      if (pointer != null) {
+        myBookmarks[i] = null;
+        fireBookmarkRemoved(i, pointer.getNode());
+      }
     }
   }
 

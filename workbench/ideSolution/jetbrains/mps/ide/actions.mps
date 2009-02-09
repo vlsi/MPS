@@ -9,8 +9,6 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
@@ -9786,6 +9784,9 @@
     <property name="isPopup" value="true" />
     <property name="caption" value="Bookmarks" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1234013898276">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234182029298">
+        <link role="action" targetNodeId="1234180771821" resolveInfo="RemoveAllBookmarks" />
+      </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234018518729">
         <link role="action" targetNodeId="1234018313905" resolveInfo="GoToBookmark0" />
       </node>
@@ -10879,6 +10880,40 @@
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234018335423">
       <property name="name" value="project" />
       <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234180771821">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="RemoveAllBookmarks" />
+    <property name="caption" value="Remove All Bookmarks" />
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234180801455">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234180771822">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234180771823">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234180816759">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234180849887">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234180816760">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234180816761">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234180816762" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234180816763">
+                  <link role="member" targetNodeId="1234180801455" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234180816764">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234180816765">
+                  <link role="classifier" targetNodeId="148.~BookmarkManager" resolveInfo="BookmarkManager" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234180851425">
+              <link role="baseMethodDeclaration" targetNodeId="148.~BookmarkManager.clearBookmarks():void" resolveInfo="clearBookmarks" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

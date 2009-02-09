@@ -14,6 +14,7 @@ public class Bookmarks_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
+      this.addAction("jetbrains.mps.ide.actions.RemoveAllBookmarks_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.GoToBookmark0_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.GoToBookmark1_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.GoToBookmark2_Action", "jetbrains.mps.ide");
