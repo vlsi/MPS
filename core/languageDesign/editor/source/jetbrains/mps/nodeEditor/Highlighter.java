@@ -220,6 +220,10 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         }
       }
     }
+
+    for (IEditorChecker checker : checkers) {
+      checker.checkingIterationFinished();
+    }
   }
 
   protected List<IEditor> getAllEditors() {

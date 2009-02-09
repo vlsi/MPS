@@ -38,4 +38,6 @@ public interface IEditorChecker {
   public EditorMessageOwner getOwner(SNode rootNode);
 
   public boolean hasDramaticalEvent(List<SModelEvent> events);
+
+  public void checkingIterationFinished();
 }

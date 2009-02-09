@@ -75,4 +75,8 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMess
   protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {
     return false;
   }
+
+  public void checkingIterationFinished() {
+    
+  }
 }

@@ -26,6 +26,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.MyState;
+import jetbrains.mps.nodeEditor.Highlighter;
 
 import javax.swing.Icon;
 import java.util.List;
@@ -77,6 +78,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
 
   public SNodePointer[] myBookmarks = new SNodePointer[10];
   private Project myProject;
+  private BookmarksHighlighter myChecker;
 
   public BookmarkManager(Project project) {
     myProject = project;
@@ -95,9 +97,13 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
   }
 
   public void initComponent() {
+    myChecker = new BookmarksHighlighter(this);
+    myProject.getComponent(Highlighter.class).addChecker(myChecker);
   }
 
   public void disposeComponent() {
+    myProject.getComponent(Highlighter.class).removeChecker(myChecker);
+    myChecker = null;
   }
 
   public List<Pair<SNode, Integer>> getBookmarks(SNode root) {
