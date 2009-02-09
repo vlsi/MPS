@@ -619,7 +619,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1754_9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1754_9");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Indent_1754_0(EditorCell editorCell, SNode node, EditorContext context) {

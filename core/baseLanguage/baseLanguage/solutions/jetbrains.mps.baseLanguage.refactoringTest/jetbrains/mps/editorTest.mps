@@ -1846,9 +1846,9 @@
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232973340713" />
-          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232973350906">
-            <property name="caretPosition" value="0" />
-            <property name="cellId" value="Constant_1754_10" />
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1234185157055">
+            <property name="isLastPosition" value="true" />
+            <property name="cellId" value="Constant_1754_9" />
           </node>
         </node>
       </node>
@@ -1869,7 +1869,7 @@
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232973357259">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1232973363386">
-              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232973365934">
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1234185163261">
                 <property name="isLastPosition" value="true" />
                 <property name="cellId" value="Error_3869_0" />
               </node>
