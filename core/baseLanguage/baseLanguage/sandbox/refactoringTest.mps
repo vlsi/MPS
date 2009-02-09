@@ -212,8 +212,8 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1234172979814" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234172992861">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234173031459">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234187021585">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234187644733">
             <link role="variableDeclaration" targetNodeId="1234172979813" resolveInfo="type" />
           </node>
         </node>

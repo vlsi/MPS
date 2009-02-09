@@ -392,8 +392,7 @@ public class EditorManager {
       setEditable(true);
       setCellBackgroundColor(LightColors.BLUE);
 
-      getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
-      getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
+      getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);      
 
       mySide = side;
     }

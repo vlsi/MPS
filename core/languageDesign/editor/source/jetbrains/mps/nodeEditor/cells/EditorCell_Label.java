@@ -147,11 +147,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public boolean isFirstPositionAllowed() {
-    return getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED) && !getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
+    return getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED);
   }
 
   public boolean isLastPositionAllowed() {
-    return getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED) && !getStyle().get(StyleAttributes.PUNCTUATION_RIGTH);
+    return getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED);
   }
 
   public int getCaretPosition() {
