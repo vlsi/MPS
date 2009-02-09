@@ -213,7 +213,7 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234187021585">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234187644733">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234189318826">
             <link role="variableDeclaration" targetNodeId="1234172979813" resolveInfo="type" />
           </node>
         </node>

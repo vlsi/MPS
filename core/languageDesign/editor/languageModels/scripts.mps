@@ -206,5 +206,95 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1234198385755">
+    <property name="migrationFromBuild" value="1193" />
+    <property name="name" value="horizontalGapMigration" />
+    <property name="category" value="editor language" />
+    <property name="title" value="horizontal gap migration" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1234198438294">
+      <property name="description" value="Pardding rigth replacement" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1215007897487" resolveInfo="PaddingRightStyleClassItem" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1234198438295">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234198438296">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234198551260">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234198551261">
+              <property name="name" value="newNode" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1234198551262">
+                <link role="concept" targetNodeId="1.1233759184865" resolveInfo="PunctuationRightStyleClassItem" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1234198566181">
+                <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1234198566182">
+                  <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1234198566183">
+                    <link role="concept" targetNodeId="1.1233759184865" resolveInfo="PunctuationRightStyleClassItem" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234198571178">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1234198582182">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1234198582679">
+                <property name="value" value="true" />
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234198571699">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234198571179">
+                  <link role="variableDeclaration" targetNodeId="1234198551261" resolveInfo="newNode" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234198580800">
+                  <link role="property" targetNodeId="1.1186414551515" resolveInfo="flag" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234198536239">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234198536991">
+              <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1234198536240" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1234198541383">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234198599229">
+                  <link role="variableDeclaration" targetNodeId="1234198551261" resolveInfo="newNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1234198467730">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234198467731">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234198481591">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1234198513542">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234198527775">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234198524244">
+                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1234198524179" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234198526415">
+                    <link role="property" targetNodeId="1.1215007802031" resolveInfo="value" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234198529172">
+                  <link role="baseMethodDeclaration" targetNodeId="4.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234198530266">
+                    <property name="value" value="0." />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234198502930">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234198481992">
+                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1234198481592" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234198487211">
+                    <link role="property" targetNodeId="1.1215007802031" resolveInfo="value" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234198504268">
+                  <link role="baseMethodDeclaration" targetNodeId="4.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234198509869">
+                    <property name="value" value="0.0" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
