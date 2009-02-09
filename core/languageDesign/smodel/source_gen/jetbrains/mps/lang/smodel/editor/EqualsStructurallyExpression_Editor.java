@@ -19,8 +19,6 @@ import jetbrains.mps.baseLanguage.editor.BinaryOperation_LeftArgument_Actions;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.baseLanguage.editor.CastExpression_KeyMap;
 import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
@@ -148,8 +146,6 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.EDITABLE, true);
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
         }
 
       };

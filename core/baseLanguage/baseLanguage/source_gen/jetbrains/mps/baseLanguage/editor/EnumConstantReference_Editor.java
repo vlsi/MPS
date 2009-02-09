@@ -22,8 +22,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -194,7 +192,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
 
         };
@@ -252,15 +249,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_0362_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name_1");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
     }
 
     private static void setupLabel_Property_0362_1(EditorCell_Label editorCell, SNode node, EditorContext context) {

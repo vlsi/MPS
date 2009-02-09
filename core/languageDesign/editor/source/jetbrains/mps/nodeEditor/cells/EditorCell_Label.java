@@ -147,11 +147,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public boolean isFirstPositionAllowed() {
-    return getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED);
+    return getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED) && !getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
   }
 
   public boolean isLastPositionAllowed() {
-    return getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED);
+    return getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED) && !getStyle().get(StyleAttributes.PUNCTUATION_RIGTH);
   }
 
   public int getCaretPosition() {
@@ -246,12 +246,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return getTextLineWidth();
   }
 
-  public int getPaddingLeft() {
-    return getRenderedTextLine().getPaddingLeft();
+  public int getLeftInsert() {
+    return getRenderedTextLine().getPaddingLeft() + myGapLeft;
   }
 
-  public int getPaddingRight() {
-    return getRenderedTextLine().getPaddingRight();
+  public int getRightInsert() {
+    return getRenderedTextLine().getPaddingRight() + + myGapRight;
   }
 
   public int getPaddingTop() {
@@ -322,9 +322,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     boolean toShowCaret = toShowCaret();
     boolean selected = isSelectionPaintedOnAncestor();
     if (isDrawBrackets()) {
-      textLine.paint(g, myX + BRACKET_WIDTH, myY, myWidth - 2 * BRACKET_WIDTH, myHeight, selected, toShowCaret);
+      textLine.paint(g, myX + myGapLeft + BRACKET_WIDTH, myY, myWidth - 2 * BRACKET_WIDTH, myHeight, selected, toShowCaret);
     } else {
-      textLine.paint(g, myX, myY, myWidth, myHeight, selected, toShowCaret);
+      textLine.paint(g, myX + myGapLeft, myY, myWidth, myHeight, selected, toShowCaret);
     }
   }
 

@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -156,15 +154,6 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   private static void setupBasic_Property_2322_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_charConstant");
     BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Property_2322_1(EditorCell editorCell, SNode node, EditorContext context) {

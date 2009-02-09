@@ -12,6 +12,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
@@ -81,6 +83,15 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_2079_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2079_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }

@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -28,7 +27,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 import javax.swing.*;
@@ -93,9 +91,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       Point anchor = myEditorComponent.getLocationOnScreen();
       getPopupWindow().setRelativeCell(cell);
       getPopupWindow().relayout();
-      myPatternEditorLocation = new Point(anchor.x + cell.getX() + cell.getPaddingLeft(), anchor.y + cell.getY() + cell.getPaddingTop());
+      myPatternEditorLocation = new Point(anchor.x + cell.getX() + cell.getLeftInsert(), anchor.y + cell.getY() + cell.getPaddingTop());
       myPatternEditorSize = new Dimension(
-        cell.getWidth() - cell.getPaddingLeft() - cell.getPaddingRight() + 1,
+        cell.getWidth() - cell.getLeftInsert() - cell.getRightInsert() + 1,
         cell.getHeight() - cell.getPaddingTop() - cell.getPaddingBottom() + 1);
     }
   }
@@ -622,7 +620,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       Component component = myEditorComponent;
       Point anchor = component.getLocationOnScreen();
       Point location =
-        new Point(anchor.x + myRelativeCell.getX() + myRelativeCell.getPaddingLeft(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
+        new Point(anchor.x + myRelativeCell.getX() + myRelativeCell.getLeftInsert(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
 
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 

@@ -16,8 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
 
@@ -102,9 +100,7 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };

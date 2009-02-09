@@ -276,14 +276,11 @@ public class CellLayout_Flow extends AbstractCellLayout {
     }
 
     private void addCell(EditorCell cell) {
-      cell.setX(myX);
-      if (myNextIsPunctuation) {
-        cell.setNextIsPunctuation();
-      }
+      cell.setX(myX);      
       cell.relayout();
       myX +=cell.getWidth();
       if (myNextIsPunctuation) {
-        myX -=cell.getPaddingRight();
+        myX -=cell.getRightInsert();
       }
       setMaxAscent(Math.max(myMaxAscent, cell.getAscent()));
       setMaxDescent(Math.max(myMaxDescent, cell.getDescent()));

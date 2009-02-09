@@ -7,8 +7,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class BaseLanguageStyle_StyleSheet {
 
@@ -26,8 +24,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getKeyWord(null));
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       }
 
     };
@@ -148,8 +144,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
       }
 
     };
@@ -168,9 +162,7 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
-        this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+        this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
 
     };
@@ -180,9 +172,8 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
+        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       }
 
     };
@@ -201,8 +192,7 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+        this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
 
     };
@@ -212,6 +202,7 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
+        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
       }
 
     };
@@ -221,7 +212,27 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+      }
+
+    };
+  }
+
+  public static Style getLeftBracket(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
+        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+      }
+
+    };
+  }
+
+  public static Style getRightBracket(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
+        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
       }
 
     };
@@ -230,8 +241,6 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getMethodName(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       }
 
     };
@@ -240,7 +249,6 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getVariableName(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       }
 
     };
@@ -249,8 +257,6 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getClassName(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       }
 
     };
@@ -259,8 +265,7 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getSemicolon(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
       }
 
@@ -270,8 +275,8 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getDot(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         this.set(StyleAttributes.SELECTABLE, false);
       }
 

@@ -13,8 +13,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class CastExpression_Editor extends DefaultNodeEditor {
 
@@ -29,7 +27,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_9371_1(context, node));
-    editorCell.addEditorCell(this.createConstant_9371_2(context, node, ""));
     editorCell.addEditorCell(this.createRefNode_9371_1(context, node));
     return editorCell;
   }
@@ -58,14 +55,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9371_1(editorCell, node, context);
     setupLabel_Constant_9371_1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant_9371_2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9371_2(editorCell, node, context);
-    setupLabel_Constant_9371_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -155,19 +144,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_9371_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9371_2");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupLabel_RefNode_9371_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -178,9 +154,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_9371_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9371_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

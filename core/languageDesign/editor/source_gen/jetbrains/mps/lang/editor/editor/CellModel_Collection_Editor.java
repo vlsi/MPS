@@ -20,6 +20,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
@@ -511,15 +513,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_2102_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2102_2");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_2102_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -551,16 +545,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_2102_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2102_3");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_2102_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -568,6 +553,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
@@ -674,25 +660,15 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_2102_8(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2102_8");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_2102_9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2102_9");
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {

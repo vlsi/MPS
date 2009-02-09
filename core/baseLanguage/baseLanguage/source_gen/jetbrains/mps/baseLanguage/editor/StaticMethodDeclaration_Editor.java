@@ -21,8 +21,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -452,6 +450,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           this.set(StyleAttributes.SELECTABLE, false);
         }
 
@@ -508,16 +507,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNodeList_5695_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_throwsItem");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_5695_6(EditorCell editorCell, SNode node, EditorContext context) {
@@ -706,6 +695,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }
@@ -726,7 +716,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.EDITABLE, true);
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
 
         };
@@ -782,6 +771,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }

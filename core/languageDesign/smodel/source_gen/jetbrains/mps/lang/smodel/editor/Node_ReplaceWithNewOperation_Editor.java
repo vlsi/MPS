@@ -125,6 +125,15 @@ public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_2696_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2696_1");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_RefCell_2696_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

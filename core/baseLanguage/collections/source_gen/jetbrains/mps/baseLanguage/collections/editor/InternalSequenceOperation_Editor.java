@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
@@ -118,6 +120,15 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_0147_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0147_0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_0147_0(EditorCell editorCell, SNode node, EditorContext context) {

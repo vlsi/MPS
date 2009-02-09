@@ -51,12 +51,19 @@ public class StyleAttributes {
   public static final StyleAttribute<Integer> FONT_SIZE = new InheritableStyleAttribute("font-size");
 
   public static final StyleAttribute<Padding> PADDING_LEFT = new SimpleStyleAttribute<Padding>("padding-left", new Padding(0.0));
-  public static final StyleAttribute<Padding> PADDING_RIGHT = new SimpleStyleAttribute<Padding>("padding-right", new Padding(1.0));
+  public static final StyleAttribute<Padding> PADDING_RIGHT = new SimpleStyleAttribute<Padding>("padding-right", new Padding(0.0));
   public static final StyleAttribute<Padding> PADDING_TOP = new SimpleStyleAttribute<Padding>("padding-top", new Padding(0.0));
   public static final StyleAttribute<Padding> PADDING_BOTTOM = new SimpleStyleAttribute<Padding>("padding-bottom", new Padding(0.0));
 
   public static final StyleAttribute<Boolean> FIRST_POSITION_ALLOWED = new SimpleStyleAttribute<Boolean>("first-position-allowed", true);
   public static final StyleAttribute<Boolean> LAST_POSITION_ALLOWED = new SimpleStyleAttribute<Boolean>("last-position-allowed", true);
+
+  public static final StyleAttribute<Boolean> PUNCTUATION_LEFT = new SimpleStyleAttribute<Boolean>("punctuation-left", false);
+  public static final StyleAttribute<Boolean> PUNCTUATION_RIGTH = new SimpleStyleAttribute<Boolean>("punctuation-right", false);
+
+  public static final StyleAttribute<Padding> HORIZONTAL_GAP = new SimpleStyleAttribute<Padding>("horizontal-gap", new Padding(1.0));
+
+  public static final StyleAttribute<Boolean> PUNCTUATION_CELL = new SimpleStyleAttribute<Boolean>("punctuation-cell", false);
 
   public static final StyleAttribute<String> POSITION = new SimpleStyleAttribute<String>("position");
   public static final StyleAttribute<String> POSITION_CHILDREN = new SimpleStyleAttribute<String>("position-children");

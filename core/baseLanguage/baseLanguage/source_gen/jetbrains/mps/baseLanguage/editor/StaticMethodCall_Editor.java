@@ -16,12 +16,10 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -143,6 +141,15 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_7119_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_7119_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -262,15 +269,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_7119_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name_1");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
     }
 
     private static void setupLabel_Property_7119_1(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -17,8 +17,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class StringLiteral_Editor extends DefaultNodeEditor {
@@ -96,9 +94,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
@@ -115,8 +111,6 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
 
       };
@@ -135,9 +129,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };

@@ -115,12 +115,11 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_0881_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0881_1");
-    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
 
       };
@@ -130,12 +129,11 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_0881_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0881_2");
-    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
 
       };

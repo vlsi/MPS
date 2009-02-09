@@ -71,9 +71,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private EditorCell_Collection myParent = null;
   private SNodePointer myNodePointer;
   private NodeSubstituteInfo mySubstitueInfo;
-  private Map<CellActionType, EditorCellAction> myActionMap = new ListMap<CellActionType, EditorCellAction>();
-
-  private boolean myNextIsPunctuation = false;
+  private Map<CellActionType, EditorCellAction> myActionMap = new ListMap<CellActionType, EditorCellAction>();  
 
   private List<EditorMessage> myMessages = new ArrayList<EditorMessage>();
   private Style myStyle = new Style(this);
@@ -85,6 +83,8 @@ public abstract class EditorCell_Basic implements EditorCell {
   private SNode myRefNode;
   private boolean myInTree;
   private boolean myIsReferenceCell = false;
+  protected int myGapLeft;
+  protected int myGapRight;
 
   protected EditorCell_Basic(EditorContext editorContext, SNode node) {
     myEditorContext = editorContext;
@@ -277,11 +277,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myWidth;
   }
 
-  public int getPaddingLeft() {
+  public int getLeftInsert() {
     return 0;
   }
 
-  public int getPaddingRight() {
+  public int getRightInsert() {
     return 0;
   }
 
@@ -291,10 +291,6 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public int getPaddingBottom() {
     return 0;
-  }
-
-  public void setNextIsPunctuation() {
-    myNextIsPunctuation = true;
   }
 
   public int getWidth() {
@@ -614,7 +610,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public void paintBackground(Graphics g) {
     if (getCellBackgroundColor() != null) {
       g.setColor(getCellBackgroundColor());
-      g.fillRect(myX, myY, myWidth, myHeight);
+      g.fillRect(getX(), getY(), getWidth(), getHeight());
     }
     List<EditorMessage> messages = getMessages();
     for (EditorMessage message : messages) {
@@ -641,10 +637,10 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     if (isDrawBorder()) {
       g.setColor(Color.lightGray);
-      g.drawRect(myX, myY, myWidth, myHeight);
+      g.drawRect(myX, myY, getWidth(), getHeight());
     }
 
-    int leftInternalInset = getPaddingLeft();
+    int leftInternalInset = getLeftInsert();
 
     if (isDrawBrackets()) {
       g.setColor(getBracketsColor());
@@ -773,13 +769,11 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void paintSelection(Graphics g, Color c) {
-    int effectiveWidth = myNextIsPunctuation ? getWidth() - getPaddingRight() : getWidth();
-
     g.setColor(c);
-    g.fillRect(getX(), getY() /*+ getPaddingTop()*/, effectiveWidth, getHeight() - getPaddingTop() - getPaddingBottom());
+    g.fillRect(getX(), getY() /*+ getPaddingTop()*/, getWidth(), getHeight() - getPaddingTop() - getPaddingBottom());
     if (getEditor().hasFocus()) {
       g.setColor(c.darker());
-      g.drawRect(getX(), getY(), effectiveWidth, getHeight());
+      g.drawRect(getX(), getY(), getWidth(), getHeight());
     }
   }
 
@@ -787,12 +781,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     return TextBuilder.getEmptyTextBuilder();
   }
 
-  public final void relayout() {
-    myNextIsPunctuation = false;
-
+  public final void relayout() {    
     if (isDrawBrackets()) {
       myX += BRACKET_WIDTH;
     }
+    myX += myGapLeft;
 
     relayoutImpl();
 
@@ -800,6 +793,8 @@ public abstract class EditorCell_Basic implements EditorCell {
       myX -= BRACKET_WIDTH;
       myWidth += 2 * BRACKET_WIDTH;
     }
+    myX -= myGapLeft;
+    myWidth += myGapLeft + myGapRight;
   }
 
   protected void relayoutImpl() {
@@ -1268,5 +1263,12 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void onRemove() {
     myInTree = false;
+  }
+
+  public void setGapLeft(int gap) {
+    myGapLeft = gap;
+  }
+  public void setGapRight(int gap) {
+    myGapRight = gap;
   }
 }

@@ -612,6 +612,16 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="30">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="HorizontalGap" conceptFQName="jetbrains.mps.lang.editor.structure.HorizontalGap" featureKind="CONCEPT" />
+          <value featureName="HorizontalGapStyleClassItem" conceptFQName="jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -632,7 +642,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -644,7 +654,7 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
-  <import index="27" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
+  <import index="27" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
   <import index="28" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
   <import index="29" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="33" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -3918,6 +3928,54 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233148918310">
       <link role="intfc" targetNodeId="1219418625346" resolveInfo="IStyleContainer" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233758997495">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="PunctuationLeftStyleClassItem" />
+    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233759068045">
+      <property name="value" value="punctuation-left" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1233759108034">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1233759122712">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PUNCTUATION_LEFT" resolveInfo="PUNCTUATION_LEFT" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233759184865">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="PunctuationRightStyleClassItem" />
+    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233759225808">
+      <property name="value" value="punctuation-right" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1233759264978">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1233759270401">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PUNCTUATION_RIGTH" resolveInfo="PUNCTUATION_RIGTH" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233823429331">
+    <property name="package" value="Stylesheet.Paddings" />
+    <property name="name" value="HorizontalGapStyleClassItem" />
+    <link role="extends" targetNodeId="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1233823521393">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1233823532331">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.HORIZONTAL_GAP" resolveInfo="HORIZONTAL_GAP" />
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233825610829">
+      <property name="value" value="horizontal-gap" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

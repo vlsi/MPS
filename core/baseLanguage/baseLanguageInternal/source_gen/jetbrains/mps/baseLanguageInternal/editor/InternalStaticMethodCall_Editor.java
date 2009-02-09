@@ -29,8 +29,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
 
@@ -394,6 +392,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }
@@ -409,16 +408,6 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_4702_5(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_4702_5");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
     }
 
     private static void setupLabel_Constant_4702_5(EditorCell_Label editorCell, SNode node, EditorContext context) {

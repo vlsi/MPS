@@ -128,7 +128,8 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
@@ -154,7 +155,8 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };

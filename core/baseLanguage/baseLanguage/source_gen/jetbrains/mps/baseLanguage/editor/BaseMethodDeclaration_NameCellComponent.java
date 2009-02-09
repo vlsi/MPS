@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -18,8 +17,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
@@ -49,16 +46,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_4313_0(context, node, " "));
     editorCell.addEditorCell(this.createProperty_4313_1(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createConstant_4313_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4313_0(editorCell, node, context);
-    setupLabel_Constant_4313_0(editorCell, node, context);
-    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -132,25 +120,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     }
   }
 
-  private static void setupBasic_Constant_4313_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4313_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupLabel_Property_4313_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4313_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean _StyleParameter_QueryFunction_1223655957671(SNode node, EditorContext editorContext) {

@@ -18,10 +18,10 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 
 public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
 
@@ -352,7 +352,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
@@ -370,6 +370,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };
@@ -434,7 +435,8 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
@@ -477,6 +479,8 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
@@ -516,6 +520,8 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };

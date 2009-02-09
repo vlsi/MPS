@@ -13,10 +13,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class AsExpression_Editor extends DefaultNodeEditor {
 
@@ -113,15 +109,6 @@ public class AsExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1550_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1550_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_RefNode_1550_1(EditorCell editorCell, SNode node, EditorContext context) {

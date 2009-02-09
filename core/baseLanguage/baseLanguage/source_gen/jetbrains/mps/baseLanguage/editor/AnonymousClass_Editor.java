@@ -24,8 +24,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -493,8 +491,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
@@ -694,7 +691,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
 
         };
@@ -827,6 +823,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), " ");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }
@@ -906,6 +903,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }
@@ -921,15 +919,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_1871_8(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_1871_8");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
     }
 
     private static void setupLabel_Constant_1871_8(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -980,6 +969,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }

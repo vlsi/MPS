@@ -156,24 +156,12 @@ public class TextLine {
   public int getPaddingLeft() {
     Double value = myStyle.get(StyleAttributes.PADDING_LEFT).getValue();
     Measure type = myStyle.get(StyleAttributes.PADDING_LEFT).getType();
-
-    //todo this is hack which makes code look well in editor
-    if (myStyle.get(StyleAttributes.DRAW_BORDER) && myStyle.getCurrent(StyleAttributes.PADDING_LEFT) == null) {
-      value = 0.5;
-      return getHorizontalInternalInsert(value, Measure.SPACES);
-    }
     return getHorizontalInternalInsert(value, type);
   }
 
   public int getPaddingRight() {
     Double value = myStyle.get(StyleAttributes.PADDING_RIGHT).getValue();
     Measure type = myStyle.get(StyleAttributes.PADDING_RIGHT).getType();
-
-    //todo this is hack which makes code look well in editor
-    if (myStyle.get(StyleAttributes.DRAW_BORDER) && myStyle.getCurrent(StyleAttributes.PADDING_RIGHT) == null) {
-      value = 0.5;
-      return getHorizontalInternalInsert(value, Measure.SPACES);
-    }
     return getHorizontalInternalInsert(value, type);
   }
 

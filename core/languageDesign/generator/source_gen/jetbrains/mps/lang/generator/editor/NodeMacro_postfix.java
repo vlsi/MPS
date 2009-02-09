@@ -20,8 +20,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -163,15 +161,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   private static void setupBasic_RefCell_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_ReadOnlyModelAccessor_9824_0(EditorCell editorCell, SNode node, EditorContext context) {

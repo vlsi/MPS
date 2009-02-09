@@ -18,10 +18,12 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 
 public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
 
@@ -296,12 +298,13 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4542_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4542_2");
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
 
       };
@@ -311,11 +314,13 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4542_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4542_3");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
 
       };
@@ -382,6 +387,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
@@ -425,6 +432,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };

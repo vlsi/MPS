@@ -28,8 +28,6 @@ import jetbrains.mps.baseLanguage.editor._InstanceMethodDeclaration_AddAbstract;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.baseLanguage.editor._BaseMethodDeclaration_Actions;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -483,15 +481,6 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   private static void setupBasic_Constant_7205_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7205_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_RefNodeList_7205_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -707,6 +696,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }
@@ -727,8 +717,6 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
           {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.EDITABLE, true);
-            this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
 
         };
@@ -784,6 +772,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }

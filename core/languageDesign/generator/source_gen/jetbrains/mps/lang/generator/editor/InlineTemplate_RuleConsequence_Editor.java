@@ -16,8 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
 
@@ -108,7 +106,6 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
         }
 
       };

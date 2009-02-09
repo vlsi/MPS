@@ -18,8 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
@@ -120,7 +118,6 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
 
       };
@@ -153,7 +150,6 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.EDITABLE, true);
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
         }
 
       };

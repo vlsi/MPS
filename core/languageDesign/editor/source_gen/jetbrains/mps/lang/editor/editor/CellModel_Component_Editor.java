@@ -112,15 +112,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_6025_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6025_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
     editorCell.addKeyMap(new CellModel_Component_KeyMap());
   }
 
@@ -138,15 +130,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_6025_0(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Component_6025_0(EditorCell editorCell, SNode node, EditorContext context) {

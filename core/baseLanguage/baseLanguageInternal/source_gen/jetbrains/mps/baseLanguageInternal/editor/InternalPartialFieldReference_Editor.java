@@ -14,11 +14,11 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -239,7 +239,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7959_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7959_0");
-    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_7959_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -247,7 +247,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7959_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7959_1");
-    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_7959_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -292,7 +292,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7959_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7959_4");
-    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_7959_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -300,12 +300,31 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7959_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7959_5");
-    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_7959_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7959_6");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_7959_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

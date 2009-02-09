@@ -81,16 +81,6 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_4662_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4662_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_4662_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -164,6 +154,7 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }

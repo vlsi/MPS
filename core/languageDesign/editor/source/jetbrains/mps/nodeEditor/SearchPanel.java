@@ -270,7 +270,7 @@ public class SearchPanel extends AbstractSearchPanel {
         int prevStringWidth = metrics.stringWidth(editorCell.getRenderedText().
           substring(0, editorCell.getRenderedText().toLowerCase().
             indexOf(text.toLowerCase())));
-        int x = editorCell.getX() + editorCell.getPaddingLeft()
+        int x = editorCell.getX() + editorCell.getLeftInsert()
           + prevStringWidth;
         int y = editorCell.getY();
         int height = editorCell.getHeight();

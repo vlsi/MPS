@@ -14,11 +14,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -103,15 +101,6 @@ public class LinkList_AddNewChildOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_4523_0(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Component_4523_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -120,6 +109,15 @@ public class LinkList_AddNewChildOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_4523_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4523_0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_4523_1(EditorCell editorCell, SNode node, EditorContext context) {

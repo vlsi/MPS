@@ -19,6 +19,8 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.StyleAttribute;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -58,8 +60,8 @@ public interface EditorCell extends Cloneable {
   int getDescent();
 
   int getEffectiveWidth();
-  int getPaddingLeft();
-  int getPaddingRight();
+  int getLeftInsert();
+  int getRightInsert();
   int getPaddingTop();
   int getPaddingBottom();
 
@@ -148,8 +150,6 @@ public interface EditorCell extends Cloneable {
   Set<JComponent> getSwingComponents();
 
   EditorComponent getEditor();
-
-  void setNextIsPunctuation();
 
   void switchCaretVisible();
 
@@ -246,4 +246,7 @@ public interface EditorCell extends Cloneable {
 
   EditorCell getUpper(Condition<EditorCell> condition, int baseX);
   EditorCell getLower(Condition<EditorCell> condition, int baseX);
+
+  void setGapLeft(int gap);
+  void setGapRight(int gap);
 }

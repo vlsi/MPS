@@ -133,6 +133,15 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_0557_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0557_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNodeList_0557_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -216,6 +225,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }

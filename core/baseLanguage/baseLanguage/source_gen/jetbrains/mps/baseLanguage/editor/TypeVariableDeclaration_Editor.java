@@ -18,8 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -171,15 +169,6 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_1944_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
     TypeVariableDeclaration_addBound.setCellActions(editorCell, node, context);
   }
 
@@ -204,15 +193,6 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1944_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1944_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Collection_1944_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -304,6 +284,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), "&");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }

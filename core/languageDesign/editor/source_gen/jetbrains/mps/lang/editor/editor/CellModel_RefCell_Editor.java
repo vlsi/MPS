@@ -395,15 +395,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_8529_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_8529_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_8529_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -464,28 +456,12 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8529_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8529_3");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_8529_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8529_4");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_8529_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -535,15 +511,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_8529_0(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefCell_8529_1(EditorCell editorCell, SNode node, EditorContext context) {

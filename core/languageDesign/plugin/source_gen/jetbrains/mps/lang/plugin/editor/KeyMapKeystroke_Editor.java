@@ -18,9 +18,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -161,7 +161,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };
@@ -245,7 +245,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.SELECTABLE, false);
         }
 

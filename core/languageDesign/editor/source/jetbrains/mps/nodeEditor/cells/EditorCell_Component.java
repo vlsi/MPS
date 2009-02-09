@@ -65,7 +65,7 @@ public class EditorCell_Component extends EditorCell_Basic {
   public void relayoutImpl() {
     Dimension preferredSize = myComponent.getPreferredSize();
     myComponent.setSize(preferredSize);
-    setWidth(myComponent.getWidth());
+    setWidth(myComponent.getWidth() + myGapLeft + myGapRight);
     setHeight(myComponent.getHeight());
   }
 

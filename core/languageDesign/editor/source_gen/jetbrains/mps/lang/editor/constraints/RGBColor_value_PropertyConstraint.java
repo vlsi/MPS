@@ -22,7 +22,7 @@ public class RGBColor_value_PropertyConstraint implements IModelConstraints, INo
     manager.unRegisterNodePropertyValidator("jetbrains.mps.lang.editor.structure.RGBColor", "value");
   }
 
-  public boolean checkPropertyValue(SNode node, String propertyName, String propertyValue, IScope scope) {
+  public boolean checkPropertyValue(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
     return SPropertyOperations.getString(node, "value") == null || (SPropertyOperations.getString(propertyValue)).matches("[0-9a-fA-Z]{1,6}");
   }
 

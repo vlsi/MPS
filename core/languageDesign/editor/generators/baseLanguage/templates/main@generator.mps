@@ -22,7 +22,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
@@ -57,7 +57,7 @@
   <import index="25" modelUID="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" version="-1" />
   <import index="28" modelUID="f:java_stub#jetbrains.mps.smodel.action(jetbrains.mps.smodel.action@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
-  <import index="38" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
+  <import index="38" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
   <import index="45" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="46" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="47" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
@@ -12367,6 +12367,28 @@
                             </node>
                           </node>
                         </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233850948832">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233852337372">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233850951013">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1233850948833">
+                        <link role="variableDeclaration" targetNodeId="1184142273602" resolveInfo="editorCell" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233850959410">
+                        <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Basic.getStyle():jetbrains.mps.nodeEditor.style.Style" resolveInfo="getStyle" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233852347905">
+                      <link role="baseMethodDeclaration" targetNodeId="64.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void" resolveInfo="set" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1233852409876">
+                        <link role="classifier" targetNodeId="64.~StyleAttributes" resolveInfo="StyleAttributes" />
+                        <link role="variableDeclaration" targetNodeId="64.~StyleAttributes.PUNCTUATION_CELL" resolveInfo="PUNCTUATION_CELL" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233852419949">
+                        <property name="value" value="true" />
                       </node>
                     </node>
                   </node>

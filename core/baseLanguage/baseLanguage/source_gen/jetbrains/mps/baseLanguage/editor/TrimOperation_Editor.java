@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class TrimOperation_Editor extends DefaultNodeEditor {
 
@@ -116,15 +114,6 @@ public class TrimOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_9975_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_trimKind");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_9975_2(EditorCell editorCell, SNode node, EditorContext context) {

@@ -13,10 +13,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -33,9 +29,6 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7565_1(context, node, "return"));
-    if (renderingCondition7565_1(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_7565_2(context, node, ""));
-    }
     if (renderingCondition7565_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_7565_1(context, node));
     }
@@ -55,14 +48,6 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7565_1(editorCell, node, context);
     setupLabel_Constant_7565_1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant_7565_2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7565_2(editorCell, node, context);
-    setupLabel_Constant_7565_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -112,29 +97,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_7565_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7565_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
     ReturnStatement_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_Constant_7565_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7565_2");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupLabel_RefNode_7565_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -146,14 +109,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_7565_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_7565_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static boolean renderingCondition7565_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "expression", true) != null;
-  }
-
-  public static boolean renderingCondition7565_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "expression", true) != null;
   }
 

@@ -26,7 +26,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -39,7 +39,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <maxImportIndex value="21" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -4665,6 +4665,32 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1229954921078">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229954921079" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233828595706">
+    <property name="package" value="Stylesheet.Paddings" />
+    <link role="concept" targetNodeId="1.1233823429331" resolveInfo="HorizontalGapStyleClassItem" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233828599088">
+      <property name="name" value="isApplicableTo" />
+      <link role="overriddenMethod" targetNodeId="1214304723440" resolveInfo="isApplicableTo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233828599089">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1233828599090">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233831567676">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1233828599092">
+        <property name="name" value="cellModel" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1233828599093">
+          <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233828599094" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233828599095" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1233828595707">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233828595708" />
     </node>
   </node>
 </model>

@@ -17,8 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -136,6 +134,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };
@@ -148,9 +147,8 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };
@@ -168,8 +166,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };
@@ -239,15 +236,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_9185_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_nestedName");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
     }
 
     private static void setupLabel_Property_9185_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -298,6 +286,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }

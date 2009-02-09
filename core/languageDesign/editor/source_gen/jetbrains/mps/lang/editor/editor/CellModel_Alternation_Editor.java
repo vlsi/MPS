@@ -433,41 +433,17 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_4233_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4233_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_4233_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4233_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_4233_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4233_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_4233_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -511,28 +487,12 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_4233_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4233_3");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_4233_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4233_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_4233_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -549,11 +509,11 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_4233_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4233_4");
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -589,6 +549,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4233_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4233_2");
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -627,15 +588,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4233_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4233_3");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_4233_3(EditorCell editorCell, SNode node, EditorContext context) {

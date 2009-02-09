@@ -15,7 +15,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
@@ -207,30 +207,12 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1074794604362">
           <property name="text" value="class" />
           <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215517743473">
-            <property name="value" value="0.0" />
-          </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215516863990">
-          <property name="text" value=" " />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215516868975">
-            <property name="flag" value="false" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215516872446">
-            <property name="value" value="0.0" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215516874636">
-            <property name="value" value="0.0" />
-          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1074794745222">
           <property name="writable" value="true" />
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="defaultValue" value="&lt;no name&gt;" />
           <link role="relationDeclaration" targetNodeId="18.1169194664001" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215516065457">
-            <property name="value" value="1.0" />
-          </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310993946">
             <property name="flag" value="true" />
           </node>
@@ -269,9 +251,6 @@
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1211933522644">
             <property name="noTargetText" value="&lt;none&gt;" />
             <link role="relationDeclaration" targetNodeId="17.1165602531693" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225896371469">
-              <property name="value" value="0.0" />
-            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995980">
             <property name="flag" value="false" />
@@ -282,12 +261,6 @@
           <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997726">
             <property name="flag" value="false" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215515663259">
-            <property name="value" value="1.0" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215515252498">
-            <property name="value" value="1.0" />
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678392">
             <property name="color" value="DARK_BLUE" />
@@ -300,9 +273,6 @@
             <property name="nullText" value="&lt;none&gt;" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032014">
               <property name="flag" value="true" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225896675827">
-              <property name="value" value="0.0" />
             </node>
           </node>
         </node>
@@ -792,6 +762,9 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310993614">
             <property name="flag" value="false" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233936563610">
+            <property name="flag" value="true" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1138337100850">
           <property name="separatorText" value="," />
@@ -803,12 +776,6 @@
             </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032077">
               <property name="flag" value="true" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215187655949">
-              <property name="value" value="0.0" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215187664563">
-              <property name="value" value="0.0" />
             </node>
           </node>
         </node>
@@ -1065,6 +1032,9 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1075233459442">
           <property name="text" value="(" />
           <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233824440937">
+            <property name="flag" value="true" />
+          </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310998017">
             <property name="flag" value="false" />
           </node>
@@ -1080,12 +1050,6 @@
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032166">
               <property name="flag" value="true" />
             </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215187694484">
-              <property name="value" value="0.0" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215187691059">
-              <property name="value" value="0.0" />
-            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1075233459445">
@@ -1100,9 +1064,6 @@
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1178609159856">
             <property name="text" value="throws" />
             <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1218453735273">
-              <property name="value" value="1.0" />
-            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1178609159857">
             <property name="separatorText" value="," />
@@ -1364,6 +1325,9 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1075287750863">
           <property name="text" value="(" />
           <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233761952731">
+            <property name="flag" value="true" />
+          </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996982">
             <property name="flag" value="false" />
           </node>
@@ -1378,9 +1342,6 @@
             </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398031939">
               <property name="flag" value="true" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1220348538051">
-              <property name="value" value="0.0" />
             </node>
           </node>
         </node>
@@ -1428,12 +1389,6 @@
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1164891084596">
               <property name="separatorText" value="," />
               <link role="relationDeclaration" targetNodeId="17.1164879685961" />
-              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215196653093">
-                <property name="value" value="0.0" />
-              </node>
-              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215196655033">
-                <property name="value" value="0.0" />
-              </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1164891084597">
               <property name="text" value="{" />
@@ -1864,9 +1819,6 @@
             <property name="noTargetText" value="&lt;no name&gt;" />
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215115108204">
-              <property name="value" value="0.0" />
-            </node>
           </node>
         </node>
       </node>
@@ -1932,6 +1884,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1173991610903">
         <link role="editorComponent" targetNodeId="1173990860683" resolveInfo="BaseMethodCall_actualArgumentList" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233855596507">
+          <property name="flag" value="true" />
+        </node>
       </node>
     </node>
   </node>
@@ -1982,12 +1937,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1083091696640">
       <property name="noTargetText" value="&lt;int constant&gt;" />
       <link role="relationDeclaration" targetNodeId="17.1068580320021" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215088978609">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215088981658">
-        <property name="value" value="0.0" />
-      </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678864">
         <property name="color" value="blue" />
       </node>
@@ -1999,12 +1948,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1088424970609">
       <link role="relationDeclaration" targetNodeId="17.1068580123138" />
       <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215088955152">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215088957904">
-        <property name="value" value="0.0" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1075374365333">
@@ -2036,9 +1979,6 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032073">
           <property name="flag" value="true" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1226073727733">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="ifTrueCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1182954969191">
         <property name="vertical" value="false" />
@@ -2065,12 +2005,6 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032100">
             <property name="flag" value="true" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215096135311">
-            <property name="value" value="0.0" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215096137407">
-            <property name="value" value="0.0" />
           </node>
         </node>
       </node>
@@ -2237,14 +2171,6 @@
       </node>
       <node role="ifFalseCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1209748868405">
         <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1226681221777">
-          <property name="value" value="0.0" />
-          <property name="measure" value="spaces" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1226681224028">
-          <property name="value" value="0.0" />
-          <property name="measure" value="spaces" />
-        </node>
       </node>
     </node>
   </node>
@@ -2484,9 +2410,6 @@
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1217845767538">
                 <property name="flag" value="true" />
               </node>
-              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215092940574">
-                <property name="value" value="0.0" />
-              </node>
               <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1217845778415">
                 <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item" id="1217845781854">
                   <property name="matchingText" value="else" />
@@ -2640,29 +2563,6 @@
         <property name="text" value="return" />
         <link role="actionMap" targetNodeId="1152311212234" resolveInfo="ReturnStatement_Actions" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215093474351">
-          <property name="value" value="0.0" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215094211150">
-        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1215094225964">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215094225965">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215094225966">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1215094225967">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215094225968" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215094225969">
-                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1215094225970" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215094225971">
-                    <link role="link" targetNodeId="17.1068581517676" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215094787086">
-          <property name="flag" value="false" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1075380723767">
         <link role="relationDeclaration" targetNodeId="17.1068581517676" />
@@ -2694,12 +2594,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="1078746085984">
       <property name="name" value="nodeBox" />
       <property name="text" value="&lt;statement&gt;" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215092477665">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215092480198">
-        <property name="value" value="0.0" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1079605716538">
@@ -2713,12 +2607,6 @@
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032152">
         <property name="flag" value="true" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215096780687">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215096783908">
-        <property name="value" value="0.0" />
       </node>
     </node>
   </node>
@@ -2735,12 +2623,8 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678191">
           <property name="color" value="DARK_GREEN" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1215085396794" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215086394696">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215103780293">
-          <property name="value" value="0.0" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233847958260">
+          <property name="flag" value="true" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1079623722230">
@@ -2761,12 +2645,6 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678987">
           <property name="color" value="DARK_GREEN" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215086744265">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215086746783">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1079623722231">
         <property name="text" value="&quot;" />
@@ -2779,12 +2657,8 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399679048">
           <property name="color" value="DARK_GREEN" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1215085402030" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215086402339">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215104244641">
-          <property name="value" value="0.0" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233847974878">
+          <property name="flag" value="true" />
         </node>
       </node>
     </node>
@@ -2809,9 +2683,6 @@
           <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParent" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215103594746">
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215103598763" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1080902646664">
         <link role="relationDeclaration" targetNodeId="17.1070534934092" />
       </node>
@@ -2833,9 +2704,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1081257097747">
         <property name="text" value="instanceof" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1216221924844">
-          <property name="value" value="1.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1081257097748">
         <link role="relationDeclaration" targetNodeId="17.1081256993305" />
@@ -3291,12 +3159,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1085059604178">
         <property name="text" value="super" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215101392413">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215101394618">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1178893571584">
         <property name="text" value="(" />
@@ -3312,9 +3174,6 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032129">
             <property name="flag" value="true" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1219421214123">
-            <property name="value" value="0.0" />
           </node>
         </node>
       </node>
@@ -3340,9 +3199,6 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399677939">
           <property name="color" value="DARK_BLUE" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1221654835117">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1101210485458">
         <property name="text" value="." />
@@ -3355,9 +3211,6 @@
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1091709481302">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1221655117388">
-              <property name="value" value="0.0" />
-            </node>
           </node>
         </node>
       </node>
@@ -3439,9 +3292,6 @@
             <property name="noTargetText" value="&lt;no name&gt;" />
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215103162333">
-              <property name="value" value="0.0" />
-            </node>
           </node>
         </node>
       </node>
@@ -3459,9 +3309,6 @@
             <property name="attractsFocus" value="1" />
             <link role="styleClass" targetNodeId="1198160792349" resolveInfo="staticField" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215103151285">
-              <property name="value" value="0.0" />
-            </node>
           </node>
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1165018744026">
@@ -3553,14 +3400,8 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1215189326991">
           <property name="style" value="PLAIN" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215188939342">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215188941625">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1215188945033">
-          <property name="flag" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233847943930">
+          <property name="flag" value="true" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215012051740">
@@ -3590,9 +3431,6 @@
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="1214321202523">
           <property name="tag" value="default_RTransform" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215162347681">
-          <property name="value" value="0.0" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199466153260">
@@ -3688,12 +3526,6 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032127">
             <property name="flag" value="true" />
           </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215162340083">
-            <property name="value" value="1.0" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215162342632">
-            <property name="value" value="0.0" />
-          </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1199466166157">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199466166158">
@@ -3731,23 +3563,11 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Alternation" id="1138060380694">
       <node role="ifTrueCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="1138060384542">
         <property name="text" value="&lt;type&gt;" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215100823293">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215100825482">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="ifFalseCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1138060501183">
         <property name="noTargetText" value="&lt;type has no alias&gt;" />
         <link role="relationDeclaration" targetNodeId="18.1137473891462" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215100815868">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215100817980">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="alternationCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1146070379313">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1146070379314">
@@ -3776,9 +3596,6 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678867">
           <property name="color" value="DARK_BLUE" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1218450414990">
-          <property name="value" value="0.0" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199470083774">
@@ -3874,9 +3691,6 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032171">
             <property name="flag" value="true" />
           </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1218450408332">
-            <property name="value" value="1.0" />
-          </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1199470083816">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199470083817">
@@ -3930,9 +3744,6 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215517448442">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1119291719344">
         <property name="vertical" value="false" />
@@ -3955,12 +3766,6 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997050">
             <property name="flag" value="false" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215517441564">
-            <property name="value" value="0.0" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215517443613">
-            <property name="value" value="0.0" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1119291719346">
@@ -4006,9 +3811,6 @@
             <property name="noTargetText" value="&lt;no name&gt;" />
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1216109761291">
-              <property name="value" value="0.0" />
-            </node>
           </node>
         </node>
       </node>
@@ -4029,9 +3831,6 @@
             </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678990">
               <property name="color" value="DARK_MAGENTA" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1219236530180">
-              <property name="value" value="0.0" />
             </node>
           </node>
         </node>
@@ -4632,11 +4431,12 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1140573670192">
         <property name="text" value="&lt;" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1216668414108">
-          <property name="value" value="0.0" />
-        </node>
+        <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995758">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233929375431">
+          <property name="flag" value="true" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1140573670193">
@@ -4646,6 +4446,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1140573670194">
         <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994419">
           <property name="flag" value="false" />
         </node>
@@ -4665,9 +4466,6 @@
         <property name="noTargetText" value="&lt;no name&gt;" />
         <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
         <link role="actionMap" targetNodeId="1214997316768" resolveInfo="TypeVariableDeclaration_addBound" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1216668044915">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1214997970620">
         <property name="vertical" value="false" />
@@ -4677,9 +4475,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215090982339">
           <property name="text" value="extends" />
           <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1216667990544">
-            <property name="value" value="1.0" />
-          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1214997985454">
           <link role="relationDeclaration" targetNodeId="17.1214996921760" />
@@ -4749,9 +4544,6 @@
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1216667486012">
-            <property name="value" value="0.0" />
-          </node>
         </node>
       </node>
     </node>
@@ -4763,9 +4555,6 @@
       <link role="relationDeclaration" targetNodeId="17.1113006610751" />
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678761">
         <property name="color" value="blue" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215707139087">
-        <property name="value" value="0.0" />
       </node>
     </node>
   </node>
@@ -4781,12 +4570,8 @@
         <property name="text" value="[]" />
         <link role="actionMap" targetNodeId="1140562594615" resolveInfo="ArrayType_Brackets_Actions" />
         <link role="styleClass" targetNodeId="1215010871495" resolveInfo="Bracket" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1215089401880" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215100953102">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215100955104">
-          <property name="value" value="0.0" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233924982582">
+          <property name="flag" value="true" />
         </node>
       </node>
     </node>
@@ -4816,9 +4601,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1116615336905">
         <property name="text" value="class" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215166343376">
-          <property name="value" value="0.0" />
-        </node>
       </node>
     </node>
   </node>
@@ -4835,9 +4617,6 @@
             <property name="noTargetText" value="&lt;no name&gt;" />
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="17.1211504562189" resolveInfo="nestedName" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215100913350">
-              <property name="value" value="0.0" />
-            </node>
           </node>
         </node>
       </node>
@@ -4845,12 +4624,11 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1211505168857">
           <property name="text" value="&lt;" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996989" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215597215816">
-            <property name="value" value="0.0" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233855076947">
+            <property name="flag" value="true" />
           </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215165506943">
-            <property name="value" value="0.0" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233929346140">
+            <property name="flag" value="true" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1211505175170">
@@ -4863,9 +4641,8 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996395">
             <property name="flag" value="true" />
           </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1215686767988" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215165517305">
-            <property name="value" value="0.0" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233855098524">
+            <property name="flag" value="true" />
           </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1211505190703">
@@ -4890,6 +4667,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994420">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233855087357">
+          <property name="flag" value="true" />
         </node>
       </node>
     </node>
@@ -5165,12 +4945,6 @@
       <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934117">
         <property name="style" value="ITALIC" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215098077679">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215098080040">
-        <property name="value" value="0.0" />
       </node>
     </node>
   </node>
@@ -5658,12 +5432,6 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995543">
             <property name="flag" value="false" />
           </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215106091372">
-            <property name="value" value="1.0" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215106094061">
-            <property name="value" value="1.0" />
-          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1144226478511">
           <link role="relationDeclaration" targetNodeId="17.1144226360166" />
@@ -5786,9 +5554,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1144231387423">
           <property name="text" value=";" />
           <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215514821717">
-            <property name="value" value="1.0" />
-          </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215104976919">
             <property name="flag" value="false" />
           </node>
@@ -5799,9 +5564,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1144231423624">
           <property name="text" value=";" />
           <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215514827297">
-            <property name="value" value="1.0" />
-          </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215104980873" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1144231426986">
@@ -6110,12 +5872,6 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678351">
             <property name="color" value="DARK_BLUE" />
           </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215096551496">
-            <property name="value" value="0.0" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215096553873">
-            <property name="value" value="0.0" />
-          </node>
         </node>
       </node>
     </node>
@@ -6253,6 +6009,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1154543041458">
         <property name="text" value="{" />
         <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233925603886">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1154543050632">
         <property name="separatorText" value="," />
@@ -7283,9 +7042,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1164880033959">
           <property name="text" value="try" />
           <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1216459880650">
-            <property name="value" value="0.0" />
-          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1164880041383">
           <property name="text" value="{" />
@@ -7385,12 +7141,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1164903407621">
           <property name="text" value="}" />
           <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1218192375686">
-            <property name="value" value="0.0" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1216459869008">
-            <property name="value" value="1.0" />
-          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1164903407622">
           <property name="text" value="catch" />
@@ -7406,9 +7156,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1164903407625">
           <property name="text" value=")" />
           <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1218192615109">
-            <property name="value" value="1.0" />
-          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215011816143">
           <property name="text" value="{" />
@@ -7609,9 +7356,8 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678284">
           <property name="color" value="gray" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1215163960433" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215163962935">
-          <property name="value" value="0.0" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233846810697">
+          <property name="flag" value="true" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Alternation" id="1197651363305">
@@ -7717,9 +7463,6 @@
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="1214321202512">
                 <property name="tag" value="default_RTransform" />
               </node>
-              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215101914329">
-                <property name="value" value="0.0" />
-              </node>
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="1220435605146">
@@ -7750,10 +7493,9 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1201186146367">
             <property name="text" value="&lt;" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224588548308">
-              <property name="value" value="0.0" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233847810713">
+              <property name="flag" value="true" />
             </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1224588934890" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1201186153043">
             <property name="vertical" value="false" />
@@ -7789,11 +7531,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1170346136560">
           <property name="separatorText" value="," />
           <link role="relationDeclaration" targetNodeId="17.1170346101385" />
-          <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206630627246">
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1219241932584">
-              <property name="value" value="0.0" />
-            </node>
-          </node>
+          <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206630627246" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1170346142297">
           <property name="text" value=")" />
@@ -8131,12 +7869,6 @@
           <property name="readOnly" value="true" />
           <link role="styleClass" targetNodeId="1198160792349" resolveInfo="staticField" />
           <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215116675593">
-            <property name="value" value="0.0" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215116678095">
-            <property name="value" value="0.0" />
-          </node>
         </node>
       </node>
     </node>
@@ -8244,12 +7976,6 @@
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934283">
               <property name="style" value="ITALIC" />
             </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215188220474">
-              <property name="value" value="0.0" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215188222554">
-              <property name="value" value="0.0" />
-            </node>
           </node>
         </node>
       </node>
@@ -8266,12 +7992,6 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032044">
             <property name="flag" value="true" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215188250886">
-            <property name="value" value="0.0" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215188252982">
-            <property name="value" value="0.0" />
           </node>
         </node>
       </node>
@@ -8435,9 +8155,6 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215164267475">
           <property name="flag" value="false" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215164255314">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1173175607861">
         <link role="relationDeclaration" targetNodeId="17.1173175577737" />
@@ -8445,15 +8162,11 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1173175610988">
         <property name="text" value="]" />
         <link role="styleClass" targetNodeId="1215010871495" resolveInfo="Bracket" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233847860981">
+          <property name="flag" value="false" />
+        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215164262629">
           <property name="flag" value="true" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1215547580103" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1215547575476">
-          <property name="flag" value="true" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215164260127">
-          <property name="value" value="0.0" />
         </node>
       </node>
     </node>
@@ -8489,7 +8202,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1173990956438">
         <property name="text" value="(" />
         <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1215707972029" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233836248647">
+          <property name="flag" value="true" />
+        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934045">
           <property name="style" value="PLAIN" />
         </node>
@@ -8505,12 +8220,6 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032098">
             <property name="flag" value="true" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215188228174">
-            <property name="value" value="0.0" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215188230145">
-            <property name="value" value="0.0" />
           </node>
         </node>
         <node role="focusPolicyApplicable" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1225529606622">
@@ -9634,9 +9343,6 @@
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="1214321202510">
         <property name="tag" value="default_RTransform" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215100795550">
-        <property name="value" value="1.0" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1182160159358">
@@ -10005,18 +9711,6 @@
     <link role="conceptDeclaration" targetNodeId="17.1068580123132" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1215517344867">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215517346795">
-        <property name="text" value=" " />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215517346796">
-          <property name="flag" value="false" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215517346797">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215517346798">
-          <property name="value" value="0.0" />
-        </node>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1215517344868">
         <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
         <link role="styleClass" targetNodeId="1215090647074" resolveInfo="MethodName" />
@@ -10145,12 +9839,6 @@
       <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1215188911005">
         <link role="styleSheetClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215188913241">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215188915540">
-        <property name="value" value="0.0" />
-      </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1198594875276">
       <property name="name" value="Comment" />
@@ -10238,12 +9926,6 @@
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1215010891889">
         <property name="style" value="PLAIN" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215089025978">
-        <property name="value" value="1.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215089028996">
-        <property name="value" value="1.0" />
-      </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215010868182">
       <property name="name" value="Parenthesis" />
@@ -10256,12 +9938,8 @@
       <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1215088009377">
         <link role="styleSheetClass" targetNodeId="1215010868182" resolveInfo="Paren" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1215707602414" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215088405378">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215088408474">
-        <property name="value" value="0.0" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233761355702">
+        <property name="flag" value="true" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215088010675">
@@ -10269,13 +9947,10 @@
       <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1215088014114">
         <link role="styleSheetClass" targetNodeId="1215010868182" resolveInfo="Paren" />
       </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233761368652">
+        <property name="flag" value="true" />
+      </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1215088413006" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215088416180">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215088418557">
-        <property name="value" value="0.0" />
-      </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215010874200">
       <property name="name" value="Brace" />
@@ -10288,11 +9963,8 @@
       <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1215091330298">
         <link role="styleSheetClass" targetNodeId="1215010874200" resolveInfo="Brace" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215092107505">
-        <property name="value" value="1.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215092111397">
-        <property name="value" value="0.0" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233925200629">
+        <property name="flag" value="true" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215091331565">
@@ -10300,57 +9972,60 @@
       <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1215091334832">
         <link role="styleSheetClass" targetNodeId="1215010874200" resolveInfo="Brace" />
       </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233925208616">
+        <property name="flag" value="true" />
+      </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215010871495">
       <property name="name" value="Bracket" />
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1215010897861">
         <property name="style" value="PLAIN" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215163747603">
-        <property name="value" value="0.0" />
+    </node>
+    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1233923571622">
+      <property name="name" value="LeftBracket" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233923753542">
+        <property name="flag" value="true" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233923813536">
+        <property name="flag" value="true" />
+      </node>
+      <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1233923740467">
+        <link role="styleSheetClass" targetNodeId="1215010871495" resolveInfo="Bracket" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1233923584313">
+      <property name="name" value="RightBracket" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233923822363">
+        <property name="flag" value="true" />
+      </node>
+      <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1233923745739">
+        <link role="styleSheetClass" targetNodeId="1215010871495" resolveInfo="Bracket" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215090647074">
       <property name="name" value="MethodName" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215090655092">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215090657688">
-        <property name="value" value="0.0" />
-      </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215090010725">
       <property name="name" value="VariableName" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215090017306">
-        <property name="value" value="0.0" />
-      </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215189282959">
       <property name="name" value="ClassName" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215189295726">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215189298041">
-        <property name="value" value="0.0" />
-      </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215094139260">
       <property name="name" value="Semicolon" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215095044266">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215514812278">
-        <property name="value" value="0.0" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233823839448">
+        <property name="flag" value="true" />
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1215098136621" />
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215096040201">
       <property name="name" value="Dot" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215096042624">
-        <property name="value" value="0.0" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233844941530">
+        <property name="flag" value="true" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215096045251">
-        <property name="value" value="0.0" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233844945299">
+        <property name="flag" value="true" />
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215096046863" />
     </node>
@@ -10441,9 +10116,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188206420416">
           <property name="text" value="{" />
           <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1224752666989">
-            <property name="value" value="0.0" />
-          </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996532">
             <property name="flag" value="false" />
           </node>
@@ -10509,12 +10181,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1188206662537">
         <property name="readOnly" value="false" />
         <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1224754127421">
-          <property name="value" value="1.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224754867948">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188206667508">
         <property name="text" value="(" />
@@ -10539,6 +10205,9 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678521">
           <property name="color" value="DARK_GREEN" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233937316386">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1188208083159">
         <link role="relationDeclaration" targetNodeId="17.1188208074048" />
@@ -10559,6 +10228,9 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188995315206">
           <property name="text" value="(" />
           <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233937328612">
+            <property name="flag" value="true" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1188995299492">
           <property name="vertical" value="false" />
@@ -10566,20 +10238,11 @@
           <link role="relationDeclaration" targetNodeId="17.1188214630783" />
           <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188995299493">
             <property name="text" value="" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1224753638632">
-              <property name="value" value="0.0" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224753640806">
-              <property name="value" value="0.0" />
-            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188995305245">
           <property name="text" value=")" />
           <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224754487148">
-            <property name="value" value="1.0" />
-          </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1188995326442">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188995326443">
@@ -10638,9 +10301,6 @@
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1188214586947">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1219324951302">
-              <property name="value" value="0.0" />
-            </node>
           </node>
         </node>
       </node>
@@ -10661,9 +10321,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188220212300">
         <property name="text" value="{" />
         <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215105351491">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1188220217555">
         <property name="vertical" value="false" />
@@ -10673,9 +10330,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188220214099">
         <property name="text" value="}" />
         <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224754067511">
-          <property name="value" value="0.0" />
-        </node>
       </node>
     </node>
   </node>
@@ -12297,9 +11951,6 @@
               <property name="flag" value="true" />
             </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1226320400370" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1226320407858">
-              <property name="value" value="0.0" />
-            </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1226320420815">
               <property name="color" value="DARK_BLUE" />
             </node>
@@ -12339,9 +11990,6 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1197028135780">
         <link role="relationDeclaration" targetNodeId="17.1197027771414" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1216046369124">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1197028139380">
         <property name="text" value="." />
@@ -12391,9 +12039,6 @@
           <property name="readOnly" value="true" />
           <link role="styleClass" targetNodeId="1198595398954" resolveInfo="Field" />
           <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215174240638">
-            <property name="value" value="0.0" />
-          </node>
         </node>
       </node>
     </node>
@@ -12844,9 +12489,6 @@
         <node role="ifTrueCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1208859155873">
           <link role="relationDeclaration" targetNodeId="17.1200397540847" resolveInfo="charConstant" />
           <link role="styleClass" targetNodeId="1186415563770" resolveInfo="StringLiteral" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1218027022697">
-            <property name="value" value="0.0" />
-          </node>
         </node>
         <node role="alternationCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1208859155874">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208859155875">
@@ -13194,6 +12836,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1225532011450">
         <link role="editorComponent" targetNodeId="1173990860683" resolveInfo="IMethodCall_actualArguments" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233849433245">
+          <property name="flag" value="true" />
+        </node>
       </node>
     </node>
   </node>
@@ -13420,9 +13065,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221563873896">
         <property name="text" value="{" />
         <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1221564176691">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1221563873897">
         <property name="vertical" value="false" />
@@ -13515,9 +13157,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1208890828990">
       <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
       <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215164597435">
-        <property name="value" value="0.0" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1212695915153">
@@ -13545,10 +13184,12 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1212699852038">
           <property name="text" value="&lt;" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215597268712">
-            <property name="value" value="0.0" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233854273043">
+            <property name="flag" value="true" />
           </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1215597362268" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233854277229">
+            <property name="flag" value="true" />
+          </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310998102">
             <property name="flag" value="false" />
           </node>
@@ -13560,10 +13201,12 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1212699852040">
           <property name="text" value="&gt;" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215597656584">
-            <property name="value" value="0.0" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233854291638">
+            <property name="flag" value="true" />
           </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1215597358125" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233854296342">
+            <property name="flag" value="true" />
+          </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1212699852041">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212699852042">
@@ -13585,9 +13228,15 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233854629796">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1212699852051">
         <link role="editorComponent" targetNodeId="1173990860683" resolveInfo="IMethodCall_actualArguments" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233849845943">
+          <property name="flag" value="true" />
+        </node>
       </node>
     </node>
   </node>
@@ -13603,9 +13252,6 @@
         <property name="text" value="++" />
         <property name="attractsFocus" value="1" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1215090676083" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215090688695">
-          <property name="value" value="0.0" />
-        </node>
       </node>
     </node>
   </node>
@@ -14170,9 +13816,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1219921135420">
         <property name="text" value="..." />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225896014272">
-          <property name="value" value="0.0" />
-        </node>
       </node>
     </node>
   </node>
@@ -14219,9 +13862,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221738779195">
           <property name="text" value="{" />
           <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1221739175704">
-            <property name="value" value="0.0" />
-          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1221738769661">
           <property name="flag" value="false" />
@@ -14326,9 +13966,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224071154944">
         <property name="text" value="as" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1224071154945">
-          <property name="value" value="1.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1224071154946">
         <link role="relationDeclaration" targetNodeId="17.1224071154657" />
@@ -14389,9 +14026,6 @@
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224574067640">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224574610276">
-              <property name="value" value="0.0" />
-            </node>
           </node>
         </node>
       </node>
@@ -14402,9 +14036,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224574074659">
         <property name="text" value="values" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224574615496">
-          <property name="value" value="0.0" />
-        </node>
         <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1224579460887">
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group" id="1224579460888">
             <property name="presentation" value="default_referent" />
@@ -14461,9 +14092,6 @@
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224575200205">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224575200206">
-              <property name="value" value="0.0" />
-            </node>
           </node>
         </node>
       </node>
@@ -14474,9 +14102,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224575200208">
         <property name="text" value="valueOf" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224575200209">
-          <property name="value" value="0.0" />
-        </node>
         <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1224577760392">
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group" id="1224577760394">
             <property name="presentation" value="default_referent" />
@@ -14556,25 +14181,13 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1225271485083">
         <property name="noTargetText" value="0" />
         <link role="relationDeclaration" targetNodeId="17.1225271484917" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225271485084">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225271485085">
         <property name="text" value=":" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1225271485086">
-          <property name="value" value="1.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225271485087">
-          <property name="value" value="1.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1225271485088">
         <property name="noTargetText" value="end" />
         <link role="relationDeclaration" targetNodeId="17.1225271484918" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225271485089">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225271485090">
         <property name="text" value="]" />
@@ -14598,9 +14211,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1225271546560">
         <link role="relationDeclaration" targetNodeId="17.1225271546413" resolveInfo="trimKind" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225271546561">
-          <property name="value" value="0.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225271546562">
         <property name="text" value=")" />
@@ -14618,14 +14228,8 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1225894578683">
           <property name="style" value="PLAIN" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1225894578684">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225894578685">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1225894578686">
-          <property name="flag" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233847902336">
+          <property name="flag" value="true" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225894578687">
@@ -14836,10 +14440,9 @@
         <property name="text" value="//" />
         <link role="styleClass" targetNodeId="1198594875276" resolveInfo="Comment" />
         <link role="actionMap" targetNodeId="1232462845246" resolveInfo="CommentedStatement_Actions" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1232462732426">
-          <property name="value" value="0.0" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233847929736">
+          <property name="flag" value="true" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1232465705004" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1232461230923">
         <link role="relationDeclaration" targetNodeId="17.1232461075566" />

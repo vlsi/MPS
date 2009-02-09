@@ -9,8 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class NullLiteral_Editor extends DefaultNodeEditor {
@@ -36,8 +34,6 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.EDITABLE, true);
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
 
       };

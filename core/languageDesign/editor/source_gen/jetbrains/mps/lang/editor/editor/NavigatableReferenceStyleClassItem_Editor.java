@@ -14,6 +14,8 @@ import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -113,6 +115,16 @@ public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor
 
   private static void setupBasic_Constant_0469_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0469_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefCell_0469_0(EditorCell editorCell, SNode node, EditorContext context) {

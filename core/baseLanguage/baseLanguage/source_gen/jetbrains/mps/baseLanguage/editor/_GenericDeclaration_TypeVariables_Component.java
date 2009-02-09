@@ -12,8 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -96,11 +94,12 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
   private static void setupBasic_Constant_9618_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9618_0");
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };
@@ -114,6 +113,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
   private static void setupBasic_Constant_9618_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9618_1");
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -178,6 +178,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }

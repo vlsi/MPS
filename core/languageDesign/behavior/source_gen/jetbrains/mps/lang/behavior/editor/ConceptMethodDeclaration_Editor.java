@@ -32,8 +32,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -751,20 +749,20 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Property_6299_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
     BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_6299_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6299_2");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNodeList_6299_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -943,16 +941,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ReadOnlyModelAccessor_6299_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_6299_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Component_6299_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -1280,6 +1268,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }
@@ -1298,8 +1287,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
             this.set(StyleAttributes.EDITABLE, true);
           }
 

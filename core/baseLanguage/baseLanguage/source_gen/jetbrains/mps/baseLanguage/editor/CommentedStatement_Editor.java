@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CommentedStatement_Editor extends DefaultNodeEditor {
@@ -84,8 +82,7 @@ public class CommentedStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };

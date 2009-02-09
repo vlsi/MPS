@@ -18,10 +18,9 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class CreateEquationStatement_Editor extends DefaultNodeEditor {
@@ -241,16 +240,6 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_6235_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_RefNode_6235_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -258,6 +247,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6235_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6235_0");
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_6235_1(EditorCell editorCell, SNode node, EditorContext context) {

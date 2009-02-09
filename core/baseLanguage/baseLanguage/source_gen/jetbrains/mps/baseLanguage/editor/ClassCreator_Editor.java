@@ -18,8 +18,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -143,6 +141,15 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_9368_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_9368_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_9368_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -150,8 +157,8 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
           this.set(StyleAttributes.SELECTABLE, false);
         }
 
@@ -169,8 +176,8 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
@@ -179,6 +186,15 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_9368_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_RefCell_9368_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -303,6 +319,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }

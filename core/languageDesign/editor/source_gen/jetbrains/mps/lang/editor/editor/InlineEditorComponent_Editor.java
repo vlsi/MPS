@@ -73,24 +73,16 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_2949_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2949_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_2949_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2949_0");
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };

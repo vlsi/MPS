@@ -198,7 +198,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
     EditorCell editorCell = editorCell_collection.firstCell();
     if (editorCell == null) return 0;
-    return editorCell.getPaddingRight();
+    return editorCell.getRightInsert();
   }
 
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {

@@ -397,15 +397,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_3263_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_3263_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_3263_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -480,10 +472,10 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_3263_0(EditorCell editorCell, SNode node, EditorContext context) {
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {

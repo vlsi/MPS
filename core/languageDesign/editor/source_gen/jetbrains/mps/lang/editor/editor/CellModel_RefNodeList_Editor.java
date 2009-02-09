@@ -1082,15 +1082,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_6321_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6321_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Component_6321_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -1126,30 +1118,12 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_6321_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6321_3");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_6321_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6321_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefCell_6321_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -1166,43 +1140,17 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6321_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6321_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_6321_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6321_4");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_6321_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6321_2");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_6321_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -1219,44 +1167,17 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_6321_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6321_5");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_6321_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6321_6");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_6321_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6321_3");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefCell_6321_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -1273,29 +1194,12 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6321_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6321_4");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_6321_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6321_5");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_6321_1(EditorCell editorCell, SNode node, EditorContext context) {

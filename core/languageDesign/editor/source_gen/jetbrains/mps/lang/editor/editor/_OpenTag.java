@@ -56,6 +56,7 @@ public class _OpenTag extends AbstractCellProvider {
 
   private static void setupBasic_ReadOnlyModelAccessor_4575_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_4575_0");
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -73,7 +74,6 @@ public class _OpenTag extends AbstractCellProvider {
 
           });
           this.set(StyleAttributes.EDITABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };

@@ -19,8 +19,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
@@ -196,15 +194,6 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     private static void setupBasic_Property_6051_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getStaticField(editorCell).apply(editorCell);
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
       if (true) {
         editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
       }
@@ -260,15 +249,6 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_6051_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name_1");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
     }
 
     private static void setupLabel_Property_6051_1(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -24,8 +24,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class Antiquotation_Editor extends DefaultNodeEditor {
 
@@ -239,8 +237,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
 
           });
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
@@ -269,9 +266,8 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
             }
 
           });
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };

@@ -63,4 +63,23 @@ public class Styles_StyleSheet {
     };
   }
 
+  public static Style getBordered(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.DRAW_BORDER, true);
+      }
+
+    };
+  }
+
+  public static Style getBorderedCollection(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.SELECTABLE, false);
+        this.set(StyleAttributes.DRAW_BORDER, false);
+      }
+
+    };
+  }
+
 }

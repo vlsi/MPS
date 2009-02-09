@@ -41,13 +41,13 @@ public abstract class AbstractCellLayout implements CellLayout {
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
     EditorCell editorCell = editorCell_collection.lastCell();
     if (editorCell == null) return 0;
-    return editorCell.getPaddingRight();
+    return editorCell.getRightInsert();
   }
 
   public int getLeftInternalInset(EditorCell_Collection editorCell_collection) {
     EditorCell editorCell = editorCell_collection.firstCell();
     if (editorCell == null) return 0;
-    return editorCell.getPaddingLeft();
+    return editorCell.getLeftInsert();
   }
 
   public boolean canBeFolded() {

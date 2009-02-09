@@ -50,11 +50,11 @@
     <dependency reexport="false">a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)</dependency>
   </dependencies>
   <usedDevKits>
-    <usedDevKit>jetbrains.mps.devkit.language-design</usedDevKit>
+    <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
   <extendedLanguages>
-    <extendedLanguage>jetbrains.mps.build.packaging</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.buildlanguage</extendedLanguage>
+    <extendedLanguage>4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)</extendedLanguage>
+    <extendedLanguage>0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</extendedLanguage>
   </extendedLanguages>
 </language>
 

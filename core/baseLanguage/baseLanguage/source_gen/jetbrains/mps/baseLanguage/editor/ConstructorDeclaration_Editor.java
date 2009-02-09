@@ -32,8 +32,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
@@ -434,6 +432,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };
@@ -674,6 +673,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }
@@ -694,8 +694,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.EDITABLE, true);
-            this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
 
         };
@@ -751,6 +749,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }

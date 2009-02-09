@@ -55,7 +55,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -1717,9 +1716,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         deepestCell.getHeight() - deepestCell.getPaddingTop() - deepestCell.getPaddingBottom());
 
       g.setColor(new Color(230, 230, 190));
-      g.fillRect(deepestCell.getX() + label.getPaddingLeft(),
+      g.fillRect(deepestCell.getX() + label.getLeftInsert(),
         deepestCell.getY(),
-        deepestCell.getWidth() - label.getPaddingLeft() - label.getPaddingRight(),
+        deepestCell.getWidth() - label.getLeftInsert() - label.getRightInsert(),
         deepestCell.getHeight() - deepestCell.getPaddingTop() - deepestCell.getPaddingBottom());
     }
 

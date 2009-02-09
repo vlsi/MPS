@@ -16,8 +16,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class StaticInitializer_Editor extends DefaultNodeEditor {
 
@@ -200,15 +198,6 @@ public class StaticInitializer_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_3016_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3016_3");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupLabel_RefNode_3016_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

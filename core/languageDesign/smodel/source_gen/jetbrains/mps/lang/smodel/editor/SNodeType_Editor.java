@@ -116,16 +116,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7331_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7331_1");
-    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefCell_7331_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -146,16 +137,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7331_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7331_2");
-    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_7331_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

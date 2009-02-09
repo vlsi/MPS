@@ -16,10 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
@@ -176,15 +172,6 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_0127_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
     }
 
     private static void setupLabel_Property_0127_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

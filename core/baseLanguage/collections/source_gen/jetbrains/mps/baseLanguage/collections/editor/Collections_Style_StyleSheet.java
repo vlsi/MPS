@@ -34,8 +34,8 @@ public class Collections_Style_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(Collections_Style_StyleSheet.getAngleBracket(null));
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
 
     };
@@ -45,8 +45,8 @@ public class Collections_Style_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(Collections_Style_StyleSheet.getAngleBracket(null));
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
 
     };

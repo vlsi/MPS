@@ -20,8 +20,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -147,7 +145,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
 
       };
@@ -161,6 +158,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };
@@ -176,7 +174,8 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
@@ -195,8 +194,8 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
@@ -268,6 +267,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }

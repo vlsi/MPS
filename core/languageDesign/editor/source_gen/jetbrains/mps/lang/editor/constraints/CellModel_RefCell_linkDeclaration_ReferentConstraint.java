@@ -34,7 +34,7 @@ public class CellModel_RefCell_linkDeclaration_ReferentConstraint extends BaseNo
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.lang.editor.structure.CellModel_RefCell", "relationDeclaration");
   }
 
-  public void processReferentSetEvent(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
+  public void processReferentSetEvent(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
     SLinkOperations.setTarget(SLinkOperations.getTarget(referenceNode, "editorComponent", true), "conceptDeclaration", SLinkOperations.getTarget(newReferentNode, "target", false), false);
   }
 

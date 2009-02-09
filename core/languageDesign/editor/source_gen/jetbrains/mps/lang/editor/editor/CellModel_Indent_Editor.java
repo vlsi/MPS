@@ -29,10 +29,10 @@ public class CellModel_Indent_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8904_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8904_0");
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
         }
 
