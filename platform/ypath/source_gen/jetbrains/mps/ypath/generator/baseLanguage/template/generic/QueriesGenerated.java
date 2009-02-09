@@ -29,7 +29,6 @@ import jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -1159,7 +1158,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1196716118756(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> newCandidates = ListSequence.<SNode>fromArray();
-    for(SNode foo : Sequence.fromIterable(SLinkOperations.getTargets(_context.getNode(), "candidates", true))) {
+    for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "candidates", true))) {
       if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.StatementAggregator")) {
         ListSequence.fromList(newCandidates).addSequence(ListSequence.fromList(SLinkOperations.getTargets(foo, "candidates", true)));
       } else

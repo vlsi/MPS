@@ -1226,9 +1226,5 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1233910635194">
-    <link role="conceptDeclaration" targetNodeId="5.1071489288298" resolveInfo="LinkDeclaration" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.EditorCellModel" id="1233910635195" />
-  </node>
 </model>
 

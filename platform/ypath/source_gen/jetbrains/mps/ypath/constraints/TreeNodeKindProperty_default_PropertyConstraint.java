@@ -23,7 +23,7 @@ public class TreeNodeKindProperty_default_PropertyConstraint implements IModelCo
     manager.unRegisterNodePropertySetter("jetbrains.mps.ypath.structure.TreeNodeKindProperty", "default");
   }
 
-  public void execPropertySet(SNode node, String propertyName, String propertyValue, IScope scope) {
+  public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
     if ((SPropertyOperations.getBoolean(propertyValue)) == true) {
       SNode treepath = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathAspect", false, false);
       for(SNode desc : SNodeOperations.getDescendants(treepath, null, false)) {

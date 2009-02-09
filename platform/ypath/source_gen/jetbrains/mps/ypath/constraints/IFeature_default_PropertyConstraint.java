@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -25,9 +25,9 @@ public class IFeature_default_PropertyConstraint implements IModelConstraints, I
     manager.unRegisterNodePropertySetter("jetbrains.mps.ypath.structure.IFeature", "default");
   }
 
-  public void execPropertySet(SNode node, String propertyName, String propertyValue, IScope scope) {
+  public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
     if ((SPropertyOperations.getBoolean(propertyValue))) {
-      for(SNode foo : Sequence.fromIterable(SLinkOperations.getTargets(SNodeOperations.getParent(node), "features", true))) {
+      for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(node), "features", true))) {
         if (foo != node) {
           SPropertyOperations.set(foo, "default", "" + (false));
         }

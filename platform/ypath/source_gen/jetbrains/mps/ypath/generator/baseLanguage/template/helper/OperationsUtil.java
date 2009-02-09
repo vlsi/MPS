@@ -16,7 +16,6 @@ import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -63,7 +62,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 6:
-                      this._6_po_it = Sequence.fromIterable(IParamFeature_Behavior.call_getParameterObjects_1213877340242(it, nodeType)).iterator();
+                      this._6_po_it = ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(it, nodeType)).iterator();
                     case 7:
                       if (!(this._6_po_it.hasNext())) {
                         this.__CP__ = 3;
