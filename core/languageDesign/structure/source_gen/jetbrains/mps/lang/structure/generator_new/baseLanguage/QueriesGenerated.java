@@ -398,22 +398,6 @@ public class QueriesGenerated {
     return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(_context.getNode(), "source", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1198515654379(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return QueriesUtil.enumClassFQName(SLinkOperations.getTarget(_context.getNode(), "dataType", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1198515969941(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return QueriesUtil.enumClassFQName(SLinkOperations.getTarget(_context.getNode(), "dataType", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1198516036717(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return QueriesUtil.enumClassFQName(SLinkOperations.getTarget(_context.getNode(), "dataType", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1198516075698(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return QueriesUtil.enumClassFQName(SLinkOperations.getTarget(_context.getNode(), "dataType", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1198516836152(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return LinkDeclarationUtil.setterMethodName(SLinkOperations.getTarget(_context.getNode(), "specializedLink", false));
   }
@@ -643,6 +627,18 @@ public class QueriesGenerated {
     SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(_context.getNode());
     SNode outputEnumConstant = _context.getOutputNodeByInputNodeAndMappingLabel(defaultMember, "outputEnumConstant");
     return (SNode)outputEnumConstant;
+  }
+
+  public static Object referenceMacro_GetReferent_1234209804321(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return QueriesUtil.getEnumClassResolveInfo(SLinkOperations.getTarget(_context.getNode(), "dataType", false));
+  }
+
+  public static Object referenceMacro_GetReferent_1234210854396(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return QueriesUtil.getEnumClassResolveInfo(SLinkOperations.getTarget(_context.getNode(), "dataType", false));
+  }
+
+  public static Object referenceMacro_GetReferent_1234210973468(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return QueriesUtil.getEnumClassResolveInfo(SLinkOperations.getTarget(_context.getNode(), "dataType", false));
   }
 
   public static boolean ifMacro_Condition_1169755885217(final IOperationContext operationContext, final IfMacroContext _context) {

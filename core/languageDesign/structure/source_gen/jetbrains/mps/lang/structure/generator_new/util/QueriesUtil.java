@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
@@ -156,11 +157,8 @@ public class QueriesUtil {
     return SNodeOperations.getModel(conceptDeclaration).getLongName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
-  public static String enumClassFQName(SNode enumDeclaration) {
-    if ((enumDeclaration == null)) {
-      return "jetbrains.mps.core.structure.BaseConcept";
-    }
-    return SNodeOperations.getModel(enumDeclaration).getLongName() + "." + SPropertyOperations.getString(enumDeclaration, "name");
+  public static String getEnumClassResolveInfo(SNode enumDeclaration) {
+    return "[" + SModelOperations.getModelName(SNodeOperations.getModel(enumDeclaration)) + "]" + SPropertyOperations.getString(enumDeclaration, "name");
   }
 
   public static String AL_class_getterName(SNode node) {
