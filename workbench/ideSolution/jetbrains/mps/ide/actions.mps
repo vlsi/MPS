@@ -9,7 +9,6 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -830,6 +829,9 @@
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1228222495430">
         <link role="action" targetNodeId="1228222399863" resolveInfo="ShowInspector" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234190474703">
+        <link role="action" targetNodeId="1234190163902" resolveInfo="ShowBookmarks" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1217598172089">
         <property name="name" value="customTools" />
@@ -10914,6 +10916,43 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1234190163902">
+    <property name="package" value="Menu.MainMenu.ToolsActions" />
+    <property name="name" value="ShowBookmarks" />
+    <property name="caption" value="Show Bookmarks" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1234190163903">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234190163904">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234190224656">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234190241495">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234190228752">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234190224657">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234190224658" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234190224659">
+                  <link role="member" targetNodeId="1234190190854" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234190233165">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1234190238227">
+                  <link role="classifier" targetNodeId="148.~BookmarksTool" resolveInfo="BookmarksTool" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234190250740">
+              <link role="baseMethodDeclaration" targetNodeId="64.~BaseTool.openTool(boolean):void" resolveInfo="openTool" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1234190252286">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234190190854">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
 </model>

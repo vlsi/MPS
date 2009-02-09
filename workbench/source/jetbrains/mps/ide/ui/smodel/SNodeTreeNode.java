@@ -160,16 +160,21 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
     List<SNode> children = n.getChildren();
     List<SNode> filteredChildren = CollectionUtil.filter(children, myCondition);
-    SModelTreeNode sModelTreeNode = getSModelModelTreeNode();
     for (SNode childNode : filteredChildren) {
-      SNodeTreeNode child = sModelTreeNode == null ? new SNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()) 
-        : sModelTreeNode.createSNodeTreeNode(childNode, childNode.getRole_(), getOperationContext());
+      SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRole_(), getOperationContext());
       add(child);
     }
 
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
     treeModel.nodeStructureChanged(this);
     myInitialized = true;
+  }
+
+  protected SNodeTreeNode createChildTreeNode(SNode childNode, String role, IOperationContext operationContext) {
+    SModelTreeNode sModelTreeNode = getSModelModelTreeNode();
+    SNodeTreeNode child = sModelTreeNode == null ? new SNodeTreeNode(childNode, role, operationContext)
+        : sModelTreeNode.createSNodeTreeNode(childNode, role, operationContext);
+    return child;
   }
 
   private boolean showPropertiesAndReferences() {

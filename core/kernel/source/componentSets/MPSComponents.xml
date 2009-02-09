@@ -372,6 +372,11 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.nodeEditor.bookmark.BookmarksTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.refactoring.NewRefactoringView</implementation-class>
       <skipForDummyProject/>
     </component>

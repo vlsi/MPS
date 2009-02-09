@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.MyState;
 
@@ -140,6 +141,19 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
         fireBookmarkRemoved(i, pointer.getNode());
       }
     }
+  }
+
+  public void removeBookmark(int i) {
+    if (i > 9) return;
+    SNodePointer pointer = myBookmarks[i];
+    if (pointer != null) {
+      myBookmarks[i] = null;
+      fireBookmarkRemoved(i, pointer.getNode());
+    }
+  }
+
+  public List<SNodePointer> getAllBookmarks() {
+    return CollectionUtil.list(myBookmarks);
   }
 
   public static Icon getIcon(int bookmarkNumber) {
