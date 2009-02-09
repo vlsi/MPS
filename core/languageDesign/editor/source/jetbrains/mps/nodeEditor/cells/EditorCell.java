@@ -60,10 +60,10 @@ public interface EditorCell extends Cloneable {
   int getDescent();
 
   int getEffectiveWidth();
-  int getLeftInsert();
-  int getRightInsert();
-  int getPaddingTop();
-  int getPaddingBottom();
+  int getLeftInset();
+  int getRightInset();
+  int getTopInset();
+  int getBottomInset();
 
   Rectangle getBounds();
 
@@ -247,6 +247,6 @@ public interface EditorCell extends Cloneable {
   EditorCell getUpper(Condition<EditorCell> condition, int baseX);
   EditorCell getLower(Condition<EditorCell> condition, int baseX);
 
-  void setGapLeft(int gap);
-  void setGapRight(int gap);
+  void setLeftGap(int gap);
+  void setRightGap(int gap);
 }

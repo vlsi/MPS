@@ -91,10 +91,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       Point anchor = myEditorComponent.getLocationOnScreen();
       getPopupWindow().setRelativeCell(cell);
       getPopupWindow().relayout();
-      myPatternEditorLocation = new Point(anchor.x + cell.getX() + cell.getLeftInsert(), anchor.y + cell.getY() + cell.getPaddingTop());
+      myPatternEditorLocation = new Point(anchor.x + cell.getX() + cell.getLeftInset(), anchor.y + cell.getY() + cell.getTopInset());
       myPatternEditorSize = new Dimension(
-        cell.getWidth() - cell.getLeftInsert() - cell.getRightInsert() + 1,
-        cell.getHeight() - cell.getPaddingTop() - cell.getPaddingBottom() + 1);
+        cell.getWidth() - cell.getLeftInset() - cell.getRightInset() + 1,
+        cell.getHeight() - cell.getTopInset() - cell.getBottomInset() + 1);
     }
   }
 
@@ -620,7 +620,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       Component component = myEditorComponent;
       Point anchor = component.getLocationOnScreen();
       Point location =
-        new Point(anchor.x + myRelativeCell.getX() + myRelativeCell.getLeftInsert(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
+        new Point(anchor.x + myRelativeCell.getX() + myRelativeCell.getLeftInset(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
 
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 

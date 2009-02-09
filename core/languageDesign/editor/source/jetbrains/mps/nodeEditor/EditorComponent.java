@@ -1713,13 +1713,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       g.setColor(new Color(255, 255, 215));
       g.fillRect(0, deepestCell.getY(), getWidth(),
-        deepestCell.getHeight() - deepestCell.getPaddingTop() - deepestCell.getPaddingBottom());
+        deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
 
       g.setColor(new Color(230, 230, 190));
-      g.fillRect(deepestCell.getX() + label.getLeftInsert(),
+      g.fillRect(deepestCell.getX() + label.getLeftInset(),
         deepestCell.getY(),
-        deepestCell.getWidth() - label.getLeftInsert() - label.getRightInsert(),
-        deepestCell.getHeight() - deepestCell.getPaddingTop() - deepestCell.getPaddingBottom());
+        deepestCell.getWidth() - label.getLeftInset() - label.getRightInset(),
+        deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
     }
 
     myLeftHighlighter.paint(g);

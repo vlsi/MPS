@@ -290,7 +290,7 @@ public class TextLine {
   }
 
   public void paint(Graphics g, int shiftX, int shiftY, int width, int height, boolean isSelected, boolean toShowCaret) {
-   // shiftY += getPaddingTop();
+   // shiftY += getTopInset();
     Color backgroundColor;
     Color textColor;
     Color textBackgroundColor;

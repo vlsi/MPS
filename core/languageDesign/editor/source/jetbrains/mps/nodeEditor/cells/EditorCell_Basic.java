@@ -277,19 +277,19 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myWidth;
   }
 
-  public int getLeftInsert() {
+  public int getLeftInset() {
     return 0;
   }
 
-  public int getRightInsert() {
+  public int getRightInset() {
     return 0;
   }
 
-  public int getPaddingTop() {
+  public int getTopInset() {
     return 0;
   }
 
-  public int getPaddingBottom() {
+  public int getBottomInset() {
     return 0;
   }
 
@@ -640,7 +640,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       g.drawRect(myX, myY, getWidth(), getHeight());
     }
 
-    int leftInternalInset = getLeftInsert();
+    int leftInternalInset = getLeftInset();
 
     if (isDrawBrackets()) {
       g.setColor(getBracketsColor());
@@ -770,7 +770,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void paintSelection(Graphics g, Color c) {
     g.setColor(c);
-    g.fillRect(getX(), getY() /*+ getPaddingTop()*/, getWidth(), getHeight() - getPaddingTop() - getPaddingBottom());
+    g.fillRect(getX(), getY() /*+ getTopInset()*/, getWidth(), getHeight() - getTopInset() - getBottomInset());
     if (getEditor().hasFocus()) {
       g.setColor(c.darker());
       g.drawRect(getX(), getY(), getWidth(), getHeight());
@@ -1265,10 +1265,10 @@ public abstract class EditorCell_Basic implements EditorCell {
     myInTree = false;
   }
 
-  public void setGapLeft(int gap) {
+  public void setLeftGap(int gap) {
     myGapLeft = gap;
   }
-  public void setGapRight(int gap) {
+  public void setRightGap(int gap) {
     myGapRight = gap;
   }
 }

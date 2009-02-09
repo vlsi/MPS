@@ -83,7 +83,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       int cellHeight = editorCell.getHeight();
       int indent = getBracesIndent(editorCell);
       braceIndent = Math.max(indent, braceIndent);
-      height += cellHeight /*+ editorCell.getPaddingTop() + editorCell.getPaddingBottom()*/;
+      height += cellHeight /*+ editorCell.getTopInset() + editorCell.getBottomInset()*/;
     }
     for (EditorCell editorCell : cells) {
       lastCellWidth = editorCell.getWidth();
@@ -198,7 +198,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
     EditorCell editorCell = editorCell_collection.firstCell();
     if (editorCell == null) return 0;
-    return editorCell.getRightInsert();
+    return editorCell.getRightInset();
   }
 
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {

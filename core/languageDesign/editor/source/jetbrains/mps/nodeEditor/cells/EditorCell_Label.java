@@ -246,19 +246,19 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return getTextLineWidth();
   }
 
-  public int getLeftInsert() {
+  public int getLeftInset() {
     return getRenderedTextLine().getPaddingLeft() + myGapLeft;
   }
 
-  public int getRightInsert() {
+  public int getRightInset() {
     return getRenderedTextLine().getPaddingRight() + + myGapRight;
   }
 
-  public int getPaddingTop() {
+  public int getTopInset() {
     return getRenderedTextLine().getPaddingTop();
   }
 
-  public int getPaddingBottom() {
+  public int getBottomInset() {
     return getRenderedTextLine().getPaddingBottom();
   }
 

@@ -60,8 +60,8 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
 
       ascent = Math.max(ascent, editorCell.getAscent());
       descent = Math.max(descent, editorCell.getDescent());
-      topInset = Math.max(topInset, editorCell.getPaddingTop());
-      bottomInset = Math.max(bottomInset, editorCell.getPaddingBottom());
+      topInset = Math.max(topInset, editorCell.getTopInset());
+      bottomInset = Math.max(bottomInset, editorCell.getBottomInset());
     }
 
     int baseline = y + ascent + topInset;
@@ -75,7 +75,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
   }
 
   private void addGaps(EditorCell_Collection editorCells, int i) {
-    int gap = getHrizonalGap(editorCells);
+    int gap = getHrizontalGap(editorCells);
     EditorCell currentCell = editorCells.getCells()[i];
 
     if (currentCell instanceof EditorCell_Collection) {
@@ -84,24 +84,24 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
 
     if ((!hasPunctuationRight(currentCell.getPrevLeaf()) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
           && !hasPunctuationLeft(currentCell)) {
-      currentCell.setGapLeft(gap / 2);
+      currentCell.setLeftGap(gap / 2);
     } else {
-      currentCell.setGapLeft(0);
+      currentCell.setLeftGap(0);
     }
 
     if ((!hasPunctuationLeft(currentCell.getNextLeaf()) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
           && !hasPunctuationRight(currentCell)) {
-      currentCell.setGapRight(gap / 2);
+      currentCell.setRightGap(gap / 2);
     } else {
-      currentCell.setGapRight(0);
+      currentCell.setRightGap(0);
     }
 
     if (currentCell.getStyle().get(StyleAttributes.PUNCTUATION_CELL)) {
-      currentCell.setGapLeft(0);
+      currentCell.setLeftGap(0);
     }
 
     if (currentCell.getNextLeaf() != null && currentCell.getNextLeaf().getStyle().get(StyleAttributes.PUNCTUATION_CELL)) {
-      currentCell.setGapRight(0);
+      currentCell.setRightGap(0);
     }
   }
 
@@ -119,7 +119,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     return cell.getFirstLeaf().getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
   }
 
-  private int getHrizonalGap(EditorCell_Collection editorCells) {
+  private int getHrizontalGap(EditorCell_Collection editorCells) {
     Padding padding = editorCells.getStyle().get(StyleAttributes.HORIZONTAL_GAP);
     if (padding.getType() == Measure.PIXELS) {
       return (int)padding.getValue();
