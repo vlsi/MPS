@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+//a workaround for IDEA bug - if there is no real file for some virtual file, IDEA tries to open it as anormal file
 public class ShowFilePathAction extends AnAction {
 
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.actions.ShowFilePathAction");
