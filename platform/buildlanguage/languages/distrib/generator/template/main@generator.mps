@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904de(jetbrains.mps.build.property.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="16" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590571(jetbrains.mps.gtext.constraints)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
@@ -53,7 +53,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
   <languageAspect modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" />
@@ -861,7 +861,7 @@
         <link role="declaration" targetNodeId="3v.1199644185848" resolveInfo="antcall" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1230234395425">
           <link role="attributeDeclaration" targetNodeId="3v.1199644185858" resolveInfo="target" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.TagetReferencePropertyValueExpression" id="1230564416137">
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.TargetReferencePropertyValueExpression" id="1230564416137">
             <link role="declaration" targetNodeId="1230564202890" resolveInfo="system.specific.target2" />
             <node role="referenceMacro$link_attribute$declaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1230564502575">
               <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1230564502576">
@@ -2942,17 +2942,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.gtext.structure.GDocument" id="1230563760385">
-    <property name="name" value="map_DistribConfiguration" />
-    <property name="documentName" value="DevNull" />
-    <property name="extension" value="txt" />
-    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1230563785898">
-      <property name="text" value="emty text" />
-    </node>
-    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1230563760388">
-      <link role="applicableConcept" targetNodeId="1.1230056066379" resolveInfo="DistribConfiguration" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch" id="1230564319898">
     <property name="name" value="SystemSpecificConfig_templateSwitch" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1230564356868">
@@ -2965,6 +2954,12 @@
       <link role="applicableConcept" targetNodeId="1.1230207753430" resolveInfo="WindowsConfig" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1230564373009">
         <link role="template" targetNodeId="1230234605229" resolveInfo="reduce_WindowsConfig" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1233943617107">
+      <link role="applicableConcept" targetNodeId="1.1233939045984" resolveInfo="MacConfig" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1233943630592">
+        <link role="template" targetNodeId="1233943630588" resolveInfo="reduce_MacConfig" />
       </node>
     </node>
   </node>
@@ -3837,6 +3832,19 @@
     </node>
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1233939573241">
       <link role="applicableConcept" targetNodeId="1.1233939045984" resolveInfo="MacConfig" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1233943630588">
+    <property name="name" value="reduce_MacConfig" />
+    <link role="applicableConcept" targetNodeId="1.1233939045984" resolveInfo="MacConfig" />
+    <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1233943640838">
+      <property name="name" value="some" />
+      <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1233943640839">
+        <property name="name" value="default" />
+      </node>
+      <node role="default" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1233943640840">
+        <link role="targetDeclaration" targetNodeId="1233943640839" resolveInfo="default" />
+      </node>
     </node>
   </node>
 </model>

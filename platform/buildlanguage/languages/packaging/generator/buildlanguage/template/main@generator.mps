@@ -14,13 +14,13 @@
   <language namespace="500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)" />
-  <language namespace="jetbrains.mps.lang.generator" />
-  <language namespace="jetbrains.mps.lang.generator.generationContext" />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
+  <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
+  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="16" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -58,7 +58,7 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="5" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="16" />
+  <import index="5" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="17" />
   <import index="6" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895904c3(jetbrains.mps.buildlanguage.generated)" version="-1" />
   <import index="13" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -1399,7 +1399,7 @@
           <link role="declaration" targetNodeId="7.1199644185848" resolveInfo="antcall" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1204020979813">
             <link role="attributeDeclaration" targetNodeId="7.1199644185858" resolveInfo="target" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.TagetReferencePropertyValueExpression" id="1204022241472">
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.TargetReferencePropertyValueExpression" id="1204022241472">
               <link role="declaration" targetNodeId="1204019666128" resolveInfo="pack.language" />
               <node role="referenceMacro$link_attribute$declaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1204022248332">
                 <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1204022248333">
@@ -3072,7 +3072,7 @@
           <link role="declaration" targetNodeId="7.1199644185848" resolveInfo="antcall" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1210779877482">
             <link role="attributeDeclaration" targetNodeId="7.1199644185858" resolveInfo="target" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.TagetReferencePropertyValueExpression" id="1230232959468">
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.TargetReferencePropertyValueExpression" id="1230232959468">
               <link role="declaration" targetNodeId="1210779845345" resolveInfo="t" />
               <node role="referenceMacro$link_attribute$declaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1230233294690">
                 <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1230233294691">
@@ -3254,7 +3254,8 @@
           <link role="declaration" targetNodeId="7.1199644185848" resolveInfo="antcall" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1212487424308">
             <link role="attributeDeclaration" targetNodeId="7.1199644185858" resolveInfo="target" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.TagetReferencePropertyValueExpression" id="1234280247584">
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.TargetReferencePropertyValueExpression" id="1234280247584">
+              <property name="fullName" value="toCall@null" />
               <link role="declaration" targetNodeId="1234280204792" resolveInfo="toCall" />
               <node role="referenceMacro$link_attribute$declaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1234280254373">
                 <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1234280254374">
@@ -4938,7 +4939,7 @@
           <link role="declaration" targetNodeId="7.1199644185848" resolveInfo="antcall" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1230221634286">
             <link role="attributeDeclaration" targetNodeId="7.1199644185858" resolveInfo="target" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.TagetReferencePropertyValueExpression" id="1230221640548">
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.TargetReferencePropertyValueExpression" id="1230221640548">
               <link role="declaration" targetNodeId="1230221616458" resolveInfo="default" />
               <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1230221653578" />
               <node role="referenceMacro$link_attribute$declaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1230221653581">
