@@ -14,6 +14,9 @@
   <language namespace="500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)" />
+  <language namespace="jetbrains.mps.lang.generator" />
+  <language namespace="jetbrains.mps.lang.generator.generationContext" />
+  <language namespace="jetbrains.mps.baseLanguage" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
@@ -3242,8 +3245,8 @@
     <link role="applicableConcept" targetNodeId="1.1212485154251" resolveInfo="Replace" />
     <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1212487314609">
       <property name="name" value="tmp" />
-      <node role="importProject" type="jetbrains.mps.buildlanguage.structure.ImportProject" id="1212487323471">
-        <link role="project" targetNodeId="1212486240925" resolveInfo="multystep.tasks" />
+      <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1234280204792">
+        <property name="name" value="toCall" />
       </node>
       <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1212487314610">
         <property name="name" value="tmp" />
@@ -3251,17 +3254,17 @@
           <link role="declaration" targetNodeId="7.1199644185848" resolveInfo="antcall" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1212487424308">
             <link role="attributeDeclaration" targetNodeId="7.1199644185858" resolveInfo="target" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.TagetReferencePropertyValueExpression" id="1212487430481">
-              <link role="declaration" targetNodeId="1212486240926" resolveInfo="replace" />
-              <node role="referenceMacro$link_attribute$declaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1212487446847">
-                <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1212487446848">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212487446849">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212487459288">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216840554146">
-                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867027437" />
-                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867009623">
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.TagetReferencePropertyValueExpression" id="1234280247584">
+              <link role="declaration" targetNodeId="1234280204792" resolveInfo="toCall" />
+              <node role="referenceMacro$link_attribute$declaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1234280254373">
+                <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1234280254374">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234280254375">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234280260529">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234280260530">
+                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1234280260531" />
+                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1234280260532">
                           <link role="label" targetNodeId="1212487373195" resolveInfo="ReplaceTargets" />
-                          <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1212487459289" />
+                          <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234280260533" />
                         </node>
                       </node>
                     </node>

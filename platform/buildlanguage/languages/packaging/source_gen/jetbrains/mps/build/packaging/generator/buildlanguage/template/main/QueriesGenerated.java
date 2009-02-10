@@ -320,10 +320,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "LanguageTargets");
   }
 
-  public static Object referenceMacro_GetReferent_1212487446848(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ReplaceTargets");
-  }
-
   public static Object referenceMacro_GetReferent_1219156437486(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "VariableToPropertyDeclaration");
   }
@@ -364,6 +360,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1230233294691(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "targetDeclaration", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1234280254374(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ReplaceTargets");
   }
 
   public static boolean ifMacro_Condition_1203619982544(final IOperationContext operationContext, final IfMacroContext _context) {
