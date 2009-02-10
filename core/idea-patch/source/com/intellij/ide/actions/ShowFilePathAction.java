@@ -41,7 +41,7 @@ public class ShowFilePathAction extends AnAction {
   }
 
   public static boolean isSupported() {
-    return isJava6();//|| SystemInfo.isMac;
+    return isJava6() || SystemInfo.isMac;
   }
 
   private static boolean isJava6() {
