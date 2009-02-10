@@ -9,6 +9,9 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
+  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -30,7 +33,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="148" />
+  <maxImportIndex value="149" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -107,6 +110,7 @@
   <import index="140" modelUID="f:java_stub#jetbrains.mps.transformation(jetbrains.mps.transformation@java_stub)" version="-1" />
   <import index="144" modelUID="f:java_stub#jetbrains.mps.ide.dialogs.project.creation(jetbrains.mps.ide.dialogs.project.creation@java_stub)" version="-1" />
   <import index="148" modelUID="f:java_stub#jetbrains.mps.nodeEditor.bookmark(jetbrains.mps.nodeEditor.bookmark@java_stub)" version="-1" />
+  <import index="149" modelUID="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="NodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -5879,6 +5883,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216124446129">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216124446130">
             <property name="name" value="memory" />
+            <property name="isFinal" value="true" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216124446131">
               <link role="classifier" targetNodeId="40.~SModel" resolveInfo="SModel" />
             </node>
@@ -5898,6 +5903,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216124473032">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216124473033">
             <property name="name" value="disk" />
+            <property name="isFinal" value="true" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216124473034">
               <link role="classifier" targetNodeId="40.~SModel" resolveInfo="SModel" />
             </node>
@@ -5918,33 +5924,64 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216124519446">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216124585255">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216124519447">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216124532379">
-                <link role="baseMethodDeclaration" targetNodeId="98.~ModelDifferenceDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,java.lang.String,boolean)" resolveInfo="ModelDifferenceDialog" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216124551885">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1216124551886" />
-                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420648111">
-                    <link role="member" targetNodeId="1217420648110" resolveInfo="frame" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234281889091">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234281893911">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1234281890473">
+              <link role="baseMethodDeclaration" targetNodeId="149.~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolveInfo="getApplication" />
+              <link role="classConcept" targetNodeId="149.~ApplicationManager" resolveInfo="ApplicationManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234281898741">
+              <link role="baseMethodDeclaration" targetNodeId="149.~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolveInfo="invokeLater" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1234281900534">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1234281952731">
+                  <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1234281952732">
+                    <link role="classifier" targetNodeId="73.~Runnable" resolveInfo="Runnable" />
+                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234281952733" />
+                    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1234281952734">
+                      <property name="isAbstract" value="false" />
+                      <property name="name" value="run" />
+                      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234281952735" />
+                      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1234281952736" />
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234281952737">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234281978978">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234281978979">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1234281978980">
+                              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1234281978981">
+                                <link role="baseMethodDeclaration" targetNodeId="98.~ModelDifferenceDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,java.lang.String,boolean)" resolveInfo="ModelDifferenceDialog" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234281978982">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234281978983" />
+                                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234281978984">
+                                    <link role="member" targetNodeId="1217420648110" resolveInfo="frame" />
+                                  </node>
+                                </node>
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234281978985">
+                                  <link role="variableDeclaration" targetNodeId="1216124473033" resolveInfo="disk" />
+                                </node>
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234281978986">
+                                  <link role="variableDeclaration" targetNodeId="1216124446130" resolveInfo="memory" />
+                                </node>
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234281978987">
+                                  <property name="value" value="Model Difference" />
+                                </node>
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1234281978988">
+                                  <property name="value" value="true" />
+                                </node>
+                              </node>
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234281978989">
+                              <link role="baseMethodDeclaration" targetNodeId="109.~BaseDialog.showDialog():void" resolveInfo="showDialog" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216124556030">
-                  <link role="variableDeclaration" targetNodeId="1216124473033" resolveInfo="disc" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216124570516">
-                  <link role="variableDeclaration" targetNodeId="1216124446130" resolveInfo="memory" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216124574847">
-                  <property name="value" value="Model Difference" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233051878704">
-                  <property name="value" value="true" />
-                </node>
               </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216124587805">
-              <link role="baseMethodDeclaration" targetNodeId="109.~BaseDialog.showDialog():void" resolveInfo="showDialog" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1234281963797">
+                <link role="classifier" targetNodeId="149.~ModalityState" resolveInfo="ModalityState" />
+                <link role="variableDeclaration" targetNodeId="149.~ModalityState.NON_MODAL" resolveInfo="NON_MODAL" />
+              </node>
             </node>
           </node>
         </node>

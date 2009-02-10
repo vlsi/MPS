@@ -18,6 +18,7 @@ package jetbrains.mps.vcs.diff.ui;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.JComponent;
 import javax.swing.Action;
@@ -30,11 +31,15 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   private ModelDifferenceComponent myDifferenceComponent;
 
-  public ModelDifferenceDialog(Frame parent, SModel oldModel, SModel newModel, String windowTitle, boolean modal) throws HeadlessException {
+  public ModelDifferenceDialog(Frame parent, final SModel oldModel, final SModel newModel, String windowTitle, boolean modal) throws HeadlessException {
     super(parent, windowTitle);
     setModal(modal);
-    myDifferenceComponent = new ModelDifferenceComponent();
-    myDifferenceComponent.showDifference(oldModel, newModel);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myDifferenceComponent = new ModelDifferenceComponent();
+        myDifferenceComponent.showDifference(oldModel, newModel);
+      }
+    });
   }
 
   public void addAction(AnAction action) {
