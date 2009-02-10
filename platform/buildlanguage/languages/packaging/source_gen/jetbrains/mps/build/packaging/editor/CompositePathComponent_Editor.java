@@ -121,6 +121,7 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
         editorCell.setSelectable(false);
         PackagingStyles_StyleSheet.getSlash(editorCell).apply(editorCell);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
         return editorCell;
       }
     }

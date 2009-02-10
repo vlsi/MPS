@@ -6,8 +6,8 @@
   <fail unless="teamcity.buildConfName" message="Property teamcity.buildConfName unspecified." />
   <fail unless="version" message="Property version unspecified." />
   <import file="${ant.file}/../build-helpers.xml" />
+  <import file="${ant.file}/../MPS-external.xml" />
   <import file="${ant.file}/../MPS-languages.xml" />
-  <import file="${ant.file}/../MPS-multistep.xml" />
   <target name="main" depends="compile,clean.before,folders.create,do.the.job,clean.after" />
   <target name="compile" />
   <target name="clean.before" depends="compile">
@@ -175,7 +175,7 @@
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp">
       <fileset dir="core/kernel/classes" excludes="idea/MPSApplicationInfo.xml, **/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <antcall target="MPS-multistep.replace0" />
+    <antcall target="replace0" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp/idea" />
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp">
       <fileset dir="core/runtime/classes" excludes="**/*.zip, **/*.iml, **/*.iws, " includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
@@ -339,6 +339,12 @@
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp" />
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp" />
+  </target>
+  <target name="replace0">
+    <copy file="core/kernel/classes/idea/MPSApplicationInfo.xml" tofile="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp/idea/MPSApplicationInfo.xml" />
+    <replace file="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp/idea/MPSApplicationInfo.xml" token="__BUILD_NUMBER__" value="${build.number}" />
+    <replace file="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp/idea/MPSApplicationInfo.xml" token="__BUILD_DATE__" value="${DSTAMP}" />
+    <replace file="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp/idea/MPSApplicationInfo.xml" token="__VERSION__" value="${version}" />
   </target>
 </project>
 
