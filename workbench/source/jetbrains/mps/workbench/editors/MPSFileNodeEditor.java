@@ -30,6 +30,7 @@ import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -64,6 +65,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
   private Project myProject;
   private MPSNodeVirtualFile myFile;
   private IOperationContext myContext;
+  private boolean myIsValid = true;
 
   public MPSFileNodeEditor(IOperationContext context, final MPSNodeVirtualFile file) {
     this(context.getProject(), file, context);
@@ -161,7 +163,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
   }
 
   public boolean isValid() {
-    return true;
+    return myIsValid;
   }
 
   public void selectNotify() {
@@ -227,9 +229,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
     SModelDescriptor sm = myFile.getNode().getModel().getModelDescriptor();
 
     if (sm == null) {
-      throw new IllegalStateException("Can't find a model descriptor for model " + myFile.getNode().getModel().getLongName());
+      myIsValid = false;
+      return mpsProject.createOperationContext();
     }
-
 
     return new ModuleContext(sm.getModule(), mpsProject);
   }

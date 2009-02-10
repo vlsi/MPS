@@ -272,8 +272,7 @@ public class SModel implements Iterable<SNode> {
   }    
 
   public SModelDescriptor getModelDescriptor() {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(this);
-    return modelDescriptor;
+    return SModelRepository.getInstance().getModelDescriptor(this);
   }
 
   private boolean canFireEvent() {
