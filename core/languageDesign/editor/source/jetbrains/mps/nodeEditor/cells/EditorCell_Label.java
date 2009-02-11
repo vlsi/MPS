@@ -147,11 +147,17 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public boolean isFirstPositionAllowed() {
-    return getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED);
+    if (getStyle().getCurrent(StyleAttributes.FIRST_POSITION_ALLOWED) != null) {
+      return getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED);
+    }
+    return !getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
   }
 
   public boolean isLastPositionAllowed() {
-    return getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED);
+    if (getStyle().getCurrent(StyleAttributes.LAST_POSITION_ALLOWED) != null) {
+      return getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED);
+    }
+    return !getStyle().get(StyleAttributes.PUNCTUATION_RIGTH);
   }
 
   public int getCaretPosition() {

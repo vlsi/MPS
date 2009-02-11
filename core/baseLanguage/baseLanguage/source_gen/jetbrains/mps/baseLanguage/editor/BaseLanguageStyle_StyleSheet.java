@@ -192,7 +192,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
-        this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
 
     };
@@ -202,7 +201,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
-        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
       }
 
     };
