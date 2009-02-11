@@ -131,12 +131,18 @@ public abstract class UsagesTree extends MPSTree {
       }
     });
 
+    addTreeSelectionListener(new TreeSelectionListener() {
+      public void valueChanged(TreeSelectionEvent e) {
+        if (myAutoscroll){
+          openCurrentNodeLink(false, false);
+        }
+      }
+    });
+
     addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
-        boolean goOneClick = e.getClickCount() == 1 && myAutoscroll && e.getButton() == MouseEvent.BUTTON1;
-        boolean goTwoClick = e.getClickCount() == 2 && e.getButton() == MouseEvent.BUTTON1;
-        if (goOneClick || goTwoClick) {
-          openCurrentNodeLink(false, goTwoClick);
+        if (e.getClickCount() == 2 && e.getButton() == MouseEvent.BUTTON1) {
+          openCurrentNodeLink(false, true);
         }
       }
     });
