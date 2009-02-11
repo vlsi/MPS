@@ -18,9 +18,7 @@ package jetbrains.mps.ide.dialogs;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.datatransfer.CloneModelUtil;
-import jetbrains.mps.ide.dialogs.project.BaseProjectDialog;
 import jetbrains.mps.ide.dialogs.project.BaseStretchingProjectDialog;
-import jetbrains.mps.ide.dialogs.project.listsupport.StandartComponents;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.dialogs.project.properties.presenters.CloneModelProperties;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -33,9 +31,6 @@ import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
 
 import javax.swing.*;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.awt.BorderLayout;
 
 public class CloneModelDialog extends BaseStretchingProjectDialog {
@@ -60,12 +55,24 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
   }
 
   private void initUI() {
-    addComponent(createPathField(),createFieldConstraints(0,0,1,1));
-    addComponent(StandartComponents.createNamespacePanel(this,"Name:",myModelProperties,CloneModelProperties.PROPERTY_NAME),createFieldConstraints(0,1,1,1));
-    addComponent(createStereoPanel(),createFieldConstraints(0,2,1,1));
-    addComponent(createCheckboxPanel(),createFieldConstraints(0,3,1,1));
+    addComponent(createPathField(),createFieldConstraints(0,0));
+    addComponent(createNamespacePanel(),createFieldConstraints(0,1));
+    addComponent(createStereoPanel(),createFieldConstraints(0,2));
+    addComponent(createCheckboxPanel(),createFieldConstraints(0,3));
 
-    addComponent(new JPanel(),createListConstraints(0,4,1,1));
+    addComponent(new JPanel(),createListConstraints(0,4));
+  }
+
+  public JPanel createNamespacePanel() {
+    JPanel panel = new JPanel(new BorderLayout());
+    panel.add(new JLabel("Name:"), BorderLayout.WEST);
+    JTextField tfNamespace = new JTextField();
+    panel.add(tfNamespace, BorderLayout.CENTER);
+
+    Property pNamespace = BeanProperty.create(CloneModelProperties.PROPERTY_NAME);
+    Property pNamespaceVar = BeanProperty.create("text");
+    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pNamespace, tfNamespace, pNamespaceVar));
+    return panel;
   }
 
   private JPanel createCheckboxPanel() {
