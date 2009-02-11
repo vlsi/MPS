@@ -99,5 +99,37 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       }
 
     });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "Selectable false";
+      }
+
+      public String getAdditionalInfo() {
+        return "Selectable false";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SPropertyOperations.getBoolean(node, "flag") == false;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", null);
+        SPropertyOperations.set(newNode, "flag", "" + true);
+        SNodeOperations.insertNextSiblingChild(node, newNode);
+        SNode newNode2 = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", null);
+        SPropertyOperations.set(newNode2, "flag", "" + true);
+        SNodeOperations.insertNextSiblingChild(node, newNode2);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
   }
 }
