@@ -14,6 +14,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModelDescriptor;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewAspectModel_Action extends GeneratedAction {
@@ -70,8 +71,15 @@ public class NewAspectModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      SModelDescriptor modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language)NewAspectModel_Action.this.module));
-      NewAspectModel_Action.this.project.getComponentSafe(ProjectPane.class).selectModel(modelDescriptor);
+      final SModelDescriptor modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language)NewAspectModel_Action.this.module));
+      // we need it since tree is updated later
+      SwingUtilities.invokeLater(new Runnable() {
+
+        public void run() {
+          NewAspectModel_Action.this.project.getComponentSafe(ProjectPane.class).selectModel(modelDescriptor);
+        }
+
+      });
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "NewAspectModel", t);
     }

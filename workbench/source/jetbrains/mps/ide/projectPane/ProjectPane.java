@@ -946,7 +946,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     if (parent instanceof SModelTreeNode) {
       SModelTreeNode parentSModelNode = (SModelTreeNode) parent;
       SModelDescriptor parentModelDescriptor = parentSModelNode.getSModelDescriptor();
-      if (parentModelDescriptor == modelDescriptor) {
+      SModelReference parentModelRef = parentModelDescriptor.getSModelReference();
+      SModelReference modelRef = modelDescriptor.getSModelReference();
+      if (parentModelRef.equals(modelRef)) {
         return parentSModelNode;
       }
     }
