@@ -19,6 +19,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.dialogs.project.BaseProjectDialog;
+import jetbrains.mps.ide.dialogs.project.BaseStretchingProjectDialog;
+import jetbrains.mps.ide.dialogs.project.listsupport.StandartComponents;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.dialogs.project.properties.presenters.CloneModelProperties;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -34,8 +36,9 @@ import javax.swing.*;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.BorderLayout;
 
-public class CloneModelDialog extends BaseProjectDialog {
+public class CloneModelDialog extends BaseStretchingProjectDialog {
   private CloneModelProperties myModelProperties;
   private SModel myCloningModel;
 
@@ -57,14 +60,45 @@ public class CloneModelDialog extends BaseProjectDialog {
   }
 
   private void initUI() {
-    myContentPanel = new JPanel(new GridBagLayout());
+    addComponent(createPathField(),createFieldConstraints(0,0,1,1));
+    addComponent(StandartComponents.createNamespacePanel(this,"Name:",myModelProperties,CloneModelProperties.PROPERTY_NAME),createFieldConstraints(0,1,1,1));
+    addComponent(createStereoPanel(),createFieldConstraints(0,2,1,1));
+    addComponent(createCheckboxPanel(),createFieldConstraints(0,3,1,1));
 
-    GridBagConstraints cPathLabel = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
-    myContentPanel.add(new JLabel("Path:"), cPathLabel);
-    GridBagConstraints cPath = new GridBagConstraints(1, 0, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
+    addComponent(new JPanel(),createListConstraints(0,4,1,1));
+  }
+
+  private JPanel createCheckboxPanel() {
+    JPanel result = new JPanel(new BorderLayout());
+    JCheckBox cbLog = new JCheckBox("Use log");
+    result.add(cbLog,BorderLayout.WEST);
+
+    Property pLog = BeanProperty.create(CloneModelProperties.PROPERTY_LOG);
+    Property pLogVar = BeanProperty.create("selected");
+    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pLog, cbLog, pLogVar));
+
+    return result;
+  }
+
+  private JPanel createStereoPanel() {
+    JPanel result = new JPanel(new BorderLayout());
+    result.add(new JLabel("Stereotype:"), BorderLayout.WEST);
+    JComboBox cbStereotype = new JComboBox(SModelStereotype.values);
+    result.add(cbStereotype,BorderLayout.CENTER);
+
+    Property pStereotype = BeanProperty.create(CloneModelProperties.PROPERTY_STEREOTYPE);
+    Property pStereotypeVar = BeanProperty.create("selectedItem");
+    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pStereotype, cbStereotype, pStereotypeVar));
+    return result;
+  }
+
+  private JPanel createPathField() {
+    JPanel result = new JPanel(new BorderLayout());
+    result.add(new JLabel("Path:"), BorderLayout.WEST);
+
     JTextField tfPath = new JTextField();
     tfPath.setEditable(false);
-    myContentPanel.add(tfPath, cPath);
+    result.add(tfPath,BorderLayout.CENTER);
 
     Property pPath = BeanProperty.create(CloneModelProperties.PROPERTY_PATH);
     Property pPathVar = BeanProperty.create("text");
@@ -73,7 +107,7 @@ public class CloneModelDialog extends BaseProjectDialog {
       @Override
       public Object convertForward(Object value) {
         RootReference rr = (RootReference) value;
-        return rr.getPath()+" ("+rr.getPrefix()+")"; 
+        return rr.getPath()+" ("+rr.getPrefix()+")";
       }
 
       @Override
@@ -83,36 +117,7 @@ public class CloneModelDialog extends BaseProjectDialog {
     });
     addBinding(binding);
 
-    GridBagConstraints cNameLabel = new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
-    myContentPanel.add(new JLabel("Name:"), cNameLabel);
-    GridBagConstraints cName = new GridBagConstraints(1, 1, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
-    JTextField tfName = new JTextField();
-    myContentPanel.add(tfName, cName);
-
-    Property pName = BeanProperty.create(CloneModelProperties.PROPERTY_NAME);
-    Property pNameVar = BeanProperty.create("text");
-    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pName, tfName, pNameVar));
-
-    GridBagConstraints cStereotypeLabel = new GridBagConstraints(0, 2, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
-    myContentPanel.add(new JLabel("Stereotype:"), cStereotypeLabel);
-    GridBagConstraints cStereotype = new GridBagConstraints(1, 2, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
-    JComboBox cbStereotype = new JComboBox(SModelStereotype.values);
-    myContentPanel.add(cbStereotype, cStereotype);
-
-    Property pStereotype = BeanProperty.create(CloneModelProperties.PROPERTY_STEREOTYPE);
-    Property pStereotypeVar = BeanProperty.create("selectedItem");
-    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pStereotype, cbStereotype, pStereotypeVar));
-
-    GridBagConstraints cLog = new GridBagConstraints(0, 3, 2, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
-    JCheckBox cbLog = new JCheckBox("Use log");
-    myContentPanel.add(cbLog, cLog);
-
-    Property pLog = BeanProperty.create(CloneModelProperties.PROPERTY_LOG);
-    Property pLogVar = BeanProperty.create("selected");
-    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pLog, cbLog, pLogVar));
-
-    GridBagConstraints cSpacer = new GridBagConstraints(0, 4, 2, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
-    myContentPanel.add(new JPanel(), cSpacer);
+    return result;
   }
 
   private void collectModelProps() {
