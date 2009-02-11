@@ -573,7 +573,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
         editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
-        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_CELL, true);
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
         return editorCell;
       }
     }

@@ -12385,7 +12385,7 @@
                       <link role="baseMethodDeclaration" targetNodeId="64.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void" resolveInfo="set" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1233852409876">
                         <link role="classifier" targetNodeId="64.~StyleAttributes" resolveInfo="StyleAttributes" />
-                        <link role="variableDeclaration" targetNodeId="64.~StyleAttributes.PUNCTUATION_CELL" resolveInfo="PUNCTUATION_CELL" />
+                        <link role="variableDeclaration" targetNodeId="64.~StyleAttributes.PUNCTUATION_LEFT" resolveInfo="PUNCTUATION_LEFT" />
                       </node>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1233852419949">
                         <property name="value" value="true" />

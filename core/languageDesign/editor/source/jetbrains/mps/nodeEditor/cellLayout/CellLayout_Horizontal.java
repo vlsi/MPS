@@ -95,14 +95,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     } else {
       currentCell.setRightGap(0);
     }
-
-    if (currentCell.getStyle().get(StyleAttributes.PUNCTUATION_CELL)) {
-      currentCell.setLeftGap(0);
-    }
-
-    if (currentCell.getNextLeaf() != null && currentCell.getNextLeaf().getStyle().get(StyleAttributes.PUNCTUATION_CELL)) {
-      currentCell.setRightGap(0);
-    }
+       
   }
 
   private Boolean hasPunctuationRight(EditorCell cell) {

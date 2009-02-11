@@ -63,8 +63,6 @@ public class StyleAttributes {
 
   public static final StyleAttribute<Padding> HORIZONTAL_GAP = new SimpleStyleAttribute<Padding>("horizontal-gap", new Padding(1.0));
 
-  public static final StyleAttribute<Boolean> PUNCTUATION_CELL = new SimpleStyleAttribute<Boolean>("punctuation-cell", false);
-
   public static final StyleAttribute<String> POSITION = new SimpleStyleAttribute<String>("position");
   public static final StyleAttribute<String> POSITION_CHILDREN = new SimpleStyleAttribute<String>("position-children");
 
