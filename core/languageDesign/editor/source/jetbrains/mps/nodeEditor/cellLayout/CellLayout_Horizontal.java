@@ -82,20 +82,46 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
       return;
     }
 
-    if ((!hasPunctuationRight(currentCell.getPrevLeaf()) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
+    if ((!leftCellHasPunctuationRight(currentCell) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
           && !hasPunctuationLeft(currentCell)) {
       currentCell.setLeftGap(gap / 2);
     } else {
       currentCell.setLeftGap(0);
     }
 
-    if ((!hasPunctuationLeft(currentCell.getNextLeaf()) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
+    if ((!rightCellHasPunctuationLeft(currentCell) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
           && !hasPunctuationRight(currentCell)) {
       currentCell.setRightGap(gap / 2);
     } else {
       currentCell.setRightGap(0);
     }
        
+  }
+
+  private boolean leftCellHasPunctuationRight(EditorCell currentCell) {
+    EditorCell_Collection parent = currentCell.getParent();
+    if (parent != null && parent.getCellLayout() instanceof CellLayout_Horizontal) {
+      int index = parent.getCellNumber(currentCell);
+      if (index > 0) {
+        return hasPunctuationRight(parent.getChildAt(index - 1));
+      } else {
+        return leftCellHasPunctuationRight(parent);
+      }
+    }
+    return true;
+  }
+
+  private boolean rightCellHasPunctuationLeft(EditorCell currentCell) {
+    EditorCell_Collection parent = currentCell.getParent();
+    if (parent != null && parent.getCellLayout() instanceof CellLayout_Horizontal) {
+      int index = parent.getCellNumber(currentCell);
+      if (index < parent.getChildCount() - 1) {
+        return hasPunctuationLeft(parent.getChildAt(index + 1));
+      } else {
+        return rightCellHasPunctuationLeft(parent);
+      }
+    }
+    return true;
   }
 
   private Boolean hasPunctuationRight(EditorCell cell) {
