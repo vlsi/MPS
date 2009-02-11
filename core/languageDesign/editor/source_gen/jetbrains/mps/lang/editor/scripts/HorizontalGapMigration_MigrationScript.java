@@ -44,6 +44,33 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
       public String getName() {
+        return "Padding left delete";
+      }
+
+      public String getAdditionalInfo() {
+        return "Padding left delete";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SPropertyOperations.getString(node, "value").equals("1.0") || SPropertyOperations.getString(node, "value").equals("1.");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNodeOperations.deleteNode(node);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
         return "First posiotion allowed repacement";
       }
 
