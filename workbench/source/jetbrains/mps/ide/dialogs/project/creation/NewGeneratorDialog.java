@@ -21,6 +21,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
@@ -40,6 +41,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.List;
 
@@ -47,7 +49,7 @@ public class NewGeneratorDialog extends BaseDialog {
   private static final DialogDimensions ourDefaultDimensionSettings = new DialogDimensions(200, 200, 400, 200);
 
   private JPanel myContenetPane;
-  private JTextField myTemplateModelsDir;
+  private TextFieldWithBrowseButton myTemplateModelsDir;
   private JTextField myGeneratorName;
   private Language mySourceLanguage;
   private Generator myResult;
@@ -85,27 +87,12 @@ public class NewGeneratorDialog extends BaseDialog {
     GridBagConstraints cModelsDirLabel = new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
     myContenetPane.add(new JLabel("Templates root"), cModelsDirLabel);
 
-    GridBagConstraints cModelsDir = new GridBagConstraints(1, 1, 1, 1, 1, 0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
-    myTemplateModelsDir = new JTextField();
-    myContenetPane.add(myTemplateModelsDir, cModelsDir);
-
-    GridBagConstraints cModelsDirButton = new GridBagConstraints(2, 1, 1, 1, 0, 0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
-    JButton chooseButton = createChooseButton();
-    myContenetPane.add(chooseButton, cModelsDirButton);
-
-    GridBagConstraints cFiller = new GridBagConstraints(0, 2, 3, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
-    myContenetPane.add(new JPanel(), cFiller);
-
-    updateTemplateModelsDir();
-  }
-
-  private JButton createChooseButton() {
-    JButton chooseButton = new JButton(new AbstractAction("...") {
+    GridBagConstraints cModelsDir = new GridBagConstraints(1, 1, 2, 1, 1, 0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
+    myTemplateModelsDir = new TextFieldWithBrowseButton();
+    myTemplateModelsDir.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         String oldPath = myTemplateModelsDir.getText();
-
         TreeFileChooser chooser = new TreeFileChooser();
-
         chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
 
         if (oldPath != null && oldPath.length() != 0) {
@@ -118,7 +105,12 @@ public class NewGeneratorDialog extends BaseDialog {
         }
       }
     });
-    return chooseButton;
+    myContenetPane.add(myTemplateModelsDir, cModelsDir);
+
+    GridBagConstraints cFiller = new GridBagConstraints(0, 2, 3, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+    myContenetPane.add(new JPanel(), cFiller);
+
+    updateTemplateModelsDir();
   }
 
   private void updateTemplateModelsDir() {
