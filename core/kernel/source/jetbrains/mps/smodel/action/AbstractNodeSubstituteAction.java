@@ -154,7 +154,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
       return true;
     }
 
-    return matchingText.toUpperCase().startsWith(pattern.toUpperCase());
+    return matchingText.startsWith(pattern);
   }
 
   public final SNode substitute(@Nullable final EditorContext context, final String pattern) {

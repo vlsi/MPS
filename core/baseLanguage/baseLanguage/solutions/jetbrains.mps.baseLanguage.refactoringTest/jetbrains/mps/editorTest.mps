@@ -1964,7 +1964,7 @@
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1233066762886" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233066762887" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233066762888">
-          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1233066772920">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1234460480338">
             <property name="isLastPosition" value="true" />
             <property name="cellId" value="Constant_6577_0" />
           </node>
@@ -2062,6 +2062,57 @@
         <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1233333458858">
           <property name="keycode" value="VK_RIGHT" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1234447176815">
+    <property name="package" value="intelligentInputUtil" />
+    <property name="name" value="TypeToTypeof" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1234447269499">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1234447269500" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234447269501" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234447269502">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234447627110">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1234447627111">
+            <link role="variableDeclaration" targetNodeId="1234447282554" resolveInfo="type" />
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1234448018518">
+              <property name="isLastPosition" value="true" />
+              <property name="cellId" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1234447282554">
+        <property name="name" value="type" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1234447282555" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1234447864256">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1234447864257" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234447864258" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234447864259">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234454634042">
+          <node role="expression" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1234454636753">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1234454636754">
+              <link role="variableDeclaration" targetNodeId="1234447871934" resolveInfo="type" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1234454657810">
+                <property name="isLastPosition" value="true" />
+                <property name="cellId" value="property_name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1234447871934">
+        <property name="name" value="type" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1234447871935" />
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234448038162">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1234448038163">
+        <property name="keys" value="of" />
       </node>
     </node>
   </node>

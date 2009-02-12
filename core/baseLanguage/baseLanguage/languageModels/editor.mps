@@ -13255,7 +13255,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214918929704">
         <property name="text" value="++" />
         <property name="attractsFocus" value="1" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1215090676083" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234443248937">
+          <property name="flag" value="true" />
+        </node>
       </node>
     </node>
   </node>

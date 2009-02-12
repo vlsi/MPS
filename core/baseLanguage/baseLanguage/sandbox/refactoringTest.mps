@@ -212,11 +212,9 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1234172979814" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234357681131">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1234357683320">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1234357683321">
-              <link role="variableDeclaration" targetNodeId="1233740127321" resolveInfo="a" />
-            </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234453014805">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234458857990">
+            <link role="variableDeclaration" targetNodeId="1234172979813" resolveInfo="type" />
           </node>
         </node>
       </node>

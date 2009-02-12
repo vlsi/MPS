@@ -343,7 +343,7 @@ public class IntelligentInputUtil {
 
     // * has special meaning in completion patterns but we often want to complete multiplication
     // operations
-    return info.hasExactlyNActions(smallPattern, true, 1) && (tail.equals("*") || info.hasExactlyNActions(smallPattern + tail, true, 0));
+    return info.hasExactlyNActions(smallPattern, true, 1) && (tail.equals("*") || info.hasExactlyNActions(smallPattern + tail, false, 0));
   }
 
   private static boolean canCompleteTheWholeStringImmediately(NodeSubstituteInfo info, String pattern) {
