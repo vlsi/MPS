@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Document extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.xml.deprecated.structure.Document";
+  public static final String EXTENSION = "extension";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -20,6 +21,14 @@ public class Document extends BaseConcept implements INamedConcept {
 
   public Document(SNode node) {
     super(node);
+  }
+
+  public String getExtension() {
+    return this.getProperty(Document.EXTENSION);
+  }
+
+  public void setExtension(String value) {
+    this.setProperty(Document.EXTENSION, value);
   }
 
   public String getName() {
