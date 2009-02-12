@@ -15,6 +15,7 @@ public class Document extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String DOCTYPE = "doctype";
   public static final String ROOT_ELEMENT = "rootElement";
 
   public Document(SNode node) {
@@ -51,6 +52,14 @@ public class Document extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Document.VIRTUAL_PACKAGE, value);
+  }
+
+  public DocumentTypeDeclaration getDoctype() {
+    return (DocumentTypeDeclaration)this.getChild(DocumentTypeDeclaration.class, Document.DOCTYPE);
+  }
+
+  public void setDoctype(DocumentTypeDeclaration node) {
+    super.setChild(Document.DOCTYPE, node);
   }
 
   public Element getRootElement() {
