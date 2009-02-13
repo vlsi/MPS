@@ -3556,6 +3556,11 @@
                         </node>
                       </node>
                     </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234512455590">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234512456923">
+                        <link role="variableDeclaration" targetNodeId="1234511687627" resolveInfo="pathString" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

@@ -276,7 +276,8 @@ public class QueriesGenerated {
     for(SNode cpItem : ListSequence.fromList(classPathItemList).cut(1)) {
       pathString += prefix + AbstractPath_Behavior.call_getFullPath_1230059208735(cpItem).replace("\\", "/") + ":";
     }
-    return pathString += prefix + AbstractPath_Behavior.call_getFullPath_1230059208735(ListSequence.fromList(classPathItemList).last()).replace("\\", "/");
+    pathString += prefix + AbstractPath_Behavior.call_getFullPath_1230059208735(ListSequence.fromList(classPathItemList).last()).replace("\\", "/");
+    return pathString;
   }
 
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
