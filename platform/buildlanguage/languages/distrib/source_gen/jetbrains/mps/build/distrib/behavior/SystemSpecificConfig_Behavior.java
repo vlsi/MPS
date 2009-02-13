@@ -30,4 +30,8 @@ public class SystemSpecificConfig_Behavior {
     return vmoptionsDir + SConceptPropertyOperations.getString(thisNode, "pathSeparator") + SystemSpecificConfig_Behavior.call_getVMOptionfFileName_1231748960223(thisNode);
   }
 
+  public static String call_getAntPathFromAbstractPath_1234513234515(SNode thisNode, SNode path) {
+    return AbstractPath_Behavior.call_getFullPath_1230059208735(path).replace("/", SConceptPropertyOperations.getString(thisNode, "pathSeparator")).replace("\\", SConceptPropertyOperations.getString(thisNode, "pathSeparator"));
+  }
+
 }

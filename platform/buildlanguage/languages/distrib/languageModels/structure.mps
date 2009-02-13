@@ -302,6 +302,50 @@
       <property name="value" value="/" />
       <link role="conceptPropertyDeclaration" targetNodeId="1231769310934" resolveInfo="pathSeparator" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234514416558">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="bundleName" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.1205339194346" resolveInfo="IStringExpression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234514461588">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="infoString" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.1205339194346" resolveInfo="IStringExpression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234514479253">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="releaseVersion" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.1205339194346" resolveInfo="IStringExpression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234514787073">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="buildVersion" />
+      <link role="target" targetNodeId="3v.1205339194346" resolveInfo="IStringExpression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234512917007">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="iconPath" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1234515156408">
+    <property name="package" value="systemSpecific" />
+    <property name="name" value="ExternalVariableReference" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234515167308">
+      <link role="intfc" targetNodeId="3v.1205339194346" resolveInfo="IStringExpression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234515169991">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="variable" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.1205335290326" resolveInfo="Variable" />
+    </node>
   </node>
 </model>
 

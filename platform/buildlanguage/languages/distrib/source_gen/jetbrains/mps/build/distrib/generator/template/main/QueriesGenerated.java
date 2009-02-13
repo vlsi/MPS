@@ -21,6 +21,7 @@ import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Beh
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
 import java.util.List;
+import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.apache.commons.lang.StringUtils;
@@ -165,7 +166,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1231683866212(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).replace("/", SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator")).replace("\\", SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator"));
+    return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1231685737416(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -280,6 +281,26 @@ public class QueriesGenerated {
     return pathString;
   }
 
+  public static Object propertyMacro_GetPropertyValue_1234513156328(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "iconPath", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234515719035(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "bundleName", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234517019781(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "infoString", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234517346200(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "buildVersion", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234517383438(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "releaseVersion", true));
+  }
+
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
   }
@@ -364,6 +385,14 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1234427256031(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).equals("."));
+  }
+
+  public static boolean ifMacro_Condition_1234513109315(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "iconPath", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234513133518(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "iconPath", true) != null);
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
