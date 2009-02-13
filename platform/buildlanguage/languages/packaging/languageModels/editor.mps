@@ -222,11 +222,17 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1233741672621">
       <property name="name" value="slash" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233741724454">
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234526538270">
+        <property name="flag" value="true" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1234526544601">
+        <property name="flag" value="true" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1234526549403">
         <property name="value" value="0.3" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1233741724456">
-        <property name="value" value="0.5" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1234526567818">
+        <property name="value" value="0.3" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1205337004073">
@@ -1192,12 +1198,6 @@
       <property name="vertical" value="false" />
       <property name="separatorText" value="/" />
       <link role="relationDeclaration" targetNodeId="1.1220978161990" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1220978901246">
-        <property name="value" value="0.0" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233748147259">
-        <property name="value" value="1.0" />
-      </node>
       <node role="separatorStyle" type="jetbrains.mps.lang.editor.structure.InlineStyleDeclaration" id="1233740911680">
         <link role="parentClass" targetNodeId="1233741672621" resolveInfo="slash" />
       </node>
@@ -1229,9 +1229,6 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1221145117789">
           <link role="relationDeclaration" targetNodeId="1.1220976095387" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233741642969">
-            <property name="value" value="0.0" />
-          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1221145116819">
           <property name="flag" value="false" />
@@ -1243,12 +1240,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1220974540492">
         <link role="relationDeclaration" targetNodeId="1.1220974249696" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233741202240">
-          <property name="value" value="1.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1233741653228">
-          <property name="value" value="0.0" />
-        </node>
       </node>
     </node>
   </node>

@@ -217,11 +217,6 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1234172979814" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234453014805">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234458857990">
-            <link role="variableDeclaration" targetNodeId="1234172979813" resolveInfo="type" />
-          </node>
-        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1233740127321">
         <property name="name" value="a" />
@@ -239,19 +234,7 @@
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1234523129323">
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234523129325" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523129326">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234523531197">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1234523531198">
-            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1234523555437">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1234523555438" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1234523527691">
-        <node role="keyType" type="jetbrains.mps.baseLanguage.structure.Type" id="1234523527692" />
-        <node role="valueType" type="jetbrains.mps.baseLanguage.structure.Type" id="1234523527693" />
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523129326" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
   </node>

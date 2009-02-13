@@ -2014,6 +2014,9 @@
       <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1233066826538">
         <property name="keys" value="LOG." />
       </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234524642392">
+        <node role="expression" type="jetbrains.mps.lang.smodel.structure.NodeRefExpression" id="1234524642393" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1233333241782">
