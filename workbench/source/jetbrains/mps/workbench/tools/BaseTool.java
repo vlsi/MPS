@@ -201,7 +201,7 @@ public abstract class BaseTool {
       Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
       String actionId = ActivateToolWindowAction.getActionIdForToolWindow(myId);
       //noinspection ConstantConditions
-      if (keymap.getShortcuts(actionId).length != 0) {
+      if (keymap.getShortcuts(actionId).length == 0) {
         KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null);
         keymap.addShortcut(actionId, shortcut);
       }
