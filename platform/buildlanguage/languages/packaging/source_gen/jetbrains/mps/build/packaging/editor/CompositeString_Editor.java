@@ -12,6 +12,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 
 public class CompositeString_Editor extends DefaultNodeEditor {
 
@@ -91,6 +95,15 @@ public class CompositeString_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_4772_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4772_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0.3, Measure.SPACES));
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     CompositeString_RT.setCellActions(editorCell, node, context);
   }
 

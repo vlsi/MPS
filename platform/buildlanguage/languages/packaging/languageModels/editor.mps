@@ -809,8 +809,8 @@
     <link role="conceptDeclaration" targetNodeId="1.1205339044029" resolveInfo="SimpleString" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1205339395970">
       <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
-      <link role="actionMap" targetNodeId="1205343437256" resolveInfo="CompositeString_RT" />
       <link role="styleClass" targetNodeId="1205343740058" resolveInfo="string" />
+      <link role="actionMap" targetNodeId="1205343437256" resolveInfo="CompositeString_RT" />
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1226330394988">
         <property name="value" value="0.2" />
       </node>
@@ -852,6 +852,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1205342912279">
         <link role="relationDeclaration" targetNodeId="1.1205342834160" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem" id="1234532205455">
+        <property name="value" value="0.3" />
       </node>
     </node>
   </node>
@@ -1673,6 +1676,16 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1233321500623">
         <link role="relationDeclaration" targetNodeId="1.1233321488408" resolveInfo="pathToCheck" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1234531921328">
+    <property name="package" value="variables" />
+    <link role="conceptDeclaration" targetNodeId="1.1234531699390" resolveInfo="Space" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1234531934213">
+      <property name="text" value="\s" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1234531956321">
+        <property name="color" value="lightGray" />
       </node>
     </node>
   </node>

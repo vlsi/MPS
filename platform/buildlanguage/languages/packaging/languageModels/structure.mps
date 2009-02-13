@@ -1139,5 +1139,17 @@
       <property name="name" value="canStartFromBasedir" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1234531699390">
+    <property name="package" value="variables" />
+    <property name="name" value="Space" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234531712976">
+      <link role="intfc" targetNodeId="1205339194346" resolveInfo="IStringExpression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1234532335148">
+      <property name="value" value="space" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

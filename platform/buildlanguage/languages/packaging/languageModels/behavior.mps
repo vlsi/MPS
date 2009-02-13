@@ -6158,5 +6158,25 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233751573894" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1234531719239">
+    <property name="package" value="variables" />
+    <link role="concept" targetNodeId="1.1234531699390" resolveInfo="Space" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1234531735205">
+      <property name="name" value="getValue" />
+      <link role="overriddenMethod" targetNodeId="1213877173054" resolveInfo="getValue" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234531735207">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234531754363">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234531756127">
+            <property name="value" value=" " />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1234531743175" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234531747652" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1234531719240">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234531719241" />
+    </node>
+  </node>
 </model>
 
