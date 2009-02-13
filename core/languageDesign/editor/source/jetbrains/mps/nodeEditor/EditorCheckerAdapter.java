@@ -33,7 +33,7 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMess
 
   protected HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter) {
     if (errorReporter == null) {
-      errorReporter = new SimpleErrorReporter(message, null, null, MessageStatus.ERROR, new NodeErrorTarget());
+      errorReporter = new SimpleErrorReporter(node, message, null, null, MessageStatus.ERROR, new NodeErrorTarget());
     }
     final MessageStatus status = errorReporter.getMessageStatus();
     HighlighterMessage error = new HighlighterMessage(node, status, errorReporter.getErrorTarget(), getMessageColor(status), message, getOwner(node.getContainingRoot()));

@@ -260,15 +260,16 @@ public class EquationManager {
     String errorString = equationInfo.getErrorString();
     String ruleModel = equationInfo.getRuleModel();
     String ruleId = equationInfo.getRuleId();
+    SNode nodeWithError = equationInfo.getNodeWithError();
     if (errorString == null) {
       String strongString = isWeak ? "" : " strong";
-      errorReporter = new EquationErrorReporter(this, "type ", subtypeRepresentator,
+      errorReporter = new EquationErrorReporter(nodeWithError, this, "type ", subtypeRepresentator,
         " is not a" + strongString + " subtype of ", supertypeRepresentator, "", ruleModel, ruleId);
     } else {
-      errorReporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
+      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
     }
     errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
-    myTypeCheckingContext.reportMessage(equationInfo.getNodeWithError(), errorReporter);
+    myTypeCheckingContext.reportMessage(nodeWithError, errorReporter);
 
     //4debug
     //  myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, equationInfo, isWeak);
@@ -346,15 +347,16 @@ public class EquationManager {
     String ruleId = errorInfo.getRuleId();
     String errorString = errorInfo.getErrorString();
     IErrorReporter errorReporter;
+    SNode nodeWithError = errorInfo.getNodeWithError();
     if (errorString == null) {
       String strongString = isWeak ? "" : " strongly";
-      errorReporter = new EquationErrorReporter(this, "type ", representator1, " is not" + strongString + " comparable with ",
+      errorReporter = new EquationErrorReporter(nodeWithError, this, "type ", representator1, " is not" + strongString + " comparable with ",
         representator2, "", ruleModel, ruleId);
     } else {
-      errorReporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
+      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
     }
     errorReporter.setIntentionProvider(errorInfo.getIntentionProvider());
-    myTypeCheckingContext.reportMessage(errorInfo.getNodeWithError(), errorReporter);
+    myTypeCheckingContext.reportMessage(nodeWithError, errorReporter);
   }
 
   public WhenConcreteEntity getWhenConcreteEntity(IWrapper wrapper) {
@@ -536,10 +538,10 @@ public class EquationManager {
       String ruleId = errorInfo == null ? null : errorInfo.getRuleId();
 
       if (errorString != null) {
-        errorReporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
+        errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
       } else {
         errorReporter =
-          new EquationErrorReporter(this, "incompatible types: ",
+          new EquationErrorReporter(nodeWithError, this, "incompatible types: ",
             rhsRepresentator, " and ", lhsRepresentator, "", ruleModel, ruleId);
       }
       errorReporter.setIntentionProvider(intentionProvider);
@@ -561,10 +563,11 @@ public class EquationManager {
     keepInequationsAndEffects(var, type, false);
     RuntimeTypeVariable typeVar = var.getVariable();
     if (typeVar instanceof RuntimeErrorType) {
-      SimpleErrorReporter reporter = new SimpleErrorReporter(((RuntimeErrorType) typeVar).getErrorText(), errorInfo.getRuleModel(), errorInfo.getRuleId());
+      SNode nodeWithError = errorInfo.getNodeWithError();
+      SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, ((RuntimeErrorType) typeVar).getErrorText(), errorInfo.getRuleModel(), errorInfo.getRuleId());
       reporter.setIntentionProvider(errorInfo.getIntentionProvider());
       myTypeCheckingContext.reportMessage(
-        errorInfo.getNodeWithError(), reporter);
+        nodeWithError, reporter);
     }
     var.fireRepresentatorSet(type, this);
   }

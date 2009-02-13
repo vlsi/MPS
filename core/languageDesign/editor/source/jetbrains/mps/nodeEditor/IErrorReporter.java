@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,4 +35,5 @@ public interface IErrorReporter {
   public IntentionProvider getIntentionProvider();
   public void setIntentionProvider(IntentionProvider intentionProvider);
   public IErrorTarget getErrorTarget();
+  public SNode getSNode();
 }

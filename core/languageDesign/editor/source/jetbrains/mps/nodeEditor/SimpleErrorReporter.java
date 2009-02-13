@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
@@ -35,20 +36,22 @@ public class SimpleErrorReporter implements IErrorReporter {
   private IntentionProvider myIntentionProvider;
   private MessageStatus myMessageStatus = MessageStatus.ERROR;
   private IErrorTarget myErrorTarget = new NodeErrorTarget();
+  private SNode mySNode;
 
-  public SimpleErrorReporter(String s, String ruleModel, String ruleId) {
+  public SimpleErrorReporter(SNode node, String s, String ruleModel, String ruleId) {
     myErrorString = s;
     myRuleModel = ruleModel;
     myRuleId = ruleId;
+    mySNode = node;
   }
 
-  public SimpleErrorReporter(String s, String ruleModel, String ruleId, boolean isWarning) {
-    this(s, ruleModel, ruleId);
+  public SimpleErrorReporter(SNode node, String s, String ruleModel, String ruleId, boolean isWarning) {
+    this(node, s, ruleModel, ruleId);
     myMessageStatus = isWarning ? MessageStatus.WARNING : MessageStatus.ERROR;
   }
 
-  public SimpleErrorReporter(String s, String ruleModel, String ruleId, MessageStatus messageStatus, IErrorTarget errorTarget) {
-    this(s, ruleModel, ruleId);
+  public SimpleErrorReporter(SNode node, String s, String ruleModel, String ruleId, MessageStatus messageStatus, IErrorTarget errorTarget) {
+    this(node, s, ruleModel, ruleId);
     myMessageStatus = messageStatus;
     myErrorTarget = errorTarget;
   }
@@ -79,5 +82,9 @@ public class SimpleErrorReporter implements IErrorReporter {
 
   public IErrorTarget getErrorTarget() {
     return myErrorTarget;
+  }
+
+  public SNode getSNode() {
+    return mySNode;
   }
 }

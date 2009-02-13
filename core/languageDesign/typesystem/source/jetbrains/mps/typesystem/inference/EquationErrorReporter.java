@@ -20,6 +20,7 @@ import jetbrains.mps.typesystem.inference.IWrapper;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
@@ -39,7 +40,9 @@ public class EquationErrorReporter implements IErrorReporter {
   private String myRuleModel;
   private IntentionProvider myIntentionProvider;
 
-  public EquationErrorReporter(EquationManager equationManager, String before,
+  private SNode mySNode;
+
+  public EquationErrorReporter(SNode node, EquationManager equationManager, String before,
                                IWrapper wrapper1, String between, IWrapper wrapper2, String after, String ruleModel, String ruleId) {
     myEquationManager = equationManager;
     myBefore = before;
@@ -49,6 +52,7 @@ public class EquationErrorReporter implements IErrorReporter {
     myWrapper2 = wrapper2;
     myRuleId = ruleId;
     myRuleModel = ruleModel;
+    mySNode = node;
   }
 
   public void setIntentionProvider(IntentionProvider intentionProvider) {
@@ -86,5 +90,9 @@ public class EquationErrorReporter implements IErrorReporter {
 
   public IErrorTarget getErrorTarget() {
     return new NodeErrorTarget();
+  }
+
+  public SNode getSNode() {
+    return mySNode;
   }
 }

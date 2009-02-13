@@ -102,39 +102,39 @@ public class TypeCheckingContext {
 
   @Deprecated
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, MessageStatus.ERROR, new NodeErrorTarget());
+    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, new NodeErrorTarget());
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithError, reporter);
   }
 
   @Deprecated
   public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, MessageStatus.WARNING, new NodeErrorTarget());
+    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.WARNING, new NodeErrorTarget());
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithError, reporter);
   }
 
   @Deprecated
   public void reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(message, ruleModel, ruleId, MessageStatus.OK, new NodeErrorTarget());
+    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithInfo, message, ruleModel, ruleId, MessageStatus.OK, new NodeErrorTarget());
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithInfo, reporter);
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider, IErrorTarget errorTarget) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, MessageStatus.ERROR, errorTarget);
+    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithError, reporter);
   }
 
   public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider, IErrorTarget errorTarget) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, MessageStatus.WARNING, errorTarget);
+    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.WARNING, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithError, reporter);
   }
 
   public void reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, IntentionProvider intentionProvider, IErrorTarget errorTarget) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(message, ruleModel, ruleId, MessageStatus.OK, errorTarget);
+    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithInfo, message, ruleModel, ruleId, MessageStatus.OK, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithInfo, reporter);
   }

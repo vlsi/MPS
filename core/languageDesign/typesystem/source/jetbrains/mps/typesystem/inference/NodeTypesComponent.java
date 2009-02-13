@@ -55,16 +55,16 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private TypeChecker myTypeChecker;
   private Map<SNode, SNode> myNodesToTypesMap = new HashMap<SNode, SNode>();
   private Map<SNode, IErrorReporter> myNodesToErrorsMap = new HashMap<SNode, IErrorReporter>();
-  private Map<SNode, IErrorReporter> myNodesToNonTypesystemErrorsMap = new HashMap<SNode, IErrorReporter>();
+
+  private Map<SNode, Stack<IErrorReporter>> myNodesToNonTypesystemErrorsMap = new HashMap<SNode, Stack<IErrorReporter>>();
 
   private Set<SNode> myFullyCheckedNodes = new HashSet<SNode>(); //nodes which are checked with their children
   private Set<SNode> myPartlyCheckedNodes = new HashSet<SNode>(); // nodes which are checked themselves but not children
 
-  private Set<SNode> myFullyCheckedNodesNonTypesystem = new HashSet<SNode>(); //nodes which are checked with their children
-  private Set<SNode> myPartlyCheckedNodesNonTypesystem = new HashSet<SNode>(); // nodes which are checked themselves but not children
+  private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodesNonTypesystem
+    = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
 
   private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
-  private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodesNonTypesystem = new WeakHashMap<SNode, WeakSet<SNode>>();
 
   private EquationManager myEquationManager;
   private Map<String, Set<SNode>> myRegisteredVariables = new HashMap<String, Set<SNode>>();
@@ -77,6 +77,16 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   private Set<SNode> myCurrentNodesToInvalidate = new HashSet<SNode>();
   private Set<SNode> myCurrentNodesToInvalidateNonTypesystem = new HashSet<SNode>();
+
+  // nodes to rules which depend on this nodes
+  private Map<SNode, WeakHashMap<SNode, NonTypesystemRule_Runtime>> myNodesToDependentNodesWithNTRules =
+    new HashMap<SNode, WeakHashMap<SNode, NonTypesystemRule_Runtime>>();
+
+  //checked node & NT rule -> set of errors
+  private Map<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>> myNodesAndNTRulesToErrors =
+    new WeakHashMap<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>>();
+
+  private Pair<SNode, NonTypesystemRule_Runtime> myNonTypesystemRuleAndNodeBeingChecked = null;
 
   // for diagnostics
   private Set<SNodePointer> myNotSkippedNodes = new HashSet<SNodePointer>(1);
@@ -116,11 +126,10 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     NodeTypesComponent result = (NodeTypesComponent) super.clone();
     result.myNodesToTypesMap = new HashMap<SNode, SNode>();
     result.myNodesToErrorsMap = new HashMap<SNode, IErrorReporter>();
-    result.myNodesToNonTypesystemErrorsMap = new HashMap<SNode, IErrorReporter>();
+    result.myNodesToNonTypesystemErrorsMap = new HashMap<SNode, Stack<IErrorReporter>>();
     result.myFullyCheckedNodes = new WeakSet<SNode>();
     result.myPartlyCheckedNodes = new WeakSet<SNode>();
-    result.myPartlyCheckedNodesNonTypesystem = new WeakSet<SNode>();
-    result.myFullyCheckedNodesNonTypesystem = new WeakSet<SNode>();
+    result.myCheckedNodesNonTypesystem = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>();
     result.myTypeCheckingContext = null;
     result.myEquationManager = new EquationManager(result.myTypeChecker, result.myTypeCheckingContext);
     result.myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
@@ -128,6 +137,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     result.myModelListener = new MyModelListener();
     result.myNodesReadListener = new MyEventsReadListener();
     result.myCurrentNodesToInvalidate = new HashSet<SNode>();
+    result.myCurrentNodesToInvalidateNonTypesystem = new HashSet<SNode>();
     result.myCurrentFrontier = null;
     result.myCurrentCheckedNode = null;
     result.myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
@@ -163,11 +173,11 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   private void clearCaches() {
     myFullyCheckedNodes.clear();
-    myFullyCheckedNodesNonTypesystem.clear();
     myPartlyCheckedNodes.clear();
-    myPartlyCheckedNodesNonTypesystem.clear();
+    myCheckedNodesNonTypesystem.clear();
     myNodesToDependentNodes.clear();
-    myNodesToDependentNodesNonTypesystem.clear();
+    myNodesAndNTRulesToErrors.clear();
+    myNodesToDependentNodesWithNTRules.clear();
     myNodesToRules.clear();
   }
 
@@ -176,6 +186,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     myNodesToErrorsMap.clear();
     myNodesToNonTypesystemErrorsMap.clear();
     myCurrentNodesToInvalidate.clear();
+    myCurrentNodesToInvalidateNonTypesystem.clear();
     myVariableChar = A_CHAR;
     myVariableIndex = 0;
   }
@@ -187,8 +198,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       myNodesToTypesMap.remove(node);
       myNodesToErrorsMap.remove(node);
     } else {
-      myFullyCheckedNodesNonTypesystem.remove(node);
-      myPartlyCheckedNodesNonTypesystem.remove(node);
+      myCheckedNodesNonTypesystem.remove(node);  //todo
       myNodesToNonTypesystemErrorsMap.remove(node);
     }
     myNodesToRules.remove(node);
@@ -196,7 +206,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     if (nodeWithError != null) {
-      SimpleErrorReporter errorReporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
+      SimpleErrorReporter errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
       putError(nodeWithError, errorReporter);
     }
   }
@@ -208,18 +218,44 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   private void putError(SNode node, IErrorReporter errorReporter) {
-    Map<SNode, IErrorReporter> map;
-    if (myIsNonTypesystemCheckingInProgress) {
-      map = myNodesToNonTypesystemErrorsMap;
-    } else {
-      map = myNodesToErrorsMap;
-    }
-    IErrorReporter former = map.get(node);
-    if (former != null && former.getMessageStatus().compareTo(errorReporter.getMessageStatus()) > 0) {
-      return;
-    }
 
-    map.put(node, errorReporter);
+    if (myIsNonTypesystemCheckingInProgress) {
+      Stack<IErrorReporter> iErrorReporters = myNodesToNonTypesystemErrorsMap.get(node);
+      if (iErrorReporters == null) {
+        iErrorReporters = new Stack<IErrorReporter>();
+        myNodesToNonTypesystemErrorsMap.put(node, iErrorReporters);
+      }
+      iErrorReporters.push(errorReporter);
+
+      Collections.sort(iErrorReporters, new Comparator<IErrorReporter>() { //todo: right order?
+        public int compare(IErrorReporter o1, IErrorReporter o2) {
+          return o1.getMessageStatus().compareTo(o2.getMessageStatus());
+        }
+      });
+
+      //dependencies
+      if (myNonTypesystemRuleAndNodeBeingChecked != null) {
+        SNode currentNode = myNonTypesystemRuleAndNodeBeingChecked.o1;
+        NonTypesystemRule_Runtime currentRule = myNonTypesystemRuleAndNodeBeingChecked.o2;
+        Map<NonTypesystemRule_Runtime, Set<IErrorReporter>> rulesToErrorsMap = myNodesAndNTRulesToErrors.get(currentNode);
+        if (rulesToErrorsMap == null) {
+          rulesToErrorsMap = new HashMap<NonTypesystemRule_Runtime, Set<IErrorReporter>>();
+          myNodesAndNTRulesToErrors.put(currentNode, rulesToErrorsMap);
+        }
+        Set<IErrorReporter> errorsSet = rulesToErrorsMap.get(currentRule);
+        if (errorsSet == null) {
+          errorsSet = new HashSet<IErrorReporter>();
+          rulesToErrorsMap.put(currentRule, errorsSet);
+        }
+        errorsSet.add(errorReporter);
+      }
+    } else {
+      IErrorReporter former = myNodesToErrorsMap.get(node);
+      if (former != null && former.getMessageStatus().compareTo(errorReporter.getMessageStatus()) > 0) {
+        return;
+      }
+      myNodesToErrorsMap.put(node, errorReporter);
+    }
   }
 
   private boolean loadTypesystemRules(SNode root) {
@@ -251,7 +287,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       } else {
         myNotSkippedNodes.clear();
 
-        doInvalidate();
+        doInvalidateTypesystem();
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();
       }
@@ -277,7 +313,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     for (SNode node : new HashSet<SNode>(myNodesToErrorsMap.keySet())) {
       IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
       String errorString = iErrorReporter.reportError();
-      SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(),
+      SimpleErrorReporter reporter = new SimpleErrorReporter(node, errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(),
         iErrorReporter.getMessageStatus(), iErrorReporter.getErrorTarget());
       reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
       myNodesToErrorsMap.put(node, reporter);
@@ -433,7 +469,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
           if (isIncrementalMode()) {
             synchronized (ACCESS_LOCK) {
               myNodesReadListener.setAccessReport(true);
-              addDepedentNodes(sNode, new HashSet<SNode>(myNodesReadListener.myAcessedNodes));
+              addDepedentNodesTypesystem(sNode, new HashSet<SNode>(myNodesReadListener.myAcessedNodes));
               myNodesReadListener.setAccessReport(false);
             }
             myNodesReadListener.clear();
@@ -448,38 +484,40 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
 
-  private void addDepedentNodes(SNode sNode, Set<SNode> nodesToDependOn) {
-    addDepedentNodes(sNode, nodesToDependOn, false);
-  }
-
-  private void addDepedentNodesNonTypesystem(SNode sNode, Set<SNode> nodesToDependOn) {
-    addDepedentNodes(sNode, nodesToDependOn, true);
-  }
-
-  private void addDepedentNodes(SNode sNode, Set<SNode> nodesToDependOn, boolean nonTypesystem) {
-    WeakHashMap<SNode, WeakSet<SNode>> nodesToDependentNodes = nonTypesystem ? myNodesToDependentNodesNonTypesystem :
-      myNodesToDependentNodes;
+  private void addDepedentNodesTypesystem(SNode sNode, Set<SNode> nodesToDependOn) {
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
-      WeakSet<SNode> dependentNodes = nodesToDependentNodes.get(nodeToDependOn);
+      WeakSet<SNode> dependentNodes = myNodesToDependentNodes.get(nodeToDependOn);
       if (dependentNodes == null) {
         dependentNodes = new WeakSet<SNode>();
-        nodesToDependentNodes.put(nodeToDependOn, dependentNodes);
+        myNodesToDependentNodes.put(nodeToDependOn, dependentNodes);
       }
       dependentNodes.add(sNode);
+    }
+  }
+
+  private void addDepedentNodesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn) {
+    for (SNode nodeToDependOn : nodesToDependOn) {
+      if (nodeToDependOn == null) continue;
+      WeakHashMap<SNode, NonTypesystemRule_Runtime> dependentNodes = myNodesToDependentNodesWithNTRules.get(nodeToDependOn);
+      if (dependentNodes == null) {
+        dependentNodes = new WeakHashMap<SNode, NonTypesystemRule_Runtime>();
+        myNodesToDependentNodesWithNTRules.put(nodeToDependOn, dependentNodes);
+      }
+      dependentNodes.put(sNode, rule);
     }
   }
 
   public void addDependcyOnCurrent(SNode node) {
     HashSet<SNode> hashSet = new HashSet<SNode>();
     hashSet.add(myCurrentCheckedNode);
-    addDepedentNodes(node, hashSet);
+    addDepedentNodesTypesystem(node, hashSet);
   }
 
   public void addDependencyForCurrent(SNode node) {
     HashSet<SNode> hashSet = new HashSet<SNode>();
     hashSet.add(node);
-    addDepedentNodes(myCurrentCheckedNode, hashSet);
+    addDepedentNodesTypesystem(myCurrentCheckedNode, hashSet);
   }
 
   public Map<SNode, SNode> getMainContext() {
@@ -502,9 +540,6 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     SNode root = myRootNode;
     if (root == null) return;
     doInvalidateNonTypesystem(events);
-    myPartlyCheckedNodesNonTypesystem.addAll(myFullyCheckedNodesNonTypesystem);
-    myFullyCheckedNodesNonTypesystem.clear();
-  //  myNodesToNonTypesystemErrorsMap.clear();
     myIsNonTypesystemCheckingInProgress = true;
     try {
       Set<SNode> frontier = new LinkedHashSet<SNode>();
@@ -512,35 +547,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       frontier.add(root);
       while (!(frontier.isEmpty())) {
         for (SNode sNode : frontier) {
-          if (myFullyCheckedNodesNonTypesystem.contains(sNode)) {
-            continue;
-          }
           newFrontier.addAll(sNode.getChildren());
-
-          if (!myPartlyCheckedNodesNonTypesystem.contains(sNode)) {
-            if (isIncrementalMode()) {
-              myNodesReadListener.clear();
-              NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
-            }
-
-            try {
-              applyNonTypesystemRulesToNode(sNode);
-            } finally {
-              if (isIncrementalMode()) {
-                NodeReadEventsCaster.removeNodesReadListener();
-              }
-            }
-            if (isIncrementalMode()) {
-              synchronized (ACCESS_LOCK) {
-                myNodesReadListener.setAccessReport(true);
-                addDepedentNodesNonTypesystem(sNode, new HashSet<SNode>(myNodesReadListener.myAcessedNodes));
-                myNodesReadListener.setAccessReport(false);
-              }
-              myNodesReadListener.clear();
-            }
-            myPartlyCheckedNodesNonTypesystem.add(sNode);
-          }
-          myFullyCheckedNodesNonTypesystem.add(sNode);
+          applyNonTypesystemRulesToNode(sNode);
         }
         frontier = newFrontier;
         newFrontier = new LinkedHashSet<SNode>();
@@ -555,7 +563,33 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     Set<NonTypesystemRule_Runtime> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
     if (nonTypesystemRules != null) {
       for (NonTypesystemRule_Runtime rule : nonTypesystemRules) {
-        applyRuleToNode(node, rule);
+        Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule);
+        if (isIncrementalMode()) {
+          if (myCheckedNodesNonTypesystem.contains(nodeAndRule)) {
+            continue;
+          }
+          myNodesReadListener.clear();
+          NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
+          myNonTypesystemRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule);
+        }
+        try {
+          applyRuleToNode(node, rule);
+        } finally {
+          if (isIncrementalMode()) {
+            NodeReadEventsCaster.removeNodesReadListener();
+          }
+          myNonTypesystemRuleAndNodeBeingChecked = null;
+        }
+
+        if (isIncrementalMode()) {
+          synchronized (ACCESS_LOCK) {
+            myNodesReadListener.setAccessReport(true);
+            addDepedentNodesNonTypesystem(node, rule, new HashSet<SNode>(myNodesReadListener.myAcessedNodes));
+            myNodesReadListener.setAccessReport(false);
+          }
+          myNodesReadListener.clear();
+        }
+        myCheckedNodesNonTypesystem.add(nodeAndRule);
       }
     }
   }
@@ -619,7 +653,12 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   public IErrorReporter getError(SNode node) {
     IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
     if (iErrorReporter == null) {
-      iErrorReporter = myNodesToNonTypesystemErrorsMap.get(node);
+      Stack<IErrorReporter> iErrorReporters = myNodesToNonTypesystemErrorsMap.get(node);
+      if (iErrorReporters == null || iErrorReporters.isEmpty()) {
+        return null;
+      } else {
+        iErrorReporter = iErrorReporters.peek();
+      }
     }
     return iErrorReporter;
   }
@@ -639,7 +678,10 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     Set<SNode> keySet = new HashSet<SNode>(myNodesToErrorsMap.keySet());
     keySet.addAll(myNodesToNonTypesystemErrorsMap.keySet());
     for (SNode key : keySet) {
-      result.add(new Pair<SNode, IErrorReporter>(key, getError(key)));
+      IErrorReporter reporter = getError(key);
+      if (reporter != null) {
+        result.add(new Pair<SNode, IErrorReporter>(key, reporter));
+      }
     }
     return result;
   }
@@ -656,25 +698,43 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   private void doInvalidateNonTypesystem(List<SModelEvent> events) {
-    doInvalidate(true);
+    Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>();
+    for (SNode node : myCurrentNodesToInvalidateNonTypesystem) {
+      WeakHashMap<SNode, NonTypesystemRule_Runtime> nodesAndRules = myNodesToDependentNodesWithNTRules.get(node);
+      if (nodesAndRules != null) {
+        for (Entry<SNode, NonTypesystemRule_Runtime> entry : nodesAndRules.entrySet()) {
+           invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(entry.getKey(), entry.getValue()));
+        }
+      }
+    }
+    for (Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule : invalidatedNodesAndRules) {
+      myCheckedNodesNonTypesystem.remove(nodeAndRule);
+      Map<NonTypesystemRule_Runtime, Set<IErrorReporter>> rulesAndErrors = myNodesAndNTRulesToErrors.get(nodeAndRule.o1);
+      if (rulesAndErrors != null) {
+        Set<IErrorReporter> errors = rulesAndErrors.get(nodeAndRule.o2);
+        if (errors != null) {
+          for (IErrorReporter errorReporter : errors) {
+            Stack<IErrorReporter> iErrorReporters = myNodesToNonTypesystemErrorsMap.get(errorReporter.getSNode());
+            if (iErrorReporters != null) {
+              iErrorReporters.remove(errorReporter);
+            }
+          }
+        }
+      }
+    }
+    myCurrentNodesToInvalidateNonTypesystem.clear();
   }
 
-  private void doInvalidate() {
-    doInvalidate(false);
-  }
-
-  private void doInvalidate(boolean nonTypesystem) {
-    Set<SNode> nodesToInvalidate = nonTypesystem ? myCurrentNodesToInvalidateNonTypesystem : myCurrentNodesToInvalidate;
-    WeakHashMap<SNode, WeakSet<SNode>> nodesToDependentNodes = nonTypesystem ? myNodesToDependentNodesNonTypesystem : myNodesToDependentNodes;
+  private void doInvalidateTypesystem() {
     Set<SNode> invalidatedNodes = new HashSet<SNode>();
     Set<SNode> newNodesToInvalidate = new HashSet<SNode>();
-    Set<SNode> currentNodesToInvalidate = nodesToInvalidate;
+    Set<SNode> currentNodesToInvalidate = myCurrentNodesToInvalidate;
     while (!currentNodesToInvalidate.isEmpty()) {
       for (SNode nodeToInvalidate : currentNodesToInvalidate) {
         if (invalidatedNodes.contains(nodeToInvalidate)) continue;
-        invalidateNode(nodeToInvalidate, nonTypesystem);
+        invalidateNode(nodeToInvalidate, false);
         invalidatedNodes.add(nodeToInvalidate);
-        WeakSet<SNode> nodes = nodesToDependentNodes.get(nodeToInvalidate);
+        WeakSet<SNode> nodes = myNodesToDependentNodes.get(nodeToInvalidate);
         if (nodes != null) {
           newNodesToInvalidate.addAll(nodes);
         }
@@ -682,7 +742,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       currentNodesToInvalidate = newNodesToInvalidate;
       newNodesToInvalidate = new HashSet<SNode>();
     }
-    nodesToInvalidate.clear();
+    myCurrentNodesToInvalidate.clear();
   }
 
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
@@ -752,13 +812,15 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     }
 
     private void markDependentNodesForInvalidation(SNode eventNode, boolean nonTypesystem) {
-      Set<SNode> nodesToInvalidate = nonTypesystem ? myCurrentNodesToInvalidateNonTypesystem : myCurrentNodesToInvalidate;
-      WeakHashMap<SNode, WeakSet<SNode>> nodesToDependentNodes = nonTypesystem ? myNodesToDependentNodesNonTypesystem : myNodesToDependentNodes;
-      Set<SNode> nodes = nodesToDependentNodes.get(eventNode);
-      if (nodes != null) {
-        nodesToInvalidate.addAll(nodes);
+      if (nonTypesystem) {
+        myCurrentNodesToInvalidateNonTypesystem.add(eventNode);
+      } else {
+        Set<SNode> nodes = myNodesToDependentNodes.get(eventNode);    // todo don't use here myNodesToDependentNodes
+        if (nodes != null) {
+          myCurrentNodesToInvalidate.addAll(nodes);
+        }
+        myCurrentNodesToInvalidate.add(eventNode);
       }
-      nodesToInvalidate.add(eventNode);
     }
   }
 
