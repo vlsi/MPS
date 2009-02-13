@@ -264,7 +264,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1234427341141(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).replace("/", SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator")).replace("\\", SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator"));
+    return "$APP_PACKAGE/" + AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).replace("/", SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator")).replace("\\", SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1234428002224(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -429,7 +429,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1234427256031(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).equals("."));
+    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).equals(".");
   }
 
   public static boolean ifMacro_Condition_1234513109315(final IOperationContext operationContext, final IfMacroContext _context) {
