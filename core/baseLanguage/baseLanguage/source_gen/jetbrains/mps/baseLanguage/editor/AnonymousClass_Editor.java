@@ -492,6 +492,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };
@@ -501,6 +502,15 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1871_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1871_7");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNodeList_1871_3(EditorCell editorCell, SNode node, EditorContext context) {

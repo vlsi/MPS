@@ -7506,6 +7506,9 @@
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233847810713">
               <property name="flag" value="true" />
             </node>
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234531590441">
+              <property name="flag" value="true" />
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1201186153043">
             <property name="vertical" value="false" />
@@ -7514,6 +7517,9 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1201186147885">
             <property name="text" value="&gt;" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234531606711">
+              <property name="flag" value="true" />
+            </node>
           </node>
           <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1201186172872">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201186172873">
