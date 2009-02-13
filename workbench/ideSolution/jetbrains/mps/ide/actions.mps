@@ -379,6 +379,10 @@
         <property name="name" value="refactoring" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1222348864979" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1234535901004">
+        <property name="name" value="vcs" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1234535904313" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991225922">
@@ -981,6 +985,10 @@
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1221752224444">
       <link role="modifiedGroup" targetNodeId="1204991231476" resolveInfo="EditorPopup" />
       <link role="point" targetNodeId="1221753146354" resolveInfo="vcs" />
+    </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1234535880027">
+      <link role="modifiedGroup" targetNodeId="1204991224874" resolveInfo="LanguageActions" />
+      <link role="point" targetNodeId="1234535901004" resolveInfo="vcs" />
     </node>
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215012403340">
       <property name="value" value="VcsGroup" />

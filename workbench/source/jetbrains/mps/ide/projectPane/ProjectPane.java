@@ -94,6 +94,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.io.File;
 
 @State(
   name = "MPSProjectPane",
@@ -502,6 +503,13 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     List<IModule> modules = getSelectedModules();
     if (modules != null) {
       for (IModule module : modules) {
+        File home = module.getBundleHome();
+        if (home != null) {
+          VirtualFile vfile = VFileSystem.getFile(home);
+          if (vfile != null) {
+            selectedFilesList.add(vfile);
+          }
+        }
         IFile ifile = module.getDescriptorFile();
         if (ifile != null) {
           VirtualFile vfile = VFileSystem.getFile(ifile);
