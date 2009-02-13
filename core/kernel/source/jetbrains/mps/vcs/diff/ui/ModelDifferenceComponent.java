@@ -299,7 +299,8 @@ class ModelDifferenceComponent extends JPanel {
             Project[] openedProjects = ProjectManager.getInstance().getOpenProjects();
             if (openedProjects.length == 0) break;
             final Project firstOpenedProject = openedProjects[0];
-            firstOpenedProject.getComponent(MPSProjectHolder.class).getMPSProject().getComponentSafe(MPSEditorOpener.class).openNode(targetNode, true);
+            MPSProject mpsProject = firstOpenedProject.getComponent(MPSProjectHolder.class).getMPSProject();
+            mpsProject.getComponentSafe(MPSEditorOpener.class).openNode(targetNode);
           }
         }
       }

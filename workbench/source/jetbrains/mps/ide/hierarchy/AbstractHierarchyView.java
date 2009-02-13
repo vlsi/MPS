@@ -70,7 +70,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
   protected abstract AbstractHierarchyTree<T> createHierarchyTree(boolean isParentHierarchy);
 
   public void openNode(SNode node, IOperationContext context) {
-    context.getComponent(MPSEditorOpener.class).openNode(node, context);
+    context.getComponent(MPSEditorOpener.class).openNode(node, context,true,true);
   }
 
   protected DefaultActionGroup createButtonsGroup() {

@@ -130,7 +130,7 @@ public class StructureViewComponent {
     }
 
     public void doubleClick() {
-      myContext.getComponent(MPSEditorOpener.class).openNode(myNode, myContext);
+      myContext.getComponent(MPSEditorOpener.class).editNode(myNode, myContext);
     }
 
     public boolean isLeaf() {

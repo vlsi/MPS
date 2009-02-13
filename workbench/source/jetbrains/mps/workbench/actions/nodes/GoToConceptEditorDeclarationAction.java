@@ -141,7 +141,7 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
 
   private void navigateToEditorDeclaration(final SNode editorDeclaration, final IOperationContext operationContext, final IEditor currentEditor) {
     operationContext.getComponent(ProjectPane.class).selectNode(editorDeclaration, operationContext);
-    operationContext.getComponent(MPSEditorOpener.class).openNode(editorDeclaration, operationContext);
+    operationContext.getComponent(MPSEditorOpener.class).editNode(editorDeclaration, operationContext);
   }
 
   public static ConceptEditorDeclaration createEditorDeclaration(ConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {

@@ -174,42 +174,50 @@ public class MPSEditorOpener implements ProjectComponent {
     myEditorOpenHandlersToOwners.remove(owner);
   }
 
+  @Deprecated
   public void openNode(final SNode node) {
-    openNode(node, true);
-  }
-
-  public void openNode(final SNode node, final boolean focus) {
-    if(node == null) return;
+    if (node == null) return;
+    //todo why later?
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         ModuleContext context = ModuleContext.create(node, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
         if (context == null) return;
-        openNode(node, context, focus);
+        boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          public Boolean compute() {
+            return !node.isRoot();
+          }
+        });
+        openNode(node, context, true, select);
       }
     });
   }
 
-  public IEditor openNode(final SNode node, final IOperationContext context) {
-    return openNode(node, context, true);
+  public IEditor editNode(final SNode node, final IOperationContext context) {
+    boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return !node.isRoot();
+      }
+    });
+    return openNode(node, context, true, select);
   }
 
-  public IEditor openNode(final SNode node, final IOperationContext context, final boolean focus) {
+  public IEditor openNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
     final Project ideaProject = context.getComponent(Project.class);
     ideaProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
     return ModelAccess.instance().runReadAction(new Computable<IEditor>() {
       public IEditor compute() {
-        return doOpenNode(node, context, focus);
+        return doOpenNode(node, context, focus, select);
       }
     });
   }
 
-  private IEditor doOpenNode(final SNode node, IOperationContext context, final boolean focus) {
+  private IEditor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select) {
     assert node.isRegistered() : "You can't edit unregistered node";
 
     SNode containingRoot = node.getContainingRoot();
     final IEditor nodeEditor = doOpenEditor(containingRoot, context);
 
-    if (!node.isRoot()) {
+    if (select) {
       doSelectNodeInEditor(nodeEditor, node);
 
       if (nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent) {
@@ -238,7 +246,7 @@ public class MPSEditorOpener implements ProjectComponent {
 
   private void selectInInspector(final IEditor nodeEditor, final SNode node, IOperationContext context, final boolean focus) {
     final NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-    if(nec == null) return;
+    if (nec == null) return;
     final InspectorTool inspectorTool = nec.getInspectorTool();
     if (inspectorTool == null) return;
     if (nec.getLastInspectedNode() == null) return;
@@ -288,7 +296,7 @@ public class MPSEditorOpener implements ProjectComponent {
 
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
-    FileEditor fileEditor=editorManager.openFile(file, false)[0];
+    FileEditor fileEditor = editorManager.openFile(file, false)[0];
 
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
 

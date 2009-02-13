@@ -89,7 +89,7 @@ public class NewCreateRootRule_Intention extends BaseIntention {
     SLinkOperations.setTarget(rule, "templateNode", node, false);
     //  open in editor
     MPSEditorOpener opener = editorContext.getOperationContext().getComponent(MPSEditorOpener.class);
-    opener.openNode(rule, true);
+    opener.openNode(rule);
   }
 
   public String getLocationString() {

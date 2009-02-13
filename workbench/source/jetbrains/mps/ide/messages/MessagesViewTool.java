@@ -21,7 +21,6 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.IdeMain;
@@ -37,7 +36,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
-import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -51,9 +49,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
 
 @State(
   name = "MessagesViewTool",
@@ -343,7 +338,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        NavigationManager.getInstance().navigateTo(getMPSProject(), selectedMessage.getHintObject());
+        NavigationManager.getInstance().navigateTo(getMPSProject(), selectedMessage.getHintObject(), true, true);
       }
     });
   }

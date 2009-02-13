@@ -24,6 +24,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowType;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
@@ -39,12 +40,13 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.AbstractAction;
@@ -52,8 +54,8 @@ import javax.swing.JPopupMenu;
 import javax.swing.KeyStroke;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
-import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.TreePath;
 import java.awt.event.*;
 import java.util.*;
@@ -133,7 +135,7 @@ public abstract class UsagesTree extends MPSTree {
 
     addTreeSelectionListener(new TreeSelectionListener() {
       public void valueChanged(TreeSelectionEvent e) {
-        if (myAutoscroll){
+        if (myAutoscroll) {
           openCurrentNodeLink(false, false);
         }
       }
@@ -419,7 +421,7 @@ public abstract class UsagesTree extends MPSTree {
       }
     };
 
-    DefaultActionGroup group = ActionUtils.groupFromActions(inculdeAction,excludeAction);
+    DefaultActionGroup group = ActionUtils.groupFromActions(inculdeAction, excludeAction);
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
@@ -604,7 +606,9 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   public void navigateToNode(SNode node, boolean focus) {
-    getProject().getComponentSafe(MPSEditorOpener.class).openNode(node, focus);
+    MPSProject mpsProject = getProject().getComponent(MPSProjectHolder.class).getMPSProject();
+    ModuleContext context = ModuleContext.create(node, mpsProject);
+    getProject().getComponentSafe(MPSEditorOpener.class).openNode(node, context, focus, true);
   }
 
   private void navigateInTree(Object o, boolean focus) {
