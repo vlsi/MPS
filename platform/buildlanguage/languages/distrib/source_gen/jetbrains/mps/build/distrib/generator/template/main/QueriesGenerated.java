@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
 import java.util.List;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
+import jetbrains.mps.build.distrib.behavior.MacConfig_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.apache.commons.lang.StringUtils;
@@ -301,6 +302,30 @@ public class QueriesGenerated {
     return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "releaseVersion", true));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1234517927659(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234519055146(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "antName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234519070650(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "$" + SPropertyOperations.getString(_context.getNode(), "name") + "$";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234519371002(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getProjectName_1230292821821(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode())) + "-macos" + ".zip";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234519414225(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234520360607(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MacConfig_Behavior.call_getStartupFileName_1234518093971(_context.getNode()) + "." + MacConfig_Behavior.call_getStartupFileExtension_1234518093983(_context.getNode());
+  }
+
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
   }
@@ -319,6 +344,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1230650270986(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
+  }
+
+  public static Object referenceMacro_GetReferent_1234519151154(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "VariableToExternalPropertyDeclaration");
   }
 
   public static boolean ifMacro_Condition_1230567183522(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -430,6 +459,14 @@ public class QueriesGenerated {
       ListSequence.fromList(lines).addElement(line);
     }
     return lines;
+  }
+
+  public static Iterable sourceNodesQuery_1234518292490(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return MacConfig_Behavior.call_getAllUsedVariable_1234518747638(_context.getNode());
+  }
+
+  public static Iterable sourceNodesQuery_1234518725988(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return MacConfig_Behavior.call_getAllUsedVariable_1234518747638(_context.getNode());
   }
 
 }
