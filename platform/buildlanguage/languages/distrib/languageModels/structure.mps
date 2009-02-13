@@ -332,6 +332,12 @@
       <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234535772720">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="javaApplicationStubPath" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1234515156408">
     <property name="package" value="systemSpecific" />

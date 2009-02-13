@@ -7,7 +7,6 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
@@ -751,6 +750,22 @@
             <link role="relationDeclaration" targetNodeId="1.1234514461588" />
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1234516860794">
+            <property name="flag" value="false" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1234535815175">
+          <property name="vertical" value="false" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1234535815176">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1234535818202">
+            <property name="text" value="java application stub path" />
+            <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1234535833472">
+            <link role="relationDeclaration" targetNodeId="1.1234535772720" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1234535815178">
             <property name="flag" value="false" />
           </node>
         </node>

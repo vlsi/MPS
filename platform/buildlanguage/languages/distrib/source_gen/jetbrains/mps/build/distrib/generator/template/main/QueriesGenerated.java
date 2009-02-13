@@ -332,6 +332,10 @@ public class QueriesGenerated {
     return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "iconPath", true));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1234535902091(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "javaApplicationStubPath", true));
+  }
+
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
   }

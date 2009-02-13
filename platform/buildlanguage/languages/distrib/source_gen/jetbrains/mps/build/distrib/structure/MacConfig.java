@@ -15,6 +15,7 @@ public class MacConfig extends SystemSpecificConfig {
   public static final String RELEASE_VERSION = "releaseVersion";
   public static final String BUILD_VERSION = "buildVersion";
   public static final String ICON_PATH = "iconPath";
+  public static final String JAVA_APPLICATION_STUB_PATH = "javaApplicationStubPath";
 
   public MacConfig(SNode node) {
     super(node);
@@ -58,6 +59,14 @@ public class MacConfig extends SystemSpecificConfig {
 
   public void setIconPath(AbstractPath node) {
     super.setChild(MacConfig.ICON_PATH, node);
+  }
+
+  public AbstractPath getJavaApplicationStubPath() {
+    return (AbstractPath)this.getChild(AbstractPath.class, MacConfig.JAVA_APPLICATION_STUB_PATH);
+  }
+
+  public void setJavaApplicationStubPath(AbstractPath node) {
+    super.setChild(MacConfig.JAVA_APPLICATION_STUB_PATH, node);
   }
 
 
