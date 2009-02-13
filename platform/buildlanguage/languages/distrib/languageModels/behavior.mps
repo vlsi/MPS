@@ -10,9 +10,6 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="jetbrains.mps.lang.generator" />
-  <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.lang.smodel" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
@@ -295,7 +292,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230208019848">
-    <property name="package" value="systemSpecific" />
+    <property name="package" value="systemSpecific.windows" />
     <link role="concept" targetNodeId="1.1230207753430" resolveInfo="WindowsConfig" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230208021944">
       <property name="name" value="getStartupFileName" />
@@ -813,7 +810,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1231864296686">
-    <property name="package" value="systemSpecific" />
+    <property name="package" value="systemSpecific.windows" />
     <link role="concept" targetNodeId="1.1231860019901" resolveInfo="ArtifactReferenceCommandLinePart" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1231864597962">
       <property name="name" value="getText" />
@@ -856,7 +853,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1231864527727">
-    <property name="package" value="systemSpecific" />
+    <property name="package" value="systemSpecific.windows" />
     <link role="concept" targetNodeId="1.1231859852975" resolveInfo="AbstractCommandLinePart" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1231864533228">
       <property name="name" value="getText" />
@@ -871,7 +868,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1231864565741">
-    <property name="package" value="systemSpecific" />
+    <property name="package" value="systemSpecific.windows" />
     <link role="concept" targetNodeId="1.1231859958652" resolveInfo="StringCommandLinePart" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1231864569720">
       <property name="name" value="getText" />

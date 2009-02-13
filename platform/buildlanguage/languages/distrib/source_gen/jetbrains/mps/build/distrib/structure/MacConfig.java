@@ -4,6 +4,8 @@ package jetbrains.mps.build.distrib.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.structure.IStringExpression;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +18,7 @@ public class MacConfig extends SystemSpecificConfig {
   public static final String BUILD_VERSION = "buildVersion";
   public static final String ICON_PATH = "iconPath";
   public static final String JAVA_APPLICATION_STUB_PATH = "javaApplicationStubPath";
+  public static final String ASSOCIATION = "association";
 
   public MacConfig(SNode node) {
     super(node);
@@ -67,6 +70,26 @@ public class MacConfig extends SystemSpecificConfig {
 
   public void setJavaApplicationStubPath(AbstractPath node) {
     super.setChild(MacConfig.JAVA_APPLICATION_STUB_PATH, node);
+  }
+
+  public int getAssociationsCount() {
+    return this.getChildCount(MacConfig.ASSOCIATION);
+  }
+
+  public Iterator<MacOsFileAssociation> associations() {
+    return this.children(MacOsFileAssociation.class, MacConfig.ASSOCIATION);
+  }
+
+  public List<MacOsFileAssociation> getAssociations() {
+    return this.getChildren(MacOsFileAssociation.class, MacConfig.ASSOCIATION);
+  }
+
+  public void addAssociation(MacOsFileAssociation node) {
+    this.addChild(MacConfig.ASSOCIATION, node);
+  }
+
+  public void insertAssociation(MacOsFileAssociation prev, MacOsFileAssociation node) {
+    this.insertChild(prev, MacConfig.ASSOCIATION, node);
   }
 
 

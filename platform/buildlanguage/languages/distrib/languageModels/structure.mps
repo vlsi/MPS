@@ -153,7 +153,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230207753430">
     <property name="name" value="WindowsConfig" />
-    <property name="package" value="systemSpecific" />
+    <property name="package" value="systemSpecific.windows" />
     <link role="extends" targetNodeId="1230207207601" resolveInfo="SystemSpecificConfig" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230208346120">
       <property name="value" value="windows" />
@@ -221,7 +221,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230576552358">
-    <property name="package" value="systemSpecific" />
+    <property name="package" value="systemSpecific.windows" />
     <property name="name" value="TokenValuePair" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230576589108">
@@ -236,7 +236,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1231848405646">
-    <property name="package" value="systemSpecific" />
+    <property name="package" value="systemSpecific.windows" />
     <property name="name" value="DigitalSignatureWindowsConfiguration" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231859196186">
@@ -253,7 +253,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1231859852975">
-    <property name="package" value="systemSpecific" />
+    <property name="package" value="systemSpecific.windows" />
     <property name="name" value="AbstractCommandLinePart" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1231859948220">
@@ -261,7 +261,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1231859958652">
-    <property name="package" value="systemSpecific" />
+    <property name="package" value="systemSpecific.windows" />
     <property name="name" value="StringCommandLinePart" />
     <link role="extends" targetNodeId="1231859852975" resolveInfo="AbstractCommandLinePart" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1231861633100">
@@ -274,7 +274,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1231860019901">
-    <property name="package" value="systemSpecific" />
+    <property name="package" value="systemSpecific.windows" />
     <property name="name" value="ArtifactReferenceCommandLinePart" />
     <link role="extends" targetNodeId="1231859852975" resolveInfo="AbstractCommandLinePart" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1231861683501">
@@ -338,6 +338,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234544418896">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="association" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1234544102398" resolveInfo="MacOsFileAssociation" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1234515156408">
     <property name="package" value="systemSpecific" />
@@ -351,6 +357,46 @@
       <property name="role" value="variable" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="3v.1205335290326" resolveInfo="Variable" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1234543390854">
+    <property name="package" value="systemSpecific" />
+    <property name="name" value="FileAssociation" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234543961966">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="icon" />
+      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234543956343">
+      <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1234544065816">
+      <property name="name" value="extensions" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1234544216254">
+      <property name="value" value="file association" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1234544102398">
+    <property name="package" value="systemSpecific" />
+    <property name="name" value="MacOsFileAssociation" />
+    <link role="extends" targetNodeId="1234543390854" resolveInfo="FileAssociation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234544190921">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="role" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1234544143490" resolveInfo="Role" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1234544143490">
+    <property name="package" value="systemSpecific" />
+    <property name="name" value="Role" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234544164749">
+      <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>
