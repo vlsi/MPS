@@ -33,4 +33,14 @@ public class MacConfig_Behavior {
     }).distinct().toListSequence();
   }
 
+  public static SNode call_getUnixConfig_1234542090729(SNode thisNode) {
+    List<SNode> configs = SLinkOperations.getTargets(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode), "systemSpecificConfig", true);
+    for(SNode config : ListSequence.fromList(configs)) {
+      if (SNodeOperations.isInstanceOf(config, "jetbrains.mps.build.distrib.structure.UnixConfig")) {
+        return config;
+      }
+    }
+    return null;
+  }
+
 }

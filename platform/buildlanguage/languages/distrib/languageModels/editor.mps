@@ -414,6 +414,9 @@
                     <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1230573455653">
                       <property name="value" value="0.1" />
                     </node>
+                    <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234541675235">
+                      <property name="flag" value="true" />
+                    </node>
                   </node>
                   <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230570899658">
                     <property name="flag" value="false" />
@@ -438,6 +441,9 @@
                     <property name="text" value=".nsh" />
                     <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1230573467622">
                       <property name="value" value="0.1" />
+                    </node>
+                    <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234541685364">
+                      <property name="flag" value="true" />
                     </node>
                   </node>
                   <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1230570936778">

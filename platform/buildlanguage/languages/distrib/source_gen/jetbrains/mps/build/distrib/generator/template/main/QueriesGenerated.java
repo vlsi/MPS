@@ -21,8 +21,8 @@ import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Beh
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
 import java.util.List;
-import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.distrib.behavior.MacConfig_Behavior;
+import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.apache.commons.lang.StringUtils;
@@ -263,10 +263,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "defaultVMOptions");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1234427341141(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "$APP_PACKAGE/" + AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).replace("/", SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator")).replace("\\", SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator"));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1234428002224(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SConceptPropertyOperations.getString(_context.getNode(), "operatingSystem") + ".dist";
   }
@@ -280,28 +276,6 @@ public class QueriesGenerated {
     }
     pathString += prefix + AbstractPath_Behavior.call_getFullPath_1230059208735(ListSequence.fromList(classPathItemList).last()).replace("\\", "/");
     return pathString;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1234513156328(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String path = SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "iconPath", true));
-    int index = path.lastIndexOf(SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator"));
-    return path.substring(index + 1);
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1234515719035(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "bundleName", true));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1234517019781(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "infoString", true));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1234517346200(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "buildVersion", true));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1234517383438(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "releaseVersion", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1234517927659(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -336,10 +310,49 @@ public class QueriesGenerated {
     return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "javaApplicationStubPath", true));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1234536830992(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1234538856365(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "bundleName", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234538884121(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "infoString", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234538921167(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "releaseVersion", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234538921180(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "buildVersion", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234538966072(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String path = SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "javaApplicationStubPath", true));
     int index = path.lastIndexOf(SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator"));
     return path.substring(index + 1);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234538966123(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String path = SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "iconPath", true));
+    int index = path.lastIndexOf(SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator"));
+    return path.substring(index + 1);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234539002555(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "$APP_PACKAGE/" + AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).replace("/", SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator")).replace("\\", SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234542031178(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode unixConfig = MacConfig_Behavior.call_getUnixConfig_1234542090729(_context.getNode());
+    return UnixConfig_Behavior.call_getStartupScriptName_1230292766208(unixConfig) + "." + UnixConfig_Behavior.call_getStartupScriptExtension_1230292961412(unixConfig);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234542667480(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SystemSpecificConfig_Behavior.call_getVMOptionfFileName_1231748960223(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234542667502(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "vmOptionsDir", true));
   }
 
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -428,16 +441,28 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1234427256031(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1234538966103(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "iconPath", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234538966113(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "iconPath", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234539002538(final IOperationContext operationContext, final IfMacroContext _context) {
     return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).equals(".");
   }
 
-  public static boolean ifMacro_Condition_1234513109315(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "iconPath", true) != null);
+  public static boolean ifMacro_Condition_1234542276642(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (MacConfig_Behavior.call_getUnixConfig_1234542090729(_context.getNode()) != null);
   }
 
-  public static boolean ifMacro_Condition_1234513133518(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "iconPath", true) != null);
+  public static boolean ifMacro_Condition_1234542312208(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (MacConfig_Behavior.call_getUnixConfig_1234542090729(_context.getNode()) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234542667519(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (MacConfig_Behavior.call_getUnixConfig_1234542090729(_context.getNode()) != null) && SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
