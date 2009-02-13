@@ -20,13 +20,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
+import java.util.List;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -267,6 +267,16 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1234428002224(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SConceptPropertyOperations.getString(_context.getNode(), "operatingSystem") + ".dist";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234511653427(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String pathString = "";
+    String prefix = "$APP_PACKAGE/";
+    List<SNode> classPathItemList = SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true);
+    for(SNode cpItem : ListSequence.fromList(classPathItemList).cut(1)) {
+      pathString += prefix + AbstractPath_Behavior.call_getFullPath_1230059208735(cpItem).replace("\\", "/") + ":";
+    }
+    return pathString += prefix + AbstractPath_Behavior.call_getFullPath_1230059208735(ListSequence.fromList(classPathItemList).last()).replace("\\", "/");
   }
 
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {

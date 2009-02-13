@@ -13306,6 +13306,17 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1234428368494">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234428368495">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1234428376727" />
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1234428372401">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1234428373610" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234428370964">
+                  <link role="variableDeclaration" targetNodeId="1229428596845" resolveInfo="fileGenerator" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="1229428596852">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229428596853">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229428596854">
