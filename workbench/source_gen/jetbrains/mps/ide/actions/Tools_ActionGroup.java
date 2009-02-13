@@ -18,7 +18,6 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
     try {
       this.addAction("jetbrains.mps.ide.actions.ShowModuleRepository_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.ShowModelRepository_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.actions.ShowInspector_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.ShowBookmarks_Action", "jetbrains.mps.ide");
       this.addAnchor(Tools_ActionGroup.LABEL_ID_customTools);
       this.addSeparator();
