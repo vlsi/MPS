@@ -109,7 +109,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };
@@ -211,7 +211,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+            this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           }
 
         };

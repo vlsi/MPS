@@ -164,6 +164,15 @@ public class MapType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4714_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4714_3");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_4714_1(EditorCell editorCell, SNode node, EditorContext context) {

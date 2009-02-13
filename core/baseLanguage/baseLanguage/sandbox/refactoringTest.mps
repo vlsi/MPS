@@ -201,9 +201,14 @@
         <link role="annotation" targetNodeId="15.~NotNull" resolveInfo="NotNull" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1234523126483">
+      <property name="name" value="name" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1234523126484" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234523126485" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523126486" />
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1233740001262">
       <property name="name" value="m" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1233740001263" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233740001264" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233740001265">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234172979812">
@@ -229,6 +234,23 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1233932539289">
         <property name="name" value="c" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1233932727122" />
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1234523092737" />
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1234523129323">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234523129325" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523129326">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234523531197">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1234523531198">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1234523555437">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1234523555438" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1234523527691">
+        <node role="keyType" type="jetbrains.mps.baseLanguage.structure.Type" id="1234523527692" />
+        <node role="valueType" type="jetbrains.mps.baseLanguage.structure.Type" id="1234523527693" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />

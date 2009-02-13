@@ -28,7 +28,7 @@ public class IResolveInfo_resolveInfo_PropertyConstraint implements IModelConstr
     return node.getName();
   }
 
-  public void execPropertySet(SNode node, String propertyName, String propertyValue, IScope scope) {
+  public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
     // nothing - resolveInfo is read-only
   }
 

@@ -17,8 +17,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class TypeKeyStatement_Editor extends DefaultNodeEditor {
 
@@ -126,15 +124,6 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Property_9854_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_keys");
     BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_9854_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -143,7 +132,7 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
@@ -154,6 +143,15 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_9854_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9854_1");
     BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_ConceptProperty_9854_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

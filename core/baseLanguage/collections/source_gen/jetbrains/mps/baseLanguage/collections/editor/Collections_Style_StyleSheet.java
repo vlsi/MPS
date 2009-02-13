@@ -6,8 +6,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class Collections_Style_StyleSheet {
 
@@ -15,7 +13,6 @@ public class Collections_Style_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       }
 
     };
@@ -46,7 +43,6 @@ public class Collections_Style_StyleSheet {
       {
         this.putAll(Collections_Style_StyleSheet.getAngleBracket(null));
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
 
     };

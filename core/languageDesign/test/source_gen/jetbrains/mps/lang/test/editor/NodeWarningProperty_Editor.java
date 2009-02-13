@@ -7,10 +7,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class NodeWarningProperty_Editor extends DefaultNodeEditor {
@@ -31,15 +27,6 @@ public class NodeWarningProperty_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_7453_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7453_0");
     transformationTest_StyleSheet.getNodeProperty(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupLabel_Constant_7453_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
