@@ -263,8 +263,13 @@ public class CopyPasteUtil {
   public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     if (cb == null) return PasteNodeData.emptyPasteNodeData(model);
-    
-    Transferable content = cb.getContents(null);
+
+    Transferable content = null;
+    try{
+      content = cb.getContents(null);
+    }catch (IllegalStateException e){
+      //LOG.warning("Clipboard is not accessible. It can happen if another application is using it.");
+    }
     if (content == null) return PasteNodeData.emptyPasteNodeData(model);
 
     if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
