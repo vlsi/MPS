@@ -47,6 +47,12 @@
       <property name="value" value="custom-mps" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234290845440">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="pathToBuildToolsZip" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="2v.1220973916698" resolveInfo="Path" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233679247700">
     <property name="name" value="LibraryFolder" />

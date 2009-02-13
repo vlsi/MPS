@@ -27,4 +27,8 @@ public class MPSBuild_Behavior {
     return path;
   }
 
+  public static String getMPSBuildToolsZipName_1234294616845() {
+    return "MPS-buildtools.zip";
+  }
+
 }

@@ -22,8 +22,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 
 public class LibraryFolder_Editor extends DefaultNodeEditor {
 
@@ -286,15 +284,6 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_6803_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6803_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_RefNode_6803_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -325,15 +314,6 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_6803_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6803_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupLabel_ConceptProperty_6803_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -167,15 +165,6 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
   private static void setupBasic_Constant_0446_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0446_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Property_0446_0(EditorCell editorCell, SNode node, EditorContext context) {

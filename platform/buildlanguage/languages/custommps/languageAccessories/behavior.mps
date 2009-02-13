@@ -41,6 +41,18 @@
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233155892819">
     <link role="concept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
+    <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1234294616845">
+      <property name="name" value="getMPSBuildToolsZipName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1234294622175" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234294616847">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234294639906">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234294642964">
+            <property name="value" value="MPS-buildtools.zip" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234294636141" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1233155892820">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233155892821" />
     </node>

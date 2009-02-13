@@ -370,9 +370,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1203598738479">
           <property name="text" value="from" />
           <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1226344038979">
-            <property name="value" value="1.0" />
-          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1220982084139">
           <link role="relationDeclaration" targetNodeId="1.1220982054961" />
@@ -1325,9 +1322,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224596916552">
           <property name="text" value="excludes" />
           <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1226344150190">
-            <property name="value" value="1.0" />
-          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224596916553">
           <property name="allowEmptyText" value="true" />

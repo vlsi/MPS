@@ -5,6 +5,7 @@ package jetbrains.mps.build.custommps.structure;
 import jetbrains.mps.build.packaging.structure.AbstractProjectComponent;
 import jetbrains.mps.build.packaging.structure.ICompositeComponent;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.build.packaging.structure.Path;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -19,6 +20,7 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String PATH_TO_BUILD_TOOLS_ZIP = "pathToBuildToolsZip";
   public static final String ENTRY = "entry";
 
   public MPSBuild(SNode node) {
@@ -71,6 +73,14 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
 
   public void setVirtualPackage(String value) {
     this.setProperty(MPSBuild.VIRTUAL_PACKAGE, value);
+  }
+
+  public Path getPathToBuildToolsZip() {
+    return (Path)this.getChild(Path.class, MPSBuild.PATH_TO_BUILD_TOOLS_ZIP);
+  }
+
+  public void setPathToBuildToolsZip(Path node) {
+    super.setChild(MPSBuild.PATH_TO_BUILD_TOOLS_ZIP, node);
   }
 
   public int getEntriesCount() {
