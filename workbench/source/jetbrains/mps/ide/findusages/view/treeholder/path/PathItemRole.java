@@ -34,7 +34,7 @@ public final class PathItemRole {
 
   public static final PathItemRole ROLE_MAIN_SEARCHED_NODES = new PathItemRole("searched nodes");
   public static final PathItemRole ROLE_MAIN_RESULTS = new PathItemRole("results");
-  public static final PathItemRole ROLE_MAIN_ROOT = new PathItemRole("root");
+  public static final PathItemRole ROLE_MAIN_ROOT = new PathItemRole("main root");
 
   public static final Set<PathItemRole> VALUES = new HashSet<PathItemRole>(Arrays.asList(
     ROLE_TARGET_NODE,
