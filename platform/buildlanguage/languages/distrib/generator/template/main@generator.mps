@@ -18,9 +18,6 @@
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
@@ -95,6 +92,28 @@
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1230234522119">
                 <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1230234530058">
+                  <link role="conceptDeclaration" targetNodeId="1.1230056066379" resolveInfo="DistribConfiguration" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1234781949110">
+      <property name="keepSourceRoot" value="true" />
+      <link role="template" targetNodeId="1234781216378" resolveInfo="installer" />
+      <link role="applicableConcept" targetNodeId="1.1230207753430" resolveInfo="WindowsConfig" />
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1234781968301">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234781968302">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234781968303">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234781968304">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234781968305">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234781968306" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1234781968307" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1234781968308">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1234781968309">
                   <link role="conceptDeclaration" targetNodeId="1.1230056066379" resolveInfo="DistribConfiguration" />
                 </node>
               </node>
@@ -4003,9 +4022,14 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234538856367">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234538856368">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234538856369">
-                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234538856370" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234538856371">
-                          <link role="link" targetNodeId="1.1234514416558" />
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784438285">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234538856370" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234784440470">
+                            <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234784454908">
+                          <link role="link" targetNodeId="1.1234784278747" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234538856373">
@@ -4036,9 +4060,14 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234538884123">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234538884124">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234538884125">
-                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234538884126" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234538884127">
-                          <link role="link" targetNodeId="1.1234514461588" />
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784421406">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234538884126" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234784425299">
+                            <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234784430993">
+                          <link role="link" targetNodeId="1.1234784294876" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234538884128">
@@ -4057,6 +4086,28 @@
             <property name="name" value="JetBrains MPS $VERSION$ (build $BUILD_VERSION$)" />
             <property name="text" value="CFBundleShortVersionString" />
           </node>
+          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1234784613023">
+            <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1234784613024">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234784613025">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234784615405">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784618119">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784615406">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784615407">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234784615408" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234784615409">
+                          <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234784615410">
+                        <link role="link" targetNodeId="1.1234784329127" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1234784620081" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="content" type="jetbrains.mps.xml.deprecated.structure.Element" id="1234538921164">
           <property name="name" value="string" />
@@ -4069,9 +4120,14 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234538921169">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234538921170">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234538921171">
-                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234538921172" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234538921173">
-                          <link role="link" targetNodeId="1.1234514479253" />
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784465645">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234538921172" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234784468175">
+                            <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234784469870">
+                          <link role="link" targetNodeId="1.1234784329127" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234538921174">
@@ -4083,12 +4139,56 @@
               </node>
             </node>
           </node>
+          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1234784591512">
+            <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1234784591513">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234784591514">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234784602359">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784605600">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784602360">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784602361">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234784602362" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234784602363">
+                          <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234784602364">
+                        <link role="link" targetNodeId="1.1234784329127" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1234784607573" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="content" type="jetbrains.mps.xml.deprecated.structure.Element" id="1234538921175">
           <property name="name" value="key" />
           <node role="content" type="jetbrains.mps.xml.deprecated.structure.Text" id="1234538921176">
             <property name="name" value="JetBrains MPS $VERSION$ (build $BUILD_VERSION$)" />
             <property name="text" value="CFBundleVersion" />
+          </node>
+          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1234784626599">
+            <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1234784626600">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234784626601">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234784628532">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784628533">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784628534">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784628535">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234784628536" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234784628537">
+                          <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234784638470">
+                        <link role="link" targetNodeId="1.1234784309457" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1234784628539" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="content" type="jetbrains.mps.xml.deprecated.structure.Element" id="1234538921177">
@@ -4102,15 +4202,42 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234538921182">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234538921183">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234538921184">
-                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234538921185" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234538921186">
-                          <link role="link" targetNodeId="1.1234514787073" />
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784478236">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234538921185" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234784480178">
+                            <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234784773412">
+                          <link role="link" targetNodeId="1.1234784309457" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234538921187">
                         <link role="baseMethodDeclaration" targetNodeId="9.1213877173054" resolveInfo="getValue" />
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1234784645048">
+            <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1234784645049">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234784645050">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234784647342">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784647343">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784647344">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234784647345">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234784647346" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234784647347">
+                          <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234784647348">
+                        <link role="link" targetNodeId="1.1234784309457" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1234784647349" />
                   </node>
                 </node>
               </node>
@@ -5210,6 +5337,174 @@
         <property name="systemID" value="http://www.apple.com/DTDs/PropertyList-1.0.dtd" />
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.gtext.structure.GDocument" id="1234781216378">
+    <property name="documentName" value="installer" />
+    <property name="extension" value="nsi" />
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234782141513">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234782143617">
+        <property name="text" value="#************************************ Definitions *********************************************************#" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234782158844">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234782161205">
+        <property name="text" value="!define PRODUCT_NAME &quot;MPS&quot;" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234782141067">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234782143058">
+        <property name="text" value="!define PRODUCT_VERSION &quot;$BUILD_VERSION$&quot;" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234782158918">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234782162357">
+        <property name="text" value="!define PRODUCT_MAJOR_VERSION &quot;$VERSION$&quot;" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234782176781">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234782190152">
+        <property name="text" value="!define PRODUCT_PUBLISHER &quot;JetBrains&quot;" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234782206521">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234782234245">
+        <property name="text" value="!define PRODUCT_WEB_SITE &quot;http://www.jetbrains.com/mps&quot;" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234782250632">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234782287260">
+        <property name="text" value="!define APP_NAME &quot;${PRODUCT_PUBLISHER} ${PRODUCT_NAME} ${PRODUCT_MAJOR_VERSION} (build ${PRODUCT_VERSION})&quot;" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1234782302547" />
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781399257">
+      <property name="text" value="&#10;&#10;&#10;#************************************ Registry ************************************************************#&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781419344">
+      <property name="text" value="!define PRODUCT_UNINST_KEY &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}&quot;&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781422180">
+      <property name="text" value="!define PRODUCT_UNINST_ROOT_KEY &quot;HKLM&quot;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781436572">
+      <property name="text" value="&#10;!define INSTDIR_REG_ROOT &quot;HKLM&quot;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781451442">
+      <property name="text" value="!define INSTDIR_REG_KEY &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}&quot;&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781472644">
+      <property name="text" value=" " />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781476973">
+      <property name="text" value="#************************************ Start Menu **********************************************************#" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781490184">
+      <property name="text" value="!define MAIN_MENU_FOLDER &quot;$SMPROGRAMS\MPS&quot;&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781492685">
+      <property name="text" value="&#10;&#10;&#10;!define PROGRAM_LINK &quot;${MAIN_MENU_FOLDER}\${APP_NAME}.lnk&quot;&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781508931">
+      <property name="text" value="!define WEB_SITE_LINK &quot;${MAIN_MENU_FOLDER}\MPS Home Page.lnk&quot;&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781519289">
+      <property name="text" value="!define UNINSTALL_LINK &quot;${MAIN_MENU_FOLDER}\Uninstall ${APP_NAME}.lnk&quot;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781527339">
+      <property name="text" value=" " />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781536863">
+      <property name="text" value="#************************************ Include Headers *****************************************************#" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781561356">
+      <property name="text" value="; MUI 1.67 compatible" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781568063">
+      <property name="text" value="!include MUI.nsh&#10;&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781583943">
+      <property name="text" value=" " />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781580983">
+      <property name="text" value="#************************************ Installation Properties *********************************************#" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781597543">
+      <property name="text" value="Name &quot;${APP_NAME}&quot;&#10;OutFile &quot;${PRODUCT_NAME}-${PRODUCT_VERSION}-windows.exe&quot;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781610510">
+      <property name="text" value="InstallDir &quot;$PROGRAMFILES\JetBrains\MPS-${PRODUCT_VERSION}&quot;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781626245">
+      <property name="text" value="ShowInstDetails show" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781633374">
+      <property name="text" value="ShowUnInstDetails show" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781653000">
+      <property name="text" value="InstallDirRegKey ${INSTDIR_REG_ROOT} &quot;${INSTDIR_REG_KEY}&quot; &quot;InstallDir&quot;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781679459">
+      <property name="text" value=" " />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781675951">
+      <property name="text" value="!define MUI_WELCOMEPAGE_TEXT &quot;This wizard will guide you through the installation of ${APP_NAME}.\n\nClick Next to continue.&quot;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781684711">
+      <property name="text" value=" " />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781687392">
+      <property name="text" value="&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;#************************************ Install *************************************************************#" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781703237">
+      <property name="text" value="&#10;&#10;; Welcome page" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781707572">
+      <property name="text" value="&#10;!insertmacro MUI_PAGE_WELCOME&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781716389">
+      <property name="text" value="; License page&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781724766">
+      <property name="text" value="!insertmacro MUI_PAGE_LICENSE &quot;MPS\license\mps_license.txt&quot;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781726563">
+      <property name="text" value="&#10;; Directory page&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781739575">
+      <property name="text" value="!insertmacro MUI_PAGE_DIRECTORY" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781747402">
+      <property name="text" value="; Instfiles page&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781759703">
+      <property name="text" value="!insertmacro MUI_PAGE_INSTFILES" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781766896">
+      <property name="text" value="; Finish page" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781791477">
+      <property name="text" value="!insertmacro MUI_PAGE_FINISH" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781798875">
+      <property name="text" value="&#10;&#10;&#10;&#10;&#10;; Uninstaller pages" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781805306">
+      <property name="text" value="!insertmacro MUI_UNPAGE_INSTFILES&#10;&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781815278">
+      <property name="text" value="; Language files&#10;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781834358">
+      <property name="text" value="!insertmacro MUI_LANGUAGE &quot;English&quot;" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781856574">
+      <property name="text" value="Section &quot;Main Application&quot; sec01" />
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GIndent" id="1234781882056" />
+    <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234781288913">
+      <property name="text" value="&#10;&#10;&#10;&#10;  SetOutPath '$INSTDIR'&#10;  &#10;  ; copy files&#10;  !include install.nsh&#10;&#10;  WriteUninstaller &quot;$INSTDIR\Uninstall.exe&quot;&#10;SectionEnd&#10;&#10;Section -AdditionalIcons&#10;  SetOutPath $INSTDIR&#10;  WriteIniStr &quot;$INSTDIR\${PRODUCT_NAME}.url&quot; &quot;InternetShortcut&quot; &quot;URL&quot; &quot;${PRODUCT_WEB_SITE}&quot;&#10;  CreateDirectory &quot;${MAIN_MENU_FOLDER}&quot;&#10;  CreateShortCut &quot;${PROGRAM_LINK}&quot; &quot;$INSTDIR\mps.bat&quot; &quot;&quot; &quot;$INSTDIR\bin\application.ico&quot; &quot;&quot; SW_SHOWMINIMIZED&#10;  CreateShortCut &quot;${WEB_SITE_LINK}&quot; &quot;$INSTDIR\${PRODUCT_NAME}.url&quot; &quot;&quot; &quot;$INSTDIR\bin\homepage.ico&quot;&#10;  CreateShortCut &quot;${UNINSTALL_LINK}&quot; &quot;$INSTDIR\Uninstall.exe&quot;&#10;SectionEnd&#10;&#10;Section -Post&#10;  WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;DisplayName&quot; &quot;${APP_NAME}&quot;&#10;  WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;UninstallString&quot; &quot;$INSTDIR\Uninstall.exe&quot;&#10;  WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;DisplayVersion&quot; &quot;${PRODUCT_VERSION}&quot;&#10;  WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;URLInfoAbout&quot; &quot;${PRODUCT_WEB_SITE}&quot;&#10;  WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;Publisher&quot; &quot;${PRODUCT_PUBLISHER}&quot;&#10;SectionEnd&#10;&#10;Function .onInit&#10;FunctionEnd&#10;&#10;Function .onInstSuccess&#10;FunctionEnd&#10;&#10;#************************************ Uninstall ***********************************************************#&#10;&#10;Function UN.onUninstSuccess&#10;  HideWindow&#10;  MessageBox MB_ICONINFORMATION|MB_OK &quot;${APP_NAME} was successfully uninstalled.&quot;&#10;FunctionEnd&#10;&#10;Section UnInstall&#10;&#10;  ; clean classes before uninstallation&#10;  nsExec::Exec 'CMD /C DEL /S &quot;$INSTDIR\*.class&quot;' &#9;&#10; &#10;  Delete &quot;$INSTDIR\${PRODUCT_NAME}.url&quot;&#10;  Delete &quot;${PROGRAM_LINK}&quot;&#10;  Delete &quot;${WEB_SITE_LINK}&quot;&#10;  Delete &quot;${UNINSTALL_LINK}&quot;&#10;  RmDir  &quot;${MAIN_MENU_FOLDER}&quot;&#10;&#10;  ; delete Uninstaller&#10;  Delete &quot;$INSTDIR\Uninstall.exe&quot;        &#10;&#10;  !include uninstall.nsh&#10;&#9;&#10;  RmDir &quot;$INSTDIR&quot;&#10;&#9; &#9;&#10;  DeleteRegKey /ifempty ${INSTDIR_REG_ROOT} &quot;${INSTDIR_REG_KEY}&quot;&#10;  DeleteRegKey ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot;&#10;&#10;SectionEnd&#10;&#10;Function UN.onInit&#10;  MessageBox MB_ICONQUESTION|MB_YESNO|MB_DEFBUTTON2 &quot;Are you sure you want to uninstall ${APP_NAME}?&quot; IDYES +2&#10;  Abort&#10;FunctionEnd" />
+    </node>
+    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1234781216381" />
   </node>
 </model>
 

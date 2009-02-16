@@ -29,7 +29,7 @@ public class ExternalVariableReference_variable_ReferentConstraint extends BaseN
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode ancestor = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.distrib.structure.DistribConfiguration", false, false);
+    SNode ancestor = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.distrib.structure.DistribConfiguration", true, false);
     List<SNode> availableVars = ListSequence.<SNode>fromArray();
     ListSequence.fromList(availableVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(ancestor, "buildScriptConfiguration", false)), "builtInVariable", true)));
     ListSequence.fromList(availableVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(ancestor, "buildScriptConfiguration", false)), "variable", true)));

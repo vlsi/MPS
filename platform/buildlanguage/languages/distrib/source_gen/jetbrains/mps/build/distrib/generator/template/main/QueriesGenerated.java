@@ -52,6 +52,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.distrib.structure.DistribConfiguration");
   }
 
+  public static boolean baseMappingRule_Condition_1234781968301(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.distrib.structure.DistribConfiguration");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1230058399222(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return WindowsConfig_Behavior.call_getStartupFileName_1230208021944(_context.getNode());
   }
@@ -313,19 +317,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1234538856365(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "bundleName", true));
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1234538884121(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "infoString", true));
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "longName", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1234538921167(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "releaseVersion", true));
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1234538921180(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "buildVersion", true));
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1234538966072(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -500,6 +504,22 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1234545794561(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "icon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234784591513(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234784613024(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234784626600(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234784645049(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true) != null);
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

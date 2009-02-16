@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.structure.Configuration;
 import jetbrains.mps.build.packaging.structure.Folder;
+import jetbrains.mps.build.packaging.structure.IStringExpression;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -24,6 +25,10 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
   public static final String USE_V_M_OPTIONS_FILE = "useVMOptionsFile";
   public static final String BUILD_SCRIPT_CONFIGURATION = "buildScriptConfiguration";
   public static final String PROJECT_FOLDER = "projectFolder";
+  public static final String SHORT_NAME = "shortName";
+  public static final String LONG_NAME = "longName";
+  public static final String RELEASE_VERSION = "releaseVersion";
+  public static final String BUILD_VERSION = "buildVersion";
   public static final String CLASS_PATH = "classPath";
   public static final String STARTUP_DIRECTORY = "startupDirectory";
   public static final String VM_OPTIONS_DIR = "vmOptionsDir";
@@ -103,6 +108,38 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
 
   public void setProjectFolder(Folder node) {
     super.setReferent(DistribConfiguration.PROJECT_FOLDER, node);
+  }
+
+  public IStringExpression getShortName() {
+    return (IStringExpression)this.getChild(IStringExpression.class, DistribConfiguration.SHORT_NAME);
+  }
+
+  public void setShortName(IStringExpression node) {
+    super.setChild(DistribConfiguration.SHORT_NAME, node);
+  }
+
+  public IStringExpression getLongName() {
+    return (IStringExpression)this.getChild(IStringExpression.class, DistribConfiguration.LONG_NAME);
+  }
+
+  public void setLongName(IStringExpression node) {
+    super.setChild(DistribConfiguration.LONG_NAME, node);
+  }
+
+  public IStringExpression getReleaseVersion() {
+    return (IStringExpression)this.getChild(IStringExpression.class, DistribConfiguration.RELEASE_VERSION);
+  }
+
+  public void setReleaseVersion(IStringExpression node) {
+    super.setChild(DistribConfiguration.RELEASE_VERSION, node);
+  }
+
+  public IStringExpression getBuildVersion() {
+    return (IStringExpression)this.getChild(IStringExpression.class, DistribConfiguration.BUILD_VERSION);
+  }
+
+  public void setBuildVersion(IStringExpression node) {
+    super.setChild(DistribConfiguration.BUILD_VERSION, node);
   }
 
   public ClassPath getClassPath() {
