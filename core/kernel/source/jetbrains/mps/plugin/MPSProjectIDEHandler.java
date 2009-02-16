@@ -75,6 +75,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void projectClosed() {
+    if (IdeMain.isTestMode()) return;
+
     IProjectHandler handler = getProject().getProjectHandler();
     if (handler != null) {
       try {
