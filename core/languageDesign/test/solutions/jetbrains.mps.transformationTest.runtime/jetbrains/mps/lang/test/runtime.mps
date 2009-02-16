@@ -3404,7 +3404,7 @@
               <link role="variableDeclaration" targetNodeId="1225983619992" resolveInfo="opener" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225983839353">
-              <link role="baseMethodDeclaration" targetNodeId="32.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):jetbrains.mps.ide.IEditor" resolveInfo="openNode" />
+              <link role="baseMethodDeclaration" targetNodeId="32.~MPSEditorOpener.editNode(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):jetbrains.mps.ide.IEditor" resolveInfo="editNode" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225983845511">
                 <link role="variableDeclaration" targetNodeId="1225983590734" resolveInfo="node" />
               </node>
