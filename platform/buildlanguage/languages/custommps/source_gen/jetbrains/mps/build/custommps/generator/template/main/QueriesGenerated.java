@@ -20,6 +20,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 
 public class QueriesGenerated {
 
@@ -70,7 +71,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "UndeclaredVariableReferenceToVariable");
   }
 
-  public static Object referenceMacro_GetReferent_1234275109662(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1234780080305(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("date")) {
         return builtInVar;
@@ -79,20 +80,11 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static Object referenceMacro_GetReferent_1234275109785(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1234780080428(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToTargetDeclaration");
   }
 
-  public static Object referenceMacro_GetReferent_1234285316632(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
-      if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
-        return builtInVar;
-      }
-    }
-    return null;
-  }
-
-  public static Object referenceMacro_GetReferent_1234285316661(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1234780080603(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("date")) {
         return builtInVar;
@@ -101,7 +93,7 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static Object referenceMacro_GetReferent_1234285316687(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1234780080642(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
         return builtInVar;
@@ -110,29 +102,51 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static Object referenceMacro_GetReferent_1234285316718(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
-      if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
-        return builtInVar;
-      }
-    }
-    return null;
-  }
-
-  public static Object referenceMacro_GetReferent_1234286459403(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1234780080670(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("date")) {
         return builtInVar;
       }
     }
     return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1234780080696(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+      if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
+        return builtInVar;
+      }
+    }
+    return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1234780080727(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+      if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
+        return builtInVar;
+      }
+    }
+    return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1234780240997(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "configuration", true)).isNotEmpty()) {
+      return SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "configuration", true)).first(), "configuration", false);
+    } else
+    {
+      return ListSequence.fromList(SLinkOperations.getTargets(_context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false)), "configuration", true)).first();
+    }
+  }
+
+  public static Object referenceMacro_GetReferent_1234780362598(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPsBuildToFolder");
   }
 
   public static boolean ifMacro_Condition_1233681193440(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.LibraryFolder", false)).isNotEmpty();
   }
 
-  public static boolean ifMacro_Condition_1234275109716(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1234780080359(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.LibraryFolder", false)).isNotEmpty();
   }
 
@@ -140,7 +154,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "create", true);
   }
 
-  public static SNode sourceNodeQuery_1234275109972(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1234780080783(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }
 
@@ -164,13 +178,23 @@ public class QueriesGenerated {
     return components;
   }
 
-  public static Iterable sourceNodesQuery_1234275109965(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1234780080776(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "entry", true);
+  }
+
+  public static Iterable sourceNodesQuery_1234780106222(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "configuration", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1233931498973(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     SNode layout = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false);
-    return _context.getCopiedOutputNodeForInputNode(layout);
+    if (layout != null) {
+      return _context.getCopiedOutputNodeForInputNode(layout);
+    } else
+    {
+      SNode distConfig = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.distrib.structure.DistribConfiguration", false, false);
+      return _context.getCopiedOutputNodeForInputNode(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(distConfig, "buildScriptConfiguration", false)));
+    }
   }
 
 }

@@ -173,5 +173,38 @@
       </node>
     </node>
   </node>
+  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1234799067089">
+    <link role="concept" targetNodeId="1.1233925934806" resolveInfo="UndeclaredVariableReference" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1234799078132">
+      <property name="name" value="getValue" />
+      <link role="overriddenMethod" targetNodeId="2v.1213877173054" resolveInfo="getValue" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234799078134">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234799108428">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234799114173">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234799109810">
+              <property name="value" value="$" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234799138592">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234799125606">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1234799125103" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234799129031">
+                  <link role="property" targetNodeId="4v.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234799140090">
+                <property name="value" value="$" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1234799087078" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234799147663" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1234799067090">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234799067091" />
+    </node>
+  </node>
 </model>
 

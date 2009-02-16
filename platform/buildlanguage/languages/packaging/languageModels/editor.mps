@@ -217,7 +217,7 @@
         <property name="value" value="0.3" />
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1224597437105">
-        <property name="value" value="0.3" />
+        <property name="value" value="0.2" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1233741672621">
