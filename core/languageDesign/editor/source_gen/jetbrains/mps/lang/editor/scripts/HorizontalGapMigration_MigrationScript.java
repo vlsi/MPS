@@ -181,7 +181,7 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Constant")) {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
           SNode prev = SNodeOperations.getPrevSibling(node);
           if (ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(prev, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"))).isNotEmpty()) {
             return true;
