@@ -17,12 +17,12 @@ import jetbrains.mps.build.distrib.behavior.UnixConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
 import java.util.List;
 import jetbrains.mps.build.distrib.behavior.MacConfig_Behavior;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
+import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.apache.commons.lang.StringUtils;
@@ -133,15 +133,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1230570281835(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "pathToNsisConfigurationFile", true));
+    return WindowsConfig_Behavior.call_getInstallerScriptName_1234792987224(_context.getNode()) + "." + WindowsConfig_Behavior.call_getInstallerNsiScriptExtension_1234793014843(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1230577742650(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "token");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1230577899453(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "value", false), "antName");
+    return "$" + SPropertyOperations.getString(_context.getNode(), "name") + "$";
   }
 
   public static Object propertyMacro_GetPropertyValue_1230642371372(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -150,14 +146,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1230642678733(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1230642844320(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "installNshName");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1230642855766(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "uninstallNshName");
   }
 
   public static Object propertyMacro_GetPropertyValue_1230650061631(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -247,10 +235,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1231864177374(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "pathToExecutable", true));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1231864483288(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ArtifactReferenceCommandLinePart_Behavior.getExecutableFilePropertyName_1231864298769();
   }
 
   public static Object propertyMacro_GetPropertyValue_1231869446305(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -380,6 +364,81 @@ public class QueriesGenerated {
     return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(SNodeOperations.getParent(_context.getNode()), SLinkOperations.getTarget(_context.getNode(), "icon", true));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1234786852122(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234786935758(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234786980800(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234787044271(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "company", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234787558938(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "webSite", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234787944735(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "longName", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234790893403(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "license", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234791338300(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return WindowsConfig_Behavior.call_getStartupFileName_1230208021944(_context.getNode()) + "." + WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234793069589(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return WindowsConfig_Behavior.call_getInstallerScriptName_1234792987224(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234793091318(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return WindowsConfig_Behavior.call_getInstallerNsiScriptExtension_1234793014843(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234793510701(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "antName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234793857049(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ArtifactReferenceCommandLinePart_Behavior.getExecutableFilePropertyName_1231864298769();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234793901359(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode config = SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode());
+    String exe = SLinkOperations.getTarget(config, "shortName", true) + "-";
+    if ((SLinkOperations.getTarget(config, "buildVersion", true) != null)) {
+      exe += IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(config, "buildVersion", true));
+      exe += "-";
+    }
+    exe += "windows.exe";
+    return exe;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234795500593(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "applicationIcon", true)).replace("\\", "/");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234795525022(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "homepageIcon", true)).replace("\\", "/");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234795718376(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return WindowsConfig_Behavior.call_getApplicationIcon_1234793320553(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234795739577(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return WindowsConfig_Behavior.call_getHomepageIcon_1234793472160(_context.getNode());
+  }
+
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
   }
@@ -389,7 +448,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1230577930415(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "TokeValuePairToExternalPropertyDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "VariableToExternalPropertyDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1230650252582(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -406,10 +465,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1230567183522(final IOperationContext operationContext, final IfMacroContext _context) {
     return StringUtils.isNotEmpty(DistribConfiguration_Behavior.call_getScriptsFolder_1230570100269(_context.getNode()));
-  }
-
-  public static boolean ifMacro_Condition_1230642866220(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "generateInstallUninstallLists");
   }
 
   public static boolean ifMacro_Condition_1230645373261(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -456,10 +511,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1231760326149(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
-  }
-
-  public static boolean ifMacro_Condition_1231863969703(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true) != null);
   }
 
   public static boolean ifMacro_Condition_1231864147687(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -522,6 +573,62 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1234787078540(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234787101638(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234787120870(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "company", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234787585305(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234789849223(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234789881122(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "company", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234789892371(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234790730152(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "license", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234791236475(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "webSite", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234791261434(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "webSite", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234795775353(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "homepageIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234795806682(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "homepageIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234795883015(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "homepageIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1234795926441(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "homepageIcon", true) != null);
+  }
+
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true)).skip(1);
   }
@@ -539,11 +646,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1230577704795(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "tokenValuePair", true);
-  }
-
-  public static Iterable sourceNodesQuery_1230577870076(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "tokenValuePair", true);
+    return SystemSpecificConfig_Behavior.call_getAllUsedVariable_1234793567442(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1231694345955(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -560,11 +663,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1234518292490(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return MacConfig_Behavior.call_getAllUsedVariable_1234518747638(_context.getNode());
+    return SystemSpecificConfig_Behavior.call_getAllUsedVariable_1234793567442(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1234518725988(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return MacConfig_Behavior.call_getAllUsedVariable_1234518747638(_context.getNode());
+    return SystemSpecificConfig_Behavior.call_getAllUsedVariable_1234793567442(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1234544998538(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -593,6 +696,10 @@ public class QueriesGenerated {
       }
 
     });
+  }
+
+  public static Iterable sourceNodesQuery_1234793510694(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SystemSpecificConfig_Behavior.call_getAllUsedVariable_1234793567442(_context.getNode());
   }
 
 }

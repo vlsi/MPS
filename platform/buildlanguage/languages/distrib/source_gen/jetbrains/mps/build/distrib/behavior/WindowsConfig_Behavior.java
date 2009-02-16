@@ -20,4 +20,20 @@ public class WindowsConfig_Behavior {
     return "bat";
   }
 
+  public static String call_getInstallerScriptName_1234792987224(SNode thisNode) {
+    return "installer";
+  }
+
+  public static String call_getInstallerNsiScriptExtension_1234793014843(SNode thisNode) {
+    return "nsi";
+  }
+
+  public static String call_getApplicationIcon_1234793320553(SNode thisNode) {
+    return "application.ico";
+  }
+
+  public static String call_getHomepageIcon_1234793472160(SNode thisNode) {
+    return "homepage.ico";
+  }
+
 }

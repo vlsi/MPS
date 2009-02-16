@@ -7,8 +7,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class SystemSpecificConfig_Behavior {
+  private static Class[] PARAMETERS_1234793567442 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -32,6 +37,25 @@ public class SystemSpecificConfig_Behavior {
 
   public static String call_getAntPathFromAbstractPath_1234513234515(SNode thisNode, SNode path) {
     return AbstractPath_Behavior.call_getFullPath_1230059208735(path).replace("/", SConceptPropertyOperations.getString(thisNode, "pathSeparator")).replace("\\", SConceptPropertyOperations.getString(thisNode, "pathSeparator"));
+  }
+
+  public static List<SNode> virtual_getAllUsedVariable_1234793567442(SNode thisNode) {
+    List<SNode> references = SNodeOperations.getDescendants(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode), "jetbrains.mps.build.distrib.structure.ExternalVariableReference", false);
+    return ListSequence.fromList(references).select(new ISelector <SNode, SNode>() {
+
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "variable", false);
+      }
+
+    }).distinct().toListSequence();
+  }
+
+  public static List<SNode> call_getAllUsedVariable_1234793567442(SNode thisNode) {
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getAllUsedVariable_1234793567442", PARAMETERS_1234793567442);
+  }
+
+  public static List<SNode> callSuper_getAllUsedVariable_1234793567442(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getAllUsedVariable_1234793567442", PARAMETERS_1234793567442);
   }
 
 }

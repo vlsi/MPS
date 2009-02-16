@@ -82,6 +82,17 @@
       <property name="role" value="buildVersion" />
       <link role="target" targetNodeId="3v.1205339194346" resolveInfo="IStringExpression" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234786563468">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="company" />
+      <link role="target" targetNodeId="3v.1205339194346" resolveInfo="IStringExpression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234787338210">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="webSite" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="3v.1205339194346" resolveInfo="IStringExpression" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230059446051">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="classPath" />
@@ -189,23 +200,10 @@
       <property name="value" value="\" />
       <link role="conceptPropertyDeclaration" targetNodeId="1231769310934" resolveInfo="pathSeparator" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230570754983">
-      <property name="name" value="generateInstallUninstallLists" />
-      <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230570775309">
-      <property name="name" value="installNshName" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230570794373">
-      <property name="name" value="uninstallNshName" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230576840098">
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234790749272">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="tokenValuePair" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1230576552358" resolveInfo="TokenValuePair" />
+      <property name="role" value="license" />
+      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231848713325">
       <property name="metaClass" value="aggregation" />
@@ -213,10 +211,14 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231848729089">
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234795184694">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="pathToNsisConfigurationFile" />
-      <property name="sourceCardinality" value="1" />
+      <property name="role" value="applicationIcon" />
+      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234795196738">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="homepageIcon" />
       <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231856017880">

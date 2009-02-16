@@ -4,10 +4,9 @@ package jetbrains.mps.build.distrib.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MacConfig_Behavior {
 
@@ -20,17 +19,6 @@ public class MacConfig_Behavior {
 
   public static String call_getStartupFileExtension_1234518093983(SNode thisNode) {
     return "plist";
-  }
-
-  public static List<SNode> call_getAllUsedVariable_1234518747638(SNode thisNode) {
-    List<SNode> references = SNodeOperations.getDescendants(thisNode, "jetbrains.mps.build.distrib.structure.ExternalVariableReference", false);
-    return ListSequence.fromList(references).select(new ISelector <SNode, SNode>() {
-
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "variable", false);
-      }
-
-    }).distinct().toListSequence();
   }
 
   public static SNode call_getUnixConfig_1234542090729(SNode thisNode) {

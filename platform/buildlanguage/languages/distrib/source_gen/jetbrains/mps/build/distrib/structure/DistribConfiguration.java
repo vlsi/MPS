@@ -29,6 +29,8 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
   public static final String LONG_NAME = "longName";
   public static final String RELEASE_VERSION = "releaseVersion";
   public static final String BUILD_VERSION = "buildVersion";
+  public static final String COMPANY = "company";
+  public static final String WEB_SITE = "webSite";
   public static final String CLASS_PATH = "classPath";
   public static final String STARTUP_DIRECTORY = "startupDirectory";
   public static final String VM_OPTIONS_DIR = "vmOptionsDir";
@@ -140,6 +142,22 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept {
 
   public void setBuildVersion(IStringExpression node) {
     super.setChild(DistribConfiguration.BUILD_VERSION, node);
+  }
+
+  public IStringExpression getCompany() {
+    return (IStringExpression)this.getChild(IStringExpression.class, DistribConfiguration.COMPANY);
+  }
+
+  public void setCompany(IStringExpression node) {
+    super.setChild(DistribConfiguration.COMPANY, node);
+  }
+
+  public IStringExpression getWebSite() {
+    return (IStringExpression)this.getChild(IStringExpression.class, DistribConfiguration.WEB_SITE);
+  }
+
+  public void setWebSite(IStringExpression node) {
+    super.setChild(DistribConfiguration.WEB_SITE, node);
   }
 
   public ClassPath getClassPath() {
