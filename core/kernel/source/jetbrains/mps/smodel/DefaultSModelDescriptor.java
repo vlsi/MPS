@@ -62,8 +62,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange;
   private FastNodeFinder myFastNodeFinder;
-  private Throwable myInitializationStackTrace = new Throwable();
-
   private boolean myTransient;
 
   private long myDiskTimestamp = -1;
