@@ -103,7 +103,12 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     if (parent != null && parent.getCellLayout() instanceof CellLayout_Horizontal) {
       int index = parent.getCellNumber(currentCell);
       if (index > 0) {
-        return hasPunctuationRight(parent.getChildAt(index - 1));
+        EditorCell leftCell = parent.getChildAt(index - 1);
+        if (leftCell.getLastLeaf() instanceof EditorCell_Collection) {
+          return leftCellHasPunctuationRight(leftCell);
+        } else {
+          return hasPunctuationRight(leftCell);
+        }
       } else {
         return leftCellHasPunctuationRight(parent);
       }
@@ -116,7 +121,12 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     if (parent != null && parent.getCellLayout() instanceof CellLayout_Horizontal) {
       int index = parent.getCellNumber(currentCell);
       if (index < parent.getChildCount() - 1) {
-        return hasPunctuationLeft(parent.getChildAt(index + 1));
+        EditorCell leftCell = parent.getChildAt(index + 1);
+        if (leftCell.getLastLeaf() instanceof EditorCell_Collection) {
+          return rightCellHasPunctuationLeft(leftCell);
+        } else {
+          return hasPunctuationLeft(leftCell);
+        }       
       } else {
         return rightCellHasPunctuationLeft(parent);
       }
