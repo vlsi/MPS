@@ -21,6 +21,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptLink;
+import jetbrains.mps.lang.smodel.structure.SNodeOperation;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -312,11 +313,12 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   protected <C extends INodeAdapter> C ensureAdapter(Class<C> requiredClass, String role, INodeAdapter adapter) {
-    if (!requiredClass.isInstance(adapter)) {
+    try {
+      return (C) adapter;
+    } catch (ClassCastException e) {
       LOG.error("Incorrect type in role " + role + ". " + requiredClass.getName() + " required", adapter);
       return null;
     }
-    return (C) adapter;
   }
 
   protected void setReferent(@NotNull String role, INodeAdapter newValue) {
