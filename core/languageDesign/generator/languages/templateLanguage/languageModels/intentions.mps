@@ -2783,12 +2783,9 @@
               <link role="variableDeclaration" targetNodeId="1227220716121" resolveInfo="opener" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227220895516">
-              <link role="baseMethodDeclaration" targetNodeId="22.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode,boolean):void" resolveInfo="openNode" />
+              <link role="baseMethodDeclaration" targetNodeId="22.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode):void" resolveInfo="openNode" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227220899939">
                 <link role="variableDeclaration" targetNodeId="1227219164351" resolveInfo="rule" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1227220903582">
-                <property name="value" value="true" />
               </node>
             </node>
           </node>
@@ -3199,12 +3196,9 @@
               <link role="variableDeclaration" targetNodeId="1227221178717" resolveInfo="opener" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227221178728">
-              <link role="baseMethodDeclaration" targetNodeId="22.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode,boolean):void" resolveInfo="openNode" />
+              <link role="baseMethodDeclaration" targetNodeId="22.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode):void" resolveInfo="openNode" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227221178729">
                 <link role="variableDeclaration" targetNodeId="1227221178702" resolveInfo="rule" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1227221178730">
-                <property name="value" value="true" />
               </node>
             </node>
           </node>
