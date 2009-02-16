@@ -58,6 +58,8 @@
     <applicationService serviceInterface="com.intellij.platform.ProjectBaseDirectory"
                         serviceImplementation="com.intellij.platform.ProjectBaseDirectory"/>
 
+    <!-- two next declaration should not ever be swicthed: we want mps to open mpr projects from command line -->
+    <projectOpenProcessor implementation="jetbrains.mps.project.MpsProjectOpenProcessor"/>
     <projectOpenProcessor implementation="com.intellij.platform.PlatformProjectOpenProcessor"/>
 
     <applicationConfigurable implementation="com.intellij.application.options.pathMacros.PathMacroConfigurable"/>

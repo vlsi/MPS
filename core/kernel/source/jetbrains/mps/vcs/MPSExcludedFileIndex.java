@@ -22,7 +22,6 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.components.ServiceManager;
-import com.intellij.platform.PlatformProjectOpenProcessor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.VFileSystem;

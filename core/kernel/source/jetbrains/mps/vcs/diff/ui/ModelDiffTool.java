@@ -23,6 +23,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.wm.WindowManager;
 
 import java.io.IOException;
 import java.io.ByteArrayInputStream;
@@ -56,7 +57,7 @@ public class ModelDiffTool implements DiffTool {
 
       final ModelDifferenceDialog d = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
         public ModelDifferenceDialog compute() {
-          return new ModelDifferenceDialog(null, oldModel, newModel, request.getWindowTitle(), !request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
+          return new ModelDifferenceDialog(WindowManager.getInstance().getFrame(request.getProject()), oldModel, newModel, request.getWindowTitle(), !request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
         }
       });
       AnAction action = new AnAction("View As Text", "View As Text", Icons.TEXT_ICON){
