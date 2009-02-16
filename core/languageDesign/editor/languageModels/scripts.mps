@@ -8,7 +8,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -213,56 +213,6 @@
     <property name="name" value="HorizontalGapMigration" />
     <property name="category" value="editor language" />
     <property name="title" value="horizontal gap migration" />
-    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1234198438294">
-      <property name="description" value="Pardding rigth delete" />
-      <link role="affectedInstanceConcept" targetNodeId="1.1215007897487" resolveInfo="PaddingRightStyleClassItem" />
-      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1234198438295">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234198438296">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234366676235">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234366677114">
-              <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1234366676236" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" id="1234366679579" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1234198467730">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234198467731">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234198481591">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1234198513542">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234198527775">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234198524244">
-                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1234198524179" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234198526415">
-                    <link role="property" targetNodeId="1.1215007802031" resolveInfo="value" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234198529172">
-                  <link role="baseMethodDeclaration" targetNodeId="4.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234198530266">
-                    <property name="value" value="0." />
-                  </node>
-                </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234198502930">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234198481992">
-                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1234198481592" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234198487211">
-                    <link role="property" targetNodeId="1.1215007802031" resolveInfo="value" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234198504268">
-                  <link role="baseMethodDeclaration" targetNodeId="4.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234198509869">
-                    <property name="value" value="0.0" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1234374055844">
       <property name="description" value="Padding left delete" />
       <link role="affectedInstanceConcept" targetNodeId="1.1215007883204" resolveInfo="PaddingLeftStyleClassItem" />

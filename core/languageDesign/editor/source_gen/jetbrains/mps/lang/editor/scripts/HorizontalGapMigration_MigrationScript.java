@@ -20,33 +20,6 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
       public String getName() {
-        return "Pardding rigth delete";
-      }
-
-      public String getAdditionalInfo() {
-        return "Pardding rigth delete";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return SPropertyOperations.getString(node, "value").equals("0.0") || SPropertyOperations.getString(node, "value").equals("0.");
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SNodeOperations.deleteNode(node);
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
-      public String getName() {
         return "Padding left delete";
       }
 
