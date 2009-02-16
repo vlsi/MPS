@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript {
 
@@ -158,6 +159,46 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
         SNode newNode2 = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", null);
         SPropertyOperations.set(newNode2, "flag", "" + true);
         SNodeOperations.insertNextSiblingChild(node, newNode2);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "Add punctuation left to constant cell";
+      }
+
+      public String getAdditionalInfo() {
+        return "Add punctuation left to constant cell";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.editor.structure.CellModel_Constant";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Constant")) {
+          SNode prev = SNodeOperations.getPrevSibling(node);
+          if (ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(prev, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"))).isNotEmpty()) {
+            return true;
+          }
+          if (SNodeOperations.isInstanceOf(prev, "jetbrains.mps.lang.editor.structure.CellModel_RefCell")) {
+            if (ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(SLinkOperations.getTarget(SLinkOperations.getTarget(prev, "editorComponent", true), "cellModel", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"))).isNotEmpty()) {
+              return true;
+            }
+          }
+        }
+        return false;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", null);
+        SPropertyOperations.set(newNode, "flag", "" + true);
+        SLinkOperations.addChild(node, "styleItem", newNode);
       }
 
       public boolean isShowAsIntention() {
