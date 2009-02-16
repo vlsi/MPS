@@ -9,6 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.List;
+import jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript {
 
@@ -112,7 +115,8 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SPropertyOperations.getBoolean(node, "flag") == false;
+        List<SNode> paddingRight = IStyleContainer_Behavior.call_getClassItems_1219419901278(SNodeOperations.getParent(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
+        return SPropertyOperations.getBoolean(node, "flag") == false && ListSequence.fromList(paddingRight).isNotEmpty();
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -145,9 +149,12 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", null);
-        SPropertyOperations.set(newNode, "flag", "" + true);
-        SNodeOperations.insertNextSiblingChild(node, newNode);
+        List<SNode> paddingRigth = IStyleContainer_Behavior.call_getClassItems_1219419901278(SNodeOperations.getParent(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
+        if (ListSequence.fromList(paddingRigth).isNotEmpty()) {
+          SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", null);
+          SPropertyOperations.set(newNode, "flag", "" + true);
+          SNodeOperations.insertNextSiblingChild(node, newNode);
+        }
         SNode newNode2 = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", null);
         SPropertyOperations.set(newNode2, "flag", "" + true);
         SNodeOperations.insertNextSiblingChild(node, newNode2);
