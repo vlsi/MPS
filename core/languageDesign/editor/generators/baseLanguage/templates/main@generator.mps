@@ -13,6 +13,9 @@
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
+  <language namespace="jetbrains.mps.lang.generator" />
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.lang.smodel" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -17199,6 +17202,52 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1234879413380">
+      <link role="applicableConcept" targetNodeId="38.1073389882823" resolveInfo="CellModel_RefNode" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1234879572495">
+        <link role="template" targetNodeId="1229342844257" resolveInfo="reduce_WrapRootRefNode" />
+      </node>
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1234879618248">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234879618249">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234879631644">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234879635887">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234879632716">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234879631645" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1234879634648" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1234879637974">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1234879645840">
+                  <link role="conceptDeclaration" targetNodeId="38.1166049232041" resolveInfo="AbstractComponent" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1234879650536">
+      <link role="applicableConcept" targetNodeId="38.1088013125922" resolveInfo="CellModel_RefCell" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1234879683067">
+        <link role="template" targetNodeId="1229342844257" resolveInfo="reduce_WrapRootRefNode" />
+      </node>
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1234879685747">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234879685748">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234879689414">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234879692716">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234879689962">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234879689415" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1234879691876" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1234879694345">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1234879701683">
+                  <link role="conceptDeclaration" targetNodeId="38.1166049232041" resolveInfo="AbstractComponent" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1198258380049">
     <property name="name" value="reduce_CellModel_BlockEnd" />
@@ -19280,8 +19329,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1229342844257">
     <property name="package" value="sugar" />
-    <property name="name" value="reduce_WrapRootRefNodeList" />
-    <link role="applicableConcept" targetNodeId="38.1073390211982" resolveInfo="CellModel_RefNodeList" />
+    <property name="name" value="reduce_WrapRootRefNode" />
+    <link role="applicableConcept" targetNodeId="38.1073389214265" resolveInfo="EditorCellModel" />
     <node role="contentNode" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1229342946521">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229342954079">
         <property name="text" value="place for ref.node" />
