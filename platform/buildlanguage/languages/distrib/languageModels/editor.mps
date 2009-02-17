@@ -7,7 +7,6 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
@@ -678,30 +677,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1230292476337">
       <link role="relationDeclaration" targetNodeId="1.1230207324294" resolveInfo="operatingSystem" />
       <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1230576609297">
-    <property name="package" value="systemSpecific.windows" />
-    <link role="conceptDeclaration" targetNodeId="1.1230576552358" resolveInfo="TokenValuePair" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1230576614465">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230576618989">
-        <link role="relationDeclaration" targetNodeId="1.1230576589108" resolveInfo="token" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1230576621887">
-        <property name="text" value="-&gt;" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1230576627386">
-        <link role="relationDeclaration" targetNodeId="1.1230576594202" />
-        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1230576627387">
-          <link role="conceptDeclaration" targetNodeId="3v.1205335290326" resolveInfo="Variable" />
-          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230576635122">
-            <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
-            <link role="styleClass" targetNodeId="4v.1205337004073" resolveInfo="variable" />
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1231856505015">

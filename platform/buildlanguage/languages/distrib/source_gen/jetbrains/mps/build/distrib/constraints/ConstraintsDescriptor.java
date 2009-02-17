@@ -13,7 +13,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     this.myConstraints.add(new DistribConfiguration_projectFolder_ReferentConstraint());
-    this.myConstraints.add(new TokenValuePair_value_ReferentConstraint());
     this.myConstraints.add(new ExternalVariableReference_variable_ReferentConstraint());
   }
 

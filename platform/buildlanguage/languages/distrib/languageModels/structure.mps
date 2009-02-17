@@ -206,23 +206,23 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234790749272">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="license" />
-      <link role="target" targetNodeId="3v.1220973916698" resolveInfo="Path" />
+      <link role="target" targetNodeId="3v.1233321544558" resolveInfo="IPath" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231848713325">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="pathToNsisZipFile" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3v.1220973916698" resolveInfo="Path" />
+      <link role="target" targetNodeId="3v.1233321544558" resolveInfo="IPath" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234795184694">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="applicationIcon" />
-      <link role="target" targetNodeId="3v.1220973916698" resolveInfo="Path" />
+      <link role="target" targetNodeId="3v.1233321544558" resolveInfo="IPath" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234795196738">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="homepageIcon" />
-      <link role="target" targetNodeId="3v.1220973916698" resolveInfo="Path" />
+      <link role="target" targetNodeId="3v.1233321544558" resolveInfo="IPath" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231856017880">
       <property name="metaClass" value="aggregation" />
@@ -318,13 +318,13 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="iconPath" />
       <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+      <link role="target" targetNodeId="3v.1233321544558" resolveInfo="IPath" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234535772720">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="javaApplicationStubPath" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+      <link role="target" targetNodeId="3v.1233321544558" resolveInfo="IPath" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234544418896">
       <property name="metaClass" value="aggregation" />
