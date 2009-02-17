@@ -762,9 +762,6 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310993614">
             <property name="flag" value="false" />
           </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233936563610">
-            <property name="flag" value="true" />
-          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1138337100850">
           <property name="separatorText" value="," />
@@ -9951,6 +9948,9 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215087929380">
       <property name="name" value="LeftParen" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234882759318">
+        <property name="flag" value="true" />
+      </node>
       <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1215088009377">
         <link role="styleSheetClass" targetNodeId="1215010868182" resolveInfo="Paren" />
       </node>

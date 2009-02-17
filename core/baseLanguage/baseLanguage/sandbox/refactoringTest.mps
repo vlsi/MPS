@@ -234,7 +234,32 @@
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1234523129323">
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234523129325" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523129326" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523129326">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234883487004">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234883487005">
+            <property name="name" value="r" />
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1234883487006">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1234883490191" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234883495187">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234883495544">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234883495188">
+              <link role="variableDeclaration" targetNodeId="1234883487005" resolveInfo="r" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" id="1234883502603">
+              <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1234883502604">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234883502605" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1234883502606">
+                  <property name="name" value="it" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1234883502607" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
   </node>
