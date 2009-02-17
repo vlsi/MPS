@@ -220,7 +220,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
-        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
 

@@ -9995,9 +9995,6 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1233923571622">
       <property name="name" value="LeftBracket" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233923753542">
-        <property name="flag" value="true" />
-      </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233923813536">
         <property name="flag" value="true" />
       </node>
