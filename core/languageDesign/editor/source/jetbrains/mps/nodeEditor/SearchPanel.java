@@ -264,7 +264,7 @@ public class SearchPanel extends AbstractSearchPanel {
 
     public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
       EditorCell_Label editorCell = (EditorCell_Label) cell;
-      if (editorCell != null) {
+      if (editorCell != null && editorCell.getRenderedText().length() >= myEndPosition) {
         FontMetrics metrics = g.getFontMetrics();
         String text = editorCell.getRenderedText().substring(myStartPosition, myEndPosition);
         int prevStringWidth = metrics.stringWidth(editorCell.getRenderedText().
