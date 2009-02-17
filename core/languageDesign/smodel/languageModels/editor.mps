@@ -2360,9 +2360,6 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233848893668">
             <property name="flag" value="true" />
           </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233848896486">
-            <property name="flag" value="true" />
-          </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1206995967611">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206995967612">

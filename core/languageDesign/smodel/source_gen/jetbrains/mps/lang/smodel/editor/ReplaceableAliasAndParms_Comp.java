@@ -195,7 +195,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
 
       };
