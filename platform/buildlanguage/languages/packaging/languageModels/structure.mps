@@ -512,6 +512,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1203614726444">
       <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234874552379">
+      <link role="intfc" targetNodeId="1234864659795" resolveInfo="IVariableHolder" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1203614596836">
       <property name="value" value="build script" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
@@ -1150,6 +1153,10 @@
       <property name="value" value="space" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1234864659795">
+    <property name="package" value="variables" />
+    <property name="name" value="IVariableHolder" />
   </node>
 </model>
 

@@ -631,6 +631,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToProject");
   }
 
+  public static SNode weaving_MappingRule_ContextNodeQuery_1234807365626(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.buildlanguage.structure.Project", false, false));
+  }
+
   public static void mappingScript_CodeBlock_1217435006860(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout");
     for(SNode layout : ListSequence.fromList(layouts)) {

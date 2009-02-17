@@ -91,7 +91,11 @@ public class QueriesGenerated {
                 suggestFiles = suggestFiles[0].listFiles();
               }
             }
-            boolean isFile = SConceptPropertyOperations.getBoolean(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", true, false), "acceptFiles");
+            SNode abstractProjectComponent = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", true, false);
+            boolean isFile = (abstractProjectComponent == null ?
+              true :
+              SConceptPropertyOperations.getBoolean(abstractProjectComponent, "acceptFiles")
+            );
             List<String> suggestStrings = ListSequence.<String>fromArray();
             for(File f : suggestFiles) {
               if (f.exists() && (isFile || f.isDirectory())) {

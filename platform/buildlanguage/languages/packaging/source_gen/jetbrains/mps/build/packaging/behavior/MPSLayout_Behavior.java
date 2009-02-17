@@ -17,6 +17,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.application.PathMacros;
+import java.util.LinkedList;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.Macros;
 
@@ -110,6 +111,13 @@ public class MPSLayout_Behavior {
     }
     ListSequence.fromList(names).addSequence(SetSequence.fromSet(PathMacros.getInstance().getUserMacroNames()));
     return names;
+  }
+
+  public static List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {
+    List<SNode> vars = ListSequence.fromList(new LinkedList<SNode>());
+    ListSequence.fromList(vars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "variable", true)));
+    ListSequence.fromList(vars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "builtInVariable", true)));
+    return vars;
   }
 
   public static String call_evaluateMacro_1220980091008(SNode thisNode, String macroName) {

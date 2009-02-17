@@ -14,9 +14,6 @@
   <language namespace="500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)" />
-  <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
-  <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
@@ -131,6 +128,33 @@
                     <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1234272402824">
                       <property name="name" value="it" />
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1234272402825" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1234807365624">
+      <link role="applicableConcept" targetNodeId="1.1220973916698" resolveInfo="Path" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1234807410253">
+        <link role="template" targetNodeId="1234807410249" resolveInfo="weave_Path" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1234807365626">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234807365627">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234807464512">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234807468732">
+              <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1234807467107" />
+              <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput" id="1234807473269">
+                <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234807479745">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234807479746" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1234807479747">
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1234807479748">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1234807479749">
+                        <link role="conceptDeclaration" targetNodeId="5.1196851066733" resolveInfo="Project" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -5202,6 +5226,10 @@
         <link role="targetDeclaration" targetNodeId="1234272564510" resolveInfo="default" />
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1234807410249">
+    <property name="name" value="weave_Path" />
+    <link role="applicableConcept" targetNodeId="1.1220973916698" resolveInfo="Path" />
   </node>
 </model>
 
