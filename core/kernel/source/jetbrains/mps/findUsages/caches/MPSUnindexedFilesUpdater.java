@@ -27,6 +27,8 @@ import com.intellij.util.containers.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import jetbrains.mps.smodel.ModelAccess;
+
 public class MPSUnindexedFilesUpdater implements CacheUpdater {
   private final FileBasedIndex myIndex;
 
@@ -35,8 +37,13 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
   }
 
   public VirtualFile[] queryNeededFiles() {
-    CollectingContentIterator finder = myIndex.createContentIterator();
-    iterateIndexableFiles(finder);
+    final CollectingContentIterator finder = myIndex.createContentIterator();
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        iterateIndexableFiles(finder);
+      }
+    });
     final List<VirtualFile> files = finder.getFiles();
     return files.toArray(new VirtualFile[files.size()]);
   }

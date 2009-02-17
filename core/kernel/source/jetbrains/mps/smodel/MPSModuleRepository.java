@@ -27,6 +27,8 @@ import jetbrains.mps.vfs.MPSExtentions;
 
 import java.io.File;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ConcurrentHashMap;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
@@ -40,16 +42,16 @@ public class MPSModuleRepository implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(MPSModuleRepository.class);
   }
 
-  private Map<String, IModule> myFileToModuleMap = new LinkedHashMap<String, IModule>();  
-  private Map<String, IModule> myFqNameToModulesMap = new LinkedHashMap<String, IModule>();
-  private Map<ModuleId, IModule> myIdToModuleMap = new LinkedHashMap<ModuleId, IModule>();
+  private Map<String, IModule> myFileToModuleMap = new ConcurrentHashMap<String, IModule>();
+  private Map<String, IModule> myFqNameToModulesMap = new ConcurrentHashMap<String, IModule>();
+  private Map<ModuleId, IModule> myIdToModuleMap = new ConcurrentHashMap<ModuleId, IModule>();
 
   private Set<IModule> myModules = new LinkedHashSet<IModule>();
 
   private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();
 
-  private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
-  private List<MPSModuleRepositoryListener> myListeners = new ArrayList<MPSModuleRepositoryListener>();
+  private List<ModuleRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<ModuleRepositoryListener>();
+  private List<MPSModuleRepositoryListener> myListeners = new CopyOnWriteArrayList<MPSModuleRepositoryListener>();
 
   private boolean myDirtyFlag = false;
 
@@ -150,12 +152,16 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void fireModuleInitialized(IModule module) {
+    assertCanRead();
+
     for (ModuleRepositoryListener l : myModuleListeners) {
       l.moduleInitialized(module);
     }
   }
 
   public Set<MPSModuleOwner> getOwners(IModule module) {
+    assertCanRead();
+
     return myModuleToOwners.getByFirst(module);
   }
 
@@ -172,22 +178,32 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public IModule getModuleByFile(File file) {
+    assertCanRead();
+
     return myFileToModuleMap.get(FileUtil.getCanonicalPath(file));
   }
 
   public IModule getModuleByPath(String path) {
+    assertCanRead();
+
     return myFileToModuleMap.get(path);
   }
 
   public IModule getModuleByUID(String moduleUID) {
+    assertCanRead();
+
     return myFqNameToModulesMap.get(moduleUID);
   }
 
   public IModule getModuleById(ModuleId moduleId) {
+    assertCanRead();
+
     return myIdToModuleMap.get(moduleId);
   }
 
   public void moduleFqNameChanged(IModule module, String oldName) {
+    assertCanWrite();
+
     if (myFqNameToModulesMap.get(oldName) != module || myFqNameToModulesMap.containsKey(module.getModuleFqName())) {
       throw new IllegalStateException();
     }
@@ -203,6 +219,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public <TM extends IModule> TM registerModule(IFile file, MPSModuleOwner owner, Class<TM> cls) {
+    assertCanWrite();
+
     myDirtyFlag = true;
     String canonicalPath = file.getCanonicalPath();
     IModule module = myFileToModuleMap.get(canonicalPath);
@@ -232,10 +250,14 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public boolean existsModule(IModule module, MPSModuleOwner owner) {
+    assertCanRead();
+
     return myModuleToOwners.contains(module, owner);
   }
 
   public void addModule(IModule module, MPSModuleOwner owner) {
+    assertCanWrite();
+
     myDirtyFlag = true;
     if (existsModule(module, owner)) {
       throw new RuntimeException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
@@ -276,6 +298,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void unRegisterModules(MPSModuleOwner owner) {
+    assertCanWrite();
+
     myDirtyFlag = true;
 
     myModuleToOwners.clearSecond(owner);
@@ -284,6 +308,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void removeUnusedModules() {
+    assertCanWrite();
+
     if (!myDirtyFlag) return;
 
     myDirtyFlag = false;
@@ -295,7 +321,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     //todo: do the similar thing with module stubs
   }
 
-  public Set<IModule> getModulesToBeRemoved(Set<MPSModuleOwner> willBeReleased) {
+  private Set<IModule> getModulesToBeRemoved(Set<MPSModuleOwner> willBeReleased) {
     Set<MPSModuleOwner> rootOwners = new HashSet<MPSModuleOwner>();
     for (IModule m : myModules) {
       for (MPSModuleOwner owner : myModuleToOwners.getByFirst(m)) {
@@ -337,6 +363,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void removeModule(IModule module) {
+    assertCanWrite();
+
     if (!myModules.contains(module)) {
       return;
     }
@@ -358,6 +386,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void readModuleDescriptors(Iterator<? extends RootReference> roots, MPSModuleOwner owner) {
+    assertCanWrite();
+
     while (roots.hasNext()) {
       RootReference root = roots.next();
       IFile moduleRoot = FileSystem.getFile(root.getPath());
@@ -372,7 +402,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     }
   }
 
-  private boolean isExluded(String dirName) {
+  private boolean isExcluded(String dirName) {
     if (".svn".equals(dirName)) return true;
     if ("WEB-INF".equals(dirName)) return true;
 
@@ -381,10 +411,12 @@ public class MPSModuleRepository implements ApplicationComponent {
 
 
   public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
+    assertCanWrite();
+
     List<IModule> result = new ArrayList<IModule>();
     String dirName = dir.getName();
 
-    if (isExluded(dirName)) return result;
+    if (isExcluded(dirName)) return result;
 
     List<IFile> files = dir.list();
     if (files == null) { //i.e it isn't a directory
@@ -439,6 +471,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public Language getLanguageSafe(String namespace) {
+    assertCanRead();
+
     Language result = getLanguage(namespace);
     if (result == null) {
       throw new NullPointerException();
@@ -459,6 +493,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public Generator getGenerator(String alias) {
+    assertCanRead();
+
     for (Generator g : getAllGenerators()) {
       if (g.getAlias().equals(alias)) {
         return g;
@@ -484,6 +520,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
+    assertCanRead();
+
     List<MT> list = new LinkedList<MT>();
     Set<IModule> modules = myModuleToOwners.getBySecond(moduleOwner);
     if (modules != null) {
@@ -509,6 +547,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public <MT extends IModule> List<MT> getAllModules(Class<MT> cls) {
+    assertCanRead();
+
     List<MT> result = new ArrayList<MT>();
     for (IModule module : myModules) {
       if (cls.isInstance(module)) result.add((MT) module);
@@ -537,6 +577,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public List<IModule> getAllModulesInDirectory(File file) {
+    assertCanRead();
+
     String path = FileUtil.getCanonicalPath(file);
     List<IModule> result = new ArrayList<IModule>();
     for (IModule m : getAllModules()) {
@@ -555,6 +597,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public IModule getModuleForModelFile(String path) {
+    assertCanRead();
+
     for (IModule module : getAllModules()) {
       List<SModelRoot> smodelRoots = module.getSModelRoots();
       for (SModelRoot root : smodelRoots) {
@@ -568,6 +612,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void updateReferences() {
+    assertCanWrite();
+
     for (IModule m : getAllModules()) {
       AbstractModule module = (AbstractModule) m;
 
@@ -584,6 +630,18 @@ public class MPSModuleRepository implements ApplicationComponent {
       if (needSaving && module.getDescriptorFile() != null && !module.isPackaged()) {
         module.save();
       }
+    }
+  }
+
+  private void assertCanRead() {
+    if (!ModelAccess.instance().canRead()) {
+      throw new IllegalStateException("Can't read");
+    }
+  }
+
+  private void assertCanWrite() {
+    if (!ModelAccess.instance().canWrite()) {
+      throw new IllegalStateException("Can't write");
     }
   }
 }

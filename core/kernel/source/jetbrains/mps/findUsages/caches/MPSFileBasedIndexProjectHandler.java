@@ -30,6 +30,7 @@ import com.intellij.ide.startup.FileSystemSynchronizer;
 import java.util.Set;
 
 import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.smodel.ModelAccess;
 
 
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
@@ -58,7 +59,11 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
 
   public void updateRoots() {
     boolean firstTime = myIndexableRoots == null;
-    myIndexableRoots = CacheUtil.getIndexableRoots();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myIndexableRoots = CacheUtil.getIndexableRoots();
+      }
+    });
     if (!firstTime) {
       FileSystemSynchronizer synchronizer = new FileSystemSynchronizer();
       synchronizer.registerCacheUpdater(new MPSUnindexedFilesUpdater(myIndex));

@@ -36,6 +36,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
@@ -86,11 +87,15 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   }
 
   public void initComponent() {
-    List<IModule> moduleList = myModuleRepository.getAllModules();
-    for (IModule module : moduleList) {
-      addModuleFile(module);
-    }
-    myModuleRepository.addModuleRepositoryListener(myModuleRepositoryListener);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        List<IModule> moduleList = myModuleRepository.getAllModules();
+        for (IModule module : moduleList) {
+          addModuleFile(module);
+        }
+        myModuleRepository.addModuleRepositoryListener(myModuleRepositoryListener);
+      }
+    });
   }
 
   private void removeModuleFile(IModule module) {
