@@ -1339,7 +1339,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (root instanceof EditorCell_Collection) {
       for (EditorCell child : ((EditorCell_Collection) root)) {
         SNode childNode = child.getSNode();
-        if (childNode == node || (childNode.isAttribute() && childNode.getParent() == node)) {
+        if (childNode == node || (childNode != null && childNode.isAttribute() && childNode.getParent() == node)) {
           EditorCell result = findCellWithIdWithingBigCell(child, id, node);
           if (result != null) {
             return result;
