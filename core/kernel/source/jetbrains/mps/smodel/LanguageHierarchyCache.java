@@ -20,10 +20,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Set;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
@@ -112,9 +109,9 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   public Set<String> getParentsNames(String conceptFqName) {
     if (myParentsNamesMap.containsKey(conceptFqName)) {
-      return new HashSet<String>(myParentsNamesMap.get(conceptFqName));
+      return new LinkedHashSet<String>(myParentsNamesMap.get(conceptFqName));
     }
-    Set<String> result = new HashSet<String>();
+    Set<String> result = new LinkedHashSet<String>();
     AbstractConceptDeclaration declaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (declaration == null) {
       return result;
@@ -135,19 +132,18 @@ public class LanguageHierarchyCache implements ApplicationComponent {
       }
     }
     myParentsNamesMap.put(conceptFqName, result);
-    return result;
+    return new LinkedHashSet<String>(result);
   }
 
   public Set<String> getAncestorsNames(final String conceptFqName) {
     if (myAncestorsNamesMap.containsKey(conceptFqName)) {
-      //return new HashSet<String>(myParentsNamesMap.get(conceptFqName));
-      return myAncestorsNamesMap.get(conceptFqName);
+      return new LinkedHashSet<String>(myAncestorsNamesMap.get(conceptFqName));
     } else {
       return NodeReadAccessCaster.runReadTransparentAction(new Computable<Set<String>>() {
         public Set<String> compute() {
-          Set<String> result = new HashSet<String>();
+          Set<String> result = new LinkedHashSet<String>();
           AbstractConceptDeclaration declaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-          Set<String> parents = new HashSet<String>();
+          Set<String> parents = new LinkedHashSet<String>();
           if (declaration == null) {
             return result;
           }
@@ -191,7 +187,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
           }
           myParentsNamesMap.put(conceptFqName, parents);
           myAncestorsNamesMap.put(conceptFqName, result);
-          return result;
+          return new LinkedHashSet<String>(result);
         }
       });
     }
@@ -202,13 +198,27 @@ public class LanguageHierarchyCache implements ApplicationComponent {
       rebuildCaches();
     }
     Set<String> children = myDescendantsCache.get(congeptFQName);
-    if (children == null) return new HashSet<String>();
-    return children;
+    if (children == null) return new LinkedHashSet<String>();
+    return new LinkedHashSet<String>(children);
+  }
+
+  public Set<String> getAllDescendantsOfConcept(String conceptFqName) {
+    Set<String> result = new LinkedHashSet<String>();
+    collectDescendants(conceptFqName, result);
+    return result;
+  }
+
+  private void collectDescendants(String concept, Set<String> result) {
+    if (result.contains(concept)) return;
+    result.add(concept);
+    for (String desc : getDescendantsOfConcept(concept)) {
+      collectDescendants(desc, result);
+    }
   }
 
   private void addToCache(String nodeFQName) {
     for (String parentFQName : getParentsNames(nodeFQName)) {
-      if (!myDescendantsCache.containsKey(parentFQName)) myDescendantsCache.put(parentFQName, new HashSet<String>());
+      if (!myDescendantsCache.containsKey(parentFQName)) myDescendantsCache.put(parentFQName, new LinkedHashSet<String>());
       myDescendantsCache.get(parentFQName).add(nodeFQName);
     }
   }
