@@ -28,6 +28,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -126,10 +127,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1230568551733(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return WindowsConfig_Behavior.call_getStartupFileName_1230208021944(_context.getNode()) + "." + WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1230570246891(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "pathToNsisZipFile", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1230570281835(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -388,10 +385,6 @@ public class QueriesGenerated {
     return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "longName", true));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1234790893403(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "license", true));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1234791338300(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return WindowsConfig_Behavior.call_getStartupFileName_1230208021944(_context.getNode()) + "." + WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(_context.getNode());
   }
@@ -423,14 +416,6 @@ public class QueriesGenerated {
     return exe;
   }
 
-  public static Object propertyMacro_GetPropertyValue_1234795500593(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "applicationIcon", true)).replace("\\", "/");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1234795525022(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "homepageIcon", true)).replace("\\", "/");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1234795718376(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return WindowsConfig_Behavior.call_getApplicationIcon_1234793320553(_context.getNode());
   }
@@ -448,7 +433,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1230577930415(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "VariableToExternalPropertyDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "VariableToExternalPropertyDeclarationWin");
   }
 
   public static Object referenceMacro_GetReferent_1230650252582(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -460,7 +445,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1234519151154(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "VariableToExternalPropertyDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "VariableToExternalPropertyDeclarationMac");
   }
 
   public static boolean ifMacro_Condition_1230567183522(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -627,6 +612,18 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1234795926441(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "homepageIcon", true) != null);
+  }
+
+  public static SNode sourceNodeQuery_1234805895221(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "pathToNsisZipFile", true);
+  }
+
+  public static SNode sourceNodeQuery_1234806183345(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "applicationIcon", true);
+  }
+
+  public static SNode sourceNodeQuery_1234806209821(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "homepageIcon", true);
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

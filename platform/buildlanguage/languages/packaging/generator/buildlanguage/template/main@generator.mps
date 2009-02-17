@@ -14,6 +14,9 @@
   <language namespace="500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)" />
+  <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
+  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
@@ -163,6 +166,25 @@
           </node>
         </node>
       </node>
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1234878334032">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234878334033">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234878335835">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234878346138">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234878335836">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234878335837" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1234878335838">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1234878335839">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1234878335840">
+                      <link role="conceptDeclaration" targetNodeId="5.1196851066733" resolveInfo="Project" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1234878348385" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="preMappingScript" type="jetbrains.mps.lang.generator.structure.MappingScriptReference" id="1217435029652">
       <link role="mappingScript" targetNodeId="1217435006859" resolveInfo="CalculateCycles" />
@@ -284,6 +306,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1233308633767">
+      <property name="applyToConceptInheritors" value="true" />
       <link role="applicableConcept" targetNodeId="1.1203598512427" resolveInfo="Folder" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1233308633768">
         <link role="template" targetNodeId="1203620846457" resolveInfo="reduce_Folder" />

@@ -123,6 +123,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1230056399938">
       <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234871158456">
+      <link role="intfc" targetNodeId="3v.1234864659795" resolveInfo="IVariableHolder" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230058022109">
       <property name="name" value="startupClass" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
@@ -203,23 +206,23 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234790749272">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="license" />
-      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+      <link role="target" targetNodeId="3v.1220973916698" resolveInfo="Path" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231848713325">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="pathToNsisZipFile" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+      <link role="target" targetNodeId="3v.1220973916698" resolveInfo="Path" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234795184694">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="applicationIcon" />
-      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+      <link role="target" targetNodeId="3v.1220973916698" resolveInfo="Path" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234795196738">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="homepageIcon" />
-      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+      <link role="target" targetNodeId="3v.1220973916698" resolveInfo="Path" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231856017880">
       <property name="metaClass" value="aggregation" />
@@ -242,21 +245,6 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1231769761796">
       <property name="value" value="/" />
       <link role="conceptPropertyDeclaration" targetNodeId="1231769310934" resolveInfo="pathSeparator" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230576552358">
-    <property name="package" value="systemSpecific.windows" />
-    <property name="name" value="TokenValuePair" />
-    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230576589108">
-      <property name="name" value="token" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1230576594202">
-      <property name="metaClass" value="reference" />
-      <property name="role" value="value" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3v.1205335290326" resolveInfo="Variable" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1231848405646">

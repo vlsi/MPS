@@ -4,6 +4,7 @@ package jetbrains.mps.build.distrib.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.build.packaging.structure.IVariableHolder;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.structure.Configuration;
 import jetbrains.mps.build.packaging.structure.Folder;
@@ -14,7 +15,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class DistribConfiguration extends BaseConcept implements INamedConcept {
+public class DistribConfiguration extends BaseConcept implements INamedConcept, IVariableHolder {
   public static final String concept = "jetbrains.mps.build.distrib.structure.DistribConfiguration";
   public static final String STARTUP_CLASS = "startupClass";
   public static final String DEFAULT_V_M_OPTIONS = "defaultVMOptions";

@@ -44,7 +44,7 @@
       <link role="intfc" targetNodeId="2v.1203617883391" resolveInfo="ICompositeComponent" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233150001577">
-      <property name="value" value="custom-mps" />
+      <property name="value" value="mps-build" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234290845440">

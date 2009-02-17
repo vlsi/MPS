@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 
 public class DistribConfiguration_Behavior {
 
@@ -76,6 +77,17 @@ public class DistribConfiguration_Behavior {
 
   public static String call_getVMOptionsFileName_1231749012626(SNode thisNode) {
     return DistribConfiguration_Behavior.call_getProjectName_1230292821821(thisNode).toLowerCase();
+  }
+
+  public static List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {
+    if ((SLinkOperations.getTarget(thisNode, "buildScriptConfiguration", false) == null)) {
+      return ListSequence.fromList(new LinkedList<SNode>());
+    }
+    SNode layout = Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(thisNode, "buildScriptConfiguration", false));
+    if ((layout == null)) {
+      return ListSequence.fromList(new LinkedList<SNode>());
+    }
+    return IVariableHolder_Behavior.call_getAllVariable_1234864693585(layout);
   }
 
 }

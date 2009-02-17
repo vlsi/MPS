@@ -7,13 +7,9 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Variable_DefaultSearchScope implements INodeReferentSearchScopeProvider {
 
@@ -29,10 +25,7 @@ public class Variable_DefaultSearchScope implements INodeReferentSearchScopeProv
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> allVars = new ArrayList<SNode>();
-    ListSequence.fromList(allVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "variable", true)));
-    ListSequence.fromList(allVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true)));
-    return new SimpleSearchScope(allVars);
+    return new SimpleSearchScope(IVariableHolder_Behavior.call_getAllVariable_1234864693585(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.packaging.structure.IVariableHolder", true, false)));
   }
 
 }

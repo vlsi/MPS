@@ -57,6 +57,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "compile");
   }
 
+  public static boolean baseMappingRule_Condition_1234878334032(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.buildlanguage.structure.Project", false, false) != null);
+  }
+
   public static Object propertyMacro_GetPropertyValue_1203614794462(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Configuration_Behavior.call_getBuildFileName_1230217425313(_context.getNode());
   }
