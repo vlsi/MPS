@@ -125,6 +125,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
 
       };

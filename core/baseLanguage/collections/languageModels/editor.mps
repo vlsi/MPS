@@ -1311,6 +1311,9 @@
         <property name="text" value="[" />
         <link role="styleClass" targetNodeId="15.1215010871495" resolveInfo="Bracket" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1222433058510" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234865218158">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1197932614043">
         <link role="relationDeclaration" targetNodeId="1.1197932525128" />
