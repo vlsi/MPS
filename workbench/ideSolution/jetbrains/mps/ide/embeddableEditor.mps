@@ -849,6 +849,27 @@
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219653403368">
       <link role="classifier" targetNodeId="9.~GenerateClassesGenerationType" resolveInfo="GenerateClassesGenerationType" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1234870589175">
+      <property name="name" value="isApplicable" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234870589176" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1234870589177" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1234870589178">
+        <property name="name" value="sm" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234870589179">
+          <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+        </node>
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234870589180">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234870594458">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1234870946033">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1234870947756" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1234870939796">
+              <link role="variableDeclaration" targetNodeId="1234870589178" resolveInfo="sm" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220433141274">
     <property name="name" value="EmbeddableEditorPanel" />
