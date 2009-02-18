@@ -1763,7 +1763,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225711210863">
         <property name="text" value="[" />
-        <link role="styleClass" targetNodeId="15.1215091279307" resolveInfo="LeftBrace" />
+        <link role="styleClass" targetNodeId="15.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1225711216983">
         <property name="attractsFocus" value="2" />
@@ -1771,7 +1771,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225711218746">
         <property name="text" value="]" />
-        <link role="styleClass" targetNodeId="15.1215091331565" resolveInfo="RightBrace" />
+        <link role="styleClass" targetNodeId="15.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>

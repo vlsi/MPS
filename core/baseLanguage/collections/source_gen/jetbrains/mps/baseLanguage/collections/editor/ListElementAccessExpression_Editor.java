@@ -119,7 +119,7 @@ public class ListElementAccessExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3794_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3794_0");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_3794_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -130,7 +130,7 @@ public class ListElementAccessExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3794_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3794_1");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_RefNode_3794_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
