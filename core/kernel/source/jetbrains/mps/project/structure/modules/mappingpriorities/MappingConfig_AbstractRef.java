@@ -19,4 +19,8 @@ public class MappingConfig_AbstractRef {
   public MappingConfig_AbstractRef getCopy(){
     return new MappingConfig_AbstractRef();
   }
+
+  public boolean isIncomplete(){
+    return true;
+  }
 }

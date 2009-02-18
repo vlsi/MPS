@@ -19,4 +19,9 @@ public class MappingConfig_RefAllLocal extends MappingConfig_AbstractRef{
   public MappingConfig_AbstractRef getCopy() {
     return new MappingConfig_RefAllLocal();
   }
+
+  @Override
+  public boolean isIncomplete() {
+    return false;
+  }
 }

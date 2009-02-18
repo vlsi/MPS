@@ -21,6 +21,10 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef{
   private GeneratorReference myGenerator;
   private MappingConfig_AbstractRef myMappingConfig;
 
+  public MappingConfig_ExternalRef() {
+    myMappingConfig = new MappingConfig_AbstractRef();
+  }
+
   public GeneratorReference getGenerator() {
     return myGenerator;
   }
@@ -42,5 +46,11 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef{
     result.myGenerator = myGenerator.getCopy();
     result.myMappingConfig = myMappingConfig.getCopy();
     return result;
+  }
+
+  @Override
+  public boolean isIncomplete() {
+    if (myGenerator==null) return false;
+    return myMappingConfig.isIncomplete();
   }
 }

@@ -25,6 +25,12 @@ public class MappingPriorityRule {
   private RuleType myType;
   private MappingConfig_AbstractRef myLeft,myRight;
 
+  public MappingPriorityRule() {
+    myType = RuleType.STRICTLY_TOGETHER;
+    myLeft = new MappingConfig_AbstractRef();
+    myRight = new MappingConfig_AbstractRef();
+  }
+
   public RuleType getType() {
     return myType;
   }

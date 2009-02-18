@@ -36,4 +36,12 @@ public class MappingConfig_RefSet extends MappingConfig_AbstractRef{
     }
     return result;
   }
+
+  @Override
+  public boolean isIncomplete() {
+    for (MappingConfig_AbstractRef ref:myRefs){
+      if (ref.isIncomplete()) return true;
+    }
+    return false;
+  }
 }

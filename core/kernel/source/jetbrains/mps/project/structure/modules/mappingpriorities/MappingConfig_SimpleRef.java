@@ -41,4 +41,12 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef{
     result.myNodeID = myNodeID;
     return result;
   }
+
+  @Override
+  public boolean isIncomplete() {
+    if (myModelUID==null) return true;
+    if (myModelUID.equals("*"))return false;
+    if (myNodeID==null) return true;
+    return false;
+  }
 }
