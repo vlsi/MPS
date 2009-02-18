@@ -63,11 +63,7 @@ public class ProjectTester {
   }
 
   public TestResult testProject(final String[] configurationsGiven) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myProject.getPluginManager().reloadPlugins();
-      }
-    });
+    myProject.getPluginManager().reloadPlugins();
 
     final List<String> errors = new ArrayList<String>();
     final List<String> warnings = new ArrayList<String>();
