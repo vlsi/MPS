@@ -180,7 +180,7 @@ public class MPSEditorOpener implements ProjectComponent {
     //todo why later?
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        ModuleContext context = ModuleContext.create(node, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
+        ModuleContext context = ModuleContext.create(node, myProject.getComponent(MPSProjectHolder.class).getMPSProject(),false);
         if (context == null) return;
         boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
           public Boolean compute() {

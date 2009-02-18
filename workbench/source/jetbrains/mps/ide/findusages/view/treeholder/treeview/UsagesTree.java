@@ -605,9 +605,9 @@ public abstract class UsagesTree extends MPSTree {
     return inResults((UsagesTreeNode) node.getParent());
   }
 
-  public void navigateToNode(SNode node, boolean focus) {
+  public void navigateToNode(final SNode node, boolean focus) {
     MPSProject mpsProject = getProject().getComponent(MPSProjectHolder.class).getMPSProject();
-    ModuleContext context = ModuleContext.create(node, mpsProject);
+    ModuleContext context = ModuleContext.create(node, mpsProject,false);
     getProject().getComponentSafe(MPSEditorOpener.class).openNode(node, context, focus, true);
   }
 
