@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.core.structure.IType;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -96,7 +97,11 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
       if (!node.isRoot()) {
         auxModel.addRoot(node);
       }
-      type = TypeChecker.getInstance().getTypeOf(node);
+      if (BaseAdapter.isInstance(node, IType.class)) {
+        type = node;
+      } else {
+        type = TypeChecker.getInstance().getTypeOf(node);
+      }
       auxModel.removeRoot(node);
     } finally {
       auxModel.setLoading(wasLoading);

@@ -46,18 +46,19 @@ public class HoleWrapper extends NodeWrapper {
     }
     if (myEquationManager != null) {
       if (inequationSystem == null) {
-        inequationSystem = myEquationManager.getInequationSystem(this);
+        inequationSystem = myEquationManager.getInequationSystem();
       }
       if (inequationSystem == null) {
-        inequationSystem = new InequationSystem(equationManager, this);
+        inequationSystem = new InequationSystem(this);
       }
-      myEquationManager.putInequationSystem(this, inequationSystem);
+      inequationSystem.setHoleWrapper(this);
+      myEquationManager.putInequationSystem(inequationSystem);
     }
   }
 
   public InequationSystem getInequationSystem() {
     if (myEquationManager == null) return null;
-    return myEquationManager.getInequationSystem(this);
+    return myEquationManager.getInequationSystem();
   }
 
   public boolean isVariable() {
@@ -66,5 +67,9 @@ public class HoleWrapper extends NodeWrapper {
 
   public boolean isConcrete() {
     return false;
+  }
+
+  public EquationManager getEquationManager() {
+    return myEquationManager;
   }
 }

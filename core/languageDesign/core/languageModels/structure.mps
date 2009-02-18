@@ -114,5 +114,8 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1233160296597">
     <property name="name" value="IContainer" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1234971358450">
+    <property name="name" value="IType" />
+  </node>
 </model>
 

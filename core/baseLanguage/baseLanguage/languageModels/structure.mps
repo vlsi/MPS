@@ -190,6 +190,9 @@
       <property name="value" value="a type" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234971398169">
+      <link role="intfc" targetNodeId="4.1234971358450" resolveInfo="IType" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068431474542">
     <property name="name" value="VariableDeclaration" />

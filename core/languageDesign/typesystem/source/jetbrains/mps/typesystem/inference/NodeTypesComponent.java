@@ -25,6 +25,8 @@ import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
@@ -105,6 +107,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private boolean myIsSmartCompletion = false;
   private SNode myHole = null;
   private HoleWrapper myHoleTypeWrapper = null;
+  private boolean myHoleIsAType = false;
 
   public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myRootNode = rootNode;
@@ -340,6 +343,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     getSlicer().beforeTypesExpanded(myNodesToTypesMap);
 
     if (myIsSmartCompletion) {
+      myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager, myHoleTypeWrapper); //todo why do we need to create new wrapper? (equation manager is old)
       myHoleTypeWrapper.getInequationSystem().normalize();
     }
 
@@ -368,20 +372,35 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     return computeTypesForNode_special(initialNode, continuation, false);
   }
 
-  public InequationSystem computeInequationsForHole(SNode hole) {
+  public InequationSystem computeInequationsForHole(SNode hole, boolean holeIsAType) {
     List<SNode> additionalNodes = new ArrayList<SNode>();
     additionalNodes.add(hole);
 
     try {
       myIsSmartCompletion = true;
       myHole = hole;
+      myHoleIsAType = holeIsAType;
       computeTypesForNode_special(hole.getParent(), null, false, additionalNodes);
       return myHoleTypeWrapper.getInequationSystem();
     } finally {
       myIsSmartCompletion = false;
       myHoleTypeWrapper = null;
       myHole = null;
+      myHoleIsAType = false;
     }
+  }
+
+  public IWrapper getHoleWrapperRepresentator(IWrapper wrapper) {
+    if (wrapper == null) {
+      return null;
+    }
+    if (myIsSmartCompletion && wrapper instanceof HoleWrapper) {
+      return myHoleTypeWrapper;
+    }
+    if (myIsSmartCompletion && myHoleIsAType && wrapper.getNode() == myHole) {
+      return myHoleTypeWrapper;
+    }
+    return null;
   }
 
   private SNode computeTypesForNode_special(SNode initialNode, Runnable continuation, boolean refreshTypes) {
@@ -403,6 +422,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         type = getType(initialNode);
         if (type == null ||
           type.getAdapter() instanceof RuntimeTypeVariable ||
+          (type.getAdapter() instanceof RuntimeHoleType  && myHoleTypeWrapper.getInequationSystem().isEmpty()) ||
           !type.getAdapter().getDescendants(RuntimeTypeVariable.class).isEmpty()) {
           if (node.isRoot()) {
             computeTypes(node, refreshTypes, true, new ArrayList<SNode>()); //the last possibility: check the whole root
@@ -437,7 +457,9 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     frontier.addAll(additionalNodes);
     if (myIsSmartCompletion) {
       myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager, myHoleTypeWrapper);
-      myNodesToTypesMap.put(myHole, myHoleTypeWrapper.getNode());
+      if (!myHoleIsAType) {
+        myNodesToTypesMap.put(myHole, myHoleTypeWrapper.getNode());
+      }
     }
     while (!(frontier.isEmpty())) {
       for (SNode sNode : frontier) {

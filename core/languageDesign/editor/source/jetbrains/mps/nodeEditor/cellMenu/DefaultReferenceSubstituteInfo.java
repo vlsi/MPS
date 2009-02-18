@@ -104,7 +104,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
       }
       SNode hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
       parent.replaceChild(nodeToEquate, hole);
-      InequationSystem inequationsForHole = TypeChecker.getInstance().getInequationsForHole(hole);
+      InequationSystem inequationsForHole = TypeChecker.getInstance().getInequationsForHole(hole, false);
       auxModel.removeRoot(nodeCopyRoot);
       return inequationsForHole;
     } finally {

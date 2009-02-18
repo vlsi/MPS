@@ -104,6 +104,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
         auxModel.addRoot(nodeCopyRoot);
       }
 
+      boolean holeIsAType = SModelUtil_new.isAssignableConcept(myLinkDeclaration.getTarget(), "jetbrains.mps.lang.core.structure.IType");
       SNode hole = null;
       SNode parent = mapping.get(myParentNode);
       if (myCurrentChild != null) {
@@ -113,7 +114,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
       String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
       hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
       parent.setChild(role, hole);
-      InequationSystem inequationsForHole = TypeChecker.getInstance().getInequationsForHole(hole);
+      InequationSystem inequationsForHole = TypeChecker.getInstance().getInequationsForHole(hole, holeIsAType);
       auxModel.removeRoot(nodeCopyRoot);
       return inequationsForHole;
     } finally {

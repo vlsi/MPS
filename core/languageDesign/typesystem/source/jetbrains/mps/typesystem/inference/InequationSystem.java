@@ -19,8 +19,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
 
@@ -33,10 +31,8 @@ import java.util.HashSet;
  */
 public class InequationSystem {
   private HoleWrapper myHoleType;
-  private EquationManager myEquationManager;
 
-  public InequationSystem(EquationManager equationManager, HoleWrapper holeType) {
-    myEquationManager = equationManager;
+  public InequationSystem(HoleWrapper holeType) {
     myHoleType = holeType;
   }
 
@@ -67,8 +63,8 @@ public class InequationSystem {
   }
 
   public boolean satisfies(SNode type) {
-    SubtypingManager subtypingManager = myEquationManager.getTypeCheckingContext().getSubtypingManager();
-    IWrapper typeWrapper = NodeWrapper.fromNode(type, myEquationManager);
+    SubtypingManager subtypingManager = getEquationManager().getTypeCheckingContext().getSubtypingManager();
+    IWrapper typeWrapper = NodeWrapper.fromNode(type, getEquationManager());
     for (IWrapper w : myEquals) {
       if (!MatchingUtil.matchNodes(w.getNode(), type)) {
         return false;
@@ -102,13 +98,13 @@ public class InequationSystem {
   }
 
   public void normalize() {
-    SModel runtimeTypesModel = myEquationManager.getTypeCheckingContext().getRuntimeTypesModel();
+    SModel runtimeTypesModel = getEquationManager().getTypeCheckingContext().getRuntimeTypesModel();
 
     {
       HashSet<IWrapper> wrappers = new HashSet<IWrapper>(myEquals);
       myEquals.clear();
       for (IWrapper wrapper : wrappers) {
-        myEquals.add(myEquationManager.expandWrapper(null, wrapper, runtimeTypesModel));
+        myEquals.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
       }
     }
 
@@ -116,7 +112,7 @@ public class InequationSystem {
       HashSet<IWrapper> wrappers = new HashSet<IWrapper>(mySubtypes);
       mySubtypes.clear();
       for (IWrapper wrapper : wrappers) {
-        mySubtypes.add(myEquationManager.expandWrapper(null, wrapper, runtimeTypesModel));
+        mySubtypes.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
       }
     }
 
@@ -124,7 +120,7 @@ public class InequationSystem {
       HashSet<IWrapper> wrappers = new HashSet<IWrapper>(mySupertypes);
       mySupertypes.clear();
       for (IWrapper wrapper : wrappers) {
-        mySupertypes.add(myEquationManager.expandWrapper(null, wrapper, runtimeTypesModel));
+        mySupertypes.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
       }
     }
 
@@ -132,7 +128,7 @@ public class InequationSystem {
       HashSet<IWrapper> wrappers = new HashSet<IWrapper>(myStrongSubtypes);
       myStrongSubtypes.clear();
       for (IWrapper wrapper : wrappers) {
-        myStrongSubtypes.add(myEquationManager.expandWrapper(null, wrapper, runtimeTypesModel));
+        myStrongSubtypes.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
       }
     }
 
@@ -140,7 +136,7 @@ public class InequationSystem {
       HashSet<IWrapper> wrappers = new HashSet<IWrapper>(myStrongSupertypes);
       myStrongSupertypes.clear();
       for (IWrapper wrapper : wrappers) {
-        myStrongSupertypes.add(myEquationManager.expandWrapper(null, wrapper, runtimeTypesModel));
+        myStrongSupertypes.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
       }
     }
 
@@ -176,4 +172,11 @@ public class InequationSystem {
   }
 
 
+  public EquationManager getEquationManager() {
+    return myHoleType.getEquationManager();
+  }
+
+  void setHoleWrapper(HoleWrapper holeWrapper) {
+    myHoleType = holeWrapper;
+  }
 }

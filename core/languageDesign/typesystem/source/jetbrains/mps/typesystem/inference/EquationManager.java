@@ -26,7 +26,6 @@ import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.typesystem.debug.ISlicer;
-import jetbrains.mps.typesystem.debug.SliceInfo;
 
 import java.util.*;
 
@@ -68,7 +67,7 @@ public class EquationManager {
   private Map<IWrapper, Set<IWrapperListener>> myWrapperListeners = new HashMap<IWrapper, Set<IWrapperListener>>(64, 0.4f);
   private boolean myCollectConcretes = false;
 
-  private Map<HoleWrapper, InequationSystem> myHolesToInequationSystems = new HashMap<HoleWrapper, InequationSystem>();
+  private InequationSystem myInequationSystem = null;
 
   private Set<WhenConcreteEntity> myCollectedWhenConcreteEntities = new HashSet<WhenConcreteEntity>();
   private TypeCheckingContext myTypeCheckingContext;
@@ -96,6 +95,10 @@ public class EquationManager {
   }
 
   public IWrapper getRepresentatorWrapper(IWrapper type_) {
+    IWrapper representator = myTypeCheckingContext.getNodeTypesComponent().getHoleWrapperRepresentator(type_);
+    if (representator != null) {
+      return representator;
+    }
     IWrapper type = type_;
     IWrapper parent = getParent(type);
     if (parent != null) {
@@ -147,12 +150,12 @@ public class EquationManager {
     variables.add(variable);
   }
 
-  InequationSystem getInequationSystem(HoleWrapper holeWrapper) {
-    return myHolesToInequationSystems.get(holeWrapper);
+  InequationSystem getInequationSystem() {
+    return myInequationSystem;
   }
 
-  void putInequationSystem(HoleWrapper holeWrapper, InequationSystem inequationSystem) {
-    myHolesToInequationSystems.put(holeWrapper, inequationSystem);
+  void putInequationSystem(InequationSystem inequationSystem) {
+    myInequationSystem = inequationSystem;
   }
 
 
