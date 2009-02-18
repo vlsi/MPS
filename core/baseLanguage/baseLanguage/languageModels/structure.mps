@@ -2931,7 +2931,7 @@
     <property name="package" value="string" />
     <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271221394">
-      <property name="value" value="ne" />
+      <property name="value" value=":ne:" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271221395">
@@ -2948,7 +2948,7 @@
     <property name="package" value="string" />
     <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271283260">
-      <property name="value" value="eq" />
+      <property name="value" value=":eq:" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271283261">
