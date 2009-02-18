@@ -93,7 +93,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
       }
     }
 
-    public void after(List<? extends VFileEvent> events) {
+    public void after(final List<? extends VFileEvent> events) {
 
       Application application = ApplicationManager.getApplication();
       if (application.isDisposeInProgress() || application.isDisposed()) {
@@ -102,20 +102,24 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
       final ReloadSession reloadSession = new ReloadSession();
 
-      // collecting changed models, modules etc.
-      for (VFileEvent event : events) {
-        String path = event.getPath();
-        File file = new File(path);
-        List<IModule> moduleList = MPSModuleRepository.getInstance().getAllModulesInDirectory(file);
-        for (IModule m : moduleList) {
-          ModuleFileProcessor.getInstance().process(new VFileEventDecorator(event, m.getDescriptorFile().getAbsolutePath()), reloadSession);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          // collecting changed models, modules etc.
+          for (VFileEvent event : events) {
+            String path = event.getPath();
+            File file = new File(path);
+            List<IModule> moduleList = MPSModuleRepository.getInstance().getAllModulesInDirectory(file);
+            for (IModule m : moduleList) {
+              ModuleFileProcessor.getInstance().process(new VFileEventDecorator(event, m.getDescriptorFile().getAbsolutePath()), reloadSession);
+            }
+            if (MPSFileTypesManager.instance().isModelFile(path)) {
+              ModelFileProcessor.getInstance().process(event, reloadSession);
+            } else if (MPSFileTypesManager.instance().isModuleFile(path)) {
+              ModuleFileProcessor.getInstance().process(event, reloadSession);
+            }
+          }
         }
-        if (MPSFileTypesManager.instance().isModelFile(path)) {
-          ModelFileProcessor.getInstance().process(event, reloadSession);
-        } else if (MPSFileTypesManager.instance().isModuleFile(path)) {
-          ModuleFileProcessor.getInstance().process(event, reloadSession);
-        }
-      }
+      });
 
       // reloading
       application.invokeLater(new Runnable() {
