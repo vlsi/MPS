@@ -22,6 +22,9 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.startup.StartupManagerEx;
 import jetbrains.mps.ide.IdeMain;
@@ -29,8 +32,14 @@ import jetbrains.mps.ide.actions.MakeAllModules_Action;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
+
+import java.util.LinkedHashSet;
 
 public class StartupModuleMaker extends AbstractProjectComponent {
   public StartupModuleMaker(Project project) {
@@ -38,25 +47,25 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
     if (IdeMain.isTestMode()) return;
 
-    StartupManagerEx.getInstanceEx(myProject).registerPostStartupActivity(new Runnable() {
+    StartupManagerEx.getInstanceEx(myProject).registerPreStartupActivity(new Runnable() {
       public void run() {
-        MakeAllModules_Action action = new MakeAllModules_Action();
-        DataContext dc = new DataContext() {
-          private DataContext myRealContext = DataManager.getInstance().getDataContext();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
+            if (indicator == null) {
+              indicator = new EmptyProgressIndicator();
+            }
+            indicator.pushState();
 
-          @Nullable
-          public Object getData(@NonNls String dataId) {
-            if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName())) {
-              return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-            } else {
-              return myRealContext.getData(dataId);
+            try {
+              ModuleMaker maker = new ModuleMaker();
+              maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
+              ClassLoaderManager.getInstance().reloadAll(indicator);
+            } finally {
+              indicator.popState();
             }
           }
-        };
-
-        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, dc);
-        action.update(event);
-        action.actionPerformed(event);
+        });
       }
     });
   }

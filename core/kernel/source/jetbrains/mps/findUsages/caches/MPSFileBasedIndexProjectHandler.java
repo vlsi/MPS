@@ -47,7 +47,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
 
     final StartupManagerEx startupManager = (StartupManagerEx) StartupManager.getInstance(myProject);
     if (startupManager != null) {
-      startupManager.registerPostStartupActivity(new Runnable() {
+      startupManager.registerPreStartupActivity(new Runnable() {
         public void run() {
           updateRoots();
           startupManager.getFileSystemSynchronizer().registerCacheUpdater(updater);
