@@ -169,13 +169,17 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
           Collections.reverse(mySortedPlugins);
           collectState(mySortedPlugins);
 
-          for (BaseProjectPlugin plugin : mySortedPlugins) {
-            try {
-              plugin.dispose();
-            } catch (Throwable t) {
-              LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              for (BaseProjectPlugin plugin : mySortedPlugins) {
+                try {
+                  plugin.dispose();
+                } catch (Throwable t) {
+                  LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
+                }
+              }
             }
-          }
+          });
           mySortedPlugins.clear();
         }
         myLoaded = false;
