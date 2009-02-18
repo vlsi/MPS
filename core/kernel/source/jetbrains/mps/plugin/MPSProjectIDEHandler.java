@@ -18,6 +18,7 @@ package jetbrains.mps.plugin;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
@@ -51,20 +52,19 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   private static final Logger LOG = Logger.getLogger(MPSProjectIDEHandler.class);
 
   private Project myProject;
+  //we cache MPS project so that we can use
+  private MPSProject myMPSProject;
 
   public MPSProjectIDEHandler(Project project) throws RemoteException {
     myProject = project;
   }
 
-  private MPSProject getProject() {
-    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-  }
-
   public void projectOpened() {
     if (IdeMain.isTestMode()) return;
 
+    myMPSProject =myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     try {
-      IProjectHandler handler = getProject().getProjectHandler();
+      IProjectHandler handler = myMPSProject.getProjectHandler();
       if (handler == null) {
         return;
       }
@@ -77,7 +77,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void projectClosed() {
     if (IdeMain.isTestMode()) return;
 
-    IProjectHandler handler = getProject().getProjectHandler();
+    IProjectHandler handler = myMPSProject.getProjectHandler();
     if (handler != null) {
       try {
         handler.removeIdeHandler(this);
@@ -108,7 +108,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   private Frame getMainFrame() {
-    return getProject().getComponent(Frame.class);
+    return myMPSProject.getComponent(Frame.class);
   }
 
   public void showNode(final String namespace, final String id) throws RemoteException {
