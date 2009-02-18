@@ -168,7 +168,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
               if (declaringLanguage == null) continue;
               parents.add(fqName);
               result.addAll(getAncestorsNames(fqName));
-            }
+            }                        2
           }
 
           if (declaration instanceof InterfaceConceptDeclaration) {
