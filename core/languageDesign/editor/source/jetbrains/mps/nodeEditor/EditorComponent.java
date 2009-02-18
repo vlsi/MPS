@@ -2188,16 +2188,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) return new MyCutProvider();
     if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName()))  return new MyCopyProvider();
     if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) return new MyPasteProvider();
-    if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE.getName())) {
-      return ModelAccess.instance().runReadAction(new Computable<Object>() {
-        public Object compute() {
-          SNodePointer nodePointer = myNodePointer;
-          if (nodePointer == null || nodePointer.getNode() == null) return null;
-          SNode node = nodePointer.getNode();
-          return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
-        }
-      });
-    }
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       return ModelAccess.instance().runReadAction(new Computable<Object>() {
         public Object compute() {
