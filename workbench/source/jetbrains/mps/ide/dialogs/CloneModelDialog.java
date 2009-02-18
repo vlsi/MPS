@@ -157,7 +157,7 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
     return null;
   }
 
-  protected boolean saveChanges() {
+  protected boolean doSaveChanges() {
     String errorString = getErrorString();
     if (errorString != null) {
       setErrorText(errorString);
