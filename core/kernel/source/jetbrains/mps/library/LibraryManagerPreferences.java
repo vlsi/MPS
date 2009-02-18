@@ -18,6 +18,7 @@ package jetbrains.mps.library;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionListener;
@@ -97,22 +98,26 @@ public class LibraryManagerPreferences {
     updateModel(true);
   }
 
-  private void updateModel(boolean updateManager) {
-    Library oldSelection = (Library) myLibrariesList.getSelectedValue();
-    List<Library> libraries = new ArrayList<Library>(myManager.getLibraries());
-    Collections.sort(libraries, new ToStringComparator());
-    myListModel.clear();
-    for (Library l : libraries) {
-      myListModel.addElement(l);
-    }
+  private void updateModel(final boolean updateManager) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        Library oldSelection = (Library) myLibrariesList.getSelectedValue();
+        List<Library> libraries = new ArrayList<Library>(myManager.getLibraries());
+        Collections.sort(libraries, new ToStringComparator());
+        myListModel.clear();
+        for (Library l : libraries) {
+          myListModel.addElement(l);
+        }
 
-    if (oldSelection != null) {
-      myLibrariesList.setSelectedValue(oldSelection, true);
-    }
+        if (oldSelection != null) {
+          myLibrariesList.setSelectedValue(oldSelection, true);
+        }
 
-    if (updateManager) {
-      myManager.update();
-    }
+        if (updateManager) {
+          myManager.update();
+        }
+      }
+    });
   }
 
   private void remove() {
