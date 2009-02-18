@@ -29,8 +29,6 @@ import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.event.SModelRootEvent;
 
 public class LanguageHierarchyCache implements ApplicationComponent {
   public static LanguageHierarchyCache getInstance() {
@@ -39,7 +37,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   private Map<String, Set<String>> myAncestorsNamesMap = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
-  private Map<String, Set<String>> myDescendantsCache = new HashMap<String, Set<String>>();
+  private Map<String, Set<String>> myDirectDescendantsCache = new HashMap<String, Set<String>>();
   private boolean myDescendantsCachesAreValid = false;
 
   private SModelRepositoryAdapter myRepositoryListener = null;
@@ -100,7 +98,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public void invalidateCache() {
-    myDescendantsCache.clear();
+    myDirectDescendantsCache.clear();
     myDescendantsCachesAreValid = false;
 
     myParentsNamesMap.clear();
@@ -109,7 +107,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   public Set<String> getParentsNames(String conceptFqName) {
     if (myParentsNamesMap.containsKey(conceptFqName)) {
-      return new LinkedHashSet<String>(myParentsNamesMap.get(conceptFqName));
+      return Collections.unmodifiableSet(myParentsNamesMap.get(conceptFqName));
     }
     Set<String> result = new LinkedHashSet<String>();
     AbstractConceptDeclaration declaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
@@ -132,12 +130,12 @@ public class LanguageHierarchyCache implements ApplicationComponent {
       }
     }
     myParentsNamesMap.put(conceptFqName, result);
-    return new LinkedHashSet<String>(result);
+    return Collections.unmodifiableSet(result);
   }
 
   public Set<String> getAncestorsNames(final String conceptFqName) {
     if (myAncestorsNamesMap.containsKey(conceptFqName)) {
-      return new LinkedHashSet<String>(myAncestorsNamesMap.get(conceptFqName));
+      return Collections.unmodifiableSet(myAncestorsNamesMap.get(conceptFqName));
     } else {
       return NodeReadAccessCaster.runReadTransparentAction(new Computable<Set<String>>() {
         public Set<String> compute() {
@@ -187,7 +185,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
           }
           myParentsNamesMap.put(conceptFqName, parents);
           myAncestorsNamesMap.put(conceptFqName, result);
-          return new LinkedHashSet<String>(result);
+          return Collections.unmodifiableSet(result);
         }
       });
     }
@@ -197,9 +195,9 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     if (!myDescendantsCachesAreValid) {
       rebuildCaches();
     }
-    Set<String> children = myDescendantsCache.get(congeptFQName);
+    Set<String> children = myDirectDescendantsCache.get(congeptFQName);
     if (children == null) return new LinkedHashSet<String>();
-    return new LinkedHashSet<String>(children);
+    return Collections.unmodifiableSet(children);
   }
 
   public Set<String> getAllDescendantsOfConcept(String conceptFqName) {
@@ -218,13 +216,15 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   private void addToCache(String nodeFQName) {
     for (String parentFQName : getParentsNames(nodeFQName)) {
-      if (!myDescendantsCache.containsKey(parentFQName)) myDescendantsCache.put(parentFQName, new LinkedHashSet<String>());
-      myDescendantsCache.get(parentFQName).add(nodeFQName);
+      if (!myDirectDescendantsCache.containsKey(parentFQName)) {
+        myDirectDescendantsCache.put(parentFQName, new LinkedHashSet<String>());
+      }
+      myDirectDescendantsCache.get(parentFQName).add(nodeFQName);
     }
   }
 
   private void rebuildCaches() {
-    myDescendantsCache.clear();
+    myDirectDescendantsCache.clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Language language : myModuleRepository.getAllLanguages()) {
