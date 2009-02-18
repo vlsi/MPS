@@ -37,8 +37,9 @@ public class NullableUtil {
       if (!(p.getInstructionsFor(reference).isEmpty())) {
         Instruction instruction = p.getInstructionsFor(reference).get(0);
         NullableVariableState state = MapSequence.fromMap(analysisResult.get(instruction)).get(SLinkOperations.getTarget(reference, "variableDeclaration", false));
-        assert state != null;
-        MapSequence.fromMap(result).put(reference, state);
+        if (state != null) {
+          MapSequence.fromMap(result).put(reference, state);
+        }
       }
     }
     return result;
