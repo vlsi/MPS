@@ -127,6 +127,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   private void loadPlugins() {
+    //do not wait - deadlock
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         if (myProject.isDisposed()) return;
@@ -159,7 +160,8 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   private void disposePlugins() {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    //need to wait cause otherwise project can be disposed before plugins
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         assert !myProject.isDisposed();
         if (!myLoaded) return;
