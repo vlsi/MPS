@@ -434,16 +434,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
 
   private static void setupBasic_Constant_7205_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7205_0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_7205_1(EditorCell editorCell, SNode node, EditorContext context) {

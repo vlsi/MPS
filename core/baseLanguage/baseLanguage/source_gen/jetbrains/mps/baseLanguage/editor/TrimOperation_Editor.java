@@ -13,8 +13,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class TrimOperation_Editor extends DefaultNodeEditor {
 
@@ -100,16 +98,7 @@ public class TrimOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9975_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9975_1");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_9975_0(EditorCell editorCell, SNode node, EditorContext context) {

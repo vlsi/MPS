@@ -159,16 +159,7 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1988_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1988_3");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_1988_0(EditorCell editorCell, SNode node, EditorContext context) {

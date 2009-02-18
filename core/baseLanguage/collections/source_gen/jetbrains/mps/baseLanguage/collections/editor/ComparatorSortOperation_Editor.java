@@ -164,7 +164,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4999_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4999_0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_4999_0(EditorCell editorCell, SNode node, EditorContext context) {

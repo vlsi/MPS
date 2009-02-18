@@ -16,10 +16,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
@@ -142,15 +138,6 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1964_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1964_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_RefNode_1964_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -170,7 +157,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1964_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1964_3");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1964_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

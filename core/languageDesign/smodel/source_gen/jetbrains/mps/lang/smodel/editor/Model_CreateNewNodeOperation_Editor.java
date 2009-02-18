@@ -190,16 +190,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6619_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6619_2");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_RefCell_6619_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

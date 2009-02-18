@@ -96,7 +96,7 @@
         <link role="styleClass" targetNodeId="3.1215088010675" resolveInfo="RightParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1211979524795">
-        <property name="text" value=" match" />
+        <property name="text" value="match" />
         <link role="styleClass" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1211982223918">

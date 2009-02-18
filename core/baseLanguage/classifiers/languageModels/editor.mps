@@ -97,10 +97,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1205769425501">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="4.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1217000555400">
-          <property name="value" value="0.0" />
-        </node>
+        <link role="styleClass" targetNodeId="4.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1205769434991">
         <property name="vertical" value="false" />
@@ -210,10 +207,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221310280147">
           <property name="text" value="(" />
-          <link role="styleClass" targetNodeId="4.1215087929380" resolveInfo="LeftParen" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1221310280148">
-            <property name="flag" value="false" />
-          </node>
+          <link role="styleClass" targetNodeId="4.1234958090348" resolveInfo="LeftParenAfterName" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1221310280149">
           <property name="separatorText" value="," />

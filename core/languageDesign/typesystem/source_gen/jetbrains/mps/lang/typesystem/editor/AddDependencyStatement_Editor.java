@@ -108,7 +108,7 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5911_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5911_1");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_5911_0(EditorCell editorCell, SNode node, EditorContext context) {

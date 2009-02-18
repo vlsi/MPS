@@ -544,10 +544,7 @@
             </node>
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225194473533">
               <property name="text" value="(" />
-              <link role="styleClass" targetNodeId="3.1215087929380" resolveInfo="LeftParen" />
-              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233844673236">
-                <property name="flag" value="true" />
-              </node>
+              <link role="styleClass" targetNodeId="3.1234958090348" resolveInfo="LeftParenAfterName" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1225194473534">
               <property name="vertical" value="false" />
@@ -941,8 +938,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225194588671">
           <property name="text" value="(" />
-          <link role="styleClass" targetNodeId="3.1215087929380" resolveInfo="LeftParen" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1225194588672" />
+          <link role="styleClass" targetNodeId="3.1234958090348" resolveInfo="LeftParenAfterName" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1225194588673">
           <property name="vertical" value="false" />

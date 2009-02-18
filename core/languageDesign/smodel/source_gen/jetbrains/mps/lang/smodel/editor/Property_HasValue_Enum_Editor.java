@@ -104,7 +104,7 @@ public class Property_HasValue_Enum_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_0541_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0541_0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_0541_1(EditorCell editorCell, SNode node, EditorContext context) {

@@ -112,7 +112,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7796_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7796_2");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_7796_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

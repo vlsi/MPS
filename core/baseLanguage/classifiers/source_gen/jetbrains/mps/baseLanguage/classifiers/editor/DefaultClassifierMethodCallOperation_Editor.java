@@ -128,16 +128,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
 
   private static void setupBasic_Constant_4982_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4982_0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_4982_0(EditorCell editorCell, SNode node, EditorContext context) {

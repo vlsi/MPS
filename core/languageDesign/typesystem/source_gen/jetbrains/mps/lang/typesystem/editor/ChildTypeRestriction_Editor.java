@@ -223,7 +223,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4762_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4762_1");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_4762_2(EditorCell editorCell, SNode node, EditorContext context) {

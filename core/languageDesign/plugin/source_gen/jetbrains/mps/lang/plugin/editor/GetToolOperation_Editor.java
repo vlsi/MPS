@@ -14,12 +14,12 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class GetToolOperation_Editor extends DefaultNodeEditor {
 
@@ -101,29 +101,11 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_8845_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8845_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_8845_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8845_1");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_8845_2(EditorCell editorCell, SNode node, EditorContext context) {

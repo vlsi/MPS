@@ -180,7 +180,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8094_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8094_2");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_RefCell_8094_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

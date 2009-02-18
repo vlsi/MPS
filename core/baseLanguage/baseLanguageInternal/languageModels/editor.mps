@@ -223,8 +223,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174318220174">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="3.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1219063822350" />
+        <link role="styleClass" targetNodeId="3.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1174318227631">
         <property name="separatorText" value="," />

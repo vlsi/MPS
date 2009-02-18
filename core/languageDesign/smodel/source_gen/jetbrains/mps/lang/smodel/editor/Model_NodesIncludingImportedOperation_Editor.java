@@ -153,7 +153,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
 
   private static void setupBasic_Constant_3997_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3997_1");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_3997_2(EditorCell editorCell, SNode node, EditorContext context) {

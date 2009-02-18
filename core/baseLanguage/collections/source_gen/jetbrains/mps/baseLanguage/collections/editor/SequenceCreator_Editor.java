@@ -206,16 +206,7 @@ public class SequenceCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7951_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7951_3");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_7951_4(EditorCell editorCell, SNode node, EditorContext context) {

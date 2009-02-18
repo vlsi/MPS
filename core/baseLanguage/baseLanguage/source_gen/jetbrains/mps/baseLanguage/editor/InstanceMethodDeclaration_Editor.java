@@ -473,17 +473,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5704_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5704_0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_5704_1(EditorCell editorCell, SNode node, EditorContext context) {

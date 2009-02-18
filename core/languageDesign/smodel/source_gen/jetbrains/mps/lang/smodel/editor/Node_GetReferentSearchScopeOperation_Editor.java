@@ -143,7 +143,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
 
   private static void setupBasic_Constant_3341_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3341_0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_3341_1(EditorCell editorCell, SNode node, EditorContext context) {

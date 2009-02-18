@@ -111,7 +111,7 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8039_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8039_1");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_8039_0(EditorCell editorCell, SNode node, EditorContext context) {

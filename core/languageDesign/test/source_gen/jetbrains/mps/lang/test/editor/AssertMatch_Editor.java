@@ -40,7 +40,7 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_9939_3(context, node, "<"));
     editorCell.addEditorCell(this.createRefNodeList_9939_0(context, node));
     editorCell.addEditorCell(this.createConstant_9939_4(context, node, ">"));
-    editorCell.addEditorCell(this.createConstant_9939_1(context, node, " match"));
+    editorCell.addEditorCell(this.createConstant_9939_1(context, node, "match"));
     editorCell.addEditorCell(this.createConstant_9939_5(context, node, "<"));
     editorCell.addEditorCell(this.createRefNodeList_9939_1(context, node));
     editorCell.addEditorCell(this.createConstant_9939_6(context, node, ">"));

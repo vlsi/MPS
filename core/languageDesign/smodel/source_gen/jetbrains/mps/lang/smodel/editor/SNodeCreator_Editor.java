@@ -145,16 +145,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6629_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6629_0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_6629_1(EditorCell editorCell, SNode node, EditorContext context) {

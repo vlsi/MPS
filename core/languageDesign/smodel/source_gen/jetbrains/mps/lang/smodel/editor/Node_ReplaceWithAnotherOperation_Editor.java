@@ -15,8 +15,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class Node_ReplaceWithAnotherOperation_Editor extends DefaultNodeEditor {
 
@@ -106,16 +104,7 @@ public class Node_ReplaceWithAnotherOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2923_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2923_0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_2923_1(EditorCell editorCell, SNode node, EditorContext context) {

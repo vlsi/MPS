@@ -137,7 +137,7 @@ public class RemoveSetElementOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9725_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9725_0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_9725_0(EditorCell editorCell, SNode node, EditorContext context) {

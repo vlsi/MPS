@@ -150,7 +150,7 @@ public class Concept_GetAllSubConcepts_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6611_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6611_1");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_6611_2(EditorCell editorCell, SNode node, EditorContext context) {

@@ -91,7 +91,7 @@ public class MeetType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1323_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1323_1");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_1323_0(EditorCell editorCell, SNode node, EditorContext context) {

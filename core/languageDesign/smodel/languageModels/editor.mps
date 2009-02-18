@@ -159,10 +159,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487990992">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233844205643">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1138662130034">
         <property name="noTargetText" value="&lt;no value&gt;" />
@@ -234,10 +231,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487847416">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233848635554">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1139880110905">
         <property name="noTargetText" value="&lt;default&gt;" />
@@ -274,10 +268,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487762221">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233930314503">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1139877775154">
         <property name="noTargetText" value="&lt;default&gt;" />
@@ -321,10 +312,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487310217">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233844000670">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1177027646284">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -345,7 +333,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487163813">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1139859121222">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -382,10 +370,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487419431">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233930740826">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1139868035540">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -422,10 +407,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487753719">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233930451074">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1139870441857">
         <link role="relationDeclaration" targetNodeId="1.1139870362308" />
@@ -445,7 +427,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487836133">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1140029629084">
         <link role="relationDeclaration" targetNodeId="1.1139870362308" />
@@ -478,10 +460,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487382396">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233853173977">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1140131934570">
         <link role="relationDeclaration" targetNodeId="1.1140131861877" />
@@ -571,10 +550,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487883217">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233844461742">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1140725455182">
         <link role="relationDeclaration" targetNodeId="1.1140725362529" />
@@ -594,7 +570,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487204567">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1143221124298">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -625,7 +601,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487211679">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1143224155413">
         <property name="attractsFocus" value="1" />
@@ -646,7 +622,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487265809">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1143224196793">
         <property name="attractsFocus" value="1" />
@@ -691,10 +667,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206484910590">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233930574468">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1143235366833">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -810,7 +783,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487372237">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1144195585868">
         <property name="noTargetText" value="&lt;concept of parent&gt;" />
@@ -1030,7 +1003,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487951705">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1146171170038">
         <property name="noTargetText" value="&lt;no value&gt;" />
@@ -1050,10 +1023,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487983631">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233930902139">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1146253646908">
         <property name="noTargetText" value="&lt;no value&gt;" />
@@ -1120,7 +1090,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177700867230">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1166648602700">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -1201,7 +1171,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206486703955">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1171315915309">
         <property name="noTargetText" value="&lt;all&gt;" />
@@ -1236,7 +1206,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206486656308">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1171323979880">
         <property name="noTargetText" value="&lt;all&gt;" />
@@ -1414,7 +1384,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487728794">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1172244089060">
         <link role="relationDeclaration" targetNodeId="1.1172244025707" />
@@ -1448,7 +1418,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206486113014">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1206733827041">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -1517,7 +1487,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177028645589">
         <property name="text" value="/" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1172424124986">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -1592,7 +1562,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206486688203">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1176109781602">
         <link role="relationDeclaration" targetNodeId="1.1176109762787" />
@@ -1694,7 +1664,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206486189209">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1206486189210">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -1715,7 +1685,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206486155767">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1180031838390">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -1758,10 +1728,7 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1181943477553">
           <property name="text" value="(" />
-          <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233925984237">
-            <property name="flag" value="true" />
-          </node>
+          <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1181943477554">
           <link role="relationDeclaration" targetNodeId="1.1181937442359" />
@@ -1789,7 +1756,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206486226039">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1206486226040">
         <property name="noTargetText" value="&lt;no prototype&gt;" />
@@ -1814,7 +1781,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206486063558">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1182506841743">
         <property name="noTargetText" value="&lt;smodel&gt;" />
@@ -1843,7 +1810,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206485988831">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1221164457353">
         <property name="noTargetText" value="&lt;no reference role&gt;" />
@@ -1879,7 +1846,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206486612668">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1182511100904">
         <property name="noTargetText" value="&lt;no scope&gt;" />
@@ -2212,7 +2179,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206019913627">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1206019917223">
         <property name="vertical" value="false" />
@@ -2245,9 +2212,6 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934276">
           <property name="style" value="BOLD" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215160714526">
-          <property name="value" value="0.0" />
         </node>
       </node>
       <node role="alternationCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1212008926118">
@@ -2283,7 +2247,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206484905011">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1206482605000">
         <property name="noTargetText" value="&lt;no prototype&gt;" />
@@ -2410,10 +2374,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1219353219752">
         <property name="text" value="/" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234524655861">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1219353235996">
         <property name="noTargetText" value="&lt;no name&gt;" />
@@ -2457,7 +2418,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221164365412">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1221164365413">
         <property name="noTargetText" value="&lt;global scope&gt;" />
@@ -2482,7 +2443,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221170704918">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1221171056921">
         <link role="relationDeclaration" targetNodeId="1.1221170724607" />
@@ -2506,10 +2467,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1226359292522">
         <property name="text" value="/" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233846596834">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1226359367775">
         <property name="noTargetText" value="concept" />
