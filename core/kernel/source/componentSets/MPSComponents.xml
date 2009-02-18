@@ -520,6 +520,10 @@
     <component>
       <implementation-class>jetbrains.mps.findUsages.caches.MPSFileBasedIndexProjectHandler</implementation-class>  
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.make.StartupModuleMaker</implementation-class>
+    </component>
   </project-components>
 
 

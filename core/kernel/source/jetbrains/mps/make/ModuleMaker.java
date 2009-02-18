@@ -43,7 +43,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 public class ModuleMaker {
   private static Logger LOG = Logger.getLogger(ModuleMaker.class);
 
-  private static int MAX_ERRORS = 100;
+  private final static int MAX_ERRORS = 100;
 
   private Map<String, IModule> myContainingModules = new HashMap<String, IModule>();
   private Map<IModule, ModuleSources> myModuleSources = new HashMap<IModule, ModuleSources>();

@@ -55,7 +55,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
         }
       });
     }
-  }
+  }    
 
   public void updateRoots() {
     boolean firstTime = myIndexableRoots == null;
