@@ -374,7 +374,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   public void clear() {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         myModel.clear();
         myMessages.clear();
@@ -391,7 +391,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
     myMessagesInProgress.incrementAndGet();
 
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         int messages = myMessagesInProgress.decrementAndGet();
 
