@@ -39,6 +39,6 @@ public enum RuleType {
     for (RuleType rt:RuleType.values()){
       if (rt.getName().equals(s)) return rt;
     }
-    return null;
+    throw new IllegalArgumentException("No priority rule type: "+s);
   }
 }
