@@ -41,6 +41,7 @@ import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -422,7 +423,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     final SModelDescriptor result = manager.createNewModel(root, name, this);
-    result.getSModel().runLoadingAction(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         result.save();
       }

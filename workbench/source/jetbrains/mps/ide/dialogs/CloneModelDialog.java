@@ -19,7 +19,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.dialogs.project.BaseStretchingProjectDialog;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.dialogs.project.properties.presenters.CloneModelProperties;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
@@ -55,12 +54,12 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
   }
 
   private void initUI() {
-    addComponent(createPathField(),createFieldConstraints(0,0));
-    addComponent(createNamespacePanel(),createFieldConstraints(0,1));
-    addComponent(createStereoPanel(),createFieldConstraints(0,2));
-    addComponent(createCheckboxPanel(),createFieldConstraints(0,3));
+    addComponent(createPathField(), createFieldConstraints(0, 0));
+    addComponent(createNamespacePanel(), createFieldConstraints(0, 1));
+    addComponent(createStereoPanel(), createFieldConstraints(0, 2));
+    addComponent(createCheckboxPanel(), createFieldConstraints(0, 3));
 
-    addComponent(new JPanel(),createListConstraints(0,4));
+    addComponent(new JPanel(), createListConstraints(0, 4));
   }
 
   public JPanel createNamespacePanel() {
@@ -78,7 +77,7 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
   private JPanel createCheckboxPanel() {
     JPanel result = new JPanel(new BorderLayout());
     JCheckBox cbLog = new JCheckBox("Use log");
-    result.add(cbLog,BorderLayout.WEST);
+    result.add(cbLog, BorderLayout.WEST);
 
     Property pLog = BeanProperty.create(CloneModelProperties.PROPERTY_LOG);
     Property pLogVar = BeanProperty.create("selected");
@@ -91,7 +90,7 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
     JPanel result = new JPanel(new BorderLayout());
     result.add(new JLabel("Stereotype:"), BorderLayout.WEST);
     JComboBox cbStereotype = new JComboBox(SModelStereotype.values);
-    result.add(cbStereotype,BorderLayout.CENTER);
+    result.add(cbStereotype, BorderLayout.CENTER);
 
     Property pStereotype = BeanProperty.create(CloneModelProperties.PROPERTY_STEREOTYPE);
     Property pStereotypeVar = BeanProperty.create("selectedItem");
@@ -105,7 +104,7 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
 
     JTextField tfPath = new JTextField();
     tfPath.setEditable(false);
-    result.add(tfPath,BorderLayout.CENTER);
+    result.add(tfPath, BorderLayout.CENTER);
 
     Property pPath = BeanProperty.create(CloneModelProperties.PROPERTY_PATH);
     Property pPathVar = BeanProperty.create("text");
@@ -114,7 +113,7 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
       @Override
       public Object convertForward(Object value) {
         RootReference rr = (RootReference) value;
-        return rr.getPath()+" ("+rr.getPrefix()+")";
+        return rr.getPath() + " (" + rr.getPrefix() + ")";
       }
 
       @Override
@@ -130,7 +129,7 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
   private void collectModelProps() {
     myModelProperties = new CloneModelProperties();
     myModelProperties.loadFrom(myCloningModel);
-    
+
     String newName = createNameForCopy(myCloningModel.getLongName(), myCloningModel.getStereotype());
     myModelProperties.setLongName(newName);
   }
@@ -160,7 +159,7 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
 
   protected boolean saveChanges() {
     String errorString = getErrorString();
-    if (errorString!=null){
+    if (errorString != null) {
       setErrorText(errorString);
       return false;
     }
@@ -181,11 +180,13 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
     }
 
     final SModelRoot modelRoot = module.findModelRoot(reference.getPath());
-    final SModelDescriptor modelDescriptor = ModelAccess.instance().runWriteAction(new Computable<SModelDescriptor>() {
-      public SModelDescriptor compute() {
-        return module.createModel(new SModelFqName(modelName, stereotype), modelRoot);
+    final SModelDescriptor modelDescriptor = ModelAccess.instance().runWriteActionInCommand(
+      new Computable<SModelDescriptor>() {
+        public SModelDescriptor compute() {
+          return module.createModel(new SModelFqName(modelName, stereotype), modelRoot);
+        }
       }
-    });
+    );
     if (modelDescriptor == null) {
       setErrorText("You can't create a model in the model root that you specified");
       return false;
