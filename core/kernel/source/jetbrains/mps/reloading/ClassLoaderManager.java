@@ -18,6 +18,7 @@ package jetbrains.mps.reloading;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -185,10 +186,10 @@ public class ClassLoaderManager implements ApplicationComponent {
     }
   }
 
-  private RuntimeEnvironment<ModuleReference> createRuntimeEnvironment() {
+  private RuntimeEnvironment<ModuleReference> createRuntimeEnvironment(LibraryManager libraryManager) {
     final Set<String> excludedPackages = new HashSet<String>();
     final Set<String> generatorPrefixes = new HashSet<String>();
-    for (Language l : LibraryManager.getInstance().getBootstrapModules(Language.class)) {
+    for (Language l : libraryManager.getBootstrapModules(Language.class)) {
       for (LanguageAspect aspect : LanguageAspect.values()) {
         if (aspect == LanguageAspect.STRUCTURE) continue;
         excludedPackages.add(l.getNamespace() + "." + aspect.getName());
@@ -252,6 +253,18 @@ public class ClassLoaderManager implements ApplicationComponent {
         LOG.error(t);
       }
     }
+  }
+
+  public void init(LibraryManager libraryManager) {
+    synchronized (myLock) {
+      if (myRuntimeEnvironment == null) {
+        myRuntimeEnvironment = createRuntimeEnvironment(libraryManager);
+      }
+    }
+  }
+
+  private RuntimeEnvironment<ModuleReference> createRuntimeEnvironment() {
+    return createRuntimeEnvironment(LibraryManager.getInstance());
   }
 }
                                           

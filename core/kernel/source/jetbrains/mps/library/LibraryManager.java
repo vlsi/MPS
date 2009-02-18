@@ -46,7 +46,7 @@ import java.util.*;
   name = "LibraryManager",
   storages = {
     @Storage(
-      id ="other",
+      id = "other",
       file = "$APP_CONFIG$/libraryManager.xml"
     )}
 )
@@ -143,9 +143,9 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
         return PathManager.getWorkbenchPath();
       }
     });
-   result.add(new PredefinedLibrary("mps.app") {
+    result.add(new PredefinedLibrary("mps.app") {
       public String getPath() {
-        return PathManager.getAppPath()  ;
+        return PathManager.getAppPath();
       }
     });
     result.add(new PredefinedLibrary("mps.samples") {
@@ -198,6 +198,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
             myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
           }
         }
+        ClassLoaderManager.getInstance().init(LibraryManager.this);
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         fireOnLoad(myOwner);
 
@@ -231,11 +232,12 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
 
     return new HashSet<M>(result);
   }
+
   private <M extends IModule> void addGenerators(Class<M> cls, List<M> result) {
     for (M m : new ArrayList<M>(result)) {
       if (m instanceof Language) {
         if (cls.isAssignableFrom(Generator.class)) {
-          result.addAll((List<? extends M>)((Language) m).getGenerators());
+          result.addAll((List<? extends M>) ((Language) m).getGenerators());
         }
       }
     }
