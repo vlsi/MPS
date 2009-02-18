@@ -11,12 +11,12 @@
         <modelRoot path="${language_descriptor}/generator/buildlanguage/template" namespacePrefix="jetbrains.mps.build.packaging.generator.buildlanguage.template" />
       </models>
       <external-templates>
-        <generator generatorUID="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
         <generator generatorUID="ab777ef3-cd35-47a2-8db1-108b4d67986f(jetbrains.mps.build.packaging###1203014923802)" />
+        <generator generatorUID="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
       </external-templates>
       <dependencies>
-        <dependency reexport="true">0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</dependency>
         <dependency reexport="false">500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)</dependency>
+        <dependency reexport="true">0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.build.dependency</usedLanguages>
