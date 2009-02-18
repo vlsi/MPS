@@ -327,7 +327,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     myDiskTimestamp = fileTimestamp();
     
     IFile modelFile = getModelFile();
-    if (modelFile != null) {
+    if (modelFile != null && !modelFile.isReadOnly()) {
       VFileSystem.refreshFileSynchronously(modelFile);
     }
 
