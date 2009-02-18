@@ -73,13 +73,13 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   @Nullable
-  public static ModuleContext create(final SNode node, MPSProject project) {
+  public static ModuleContext create(final SNode node, MPSProject project,boolean askIfMany) {
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       public SModel compute() {
         return node.getModel();
       }
     });
-    return create(model, project, true);
+    return create(model, project, askIfMany);
   }
 
   @Nullable
