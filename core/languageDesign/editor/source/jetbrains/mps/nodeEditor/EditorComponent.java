@@ -1015,7 +1015,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && noKeysDown(keyEvent)) {
       EditorCell contextCell = editorContext.getContextCell();
-      if (contextCell.isFirstCaretPosition() && !(contextCell.isLastCaretPosition())) {
+      if (contextCell != null && contextCell.isFirstCaretPosition() && !(contextCell.isLastCaretPosition())) {
         return CellActionType.INSERT_BEFORE; 
       }
       return CellActionType.INSERT;
