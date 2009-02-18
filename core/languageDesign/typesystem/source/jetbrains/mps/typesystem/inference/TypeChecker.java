@@ -243,12 +243,12 @@ public class TypeChecker implements ApplicationComponent {
     return resultType;
   }
 
-  public InequationSystem getInequationsForHole(SNode hole) {
+  public InequationSystem getInequationsForHole(SNode hole, boolean holeIsAType) {
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(hole.getContainingRoot());
     final NodeTypesComponent temporaryComponent;
     temporaryComponent = typeCheckingContext.createTemporaryTypesComponent();
     try {
-      return temporaryComponent.computeInequationsForHole(hole);
+      return temporaryComponent.computeInequationsForHole(hole, holeIsAType);
     } finally {
       temporaryComponent.clearListeners(); //in order to prevent memory leaks.
       typeCheckingContext.popTemporaryTypesComponent();
