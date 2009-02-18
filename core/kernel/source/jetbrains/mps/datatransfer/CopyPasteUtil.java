@@ -51,12 +51,14 @@ public class CopyPasteUtil {
     necessaryLanguages.clear();
     Set<SNode> sourceNodes = sourceNodesToNewNodes.keySet();
     for (SNode node : sourceNodes) {
-      necessaryLanguages.add(node.getConceptLanguage());
+      necessaryLanguages.add(node.getConceptLanguage().update());
     }
     for (SReference ref : allReferences) {
       if (sourceNodesToNewNodes.get(ref.getTargetNode()) == null) {
         SModelReference targetModelReference = ref.getTargetSModelReference();
-        necessaryImports.add(targetModelReference);
+        if (targetModelReference != null) {
+          necessaryImports.add(targetModelReference.update());
+        }
       }
     }
   }
@@ -315,9 +317,9 @@ public class CopyPasteUtil {
             additionalModels.add(modelReference);
         }
 
-        for (ModuleReference namespace : necessaryLanguages) {
-          if (!targetModel.hasLanguage(namespace)) {
-            additionalLanguages.add(namespace);
+        for (ModuleReference moduleReference : necessaryLanguages) {
+          if (!targetModel.hasLanguage(moduleReference)) {
+            additionalLanguages.add(moduleReference);
           }
         }
 
