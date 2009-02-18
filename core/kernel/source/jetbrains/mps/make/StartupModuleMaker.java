@@ -23,6 +23,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.ide.DataManager;
+import com.intellij.ide.startup.StartupManagerEx;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.actions.MakeAllModules_Action;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -34,35 +35,28 @@ import org.jetbrains.annotations.NonNls;
 public class StartupModuleMaker extends AbstractProjectComponent {
   public StartupModuleMaker(Project project) {
     super(project);
-  }
 
-  @Override
-  public void projectOpened() {
     if (IdeMain.isTestMode()) return;
 
-    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+    StartupManagerEx.getInstanceEx(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            MakeAllModules_Action action = new MakeAllModules_Action();
-            DataContext dc = new DataContext() {
-              private DataContext myRealContext = DataManager.getInstance().getDataContext();
+        MakeAllModules_Action action = new MakeAllModules_Action();
+        DataContext dc = new DataContext() {
+          private DataContext myRealContext = DataManager.getInstance().getDataContext();
 
-              @Nullable
-              public Object getData(@NonNls String dataId) {
-                if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName())) {
-                  return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-                } else {
-                  return myRealContext.getData(dataId);
-                }
-              }
-            };
-
-            AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, dc);
-            action.update(event);
-            action.actionPerformed(event);
+          @Nullable
+          public Object getData(@NonNls String dataId) {
+            if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName())) {
+              return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+            } else {
+              return myRealContext.getData(dataId);
+            }
           }
-        });
+        };
+
+        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, dc);
+        action.update(event);
+        action.actionPerformed(event);
       }
     });
   }

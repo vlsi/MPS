@@ -31,6 +31,7 @@ import java.util.Set;
 
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.make.StartupModuleMaker;
 
 
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
@@ -38,16 +39,15 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
 
   private Set<VirtualFile> myIndexableRoots;
 
-  public MPSFileBasedIndexProjectHandler(Project project, FileBasedIndex index) {
+  public MPSFileBasedIndexProjectHandler(Project project, FileBasedIndex index, StartupModuleMaker maker) {
     super(project);
-
     myIndex = index;
 
     final MPSUnindexedFilesUpdater updater = new MPSUnindexedFilesUpdater(myIndex);
 
-    final StartupManagerEx startupManager = (StartupManagerEx) StartupManager.getInstance(project);
+    final StartupManagerEx startupManager = (StartupManagerEx) StartupManager.getInstance(myProject);
     if (startupManager != null) {
-      startupManager.registerPreStartupActivity(new Runnable() {
+      startupManager.registerPostStartupActivity(new Runnable() {
         public void run() {
           updateRoots();
           startupManager.getFileSystemSynchronizer().registerCacheUpdater(updater);
@@ -55,7 +55,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
         }
       });
     }
-  }    
+  }
 
   public void updateRoots() {
     boolean firstTime = myIndexableRoots == null;
