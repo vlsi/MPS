@@ -3997,7 +3997,7 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1220011856297" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220011802587">
-                    <link role="baseMethodDeclaration" targetNodeId="40.~ContentManager.setSelectedContent(com.intellij.ui.content.Content):com.intellij.openapi.util.ActionCallback" resolveInfo="setSelectedContent" />
+                    <link role="baseMethodDeclaration" targetNodeId="40.~ContentManager.setSelectedContent(com.intellij.ui.content.Content):void" resolveInfo="setSelectedContent" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220011802588">
                       <link role="variableDeclaration" targetNodeId="1220011802569" resolveInfo="content" />
                     </node>
