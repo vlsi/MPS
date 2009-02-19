@@ -161,7 +161,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   private void disposePlugins() {
     //need to wait cause otherwise project can be disposed before plugins
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         assert !myProject.isDisposed();
         if (!myLoaded) return;
