@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class ArrayType_Editor extends DefaultNodeEditor {
 
@@ -89,6 +90,9 @@ public class ArrayType_Editor extends DefaultNodeEditor {
 
       };
       inlineStyle.apply(editorCell);
+    }
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
     ArrayType_Brackets_Actions.setCellActions(editorCell, node, context);
   }

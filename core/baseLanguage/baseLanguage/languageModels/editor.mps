@@ -4549,6 +4549,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1113208455588">
         <property name="text" value="[]" />
+        <property name="attractsFocus" value="1" />
         <link role="actionMap" targetNodeId="1140562594615" resolveInfo="ArrayType_Brackets_Actions" />
         <link role="styleClass" targetNodeId="1215010871495" resolveInfo="Bracket" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233924982582">

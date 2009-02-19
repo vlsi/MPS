@@ -210,19 +210,7 @@
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1233740001262">
       <property name="name" value="m" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233740001264" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233740001265">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235062323895">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235062323896">
-            <property name="name" value="a" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1235062583756">
-              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1235062351765">
-                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235062323897" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1235062360801" />
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233740001265" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1233740127321">
         <property name="name" value="a" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1235052041477">
