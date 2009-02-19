@@ -13,8 +13,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
@@ -119,16 +117,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2233_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2233_0");
-    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     ArrayAccessExpression_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -137,17 +126,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2233_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2233_1");
-    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_RIGTH, false);
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_RefNode_2233_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

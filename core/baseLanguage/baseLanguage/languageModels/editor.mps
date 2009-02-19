@@ -8148,23 +8148,14 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1173175604827">
         <property name="text" value="[" />
         <link role="actionMap" targetNodeId="1173187381459" resolveInfo="ArrayAccessExpression_Actions" />
-        <link role="styleClass" targetNodeId="1215010871495" resolveInfo="Bracket" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215164267475">
-          <property name="flag" value="false" />
-        </node>
+        <link role="styleClass" targetNodeId="1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1173175607861">
         <link role="relationDeclaration" targetNodeId="17.1173175577737" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1173175610988">
         <property name="text" value="]" />
-        <link role="styleClass" targetNodeId="1215010871495" resolveInfo="Bracket" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233847860981">
-          <property name="flag" value="false" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215164262629">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
@@ -9689,14 +9680,14 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1184952955663">
         <property name="text" value="[" />
-        <link role="styleClass" targetNodeId="1215010871495" resolveInfo="Bracket" />
+        <link role="styleClass" targetNodeId="1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1184953300484">
         <link role="relationDeclaration" targetNodeId="17.1184953288404" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1184952958056">
         <property name="text" value="]" />
-        <link role="styleClass" targetNodeId="1215010871495" resolveInfo="Bracket" />
+        <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
