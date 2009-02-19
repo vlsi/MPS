@@ -580,7 +580,7 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226514043510">
-                      <link role="baseMethodDeclaration" targetNodeId="10.1220980057360" resolveInfo="getAllMacroNames" />
+                      <link role="baseMethodDeclaration" targetNodeId="10.1234975567387" resolveInfo="getAllMacroNames" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226514043511">
                         <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1226514043512">
                           <link role="concept" targetNodeId="1.1233321544558" resolveInfo="IPath" />

@@ -1437,7 +1437,7 @@
                     <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="1226514924194" />
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226514924195">
-                    <link role="baseMethodDeclaration" targetNodeId="14.1220980057360" resolveInfo="getAllMacroNames" />
+                    <link role="baseMethodDeclaration" targetNodeId="14.1234975567387" resolveInfo="getAllMacroNames" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226514924196">
                       <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1226514924197">
                         <link role="concept" targetNodeId="1.1233321544558" resolveInfo="IPath" />

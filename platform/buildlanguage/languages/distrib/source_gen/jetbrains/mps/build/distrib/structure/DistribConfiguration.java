@@ -5,17 +5,19 @@ package jetbrains.mps.build.distrib.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.build.packaging.structure.IVariableHolder;
+import jetbrains.mps.build.packaging.structure.IMacroHolder;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.structure.Configuration;
 import jetbrains.mps.build.packaging.structure.Folder;
 import jetbrains.mps.build.packaging.structure.IStringExpression;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.build.packaging.structure.Macro;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class DistribConfiguration extends BaseConcept implements INamedConcept, IVariableHolder {
+public class DistribConfiguration extends BaseConcept implements INamedConcept, IVariableHolder, IMacroHolder {
   public static final String concept = "jetbrains.mps.build.distrib.structure.DistribConfiguration";
   public static final String STARTUP_CLASS = "startupClass";
   public static final String DEFAULT_V_M_OPTIONS = "defaultVMOptions";
@@ -36,6 +38,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   public static final String STARTUP_DIRECTORY = "startupDirectory";
   public static final String VM_OPTIONS_DIR = "vmOptionsDir";
   public static final String SYSTEM_SPECIFIC_CONFIG = "systemSpecificConfig";
+  public static final String MACRO = "macro";
 
   public DistribConfiguration(SNode node) {
     super(node);
@@ -203,6 +206,26 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
 
   public void insertSystemSpecificConfig(SystemSpecificConfig prev, SystemSpecificConfig node) {
     this.insertChild(prev, DistribConfiguration.SYSTEM_SPECIFIC_CONFIG, node);
+  }
+
+  public int getMacrosCount() {
+    return this.getChildCount(DistribConfiguration.MACRO);
+  }
+
+  public Iterator<Macro> macros() {
+    return this.children(Macro.class, DistribConfiguration.MACRO);
+  }
+
+  public List<Macro> getMacros() {
+    return this.getChildren(Macro.class, DistribConfiguration.MACRO);
+  }
+
+  public void addMacro(Macro node) {
+    this.addChild(DistribConfiguration.MACRO, node);
+  }
+
+  public void insertMacro(Macro prev, Macro node) {
+    this.insertChild(prev, DistribConfiguration.MACRO, node);
   }
 
 

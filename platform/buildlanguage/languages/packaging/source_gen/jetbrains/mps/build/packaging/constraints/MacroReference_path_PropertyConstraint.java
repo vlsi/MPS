@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
+import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -25,7 +25,7 @@ public class MacroReference_path_PropertyConstraint implements IModelConstraints
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return MPSLayout_Behavior.call_evaluateMacro_1220980091008(SNodeOperations.getAncestor(node, "jetbrains.mps.build.packaging.structure.MPSLayout", false, true), SPropertyOperations.getString(node, "name"));
+    return IMacroHolder_Behavior.call_evaluateMacro_1234975967990(SNodeOperations.getAncestor(node, "jetbrains.mps.build.packaging.structure.MPSLayout", false, true), SPropertyOperations.getString(node, "name"));
   }
 
 }

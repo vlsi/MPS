@@ -95,64 +95,6 @@ public class QueriesGenerated {
     return output;
   }
 
-  public static Object referenceMacro_GetReferent_1234780080305(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
-      if (SPropertyOperations.getString(builtInVar, "name").equals("date")) {
-        return builtInVar;
-      }
-    }
-    return null;
-  }
-
-  public static Object referenceMacro_GetReferent_1234780080428(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToTargetDeclaration");
-  }
-
-  public static Object referenceMacro_GetReferent_1234780080603(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
-      if (SPropertyOperations.getString(builtInVar, "name").equals("date")) {
-        return builtInVar;
-      }
-    }
-    return null;
-  }
-
-  public static Object referenceMacro_GetReferent_1234780080642(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
-      if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
-        return builtInVar;
-      }
-    }
-    return null;
-  }
-
-  public static Object referenceMacro_GetReferent_1234780080670(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
-      if (SPropertyOperations.getString(builtInVar, "name").equals("date")) {
-        return builtInVar;
-      }
-    }
-    return null;
-  }
-
-  public static Object referenceMacro_GetReferent_1234780080696(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
-      if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
-        return builtInVar;
-      }
-    }
-    return null;
-  }
-
-  public static Object referenceMacro_GetReferent_1234780080727(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
-      if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
-        return builtInVar;
-      }
-    }
-    return null;
-  }
-
   public static Object referenceMacro_GetReferent_1234780240997(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "configuration", true)).isNotEmpty()) {
       return SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "configuration", true)).first(), "configuration", false);
@@ -174,11 +116,69 @@ public class QueriesGenerated {
     return output;
   }
 
+  public static Object referenceMacro_GetReferent_1234971270263(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+      if (SPropertyOperations.getString(builtInVar, "name").equals("date")) {
+        return builtInVar;
+      }
+    }
+    return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1234971270387(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToTargetDeclaration");
+  }
+
+  public static Object referenceMacro_GetReferent_1234971270563(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+      if (SPropertyOperations.getString(builtInVar, "name").equals("date")) {
+        return builtInVar;
+      }
+    }
+    return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1234971270602(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+      if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
+        return builtInVar;
+      }
+    }
+    return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1234971270630(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+      if (SPropertyOperations.getString(builtInVar, "name").equals("date")) {
+        return builtInVar;
+      }
+    }
+    return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1234971270656(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+      if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
+        return builtInVar;
+      }
+    }
+    return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1234971270687(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+      if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
+        return builtInVar;
+      }
+    }
+    return null;
+  }
+
   public static boolean ifMacro_Condition_1233681193440(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.LibraryFolder", false)).isNotEmpty();
   }
 
-  public static boolean ifMacro_Condition_1234780080359(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1234971270318(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.LibraryFolder", false)).isNotEmpty();
   }
 
@@ -186,7 +186,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "create", true);
   }
 
-  public static SNode sourceNodeQuery_1234780080783(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1234971270743(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }
 
@@ -210,14 +210,6 @@ public class QueriesGenerated {
     return components;
   }
 
-  public static Iterable sourceNodesQuery_1234780080776(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "entry", true);
-  }
-
-  public static Iterable sourceNodesQuery_1234780106222(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "configuration", true);
-  }
-
   public static Iterable sourceNodesQuery_1234877027528(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     Iterable<SNode> undeclaredVariables = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.UndeclaredVariableReference", false)).distinct();
     return Sequence.fromIterable(undeclaredVariables).where(new IWhereFilter <SNode>() {
@@ -238,6 +230,14 @@ public class QueriesGenerated {
       }
 
     });
+  }
+
+  public static Iterable sourceNodesQuery_1234971270736(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "entry", true);
+  }
+
+  public static Iterable sourceNodesQuery_1234971270750(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "configuration", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1234876993397(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {

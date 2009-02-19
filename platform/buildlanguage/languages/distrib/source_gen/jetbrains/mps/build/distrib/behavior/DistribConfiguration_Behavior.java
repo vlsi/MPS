@@ -90,4 +90,8 @@ public class DistribConfiguration_Behavior {
     return IVariableHolder_Behavior.call_getAllVariable_1234864693585(layout);
   }
 
+  public static String virtual_getPath_1234976932856(SNode thisNode) {
+    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(SLinkOperations.getTarget(thisNode, "projectFolder", false)).getAbsolutePath();
+  }
+
 }

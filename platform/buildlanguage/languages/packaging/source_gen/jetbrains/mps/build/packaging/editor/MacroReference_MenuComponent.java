@@ -9,7 +9,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
+import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,7 +27,7 @@ public class MacroReference_MenuComponent extends AbstractCellMenuComponent {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> allMacroNames = MPSLayout_Behavior.call_getAllMacroNames_1220980057360(SNodeOperations.getAncestor(node, "jetbrains.mps.build.packaging.structure.MPSLayout", true, true), SConceptPropertyOperations.getBoolean(SNodeOperations.getParent(node), "canStartFromBasedir"));
+      List<String> allMacroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(SNodeOperations.getAncestor(node, "jetbrains.mps.build.packaging.structure.MPSLayout", true, true), SConceptPropertyOperations.getBoolean(SNodeOperations.getParent(node), "canStartFromBasedir"));
       ListSequence.fromList(allMacroNames).addElement("no macro");
       return allMacroNames;
     }

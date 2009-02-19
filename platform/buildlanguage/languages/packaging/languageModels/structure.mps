@@ -494,12 +494,6 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1216905728562" resolveInfo="ModuleCycle" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1219229028250">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="macro" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1219228952036" resolveInfo="Macro" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1226493152214">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="baseDirectory" />
@@ -514,6 +508,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234874552379">
       <link role="intfc" targetNodeId="1234864659795" resolveInfo="IVariableHolder" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234968783421">
+      <link role="intfc" targetNodeId="1234968728594" resolveInfo="IMacroHolder" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1203614596836">
       <property name="value" value="build script" />
@@ -1157,6 +1154,16 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1234864659795">
     <property name="package" value="variables" />
     <property name="name" value="IVariableHolder" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1234968728594">
+    <property name="package" value="sourcePaths" />
+    <property name="name" value="IMacroHolder" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234969173075">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="macro" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1219228952036" resolveInfo="Macro" />
+    </node>
   </node>
 </model>
 

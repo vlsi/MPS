@@ -14,6 +14,9 @@
         <generator generatorUID="jetbrains.mps.build.distrib#1230058167282" />
         <generator generatorUID="jetbrains.mps.build.packaging###1203014923802" />
       </external-templates>
+      <dependencies>
+        <dependency reexport="false">76bd44da-d54b-493f-99db-fa2fd7d290af(jetbrains.mps.build.mpsbuild)</dependency>
+      </dependencies>
       <usedLanguages>
         <usedLanguages>02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)</usedLanguages>
       </usedLanguages>

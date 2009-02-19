@@ -15,10 +15,7 @@ import org.apache.commons.lang.StringUtils;
 import java.io.File;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import com.intellij.openapi.application.PathMacros;
 import java.util.LinkedList;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.Macros;
 
 public class MPSLayout_Behavior {
@@ -50,7 +47,7 @@ public class MPSLayout_Behavior {
   }
 
   public static String virtual_getPath_1213877230696(SNode thisNode) {
-    String macro = MPSLayout_Behavior.call_evaluateMacro_1220980091008(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "baseDirectory", true), "macro", true), "name"));
+    String macro = IMacroHolder_Behavior.call_evaluateMacro_1234975967990(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "baseDirectory", true), "macro", true), "name"));
     String fullPathWithoutMacro = Path_Behavior.call_getFullPathWithoutMacro_1226511495568(SLinkOperations.getTarget(thisNode, "baseDirectory", true));
     return (StringUtils.isEmpty(macro) ?
       fullPathWithoutMacro :
@@ -104,15 +101,6 @@ public class MPSLayout_Behavior {
     return result;
   }
 
-  public static List<String> call_getAllMacroNames_1220980057360(SNode thisNode, boolean addBasedir) {
-    List<String> names = ListSequence.<String>fromArray(MPSLayout_Behavior.getMPSHomeName_1226508944077());
-    if (addBasedir) {
-      ListSequence.fromList(names).addElement(MPSLayout_Behavior.getBasedirName_1226509010730());
-    }
-    ListSequence.fromList(names).addSequence(SetSequence.fromSet(PathMacros.getInstance().getUserMacroNames()));
-    return names;
-  }
-
   public static List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {
     List<SNode> vars = ListSequence.fromList(new LinkedList<SNode>());
     ListSequence.fromList(vars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "variable", true)));
@@ -120,18 +108,12 @@ public class MPSLayout_Behavior {
     return vars;
   }
 
-  public static String call_evaluateMacro_1220980091008(SNode thisNode, String macroName) {
-    if (macroName.equals(MPSLayout_Behavior.getBasedirName_1226509010730())) {
-      return ILayoutComponent_Behavior.call_getPath_1213877230696(thisNode);
-    }
-    if (macroName.equals(MPSLayout_Behavior.getMPSHomeName_1226508944077())) {
-      return PathManager.getHomePath();
-    }
-    return PathMacros.getInstance().getValue(macroName);
-  }
-
   public static String call_getDefaultTargetName_1230209625713(SNode thisNode) {
     return "main";
+  }
+
+  public static String virtual_getPath_1234976932856(SNode thisNode) {
+    return ILayoutComponent_Behavior.call_getPath_1213877230696(thisNode);
   }
 
   public static String getMPSHomeName_1226508944077() {

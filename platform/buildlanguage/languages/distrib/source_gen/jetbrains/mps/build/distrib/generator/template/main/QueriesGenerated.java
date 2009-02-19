@@ -22,6 +22,7 @@ import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
 import java.util.List;
 import jetbrains.mps.build.distrib.behavior.MacConfig_Behavior;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
+import jetbrains.mps.build.packaging.behavior.IPath_Behavior;
 import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -34,6 +35,9 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.generator.template.MappingScriptContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 
 public class QueriesGenerated {
 
@@ -289,14 +293,6 @@ public class QueriesGenerated {
     return MacConfig_Behavior.call_getStartupFileName_1234518093971(_context.getNode()) + "." + MacConfig_Behavior.call_getStartupFileExtension_1234518093983(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1234534521535(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "iconPath", true));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1234535902091(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "javaApplicationStubPath", true));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1234538856365(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true));
   }
@@ -314,13 +310,13 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1234538966072(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String path = SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "javaApplicationStubPath", true));
+    String path = IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(_context.getNode(), "javaApplicationStubPath", true)).getAbsolutePath();
     int index = path.lastIndexOf(SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator"));
     return path.substring(index + 1);
   }
 
   public static Object propertyMacro_GetPropertyValue_1234538966123(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String path = SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "iconPath", true));
+    String path = IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(_context.getNode(), "iconPath", true)).getAbsolutePath();
     int index = path.lastIndexOf(SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator"));
     return path.substring(index + 1);
   }
@@ -626,6 +622,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "homepageIcon", true);
   }
 
+  public static SNode sourceNodeQuery_1234971573235(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "iconPath", true);
+  }
+
+  public static SNode sourceNodeQuery_1234971617551(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "javaApplicationStubPath", true);
+  }
+
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true)).skip(1);
   }
@@ -697,6 +701,23 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1234793510694(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SystemSpecificConfig_Behavior.call_getAllUsedVariable_1234793567442(_context.getNode());
+  }
+
+  public static Iterable sourceNodesQuery_1234978158023(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "macro", true);
+  }
+
+  public static void mappingScript_CodeBlock_1234975234874(final IOperationContext operationContext, final MappingScriptContext _context) {
+    List<SNode> holders = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.IMacroHolder");
+    for(SNode holder : ListSequence.fromList(holders)) {
+      List<String> allMAcroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(holder, true);
+      for(String macroName : ListSequence.fromList(allMAcroNames)) {
+        SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
+        SPropertyOperations.set(macro, "name", macroName);
+        SPropertyOperations.set(macro, "path", IMacroHolder_Behavior.call_evaluateMacro_1234975967990(holder, macroName).replace("\\", "/"));
+        SLinkOperations.addChild(holder, "macro", macro);
+      }
+    }
   }
 
 }

@@ -126,6 +126,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234871158456">
       <link role="intfc" targetNodeId="3v.1234864659795" resolveInfo="IVariableHolder" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234970506509">
+      <link role="intfc" targetNodeId="3v.1234968728594" resolveInfo="IMacroHolder" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1230058022109">
       <property name="name" value="startupClass" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
