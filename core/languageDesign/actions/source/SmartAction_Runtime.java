@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
  * To change this template use File | Settings | File Templates.
  */
 public interface SmartAction_Runtime {
-  public void execute(SmartActionContext actionContext);
+  public void execute(EditorCell selectedCell, IOperationContext operationContext, SmartActionContext actionContext);
   public boolean fillActionContext(SmartActionContext actionContext);
   public boolean isApplicable(EditorCell selectedCell, IOperationContext operationContext);
 }

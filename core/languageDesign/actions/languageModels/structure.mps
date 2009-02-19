@@ -2316,6 +2316,10 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235051221371">
     <property name="name" value="GenerateCodeAction" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1235062223632">
+      <property name="name" value="description" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235056752178">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="isApplicable" />
@@ -2419,6 +2423,14 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235060179343">
     <property name="name" value="ExecuteSmartActionFunction" />
     <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1235064998716">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1235055936803" resolveInfo="ConceptFunctionParameter_EditorCell" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1235065009859">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1235056040733" resolveInfo="ConceptFunctionParameter_OperationContext" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1235060217454">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1235060219675" />

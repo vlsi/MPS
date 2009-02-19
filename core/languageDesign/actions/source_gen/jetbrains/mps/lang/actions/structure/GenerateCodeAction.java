@@ -12,6 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenerateCodeAction extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.actions.structure.GenerateCodeAction";
+  public static final String DESCRIPTION = "description";
   public static final String IS_APPLICABLE = "isApplicable";
   public static final String FILL_ACTION_CONTEXT = "fillActionContext";
   public static final String EXECUTE_SMART_ACTION = "executeSmartAction";
@@ -19,6 +20,14 @@ public class GenerateCodeAction extends BaseConcept {
 
   public GenerateCodeAction(SNode node) {
     super(node);
+  }
+
+  public String getDescription() {
+    return this.getProperty(GenerateCodeAction.DESCRIPTION);
+  }
+
+  public void setDescription(String value) {
+    this.setProperty(GenerateCodeAction.DESCRIPTION, value);
   }
 
   public IsSmartActionApplicableFunction getIsApplicable() {
