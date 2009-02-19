@@ -24,7 +24,7 @@ import java.util.TreeSet;
 
 public class StructuralCollectionUtil {
 
-  private static final ObjectCache<SNode, Integer> ourHashCodeCash = new ObjectCache<SNode, Integer>(2000);
+  private static final ObjectCache<SNode, Integer> ourHashCodeCash = new ObjectCache<SNode, Integer>(20000);
 
 
   public static int hashCode(SNode node) {
