@@ -40,12 +40,22 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ControlAbstraction" conceptFQName="jetbrains.mps.baseLanguage.closures.structure.ControlAbstraction" featureKind="CONCEPT" />
+          <value featureName="ControlAbstractionDeclaration" conceptFQName="jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -259,6 +269,101 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1228997986329">
       <property name="value" value="yield all elements in a sequence" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1229598881739">
+    <property name="name" value="UnrestrictedClosureLiteral" />
+    <link role="extends" targetNodeId="1199569711397" resolveInfo="ClosureLiteral" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230480193834">
+      <property name="value" value="{ ==&gt; &lt;body&gt; }" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230480223639">
+      <property name="value" value="unrestricted closure literal" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1229599010201">
+    <property name="name" value="ClosureControlStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1229629839560">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="controlMethod" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1081236700938" resolveInfo="StaticMethodDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1232476496647">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="closure" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1229599114269" resolveInfo="ControlClosureLiteral" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1229629947873">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="parameter" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1229704734287">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1229599114269">
+    <property name="name" value="ControlClosureLiteral" />
+    <link role="extends" targetNodeId="1229598881739" resolveInfo="UnrestrictedClosureLiteral" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1229599750256">
+    <property name="name" value="ControlAbstractionContainer" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="2.1107461130800" resolveInfo="Classifier" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1229600801065">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="controlAbstraction" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1229599834263" resolveInfo="ControlAbstraction" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1229599834263">
+    <property name="name" value="ControlAbstractionDeclaration" />
+    <link role="extends" targetNodeId="2.1109279851642" resolveInfo="GenericDeclaration" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1229600064117">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="parameter" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="2.1068498886292" resolveInfo="ParameterDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1229600049315">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="body" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229601068295">
+      <link role="intfc" targetNodeId="2.1178285077437" resolveInfo="ClassifierMember" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229601074122">
+      <link role="intfc" targetNodeId="1.1196978630214" resolveInfo="IResolveInfo" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229603445430">
+      <link role="intfc" targetNodeId="2.1188208481402" resolveInfo="HasAnnotation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1229708828035">
+    <property name="name" value="UnrestrictedFunctionType" />
+    <link role="extends" targetNodeId="1199542442495" resolveInfo="FunctionType" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1232020907791">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="terminateType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1229716548197">
+      <property name="value" value="{ ==&gt; }" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1229716555965">
+      <property name="value" value="unrestricted function type" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>

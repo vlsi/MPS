@@ -40,7 +40,7 @@
   <import index="14" modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
-  <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
+  <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1203518207327">
     <property name="package" value="internal" />
     <link role="conceptDeclaration" targetNodeId="1.1203518072036" resolveInfo="SmartClosureParameterDeclaration" />

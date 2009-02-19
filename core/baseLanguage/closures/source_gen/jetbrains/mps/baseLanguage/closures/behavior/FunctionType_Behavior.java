@@ -14,8 +14,13 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class FunctionType_Behavior {
+  private static Class[] PARAMETERS_1213877404927 = {SNode.class};
+  private static Class[] PARAMETERS_1230472987259 = {SNode.class};
+  private static Class[] PARAMETERS_1230475757059 = {SNode.class};
+  private static Class[] PARAMETERS_1232032188607 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -32,13 +37,12 @@ public class FunctionType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_0().createNode();
+    return new _Quotations.QuotationClass_1().createNode();
   }
 
-  public static String call_getRuntimeSignature_1213877404927(SNode thisNode) {
-    String[] paramTypes = new String[]{"_J","_K","_L","_M","_N","_O","_P","_Q","_S","_T"};
+  public static String virtual_getRuntimeSignature_1213877404927(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
-    if ((SLinkOperations.getTarget(thisNode, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+    if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
       sb.append("_return");
     } else
     {
@@ -46,24 +50,11 @@ public class FunctionType_Behavior {
     }
     sb.append("_P").append(SLinkOperations.getCount(thisNode, "parameterType"));
     sb.append("_E").append(SLinkOperations.getCount(thisNode, "throwsType"));
-    /*
-      int idx = paramTypes.length - SLinkOperations.getCount(thisNode, "parameterType");
-      if (idx < 0) {
-        return "???too many parameters in function type???";
-      }
-      String sep = "_from";
-      for(SNode t : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
-        sb.append(sep);
-        sep = "_and";
-        if (idx >= paramTypes.length) {
-          sb.append("_not_enough_type_variables");
-          break;
-        }
-        sb.append(paramTypes[idx]);
-        idx = idx + 1;
-      }
-    */
     return sb.toString();
+  }
+
+  public static String virtual_getRuntimeClassName_1230472987259(SNode thisNode) {
+    return "_FunctionTypes";
   }
 
   public static String call_getSignature_1213877405047(SNode thisNode) {
@@ -123,11 +114,100 @@ public class FunctionType_Behavior {
     }
   }
 
-  public static SNode call_getNormalizedReturnType_1213877405252(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      return SLinkOperations.getTarget(thisNode, "resultType", true);
+  public static SNode virtual_getResultType_1230475757059(SNode thisNode) {
+    SNode rt = SLinkOperations.getTarget(thisNode, "resultType", true);
+    if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+      List<SNode> args = SLinkOperations.getTargets(rt, "argument", true);
+      rt = args.get(0);
     }
-    return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(thisNode, "resultType", true));
+    return ((rt != null) && !(SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.VoidType")) ?
+      rt :
+      null
+    );
+  }
+
+  public static SNode virtual_getTerminateType_1232032188607(SNode thisNode) {
+    return null;
+  }
+
+  public static SNode call_getDeclarationRuntimeType_1230319610063(SNode thisNode) {
+    String rtCls = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(thisNode) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(thisNode);
+    SNode ice = RuntimeUtils.getRuntimeClassifiersMap().get(rtCls);
+    if (ice == null) {
+      return null;
+    }
+    SNode ct = new _Quotations.QuotationClass_2().createNode(ice);
+    if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
+      SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode)), true));
+    }
+    if ((FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode) != null)) {
+      SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode)), true));
+    }
+    for(SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
+      SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt), false));
+    }
+    for(SNode tt : SLinkOperations.getTargets(thisNode, "throwsType", true)) {
+      SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(tt, true));
+    }
+    return ct;
+  }
+
+  public static SNode call_getRuntimeType_1230319150573(SNode thisNode) {
+    String rtCls = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(thisNode) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(thisNode);
+    SNode ice = RuntimeUtils.getRuntimeClassifiersMap().get(rtCls);
+    if (ice == null) {
+      return null;
+    }
+    SNode ct = new _Quotations.QuotationClass_3().createNode(ice);
+    if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
+      SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode))));
+    }
+    if ((FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode) != null)) {
+      SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode))));
+    }
+    for(SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
+      SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt)));
+    }
+    for(SNode tt : SLinkOperations.getTargets(thisNode, "throwsType", true)) {
+      SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(tt));
+    }
+    return ct;
+  }
+
+  public static SNode call_getRuntimeType_1230320203983(SNode thisNode, List<SNode> parameterType) {
+    String rtCls = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(thisNode) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(thisNode);
+    SNode ice = RuntimeUtils.getRuntimeClassifiersMap().get(rtCls);
+    if (ice == null) {
+      return null;
+    }
+    SNode ct = new _Quotations.QuotationClass_4().createNode(ice);
+    if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
+      SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode))));
+    }
+    if ((FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode) != null)) {
+      SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode))));
+    }
+    for(SNode pt : parameterType) {
+      SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt)));
+    }
+    for(SNode tt : SLinkOperations.getTargets(thisNode, "throwsType", true)) {
+      SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(tt));
+    }
+    return ct;
+  }
+
+  public static SNode call_getNormalizedReturnType_1213877405252(SNode thisNode) {
+    return ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null) ?
+      ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode)) :
+      new _Quotations.QuotationClass_5().createNode()
+    );
+  }
+
+  public static SNode call_getNormalizedTerminateType_1232036646585(SNode thisNode) {
+    return ((FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode) != null) ?
+      ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode)) :
+      new _Quotations.QuotationClass_6().createNode()
+    );
   }
 
   public static SNode call_getNormalizedSequenceParameterReturnType_1213877405260(SNode thisNode) {
@@ -153,6 +233,38 @@ public class FunctionType_Behavior {
       idx = idx + 1;
     }
     return resList;
+  }
+
+  public static String call_getRuntimeSignature_1213877404927(SNode thisNode) {
+    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getRuntimeSignature_1213877404927", PARAMETERS_1213877404927);
+  }
+
+  public static String call_getRuntimeClassName_1230472987259(SNode thisNode) {
+    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getRuntimeClassName_1230472987259", PARAMETERS_1230472987259);
+  }
+
+  public static SNode call_getResultType_1230475757059(SNode thisNode) {
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getResultType_1230475757059", PARAMETERS_1230475757059);
+  }
+
+  public static SNode call_getTerminateType_1232032188607(SNode thisNode) {
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getTerminateType_1232032188607", PARAMETERS_1232032188607);
+  }
+
+  public static String callSuper_getRuntimeSignature_1213877404927(SNode thisNode, String callerConceptFqName) {
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getRuntimeSignature_1213877404927", PARAMETERS_1213877404927);
+  }
+
+  public static String callSuper_getRuntimeClassName_1230472987259(SNode thisNode, String callerConceptFqName) {
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getRuntimeClassName_1230472987259", PARAMETERS_1230472987259);
+  }
+
+  public static SNode callSuper_getResultType_1230475757059(SNode thisNode, String callerConceptFqName) {
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getResultType_1230475757059", PARAMETERS_1230475757059);
+  }
+
+  public static SNode callSuper_getTerminateType_1232032188607(SNode thisNode, String callerConceptFqName) {
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getTerminateType_1232032188607", PARAMETERS_1232032188607);
   }
 
 }

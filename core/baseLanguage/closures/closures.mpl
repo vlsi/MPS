@@ -7,6 +7,7 @@
   <accessoryModels>
     <model modelUID="jetbrains.mps.baseLanguage.closures.static" />
     <model modelUID="r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)" />
+    <model modelUID="r:00000000-0000-4000-0000-011c895903ae(jetbrains.mps.baseLanguage.closures.runtime)" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.baseLanguage.closures#1199623535494" uuid="857d0a79-6f44-4f46-84ed-9c5b42632011">
@@ -26,8 +27,8 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}/runtime/classes" />
-    <entry path="${language_descriptor}/classes" />
+    <entry path="${language_descriptor}/runtime/classes" include="false" />
+    <entry path="${language_descriptor}/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
     <entry path="${language_descriptor}/runtime/classes" />
@@ -39,6 +40,9 @@
     <dependency reexport="false">e7d4970e-3e9f-4cf0-a129-f5976c82d635(jetbrains.mps.lang.patterns#1174810948060)</dependency>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
   </dependencies>
+  <runtime>
+    <dependency reexport="false">4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)</dependency>
+  </runtime>
   <extendedLanguages>
     <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>

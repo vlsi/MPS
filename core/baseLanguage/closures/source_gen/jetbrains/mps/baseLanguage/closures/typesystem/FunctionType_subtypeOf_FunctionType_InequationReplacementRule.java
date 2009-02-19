@@ -6,14 +6,14 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_R
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -23,6 +23,14 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext) {
+    if (SNodeOperations.getConceptDeclaration(subtype) != SNodeOperations.getConceptDeclaration(supertype)) {
+      {
+        BaseIntentionProvider intentionProvider = null;
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "incompatible types", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229719015332", intentionProvider, errorTarget);
+      }
+      return;
+    }
     if (SLinkOperations.getCount(subtype, "parameterType") != SLinkOperations.getCount(supertype, "parameterType")) {
       {
         BaseIntentionProvider intentionProvider = null;
@@ -31,10 +39,24 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       }
       return;
     }
+    /*
+      {
+        SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), SLinkOperations.getTarget(supertype, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1201614892741", false, 0, intentionProvider);
+      }
+    */
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), SLinkOperations.getTarget(supertype, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1201614892741", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(supertype, "resultType", true), typeCheckingContext), SLinkOperations.getTarget(supertype, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1230129782492", false, 0, intentionProvider);
+    }
+    if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
+      {
+        SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createLessThanInequation(new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(supertype, "terminateType", true), typeCheckingContext), SLinkOperations.getTarget(supertype, "terminateType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1232130736964", false, 0, intentionProvider);
+      }
     }
     {
       SNode paramType1;
@@ -73,11 +95,23 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     boolean result_14532009 = true;
     {
+      if (SNodeOperations.getConceptDeclaration(subtype) != SNodeOperations.getConceptDeclaration(supertype)) {
+        result_14532009 = false;
+        return result_14532009;
+      }
       if (SLinkOperations.getCount(subtype, "parameterType") != SLinkOperations.getCount(supertype, "parameterType")) {
         result_14532009 = false;
         return result_14532009;
       }
-      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(subtype, "resultType", true), SLinkOperations.getTarget(supertype, "resultType", true), true);
+      /*
+        {
+          result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(subtype, "resultType", true), SLinkOperations.getTarget(supertype, "resultType", true), true);
+        }
+      */
+      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(supertype, "resultType", true)), SLinkOperations.getTarget(supertype, "resultType", true), true);
+      if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
+        result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(supertype, "terminateType", true)), SLinkOperations.getTarget(supertype, "terminateType", true), true);
+      }
       {
         SNode paramType1;
         SNode paramType2;

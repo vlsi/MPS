@@ -40,7 +40,7 @@ public class typeof_DowncastExpression_InferenceRule extends AbstractInferenceRu
           }
         }
 
-      }, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231553787", false);
+      }, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231553787", false, false);
     }
   }
 

@@ -12,7 +12,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -4276,7 +4276,15 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1214833953806">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214833953807" />
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214833953807">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1231258014665">
+                    <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1231258015894">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1231258020807">
+                        <link role="baseMethodDeclaration" targetNodeId="2.~Exception.&lt;init&gt;()" resolveInfo="Exception" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -4290,7 +4298,15 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1214833958577">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214833958578" />
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214833958578">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1231258039394">
+                    <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1231258040321">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1231258043936">
+                        <link role="baseMethodDeclaration" targetNodeId="2.~RuntimeException.&lt;init&gt;()" resolveInfo="RuntimeException" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

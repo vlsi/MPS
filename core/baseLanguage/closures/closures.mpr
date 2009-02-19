@@ -8,6 +8,7 @@
     <projectSolutions>
       <solutionPath path="${project}/solutions/closures.test/closures.test.msd" />
       <solutionPath path="${project}/solutions/closures.sandbox/closures.sandbox.msd" />
+      <solutionPath path="${project}/runtime/closures.runtime.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/closures.mpl" />

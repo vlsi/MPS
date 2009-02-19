@@ -181,6 +181,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
         }
 
       };
@@ -194,6 +195,15 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_1642_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     FunctionType_addThrows.setCellActions(editorCell, node, context);
   }
 
