@@ -1,3 +1,5 @@
+package jetbrains.mps.lang.actions;
+
 import jetbrains.mps.smodel.IOperationContext;
 
 import java.util.Map;

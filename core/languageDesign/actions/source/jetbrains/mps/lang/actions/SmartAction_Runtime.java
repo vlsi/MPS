@@ -1,3 +1,5 @@
+package jetbrains.mps.lang.actions;
+
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 

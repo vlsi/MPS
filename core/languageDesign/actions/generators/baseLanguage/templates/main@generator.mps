@@ -5863,5 +5863,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1235067948628">
+    <property name="name" value="SmartActions" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235067971522">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1235067971523" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235067971524" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235067971525" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235067948629" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1235067948630">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1235067948631" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235067948632" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235067948633" />
+    </node>
+    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1235067948634" />
+  </node>
 </model>
 
