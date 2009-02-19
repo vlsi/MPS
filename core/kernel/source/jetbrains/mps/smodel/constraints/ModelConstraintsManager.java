@@ -424,6 +424,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
     myNodePropertyGettersMap.clear();
     myNodePropertySettersMap.clear();
     myNodeReferentSearchScopeProvidersMap.clear();
+    myNodeReferentSetEventHandlersMap.clear();
+    myNodeDefaultSearchScopeProvidersMap.clear();
 
     for (String languageNamespace : myAddedLanguageNamespaces.keySet()) {
       List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.get(languageNamespace);
