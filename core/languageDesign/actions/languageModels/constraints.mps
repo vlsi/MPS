@@ -373,5 +373,60 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1235053871244">
+    <link role="concept" targetNodeId="1.1235053713157" resolveInfo="SmartActionParameterReference" />
+    <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1235053872698">
+      <link role="applicableLink" targetNodeId="1.1235053754581" />
+      <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1235053874371">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235053874372">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235053906821">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235053906822">
+              <property name="name" value="ancestor" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1235053906823">
+                <link role="concept" targetNodeId="1.1235051221371" resolveInfo="GenerateCodeAction" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235053906824">
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1235053906825" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1235053906826">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1235053906827">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1235053906828">
+                      <link role="conceptDeclaration" targetNodeId="1.1235051221371" resolveInfo="GenerateCodeAction" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1235054537946">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235054537947">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235054548815">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1235054601225">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" id="1235054607102">
+                    <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1235054619025" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235054541935">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235054539825">
+                <link role="variableDeclaration" targetNodeId="1235053906822" resolveInfo="ancestor" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1235054545236" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235054475481">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235054478594">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235054477687">
+                <link role="variableDeclaration" targetNodeId="1235053906822" resolveInfo="ancestor" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1235054481176">
+                <link role="link" targetNodeId="1.1235053836789" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

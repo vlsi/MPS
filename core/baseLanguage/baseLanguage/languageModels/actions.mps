@@ -8879,5 +8879,9 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.actions.structure.SmartEditorActions" id="1235058518070">
+    <property name="name" value="BL_EditorActions" />
+    <node role="generateCode" type="jetbrains.mps.lang.actions.structure.GenerateCodeAction" id="1235058531184" />
+  </node>
 </model>
 

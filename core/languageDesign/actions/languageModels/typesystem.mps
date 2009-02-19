@@ -583,5 +583,63 @@
       <link role="concept" targetNodeId="1.1221137268788" resolveInfo="ConceptFunctionParameter_nodeToPasteWrap" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1235053786557">
+    <property name="name" value="typeof_SmartActionParameterReference" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235053786558">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1235053793393">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1235053795288">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1235053795289">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235053798667">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235053797775">
+                <link role="applicableNode" targetNodeId="1235053786559" resolveInfo="reference" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1235053800159">
+                <link role="link" targetNodeId="1.1235053754581" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1235053793412">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1235053789405">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235053790532">
+              <link role="applicableNode" targetNodeId="1235053786559" resolveInfo="reference" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1235053786559">
+      <property name="name" value="reference" />
+      <link role="concept" targetNodeId="1.1235053713157" resolveInfo="SmartActionParameterReference" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1235053808082">
+    <property name="name" value="typeof_SmartActionParameter" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235053808083">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1235053817637">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1235053821032">
+          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235053822143">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235053821033">
+              <link role="applicableNode" targetNodeId="1235053808084" resolveInfo="parameter" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1235053822600">
+              <link role="link" targetNodeId="1.1235053654084" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1235053817640">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1235053810945">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235053814025">
+              <link role="applicableNode" targetNodeId="1235053808084" resolveInfo="parameter" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1235053808084">
+      <property name="name" value="parameter" />
+      <link role="concept" targetNodeId="1.1235053632692" resolveInfo="SmartActionParameter" />
+    </node>
+  </node>
 </model>
 

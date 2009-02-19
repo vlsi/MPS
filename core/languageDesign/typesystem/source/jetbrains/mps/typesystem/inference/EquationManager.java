@@ -1053,9 +1053,18 @@ public class EquationManager {
     return thisLessThanType(var, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         // c :< T => c = T
-        ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
+        ISlicer slicer = null;
+        if (myTypeCheckingContext != null) {
+          slicer = myTypeCheckingContext.getCurrentSlicer();
+        } else {
+          LOG.error("type checking context is null");
+        }
         IWrapper otherType = decideIfIsLineAndReturnInfimum(concreteSupertypes);
-        slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), new ArrayList<EquationInfo>(errorInfoMap.values()));
+        if (slicer != null) {
+          slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), new ArrayList<EquationInfo>(errorInfoMap.values()));
+        } else {
+          LOG.error("slicer is null");
+        }
         addEquation(type,  /*concreteSupertypes.iterator().next()*/otherType, errorInfo);
       }
     }, priority, minPriority, isShallow);

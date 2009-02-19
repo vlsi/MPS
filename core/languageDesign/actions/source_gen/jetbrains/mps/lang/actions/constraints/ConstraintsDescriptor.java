@@ -16,6 +16,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint());
     this.myConstraints.add(new SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint());
     this.myConstraints.add(new NodeFactory_applicableConcept_ReferentConstraint());
+    this.myConstraints.add(new SmartActionParameterReference_smartActionParameter_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
