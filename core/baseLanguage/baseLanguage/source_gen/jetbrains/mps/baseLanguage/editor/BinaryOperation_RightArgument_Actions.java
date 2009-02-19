@@ -41,10 +41,12 @@ public class BinaryOperation_RightArgument_Actions {
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getNodeEditorComponent();
       EditorCell cell = editor.findNodeCell(leftExpression);
-      EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
-      editor.changeSelection(lastLeaf);
-      if (lastLeaf instanceof EditorCell_Label) {
-        ((EditorCell_Label)lastLeaf).end();
+      if (cell != null) {
+        EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
+        editor.changeSelection(lastLeaf);
+        if (lastLeaf instanceof EditorCell_Label) {
+          ((EditorCell_Label)lastLeaf).end();
+        }
       }
     }
 
