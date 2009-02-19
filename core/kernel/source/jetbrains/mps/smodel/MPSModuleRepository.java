@@ -194,8 +194,6 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public IModule getModuleByUID(String moduleUID) {
-    assertCanRead();
-
     return myFqNameToModulesMap.get(moduleUID);
   }
 
