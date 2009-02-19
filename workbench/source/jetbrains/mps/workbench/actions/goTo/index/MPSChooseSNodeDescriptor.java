@@ -67,7 +67,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       public boolean process(SNodeDescriptor s) {
         if (scope instanceof GlobalScope
         || scope.getModelDescriptor(s.getModelReference()) != null ) {
-          if (s.isDependOnOtherModel() || changedModels.contains(s.getModelReference())) {
+          if (s.isDependOnOtherModel() || s.isInvalid() || changedModels.contains(s.getModelReference())) {
             hasToLoad.add(s.getModelReference());
           } else {
             keys.add(s);
@@ -83,7 +83,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       for (SNode root : roots) {
         int number = roots.indexOf(root);
         String nodeName = (root.getName() == null)? "null" : root.getName();
-        keys.add(SNodeDescriptor.fromModelReference(nodeName, root.getConceptFqName(), root.getModel().getSModelReference(), true, number));
+        keys.add(SNodeDescriptor.fromModelReference(nodeName, root.getConceptFqName(), root.getModel().getSModelReference(), true, false, number));
       }
     }
     return keys.toArray(new SNodeDescriptor[keys.size()]);

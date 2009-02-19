@@ -26,20 +26,22 @@ public class SNodeDescriptor {
   private long myMostSignificantBits;
   private long myLeastSignificantBits;
   private Boolean myIsDependOnOtherModel;
+  private Boolean myIsInvalid;
   private int myNumberInModel;
 
-  public SNodeDescriptor(String nodeName, String fqName, long mostSignificantBits, long leastSignificantBits, Boolean dependOnOtherModel, int number) {
+  public SNodeDescriptor(String nodeName, String fqName, long mostSignificantBits, long leastSignificantBits, Boolean dependOnOtherModel, Boolean invalid, int number) {
     myNodeName = nodeName;
     myConceptFqName = fqName;
     myMostSignificantBits = mostSignificantBits;
     myLeastSignificantBits = leastSignificantBits;
     myIsDependOnOtherModel = dependOnOtherModel;
+    myIsInvalid = invalid;
     myNumberInModel = number;
   }
 
-  public static SNodeDescriptor fromModelReference(String nodeName, String fqName, SModelReference ref, Boolean dependOnOtherModel, int number) {
+  public static SNodeDescriptor fromModelReference(String nodeName, String fqName, SModelReference ref, Boolean dependOnOtherModel, Boolean invalid, int number) {
      UUID uuid = UUID.fromString(ref.getSModelId().toString().substring(2));
-     return new SNodeDescriptor(nodeName, fqName, uuid.getMostSignificantBits(), uuid.getLeastSignificantBits(), dependOnOtherModel, number);
+     return new SNodeDescriptor(nodeName, fqName, uuid.getMostSignificantBits(), uuid.getLeastSignificantBits(), dependOnOtherModel, invalid, number);
   }
 
   public String getConceptFqName() {
@@ -56,6 +58,10 @@ public class SNodeDescriptor {
 
   public Boolean isDependOnOtherModel() {
     return myIsDependOnOtherModel;
+  }
+
+  public Boolean isInvalid() {
+    return myIsInvalid;
   }
 
   public int getNumberInModel() {
