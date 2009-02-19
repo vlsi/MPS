@@ -61,7 +61,7 @@ public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
   }
 
   public int getVersion() {
-    return 0;
+    return 1;
   }
 
   public int getCacheSize() {
