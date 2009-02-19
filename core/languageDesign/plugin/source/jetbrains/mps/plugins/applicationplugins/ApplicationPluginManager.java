@@ -39,6 +39,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionFactory;
@@ -60,11 +61,19 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
   private ReloadListener myReloadListener = new ReloadListener() {
     public void onBeforeReload() {
-      disposePlugins();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          disposePlugins();
+        }
+      });
     }
 
     public void onReload() {
-      loadPlugins();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          loadPlugins();
+        }
+      });
     }
 
     public void onAfterReload() {

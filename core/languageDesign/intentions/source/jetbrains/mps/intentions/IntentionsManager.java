@@ -218,14 +218,18 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public void refresh() {
-    myIntentions.clear();
-    myNodesByIntentions.clear();
-    myIntentionsLanguages.clear();
-    invalidateCaches();
-    for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
-      addIntentionsFromLanguage(language);
-      addMigrationsFromLanguage(language);
-    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myIntentions.clear();
+        myNodesByIntentions.clear();
+        myIntentionsLanguages.clear();
+        invalidateCaches();
+        for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
+          addIntentionsFromLanguage(language);
+          addMigrationsFromLanguage(language);
+        }
+      }
+    });
   }
 
   private void addMigrationsFromLanguage(Language language) {

@@ -101,16 +101,20 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void invalidateCaches() {
-    MPSProjects projects = MPSProjects.instance();
-    if (projects != null) {
-      for (MPSProject p : projects.getProjects()) {
-        p.invalidateCaches();
-      }
-    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        MPSProjects projects = MPSProjects.instance();
+        if (projects != null) {
+          for (MPSProject p : projects.getProjects()) {
+            p.invalidateCaches();
+          }
+        }
 
-    for (IModule m : getAllModules()) {
-      m.invalidateCaches();
-    }
+        for (IModule m : getAllModules()) {
+          m.invalidateCaches();
+        }
+      }
+    });
   }
 
   public void addModuleRepositoryListener(ModuleRepositoryListener l) {

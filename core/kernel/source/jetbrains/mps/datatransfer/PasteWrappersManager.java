@@ -119,7 +119,11 @@ public class PasteWrappersManager implements ApplicationComponent {
 
   private class MyReloadHandler extends ReloadAdapter {
     public void onReload() {
-      reload();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          reload();
+        }
+      });
     }
   }
 }

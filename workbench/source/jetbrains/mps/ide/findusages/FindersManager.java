@@ -107,35 +107,39 @@ public class FindersManager implements ApplicationComponent {
   }
 
   public void refresh() {
-    myFinders.clear();
-    myNodesByFinder.clear();
-    for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
-      SModelDescriptor findUsagesModelDescriptor = l.getFindUsagesModelDescriptor();
-      if (findUsagesModelDescriptor != null) {
-        SModel smodel = findUsagesModelDescriptor.getSModel();
-        for (FinderDeclaration finderDeclaration : smodel.getRootsAdapters(FinderDeclaration.class)) {
-          String className = smodel.getSModelReference().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(finderDeclaration.getNode());
-          String conceptName = FinderDeclaration_Behavior.call_getConceptName_1213877240111(finderDeclaration.getNode());
-          try {
-            Class<?> cls = l.getClass(className);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myFinders.clear();
+        myNodesByFinder.clear();
+        for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
+          SModelDescriptor findUsagesModelDescriptor = l.getFindUsagesModelDescriptor();
+          if (findUsagesModelDescriptor != null) {
+            SModel smodel = findUsagesModelDescriptor.getSModel();
+            for (FinderDeclaration finderDeclaration : smodel.getRootsAdapters(FinderDeclaration.class)) {
+              String className = smodel.getSModelReference().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(finderDeclaration.getNode());
+              String conceptName = FinderDeclaration_Behavior.call_getConceptName_1213877240111(finderDeclaration.getNode());
+              try {
+                Class<?> cls = l.getClass(className);
 
-            if (cls != null) {
-              Object finder = cls.newInstance();
-              Set<GeneratedFinder> finders = myFinders.get(conceptName);
-              if (finders == null) {
-                finders = new HashSet<GeneratedFinder>();
+                if (cls != null) {
+                  Object finder = cls.newInstance();
+                  Set<GeneratedFinder> finders = myFinders.get(conceptName);
+                  if (finders == null) {
+                    finders = new HashSet<GeneratedFinder>();
+                  }
+                  finders.add((GeneratedFinder) finder);
+                  myFinders.put(conceptName, finders);
+                  myNodesByFinder.put((GeneratedFinder) finder, finderDeclaration.getNode());
+                } else {
+                  LOG.warning("Finder is registered but isn't compiled " + NameUtil.nodeFQName(finderDeclaration), finderDeclaration);
+                }
+              } catch (Exception e) {
+                LOG.error(e, finderDeclaration);
               }
-              finders.add((GeneratedFinder) finder);
-              myFinders.put(conceptName, finders);
-              myNodesByFinder.put((GeneratedFinder) finder, finderDeclaration.getNode());
-            } else {
-              LOG.warning("Finder is registered but isn't compiled " + NameUtil.nodeFQName(finderDeclaration), finderDeclaration);
             }
-          } catch (Exception e) {
-            LOG.error(e, finderDeclaration);
           }
         }
       }
-    }
+    });
   }
 }
