@@ -273,7 +273,10 @@ public class TabbedEditor implements IEditor {
     MyFileEditorState s = (MyFileEditorState) state;
     myTabbedPane.selectTab(s.myTab);
     if (s.myMemento != null) {
-      getEditorContext().setMemento(s.myMemento);
+      EditorContext editorContext = getEditorContext();
+      if (editorContext != null) {
+        editorContext.setMemento(s.myMemento);
+      }
     }
   }
 
