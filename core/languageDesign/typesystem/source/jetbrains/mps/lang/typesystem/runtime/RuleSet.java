@@ -17,6 +17,7 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;

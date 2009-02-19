@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:1222090580432(testRefactoring.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c8a4661d0(testRefactoring.structure)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="2" modelUID="testRefactoringTargetLang.structure" version="0" />
+  <import index="2" modelUID="r:00000000-0000-4000-0000-011c8a4661d3(testRefactoringTargetLang.structure)" version="0" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198157505315">
     <property name="name" value="MyVeryGoodConcept1" />
     <property name="rootable" value="true" />

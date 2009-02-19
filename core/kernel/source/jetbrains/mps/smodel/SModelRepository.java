@@ -68,11 +68,15 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public void refreshModels() {
-    LOG.debug("Model refresh");
-    for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myModelDescriptors)) {
-      m.refresh();
-    }
-    LOG.debug("Model refresh done");
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        LOG.debug("Model refresh");
+        for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myModelDescriptors)) {
+          m.refresh();
+        }
+        LOG.debug("Model refresh done");
+      }
+    });
   }
 
   public boolean containsModelWithFile(IFile modelFile) {
