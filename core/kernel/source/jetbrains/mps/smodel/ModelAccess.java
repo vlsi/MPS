@@ -139,7 +139,7 @@ public class ModelAccess {
           return false;
         }
       }
-    });
+    });                                     
   }
 
   public boolean tryWrite(final Runnable r) {

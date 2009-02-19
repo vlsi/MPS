@@ -128,7 +128,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
       }
     });
 
-    ModelAccess.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModelRepository.getInstance().saveAll();
       }
