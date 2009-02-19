@@ -124,6 +124,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             public void run() {
               if (isProjectDisposed()) return;
               rebuildEditorContent();
+              myNodeSubstituteChooser.setNodeSubstituteInfo(null);
             }
           });
         }
