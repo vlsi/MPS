@@ -9954,7 +9954,6 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215091279307">
       <property name="name" value="LeftBrace" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.StyleClassItem" id="1234523592705" />
       <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1215091330298">
         <link role="styleSheetClass" targetNodeId="1215010874200" resolveInfo="Brace" />
       </node>

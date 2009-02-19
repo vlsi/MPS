@@ -182,10 +182,6 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
 
   private static void setupBasic_Collection_4196_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4196_1");
-  }
-
-  private static void setupBasic_Collection_4196_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4196_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -195,6 +191,10 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
       };
       inlineStyle.apply(editorCell);
     }
+  }
+
+  private static void setupBasic_Collection_4196_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_4196_2");
   }
 
   private static void setupLabel_RefNode_4196_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -124,12 +124,12 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2648_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2648_0");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_2648_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2648_1");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_2648_0(EditorCell editorCell, SNode node, EditorContext context) {

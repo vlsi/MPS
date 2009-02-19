@@ -149,7 +149,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199569945678">
         <property name="text" value="{" />
-        <link role="styleClass" targetNodeId="3.1215091279307" resolveInfo="LeftBrace" />
+        <link role="styleClass" targetNodeId="3.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1199569952632">
         <property name="separatorText" value="," />
@@ -179,7 +179,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199569948005">
         <property name="text" value="}" />
-        <link role="styleClass" targetNodeId="3.1215091331565" resolveInfo="RightBrace" />
+        <link role="styleClass" targetNodeId="3.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
