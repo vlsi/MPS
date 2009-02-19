@@ -124,7 +124,7 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
   }
 
   public MyState getState() {
-    return new MyState(myTree.saveState(), toolIsOpened());
+    return new MyState(myTree.saveState());
   }
 
   public void loadState(final MyState state) {
@@ -169,10 +169,8 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
 
   public static class MyState {
     public TreeState myTreeState;
-    public boolean myIsShown;
 
-    public MyState(TreeState treeState, boolean isShown) {
-      myIsShown = isShown;
+    public MyState(TreeState treeState) {
       myTreeState = treeState;
     }
 
