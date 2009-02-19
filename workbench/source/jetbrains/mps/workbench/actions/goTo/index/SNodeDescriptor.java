@@ -64,6 +64,14 @@ public class SNodeDescriptor {
     return myIsInvalid;
   }
 
+  public void setInvalid(boolean invalid) {
+    myIsInvalid = invalid;
+  }
+
+  public void setDependOnOtherModel(boolean dependONOtherModel) {
+    myIsDependOnOtherModel = dependONOtherModel;
+  }
+
   public int getNumberInModel() {
     return myNumberInModel;
   }
@@ -74,5 +82,20 @@ public class SNodeDescriptor {
 
   public long getMostSignificantBits() {
     return myMostSignificantBits;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null || !(obj instanceof SNodeDescriptor)) return false;
+    SNodeDescriptor sd = (SNodeDescriptor) obj;
+    return sd.getConceptFqName().equals(getConceptFqName())
+      && sd.getModelReference().equals(getModelReference())
+      && sd.getNodeName().equals(getNodeName())
+      && sd.getNumberInModel() == getNumberInModel();
+  }
+
+  @Override
+  public int hashCode() {
+    return getNodeName().hashCode();
   }
 }

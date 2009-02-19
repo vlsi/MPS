@@ -17,12 +17,9 @@ package jetbrains.mps.workbench.actions.goTo.index;
 
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.util.NameUtil;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.util.indexing.*;
 import com.intellij.util.Processor;
@@ -32,8 +29,6 @@ import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.ide.startup.FileSystemSynchronizer;
 
 import java.util.*;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 
 public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor> {
   public ScalarIndexExtension<SNodeDescriptor> myIndex;
@@ -68,6 +63,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
         if (scope instanceof GlobalScope
         || scope.getModelDescriptor(s.getModelReference()) != null ) {
           if (s.isDependOnOtherModel() || s.isInvalid() || changedModels.contains(s.getModelReference())) {
+            s.setInvalid(false);
             hasToLoad.add(s.getModelReference());
           } else {
             keys.add(s);
@@ -83,7 +79,11 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       for (SNode root : roots) {
         int number = roots.indexOf(root);
         String nodeName = (root.getName() == null)? "null" : root.getName();
-        keys.add(SNodeDescriptor.fromModelReference(nodeName, root.getConceptFqName(), root.getModel().getSModelReference(), true, false, number));
+        SNodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
+          nodeName, root.getConceptFqName(), root.getModel().getSModelReference(), true, false, number);
+        if (!keys.contains(nodeDescriptor)) {
+          keys.add(nodeDescriptor);
+        }
       }
     }
     return keys.toArray(new SNodeDescriptor[keys.size()]);
@@ -96,12 +96,12 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       public void navigate(boolean requestFocus) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-              SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
-              SModel model = descriptor.getSModel();
-              List<SNode> roots = ((BaseSNodeDescriptorIndexer) myIndex.getIndexer()).getNodes(model);
-              SNode node = roots.get(object.getNumberInModel());
-              myProject.getComponentSafe(MPSEditorOpener.class).openNode(node);
-            }
+            SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
+            SModel model = descriptor.getSModel();
+            List<SNode> roots = ((BaseSNodeDescriptorIndexer) myIndex.getIndexer()).getNodes(model);
+            SNode node = roots.get(object.getNumberInModel());
+            myProject.getComponentSafe(MPSEditorOpener.class).openNode(node);
+          }
         });
       }
     };

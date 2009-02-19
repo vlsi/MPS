@@ -120,15 +120,14 @@ class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
   }
 
   public int getHashCode(SNodeDescriptor value) {
-    return value.getModelReference().toString().hashCode() * 10 + value.getNumberInModel();
+    return value.getNodeName().hashCode();
   }
 
   public boolean isEqual(SNodeDescriptor val1, SNodeDescriptor val2) {
     return val1.getConceptFqName().equals(val2.getConceptFqName())
       && val1.getNodeName().equals(val2.getNodeName())
       && val1.getNumberInModel() == val2.getNumberInModel()
-      && val1.getLeastSignificantBits() == val2.getLeastSignificantBits()
-      && val1.getMostSignificantBits() == val2.getMostSignificantBits();
+      && val1.getModelReference().equals(val2.getModelReference());
   }
 
   public void save(DataOutput out, SNodeDescriptor value) throws IOException {
