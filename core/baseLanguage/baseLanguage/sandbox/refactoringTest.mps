@@ -210,7 +210,13 @@
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1233740001262">
       <property name="name" value="m" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233740001264" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233740001265" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233740001265">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235066030540">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1235066034818">
+            <link role="variableDeclaration" targetNodeId="1233740454244" resolveInfo="b" />
+          </node>
+        </node>
+      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1233740127321">
         <property name="name" value="a" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1235052041477">

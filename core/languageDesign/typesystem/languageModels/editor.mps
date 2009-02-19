@@ -1768,7 +1768,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1221586799853">
         <property name="vertical" value="false" />
-        <property name="separatorText" value="&amp;" />
+        <property name="separatorText" value=" &amp;" />
         <link role="relationDeclaration" targetNodeId="1.1188473537547" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221586799854">
