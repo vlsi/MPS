@@ -194,8 +194,8 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
   }
 
   public void dispose() {
-    myNodeEditor.dispose();
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+    myNodeEditor.dispose();
   }
 
   private void recreateEditor() {

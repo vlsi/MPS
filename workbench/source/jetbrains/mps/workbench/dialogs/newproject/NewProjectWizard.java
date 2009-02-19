@@ -127,6 +127,14 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
         createProject();
       }
     });
+
+    ModelAccess.instance().executeCommand(new Runnable() {
+      public void run() {
+        SModelRepository.getInstance().saveAll();
+      }
+    });
+
+
     if (error[0] != null) {
       Messages.showErrorDialog(getContentPane(), error[0]);
       return;
@@ -166,21 +174,17 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     //noinspection ConstantConditions
     final MPSProject mpsProject = myCreatedProject.getComponent(MPSProjectHolder.class).getMPSProject();
 
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            if (myOptions.getCreateNewLanguage()) {
-              myCreatedLanguage = createNewLanguage(mpsProject);
-              mpsProject.addProjectLanguage(myCreatedLanguage);
-            }
+        if (myOptions.getCreateNewLanguage()) {
+          myCreatedLanguage = createNewLanguage(mpsProject);
+          mpsProject.addProjectLanguage(myCreatedLanguage);
+        }
 
-            if (myOptions.getCreateNewSolution()) {
-              IFile solutionDescriptorFile = createNewSolution();
-              myCreatedSolution = mpsProject.addProjectSolution(solutionDescriptorFile.toFile());
-            }
-          }
-        });
+        if (myOptions.getCreateNewSolution()) {
+          IFile solutionDescriptorFile = createNewSolution();
+          myCreatedSolution = mpsProject.addProjectSolution(solutionDescriptorFile.toFile());
+        }
       }
     });
   }
@@ -230,10 +234,10 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     LanguageDescriptor languageDescriptor = language.getLanguageDescriptor();
     ModuleReference ref = LanguageDesign_DevKit.MODULE_REFERENCE;
     languageDescriptor.getUsedDevkits().add(ref);
-    LanguageAspect.STRUCTURE.createNew(language);
-    LanguageAspect.EDITOR.createNew(language);
-    LanguageAspect.CONSTRAINTS.createNew(language);
-    LanguageAspect.TYPESYSTEM.createNew(language);
+    LanguageAspect.STRUCTURE.createNew(language, false);
+    LanguageAspect.EDITOR.createNew(language, false);
+    LanguageAspect.CONSTRAINTS.createNew(language, false);
+    LanguageAspect.TYPESYSTEM.createNew(language, false);
     language.setLanguageDescriptor(languageDescriptor);
     language.save();
 

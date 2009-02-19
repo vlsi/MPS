@@ -185,7 +185,7 @@ public enum LanguageAspect {
     return createNew(l, true);
   }
 
-  public SModelDescriptor createNew(final Language l, final boolean saveDescriptor) {
+  public SModelDescriptor createNew(final Language l, final boolean saveModel) {
     assert get(l) == null;
 
     final SModelDescriptor model = l.createModel(getModuleUID(l), l.getSModelRoots().get(0));
@@ -204,9 +204,8 @@ public enum LanguageAspect {
 
         model.getSModel().addImportedModel(l.getStructureModelDescriptor().getSModelReference());
 
-        model.save();
-
-        if (saveDescriptor) {
+        if (saveModel) {
+          model.save();
           l.setLanguageDescriptor(l.getLanguageDescriptor(), false);
           l.save();
         }

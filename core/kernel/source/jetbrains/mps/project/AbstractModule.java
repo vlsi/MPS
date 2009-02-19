@@ -422,13 +422,10 @@ public abstract class AbstractModule implements IModule {
       return null;
     }
 
-    final SModelDescriptor result = manager.createNewModel(root, name, this);
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        result.save();
-      }
-    });
-    return result;
+    SModelDescriptor model = manager.createNewModel(root, name, this);
+    SModelRepository.getInstance().markChanged(model, true);
+
+    return model;
   }
 
   public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
