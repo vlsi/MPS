@@ -247,8 +247,8 @@ public class TestMain {
             testRefactoringDescriptor.getClassPaths().set(0,cpEntry1);
             testRefactoringTargetDescriptor.getClassPaths().set(0,cpEntry2);
 
-            testRefactoringLanguage[0].setLanguageDescriptor(testRefactoringDescriptor);
-            testRefactoringTargetLanguage[0].setLanguageDescriptor(testRefactoringTargetDescriptor);
+            testRefactoringLanguage[0].setLanguageDescriptor(testRefactoringDescriptor, false);
+            testRefactoringTargetLanguage[0].setLanguageDescriptor(testRefactoringTargetDescriptor, false);
           }
         } catch (Throwable t) {
           t.printStackTrace();
