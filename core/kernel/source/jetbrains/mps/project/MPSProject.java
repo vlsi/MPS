@@ -81,10 +81,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         for (IModule m : getModules()) {
           m.onModuleLoad();
         }
-
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
       }
     });
+
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
   public IScope getScope() {
