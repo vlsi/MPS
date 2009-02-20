@@ -295,9 +295,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
 
     InspectorEditorComponent inspectorEditorComponent = null;
-    if (editor instanceof NodeEditorWithInspectorComponent) {
-      inspectorEditorComponent = ((NodeEditorWithInspectorComponent)editor).getInspector();
-    }
 
     NodeHighlightManager highlightManager = editor.getHighlightManager();
     NodeHighlightManager inspectorHighlightManager = inspectorEditorComponent == null ? null : inspectorEditorComponent.getHighlightManager();
