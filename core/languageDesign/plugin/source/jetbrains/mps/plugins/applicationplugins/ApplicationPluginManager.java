@@ -37,6 +37,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -59,7 +60,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
   private List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
   private BaseApplicationPlugin myIDEPlugin;
 
-  private ReloadListener myReloadListener = new ReloadListener() {
+  private ReloadListener myReloadListener = new ReloadAdapter() {
     public void onBeforeReload() {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -74,9 +75,6 @@ public class ApplicationPluginManager implements ApplicationComponent {
           loadPlugins();
         }
       });
-    }
-
-    public void onAfterReload() {
     }
   };
 

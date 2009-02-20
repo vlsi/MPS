@@ -39,6 +39,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -75,16 +76,13 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   public void projectOpened() {
-    myReloadListener = new ReloadListener() {
+    myReloadListener = new ReloadAdapter() {
       public void onBeforeReload() {
         disposePlugins();
       }
 
       public void onReload() {
         loadPlugins();
-      }
-
-      public void onAfterReload() {
       }
     };
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);

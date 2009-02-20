@@ -62,6 +62,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
@@ -135,15 +136,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
   public static final String ID = ProjectViewPane.ID;
 
-  private ReloadListener myReloadListener = new ReloadListener() {
-    public void onBeforeReload() {
-
-    }
-
-    public void onReload() {
-
-    }
-
+  private ReloadListener myReloadListener = new ReloadAdapter() {
     public void onAfterReload() {
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
