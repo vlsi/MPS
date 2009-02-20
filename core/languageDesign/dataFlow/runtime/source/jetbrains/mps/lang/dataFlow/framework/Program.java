@@ -28,7 +28,7 @@ public class Program {
   private List<TryFinallyInfo> myTryFinallyInfo = new ArrayList<TryFinallyInfo>();
 
   private Map<Object, Integer> myStarts = new HashMap<Object, Integer>();
-  private Map<Object, Integer> myEnds = new HashMap<Object, Integer>();  
+  private Map<Object, Integer> myEnds = new HashMap<Object, Integer>();
   private Stack<Object> myCreationStack = new Stack<Object>();
 
   public List<Instruction> getInstructions() {
@@ -106,10 +106,16 @@ public class Program {
   }
 
   public int getStart(Object o) {
+    if (!myStarts.containsKey(o)) {
+        throw new RuntimeException("Can't find a start of node " + o);
+    }
     return myStarts.get(o);
   }
 
   public int getEnd(Object o) {
+    if (!myEnds.containsKey(o)) {
+        throw new RuntimeException("Can't find a end of node " + o);
+    }
     return myEnds.get(o);
   }
 
