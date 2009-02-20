@@ -432,8 +432,6 @@ public class TestMain {
       throw new RuntimeException(e);
     }
 
-
-    LoggerUtil.configureLogger();
   }
 
   public static interface ProjectRunnable {
