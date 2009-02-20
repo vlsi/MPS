@@ -1434,7 +1434,6 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1235082202347" />
         </node>
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235082184872">
           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235082170614">

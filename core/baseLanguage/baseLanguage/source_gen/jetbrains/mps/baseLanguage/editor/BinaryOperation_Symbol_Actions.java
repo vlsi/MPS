@@ -7,6 +7,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class BinaryOperation_Symbol_Actions {
 
@@ -23,7 +28,7 @@ public class BinaryOperation_Symbol_Actions {
     }
 
     public String getDescriptionText() {
-      return "disable delete";
+      return "delete";
     }
 
     public void execute(EditorContext editorContext) {
@@ -31,6 +36,18 @@ public class BinaryOperation_Symbol_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode rightExpression = SLinkOperations.getTarget(node, "rightExpression", true);
+      SNodeOperations.replaceWithAnother(node, rightExpression);
+      editorContext.flushEvents();
+      EditorComponent editor = editorContext.getNodeEditorComponent();
+      EditorCell cell = editor.findNodeCell(rightExpression);
+      if (cell != null) {
+        EditorCell firstLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
+        editor.changeSelection(firstLeaf);
+        if (firstLeaf instanceof EditorCell_Label) {
+          ((EditorCell_Label)firstLeaf).home();
+        }
+      }
     }
 
 }

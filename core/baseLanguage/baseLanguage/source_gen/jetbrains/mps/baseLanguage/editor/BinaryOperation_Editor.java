@@ -151,6 +151,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
+    BinaryOperation_Symbol_Actions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new CastExpression_KeyMap());
   }
 

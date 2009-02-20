@@ -8,9 +8,9 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -21,19 +21,16 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
   public List<SNode> getSubOrSuperTypes(SNode ft) {
     List<SNode> supertypes = Collections.emptyList();
     String rtSig = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(ft) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(ft);
-    List<SNode> interfaces = RulesUtil_Closures.getInterfaces();
-    for(SNode ice : interfaces) {
-      if (rtSig.equals(SPropertyOperations.getString(ice, "name"))) {
-        SNode ct = new _Quotations.QuotationClass_5().createNode(ice);
-        if ((FunctionType_Behavior.call_getResultType_1230475757059(ft) != null)) {
-          SLinkOperations.addChild(ct, "parameter", SNodeOperations.copyNode(FunctionType_Behavior.call_getResultType_1230475757059(ft)));
-        }
-        for(SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
-          SLinkOperations.addChild(ct, "parameter", SNodeOperations.copyNode(pt));
-        }
-        supertypes = Collections.singletonList(ct);
-        break;
+    SNode ice = RuntimeUtils.getRuntimeClassifiersMap().get(rtSig);
+    if (SNodeOperations.isInstanceOf(ice, "jetbrains.mps.baseLanguage.structure.Interface")) {
+      SNode ct = new _Quotations.QuotationClass_5().createNode(ice);
+      if ((FunctionType_Behavior.call_getResultType_1230475757059(ft) != null)) {
+        SLinkOperations.addChild(ct, "parameter", SNodeOperations.copyNode(FunctionType_Behavior.call_getResultType_1230475757059(ft)));
       }
+      for(SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
+        SLinkOperations.addChild(ct, "parameter", SNodeOperations.copyNode(pt));
+      }
+      supertypes = Collections.singletonList(ct);
     }
     return supertypes;
   }
