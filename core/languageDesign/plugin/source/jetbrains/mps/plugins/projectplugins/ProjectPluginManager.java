@@ -81,6 +81,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   public void projectClosed() {
+    myReloadListener.dispose();
     disposePlugins();
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
   }
@@ -273,22 +274,28 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   private class MyReloadListener extends ReloadAdapter {
+    private boolean myIsDisposed = false;
+
     public void onBeforeReload() {
-      Runnable runnable = new Runnable() {
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
+          if (myIsDisposed) return;
           disposePlugins();
         }
-      };
-      ThreadUtils.runInUIThreadNoWait(runnable);
+      });
     }
 
     public void onReload() {
-      Runnable runnable = new Runnable() {
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
+          if (myIsDisposed) return;
           loadPlugins();
         }
-      };
-      ThreadUtils.runInUIThreadNoWait(runnable);
+      });
+    }
+
+    public void dispose(){
+      myIsDisposed = true;
     }
   }
 }

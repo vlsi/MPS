@@ -199,6 +199,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
   }
 
   private void recreateEditor() {
+    if (myProject.isDisposed()) return;
     if (myNodeEditor instanceof NodeEditor) return;
 
     myComponent.removeAll();
