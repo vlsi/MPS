@@ -14621,12 +14621,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1233824930842">
         <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233826655491">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1233826660698">
-          <property name="value" value="1.0" />
-        </node>
       </node>
     </node>
   </node>
@@ -14638,10 +14632,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233824951285">
         <property name="text" value="(" />
         <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1233827559979">
-          <property name="value" value="0.0" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1235145995756">
+          <property name="flag" value="true" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1233828192691" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1233824956865">
         <property name="separatorText" value="," />
@@ -14650,9 +14643,12 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233824959508">
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233827879402">
-          <property name="value" value="0.0" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1235146317873">
+          <property name="flag" value="true" />
         </node>
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1235145360493">
+        <property name="flag" value="true" />
       </node>
     </node>
   </node>
@@ -14664,10 +14660,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233829210932">
         <property name="text" value="(" />
         <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1233829239173">
-          <property name="value" value="0.0" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1235146963956">
+          <property name="flag" value="true" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1233829242378" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1233829213480">
         <property name="separatorText" value="," />
@@ -14676,8 +14671,8 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233829225703">
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233830928554">
-          <property name="value" value="0.0" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1235147288737">
+          <property name="flag" value="true" />
         </node>
       </node>
     </node>
