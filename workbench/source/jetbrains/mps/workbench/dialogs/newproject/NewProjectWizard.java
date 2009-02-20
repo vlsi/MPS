@@ -238,7 +238,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     LanguageAspect.EDITOR.createNew(language, false);
     LanguageAspect.CONSTRAINTS.createNew(language, false);
     LanguageAspect.TYPESYSTEM.createNew(language, false);
-    language.setLanguageDescriptor(languageDescriptor);
+    language.setLanguageDescriptor(languageDescriptor,false);
     language.save();
 
     return language;
