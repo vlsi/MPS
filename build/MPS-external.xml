@@ -238,6 +238,7 @@
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguageInternal0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.closures0" />
+    <antcall target="MPS-languages.pack.closures.runtime0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections0" />
     <antcall target="MPS-languages.pack.collections_samples0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates0" />

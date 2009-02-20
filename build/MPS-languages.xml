@@ -70,6 +70,20 @@
     </jar>
     <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.closures.tmp" />
   </target>
+  <target name="pack.closures.runtime0">
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/closures.runtime.tmp" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/closures.runtime.tmp/module" />
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/closures.runtime.tmp/module">
+      <fileset file="core/baseLanguage/closures/runtime/closures.runtime.msd" />
+    </copy>
+    <copy todir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/closures.runtime.tmp/module">
+      <fileset dir="core/baseLanguage/closures/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+    </copy>
+    <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/closures.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/closures.runtime.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/closures.runtime.tmp" />
+  </target>
   <target name="pack.jetbrains.mps.baseLanguage.collections0">
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.tmp/module" />
