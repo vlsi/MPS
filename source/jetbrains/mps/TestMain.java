@@ -31,6 +31,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -288,7 +289,7 @@ public class TestMain {
     return testActionForLeaks(new Runnable() {
       public void run() {
         MPSProject project = loadProject(projectFile);
-        project.getPluginManager().reloadPlugins();
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         project.dispose();
       }
     }, leakThreshold);

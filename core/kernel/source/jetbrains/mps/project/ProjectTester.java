@@ -28,6 +28,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
@@ -63,7 +64,7 @@ public class ProjectTester {
   }
 
   public TestResult testProject(final String[] configurationsGiven) {
-    myProject.getPluginManager().reloadPlugins();
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
 
     final List<String> errors = new ArrayList<String>();
     final List<String> warnings = new ArrayList<String>();

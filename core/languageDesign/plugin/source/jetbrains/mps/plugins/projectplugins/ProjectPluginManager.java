@@ -20,7 +20,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Pair;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.MPSProjectHolder;
@@ -28,11 +28,11 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.PluginSorter;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
-import jetbrains.mps.plugins.PluginSorter;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -41,8 +41,8 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -52,11 +52,11 @@ import java.util.*;
 @State(
   name = "ProjectPluginManager",
   storages = {
-  @Storage(
-    id = "other",
-    file = "$WORKSPACE_FILE$"
-  )
-    }
+    @Storage(
+      id = "other",
+      file = "$WORKSPACE_FILE$"
+    )
+  }
 )
 public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
   private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
@@ -69,22 +69,14 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private Project myProject;
   private Ide_ProjectPlugin myIdePlugin;
 
-  private ReloadListener myReloadListener;
+  private MyReloadListener myReloadListener;
 
   public ProjectPluginManager(Project project) {
     myProject = project;
   }
 
   public void projectOpened() {
-    myReloadListener = new ReloadAdapter() {
-      public void onBeforeReload() {
-        disposePlugins();
-      }
-
-      public void onReload() {
-        loadPlugins();
-      }
-    };
+    myReloadListener = new MyReloadListener();
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
@@ -119,74 +111,62 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   //----------------RELOAD STUFF---------------------  
 
-  public void reloadPlugins() {
-    disposePlugins();
-    loadPlugins();
-  }
-
   private void loadPlugins() {
-    //do not wait - deadlock
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        if (myProject.isDisposed()) return;
-        if (myLoaded) return;
+    assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
+    if (myProject.isDisposed()) return;
+    if (myLoaded) return;
 
-        final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-        synchronized (myPluginsLock) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              mySortedPlugins = createPlugins(mpsProject);
-            }
-          });
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              for (BaseProjectPlugin plugin : mySortedPlugins) {
-                try {
-                  plugin.init(mpsProject);
-                } catch (Throwable t1) {
-                  LOG.error("Plugin " + plugin + " threw an exception during initialization " + t1.getMessage(), t1);
-                }
-              }
-            }
-          });
-          spreadState(mySortedPlugins);
+    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    synchronized (myPluginsLock) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          mySortedPlugins = createPlugins(mpsProject);
         }
+      });
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          for (BaseProjectPlugin plugin : mySortedPlugins) {
+            try {
+              plugin.init(mpsProject);
+            } catch (Throwable t1) {
+              LOG.error("Plugin " + plugin + " threw an exception during initialization " + t1.getMessage(), t1);
+            }
+          }
+        }
+      });
+      spreadState(mySortedPlugins);
+    }
 
-        myLoaded = true;
-      }
-    });
+    myLoaded = true;
   }
 
   private void disposePlugins() {
-    //need to wait cause otherwise project can be disposed before plugins
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        assert !myProject.isDisposed();
-        if (!myLoaded) return;
-        synchronized (myPluginsLock) {
-          Collections.reverse(mySortedPlugins);
-          collectState(mySortedPlugins);
+    assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
+    assert !myProject.isDisposed();
 
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              for (BaseProjectPlugin plugin : mySortedPlugins) {
-                try {
-                  plugin.dispose();
-                } catch (Throwable t) {
-                  LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
-                }
-              }
+    if (!myLoaded) return;
+    synchronized (myPluginsLock) {
+      Collections.reverse(mySortedPlugins);
+      collectState(mySortedPlugins);
+
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          for (BaseProjectPlugin plugin : mySortedPlugins) {
+            try {
+              plugin.dispose();
+            } catch (Throwable t) {
+              LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
             }
-          });
-          mySortedPlugins.clear();
+          }
         }
-        myLoaded = false;
-      }
-    });
+      });
+      mySortedPlugins.clear();
+    }
+    myLoaded = false;
   }
 
   private ArrayList<BaseProjectPlugin> createPlugins(MPSProject project) {
-    final Map<IModule,BaseProjectPlugin> plugins = new HashMap<IModule,BaseProjectPlugin>();
+    final Map<IModule, BaseProjectPlugin> plugins = new HashMap<IModule, BaseProjectPlugin>();
 
     Set<Language> languages = new HashSet<Language>();
     Set<DevKit> devkits = new HashSet<DevKit>();
@@ -224,12 +204,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
     myIdePlugin = new Ide_ProjectPlugin();
     IModule ideModule = MPSModuleRepository.getInstance().getModuleByUID(IDE_MODULE_ID);
-    plugins.put(ideModule,myIdePlugin);
+    plugins.put(ideModule, myIdePlugin);
 
     return PluginSorter.sortByDependencies(plugins);
   }
 
-  private BaseProjectPlugin createPlugin(IModule module,String className) {
+  private BaseProjectPlugin createPlugin(IModule module, String className) {
     try {
       Class pluginClass = module.getClass(className);
       if (pluginClass == null) return null;
@@ -290,5 +270,25 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   public static class PluginsState {
     @MapAnnotation(surroundWithTag = false, entryTagName = "option", keyAttributeName = "name", valueAttributeName = "value")
     public Map<String, PluginState> pluginsState = new HashMap<String, PluginState>();
+  }
+
+  private class MyReloadListener extends ReloadAdapter {
+    public void onBeforeReload() {
+      Runnable runnable = new Runnable() {
+        public void run() {
+          disposePlugins();
+        }
+      };
+      ThreadUtils.runInUIThreadNoWait(runnable);
+    }
+
+    public void onReload() {
+      Runnable runnable = new Runnable() {
+        public void run() {
+          loadPlugins();
+        }
+      };
+      ThreadUtils.runInUIThreadNoWait(runnable);
+    }
   }
 }
