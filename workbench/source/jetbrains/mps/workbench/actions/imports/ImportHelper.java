@@ -30,10 +30,14 @@ import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
+import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.actions.goTo.index.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -47,6 +51,12 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JOptionPane;
 
 public class ImportHelper {
+  private static boolean myUseCache = true;
+
+  public static void setUseCache(boolean useCache) {
+    myUseCache = useCache;
+  }
+
   public static void addModelImport(Project project, final MPSProject mpsProject, final IModule module, final SModelDescriptor model) {
     FakePsiElement fakePsiContext = new FakePsiElement() {
       public PsiElement getParent() {
@@ -159,46 +169,72 @@ public class ImportHelper {
       }
     };
 
-    BaseNodeModel goToNodeModel = new BaseNodeModel(mpsProject) {
-      public NavigationItem doGetNavigationItem(SNode node) {
-        return new BaseNodeItem(node) {
-          public void navigate(boolean requestFocus) {
-            new AddModelItem(model, getNode().getModel().getModelDescriptor(), contextModule) {
-              public MPSProject getMPSProject() {
-                return mpsProject;
-              }
-            }.navigate(requestFocus);
-          }
-        };
-      }
-
-      public SNode[] find(IScope scope) {
-        List<SModelDescriptor> modelDescriptors =
-          CollectionUtil.filter(scope.getModelDescriptors(), new Condition<SModelDescriptor>() {
-            public boolean met(SModelDescriptor modelDescriptor) {
-              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor);
-              boolean hasModule = modelDescriptor.getModule() != null;
-              return rightStereotype && hasModule;
+    BaseMPSChooseModel goToNodeModel;
+    if (!myUseCache) {
+      goToNodeModel = new BaseNodeModel(mpsProject) {
+        public NavigationItem doGetNavigationItem(SNode node) {
+          return new BaseNodeItem(node) {
+            public void navigate(boolean requestFocus) {
+              new AddModelItem(model, getNode().getModel().getModelDescriptor(), contextModule) {
+                public MPSProject getMPSProject() {
+                  return mpsProject;
+                }
+              }.navigate(requestFocus);
             }
-          });
-
-
-        final List<SNode> nodes = new ArrayList<SNode>();
-        for (SModelDescriptor modelDescriptor : modelDescriptors) {
-          SModel model = modelDescriptor.getSModel();
-          if (model == null) continue;
-          for (SNode node : model.getRoots()) {
-            nodes.add(node);
-          }
+          };
         }
-        return nodes.toArray(new SNode[0]);
-      }
 
-      @Nullable
-      public String getPromptText() {
-        return "Import model that inculdes root:";
-      }
-    };
+        public SNode[] find(IScope scope) {
+          List<SModelDescriptor> modelDescriptors =
+            CollectionUtil.filter(scope.getModelDescriptors(), new Condition<SModelDescriptor>() {
+              public boolean met(SModelDescriptor modelDescriptor) {
+                boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor);
+                boolean hasModule = modelDescriptor.getModule() != null;
+                return rightStereotype && hasModule;
+              }
+            });
+
+
+          final List<SNode> nodes = new ArrayList<SNode>();
+          for (SModelDescriptor modelDescriptor : modelDescriptors) {
+            SModel model = modelDescriptor.getSModel();
+            if (model == null) continue;
+            for (SNode node : model.getRoots()) {
+              nodes.add(node);
+            }
+          }
+          return nodes.toArray(new SNode[0]);
+        }
+
+        @Nullable
+        public String getPromptText() {
+          return "Import model that inculdes root:";
+        }
+      };
+    } else {
+      goToNodeModel = new MPSChooseSNodeDescriptor(mpsProject, new RootNodeNameIndex()) {
+        public NavigationItem doGetNavigationItem(final SNodeDescriptor object) {
+          return new RootNodeElement(object) {
+            public void navigate(boolean requestFocus) {
+              SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
+              SModel modelDescriptor = descriptor.getSModel();
+              List<SNode> roots = ((BaseSNodeDescriptorIndexer) myIndex.getIndexer()).getNodes(modelDescriptor);
+              SNode node = roots.get(object.getNumberInModel());
+              new AddModelItem(model, node.getModel().getModelDescriptor(), contextModule) {
+                public MPSProject getMPSProject() {
+                  return mpsProject;
+                }
+              }.navigate(requestFocus);
+            }
+          };
+        }        
+
+        @Nullable
+        public String getPromptText() {
+          return "Import model that inculdes root:";
+        }
+      };
+    }
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
