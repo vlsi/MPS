@@ -474,10 +474,10 @@
       <property name="propertyName" value="sss" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216563590569" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1216563599638" />
-      <node role="propertyImplementation" type="jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation" id="1216563590571">
-        <node role="defaultGetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultGetAccessor" id="1216563590572" />
-        <node role="defaultSetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultSetAccessor" id="1216563590573">
-          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216563590574" />
+      <node role="propertyImplementation" type="jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation" id="1235225531971">
+        <node role="defaultGetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultGetAccessor" id="1235225531972" />
+        <node role="defaultSetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultSetAccessor" id="1235225531973">
+          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235225536069" />
         </node>
       </node>
     </node>

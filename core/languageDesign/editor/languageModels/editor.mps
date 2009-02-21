@@ -2308,36 +2308,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1106271535824">
-    <property name="package" value="CellLayout" />
-    <link role="conceptDeclaration" targetNodeId="2.1106270637846" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1106271586309">
-      <property name="text" value="Flow" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1214314941229">
-        <property name="flag" value="true" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1106271583784">
-    <property name="package" value="CellLayout" />
-    <link role="conceptDeclaration" targetNodeId="2.1106270549637" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1106271613640">
-      <property name="text" value="Horizontal" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1214314941664">
-        <property name="flag" value="true" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1106271611316">
-    <property name="package" value="CellLayout" />
-    <link role="conceptDeclaration" targetNodeId="2.1106270571710" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1106271634762">
-      <property name="text" value="Vertical" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1214314939424">
-        <property name="flag" value="true" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration" id="1130860818891">
     <property name="name" value="EditorCellModel_KeyMap" />
     <link role="applicableConcept" targetNodeId="2.1073389214265" />
@@ -7926,16 +7896,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1216672309006">
-    <property name="package" value="CellLayout" />
-    <link role="conceptDeclaration" targetNodeId="2.1216672142186" resolveInfo="CellLayout_Indent" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1216672312102">
-      <property name="text" value="Indent" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1216672312103">
-        <property name="flag" value="true" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1225456446092">
     <property name="package" value="Stylesheet" />
     <link role="conceptDeclaration" targetNodeId="2.1225456267680" resolveInfo="RGBColor" />
@@ -8167,6 +8127,13 @@
         <property name="text" value="}" />
         <link role="styleClass" targetNodeId="26.1215088010675" resolveInfo="RightParen" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1235227043904">
+    <property name="package" value="CellLayout" />
+    <link role="conceptDeclaration" targetNodeId="2.1106270491082" resolveInfo="CellLayout" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1235229087855">
+      <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

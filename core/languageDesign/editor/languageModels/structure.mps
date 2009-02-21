@@ -1257,21 +1257,36 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1106270491082">
     <property name="name" value="CellLayout" />
     <property name="package" value="CellLayout" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1235226217430">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" resolveInfo="abstract" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1106270549637">
     <property name="name" value="CellLayout_Horizontal" />
     <property name="package" value="CellLayout" />
     <link role="extends" targetNodeId="1106270491082" resolveInfo="CellLayout" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235227714767">
+      <property name="value" value="horizontal" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1106270571710">
     <property name="name" value="CellLayout_Vertical" />
     <property name="package" value="CellLayout" />
     <link role="extends" targetNodeId="1106270491082" resolveInfo="CellLayout" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235227746009">
+      <property name="value" value="vertical" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1106270637846">
     <property name="name" value="CellLayout_Flow" />
     <property name="package" value="CellLayout" />
     <link role="extends" targetNodeId="1106270491082" resolveInfo="CellLayout" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235227699406">
+      <property name="value" value="flow" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1130847686886">
     <property name="name" value="UnderlineStyle" />
@@ -3671,6 +3686,10 @@
     <property name="package" value="CellLayout" />
     <property name="name" value="CellLayout_Indent" />
     <link role="extends" targetNodeId="1106270491082" resolveInfo="CellLayout" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235227729696">
+      <property name="value" value="indent" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1219226236603">
     <property name="package" value="Stylesheet" />
