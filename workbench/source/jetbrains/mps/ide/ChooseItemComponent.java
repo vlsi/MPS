@@ -49,7 +49,6 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
   private String myHeader;
   private JComponent myHeaderLabel;
   private JPanel myMainPanel;
-  private @Nullable JDialog myContainingFrame;
 
   public ChooseItemComponent(String header) {
     this(header, false);
@@ -140,13 +139,6 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
         doChoose(selectedItem);
       }
     });
-    askForDispose();
-  }
-
-  public void askForDispose() {
-    if (myContainingFrame != null) {
-      myContainingFrame.dispose();
-    }
   }
 
   public abstract void doChoose(Item item);

@@ -213,9 +213,6 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       setPreferredSize(new Dimension(400, 100));
     }
 
-    public void askForDispose() {
-    }
-
     protected String getItemPresentation(SModelDescriptor sm) {
       return sm.getSModelFqName().toString();
     }
