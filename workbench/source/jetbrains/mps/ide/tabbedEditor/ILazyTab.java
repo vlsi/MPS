@@ -20,6 +20,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import javax.swing.JComponent;
 import java.util.List;
 
+import org.jdom.Element;
+
 public interface ILazyTab {
   String getTitle();
 
@@ -34,4 +36,8 @@ public interface ILazyTab {
   boolean canCreate();
 
   void create();
+
+  int getCurrentTab();
+
+  void selectTab(int index);
 }

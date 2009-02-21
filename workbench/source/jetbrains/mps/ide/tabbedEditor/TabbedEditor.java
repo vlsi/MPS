@@ -257,7 +257,10 @@ public class TabbedEditor implements IEditor {
     if (getEditorContext() != null) {
       result.myMemento = getEditorContext().createMemento(level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL);
     }
-    result.myTab = myTabbedPane.getCurrentTabIndex();
+    result.myCurrentTab = myTabbedPane.getCurrentTabIndex();
+    for (ILazyTab tab:myTabbedPane.getTabs()){
+      result.myInnerCurrentTabs.add(tab.getCurrentTab());
+    }
     return result;
   }
 
@@ -271,7 +274,12 @@ public class TabbedEditor implements IEditor {
     }
 
     MyFileEditorState s = (MyFileEditorState) state;
-    myTabbedPane.selectTab(s.myTab);
+    myTabbedPane.selectTab(s.myCurrentTab);
+    int i = 0;
+    for (ILazyTab tab:myTabbedPane.getTabs()){
+      tab.selectTab(s.myInnerCurrentTabs.get(i));
+      i++;
+    }
     if (s.myMemento != null) {
       EditorContext editorContext = getEditorContext();
       if (editorContext != null) {
@@ -318,19 +326,35 @@ public class TabbedEditor implements IEditor {
 
   public static class MyFileEditorState implements MPSEditorState {
     private static final String TAB = "tab";
+    private static final String TABS = "inner_tabs";
+    private static final String INDEX = "index";
 
     private Object myMemento;
-    private int myTab;
+    private List<Integer> myInnerCurrentTabs = new ArrayList<Integer>();
+    private int myCurrentTab;
 
     public void save(Element e) {
-      e.setAttribute(TAB, "" + myTab);
+      e.setAttribute(TAB, "" + myCurrentTab);
+      Element innerTabsIndexXML = new Element(TABS);
+      for (int innerTabIndex: myInnerCurrentTabs){
+        Element innerTabIndexXML = new Element(TAB);
+        innerTabIndexXML.setAttribute(INDEX,Integer.toString(innerTabIndex));
+        innerTabsIndexXML.addContent(innerTabIndexXML);
+      }
+      e.addContent(innerTabsIndexXML);
     }
 
     public void load(Element e) {
       try {
-        myTab = Integer.parseInt(e.getAttributeValue(TAB));
+        myCurrentTab = Integer.parseInt(e.getAttributeValue(TAB));
       } catch (NumberFormatException ex) {
-        myTab = 0;
+        myCurrentTab = 0;
+      }
+      myInnerCurrentTabs.clear();
+      Element innerTabsIndexXML = e.getChild(TABS);
+      for (Element innerTabIndexXML: (List<Element>)innerTabsIndexXML.getChildren()){
+        String value = innerTabIndexXML.getAttributeValue(INDEX);
+        myInnerCurrentTabs.add(Integer.parseInt(value));
       }
     }
 

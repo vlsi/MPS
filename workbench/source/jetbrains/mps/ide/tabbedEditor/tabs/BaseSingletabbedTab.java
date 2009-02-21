@@ -102,6 +102,13 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
 
   protected abstract SNode createLoadableNode();
 
+  public final int getCurrentTab() {
+    return 0;
+  }
+
+  public final void selectTab(int index) {
+  }
+
   protected SNode getBaseNode() {
     return myBaseNode.getNode();
   }

@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.ide.tabbedEditor.tabs;
 
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.*;
@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 
 import javax.swing.*;
@@ -48,6 +47,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   private List<EditorComponent> myEditors = new ArrayList<EditorComponent>();
   private Class<? extends BaseAdapter> myClass;
   private TabbedEditor myTabbedEditor;
+  private int myCurrentIndex = 0;
 
   protected BaseMultitabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
     myTabbedEditor = tabbedEditor;
@@ -143,6 +143,12 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     if (!loadableNodes.isEmpty()) {
       myComponent = new JPanel(new BorderLayout());
       myInnerTabbedPane = new JTabbedPane();
+      if (myCurrentIndex != 0) {
+        try {
+          myInnerTabbedPane.setSelectedIndex(myCurrentIndex);
+        } catch (ArrayIndexOutOfBoundsException e) {
+        }
+      }
       for (Pair<SNode, IOperationContext> loadableNodeAndContext : loadableNodes) {
         addInnerTab(loadableNodeAndContext.o1, loadableNodeAndContext.o2);
       }
@@ -225,7 +231,18 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     tryToInitComponent();
   }
 
+  public int getCurrentTab() {
+    if (myInnerTabbedPane == null) return 0;
+    return myInnerTabbedPane.getSelectedIndex();
+  }
+
   public void selectTab(int index) {
-    myInnerTabbedPane.setSelectedIndex(index);
+    try {
+      myCurrentIndex = index;
+      if (myInnerTabbedPane != null) {
+        myInnerTabbedPane.setSelectedIndex(myCurrentIndex);
+      }
+    } catch (ArrayIndexOutOfBoundsException e) {
+    }
   }
 }
