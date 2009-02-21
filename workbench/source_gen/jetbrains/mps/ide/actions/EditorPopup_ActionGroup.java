@@ -47,7 +47,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.CloneRoot_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.baseLanguage.ShowParametersAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.actions.ModelProperties_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.ModelPropertiesWOShortcut_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_vcs);
       this.addSeparator();

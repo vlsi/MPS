@@ -47,6 +47,18 @@ import java.awt.Window;
 import java.util.List;
 
 public class CommonChoosers {
+  public static SNode showDialogNodeChooser(final Component parent, final List<SNode> values) {
+    Window window = SwingUtilities.getWindowAncestor(parent);
+    NodeChooserDialog dialog;
+    if (window instanceof Frame) {
+      dialog = new NodeChooserDialog((Frame) window, values);
+    } else {
+      dialog = new NodeChooserDialog((Dialog) window, values);
+    }
+    dialog.showDialog();
+    return dialog.getResult();
+  }
+
   public static SModelDescriptor showDialogModelChooser(final Component parent, final List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) {
     Window window = SwingUtilities.getWindowAncestor(parent);
     ModelChooserDialog dialog;
