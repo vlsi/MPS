@@ -13,7 +13,6 @@ import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.dialogs.ModelPropertiesDialog;
 
@@ -25,6 +24,7 @@ public class ModelProperties_Action extends GeneratedAction {
   public IOperationContext context;
   public ActionPlace place;
   public MPSProject project;
+  public Integer size;
 
   public ModelProperties_Action() {
     super("Model Properties", "", ICON);
@@ -38,10 +38,7 @@ public class ModelProperties_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    if (ModelProperties_Action.this.place != ActionPlace.EDITOR) {
-      return false;
-    }
-    return ModelProperties_Action.this.project.getComponent(ProjectPane.class).getSelectionSize() == 1;
+    return ModelProperties_Action.this.size == 1;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -75,6 +72,10 @@ public class ModelProperties_Action extends GeneratedAction {
     }
     this.project = event.getData(MPSDataKeys.MPS_PROJECT);
     if (this.project == null) {
+      return false;
+    }
+    this.size = event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE);
+    if (this.size == null) {
       return false;
     }
     return true;

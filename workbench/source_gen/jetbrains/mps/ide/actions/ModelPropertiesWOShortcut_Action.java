@@ -13,7 +13,6 @@ import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.dialogs.ModelPropertiesDialog;
 
@@ -37,19 +36,9 @@ public class ModelPropertiesWOShortcut_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    if (ModelPropertiesWOShortcut_Action.this.place != ActionPlace.EDITOR) {
-      return false;
-    }
-    return ModelPropertiesWOShortcut_Action.this.project.getComponent(ProjectPane.class).getSelectionSize() == 1;
-  }
-
   public void doUpdate(@NotNull() AnActionEvent event) {
     try {
-      {
-        boolean enabled = this.isApplicable(event);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "ModelPropertiesWOShortcut", t);
       this.disable(event.getPresentation());
