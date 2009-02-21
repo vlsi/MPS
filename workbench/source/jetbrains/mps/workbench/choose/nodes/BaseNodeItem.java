@@ -33,7 +33,7 @@ public abstract class BaseNodeItem implements NavigationItem {
   }
 
   public String getName() {
-    return myNode.getName();
+    return null;
   }
 
   @Nullable
@@ -42,6 +42,7 @@ public abstract class BaseNodeItem implements NavigationItem {
   }
 
   public FileStatus getFileStatus() {
+    //todo return right value
     return FileStatus.NOT_CHANGED;
   }
 

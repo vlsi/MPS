@@ -19,6 +19,7 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseModelItem implements NavigationItem {
@@ -33,8 +34,7 @@ public abstract class BaseModelItem implements NavigationItem {
   }
 
   public String getName() {
-    //noinspection ConstantConditions
-    return getPresentation().getPresentableText();
+    return null;
   }
 
   @Nullable
@@ -43,7 +43,8 @@ public abstract class BaseModelItem implements NavigationItem {
   }
 
   public FileStatus getFileStatus() {
-    return FileStatus.NOT_CHANGED;
+    boolean changed = SModelRepository.getInstance().isChanged(myModelDescriptor);
+    return changed ?FileStatus.MODIFIED:FileStatus.NOT_CHANGED;
   }
 
   public boolean canNavigate() {
@@ -51,7 +52,6 @@ public abstract class BaseModelItem implements NavigationItem {
   }
 
   public boolean canNavigateToSource() {
-    return true;
+    return false;
   }
-
 }

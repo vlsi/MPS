@@ -20,6 +20,7 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseModuleItem implements NavigationItem {
@@ -36,8 +37,7 @@ public abstract class BaseModuleItem implements NavigationItem {
   }
 
   public String getName() {
-    //noinspection ConstantConditions
-    return getPresentation().getPresentableText();
+    return null;
   }
 
   @Nullable
@@ -46,6 +46,7 @@ public abstract class BaseModuleItem implements NavigationItem {
   }
 
   public FileStatus getFileStatus() {
+    //todo return correct value
     return FileStatus.NOT_CHANGED;
   }
 
@@ -54,6 +55,6 @@ public abstract class BaseModuleItem implements NavigationItem {
   }
 
   public boolean canNavigateToSource() {
-    return true;
+    return false;
   }
 }
