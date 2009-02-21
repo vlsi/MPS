@@ -38,7 +38,6 @@ public class Icons {
   public static final Icon TRANSIENT_MODELS_ICON = new ImageIcon(Icons.class.getResource("nodes/transientModels.png"));
 
   public static final Icon PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/properties.png"));
-  public static final Icon MODEL_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/modelProperties.png"));
 
   public static final Icon SVN_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/svn.png"));
 

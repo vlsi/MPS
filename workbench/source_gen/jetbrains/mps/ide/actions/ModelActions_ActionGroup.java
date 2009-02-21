@@ -42,7 +42,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.addAnchor(ModelActions_ActionGroup.LABEL_ID_vcs);
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.model.ModelPropertiesAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.ModelProperties_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
