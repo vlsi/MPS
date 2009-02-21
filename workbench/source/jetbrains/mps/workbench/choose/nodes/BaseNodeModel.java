@@ -23,10 +23,12 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
   public BaseNodeModel(MPSProject project) {
-    super(project);
+    this(project,"node");
   }
 
-  //---------------------FIND STUFF------------------------
+  public BaseNodeModel(MPSProject project,String entityName) {
+    super(project,entityName);
+  }
 
   public String doGetFullName(Object element) {
     NodePresentation presentation = (NodePresentation) ((NavigationItem) element).getPresentation();
@@ -48,20 +50,7 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
     };
   }
 
-  //---------------------INTERFACE STUFF------------------------
-
   public String getCheckBoxName() {
-    //return IdeBundle.message("checkbox.include.non.project.classes");
     return "Include non-project models";
-  }
-
-  public String getNotInMessage() {
-    //return IdeBundle.message("label.no.matches.found.in.project");
-    return "no nodes found in project";
-  }
-
-  public String getNotFoundMessage() {
-    //return IdeBundle.message("label.no.matches.found");
-    return "no mathches found";
   }
 }

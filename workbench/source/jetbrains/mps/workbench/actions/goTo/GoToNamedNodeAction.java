@@ -73,7 +73,7 @@ public class GoToNamedNodeAction extends BaseAction {
         }
       };
 
-      BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject) {
+      BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject,"symbol") {
         public SNode[] find(IScope scope) {
           final List<SNode> nodes = new ArrayList<SNode>();
           List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
@@ -89,11 +89,6 @@ public class GoToNamedNodeAction extends BaseAction {
             }));
           }
           return nodes.toArray(new SNode[0]);
-        }
-
-        @Nullable
-        public String getPromptText() {
-          return "Symbol name:";
         }
       };
       popup = ChooseByNamePopup.createPopup(project, baseNodeModel, fakePsiContext);

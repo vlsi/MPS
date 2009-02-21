@@ -32,11 +32,11 @@ import java.awt.Frame;
 @State(
   name = "CharismaBlameDialog",
   storages = {
-  @Storage(
-    id = "other",
-    file = "$APP_CONFIG$/charismaBlameDialog.xml"
-  )
-    }
+    @Storage(
+      id = "other",
+      file = "$APP_CONFIG$/charismaBlameDialog.xml"
+    )
+  }
 )
 public class BlameDialogComponent implements ApplicationComponent, PersistentStateComponent<BlameDialog.MyState> {
   private BlameDialog.MyState myDialogState = new MyState();

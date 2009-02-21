@@ -83,18 +83,11 @@ public class GoToModelAction extends BaseAction {
 
         return modelDescriptors.toArray(new SModelDescriptor[0]);
       }
-
-      @Nullable
-      public String getPromptText() {
-        //return IdeBundle.message("prompt.gotoclass.enter.class.name");
-        return "Model name:";
-      }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new FakePsiContext());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
-        //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
       }
 
       public void elementChosen(final Object element) {

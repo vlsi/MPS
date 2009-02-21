@@ -34,6 +34,7 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Frame;
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractHierarchyView<T extends INodeAdapter> extends BaseProjectTool {
 
@@ -131,7 +132,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
   protected ActionGroup getHierarchyForFoundConceptActionGroup(final Class<T> aClass) {
     BaseAction action = new BaseAction("Show Hierarchy For Concept") {
       protected void doExecute(AnActionEvent e) {
-        java.util.List<SNode> nodes = new ArrayList<SNode>();
+        List<SNode> nodes = new ArrayList<SNode>();
         for (SModelDescriptor modelDescriptor : myContext.getScope().getModelDescriptors()) {
           if (modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
           for (INodeAdapter node : modelDescriptor.getSModel().getRootsAdapters()) {

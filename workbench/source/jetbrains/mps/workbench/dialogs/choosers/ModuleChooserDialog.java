@@ -65,7 +65,7 @@ class ModuleChooserDialog<T> extends BaseDialog {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
-    BaseModuleModel goToModuleModel = new BaseModuleModel(mpsProject) {
+    BaseModuleModel goToModuleModel = new BaseModuleModel(mpsProject,entityString) {
       public NavigationItem doGetNavigationItem(final IModule module) {
         return new BaseModuleItem(module) {
           public void navigate(boolean requestFocus) {
@@ -83,21 +83,6 @@ class ModuleChooserDialog<T> extends BaseDialog {
 
       public IModule[] find(IScope scope) {
         throw new UnsupportedOperationException("must not be used");
-      }
-
-      @Nullable
-      public String getPromptText() {
-        return NameUtil.capitalize(entityString)+" name:";
-      }
-
-      @Nullable
-      public String getCheckBoxName() {
-        return "Include non-project "+NameUtil.pluralize(entityString);
-      }
-
-      @Override
-      public String getNotInMessage() {
-        return "no "+NameUtil.pluralize(entityString)+" found in project";
       }
 
       @Override

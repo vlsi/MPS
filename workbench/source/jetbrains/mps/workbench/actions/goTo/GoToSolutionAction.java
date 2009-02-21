@@ -76,12 +76,6 @@ public class GoToSolutionAction extends BaseAction {
         }
         return solutions.toArray(new Solution[0]);
       }
-
-      @Nullable
-      public String getPromptText() {
-        //return IdeBundle.message("prompt.gotoclass.enter.class.name");
-        return "Solution name:";
-      }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToSolutionModel, new FakePsiContext());
     

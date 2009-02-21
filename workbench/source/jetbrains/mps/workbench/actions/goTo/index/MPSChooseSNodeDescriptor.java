@@ -34,7 +34,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
   public ScalarIndexExtension<SNodeDescriptor> myIndex;
 
   public MPSChooseSNodeDescriptor(MPSProject project, ScalarIndexExtension<SNodeDescriptor> index) {
-    super(project);
+    super(project,"node");
     myIndex = index;
   }
 
@@ -119,18 +119,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
   public String getCheckBoxName() {  
     return "Include non-project models";
-  }
-
-  public String getNotInMessage() {
-    return "no nodes found in project";
-  }
-
-  public String getNotFoundMessage() {
-    return "no mathches found";
-  }
-
-  public String getPromptText() {
-    return "Node name:";
   }
 
   //todo this is a workaround for IDEA's bug. Remove it as soon as IDEA will fix the bug.

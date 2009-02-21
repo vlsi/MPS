@@ -23,8 +23,8 @@ import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
   //---------------------FIND STUFF------------------------
 
-  public BaseModuleModel(MPSProject project) {
-    super(project);
+  public BaseModuleModel(MPSProject project,String entityName) {
+    super(project,entityName);
   }
 
   public String doGetFullName(Object element) {
@@ -33,19 +33,5 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
 
   public String doGetObjectName(IModule module) {
     return module.getModuleFqName();
-  }
-
-  //---------------------INTERFACE STUFF------------------------
-
-  public String getCheckBoxName() {
-    return "Include non-project modules";
-  }
-
-  public String getNotInMessage() {
-    return "no modules found in project";
-  }
-
-  public String getNotFoundMessage() {
-    return "no mathches found";
   }
 }

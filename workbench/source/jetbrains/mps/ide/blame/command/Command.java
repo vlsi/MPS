@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.ide.blame.command;
 
+import jetbrains.mps.ide.blame.perform.Query;
+import jetbrains.mps.ide.blame.perform.Response;
 import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.params.HttpClientParams;
 import org.apache.commons.httpclient.methods.PostMethod;
 
 import java.io.IOException;
-
-import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.ide.blame.perform.Query;
 
 public class Command {
   public static final String TEAMSYS = "http://jetbrains.net/tracker";

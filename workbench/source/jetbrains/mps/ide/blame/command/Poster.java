@@ -16,7 +16,10 @@
 package jetbrains.mps.ide.blame.command;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.blame.perform.*;
+import jetbrains.mps.ide.blame.perform.Executor;
+import jetbrains.mps.ide.blame.perform.Performable;
+import jetbrains.mps.ide.blame.perform.Query;
+import jetbrains.mps.ide.blame.perform.Response;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.params.HttpClientParams;
 import org.jetbrains.annotations.Nullable;

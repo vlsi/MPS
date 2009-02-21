@@ -17,7 +17,6 @@ package jetbrains.mps.ide.blame.perform;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task.Backgroundable;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +31,7 @@ public class Executor {
 
   public Response execute(final Performable procedure) {
     final Response[] response = new Response[1];
-    
+
     ProgressManager.getInstance().run(new Modal(myProject, "Connection in progress. Please wait.", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         try {

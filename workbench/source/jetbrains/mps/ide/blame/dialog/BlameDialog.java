@@ -21,13 +21,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
+import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;

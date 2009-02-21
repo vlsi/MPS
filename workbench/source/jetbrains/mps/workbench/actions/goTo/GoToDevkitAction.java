@@ -67,12 +67,6 @@ public class GoToDevkitAction extends BaseAction {
       public DevKit[] find(IScope scope) {
         return scope.getVisibleDevkits().toArray(new DevKit[0]);
       }
-
-      @Nullable
-      public String getPromptText() {
-        //return IdeBundle.message("prompt.gotoclass.enter.class.name");
-        return "Devkit name:";
-      }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToDevkitModel, new FakePsiContext());
 

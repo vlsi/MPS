@@ -76,11 +76,6 @@ public class GoToRootNodeAction extends BaseAction {
           }
           return nodes.toArray(new SNode[0]);
         }
-
-        @Nullable
-        public String getPromptText() {
-          return "Node name:";
-        }
       };
       popup = ChooseByNamePopup.createPopup(project, baseNodeModel, new FakePsiContext());
     } else {

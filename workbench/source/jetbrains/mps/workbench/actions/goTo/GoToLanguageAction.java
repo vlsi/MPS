@@ -67,12 +67,6 @@ public class GoToLanguageAction extends BaseAction {
       public Language[] find(IScope scope) {
         return scope.getVisibleLanguages().toArray(new Language[0]);
       }
-
-      @Nullable
-      public String getPromptText() {
-        //return IdeBundle.message("prompt.gotoclass.enter.class.name");
-        return "Language name:";
-      }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, new FakePsiContext());
     

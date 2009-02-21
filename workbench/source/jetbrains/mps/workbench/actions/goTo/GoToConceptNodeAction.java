@@ -54,7 +54,7 @@ public class GoToConceptNodeAction extends BaseAction {
     //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
-    BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject) {
+    BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject,"concept") {
       public SNode[] find(IScope scope) {
         final List<SNode> nodes = new ArrayList<SNode>();
         for (Language l : scope.getVisibleLanguages()) {
@@ -65,17 +65,11 @@ public class GoToConceptNodeAction extends BaseAction {
         return nodes.toArray(new SNode[0]);
 
       }
-
-      @Nullable
-      public String getPromptText() {
-        return "Concept name:";
-      }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, baseNodeModel, new FakePsiContext());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
-        //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
       }
 
       public void elementChosen(Object element) {

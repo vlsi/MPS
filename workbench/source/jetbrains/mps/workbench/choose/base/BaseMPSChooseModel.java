@@ -24,7 +24,9 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.ListCellRenderer;
 import java.util.ArrayList;
@@ -41,8 +43,11 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   private Map<String, List<NavigationItem>> myProjectNamesCache = new HashMap<String, List<NavigationItem>>();
   private Map<String, List<NavigationItem>> myGlobalNamesCache = new HashMap<String, List<NavigationItem>>();
 
-  protected BaseMPSChooseModel(MPSProject project) {
+  private String myEntityName = "";
+
+  protected BaseMPSChooseModel(MPSProject project,String entityName) {
     myProject = project;
+    myEntityName = entityName;
   }
 
   //---------------------FIND STUFF------------------------
@@ -138,6 +143,23 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   //---------------------INTERFACE STUFF------------------------
 
+  public String getCheckBoxName() {
+    return "Include non-project "+ NameUtil.pluralize(myEntityName);
+  }
+
+  public String getNotInMessage() {
+    return "no "+ NameUtil.pluralize(myEntityName)+" found in project";
+  }
+
+  public String getNotFoundMessage() {
+    return "no mathches found";
+  }
+
+  @Nullable
+  public String getPromptText() {
+    return NameUtil.capitalize(myEntityName)+" name:";
+  }
+
   @NotNull
   public String[] getSeparators() {
     return new String[]{"."};
@@ -150,17 +172,10 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   }
 
   public boolean loadInitialCheckBoxState() {
-    //PropertiesComponent propertiesComponent = PropertiesComponent.getInstance(myProject);
-    //return Boolean.TRUE.toString().equals(propertiesComponent.getValue("GoToClass.toSaveIncludeLibraries")) &&
-    //  Boolean.TRUE.toString().equals(propertiesComponent.getValue("GoToClass.includeLibraries"));
     return true;
   }
 
   public void saveInitialCheckBoxState(boolean state) {
-    //PropertiesComponent propertiesComponent = PropertiesComponent.getInstance(myProject);
-    //if (Boolean.TRUE.toString().equals(propertiesComponent.getValue("GoToClass.toSaveIncludeLibraries"))) {
-    //  propertiesComponent.setValue("GoToClass.includeLibraries", Boolean.toString(state));
-    //}
   }
 
   public ListCellRenderer getListCellRenderer() {

@@ -85,11 +85,6 @@ class ModelChooserDialog extends BaseDialog {
         throw new UnsupportedOperationException("must not be used");
       }
 
-      @Nullable
-      public String getPromptText() {
-        return "Model name:";
-      }
-
       @Override
       public boolean loadInitialCheckBoxState() {
         return false;

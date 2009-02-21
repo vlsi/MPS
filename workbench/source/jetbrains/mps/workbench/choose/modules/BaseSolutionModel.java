@@ -19,10 +19,6 @@ import jetbrains.mps.project.MPSProject;
 
 public abstract class BaseSolutionModel extends BaseModuleModel {
   public BaseSolutionModel(MPSProject project) {
-    super(project);
-  }
-
-  public String getCheckBoxName() {
-    return "Include non-project solutions";
+    super(project,"solution");
   }
 }

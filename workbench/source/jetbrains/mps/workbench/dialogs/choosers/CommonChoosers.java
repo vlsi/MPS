@@ -27,6 +27,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
@@ -34,6 +35,8 @@ import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
+import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
+import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
@@ -97,11 +100,6 @@ public class CommonChoosers {
       public SModelDescriptor[] find(IScope scope) {
         return models.toArray(new SModelDescriptor[models.size()]);
       }
-
-      @Nullable
-      public String getPromptText() {
-        return "Model name:";
-      }
     };
     
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new FakePsiContext());
@@ -125,25 +123,13 @@ public class CommonChoosers {
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
     final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
-    BaseMPSChooseModel<T> goToModuleModel = new BaseMPSChooseModel<T>(mpsProject) {
+    BaseMPSChooseModel<T> goToModuleModel = new BaseMPSChooseModel<T>(mpsProject,entityString) {
       public String doGetFullName(Object element) {
         return ((BaseModuleItem) element).getModule().getModuleUID();
       }
 
       public String doGetObjectName(T module) {
         return module.getModuleFqName();
-      }
-
-      public String getCheckBoxName() {
-        return "Include non-project "+NameUtil.pluralize(entityString);
-      }
-
-      public String getNotInMessage() {
-        return "no "+NameUtil.pluralize(entityString)+" found in project";
-      }
-
-      public String getNotFoundMessage() {
-        return "no mathches found";
       }
 
       public NavigationItem doGetNavigationItem(final T module) {
@@ -156,11 +142,6 @@ public class CommonChoosers {
 
       public T[] find(IScope scope) {
         return (T[]) modules.toArray();
-      }
-
-      @Nullable
-      public String getPromptText() {
-        return NameUtil.capitalize(entityString) + " name:";
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModuleModel, new FakePsiContext());

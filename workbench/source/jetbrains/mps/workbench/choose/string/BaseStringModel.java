@@ -24,10 +24,8 @@ import jetbrains.mps.util.NameUtil;
 
 public abstract class BaseStringModel extends BaseMPSChooseModel<String> {
   public BaseStringModel(MPSProject project) {
-    super(project);
+    super(project,"");
   }
-
-  //---------------------FIND STUFF------------------------
 
   public String doGetFullName(Object element) {
     BaseStringItem navigationItem = (BaseStringItem) element;
@@ -36,19 +34,5 @@ public abstract class BaseStringModel extends BaseMPSChooseModel<String> {
 
   public String doGetObjectName(String s) {
     return NameUtil.shortNameFromLongName(s);
-  }
-
-  //---------------------INTERFACE STUFF------------------------
-
-  public String getCheckBoxName() {
-    return "";
-  }
-
-  public String getNotInMessage() {
-    return "";
-  }
-
-  public String getNotFoundMessage() {
-    return "no mathches found";
   }
 }
