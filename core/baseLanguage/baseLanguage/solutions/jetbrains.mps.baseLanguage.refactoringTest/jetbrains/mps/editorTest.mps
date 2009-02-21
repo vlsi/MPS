@@ -2119,5 +2119,42 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1235221783263">
+    <property name="package" value="selection" />
+    <property name="name" value="AnnotationSelection" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235221839249">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1235221839250" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235221839251" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235221839252" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1235221873028">
+        <link role="annotation" targetNodeId="1.~SuppressWarnings" resolveInfo="SuppressWarnings" />
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1235221891914">
+          <property name="caretPosition" value="0" />
+          <property name="cellId" value="Collection_4312_0" />
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235221888081">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1235221888082" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235221888083" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235221888084" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1235221888085">
+        <link role="annotation" targetNodeId="1.~SuppressWarnings" resolveInfo="SuppressWarnings" />
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1235221895225">
+          <property name="isLastPosition" value="true" />
+          <property name="cellId" value="Constant_4312_2" />
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235221901284">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1235221901285">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1235221901286">
+          <property name="keycode" value="VK_END" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

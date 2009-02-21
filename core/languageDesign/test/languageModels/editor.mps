@@ -698,6 +698,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1228935068186">
         <property name="text" value=";" />
+        <link role="styleClass" targetNodeId="3.1215094139260" resolveInfo="Semicolon" />
       </node>
     </node>
   </node>

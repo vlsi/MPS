@@ -205,7 +205,17 @@
       <property name="name" value="name" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1234523126484" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234523126485" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523126486" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523126486">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235219371736">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235219371737">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235219371738" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235219374285">
+              <property name="value" value="10" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1233740001262">
       <property name="name" value="m" />
