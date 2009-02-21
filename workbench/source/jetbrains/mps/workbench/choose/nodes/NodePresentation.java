@@ -19,6 +19,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
 
@@ -45,7 +46,7 @@ public class NodePresentation extends BasePresentation {
 
   @NotNull
   public String doGetPresentableText() {
-    return "" + myNode.getName();
+    return NodePresentationUtil.matchingText(myNode);
   }
 
   public String doGetLocationString() {

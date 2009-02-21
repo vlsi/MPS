@@ -18,7 +18,6 @@ package jetbrains.mps.ide.hierarchy;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.baseLanguage.actions.GoToMemberWindow.GoToNodeComponent;
 import jetbrains.mps.ide.ChooseItemWindow;
 import jetbrains.mps.ide.hierarchy.icons.Icons;
 import jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction;
@@ -29,6 +28,8 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers.ChooserCallback;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -140,8 +141,8 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
           }
         }
 
-        new ChooseItemWindow(getMPSProject().getComponent(Frame.class), nodes.toArray(new SNode[0]), new GoToNodeComponent(myContext) {
-          public void doChoose(final SNode node) {
+        CommonChoosers.showSimpleNodeChooser(nodes,new ChooserCallback<SNode>() {
+          public void execute(SNode node) {
             MPSProject project = getMPSProject();
             if (project != null) {
               final IOperationContext operationContext = project.createOperationContext();

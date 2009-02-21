@@ -83,6 +83,41 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
+  public static void showSimpleNodeChooser(final List<SNode> nodes, final ChooserCallback<SNode> callback) {
+    DataContext dataContext = DataManager.getInstance().getDataContext();
+    final Project project = MPSDataKeys.PROJECT.getData(dataContext);
+    final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
+
+    BaseNodeModel goToNodeModel = new BaseNodeModel(mpsProject) {
+      public NavigationItem doGetNavigationItem(final SNode node) {
+        return new BaseNodeItem(node) {
+          public void navigate(boolean requestFocus) {
+            callback.execute(getNode());
+          }
+        };
+      }
+
+      public SNode[] find(IScope scope) {
+        return nodes.toArray(new SNode[nodes.size()]);
+      }
+    };
+
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, new FakePsiContext());
+
+    popup.invoke(new ChooseByNamePopupComponent.Callback() {
+      public void onClose() {
+      }
+
+      public void elementChosen(final Object element) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            ((NavigationItem) element).navigate(true);
+          }
+        });
+      }
+    }, ModalityState.current(), true);
+  }
+  
   public static void showSimpleModelChooser(final List<SModelDescriptor> models, final ChooserCallback<SModelDescriptor> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
