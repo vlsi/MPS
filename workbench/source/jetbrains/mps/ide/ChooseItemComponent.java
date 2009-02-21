@@ -201,9 +201,6 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
     return myItemsMap;
   }
 
-  public void setContainingFrame(@Nullable ChooseItemWindow<Item> containingFrame) {
-    myContainingFrame = containingFrame;
-  }
 
   public void putItem(String name, Item item) {
     if (!myItemsMap.containsKey(name)) {
