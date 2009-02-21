@@ -14,7 +14,7 @@ import java.util.HashMap;
  */
 public class SmartActionContext {
   private IOperationContext myOperationContext;
-  private Map<String, Object> myMap = new HashMap<String, Object>();
+  private Map<String, Object[]> myMap = new HashMap<String, Object[]>();
 
   public SmartActionContext(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -24,11 +24,12 @@ public class SmartActionContext {
     return myOperationContext;
   }
 
-  public void put(String key, Object value) {
-    myMap.put(key, value);
-  }
-
-  public Object get(String key) {
-    return myMap.get(key);
+  public Object[] get(String key) {
+    Object[] objects = myMap.get(key);
+    if (objects == null) {
+      objects = new Object[1];
+      myMap.put(key, objects);
+    }
+    return objects;
   }
 }
