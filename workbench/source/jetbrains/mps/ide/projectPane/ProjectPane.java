@@ -408,7 +408,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return getContextForSelection();
     if (dataId.equals(MPSDataKeys.LOGICAL_VIEW_NODE.getName())) return getSelectedTreeNode();
     if (dataId.equals(MPSDataKeys.LOGICAL_VIEW_NODES.getName())) return getSelectedTreeNodes();
-    if (dataId.equals(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE.getName())) return getSelectionPaths().length;
+    if (dataId.equals(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE.getName())) return getSelectionSize();
     if (dataId.equals(MPSDataKeys.PLACE.getName())) return getPlace();
 
     //PDK
@@ -419,6 +419,10 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
     //not found
     return null;
+  }
+
+  public int getSelectionSize() {
+    return getSelectionPaths().length;
   }
 
   private SModelDescriptor getCurrentModel() {

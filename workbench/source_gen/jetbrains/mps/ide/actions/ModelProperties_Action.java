@@ -9,8 +9,11 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.dialogs.ModelPropertiesDialog;
 
@@ -18,9 +21,10 @@ public class ModelProperties_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(ModelProperties_Action.class);
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/modelProperties.png", "jetbrains.mps.ide"), true);
 
-  public Integer selectedCount;
   public SModelDescriptor model;
   public IOperationContext context;
+  public ActionPlace place;
+  public MPSProject project;
 
   public ModelProperties_Action() {
     super("Model Properties", "", ICON);
@@ -33,8 +37,19 @@ public class ModelProperties_Action extends GeneratedAction {
     return "alt ENTER";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    if (ModelProperties_Action.this.place != ActionPlace.EDITOR) {
+      return false;
+    }
+    return ModelProperties_Action.this.project.getComponent(ProjectPane.class).getSelectionSize() == 1;
+  }
+
   public void doUpdate(@NotNull() AnActionEvent event) {
     try {
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "ModelProperties", t);
       this.disable(event.getPresentation());
@@ -46,16 +61,20 @@ public class ModelProperties_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.selectedCount = event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE);
-    if (this.selectedCount == null) {
-      return false;
-    }
-    this.model = event.getData(MPSDataKeys.MODEL);
+    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
     if (this.model == null) {
       return false;
     }
     this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (this.context == null) {
+      return false;
+    }
+    this.place = event.getData(MPSDataKeys.PLACE);
+    if (this.place == null) {
+      return false;
+    }
+    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    if (this.project == null) {
       return false;
     }
     return true;
