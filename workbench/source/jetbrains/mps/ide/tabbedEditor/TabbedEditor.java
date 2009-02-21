@@ -277,7 +277,13 @@ public class TabbedEditor implements IEditor {
     myTabbedPane.selectTab(s.myCurrentTab);
     int i = 0;
     for (ILazyTab tab:myTabbedPane.getTabs()){
-      tab.selectTab(s.myInnerCurrentTabs.get(i));
+      int index;
+      try{
+        index = s.myInnerCurrentTabs.get(i);
+      }catch (IndexOutOfBoundsException e){
+        index = 0;
+      }
+      tab.selectTab(index);
       i++;
     }
     if (s.myMemento != null) {
@@ -352,9 +358,11 @@ public class TabbedEditor implements IEditor {
       }
       myInnerCurrentTabs.clear();
       Element innerTabsIndexXML = e.getChild(TABS);
-      for (Element innerTabIndexXML: (List<Element>)innerTabsIndexXML.getChildren()){
-        String value = innerTabIndexXML.getAttributeValue(INDEX);
-        myInnerCurrentTabs.add(Integer.parseInt(value));
+      if (innerTabsIndexXML!=null){
+        for (Element innerTabIndexXML: (List<Element>)innerTabsIndexXML.getChildren()){
+          String value = innerTabIndexXML.getAttributeValue(INDEX);
+          myInnerCurrentTabs.add(Integer.parseInt(value));
+        }
       }
     }
 
