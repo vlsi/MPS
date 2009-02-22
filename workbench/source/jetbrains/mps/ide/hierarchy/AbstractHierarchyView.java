@@ -18,7 +18,6 @@ package jetbrains.mps.ide.hierarchy;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.ide.ChooseItemWindow;
 import jetbrains.mps.ide.hierarchy.icons.Icons;
 import jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction;
 import jetbrains.mps.ide.hierarchy.toggle.ToggleActionGroup;
