@@ -27,6 +27,8 @@ public class CloneModelUtil {
         for (SNode root : CopyUtil.copy(model.getRoots())) {
           modelCopy.addRoot(root);
         }
+        // fix MPS-3829: save model in order to ensure it was added to vcs (new models are added on first save event)
+        modelCopy.getModelDescriptor().save();
       }
     });
     return modelCopy;
