@@ -2615,7 +2615,7 @@
         </node>
       </node>
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231748107094">
-        <property name="text" value="&quot;`" />
+        <property name="text" value="&quot; | tr '\r' ' '`" />
       </node>
       <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1231748274954">
         <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1231748274955">
@@ -2805,6 +2805,15 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1235406616240">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1235406618588">
+        <property name="text" value="LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1235406628191" />
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1235406631234">
+        <property name="text" value="export LD_LIBRARY_PATH" />
       </node>
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1231686953631">
