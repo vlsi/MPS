@@ -26,7 +26,9 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 
@@ -133,6 +135,13 @@ class ReloadSession {
               break;
             }
           }
+        }
+
+        // fix MPS-3796: instead reloading generator, reload it's language
+        Set<Generator> generators = CollectionUtil.filter(Generator.class, myChangedModules);
+        myChangedModules.removeAll(generators);
+        for (Generator gen : generators) {
+          myChangedModules.add(gen.getSourceLanguage());
         }
 
         myChangedModels.removeAll(skip);
