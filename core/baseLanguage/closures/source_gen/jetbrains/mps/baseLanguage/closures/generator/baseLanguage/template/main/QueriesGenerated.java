@@ -35,6 +35,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Collections;
+import jetbrains.mps.baseLanguage.closures.util.Constants;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
@@ -2507,8 +2508,8 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1215604550393(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(int params = 0 ; params <= 5 ; params = params + 1) {
-      for(int exceps = 0 ; exceps <= 5 ; exceps = exceps + 1) {
+    for(int params = 0 ; params <= Constants.MAX_CLOSURE_PARAMETERS ; params = params + 1) {
+      for(int exceps = 0 ; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS ; exceps = exceps + 1) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
@@ -2550,8 +2551,8 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1215605064522(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(int params = 0 ; params <= 5 ; params = params + 1) {
-      for(int exceps = 0 ; exceps <= 5 ; exceps = exceps + 1) {
+    for(int params = 0 ; params <= Constants.MAX_CLOSURE_PARAMETERS ; params = params + 1) {
+      for(int exceps = 0 ; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS ; exceps = exceps + 1) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
@@ -2662,8 +2663,8 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1229880126313(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(int params = 0 ; params <= 5 ; params = params + 1) {
-      for(int exceps = 0 ; exceps <= 5 ; exceps = exceps + 1) {
+    for(int params = 0 ; params <= Constants.MAX_CLOSURE_PARAMETERS ; params = params + 1) {
+      for(int exceps = 0 ; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS ; exceps = exceps + 1) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
@@ -2675,8 +2676,8 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1229880447879(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(int params = 0 ; params <= 5 ; params = params + 1) {
-      for(int exceps = 0 ; exceps <= 5 ; exceps = exceps + 1) {
+    for(int params = 0 ; params <= Constants.MAX_CLOSURE_PARAMETERS ; params = params + 1) {
+      for(int exceps = 0 ; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS ; exceps = exceps + 1) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
@@ -2800,8 +2801,8 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1232027809985(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(int params = 0 ; params <= 5 ; params = params + 1) {
-      for(int exceps = 0 ; exceps <= 5 ; exceps = exceps + 1) {
+    for(int params = 0 ; params <= Constants.MAX_CLOSURE_PARAMETERS ; params = params + 1) {
+      for(int exceps = 0 ; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS ; exceps = exceps + 1) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
@@ -2853,8 +2854,8 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1232027816385(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(int params = 0 ; params <= 5 ; params = params + 1) {
-      for(int exceps = 0 ; exceps <= 5 ; exceps = exceps + 1) {
+    for(int params = 0 ; params <= Constants.MAX_CLOSURE_PARAMETERS ; params = params + 1) {
+      for(int exceps = 0 ; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS ; exceps = exceps + 1) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
@@ -2906,8 +2907,8 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1232027821623(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(int params = 0 ; params <= 5 ; params = params + 1) {
-      for(int exceps = 0 ; exceps <= 5 ; exceps = exceps + 1) {
+    for(int params = 0 ; params <= Constants.MAX_CLOSURE_PARAMETERS ; params = params + 1) {
+      for(int exceps = 0 ; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS ; exceps = exceps + 1) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
@@ -2959,8 +2960,8 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1232028919192(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(int params = 0 ; params <= 5 ; params = params + 1) {
-      for(int exceps = 0 ; exceps <= 5 ; exceps = exceps + 1) {
+    for(int params = 0 ; params <= Constants.MAX_CLOSURE_PARAMETERS ; params = params + 1) {
+      for(int exceps = 0 ; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS ; exceps = exceps + 1) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
@@ -3032,8 +3033,8 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1232028933043(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(int params = 0 ; params <= 5 ; params = params + 1) {
-      for(int exceps = 0 ; exceps <= 5 ; exceps = exceps + 1) {
+    for(int params = 0 ; params <= Constants.MAX_CLOSURE_PARAMETERS ; params = params + 1) {
+      for(int exceps = 0 ; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS ; exceps = exceps + 1) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
@@ -3105,8 +3106,8 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1232028944362(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(int params = 0 ; params <= 5 ; params = params + 1) {
-      for(int exceps = 0 ; exceps <= 5 ; exceps = exceps + 1) {
+    for(int params = 0 ; params <= Constants.MAX_CLOSURE_PARAMETERS ; params = params + 1) {
+      for(int exceps = 0 ; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS ; exceps = exceps + 1) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);

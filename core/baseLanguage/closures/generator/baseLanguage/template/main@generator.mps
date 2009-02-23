@@ -4185,6 +4185,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1199624210107">
     <property name="name" value="_FunctionTypes" />
     <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.Interface" id="1215605064269">
@@ -4947,8 +4948,9 @@
                     </node>
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" id="1215605064564">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215605064565">
-                      <property name="value" value="5" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406026047">
+                      <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                      <link role="variableDeclaration" targetNodeId="2v.1235405969792" resolveInfo="MAX_CLOSURE_EXCEPTIONS" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215605064566">
                       <link role="variableDeclaration" targetNodeId="1215605064537" resolveInfo="exceps" />
@@ -4973,8 +4975,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215605064573">
                   <link role="variableDeclaration" targetNodeId="1215605064532" resolveInfo="params" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215605064574">
-                  <property name="value" value="5" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406016774">
+                  <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                  <link role="variableDeclaration" targetNodeId="2v.1235405933531" resolveInfo="MAX_CLOSURE_PARAMETERS" />
                 </node>
               </node>
               <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215605064575">
@@ -5765,8 +5768,9 @@
                     </node>
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" id="1215604597485">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215604598235">
-                      <property name="value" value="5" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406049216">
+                      <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                      <link role="variableDeclaration" targetNodeId="2v.1235405969792" resolveInfo="MAX_CLOSURE_EXCEPTIONS" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215604596277">
                       <link role="variableDeclaration" targetNodeId="1215604582574" resolveInfo="exceps" />
@@ -5791,8 +5795,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215604571860">
                   <link role="variableDeclaration" targetNodeId="1215604555860" resolveInfo="params" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215604573057">
-                  <property name="value" value="5" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406036829">
+                  <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                  <link role="variableDeclaration" targetNodeId="2v.1235405933531" resolveInfo="MAX_CLOSURE_PARAMETERS" />
                 </node>
               </node>
               <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215604576316">
@@ -20124,8 +20129,9 @@
                     </node>
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" id="1229880126356">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1229880126357">
-                      <property name="value" value="5" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406171071">
+                      <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                      <link role="variableDeclaration" targetNodeId="2v.1235405969792" resolveInfo="MAX_CLOSURE_EXCEPTIONS" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229880126358">
                       <link role="variableDeclaration" targetNodeId="1229880126328" resolveInfo="exceps" />
@@ -20150,8 +20156,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229880126365">
                   <link role="variableDeclaration" targetNodeId="1229880126323" resolveInfo="params" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1229880126366">
-                  <property name="value" value="5" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406162180">
+                  <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                  <link role="variableDeclaration" targetNodeId="2v.1235405933531" resolveInfo="MAX_CLOSURE_PARAMETERS" />
                 </node>
               </node>
               <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1229880126367">
@@ -21619,8 +21626,9 @@
                     </node>
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" id="1232027810027">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232027810028">
-                      <property name="value" value="5" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406183342">
+                      <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                      <link role="variableDeclaration" targetNodeId="2v.1235405969792" resolveInfo="MAX_CLOSURE_EXCEPTIONS" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232027810029">
                       <link role="variableDeclaration" targetNodeId="1232027810000" resolveInfo="exceps" />
@@ -21645,8 +21653,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232027810036">
                   <link role="variableDeclaration" targetNodeId="1232027809995" resolveInfo="params" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232027810037">
-                  <property name="value" value="5" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406178643">
+                  <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                  <link role="variableDeclaration" targetNodeId="2v.1235405933531" resolveInfo="MAX_CLOSURE_PARAMETERS" />
                 </node>
               </node>
               <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1232027810038">
@@ -22780,8 +22789,9 @@
                     </node>
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" id="1232027816427">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232027816428">
-                      <property name="value" value="5" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406198238">
+                      <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                      <link role="variableDeclaration" targetNodeId="2v.1235405969792" resolveInfo="MAX_CLOSURE_EXCEPTIONS" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232027816429">
                       <link role="variableDeclaration" targetNodeId="1232027816400" resolveInfo="exceps" />
@@ -22806,8 +22816,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232027816436">
                   <link role="variableDeclaration" targetNodeId="1232027816395" resolveInfo="params" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232027816437">
-                  <property name="value" value="5" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406192218">
+                  <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                  <link role="variableDeclaration" targetNodeId="2v.1235405933531" resolveInfo="MAX_CLOSURE_PARAMETERS" />
                 </node>
               </node>
               <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1232027816438">
@@ -23610,8 +23621,9 @@
                     </node>
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" id="1232027821665">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232027821666">
-                      <property name="value" value="5" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406210585">
+                      <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                      <link role="variableDeclaration" targetNodeId="2v.1235405969792" resolveInfo="MAX_CLOSURE_EXCEPTIONS" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232027821667">
                       <link role="variableDeclaration" targetNodeId="1232027821638" resolveInfo="exceps" />
@@ -23636,8 +23648,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232027821674">
                   <link role="variableDeclaration" targetNodeId="1232027821633" resolveInfo="params" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232027821675">
-                  <property name="value" value="5" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406205050">
+                  <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                  <link role="variableDeclaration" targetNodeId="2v.1235405933531" resolveInfo="MAX_CLOSURE_PARAMETERS" />
                 </node>
               </node>
               <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1232027821676">
@@ -25471,8 +25484,9 @@
                     </node>
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" id="1229880447921">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1229880447922">
-                      <property name="value" value="5" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406072157">
+                      <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                      <link role="variableDeclaration" targetNodeId="2v.1235405969792" resolveInfo="MAX_CLOSURE_EXCEPTIONS" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229880447923">
                       <link role="variableDeclaration" targetNodeId="1229880447894" resolveInfo="exceps" />
@@ -25497,8 +25511,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229880447930">
                   <link role="variableDeclaration" targetNodeId="1229880447889" resolveInfo="params" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1229880447931">
-                  <property name="value" value="5" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406064906">
+                  <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                  <link role="variableDeclaration" targetNodeId="2v.1235405933531" resolveInfo="MAX_CLOSURE_PARAMETERS" />
                 </node>
               </node>
               <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1229880447932">
@@ -27550,11 +27565,12 @@
                     </node>
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" id="1232028919234">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232028919235">
-                      <property name="value" value="5" />
-                    </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232028919236">
                       <link role="variableDeclaration" targetNodeId="1232028919207" resolveInfo="exceps" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406103117">
+                      <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                      <link role="variableDeclaration" targetNodeId="2v.1235405969792" resolveInfo="MAX_CLOSURE_EXCEPTIONS" />
                     </node>
                   </node>
                   <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1232028919237">
@@ -27576,8 +27592,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232028919243">
                   <link role="variableDeclaration" targetNodeId="1232028919202" resolveInfo="params" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232028919244">
-                  <property name="value" value="5" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406087719">
+                  <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                  <link role="variableDeclaration" targetNodeId="2v.1235405933531" resolveInfo="MAX_CLOSURE_PARAMETERS" />
                 </node>
               </node>
               <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1232028919245">
@@ -29632,8 +29649,9 @@
                     </node>
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" id="1232028933085">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232028933086">
-                      <property name="value" value="5" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406127949">
+                      <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                      <link role="variableDeclaration" targetNodeId="2v.1235405969792" resolveInfo="MAX_CLOSURE_EXCEPTIONS" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232028933087">
                       <link role="variableDeclaration" targetNodeId="1232028933058" resolveInfo="exceps" />
@@ -29658,8 +29676,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232028933094">
                   <link role="variableDeclaration" targetNodeId="1232028933053" resolveInfo="params" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232028933095">
-                  <property name="value" value="5" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406112750">
+                  <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                  <link role="variableDeclaration" targetNodeId="2v.1235405933531" resolveInfo="MAX_CLOSURE_PARAMETERS" />
                 </node>
               </node>
               <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1232028933096">
@@ -31713,8 +31732,9 @@
                     </node>
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" id="1232028944404">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232028944405">
-                      <property name="value" value="5" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406146452">
+                      <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                      <link role="variableDeclaration" targetNodeId="2v.1235405969792" resolveInfo="MAX_CLOSURE_EXCEPTIONS" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232028944406">
                       <link role="variableDeclaration" targetNodeId="1232028944377" resolveInfo="exceps" />
@@ -31739,8 +31759,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232028944413">
                   <link role="variableDeclaration" targetNodeId="1232028944372" resolveInfo="params" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232028944414">
-                  <property name="value" value="5" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235406140132">
+                  <link role="classifier" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                  <link role="variableDeclaration" targetNodeId="2v.1235405933531" resolveInfo="MAX_CLOSURE_PARAMETERS" />
                 </node>
               </node>
               <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1232028944415">
@@ -32717,7 +32738,7 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1231355937296">
     <property name="name" value="replace_BaseMethodCall_UnrestrictedClosureLiteral" />
     <link role="applicableConcept" targetNodeId="1.1229598881739" resolveInfo="UnrestrictedClosureLiteral" />
@@ -33795,7 +33816,7 @@
                           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1231430078283">
                             <link role="classifier" targetNodeId="6.~List" resolveInfo="List" />
                             <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1231430080101">
-                              <link role="concept" targetNodeId="2v.1071489090640" resolveInfo="ConceptDeclaration" />
+                              <link role="concept" targetNodeId="3v.1071489090640" resolveInfo="ConceptDeclaration" />
                             </node>
                           </node>
                         </node>
@@ -37431,7 +37452,7 @@
                           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232472474122">
                             <link role="classifier" targetNodeId="6.~List" resolveInfo="List" />
                             <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1232472474123">
-                              <link role="concept" targetNodeId="2v.1071489090640" resolveInfo="ConceptDeclaration" />
+                              <link role="concept" targetNodeId="3v.1071489090640" resolveInfo="ConceptDeclaration" />
                             </node>
                           </node>
                         </node>

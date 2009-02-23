@@ -29,6 +29,22 @@
         <property name="value" value="true" />
       </node>
     </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1235405933531">
+      <property name="name" value="MAX_CLOSURE_PARAMETERS" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235405940852" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235405943926" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235405965509">
+        <property name="value" value="10" />
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1235405969792">
+      <property name="name" value="MAX_CLOSURE_EXCEPTIONS" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235405973535" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235405975502" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235405982577">
+        <property name="value" value="10" />
+      </node>
+    </node>
   </node>
 </model>
 
