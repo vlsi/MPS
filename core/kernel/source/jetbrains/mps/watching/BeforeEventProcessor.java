@@ -39,6 +39,7 @@ class BeforeEventProcessor extends EventProcessor {
     if (model == null) {
       // if model is null, then it was removed by user
       VirtualFile vfile = getVFile(event);
+      if (vfile == null) return;
       Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
       if (project != null) {
         MPSVCSManager.getInstance(project).deleteVirtualFilesAndRemoveFromVcs(Collections.singletonList(vfile));
