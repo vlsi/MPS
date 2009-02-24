@@ -454,8 +454,8 @@
               <node role="argument" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1230129815387">
                 <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1230129817566">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230129818700">
-                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1230129818701">
-                      <link role="applicableNode" targetNodeId="1201614802826" resolveInfo="functionSuperType" />
+                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235488302740">
+                      <link role="applicableNode" targetNodeId="1201614774958" resolveInfo="functionSubType" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1230129818702">
                       <link role="link" targetNodeId="1.1199542457201" />
@@ -479,8 +479,8 @@
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232130778579">
                         <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1232130774344">
                           <link role="concept" targetNodeId="1.1229708828035" resolveInfo="UnrestrictedFunctionType" />
-                          <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1232130772494">
-                            <link role="applicableNode" targetNodeId="1201614802826" resolveInfo="functionSuperType" />
+                          <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235488297099">
+                            <link role="applicableNode" targetNodeId="1201614774958" resolveInfo="functionSubType" />
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1232130795388">

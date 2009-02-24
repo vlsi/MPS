@@ -49,13 +49,13 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(supertype, "resultType", true), typeCheckingContext), SLinkOperations.getTarget(supertype, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1230129782492", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(subtype, "resultType", true), typeCheckingContext), SLinkOperations.getTarget(supertype, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1230129782492", false, 0, intentionProvider);
     }
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(supertype, "terminateType", true), typeCheckingContext), SLinkOperations.getTarget(supertype, "terminateType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1232130736964", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(subtype, "terminateType", true), typeCheckingContext), SLinkOperations.getTarget(supertype, "terminateType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1232130736964", false, 0, intentionProvider);
       }
     }
     {
@@ -108,9 +108,9 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
           result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(subtype, "resultType", true), SLinkOperations.getTarget(supertype, "resultType", true), true);
         }
       */
-      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(supertype, "resultType", true)), SLinkOperations.getTarget(supertype, "resultType", true), true);
+      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(subtype, "resultType", true)), SLinkOperations.getTarget(supertype, "resultType", true), true);
       if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
-        result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(supertype, "terminateType", true)), SLinkOperations.getTarget(supertype, "terminateType", true), true);
+        result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(subtype, "terminateType", true)), SLinkOperations.getTarget(supertype, "terminateType", true), true);
       }
       {
         SNode paramType1;
