@@ -135,4 +135,11 @@ public class RefactoringViewItem {
     myNewRefactoringView.closeRefactoringView(this);
   }
 
+  public void requestFocus() {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        myDoRefactorButton.requestFocus();
+      }
+    });
+  }
 }

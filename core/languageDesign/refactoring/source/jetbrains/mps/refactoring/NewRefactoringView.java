@@ -56,6 +56,7 @@ public class NewRefactoringView extends BaseProjectTool {
     addContent(refactoringViewItem.getComponent(), "refactoring", null, false);
     refactoringViewItem.initUsagesView();
     openTool(true);
+    refactoringViewItem.requestFocus();
   }
 
   void closeRefactoringView(final RefactoringViewItem refactoringViewItem) {
