@@ -228,8 +228,10 @@ public class GeneratorManager implements SearchableConfigurable {
             message += "\n" + sm.getSModelFqName();
           }
 
-          int result = Messages.showYesNoDialog(myProject, message, "Generate Required Models", Messages.getWarningIcon());
-          if (result == 0) { //idea don't have constants for YES/NO
+          int result = Messages.showYesNoCancelDialog(myProject, message, "Generate Required Models", Messages.getWarningIcon());
+          if (result==2){
+            return false;
+          }else if (result == 0) { //idea don't have constants for YES/NO
             generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), IGenerationType.FILES);            
           }
         }
