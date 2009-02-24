@@ -3087,7 +3087,7 @@
       <property name="caretPolicy" value="caret_at_last_position" />
       <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="1166035149310">
         <property name="keycode" value="VK_0" />
-        <property name="modifiers" value="ctrl+shift" />
+        <property name="modifiers" value="ctrl+alt" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="1166035149311">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1166035149312">
@@ -3111,7 +3111,7 @@
       <property name="caretPolicy" value="caret_at_first_position" />
       <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="1166035160002">
         <property name="keycode" value="VK_9" />
-        <property name="modifiers" value="ctrl+shift" />
+        <property name="modifiers" value="ctrl+alt" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="1166035160003">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1166035160004">
@@ -3350,6 +3350,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1081880010410">
         <property name="text" value="(" />
+        <property name="attractsFocus" value="1" />
         <link role="actionMap" targetNodeId="1166027091157" resolveInfo="DeleteParenthesis_Actions" />
         <link role="keyMap" targetNodeId="1166110777830" resolveInfo="OpenParenthesis_KeyMap" />
         <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
@@ -3359,6 +3360,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1081880010412">
         <property name="text" value=")" />
+        <property name="attractsFocus" value="1" />
         <link role="actionMap" targetNodeId="1166027091157" resolveInfo="DeleteParenthesis_Actions" />
         <link role="keyMap" targetNodeId="1166102189373" resolveInfo="CloseParenthesis_KeyMap" />
         <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />

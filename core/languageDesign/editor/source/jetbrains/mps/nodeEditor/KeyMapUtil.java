@@ -206,14 +206,14 @@ public class KeyMapUtil {
 
   private static boolean isStrictlyFirstCaretPosition(EditorCell cell) {
     if (!(cell instanceof EditorCell_Label)) return false;
-    EditorCell_Label label = (EditorCell_Label) cell;
-    return label.isFirstCaretPosition() && label.isFirstPositionAllowed();
+    EditorCell_Label label = (EditorCell_Label) cell;    
+    return label.isFirstCaretPosition() && label.isFirstPositionAllowed() && cell.getContainingBigCell().getFirstLeaf() == cell;
   }
 
   private static boolean isStrictlyLastCaretPosition(EditorCell cell) {
     if (!(cell instanceof EditorCell_Label)) return false;
     EditorCell_Label label = (EditorCell_Label) cell;
-    return label.isLastCaretPosition() && label.isLastPositionAllowed();
+    return label.isLastCaretPosition() && label.isLastPositionAllowed() && cell.getContainingBigCell().getLastLeaf() == cell;
   }
 
   public static List<Pair<EditorCellKeyMapAction, ActionKey>> getAllApplicableActionsAndKeys(EditorCell selectedCell, EditorContext editorContext) {
