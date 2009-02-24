@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 
 public class IfStatement_DataFlow extends DataFlowBuilder {
 
@@ -22,30 +21,6 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
       SNode bconst = SLinkOperations.getTarget(_context.getNode(), "condition", true);
       if (!(SPropertyOperations.getBoolean(bconst, "value"))) {
         _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
-      }
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
-      SNode expr = SLinkOperations.getTarget(_context.getNode(), "condition", true);
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(expr, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) {
-        SNode var = SLinkOperations.getTarget(SLinkOperations.getTarget(expr, "leftExpression", true), "variableDeclaration", false);
-        _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "falseLabel"));
-        _context.getBuilder().emitVarEqulas(var, Expression_Behavior.call_getNullableState_1230540989695(SLinkOperations.getTarget(expr, "rightExpression", true)).not());
-        _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "trueLabel"));
-        _context.getBuilder().emitLabel("falseLabel");
-        _context.getBuilder().emitVarEqulas(var, Expression_Behavior.call_getNullableState_1230540989695(SLinkOperations.getTarget(expr, "rightExpression", true)));
-        _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
-        _context.getBuilder().emitLabel("trueLabel");
-      }
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
-      SNode expr = SLinkOperations.getTarget(_context.getNode(), "condition", true);
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(expr, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) {
-        SNode var = SLinkOperations.getTarget(SLinkOperations.getTarget(expr, "leftExpression", true), "variableDeclaration", false);
-        _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "falseLabel"));
-        _context.getBuilder().emitVarEqulas(var, Expression_Behavior.call_getNullableState_1230540989695(SLinkOperations.getTarget(expr, "rightExpression", true)));
-        _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "trueLabel"));
-        _context.getBuilder().emitLabel("falseLabel");
-        _context.getBuilder().emitVarEqulas(var, Expression_Behavior.call_getNullableState_1230540989695(SLinkOperations.getTarget(expr, "rightExpression", true)).not());
-        _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
-        _context.getBuilder().emitLabel("trueLabel");
       }
     } else
     {
