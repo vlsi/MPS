@@ -32,7 +32,7 @@ public class MappingConfig_RefSet extends MappingConfig_AbstractRef{
   public MappingConfig_RefSet getCopy() {
     MappingConfig_RefSet result = new MappingConfig_RefSet();
     for (MappingConfig_AbstractRef ref:myRefs){
-      result.myRefs.add(ref.getCopy());
+      result.myRefs.add(ref!=null?ref.getCopy():null);
     }
     return result;
   }

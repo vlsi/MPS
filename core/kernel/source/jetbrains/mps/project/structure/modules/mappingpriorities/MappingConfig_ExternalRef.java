@@ -43,8 +43,8 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef{
 
   public MappingConfig_ExternalRef getCopy() {
     MappingConfig_ExternalRef result = new MappingConfig_ExternalRef();
-    result.myGenerator = myGenerator.getCopy();
-    result.myMappingConfig = myMappingConfig.getCopy();
+    result.myGenerator = myGenerator!=null?myGenerator.getCopy():null;
+    result.myMappingConfig = myMappingConfig!=null?myMappingConfig.getCopy():null;
     return result;
   }
 

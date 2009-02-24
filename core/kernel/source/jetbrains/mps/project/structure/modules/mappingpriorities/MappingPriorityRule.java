@@ -57,8 +57,9 @@ public class MappingPriorityRule {
 
   public MappingPriorityRule getCopy() {
     MappingPriorityRule result = new MappingPriorityRule();
-    result.myLeft = myLeft.getCopy();
-    result.myRight = myRight.getCopy();
+
+    result.myLeft = myLeft!=null?myLeft.getCopy():null;
+    result.myRight = myRight!=null?myRight.getCopy():null;
     result.myType = myType;
 
     return result;
