@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.commons.lang.StringUtils;
 
 public class PackagingLanguageGenerator {
 
@@ -42,6 +43,9 @@ public class PackagingLanguageGenerator {
     if (pathComponents.length > 0) {
       List<SNode> pathComponentNodes = new ArrayList();
       for(String pathComponentName : pathComponents) {
+        if (StringUtils.isEmpty(pathComponentName)) {
+          continue;
+        }
         pathComponentNodes.add(PackagingLanguageGenerator.createPathComponent(pathComponentName));
       }
       SNode compositePathComponent = createCompositePathComponent(pathComponentNodes);
