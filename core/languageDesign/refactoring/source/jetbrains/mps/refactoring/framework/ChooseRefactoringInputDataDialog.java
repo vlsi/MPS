@@ -41,7 +41,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   public JCheckBox myIsLocalCheckBox;
   public JCheckBox myGenerateModelsCheckBox;
 
-  public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
+  public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, final RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
     super(refactoringContext.getCurrentOperationContext().getMainFrame(), "Input Data for Refactoring");
     myRefactoring = refactoring;
     myRefactoringContext = refactoringContext;
@@ -74,14 +74,18 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     checkBoxPanelConstraints.weightx = 0;
     checkBoxPanelConstraints.weighty = 0;
 
-    boolean isLocalByDefault = true;
-    IModule module = refactoringContext.getSelectedModule();
-    if (module instanceof Language) {
-      Language l = (Language) module;
-      if (l.isBootstrap()) {
-        isLocalByDefault = false;
+    boolean isLocalByDefault = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        IModule module = refactoringContext.getSelectedModule();
+        if (module instanceof Language) {
+          Language l = (Language) module;
+          if (l.isBootstrap()) {
+            return false;
+          }
+        }
+        return true;
       }
-    }
+    });
 
     if (myRefactoring.doesUpdateModel()) {
       myIsLocalCheckBox = new JCheckBox("is local");
