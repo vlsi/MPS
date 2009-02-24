@@ -71,11 +71,13 @@ class GenerationSettingsPreferencesPage {
     myGenerationSettings.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
     myGenerationSettings.setDumpStatistics(myDumpQueriesStatisticsCheckBox.isSelected());
     myGenerationSettings.setShowErrorsOnly(myShowErrorsOnlyCheckBox.isSelected());
+    myGenerationSettings.setGenerateRequirements(myGenerateRequirements.isSelected());
   }
 
   public boolean isModified() {
-    return !(myGenerationSettings.isSaveTransientModels()==mySaveTransientModelsCheckBox.isSelected()&&
-           myGenerationSettings.isDumpStatistics()==myDumpQueriesStatisticsCheckBox.isSelected()&&
-           myGenerationSettings.isShowErrorsOnly()==myShowErrorsOnlyCheckBox.isSelected());
+    return !(myGenerationSettings.isSaveTransientModels() == mySaveTransientModelsCheckBox.isSelected() &&
+           myGenerationSettings.isDumpStatistics() == myDumpQueriesStatisticsCheckBox.isSelected() &&
+           myGenerationSettings.isShowErrorsOnly() == myShowErrorsOnlyCheckBox.isSelected() &&
+           myGenerationSettings.isGenerateRequirements() == myGenerateRequirements.isSelected());
   }
 }
