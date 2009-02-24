@@ -4,19 +4,29 @@ package jetbrains.mps.baseLanguage.closures.runtime;
 
 
 public class _UnrestrictedClosures {
-  public static class _base <T, R> {
+  /* package */static class _base <T, R> {
 
     private Result<? extends T, ? extends R> result;
 
-    public _base() {
+    protected _base() {
     }
 
     @SuppressWarnings(value = "unchecked")
-    public Result<T, R> getResult() {
+    public Result<T, R> getAndClearLastResult() {
+      if (this.result == null) {
+        throw new IllegalStateException("No last result: closure was never invoked");
+      }
+      Result<T, R> tmp = ((Result<T, R>)this.result);
+      this.result = null;
+      return tmp;
+    }
+
+    @SuppressWarnings(value = "unchecked")
+    protected Result<T, R> getLastResult() {
       return ((Result<T, R>)this.result);
     }
 
-    protected void setResult(Result<? extends T, ? extends R> result) {
+    protected void setLastResult(Result<? extends T, ? extends R> result) {
       this.result = result;
     }
 
@@ -30,8 +40,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted() {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -44,8 +54,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted() throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -58,8 +68,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted() throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -72,8 +82,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted() throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -86,8 +96,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted() throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -100,8 +110,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted() throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -114,8 +124,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -128,8 +138,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -142,8 +152,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -156,8 +166,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -170,8 +180,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -184,8 +194,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1) {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -198,8 +208,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -212,8 +222,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -226,8 +236,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -240,8 +250,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -254,8 +264,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -268,8 +278,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -282,8 +292,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -296,8 +306,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -310,8 +320,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -324,8 +334,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -338,8 +348,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -352,8 +362,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -366,8 +376,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -380,8 +390,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -394,8 +404,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -408,8 +418,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -422,8 +432,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -436,8 +446,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -450,8 +460,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -464,8 +474,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -478,8 +488,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -492,8 +502,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -506,8 +516,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -520,8 +530,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -534,8 +544,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -548,8 +558,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -562,8 +572,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -576,8 +586,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -590,8 +600,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -604,8 +614,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -618,8 +628,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -632,8 +642,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -646,8 +656,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -660,8 +670,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -674,8 +684,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -688,8 +698,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -702,8 +712,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -716,8 +726,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -730,8 +740,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -744,8 +754,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -758,8 +768,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -772,8 +782,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -786,8 +796,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -800,8 +810,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -814,8 +824,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -828,8 +838,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -842,8 +852,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -856,8 +866,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -870,8 +880,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -884,8 +894,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -898,8 +908,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -912,8 +922,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -926,8 +936,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -940,8 +950,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -954,8 +964,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -968,8 +978,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -982,8 +992,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -996,8 +1006,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -1010,8 +1020,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -1024,8 +1034,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -1038,8 +1048,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -1052,8 +1062,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -1066,8 +1076,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -1080,8 +1090,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -1094,8 +1104,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -1108,8 +1118,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -1122,8 +1132,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -1136,8 +1146,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -1150,8 +1160,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -1164,8 +1174,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -1178,8 +1188,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -1192,8 +1202,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -1206,8 +1216,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -1220,8 +1230,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -1234,8 +1244,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -1248,8 +1258,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -1262,8 +1272,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -1276,8 +1286,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -1290,8 +1300,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -1304,8 +1314,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -1318,8 +1328,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -1332,8 +1342,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -1346,8 +1356,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -1360,8 +1370,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -1374,8 +1384,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -1388,8 +1398,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -1402,8 +1412,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -1416,8 +1426,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -1430,8 +1440,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -1444,8 +1454,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -1458,8 +1468,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -1472,8 +1482,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -1486,8 +1496,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -1500,8 +1510,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -1514,8 +1524,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -1528,8 +1538,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -1542,8 +1552,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -1556,8 +1566,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -1570,8 +1580,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -1584,8 +1594,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -1598,8 +1608,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -1612,8 +1622,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -1626,8 +1636,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -1640,8 +1650,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -1654,8 +1664,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -1668,8 +1678,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -1682,8 +1692,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -1696,8 +1706,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -1710,8 +1720,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -1724,8 +1734,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted() {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -1738,8 +1748,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted() throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -1752,8 +1762,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted() throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -1766,8 +1776,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted() throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -1780,8 +1790,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted() throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -1794,8 +1804,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted() throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -1808,8 +1818,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -1822,8 +1832,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -1836,8 +1846,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -1850,8 +1860,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -1864,8 +1874,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -1878,8 +1888,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1) {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -1892,8 +1902,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -1906,8 +1916,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -1920,8 +1930,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -1934,8 +1944,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -1948,8 +1958,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -1962,8 +1972,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -1976,8 +1986,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -1990,8 +2000,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -2004,8 +2014,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -2018,8 +2028,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -2032,8 +2042,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -2046,8 +2056,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -2060,8 +2070,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -2074,8 +2084,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -2088,8 +2098,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -2102,8 +2112,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -2116,8 +2126,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -2130,8 +2140,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -2144,8 +2154,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -2158,8 +2168,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -2172,8 +2182,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -2186,8 +2196,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -2200,8 +2210,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -2214,8 +2224,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -2228,8 +2238,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -2242,8 +2252,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -2256,8 +2266,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -2270,8 +2280,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -2284,8 +2294,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -2298,8 +2308,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -2312,8 +2322,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -2326,8 +2336,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -2340,8 +2350,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -2354,8 +2364,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -2368,8 +2378,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -2382,8 +2392,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -2396,8 +2406,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -2410,8 +2420,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -2424,8 +2434,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -2438,8 +2448,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -2452,8 +2462,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -2466,8 +2476,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -2480,8 +2490,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -2494,8 +2504,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -2508,8 +2518,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -2522,8 +2532,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -2536,8 +2546,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -2550,8 +2560,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -2564,8 +2574,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -2578,8 +2588,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -2592,8 +2602,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -2606,8 +2616,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -2620,8 +2630,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -2634,8 +2644,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -2648,8 +2658,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -2662,8 +2672,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -2676,8 +2686,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -2690,8 +2700,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -2704,8 +2714,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -2718,8 +2728,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -2732,8 +2742,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -2746,8 +2756,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -2760,8 +2770,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -2774,8 +2784,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -2788,8 +2798,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -2802,8 +2812,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -2816,8 +2826,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -2830,8 +2840,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -2844,8 +2854,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -2858,8 +2868,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -2872,8 +2882,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -2886,8 +2896,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -2900,8 +2910,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -2914,8 +2924,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -2928,8 +2938,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -2942,8 +2952,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -2956,8 +2966,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -2970,8 +2980,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -2984,8 +2994,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -2998,8 +3008,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -3012,8 +3022,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -3026,8 +3036,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -3040,8 +3050,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -3054,8 +3064,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -3068,8 +3078,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -3082,8 +3092,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -3096,8 +3106,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -3110,8 +3120,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -3124,8 +3134,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -3138,8 +3148,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -3152,8 +3162,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -3166,8 +3176,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -3180,8 +3190,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -3194,8 +3204,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -3208,8 +3218,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -3222,8 +3232,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -3236,8 +3246,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -3250,8 +3260,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -3264,8 +3274,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -3278,8 +3288,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -3292,8 +3302,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -3306,8 +3316,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -3320,8 +3330,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -3334,8 +3344,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -3348,8 +3358,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -3362,8 +3372,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -3376,8 +3386,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -3390,8 +3400,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -3404,8 +3414,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<Object, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -3418,8 +3428,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted() {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -3432,8 +3442,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted() throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -3446,8 +3456,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted() throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -3460,8 +3470,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted() throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -3474,8 +3484,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted() throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -3488,8 +3498,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted() throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -3502,8 +3512,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -3516,8 +3526,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -3530,8 +3540,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -3544,8 +3554,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -3558,8 +3568,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -3572,8 +3582,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1) {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -3586,8 +3596,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -3600,8 +3610,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -3614,8 +3624,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -3628,8 +3638,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -3642,8 +3652,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -3656,8 +3666,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -3670,8 +3680,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -3684,8 +3694,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -3698,8 +3708,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -3712,8 +3722,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -3726,8 +3736,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -3740,8 +3750,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -3754,8 +3764,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -3768,8 +3778,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -3782,8 +3792,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -3796,8 +3806,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -3810,8 +3820,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -3824,8 +3834,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -3838,8 +3848,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -3852,8 +3862,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -3866,8 +3876,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -3880,8 +3890,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -3894,8 +3904,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -3908,8 +3918,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -3922,8 +3932,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -3936,8 +3946,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -3950,8 +3960,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -3964,8 +3974,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -3978,8 +3988,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -3992,8 +4002,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -4006,8 +4016,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -4020,8 +4030,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -4034,8 +4044,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -4048,8 +4058,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -4062,8 +4072,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -4076,8 +4086,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -4090,8 +4100,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -4104,8 +4114,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -4118,8 +4128,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -4132,8 +4142,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -4146,8 +4156,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -4160,8 +4170,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -4174,8 +4184,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -4188,8 +4198,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -4202,8 +4212,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -4216,8 +4226,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -4230,8 +4240,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -4244,8 +4254,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -4258,8 +4268,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -4272,8 +4282,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -4286,8 +4296,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -4300,8 +4310,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -4314,8 +4324,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -4328,8 +4338,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -4342,8 +4352,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -4356,8 +4366,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -4370,8 +4380,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -4384,8 +4394,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -4398,8 +4408,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -4412,8 +4422,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -4426,8 +4436,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -4440,8 +4450,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -4454,8 +4464,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -4468,8 +4478,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -4482,8 +4492,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -4496,8 +4506,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -4510,8 +4520,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -4524,8 +4534,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -4538,8 +4548,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -4552,8 +4562,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -4566,8 +4576,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -4580,8 +4590,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -4594,8 +4604,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -4608,8 +4618,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -4622,8 +4632,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -4636,8 +4646,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -4650,8 +4660,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -4664,8 +4674,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -4678,8 +4688,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -4692,8 +4702,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -4706,8 +4716,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -4720,8 +4730,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -4734,8 +4744,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -4748,8 +4758,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -4762,8 +4772,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -4776,8 +4786,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -4790,8 +4800,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -4804,8 +4814,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -4818,8 +4828,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -4832,8 +4842,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -4846,8 +4856,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -4860,8 +4870,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -4874,8 +4884,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -4888,8 +4898,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -4902,8 +4912,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -4916,8 +4926,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -4930,8 +4940,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -4944,8 +4954,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -4958,8 +4968,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -4972,8 +4982,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -4986,8 +4996,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -5000,8 +5010,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -5014,8 +5024,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -5028,8 +5038,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -5042,8 +5052,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -5056,8 +5066,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -5070,8 +5080,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -5084,8 +5094,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -5098,8 +5108,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, Object> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -5112,8 +5122,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted() {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -5126,8 +5136,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted() throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -5140,8 +5150,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted() throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -5154,8 +5164,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted() throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -5168,8 +5178,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -5182,8 +5192,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -5196,8 +5206,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -5210,8 +5220,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -5224,8 +5234,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -5238,8 +5248,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -5252,8 +5262,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted());
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
     }
 
 }
@@ -5266,8 +5276,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1) {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -5280,8 +5290,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -5294,8 +5304,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -5308,8 +5318,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -5322,8 +5332,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -5336,8 +5346,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -5350,8 +5360,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -5364,8 +5374,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -5378,8 +5388,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -5392,8 +5402,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -5406,8 +5416,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
     }
 
 }
@@ -5420,8 +5430,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -5434,8 +5444,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -5448,8 +5458,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -5462,8 +5472,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -5476,8 +5486,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -5490,8 +5500,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -5504,8 +5514,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -5518,8 +5528,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -5532,8 +5542,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -5546,8 +5556,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -5560,8 +5570,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
     }
 
 }
@@ -5574,8 +5584,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -5588,8 +5598,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -5602,8 +5612,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -5616,8 +5626,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -5630,8 +5640,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -5644,8 +5654,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -5658,8 +5668,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -5672,8 +5682,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -5686,8 +5696,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -5700,8 +5710,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -5714,8 +5724,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
     }
 
 }
@@ -5728,8 +5738,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -5742,8 +5752,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -5756,8 +5766,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -5770,8 +5780,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -5784,8 +5794,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -5798,8 +5808,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -5812,8 +5822,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -5826,8 +5836,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -5840,8 +5850,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -5854,8 +5864,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -5868,8 +5878,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
     }
 
 }
@@ -5882,8 +5892,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -5896,8 +5906,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -5910,8 +5920,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -5924,8 +5934,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -5938,8 +5948,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -5952,8 +5962,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -5966,8 +5976,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -5980,8 +5990,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -5994,8 +6004,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -6008,8 +6018,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -6022,8 +6032,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
     }
 
 }
@@ -6036,8 +6046,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -6050,8 +6060,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -6064,8 +6074,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -6078,8 +6088,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -6092,8 +6102,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -6106,8 +6116,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -6120,8 +6130,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -6134,8 +6144,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -6148,8 +6158,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -6162,8 +6172,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -6176,8 +6186,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
     }
 
 }
@@ -6190,8 +6200,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -6204,8 +6214,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -6218,8 +6228,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -6232,8 +6242,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -6246,8 +6256,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -6260,8 +6270,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -6274,8 +6284,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -6288,8 +6298,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -6302,8 +6312,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -6316,8 +6326,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -6330,8 +6340,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
     }
 
 }
@@ -6344,8 +6354,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -6358,8 +6368,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -6372,8 +6382,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -6386,8 +6396,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -6400,8 +6410,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -6414,8 +6424,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -6428,8 +6438,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -6442,8 +6452,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -6456,8 +6466,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -6470,8 +6480,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -6484,8 +6494,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
     }
 
 }
@@ -6498,8 +6508,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -6512,8 +6522,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -6526,8 +6536,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -6540,8 +6550,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -6554,8 +6564,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -6568,8 +6578,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -6582,8 +6592,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -6596,8 +6606,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -6610,8 +6620,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -6624,8 +6634,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -6638,8 +6648,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
     }
 
 }
@@ -6652,8 +6662,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -6666,8 +6676,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -6680,8 +6690,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -6694,8 +6704,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -6708,8 +6718,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -6722,8 +6732,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -6736,8 +6746,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -6750,8 +6760,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -6764,8 +6774,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -6778,8 +6788,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }
@@ -6792,8 +6802,8 @@ public class _UnrestrictedClosures {
     }
 
     public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
-      this.setResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
-      return this.getResult();
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
     }
 
 }

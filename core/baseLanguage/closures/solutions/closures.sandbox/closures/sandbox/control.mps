@@ -126,8 +126,8 @@
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral" id="1231501075974">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231501075975">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1232131582648">
-                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1232368717217">
-                    <property name="value" value="true" />
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1235407026242">
+                    <property name="value" value="false" />
                   </node>
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232131582650">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232131586312">

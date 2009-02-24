@@ -1703,6 +1703,20 @@ public class QueriesGenerated {
     return stmts.size() > 0 && SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
   }
 
+  public static boolean ifMacro_Condition_1235475035904(final IOperationContext operationContext, final IfMacroContext _context) {
+    List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
+    List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
+    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    return (FunctionType_Behavior.call_getResultType_1230475757059(type) != null);
+  }
+
+  public static boolean ifMacro_Condition_1235475070538(final IOperationContext operationContext, final IfMacroContext _context) {
+    List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
+    List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
+    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    return (FunctionType_Behavior.call_getResultType_1230475757059(type) != null);
+  }
+
   public static SNode sourceNodeQuery_1199624915150(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct != null) {
@@ -2179,6 +2193,20 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1232623720949(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "returnType", true);
+  }
+
+  public static SNode sourceNodeQuery_1235475035944(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
+    List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
+    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(type);
+  }
+
+  public static SNode sourceNodeQuery_1235475070586(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
+    List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
+    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(type);
   }
 
   public static Iterable sourceNodesQuery_1199624932349(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

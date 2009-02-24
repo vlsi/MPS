@@ -42,7 +42,7 @@ public class ControlStatementDemo {
     for(_UnrestrictedClosures._void_terminate_P0_E0<Integer> __closure__ = new _UnrestrictedClosures._void_terminate_P0_E0<Integer>(new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
 
       public Result<Integer, Integer> invokeUnrestricted() {
-        if (true) {
+        if (false) {
           return Result.RETURN(1);
         }
         return Result.TERMINATE(42);
@@ -50,9 +50,10 @@ public class ControlStatementDemo {
 
     }) ;  ; ) {
       bar(__closure__);
-      switch (__closure__.getResult().getOutcome()) {
+      Result<?, Object> __result__ = __closure__.getAndClearLastResult();
+      switch (__result__.getOutcome()) {
         case RETURN_VALUE:
-          return __closure__.getResult().returnInt();
+          return __result__.returnInt();
         case BREAK:
           break;
         default:
@@ -68,9 +69,10 @@ public class ControlStatementDemo {
 
     }) ;  ; ) {
       bar(__closure__);
-      switch (__closure__.getResult().getOutcome()) {
+      Result<?, Object> __result__ = __closure__.getAndClearLastResult();
+      switch (__result__.getOutcome()) {
         case RETURN_VALUE:
-          return __closure__.getResult().returnInt();
+          return __result__.returnInt();
         case BREAK:
           break;
         default:
@@ -78,8 +80,7 @@ public class ControlStatementDemo {
       }
       break;
     }
-    for(_UnrestrictedClosures._void_void_P0_E0 __closure__ = new _UnrestrictedClosures._void_void_P0_E0(
-    		new _UnrestrictedFunctionTypes._void_void_P0_E0() {
+    for(_UnrestrictedClosures._void_void_P0_E0 __closure__ = new _UnrestrictedClosures._void_void_P0_E0(new _UnrestrictedFunctionTypes._void_void_P0_E0() {
 
       public Result<Object, Object> invokeUnrestricted() {
         return Result.TERMINATE_VOID();
@@ -87,7 +88,8 @@ public class ControlStatementDemo {
 
     }) ;  ; ) {
       withLock(null, __closure__);
-      switch (__closure__.getResult().getOutcome()) {
+      Result<?, Object> __result__ = __closure__.getAndClearLastResult();
+      switch (__result__.getOutcome()) {
         case BREAK:
           break;
         default:
