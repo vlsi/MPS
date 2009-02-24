@@ -53,7 +53,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   private Project myProject;
 
   private MyFileEditorManagerListener myFileEditorManagerListener = new MyFileEditorManagerListener();
-  private Map<MPSFileNodeEditor, Set<WarningPanel>> myWarnings = new WeakHashMap<MPSFileNodeEditor, Set<WarningPanel>>();
+  private Map<VirtualFile, Set<WarningPanel>> myWarnings = new HashMap<VirtualFile, Set<WarningPanel>>();
 
   public MPSEditorWarningsManager(Project project, FileEditorManager fileEditorManager, ClassLoaderManager classLoaderManager) {
     myProject = project;
@@ -85,11 +85,11 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   private void updateWarnings(final MPSFileNodeEditor editor) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (myWarnings.containsKey(editor)) {
-          for (WarningPanel panel : myWarnings.get(editor)) {
+        if (myWarnings.containsKey(editor.getFile())) {
+          for (WarningPanel panel : myWarnings.get(editor.getFile())) {
             myFileEditorManager.removeTopComponent(editor, panel);
           }
-          myWarnings.remove(editor);
+          myWarnings.remove(editor.getFile());
         }
 
         SModel smodel = editor.getFile().getNode().getModel();
@@ -170,12 +170,12 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void addWarningPanel(MPSFileNodeEditor editor, String text, String linkText, Runnable handler) {
-    if (!myWarnings.containsKey(editor)) {
-      myWarnings.put(editor, new HashSet<WarningPanel>());
+    if (!myWarnings.containsKey(editor.getFile())) {
+      myWarnings.put(editor.getFile(), new HashSet<WarningPanel>());
     }
     WarningPanel panel = new WarningPanel(text, linkText, handler);
     myFileEditorManager.addTopComponent(editor, panel);
-    myWarnings.get(editor).add(panel);
+    myWarnings.get(editor.getFile()).add(panel);
   }
 
   private class MyFileEditorManagerListener implements FileEditorManagerListener {
@@ -190,6 +190,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     }
 
     public void fileClosed(FileEditorManager source, VirtualFile file) {
+      myWarnings.remove(file);
     }
 
     public void selectionChanged(FileEditorManagerEvent event) {
