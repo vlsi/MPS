@@ -40,7 +40,6 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_5968_0(context, node, "<node"));
     editorCell.addEditorCell(this.createAttributedNodeCell_5968_0(context, node));
-    editorCell.addEditorCell(this.createConstant_5968_3(context, node, ""));
     editorCell.addEditorCell(this.createRefNodeList_5968_0(context, node));
     editorCell.addEditorCell(this.createConstant_5968_1(context, node, ">"));
     return editorCell;
@@ -58,14 +57,6 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_5968_1(editorCell, node, context);
     setupLabel_Constant_5968_1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant_5968_3(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5968_3(editorCell, node, context);
-    setupLabel_Constant_5968_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -125,20 +116,6 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_properties");
   }
 
-  private static void setupBasic_Constant_5968_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5968_3");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupLabel_Constant_5968_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -146,9 +123,6 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_RefNodeList_5968_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_5968_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class propertiesListHandler_5968_0 extends RefNodeListHandler {

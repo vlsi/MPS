@@ -188,14 +188,6 @@
         <link role="actionMap" targetNodeId="1215524000577" resolveInfo="Annotation_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" id="1215507949478" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1217426780941">
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234461452316">
-          <property name="flag" value="true" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1234461452377">
-          <property name="flag" value="true" />
-        </node>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1215518214434">
         <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="1.1215507909023" />

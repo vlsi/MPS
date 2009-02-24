@@ -385,11 +385,6 @@
         </node>
       </node>
     </node>
-    <node role="testMethods" type="jetbrains.mps.lang.test.structure.SimpleNodeTest" id="1225979303253">
-      <property name="name" value="UnreachableStatements" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225979303254" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215444211003" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586324">
     <property name="name" value="ReadAction" />
