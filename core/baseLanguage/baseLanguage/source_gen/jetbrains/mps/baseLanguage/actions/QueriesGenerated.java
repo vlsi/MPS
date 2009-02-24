@@ -315,6 +315,11 @@ __switch__:
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ArrayCreator"));
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1235479197615(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    SNode type = TypeChecker.getInstance().getTypeOf(_context.getSourceNode());
+    return SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.BooleanType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(type, "classifier", false) == SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Boolean");
+  }
+
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface")) {
       SPropertyOperations.set(_context.getNewNode(), "isAbstract", "" + (true));
@@ -3088,6 +3093,32 @@ __switch__:
 
         public String getMatchingText(String pattern) {
           return "abstract";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1235477734335(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotExpression");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode not = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), not);
+          SLinkOperations.setTarget(not, "expression", _context.getSourceNode(), true);
+          return not;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "!";
         }
 
         public String getVisibleMatchingText(String pattern) {
