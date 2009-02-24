@@ -124,10 +124,6 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1215885029537">
         <link role="action" targetNodeId="1215884802964" resolveInfo="ExpandNode" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204908802354" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518716962">
-        <link role="constructorDeclaration" targetNodeId="1.~GoToConceptEditorDeclarationAction.&lt;init&gt;()" resolveInfo="GoToConceptEditorDeclarationAction" />
-      </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204908813326" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518716555">
         <link role="constructorDeclaration" targetNodeId="1.~CopyNodeAction.&lt;init&gt;()" resolveInfo="CopyNodeAction" />

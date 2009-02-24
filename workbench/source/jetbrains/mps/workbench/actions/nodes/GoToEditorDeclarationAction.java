@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.actions.nodes;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
@@ -35,7 +36,7 @@ import javax.swing.JOptionPane;
 /**
  * @author Kostik
  */
-public class GoToConceptEditorDeclarationAction extends BaseAction {
+public class GoToEditorDeclarationAction extends BaseAction {
   private SNode myNode;
   private ConceptDeclaration myConcept;
   private IScope myScope;
@@ -44,35 +45,46 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
   private IOperationContext myContext;
   private IEditor myEditor;
 
-  public GoToConceptEditorDeclarationAction() {
-    super("Go To Concept Editor Declaration");
+  public GoToEditorDeclarationAction() {
+    super("Go To Editor Declaration");
     setExecuteOutsideCommand(true);
     setIsAlwaysVisible(false);
     getTemplatePresentation().setIcon(jetbrains.mps.lang.editor.icons.Icons.EDITOR_ICON);
   }
 
+  @NotNull
+  public String getKeyStroke() {
+    return "ctrl shift E";
+  }
+
   protected void doExecute(AnActionEvent e) {
-    Language language = null;
-    if (myModule instanceof Language) {
-      Language contextLanguage = (Language) myModule;
-      SModelDescriptor testStructureModel = contextLanguage.getStructureModelDescriptor();
-      if (myNode.getModel().getSModelReference().equals(testStructureModel.getSModelReference())) {
-        language = contextLanguage;
+    Language language = ModelAccess.instance().runReadAction(new Computable<Language>() {
+      public Language compute() {
+        if (myModule instanceof Language) {
+          Language contextLanguage = (Language) myModule;
+          SModelDescriptor testStructureModel = contextLanguage.getStructureModelDescriptor();
+          if (myNode.getModel().getSModelReference().equals(testStructureModel.getSModelReference())) {
+            return contextLanguage;
+          }
+        }
+        return SModelUtil_new.getDeclaringLanguage(myConcept, myScope);
       }
-    }
+    });
+
     if (language == null) {
-      language = SModelUtil_new.getDeclaringLanguage(myConcept, myScope);
-      if (language == null) {
-        JOptionPane.showMessageDialog(null, "Couldn't find declaring language for concept " + NameUtil.nodeFQName(myNode));
-        return;
-      }
+      JOptionPane.showMessageDialog(null, "Couldn't find declaring language for concept " + NameUtil.nodeFQName(myNode));
+      return;
     }
 
     final ModuleContext languageContext = new ModuleContext(language, myProject);
-    SModelDescriptor languageEditor = language.getEditorModelDescriptor();
+    final SModelDescriptor languageEditor = language.getEditorModelDescriptor();
     ConceptEditorDeclaration editorDeclaration;
     if (languageEditor != null) {
-      editorDeclaration = SModelUtil_new.findEditorDeclaration(languageEditor.getSModel(), myConcept);
+      editorDeclaration = ModelAccess.instance().runReadAction(new Computable<ConceptEditorDeclaration>() {
+        public ConceptEditorDeclaration compute() {
+          return SModelUtil_new.findEditorDeclaration(languageEditor.getSModel(), myConcept);
+        }
+      });
       if (editorDeclaration != null) {
         navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, myEditor);
         return;
@@ -114,11 +126,6 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
     navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, myEditor);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl shift E";
-  }
-
   protected boolean collectActionData(AnActionEvent e) {
     if (!super.collectActionData(e)) return false;
     ActionEventData data = new ActionEventData(e);
@@ -150,9 +157,5 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
     editorDeclaration.setConceptDeclaration(conceptDeclaration);
     editorModel.addRoot(editorDeclaration);
     return editorDeclaration;
-  }
-
-  public static SModelDescriptor createConstraintsModel(Language language) {
-    return LanguageAspect.CONSTRAINTS.createNew(language);
   }
 }

@@ -21,8 +21,6 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.ExpandNode_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.nodes.GoToConceptEditorDeclarationAction", "jetbrains.mps.ide");
-      this.addSeparator();
       this.addAction("jetbrains.mps.workbench.actions.nodes.CopyNodeAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.nodes.CopyNodeReferenceAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.nodes.PasteNodeAction", "jetbrains.mps.ide");
