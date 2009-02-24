@@ -92,7 +92,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       for (BaseProjectPlugin plugin : mySortedPlugins) {
         List<GeneratedTool> tools = ((BaseProjectPlugin) plugin).getTools();
         for (GeneratedTool tool : tools) {
-          if (tool.getClass() == toolClass) return (T) tool;
+          if (tool.getClass().getName().equals(toolClass.getName())) return (T) tool;
         }
       }
       return null;
