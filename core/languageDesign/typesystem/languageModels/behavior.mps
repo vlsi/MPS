@@ -856,5 +856,61 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877521646" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1235492904617">
+    <link role="concept" targetNodeId="1.1185281562363" resolveInfo="RuntimeTypeVariable" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1235492908197">
+      <property name="name" value="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="11.1213877396640" resolveInfo="getPresentation" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235492908199">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235492922245">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235492932816">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1235492931611" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1235492934532">
+              <link role="property" targetNodeId="10.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235492916237">
+        <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1235492904618">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235492904619" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1235492943486">
+    <link role="concept" targetNodeId="1.1185281562361" resolveInfo="RuntimeErrorType" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1235492945929">
+      <property name="name" value="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="11.1213877396640" resolveInfo="getPresentation" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235492945931">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235492960755">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235492972667">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235492982983">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235492983053">
+                <property name="value" value="]" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235492980012">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1235492978636" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1235492980694">
+                  <link role="property" targetNodeId="1.1185281562362" resolveInfo="errorText" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235492962140">
+              <property name="value" value="error[" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235492951542">
+        <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1235492943487">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235492943488" />
+    </node>
+  </node>
 </model>
 

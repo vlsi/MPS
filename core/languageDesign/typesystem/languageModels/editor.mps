@@ -3712,5 +3712,36 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1235492726015">
+    <link role="conceptDeclaration" targetNodeId="1.1185281562361" resolveInfo="RuntimeErrorType" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1235492758471">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235492771645">
+        <property name="text" value="error" />
+        <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235492999798">
+        <property name="text" value="[" />
+        <link role="styleClass" targetNodeId="27.1233923571622" resolveInfo="LeftBracket" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1235492777703">
+        <link role="relationDeclaration" targetNodeId="1.1185281562362" resolveInfo="errorText" />
+        <link role="styleClass" targetNodeId="27.1186415563770" resolveInfo="StringLiteral" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235493011094">
+        <property name="text" value="]" />
+        <link role="styleClass" targetNodeId="27.1233923584313" resolveInfo="RightBracket" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1235492809072">
+    <link role="conceptDeclaration" targetNodeId="1.1185281562363" resolveInfo="RuntimeTypeVariable" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1235492819081">
+      <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1235492882409">
+        <property name="color" value="DARK_BLUE" />
+      </node>
+    </node>
+  </node>
 </model>
 
