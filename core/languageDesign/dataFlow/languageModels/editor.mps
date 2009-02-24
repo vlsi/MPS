@@ -338,5 +338,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1235407044176">
+    <property name="package" value="Instructions" />
+    <link role="conceptDeclaration" targetNodeId="1.1235406864909" resolveInfo="EmitVaraibleValueIs" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1235407053434">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235407061171">
+        <property name="text" value="variable" />
+        <link role="styleClass" targetNodeId="1206443699820" resolveInfo="Instruction" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1235407079438">
+        <link role="relationDeclaration" targetNodeId="1.1235406884693" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235407086308">
+        <property name="text" value="value is" />
+        <link role="styleClass" targetNodeId="1206443699820" resolveInfo="Instruction" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1235407094122">
+        <link role="relationDeclaration" targetNodeId="1.1235406895876" />
+      </node>
+    </node>
+  </node>
 </model>
 

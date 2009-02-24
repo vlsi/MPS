@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.dataFlow.framework;
 
 import jetbrains.mps.lang.dataFlow.framework.instructions.*;
+import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 
 import java.util.*;
 
@@ -144,6 +145,14 @@ public abstract class StructuralProgramBuilder<N> {
 
   public void emitEndTry() {
     EndTryInstruction instruction = new EndTryInstruction();
+    onInstructionEmitted(instruction);
+    myProgram.add(instruction);
+  }
+
+  public void emitVarEqulas(Object var, NullableVariableState value) {
+    VariableValueInstruction instruction = new VariableValueInstruction();
+    instruction.setVariable(var);
+    instruction.setValue(value);
     onInstructionEmitted(instruction);
     myProgram.add(instruction);
   }

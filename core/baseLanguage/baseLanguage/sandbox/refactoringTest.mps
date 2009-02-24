@@ -206,12 +206,46 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1234523126484" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234523126485" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523126486">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235219371736">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235219371737">
-            <property name="name" value="a" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235219371738" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235219374285">
-              <property name="value" value="10" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235411198585">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235411198586">
+            <property name="name" value="name" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1235411198587" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1235411204824" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1235411206502">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235411206503">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235411230862">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235411231119">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235411230863">
+                  <link role="variableDeclaration" targetNodeId="1235411198586" resolveInfo="name" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235411233647">
+                  <link role="baseMethodDeclaration" targetNodeId="10.~String.charAt(int):char" resolveInfo="charAt" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235411234688">
+                    <property name="value" value="0" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1235411227080">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235411211788">
+              <link role="variableDeclaration" targetNodeId="1235411198586" resolveInfo="name" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1235411228407" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235411845589">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235411861009">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235411845590">
+              <link role="variableDeclaration" targetNodeId="1235411198586" resolveInfo="name" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235411863378">
+              <link role="baseMethodDeclaration" targetNodeId="10.~String.charAt(int):char" resolveInfo="charAt" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235411867434">
+                <property name="value" value="1" />
+              </node>
             </node>
           </node>
         </node>

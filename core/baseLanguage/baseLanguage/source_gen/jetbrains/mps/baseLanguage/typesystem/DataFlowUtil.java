@@ -147,10 +147,18 @@ public class DataFlowUtil {
   public static void checkNullable(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     NullableAnalysisResult result = new NullableAnalysisResult(statementList);
     for(SNode problemNode : ListSequence.fromList(result.checkNodes(statementList))) {
-      {
-        BaseIntentionProvider intentionProvider = null;
-        IErrorTarget errorTarget = new NodeErrorTarget();
-        typeCheckingContext.reportWarning(problemNode, "Assign nullable value to not nullable.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1231940297398", intentionProvider, errorTarget);
+      if (SNodeOperations.isInstanceOf(problemNode, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          typeCheckingContext.reportWarning(problemNode, "Assign nullable value to not nullable.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1235234110878", intentionProvider, errorTarget);
+        }
+      } else if (SNodeOperations.isInstanceOf(problemNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          typeCheckingContext.reportWarning(problemNode, "Expression may be null.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1235234157876", intentionProvider, errorTarget);
+        }
       }
     }
   }

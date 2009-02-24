@@ -388,5 +388,26 @@
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235406864909">
+    <property name="package" value="Instructions" />
+    <property name="name" value="EmitVariableValueIs" />
+    <link role="extends" targetNodeId="1206443583064" resolveInfo="EmitStatement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235406884693">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="variable" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235406895876">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="value" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235408100257">
+      <property name="value" value="variable value is" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

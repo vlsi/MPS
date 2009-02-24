@@ -83,6 +83,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "value", true);
   }
 
+  public static SNode sourceNodeQuery_1235407415949(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "variable", true);
+  }
+
+  public static SNode sourceNodeQuery_1235407468435(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "value", true);
+  }
+
   public static Iterable sourceNodesQuery_1206456525472(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration");
   }

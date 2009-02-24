@@ -85,7 +85,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                 SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
                 {
                   BaseIntentionProvider intentionProvider = null;
-                  intentionProvider = new BaseIntentionProvider("r:35abae5e-83bf-4828-9f7c-4fd91f745f23(jetbrains.mps.baseLanguage.typesystem@17_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+                  intentionProvider = new BaseIntentionProvider("r:65d20a7e-e76c-448a-a15c-68d69497a3b9(jetbrains.mps.baseLanguage.typesystem@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
                   intentionProvider.putArgument("methodCall", methodCall);
                   intentionProvider.putArgument("classifier", classifier);
                   IErrorTarget errorTarget = new NodeErrorTarget();

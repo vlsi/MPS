@@ -13063,12 +13063,48 @@
             <property name="name" value="problemNode" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231930255191">
-            <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="1231940297398">
-              <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1231940304089">
-                <property name="value" value="Assign nullable value to not nullable." />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1235234085265">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235234085266">
+                <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="1235234110878">
+                  <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235234110879">
+                    <property name="value" value="Assign nullable value to not nullable." />
+                  </node>
+                  <node role="nodeToReport" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1235234110880">
+                    <link role="variable" targetNodeId="1231930255189" resolveInfo="problemNode" />
+                  </node>
+                </node>
               </node>
-              <node role="nodeToReport" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1231940297400">
-                <link role="variable" targetNodeId="1231930255189" resolveInfo="descendant" />
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235234100888">
+                <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1235234088550">
+                  <link role="variable" targetNodeId="1231930255189" resolveInfo="problemNode" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1235234102917">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1235234106230">
+                    <link role="conceptDeclaration" targetNodeId="1.1068498886294" resolveInfo="AssignmentExpression" />
+                  </node>
+                </node>
+              </node>
+              <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1235234145925">
+                <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235234145927">
+                  <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="1235234157876">
+                    <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235234157877">
+                      <property name="value" value="Expression may be null." />
+                    </node>
+                    <node role="nodeToReport" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1235234157878">
+                      <link role="variable" targetNodeId="1231930255189" resolveInfo="problemNode" />
+                    </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235234153107">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1235234153108">
+                    <link role="variable" targetNodeId="1231930255189" resolveInfo="problemNode" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1235234153109">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1235234153110">
+                      <link role="conceptDeclaration" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
