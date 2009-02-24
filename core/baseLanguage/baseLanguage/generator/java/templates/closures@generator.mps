@@ -25,7 +25,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="26" />
+  <maxImportIndex value="27" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.baseLanguage.generator.java.closures(jetbrains.mps.baseLanguage.generator.java.closures@java_stub)" version="-1" />
@@ -33,6 +33,7 @@
   <import index="16" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="24" modelUID="r:00000000-0000-4000-0000-011c895902ce(jetbrains.mps.baseLanguage.generator.java.closures.util)" version="-1" />
+  <import index="27" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="-1" />
   <visible index="2" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1152552359277">
     <property name="name" value="MAPPING_closures" />
@@ -138,6 +139,22 @@
       <link role="applicableConcept" targetNodeId="2.1152728232947" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1170197839047">
         <link role="template" targetNodeId="1152823060739" resolveInfo="reduce_Closure_NewClosureAdapterExpression" />
+      </node>
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1235512472616">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235512472617">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235512473370">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1235512473371">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235512473372">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1235512473373" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1235512473374">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1235512473375">
+                    <link role="conceptDeclaration" targetNodeId="27.1168428649324" resolveInfo="LambdaMethod" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1170198168319">
