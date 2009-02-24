@@ -366,7 +366,9 @@
                 <link role="link" targetNodeId="1.1220982054961" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="1228344471760" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1235490623800">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1235490694451" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224167011318">
