@@ -51,7 +51,7 @@ public class QueriesGenerated {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Module", null);
                 SPropertyOperations.set(newNode, "id", (item).getModuleId().toString());
-                SPropertyOperations.set(newNode, "name", (item).getModuleReference().getModuleFqName());
+                SPropertyOperations.set(newNode, "name", Module_Behavior.extractModuleProperName_1235487584035((item)));
                 return newNode;
               }
 

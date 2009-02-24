@@ -183,4 +183,18 @@ public class Module_Behavior {
     return list;
   }
 
+  public static String extractModuleProperName_1235487584035(IModule module) {
+    if (module instanceof Solution) {
+      Solution solution = (Solution)module;
+      if (!(solution.isExternallyVisible())) {
+        return Module_Behavior.replaceBadCharacters_1235487831795(solution.getSolutionDescriptor().getNamespace());
+      }
+    }
+    return Module_Behavior.replaceBadCharacters_1235487831795(module.getModuleFqName());
+  }
+
+  public static String replaceBadCharacters_1235487831795(String name) {
+    return name.replace("/", "_").replace("\\", "_");
+  }
+
 }

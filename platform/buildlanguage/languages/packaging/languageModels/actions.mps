@@ -119,16 +119,10 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1222445826100">
-                    <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222445826101">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222445826102">
-                        <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1222445893375" />
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222445826104">
-                          <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
-                        </node>
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222445826105">
-                        <link role="baseMethodDeclaration" targetNodeId="13.~ModuleReference.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
-                      </node>
+                    <node role="value" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1235488026422">
+                      <link role="baseMethodDeclaration" targetNodeId="10.1235487584035" resolveInfo="extractModuleProperName" />
+                      <link role="concept" targetNodeId="1.1203599702327" resolveInfo="Module" />
+                      <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1235488030885" />
                     </node>
                   </node>
                 </node>

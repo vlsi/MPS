@@ -103,7 +103,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1204022349926(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("pack." + SPropertyOperations.getString(_context.getNode(), "name"), null);
+    return _context.createUniqueName("pack." + SPropertyOperations.getString(_context.getNode(), "name").replace(File.separator, "_"), null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1204107798457(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -215,7 +215,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1217518534457(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name").replace(File.separator, "_");
   }
 
   public static Object propertyMacro_GetPropertyValue_1217518689738(final IOperationContext operationContext, final PropertyMacroContext _context) {

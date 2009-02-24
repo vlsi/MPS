@@ -35,7 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="21" />
+  <maxImportIndex value="23" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
@@ -44,6 +44,8 @@
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="21" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <import index="22" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="23" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104846985">
     <property name="package" value="projectComponents" />
     <link role="concept" targetNodeId="15.1203598512427" resolveInfo="Folder" />
@@ -216,13 +218,12 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222448597604">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222448597605">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222448597606">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235487987054">
+            <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1235487987055">
+              <link role="concept" targetNodeId="15.1203599702327" resolveInfo="Module" />
+              <link role="baseMethodDeclaration" targetNodeId="18.1235487584035" resolveInfo="extractModuleProperName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235487992958">
                 <link role="variableDeclaration" targetNodeId="1222448597595" resolveInfo="module" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222448597607">
-                <link role="baseMethodDeclaration" targetNodeId="10.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
               </node>
             </node>
           </node>
