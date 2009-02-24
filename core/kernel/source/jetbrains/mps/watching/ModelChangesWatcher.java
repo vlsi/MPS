@@ -23,8 +23,10 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
 import com.intellij.openapi.vfs.newvfs.events.*;
+import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
+import com.intellij.util.Processor;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -105,13 +107,20 @@ public class ModelChangesWatcher implements ApplicationComponent {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           // collecting changed models, modules etc.
-          for (VFileEvent event : events) {
+          for (final VFileEvent event : events) {
             String path = event.getPath();
             File file = new File(path);
-            List<IModule> moduleList = MPSModuleRepository.getInstance().getAllModulesInDirectory(file);
-            for (IModule m : moduleList) {
-              ModuleFileProcessor.getInstance().process(new VFileEventDecorator(event, m.getDescriptorFile().getAbsolutePath()), reloadSession);
-            }
+            FileUtil.processFilesRecursively(file, new Processor<File>() {
+              public boolean process(File file) {
+                String filePath = file.getAbsolutePath();
+                if (MPSFileTypesManager.instance().isModelFile(filePath)) {
+                  ModelFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
+                } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
+                  ModuleFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
+                }
+                return true;
+              }
+            });
             if (MPSFileTypesManager.instance().isModelFile(path)) {
               ModelFileProcessor.getInstance().process(event, reloadSession);
             } else if (MPSFileTypesManager.instance().isModuleFile(path)) {
