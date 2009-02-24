@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.commons.lang.StringUtils;
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.LinkedList;
@@ -49,10 +50,15 @@ public class MPSLayout_Behavior {
   public static String virtual_getPath_1213877230696(SNode thisNode) {
     String macro = IMacroHolder_Behavior.call_evaluateMacro_1234975967990(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "baseDirectory", true), "macro", true), "name"));
     String fullPathWithoutMacro = Path_Behavior.call_getFullPathWithoutMacro_1226511495568(SLinkOperations.getTarget(thisNode, "baseDirectory", true));
-    return (StringUtils.isEmpty(macro) ?
-      fullPathWithoutMacro :
-      macro + File.separator + fullPathWithoutMacro
-    );
+    if (StringUtils.isEmpty(macro)) {
+      if (Arrays.asList(File.listRoots()).contains(new File("/")) && !(fullPathWithoutMacro.startsWith("/"))) {
+        fullPathWithoutMacro = "/" + fullPathWithoutMacro;
+      }
+      return fullPathWithoutMacro;
+    } else
+    {
+      return macro + File.separator + fullPathWithoutMacro;
+    }
   }
 
   public static List<SNode> call_getTopologicalSortedComponents_1213877228271(SNode thisNode) {
