@@ -926,7 +926,10 @@ public final class SNode {
     List<SNode> result = new ArrayList<SNode>();
     if (myChildren != null) {
       for (SNode child : myChildren) {
-        if (role.equals(child.getRole_())) result.add(child);
+        if (role.equals(child.getRole_())) {
+          result.add(child);
+          child.fireNodeReadAccess();
+        }
       }
     }
     return result;
