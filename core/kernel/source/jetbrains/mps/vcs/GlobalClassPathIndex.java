@@ -138,6 +138,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     IFile classesGen = module.getClassesGen();
     if (classesGen == null) return;
     VirtualFile classesGenVirtual = VFileSystem.getFile(classesGen);
+    if (classesGenVirtual == null) return;
     dealWithClassPathOnModuleRemove(module, classesGenVirtual);
   }
 
@@ -202,6 +203,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     IFile classesGen = module.getClassesGen();
     if (classesGen == null) return;
     VirtualFile classesGenVirtual = VFileSystem.getFile(classesGen);
+    if (classesGenVirtual == null) return;
     dealWithClassPathOnModuleAdd(module, classesGenVirtual);
   }
 
