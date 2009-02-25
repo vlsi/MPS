@@ -9,6 +9,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import junit.framework.Assert;
+import java.util.Collections;
 
 public class Find_Test extends Util_Test {
 
@@ -86,6 +87,162 @@ __switch__:
 
     });
     Assert.assertEquals(10, found2);
+  }
+
+  @Test()
+  public void test_anyAll() throws Exception {
+    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure <Integer>() {
+
+      public Iterable<Integer> iterable() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _2_i;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_i = 1;
+                    case 3:
+                      if (!(this._2_i <= 10)) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._2_i++ ;
+                      this.__CP__ = 3;
+                      break;
+                    case 6:
+                      this.__CP__ = 5;
+                      this.yield(this._2_i);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 6;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    Assert.assertTrue(Sequence.fromIterable(test).any(new IWhereFilter <Integer>() {
+
+      public boolean accept(Integer it) {
+        return it % 2 == 0;
+      }
+
+    }));
+    Assert.assertFalse(Sequence.fromIterable(test).all(new IWhereFilter <Integer>() {
+
+      public boolean accept(Integer it) {
+        return it % 2 == 1;
+      }
+
+    }));
+    Assert.assertTrue(Sequence.fromIterable(test).all(new IWhereFilter <Integer>() {
+
+      public boolean accept(Integer it) {
+        return it >= 1 && it <= 10;
+      }
+
+    }));
+    Iterable<Integer> test2 = Sequence.fromClosure(new ISequenceClosure <Integer>() {
+
+      public Iterable<Integer> iterable() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 1;
+                      this.yield(42);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    Assert.assertTrue(Sequence.fromIterable(test2).any(new IWhereFilter <Integer>() {
+
+      public boolean accept(Integer it) {
+        return it == 42;
+      }
+
+    }));
+    Assert.assertFalse(Sequence.fromIterable(test2).any(new IWhereFilter <Integer>() {
+
+      public boolean accept(Integer it) {
+        return it == 0;
+      }
+
+    }));
+    Assert.assertTrue(Sequence.fromIterable(test2).all(new IWhereFilter <Integer>() {
+
+      public boolean accept(Integer it) {
+        return it == 42;
+      }
+
+    }));
+    Iterable<Integer> test3 = Sequence.fromIterable(Collections.<Integer>emptyList());
+    Assert.assertFalse(Sequence.fromIterable(test3).any(new IWhereFilter <Integer>() {
+
+      public boolean accept(Integer it) {
+        return true;
+      }
+
+    }));
+    Assert.assertTrue(Sequence.fromIterable(test3).all(new IWhereFilter <Integer>() {
+
+      public boolean accept(Integer it) {
+        return false;
+      }
+
+    }));
   }
 
 }

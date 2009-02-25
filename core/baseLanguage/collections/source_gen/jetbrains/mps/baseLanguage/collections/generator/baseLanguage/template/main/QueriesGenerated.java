@@ -1629,6 +1629,14 @@ public class QueriesGenerated {
     return new _Quotations.QuotationClass_7().createNode();
   }
 
+  public static SNode sourceNodeQuery_1235567916444(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "closure", true);
+  }
+
+  public static SNode sourceNodeQuery_1235567957388(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "closure", true);
+  }
+
   public static Iterable sourceNodesQuery_1200500184872(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode creator = SLinkOperations.getTarget(_context.getNode(), "creator", true);
     return SLinkOperations.getTargets(creator, "initValue", true);

@@ -28,6 +28,10 @@ public interface ISequence<T> extends Iterable<T> {
 
     T findLast(IWhereFilter<T> filter);
     
+    boolean any(IWhereFilter<T> filter);
+    
+    boolean all(IWhereFilter<T> filter);
+    
     <U> ISequence<U> translate(ITranslator<T, U> translator);
 
     <U> ISequence<U> translate(ITranslator2<T, U> translator);

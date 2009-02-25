@@ -1920,5 +1920,45 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235566554328">
+    <property name="name" value="AnyOperation" />
+    <property name="package" value="internal" />
+    <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235566554329">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="filter" />
+      <property name="sourceCardinality" value="1" />
+      <link role="specializedLink" targetNodeId="1204796294226" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235566554330">
+      <property name="value" value="any" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235566554331">
+      <property name="value" value="check if there are any elements matching the condition" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235566831861">
+    <property name="name" value="AllOperation" />
+    <property name="package" value="internal" />
+    <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235566831862">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="filter" />
+      <property name="sourceCardinality" value="1" />
+      <link role="specializedLink" targetNodeId="1204796294226" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235566831863">
+      <property name="value" value="all" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235566831864">
+      <property name="value" value="check if all elements match the condition" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
 </model>
 

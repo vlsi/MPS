@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.impl.ComparingSequence;
 import jetbrains.mps.internal.collections.runtime.impl.ConcatingSequence;
 import jetbrains.mps.internal.collections.runtime.impl.FilteringSequence;
 import jetbrains.mps.internal.collections.runtime.impl.LimitedCardinalitySequence;
+import jetbrains.mps.internal.collections.runtime.impl.NegateWhereFilter;
 import jetbrains.mps.internal.collections.runtime.impl.NullSequence;
 import jetbrains.mps.internal.collections.runtime.impl.NullSetSequence;
 import jetbrains.mps.internal.collections.runtime.impl.PagingSequence;
@@ -104,6 +105,14 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     
     public T findLast(IWhereFilter<T> filter) {
 		return where(filter).last();
+    }
+    
+    public boolean any(IWhereFilter<T> filter) {
+    	return where (filter).isNotEmpty();
+    }
+    
+    public boolean all(IWhereFilter<T> filter) {
+    	return where (new NegateWhereFilter<T>(filter)).isEmpty();
     }
     
     // public <U> Sequence<T,U> map (IMapper<? super T,U> mapper)
