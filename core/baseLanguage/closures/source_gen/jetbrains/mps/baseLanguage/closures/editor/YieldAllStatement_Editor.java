@@ -110,6 +110,7 @@ public class YieldAllStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2801_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2801_0");
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_ConceptProperty_2801_0(EditorCell editorCell, SNode node, EditorContext context) {

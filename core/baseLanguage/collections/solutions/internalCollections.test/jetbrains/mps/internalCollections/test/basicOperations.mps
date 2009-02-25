@@ -1191,6 +1191,35 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1235570059330">
+        <property name="methodName" value="singleton" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1235570059331" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235570059332">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235570063655">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235570063656">
+              <property name="name" value="sl" />
+              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1235570063657">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.LongType" id="1235570067393" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1235570115953">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" id="1235570118205">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.LongType" id="1235570122446" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1235570125695">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235570125696">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="1235570172666">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235570173753">
+                          <property name="value" value="1" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1235570128907" />
+        </node>
+      </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204982066081">
       <link role="classifier" targetNodeId="1.1204129267857" resolveInfo="Util_Test" />

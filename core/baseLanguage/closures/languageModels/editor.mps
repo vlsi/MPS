@@ -211,6 +211,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1200830955609">
         <property name="text" value=";" />
+        <link role="styleClass" targetNodeId="3.1215094139260" resolveInfo="Semicolon" />
       </node>
     </node>
   </node>
@@ -304,6 +305,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1229002150875">
         <property name="text" value=";" />
+        <link role="styleClass" targetNodeId="3.1215094139260" resolveInfo="Semicolon" />
       </node>
     </node>
   </node>
