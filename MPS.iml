@@ -32,7 +32,6 @@
     <orderEntry type="module" module-name="pattern" exported="" />
     <orderEntry type="module" module-name="quotation" exported="" />
     <orderEntry type="module" module-name="annotations" exported="" />
-    <orderEntry type="module" module-name="projectLanguage" exported="" />
     <orderEntry type="module" module-name="workbench" exported="" />
     <orderEntry type="module" module-name="kernel" exported="" />
     <orderEntry type="module" module-name="plugin" exported="" />
@@ -67,7 +66,7 @@
     <orderEntry type="library" exported="" name="XmlRpc" level="project" />
     <orderEntry type="library" exported="" name="XStream" level="project" />
     <orderEntry type="library" exported="" name="YJP" level="project" />
-    <orderEntry type="module" module-name="textGen" exported="" />
+    <orderEntry type="module" module-name="textgen" exported="" />
   </component>
   <component name="copyright">
     <Base>

@@ -997,6 +997,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/test/test.iml" filepath="$PROJECT_DIR$/core/languageDesign/test/test.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/testMaterial/testRefactoring/testRefactoring.iml" filepath="$PROJECT_DIR$/testMaterial/testRefactoring/testRefactoring.iml" group="core/languageDesign/refactoring" />
       <module fileurl="file://$PROJECT_DIR$/testMaterial/testRenameLanguage/testRenameLanguage.iml" filepath="$PROJECT_DIR$/testMaterial/testRenameLanguage/testRenameLanguage.iml" group="core/languageDesign/refactoring" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/textGen/textgen.iml" filepath="$PROJECT_DIR$/core/languageDesign/textGen/textgen.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/samples/theSimplestLanguage/theSimplestLanguage.iml" filepath="$PROJECT_DIR$/samples/theSimplestLanguage/theSimplestLanguage.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/typesystem/typesystem.iml" filepath="$PROJECT_DIR$/core/languageDesign/typesystem/typesystem.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" group="platform/uiLanguage" />
@@ -1043,11 +1044,11 @@
     </configuration>
     <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false" sample_coverage="true" runner="emma">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
-      <option name="VM_PARAMETERS" value="-ea -Xmx2048m -XX:MaxPermSize=92m -Xss1024k -Dmps.internal=true " />
+      <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=92m -Xss1024k -Dmps.internal=true " />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/JetBrains/MPS-1244/lib/jre" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk1.6.0_07" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />

@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
 import java.util.ArrayList;
 
-public class LanguageDescriptor extends ModuleDescriptor{
+public class LanguageDescriptor extends ModuleDescriptor {
   private String myGenPath;
   private boolean myEnableJavaStubs;
 
