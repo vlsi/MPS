@@ -8,6 +8,8 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
+  <language namespace="2c55c7ac-60c3-4eea-b9db-0d627bd2dcb9(jetbrains.mps.xml)" />
+  <language namespace="64f62b28-36e3-4052-9f72-f616211ae615(jetbrains.mps.xmlInternal)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -34,6 +36,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590585(jetbrains.mps.xml.constraints)" version="6" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590598(jetbrains.mps.xmlSchema.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590595(jetbrains.mps.xmlSchema.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590591(jetbrains.mps.xmlInternal.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
   <maxImportIndex value="17" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590398(jetbrains.mps.baseLanguage.sandbox.refactoringTest)" version="-1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -254,6 +262,39 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234523129325" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
+  </node>
+  <node type="jetbrains.mps.xmlInternal.structure.XmlFile" id="1235566110040">
+    <property name="fileName" value="file" />
+    <property name="extension" value="xml" />
+    <node role="document" type="jetbrains.mps.xmlInternal.structure.Document" id="1235566316933">
+      <node role="rootElement" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1235566345725">
+        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1235566345726">
+          <property name="text" value="aaaaa" />
+        </node>
+        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1235566345727">
+          <node role="content" type="jetbrains.mps.xml.structure.ContentList" id="1235566362198">
+            <property name="isHorizontal" value="true" />
+            <node role="content" type="jetbrains.mps.xml.structure.Text" id="1235566366897">
+              <property name="text" value="asdfasdfa" />
+            </node>
+            <node role="content" type="jetbrains.mps.xml.structure.Text" id="1235566368420">
+              <property name="text" value="dsfadfasdfadf" />
+            </node>
+            <node role="content" type="jetbrains.mps.xml.structure.Text" id="1235566369454">
+              <property name="text" value="asdfasdfadfasdf" />
+            </node>
+          </node>
+          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1235566358773" />
+        </node>
+        <node role="attribute" type="jetbrains.mps.xmlInternal.structure.SimpleAttribute" id="1235566352038">
+          <property name="attributeName" value="asdfasdf" />
+          <node role="value" type="jetbrains.mps.xml.structure.Text" id="1235566352039">
+            <property name="text" value="fasdfasdfa" />
+          </node>
+        </node>
+      </node>
+      <node role="prolog" type="jetbrains.mps.xmlInternal.structure.Prolog" id="1235566318215" />
+    </node>
   </node>
 </model>
 
