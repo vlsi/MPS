@@ -417,6 +417,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true), "jetbrains.mps.baseLanguage.structure.NullLiteral");
   }
 
+  public static boolean baseMappingRule_Condition_1235575812282(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1167778587376(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.createUniqueName("_zCursor", null);
   }
@@ -541,6 +545,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1228857465147(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", true), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1235576308297(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "jetbrains.mps.internal.collections.runtime.Sequence";
   }
 
   public static Object referenceMacro_GetReferent_1170982686718(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1635,6 +1643,19 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1235567957388(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "closure", true);
+  }
+
+  public static SNode sourceNodeQuery_1235576322667(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "creator", true), "elementType", true));
+  }
+
+  public static SNode sourceNodeQuery_1235576346648(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "creator", true), "singletonValue", true);
+  }
+
+  public static SNode sourceNodeQuery_1235576377612(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "creator", true), "elementType", true);
+    return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "creator", true), "elementType", true));
   }
 
   public static Iterable sourceNodesQuery_1200500184872(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

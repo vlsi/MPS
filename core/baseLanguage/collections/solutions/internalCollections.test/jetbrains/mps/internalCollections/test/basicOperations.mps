@@ -1195,29 +1195,44 @@
         <property name="methodName" value="singleton" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1235570059331" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235570059332">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235570063655">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235570063656">
-              <property name="name" value="sl" />
-              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1235570063657">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.LongType" id="1235570067393" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235576136350">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235576136351">
+              <property name="name" value="ssl" />
+              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1235576136352">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235576758001" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1235570115953">
-                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" id="1235570118205">
-                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.LongType" id="1235570122446" />
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1235570125695">
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235570125696">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="1235570172666">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235570173753">
-                          <property name="value" value="1" />
-                        </node>
-                      </node>
-                    </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1235576143777">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" id="1235576143778">
+                  <node role="singletonValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235576728654">
+                    <property name="value" value="42" />
                   </node>
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235576760757" />
                 </node>
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1235570128907" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="1235576157799">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235576158389">
+              <property name="value" value="1" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235576160095">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235576159781">
+                <link role="variableDeclaration" targetNodeId="1235576136351" resolveInfo="ssl" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1235576162383" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="1235576168618">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235576174866">
+              <property name="value" value="42" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235576177614">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235576177351">
+                <link role="variableDeclaration" targetNodeId="1235576136351" resolveInfo="ssl" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1235576182236" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

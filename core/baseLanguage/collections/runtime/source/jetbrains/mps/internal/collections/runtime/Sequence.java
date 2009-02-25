@@ -16,6 +16,7 @@
 package jetbrains.mps.internal.collections.runtime;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 
 import jetbrains.mps.internal.collections.runtime.impl.BasicSequence;
@@ -92,6 +93,15 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
             return (ISequence<U>) iterable;
         }
         return new BasicSequence<U> (iterable);
+    }
+    
+    public static <U> ISequence<U> singleton (U value) {
+        if (IGNORE_NULL_VALUES) {
+            if (value == null) {
+                return NullSequence.instance();
+            }
+        }
+        return new BasicSequence<U> (Collections.singleton(value));
     }
     
     // public Sequence<T,T> where (IWhereFilter<? super T> filter)

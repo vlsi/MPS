@@ -395,4 +395,11 @@ __switch__:
     Assert.assertEquals(0, carr.length);
   }
 
+  @Test()
+  public void test_singleton() throws Exception {
+    Iterable<Integer> ssl = Sequence.<Integer>singleton(42);
+    Assert.assertSame(1, Sequence.fromIterable(ssl).count());
+    Assert.assertSame(42, Sequence.fromIterable(ssl).first());
+  }
+
 }

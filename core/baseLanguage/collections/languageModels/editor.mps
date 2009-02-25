@@ -2292,5 +2292,45 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1235573413466">
+    <link role="conceptDeclaration" targetNodeId="1.1235573135402" resolveInfo="SingletonSequenceCreator" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1235573415079">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235573415080">
+        <property name="text" value="singleton" />
+        <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1235573415081">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235573415082">
+        <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="1215709345400" resolveInfo="LeftAngleBracket" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1235573415083">
+        <link role="relationDeclaration" targetNodeId="1.1207756918186" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235573415084">
+        <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="1215709621223" resolveInfo="RightAngleBracket" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="1235573415085">
+          <property name="tag" value="default_RTransform" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235573415086">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="15.1234958090348" resolveInfo="LeftParenAfterName" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1235573435291">
+        <link role="relationDeclaration" targetNodeId="1.1235573187520" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235573415099">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="15.1215088010675" resolveInfo="RightParen" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1235573415100">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
