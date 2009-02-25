@@ -305,7 +305,8 @@ public class TypeChecker implements ApplicationComponent {
   @Nullable
   public SNode getTypeOf(SNode node) {
     if (node == null) return null;
-    if (NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node).isInEditorQueries()) {
+    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
+    if (context != null && context.isInEditorQueries()) {
       return getTypeOf_resolveMode(node, true);
     } else if (myIsGeneration && TypesystemPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
       return getTypeOf_generationMode(node);
