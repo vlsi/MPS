@@ -25,7 +25,7 @@ public class ModuleDescriptor {
   private String myUUID;
   private String myNamespace;
   private String myTimestamp;
-  private boolean myCompileInMPS;
+  private boolean myCompileInMPS = true;
 
   private List<ModelRoot> myModelRoots;
   private List<Dependency> myDependencies;
