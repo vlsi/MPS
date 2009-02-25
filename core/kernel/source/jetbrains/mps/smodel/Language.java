@@ -36,6 +36,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.library.LibraryManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -190,6 +191,11 @@ public class Language extends AbstractModule {
         LOG.error("Can't find language " + ref.getModuleFqName() + " which is referenced in " + this);
       }
     }
+
+    if (!result.contains(Core_Language.get())) {
+      result.add(Core_Language.get());
+    }
+
     return result;
   }
 
