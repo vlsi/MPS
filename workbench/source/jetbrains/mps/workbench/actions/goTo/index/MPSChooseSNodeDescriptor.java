@@ -39,6 +39,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
   }
 
   public SNodeDescriptor[] find(final IScope scope) {
+    assert scope != null;
     ensureCachesAreUpToDate();
 
     final Set<SNodeDescriptor> keys = new HashSet<SNodeDescriptor>();
@@ -61,7 +62,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     FileBasedIndex.getInstance().processAllKeys(indexName, new Processor<SNodeDescriptor>() {
       public boolean process(SNodeDescriptor s) {
         if (scope instanceof GlobalScope
-        || scope.getModelDescriptor(s.getModelReference()) != null ) {
+        || scope.getModelDescriptor(s.getModelReference()) != null) {
           if (s.isDependOnOtherModel() || s.isInvalid() || changedModels.contains(s.getModelReference())) {
             s.setInvalid(false);
             hasToLoad.add(s.getModelReference());
