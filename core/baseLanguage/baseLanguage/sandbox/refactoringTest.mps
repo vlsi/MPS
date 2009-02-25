@@ -206,13 +206,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1234523126484" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234523126485" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523126486">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235411198585">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235411198586">
-            <property name="name" value="name" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1235411198587" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1235411204824" />
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235487805102">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235487805959">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235487806144">

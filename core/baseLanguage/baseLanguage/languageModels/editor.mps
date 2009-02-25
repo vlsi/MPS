@@ -9849,7 +9849,7 @@
     <link role="conceptDeclaration" targetNodeId="17.1068580123132" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1215517344867">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1215517344868">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1235499091818">
         <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
         <link role="styleClass" targetNodeId="1215090647074" resolveInfo="MethodName" />
         <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1215517344869">
