@@ -28,7 +28,9 @@ public class DataFlowUtil {
     checkUninitializedReads(typeCheckingContext, statementList);
     checkUnusedAssignments(typeCheckingContext, statementList);
     checkUnusedVariables(typeCheckingContext, statementList);
-    checkNullable(typeCheckingContext, statementList);
+    /*
+      checkNullable(typeCheckingContext, statementList);
+    */
   }
 
   @CheckingMethod()

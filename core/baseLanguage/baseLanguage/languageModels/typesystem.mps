@@ -12381,11 +12381,13 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231931888757">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1231931888758">
-            <link role="baseMethodDeclaration" targetNodeId="1231929658716" resolveInfo="checkNullable" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1231931893071">
-              <link role="variableDeclaration" targetNodeId="1223640228656" resolveInfo="statementList" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatement" id="1235556071027">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231931888757">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1231931888758">
+              <link role="baseMethodDeclaration" targetNodeId="1231929658716" resolveInfo="checkNullable" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1231931893071">
+                <link role="variableDeclaration" targetNodeId="1223640228656" resolveInfo="statementList" />
+              </node>
             </node>
           </node>
         </node>
