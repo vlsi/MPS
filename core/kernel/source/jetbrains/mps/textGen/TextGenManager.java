@@ -46,7 +46,7 @@ public class TextGenManager {
 
   public TextGenerationResult generateText(IOperationContext context, SNode node) {
     TextGenBuffer buffer = new TextGenBuffer();
-    buffer.putUserObject(BaseLangTextGen.PACKAGE_NAME, node.getModel().getLongName());
+    buffer.putUserObject("PACKAGE_NAME", node.getModel().getLongName());
     appendNodeText(context, buffer, node, null);
     return new TextGenerationResult(buffer.getText(), buffer.hasErrors());
   }
@@ -55,7 +55,7 @@ public class TextGenManager {
     return !(loadNodeTextGen(null, node) instanceof DefaultTextGen);
   }
 
-  protected void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, SNode contextNode) {
+  public void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, SNode contextNode) {
     if(node == null) {
       buffer.append("???");
 

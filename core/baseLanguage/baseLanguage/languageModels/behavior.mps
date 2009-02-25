@@ -3461,6 +3461,19 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233076448980" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076448981" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1234359555698">
+      <property name="name" value="isVoidReturn" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1234359596407" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234359555700">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234359606424">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1234359608785">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234359559819" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877350304">
       <property name="name" value="getParametersPresentation" />
       <property name="isPrivate" value="false" />
@@ -6862,6 +6875,19 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233076532809" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076532810" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1234359686037">
+      <property name="name" value="isVoidReturn" />
+      <link role="overriddenMethod" targetNodeId="1234359555698" resolveInfo="isVoidReturn" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234359686039">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234359692355">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1234359694044">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1234359690274" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234359690275" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877436333">
       <property name="name" value="getPresentation" />

@@ -29,6 +29,7 @@ import jetbrains.mps.lang.findUsages.structure.FindUsages_Language;
 import jetbrains.mps.lang.plugin.structure.Plugin_Language;
 import jetbrains.mps.lang.dataFlow.structure.DataFlow_Language;
 import jetbrains.mps.lang.test.structure.Test_Language;
+import jetbrains.mps.lang.textGen.structure.TextGen_Language;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 
 import javax.swing.Icon;
@@ -150,6 +151,12 @@ public enum LanguageAspect {
   TEST("test") {
     public ModuleReference getMainLanguage() {
       return Test_Language.MODULE_REFERENCE;
+    }
+  },
+
+  TEXT_GEN("textGen") {
+    public ModuleReference getMainLanguage() {
+      return TextGen_Language.MODULE_REFERENCE;
     }
   };
 

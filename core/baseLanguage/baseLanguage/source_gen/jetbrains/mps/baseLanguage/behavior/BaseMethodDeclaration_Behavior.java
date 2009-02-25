@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseMethodDeclaration_Behavior {
   private static Class[] PARAMETERS_1227714048980 = {SNode.class};
+  private static Class[] PARAMETERS_1234359555698 = {SNode.class};
   private static Class[] PARAMETERS_1232982539764 = {SNode.class};
 
   public static void init(SNode thisNode) {
@@ -26,6 +27,10 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
+    return false;
+  }
+
+  public static boolean virtual_isVoidReturn_1234359555698(SNode thisNode) {
     return false;
   }
 
@@ -115,12 +120,20 @@ public class BaseMethodDeclaration_Behavior {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isDataFlowChecked_1227714048980", PARAMETERS_1227714048980);
   }
 
+  public static boolean call_isVoidReturn_1234359555698(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isVoidReturn_1234359555698", PARAMETERS_1234359555698);
+  }
+
   public static boolean call_isAbstract_1232982539764(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isAbstract_1232982539764", PARAMETERS_1232982539764);
   }
 
   public static boolean callSuper_isDataFlowChecked_1227714048980(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isDataFlowChecked_1227714048980", PARAMETERS_1227714048980);
+  }
+
+  public static boolean callSuper_isVoidReturn_1234359555698(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isVoidReturn_1234359555698", PARAMETERS_1234359555698);
   }
 
   public static boolean callSuper_isAbstract_1232982539764(SNode thisNode, String callerConceptFqName) {

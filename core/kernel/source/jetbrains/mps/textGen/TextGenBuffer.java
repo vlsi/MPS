@@ -41,7 +41,7 @@ public final class TextGenBuffer {
     return topBufferText.length() <= 0 ? defaultBufferText : topBufferText + getLineSeparator() + getLineSeparator() + defaultBufferText;
   }
 
-  String getLineSeparator() {
+  public String getLineSeparator() {
     return System.getProperty("line.separator");
   }
 

@@ -34,7 +34,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     myBuffer = buffer;
   }
 
-  protected final TextGenBuffer getBuffer() {
+  public final TextGenBuffer getBuffer() {
     return myBuffer;
   }
 
@@ -54,8 +54,10 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     mySNode = contextNode;
   }
 
+  @Deprecated
   protected abstract void doGenerateText(BA ba);
 
+  @Deprecated
   protected final void appendNodeText(INodeAdapter ba) {
     try {
       TextGenManager.instance().appendNodeText(
@@ -65,43 +67,43 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     }
   }
 
-  protected void increaseDepth() {
+  public void increaseDepth() {
     myBuffer.increaseDepth();
   }
 
-  protected void decreaseDepth() {
+  public void decreaseDepth() {
     myBuffer.decreaseDepth();
   }
 
-  protected void append(String s) {
+  public void append(String s) {
     myBuffer.append(s);
   }
 
-  protected void appendNewLine() {
+  public void appendNewLine() {
     append(myBuffer.getLineSeparator());
   }
 
-  protected void appendWithIndent(String s) {
+  public void appendWithIndent(String s) {
     myBuffer.appendWithIndent(s);
   }
 
-  protected void indentBuffer() {
+  public void indentBuffer() {
     myBuffer.indentBuffer();
   }
 
-  protected final Object getUserObject(Object key) {
+  public final Object getUserObject(Object key) {
     return myBuffer.getUserObject(key);
   }
 
-  protected final void putUserObject(Object key, Object o) {
+  public final void putUserObject(Object key, Object o) {
     myBuffer.putUserObject(key, o);
   }
 
-  protected void foundError() {
+  public void foundError() {
     foundError(null);
   }
 
-  protected void foundError(String info) {
+  public void foundError(String info) {
     if (info != null) {
       LOG.error("textgen error: '" + info + "' in " + getSNode().getDebugText(), getSNode());
     } else {
@@ -115,7 +117,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
    * @param role - must be 'genuine role'
    *             todo: tmp
    */
-  protected String getReferentResolveInfoOrName(String role, SNode sourceNode) {
+  public String getReferentResolveInfoOrName(String role, SNode sourceNode) {
     SReference reference = sourceNode.getReference(role);
     if (reference == null) {
       foundError();
@@ -133,7 +135,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     return targetNode.getName();
   }
 
-  protected String getDeafultNoTextGenErrorText(INodeAdapter node) {
+  public String getDeafultNoTextGenErrorText(INodeAdapter node) {
     return "<!TextGen not found for '" + node.getConceptFQName() + "'!>";
   }
 }

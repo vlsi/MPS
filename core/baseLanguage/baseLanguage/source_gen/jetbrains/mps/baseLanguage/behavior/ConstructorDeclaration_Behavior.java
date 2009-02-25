@@ -22,6 +22,10 @@ public class ConstructorDeclaration_Behavior {
     return true;
   }
 
+  public static boolean virtual_isVoidReturn_1234359555698(SNode thisNode) {
+    return true;
+  }
+
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder result = new StringBuilder();
     result.append(SPropertyOperations.getString(thisNode, "nestedName"));

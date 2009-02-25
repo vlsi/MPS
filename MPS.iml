@@ -67,6 +67,7 @@
     <orderEntry type="library" exported="" name="XmlRpc" level="project" />
     <orderEntry type="library" exported="" name="XStream" level="project" />
     <orderEntry type="library" exported="" name="YJP" level="project" />
+    <orderEntry type="module" module-name="textGen" exported="" />
   </component>
   <component name="copyright">
     <Base>
