@@ -11,7 +11,6 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -26,7 +25,7 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
 
   public void applyRule(final SNode cd, final TypeCheckingContext typeCheckingContext) {
     List<SNode> superConcepts = AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(cd);
-    Language language = SModelUtil_new.getDeclaringLanguage((AbstractConceptDeclaration)((BaseConcept)SNodeOperations.getAdapter(cd)), GlobalScope.getInstance());
+    Language language = SModelUtil_new.getDeclaringLanguage(((AbstractConceptDeclaration)SNodeOperations.getAdapter(cd)), GlobalScope.getInstance());
     List<Language> extendedLanguages = language.getAllExtendedLanguages();
     for(SNode superConcept : superConcepts) {
       Language conceptLanguage = SModelUtil_new.getDeclaringLanguage(((AbstractConceptDeclaration)SNodeOperations.getAdapter(superConcept)), GlobalScope.getInstance());

@@ -473,16 +473,11 @@
           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235136293838">
             <link role="baseMethodDeclaration" targetNodeId="12.~SModelUtil_new.getDeclaringLanguage(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.Language" resolveInfo="getDeclaringLanguage" />
             <link role="classConcept" targetNodeId="12.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1235139308983">
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235139308984">
-                <link role="classifier" targetNodeId="15.~AbstractConceptDeclaration" resolveInfo="AbstractConceptDeclaration" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235139308985">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235139308986">
+                <link role="applicableNode" targetNodeId="1235133155414" resolveInfo="cd" />
               </node>
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235139308985">
-                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235139308986">
-                  <link role="applicableNode" targetNodeId="1235133155414" resolveInfo="cd" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1235139308987" />
-              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1235139308987" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235136293842">
               <link role="baseMethodDeclaration" targetNodeId="13.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
