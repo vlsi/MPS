@@ -3124,10 +3124,6 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1232461062092">
     <property name="name" value="CommentedStatement" />
     <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235559536636">
-      <property name="value" value="//" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1232461075566">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="statement" />
