@@ -214,7 +214,10 @@ public class GenerationController {
     if (outputFolder != null && !new File(outputFolder).exists()) {
       new File(outputFolder).mkdirs();
       try {
-        getProjectHandler().addSourceRoot(outputFolder);
+        IProjectHandler projectHandler = getProjectHandler();
+        if (projectHandler != null) {
+          projectHandler.addSourceRoot(outputFolder);
+        }
       } catch (Exception e) {
         myMesssages.handle(new Message(MessageKind.WARNING,GenerationController.class, "Can't add output folder to IDEA as sources"));
       }
