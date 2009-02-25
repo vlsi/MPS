@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.*;
 
 public class CloneModelUtil {
-
   public static SModel cloneModel(final SModel model, final SModel modelCopy, IScope scope) {
     modelCopy.runLoadingAction(new Runnable() {
       public void run() {

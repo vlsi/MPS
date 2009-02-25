@@ -88,7 +88,7 @@ public class Icons {
   public static final Icon DELETE_ICON = new ImageIcon(Icons.class.getResource("other/cancel.png"));
   public static final Icon FIND_ICON = new ImageIcon(Icons.class.getResource("other/find.png"));
 
-  public static final Icon HIERARCHY_ICON = new ImageIcon(Icons.class.getResource("nodes/hierarchyView.png"));
+  public static final Icon HIERARCHY_ICON = new ImageIcon(Icons.class.getResource("nodes/hierarchyView.png")  );
 
   public static final Icon DISCARD_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/discardAll.png"));
   public static final Icon SELECT_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/selectAll.png"));
