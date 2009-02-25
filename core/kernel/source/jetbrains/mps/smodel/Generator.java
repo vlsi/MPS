@@ -142,10 +142,6 @@ public class Generator extends AbstractModule {
       result.getSModel().addDevKit(LanguageDesign_DevKit.get());
     }
     result.getSModel().addLanguage(GenerationContext_Language.get());
-
-    LanguageDescriptor oldDescriptor = getSourceLanguage().getLanguageDescriptor();
-    getSourceLanguage().setLanguageDescriptor(oldDescriptor);
-
     return result;
   }
 
