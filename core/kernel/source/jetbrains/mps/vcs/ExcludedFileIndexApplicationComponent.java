@@ -48,36 +48,16 @@ import jetbrains.mps.reloading.FileClassPathItem;
 
 public class ExcludedFileIndexApplicationComponent implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ExcludedFileIndexApplicationComponent.class);
+  private final GlobalClassPathIndex myGlobalClassPathIndex;
 
   public static ExcludedFileIndexApplicationComponent getInstance() {
     return ApplicationManager.getApplication().getComponent(ExcludedFileIndexApplicationComponent.class);
   }
 
-  private final MPSModuleRepository myModuleRepository;
-  private final Set<VirtualFile> myExcludedFiles = new CopyOnWriteArraySet<VirtualFile>();
   private final String[] myExcludedRegexps = new String[]{".*\\.svn.*"};
-  private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
-    @Override
-    public void moduleAdded(IModule module) {
-      addModuleFile(module);
-    }
-/*
-    // work only after MPS restart, since on-line update is too complicated
-    @Override
-    public void moduleInitialized(IModule module) {
-      ((AbstractModule)module).updateExcludes();
-      addModuleFile(module);
-    }
-*/
 
-    @Override
-    public void moduleRemoved(IModule module) {
-      removeModuleFile(module);
-    }
-  };
-
-  public ExcludedFileIndexApplicationComponent(final MPSModuleRepository moduleRepository) {
-    myModuleRepository = moduleRepository;
+  public ExcludedFileIndexApplicationComponent(GlobalClassPathIndex globalClassPathIndex) {
+    myGlobalClassPathIndex = globalClassPathIndex;
   }
 
   @NonNls
@@ -87,64 +67,15 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   }
 
   public void initComponent() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        List<IModule> moduleList = myModuleRepository.getAllModules();
-        for (IModule module : moduleList) {
-          addModuleFile(module);
-        }
-        myModuleRepository.addModuleRepositoryListener(myModuleRepositoryListener);
-      }
-    });
-  }
-
-  private void removeModuleFile(IModule module) {
-    IFile classesGen = module.getClassesGen();
-    if (classesGen == null) return;
-    VirtualFile classesGenVirtual = VFileSystem.getFile(classesGen);
-    if (classesGenVirtual != null) {
-      boolean found = myExcludedFiles.remove(classesGenVirtual);
-      if (!found) {
-        LOG.warning("Not found classes_gen folder " + classesGenVirtual + " of module " + module);
-      }
-    }
-  }
-
-  private void addModuleFile(IModule module) {
-    IFile classesGen = module.getClassesGen();
-    if (classesGen == null) return;
-    VirtualFile classesGenVirtual = VFileSystem.getFile(classesGen);
-    if (classesGenVirtual != null) {
-      myExcludedFiles.add(classesGenVirtual);
-    }
-    excludeClassPath(module, module.getClassPathItem());
-  }
-
-  private void excludeClassPath(IModule module, IClassPathItem item) {
-    if (item instanceof CompositeClassPathItem) {
-      List<IClassPathItem> children = ((CompositeClassPathItem) item).getChildren();
-      for (IClassPathItem child : children) {
-        excludeClassPath(module, child);
-      }
-    } else if (item instanceof FileClassPathItem) {
-      String classPath = ((FileClassPathItem) item).getClassPath();
-      VirtualFile classPathFile = VFileSystem.getFile(classPath);
-      if (classPathFile != null && classPathFile.isDirectory()) {
-        if (module.isClassPathExcluded(classPath)) {
-          myExcludedFiles.add(classPathFile);
-        }
-      }
-    }
   }
 
   public void disposeComponent() {
-    myModuleRepository.removeModuleRepositoryListener(myModuleRepositoryListener);
   }
 
   public boolean isExcluded(VirtualFile file) {
-    if (myExcludedFiles.contains(file)) return true;
+    if (myGlobalClassPathIndex.isExcluded(file)) return true;
 
-    for (VirtualFile excludedFile : myExcludedFiles) {
+    for (VirtualFile excludedFile : myGlobalClassPathIndex.getExcludedClassPath()) {
       if (VfsUtil.isAncestor(excludedFile, file, false)) {
         return true;
       }

@@ -68,6 +68,9 @@
       <implementation-class>jetbrains.mps.vcs.ExcludedFileIndexApplicationComponent</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.vcs.GlobalClassPathIndex</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.vcs.SuspiciousModelIndex</implementation-class>
     </component>
   </application-components>

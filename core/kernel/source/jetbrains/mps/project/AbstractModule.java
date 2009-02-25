@@ -508,6 +508,17 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  public void setIncludedClassPath() {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    for (ClassPathEntry entry : descriptor.getClassPaths()) {
+      if (myIncludedClassPath.contains(entry.getPath())) {
+        entry.setIncludedInVCS(true);
+      } else {
+        entry.setIncludedInVCS(false);
+      }
+    }
+  }
+
   public List<String> getSourcePaths() {
     List<String> result = new ArrayList<String>();
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -539,7 +550,16 @@ public abstract class AbstractModule implements IModule {
   }
 
   public boolean isClassPathExcluded(String path) {
-    return !myIncludedClassPath.contains(path);    
+    return !myIncludedClassPath.contains(path);
+  }
+
+  public void excludeClassPath(IModule m, String path, boolean exclude) {
+    if (exclude) {
+      myIncludedClassPath.remove(path);
+    } else {
+      myIncludedClassPath.add(path);
+    }
+    setIncludedClassPath();
   }
 
   public Class getClass(String fqName) {
