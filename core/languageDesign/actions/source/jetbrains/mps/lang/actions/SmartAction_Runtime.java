@@ -26,8 +26,14 @@ public abstract class SmartAction_Runtime {
 
   public void askForActionParametersAndExecute(final EditorCell selectedCell, final IOperationContext operationContext) {
     final SmartActionContext actionContext = new SmartActionContext(operationContext);
-    final JDialog dialog = new JDialog();
     final SmartActionUIPanel mainPanel = getUI(actionContext);
+
+    if (mainPanel == null) {
+      execute(selectedCell, operationContext, actionContext);
+      return;
+    }
+
+    final JDialog dialog = new JDialog();
     dialog.setModal(true);
     dialog.setLayout(new BorderLayout());
 

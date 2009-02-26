@@ -16,7 +16,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.hierarchy.HierarchyViewTool;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.project.ProjectOperationContext;
 
 public class ShowConceptInHierarchy_Action extends GeneratedAction {
@@ -78,7 +77,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       HierarchyViewTool tool = ShowConceptInHierarchy_Action.this.context.getComponent(HierarchyViewTool.class);
-      tool.showConceptInHierarchy((AbstractConceptDeclaration)((BaseConcept)SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.node)), new ProjectOperationContext(ShowConceptInHierarchy_Action.this.project));
+      tool.showConceptInHierarchy((AbstractConceptDeclaration)((AbstractConceptDeclaration)SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.node)), new ProjectOperationContext(ShowConceptInHierarchy_Action.this.project));
       tool.openToolLater(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowConceptInHierarchy", t);

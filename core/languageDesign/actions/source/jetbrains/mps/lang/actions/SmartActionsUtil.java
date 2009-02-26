@@ -48,7 +48,13 @@ public class SmartActionsUtil {
             Object o = c.getConstructor().newInstance();
             for (Method method : c.getMethods()) {
               try {
-                actions.add((SmartAction_Runtime) method.invoke(o));
+                if (method.getName().startsWith("getGenerateCodeAction_")) {
+                  Object result = method.invoke(o);
+                  SmartAction_Runtime action = (SmartAction_Runtime) result;
+                  if (action.isApplicable(selectedCell, operationContext)) {
+                    actions.add(action);
+                  }
+                }
               } catch (Throwable t) {
                 LOG.error(t);
               }
@@ -58,6 +64,10 @@ public class SmartActionsUtil {
           LOG.error(t);
         }
       }
+    }
+    
+    if (actions.isEmpty()) {
+      return;
     }
 
     JPopupMenu menu = new JPopupMenu();
