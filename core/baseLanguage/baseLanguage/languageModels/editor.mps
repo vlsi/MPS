@@ -15101,5 +15101,49 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1235662680454">
+    <property name="package" value="interval" />
+    <link role="conceptDeclaration" targetNodeId="17.1235661255601" resolveInfo="InIntervalExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1235662759178">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1235662759179">
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" resolveInfo="BinaryOperation_LeftArgument_Actions" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235662795690">
+        <property name="text" value="∈" />
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1235663191291">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1235663191292">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" resolveInfo="BinaryOperation" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1235662759185">
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" resolveInfo="BinaryOperation_RightArgument_Actions" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1235663621054">
+    <property name="package" value="interval" />
+    <link role="conceptDeclaration" targetNodeId="17.1235663535251" resolveInfo="IntervalContainsExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1235663622338">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1235663622339">
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" resolveInfo="BinaryOperation_LeftArgument_Actions" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235663622340">
+        <property name="text" value="∍" />
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1235663622341">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1235663622342">
+            <link role="replacementConcept" targetNodeId="17.1081773326031" resolveInfo="BinaryOperation" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1235663622343">
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" resolveInfo="BinaryOperation_RightArgument_Actions" />
+      </node>
+    </node>
+  </node>
 </model>
 

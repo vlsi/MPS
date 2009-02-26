@@ -4,6 +4,8 @@
   <refactoringHistory />
   <language namespace="144f7012-c2d5-43be-be2b-4bfb7dff6503(jetbrains.mps.samples.agreementLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations" id="1112315976835">
     <node role="eventType" type="jetbrains.mps.samples.agreementLanguage.structure.EventType" id="1112316021402">

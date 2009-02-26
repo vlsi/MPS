@@ -80,6 +80,55 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235662295508">
+      <property name="name" value="isGood" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1235662321702" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235662295510" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235662295511">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235662302889">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InIntervalExpression" id="1235662309470">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntervalLiteral" id="1235662312818">
+              <node role="start" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235662315727">
+                <property name="value" value="10" />
+              </node>
+              <node role="end" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235662316152">
+                <property name="value" value="20" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1235662303719">
+              <link role="variableDeclaration" targetNodeId="1235662298965" resolveInfo="y" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1235662298965">
+        <property name="name" value="y" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235662298966" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235664078386">
+      <property name="name" value="isBad" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1235664082751" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235664078388" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235664078389">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235664088691">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntervalContainsExpression" id="1235664096401">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1235664097452">
+              <link role="variableDeclaration" targetNodeId="1235664086049" resolveInfo="y" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntervalLiteral" id="1235664090521">
+              <node role="end" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235664093586">
+                <property name="value" value="23" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1235664086049">
+        <property name="name" value="y" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235664086050" />
+      </node>
+    </node>
   </node>
 </model>
 

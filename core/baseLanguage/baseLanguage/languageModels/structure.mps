@@ -3245,5 +3245,39 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235661255601">
+    <property name="package" value="interval" />
+    <property name="name" value="InIntervalExpression" />
+    <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235661687046">
+      <property name="value" value=":in:" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235661708674">
+      <property name="value" value="(∈) is in interval" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1235661715535">
+      <property name="value" value="1" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235663535251">
+    <property name="package" value="interval" />
+    <property name="name" value="IntervalContainsExpression" />
+    <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235663553034">
+      <property name="value" value=":contains:" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235663553035">
+      <property name="value" value="(∍) interval contains" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1235663553036">
+      <property name="value" value="1" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
+    </node>
+  </node>
 </model>
 
