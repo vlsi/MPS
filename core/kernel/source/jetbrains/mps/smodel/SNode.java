@@ -929,6 +929,7 @@ public final class SNode {
         if (role.equals(child.getRole_())) {
           result.add(child);
           child.fireNodeReadAccess();
+          NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
         }
       }
     }

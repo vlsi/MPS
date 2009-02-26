@@ -81,8 +81,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private Set<SNode> myCurrentNodesToInvalidateNonTypesystem = new HashSet<SNode>();
 
   // nodes to rules which depend on this nodes
-  private Map<SNode, WeakHashMap<SNode, NonTypesystemRule_Runtime>> myNodesToDependentNodesWithNTRules =
-    new HashMap<SNode, WeakHashMap<SNode, NonTypesystemRule_Runtime>>();
+  private Map<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> myNodesToDependentNodesWithNTRules =
+    new HashMap<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
 
   //checked node & NT rule -> set of errors
   private Map<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>> myNodesAndNTRulesToErrors =
@@ -133,6 +133,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     result.myFullyCheckedNodes = new WeakSet<SNode>();
     result.myPartlyCheckedNodes = new WeakSet<SNode>();
     result.myCheckedNodesNonTypesystem = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>();
+    result.myNodesAndNTRulesToErrors = new HashMap<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>>();
+    result.myNodesToDependentNodesWithNTRules = new HashMap<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
     result.myTypeCheckingContext = null;
     result.myEquationManager = new EquationManager(result.myTypeChecker, result.myTypeCheckingContext);
     result.myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
@@ -521,12 +523,17 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private void addDepedentNodesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn) {
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
-      WeakHashMap<SNode, NonTypesystemRule_Runtime> dependentNodes = myNodesToDependentNodesWithNTRules.get(nodeToDependOn);
+      WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = myNodesToDependentNodesWithNTRules.get(nodeToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new WeakHashMap<SNode, NonTypesystemRule_Runtime>();
+        dependentNodes = new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>();
         myNodesToDependentNodesWithNTRules.put(nodeToDependOn, dependentNodes);
       }
-      dependentNodes.put(sNode, rule);
+      Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(sNode);
+      if (rules == null) {
+        rules = new HashSet<NonTypesystemRule_Runtime>();
+        dependentNodes.put(sNode, rules);
+      }
+      rules.add(rule);
     }
   }
 
@@ -722,10 +729,15 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private void doInvalidateNonTypesystem(List<SModelEvent> events) {
     Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>();
     for (SNode node : myCurrentNodesToInvalidateNonTypesystem) {
-      WeakHashMap<SNode, NonTypesystemRule_Runtime> nodesAndRules = myNodesToDependentNodesWithNTRules.get(node);
+      WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> nodesAndRules = myNodesToDependentNodesWithNTRules.get(node);
       if (nodesAndRules != null) {
-        for (Entry<SNode, NonTypesystemRule_Runtime> entry : nodesAndRules.entrySet()) {
-           invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(entry.getKey(), entry.getValue()));
+        for (SNode nodeOfRule : nodesAndRules.keySet()) {
+          Set<NonTypesystemRule_Runtime> rules = nodesAndRules.get(nodeOfRule);
+          if (rules != null) {
+            for (NonTypesystemRule_Runtime rule : rules) {
+              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(nodeOfRule, rule));
+            }
+          }
         }
       }
     }
