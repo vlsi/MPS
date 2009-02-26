@@ -7283,7 +7283,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1164903407620">
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1164903407621">
           <property name="text" value="}" />
-          <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
+          <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1164903407622">
           <property name="text" value="catch" />
@@ -7302,7 +7302,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215011816143">
           <property name="text" value="{" />
-          <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
+          <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997654">
           <property name="flag" value="false" />

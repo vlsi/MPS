@@ -183,7 +183,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7938_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7938_0");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_7938_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -232,7 +232,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7938_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7938_4");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Indent_7938_0(EditorCell editorCell, SNode node, EditorContext context) {
