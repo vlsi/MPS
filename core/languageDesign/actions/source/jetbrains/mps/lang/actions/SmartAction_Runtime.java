@@ -22,6 +22,7 @@ public abstract class SmartAction_Runtime {
   public abstract void execute(EditorCell selectedCell, IOperationContext operationContext, SmartActionContext actionContext);
   public abstract SmartActionUIPanel getUI(SmartActionContext actionContext);
   public abstract boolean isApplicable(EditorCell selectedCell, IOperationContext operationContext);
+  public abstract String getDescriptionText();
 
   public void askForActionParametersAndExecute(final EditorCell selectedCell, final IOperationContext operationContext) {
     final SmartActionContext actionContext = new SmartActionContext(operationContext);

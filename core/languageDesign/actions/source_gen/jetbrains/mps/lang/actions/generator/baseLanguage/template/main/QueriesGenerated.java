@@ -22,12 +22,17 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import java.util.List;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1221138344773(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.PasteWrapper")).isNotEmpty();
+  }
+
+  public static boolean createRootRule_Condition_1235652996916(final IOperationContext operationContext, final CreateRootRuleContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.SmartEditorActions")).isNotEmpty();
   }
 
   public static Object propertyMacro_GetPropertyValue_1172253035856(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -122,8 +127,8 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "smartActionParameter", false), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1235240655204(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+  public static Object propertyMacro_GetPropertyValue_1235659476375(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "description");
   }
 
   public static Object referenceMacro_GetReferent_1202914532639(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -560,7 +565,12 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1235155841332(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "generateCode", true);
+    List<SNode> result = ListSequence.<SNode>fromArray();
+    List<SNode> smartEditorActions = SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.SmartEditorActions");
+    for(SNode actionsContainer : smartEditorActions) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(actionsContainer, "generateCode", true)));
+    }
+    return result;
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1186794781128(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
