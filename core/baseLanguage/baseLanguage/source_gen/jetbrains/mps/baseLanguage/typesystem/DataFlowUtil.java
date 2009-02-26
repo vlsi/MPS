@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.DataFlow;
@@ -23,7 +24,7 @@ public class DataFlowUtil {
   }
 
   @CheckingMethod()
-  public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, SNode statementList) {
+  public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, @NotNull() SNode statementList) {
     checkUnreachable(typeCheckingContext, statementList);
     checkUninitializedReads(typeCheckingContext, statementList);
     checkUnusedAssignments(typeCheckingContext, statementList);

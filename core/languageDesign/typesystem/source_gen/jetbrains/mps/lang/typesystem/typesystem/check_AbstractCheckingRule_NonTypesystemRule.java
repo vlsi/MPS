@@ -6,8 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_AbstractCheckingRule_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -16,7 +16,9 @@ public class check_AbstractCheckingRule_NonTypesystemRule extends AbstractNonTyp
   }
 
   public void applyRule(final SNode abstractCheckingRule, final TypeCheckingContext typeCheckingContext) {
-    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(abstractCheckingRule, "body", true));
+    if (SLinkOperations.getTarget(abstractCheckingRule, "body", true) != null) {
+      DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(abstractCheckingRule, "body", true));
+    }
   }
 
   public String getApplicableConceptFQName() {

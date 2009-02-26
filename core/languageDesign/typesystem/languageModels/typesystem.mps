@@ -1716,15 +1716,30 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1207314759346">
     <property name="name" value="check_AbstractCheckingRule" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207314759347">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223643073911">
-        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223643081726">
-          <link role="baseMethodDeclaration" targetNodeId="12.1223640221746" resolveInfo="checkDataFlow" />
-          <link role="classConcept" targetNodeId="12.1223640197349" resolveInfo="DataFlowUtil" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223643086820">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1223643086821">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1235663796518">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235663796519">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235663812110">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235663812111">
+              <link role="baseMethodDeclaration" targetNodeId="12.1223640221746" resolveInfo="checkDataFlow" />
+              <link role="classConcept" targetNodeId="12.1223640197349" resolveInfo="DataFlowUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235663812112">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235663812113">
+                  <link role="applicableNode" targetNodeId="1207314761302" resolveInfo="abstractCheckingRule" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1235663812114">
+                  <link role="link" targetNodeId="1.1195213635060" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1235663815462">
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1235663817959" />
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235663808421">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235663808422">
               <link role="applicableNode" targetNodeId="1207314761302" resolveInfo="abstractCheckingRule" />
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223643086822">
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1235663808423">
               <link role="link" targetNodeId="1.1195213635060" />
             </node>
           </node>
