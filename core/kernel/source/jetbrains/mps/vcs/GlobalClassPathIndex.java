@@ -32,6 +32,8 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.cleanup.CleanupListener;
+import jetbrains.mps.cleanup.CleanupManager;
 import org.jetbrains.annotations.NotNull;
 
 public class GlobalClassPathIndex implements ApplicationComponent {
@@ -41,6 +43,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   }
 
   private final MPSModuleRepository myModuleRepository;
+  private final CleanupManager myCleanupManager;
   private final Map<VirtualFile, ArrayList<IModule>> myClassPathIndex = new HashMap<VirtualFile, ArrayList<IModule>>();
   private final Set<VirtualFile> myExcludedClassPath = new HashSet<VirtualFile>();
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
@@ -51,7 +54,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
 
     @Override
     public void moduleInitialized(IModule module) {
-//  todo moduleInitialized is not called on change module properties => move this call to the right place   
+//  todo moduleInitialized is not called on change module properties => move this call to the right place
 //      GlobalClassPathIndex.this.moduleInitialized(module);
     }
 
@@ -60,9 +63,17 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       GlobalClassPathIndex.this.moduleRemoved(module);
     }
   };
+  private final CleanupListener myCleanupListener = new CleanupListener() {
+    public void performCleanup() {
+      for (IModule module : myModuleRepository.getAllModules()){
+        GlobalClassPathIndex.this.moduleInitialized(module);
+      }
+    }
+  };
 
-  public GlobalClassPathIndex(final MPSModuleRepository moduleRepository) {
+  public GlobalClassPathIndex(final MPSModuleRepository moduleRepository, CleanupManager cleanupManager) {
     myModuleRepository = moduleRepository;
+    myCleanupManager = cleanupManager;
   }
 
   private void moduleInitialized(IModule module) {
@@ -85,13 +96,21 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   }
 
   private void dealWithClassPathOnModuleInit(IModule module, VirtualFile classPathFile) {
+    ArrayList<IModule> modules = myClassPathIndex.get(classPathFile);
+    if (modules == null) {
+      modules = new ArrayList<IModule>();
+      myClassPathIndex.put(classPathFile, modules);
+    }
+    if (!modules.contains(module)) {
+      modules.add(module);      
+    }
     if (module.isClassPathExcluded(classPathFile.getPath()) && !myExcludedClassPath.contains(classPathFile)) {
       // should exclude classPath
       for (IModule m : myClassPathIndex.get(classPathFile)) {
         if (m == module) continue;
-        m.excludeClassPath(m, classPathFile.getPath(), false);
+        m.excludeClassPath(m, classPathFile.getPath(), true);
       }
-    } else {
+    } else if (!module.isClassPathExcluded(classPathFile.getPath()) && myExcludedClassPath.contains(classPathFile)) {
       // should include classPath
       for (IModule m : myClassPathIndex.get(classPathFile)) {
         if (m == module) continue;
@@ -222,10 +241,12 @@ public class GlobalClassPathIndex implements ApplicationComponent {
         myModuleRepository.addModuleRepositoryListener(myModuleRepositoryListener);
       }
     });
+    myCleanupManager.addCleanupListener(myCleanupListener);
   }
 
   public void disposeComponent() {
     myModuleRepository.removeModuleRepositoryListener(myModuleRepositoryListener);
+    myCleanupManager.removeCleanupListener(myCleanupListener);
   }
 
   public boolean isExcluded(VirtualFile file) {
