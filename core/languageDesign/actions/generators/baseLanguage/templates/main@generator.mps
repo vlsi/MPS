@@ -5927,9 +5927,11 @@
                 </node>
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235155832484">
                   <property name="isAbstract" value="false" />
-                  <property name="name" value="fillActionContext" />
+                  <property name="name" value="getUI" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235155832485" />
-                  <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1235155832486" />
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235648867188">
+                    <link role="classifier" targetNodeId="33.~SmartActionUIPanel" resolveInfo="SmartActionUIPanel" />
+                  </node>
                   <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1235155832487">
                     <property name="name" value="smartActionContext" />
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235155832488">
@@ -5978,9 +5980,7 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235156009554">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1235156012535">
-                        <property name="value" value="true" />
-                      </node>
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1235648861858" />
                       <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1235156017797">
                         <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1235156017798">
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235156017799">

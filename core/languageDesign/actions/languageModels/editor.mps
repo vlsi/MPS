@@ -1900,7 +1900,7 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1235060236320" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235060246478">
-        <property name="text" value="fill action context" />
+        <property name="text" value="get action UI" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1235060315078">
         <link role="relationDeclaration" targetNodeId="1.1235060277747" />

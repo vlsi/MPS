@@ -14,7 +14,7 @@ public class GenerateCodeAction extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.actions.structure.GenerateCodeAction";
   public static final String DESCRIPTION = "description";
   public static final String IS_APPLICABLE = "isApplicable";
-  public static final String FILL_ACTION_CONTEXT = "fillActionContext";
+  public static final String GET_ACTION_U_I = "getActionUI";
   public static final String EXECUTE_SMART_ACTION = "executeSmartAction";
   public static final String SMART_ACTION_PARAMETER = "smartActionParameter";
 
@@ -38,12 +38,12 @@ public class GenerateCodeAction extends BaseConcept {
     super.setChild(GenerateCodeAction.IS_APPLICABLE, node);
   }
 
-  public FillActionContextFunction getFillActionContext() {
-    return (FillActionContextFunction)this.getChild(FillActionContextFunction.class, GenerateCodeAction.FILL_ACTION_CONTEXT);
+  public GetActionUIFunction getGetActionUI() {
+    return (GetActionUIFunction)this.getChild(GetActionUIFunction.class, GenerateCodeAction.GET_ACTION_U_I);
   }
 
-  public void setFillActionContext(FillActionContextFunction node) {
-    super.setChild(GenerateCodeAction.FILL_ACTION_CONTEXT, node);
+  public void setGetActionUI(GetActionUIFunction node) {
+    super.setChild(GenerateCodeAction.GET_ACTION_U_I, node);
   }
 
   public ExecuteSmartActionFunction getExecuteSmartAction() {

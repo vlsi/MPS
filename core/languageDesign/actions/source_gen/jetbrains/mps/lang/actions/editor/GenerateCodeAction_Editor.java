@@ -47,7 +47,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_5804_3(context, node, "parameters"));
     editorCell.addEditorCell(this.createRefNodeList_5804_0(context, node));
     editorCell.addEditorCell(this.createConstant_5804_4(context, node, " "));
-    editorCell.addEditorCell(this.createConstant_5804_5(context, node, "fill action context"));
+    editorCell.addEditorCell(this.createConstant_5804_5(context, node, "get action UI"));
     editorCell.addEditorCell(this.createRefNode_5804_3(context, node));
     editorCell.addEditorCell(this.createConstant_5804_7(context, node, " "));
     editorCell.addEditorCell(this.createConstant_5804_6(context, node, "execute"));
@@ -194,8 +194,8 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_5804_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("fillActionContext");
-    provider.setNoTargetText("<no fillActionContext>");
+    provider.setRole("getActionUI");
+    provider.setNoTargetText("<no getActionUI>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_5804_2_internal(context, node, provider);

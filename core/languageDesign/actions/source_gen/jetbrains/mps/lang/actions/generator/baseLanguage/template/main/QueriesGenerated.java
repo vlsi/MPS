@@ -279,11 +279,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1235156005973(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "fillActionContext", true) != null);
+    return (SLinkOperations.getTarget(_context.getNode(), "getActionUI", true) != null);
   }
 
   public static boolean ifMacro_Condition_1235156017798(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "fillActionContext", true) == null);
+    return (SLinkOperations.getTarget(_context.getNode(), "getActionUI", true) == null);
   }
 
   public static boolean ifMacro_Condition_1235156249241(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -512,7 +512,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1235156090021(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "fillActionContext", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "getActionUI", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1235156274225(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

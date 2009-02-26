@@ -359,7 +359,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="12" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -371,6 +371,7 @@
   <import index="9" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
+  <import index="12" modelUID="f:java_stub#jetbrains.mps.lang.actions(jetbrains.mps.lang.actions@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1112056943463">
     <property name="rootable" value="true" />
     <property name="iconPath" value="${language_descriptor}\icons\actions.png" />
@@ -2327,7 +2328,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235060277747">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="fillActionContext" />
+      <property name="role" value="getActionUI" />
       <link role="target" targetNodeId="1235060070612" resolveInfo="FillActionContextFunction" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235060297686">
@@ -2413,11 +2414,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235060070612">
-    <property name="name" value="FillActionContextFunction" />
+    <property name="name" value="GetActionUIFunction" />
     <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1235060143287">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1235060171436" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235648758679">
+        <link role="classifier" targetNodeId="12.~SmartActionUIPanel" resolveInfo="SmartActionUIPanel" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235060179343">
