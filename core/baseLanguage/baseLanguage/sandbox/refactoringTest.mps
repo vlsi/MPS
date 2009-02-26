@@ -260,6 +260,14 @@
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1234523129323">
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234523129325" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235665317705">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235665321431">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntervalLiteral" id="1235665321432">
+            <property name="endIncluded" value="false" />
+            <property name="startIncluded" value="false" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
   </node>

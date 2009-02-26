@@ -1060,6 +1060,11 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_Basic");
   }
 
+  public static Object referenceMacro_GetReferent_1235665716093(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode generatedClass = (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass");
+    return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
+  }
+
   public static boolean ifMacro_Condition_1168384460946(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "inspectedCellModel", true) != null;
   }
@@ -1374,6 +1379,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1233150067223(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "separatorStyle", true), "styleItem", true)).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_1235665716111(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "menuDescriptor", true) != null;
   }
 
   public static SNode sourceNodeQuery_1168383269962(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1768,6 +1777,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1233150067209(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "separatorStyle", true), "styleItem", true);
+  }
+
+  public static Iterable sourceNodesQuery_1235665716083(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "menuDescriptor", true), "cellMenuPart", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1186771925799(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
