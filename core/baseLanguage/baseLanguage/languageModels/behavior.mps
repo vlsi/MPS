@@ -10361,5 +10361,12 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233925298575" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1235660762396">
+    <property name="package" value="interval" />
+    <link role="concept" targetNodeId="1.1235658773655" resolveInfo="IntervalLiteral" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1235660762397">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235660762398" />
+    </node>
+  </node>
 </model>
 

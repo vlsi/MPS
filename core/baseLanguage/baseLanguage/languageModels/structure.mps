@@ -3199,5 +3199,51 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1233920926773">
     <property name="name" value="TypeAnnotable" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235657188186">
+    <property name="name" value="IntervalType" />
+    <property name="package" value="interval" />
+    <link role="extends" targetNodeId="1068431790189" resolveInfo="Type" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235657207109">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="elementType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235657990638">
+      <property name="value" value="interval" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235657998031">
+      <property name="value" value="interval type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235658773655">
+    <property name="package" value="interval" />
+    <property name="name" value="IntervalLiteral" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235658778984">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="start" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235658782953">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="end" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1235658788580">
+      <property name="name" value="startIncluded" />
+      <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1235658792893">
+      <property name="name" value="endIncluded" />
+      <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235659469476">
+      <property name="value" value="interval" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
