@@ -37,7 +37,6 @@ import jetbrains.mps.cleanup.CleanupManager;
 import org.jetbrains.annotations.NotNull;
 
 public class GlobalClassPathIndex implements ApplicationComponent {
-
   public static GlobalClassPathIndex getInstance() {
     return ApplicationManager.getApplication().getComponent(GlobalClassPathIndex.class);
   }
@@ -46,6 +45,8 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   private final CleanupManager myCleanupManager;
   private final Map<VirtualFile, ArrayList<IModule>> myClassPathIndex = new HashMap<VirtualFile, ArrayList<IModule>>();
   private final Set<VirtualFile> myExcludedClassPath = new HashSet<VirtualFile>();
+  private boolean myIsChanged = false;
+  private final List<ExclusionChangedListener> myListeners = new ArrayList<ExclusionChangedListener>();
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
     @Override
     public void moduleAdded(IModule module) {
@@ -68,8 +69,26 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       for (IModule module : myModuleRepository.getAllModules()){
         GlobalClassPathIndex.this.moduleInitialized(module);
       }
+      if (myIsChanged) {
+        notifyListeners();
+        myIsChanged = false;
+      }
     }
   };
+
+  private void notifyListeners() {
+    for (ExclusionChangedListener l : myListeners) {
+      l.exclusionChanged();
+    }
+  }
+
+  public void addListener(ExclusionChangedListener l) {
+    myListeners.add(l);
+  }
+
+  public void removeListener(ExclusionChangedListener l) {
+    myListeners.remove(l);  
+  }
 
   public GlobalClassPathIndex(final MPSModuleRepository moduleRepository, CleanupManager cleanupManager) {
     myModuleRepository = moduleRepository;
@@ -110,12 +129,16 @@ public class GlobalClassPathIndex implements ApplicationComponent {
         if (m == module) continue;
         m.excludeClassPath(m, classPathFile.getPath(), true);
       }
+      myExcludedClassPath.add(classPathFile);
+      myIsChanged = true;
     } else if (!module.isClassPathExcluded(classPathFile.getPath()) && myExcludedClassPath.contains(classPathFile)) {
       // should include classPath
       for (IModule m : myClassPathIndex.get(classPathFile)) {
         if (m == module) continue;
         m.excludeClassPath(m, classPathFile.getPath(), false);
       }
+      myExcludedClassPath.remove(classPathFile);
+      myIsChanged = true;
     }
   }
 
@@ -255,5 +278,9 @@ public class GlobalClassPathIndex implements ApplicationComponent {
 
   public Set<VirtualFile> getExcludedClassPath() {
     return Collections.unmodifiableSet(myExcludedClassPath);
+  }
+
+  public static interface ExclusionChangedListener {
+    void exclusionChanged();
   }
 }

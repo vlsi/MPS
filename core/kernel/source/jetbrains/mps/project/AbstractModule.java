@@ -41,7 +41,6 @@ import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -553,13 +552,18 @@ public abstract class AbstractModule implements IModule {
     return !myIncludedClassPath.contains(path);
   }
 
-  public void excludeClassPath(IModule m, String path, boolean exclude) {
+  public boolean excludeClassPath(IModule m, String path, boolean exclude) {
+    boolean changed;
     if (exclude) {
-      myIncludedClassPath.remove(path);
+      changed = myIncludedClassPath.remove(path);
     } else {
-      myIncludedClassPath.add(path);
+      changed = myIncludedClassPath.add(path);
     }
     setIncludedClassPath();
+    if (changed) {
+      save();
+    }
+    return changed;
   }
 
   public Class getClass(String fqName) {

@@ -57,6 +57,8 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.vcs.GlobalClassPathIndex.ExclusionChangedListener;
+import jetbrains.mps.vcs.GlobalClassPathIndex;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -86,6 +88,11 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       IFile modeFile = sm.getModelFile();
       if (modeFile == null) return;
       VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modeFile));
+    }
+  };
+  private final ExclusionChangedListener myExclusionListener = new ExclusionChangedListener() {
+    public void exclusionChanged() {
+      rebuildTreeLater();
     }
   };
 
@@ -192,6 +199,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         }
       }
     });
+    GlobalClassPathIndex.getInstance().addListener(myExclusionListener);
   }
 
   public MPSTree getTree() {
@@ -214,6 +222,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
     GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalSModelListener);
     myMessageBusConnection.disconnect();
+    GlobalClassPathIndex.getInstance().removeListener(myExclusionListener);
   }
 
   private void rebuildTreeLater() {
