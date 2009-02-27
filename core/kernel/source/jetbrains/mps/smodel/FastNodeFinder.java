@@ -98,14 +98,12 @@ public class FastNodeFinder {
         addToCache(child);
       }
 
-      AbstractConceptDeclaration concept = root.getConceptDeclarationAdapter();
+      String conceptFqName = root.getConceptFqName();
 
-      if (concept != null) {
-        add(concept, root, true);
-        
-        for (AbstractConceptDeclaration acd : getParents(concept)) {
-          add(acd, root, false);
-        }
+      add(conceptFqName, root, true);
+
+      for (String acd : getParents(conceptFqName)) {
+        add(acd, root, false);
       }
     } finally {
       NodeReadAccessCaster.setEventsBlocked(wereBlocked);
@@ -121,27 +119,22 @@ public class FastNodeFinder {
         removeFromCache(child);
       }
 
-      AbstractConceptDeclaration concept = root.getConceptDeclarationAdapter();
+      String conceptFqName = root.getConceptFqName();
+      remove(conceptFqName, root, true);
 
-      if (concept != null) {
-        remove(concept, root, true);
-
-        for (AbstractConceptDeclaration acd : getParents(concept)) {
-          remove(acd, root, false);
-        }
+      for (String acd : getParents(conceptFqName)) {
+        remove(acd, root, false);
       }
     } finally {
       NodeReadAccessCaster.setEventsBlocked(wereBlocked);
     }
   }
 
-  private List<AbstractConceptDeclaration> getParents(AbstractConceptDeclaration current) {
-    return new ConceptAndSuperConceptsScope(current).getConcepts();
+  private Set<String> getParents(String current) {
+    return LanguageHierarchyCache.getInstance().getAncestorsNames(current);
   }
 
-  private void add(AbstractConceptDeclaration acd, SNode node, boolean noInheritance) {
-    String conceptFqName = NameUtil.nodeFQName(acd);
-
+  private void add(String conceptFqName, SNode node, boolean noInheritance) {
     Map<String, Set<SNode>> map;
     if (noInheritance) {
       map = myNodesNoInheritance;
@@ -157,9 +150,7 @@ public class FastNodeFinder {
     set.add(node);
   }
 
-  private void remove(AbstractConceptDeclaration acd, SNode node, boolean noInheritance) {
-    String conceptFqName = NameUtil.nodeFQName(acd);
-
+  private void remove(String conceptFqName, SNode node, boolean noInheritance) {
     Map<String, Set<SNode>> map;
     if (noInheritance) {
       map = myNodesNoInheritance;
