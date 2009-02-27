@@ -215,12 +215,17 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234523126485" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523126486">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235487805102">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235487805959">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235487806144">
-              <property name="value" value="2" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235487805103">
-              <property name="value" value="2" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1235759237953">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1235759237954">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235759237955">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235759237956">
+                  <property name="value" value="2" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235759237957">
+                  <property name="value" value="2" />
+                </node>
+              </node>
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1235759245320" />
             </node>
           </node>
         </node>
@@ -257,17 +262,6 @@
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1233932727122" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1234523092737" />
-    </node>
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1234523129323">
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234523129325" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235665317705">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235665321431">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntervalLiteral" id="1235665321432">
-            <property name="endIncluded" value="false" />
-            <property name="startIncluded" value="false" />
-          </node>
-        </node>
-      </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
   </node>

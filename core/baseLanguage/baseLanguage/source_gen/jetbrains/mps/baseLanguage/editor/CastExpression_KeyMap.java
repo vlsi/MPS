@@ -9,8 +9,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 
 public class CastExpression_KeyMap extends EditorCellKeyMap {
 
@@ -18,11 +19,52 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new CastExpression_KeyMap.CastExpression_KeyMap_Action0();
+    this.putAction("any", "VK_DELETE", action);
+    action = new CastExpression_KeyMap.CastExpression_KeyMap_Action1();
     this.putAction("ctrl+shift", "VK_SPACE", action);
   }
   public static class CastExpression_KeyMap_Action0 extends EditorCellKeyMapAction {
 
     public CastExpression_KeyMap_Action0() {
+      this.setShownInPopupMenu(false);
+    }
+
+    public boolean isMenuAlwaysShown() {
+      return false;
+    }
+
+    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
+      EditorCell contextCell = editorContext.getContextCell();
+      if ((contextCell == null)) {
+        return false;
+      }
+      SNode contextNode = contextCell.getSNode();
+      if (contextNode == null) {
+        return false;
+      }
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.CastExpression")) {
+        return true;
+      }
+      return false;
+    }
+
+    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
+      EditorCell contextCell = editorContext.getContextCell();
+      this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
+    }
+
+    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
+    }
+
+    public String getKeyStroke() {
+      return " DELETE";
+    }
+
+}
+  public static class CastExpression_KeyMap_Action1 extends EditorCellKeyMapAction {
+
+    public CastExpression_KeyMap_Action1() {
       this.setShownInPopupMenu(false);
     }
 

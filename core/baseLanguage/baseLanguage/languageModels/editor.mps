@@ -6192,6 +6192,28 @@
   <node type="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration" id="1158938292640">
     <property name="name" value="CastExpression_KeyMap" />
     <link role="applicableConcept" targetNodeId="17.1070534934090" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem" id="1235759362390">
+      <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="1235759362391">
+        <property name="keycode" value="VK_DELETE" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="1235759362392">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235759362393">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235759390211">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235759390212">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1235759484717" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1235759390214">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235759390215">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1235759487835" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1235759390217">
+                    <link role="link" targetNodeId="17.1070534934092" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="item" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem" id="1158938418835">
       <property name="description" value="fills cast type of cast expression" />
       <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="1158938418836">
