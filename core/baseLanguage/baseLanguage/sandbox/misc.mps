@@ -66,6 +66,11 @@
   <import index="148" modelUID="r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1227257059348">
     <property name="name" value="Test" />
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1235663374759">
+      <property name="name" value="myI" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1235663374760" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235663388147" />
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1227257098731">
       <property name="name" value="foo" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227257098732" />
@@ -111,6 +116,7 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1235663393273" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257059349" />

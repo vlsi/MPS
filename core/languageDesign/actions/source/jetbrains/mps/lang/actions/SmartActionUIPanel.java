@@ -10,5 +10,5 @@ import javax.swing.JPanel;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class SmartActionUIPanel extends JPanel {
-  public abstract void fillActionContext(SmartActionContext actionContext);
+  public abstract void fillActionContext();
 }

@@ -49,9 +49,9 @@ public class SmartActionsUtil {
             for (Method method : c.getMethods()) {
               try {
                 if (method.getName().startsWith("getGenerateCodeAction_")) {
-                  Object result = method.invoke(o);
+                  Object result = method.invoke(o, operationContext);
                   SmartAction_Runtime action = (SmartAction_Runtime) result;
-                  if (action.isApplicable(selectedCell, operationContext)) {
+                  if (action.isApplicable(selectedCell)) {
                     actions.add(action);
                   }
                 }
@@ -89,7 +89,7 @@ public class SmartActionsUtil {
         public void actionPerformed(ActionEvent e) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              action.askForActionParametersAndExecute(selectedCell, operationContext);
+              action.askForActionParametersAndExecute(selectedCell);
             }
           });
         }

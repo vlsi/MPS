@@ -1589,5 +1589,23 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221137535322" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1235663595514">
+    <link role="concept" targetNodeId="1.1235053713157" resolveInfo="SmartActionParameterReference" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1235663597173">
+      <property name="name" value="isLValue" />
+      <link role="overriddenMethod" targetNodeId="5.1213877519786" resolveInfo="isLValue" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235663597175">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235663607028">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1235663609061">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1235663603855" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1235663595515">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235663595516" />
+    </node>
+  </node>
 </model>
 

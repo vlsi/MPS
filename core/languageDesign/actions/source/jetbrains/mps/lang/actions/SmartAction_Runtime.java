@@ -19,17 +19,32 @@ import java.awt.event.ActionEvent;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class SmartAction_Runtime {
-  public abstract void execute(EditorCell selectedCell, IOperationContext operationContext, SmartActionContext actionContext);
-  public abstract SmartActionUIPanel getUI(SmartActionContext actionContext);
-  public abstract boolean isApplicable(EditorCell selectedCell, IOperationContext operationContext);
+  public abstract void execute(EditorCell selectedCell);
+  public abstract SmartActionUIPanel getUI();
+  public abstract boolean isApplicable(EditorCell selectedCell);
   public abstract String getDescriptionText();
 
-  public void askForActionParametersAndExecute(final EditorCell selectedCell, final IOperationContext operationContext) {
-    final SmartActionContext actionContext = new SmartActionContext(operationContext);
-    final SmartActionUIPanel mainPanel = getUI(actionContext);
+  private SmartActionContext mySmartActionContext;
+  private IOperationContext myOperationContext;
+
+  public SmartAction_Runtime(IOperationContext operationContext) {
+    myOperationContext = operationContext;
+    mySmartActionContext = new SmartActionContext(operationContext);
+  }
+
+  protected SmartActionContext getSmartActionContext() {
+    return mySmartActionContext;
+  }
+
+  protected IOperationContext getOperationContext() {
+    return myOperationContext;
+  }
+
+  public void askForActionParametersAndExecute(final EditorCell selectedCell) {
+    final SmartActionUIPanel mainPanel = getUI();
 
     if (mainPanel == null) {
-      execute(selectedCell, operationContext, actionContext);
+      execute(selectedCell);
       return;
     }
 
@@ -41,8 +56,8 @@ public abstract class SmartAction_Runtime {
     buttonPanel.setLayout(new FlowLayout());
     buttonPanel.add(new JButton(new AbstractAction("OK") {
       public void actionPerformed(ActionEvent e) {
-        mainPanel.fillActionContext(actionContext);
-        execute(selectedCell, operationContext, actionContext);
+        mainPanel.fillActionContext();
+        execute(selectedCell);
         dialog.dispose();
       }
     }));
