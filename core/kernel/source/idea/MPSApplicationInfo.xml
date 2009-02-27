@@ -7,5 +7,6 @@
   <package code="__PACKAGE_CODE__"/>
   <names product="MPS" fullname="JetBrains MPS __VERSION__"/>
 
+  <update-urls check="http://www.jetbrains.com/mps/update.xml" download="http://www.jetbrains.com/idea/download/"/>    
   <welcome-screen caption-url="/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png" slogan-url="/jetbrains/mps/workbench/icons/mpsSlogan.png"/>
 </component>
