@@ -48,7 +48,7 @@ import java.util.List;
 
 public class CommonChoosers {
   public static SNode showDialogNodeChooser(final Component parent, final List<SNode> values) {
-    Window window = SwingUtilities.getWindowAncestor(parent);
+    Window window = parent instanceof Window?(Window)parent:SwingUtilities.getWindowAncestor(parent);
     NodeChooserDialog dialog;
     if (window instanceof Frame) {
       dialog = new NodeChooserDialog((Frame) window, values);
@@ -60,7 +60,7 @@ public class CommonChoosers {
   }
 
   public static SModelDescriptor showDialogModelChooser(final Component parent, final List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) {
-    Window window = SwingUtilities.getWindowAncestor(parent);
+    Window window = parent instanceof Window?(Window)parent:SwingUtilities.getWindowAncestor(parent);
     ModelChooserDialog dialog;
     if (window instanceof Frame) {
       dialog = new ModelChooserDialog((Frame) window, models, nonProjectModels);
@@ -72,7 +72,7 @@ public class CommonChoosers {
   }
 
   public static <T extends IModule> T showDialogModuleChooser(final Component parent, String entityString, final List<T> modules, @Nullable List<T> nonProjectModules) {
-    Window window = SwingUtilities.getWindowAncestor(parent);
+    Window window = parent instanceof Window?(Window)parent:SwingUtilities.getWindowAncestor(parent);
     ModuleChooserDialog<T> dialog;
     if (window instanceof Frame) {
       dialog = new ModuleChooserDialog<T>((Frame) window, modules, nonProjectModules, entityString);
@@ -84,7 +84,7 @@ public class CommonChoosers {
   }
 
   public static String showDialogStringChooser(final Component parent, String entityString, final List<String> values) {
-    Window window = SwingUtilities.getWindowAncestor(parent);
+    Window window = parent instanceof Window?(Window)parent:SwingUtilities.getWindowAncestor(parent);
     StringChooserDialog dialog;
     if (window instanceof Frame) {
       dialog = new StringChooserDialog((Frame) window, values,entityString);
