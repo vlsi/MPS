@@ -57,9 +57,7 @@ public abstract class SmartAction_Runtime {
     buttonPanel.setLayout(new FlowLayout());
     buttonPanel.add(new JButton(new AbstractAction("OK") {
       public void actionPerformed(ActionEvent e) {
-        mainPanel.fillActionContext();
-        execute(selectedCell);
-        dialog.dispose();
+        onOk(mainPanel, selectedCell, dialog);
       }
     }));
     buttonPanel.add(new JButton(new AbstractAction("Cancel") {
@@ -67,6 +65,11 @@ public abstract class SmartAction_Runtime {
         dialog.dispose();
       }
     }));
+    mainPanel.setOnOk(new Runnable() {
+      public void run() {
+        onOk(mainPanel, selectedCell, dialog);
+      }
+    });
 
     dialog.add(mainPanel, BorderLayout.CENTER);
     dialog.add(buttonPanel, BorderLayout.SOUTH);
@@ -75,5 +78,11 @@ public abstract class SmartAction_Runtime {
     dialog.setLocation((editorComponent.getWidth() - dialog.getWidth())/2,
       (editorComponent.getHeight() - dialog.getHeight())/2 );
     dialog.setVisible(true);
+  }
+
+  private void onOk(SmartActionUIPanel mainPanel, EditorCell selectedCell, JDialog dialog) {
+    mainPanel.fillActionContext();
+    execute(selectedCell);
+    dialog.dispose();
   }
 }

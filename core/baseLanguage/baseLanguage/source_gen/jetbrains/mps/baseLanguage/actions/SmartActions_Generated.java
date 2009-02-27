@@ -16,6 +16,8 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.SimpleSNodeTreeNode;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 import javax.swing.tree.TreePath;
@@ -50,20 +52,31 @@ public class SmartActions_Generated {
 
       public SmartActionUIPanel getUI() {
         {
-          SmartActionUIPanel result = new SmartActionUIPanel() {
+          final SmartActionUIPanel[] result = new SmartActionUIPanel[1];
+          result[0] = new SmartActionUIPanel() {
             {
               MPSTree tree = new MPSTree() {
 
                 protected MPSTreeNode rebuild() {
                   MPSTreeNodeEx root = new SimpleSNodeTreeNode(((SNode)(getSmartActionContext()).get("classConcept")[0]), ((IOperationContext)(getSmartActionContext()).get("operationContext")[0]));
                   for(SNode field : SLinkOperations.getTargets(((SNode)(getSmartActionContext()).get("classConcept")[0]), "field", true)) {
-                    root.add(new SimpleSNodeTreeNode(field, ((IOperationContext)(getSmartActionContext()).get("operationContext")[0])));
+                    SimpleSNodeTreeNode treeNode = new SimpleSNodeTreeNode(field, ((IOperationContext)(getSmartActionContext()).get("operationContext")[0]));
+                    root.add(treeNode);
                   }
                   return root;
                 }
 
               };
               this.myTree = tree;
+              tree.addKeyListener(new KeyAdapter() {
+
+                public void keyPressed(KeyEvent event) {
+                  if (event.getKeyCode() == KeyEvent.VK_ENTER) {
+                    result[0].ok();
+                  }
+                }
+
+              });
               tree.rebuildNow();
               JScrollPane scrollPane = new JScrollPane(tree);
               this.setLayout(new BorderLayout());
@@ -90,7 +103,7 @@ public class SmartActions_Generated {
             }
 
           };
-          return result;
+          return result[0];
         }
       }
 

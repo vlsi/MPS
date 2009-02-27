@@ -10,5 +10,17 @@ import javax.swing.JPanel;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class SmartActionUIPanel extends JPanel {
+  private Runnable myOnOk = null;
+
   public abstract void fillActionContext();
+
+  public void setOnOk(Runnable onOk) {
+    myOnOk = onOk;
+  }
+  
+  public void ok() {
+    if (myOnOk != null) {
+      myOnOk.run();
+    }
+  }
 }
