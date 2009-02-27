@@ -13,12 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.baseLanguage.runtime;
+package jetbrains.mps.baseLanguage.math.runtime;
 
 import org.junit.Test;
 import org.junit.Assert;
 
 import java.util.*;
+
+import jetbrains.mps.baseLanguage.math.runtime.Interval;
 
 public class IntervalTest {
   @Test
