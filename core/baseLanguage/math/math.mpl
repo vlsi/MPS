@@ -5,7 +5,18 @@
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage.math" />
   </models>
   <accessoryModels />
-  <generators />
+  <generators>
+    <generator name="" generatorUID="jetbrains.mps.baseLanguage.math#1235731725718" uuid="a4f54010-f543-4c3d-a263-da72012ed5d5">
+      <models>
+        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.baseLanguage.math.generator.template" />
+      </models>
+      <external-templates />
+      <usedDevKits>
+        <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
+      </usedDevKits>
+      <mapping-priorities />
+    </generator>
+  </generators>
   <classPath>
     <entry path="${language_descriptor}/classes" include="false" />
   </classPath>

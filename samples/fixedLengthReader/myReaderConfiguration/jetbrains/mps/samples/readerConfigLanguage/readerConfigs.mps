@@ -4,6 +4,8 @@
   <refactoringHistory />
   <language namespace="089e26c5-bfc3-4a60-9953-f68169a4608a(jetbrains.mps.samples.readerConfigLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration" id="1127341420738">
     <property name="name" value="Config1" />

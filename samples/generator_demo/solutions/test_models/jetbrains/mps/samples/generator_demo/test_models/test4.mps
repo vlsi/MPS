@@ -3,6 +3,8 @@
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="772f6dcd-8c0d-48f7-869c-908e036f7c8e(jetbrains.mps.sampleXML)" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <language-engaged-on-generation namespace="1409a436-ea24-4d03-a196-53795139ce8d(jetbrains.mps.samples.generator_demo.demoLang4)" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.sampleXML.structure.Document" id="1228679850889">
