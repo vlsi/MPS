@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.baseLanguage.runtime;
+package jetbrains.mps.baseLanguage.math.runtime;
 
 import java.util.Iterator;
 import java.util.Map;

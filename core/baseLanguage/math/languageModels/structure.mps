@@ -82,5 +82,85 @@
       <link role="intfc" targetNodeId="2v.1212170275853" resolveInfo="IValidIdentifier" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235747354980">
+    <property name="name" value="InIntervalExpression" />
+    <property name="package" value="interval" />
+    <link role="extends" targetNodeId="2v.1081773326031" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235747354981">
+      <property name="value" value=":in:" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235747354982">
+      <property name="value" value="(∈) is in interval" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1235747354983">
+      <property name="value" value="1" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1166617629900" resolveInfo="priority" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235747354984">
+    <property name="name" value="IntervalContainsExpression" />
+    <property name="package" value="interval" />
+    <link role="extends" targetNodeId="2v.1081773326031" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235747354985">
+      <property name="value" value=":contains:" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235747354986">
+      <property name="value" value="(∍) interval contains" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1235747354987">
+      <property name="value" value="1" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1166617629900" resolveInfo="priority" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235747354988">
+    <property name="name" value="IntervalLiteral" />
+    <property name="package" value="interval" />
+    <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235747354989">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="start" />
+      <link role="target" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235747354990">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="end" />
+      <link role="target" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1235747354991">
+      <property name="name" value="startIncluded" />
+      <link role="dataType" targetNodeId="3v.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1235747354992">
+      <property name="name" value="endIncluded" />
+      <link role="dataType" targetNodeId="3v.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235747354993">
+      <property name="value" value="interval" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235747354994">
+    <property name="name" value="IntervalType" />
+    <property name="package" value="interval" />
+    <link role="extends" targetNodeId="2v.1068431790189" resolveInfo="Type" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235747354995">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="elementType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2v.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235747354996">
+      <property name="value" value="interval" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235747354997">
+      <property name="value" value="interval type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
 </model>
 

@@ -10,6 +10,7 @@
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/math.mpl" />
+      <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs />
