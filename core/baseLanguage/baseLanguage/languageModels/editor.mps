@@ -36,7 +36,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903c8(jetbrains.mps.baseLanguage.ext.csharp.structure)" version="1" />
-  <maxImportIndex value="83" />
+  <maxImportIndex value="86" />
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -68,6 +68,9 @@
   <import index="81" modelUID="f:java_stub#jetbrains.mps.lang.structure.editor(jetbrains.mps.lang.structure.editor@java_stub)" version="-1" />
   <import index="82" modelUID="f:java_stub#jetbrains.mps.lang.editor.structure(jetbrains.mps.lang.editor.structure@java_stub)" version="-1" />
   <import index="83" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.choosers(jetbrains.mps.workbench.dialogs.choosers@java_stub)" version="-1" />
+  <import index="84" modelUID="f:java_stub#com.intellij.ide(com.intellij.ide@java_stub)" version="-1" />
+  <import index="85" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
+  <import index="86" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1073416106125">
     <property name="name" value="StatementList_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123136" />
@@ -11752,6 +11755,33 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235743165289">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235743165290">
+              <property name="name" value="frame" />
+              <property name="isFinal" value="true" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235743165291">
+                <link role="classifier" targetNodeId="56.~Frame" resolveInfo="Frame" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235743236541">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235743231290">
+                  <link role="classifier" targetNodeId="85.~MPSDataKeys" resolveInfo="MPSDataKeys" />
+                  <link role="variableDeclaration" targetNodeId="85.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235743238295">
+                  <link role="baseMethodDeclaration" targetNodeId="86.~DataKey.getData(com.intellij.openapi.actionSystem.DataContext):java.lang.Object" resolveInfo="getData" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235743239156">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235743239157">
+                      <link role="baseMethodDeclaration" targetNodeId="84.~DataManager.getInstance():com.intellij.ide.DataManager" resolveInfo="getInstance" />
+                      <link role="classConcept" targetNodeId="84.~DataManager" resolveInfo="DataManager" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235743239158">
+                      <link role="baseMethodDeclaration" targetNodeId="84.~DataManager.getDataContext():com.intellij.openapi.actionSystem.DataContext" resolveInfo="getDataContext" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235246286053">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235246290066">
               <link role="baseMethodDeclaration" targetNodeId="23.~SwingUtilities.invokeLater(java.lang.Runnable):void" resolveInfo="invokeLater" />
@@ -11790,13 +11820,8 @@
                             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235246397329">
                               <link role="baseMethodDeclaration" targetNodeId="83.~CommonChoosers.showDialogNodeChooser(java.awt.Component,java.util.List):jetbrains.mps.smodel.SNode" resolveInfo="showDialogNodeChooser" />
                               <link role="classConcept" targetNodeId="83.~CommonChoosers" resolveInfo="CommonChoosers" />
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235246397330">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235246397331">
-                                  <link role="variableDeclaration" targetNodeId="1235246382106" resolveInfo="context" />
-                                </node>
-                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235246397332">
-                                  <link role="baseMethodDeclaration" targetNodeId="20.~IOperationContext.getMainFrame():java.awt.Frame" resolveInfo="getMainFrame" />
-                                </node>
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235743424515">
+                                <link role="variableDeclaration" targetNodeId="1235743165290" resolveInfo="frame" />
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235246397333">
                                 <link role="variableDeclaration" targetNodeId="1235246224003" resolveInfo="members" />
