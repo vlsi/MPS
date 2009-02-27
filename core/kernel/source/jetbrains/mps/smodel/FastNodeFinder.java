@@ -122,10 +122,13 @@ public class FastNodeFinder {
       }
 
       AbstractConceptDeclaration concept = root.getConceptDeclarationAdapter();
-      remove(concept, root, true);
 
-      for (AbstractConceptDeclaration acd : getParents(concept)) {
-        remove(acd, root, false);
+      if (concept != null) {
+        remove(concept, root, true);
+
+        for (AbstractConceptDeclaration acd : getParents(concept)) {
+          remove(acd, root, false);
+        }
       }
     } finally {
       NodeReadAccessCaster.setEventsBlocked(wereBlocked);
