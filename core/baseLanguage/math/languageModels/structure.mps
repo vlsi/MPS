@@ -28,6 +28,7 @@
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235729052763">
     <property name="name" value="SumExpression" />
+    <property name="package" value="sum" />
     <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235729121736">
       <property name="value" value="sum" />
@@ -64,6 +65,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235729871799">
     <property name="name" value="SumVariableReference" />
+    <property name="package" value="sum" />
     <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235730054504">
       <property name="metaClass" value="reference" />
@@ -74,6 +76,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235729930489">
     <property name="name" value="SumVariableDeclaration" />
+    <property name="package" value="sum" />
     <link role="extends" targetNodeId="3v.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1235729945117">
       <link role="intfc" targetNodeId="2v.1212170275853" resolveInfo="IValidIdentifier" />

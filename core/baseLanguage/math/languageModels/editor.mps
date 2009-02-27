@@ -29,6 +29,7 @@
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1235729173444">
+    <property name="package" value="sum" />
     <link role="conceptDeclaration" targetNodeId="1.1235729052763" resolveInfo="SumExpression" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1235729175915">
       <property name="vertical" value="false" />
@@ -79,12 +80,14 @@
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1235729957306">
+    <property name="package" value="sum" />
     <link role="conceptDeclaration" targetNodeId="1.1235729930489" resolveInfo="SumVariableDeclaration" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1235729959324">
       <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1235730066818">
+    <property name="package" value="sum" />
     <link role="conceptDeclaration" targetNodeId="1.1235729871799" resolveInfo="SumVariableReference" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1235730072336">
       <link role="relationDeclaration" targetNodeId="1.1235730054504" />
