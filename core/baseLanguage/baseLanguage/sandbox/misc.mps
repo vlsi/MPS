@@ -120,6 +120,21 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257059349" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235758361344">
+      <property name="name" value="getMyI" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235758361346" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235758361348" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235758361349">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235758361350">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235758361351">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1235758361370" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1235758361371">
+              <link role="fieldDeclaration" targetNodeId="1235663374759" resolveInfo="myI" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1228322936168">
     <property name="name" value="A" />

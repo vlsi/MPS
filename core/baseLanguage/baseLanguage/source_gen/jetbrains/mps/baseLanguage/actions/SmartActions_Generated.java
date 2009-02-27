@@ -15,10 +15,12 @@ import jetbrains.mps.lang.actions.SmartActionUIPanel;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.SimpleSNodeTreeNode;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
+import javax.swing.tree.TreePath;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class SmartActions_Generated {
 
@@ -30,12 +32,13 @@ public class SmartActions_Generated {
 
       public void execute(final EditorCell selectedCell) {
         SNode ancestor = SNodeOperations.getAncestor(((SNode)selectedCell.getSNode()), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-        if (((List<SNode>[])(getSmartActionContext()).get("fields"))[0] == null) {
+        if (((List<SNode>)(getSmartActionContext()).get("fields")[0]) == null) {
           return;
         }
-        for(SNode field : ((List<SNode>[])(getSmartActionContext()).get("fields"))[0]) {
+        for(SNode field : ((List<SNode>)(getSmartActionContext()).get("fields")[0])) {
           SNode getter = SLinkOperations.addNewChild(ancestor, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
           SPropertyOperations.set(getter, "name", "get" + NameUtil.capitalize(SPropertyOperations.getString(field, "name")));
+          SLinkOperations.setTarget(getter, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), true);
           SLinkOperations.setNewChild(getter, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
           SNode returnStatement = SLinkOperations.addNewChild(SLinkOperations.getTarget(getter, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
           SNode dotExpression = SLinkOperations.setNewChild(returnStatement, "expression", "jetbrains.mps.baseLanguage.structure.DotExpression");
@@ -52,31 +55,38 @@ public class SmartActions_Generated {
               MPSTree tree = new MPSTree() {
 
                 protected MPSTreeNode rebuild() {
-                  MPSTreeNodeEx root = new MPSTreeNodeEx(((IOperationContext[])(getSmartActionContext()).get("operationContext"))[0]) {
-                    {
-                      this.setIcon(IconManager.getIconFor(((SNode[])(getSmartActionContext()).get("classConcept"))[0]));
-                    }
-
-
-                    public SNode getSNode() {
-                      return ((SNode[])(getSmartActionContext()).get("classConcept"))[0];
-                    }
-
-                  };
-                  for(SNode field : SLinkOperations.getTargets(((SNode[])(getSmartActionContext()).get("classConcept"))[0], "field", true)) {
-                    root.add(new SNodeTreeNode(field, ((IOperationContext[])(getSmartActionContext()).get("operationContext"))[0]));
+                  MPSTreeNodeEx root = new SimpleSNodeTreeNode(((SNode)(getSmartActionContext()).get("classConcept")[0]), ((IOperationContext)(getSmartActionContext()).get("operationContext")[0]));
+                  for(SNode field : SLinkOperations.getTargets(((SNode)(getSmartActionContext()).get("classConcept")[0]), "field", true)) {
+                    root.add(new SimpleSNodeTreeNode(field, ((IOperationContext)(getSmartActionContext()).get("operationContext")[0])));
                   }
                   return root;
                 }
 
               };
+              this.myTree = tree;
+              tree.rebuildNow();
               JScrollPane scrollPane = new JScrollPane(tree);
               this.setLayout(new BorderLayout());
               this.add(scrollPane, BorderLayout.CENTER);
             }
 
 
+            private MPSTree myTree;
+
             public void fillActionContext() {
+              TreePath[] paths = this.myTree.getSelectionPaths();
+              if (paths != null) {
+                (getSmartActionContext()).get("fields")[0] = new ArrayList<SNode>();
+                for(TreePath path : paths) {
+                  MPSTreeNode node = (MPSTreeNode)path.getLastPathComponent();
+                  if (node instanceof MPSTreeNodeEx) {
+                    SNode snode = ((MPSTreeNodeEx)node).getSNode();
+                    if (SNodeOperations.isInstanceOf(snode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+                      ListSequence.fromList(((List<SNode>)(getSmartActionContext()).get("fields")[0])).addElement(snode);
+                    }
+                  }
+                }
+              }
             }
 
           };
@@ -91,8 +101,8 @@ public class SmartActions_Generated {
             return false;
           }
           SNode ancestor = SNodeOperations.getAncestor(sNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-          ((SNode[])(getSmartActionContext()).get("classConcept"))[0] = ancestor;
-          ((IOperationContext[])(getSmartActionContext()).get("operationContext"))[0] = getOperationContext();
+          (getSmartActionContext()).get("classConcept")[0] = ancestor;
+          (getSmartActionContext()).get("operationContext")[0] = getOperationContext();
           return (ancestor != null);
         }
       }

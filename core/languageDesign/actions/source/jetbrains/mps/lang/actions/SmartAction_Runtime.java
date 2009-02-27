@@ -1,6 +1,7 @@
 package jetbrains.mps.lang.actions;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JDialog;
@@ -69,6 +70,10 @@ public abstract class SmartAction_Runtime {
 
     dialog.add(mainPanel, BorderLayout.CENTER);
     dialog.add(buttonPanel, BorderLayout.SOUTH);
+    dialog.setSize(200,400);
+    EditorComponent editorComponent = selectedCell.getEditor();
+    dialog.setLocation((editorComponent.getWidth() - dialog.getWidth())/2,
+      (editorComponent.getHeight() - dialog.getHeight())/2 );
     dialog.setVisible(true);
   }
 }
