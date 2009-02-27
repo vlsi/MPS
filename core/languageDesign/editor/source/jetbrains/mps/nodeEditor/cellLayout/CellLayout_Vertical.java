@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.Font;
@@ -210,6 +211,12 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   }
 
   public int getAscent(EditorCell_Collection editorCells) {
+    for (EditorCell cell : editorCells.getCells()) {
+      if (cell.getStyle().get(StyleAttributes.BASE_LINE_CELL)) {
+        return cell.getY() - editorCells.getY() + cell.getAscent();
+      }
+    }
+
     for (EditorCell cell : editorCells.getCells()) {
       int result = cell.getAscent();
       if (result > 0) {

@@ -3997,5 +3997,21 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235728439575">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="BaseLineCell" />
+    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1235728439576">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235728439577">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.BASE_LINE_CELL" resolveInfo="BASE_LINE_CELL" />
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235728439578">
+      <property name="value" value="base-line-cell" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

@@ -975,6 +975,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/intentions/intentions.iml" filepath="$PROJECT_DIR$/core/languageDesign/intentions/intentions.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/logging/logging.iml" filepath="$PROJECT_DIR$/core/baseLanguage/logging/logging.iml" group="core/baseLanguage" />
+      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/math/math.iml" filepath="$PROJECT_DIR$/core/baseLanguage/math/math.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/money.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/money.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" filepath="$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" group="core/languageDesign" />

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project relativePaths="false" version="4">
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSProject">
+    <projectSolutions>
+      <solutionPath path="${project}/solutions/jetbrains.mps.baseLanguage.math.sandbox/jetbrains.mps.baseLanguage.math.sandbox.msd" />
+    </projectSolutions>
+    <projectLanguages>
+      <languagePath path="${project}/math.mpl" />
+    </projectLanguages>
+    <projectDevkits />
+    <genConfs />
+  </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="mathLanguage" />
+  </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
+  <component name="SvnBranchConfigurationManager">
+    <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+  </component>
+</project>
+
