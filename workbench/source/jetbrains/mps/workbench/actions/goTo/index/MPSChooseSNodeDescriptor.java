@@ -39,7 +39,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
   }
 
   public SNodeDescriptor[] find(final IScope scope) {
-    assert scope != null;
     ensureCachesAreUpToDate();
 
     final Set<SNodeDescriptor> keys = new HashSet<SNodeDescriptor>();
@@ -76,6 +75,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
     for (SModelReference ref : hasToLoad) {
       SModelDescriptor sm = scope.getModelDescriptor(ref);
+      if (sm == null) continue;
       List<SNode> roots = ((BaseSNodeDescriptorIndexer) myIndex.getIndexer()).getNodes(sm.getSModel());
       for (SNode root : roots) {
         int number = roots.indexOf(root);
