@@ -53,7 +53,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
 
   private IEditor myNodeEditor;
   private ReloadListener myReloadListener = new ReloadAdapter() {
-    public void onReload() {
+    public void onAfterReload() {
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
           recreateEditor();

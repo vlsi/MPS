@@ -45,10 +45,10 @@ import java.util.*;
 @State(
   name = "MPSIntentionsManager",
   storages = {
-  @Storage(
-    id = "other",
-    file = "$APP_CONFIG$/intentions.xml"
-  )}
+    @Storage(
+      id = "other",
+      file = "$APP_CONFIG$/intentions.xml"
+    )}
 )
 public class IntentionsManager implements ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
@@ -73,8 +73,10 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+      @Override
       public void onReload() {
-        refresh();
+        dispose();
+        load();
       }
     });
   }
@@ -153,8 +155,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
     Set<Intention> disabled = getDisabledIntentions();
 
-    for (Pair<Intention,SNode> ip:getAvailableIntentions(node, context)){
-      if (!disabled.contains(ip.first)){
+    for (Pair<Intention, SNode> ip : getAvailableIntentions(node, context)) {
+      if (!disabled.contains(ip.first)) {
         result.add(ip);
       }
     }
@@ -217,13 +219,20 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return myIntentionsLanguages.get(intention.getClass());
   }
 
-  public void refresh() {
+  public void dispose() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myIntentions.clear();
         myNodesByIntentions.clear();
         myIntentionsLanguages.clear();
         invalidateCaches();
+      }
+    });
+  }
+
+  public void load(){
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
         for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
           addIntentionsFromLanguage(language);
           addMigrationsFromLanguage(language);
@@ -248,7 +257,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     for (BaseMigrationScript script : scripts.keySet()) {
       MigrationScript migrationScript = scripts.get(script);
       for (AbstractMigrationRefactoring refactoring : script.getRefactorings()) {
-        if (refactoring.isShowAsIntention()){
+        if (refactoring.isShowAsIntention()) {
           Intention intention = new MigrationRefactoringAdapter(refactoring, migrationScript);
           addIntention(intention);
           myNodesByIntentions.put(intention, migrationScript.getNode());

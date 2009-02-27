@@ -60,23 +60,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
   private List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
   private BaseApplicationPlugin myIDEPlugin;
 
-  private ReloadListener myReloadListener = new ReloadAdapter() {
-    public void onBeforeReload() {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          disposePlugins();
-        }
-      });
-    }
-
-    public void onReload() {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          loadPlugins();
-        }
-      });
-    }
-  };
+  private ReloadListener myReloadListener = new MyReloadListener();
 
   //----------------RELOAD STUFF---------------------
 
@@ -248,5 +232,16 @@ public class ApplicationPluginManager implements ApplicationComponent {
   public void disposeComponent() {
     disposePlugins();
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+  }
+
+  private class MyReloadListener extends ReloadAdapter {
+    public void onReload() {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          disposePlugins();
+          loadPlugins();
+        }
+      });
+    }
   }
 }

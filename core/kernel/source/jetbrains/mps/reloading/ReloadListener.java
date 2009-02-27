@@ -35,7 +35,7 @@ public interface ReloadListener {
   /**
    * If you want to update UI after reload do it here.
    *
-   * Precondition: all reloadable parts are reloadeb under a new classloader
+   * Precondition: all reloadable parts are reloaded under a new classloader
    */
   void onAfterReload();
 }

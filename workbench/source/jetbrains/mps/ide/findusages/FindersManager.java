@@ -18,9 +18,9 @@ package jetbrains.mps.ide.findusages;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.lang.findUsages.structure.FinderDeclaration;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -50,8 +50,10 @@ public class FindersManager implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+      @Override
       public void onReload() {
-        refresh();
+        dispose();
+        load();
       }
     });
   }
@@ -106,11 +108,9 @@ public class FindersManager implements ApplicationComponent {
     return myNodesByFinder.get(finder);
   }
 
-  public void refresh() {
+  public void load() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myFinders.clear();
-        myNodesByFinder.clear();
         for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
           SModelDescriptor findUsagesModelDescriptor = l.getFindUsagesModelDescriptor();
           if (findUsagesModelDescriptor != null) {
@@ -139,6 +139,15 @@ public class FindersManager implements ApplicationComponent {
             }
           }
         }
+      }
+    });
+  }
+
+  public void dispose() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myFinders.clear();
+        myNodesByFinder.clear();
       }
     });
   }

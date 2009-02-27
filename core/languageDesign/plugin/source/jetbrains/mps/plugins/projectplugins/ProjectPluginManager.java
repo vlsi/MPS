@@ -274,21 +274,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   private class MyReloadListener extends ReloadAdapter {
-    private boolean myIsDisposed = false;
-
-    public void onBeforeReload() {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        public void run() {
-          if (myIsDisposed) return;
-          disposePlugins();
-        }
-      });
-    }
-
+    private volatile boolean myIsDisposed = false;
     public void onReload() {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
           if (myIsDisposed) return;
+          disposePlugins();
           loadPlugins();
         }
       });
