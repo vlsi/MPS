@@ -7,12 +7,6 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/languages/buildlanguage/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/buildlanguage/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/classpath/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/custommps/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/dependency/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/distrib/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/packaging/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/property/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.build.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.build/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
