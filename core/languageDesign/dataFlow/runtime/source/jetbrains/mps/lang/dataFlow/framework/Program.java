@@ -20,6 +20,7 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.*;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachabilityAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer;
+import jetbrains.mps.lang.dataFlow.DataflowBuilderException;
 
 import java.util.*;
 
@@ -107,14 +108,14 @@ public class Program {
 
   public int getStart(Object o) {
     if (!myStarts.containsKey(o)) {
-        throw new RuntimeException("Can't find a start of node " + o);
+        throw new DataflowBuilderException("Can't find a start of node " + o);
     }
     return myStarts.get(o);
   }
 
   public int getEnd(Object o) {
     if (!myEnds.containsKey(o)) {
-        throw new RuntimeException("Can't find a end of node " + o);
+        throw new DataflowBuilderException("Can't find a start of node " + o);
     }
     return myEnds.get(o);
   }
