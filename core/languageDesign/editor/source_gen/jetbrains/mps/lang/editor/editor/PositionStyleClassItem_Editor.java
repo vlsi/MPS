@@ -14,8 +14,6 @@ import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class PositionStyleClassItem_Editor extends DefaultNodeEditor {
 
@@ -113,16 +111,6 @@ public class PositionStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3721_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3721_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Property_3721_0(EditorCell editorCell, SNode node, EditorContext context) {
