@@ -7659,25 +7659,24 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213348256149">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225800828278">
-            <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1213348256150">
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213348256151">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213348282069">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1213348286024">
-                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1213348287442">
+          <node role="expression" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" id="1235748548321">
+            <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1235748548322">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235748548323">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235748548324">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1235748548325">
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235748548326">
                       <property name="value" value="1000" />
                     </node>
-                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213348282070">
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1213348282071">
+                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235748548327">
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1235748548328">
                         <link role="fieldDeclaration" targetNodeId="1213348273313" resolveInfo="bar" />
                       </node>
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1213348282072" />
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1235748548329" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1225800828280" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1213354296748">

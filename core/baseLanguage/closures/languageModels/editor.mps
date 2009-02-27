@@ -950,5 +950,53 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1235747094428">
+    <link role="conceptDeclaration" targetNodeId="1.1235746970280" resolveInfo="CompactInvokeFunctionExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1235747096390">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1235747103454">
+        <link role="relationDeclaration" targetNodeId="1.1235746996653" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235747106897">
+        <property name="text" value="(" />
+        <link role="actionMap" targetNodeId="1235747240808" resolveInfo="CompactInvokeFunctionExpression_DELETE" />
+        <link role="styleClass" targetNodeId="3.1234958090348" resolveInfo="LeftParenAfterName" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1235747114490">
+        <property name="separatorText" value="," />
+        <link role="relationDeclaration" targetNodeId="1.1235747002942" />
+        <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235747845729" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235747122397">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="3.1215088010675" resolveInfo="RightParen" />
+        <link role="actionMap" targetNodeId="1235747240808" resolveInfo="CompactInvokeFunctionExpression_DELETE" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="1235747240808">
+    <property name="name" value="CompactInvokeFunctionExpression_DELETE" />
+    <link role="applicableConcept" targetNodeId="1.1235746970280" resolveInfo="CompactInvokeFunctionExpression" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="1235747251979">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="1235747251980">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235747251981">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235747272665">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235747272780">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1235747272666" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1235747276247">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235747277613">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1235747277562" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1235747278858">
+                    <link role="link" targetNodeId="1.1235746996653" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -10,6 +10,7 @@ public class DFABuilders extends DataFlowBuilders {
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", new ClosureLiteral_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", new InvokeFunctionOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", new CompactInvokeFunctionExpression_DataFlow());
   }
 
 }

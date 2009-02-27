@@ -2209,6 +2209,14 @@ public class QueriesGenerated {
     return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(type);
   }
 
+  public static SNode sourceNodeQuery_1235747978783(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "function", true)), "resultType", true);
+  }
+
+  public static SNode sourceNodeQuery_1235747978796(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "function", true);
+  }
+
   public static Iterable sourceNodesQuery_1199624932349(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> paramDecls = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
     int idx = 0;
@@ -3454,6 +3462,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1232624247528(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
+  }
+
+  public static Iterable sourceNodesQuery_1235747978775(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
 
   public static SNode mapSrcMacro_mapper_1207147150424(final IOperationContext operationContext, final MapSrcMacroContext _context) {

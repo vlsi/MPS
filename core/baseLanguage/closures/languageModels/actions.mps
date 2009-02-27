@@ -7,6 +7,9 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -33,6 +36,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="12" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -650,6 +654,61 @@
           </node>
           <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1232462963650">
             <property name="text" value="add parameters" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1235747431053">
+    <property name="name" value="compact_invoke" />
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1235747446457">
+      <link role="applicableConcept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" id="1235747455803">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235747455804">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235747461622">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1235748757181">
+              <node role="rightExpression" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1235748761703">
+                <link role="conceptDeclaration" targetNodeId="1.1199542442495" resolveInfo="FunctionType" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235748755385">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235747461970">
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1235747461623" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1235747464255" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="1235748756401" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1235747496442">
+        <link role="concept" targetNodeId="1.1235746970280" resolveInfo="CompactInvokeFunctionExpression" />
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="1235747505204">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="1235747505205">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235747505206">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235747774816">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235747775823">
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1235747774817" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1235747778396">
+                    <node role="replacementNode" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1235747781381">
+                      <node role="quotedNode" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" id="1235747783430">
+                        <node role="function" type="jetbrains.mps.baseLanguage.structure.Expression" id="1235747783431">
+                          <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1235747809934">
+                            <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1235747813999" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1235747507125">
+            <property name="text" value="(" />
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1235747511682">
+            <property name="text" value="invoke function" />
           </node>
         </node>
       </node>

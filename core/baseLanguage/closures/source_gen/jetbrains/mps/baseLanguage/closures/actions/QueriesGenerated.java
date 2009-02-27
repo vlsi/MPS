@@ -13,11 +13,12 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.closures.behavior.ControlMethodUtil;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -67,6 +68,10 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClosureControlStatement_1232456372775(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SLinkOperations.getCount(_context.getSourceNode(), "parameter") == 0;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1235747455803(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getTypeOf(_context.getSourceNode())) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType");
   }
 
   public static void nodeFactory_NodeSetup_UnrestrictedFunctionType_1232132222405(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -218,6 +223,33 @@ public class QueriesGenerated {
 
         public String getDescriptionText(String pattern) {
           return "add parameters";
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1235747446457(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new _Quotations.QuotationClass_0().createNode(_context.getSourceNode()));
+        }
+
+        public String getMatchingText(String pattern) {
+          return "(";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "invoke function";
         }
 
       });
