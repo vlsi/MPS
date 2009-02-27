@@ -122,11 +122,13 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_2233_1(EditorCell editorCell, SNode node, EditorContext context) {
+    ArrayAccessExpression_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Constant_2233_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2233_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    ArrayAccessExpression_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupLabel_RefNode_2233_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
