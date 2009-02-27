@@ -23,6 +23,7 @@ import jetbrains.mps.ide.blame.perform.Response;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.params.HttpClientParams;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 public class Poster {
   private static final int TIMEOUT = 5000;
@@ -33,8 +34,10 @@ public class Poster {
     myExecutor = new Executor(project);
   }
 
+  @NotNull
   public Response send(final Query query) {
     Performable send = new Performable() {
+      @NotNull
       public Response perform() throws Exception {
         HttpClient client = new HttpClient();
         setTimeouts(client);
@@ -50,6 +53,7 @@ public class Poster {
 
   public Response test(final Query query) {
     Performable test = new Performable() {
+      @NotNull
       public Response perform() throws Exception {
         HttpClient client = new HttpClient();
         setTimeouts(client);

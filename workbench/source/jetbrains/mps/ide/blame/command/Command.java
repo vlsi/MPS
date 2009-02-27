@@ -19,6 +19,7 @@ import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.PostMethod;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
@@ -45,6 +46,7 @@ public class Command {
     }
   }
 
+  @NotNull
   public static Response postIssue(HttpClient c, String summary, String description) throws IOException {
     PostMethod p = new PostMethod(TEAMSYS + POST_ISSUE);
     p.addParameter("project", PROJECT);

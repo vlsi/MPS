@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.ide.blame.perform;
 
+import org.jetbrains.annotations.NotNull;
+
 public interface Performable {
+  @NotNull
   Response perform() throws Exception;
 }

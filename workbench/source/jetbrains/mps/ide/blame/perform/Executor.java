@@ -29,6 +29,7 @@ public class Executor {
     myProject = project;
   }
 
+  @NotNull
   public Response execute(final Performable procedure) {
     final Response[] response = new Response[1];
 
