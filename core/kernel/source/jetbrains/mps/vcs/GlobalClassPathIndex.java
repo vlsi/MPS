@@ -34,9 +34,11 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
 public class GlobalClassPathIndex implements ApplicationComponent {
+  private static final Logger LOG = Logger.getLogger(GlobalClassPathIndex.class);
   public static GlobalClassPathIndex getInstance() {
     return ApplicationManager.getApplication().getComponent(GlobalClassPathIndex.class);
   }
@@ -166,7 +168,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     ArrayList<IModule> modules = myClassPathIndex.get(classPathFile);
     if (modules != null) {
       boolean removed = modules.remove(module);
-      assert removed;
+      LOG.assertLog(removed, "Classpath index does not contain module " + module + " for classpath " + classPathFile);
     }
     if (module.isClassPathExcluded(classPathFile.getPath())) {
       // if we exclude this class path and nobody else does, we remove classPath from excluded
