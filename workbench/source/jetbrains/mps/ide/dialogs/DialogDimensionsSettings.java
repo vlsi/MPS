@@ -60,10 +60,10 @@ public class DialogDimensionsSettings implements PersistentStateComponent<MyStat
   }
 
   public static class DialogDimensions {
-    public int myTop;
-    public int myLeft;
-    public int myWidth;
-    public int myHeight;
+    private int myTop;
+    private int myLeft;
+    private int myWidth;
+    private int myHeight;
 
     public DialogDimensions() {
     }
