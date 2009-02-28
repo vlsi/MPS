@@ -78,7 +78,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     int gap = getHrizontalGap(editorCells);
     EditorCell currentCell = editorCells.getCells()[i];
 
-    if (currentCell instanceof EditorCell_Collection) {
+    if (currentCell instanceof EditorCell_Collection && ((EditorCell_Collection)currentCell).getCellLayout() instanceof CellLayout_Horizontal) {
       return;
     }
 
