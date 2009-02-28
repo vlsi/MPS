@@ -16,12 +16,16 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.lang.core.structure.IWrapper;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +61,25 @@ public class CellAction_DeleteNode extends EditorCellAction {
   public void execute(EditorContext context) {
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(getNodeToDelete());
+    if (nodes.size() == 1) {
+      SNode node = nodes.get(0);
+      if (node.getAllAttributes().size() > 0) {
+        String role = node.getRole_();
+        for (LinkDeclaration link: node.getParent().getConceptDeclarationAdapter().getLinkDeclarations()) {
+          if (link.getRole().equals(role)) {
+            SNode newNode = NodeFactoryManager.createNode(NameUtil.nodeFQName(link.getTarget()), null, null, null);
+            for (SNode attribute: node.getAllAttributes()) {
+              String attributeRole = attribute.getRole_();
+              node.removeChild(attribute);
+              newNode.addChild(attributeRole, attribute);
+            }
+            node.getParent().replaceChild(node, newNode);
+          }
+
+        }
+        return;
+      }
+    }
     new DeleteNodesHelper(nodes, context.getOperationContext(), false).deleteNodes(false);
   }
 }
