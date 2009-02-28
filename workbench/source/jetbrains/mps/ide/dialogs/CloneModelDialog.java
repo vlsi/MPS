@@ -31,6 +31,7 @@ import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.GridBagConstraints;
 
 public class CloneModelDialog extends BaseStretchingProjectDialog {
   private CloneModelProperties myModelProperties;
@@ -54,57 +55,21 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
   }
 
   private void initUI() {
-    addComponent(createPathField(), createFieldConstraints(0, 0));
-    addComponent(createNamespacePanel(), createFieldConstraints(0, 1));
-    addComponent(createStereoPanel(), createFieldConstraints(0, 2));
-    addComponent(createCheckboxPanel(), createFieldConstraints(0, 3));
+    createPathField();
+    createNamespacePanel();
+    createStereoPanel();
+    createCheckboxPanel();
 
-    addComponent(new JPanel(), createListConstraints(0, 4));
+    addComponent(new JPanel(), createLabelConstraints(0, 4));
+    addComponent(new JPanel(), createListConstraints(1, 4));
   }
 
-  public JPanel createNamespacePanel() {
-    JPanel panel = new JPanel(new BorderLayout());
-    panel.add(new JLabel("Name:"), BorderLayout.WEST);
-    JTextField tfNamespace = new JTextField();
-    panel.add(tfNamespace, BorderLayout.CENTER);
-
-    Property pNamespace = BeanProperty.create(CloneModelProperties.PROPERTY_NAME);
-    Property pNamespaceVar = BeanProperty.create("text");
-    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pNamespace, tfNamespace, pNamespaceVar));
-    return panel;
-  }
-
-  private JPanel createCheckboxPanel() {
-    JPanel result = new JPanel(new BorderLayout());
-    JCheckBox cbLog = new JCheckBox("Use log");
-    result.add(cbLog, BorderLayout.WEST);
-
-    Property pLog = BeanProperty.create(CloneModelProperties.PROPERTY_LOG);
-    Property pLogVar = BeanProperty.create("selected");
-    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pLog, cbLog, pLogVar));
-
-    return result;
-  }
-
-  private JPanel createStereoPanel() {
-    JPanel result = new JPanel(new BorderLayout());
-    result.add(new JLabel("Stereotype:"), BorderLayout.WEST);
-    JComboBox cbStereotype = new JComboBox(SModelStereotype.values);
-    result.add(cbStereotype, BorderLayout.CENTER);
-
-    Property pStereotype = BeanProperty.create(CloneModelProperties.PROPERTY_STEREOTYPE);
-    Property pStereotypeVar = BeanProperty.create("selectedItem");
-    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pStereotype, cbStereotype, pStereotypeVar));
-    return result;
-  }
-
-  private JPanel createPathField() {
-    JPanel result = new JPanel(new BorderLayout());
-    result.add(new JLabel("Path:"), BorderLayout.WEST);
+  private void createPathField() {
+    addComponent(new JLabel("Path:"), createLabelConstraints(0,0));
 
     JTextField tfPath = new JTextField();
     tfPath.setEditable(false);
-    result.add(tfPath, BorderLayout.CENTER);
+    addComponent(tfPath, createFieldConstraints(1,0));
 
     Property pPath = BeanProperty.create(CloneModelProperties.PROPERTY_PATH);
     Property pPathVar = BeanProperty.create("text");
@@ -122,8 +87,36 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
       }
     });
     addBinding(binding);
+  }
 
-    return result;
+  public void createNamespacePanel() {
+    addComponent(new JLabel("Name:"), createLabelConstraints(0,1));
+    JTextField tfNamespace = new JTextField();
+    addComponent(tfNamespace, createFieldConstraints(1,1));
+
+    Property pNamespace = BeanProperty.create(CloneModelProperties.PROPERTY_NAME);
+    Property pNamespaceVar = BeanProperty.create("text");
+    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pNamespace, tfNamespace, pNamespaceVar));
+  }
+
+  private void createStereoPanel() {
+    addComponent(new JLabel("Stereotype:"), createLabelConstraints(0,2));
+    JComboBox cbStereotype = new JComboBox(SModelStereotype.values);
+    addComponent(cbStereotype, createFieldConstraints(1,2));
+
+    Property pStereotype = BeanProperty.create(CloneModelProperties.PROPERTY_STEREOTYPE);
+    Property pStereotypeVar = BeanProperty.create("selectedItem");
+    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pStereotype, cbStereotype, pStereotypeVar));
+  }
+
+  private void createCheckboxPanel() {
+    JCheckBox cbLog = new JCheckBox("Use log");
+    addComponent(cbLog, createLabelConstraints(0,3));
+    addComponent(new JPanel(), createFieldConstraints(1,3));
+
+    Property pLog = BeanProperty.create(CloneModelProperties.PROPERTY_LOG);
+    Property pLogVar = BeanProperty.create("selected");
+    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pLog, cbLog, pLogVar));
   }
 
   private void collectModelProps() {

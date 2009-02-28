@@ -85,8 +85,8 @@ public abstract class BaseDialog extends JDialog {
     });
 
     updateDimensionSettings();
-    setLocation(myDialogDimensions.myLeft, myDialogDimensions.myTop);
-    setSize(myDialogDimensions.myWidth, myDialogDimensions.myHeight);
+    setLocation(myDialogDimensions.getLeft(), myDialogDimensions.getTop());
+    setSize(myDialogDimensions.getWidth(), myDialogDimensions.getHeight());
   }
 
 
@@ -103,11 +103,11 @@ public abstract class BaseDialog extends JDialog {
   protected void saveMyDimensionSettings() {
     Point p = getLocation();
     Dimension d = getSize();
-    myDialogDimensions.myTop = (int) p.getY();
-    myDialogDimensions.myLeft = (int) p.getX();
-    myDialogDimensions.myWidth = (int) d.getWidth();
-    myDialogDimensions.myHeight = (int) d.getHeight();
-    saveDimensionSettings(myDialogDimensions.myLeft, myDialogDimensions.myTop, myDialogDimensions.myWidth, myDialogDimensions.myHeight, this.getClass());
+    myDialogDimensions.setTop((int) p.getY()) ;
+    myDialogDimensions.setLeft((int) p.getX()) ;
+    myDialogDimensions.setWidth((int) d.getWidth());
+    myDialogDimensions.setHeight((int) d.getHeight());
+    saveDimensionSettings(myDialogDimensions.getLeft(), myDialogDimensions.getTop(), myDialogDimensions.getWidth(), myDialogDimensions.getHeight(), this.getClass());
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
