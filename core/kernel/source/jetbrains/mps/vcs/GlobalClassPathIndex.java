@@ -98,8 +98,18 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   }
 
   private void moduleInitialized(IModule module) {
+    updateClassesGen(module);
     updateClassPath(module, module.getClassPathItem());
   }
+
+  private void updateClassesGen(IModule module) {
+    IFile classesGen = module.getClassesGen();
+    if (classesGen == null) return;
+    VirtualFile classesGenVirtual = VFileSystem.getFile(classesGen);
+    if (classesGenVirtual == null) return;
+    myExcludedClassPath.add(classesGenVirtual);
+  }
+
 
   private void updateClassPath(IModule module, IClassPathItem item) {
     if (item instanceof CompositeClassPathItem) {
@@ -145,7 +155,6 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   }
 
   private void moduleRemoved(IModule module) {
-    unexcludeClassesGen(module);
     unexcludeClassPath(module, module.getClassPathItem());
   }
 
@@ -176,14 +185,6 @@ public class GlobalClassPathIndex implements ApplicationComponent {
         myExcludedClassPath.remove(classPathFile);
       }
     }
-  }
-
-  private void unexcludeClassesGen(IModule module) {
-    IFile classesGen = module.getClassesGen();
-    if (classesGen == null) return;
-    VirtualFile classesGenVirtual = VFileSystem.getFile(classesGen);
-    if (classesGenVirtual == null) return;
-    dealWithClassPathOnModuleRemove(module, classesGenVirtual);
   }
 
   private void moduleAdded(IModule module) {
@@ -248,7 +249,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     if (classesGen == null) return;
     VirtualFile classesGenVirtual = VFileSystem.getFile(classesGen);
     if (classesGenVirtual == null) return;
-    dealWithClassPathOnModuleAdd(module, classesGenVirtual);
+    myExcludedClassPath.add(classesGenVirtual);
   }
 
   @NotNull
