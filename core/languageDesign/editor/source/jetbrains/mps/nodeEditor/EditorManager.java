@@ -394,6 +394,8 @@ public class EditorManager {
 
       getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
       getStyle().set(StyleAttributes.PUNCTUATION_RIGTH, true);
+      getStyle().set(StyleAttributes.FIRST_POSITION_ALLOWED, true);
+      getStyle().set(StyleAttributes.LAST_POSITION_ALLOWED, true);
 
       mySide = side;
     }

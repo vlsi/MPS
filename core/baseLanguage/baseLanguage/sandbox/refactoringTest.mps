@@ -213,23 +213,7 @@
       <property name="name" value="name" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1234523126484" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234523126485" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523126486">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235487805102">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1235759237953">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1235759237954">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235759237955">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235759237956">
-                  <property name="value" value="2" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235759237957">
-                  <property name="value" value="2" />
-                </node>
-              </node>
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1235759245320" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234523126486" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1235483719053">
         <property name="name" value="t" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235483719054" />
@@ -264,39 +248,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1234523092737" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
-  </node>
-  <node type="jetbrains.mps.xmlInternal.structure.XmlFile" id="1235566110040">
-    <property name="fileName" value="file" />
-    <property name="extension" value="xml" />
-    <node role="document" type="jetbrains.mps.xmlInternal.structure.Document" id="1235566316933">
-      <node role="rootElement" type="jetbrains.mps.xmlInternal.structure.SimpleElement" id="1235566345725">
-        <node role="elementName" type="jetbrains.mps.xml.structure.Text" id="1235566345726">
-          <property name="text" value="aaaaa" />
-        </node>
-        <node role="contentList" type="jetbrains.mps.xml.structure.ContentList" id="1235566345727">
-          <node role="content" type="jetbrains.mps.xml.structure.ContentList" id="1235566362198">
-            <property name="isHorizontal" value="true" />
-            <node role="content" type="jetbrains.mps.xml.structure.Text" id="1235566366897">
-              <property name="text" value="asdfasdfa" />
-            </node>
-            <node role="content" type="jetbrains.mps.xml.structure.Text" id="1235566368420">
-              <property name="text" value="dsfadfasdfadf" />
-            </node>
-            <node role="content" type="jetbrains.mps.xml.structure.Text" id="1235566369454">
-              <property name="text" value="asdfasdfadfasdf" />
-            </node>
-          </node>
-          <node role="content" type="jetbrains.mps.xml.structure.Text" id="1235566358773" />
-        </node>
-        <node role="attribute" type="jetbrains.mps.xmlInternal.structure.SimpleAttribute" id="1235566352038">
-          <property name="attributeName" value="asdfasdf" />
-          <node role="value" type="jetbrains.mps.xml.structure.Text" id="1235566352039">
-            <property name="text" value="fasdfasdfa" />
-          </node>
-        </node>
-      </node>
-      <node role="prolog" type="jetbrains.mps.xmlInternal.structure.Prolog" id="1235566318215" />
-    </node>
   </node>
 </model>
 
