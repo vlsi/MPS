@@ -22,40 +22,34 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
+import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AspectMethodsFinder extends BaseFinder {
-  private static final String MODELS = "models";
-  private static final String MODEL = "model";
-  private static final String MODEL_UID = "model_uid";
-  private static final String METHOD = "method";
-  private static final String METHOD_NAME = "method_name";
-
-  private List<SModel> myModels = new ArrayList<SModel>();
-  private String myMethodName = "";
-
-  public AspectMethodsFinder() {
-
-  }
-
-  public AspectMethodsFinder(List<SModel> models, String methodName) {
-    myModels = models;
-    myMethodName = methodName;
-  }
-
   public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator) {
+    final AspectMethodQueryData data = (AspectMethodQueryData) query.getObjectHolder().getObject();
+
+    final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (final SModelDescriptor descriptor : SModelRepository.getInstance().getModelDescriptorsByModelName(data.myModelName)) {
+          if (!descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+            applicableModelDescriptors.add(descriptor.getSModel());
+          }
+        }
+      }
+    });
+
     SearchResults<SNode> res = new SearchResults<SNode>();
-    for (SModel model : myModels) {
+    for (SModel model : applicableModelDescriptors) {
       for (SNode root : model.getRoots()) {
-        findNodes(res, root, myMethodName);
+        findNodes(res, root, data.myMethodName);
       }
     }
     return res;
@@ -74,42 +68,50 @@ public class AspectMethodsFinder extends BaseFinder {
     }
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
-    super.read(element, project);
-
-    Element modelsXML = element.getChild(MODELS);
-    for (Element modelXML : (List<Element>) modelsXML.getChildren(MODEL)) {
-      SModelReference modelReference = SModelReference.fromString(modelXML.getAttribute(MODEL_UID).getValue());
-      SModelDescriptor modelDescriptor = project.getScope().getModelDescriptor(modelReference);
-      if (modelDescriptor != null) {
-        SModel model = modelDescriptor.getSModel();
-        myModels.add(model);
-      }
-    }
-
-    Element methodXML = element.getChild(METHOD);
-    myMethodName = methodXML.getAttribute(METHOD_NAME).getValue();
-  }
-
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
-    super.write(element, project);
-
-    Element modelsXML = new Element(MODELS);
-    for (SModel model : myModels) {
-      if (model.getModelDescriptor() == null)
-        throw new CantSaveSomethingException("one of the models is transient - can't save");
-      Element modelXML = new Element(MODEL);
-      modelXML.setAttribute(MODEL_UID, model.getModelDescriptor().getSModelReference().toString());
-      modelsXML.addContent(modelXML);
-    }
-    element.addContent(modelsXML);
-
-    Element methodXML = new Element(METHOD);
-    methodXML.setAttribute(METHOD_NAME, myMethodName);
-    element.addContent(methodXML);
-  }
-
   public String getDescription() {
     return "aspect methods";
+  }
+
+  public static class AspectMethodsHolder implements IHolder<AspectMethodQueryData> {
+    private static final String METHOD_NAME = "method_name";
+    private static final String MODEL_NAME = "model_name";
+
+    private AspectMethodQueryData myData = new AspectMethodQueryData();
+
+    public AspectMethodsHolder() {
+
+    }
+
+    public AspectMethodsHolder(String modelName,String methodName) {
+      myData.myModelName = modelName;
+      myData.myMethodName = methodName;
+    }
+
+    public AspectMethodQueryData getObject() {
+      return myData;
+    }
+
+    public String getCaption() {
+      return myData.myMethodName+" in "+myData.myModelName;
+    }
+
+    public Icon getIcon() {
+      return null;
+    }
+
+    public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+      myData.myModelName = element.getAttributeValue(MODEL_NAME);
+      myData.myMethodName = element.getAttributeValue(METHOD_NAME);
+    }
+
+    public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+      element.setAttribute(MODEL_NAME,myData.myModelName);
+      element.setAttribute(METHOD_NAME,myData.myMethodName);
+    }
+  }
+
+  public static class AspectMethodQueryData{
+    public String myModelName = "";
+    public String myMethodName = "";
   }
 }

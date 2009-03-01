@@ -27,6 +27,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder.AspectMethodsHolder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
@@ -134,21 +135,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showAspectMethodUsages(final String namespace, final String name) throws RemoteException {
-    final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (final SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
-          if (!namespace.equals(descriptor.getSModelReference().getLongName())) continue;
-          if (!descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
-            applicableModelDescriptors.add(descriptor.getSModel());
-          }
-        }
-      }
-    });
-
-    SearchQuery searchQuery = new SearchQuery(GlobalScope.getInstance());
-    BaseFinder finder = new AspectMethodsFinder(applicableModelDescriptors, name);
-    BaseFinder[] finders = new BaseFinder[]{finder};
+    SearchQuery searchQuery = new SearchQuery(new AspectMethodsHolder(namespace, name),GlobalScope.getInstance());
+    BaseFinder[] finders = new BaseFinder[]{new AspectMethodsFinder()};
     myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), searchQuery, false, true, false, "No usages for that method");
   }
 

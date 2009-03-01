@@ -70,7 +70,7 @@ import java.util.List;
 public class UsagesViewTool extends BaseProjectTool implements PersistentStateComponent<Element> {
   private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
 
-  private static final String VERSION_NUMBER = "0.9994";
+  private static final String VERSION_NUMBER = "0.9995";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
