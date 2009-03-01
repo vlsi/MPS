@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -24,16 +24,14 @@ import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
 import java.util.ArrayList;
 
-public class LanguageConceptsUsagesFinder extends BaseFinder {
+public class LanguageConceptsUsagesFinder implements IFinder {
   public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
     SearchResults<SNode> searchResults = new SearchResults<SNode>();
     IHolder holder = query.getObjectHolder();

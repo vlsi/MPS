@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.logging.Logger;
@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.action.ActionEventData;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -68,7 +67,7 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
   }
 
   public IResultProvider getResult(SNode node) {
-    List<BaseFinder> finders = new ArrayList<BaseFinder>();
+    List<IFinder> finders = new ArrayList<IFinder>();
     for (String finderClassName : myFindersClassNames) {
       String languageNamespacePlusFindUsages = NameUtil.namespaceFromLongName(finderClassName);
       String aspectEnding = "." + LanguageAspect.FIND_USAGES.getName();
@@ -85,7 +84,7 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
       Class finderClass = l.getClass(finderClassName);
       if (finderClass != null) {
         try {
-          BaseFinder finder = (BaseFinder) finderClass.newInstance();
+          IFinder finder = (IFinder) finderClass.newInstance();
           finders.add(finder);
         } catch (Throwable t) {
           LOG.error(t);

@@ -24,10 +24,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
-public abstract class BaseFinder{
-  public BaseFinder() {
-
-  }
-
+public interface IFinder {
   public abstract SearchResults find(SearchQuery query, ProgressIndicator indicator);
 }

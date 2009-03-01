@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -25,7 +25,7 @@ import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
-public class ModelUsagesFinder extends BaseFinder {
+public class ModelUsagesFinder implements IFinder {
 
   public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
     SearchResults searchResults = new SearchResults();

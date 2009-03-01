@@ -18,14 +18,13 @@ package jetbrains.mps.plugin;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder.AspectMethodsHolder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -46,8 +45,6 @@ import java.awt.Frame;
 import java.rmi.NoSuchObjectException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSProjectIDEHandler.class);
@@ -136,7 +133,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
   public void showAspectMethodUsages(final String namespace, final String name) throws RemoteException {
     SearchQuery searchQuery = new SearchQuery(new AspectMethodsHolder(namespace, name),GlobalScope.getInstance());
-    BaseFinder[] finders = new BaseFinder[]{new AspectMethodsFinder()};
+    IFinder[] finders = new IFinder[]{new AspectMethodsFinder()};
     myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), searchQuery, false, true, false, "No usages for that method");
   }
 
@@ -192,7 +189,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     });
   }
 
-  private void findUsages(final @NotNull SNode node, final IScope scope, final BaseFinder finder) {
+  private void findUsages(final @NotNull SNode node, final IScope scope, final IFinder finder) {
     new Thread() {
       public void run() {
         SearchQuery query = ModelAccess.instance().runReadAction(new Computable<SearchQuery>() {
@@ -201,7 +198,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           }
         });
 
-        BaseFinder[] finders = new BaseFinder[]{finder};
+        IFinder[] finders = new IFinder[]{finder};
         myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), query, true, true, false, "No usages for that node");
       }
     }.start();

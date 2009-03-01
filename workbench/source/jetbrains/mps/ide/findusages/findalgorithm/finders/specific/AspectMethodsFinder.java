@@ -18,7 +18,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -31,7 +31,7 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AspectMethodsFinder extends BaseFinder {
+public class AspectMethodsFinder implements IFinder {
   public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator) {
     final AspectMethodQueryData data = (AspectMethodQueryData) query.getObjectHolder().getObject();
 

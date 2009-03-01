@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -27,7 +27,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 
-public class LanguageUsagesFinder extends BaseFinder {
+public class LanguageUsagesFinder implements IFinder {
   private static final String USED_BY = "used by";
   private static final String DEPENDENT_MODULES = "dependent modules";
   private static final String EXTENDING_LANGUAGES = "extending languages";

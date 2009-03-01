@@ -4298,7 +4298,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212243683790">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212243696761">
             <link role="classConcept" targetNodeId="29.~FindUtils" resolveInfo="FindUtils" />
-            <link role="baseMethodDeclaration" targetNodeId="29.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
+            <link role="baseMethodDeclaration" targetNodeId="29.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
             <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1212243700418" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216221284767">
               <link role="baseMethodDeclaration" targetNodeId="33.~ActionEventData.createProgressIndicator():com.intellij.openapi.progress.ProgressIndicator" resolveInfo="createProgressIndicator" />

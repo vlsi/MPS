@@ -33365,8 +33365,8 @@
                                     <link role="variableDeclaration" targetNodeId="1225455574898" resolveInfo="results" />
                                   </node>
                                   <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225455494798">
-                                    <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                                     <link role="classConcept" targetNodeId="82.~FindUtils" resolveInfo="FindUtils" />
+                                    <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,java.util.Collection,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225455494799">
                                       <link role="variableDeclaration" targetNodeId="1225455494785" resolveInfo="indiactor" />
                                     </node>
@@ -34909,8 +34909,8 @@
                   <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227519899038" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227519899039">
-                  <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                   <link role="classConcept" targetNodeId="82.~FindUtils" resolveInfo="FindUtils" />
+                  <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,java.util.Collection,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227519899040">
                     <link role="variableDeclaration" targetNodeId="1227519587891" resolveInfo="progressIndicator" />
                   </node>
@@ -34986,8 +34986,8 @@
                   <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227633792966" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227633792967">
-                  <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                   <link role="classConcept" targetNodeId="82.~FindUtils" resolveInfo="FindUtils" />
+                  <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,java.util.Collection,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227633792968">
                     <link role="variableDeclaration" targetNodeId="1227519587891" resolveInfo="progressIndicator" />
                   </node>
@@ -35070,7 +35070,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1227521194939">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227529377908">
             <link role="classConcept" targetNodeId="82.~FindUtils" resolveInfo="FindUtils" />
-            <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
+            <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,java.util.Collection,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227529377909">
               <link role="variableDeclaration" targetNodeId="1227521097470" resolveInfo="progressIndicator" />
             </node>

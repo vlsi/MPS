@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.findusages.view;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseLeaf;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseNode;
@@ -40,7 +40,7 @@ import java.util.List;
 public class FindUtils {
   private static Logger LOG = Logger.getLogger(FindUtils.class);
 
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final Collection<SNode> nodes, final IScope scope, final BaseFinder... finders) {
+  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final Collection<SNode> nodes, final IScope scope, final IFinder... finders) {
     final SearchResults[] results = new SearchResults[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -68,11 +68,11 @@ public class FindUtils {
     return getSearchResults(indicator, node, scope, finders.toArray(new GeneratedFinder[0]));
   }
 
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SNode node, final IScope scope, final BaseFinder... finders) {
+  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SNode node, final IScope scope, final IFinder... finders) {
     return getSearchResults(indicator, new SearchQuery(node, scope), makeProvider(finders));
   }
 
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SearchQuery query, final BaseFinder... finders) {
+  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SearchQuery query, final IFinder... finders) {
     return getSearchResults(indicator, query, makeProvider(finders));
   }
 
@@ -107,15 +107,15 @@ public class FindUtils {
     }
   }
 
-  public static IResultProvider makeProvider(Collection<BaseFinder> finders) {
+  public static IResultProvider makeProvider(Collection<IFinder> finders) {
     UnionNode unionNode = new UnionNode();
-    for (BaseFinder finder : finders) {
+    for (IFinder finder : finders) {
       addChild(unionNode, new FinderNode(finder));
     }
     return unionNode;
   }
 
-  public static IResultProvider makeProvider(BaseFinder... finders) {
+  public static IResultProvider makeProvider(IFinder... finders) {
     return makeProvider(Arrays.asList(finders));
   }
 

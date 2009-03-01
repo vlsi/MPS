@@ -17,7 +17,7 @@ package jetbrains.mps.lang.script.plugin.migrationtool;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -35,7 +35,7 @@ import java.util.*;
  * Igor Alshannikov
  * Jun 18, 2008
  */
-public class MigrationScriptFinder extends BaseFinder {
+public class MigrationScriptFinder implements IFinder {
 
   private List<SNodePointer> myScripts = new ArrayList<SNodePointer>();
   private IOperationContext myOperationContext;

@@ -936,7 +936,7 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235929414157">
               <link role="baseMethodDeclaration" targetNodeId="18.~UsagesViewTool.findUsages(jetbrains.mps.ide.findusages.model.IResultProvider,jetbrains.mps.ide.findusages.model.SearchQuery,boolean,boolean,boolean,java.lang.String):void" resolveInfo="findUsages" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235929414158">
-                <link role="baseMethodDeclaration" targetNodeId="18.~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
+                <link role="baseMethodDeclaration" targetNodeId="18.~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
                 <link role="classConcept" targetNodeId="18.~FindUtils" resolveInfo="FindUtils" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1235929414159">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1235929414160">
@@ -3054,9 +3054,6 @@
         </node>
       </node>
     </node>
-    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219922578867">
-      <link role="classifier" targetNodeId="19.~BaseFinder" resolveInfo="BaseFinder" />
-    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1219922585243">
       <property name="name" value="find" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219922585244" />
@@ -3084,7 +3081,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1219922952074">
               <link role="classConcept" targetNodeId="18.~FindUtils" resolveInfo="FindUtils" />
-              <link role="baseMethodDeclaration" targetNodeId="18.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,java.util.Collection,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
+              <link role="baseMethodDeclaration" targetNodeId="18.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,java.util.Collection,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219922952075">
                 <link role="variableDeclaration" targetNodeId="1219922585248" resolveInfo="indicator" />
               </node>
@@ -3249,6 +3246,9 @@
         </node>
       </node>
     </node>
+    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235938873328">
+      <link role="classifier" targetNodeId="19.~IFinder" resolveInfo="IFinder" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ToolDeclaration" id="1220008857613">
     <property name="name" value="RunReplacement" />
@@ -3402,7 +3402,7 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1220437683667" />
                       </node>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235926850509">
-                        <link role="baseMethodDeclaration" targetNodeId="18.~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
+                        <link role="baseMethodDeclaration" targetNodeId="18.~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
                         <link role="classConcept" targetNodeId="18.~FindUtils" resolveInfo="FindUtils" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1235926851028">
                           <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1235926851029">

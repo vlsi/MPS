@@ -19,7 +19,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -37,13 +37,13 @@ public class FinderNode extends BaseLeaf {
 
   private static final Logger LOG = Logger.getLogger(FinderNode.class);
 
-  private BaseFinder myFinder;
+  private IFinder myFinder;
 
   public FinderNode() {
 
   }
 
-  public FinderNode(BaseFinder finder) {
+  public FinderNode(IFinder finder) {
     myFinder = finder;
   }
 
@@ -107,7 +107,7 @@ public class FinderNode extends BaseLeaf {
         }
       }
       if (finderClass != null) {
-        myFinder = (BaseFinder) finderClass.newInstance();
+        myFinder = (IFinder) finderClass.newInstance();
       } else {
         throw new CantLoadSomethingException("Can't find finder class " + finderName);
       }
