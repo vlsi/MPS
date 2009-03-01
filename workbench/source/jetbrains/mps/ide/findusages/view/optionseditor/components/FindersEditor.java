@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
 import jetbrains.mps.ide.findusages.FindersManager;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.smodel.SNode;
@@ -46,15 +47,15 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
     Set<GeneratedFinder> availableFinders = FindersManager.getInstance().getAvailableFinders(node);
 
     List<GeneratedFinder> sortedFinders = new ArrayList<GeneratedFinder>(availableFinders);
-    Collections.sort(sortedFinders, new Comparator<GeneratedFinder>() {
-      public int compare(GeneratedFinder o1, GeneratedFinder o2) {
+    Collections.sort(sortedFinders, new Comparator<IInterfacedFinder>() {
+      public int compare(IInterfacedFinder o1, IInterfacedFinder o2) {
         return o1.getDescription().compareToIgnoreCase(o2.getDescription());
       }
     });
 
     List<String> correctEnabledFinders = new ArrayList<String>();
 
-    for (final GeneratedFinder finder : sortedFinders) {
+    for (final IInterfacedFinder finder : sortedFinders) {
       boolean isEnabled = false;
 
       for (String enabledFinderName : myOptions.getFindersClassNames()) {
@@ -86,8 +87,10 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
       finderCheckBox.addKeyListener(new KeyAdapter() {
         public void keyPressed(KeyEvent e) {
           if ((e.getKeyCode() == MenuKeyEvent.VK_B) && (e.getID() == MenuKeyEvent.KEY_PRESSED) && (e.isControlDown())) {
-            goToFinder(finder);
-            e.consume();
+            if (finder instanceof GeneratedFinder) {
+              goToFinder((GeneratedFinder) finder);
+              e.consume();
+            }
           }
         }
       });
@@ -97,7 +100,9 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
       goToFinderButton.setToolTipText("Go to finder declaration");
       goToFinderButton.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          goToFinder(finder);
+          if (finder instanceof GeneratedFinder) {
+            goToFinder((GeneratedFinder) finder);
+          }
         }
       });
 

@@ -20,6 +20,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -49,7 +50,7 @@ public class FinderNode extends BaseLeaf {
 
   public String getTaskName() {
     if (myFinder instanceof GeneratedFinder) {
-      return ((GeneratedFinder) myFinder).getDescription();
+      return ((IInterfacedFinder) myFinder).getDescription();
     } else {
       return myFinder.getClass().getName();
     }

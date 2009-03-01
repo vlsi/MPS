@@ -18,6 +18,7 @@ package jetbrains.mps.ide.findusages;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.lang.findUsages.structure.FinderDeclaration;
@@ -93,9 +94,9 @@ public class FindersManager implements ApplicationComponent {
       });
   }
 
-  public GeneratedFinder getFinderByClassName(String className) {
+  public IInterfacedFinder getFinderByClassName(String className) {
     for (Set<GeneratedFinder> finders : myFinders.values()) {
-      for (GeneratedFinder finder : finders) {
+      for (IInterfacedFinder finder : finders) {
         if (finder.getClass().getName().equals(className)) {
           return finder;
         }
