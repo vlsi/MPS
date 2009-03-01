@@ -23,6 +23,11 @@ import javax.swing.JComponent;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import jetbrains.mps.ide.findusages.view.FindUtils;
 
 public class FindInstancesDialog extends BaseDialog {
 
@@ -97,9 +102,8 @@ public class FindInstancesDialog extends BaseDialog {
       String fqName = result.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
       ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
       Query query = (Query)Class.forName(fqName, true, loader).newInstance();
-      final QueryExecutor executor = new QueryExecutor();
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
-      executor.execute(this.myContext.getProject(), query, result.getSNode(), scope);
+      this.execute(this.myContext.getProject(), query, result.getSNode(), scope);
     } catch (Throwable t) {
       t.printStackTrace();
     }
@@ -109,6 +113,24 @@ public class FindInstancesDialog extends BaseDialog {
   public void buttonCancel() {
     this.myEditor.disposeEditor();
     this.dispose();
+  }
+
+  public void execute(Project project, Query query, final SNode queryNode, final IScope scope) {
+    final Wrappers._T<SearchQuery> searchQuery = new Wrappers._T<SearchQuery>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+
+      public void run() {
+        if (SLinkOperations.getTarget(queryNode, "conceptDeclaration", false) != null) {
+          searchQuery.value = new SearchQuery(new NodeHolder(SLinkOperations.getTarget(queryNode, "conceptDeclaration", false)), scope);
+        } else
+        {
+          searchQuery.value = new SearchQuery(scope);
+        }
+      }
+
+    });
+    UsagesViewTool tool = project.getComponent(UsagesViewTool.class);
+    tool.findUsages(FindUtils.makeProvider(new QueryFinder(query)), searchQuery.value, false, false, false, "No usages for that node");
   }
 
 }

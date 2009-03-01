@@ -22,6 +22,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 
 public class ReplaceDialog extends BaseDialog {
 
@@ -81,16 +84,32 @@ public class ReplaceDialog extends BaseDialog {
     try {
       final GenerationResult result = this.myEditor.generate();
       String fqName = result.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
-      ClassLoader loader = result.getLoader(ReplacementExecutor.class.getClassLoader());
+      ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
       Query query = (Query)Class.forName(fqName, true, loader).newInstance();
-      final ReplacementExecutor executor = new ReplacementExecutor();
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
-      executor.execute(this.myContext.getMPSProject(), query, result.getSNode(), scope);
+      this.execute(this.myContext.getMPSProject(), query, result.getSNode(), scope);
       this.myEditor.disposeEditor();
       this.dispose();
     } catch (Throwable t) {
       t.printStackTrace();
     }
+  }
+
+  public void execute(MPSProject project, Query query, final SNode queryNode, final IScope scope) {
+    final Wrappers._T<SearchQuery> searchQuery = new Wrappers._T<SearchQuery>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+
+      public void run() {
+        if (SLinkOperations.getTarget(queryNode, "conceptDeclaration", false) != null) {
+          searchQuery.value = new SearchQuery(new NodeHolder(SLinkOperations.getTarget(queryNode, "conceptDeclaration", false)), scope);
+        } else
+        {
+          searchQuery.value = new SearchQuery(scope);
+        }
+      }
+
+    });
+    project.getPluginManager().getTool(RunReplacement_Tool.class).addTab(searchQuery.value, query);
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", defaultButton = false)
