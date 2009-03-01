@@ -9,7 +9,6 @@ import javax.swing.JButton;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import java.awt.FlowLayout;
@@ -19,9 +18,15 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
 import javax.swing.JComponent;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.ArrayList;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class ReplacementView {
 
@@ -30,7 +35,7 @@ public class ReplacementView {
   private JPanel myMainPanel = new JPanel(new BorderLayout());
   private JButton myButton = new JButton("Do replace");
 
-  public ReplacementView(RunReplacement_Tool tool, MPSProject project, IResultProvider provider, SearchQuery searchQuery, final SearchResults results, final Query query) {
+  public ReplacementView(RunReplacement_Tool tool, final MPSProject project, IResultProvider provider, SearchQuery searchQuery, final Query query) {
     this.myTool = tool;
     this.myUsagesView = new UsagesView(project, new ViewOptions()) {
 
@@ -43,7 +48,7 @@ public class ReplacementView {
     this.myButton.addActionListener(new ActionListener() {
 
       public void actionPerformed(ActionEvent event) {
-        final List<SNode> replaceNodes = ReplacementView.this.getExecuteResult(results);
+        final List<SNode> replaceNodes = ReplacementView.this.getExecuteResult(ReplacementView.this.myUsagesView.getIncludedResultNodes());
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
           public void run() {
@@ -61,21 +66,34 @@ public class ReplacementView {
       }
 
     });
-    this.myUsagesView.setRunOptions(provider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true), results);
+    this.myUsagesView.setRunOptions(provider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
     buttonPanel.add(this.myButton);
     this.myMainPanel.add(buttonPanel, BorderLayout.SOUTH);
     this.myMainPanel.add(this.myUsagesView.getComponent(), BorderLayout.CENTER);
+    SwingUtilities.invokeLater(new Runnable() {
+
+      public void run() {
+        ProgressManager.getInstance().run(new Task.Modal(project.getComponent(Project.class), "Searching", true) {
+
+          public void run(@NotNull() ProgressIndicator indicator) {
+            indicator.setIndeterminate(true);
+            ReplacementView.this.myUsagesView.run(indicator);
+          }
+
+        });
+      }
+
+    });
   }
 
   public JComponent getComponent() {
     return this.myMainPanel;
   }
 
-  public List<SNode> getExecuteResult(SearchResults searchResults) {
+  public List<SNode> getExecuteResult(List<SNodePointer> nodes) {
     List<SNode> results = new ArrayList<SNode>();
-    List<SearchResult<SNode>> resultsList = searchResults.getSearchResults();
-    for(SearchResult<SNode> nodeResult : resultsList) {
-      results.add(nodeResult.getObject());
+    for(SNodePointer nodePointer : nodes) {
+      results.add(nodePointer.getNode());
     }
     return results;
   }

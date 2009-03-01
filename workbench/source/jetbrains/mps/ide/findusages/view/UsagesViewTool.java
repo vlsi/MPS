@@ -37,7 +37,6 @@ import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -197,17 +196,13 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
           }
         });
         if (!isCancelled[0]) {
-          showResults(searchResults[0], showOne, forceNewTab, provider, query, isRerunnable, notFoundMsg);
+          showResults(provider, query, searchResults[0], showOne, forceNewTab, isRerunnable, notFoundMsg);
         }
       }
     });
   }
 
-  public void showResults(final SearchQuery query, final SearchResults searchResults) {
-    showResults(searchResults, false, false, FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults())), query, false, "No usages for that node");
-  }
-
-  private void showResults(final SearchResults searchResults, final boolean showOne, final boolean forceNewTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final String notFoundMsg) {
+  private void showResults(final IResultProvider provider, final SearchQuery query, final SearchResults searchResults, final boolean showOne, final boolean forceNewTab, final boolean isRerunnable, final String notFoundMsg) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         int resCount = searchResults.getSearchResults().size();

@@ -23,10 +23,6 @@ import javax.swing.JComponent;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
 
 public class FindInstancesDialog extends BaseDialog {
 
@@ -97,27 +93,13 @@ public class FindInstancesDialog extends BaseDialog {
   @BaseDialog.Button(position = 0, name = "Find", defaultButton = true)
   public void buttonFind() {
     try {
-      final GenerationResult result = this.myEditor.generate();
-      String fqName = result.getModelDescriptor().getLongName() + "." + QueryConstants.GENERATED_QUERY_NAME;
+      GenerationResult result = this.myEditor.generate();
+      String fqName = result.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
       ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
       Query query = (Query)Class.forName(fqName, true, loader).newInstance();
-      final QueryExecutor executor = new QueryExecutor(this.myContext, query);
+      final QueryExecutor executor = new QueryExecutor();
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
-      ProgressManager.getInstance().run(new Task.Modal(FindInstancesDialog.this.myContext.getProject(), "Executing query", false) {
-
-        public void run(@NotNull() ProgressIndicator indicator) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-
-            public void run() {
-              executor.setSNode(result.getSNode());
-            }
-
-          });
-          executor.execute(indicator, scope);
-        }
-
-      });
-      executor.showResults();
+      executor.execute(this.myContext.getProject(), query, result.getSNode(), scope);
     } catch (Throwable t) {
       t.printStackTrace();
     }

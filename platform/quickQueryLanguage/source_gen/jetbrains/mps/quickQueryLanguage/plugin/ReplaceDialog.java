@@ -22,10 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
 
 public class ReplaceDialog extends BaseDialog {
 
@@ -84,26 +80,12 @@ public class ReplaceDialog extends BaseDialog {
   public void buttonReplace() {
     try {
       final GenerationResult result = this.myEditor.generate();
-      String fqName = result.getModelDescriptor().getLongName() + "." + QueryConstants.GENERATED_QUERY_NAME;
+      String fqName = result.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
       ClassLoader loader = result.getLoader(ReplacementExecutor.class.getClassLoader());
       Query query = (Query)Class.forName(fqName, true, loader).newInstance();
-      final ReplacementExecutor executor = new ReplacementExecutor(this.myContext, query);
+      final ReplacementExecutor executor = new ReplacementExecutor();
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
-      ProgressManager.getInstance().run(new Task.Modal(ReplaceDialog.this.myContext.getProject(), "Executing query", false) {
-
-        public void run(@NotNull() ProgressIndicator indicator) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-
-            public void run() {
-              executor.setSNode(result.getSNode());
-            }
-
-          });
-          executor.execute(indicator, scope);
-        }
-
-      });
-      executor.showResults();
+      executor.execute(this.myContext.getMPSProject(), query, result.getSNode(), scope);
       this.myEditor.disposeEditor();
       this.dispose();
     } catch (Throwable t) {

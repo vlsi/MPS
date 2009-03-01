@@ -20,11 +20,6 @@ public class FindInstancesContext extends StandaloneMPSContext {
     this.myModule = oldContext.getModule();
   }
 
-  @Deprecated()
-  public MPSProject getMPSProject() {
-    return this.myMPSProject;
-  }
-
   public IModule getModule() {
     return this.myModule;
   }
@@ -39,6 +34,11 @@ public class FindInstancesContext extends StandaloneMPSContext {
       return component;
     }
     return super.getComponent(c);
+  }
+
+  @Deprecated()
+  public MPSProject getMPSProject() {
+    return this.myMPSProject;
   }
 
 }

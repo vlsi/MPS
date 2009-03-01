@@ -283,8 +283,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220257961589">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220258391049">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1220258391050">
-              <link role="classifier" targetNodeId="11.1220258027098" resolveInfo="QueryConstant" />
-              <link role="variableDeclaration" targetNodeId="11.1220258057720" resolveInfo="GENERATED_QUERY_NAME" />
+              <link role="classifier" targetNodeId="11.1219056224639" resolveInfo="QueryExecutor" />
+              <link role="variableDeclaration" targetNodeId="11.1220257798123" resolveInfo="GENERATED_QUERY_NAME" />
             </node>
           </node>
         </node>

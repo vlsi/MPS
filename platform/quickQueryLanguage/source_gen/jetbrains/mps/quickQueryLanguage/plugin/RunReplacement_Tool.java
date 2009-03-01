@@ -13,12 +13,9 @@ import javax.swing.JComponent;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.Content;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 
 public class RunReplacement_Tool extends GeneratedTool {
 
@@ -48,12 +45,11 @@ public class RunReplacement_Tool extends GeneratedTool {
     manager.removeContent(content, true);
   }
 
-  public void addTab(final SearchQuery searchQuery, final SearchResults searchResults, final Query query) {
+  public void addTab(final SearchQuery searchQuery, final Query query) {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        IResultProvider provider = FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults()));
-        ReplacementView view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.getMPSProject(), provider, searchQuery, searchResults, query);
+        ReplacementView view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.getMPSProject(), FindUtils.makeProvider(new QueryFinder(query)), searchQuery, query);
         RunReplacement_Tool.this.myViews.add(view);
         String name = "Query ";
         if (RunReplacement_Tool.this.myViews.size() > 1) {

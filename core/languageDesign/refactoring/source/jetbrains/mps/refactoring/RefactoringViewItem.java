@@ -17,12 +17,15 @@ package jetbrains.mps.refactoring;
 
 import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder.ConstantHolder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Element;
@@ -33,13 +36,6 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 08.06.2008
- * Time: 17:34:19
- * To change this template use File | Settings | File Templates.
- */
 public class RefactoringViewItem {
   private RefactoringViewAction myRefactoringViewAction;
   private SearchResults mySearchResults;
@@ -107,8 +103,8 @@ public class RefactoringViewItem {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            myUsagesView.setRunOptions(FindUtils.makeProvider(new ConstantFinder(mySearchResults.getSearchResults())),
-              null,
+            myUsagesView.setRunOptions(FindUtils.makeProvider(new ConstantFinder()),
+              new SearchQuery(new ConstantHolder(mySearchResults), GlobalScope.getInstance()),
               new ButtonConfiguration(false, false, true),
               mySearchResults);
           }
