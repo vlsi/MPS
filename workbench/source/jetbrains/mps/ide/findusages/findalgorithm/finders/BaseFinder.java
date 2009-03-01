@@ -24,16 +24,8 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
-public abstract class BaseFinder implements IExternalizeable {
+public abstract class BaseFinder{
   public BaseFinder() {
-
-  }
-
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
-
-  }
-
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
 
   }
 

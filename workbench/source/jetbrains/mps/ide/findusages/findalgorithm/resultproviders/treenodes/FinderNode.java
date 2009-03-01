@@ -86,7 +86,6 @@ public class FinderNode extends BaseLeaf {
     super.write(element, project);
     Element finderXML = new Element(FINDER);
     finderXML.setAttribute(CLASS_NAME, myFinder.getClass().getName());
-    myFinder.write(finderXML, project);
     element.addContent(finderXML);
   }
 
@@ -109,7 +108,6 @@ public class FinderNode extends BaseLeaf {
       }
       if (finderClass != null) {
         myFinder = (BaseFinder) finderClass.newInstance();
-        myFinder.read(finderXML, project);
       } else {
         throw new CantLoadSomethingException("Can't find finder class " + finderName);
       }
