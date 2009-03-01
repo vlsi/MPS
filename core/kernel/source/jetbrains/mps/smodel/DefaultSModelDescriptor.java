@@ -40,6 +40,7 @@ import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
+import com.intellij.util.containers.WeakList;
 
 public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private static final String VERSION = "version";
@@ -55,7 +56,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   //it should be possible to add listeners from any thread so we use lock here
   //access to other fields is synchronized with ModelAccess
   private final Object myListenersLock = new Object();
-  private List<SModelListener> myWeakModelListeners = new ArrayList<SModelListener>(0);
+  private List<SModelListener> myWeakModelListeners = new WeakList<SModelListener>();
   private List<SModelListener> myModelListeners = new ArrayList<SModelListener>(0);
   private List<SModelCommandListener> myModelCommandListeners = new ArrayList<SModelCommandListener>(0);
 
