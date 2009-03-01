@@ -22,11 +22,13 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
@@ -34,6 +36,7 @@ import org.jdom.Element;
 
 public class FinderNode extends BaseLeaf {
   private static final String FINDER = "finder";
+  private static final String GENERATED_FINDER = "generated_finder";
   private static final String CLASS_NAME = "class_name";
 
   private static final Logger LOG = Logger.getLogger(FinderNode.class);
@@ -85,35 +88,46 @@ public class FinderNode extends BaseLeaf {
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
-    Element finderXML = new Element(FINDER);
-    finderXML.setAttribute(CLASS_NAME, myFinder.getClass().getName());
+
+    Element finderXML;
+    if (myFinder instanceof ReloadableFinder) {
+      finderXML = new Element(GENERATED_FINDER);
+      GeneratedFinder realFinder = ((ReloadableFinder) myFinder).getFinder();
+      if (realFinder != null) {
+        finderXML.setAttribute(CLASS_NAME, realFinder.getClass().getName());
+      }
+    } else {
+      finderXML = new Element(FINDER);
+      finderXML.setAttribute(CLASS_NAME, myFinder.getClass().getName());
+    }
     element.addContent(finderXML);
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     super.read(element, project);
-    Element finderXML = element.getChild(FINDER);
-    String finderName = finderXML.getAttribute(CLASS_NAME).getValue();
-    try {
-      Class finderClass = null;
-      for (Language l : project.getProjectLanguages()) {
-        finderClass = l.getClass(finderName);
-        if (finderClass != null) break;
-      }
-      if (finderClass == null) {
-        try {
-          finderClass = Class.forName(finderName);
-        } catch (ClassNotFoundException e) {
-          finderClass = null;
-        }
-      }
-      if (finderClass != null) {
+    if (element.getChild(FINDER) != null) {
+      Element finderXML = element.getChild(FINDER);
+      String finderName = finderXML.getAttribute(CLASS_NAME).getValue();
+      try {
+        Class finderClass = Class.forName(finderName);
         myFinder = (IFinder) finderClass.newInstance();
-      } else {
-        throw new CantLoadSomethingException("Can't find finder class " + finderName);
+      } catch (Throwable t) {
+        throw new CantLoadSomethingException("Can't instantiate finder " + finderName, t);
       }
-    } catch (Throwable t) {
-      throw new CantLoadSomethingException("Can't find or read finder " + finderName, t);
+    } else {
+      Element finderXML = element.getChild(GENERATED_FINDER);
+      String finderName = finderXML.getAttribute(CLASS_NAME).getValue();
+      try {
+        for (Language l : project.getProjectLanguages()) {
+          if (l.getClass(finderName) != null) {
+            myFinder = new ReloadableFinder(l.getModuleReference(), finderName);
+            break;
+          }
+        }
+        throw new CantLoadSomethingException("Can't find finder " + finderName);
+      } catch (Throwable t) {
+        throw new CantLoadSomethingException("Can't instantiate finder " + finderName, t);
+      }
     }
   }
 }

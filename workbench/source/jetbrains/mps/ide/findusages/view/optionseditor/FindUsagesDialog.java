@@ -131,19 +131,9 @@ public class FindUsagesDialog extends BaseDialog {
     }
 
     public void goToFinder(final GeneratedFinder finder) {
-      final SNode[] finderNode = new SNode[]{null};
-
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          finderNode[0] = FindersManager.getInstance().getNodeByFinder(finder);
-        }
-      });
-
-      if (finderNode[0] == null) return;
-
+      SNode finderNode = finder.getNodeToNavigate();
       FindUsagesDialog.this.onCancel();
-
-      myProject.getComponentSafe(MPSEditorOpener.class).openNode(finderNode[0]);
+      myProject.getComponentSafe(MPSEditorOpener.class).openNode(finderNode);
     }
   }
 }

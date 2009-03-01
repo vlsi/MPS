@@ -87,7 +87,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
       finderCheckBox.addKeyListener(new KeyAdapter() {
         public void keyPressed(KeyEvent e) {
           if ((e.getKeyCode() == MenuKeyEvent.VK_B) && (e.getID() == MenuKeyEvent.KEY_PRESSED) && (e.isControlDown())) {
-            if (finder instanceof GeneratedFinder) {
+            if (finder.canNavigate()){
               goToFinder((GeneratedFinder) finder);
               e.consume();
             }
@@ -100,7 +100,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
       goToFinderButton.setToolTipText("Go to finder declaration");
       goToFinderButton.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          if (finder instanceof GeneratedFinder) {
+          if (finder.canNavigate()){
             goToFinder((GeneratedFinder) finder);
           }
         }

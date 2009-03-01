@@ -21,9 +21,14 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
+import jetbrains.mps.ide.findusages.FindersManager;
+import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +46,22 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
 
   public String getLongDescription() {
     return "";
+  }
+
+  public SNode getNodeToNavigate() {
+    final SNode[] finderNode = new SNode[]{null};
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        finderNode[0] = FindersManager.getInstance().getNodeByFinder(GeneratedFinder.this);
+      }
+    });
+
+    return finderNode[0];
+  }
+
+  public boolean canNavigate() {
+    return true;
   }
 
   protected abstract void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator);
