@@ -87,7 +87,6 @@ public class FilterNode extends BaseNode {
     super.write(element, project);
     Element filterXML = new Element(FILTER);
     filterXML.setAttribute(CLASS_NAME, myFilter.getClass().getName());
-    myFilter.write(filterXML, project);
     element.addContent(filterXML);
   }
 
@@ -110,7 +109,6 @@ public class FilterNode extends BaseNode {
       }
       if (filterClass != null) {
         myFilter = (BaseFilter) filterClass.newInstance();
-        myFilter.read(filterXML, project);
       } else {
         throw new CantLoadSomethingException("Can't find filter class " + filterName);
       }
