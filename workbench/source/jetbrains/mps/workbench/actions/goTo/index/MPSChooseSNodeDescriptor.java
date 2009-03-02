@@ -60,8 +60,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
     FileBasedIndex.getInstance().processAllKeys(indexName, new Processor<SNodeDescriptor>() {
       public boolean process(SNodeDescriptor s) {
-        if (scope instanceof GlobalScope
-        || scope.getModelDescriptor(s.getModelReference()) != null) {
+        if (scope.getModelDescriptor(s.getModelReference()) != null) {
           if (s.isDependOnOtherModel() || s.isInvalid() || changedModels.contains(s.getModelReference())) {
             s.setInvalid(false);
             hasToLoad.add(s.getModelReference());
