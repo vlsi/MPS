@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.quickQueryLanguage.plugin.QueryConstants;
+import jetbrains.mps.quickQueryLanguage.plugin.QueryExecutor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -20,7 +20,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1220257961588(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return QueryConstants.GENERATED_QUERY_NAME;
+    return QueryExecutor.GENERATED_QUERY_NAME;
   }
 
   public static SNode sourceNodeQuery_1219760682963(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
