@@ -322,6 +322,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     //we must be in command since model save might change model by adding model/language imports
     if (!mySModel.isLoading()) LOG.assertInCommand();
 
+    if (needsReloading()) {
+      LOG.warning("Model " + mySModel.getSModelFqName() + " was modify externally and not reloaded!");
+    }
+
     SModelRepository.getInstance().markUnchanged(mySModel);
     myModelRootManager.saveModel(this);
 

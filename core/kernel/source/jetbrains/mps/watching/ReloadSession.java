@@ -57,8 +57,7 @@ class ReloadSession {
           if (!myNewModuleVFiles.isEmpty()) {
             LOG.info("reloading libraries");
             progressIndicator.setText("Reloading libraries... Please wait.");
-            LibraryManager.getInstance().update();
-            return;
+            LibraryManager.getInstance().updateAll();
           }
 
           preprocess();
@@ -76,7 +75,9 @@ class ReloadSession {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           try {
-            progressIndicator.setText2("Reloading " + model.getSModelReference().getSModelFqName());
+            String text = "Reloading " + model.getSModelReference().getSModelFqName();
+            LOG.info(text);
+            progressIndicator.setText2(text);
             model.reloadFromDisk();
           } catch (RuntimeException e) {
             LOG.error(e);
@@ -91,7 +92,9 @@ class ReloadSession {
     for (final IModule module : myChangedModules) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          progressIndicator.setText2("Reloading " + module.getModuleFqName());
+          String text = "Reloading " + module.getModuleFqName();
+          LOG.info(text);
+          progressIndicator.setText2(text);
           module.reloadFromDisk();
         }
       });
@@ -100,8 +103,10 @@ class ReloadSession {
     for (final IModule module : myDeletedModules) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
+          String text = "Unloading removed module " + module.getModuleFqName();
+          LOG.info(text);
           MPSModuleRepository.getInstance().removeModule(module);
-          progressIndicator.setText2("Unloading removed module " + module.getModuleFqName());
+          progressIndicator.setText2(text);
         }
       });
     }

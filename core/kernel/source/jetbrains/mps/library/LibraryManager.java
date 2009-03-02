@@ -163,8 +163,10 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   }
 
   private void updatePredefinedLibraries() {
-    myPredefinedLibrariesOwner = new MPSModuleOwner() { };
-    myBootstrapLibrariesOwner = new MPSModuleOwner() { };
+    myPredefinedLibrariesOwner = new MPSModuleOwner() {
+    };
+    myBootstrapLibrariesOwner = new MPSModuleOwner() {
+    };
     for (Library l : getLibraries()) {
       if (l.isPredefined()) {
         MPSModuleOwner owner = (l.isBootstrap() ? myBootstrapLibrariesOwner : myPredefinedLibrariesOwner);
@@ -190,7 +192,8 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
     if (myOwner != null) {
       myRepository.unRegisterModules(myOwner);
     }
-    myOwner = new MPSModuleOwner() { };
+    myOwner = new MPSModuleOwner() {
+    };
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         for (Library l : getLibraries()) {
@@ -203,6 +206,16 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
         fireOnLoad(myOwner);
 
         CleanupManager.getInstance().cleanup();
+      }
+    });
+  }
+
+  public void updateAll() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        updatePredefinedLibraries();
+        updateCustomBuiltInLibraries();
+        update();
       }
     });
   }
