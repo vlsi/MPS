@@ -3085,56 +3085,6 @@
         </node>
       </node>
     </node>
-    <node role="item" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem" id="1166035149309">
-      <property name="description" value="Insert closing parenthesis" />
-      <property name="caretPolicy" value="caret_at_last_position" />
-      <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="1166035149310">
-        <property name="keycode" value="VK_0" />
-        <property name="modifiers" value="ctrl+alt" />
-      </node>
-      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="1166035149311">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1166035149312">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1166035418075">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1166035431639">
-              <link role="classConcept" targetNodeId="48.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
-              <link role="baseMethodDeclaration" targetNodeId="48.~ParenthesisUtil.addClosingParenthesis(jetbrains.mps.baseLanguage.structure.Expression,boolean,jetbrains.mps.nodeEditor.EditorContext):void" resolveInfo="addClosingParenthesis" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721451">
-                <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1166035784259" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1171545043333" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1166035451111" />
-              <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1166090256931" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="item" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem" id="1166035160001">
-      <property name="description" value="Insert opening parenthesis" />
-      <property name="caretPolicy" value="caret_at_first_position" />
-      <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="1166035160002">
-        <property name="keycode" value="VK_9" />
-        <property name="modifiers" value="ctrl+alt" />
-      </node>
-      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="1166035160003">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1166035160004">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1166035468581">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1166035468582">
-              <link role="classConcept" targetNodeId="48.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
-              <link role="baseMethodDeclaration" targetNodeId="48.~ParenthesisUtil.addClosingParenthesis(jetbrains.mps.baseLanguage.structure.Expression,boolean,jetbrains.mps.nodeEditor.EditorContext):void" resolveInfo="addClosingParenthesis" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721695">
-                <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1166035794761" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1171545047994" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1166035468584">
-                <property name="value" value="true" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1166090268983" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1081790432906">
     <property name="name" value="SuperConstructorInvocation_Editor" />
@@ -3357,6 +3307,9 @@
         <link role="actionMap" targetNodeId="1166027091157" resolveInfo="DeleteParenthesis_Actions" />
         <link role="keyMap" targetNodeId="1166110777830" resolveInfo="OpenParenthesis_KeyMap" />
         <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1235993442258">
+          <property name="flag" value="false" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1081880010411">
         <link role="relationDeclaration" targetNodeId="17.1079359253376" />
@@ -3371,7 +3324,7 @@
           <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032125">
-          <property name="flag" value="true" />
+          <property name="flag" value="false" />
         </node>
       </node>
     </node>
