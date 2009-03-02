@@ -32,6 +32,7 @@ import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar;
 import com.intellij.openapi.util.SystemInfo;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -538,7 +539,12 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     int bestDistance = Integer.MAX_VALUE;
     Module bestModule = null;
 
-    for (Module module : ModuleManager.getInstance(myProject).getModules()) {
+    Module[] modules = ApplicationManager.getApplication().runReadAction(new Computable<Module[]>() {
+      public Module[] compute() {
+        return ModuleManager.getInstance(myProject).getModules();
+      }
+    });
+    for (Module module : modules) {
       ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
       for (VirtualFile contentRoot : rootManager.getContentRoots()) {
         int distance = getDistance(contentRoot, file);
