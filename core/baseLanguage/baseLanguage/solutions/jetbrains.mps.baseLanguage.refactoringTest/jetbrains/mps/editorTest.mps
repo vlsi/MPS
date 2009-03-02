@@ -2207,5 +2207,95 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1236013278645">
+    <property name="name" value="CompexTransformTest" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236013323503">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236013323504" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236013323505" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236013323506">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1236013337232">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236013337234" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1236013399097">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236013400952">
+              <property name="value" value="10" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1236013405004">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236013405115">
+                <property name="value" value="1" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1236013352346">
+                <link role="variableDeclaration" targetNodeId="1236013348867" resolveInfo="a" />
+              </node>
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1236013428128">
+                <property name="isLastPosition" value="true" />
+                <property name="cellId" value="conceptProperty_alias" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1236013348867">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1236013348868" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236013384899">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236013384900" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236013384901" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236013384902">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1236013384903">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236013384904" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1236014849619">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1236014721247">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1236013384907">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236013384908">
+                  <property name="value" value="10" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1236013384909">
+                  <link role="variableDeclaration" targetNodeId="1236013384910" resolveInfo="a" />
+                  <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1236014857201">
+                    <property name="isLastPosition" value="true" />
+                    <property name="cellId" value="property_name" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1236013384910">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1236013384911" />
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236013432476">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236013432477">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236013432478">
+          <property name="keycode" value="VK_BACK_SPACE" />
+        </node>
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236013443117">
+          <property name="keycode" value="VK_BACK_SPACE" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1236013460770">
+        <property name="keys" value="(" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236013504817">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236013504818">
+          <property name="keycode" value="VK_LEFT" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1236014863171">
+        <property name="keys" value="!" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236014863172">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236014863173">
+          <property name="keycode" value="VK_LEFT" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
