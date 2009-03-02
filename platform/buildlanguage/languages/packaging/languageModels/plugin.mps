@@ -11928,6 +11928,9 @@
         <node role="item" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227007448108">
           <property name="value" value="Script Name" />
         </node>
+        <node role="item" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236003679892">
+          <property name="value" value="Model" />
+        </node>
         <node role="item" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227007450217">
           <property name="value" value="Command Line" />
         </node>
@@ -12186,12 +12189,12 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227007129601">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227007228507">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1227007231525">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227007230107">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1236003907672">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1236003907673">
               <link role="variableDeclaration" targetNodeId="1227007129599" resolveInfo="column" />
             </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227007233224">
-              <property name="value" value="1" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236003931224">
+              <property name="value" value="0" />
             </node>
           </node>
           <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1227007258181">
@@ -12358,6 +12361,33 @@
               <property name="value" value="0" />
             </node>
           </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1236003734737">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1236003738600">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236003739386">
+                <property name="value" value="1" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1236003737366">
+                <link role="variableDeclaration" targetNodeId="1227007129622" resolveInfo="column" />
+              </node>
+            </node>
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236003734739">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236003758920">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236003770328">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236003765759">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236003765432">
+                      <link role="variableDeclaration" targetNodeId="1227007736468" resolveInfo="snode" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236003769202">
+                      <link role="baseMethodDeclaration" targetNodeId="4.~SNodePointer.getModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getModelReference" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236003779319">
+                    <link role="baseMethodDeclaration" targetNodeId="4.~SModelReference.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1227012922313">
           <node role="expression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1227012944286">
@@ -12451,11 +12481,11 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227007129649">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.AssertStatement" id="1227013233025">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1227013240301">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227013240925">
-              <property name="value" value="1" />
-            </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227013238985">
               <link role="variableDeclaration" targetNodeId="1227007129647" resolveInfo="column" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236004151248">
+              <property name="value" value="2" />
             </node>
           </node>
         </node>
@@ -12489,6 +12519,14 @@
               </node>
               <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1227013258555" />
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236004785118">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236004785119">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236004785120">
+              <link role="baseMethodDeclaration" targetNodeId="1227013453806" resolveInfo="notifyListeners" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236004785121" />
           </node>
         </node>
       </node>

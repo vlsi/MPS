@@ -8,6 +8,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.plugin.BaseOutputReader;
+import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
 import com.intellij.openapi.application.PathMacros;
 import java.util.Set;
@@ -29,20 +30,33 @@ public class BuildScriptRunner extends BaseRunner {
       ListSequence.fromList(parameters).addSequence(ListSequence.fromList(Arrays.asList(commandLine.split(" "))));
     }
     ProcessBuilder builder = new ProcessBuilder(parameters);
+    builder.directory(file.getParentFile());
     try {
       Process process = builder.start();
       BaseOutputReader input = new BaseOutputReader(process.getInputStream()) {
 
-        protected void addMessage(String message) {
-          BuildScriptRunner.this.myComponent.addMessage(message);
+        protected void addMessage(final String message) {
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+
+            public void run() {
+              BuildScriptRunner.this.myComponent.addMessage(message);
+            }
+
+          });
         }
 
       };
       input.start();
       BaseOutputReader error = new BaseOutputReader(process.getErrorStream()) {
 
-        protected void addMessage(String message) {
-          BuildScriptRunner.this.myComponent.addError(message);
+        protected void addMessage(final String message) {
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+
+            public void run() {
+              BuildScriptRunner.this.myComponent.addError(message);
+            }
+
+          });
         }
 
       };
