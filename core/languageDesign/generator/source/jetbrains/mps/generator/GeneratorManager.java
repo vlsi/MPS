@@ -204,7 +204,7 @@ public class GeneratorManager implements SearchableConfigurable {
       saveTransientModels = false;
     }
 
-    if (!myGeneratingRequirements && mySettings.isGenerateRequirements()) {
+    if (generateRequirements()) {
       boolean wasSaveTransientModels = mySettings.isSaveTransientModels();
       myGeneratingRequirements = true;
       try {
@@ -257,6 +257,10 @@ public class GeneratorManager implements SearchableConfigurable {
       }
     });
     return result[0];
+  }
+
+  protected boolean generateRequirements() {
+    return !myGeneratingRequirements && mySettings.isGenerateRequirements();
   }
 
   private List<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, IOperationContext context) {
