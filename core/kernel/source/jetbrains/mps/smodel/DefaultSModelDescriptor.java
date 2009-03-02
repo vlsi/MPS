@@ -323,7 +323,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (!mySModel.isLoading()) LOG.assertInCommand();
 
     if (needsReloading()) {
-      LOG.warning("Model " + mySModel.getSModelFqName() + " was modify externally and not reloaded!");
+      LOG.warning("Model " + mySModel.getSModelFqName() + " was modified externally and not reloaded!");
     }
 
     SModelRepository.getInstance().markUnchanged(mySModel);
