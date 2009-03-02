@@ -3855,9 +3855,6 @@
       <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1234780786069">
         <property name="path" value="core/baseLanguage/jetbrains.mps.internal.collections.mpsarch.jar" />
       </node>
-      <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1234780786070">
-        <property name="path" value="core/jetbrains.mps.projectLanguage.mpsarch.jar" />
-      </node>
       <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1234780786071">
         <property name="path" value="platform/jetbrains.mps.uiLanguage.mpsarch.jar" />
       </node>
