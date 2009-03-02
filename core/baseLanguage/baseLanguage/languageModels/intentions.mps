@@ -11,6 +11,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -7624,6 +7625,51 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1231930901296" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1236007216018">
+    <property name="name" value="AddMainMethod" />
+    <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1236007216019">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236007216020">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236007279737">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236007279738">
+            <property name="value" value="Add main method" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1236007216021">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236007216022">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236007290681">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236007296626">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236007291124">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1236007290682" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1236007295320">
+                <link role="link" targetNodeId="1.1070462273904" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1236007297638">
+              <node role="childNode" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1236007302054">
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1236007309493">
+                  <property name="name" value="main" />
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236007309494" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236007309495" />
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236007309496" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1236007315186">
+                    <property name="name" value="args" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1236007322800">
+                      <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236007315187">
+                        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
