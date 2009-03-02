@@ -57,7 +57,7 @@ class ReloadSession {
           if (!myNewModuleVFiles.isEmpty()) {
             LOG.info("reloading libraries");
             progressIndicator.setText("Reloading libraries... Please wait.");
-            LibraryManager.getInstance().updateAll();
+            LibraryManager.getInstance().update();
           }
 
           preprocess();

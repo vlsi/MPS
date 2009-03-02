@@ -210,16 +210,6 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
     });
   }
 
-  public void updateAll() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        updatePredefinedLibraries();
-        updateCustomBuiltInLibraries();
-        update();
-      }
-    });
-  }
-
   private void fireOnLoad(final MPSModuleOwner owner) {
     for (IModule m : myRepository.getModules(owner)) {
       m.onModuleLoad();
