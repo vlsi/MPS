@@ -130,6 +130,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_5487_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5487_2");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    NotExpression_Parens_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupLabel_Constant_5487_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

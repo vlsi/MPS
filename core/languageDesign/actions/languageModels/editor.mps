@@ -642,6 +642,9 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1196347343442">
             <property name="text" value=")" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1236004740605">
+              <property name="flag" value="true" />
+            </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678123">
               <property name="color" value="DARK_BLUE" />
             </node>

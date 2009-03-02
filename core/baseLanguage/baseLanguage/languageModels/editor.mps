@@ -3347,6 +3347,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215012051740">
         <property name="text" value="(" />
         <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
+        <link role="actionMap" targetNodeId="1140733182387" resolveInfo="NotExpression_Parens_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1081930071609">
         <link role="relationDeclaration" targetNodeId="17.1081516765348" />

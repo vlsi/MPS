@@ -257,6 +257,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
 
