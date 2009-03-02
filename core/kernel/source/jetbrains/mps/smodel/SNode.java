@@ -1528,7 +1528,7 @@ public final class SNode {
     String conceptFQName = getConceptFqName();
     AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
     if (concept == null) {
-      LOG.error("couldn't find concept declaration '" + conceptFQName + "' for node " + getId() + " in model " + getModel().getSModelReference(), this);
+      LOG.error("couldn't find concept declaration '" + conceptFQName + "' for node " + getId() + " in model " + getModel().getSModelFqName(), this);
       SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
     }
     return concept;
