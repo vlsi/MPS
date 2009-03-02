@@ -549,7 +549,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635881">
-    <property name="name" value="TrueTest" />
+    <property name="name" value="IfAndElseTest" />
     <property name="package" value="simple" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230058635882">
       <property name="name" value="method" />
@@ -567,12 +567,23 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635888" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230058635889" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635890">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230058635891">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1230058635892">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1236015268186">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1236015277752">
             <property name="value" value="true" />
-            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1230058635893">
-              <property name="isLastPosition" value="true" />
-              <property name="cellId" value="property_value" />
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236015268188" />
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1236015602351">
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236015602353" />
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1236015818402">
+              <property name="value" value="false" />
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1236015825218">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236015825219">
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1236015830858">
+                <property name="isLastPosition" value="true" />
+                <property name="cellId" value="Constant_6577_0" />
+              </node>
             </node>
           </node>
         </node>
@@ -580,7 +591,33 @@
     </node>
     <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635894">
       <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1230058635895">
-        <property name="keys" value="true" />
+        <property name="keys" value="iftrue" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236015297885">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236015297886">
+          <property name="keycode" value="VK_DOWN" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236015309615">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236015309616">
+          <property name="keycode" value="VK_DOWN" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1236015608243">
+        <property name="keys" value="else iffalse" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236015840233">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236015840234">
+          <property name="keycode" value="VK_DOWN" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236015840236">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236015840237">
+          <property name="keycode" value="VK_DOWN" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1236015848046">
+        <property name="keys" value="else {" />
       </node>
     </node>
   </node>
