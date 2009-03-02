@@ -13,18 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.style;
 
-import java.awt.*;
-import java.text.AttributedCharacterIterator.Attribute;
-import java.util.Map;
 
-/**
- * @author Kostik
- */
-public class MPSFonts {
-  public static final int BOLD = Font.BOLD;
-  public static final int ITALIC = Font.ITALIC;
-  public static final int BOLD_ITALIC = Font.BOLD | Font.ITALIC;
-  public static final int PLAIN = Font.PLAIN;
+public enum CellAlign {
+  LEFT,
+  RIGHT,
+  CENTER
 }

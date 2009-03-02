@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.CellAlign;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.Font;
@@ -92,6 +93,20 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       int delta = braceIndent - indent;
       width = Math.max(width, lastCellWidth + delta);
     }
+    
+    for (EditorCell editorCell : cells) {
+      int cellX = editorCell.getX();
+      int cellY = editorCell.getY();
+      int newCellX = cellX;
+      CellAlign cellAlign = editorCells.getStyle().get(StyleAttributes.HORIZONTAL_ALIGN);
+      if (cellAlign == CellAlign.CENTER) {
+        newCellX = cellX + (width - editorCell.getWidth()) / 2;
+      } else if (cellAlign == CellAlign.RIGHT) {
+        newCellX = cellX + width - editorCell.getWidth();
+      }
+      if (newCellX != cellX) editorCell.moveTo(newCellX, cellY);
+    }
+
     editorCells.setArtificialBracesIndent(braceIndent);
     for (EditorCell editorCell : cells) {
       int cellX = editorCell.getX();

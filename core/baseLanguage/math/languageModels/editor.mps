@@ -70,9 +70,6 @@
             <property name="flag" value="false" />
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1235729178467">
-          <property name="flag" value="false" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1235729552302">
         <link role="relationDeclaration" targetNodeId="1.1235729199892" />

@@ -1065,6 +1065,10 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
   }
 
+  public static Object referenceMacro_GetReferent_1236002025123(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SPropertyOperations.getString_def(_context.getNode(), "align", "LEFT");
+  }
+
   public static boolean ifMacro_Condition_1168384460946(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "inspectedCellModel", true) != null;
   }

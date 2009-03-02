@@ -4013,5 +4013,42 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235999440492">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="HorizontalAlign" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235999512654">
+      <property name="value" value="hirizontal-align" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1235999557292">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1235999566301">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.HORIZONTAL_ALIGN" resolveInfo="HORIZONTAL_ALIGN" />
+      </node>
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1235999920262">
+      <property name="name" value="align" />
+      <link role="dataType" targetNodeId="1235999709834" resolveInfo="AlignEnum" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1235999709834">
+    <property name="name" value="AlignEnum" />
+    <link role="memberDataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    <link role="defaultMember" targetNodeId="1235999709835" />
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1235999709835">
+      <property name="externalValue" value="left" />
+      <property name="internalValue" value="LEFT" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1235999738057">
+      <property name="externalValue" value="rigth" />
+      <property name="internalValue" value="RIGHT" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1235999744266">
+      <property name="externalValue" value="center" />
+      <property name="internalValue" value="CENTER" />
+    </node>
+  </node>
 </model>
 
