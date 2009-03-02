@@ -75,10 +75,11 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
   }
 
   private void addGaps(EditorCell_Collection editorCells, int i) {
-    int gap = getHrizontalGap(editorCells);
+    int gap = getHorizontalGap(editorCells);
     EditorCell currentCell = editorCells.getCells()[i];
 
-    if (currentCell instanceof EditorCell_Collection && ((EditorCell_Collection)currentCell).getCellLayout() instanceof CellLayout_Horizontal) {
+    if (currentCell instanceof EditorCell_Collection &&
+          (((EditorCell_Collection)currentCell).getCellLayout() instanceof CellLayout_Horizontal || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))) {      
       return;
     }
 
@@ -148,7 +149,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     return cell.getFirstLeaf().getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
   }
 
-  private int getHrizontalGap(EditorCell_Collection editorCells) {
+  private int getHorizontalGap(EditorCell_Collection editorCells) {
     Padding padding = editorCells.getStyle().get(StyleAttributes.HORIZONTAL_GAP);
     if (padding.getType() == Measure.PIXELS) {
       return (int)padding.getValue();
