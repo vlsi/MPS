@@ -17,6 +17,8 @@ package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.logging.Logger;
@@ -38,6 +40,7 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
 
   private static final String FINDERS = "finders";
   private static final String FINDER = "finder";
+  private static final String FINDER_REF = "finder_ref";
   private static final String CLASS_NAME = "class_name";
 
   @NotNull
@@ -85,6 +88,9 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
       if (finderClass != null) {
         try {
           IFinder finder = (IFinder) finderClass.newInstance();
+          if (finder instanceof GeneratedFinder){
+            finder = new ReloadableFinder(l.getModuleReference(),(GeneratedFinder)finder); 
+          }
           finders.add(finder);
         } catch (Throwable t) {
           LOG.error(t);

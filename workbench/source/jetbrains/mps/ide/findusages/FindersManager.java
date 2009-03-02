@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.lang.findUsages.structure.FinderDeclaration;
 import jetbrains.mps.logging.Logger;
@@ -27,6 +28,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -68,11 +70,11 @@ public class FindersManager implements ApplicationComponent {
   public void disposeComponent() {
   }
 
-  public Set<GeneratedFinder> getAvailableFinders(final SNode node) {
+  public Set<ReloadableFinder> getAvailableFinders(final SNode node) {
     return
-      (Set<GeneratedFinder>) ModelAccess.instance().runReadAction(new Computable<Object>() {
-        public Object compute() {
-          Set<GeneratedFinder> result = new HashSet<GeneratedFinder>();
+      ModelAccess.instance().runReadAction(new Computable<Set<ReloadableFinder>>() {
+        public Set<ReloadableFinder> compute() {
+          Set<ReloadableFinder> result = new HashSet<ReloadableFinder>();
 
           for (String conceptFQName : myFinders.keySet()) {
             if (node.isInstanceOfConcept(conceptFQName)) {
@@ -80,7 +82,7 @@ public class FindersManager implements ApplicationComponent {
                 try {
                   if (finder.isVisible(node)) {
                     if (finder.isApplicable(node)) {
-                      result.add(finder);
+                      result.add(new ReloadableFinder(getFinderModule(finder),finder));
                     }
                   }
                 } catch (Throwable t) {
@@ -89,27 +91,31 @@ public class FindersManager implements ApplicationComponent {
               }
             }
           }
-          return Collections.unmodifiableSet(result);
+          return (Set<ReloadableFinder>)Collections.unmodifiableSet(result);
         }
       });
   }
 
-  public IInterfacedFinder getFinderByClassName(String className) {
+  public ReloadableFinder getFinderByClassName(String className) {
     for (Set<GeneratedFinder> finders : myFinders.values()) {
-      for (IInterfacedFinder finder : finders) {
+      for (GeneratedFinder finder : finders) {
         if (finder.getClass().getName().equals(className)) {
-          return finder;
+          return new ReloadableFinder(getFinderModule(finder),finder);
         }
       }
     }
     return null;
   }
 
+  public SNode getNodeByFinder(ReloadableFinder finder) {
+    return myNodesByFinder.get(finder.getFinder());
+  }
+
   public SNode getNodeByFinder(GeneratedFinder finder) {
     return myNodesByFinder.get(finder);
   }
 
-  public void load() {
+  private void load() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
@@ -151,5 +157,12 @@ public class FindersManager implements ApplicationComponent {
         myNodesByFinder.clear();
       }
     });
+  }
+
+  private ModuleReference getFinderModule(GeneratedFinder finder) {
+    SModelDescriptor finderModel = myNodesByFinder.get(finder).getModel().getModelDescriptor();
+    Language finderLanguage = Language.getLanguageForLanguageAspect(finderModel);
+    ModuleReference moduleReference = finderLanguage.getModuleReference();
+    return moduleReference;
   }
 }

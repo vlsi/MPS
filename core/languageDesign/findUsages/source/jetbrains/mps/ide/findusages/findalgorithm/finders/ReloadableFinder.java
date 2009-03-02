@@ -14,7 +14,7 @@ import java.lang.ref.WeakReference;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 
-public class ReloadableFinder implements IInterfacedFinder{
+public class ReloadableFinder implements IInterfacedFinder {
   private static Logger LOG = Logger.getLogger(ReloadableFinder.class);
 
   private ModuleReference myModuleRef;
@@ -26,12 +26,18 @@ public class ReloadableFinder implements IInterfacedFinder{
     myFinderClass = finderClass;
   }
 
-  public GeneratedFinder getFinder(){
-    if (myFinder.get()==null){
+  public ReloadableFinder(ModuleReference moduleReference, GeneratedFinder finder) {
+    myModuleRef = moduleReference;
+    myFinderClass = finder.getClass().getName();
+    myFinder = new WeakReference<GeneratedFinder>(finder);
+  }
+
+  public GeneratedFinder getFinder() {
+    if (myFinder.get() == null) {
       IModule module = MPSModuleRepository.getInstance().getModule(myModuleRef);
-      if (module==null) return null;
+      if (module == null) return null;
       Class finderClass = module.getClass(myFinderClass);
-      if (finderClass==null) return null;
+      if (finderClass == null) return null;
       Object finder = null;
       try {
         finder = finderClass.newInstance();
@@ -42,56 +48,56 @@ public class ReloadableFinder implements IInterfacedFinder{
         LOG.error(e);
         return null;
       }
-      myFinder=new WeakReference(finder);
+      myFinder = new WeakReference(finder);
     }
     return myFinder.get();
   }
 
   public String getConcept() {
     GeneratedFinder finder = getFinder();
-    if (finder==null) return "";
+    if (finder == null) return "";
     return finder.getConcept();
   }
 
   public boolean isApplicable(SNode node) {
     GeneratedFinder finder = getFinder();
-    if (finder==null) return false;
+    if (finder == null) return false;
     return finder.isApplicable(node);
   }
 
   public boolean isVisible(SNode node) {
     GeneratedFinder finder = getFinder();
-    if (finder==null) return false;
+    if (finder == null) return false;
     return finder.isVisible(node);
   }
 
   public String getDescription() {
     GeneratedFinder finder = getFinder();
-    if (finder==null) return "";
+    if (finder == null) return "";
     return finder.getDescription();
   }
 
   public String getLongDescription() {
     GeneratedFinder finder = getFinder();
-    if (finder==null) return "";
+    if (finder == null) return "";
     return finder.getLongDescription();
   }
 
   public boolean canNavigate() {
     GeneratedFinder finder = getFinder();
-    if (finder==null) return false;
+    if (finder == null) return false;
     return finder.canNavigate();
   }
 
   public SNode getNodeToNavigate() {
     GeneratedFinder finder = getFinder();
-    if (finder==null) return null;
+    if (finder == null) return null;
     return finder.getNodeToNavigate();
   }
 
   public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator) {
     GeneratedFinder finder = getFinder();
-    if (finder==null) return new SearchResults();
-    return finder.find(query,indicator);
+    if (finder == null) return new SearchResults();
+    return finder.find(query, indicator);
   }
 }

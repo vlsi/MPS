@@ -28,6 +28,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
@@ -118,10 +119,11 @@ public class FinderNode extends BaseLeaf {
       Element finderXML = element.getChild(GENERATED_FINDER);
       String finderName = finderXML.getAttribute(CLASS_NAME).getValue();
       try {
-        for (Language l : project.getProjectLanguages()) {
+        //todo make it faster by saving language namespace
+        for (Language l : GlobalScope.getInstance().getVisibleLanguages()) {
           if (l.getClass(finderName) != null) {
             myFinder = new ReloadableFinder(l.getModuleReference(), finderName);
-            break;
+            return;
           }
         }
         throw new CantLoadSomethingException("Can't find finder " + finderName);

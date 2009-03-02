@@ -18,6 +18,7 @@ package jetbrains.mps.ide.findusages.view.optionseditor.components;
 import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.smodel.SNode;
 
@@ -44,34 +45,34 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
         BorderFactory.createTitledBorder("Finders"),
         BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
-    Set<GeneratedFinder> availableFinders = FindersManager.getInstance().getAvailableFinders(node);
+    Set<ReloadableFinder> availableFinders = FindersManager.getInstance().getAvailableFinders(node);
 
-    List<GeneratedFinder> sortedFinders = new ArrayList<GeneratedFinder>(availableFinders);
-    Collections.sort(sortedFinders, new Comparator<IInterfacedFinder>() {
-      public int compare(IInterfacedFinder o1, IInterfacedFinder o2) {
+    List<ReloadableFinder> sortedFinders = new ArrayList<ReloadableFinder>(availableFinders);
+    Collections.sort(sortedFinders, new Comparator<ReloadableFinder>() {
+      public int compare(ReloadableFinder o1, ReloadableFinder o2) {
         return o1.getDescription().compareToIgnoreCase(o2.getDescription());
       }
     });
 
     List<String> correctEnabledFinders = new ArrayList<String>();
 
-    for (final IInterfacedFinder finder : sortedFinders) {
+    for (final ReloadableFinder finder : sortedFinders) {
       boolean isEnabled = false;
 
       for (String enabledFinderName : myOptions.getFindersClassNames()) {
-        if (enabledFinderName.equals(finder.getClass().getName())) {
+        if (enabledFinderName.equals(finder.getFinder().getClass().getName())) {
           isEnabled = true;
         }
       }
 
       if (isEnabled) {
-        correctEnabledFinders.add(finder.getClass().getName());
+        correctEnabledFinders.add(finder.getFinder().getClass().getName());
       }
 
-      JCheckBox finderCheckBox = new JCheckBox(finder.getDescription(), isEnabled);
+      JCheckBox finderCheckBox = new JCheckBox(finder.getFinder().getDescription(), isEnabled);
       finderCheckBox.addChangeListener(new ChangeListener() {
         public void stateChanged(ChangeEvent e) {
-          String finderClassName = finder.getClass().getName();
+          String finderClassName = finder.getFinder().getClass().getName();
           if (((JCheckBox) e.getSource()).isSelected()) {
             if (!myOptions.getFindersClassNames().contains(finderClassName)) {
               myOptions.getFindersClassNames().add(finderClassName);
@@ -88,7 +89,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
         public void keyPressed(KeyEvent e) {
           if ((e.getKeyCode() == MenuKeyEvent.VK_B) && (e.getID() == MenuKeyEvent.KEY_PRESSED) && (e.isControlDown())) {
             if (finder.canNavigate()){
-              goToFinder((GeneratedFinder) finder);
+              goToFinder(finder);
               e.consume();
             }
           }
@@ -101,7 +102,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
       goToFinderButton.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
           if (finder.canNavigate()){
-            goToFinder((GeneratedFinder) finder);
+            goToFinder(finder);
           }
         }
       });
@@ -125,7 +126,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
     myOptions.setFindersClassNames(correctEnabledFinders);
   }
 
-  public abstract void goToFinder(GeneratedFinder finder);
+  public abstract void goToFinder(ReloadableFinder finder);
 
   protected void findersListChangedByUser() {
 

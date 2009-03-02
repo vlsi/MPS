@@ -19,6 +19,7 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEditor;
@@ -130,8 +131,9 @@ public class FindUsagesDialog extends BaseDialog {
       myProject = project;
     }
 
-    public void goToFinder(final GeneratedFinder finder) {
+    public void goToFinder(final ReloadableFinder finder) {
       SNode finderNode = finder.getNodeToNavigate();
+      if (finderNode==null) return;
       FindUsagesDialog.this.onCancel();
       myProject.getComponentSafe(MPSEditorOpener.class).openNode(finderNode);
     }
