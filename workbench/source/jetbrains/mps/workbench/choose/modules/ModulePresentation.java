@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.choose.modules;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
+import jetbrains.mps.smodel.Generator;
 
 import javax.swing.Icon;
 
@@ -32,6 +33,9 @@ public class ModulePresentation extends BasePresentation {
 
   @NotNull
   public String doGetPresentableText() {
+    if (myModule instanceof Generator){
+      return ((Generator)myModule).getAlias();
+    }
     return myModule.getModuleUID();
   }
 
