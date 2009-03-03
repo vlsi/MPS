@@ -510,12 +510,10 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5704_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5704_2");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.POSITION, "next-line");
         }
 
@@ -563,7 +561,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5704_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5704_6");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Component_5704_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -646,6 +644,15 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5704_9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5704_9");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Indent_5704_0(EditorCell editorCell, SNode node, EditorContext context) {

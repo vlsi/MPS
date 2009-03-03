@@ -235,11 +235,13 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       }
 
       if (target == null) return false;
+      /*
       if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
           return target.getSNode().isAncestorOf(selectedCell.getSNode());
         }
       })) return false;
+      */
 
       return target.executeAction(CellActionType.DELETE);
     }

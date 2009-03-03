@@ -647,11 +647,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1754_10(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1754_10");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
         }

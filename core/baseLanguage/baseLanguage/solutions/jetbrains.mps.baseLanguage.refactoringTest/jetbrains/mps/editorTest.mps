@@ -2334,5 +2334,98 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1236090523881">
+    <property name="package" value="sideDelete" />
+    <property name="name" value="SideDeleteAtEndWhithBackSpace" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1236090550299">
+      <property name="name" value="Clazz" />
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236090580737">
+        <property name="name" value="method" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236090580738" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236090580739" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236090580740" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236090550300" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1236090550301">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236090550302" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236090550303" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236090550304">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1236090559940">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236090559942" />
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1236090577715">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236090577850">
+                <property name="value" value="0" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1236090570024">
+                <link role="variableDeclaration" targetNodeId="1236090565605" resolveInfo="t" />
+              </node>
+            </node>
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1236090602519">
+              <property name="isLastPosition" value="true" />
+              <property name="cellId" value="Constant_1754_10" />
+            </node>
+          </node>
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1236090565605">
+          <property name="name" value="t" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1236090565606" />
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1236090557432">
+      <property name="name" value="Clazz" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236090557433" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1236090557434">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236090557435" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236090557436" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236090557437" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1236090594955">
+          <property name="name" value="t" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1236090594956" />
+        </node>
+      </node>
+      <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1236092827549">
+        <property name="isLastPosition" value="true" />
+        <property name="cellId" value="Constant_8372_4" />
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236090613501">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236090613502">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236090613503">
+          <property name="keycode" value="VK_BACK_SPACE" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236090646490">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236090646491">
+          <property name="keycode" value="VK_DOWN" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236090661518">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236090661519">
+          <property name="keycode" value="VK_DOWN" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236090662719">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236090662720">
+          <property name="keycode" value="VK_DOWN" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236090664947">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236090664948">
+          <property name="keycode" value="VK_DOWN" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236090672431">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236090672432">
+          <property name="keycode" value="VK_DOWN" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236090706857">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236090706858">
+          <property name="keycode" value="VK_BACK_SPACE" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
