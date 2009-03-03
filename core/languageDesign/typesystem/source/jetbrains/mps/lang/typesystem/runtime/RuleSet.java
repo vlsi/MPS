@@ -36,7 +36,7 @@ import java.util.HashSet;
  * Time: 18:55:53
  * To change this template use File | Settings | File Templates.
  */
-public class RuleSet<T extends Rule_Runtime> {
+public class RuleSet<T extends IApplicableToConcept> {
   Map<AbstractConceptDeclaration, Set<T>> myRules = new HashMap<AbstractConceptDeclaration, Set<T>>();
 
   public void addRuleSetItem(Set<T> rules) {

@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SNode;
  * Time: 13:54:10
  * To change this template use File | Settings | File Templates.
  */
-public interface Rule_Runtime {
+public interface Rule_Runtime extends IApplicableToConcept {
   boolean isApplicable(SNode argument);
-  String getApplicableConceptFQName();
 }

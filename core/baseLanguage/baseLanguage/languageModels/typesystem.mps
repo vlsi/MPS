@@ -17020,7 +17020,26 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule" id="1236084661637">
     <node role="function" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction" id="1236084661641">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236084661642" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236084661642">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236094059411">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1236094066449">
+            <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1236094067972">
+              <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1236094067973">
+                <link role="concept" targetNodeId="1.1070534370425" resolveInfo="IntegerType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="operationConcept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1236094039054">
+      <link role="concept" targetNodeId="1.1068581242875" resolveInfo="PlusExpression" />
+    </node>
+    <node role="leftOperandConcept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1236094043748">
+      <link role="concept" targetNodeId="1.1070534370425" resolveInfo="IntegerType" />
+    </node>
+    <node role="rightOperandConcept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1236094051660">
+      <link role="concept" targetNodeId="1.1070534370425" resolveInfo="IntegerType" />
     </node>
   </node>
 </model>

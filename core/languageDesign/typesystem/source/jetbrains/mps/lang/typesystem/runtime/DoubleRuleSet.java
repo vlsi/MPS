@@ -34,7 +34,7 @@ import java.util.HashSet;
  * Time: 18:10:13
  * To change this template use File | Settings | File Templates.
  */
-public class DoubleRuleSet<T extends IRuleWithTwoApplicableNodes> {
+public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
   Map<Pair<AbstractConceptDeclaration, AbstractConceptDeclaration>, Set<T>> myRules =
           new HashMap<Pair<AbstractConceptDeclaration, AbstractConceptDeclaration>, Set<T>>();
 

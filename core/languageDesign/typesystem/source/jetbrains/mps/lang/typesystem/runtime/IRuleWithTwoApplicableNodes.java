@@ -24,9 +24,7 @@ import jetbrains.mps.smodel.SNode;
  * Time: 15:47:47
  * To change this template use File | Settings | File Templates.
  */
-public interface IRuleWithTwoApplicableNodes {
+public interface IRuleWithTwoApplicableNodes extends IApplicableTo2Concepts {
   public boolean isApplicable1(SNode node);
   public boolean isApplicable2(SNode node);
-  public String getApplicableConceptFQName1();
-  public String getApplicableConceptFQName2();
 }
