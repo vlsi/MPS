@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.util;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class PairMap<K1, K2, V> {
-  private Map<K1, Map<K2, V>> myMap = new HashMap<K1, Map<K2,V>>();
+  private Map<K1, Map<K2, V>> myMap = new HashMap<K1, Map<K2, V>>();
 
   public void put(K1 k1, K2 k2, V v) {
     Map<K2, V> map = myMap.get(k1);
     if (map == null) {
-      map = new HashMap<K2,V>(1);
+      map = new HashMap<K2, V>(1);
       myMap.put(k1, map);
     }
     map.put(k2, v);

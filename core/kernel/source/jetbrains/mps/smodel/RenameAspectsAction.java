@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.refactoring.renameModel.ModelRenamer;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.refactoring.renameModel.ModelRenamer;
+import jetbrains.mps.workbench.action.BaseAction;
 
 public class RenameAspectsAction extends BaseAction {
   public RenameAspectsAction() {

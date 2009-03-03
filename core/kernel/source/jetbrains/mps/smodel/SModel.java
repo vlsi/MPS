@@ -25,7 +25,9 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -268,7 +270,7 @@ public class SModel implements Iterable<SNode> {
 
   public boolean isLoading() {
     return myLoading;
-  }    
+  }
 
   public SModelDescriptor getModelDescriptor() {
     return SModelRepository.getInstance().getModelDescriptor(this);
@@ -908,7 +910,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public Set<SModelReference> getDependenciesModelUIDs() {
-    Set<SModelReference> result = new HashSet<SModelReference>();    
+    Set<SModelReference> result = new HashSet<SModelReference>();
     for (SModelDescriptor sm : getDependenciesModels()) {
       result.add(sm.getSModelReference());
     }

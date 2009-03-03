@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.SNode;
 
 /**
  * Igor Alshannikov

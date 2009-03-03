@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.vcs.diff.changes.NewNodeChange;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 
 public class SetNodeChange extends NewNodeChange {
   public SetNodeChange(String nodeType, SNodeId nodeId, String role, SNodeId parentId) {
@@ -48,7 +50,7 @@ public class SetNodeChange extends NewNodeChange {
       if (pc != n) {
         parent.removeChild(pc);
       }
-    }        
+    }
   }
 
 }

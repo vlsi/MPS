@@ -16,10 +16,9 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.smodel.SModelReference;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ModuleDescriptor {
   private String myUUID;
@@ -37,7 +36,7 @@ public class ModuleDescriptor {
   public ModuleDescriptor() {
     myModelRoots = new ArrayList<ModelRoot>();
     myDependencies = new ArrayList<Dependency>();
-    myUsedLanguages  = new ArrayList<ModuleReference>();
+    myUsedLanguages = new ArrayList<ModuleReference>();
     myUsedDevkits = new ArrayList<ModuleReference>();
     myClassPaths = new ArrayList<ClassPathEntry>();
     mySourcePaths = new ArrayList<String>();

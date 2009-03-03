@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.util.WeakSet;
 
 /**
  * Unregistered nodes can be used in some component, for example in undo. If they have
@@ -38,7 +37,7 @@ class UnregisteredNodesWithAdapters {
     ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
       public void onReload() {
         for (SNode node : myNodes) {
-          node.clearAdapters();          
+          node.clearAdapters();
         }
         myNodes.clear();
       }

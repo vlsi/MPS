@@ -15,42 +15,41 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
-import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.keymap.KeymapManager;
+import com.intellij.ide.TreeExpander;
 import com.intellij.ide.actions.CollapseAllToolbarAction;
 import com.intellij.ide.actions.ExpandAllToolbarAction;
-import com.intellij.ide.TreeExpander;
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.keymap.KeymapManager;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.vcs.diff.*;
+import jetbrains.mps.vcs.diff.DiffBuilder;
 import jetbrains.mps.vcs.diff.changes.*;
-import jetbrains.mps.project.StandaloneMPSContext;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.MPSProjectHolder;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import org.jetbrains.annotations.NotNull;
 
 class ModelDifferenceComponent extends JPanel {
   private MPSTree myModelTree = new MyMPSTree();

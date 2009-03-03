@@ -15,23 +15,20 @@
  */
 package jetbrains.mps.findUsages.caches;
 
+import com.intellij.ide.startup.FileSystemSynchronizer;
+import com.intellij.ide.startup.StartupManagerEx;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileSystem;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.roots.ContentIterator;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.IndexableFileSet;
-import com.intellij.ide.startup.StartupManagerEx;
-import com.intellij.ide.startup.FileSystemSynchronizer;
+import jetbrains.mps.make.StartupModuleMaker;
+import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.Set;
-
-import jetbrains.mps.util.misc.hash.HashSet;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.make.StartupModuleMaker;
 
 
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
@@ -87,8 +84,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
       for (VirtualFile child : file.getChildren()) {
         iterateIndexableFilesIn(child, iterator);
       }
-    }
-    else {
+    } else {
       iterator.processFile(file);
     }
   }

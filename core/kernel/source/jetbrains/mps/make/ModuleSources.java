@@ -16,15 +16,15 @@
 package jetbrains.mps.make;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 
 import java.util.*;
 
 public class ModuleSources {
   private IModule myModule;
-  private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();    
+  private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();
   private Map<String, ResourceFile> myResourceFiles = new HashMap<String, ResourceFile>();
 
   private Set<IFile> myFilesToDelete = new HashSet<IFile>();
@@ -115,7 +115,7 @@ public class ModuleSources {
           JavaFile javaFile = myJavaFiles.get(fqName);
           if (javaFile == null) {
             myFilesToDelete.add(file);
-          } else if (javaFile.getFile().lastModified() < file.lastModified())   {
+          } else if (javaFile.getFile().lastModified() < file.lastModified()) {
             myFilesToCompile.remove(javaFile);
           }
         }

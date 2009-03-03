@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.UUID;
 
 public abstract class SModelId {

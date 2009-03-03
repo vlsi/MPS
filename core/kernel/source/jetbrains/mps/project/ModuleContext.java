@@ -17,8 +17,8 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -73,7 +73,7 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   @Nullable
-  public static ModuleContext create(final SNode node, MPSProject project,boolean askIfMany) {
+  public static ModuleContext create(final SNode node, MPSProject project, boolean askIfMany) {
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       public SModel compute() {
         return node.getModel();

@@ -18,11 +18,12 @@ package jetbrains.mps.smodel.constraints;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -31,7 +32,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -311,8 +311,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public INodePropertyValidator getNodePropertyValidator(final SNode node, @NotNull String propertyName) {
-    if(node == null) return null;
-    
+    if (node == null) return null;
+
     final StringBuilder builder = new StringBuilder();
     builder.append('#');
     builder.append(propertyName);
@@ -415,7 +415,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     myAddedLanguageNamespaces.remove(namespace);
   }
 
-  private void reloadAll() {                        
+  private void reloadAll() {
     myCanBeChildMethods.clear();
     myCanBeParentMethods.clear();
     myCanBeRootMethods.clear();

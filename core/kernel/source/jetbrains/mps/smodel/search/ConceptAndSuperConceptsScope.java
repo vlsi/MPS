@@ -15,21 +15,20 @@
  */
 package jetbrains.mps.smodel.search;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptProperty;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.intellij.openapi.util.Computable;
 
 /**
  * Igor Alshannikov
@@ -69,7 +68,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
     if (myTopConcept == null) return null;
     return NodeReadAccessCaster.runReadTransparentAction(new Computable<LinkDeclaration>() {
       public LinkDeclaration compute() {
-        return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationByRole(role); 
+        return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationByRole(role);
       }
     });
   }

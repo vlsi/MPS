@@ -15,17 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
-import java.util.*;
-import java.util.HashMap;
-import java.util.HashSet;
-
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.misc.hash.*;
+
+import java.util.*;
 
 
 public class FastNodeFinder {
@@ -44,7 +40,7 @@ public class FastNodeFinder {
   }
 
   public void dispose() {
-    myModelDescriptor.removeModelListener(myListener);    
+    myModelDescriptor.removeModelListener(myListener);
   }
 
   private void initCache() {
@@ -188,13 +184,13 @@ public class FastNodeFinder {
         if (!myInitialized) return;
 
         addToCache(event.getRoot());
-      }      
+      }
     }
 
     public void rootRemoved(SModelRootEvent event) {
       synchronized (myLock) {
         if (!myInitialized) return;
-        
+
         removeFromCache(event.getRoot());
       }
     }

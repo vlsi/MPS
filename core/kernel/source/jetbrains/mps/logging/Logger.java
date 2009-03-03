@@ -15,17 +15,15 @@
  */
 package jetbrains.mps.logging;
 
-import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.Level;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.apache.log4j.Level;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.application.ApplicationManager;
 
 public class Logger {
   private static Map<String, Logger> ourLoggers = new HashMap<String, Logger>();

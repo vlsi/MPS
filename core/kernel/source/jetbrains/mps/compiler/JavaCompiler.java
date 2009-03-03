@@ -16,9 +16,8 @@
 package jetbrains.mps.compiler;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.AbstractClassLoader;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.vfs.MPSExtentions;
 import org.eclipse.jdt.internal.compiler.*;
 import org.eclipse.jdt.internal.compiler.Compiler;
@@ -27,7 +26,6 @@ import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
-import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -55,7 +53,7 @@ public class JavaCompiler {
     CompilerOptions options = new CompilerOptions();
     options.sourceLevel = ClassFileConstants.JDK1_5;
     options.targetJDK = ClassFileConstants.JDK1_5;
-    options.produceDebugAttributes = ClassFileConstants.ATTR_SOURCE | ClassFileConstants.ATTR_LINES | ClassFileConstants.ATTR_VARS;        
+    options.produceDebugAttributes = ClassFileConstants.ATTR_SOURCE | ClassFileConstants.ATTR_LINES | ClassFileConstants.ATTR_VARS;
 
     org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(), new MyErrorHandlingPolicy(), options, new MyCompilerRequestor(), new DefaultProblemFactory(), null);
     //c.options.verbose = true;
@@ -96,7 +94,7 @@ public class JavaCompiler {
         } catch (IOException e) {
           LOG.error(e);
         }
-     } else {
+      } else {
         LOG.warning("WARNING : Class to be put has a wrong package");
       }
     }

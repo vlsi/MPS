@@ -15,15 +15,18 @@
  */
 package jetbrains.mps.smodel.search;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Condition;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
-
-import com.intellij.openapi.util.Computable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Igor Alshannikov

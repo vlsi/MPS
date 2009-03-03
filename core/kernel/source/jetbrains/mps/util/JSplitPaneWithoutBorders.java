@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.util;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JComponent;
+import javax.swing.JSplitPane;
+import java.awt.Component;
 
 /**
  * @author Kostik

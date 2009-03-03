@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov

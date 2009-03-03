@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.make;
 
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.IFile;
 
 import java.io.IOException;
 

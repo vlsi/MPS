@@ -125,7 +125,7 @@ public class RuntimeEnvironment<T> {
         Set<RBundle> bundlesSet = new HashSet<RBundle>(Arrays.asList(bundles));
         for (RBundle<T> b : deps) {
           message += "bundle " + b + " depends on ";
-          for (T depName: b.getDependencies()) {
+          for (T depName : b.getDependencies()) {
             if (bundlesSet.contains(get(depName))) {
               message += depName + " ";
             }

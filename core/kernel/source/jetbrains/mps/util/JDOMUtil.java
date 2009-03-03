@@ -19,8 +19,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.JDOMException;
-import org.jdom.Element;
-import org.jdom.CDATA;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
@@ -36,7 +34,7 @@ public class JDOMUtil {
 
   public static Document loadDocument(IFile file) throws JDOMException, IOException {
     SAXBuilder saxBuilder = createBuilder();
-    try {            
+    try {
       return saxBuilder.build(new InputStreamReader(file.openInputStream(), ENCODING));
     } catch (JDOMException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
@@ -100,7 +98,7 @@ public class JDOMUtil {
   }
 
   public static void writeDocument(Document document, IFile file) throws IOException {
-    if(!file.getParent().exists()) {
+    if (!file.getParent().exists()) {
       file.getParent().mkdirs();
     }
 
@@ -118,13 +116,13 @@ public class JDOMUtil {
   }
 
   public static void writeDocument(Document document, File file) throws IOException {
-    if(!file.getParentFile().exists()) {
+    if (!file.getParentFile().exists()) {
       file.getParentFile().mkdirs();
     }
 
     if (!file.exists()) {
       file.createNewFile();
-    } 
+    }
 
     OutputStream stream = new BufferedOutputStream(new FileOutputStream(file));
     try {
@@ -205,7 +203,7 @@ break;
             break;
 // end Max patch
 
-          default :
+          default:
             entity = null;
             break;
         }
@@ -233,6 +231,7 @@ break;
       // the unmodified input string.
       return (buffer == null) ? str : buffer.toString();
     }
+
     public String escapeElementEntities(String str) {
       StringBuffer buffer;
       char ch;
@@ -257,7 +256,7 @@ break;
           case '&':
             entity = "&amp;";
             break;
-          default :
+          default:
             entity = null;
             break;
         }

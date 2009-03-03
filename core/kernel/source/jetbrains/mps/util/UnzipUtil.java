@@ -37,8 +37,8 @@ public class UnzipUtil {
         FileOutputStream output = new FileOutputStream(entryFile, false);
         byte[] b = new byte[512];
         int len;
-        while ((len=zipInput.read(b))!= -1) {
-          output.write(b,0,len);
+        while ((len = zipInput.read(b)) != -1) {
+          output.write(b, 0, len);
         }
         output.close();
       }

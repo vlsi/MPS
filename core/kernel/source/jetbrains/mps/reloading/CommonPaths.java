@@ -17,15 +17,14 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.FileSystemFile;
+import sun.misc.Launcher;
 
-import java.net.URL;
-import java.net.URISyntaxException;
 import java.io.File;
 import java.io.IOException;
-
-import sun.misc.Launcher;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 public class CommonPaths {
   private static Logger LOG = Logger.getLogger(CommonPaths.class);
@@ -211,7 +210,7 @@ public class CommonPaths {
 
   private static IClassPathItem getMPSKernelClassPath() {
     String supportClasses = PathManager.getHomePath() + File.separator + "core"
-            + File.separator + "kernel" + File.separator + "classes";
+      + File.separator + "kernel" + File.separator + "classes";
     if (new File(supportClasses).exists()) {
       return new FileClassPathItem(supportClasses);
     }
@@ -221,7 +220,7 @@ public class CommonPaths {
 
   private static IClassPathItem getMPSSupportClassPath() {
     String supportClasses = PathManager.getHomePath() + File.separator + "MPSPlugin"
-            + File.separator + "MPSSupport" + File.separator + "classes";
+      + File.separator + "MPSSupport" + File.separator + "classes";
     if (new File(supportClasses).exists()) {
       return new FileClassPathItem(supportClasses);
     }
@@ -231,7 +230,7 @@ public class CommonPaths {
 
   private static IClassPathItem getWorkbenchClassPath() {
     String workbenchClasses = PathManager.getHomePath() + File.separator + "workbench"
-            + File.separator + "classes";
+      + File.separator + "classes";
     if (new File(workbenchClasses).exists()) {
       return new FileClassPathItem(workbenchClasses);
     }
@@ -241,10 +240,10 @@ public class CommonPaths {
 
   private static IClassPathItem getSVNSupportClasspath() {
     String workbenchClasses = PathManager.getHomePath() + File.separator + "core"
-            + File.separator + "kernel"
-            + File.separator + "vcs"
-            + File.separator + "svn"
-            + File.separator + "classes";
+      + File.separator + "kernel"
+      + File.separator + "vcs"
+      + File.separator + "svn"
+      + File.separator + "classes";
     if (new File(workbenchClasses).exists()) {
       return new FileClassPathItem(workbenchClasses);
     }

@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.watching;
 
-import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.openapi.vfs.VirtualFileSystem;
+import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 
-public class VFileEventDecorator extends VFileEvent{
+public class VFileEventDecorator extends VFileEvent {
   private final String myPath;
   private final VFileEvent myEvent;
 
@@ -28,7 +28,7 @@ public class VFileEventDecorator extends VFileEvent{
     myPath = path;
   }
 
-  public VFileEvent undecorate(){
+  public VFileEvent undecorate() {
     return myEvent;
   }
 

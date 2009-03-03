@@ -17,9 +17,9 @@ package jetbrains.mps.smodel.persistence.def.v0;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
-import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.v0.externalResolve.ExternalResolver;
 import org.jdom.Element;
 
@@ -48,7 +48,7 @@ import org.jdom.Element;
     String resolveInfo = linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO);
     String attExtResolveInfo = linkElement.getAttributeValue(ModelPersistence.EXT_RESOLVE_INFO);
     String attTargetNodeId = linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
-    
+
     this.myUseUIDs = useUIDs;
     this.mySourceNode = sourceNode;
     this.myRole = role;
@@ -137,10 +137,10 @@ import org.jdom.Element;
 
     if (this.getExtResolveInfo() == null) {
       return new StaticReference(this.getRole(),
-              this.getSourceNode(),
+        this.getSourceNode(),
         importedModelReference,
-              SNodeId.fromString(this.getTargetId()),
-              this.getResolveInfo());
+        SNodeId.fromString(this.getTargetId()),
+        this.getResolveInfo());
     }
 
     String extResolveInfo = this.getExtResolveInfo();
@@ -148,10 +148,10 @@ import org.jdom.Element;
     SNodeId targetId = ERI2IDConverter.convert(this.getSourceNode(), this.getRole(), extResolveInfo);
     if (targetId != null) {
       return new StaticReference(this.getRole(),
-              this.getSourceNode(),
+        this.getSourceNode(),
         importedModelReference,
-              targetId,
-              resolveInfo);
+        targetId,
+        resolveInfo);
     }
 
     // couldn't convert
@@ -159,10 +159,10 @@ import org.jdom.Element;
       resolveInfo = this.getResolveInfo();
     }
     return new StaticReference(this.getRole(),
-            this.getSourceNode(),
+      this.getSourceNode(),
       importedModelReference,
-            null,
-            resolveInfo);
+      null,
+      resolveInfo);
   }
 
   public void createReferenceInModel(SModel model, VisibleModelElements visibleModelElements) {

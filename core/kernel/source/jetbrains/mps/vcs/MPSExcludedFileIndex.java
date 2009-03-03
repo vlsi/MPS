@@ -15,19 +15,10 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.vcs.impl.ExcludedFileIndex;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VfsUtil;
-import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.openapi.components.ServiceManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.vfs.IFile;
-
-import java.util.List;
+import com.intellij.openapi.vcs.impl.ExcludedFileIndex;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VirtualFile;
 
 public class MPSExcludedFileIndex extends ExcludedFileIndex {
   private final Project myProject;
@@ -50,7 +41,7 @@ public class MPSExcludedFileIndex extends ExcludedFileIndex {
   }
 
   public boolean isValidAncestor(VirtualFile baseDir, VirtualFile childDir) {
-    if (!baseDir.getFileSystem().equals(childDir.getFileSystem())){
+    if (!baseDir.getFileSystem().equals(childDir.getFileSystem())) {
       return false;
     }
 

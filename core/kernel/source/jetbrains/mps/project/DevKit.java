@@ -15,23 +15,24 @@
  */
 package jetbrains.mps.project;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.vfs.IFile;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
-
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class DevKit extends AbstractModule {
   private static Logger LOG = Logger.getLogger(DevKit.class);

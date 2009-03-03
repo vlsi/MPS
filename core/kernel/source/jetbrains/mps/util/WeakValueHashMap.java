@@ -26,16 +26,16 @@ package jetbrains.mps.util;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.HashMap;
 
-public class WeakValueHashMap<K,V> implements Map<K,V> {
+public class WeakValueHashMap<K, V> implements Map<K, V> {
 
-  private HashMap<K,MyReference<K,V>> myMap;
+  private HashMap<K, MyReference<K, V>> myMap;
   private ReferenceQueue<V> myQueue = new ReferenceQueue<V>();
 
-  private static class MyReference<K,T> extends WeakReference<T> {
+  private static class MyReference<K, T> extends WeakReference<T> {
     final K myKey;
 
     public MyReference(K key, T referent, ReferenceQueue<? super T> q) {
@@ -46,36 +46,36 @@ public class WeakValueHashMap<K,V> implements Map<K,V> {
 
   @SuppressWarnings({"UnusedDeclaration"})
   public WeakValueHashMap() {
-    myMap = new HashMap<K, MyReference<K,V>>();
+    myMap = new HashMap<K, MyReference<K, V>>();
   }
 
   private void processQueue() {
-    while(true){
-      MyReference<K, V> ref = (MyReference<K, V>)myQueue.poll();
+    while (true) {
+      MyReference<K, V> ref = (MyReference<K, V>) myQueue.poll();
       if (ref == null) {
         return;
       }
-      if (myMap.get(ref.myKey) == ref){
+      if (myMap.get(ref.myKey) == ref) {
         myMap.remove(ref.myKey);
       }
     }
   }
 
   public V get(Object key) {
-    MyReference<K,V> ref = myMap.get(key);
+    MyReference<K, V> ref = myMap.get(key);
     if (ref == null) return null;
     return ref.get();
   }
 
   public V put(K key, V value) {
     processQueue();
-    MyReference<K,V> oldRef = myMap.put(key, new MyReference<K,V>(key, value, myQueue));
+    MyReference<K, V> oldRef = myMap.put(key, new MyReference<K, V>(key, value, myQueue));
     return oldRef != null ? oldRef.get() : null;
   }
 
   public V remove(Object key) {
     processQueue();
-    MyReference<K,V> ref = myMap.remove(key);
+    MyReference<K, V> ref = myMap.remove(key);
     return ref != null ? ref.get() : null;
   }
 

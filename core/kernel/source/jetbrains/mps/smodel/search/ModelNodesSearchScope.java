@@ -18,10 +18,9 @@ package jetbrains.mps.smodel.search;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * author: Igor Alshannikov

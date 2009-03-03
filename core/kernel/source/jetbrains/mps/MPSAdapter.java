@@ -17,10 +17,7 @@ package jetbrains.mps;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileTypeManager;
-import com.intellij.openapi.fileTypes.StdFileTypes;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.nodeEditor.CaretBlinker;
-import jetbrains.mps.vfs.MPSExtentions;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 

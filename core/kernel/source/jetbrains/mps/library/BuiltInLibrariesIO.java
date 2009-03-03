@@ -15,19 +15,19 @@
  */
 package jetbrains.mps.library;
 
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.PathManager;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 
-import java.util.Map;
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
-import java.io.*;
-
-import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.Macros;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.logging.Logger;
+import java.util.List;
+import java.util.Map;
 
 public class BuiltInLibrariesIO {
   private static final Logger LOG = Logger.getLogger(BuiltInLibrariesIO.class);

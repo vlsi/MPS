@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.vfs.IFile;
 
 /**
  * Igor Alshannikov

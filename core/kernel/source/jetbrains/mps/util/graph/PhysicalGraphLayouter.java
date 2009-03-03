@@ -54,7 +54,7 @@ public class PhysicalGraphLayouter {
   }
 
   public double getForceConst() {
-    return 0.3/getTensionConst();
+    return 0.3 / getTensionConst();
   }
 
   private double getCurrentForceFactor() {
@@ -84,19 +84,19 @@ public class PhysicalGraphLayouter {
   }
 
   private void setBaricenter(IGraph graph, int baricenterx, int baricentery) {
-    Pair<Integer,Integer> baricenter = graph.getBaricenter();
+    Pair<Integer, Integer> baricenter = graph.getBaricenter();
     int deltax = baricenterx - baricenter.o1;
     int deltay = baricentery - baricenter.o2;
     for (IVertex vertex : graph.getVertices()) {
       double x = vertex.getX();
       double y = vertex.getY();
-      vertex.trySetCoords(x+deltax,y+deltay);
+      vertex.trySetCoords(x + deltax, y + deltay);
     }
   }
 
 
   private void relayoutPhysically(IGraph graph, int baricenterx, int baricentery) {
-    Map<IVertex,Pair<Double,Double>> forces = new HashMap<IVertex, Pair<Double, Double>>();
+    Map<IVertex, Pair<Double, Double>> forces = new HashMap<IVertex, Pair<Double, Double>>();
     Set<IVertex> vertices = graph.getVertices();
     final double ELECTRICITY_CONST = getCulonConst();
     final double IDLE_CONST = getIdleLength();
@@ -105,7 +105,7 @@ public class PhysicalGraphLayouter {
 
     // collect forces
     for (IVertex vertex : vertices) {
-      forces.put(vertex, new Pair<Double, Double>(0.0,0.0));
+      forces.put(vertex, new Pair<Double, Double>(0.0, 0.0));
     }
     for (IEdge edge : graph.getEdges()) {
       IVertex vertex1 = edge.getFirst();
@@ -116,8 +116,8 @@ public class PhysicalGraphLayouter {
         rawTension = rawTension * 5;
       }*/
       double tension = rawTension;
-      double forcex = ((vertex2.getX() - vertex1.getX())/dist)*tension;
-      double forcey = ((vertex2.getY() - vertex1.getY())/dist)*tension;
+      double forcex = ((vertex2.getX() - vertex1.getX()) / dist) * tension;
+      double forcey = ((vertex2.getY() - vertex1.getY()) / dist) * tension;
       Pair<Double, Double> force1 = forces.get(vertex1);
       Pair<Double, Double> force2 = forces.get(vertex2);
       force1.o1 = force1.o1 + forcex;
@@ -126,17 +126,17 @@ public class PhysicalGraphLayouter {
       force2.o2 = force2.o2 - forcey;
     }
     List<IVertex> verticesList = new ArrayList<IVertex>(vertices);
-    for(int i = 0; i<verticesList.size()-1; i++) {
-      for (int j=i+1; j<verticesList.size(); j++) {
+    for (int i = 0; i < verticesList.size() - 1; i++) {
+      for (int j = i + 1; j < verticesList.size(); j++) {
         IVertex vertex1 = verticesList.get(i);
         IVertex vertex2 = verticesList.get(j);
         double dist = distance(vertex1, vertex2);
-        double culon = ELECTRICITY_CONST/(dist*dist*dist*Math.signum(dist));
+        double culon = ELECTRICITY_CONST / (dist * dist * dist * Math.signum(dist));
         /*if (dist < (vertex1.getWidth() + vertex2.getWidth())/2) {
           culon = culon * 30;
         }*/
-        double forcex = ((vertex2.getX() - vertex1.getX())/dist)*culon;
-        double forcey = ((vertex2.getY() - vertex1.getY())/dist)*culon;
+        double forcex = ((vertex2.getX() - vertex1.getX()) / dist) * culon;
+        double forcey = ((vertex2.getY() - vertex1.getY()) / dist) * culon;
         Pair<Double, Double> force1 = forces.get(vertex1);
         Pair<Double, Double> force2 = forces.get(vertex2);
         force1.o1 = force1.o1 - forcex;
@@ -150,10 +150,10 @@ public class PhysicalGraphLayouter {
     for (IVertex vertex : vertices) {
       double x = vertex.getX();
       double y = vertex.getY();
-      Pair<Double,Double> force = forces.get(vertex);
+      Pair<Double, Double> force = forces.get(vertex);
       double deltax = force.o1 * FORCE;
       double deltay = force.o2 * FORCE;
-      vertex.trySetCoords(x+deltax,y+deltay);
+      vertex.trySetCoords(x + deltax, y + deltay);
     }
 
     //reposition
@@ -163,7 +163,7 @@ public class PhysicalGraphLayouter {
   private double distance(IVertex vertex1, IVertex vertex2) {
     double distx = vertex1.getX() - vertex2.getX();
     double disty = vertex1.getY() - vertex2.getY();
-    return Math.sqrt(distx*distx+disty*disty);
+    return Math.sqrt(distx * distx + disty * disty);
   }
 
   public void preliminaryLayout(IGraph graph, int baricenterx, int baricentery) {
@@ -180,7 +180,7 @@ public class PhysicalGraphLayouter {
     for (IVertex vertex : vertices) {
       double x = baricenterx + Math.cos(currentAngle) * radius;
       double y = baricentery + Math.sin(currentAngle) * radius;
-      vertex.trySetCoords(x,y);
+      vertex.trySetCoords(x, y);
       currentAngle = currentAngle + angle;
     }
   }
@@ -193,9 +193,9 @@ public class PhysicalGraphLayouter {
     preliminaryLayout(graph, baricenterx, baricentery);
     int iterationsCount = calculateIterationsCount(graph);
     resetCurrentForceFactor();
-    for (int i = 1; i<= iterationsCount; i++) {
+    for (int i = 1; i <= iterationsCount; i++) {
       relayoutPhysically(graph, baricenterx, baricentery);
-      setCurrentForceFactor(getCurrentForceFactor()*0.75);
+      setCurrentForceFactor(getCurrentForceFactor() * 0.75);
     }
     for (IVertex vertex : graph.getVertices()) {
       vertex.confirmCoords();

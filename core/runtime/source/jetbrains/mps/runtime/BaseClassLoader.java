@@ -45,7 +45,7 @@ abstract class BaseClassLoader extends ClassLoader {
 
     if (c == null) {
       c = loadBeforeCurrent(name);
-      
+
       if (c == null) {
         byte[] bytes = null;
         bytes = findClassBytes(name);

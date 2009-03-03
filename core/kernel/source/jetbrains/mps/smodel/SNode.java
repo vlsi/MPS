@@ -31,12 +31,11 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * User: Sergey Dmitriev
@@ -165,7 +164,7 @@ public final class SNode {
     return myModel;
   }
 
-  public boolean isModelLoading() {    
+  public boolean isModelLoading() {
     return myModel.isLoading();
   }
 

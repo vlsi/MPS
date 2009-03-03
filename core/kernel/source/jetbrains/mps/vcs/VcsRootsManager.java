@@ -17,24 +17,25 @@ package jetbrains.mps.vcs;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
-import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.ConcurrentHashSet;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
-
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.logging.Logger;
 
 public class VcsRootsManager implements ProjectComponent {
   private final static Logger LOG = Logger.getLogger(VcsRootsManager.class);

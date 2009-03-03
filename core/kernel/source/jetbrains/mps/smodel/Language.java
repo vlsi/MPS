@@ -16,28 +16,29 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.refactoring.structure.Refactoring;
-import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.Structure_Language;
+import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.*;
-import jetbrains.mps.lang.core.structure.Core_Language;
-import jetbrains.mps.library.LibraryManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -59,7 +60,9 @@ public class Language extends AbstractModule {
   private IClassPathItem myLanguageRuntimeClasspath;
 
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
-  private @Nullable Set<ILoggableRefactoring> myCachedRefactorings = null;
+  private
+  @Nullable
+  Set<ILoggableRefactoring> myCachedRefactorings = null;
 
   private List<Language> myAllExtendedLanguages = new ArrayList<Language>();
 
@@ -628,7 +631,7 @@ public class Language extends AbstractModule {
   }
 
   public void removeAccessoryModel(SModelDescriptor sm) {
-    Iterator<SModelReference> i =myLanguageDescriptor.getAccessoryModels().iterator();
+    Iterator<SModelReference> i = myLanguageDescriptor.getAccessoryModels().iterator();
     while (i.hasNext()) {
       SModelReference model = i.next();
       if (model.equals(sm.getSModelReference())) {

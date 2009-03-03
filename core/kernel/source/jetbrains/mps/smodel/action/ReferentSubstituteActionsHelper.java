@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
@@ -25,10 +25,10 @@ import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.util.Condition;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ArrayList;
 
 /*package*/ class ReferentSubstituteActionsHelper {
   private static final Logger LOG = Logger.getLogger(ReferentSubstituteActionsHelper.class);

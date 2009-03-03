@@ -15,19 +15,17 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.projectImport.ProjectOpenProcessor;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.projectImport.ProjectOpenProcessor;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.projectPane.Icons;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-
-public class MpsProjectOpenProcessor extends ProjectOpenProcessor{
+public class MpsProjectOpenProcessor extends ProjectOpenProcessor {
   public String getName() {
     return "MPS Project";  //To change body of implemented methods use File | Settings | File Templates.
   }

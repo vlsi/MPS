@@ -48,7 +48,7 @@ public class ModelRoot {
     myHandlerClass = handlerClass;
   }
 
-  public ModelRoot getCopy(){
+  public ModelRoot getCopy() {
     ModelRoot result = new ModelRoot();
     result.myPath = myPath;
     result.myPrefix = myPrefix;

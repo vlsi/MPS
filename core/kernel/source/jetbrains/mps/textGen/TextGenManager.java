@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.baseLanguage.textGen.BaseLangTextGen;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -38,7 +37,7 @@ public class TextGenManager {
   }
 
   public static TextGenManager instance() {
-    if(myInstance == null) {
+    if (myInstance == null) {
       myInstance = new TextGenManager();
     }
     return myInstance;
@@ -56,7 +55,7 @@ public class TextGenManager {
   }
 
   public void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, SNode contextNode) {
-    if(node == null) {
+    if (node == null) {
       buffer.append("???");
 
       if (contextNode != null) {
@@ -66,8 +65,8 @@ public class TextGenManager {
       return;
     }
 
-    SNodeTextGen nodeTextGen = loadNodeTextGen(context,  node);
-    if(nodeTextGen == null) {
+    SNodeTextGen nodeTextGen = loadNodeTextGen(context, node);
+    if (nodeTextGen == null) {
       LOG.error("couldn't find text generator for " + node.getDebugText(), node);
     }
     assert nodeTextGen != null;

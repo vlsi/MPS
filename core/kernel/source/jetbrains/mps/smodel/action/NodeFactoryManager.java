@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.lang.actions.behavior.NodeFactory_Behavior;
+import jetbrains.mps.lang.actions.structure.NodeFactories;
 import jetbrains.mps.lang.actions.structure.NodeFactory;
 import jetbrains.mps.lang.actions.structure.NodeSetupFunction;
-import jetbrains.mps.lang.actions.structure.NodeFactories;
-import jetbrains.mps.lang.actions.behavior.NodeFactory_Behavior;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
@@ -30,8 +32,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -107,9 +107,9 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
         List<NodeFactories> nodeFactoriesList = actionsModelDescriptor.getSModel().getRootsAdapters(NodeFactories.class);
         for (NodeFactories nodeFactoriesContainer : nodeFactoriesList) {
           for (NodeFactory nodeFactory : nodeFactoriesContainer.getNodeFactories()) {
-             if (nodeFactory.getApplicableConcept() == conceptF) {
-               nodeFactories.add(nodeFactory);
-             }
+            if (nodeFactory.getApplicableConcept() == conceptF) {
+              nodeFactories.add(nodeFactory);
+            }
           }
         }
       }

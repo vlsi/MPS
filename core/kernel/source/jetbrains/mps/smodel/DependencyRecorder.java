@@ -18,7 +18,9 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 import jetbrains.mps.util.ManyToManyMap;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class DependencyRecorder<T> {
   private ManyToManyMap<T, SNode> myObjectsToNodes = new ManyToManyMap<T, SNode>();

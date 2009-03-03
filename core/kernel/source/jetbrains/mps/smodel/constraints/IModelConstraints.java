@@ -21,5 +21,6 @@ package jetbrains.mps.smodel.constraints;
  */
 public interface IModelConstraints {
   void registerSelf(ModelConstraintsManager manager);
+
   void unRegisterSelf(ModelConstraintsManager manager);
 }

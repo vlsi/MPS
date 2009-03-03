@@ -16,17 +16,16 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.smodel.SModelReference;
+import org.jdom.Element;
 
-import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
-
-import org.jdom.Element;
+import java.util.Map;
 
 /**
  * Igor Alshannikov
-* Oct 9, 2007
-*/
+ * Oct 9, 2007
+ */
 public class VisibleModelElements {
   private Map<Integer, SModelReference> myVisibleModelElements = new HashMap<Integer, SModelReference>();
   private int myMaxVisibleModelIndex = 1;

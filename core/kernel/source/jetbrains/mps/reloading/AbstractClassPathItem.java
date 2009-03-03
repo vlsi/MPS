@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.reloading;
 
-import java.util.*;
+import java.util.Set;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
   public long getTimestamp() {

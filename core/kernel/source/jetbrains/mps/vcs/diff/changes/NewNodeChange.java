@@ -16,7 +16,6 @@
 package jetbrains.mps.vcs.diff.changes;
 
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.vcs.diff.changes.Change;
 
 public abstract class NewNodeChange extends Change {
   private String myConceptFqName;

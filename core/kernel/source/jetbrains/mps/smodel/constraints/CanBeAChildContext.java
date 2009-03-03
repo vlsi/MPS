@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 
 public class CanBeAChildContext {
   private SNode myParentNode;

@@ -15,30 +15,30 @@
  */
 package jetbrains.mps.vcs;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.application.ApplicationManager;
-
-import java.util.*;
-
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.util.misc.hash.HashMap;
-import jetbrains.mps.util.misc.hash.HashSet;
-import jetbrains.mps.smodel.ModuleRepositoryAdapter;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryAdapter;
+import jetbrains.mps.util.misc.hash.HashMap;
+import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
 
 public class GlobalClassPathIndex implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(GlobalClassPathIndex.class);
+
   public static GlobalClassPathIndex getInstance() {
     return ApplicationManager.getApplication().getComponent(GlobalClassPathIndex.class);
   }
@@ -68,7 +68,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   };
   private final CleanupListener myCleanupListener = new CleanupListener() {
     public void performCleanup() {
-      for (IModule module : myModuleRepository.getAllModules()){
+      for (IModule module : myModuleRepository.getAllModules()) {
         GlobalClassPathIndex.this.moduleInitialized(module);
       }
       if (myIsChanged) {
@@ -89,7 +89,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   }
 
   public void removeListener(ExclusionChangedListener l) {
-    myListeners.remove(l);  
+    myListeners.remove(l);
   }
 
   public GlobalClassPathIndex(final MPSModuleRepository moduleRepository, CleanupManager cleanupManager) {
@@ -133,7 +133,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       myClassPathIndex.put(classPathFile, modules);
     }
     if (!modules.contains(module)) {
-      modules.add(module);      
+      modules.add(module);
     }
     if (module.isClassPathExcluded(classPathFile.getPath()) && !myExcludedClassPath.contains(classPathFile)) {
       // should exclude classPath

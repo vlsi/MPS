@@ -15,30 +15,29 @@
  */
 package jetbrains.mps.vcs;
 
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.vfs.IFile;
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.changes.ChangeListAdapter;
+import com.intellij.openapi.vcs.changes.ChangeListManager;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.generator.CompilationListener;
+import jetbrains.mps.generator.GenerationListener;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.watching.ModelChangesWatcher.MetadataCreationListener;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.util.*;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.GenerationListener;
-import jetbrains.mps.generator.CompilationListener;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.*;
-import com.intellij.openapi.vcs.changes.*;
-import com.intellij.openapi.vfs.*;
-import com.intellij.openapi.components.ProjectComponent;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class MPSVCSManager implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSVCSManager.class);

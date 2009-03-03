@@ -35,7 +35,7 @@ public class RootReference {
     myPrefix = prefix;
   }
 
-  public RootReference getCopy(){
+  public RootReference getCopy() {
     RootReference result = new RootReference();
     result.myPath = myPath;
     result.myPrefix = myPrefix;

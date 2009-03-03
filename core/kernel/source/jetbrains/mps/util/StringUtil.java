@@ -35,16 +35,15 @@ public class StringUtil {
     String oldS1 = ignoreCase ? oldS.toLowerCase() : oldS;
     StringBuffer newText = null;
     int i = 0;
-    while (i < text1.length()){
+    while (i < text1.length()) {
       int i1 = text1.indexOf(oldS1, i);
-      if (i1 < 0){
+      if (i1 < 0) {
         if (i == 0) return text;
         newText.append(text.substring(i));
         break;
-      }
-      else{
+      } else {
         if (newS == null) return null;
-        if (newText == null){
+        if (newText == null) {
           newText = new StringBuffer();
         }
         newText.append(text.substring(i, i1));

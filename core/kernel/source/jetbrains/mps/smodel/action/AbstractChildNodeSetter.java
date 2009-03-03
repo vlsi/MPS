@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.

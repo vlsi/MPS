@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.util.containers.WeakList;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
@@ -35,12 +37,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 
 import java.util.*;
-
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileSystem;
-import com.intellij.util.containers.WeakList;
 
 public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private static final String VERSION = "version";
@@ -146,7 +142,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private void doPostLoadStuff() {
     myModelRootManager.updateAfterLoad(this);
     LOG.assertLog(mySModel != null, "Couldn't load model \"" + getSModelReference().getLongName() + "\"");
-           
+
     updateModelWithRefactorings();
 
     myDiskTimestamp = fileTimestamp();
@@ -163,7 +159,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       return;
     }
     boolean wasLoading = mySModel.setLoading(true);
-    try {      
+    try {
       for (SModelDescriptor modelDescriptor : mySModel.getDependenciesModels()) {
         playUsedModelDescriptorsRefactoring(modelDescriptor);
       }
@@ -330,7 +326,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     myModelRootManager.saveModel(this);
 
     myDiskTimestamp = fileTimestamp();
-    
+
     IFile modelFile = getModelFile();
     if (modelFile != null && !modelFile.isReadOnly()) {
       VFileSystem.refreshFileSynchronously(modelFile);

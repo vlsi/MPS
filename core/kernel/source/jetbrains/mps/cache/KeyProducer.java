@@ -41,7 +41,7 @@ public class KeyProducer {
       if (o == null || getClass() != o.getClass()) return false;
       Key key = (Key) o;
       return myProducerHashCode == key.myProducerHashCode &&
-              myInnerKey.equals(key.myInnerKey);
+        myInnerKey.equals(key.myInnerKey);
     }
 
     public int hashCode() {

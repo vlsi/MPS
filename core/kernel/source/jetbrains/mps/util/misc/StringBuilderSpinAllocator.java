@@ -39,7 +39,7 @@ public class StringBuilderSpinAllocator {
   }
 
   private static final SpinAllocator<StringBuilder> _allocator =
-      new SpinAllocator<StringBuilder>(new Creator(), new Disposer());
+    new SpinAllocator<StringBuilder>(new Creator(), new Disposer());
 
   public static StringBuilder alloc() {
     return _allocator.alloc();

@@ -15,20 +15,20 @@
  */
 package jetbrains.mps.datatransfer;
 
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 
 public class PasteWrappersManager implements ApplicationComponent {
 
@@ -92,7 +92,7 @@ public class PasteWrappersManager implements ApplicationComponent {
   }
 
   private void reload() {
-    myWrappers.clear();    
+    myWrappers.clear();
     for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
       try {
         String pasteWrappersClass = language.getNamespace() + "." + LanguageAspect.ACTIONS.getName() + "." + PASTE_WRAPPER_CLASS_NAME;

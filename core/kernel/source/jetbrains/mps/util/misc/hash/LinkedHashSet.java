@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.util.misc.hash;
 
-import java.util.*;
+import java.util.AbstractSet;
+import java.util.Iterator;
+import java.util.Set;
 
 public class LinkedHashSet<E> extends AbstractSet<E> implements Set<E> {
 

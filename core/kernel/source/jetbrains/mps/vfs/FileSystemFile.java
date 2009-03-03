@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.vfs;
 
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.vfs.VirtualFile;
 
 public class FileSystemFile implements IFile {
   private File myFile;
@@ -156,7 +155,7 @@ public class FileSystemFile implements IFile {
   }
 
   public VirtualFile toVirtualFile() {
-    return VFileSystem.getFile(this); 
+    return VFileSystem.getFile(this);
   }
 
   public long length() {

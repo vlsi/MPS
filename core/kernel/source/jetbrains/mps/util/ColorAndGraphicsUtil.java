@@ -52,7 +52,7 @@ public class ColorAndGraphicsUtil {
   }
 
   public static BasicStroke dottedStroke() {
-    float[] dash = new float[]{1.0f,3.0f};
+    float[] dash = new float[]{1.0f, 3.0f};
     return new BasicStroke(1.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1.0f, dash, 0.0f);
   }
 
@@ -78,7 +78,7 @@ public class ColorAndGraphicsUtil {
     g2d.setPaint(createPaintForLine(g.getColor()));
     g2d.fillRect(0, 0, xEnd - xStart + offset, WAVE_HEIGHT + 1);
     g2d.setPaint(oldPaint);
-  }                                                           
+  }
 
   public static void drawWaveOld(Graphics g, int xStart, int xEnd, int y) {
     int startSegment = xStart / WAVE_SEGMENT_LENGTH;
@@ -108,6 +108,6 @@ public class ColorAndGraphicsUtil {
 
   public static Point getCentralPosition(Component parent, Component component) {
     return new Point(parent.getX() + (parent.getWidth() - component.getWidth()) / 2,
-             parent.getY() + (parent.getHeight() - component.getHeight()) / 2);
+      parent.getY() + (parent.getHeight() - component.getHeight()) / 2);
   }
 }

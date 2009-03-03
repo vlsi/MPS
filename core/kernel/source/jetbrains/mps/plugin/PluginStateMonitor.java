@@ -21,7 +21,6 @@ import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.StatusBar;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.plugin.icons.Icons;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -165,7 +164,7 @@ public class PluginStateMonitor implements ProjectComponent {
       super(INITIAL_DELAY, listener);
     }
 
-    public void setNewDelay(int delay){
+    public void setNewDelay(int delay) {
       setDelay(delay);
       setInitialDelay(delay);
       restart();

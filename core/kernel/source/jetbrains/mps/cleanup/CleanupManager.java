@@ -15,18 +15,17 @@
  */
 package jetbrains.mps.cleanup;
 
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandAdapter;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.CommandEvent;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 import java.util.ArrayList;
-
-import jetbrains.mps.smodel.ModelAccess;
+import java.util.List;
 
 public class CleanupManager implements ApplicationComponent {
   public static CleanupManager getInstance() {

@@ -16,8 +16,6 @@
 package jetbrains.mps.util;
 
 import java.util.AbstractList;
-import java.util.Arrays;
-import java.lang.reflect.Array;
 
 public abstract class ArrayWrapper<T> extends AbstractList<T> {
   private T[] myArray;

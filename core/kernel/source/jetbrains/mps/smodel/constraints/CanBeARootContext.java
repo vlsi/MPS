@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 
 public class CanBeARootContext {

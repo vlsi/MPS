@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.util.misc.hash;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.Map;
 
 public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
 

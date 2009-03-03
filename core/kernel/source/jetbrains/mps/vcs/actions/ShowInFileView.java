@@ -15,18 +15,13 @@
  */
 package jetbrains.mps.vcs.actions;
 
-import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.actions.AbstractVcsAction;
 import com.intellij.openapi.vcs.actions.VcsContext;
-import com.intellij.pom.Navigatable;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView;
-import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 
 public class ShowInFileView extends AbstractShowInFileWiew {
 

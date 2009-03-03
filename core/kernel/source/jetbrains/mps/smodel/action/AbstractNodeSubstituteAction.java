@@ -15,21 +15,20 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.ide.ChooseItemComponent;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
@@ -86,6 +85,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   public String getDescriptionText(String pattern) {
     return getDescriptionText(pattern, false);
   }
+
   public Icon getIconFor(String pattern) {
     return getIconFor(pattern, false);
   }

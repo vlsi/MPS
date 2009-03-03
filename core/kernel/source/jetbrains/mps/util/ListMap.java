@@ -54,7 +54,7 @@ public class ListMap<K, V> extends AbstractMap<K, V> {
   public Set<Entry<K, V>> entrySet() {
     return new AbstractSet<Entry<K, V>>() {
       public Iterator<Entry<K, V>> iterator() {
-        return (Iterator<Entry<K,V>>) (Iterator) _entries().iterator();
+        return (Iterator<Entry<K, V>>) (Iterator) _entries().iterator();
       }
 
       public int size() {

@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.smodel.search;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-
-import java.util.*;
-
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Igor Alshannikov

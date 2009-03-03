@@ -15,18 +15,17 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.command.CommandAdapter;
+import com.intellij.openapi.command.CommandEvent;
+import com.intellij.openapi.command.CommandListener;
+import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 
-import java.util.*;
-import java.lang.reflect.Proxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-
-import com.intellij.openapi.command.CommandListener;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.CommandAdapter;
-import com.intellij.openapi.command.CommandEvent;
+import java.lang.reflect.Proxy;
+import java.util.*;
 
 public class EventsCollector {
   private static CommandListenersSupport ourListenersSupport = new CommandListenersSupport();
@@ -40,10 +39,10 @@ public class EventsCollector {
 
   private Runnable myCurrentCommand;
 
-  public EventsCollector() {    
+  public EventsCollector() {
     myCommandProcessor = CommandProcessor.getInstance();
     myCurrentCommand = myCommandProcessor.getCurrentCommand();
-    
+
     ourListenersSupport.addCommandListener(myCommandListener = new CommandAdapter() {
       public void commandStarted(CommandEvent event) {
         myEvents.clear();
@@ -58,9 +57,9 @@ public class EventsCollector {
   }
 
   private SModelListener createCommandEventsCollector() {
-    return (SModelListener) Proxy.newProxyInstance(    
+    return (SModelListener) Proxy.newProxyInstance(
       getClass().getClassLoader(),
-      new Class[] { SModelListener.class },
+      new Class[]{SModelListener.class},
       new InvocationHandler() {
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
           if (method.getName().equals("equals") && args.length == 1) {

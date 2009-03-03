@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.util.misc.hash;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.Map;
 
 public class IntHashMap<V> extends AbstractHashMap<Integer, V> implements Map<Integer, V> {
 

@@ -60,7 +60,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void projectOpened() {
     if (IdeMain.isTestMode()) return;
 
-    myMPSProject =myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    myMPSProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     try {
       IProjectHandler handler = myMPSProject.getProjectHandler();
       if (handler == null) {
@@ -132,7 +132,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showAspectMethodUsages(final String namespace, final String name) throws RemoteException {
-    SearchQuery searchQuery = new SearchQuery(new AspectMethodsHolder(namespace, name),GlobalScope.getInstance());
+    SearchQuery searchQuery = new SearchQuery(new AspectMethodsHolder(namespace, name), GlobalScope.getInstance());
     IFinder[] finders = new IFinder[]{new AspectMethodsFinder()};
     myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), searchQuery, false, true, false, "No usages for that method");
   }

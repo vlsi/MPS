@@ -15,17 +15,15 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
+import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
 
 import javax.swing.JComponent;
-import javax.swing.Action;
 import java.awt.Frame;
 import java.awt.HeadlessException;
-
-import com.intellij.openapi.actionSystem.AnAction;
 
 public class ModelDifferenceDialog extends BaseDialog {
 
@@ -36,7 +34,7 @@ public class ModelDifferenceDialog extends BaseDialog {
     setModal(modal);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myDifferenceComponent = new ModelDifferenceComponent(); 
+        myDifferenceComponent = new ModelDifferenceComponent();
         myDifferenceComponent.showDifference(oldModel, newModel);
       }
     });

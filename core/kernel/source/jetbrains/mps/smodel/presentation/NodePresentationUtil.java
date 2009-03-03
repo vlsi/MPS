@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel.presentation;
 
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.IResolveInfo;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
@@ -67,7 +67,7 @@ public class NodePresentationUtil {
 
     if (visible) {
       return nodeAdapter.getNode().getPresentation();
-    } else {      
+    } else {
       if (nodeAdapter instanceof IResolveInfo) {
         return ((IResolveInfo) nodeAdapter).getResolveInfo();
       }

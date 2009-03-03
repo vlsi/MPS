@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.util.graph;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -62,7 +65,7 @@ public class Vertex implements IVertex {
   }
 
   public String toString() {
-    return myName + "("+myX+","+myY+")";
+    return myName + "(" + myX + "," + myY + ")";
   }
 
   public List<IEdge> getStar() {

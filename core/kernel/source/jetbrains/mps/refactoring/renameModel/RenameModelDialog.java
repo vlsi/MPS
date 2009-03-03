@@ -17,10 +17,10 @@ package jetbrains.mps.refactoring.renameModel;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.SModelRoot;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,14 +43,14 @@ public class RenameModelDialog extends BaseDialog {
 
     myMainPanel = new JPanel(new GridBagLayout());
 
-    GridBagConstraints cLabel = new GridBagConstraints(0,0,1,1,0,0,GridBagConstraints.CENTER,GridBagConstraints.NONE,new Insets(0,0,0,0),0,0 );
+    GridBagConstraints cLabel = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
     myMainPanel.add(new JLabel("Model Name:"), cLabel);
 
-    GridBagConstraints cNameField = new GridBagConstraints(1,0,1,1,1,0,GridBagConstraints.CENTER,GridBagConstraints.BOTH,new Insets(0,0,0,0),0,0 );
+    GridBagConstraints cNameField = new GridBagConstraints(1, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
     myModelNameField = new JTextField(myModelDescriptor.getSModelFqName().toString(), 30);
     myMainPanel.add(myModelNameField, cNameField);
 
-    GridBagConstraints cUpdateCheckbox = new GridBagConstraints(0,2,2,1,1,1,GridBagConstraints.NORTHWEST,GridBagConstraints.NONE,new Insets(0,0,0,0),0,0 );
+    GridBagConstraints cUpdateCheckbox = new GridBagConstraints(0, 2, 2, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
     myUpdateAllReferences = new JCheckBox("Update All References");
     myUpdateAllReferences.getModel().setSelected(true);
     myMainPanel.add(myUpdateAllReferences, cUpdateCheckbox);

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.watching;
 
-import com.intellij.openapi.vfs.newvfs.events.*;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.newvfs.events.*;
 
 abstract class EventProcessor {
   public final void process(VFileEvent event, ReloadSession reloadSession) {
@@ -34,7 +34,7 @@ abstract class EventProcessor {
     } else if (event instanceof VFilePropertyChangeEvent) {
       processPropertyChanged(event, reloadSession);
     } else if (event instanceof VFileEventDecorator) {
-      VFileEventDecorator eventDecorator = (VFileEventDecorator)event;
+      VFileEventDecorator eventDecorator = (VFileEventDecorator) event;
       if (eventDecorator.undecorate() instanceof VFileContentChangeEvent) {
         processContentChanged(event, reloadSession);
       } else if (eventDecorator.undecorate() instanceof VFileCopyEvent) {

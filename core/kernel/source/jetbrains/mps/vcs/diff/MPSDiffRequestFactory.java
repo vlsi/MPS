@@ -15,31 +15,27 @@
  */
 package jetbrains.mps.vcs.diff;
 
+import com.intellij.openapi.diff.ActionButtonPresentation;
+import com.intellij.openapi.diff.MergeRequest;
+import com.intellij.openapi.diff.SimpleContent;
 import com.intellij.openapi.diff.impl.mergeTool.DiffRequestFactoryImpl;
 import com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl;
-import com.intellij.openapi.diff.MergeRequest;
-import com.intellij.openapi.diff.ActionButtonPresentation;
-import com.intellij.openapi.diff.DiffContent;
-import com.intellij.openapi.diff.SimpleContent;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
+import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.vfs.VFileSystem;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.io.OutputStream;
 import java.io.IOException;
-import java.io.ByteArrayInputStream;
+import java.io.OutputStream;
 
 public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
   private static final Logger LOG = Logger.getLogger(MPSDiffRequestFactory.class);

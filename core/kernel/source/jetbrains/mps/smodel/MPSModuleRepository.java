@@ -15,25 +15,24 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.model.RootReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.*;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ConcurrentHashMap;
-
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MPSModuleRepository implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);

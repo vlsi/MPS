@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.annotations.NotNull;
 
 /**

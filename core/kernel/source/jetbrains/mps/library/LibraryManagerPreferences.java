@@ -16,13 +16,13 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.GridLayout;

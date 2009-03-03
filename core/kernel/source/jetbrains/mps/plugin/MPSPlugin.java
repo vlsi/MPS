@@ -29,6 +29,7 @@ public class MPSPlugin {
   //---singleton stuff---
 
   private static MPSPlugin ourInstance;
+
   public static MPSPlugin getInstance() {
     if (ourInstance == null) {
       ourInstance = new MPSPlugin();
@@ -59,7 +60,7 @@ public class MPSPlugin {
       try {
         myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
       } catch (Exception e) {
-        if (!myMessageShown){
+        if (!myMessageShown) {
           myMessageShown = true;
           LOG.info("Wasn't able to connect to IDEA");
         }

@@ -15,12 +15,8 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.util.CollectionUtil;
-import org.jdom.Element;
-
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Kostik

@@ -15,20 +15,23 @@
  */
 package jetbrains.mps.javastub.classpath;
 
+import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
+import jetbrains.mps.javastub.ClassPathItemProvider;
 import jetbrains.mps.javastub.ConverterFactory;
 import jetbrains.mps.javastub.IConverter;
-import jetbrains.mps.javastub.ClassPathItemProvider;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public abstract class ClassPathModelRootManager extends AbstractModelRootManager {
   private static Logger LOG = Logger.getLogger(ClassPathModelRootManager.class);
@@ -56,7 +59,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
       return result;
     } finally {
       myOwner = null;
-    }        
+    }
   }
 
   @NotNull
@@ -65,7 +68,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     ourTimestamps.put(model.getSModelReference(), timestamp(modelDescriptor));
     model.addLanguage(BaseLanguage_Language.get());
     return model;
-  }                                                             
+  }
 
   public void updateAfterLoad(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = modelDescriptor.getSModel();
@@ -122,7 +125,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
           final SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
 
           assert descriptor != null;
-          
+
           SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
           descriptors.add(descriptor);
 

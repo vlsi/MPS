@@ -19,7 +19,7 @@ public interface ReloadListener {
   /**
    * If you want to safely shut down services which depend on reloadable parts do it here.
    * Do not clean caches here.
-   *
+   * <p/>
    * Invariant: reloadable parts aren't touched
    */
   void onBeforeReload();
@@ -27,14 +27,14 @@ public interface ReloadListener {
   /**
    * If you want to clean caches/reinstantiate reloadable parts, do it here. For example,
    * constraints are reloaded in this mehtod
-   *
+   * <p/>
    * Postcondition : reloadable parts of current component should be reinitialized under a new classloader
    */
   void onReload();
 
   /**
    * If you want to update UI after reload do it here.
-   *
+   * <p/>
    * Precondition: all reloadable parts are reloaded under a new classloader
    */
   void onAfterReload();

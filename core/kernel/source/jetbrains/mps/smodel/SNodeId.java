@@ -26,7 +26,7 @@ import jetbrains.mps.util.annotation.ImmutableObject;
 public abstract class SNodeId {
 
   public static SNodeId fromString(String idString) {
-    if(idString.startsWith(Foreign.ID_PREFIX)) {
+    if (idString.startsWith(Foreign.ID_PREFIX)) {
       return new Foreign(idString);
     }
     try {

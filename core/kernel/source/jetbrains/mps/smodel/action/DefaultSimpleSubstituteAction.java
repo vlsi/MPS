@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SNode;
 
 public abstract class DefaultSimpleSubstituteAction extends DefaultChildNodeSubstituteAction {
   public DefaultSimpleSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {

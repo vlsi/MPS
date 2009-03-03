@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.vfs;
 
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.JarFileSystem;
-
-import java.io.File;
-
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.File;
 
 public class VFileSystem {
 
@@ -59,7 +58,7 @@ public class VFileSystem {
    * This method refresh filesystem from disk when searching for file.
    * It call LocalFileSystem.refreshAndFindFileByIoFile, which take some locks (consider IDEA code for details),
    * so CALL THIS METHOD CAREFULLY!
-   * 
+   *
    * @param file - IO file to find.
    * @return virtual file corresponding to IO file, or none if no such file exists.
    */

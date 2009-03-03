@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.resolve;
 
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
+import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
-import jetbrains.mps.ide.ThreadUtils;
 
 import java.util.*;
 
@@ -38,7 +38,7 @@ public class AutoResolver extends EditorCheckerAdapter {
   public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     // disable for transient models
-    if(rootNode.getModel().getModelDescriptor().isTransient()) {
+    if (rootNode.getModel().getModelDescriptor().isTransient()) {
       return messages;
     }
     List<SReference> yetBadReferences = new ArrayList<SReference>();
@@ -69,7 +69,7 @@ public class AutoResolver extends EditorCheckerAdapter {
       }
     });
 
-     // highlight nodes with errors
+    // highlight nodes with errors
     for (SReference ref : yetBadReferences) {
       EditorMessage message = createHighlighterMessage(ref.getSourceNode(), "unresolved reference");
       messages.add(message);

@@ -16,12 +16,15 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
 import jetbrains.mps.smodel.persistence.def.v1.ModelWriter1;
-import jetbrains.mps.smodel.persistence.def.v2.ModelWriter2;
 import jetbrains.mps.smodel.persistence.def.v2.ModelReader2;
+import jetbrains.mps.smodel.persistence.def.v2.ModelWriter2;
 import jetbrains.mps.smodel.persistence.def.v3.ModelReader3;
 import jetbrains.mps.smodel.persistence.def.v3.ModelWriter3;
 import jetbrains.mps.util.JDOMUtil;
@@ -33,14 +36,12 @@ import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.IOException;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-
-import com.intellij.util.indexing.FileContent;
+import java.util.regex.Pattern;
 
 
 /**
@@ -185,16 +186,16 @@ public class ModelPersistence {
 
   @NotNull
   public static SModel readModel(
-          @NotNull Document document,
-          @NotNull String modelName,
-          @NotNull String stereotype) {
+    @NotNull Document document,
+    @NotNull String modelName,
+    @NotNull String stereotype) {
     return modelReaders.get(currentPersistenceVersion).readModel(document, modelName, stereotype);
   }
 
   @Nullable
   public static SNode readNode(
-          @NotNull Element nodeElement,
-          @NotNull SModel model) {
+    @NotNull Element nodeElement,
+    @NotNull SModel model) {
     return modelReaders.get(currentPersistenceVersion).readNode(nodeElement, model);
   }
 

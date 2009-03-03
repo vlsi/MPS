@@ -19,14 +19,14 @@ package jetbrains.mps.util;
 import sun.misc.Launcher;
 
 import java.io.*;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.Iterator;
+import java.util.List;
 import java.util.jar.JarOutputStream;
 import java.util.jar.Manifest;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
-import java.util.List;
-import java.util.Iterator;
-import java.net.URL;
-import java.net.URISyntaxException;
 
 /**
  * @author Kostik
@@ -302,7 +302,7 @@ public class FileUtil {
       }
 
       return result.toString();
-    } catch(IOException e) {
+    } catch (IOException e) {
       throw new RuntimeException(e);
     } finally {
       try {
@@ -338,7 +338,7 @@ public class FileUtil {
       }
 
       return null;
-    } catch(IOException e) {
+    } catch (IOException e) {
       throw new RuntimeException(e);
     } finally {
       try {
@@ -352,14 +352,14 @@ public class FileUtil {
   }
 
 
-  public static boolean isParent(File parent, File child){
-    if (!parent.isDirectory()){
+  public static boolean isParent(File parent, File child) {
+    if (!parent.isDirectory()) {
       return false;
     }
 
     if (parent.equals(child)) return true;
 
-    for (File f : parent.listFiles()){
+    for (File f : parent.listFiles()) {
       if (isParent(f, child)) return true;
     }
 

@@ -32,33 +32,42 @@ public class NodesParetoFrontier {
     private SNode myNode;
     private NodeBox myNext;
     private int myNumber;
+
     public NodeBox(SNode node) {
       myNode = node;
     }
+
     public NodeBox(SNode node, int number) {
       myNode = node;
       myNumber = number;
     }
+
     public void setNext(NodeBox next) {
       myNext = next;
     }
+
     public NodeBox getNext() {
       return myNext;
     }
+
     public SNode getNode() {
       return myNode;
     }
+
     public int getNumber() {
       return myNumber;
     }
+
     public NodeBox last() {
       NodeBox last = this;
       while (last.getNext() != null) last = last.getNext();
       return last;
     }
+
     public Iterator<NodeBox> iterator() {
       return new Iterator<NodeBox>() {
         private NodeBox myCurrent = NodeBox.this;
+
         public boolean hasNext() {
           return myCurrent != null;
         }
@@ -71,14 +80,14 @@ public class NodesParetoFrontier {
         }
 
         public void remove() {
-         throw new UnsupportedOperationException();
+          throw new UnsupportedOperationException();
         }
       };
     }
 
     public boolean equals(Object obj) {
       if (obj instanceof SNode) return myNode.equals(obj);
-      if (obj instanceof NodeBox) return myNode.equals(((NodeBox)obj).myNode);
+      if (obj instanceof NodeBox) return myNode.equals(((NodeBox) obj).myNode);
       return false;
     }
 
@@ -96,7 +105,7 @@ public class NodesParetoFrontier {
   // respects the order of groups' first elements in the source list.
   public static List<NodeBox> findParetoFrontier(List<SNode> nodes) {
     //init
-    Map<SNode, NodeBox> initialMap = new HashMap<SNode,NodeBox>();
+    Map<SNode, NodeBox> initialMap = new HashMap<SNode, NodeBox>();
     for (SNode node : nodes) {
       initialMap.put(node, new NodeBox(node));
     }

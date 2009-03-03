@@ -16,11 +16,11 @@
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 public class MappingConfig_AbstractRef {
-  public MappingConfig_AbstractRef getCopy(){
+  public MappingConfig_AbstractRef getCopy() {
     return new MappingConfig_AbstractRef();
   }
 
-  public boolean isIncomplete(){
+  public boolean isIncomplete() {
     return true;
   }
 }

@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.watching;
 
-import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 
 class ProjectFileProcessor extends EventProcessor {
   private static final ProjectFileProcessor INSTANCE = new ProjectFileProcessor();

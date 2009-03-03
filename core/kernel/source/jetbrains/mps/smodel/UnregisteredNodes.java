@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.cleanup.CleanupListener;
+import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.PairMap;
 
 /**

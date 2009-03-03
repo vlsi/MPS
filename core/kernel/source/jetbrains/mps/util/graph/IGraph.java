@@ -17,8 +17,8 @@ package jetbrains.mps.util.graph;
 
 import jetbrains.mps.util.Pair;
 
-import java.util.*;
 import java.awt.Rectangle;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,16 +29,26 @@ import java.awt.Rectangle;
  */
 public interface IGraph {
   Set<IEdge> getEdges();
+
   Set<IVertex> getVertices();
+
   void addVertex(IVertex vertex);
+
   boolean connect(IVertex vertex1, IVertex vertex2);
+
   boolean connect(IVertex vertex1, IVertex vertex2, Object key, Object userObject);
+
   boolean isConnected(IVertex vertex1, IVertex vertex2);
-  Pair<Integer,Integer> getBaricenter();
+
+  Pair<Integer, Integer> getBaricenter();
+
   int getVerticesCount();
+
   int getEdgesCount();
 
   public void setUpperLeftCorner(int x, int y);
+
   public void move(int deltaX, int deltaY);
+
   public Rectangle getFramingRectangle();
 }

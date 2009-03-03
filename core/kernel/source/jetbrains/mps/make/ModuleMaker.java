@@ -15,30 +15,28 @@
  */
 package jetbrains.mps.make;
 
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.ide.messages.FileWithPosition;
-import jetbrains.mps.make.MakeScheduleBuilder;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
-import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
-
-import com.intellij.openapi.progress.ProgressIndicator;
 
 public class ModuleMaker {
   private static Logger LOG = Logger.getLogger(ModuleMaker.class);
@@ -113,7 +111,7 @@ public class ModuleMaker {
       if (!isUpToDate(c)) {
         toCompile.add(c);
       }
-    }                                         
+    }
     return toCompile;
   }
 
@@ -127,7 +125,7 @@ public class ModuleMaker {
 
     if (!hasAnythingToCompile) {
       return new jetbrains.mps.plugin.CompilationResult(0, 0, false);
-    }   
+    }
 
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
 
@@ -137,7 +135,7 @@ public class ModuleMaker {
       if (areClassesUpToDate(m)) {
         continue;
       }
-      
+
       if (!m.isCompileInMPS()) {
         LOG.warning("Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleFqName(), m);
         continue;
@@ -149,7 +147,7 @@ public class ModuleMaker {
         f.delete();
       }
 
-      for (JavaFile f : sources.getFilesToCompile()) {                        
+      for (JavaFile f : sources.getFilesToCompile()) {
         compiler.addSource(f.getClassName(), f.getContents());
         myContainingModules.put(f.getClassName(), m);
       }
@@ -172,7 +170,7 @@ public class ModuleMaker {
           assert containingModule != null;
           JavaFile javaFile = myModuleSources.get(containingModule).getJavaFile(fqName);
 
-          String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();                    
+          String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
           if (cp.isWarning()) {
             LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
           } else {
@@ -182,8 +180,8 @@ public class ModuleMaker {
             }
           }
         }
-        
-        errorCount += cr.getErrors().length;               
+
+        errorCount += cr.getErrors().length;
       }
 
       for (ClassFile cf : cr.getClassFiles()) {
@@ -214,7 +212,7 @@ public class ModuleMaker {
               throw new RuntimeException(e);
             }
           } else {
-            output.delete();            
+            output.delete();
           }
         } else {
           LOG.error("I don't know in which module's output path I should place class file for " + fqName);
@@ -222,7 +220,7 @@ public class ModuleMaker {
       }
     }
 
-    for (IModule module : modules){
+    for (IModule module : modules) {
       ModuleSources sources = getModuleSources(module);
       for (ResourceFile toCopy : sources.getResourcesToCopy()) {
         String fqName = toCopy.getPath();
@@ -242,7 +240,7 @@ public class ModuleMaker {
     }
 
     return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
-  }                               
+  }
 
   private String getName(char[][] compoundName) {
     StringBuilder result = new StringBuilder();
@@ -257,7 +255,7 @@ public class ModuleMaker {
     return result.toString();
   }
 
-  private IClassPathItem computeDependenciesClassPath(Set<IModule> modules) {   
+  private IClassPathItem computeDependenciesClassPath(Set<IModule> modules) {
     return AbstractModule.getDependenciesClasspath(modules);
   }
 

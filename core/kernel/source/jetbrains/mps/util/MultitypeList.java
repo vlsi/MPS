@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.util;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MultitypeList {
   private List myList;
@@ -33,7 +33,7 @@ public class MultitypeList {
     myList.remove(o);
   }
 
-  public<T> int size(Class<T> cls) {
+  public <T> int size(Class<T> cls) {
     int result = 0;
     for (Object o : myList) {
       if (cls.isInstance(o)) {
@@ -43,7 +43,7 @@ public class MultitypeList {
     return result;
   }
 
-  public<T> List<T> get(Class<T> cls) {
+  public <T> List<T> get(Class<T> cls) {
     List<T> result = new ArrayList<T>();
     for (Object o : myList) {
       if (cls.isInstance(o)) {

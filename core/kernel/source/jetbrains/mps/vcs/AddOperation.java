@@ -17,23 +17,22 @@ package jetbrains.mps.vcs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.AbstractVcs;
-import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.vcs.FileStatus;
-import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
+import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vfs.VFileSystem;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.*;
-
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import org.jetbrains.annotations.NotNull;
 
 class AddOperation extends VcsOperation {
   private static final Logger LOG = Logger.getLogger(AddOperation.class);
@@ -72,10 +71,10 @@ class AddOperation extends VcsOperation {
   }
 
   private Set<VirtualFile> getAllChildren(final Set<VirtualFile> parentFiles, final Set<VirtualFile> allChildren) {
-    for (VirtualFile f : parentFiles){
+    for (VirtualFile f : parentFiles) {
       if (!f.isDirectory()) continue;
       VirtualFile[] children = f.getChildren();
-      for (VirtualFile child : children){
+      for (VirtualFile child : children) {
         allChildren.add(child);
         getAllChildren(Collections.singleton(child), allChildren);
       }
@@ -140,7 +139,7 @@ class AddOperation extends VcsOperation {
       } else {
         VirtualFile[] files = parent.getChildren();
         for (VirtualFile child : files) {
-          if (MPSFileTypesManager.instance().isModuleFile(child) && !myVirtualFilesToAdd.contains(child)){
+          if (MPSFileTypesManager.instance().isModuleFile(child) && !myVirtualFilesToAdd.contains(child)) {
             return Collections.EMPTY_LIST;
           }
         }

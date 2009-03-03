@@ -46,7 +46,7 @@ public class RBundle<T> {
   }
 
   public Set<T> getDependencies() {
-    return Collections.unmodifiableSet(myDependencies);    
+    return Collections.unmodifiableSet(myDependencies);
   }
 
   public void unload() {
@@ -68,7 +68,7 @@ public class RBundle<T> {
       return Class.forName(fqName, false, getClassLoader());
     } catch (ClassNotFoundException e) {
       return null;
-    }    
+    }
   }
 
   URL getResource(String name) {

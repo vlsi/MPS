@@ -15,37 +15,34 @@
  */
 package jetbrains.mps;
 
-import jetbrains.mps.logging.LoggerUtil;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.TestResult;
-import jetbrains.mps.project.ProjectTester;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import com.intellij.ide.IdeEventQueue;
+import com.intellij.idea.IdeaTestApplication;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectTester;
+import jetbrains.mps.project.TestResult;
+import jetbrains.mps.project.structure.modules.ClassPathEntry;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.MPSExtentions;
+import org.jdom.JDOMException;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashSet;
-
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.application.ex.ApplicationManagerEx;
-import com.intellij.openapi.util.InvalidDataException;
-import com.intellij.idea.IdeaTestApplication;
-import com.intellij.ide.IdeEventQueue;
-
-import org.jdom.JDOMException;
 
 public class TestMain {
   private static final Logger LOG = Logger.getLogger(TestMain.class);
@@ -209,7 +206,7 @@ public class TestMain {
       }
     });
     if (projectArray[0] == null) return false;
-    
+
     final MPSProject project = projectArray[0];
 
 
@@ -245,8 +242,8 @@ public class TestMain {
             cpEntry1.setPath(classPath);
             cpEntry2.setPath(classPath);
 
-            testRefactoringDescriptor.getClassPaths().set(0,cpEntry1);
-            testRefactoringTargetDescriptor.getClassPaths().set(0,cpEntry2);
+            testRefactoringDescriptor.getClassPaths().set(0, cpEntry1);
+            testRefactoringTargetDescriptor.getClassPaths().set(0, cpEntry2);
 
             testRefactoringLanguage[0].setLanguageDescriptor(testRefactoringDescriptor, false);
             testRefactoringTargetLanguage[0].setLanguageDescriptor(testRefactoringTargetDescriptor, false);

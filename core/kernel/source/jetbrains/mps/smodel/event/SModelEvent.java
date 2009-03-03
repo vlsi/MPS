@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 
 public abstract class SModelEvent {
   private SModel myModel;

@@ -17,8 +17,8 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.smodel.SModelReference;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class LanguageDescriptor extends ModuleDescriptor {
   private String myGenPath;

@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.cleanup.CleanupListener;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.cleanup.CleanupListener;
+import jetbrains.mps.cleanup.CleanupManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 

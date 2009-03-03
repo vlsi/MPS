@@ -15,18 +15,17 @@
  */
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.vfs.IFile;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
 
-import java.util.Map;
-import java.util.TreeSet;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-import java.io.IOException;
-
-import org.jdom.Element;
-import org.jdom.Document;
-import org.jdom.JDOMException;
+import java.util.Map;
+import java.util.TreeSet;
 
 class DefaultMetadataPersistence {
   private static final String ENTRY = "entry";
@@ -40,8 +39,8 @@ class DefaultMetadataPersistence {
       for (String key : new TreeSet<String>(metadata.keySet())) {
         root.addContent(
           new Element(ENTRY)
-                  .addContent(new Element(KEY).setText(key))
-                  .addContent(new Element(VALUE).setText(metadata.get(key))));
+            .addContent(new Element(KEY).setText(key))
+            .addContent(new Element(VALUE).setText(metadata.get(key))));
       }
       JDOMUtil.writeDocument(new Document(root), file);
     } catch (IOException e) {

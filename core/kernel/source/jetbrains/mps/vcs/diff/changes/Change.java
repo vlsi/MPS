@@ -28,7 +28,7 @@ public abstract class Change {
     if (o1 == null) {
       return o1 == o2;
     } else {
-      return o1.equals(o2);    
+      return o1.equals(o2);
     }
   }
 }

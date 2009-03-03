@@ -15,25 +15,25 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
+import jetbrains.mps.lang.generator.structure.Generator_Language;
+import jetbrains.mps.lang.generator.structure.MappingConfiguration;
+import jetbrains.mps.library.LanguageDesign_DevKit;
+import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.lang.generator.structure.MappingConfiguration;
-import jetbrains.mps.lang.generator.structure.Generator_Language;
-import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
+import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.project.structure.modules.mappingpriorities.*;
+import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.runtime.BytecodeLocator;
-import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.library.LanguageDesign_DevKit;
 
 import java.io.File;
-import java.util.*;
 import java.net.URL;
+import java.util.*;
 
 public class Generator extends AbstractModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
@@ -89,7 +89,7 @@ public class Generator extends AbstractModule {
       }
     }
     if (ref instanceof MappingConfig_RefSet) {
-      for (MappingConfig_AbstractRef simpleRef : ((MappingConfig_RefSet)ref).getMappingConfigs()) {
+      for (MappingConfig_AbstractRef simpleRef : ((MappingConfig_RefSet) ref).getMappingConfigs()) {
         if (upgradeMappingConfigRef(simpleRef)) {
           descriptorChanged = true;
         }
@@ -138,7 +138,7 @@ public class Generator extends AbstractModule {
     SModelDescriptor result = super.createModel(name, root);
     if (SModelStereotype.isGeneratorModel(result)) {
       result.getSModel().addLanguage(Generator_Language.get());
-    }else{
+    } else {
       result.getSModel().addDevKit(LanguageDesign_DevKit.get());
     }
     result.getSModel().addLanguage(GenerationContext_Language.get());
@@ -182,7 +182,7 @@ public class Generator extends AbstractModule {
     LanguageDescriptor languageDescriptor = getSourceLanguage().getLanguageDescriptor();
     int index = languageDescriptor.getGenerators().indexOf(this.getGeneratorDescriptor());
     languageDescriptor.getGenerators().remove(index);
-    languageDescriptor.getGenerators().add(index,(GeneratorDescriptor)moduleDescriptor);
+    languageDescriptor.getGenerators().add(index, (GeneratorDescriptor) moduleDescriptor);
     getSourceLanguage().setLanguageDescriptor(languageDescriptor);
   }
 

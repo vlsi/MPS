@@ -15,15 +15,22 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -31,14 +38,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.util.Computable;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
+import java.util.regex.Pattern;
 
 public final class BehaviorManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(BehaviorManager.class);

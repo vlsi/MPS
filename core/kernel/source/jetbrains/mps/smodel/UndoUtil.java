@@ -15,16 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.command.undo.UndoableAction;
-import com.intellij.openapi.command.undo.UndoManager;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.project.Project;
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.ide.DataManager;
-import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.command.undo.UndoManager;
+import com.intellij.openapi.command.undo.UndoableAction;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.IdeMain;
 
 public class UndoUtil {
   private static Logger LOG = Logger.getLogger(UndoUtil.class);

@@ -16,8 +16,8 @@
 package jetbrains.mps.runtime;
 
 import java.net.URL;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class BundleClassLoader<T> extends BaseClassLoader {
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
@@ -41,7 +41,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
     synchronized (myLock) {
       if (myClassesCache.containsKey(fqName)) {
         return myClassesCache.get(fqName);
-      }      
+      }
       try {
         Class<?> cls = Class.forName(fqName, false, this);
         myClassesCache.put(fqName, cls);
@@ -55,7 +55,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
 
 
   protected Class loadBeforeCurrent(String name) {
-    Class fromParent =  myBundle.getRuntimeEnvironment().loadFromParent(name, myBundle);
+    Class fromParent = myBundle.getRuntimeEnvironment().loadFromParent(name, myBundle);
     if (fromParent != null) {
       return fromParent;
     }
@@ -75,7 +75,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
         }
       }
     }
-    
+
     return null;
   }
 
@@ -91,7 +91,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
         return re.get(dep).getResource(name);
       }
     }
-    
+
     return null;
   }
 

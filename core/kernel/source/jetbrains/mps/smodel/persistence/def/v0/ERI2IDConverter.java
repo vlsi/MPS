@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.smodel.persistence.def.v0;
 
-import jetbrains.mps.smodel.persistence.def.v0.externalResolve.ExternalResolveInfoParser;
-import jetbrains.mps.smodel.persistence.def.v0.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.persistence.def.v0.externalResolve.ExternalResolveInfoParser;
+import jetbrains.mps.smodel.persistence.def.v0.externalResolve.ExternalResolver;
 
 /**
  * Igor Alshannikov
@@ -45,8 +45,8 @@ public class ERI2IDConverter {
       }
 
       if (ExternalResolver.ENUM_CONST.equals(memType) ||
-              ExternalResolver.FIELD.equals(memType) ||
-              ExternalResolver.STATIC_FIELD.equals(memType)) {
+        ExternalResolver.FIELD.equals(memType) ||
+        ExternalResolver.STATIC_FIELD.equals(memType)) {
         String clsResolveInfo = ExternalResolveInfoParser.getMembersClassifierResolveInfo(extResolveInfo, memType);
         String className = ExternalResolver.getHumanFriendlyString(clsResolveInfo);
         String memberName = ExternalResolver.getHumanFriendlyString(extResolveInfo);

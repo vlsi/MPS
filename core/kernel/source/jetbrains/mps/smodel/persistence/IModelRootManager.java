@@ -15,20 +15,23 @@
  */
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelOwner;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Set;
 import java.util.Map;
+import java.util.Set;
 
 public interface IModelRootManager {
   public static final IModelRootManager NULL_MANAGER = new NullModelRootManager();
 
-  @NotNull Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner);
+  @NotNull
+  Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner);
 
   @NotNull
   SModel loadModel(@NotNull SModelDescriptor modelDescriptor);
@@ -37,7 +40,8 @@ public interface IModelRootManager {
 
   void saveModel(@NotNull SModelDescriptor modelDescriptor);
 
-  @Nullable SModel refresh(@NotNull SModelDescriptor modelDescriptor);
+  @Nullable
+  SModel refresh(@NotNull SModelDescriptor modelDescriptor);
 
   @Nullable
   Map<String, String> loadMetadata(@NotNull SModelDescriptor modelDescriptor);
@@ -63,9 +67,10 @@ public interface IModelRootManager {
    * 1. Register new model in SModelRepository
    * 2. Fire new model created event : SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);
    */
-  @NotNull SModelDescriptor createNewModel(@NotNull SModelRoot root,
-                                           @NotNull SModelFqName fqName,
-                                           @NotNull ModelOwner owner);
+  @NotNull
+  SModelDescriptor createNewModel(@NotNull SModelRoot root,
+                                  @NotNull SModelFqName fqName,
+                                  @NotNull ModelOwner owner);
 
   void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile);
 

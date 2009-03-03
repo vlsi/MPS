@@ -15,31 +15,31 @@
  */
 package jetbrains.mps.vcs;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerListener;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.changes.*;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.vcs.ui.VcsIdeSettings;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vcs.ui.VcsIdeSettings;
 
-import java.util.*;
 import java.io.File;
+import java.util.*;
 
 @State(
   name = "ApplicationLevelVcsConfiguration",

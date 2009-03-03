@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.project;
 
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
+import org.jetbrains.annotations.NotNull;
 
 public class GlobalOperationContext extends StandaloneMPSContext {
   public MPSProject getMPSProject() {

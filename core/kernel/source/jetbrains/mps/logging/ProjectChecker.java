@@ -17,12 +17,12 @@ package jetbrains.mps.logging;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -45,7 +45,7 @@ public class ProjectChecker {
         modelsToTest.addAll(generator.getScope().getModelDescriptors());
       }
     }
-    
+
     for (Solution solution : project.getProjectSolutions()) {
       modelsToTest.addAll(solution.getScope().getModelDescriptors());
     }

@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.vfs;
 
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.util.FileUtil;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import com.intellij.openapi.vfs.VirtualFile;
 
 public class JarFileEntryFile implements IFile {
   private JarFileData myJarFileData;

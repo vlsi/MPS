@@ -15,8 +15,6 @@
  */
 package jetbrains.mps;
 
-import com.intellij.idea.Main;
-import com.intellij.ide.license.LicenseManager;
 import com.intellij.ide.Bootstrap;
 
 public class Launcher {

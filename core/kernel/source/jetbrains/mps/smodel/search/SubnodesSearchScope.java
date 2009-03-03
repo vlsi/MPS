@@ -17,10 +17,10 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-
-import java.util.*;
-
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Igor Alshannikov

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.util;
 
-import java.util.*;
+import java.util.Comparator;
 
 
 public class ToStringComparator implements Comparator<Object> {

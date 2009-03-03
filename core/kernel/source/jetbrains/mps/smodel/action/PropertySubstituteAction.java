@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
+import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.smodel.SNode;
 
 public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
   private String myPropertyName;

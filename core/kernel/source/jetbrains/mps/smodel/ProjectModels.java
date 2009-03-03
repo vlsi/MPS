@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,7 +32,7 @@ public class ProjectModels {
       throw new RuntimeException();
     }
 
-    @NotNull  
+    @NotNull
     public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
       return new SModel(modelDescriptor.getSModelReference());
     }

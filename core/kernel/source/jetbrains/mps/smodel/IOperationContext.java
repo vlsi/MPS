@@ -15,18 +15,17 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
-
-import java.awt.*;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import org.jetbrains.annotations.NotNull;
+
+import java.awt.Frame;
 
 public interface IOperationContext {
   /**
    * Use getProject() instead
+   *
    * @return
    */
   @Deprecated
@@ -35,8 +34,13 @@ public interface IOperationContext {
   Project getProject();
 
   IModule getModule();
-  @NotNull IScope getScope();
+
+  @NotNull
+  IScope getScope();
+
   Frame getMainFrame();
+
   boolean isTestMode();
+
   <T> T getComponent(Class<T> clazz);
 }

@@ -42,11 +42,11 @@ public class CopyPasteUtil {
 
 
   private static void processImportsAndLanguages(
-      Set<SModelReference> necessaryImports,
-      Set<ModuleReference> necessaryLanguages,
-      Map<SNode, SNode> sourceNodesToNewNodes,
-      Set<SReference> allReferences) {
-    
+    Set<SModelReference> necessaryImports,
+    Set<ModuleReference> necessaryLanguages,
+    Map<SNode, SNode> sourceNodesToNewNodes,
+    Set<SReference> allReferences) {
+
     necessaryImports.clear();
     necessaryLanguages.clear();
     Set<SNode> sourceNodes = sourceNodesToNewNodes.keySet();
@@ -64,9 +64,9 @@ public class CopyPasteUtil {
   }
 
   public static PasteNodeData createNodeDataIn(
-      List<SNode> sourceNodes,
-      Map<SNode, Set<SNode>> sourceNodesAndAttributes) {
-    
+    List<SNode> sourceNodes,
+    Map<SNode, Set<SNode>> sourceNodesAndAttributes) {
+
     if (sourceNodes.isEmpty()) return PasteNodeData.emptyPasteNodeData(null);
     SModel model = sourceNodes.get(0).getModel();
 
@@ -227,7 +227,7 @@ public class CopyPasteUtil {
     for (ModuleReference devKit : model.getDevKitRefs()) {
       newModel.addDevKit(devKit);
     }
-    
+
     return newModel;
   }
 
@@ -267,9 +267,9 @@ public class CopyPasteUtil {
     if (cb == null) return PasteNodeData.emptyPasteNodeData(model);
 
     Transferable content = null;
-    try{
+    try {
       content = cb.getContents(null);
-    }catch (IllegalStateException e){
+    } catch (IllegalStateException e) {
       //LOG.warning("Clipboard is not accessible. It can happen if another application is using it.");
     }
     if (content == null) return PasteNodeData.emptyPasteNodeData(model);
@@ -295,10 +295,10 @@ public class CopyPasteUtil {
   }
 
   public static void addImportsAndLanguagesToModel(final SModel targetModel,
-                                                      final Set<ModuleReference> necessaryLanguages,
-                                                      final Set<SModelReference> necessaryImports,
-                                                      final IOperationContext context,
-                                                      Runnable onOk) {
+                                                   final Set<ModuleReference> necessaryLanguages,
+                                                   final Set<SModelReference> necessaryImports,
+                                                   final IOperationContext context,
+                                                   Runnable onOk) {
     final List<ModuleReference> additionalLanguages = new ArrayList<ModuleReference>();
     final List<SModelReference> additionalModels = new ArrayList<SModelReference>();
     final Set<ModuleReference> necessaryDevKits = new HashSet<ModuleReference>();

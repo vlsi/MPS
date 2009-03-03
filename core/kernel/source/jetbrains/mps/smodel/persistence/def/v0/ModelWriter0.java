@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.persistence.def.v0;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 

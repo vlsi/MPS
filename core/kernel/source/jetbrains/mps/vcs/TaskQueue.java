@@ -17,9 +17,9 @@ package jetbrains.mps.vcs;
 
 import jetbrains.mps.logging.Logger;
 
-import java.util.List;
-import java.util.LinkedList;
 import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 abstract class TaskQueue<T> {
   private final static Logger LOG = Logger.getLogger(TaskQueue.class);

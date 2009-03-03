@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.util;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
 
-public class CompositeIterator<T> implements Iterator<T>, Iterable<T>{
+public class CompositeIterator<T> implements Iterator<T>, Iterable<T> {
   private int myCurrent;
   private Iterator<? extends T>[] myIterators;
 
@@ -35,7 +35,7 @@ public class CompositeIterator<T> implements Iterator<T>, Iterable<T>{
   public boolean hasNext() {
     while (myCurrent < myIterators.length) {
       if (myIterators[myCurrent].hasNext()) {
-        return true;        
+        return true;
       }
       myCurrent++;
     }
@@ -46,7 +46,7 @@ public class CompositeIterator<T> implements Iterator<T>, Iterable<T>{
   public T next() {
     if (!hasNext()) {
       throw new NoSuchElementException();
-    }    
+    }
     return myIterators[myCurrent].next();
   }
 

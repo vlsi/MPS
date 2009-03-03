@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.smodel.INodeAdapter;
-
 import java.util.*;
 
 /**
@@ -100,7 +98,7 @@ public class CollectionUtil {
     };
   }
 
-  public static<T> Set<T> union(Set<T>... sets) {
+  public static <T> Set<T> union(Set<T>... sets) {
     Set<T> result = new LinkedHashSet<T>();
     for (Set<T> s : sets) {
       result.addAll(s);
@@ -108,7 +106,7 @@ public class CollectionUtil {
     return result;
   }
 
-  public static<T> List<T> union(List<T>... sets) {
+  public static <T> List<T> union(List<T>... sets) {
     List<T> result = new ArrayList<T>();
     for (List<T> s : sets) {
       result.addAll(s);
@@ -116,7 +114,7 @@ public class CollectionUtil {
     return result;
   }
 
- public static <T> Set<T> set(T... ts) {
+  public static <T> Set<T> set(T... ts) {
     Set<T> result = new HashSet<T>();
     result.addAll(Arrays.asList(ts));
     return result;

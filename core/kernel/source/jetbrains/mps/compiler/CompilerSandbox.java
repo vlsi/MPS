@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.compiler;
 
-import jetbrains.mps.reloading.ClassLoaderManager;
-
 import java.lang.reflect.InvocationTargetException;
 
 public class CompilerSandbox {

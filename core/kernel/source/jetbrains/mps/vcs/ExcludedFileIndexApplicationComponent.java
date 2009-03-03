@@ -15,36 +15,14 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileTypeManager;
-import com.intellij.openapi.fileTypes.FileTypeListener;
-import com.intellij.openapi.fileTypes.FileTypeEvent;
-import com.intellij.util.messages.MessageBus;
-import com.intellij.util.messages.MessageBusConnection;
-import com.intellij.AppTopics;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Set;
-import java.util.HashSet;
-import java.util.List;
-import java.util.LinkedList;
-import java.util.concurrent.CopyOnWriteArraySet;
-
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryAdapter;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.FileClassPathItem;
 
 public class ExcludedFileIndexApplicationComponent implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ExcludedFileIndexApplicationComponent.class);

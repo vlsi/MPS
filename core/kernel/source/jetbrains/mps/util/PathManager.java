@@ -16,19 +16,19 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.project.structure.model.ModelRoot;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -107,7 +107,7 @@ public class PathManager {
     }
 
     return new File(".").getAbsolutePath(); //we need this for build server on which stuff written above
-                                            //for somne reason doesn't work
+    //for somne reason doesn't work
   }
 
   private static boolean isMpsDir(File file) {
@@ -154,7 +154,7 @@ public class PathManager {
     if (ourTutorialPath != null) {
       return ourTutorialPath;
     }
-    ourTutorialPath = getHomePath() + File.separator + "docs" +  File.separator + "help" + File.separator + "regexps.html";
+    ourTutorialPath = getHomePath() + File.separator + "docs" + File.separator + "help" + File.separator + "regexps.html";
     return ourTutorialPath;
   }
 
@@ -240,7 +240,7 @@ public class PathManager {
    */
   private static String extractRoot(URL resourceURL, String resourcePath) {
     if (!(resourcePath.startsWith("/") || resourcePath.startsWith("\\"))) {
-      LOG.error("precondition failed for"+resourcePath);
+      LOG.error("precondition failed for" + resourcePath);
       return null;
     }
     String protocol = resourceURL.getProtocol();
@@ -276,7 +276,7 @@ public class PathManager {
   public static String findModelPath(Collection<ModelRoot> modelRoots, SModelReference modelReference) {
     for (ModelRoot modelRoot : modelRoots) {
       String path = findModelPath(modelRoot, modelReference);
-      if(path != null) {
+      if (path != null) {
         return path;
       }
     }
@@ -287,7 +287,7 @@ public class PathManager {
     while (modelRoots.hasNext()) {
       ModelRoot modelRoot = modelRoots.next();
       String path = findModelPath(modelRoot, modelReference);
-      if(path != null) {
+      if (path != null) {
         return path;
       }
     }
@@ -299,27 +299,26 @@ public class PathManager {
     String modelFQName = modelReference.getLongName();
     String name = modelFQName;
     String packagePrefix = modelRoot.getPrefix();
-    if(packagePrefix != null && packagePrefix.length() > 0) {
-      if(modelFQName.startsWith(packagePrefix + '.')) {
+    if (packagePrefix != null && packagePrefix.length() > 0) {
+      if (modelFQName.startsWith(packagePrefix + '.')) {
         name = modelFQName.substring(packagePrefix.length());
-      }
-      else {
+      } else {
         return null;
       }
     }
     String path = name.replace('.', File.separatorChar);
-    if(!path.startsWith(File.separator)) {
+    if (!path.startsWith(File.separator)) {
       path = File.separator + path;
     }
 
     if (!modelReference.getStereotype().equals("")) {
       String littleName = path.substring(path.lastIndexOf(File.separator) + 1);
       String rawPath = path.substring(0, path.lastIndexOf(File.separator) + 1);
-      System.err.println ("littleName = " + littleName + ", rawPath = " + rawPath);
+      System.err.println("littleName = " + littleName + ", rawPath = " + rawPath);
       path = rawPath + modelReference.getStereotype() + "@" + littleName;
     }
     path = modelRoot.getPath() + path + MPSExtentions.DOT_MODEL;
-    if(!(new File(path)).exists()) {
+    if (!(new File(path)).exists()) {
       return null;
     }
     return path;
@@ -355,17 +354,17 @@ public class PathManager {
   public static String getModelUIDString(IFile modelFile, IFile root, String namespacePrefix) {
     String modelPath = modelFile.getCanonicalPath();
     String rootPath = root.getCanonicalPath();
-    if(!modelPath.startsWith(rootPath)) {
+    if (!modelPath.startsWith(rootPath)) {
       return null;
     }
     int length = rootPath.length();
-    if(rootPath.endsWith(File.separator) || rootPath.endsWith("!")) {
-      length--; 
+    if (rootPath.endsWith(File.separator) || rootPath.endsWith("!")) {
+      length--;
     }
     String longName = modelPath.substring(length + 1);
     longName = longName.substring(0, longName.lastIndexOf("."));
     longName = longName.replace(File.separatorChar, '.').replace('/', '.');
-    if(namespacePrefix != null && namespacePrefix.length() > 0) {
+    if (namespacePrefix != null && namespacePrefix.length() > 0) {
       longName = namespacePrefix + ((longName.length() > 0) ? "." + longName : "");
     }
     return longName;

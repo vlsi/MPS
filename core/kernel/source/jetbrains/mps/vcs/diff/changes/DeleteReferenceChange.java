@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SReference;
 
 public class DeleteReferenceChange extends SetReferenceChange {

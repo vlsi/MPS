@@ -16,13 +16,13 @@
 package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.structure.structure.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -150,7 +150,7 @@ public class NodePaster {
     LinkDeclaration link = findSuitableLink(pasteTargetType, role);
     if (link != null && link.getMetaClass() == LinkMetaclass.aggregation) {
       if (!allowOneCardinality) {
-        return link.getSourceCardinality() != Cardinality._0__1 && link.getSourceCardinality() != Cardinality._1; 
+        return link.getSourceCardinality() != Cardinality._0__1 && link.getSourceCardinality() != Cardinality._1;
       } else {
         return true;
       }
@@ -190,7 +190,7 @@ public class NodePaster {
     if (SModelUtil_new.isAssignableConcept(pasteNode.getConceptDeclarationAdapter(), link.getTarget())) {
       node = pasteNode;
     } else if (PasteWrappersManager.getInstance().canWrapInto(pasteNode, link.getTarget())) {
-      node = PasteWrappersManager.getInstance().wrapInto(pasteNode,  link.getTarget());
+      node = PasteWrappersManager.getInstance().wrapInto(pasteNode, link.getTarget());
     } else {
       throw new RuntimeException();
     }
@@ -221,7 +221,7 @@ public class NodePaster {
       SNode container = anchorNode.getParent();
       if (container == null) {
         break;
-      }                       
+      }
       if (canPasteToTarget(container, role, firstAnchorNode == anchorNode)) {
         return new NodeAndRole(anchorNode, role);
       }

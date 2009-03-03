@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptLink;
-import jetbrains.mps.lang.smodel.structure.SNodeOperation;
+import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -277,7 +276,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   public <T extends INodeAdapter> List<T> getChildren(@NotNull String role) {
     return (List<T>) getChildren(INodeAdapter.class, role);
   }
-  
+
 
   public <T extends INodeAdapter> List<T> getChildren(Class<T> requiredClass, @NotNull String role) {
     List<T> result = new ArrayList<T>();

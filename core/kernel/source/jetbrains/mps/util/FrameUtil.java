@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.util;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Frame;
 
 /**
  * @author Kostik

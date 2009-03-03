@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.SModel;
@@ -23,11 +26,6 @@ import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.awt.HeadlessException;
-
-import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.ApplicationManager;
 
 class MergeModelsDialog extends BaseDialog {
   private MergeView myMergeView;

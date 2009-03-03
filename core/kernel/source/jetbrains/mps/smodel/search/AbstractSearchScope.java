@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.smodel.search;
 
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

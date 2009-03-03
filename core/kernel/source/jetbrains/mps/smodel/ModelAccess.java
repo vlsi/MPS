@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.util.Computable;
@@ -139,7 +138,7 @@ public class ModelAccess {
           return false;
         }
       }
-    });                                     
+    });
   }
 
   public boolean tryWrite(final Runnable r) {

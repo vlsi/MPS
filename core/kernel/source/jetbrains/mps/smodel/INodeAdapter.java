@@ -105,7 +105,7 @@ public interface INodeAdapter {
   List<INodeAdapter> getChildren();
 
   @NotNull
-    <N extends INodeAdapter> List<N> getChildren(Class<N> cls);
+  <N extends INodeAdapter> List<N> getChildren(Class<N> cls);
 
   <T extends INodeAdapter> List<T> getChildren(@NotNull String role);
 

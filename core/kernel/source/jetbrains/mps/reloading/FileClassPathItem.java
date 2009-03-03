@@ -17,11 +17,13 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.vfs.*;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
@@ -29,7 +31,7 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class FileClassPathItem extends AbstractClassPathItem {    
+public class FileClassPathItem extends AbstractClassPathItem {
   private String myClassPath;
 
   private Map<String, Set<String>> mySubpackagesCache = new HashMap<String, Set<String>>();
@@ -53,7 +55,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
 
     Set<String> classes = myAvailableClassesCache.get(namespace);
     if (classes == null
-            || !classes.contains(shortname)) {
+      || !classes.contains(shortname)) {
       return null;
     }
 
@@ -139,7 +141,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
       }
     }
 
-    mySubpackagesCache.put(namespace, subpacks.isEmpty() ? null : subpacks );
+    mySubpackagesCache.put(namespace, subpacks.isEmpty() ? null : subpacks);
     myAvailableClassesCache.put(namespace, classes.isEmpty() ? null : classes);
   }
 

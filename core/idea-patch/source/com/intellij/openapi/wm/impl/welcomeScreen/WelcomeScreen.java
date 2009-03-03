@@ -20,16 +20,13 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
 import com.intellij.ide.plugins.PluginManager;
-import com.intellij.ide.plugins.PluginManagerConfigurable;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.actionSystem.ex.ActionButtonLook;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationInfoEx;
-import com.intellij.openapi.options.ShowSettingsUtil;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.LabeledIcon;
-import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.UIBundle;
 import com.intellij.util.ui.EmptyIcon;
 import com.intellij.util.ui.UIUtil;
@@ -44,8 +41,8 @@ import java.awt.event.MouseMotionListener;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Rectangle2D;
-import java.awt.image.PixelGrabber;
 import java.awt.image.BufferedImage;
+import java.awt.image.PixelGrabber;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -88,7 +85,8 @@ public class WelcomeScreen {
   private static Icon CAPTION_IMAGE;
   private static Icon DEVELOPER_SLOGAN;
 
-  @NonNls protected static final String TAHOMA_FONT_NAME = "Tahoma";
+  @NonNls
+  protected static final String TAHOMA_FONT_NAME = "Tahoma";
   private static final Font TEXT_FONT = new Font(TAHOMA_FONT_NAME, Font.PLAIN, 11);
   private static final Font LINK_FONT = new Font(TAHOMA_FONT_NAME, Font.BOLD, 12);
   private static final Font GROUP_CAPTION_FONT = new Font(TAHOMA_FONT_NAME, Font.BOLD, 18);
@@ -109,16 +107,20 @@ public class WelcomeScreen {
 
   private int myPluginsButtonsCount = 0;
   private int myPluginsIdx = -1;
-  @NonNls protected static final String ___HTML_SUFFIX = "...</html>";
-  @NonNls protected static final String ESC_NEW_LINE = "\\n";
+  @NonNls
+  protected static final String ___HTML_SUFFIX = "...</html>";
+  @NonNls
+  protected static final String ESC_NEW_LINE = "\\n";
 
   private class ActionGroupDescriptor {
     private int myIdx = -1;
     private int myCount = 0;
     private JPanel myPanel;
     private final int myColumnIdx;
-    @NonNls protected static final String HTML_PREFIX = "<html>";
-    @NonNls protected static final String HTML_SUFFIX = "</html>";
+    @NonNls
+    protected static final String HTML_PREFIX = "<html>";
+    @NonNls
+    protected static final String HTML_SUFFIX = "</html>";
 
     public ActionGroupDescriptor(final String caption, final int columnIndex) {
       JPanel panel = new JPanel(new GridBagLayout()) {
@@ -183,10 +185,9 @@ public class WelcomeScreen {
       final AnAction[] actions = group.getChildren(null);
       for (final AnAction action : actions) {
         if (action instanceof ActionGroup) {
-          final ActionGroup childGroup = (ActionGroup)action;
+          final ActionGroup childGroup = (ActionGroup) action;
           appendActionsFromGroup(childGroup);
-        }
-        else {
+        } else {
           appendButtonForAction(action);
         }
       }
@@ -241,7 +242,7 @@ public class WelcomeScreen {
     // Create QuickStarts group of actions
     ActionGroupDescriptor quickStarts = new ActionGroupDescriptor(UIBundle.message("welcome.screen.quick.start.action.group.name"), 0);
     // Append plug-in actions to the end of the QuickStart list
-    quickStarts.appendActionsFromGroup((DefaultActionGroup)actionManager.getAction(IdeActions.GROUP_WELCOME_SCREEN_QUICKSTART));
+    quickStarts.appendActionsFromGroup((DefaultActionGroup) actionManager.getAction(IdeActions.GROUP_WELCOME_SCREEN_QUICKSTART));
     final JPanel quickStartPanel = quickStarts.getPanel();
     // Add empty panel at the end of the QuickStarts panel
     JPanel emptyPanel_2 = new JPanel();
@@ -251,7 +252,7 @@ public class WelcomeScreen {
     // Create Documentation group of actions
     ActionGroupDescriptor docsGroup = new ActionGroupDescriptor(UIBundle.message("welcome.screen.documentation.action.group.name"), 1);
     // Append plug-in actions to the end of the QuickStart list
-    docsGroup.appendActionsFromGroup((DefaultActionGroup)actionManager.getAction(IdeActions.GROUP_WELCOME_SCREEN_DOC));
+    docsGroup.appendActionsFromGroup((DefaultActionGroup) actionManager.getAction(IdeActions.GROUP_WELCOME_SCREEN_DOC));
     final JPanel docsPanel = docsGroup.getPanel();
     // Add empty panel at the end of the Documentation list
     JPanel emptyPanel_3 = new JPanel();
@@ -286,7 +287,7 @@ public class WelcomeScreen {
         CAPTION_IMAGE = new ImageIcon(image);
       }
 
-      Image image = ((ImageIcon)CAPTION_IMAGE).getImage();
+      Image image = ((ImageIcon) CAPTION_IMAGE).getImage();
       final int[] pixels = new int[1];
       final PixelGrabber pixelGrabber = new PixelGrabber(image, CAPTION_IMAGE.getIconWidth() - 1, CAPTION_IMAGE.getIconHeight() / 2, 1, 1, pixels, 0, 1);
       try {
@@ -319,9 +320,9 @@ public class WelcomeScreen {
     transparentTopPanel.setOpaque(false);
 
     topPanel.add(transparentTopPanel,
-                 new GridBagConstraints(0, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
+      new GridBagConstraints(0, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
     topPanel.add(new JLabel(DEVELOPER_SLOGAN),
-                 new GridBagConstraints(1, 0, 1, 1, 0, 0, GridBagConstraints.SOUTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 10), 0, 0));
+      new GridBagConstraints(1, 0, 1, 1, 0, 0, GridBagConstraints.SOUTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 10), 0, 0));
 
     // Create the base welcome panel
     myWelcomePanel = new JPanel(new GridBagLayout());
@@ -338,12 +339,11 @@ public class WelcomeScreen {
         .message("welcome.screen.plugins.panel.no.plugins.currently.installed.message.text")));
       addListItemToPlugins(bundledPluginsPanel, makeItalic(UIBundle
         .message("welcome.screen.plugins.panel.all.bundled.plugins.were.uninstalled.message.text")));
-    }
-    else {
+    } else {
       final Comparator<IdeaPluginDescriptor> pluginsComparator = new Comparator<IdeaPluginDescriptor>() {
         public int compare(final IdeaPluginDescriptor o1, final IdeaPluginDescriptor o2) {
-          final boolean e1 = ((IdeaPluginDescriptorImpl)o1).isEnabled();
-          final boolean e2 = ((IdeaPluginDescriptorImpl)o2).isEnabled();
+          final boolean e1 = ((IdeaPluginDescriptorImpl) o1).isEnabled();
+          final boolean e2 = ((IdeaPluginDescriptorImpl) o2).isEnabled();
           if (e1 && !e2) return -1;
           if (!e1 && e2) return 1;
           return o1.getName().compareTo(o2.getName());
@@ -361,11 +361,10 @@ public class WelcomeScreen {
         }
         if (plugin.isBundled()) {
           embeddedPlugins++;
-          addListItemToPlugins(bundledPluginsPanel, (IdeaPluginDescriptorImpl)plugin);
-        }
-        else {
+          addListItemToPlugins(bundledPluginsPanel, (IdeaPluginDescriptorImpl) plugin);
+        } else {
           installedPlugins++;
-          addListItemToPlugins(installedPluginsPanel, (IdeaPluginDescriptorImpl)plugin);
+          addListItemToPlugins(installedPluginsPanel, (IdeaPluginDescriptorImpl) plugin);
         }
       }
       if (embeddedPlugins == 0) {
@@ -391,7 +390,7 @@ public class WelcomeScreen {
 
   private void addListItemToPlugins(final JPanel bundledPluginsPanel, final IdeaPluginDescriptorImpl plugin) {
     addListItemToPlugins(bundledPluginsPanel, plugin.getName(), plugin.getDescription(), plugin.getVendorLogoPath(),
-                         plugin.getPluginClassLoader(), plugin.getUrl(), plugin.isEnabled(), PluginManager.isIncompatible(plugin));
+      plugin.getPluginClassLoader(), plugin.getUrl(), plugin.isEnabled(), PluginManager.isIncompatible(plugin));
   }
 
   public void addListItemToPlugins(JPanel panel, String name, String description, String iconPath, ClassLoader pluginClassLoader, final String url,
@@ -399,8 +398,7 @@ public class WelcomeScreen {
 
     if (StringUtil.isEmptyOrSpaces(name)) {
       return;
-    }
-    else {
+    } else {
       name = name.trim();
     }
 
@@ -410,17 +408,16 @@ public class WelcomeScreen {
     // Check the iconPath and insert empty icon in case of empty or invalid value
     if (StringUtil.isEmptyOrSpaces(iconPath)) {
       logoImage = new EmptyIcon(PLUGIN_LOGO_SIZE.width, PLUGIN_LOGO_SIZE.height);
-    }
-    else {
+    } else {
       logoImage = IconLoader.findIcon(iconPath, pluginClassLoader);
       if (logoImage == null) logoImage = new EmptyIcon(PLUGIN_LOGO_SIZE.width, PLUGIN_LOGO_SIZE.height);
     }
     JLabel imageLabel = new JLabel(logoImage);
     GridBagConstraints gBC = new GridBagConstraints(0, y, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE,
-                                                    new Insets(15, 20, 0, 0), 0, 0);
+      new Insets(15, 20, 0, 0), 0, 0);
     panel.add(imageLabel, gBC);
 
-    String shortenedName = adjustStringBreaksByWidth(name + " " + (incompatible ? UIBundle.message("welcome.screen.incompatible.plugins.description") : (enabled ? "": UIBundle.message("welcome.screen.disabled.plugins.description"))), LINK_FONT, false, PLUGIN_NAME_MAX_WIDTH, PLUGIN_NAME_MAX_ROWS);
+    String shortenedName = adjustStringBreaksByWidth(name + " " + (incompatible ? UIBundle.message("welcome.screen.incompatible.plugins.description") : (enabled ? "" : UIBundle.message("welcome.screen.disabled.plugins.description"))), LINK_FONT, false, PLUGIN_NAME_MAX_WIDTH, PLUGIN_NAME_MAX_ROWS);
     JLabel logoName = new JLabel(shortenedName);
     logoName.setFont(LINK_FONT);
     logoName.setForeground(enabled ? CAPTION_COLOR : DISABLED_CAPTION_COLOR);
@@ -429,7 +426,7 @@ public class WelcomeScreen {
     }
 
     gBC = new GridBagConstraints(1, y, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE,
-                                 new Insets(15, 7, 0, 0), 0, 0);
+      new Insets(15, 7, 0, 0), 0, 0);
     panel.add(logoName, gBC);
 
     if (!StringUtil.isEmpty(description)) {
@@ -452,7 +449,7 @@ public class WelcomeScreen {
       }
 
       gBC = new GridBagConstraints(1, y + 1, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL,
-                                   new Insets(5, 7, 0, 0), 5, 0);
+        new Insets(5, 7, 0, 0), 5, 0);
       panel.add(pluginDescription, gBC);
     }
 
@@ -485,14 +482,15 @@ public class WelcomeScreen {
    * and/or cuts it, so that the string does not exceed the given width (with ellipsis concatenated at the end if needed).<br>
    * It also removes all of the formatting HTML tags, except <b>&lt;br&gt;</b> and <b>&lt;li&gt;</b> (they are used for correct line breaks).
    * Returns the resulting or original string surrounded by <b>&lt;html&gt;</b> tags.
-   * @param string not <code>null</code> {@link String String} value, otherwise the "Not specified." string is returned.
-   * @return the resulting or original string ({@link String String}) surrounded by <b>&lt;html&gt;</b> tags.
-   * @param font not <code>null</code> {@link Font Font} object.
+   *
+   * @param string        not <code>null</code> {@link String String} value, otherwise the "Not specified." string is returned.
+   * @param font          not <code>null</code> {@link Font Font} object.
    * @param isAntiAliased <code>boolean</code> value to denote whether the font is antialiased or not.
-   * @param maxWidth <code>int</code> value specifying maximum width of the resulting string in pixels.
-   * @param maxRows <code>int</code> value spesifying the number of rows. If the value is positive, the string is modified to not exceed
-   * the specified number, and method adds an ellipsis instead of the exceeding part. If the value is zero or negative, the entire string is broken
-   * into lines until its end.
+   * @param maxWidth      <code>int</code> value specifying maximum width of the resulting string in pixels.
+   * @param maxRows       <code>int</code> value spesifying the number of rows. If the value is positive, the string is modified to not exceed
+   *                      the specified number, and method adds an ellipsis instead of the exceeding part. If the value is zero or negative, the entire string is broken
+   *                      into lines until its end.
+   * @return the resulting or original string ({@link String String}) surrounded by <b>&lt;html&gt;</b> tags.
    */
   @SuppressWarnings({"HardCodedStringLiteral"})
   private String adjustStringBreaksByWidth(String string,
@@ -516,7 +514,7 @@ public class WelcomeScreen {
 
       StringBuffer prefix = new StringBuffer();
       String suffix = string;
-      int maxIdxPerLine = (int)(maxWidth / r.getWidth() * string.length());
+      int maxIdxPerLine = (int) (maxWidth / r.getWidth() * string.length());
       int lengthLeft = string.length();
       int rows = maxRows;
       if (rows <= 0) {
@@ -532,8 +530,7 @@ public class WelcomeScreen {
             lengthLeft = suffix.length();
             if (maxRows > 0) {
               rows--;
-            }
-            else {
+            } else {
               rows = lengthLeft / maxIdxPerLine + 1;
             }
             break;
@@ -545,8 +542,7 @@ public class WelcomeScreen {
             suffix = suffix.substring(maxIdxPerLine, suffix.length());
             lengthLeft = suffix.length();
             rows--;
-          }
-          else {
+          } else {
             break;
           }
         }
@@ -558,16 +554,13 @@ public class WelcomeScreen {
             if ("...".equals(suffix.substring(i - 3, i))) {
               suffix = suffix.substring(0, i - 1);
               break;
-            }
-            else if (suffix.charAt(i - 1) == '>') {
+            } else if (suffix.charAt(i - 1) == '>') {
               //noinspection AssignmentToForLoopParameter
               i--;
-            }
-            else if (suffix.charAt(i - 1) == '.') {
+            } else if (suffix.charAt(i - 1) == '.') {
               suffix = suffix.substring(0, i) + "..";
               break;
-            }
-            else {
+            } else {
               suffix = suffix.substring(0, i) + "...";
               break;
             }
@@ -647,13 +640,11 @@ public class WelcomeScreen {
         if (state == ActionButtonComponent.POPPED) {
           g.setColor(BUTTON_POPPED_COLOR);
           g.fillRect(0, 0, dimension.width, dimension.height);
-        }
-        else {
+        } else {
           g.setColor(BUTTON_PUSHED_COLOR);
           g.fillRect(0, 0, dimension.width, dimension.height);
         }
-      }
-      else {
+      } else {
         g.setColor(getNormalButtonColor());
         g.fillRect(0, 0, dimension.width, dimension.height);
       }
@@ -670,17 +661,17 @@ public class WelcomeScreen {
       UIUtil.drawLine(g, rectangle.x, rectangle.y, rectangle.x, (rectangle.y + rectangle.height) - 1);
       UIUtil.drawLine(g, rectangle.x, rectangle.y, (rectangle.x + rectangle.width) - 1, rectangle.y);
       UIUtil.drawLine(g, (rectangle.x + rectangle.width) - 1, rectangle.y, (rectangle.x + rectangle.width) - 1,
-                      (rectangle.y + rectangle.height) - 1);
+        (rectangle.y + rectangle.height) - 1);
       UIUtil.drawLine(g, rectangle.x, (rectangle.y + rectangle.height) - 1, (rectangle.x + rectangle.width) - 1,
-                      (rectangle.y + rectangle.height) - 1);
+        (rectangle.y + rectangle.height) - 1);
     }
 
     public int getPopState() {
       if (myKeypressedButton == this) return ActionButtonComponent.PUSHED;
       if (myKeypressedButton != null) return ActionButtonComponent.NORMAL;
       if (mySelectedColumn == myColumnIdx &&
-          mySelectedRow == myRowIdx &&
-          mySelectedGroup == myGroupIdx) {
+        mySelectedRow == myRowIdx &&
+        mySelectedGroup == myGroupIdx) {
         return ActionButtonComponent.POPPED;
       }
       return ActionButtonComponent.NORMAL;
@@ -697,8 +688,7 @@ public class WelcomeScreen {
           if (myKeypressedButton == MyActionButton.this) {
             myKeypressedButton = null;
             onPress(e);
-          }
-          else {
+          } else {
             myKeypressedButton = null;
           }
 
@@ -758,7 +748,8 @@ public class WelcomeScreen {
       return LEARN_MORE_SIZE;
     }
 
-    @Override protected Color getNormalButtonColor() {
+    @Override
+    protected Color getNormalButtonColor() {
       return LEARN_MORE_BUTTON_COLOR;
     }
 
@@ -771,9 +762,9 @@ public class WelcomeScreen {
       color = GRAY_BORDER_COLOR;
       g.setColor(color);
       UIUtil.drawLine(g, (rectangle.x + rectangle.width) - 1, rectangle.y + 1, (rectangle.x + rectangle.width) - 1,
-                      (rectangle.y + rectangle.height) - 1);
+        (rectangle.y + rectangle.height) - 1);
       UIUtil.drawLine(g, rectangle.x + 1, (rectangle.y + rectangle.height) - 1, (rectangle.x + rectangle.width) - 1,
-                      (rectangle.y + rectangle.height) - 1);
+        (rectangle.y + rectangle.height) - 1);
     }
   }
 }

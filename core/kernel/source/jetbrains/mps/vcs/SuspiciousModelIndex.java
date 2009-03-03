@@ -15,25 +15,23 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.project.ProjectManagerListener;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.ProjectManagerListener;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vcs.TaskQueue;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 

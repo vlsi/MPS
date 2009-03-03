@@ -15,27 +15,24 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
-import com.intellij.openapi.diff.DiffTool;
-import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffContent;
 import com.intellij.openapi.diff.DiffManager;
+import com.intellij.openapi.diff.DiffRequest;
+import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.logging.Logger;
-
-import javax.swing.SwingUtilities;
-
-import org.jdom.JDOMException;
 import org.jdom.Document;
 
+import javax.swing.SwingUtilities;
 import java.io.*;
 
 public class ModelMergeTool implements DiffTool {
@@ -85,7 +82,7 @@ public class ModelMergeTool implements DiffTool {
       // we try to use idea diff tool instead
       LOG.warning("Can't read models. Using text based diff...", e);
       DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
-      if (ideaDiffTool.canShow(request)){
+      if (ideaDiffTool.canShow(request)) {
         ideaDiffTool.show(request);
       }
     }

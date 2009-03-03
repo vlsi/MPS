@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.smodel.search;
 
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.logging.Logger;
-
-import java.util.List;
-import java.util.ArrayList;
-
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModelAndImportedModelsScope extends AbstractSearchScope {
   private static final Logger LOG = Logger.getLogger(ModelAndImportedModelsScope.class);

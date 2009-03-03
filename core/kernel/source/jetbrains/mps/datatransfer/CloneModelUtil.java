@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.datatransfer;
 
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 
 public class CloneModelUtil {
   public static SModel cloneModel(final SModel model, final SModel modelCopy, IScope scope) {

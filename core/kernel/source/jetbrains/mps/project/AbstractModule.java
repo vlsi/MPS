@@ -16,18 +16,21 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
+import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.javastub.classpath.ClassPathModelRootManager;
+import jetbrains.mps.lang.generator.structure.Generator_Language;
+import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.persistence.ModuleReadException;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.persistence.ConflictException;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
@@ -37,10 +40,6 @@ import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
-import jetbrains.mps.lang.generator.structure.Generator_Language;
-import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
-import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
-import jetbrains.mps.library.LibraryManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;

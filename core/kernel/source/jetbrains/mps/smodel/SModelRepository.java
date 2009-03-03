@@ -15,19 +15,20 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.ManyToManyMap;
-import jetbrains.mps.vfs.IFile;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.event.SModelFileChangedEvent;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.util.ManyToManyMap;
+import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.application.ApplicationManager;
 
 public class SModelRepository implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);

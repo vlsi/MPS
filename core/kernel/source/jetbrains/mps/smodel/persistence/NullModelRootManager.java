@@ -16,15 +16,15 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 class NullModelRootManager extends AbstractModelRootManager {
   public static final Logger LOG = Logger.getLogger(NullModelRootManager.class);

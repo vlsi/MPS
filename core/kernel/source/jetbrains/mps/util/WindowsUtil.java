@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.util;
 
-import java.awt.*;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Point;
+import java.awt.Rectangle;
 
 public class WindowsUtil {
   public static Rectangle findDeviceBoundsAt(Point location) {
@@ -23,7 +26,7 @@ public class WindowsUtil {
 
     //this is a hack but i don't know how to
     //make it work on many monitors
-    GraphicsDevice devices[] = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices();    
+    GraphicsDevice devices[] = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices();
     for (GraphicsDevice d : devices) {
       Rectangle bounds = d.getDefaultConfiguration().getBounds();
       if (bounds.contains(location)) deviceBounds = bounds;

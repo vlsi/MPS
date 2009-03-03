@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.vfs;
 
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.ref.WeakReference;
 import java.lang.ref.ReferenceQueue;
-import java.util.Map;
+import java.lang.ref.WeakReference;
 import java.util.HashMap;
+import java.util.Map;
 
 class JarFileDataCache {
   private static Logger LOG = Logger.getLogger(JarFileDataCache.class);

@@ -15,21 +15,16 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.vcs.impl.VcsPathPresenter;
-import com.intellij.openapi.vcs.changes.ContentRevision;
-import com.intellij.openapi.vcs.FilePath;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.VcsRoot;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.openapi.roots.ProjectFileIndex;
-import com.intellij.openapi.roots.ProjectRootManager;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleUtil;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.VcsRoot;
+import com.intellij.openapi.vcs.changes.ContentRevision;
+import com.intellij.openapi.vcs.impl.VcsPathPresenter;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VirtualFile;
 
 import java.io.File;
 
@@ -58,7 +53,7 @@ public class ModuleVcsPathPresenter extends VcsPathPresenter {
 
         }
 
-        for (VcsRoot root : myManager.getAllVcsRoots()){
+        for (VcsRoot root : myManager.getAllVcsRoots()) {
           if (VfsUtil.isAncestor(root.path, file, true)) {
             return "[" + root.path.getName() + "]" + File.separator + file.getPath();
           }

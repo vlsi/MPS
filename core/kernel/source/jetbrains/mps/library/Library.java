@@ -55,6 +55,6 @@ public class Library {
 
   @Transient
   public boolean isBootstrap() {
-    return false;    
+    return false;
   }
 }

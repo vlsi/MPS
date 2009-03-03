@@ -18,14 +18,14 @@ package jetbrains.mps.util;
 import junit.framework.TestCase;
 
 import java.io.File;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MacrosTest extends TestCase {
   public void testExpand() {
     List<String> tests = generateExpandTests();
     for (String test : tests) {
-      String result = Macros.mpsHomeMacros().expandPath(test,new File(PathManager.getHomePath()));
+      String result = Macros.mpsHomeMacros().expandPath(test, new File(PathManager.getHomePath()));
       if (!checkExpandSeperatorsCorrectness(result)) {
         fail(getFailMessgae("Expand separators:", test, result));
       }
@@ -38,7 +38,7 @@ public class MacrosTest extends TestCase {
   public void testShrink() {
     List<String> tests = generateShrinkTests();
     for (String test : tests) {
-      String result = Macros.mpsHomeMacros().shrinkPath(test,new File(PathManager.getHomePath()));
+      String result = Macros.mpsHomeMacros().shrinkPath(test, new File(PathManager.getHomePath()));
       if (!checkShrinkSeperatorsCorrectness(result)) {
         fail(getFailMessgae("Shrink separators:", test, result));
       }
@@ -56,17 +56,17 @@ public class MacrosTest extends TestCase {
 
   private List<String> generateShrinkTests() {
     List<String> tests = new ArrayList<String>();
-    tests.add(pathByComponents(PathManager.getHomePath(),"1","2","3","4"));
+    tests.add(pathByComponents(PathManager.getHomePath(), "1", "2", "3", "4"));
     return tests;
   }
 
-  private String pathByComponents(String ... components){
+  private String pathByComponents(String... components) {
     StringBuilder result = new StringBuilder();
-    for (int i = 0;i<components.length-1;i++){
+    for (int i = 0; i < components.length - 1; i++) {
       result.append(components[i]);
       result.append(File.separatorChar);
     }
-    result.append(components[components.length-1]);
+    result.append(components[components.length - 1]);
 
     return result.toString();
   }

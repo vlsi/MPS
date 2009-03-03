@@ -19,13 +19,13 @@ import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.cache.DataSet;
 import jetbrains.mps.cache.KeyProducer;
+import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.lang.structure.structure.*;
 
 import java.util.*;
 

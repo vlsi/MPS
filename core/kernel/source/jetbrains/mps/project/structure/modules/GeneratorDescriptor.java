@@ -17,8 +17,8 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class GeneratorDescriptor extends ModuleDescriptor {
   private String myGeneratorUID;

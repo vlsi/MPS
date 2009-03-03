@@ -82,7 +82,7 @@ public class JarFileData {
     return myEntries.get(path).getSize();
   }
 
-  private void buildCaches() {    
+  private void buildCaches() {
     Iterable<? extends ZipEntry> entries = CollectionUtil.asIterable(myZipFile.entries());
 
     for (ZipEntry entry : entries) {
@@ -109,7 +109,7 @@ public class JarFileData {
 
         buildDirectoryCaches(dir);
         getFilesFor(dir).add(fileName);
-        
+
         if (dir.length() > 0) {
           myEntries.put(dir + "/" + fileName, entry);
         } else {

@@ -17,8 +17,11 @@ package jetbrains.mps.util.graph;
 
 import jetbrains.mps.util.Pair;
 
-import java.util.*;
 import java.awt.Rectangle;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -77,7 +80,7 @@ public class Graph implements IGraph {
     }
     int bcx = (int) x / myVertices.size();
     int bcy = (int) y / myVertices.size();
-    return new Pair<Integer, Integer>(bcx,bcy);
+    return new Pair<Integer, Integer>(bcx, bcy);
   }
 
   public int getVerticesCount() {
@@ -101,8 +104,8 @@ public class Graph implements IGraph {
     double maxy = 0;
     boolean first = true;
     for (IVertex vertex : myVertices) {
-      int halfWidth = vertex.getWidth()/2;
-      int halfHeight = vertex.getHeight()/2;
+      int halfWidth = vertex.getWidth() / 2;
+      int halfHeight = vertex.getHeight() / 2;
       if (first) {
         minx = vertex.getX() - halfWidth;
         maxx = vertex.getX() + halfWidth;

@@ -30,7 +30,7 @@ public final class CopyUtil {
     return copy(nodes, new HashMap<SNode, SNode>());
   }
 
-  public static<NA extends INodeAdapter> List<NA> copyAdapters(List<NA> adapters) {
+  public static <NA extends INodeAdapter> List<NA> copyAdapters(List<NA> adapters) {
     return (List<NA>) BaseAdapter.toAdapters(copy(BaseAdapter.toNodes(adapters)));
   }
 
@@ -67,21 +67,21 @@ public final class CopyUtil {
     addReferences(nodes, mapping, copyAttributes);
     return result;
   }
-  
-  public static void copyAttributes (SNode fromNode, SNode toNode) {
-	  if (fromNode == null || toNode == null) return;
-	  
-	  HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode> ();
-	  mapping.put(fromNode, toNode);
-	  
-	  for (SNode child : fromNode.getChildren(true)) {
-			if (child.isAttribute()) {
-				String role = child.getRole_();
-				assert role != null;
-				toNode.addChild(role, CopyUtil.copy(child, mapping, true));
-			}
-	  }
-	  
+
+  public static void copyAttributes(SNode fromNode, SNode toNode) {
+    if (fromNode == null || toNode == null) return;
+
+    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    mapping.put(fromNode, toNode);
+
+    for (SNode child : fromNode.getChildren(true)) {
+      if (child.isAttribute()) {
+        String role = child.getRole_();
+        assert role != null;
+        toNode.addChild(role, CopyUtil.copy(child, mapping, true));
+      }
+    }
+
   }
 
   private static SNode clone(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {

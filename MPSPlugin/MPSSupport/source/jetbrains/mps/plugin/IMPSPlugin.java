@@ -20,7 +20,9 @@ import java.rmi.RemoteException;
 
 @SuppressWarnings({"RedundantThrows"})
 public interface IMPSPlugin extends Remote {
-  IProjectHandler getProjectHandler() throws RemoteException ;
+  IProjectHandler getProjectHandler() throws RemoteException;
+
   IProjectHandler getProjectHandlerFor(String projectPath) throws RemoteException;
+
   IIDEAHandler getProjectCreator() throws RemoteException;
 }

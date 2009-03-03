@@ -21,9 +21,9 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
@@ -191,7 +191,7 @@ public class RefactoringProcessor {
     ThreadUtils.runInUIThreadNoWait(runnable);
   }
 
-  public void     writeInLogAndUpdateModels(SModelReference initialModelReference, SModel model, RefactoringContext refactoringContext) {
+  public void writeInLogAndUpdateModels(SModelReference initialModelReference, SModel model, RefactoringContext refactoringContext) {
     writeIntoLog(model, refactoringContext);
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(anotherDescriptor)) {

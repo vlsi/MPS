@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.plugin;
 
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.QueryMethodGenerated;
 
-import java.rmi.RemoteException;
 import java.lang.reflect.Method;
+import java.rmi.RemoteException;
 
 public class GeneratedQueriesOpener {
   public static boolean openQueryMethod(IOperationContext context, SNode node) {

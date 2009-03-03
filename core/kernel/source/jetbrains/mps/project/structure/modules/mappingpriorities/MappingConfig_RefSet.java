@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
-public class MappingConfig_RefSet extends MappingConfig_AbstractRef{
+public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
   private List<MappingConfig_AbstractRef> myRefs;
 
   public MappingConfig_RefSet() {
@@ -31,15 +31,15 @@ public class MappingConfig_RefSet extends MappingConfig_AbstractRef{
 
   public MappingConfig_RefSet getCopy() {
     MappingConfig_RefSet result = new MappingConfig_RefSet();
-    for (MappingConfig_AbstractRef ref:myRefs){
-      result.myRefs.add(ref!=null?ref.getCopy():null);
+    for (MappingConfig_AbstractRef ref : myRefs) {
+      result.myRefs.add(ref != null ? ref.getCopy() : null);
     }
     return result;
   }
 
   @Override
   public boolean isIncomplete() {
-    for (MappingConfig_AbstractRef ref:myRefs){
+    for (MappingConfig_AbstractRef ref : myRefs) {
       if (ref.isIncomplete()) return true;
     }
     return false;

@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.util;
 
-import java.util.*;
+import java.util.AbstractSet;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.WeakHashMap;
 
 /**
  * @author Kostik

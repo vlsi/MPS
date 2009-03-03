@@ -235,7 +235,7 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E> {
       while (result == null && index < length) {
         result = table[index++];
       }
-      if(result == null && holdsNull) {
+      if (result == null && holdsNull) {
         holdsNull = false;
         result = new Entry<E>();
       }

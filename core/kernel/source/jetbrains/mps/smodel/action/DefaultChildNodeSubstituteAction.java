@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.core.structure.IType;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 /**
@@ -32,7 +32,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   private IChildNodeSetter mySetter;
 
   /**
-   * @deprecated  - ambiguity
+   * @deprecated - ambiguity
    */
   public DefaultChildNodeSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
     // parameter object is always output concept?

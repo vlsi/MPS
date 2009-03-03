@@ -15,22 +15,21 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.logging.Logger;
-
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.lang.reflect.Proxy;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelListener;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class GlobalSModelEventsManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(GlobalSModelEventsManager.class);
@@ -114,7 +113,7 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
   private SModelListener createRelayListener() {
     return (SModelListener) Proxy.newProxyInstance(
       getClass().getClassLoader(),
-      new Class[] { SModelListener.class },
+      new Class[]{SModelListener.class},
       new InvocationHandler() {
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
           if (method.getName().equals("equals") && args.length == 1) {

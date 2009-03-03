@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.structure.modules;
 
-public class SolutionDescriptor extends ModuleDescriptor{
+public class SolutionDescriptor extends ModuleDescriptor {
   private String myOutputPath;
   private boolean myExternallyVisible;
 

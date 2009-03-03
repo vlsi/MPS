@@ -16,7 +16,10 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 
 import java.util.*;
 
@@ -51,7 +54,7 @@ public class GlobalScopeMinusTransient extends GlobalScope {
     return filterOutTransient(SModelRepository.getInstance().getModelDescriptors());
   }
 
-  private Set<IModule> filterOutTransient(Collection<IModule> modules){
+  private Set<IModule> filterOutTransient(Collection<IModule> modules) {
     Set<IModule> result = new HashSet<IModule>();
 
     for (IModule module : modules) {

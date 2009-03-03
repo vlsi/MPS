@@ -15,19 +15,15 @@
  */
 package jetbrains.mps.findUsages.caches;
 
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
-
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.VFileSystem;
+
+import java.util.HashSet;
+import java.util.Set;
 
 class CacheUtil {
   static Set<VirtualFile> getIndexableRoots() {

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 
 import java.util.Stack;
@@ -31,7 +30,7 @@ public class NodeReadEventsCaster {
   private static volatile INodesReadListener ourNodesReadListener;
   private static Stack<INodesReadListener> ourNodesReadListenersStack = new Stack<INodesReadListener>();
 
-  public static void fireNodeChildReadAccess(SNode node, String childRole, SNode child){
+  public static void fireNodeChildReadAccess(SNode node, String childRole, SNode child) {
     if (ourNodesReadListener != null) {
       ourNodesReadListener.nodeChildReadAccess(node, childRole, child);
     }

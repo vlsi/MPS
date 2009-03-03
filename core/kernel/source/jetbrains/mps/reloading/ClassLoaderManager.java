@@ -18,16 +18,15 @@ package jetbrains.mps.reloading;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.library.LibraryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -202,7 +201,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
     return new RuntimeEnvironment<ModuleReference>() {
       public Class loadFromParent(String cls, RBundle<ModuleReference> bundle) {
-        if (MPSModuleRepository.getInstance().getModule(bundle.getId()) instanceof Solution)  {
+        if (MPSModuleRepository.getInstance().getModule(bundle.getId()) instanceof Solution) {
           return null;
         }
         String pack = NameUtil.namespaceFromLongName(cls);
@@ -214,7 +213,7 @@ public class ClassLoaderManager implements ApplicationComponent {
           if (cls.startsWith(prefix)) {
             return null;
           }
-        }        
+        }
         return getFromParent(cls);
       }
     };

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.util.graph;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,18 +26,30 @@ import java.util.*;
  */
 public interface IVertex {
   double getX();
+
   double getY();
+
   List<IEdge> getStar();
+
   int getStarSize();
+
   void addEdge(IEdge e);
+
   void setCoords(double newx, double newy);
+
   void trySetCoords(double newx, double newy);
+
   void confirmCoords();
+
   String getName();
+
   Object getUserObject(Object key);
+
   void putUserObject(Object key, Object value);
+
   void removeUserObject(Object key);
 
   int getWidth();
+
   int getHeight();
 }

@@ -17,8 +17,8 @@ package jetbrains.mps.util.graph;
 
 import jetbrains.mps.util.Pair;
 
-import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Graphics;
 
 /**
  * Created by IntelliJ IDEA.
@@ -38,23 +38,23 @@ public class GraphVisualizer implements IGraphVisualizer {
       int y1 = (int) Math.round(edge.getFirst().getY());
       int x2 = (int) Math.round(edge.getSecond().getX());
       int y2 = (int) Math.round(edge.getSecond().getY());
-      g.drawLine(x1,y1,x2,y2);
+      g.drawLine(x1, y1, x2, y2);
     }
 
     for (IVertex vertex : graph.getVertices()) {
       g.setColor(Color.white);
       int x = (int) Math.round(vertex.getX()) - VERTEX_RADIUS;
       int y = (int) Math.round(vertex.getY()) - VERTEX_RADIUS;
-      g.fillOval(x,y,2*VERTEX_RADIUS,2*VERTEX_RADIUS);
+      g.fillOval(x, y, 2 * VERTEX_RADIUS, 2 * VERTEX_RADIUS);
       g.setColor(Color.black);
-      g.drawString(vertex.getName(), x+3, y+2*VERTEX_RADIUS);
+      g.drawString(vertex.getName(), x + 3, y + 2 * VERTEX_RADIUS);
     }
 
-    Pair<Integer,Integer> baricenter = graph.getBaricenter();
+    Pair<Integer, Integer> baricenter = graph.getBaricenter();
     g.setColor(Color.red);
     Integer xb = baricenter.o1;
     Integer yb = baricenter.o2;
-    g.fillOval(xb -2, yb -2, 4, 4);
+    g.fillOval(xb - 2, yb - 2, 4, 4);
   }
 
 }

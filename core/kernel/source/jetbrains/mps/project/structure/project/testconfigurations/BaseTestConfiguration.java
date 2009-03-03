@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.project.structure.project.testconfigurations;
 
+import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 
 public abstract class BaseTestConfiguration {
   private String myName;

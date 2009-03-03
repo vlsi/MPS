@@ -21,8 +21,12 @@ import java.rmi.RemoteException;
 @SuppressWarnings({"RedundantThrows", "UnusedDeclaration"})
 public interface IMPSIDEHandler extends Remote {
   void showNode(String modelNamespace, String id) throws RemoteException;
-  void showAspectMethodUsages(String namespace, String name) throws RemoteException ;
+
+  void showAspectMethodUsages(String namespace, String name) throws RemoteException;
+
   void showConceptNode(String fqName) throws RemoteException;
+
   void showClassUsages(String fqName) throws RemoteException;
+
   void showMethodUsages(String classFqName, String methodName, int parameterCount) throws RemoteException;
 }

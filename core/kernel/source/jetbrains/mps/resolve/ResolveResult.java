@@ -15,17 +15,17 @@
  */
 package jetbrains.mps.resolve;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
-* User: Cyril.Konopko
-* Date: 29.05.2008
-* Time: 19:40:18
-* To change this template use File | Settings | File Templates.
-*/
+ * User: Cyril.Konopko
+ * Date: 29.05.2008
+ * Time: 19:40:18
+ * To change this template use File | Settings | File Templates.
+ */
 public class ResolveResult {
   private SNode mySourceNode;
   private String myRole;

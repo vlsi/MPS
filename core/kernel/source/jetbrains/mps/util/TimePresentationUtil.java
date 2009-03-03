@@ -29,9 +29,9 @@ public class TimePresentationUtil {
     long seconds = allSeconds % 60;
     long hours = allMinutes / 60;
     long minutes = allMinutes % 60;
-    String hoursString = ""+hours;
-    String minutesString = ""+minutes;
-    String secondsString = ""+seconds;
+    String hoursString = "" + hours;
+    String minutesString = "" + minutes;
+    String secondsString = "" + seconds;
     if (hoursString.length() < 2) hoursString = "0" + hoursString;
     if (minutesString.length() < 2) minutesString = "0" + minutesString;
     if (secondsString.length() < 2) secondsString = "0" + secondsString;

@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.watching;
 
-import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vcs.MPSVCSManager;
+import jetbrains.mps.vfs.FileSystem;
 
 import java.util.Collections;
 

@@ -15,35 +15,33 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.CollectionUtil;
-import com.intellij.psi.impl.cache.impl.id.IdIndex;
-import com.intellij.psi.impl.cache.impl.id.IdTableBuilding;
-import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
-import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
-import com.intellij.util.indexing.FileContent;
-import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.UnindexedFilesUpdater;
+import com.intellij.ide.startup.FileSystemSynchronizer;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileFilter;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ProjectRootManager;
-import com.intellij.ide.startup.FileSystemSynchronizer;
+import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
+import com.intellij.psi.impl.cache.impl.id.IdIndex;
+import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
+import com.intellij.psi.impl.cache.impl.id.IdTableBuilding;
+import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.util.indexing.FileContent;
+import com.intellij.util.indexing.UnindexedFilesUpdater;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-
-import org.jetbrains.annotations.NotNull;
+import java.util.regex.Pattern;
 
 class FastFindUsagesManager extends FindUsagesManager {
   private static final Pattern REFERENCE_PATTERN = Pattern.compile(" targetNodeId=\"(?:[0-9]+\\.)?([0-9]+)\"");
@@ -162,17 +160,17 @@ class FastFindUsagesManager extends FindUsagesManager {
         sm.getSModel();
         result.addAll(sm.findUsages(nodes));
       }
-    }       
+    }
     return result;
   }
 
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope) {
-    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null,true);
+    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null, true);
     return new ArrayList<SNode>(set);
   }
 
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, IAdaptiveProgressMonitor monitor) {
-    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, monitor,true);
+    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, monitor, true);
     return new ArrayList<SNode>(set);
   }
 
@@ -197,16 +195,16 @@ class FastFindUsagesManager extends FindUsagesManager {
   private Set<VirtualFile> getCandidates(final Set<VirtualFile> scopeFiles, final String nodeId) {
     final Set<VirtualFile> candidates = new HashSet<VirtualFile>();
     FileBasedIndex.getInstance().processValues(IdIndex.NAME, new IdIndexEntry(nodeId, true), null,
-              new FileBasedIndex.ValueProcessor<Integer>() {
+      new FileBasedIndex.ValueProcessor<Integer>() {
         public void process(final VirtualFile file, final Integer value) {
           candidates.add(file);
         }
       }, new VirtualFileFilter() {
 
-      public boolean accept(VirtualFile file) {
-        return scopeFiles.contains(file);
-      }
-    });
+        public boolean accept(VirtualFile file) {
+          return scopeFiles.contains(file);
+        }
+      });
     return candidates;
   }
 

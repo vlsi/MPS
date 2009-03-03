@@ -17,9 +17,9 @@ package jetbrains.mps.smodel.persistence.def.v1;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
-import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import org.jdom.Element;
 
 public class ReferencePersister1 implements IReferencePersister {
@@ -39,7 +39,7 @@ public class ReferencePersister1 implements IReferencePersister {
     String resolveInfo = linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO);
     String attTargetNodeId = linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
 
-      this.myUseUIDs = useUIDs;
+    this.myUseUIDs = useUIDs;
     this.mySourceNode = sourceNode;
     this.myRole = role;
     if (attTargetNodeId != null) {

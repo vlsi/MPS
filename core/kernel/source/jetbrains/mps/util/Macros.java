@@ -89,8 +89,8 @@ public abstract class Macros {
     if (path == null) return null;
 
     //todo this is a support for old project files. New format introduced before beta
-    path = path.replace('\\',File.separatorChar);
-    path = path.replace('/',File.separatorChar);
+    path = path.replace('\\', File.separatorChar);
+    path = path.replace('/', File.separatorChar);
 
     path = path.replace(SEPARATOR_CHAR, File.separatorChar);
     return expandPath_internal(path, anchorFile);
@@ -162,11 +162,11 @@ public abstract class Macros {
   }
 
   private static String shrink(String path, String prefix) {
-    assert path.length()>=prefix.length();
+    assert path.length() >= prefix.length();
     String result = path.substring(prefix.length());
 
     if (result.length() == 0) {
-      return ""+File.separatorChar;
+      return "" + File.separatorChar;
     }
 
     return result;

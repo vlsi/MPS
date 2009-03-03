@@ -21,12 +21,11 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * User: Sergey Dmitriev

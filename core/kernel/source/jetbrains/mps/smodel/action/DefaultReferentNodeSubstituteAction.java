@@ -15,23 +15,19 @@
  */
 package jetbrains.mps.smodel.action;
 
+import com.intellij.util.containers.HashMap;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.InequationSystem;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.Icon;
-
-import com.intellij.util.containers.HashMap;
 
 /**
  * Igor Alshannikov
@@ -51,7 +47,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   }
 
   public String getMatchingText(String pattern) {
-    return getMatchingText(pattern, true, false);                                       
+    return getMatchingText(pattern, true, false);
   }
 
   public String getVisibleMatchingText(String pattern) {
@@ -79,7 +75,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
 
   @Override
   public SNode getActionType(String pattern, EditorCell contextCell) {
-     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
     SNode sourceNodePeer = getSourceNode();
     SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(sourceNodePeer.getContainingRoot()), mapping).get(0);
@@ -104,7 +100,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
       if (parent == null) {
         return null;
       }
-      sourceNode.setReferent(role, (SNode)getParameterObject());
+      sourceNode.setReferent(role, (SNode) getParameterObject());
       SNode nodeToEquateCopy = CopyUtil.copy(nodeToEquate);
       auxModel.addRoot(nodeToEquateCopy);
       SNode type = TypeChecker.getInstance().getTypeOf(nodeToEquateCopy);

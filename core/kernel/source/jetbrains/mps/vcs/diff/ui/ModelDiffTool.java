@@ -15,35 +15,28 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
-import com.intellij.openapi.diff.DiffTool;
-import com.intellij.openapi.diff.DiffRequest;
-import com.intellij.openapi.diff.DiffContent;
-import com.intellij.openapi.diff.DiffManager;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.diff.DiffContent;
+import com.intellij.openapi.diff.DiffManager;
+import com.intellij.openapi.diff.DiffRequest;
+import com.intellij.openapi.diff.DiffTool;
+import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
-
-import java.io.IOException;
-import java.io.ByteArrayInputStream;
-import java.awt.event.ActionEvent;
-
-import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import org.jdom.Document;
-import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.AbstractAction;
-import javax.swing.Action;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 
 public class ModelDiffTool implements DiffTool {
   private final static Logger LOG = Logger.getLogger(ModelDiffTool.class);
@@ -60,7 +53,7 @@ public class ModelDiffTool implements DiffTool {
           return new ModelDifferenceDialog(WindowManager.getInstance().getFrame(request.getProject()), oldModel, newModel, request.getWindowTitle(), !request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
         }
       });
-      AnAction action = new AnAction("View As Text", "View As Text", Icons.TEXT_ICON){
+      AnAction action = new AnAction("View As Text", "View As Text", Icons.TEXT_ICON) {
         public void actionPerformed(AnActionEvent e) {
           DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
           if (ideaDiffTool.canShow(request)) {

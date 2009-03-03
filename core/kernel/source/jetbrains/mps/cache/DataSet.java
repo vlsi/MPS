@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.cache;
 
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.event.*;
 
 import java.util.Set;
 

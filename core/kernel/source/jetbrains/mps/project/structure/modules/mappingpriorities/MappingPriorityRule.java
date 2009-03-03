@@ -15,15 +15,13 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
-import jetbrains.mps.project.structure.modules.GeneratorReference;
-
 public class MappingPriorityRule {
   public static final String LEFT = "left";
   public static final String TYPE = "type";
   public static final String RIGHT = "right";
 
   private RuleType myType;
-  private MappingConfig_AbstractRef myLeft,myRight;
+  private MappingConfig_AbstractRef myLeft, myRight;
 
   public MappingPriorityRule() {
     myType = RuleType.STRICTLY_TOGETHER;
@@ -58,8 +56,8 @@ public class MappingPriorityRule {
   public MappingPriorityRule getCopy() {
     MappingPriorityRule result = new MappingPriorityRule();
 
-    result.myLeft = myLeft!=null?myLeft.getCopy():null;
-    result.myRight = myRight!=null?myRight.getCopy():null;
+    result.myLeft = myLeft != null ? myLeft.getCopy() : null;
+    result.myRight = myRight != null ? myRight.getCopy() : null;
     result.myType = myType;
 
     return result;

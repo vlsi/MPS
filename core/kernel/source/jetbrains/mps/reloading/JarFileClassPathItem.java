@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
@@ -164,7 +164,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
           name = name.substring(0, name.length() - 1);
         }
 
-        String pack =  name.replace('/', '.');
+        String pack = name.replace('/', '.');
         buildPackageCaches(pack);
       } else {
         String name = entry.getName();
@@ -181,7 +181,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
           pack = packEnd > 0 ? name.substring(0, packEnd).replace('/', '.') : name;
           className = name.substring(packEnd + 1, name.length() - ".class".length());
         }
-        
+
         buildPackageCaches(pack);
         getClassesSetFor(pack).add(className);
 
@@ -189,7 +189,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
           myEntries.put(pack + "." + className, entry);
         } else {
           myEntries.put(className, entry);
-        }                                                                                  
+        }
       }
     }
   }

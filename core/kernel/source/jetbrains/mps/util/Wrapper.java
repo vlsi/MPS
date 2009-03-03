@@ -38,7 +38,7 @@ public class Wrapper<T> {
   public boolean equals(Object obj) {    // equals iff targets are the same
     if (obj == this) return true;
     if (!(obj instanceof Wrapper)) return false;
-    return ((Wrapper)obj).myTarget == myTarget;
+    return ((Wrapper) obj).myTarget == myTarget;
   }
 
 

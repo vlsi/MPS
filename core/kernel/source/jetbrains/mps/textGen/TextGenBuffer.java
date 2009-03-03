@@ -71,7 +71,7 @@ public final class TextGenBuffer {
   }
 
   protected void indentBuffer() {
-    for(int i = 0; i < myIndent * myDepth; i++) {
+    for (int i = 0; i < myIndent * myDepth; i++) {
       myBuffers[myCurrBuffer].append(' ');
     }
   }

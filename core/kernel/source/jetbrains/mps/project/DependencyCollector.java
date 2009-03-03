@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.project;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 class DependencyCollector<T extends IModule> {
   private IModule myStart;
@@ -25,7 +25,7 @@ class DependencyCollector<T extends IModule> {
   private Set<IModule> myVisited = new HashSet<IModule>();
   private Set<T> myResult = new HashSet<T>();
 
-  DependencyCollector(IModule start, Class<T> elementType ) {
+  DependencyCollector(IModule start, Class<T> elementType) {
     myStart = start;
     myResultElementType = elementType;
   }

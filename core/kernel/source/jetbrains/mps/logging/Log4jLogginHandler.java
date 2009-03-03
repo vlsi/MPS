@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.logging;
 
-import org.apache.log4j.Level;
-
 class Log4jLogginHandler implements ILoggingHandler {
   private org.apache.log4j.Logger getLogger(String fqName) {
     return org.apache.log4j.Logger.getLogger(fqName);

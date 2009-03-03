@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.logging;
 
-import org.apache.log4j.Level;
-
 /**
  * Igor Alshannikov
  * Oct 17, 2007

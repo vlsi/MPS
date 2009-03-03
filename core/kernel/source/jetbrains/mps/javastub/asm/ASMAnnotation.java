@@ -15,10 +15,13 @@
  */
 package jetbrains.mps.javastub.asm;
 
-import org.objectweb.asm.tree.AnnotationNode;
 import org.objectweb.asm.Type;
+import org.objectweb.asm.tree.AnnotationNode;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class ASMAnnotation {
@@ -35,7 +38,6 @@ public class ASMAnnotation {
         Object value = processValue(node.values.get(i * 2 + 1));
 
 
-
         myValues.put(key.toString(), value);
       }
     }
@@ -50,7 +52,7 @@ public class ASMAnnotation {
       return TypeUtil.fromType((Type) value);
     }
 
-    if (value instanceof String[]) {      
+    if (value instanceof String[]) {
       String[] svalue = (String[]) value;
       return new ASMEnumValue(svalue[0], svalue[1]);
     }

@@ -95,7 +95,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
    */
   public Set<SReference> findUsages(SNode node, IScope scope, IAdaptiveProgressMonitor progress) {
     LOG.assertCanRead();
-    return findUsages(CollectionUtil.set(node), scope, progress,true);
+    return findUsages(CollectionUtil.set(node), scope, progress, true);
   }
 
   public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
@@ -140,7 +140,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
    * @return
    */
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope) {
-    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null,true);
+    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null, true);
     return new ArrayList<SNode>(set);
   }
 
@@ -156,7 +156,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
    * @return
    */
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, IAdaptiveProgressMonitor monitor) {
-    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, monitor,true);
+    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, monitor, true);
     return new ArrayList<SNode>(set);
   }
 

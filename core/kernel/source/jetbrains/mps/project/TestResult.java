@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.project;
 
-import java.util.List;
 import java.io.PrintStream;
+import java.util.List;
 
 public class TestResult {
   public List<String> myGenerationErrors;

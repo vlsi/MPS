@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.command.undo.UndoableAction;
-import com.intellij.openapi.command.undo.UnexpectedUndoException;
 import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.DocumentReferenceByVirtualFile;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import com.intellij.openapi.command.undo.UndoableAction;
+import com.intellij.openapi.command.undo.UnexpectedUndoException;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
 public abstract class SNodeUndoableAction implements UndoableAction {
   private DocumentReference[] myAffectedDocuments;
@@ -32,10 +30,10 @@ public abstract class SNodeUndoableAction implements UndoableAction {
   protected SNodeUndoableAction(SNode affectedNode) {
     SNode containingRoot = affectedNode.getContainingRoot();
     if (containingRoot == null) {
-      myAffectedDocuments =  new DocumentReference[0];
+      myAffectedDocuments = new DocumentReference[0];
     } else {
       myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(containingRoot);
-      myAffectedDocuments = new DocumentReference[] { new DocumentReferenceByVirtualFile(myFile) };
+      myAffectedDocuments = new DocumentReference[]{new DocumentReferenceByVirtualFile(myFile)};
       myModifcationStamp = myFile.getModificationStamp();
     }
   }

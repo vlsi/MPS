@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 

@@ -15,20 +15,21 @@
  */
 package jetbrains.mps.refactoring.renameSolution;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 
-import javax.swing.*;
-
-import com.intellij.openapi.util.Computable;
-
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import java.awt.Frame;
-import java.awt.HeadlessException;
-import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.HeadlessException;
 
 public class RenameSolutionDialog extends BaseDialog {
   private JPanel myMainPanel;

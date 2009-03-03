@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-
-import java.util.*;
-
-import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
 
 public class CommandEventsManager implements ApplicationComponent {
 

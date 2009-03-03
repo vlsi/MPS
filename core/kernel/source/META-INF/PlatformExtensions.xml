@@ -123,9 +123,9 @@
     <applicationConfigurable implementation="com.intellij.util.net.HttpConfigurable"/>
     <applicationConfigurable implementation="com.intellij.openapi.diff.impl.external.DiffOptionsForm"/>
     -->
-    
+
     <fileTypeFactory implementation="com.intellij.openapi.fileTypes.impl.PlatformFileTypeFactory"/>
-    <fileTypeFactory implementation="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
+    <fileTypeFactory implementation="jetbrains.mps.fileTypes.MPSFileTypeFactory"/>
     <applicationService serviceInterface="com.intellij.openapi.options.colors.ColorSettingsPages"
                         serviceImplementation="com.intellij.openapi.options.colors.pages.ColorSettingsPagesImpl"/>
 

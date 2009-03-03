@@ -22,12 +22,12 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.ToStringComparator;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;

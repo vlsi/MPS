@@ -44,8 +44,10 @@ import java.awt.image.MemoryImageSource;
 import java.awt.image.PixelGrabber;
 import java.io.File;
 import java.text.DateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Properties;
 
 public class AboutAction extends AnAction {
   private static final int TEXT_HEIGHT = 140;
@@ -147,7 +149,7 @@ public class AboutAction extends AnAction {
     try {
       new PixelGrabber(image, 0, 0, w, IMAGE_HEADER_HEIGHT, grabbed, 0, w).grabPixels();
       for (int i = IMAGE_HEADER_HEIGHT; i < IMAGE_HEADER_HEIGHT + TEXT_HEIGHT; i++) {
-        System.arraycopy(grabbed,(IMAGE_HEADER_HEIGHT -1)*w,grabbed,i*w,w);
+        System.arraycopy(grabbed, (IMAGE_HEADER_HEIGHT - 1) * w, grabbed, i * w, w);
       }
     } catch (InterruptedException e) {
       return image;
@@ -246,7 +248,7 @@ public class AboutAction extends AnAction {
       });
       addMouseMotionListener(new MouseMotionAdapter() {
         public void mouseMoved(MouseEvent event) {
-          if (myLinks==null) return;
+          if (myLinks == null) return;
           Point pSur = new Point(event.getPoint());
           pSur.translate(InfoSurface.this.getX(), InfoSurface.this.getY());
           linkNum = -1;
@@ -342,7 +344,7 @@ public class AboutAction extends AnAction {
           final String s = line.getText();
           setFont(line.isBold() ? myBoldFont : myFont);
           if (line.isLink()) {
-            x +=20;
+            x += 20;
             g2.setColor(linkCol);
             if (fillLinks) {
               FontMetrics metrics = g2.getFontMetrics(font);
@@ -426,7 +428,7 @@ public class AboutAction extends AnAction {
       myList.addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent event) {
           AboutBoxLine line = getLineUnderMouse(event.getPoint());
-          if (line==null) return;
+          if (line == null) return;
           if (!line.isLink()) return;
           event.consume();
           BrowserUtil.launchBrowser(line.getText());
@@ -436,49 +438,49 @@ public class AboutAction extends AnAction {
         public void mouseMoved(MouseEvent event) {
           AboutBoxLine line = getLineUnderMouse(event.getPoint());
 
-          if (line==null || !line.isLink()){
+          if (line == null || !line.isLink()) {
             setCursor(Cursor.getDefaultCursor());
-          } else{
+          } else {
             setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
           }
         }
       });
-      myList.setCellRenderer(new DefaultListCellRenderer(){
+      myList.setCellRenderer(new DefaultListCellRenderer() {
         @Override
-        
+
         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
           AboutBoxLine line = (AboutBoxLine) value;
           String text = line.getText();
 
-          if (line.isBold()){
-            text = "<b>"+text+"</b>";
+          if (line.isBold()) {
+            text = "<b>" + text + "</b>";
           }
-          if (line.isLink()){
-            text = "<font color='blue'>"+"&nbsp;&nbsp;&nbsp;&nbsp;"+text+"</font>";
+          if (line.isLink()) {
+            text = "<font color='blue'>" + "&nbsp;&nbsp;&nbsp;&nbsp;" + text + "</font>";
           }
-          text = "<html>"+text+"</html>";
+          text = "<html>" + text + "</html>";
           return new JLabel(text);
         }
       });
-      myList.setBorder(BorderFactory.createEmptyBorder(0,5,3,5));
+      myList.setBorder(BorderFactory.createEmptyBorder(0, 5, 3, 5));
 
       myScrollPane = new JScrollPane(myList);
       myScrollPane.setPreferredSize(new Dimension(1, LICENSES_HEIGHT));
-      myScrollPane.setBorder(BorderFactory.createLineBorder(Color.lightGray));      
+      myScrollPane.setBorder(BorderFactory.createLineBorder(Color.lightGray));
 
       Border inner = BorderFactory.createEmptyBorder(10, 3, 3, 3);
-      Border outer = BorderFactory.createMatteBorder(0,1,1,1,Color.GRAY);
-      setBorder(BorderFactory.createCompoundBorder(outer,inner));
+      Border outer = BorderFactory.createMatteBorder(0, 1, 1, 1, Color.GRAY);
+      setBorder(BorderFactory.createCompoundBorder(outer, inner));
       setBackground(Color.WHITE);
-      
+
       setLayout(new BorderLayout());
-      add(myScrollPane,BorderLayout.CENTER);
+      add(myScrollPane, BorderLayout.CENTER);
     }
 
-    private AboutBoxLine getLineUnderMouse(Point p){
-      for (int i = 0;i<myList.getModel().getSize();i++){
-        if (myList.getCellBounds(i,i).contains(p)){
-          return (AboutBoxLine)myList.getModel().getElementAt(i);
+    private AboutBoxLine getLineUnderMouse(Point p) {
+      for (int i = 0; i < myList.getModel().getSize(); i++) {
+        if (myList.getCellBounds(i, i).contains(p)) {
+          return (AboutBoxLine) myList.getModel().getElementAt(i);
         }
       }
       return null;

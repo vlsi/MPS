@@ -15,34 +15,34 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.lang.actions.structure.*;
-import jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder_Behavior;
 import jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart_Behavior;
+import jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder_Behavior;
+import jetbrains.mps.lang.actions.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.nodeEditor.CellSide;
 
 import java.util.*;
 
 public class SideTransformHintSubstituteActionsHelper {
   private static final Logger LOG = Logger.getLogger(SideTransformHintSubstituteActionsHelper.class);
 
-   private IOperationContext myContext;
-   private SNode mySourceNode;
-   private String myTransformTag;
-   private CellSide mySide;
+  private IOperationContext myContext;
+  private SNode mySourceNode;
+  private String myTransformTag;
+  private CellSide mySide;
 
-   public SideTransformHintSubstituteActionsHelper(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
-     myContext = context;
-     mySourceNode = sourceNode;
-     myTransformTag = transformTag;
-     mySide = side;
-   }
+  public SideTransformHintSubstituteActionsHelper(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
+    myContext = context;
+    mySourceNode = sourceNode;
+    myTransformTag = transformTag;
+    mySide = side;
+  }
 
-   public boolean canCreateActions() {
+  public boolean canCreateActions() {
     return getActionBuilders().size() > 0;
   }
 
@@ -136,7 +136,7 @@ public class SideTransformHintSubstituteActionsHelper {
 
               // is applicable ?
               return SModelUtil_new.isAssignableConcept(sourceConcept, actionsBuilder.getApplicableConcept()) &&
-                      satisfiesPrecondition(actionsBuilder);
+                satisfiesPrecondition(actionsBuilder);
             }
             return false;
           }

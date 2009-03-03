@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.persistence.def.v0.externalResolve;
 
 import jetbrains.mps.baseLanguage.structure.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
@@ -224,7 +223,7 @@ public class ExternalResolveInfoProvider {
       while (iterator.hasNext()) {
         String parameterDeclaration = iterator.next();
         builder.append(parameterDeclaration);
-        if (iterator.hasNext())  {
+        if (iterator.hasNext()) {
           builder.append(", ");
         }
       }

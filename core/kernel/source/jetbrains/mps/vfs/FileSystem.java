@@ -32,7 +32,7 @@ public class FileSystem {
       }
 
       File jarFile = new File(jarFileName);
-      JarFileEntryFile root = new JarFileEntryFile(JarFileDataCache.instance().getDataFor(jarFile), jarFile, entryPath);            
+      JarFileEntryFile root = new JarFileEntryFile(JarFileDataCache.instance().getDataFor(jarFile), jarFile, entryPath);
 
       return root;
     } else {

@@ -113,7 +113,7 @@ public class ExternalResolver {
 
 
   public static boolean isEmptyExtResolveInfo(String extResolveInfo) {
-    return (extResolveInfo == null ||extResolveInfo.equals("")||extResolveInfo.endsWith("null") );
+    return (extResolveInfo == null || extResolveInfo.equals("") || extResolveInfo.endsWith("null"));
   }
 
   public static String getHumanFriendlyString(String extResolveInfo) {
@@ -122,7 +122,7 @@ public class ExternalResolver {
 
   public static String getExtResolveInfoFromJavaClass(Class cls) {
     return ExternalResolveInfoProvider.getExtResolveInfoFromJavaClass(cls.getName());
-  }    
+  }
 
   public static String getExtResolveInfoFromJavaClass(String clsName) {
     return ExternalResolveInfoProvider.getExtResolveInfoFromJavaClass(clsName);

@@ -17,12 +17,9 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.util.misc.ObjectCache;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class InternUtil {
 
-  private static final ObjectCache<String,String> internCache = new ObjectCache<String, String>(20000);
+  private static final ObjectCache<String, String> internCache = new ObjectCache<String, String>(20000);
 
   public static String intern(String s) {
     if (s == null) {
@@ -30,7 +27,7 @@ public class InternUtil {
     }
     synchronized (internCache) {
       String result = internCache.tryKey(s);
-      if(result != null) {
+      if (result != null) {
         return result;
       }
       internCache.cacheObject(s, s);

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 
 abstract class VcsOperation {
   protected final ProjectLevelVcsManager myManager;

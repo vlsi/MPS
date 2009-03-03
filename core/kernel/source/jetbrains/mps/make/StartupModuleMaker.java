@@ -15,29 +15,17 @@
  */
 package jetbrains.mps.make;
 
+import com.intellij.ide.startup.StartupManagerEx;
 import com.intellij.openapi.components.AbstractProjectComponent;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.ide.DataManager;
-import com.intellij.ide.startup.StartupManagerEx;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.actions.MakeAllModules_Action;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.LinkedHashSet;
 
@@ -49,7 +37,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
     StartupManagerEx.getInstanceEx(myProject).registerPreStartupActivity(new Runnable() {
       public void run() {
-        final ProgressIndicator[] indicator = { ProgressManager.getInstance().getProgressIndicator() };
+        final ProgressIndicator[] indicator = {ProgressManager.getInstance().getProgressIndicator()};
         if (indicator[0] == null) {
           indicator[0] = new EmptyProgressIndicator();
         }

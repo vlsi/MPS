@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 
 public class SModelRoot {
   private static final Logger LOG = Logger.getLogger(SModelRoot.class);

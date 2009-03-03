@@ -1275,7 +1275,7 @@ public abstract class ChooseByNameBase {
 
     private class CompositeChooser implements Chooser {
       private MPSChooser myMPSChooser = new MPSChooser();
-      private IdeaChooser myIdeaChooser = new IdeaChooser() ;
+      private IdeaChooser myIdeaChooser = new IdeaChooser();
 
       public void addElementsByPattern(Set<Object> elementsArray, String pattern) {
         myMPSChooser.addElementsByPattern(elementsArray, pattern);
@@ -1283,6 +1283,7 @@ public abstract class ChooseByNameBase {
       }
     }
   }
+
   private static interface CalcElementsCallback {
     void run(Set<?> elements);
   }

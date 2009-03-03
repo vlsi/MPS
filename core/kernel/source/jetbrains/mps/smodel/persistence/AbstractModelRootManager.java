@@ -16,13 +16,15 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelOwner;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Set;
 import java.util.Map;
+import java.util.Set;
 
 public abstract class AbstractModelRootManager implements IModelRootManager {
   @Nullable

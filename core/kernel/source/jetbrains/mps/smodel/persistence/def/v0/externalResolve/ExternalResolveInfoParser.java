@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.smodel.persistence.def.v0.externalResolve;
 
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.Set;
 
@@ -47,12 +47,12 @@ public class ExternalResolveInfoParser {
 
     String ownResolveInfoString = isMember ? getMembersOwnResolveInfo(resolveInfo) : resolveInfo;
     StringBuffer ownResolveInfo = new StringBuffer(ownResolveInfoString);
-    ownResolveInfo.delete(0, ownResolveInfo.indexOf("]")+1);
+    ownResolveInfo.delete(0, ownResolveInfo.indexOf("]") + 1);
     int i;
     for (i = 0; i < ownResolveInfo.length(); i++) {
       if (NAME_FINISHING_CHARS.contains(ownResolveInfo.charAt(i))) break;
     }
-    if (i>0) ownResolveInfo.delete(i,ownResolveInfo.length());
+    if (i > 0) ownResolveInfo.delete(i, ownResolveInfo.length());
     return ownResolveInfo.toString();
   }
 
@@ -60,16 +60,16 @@ public class ExternalResolveInfoParser {
     String s = resolveInfo.substring(resolveInfo.indexOf('.') + 1);
     int i = s.indexOf(" : ");
     if (i > -1) {
-      s = s.substring(0,i);
-      s = s+")";
+      s = s.substring(0, i);
+      s = s + ")";
     }
     return s;
   }
 
   public static String getMembersClassifierResolveInfo(String resolveInfo, String memberType) {
     try {
-      return resolveInfo.substring(memberType.length()+1,resolveInfo.indexOf('.')-1);
-    } catch(StringIndexOutOfBoundsException ex) {
+      return resolveInfo.substring(memberType.length() + 1, resolveInfo.indexOf('.') - 1);
+    } catch (StringIndexOutOfBoundsException ex) {
       LOG.error(ex);
       return null;
     }
@@ -81,7 +81,7 @@ public class ExternalResolveInfoParser {
 
   public static String getConstructorClassifierResolveInfo(String resolveInfo) {
     String temp = resolveInfo.substring(ExternalResolver.CONSTRUCTOR.length(), resolveInfo.indexOf(" (") - 1);
-    return temp.substring(0,temp.lastIndexOf("["));
+    return temp.substring(0, temp.lastIndexOf("["));
   }
 
   public static String getClassifierResolveInfo(String resolveInfo) {

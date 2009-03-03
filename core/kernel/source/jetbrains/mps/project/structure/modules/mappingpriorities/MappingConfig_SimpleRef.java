@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
-public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef{
+public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
   private String myModelUID;
   private String myNodeID;
 
@@ -44,9 +44,9 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef{
 
   @Override
   public boolean isIncomplete() {
-    if (myModelUID==null) return true;
-    if (myModelUID.equals("*"))return false;
-    if (myNodeID==null) return true;
+    if (myModelUID == null) return true;
+    if (myModelUID.equals("*")) return false;
+    if (myNodeID == null) return true;
     return false;
   }
 }

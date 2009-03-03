@@ -17,14 +17,14 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponentFactory;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponentFactory;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.vcs.diff.*;
+import jetbrains.mps.vcs.diff.DiffBuilder;
 import jetbrains.mps.vcs.diff.changes.*;
 
 import javax.swing.JPanel;
@@ -61,8 +61,8 @@ class ModelDifferenceViewWithEditor extends JPanel implements EditorMessageOwner
     setLayout(new BorderLayout());
 
     JSplitPane splitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
-            new JScrollPane(myModelEditorComponent),
-            new JScrollPane((Component) myModelInspector));
+      new JScrollPane(myModelEditorComponent),
+      new JScrollPane((Component) myModelInspector));
     splitter.setDividerLocation(500);
 
     add(splitter, BorderLayout.CENTER);

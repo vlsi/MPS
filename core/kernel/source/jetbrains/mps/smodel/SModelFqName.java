@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
 
 @ImmutableObject
@@ -96,7 +96,7 @@ public class SModelFqName implements Comparable<Object> {
   }
 
   public int compareTo(Object o) {
-    int compareStereotypes = this.getStereotype().compareTo(((SModelFqName)o).getStereotype());
+    int compareStereotypes = this.getStereotype().compareTo(((SModelFqName) o).getStereotype());
     if (compareStereotypes != 0) return compareStereotypes;
     return this.toString().compareTo(o.toString());
   }

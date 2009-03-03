@@ -25,28 +25,28 @@ package jetbrains.mps.util;
 public class HtmlCharsUtil {
   public static String asHtml(String s, boolean xml) {
     StringBuilder builder = new StringBuilder(s);
-    int i=0;
-    while (i<builder.length()) {
+    int i = 0;
+    while (i < builder.length()) {
       char c = builder.charAt(i);
       if (c == '>') {
-        builder.replace(i,i+1,"&gt;");
-        i+=3;
+        builder.replace(i, i + 1, "&gt;");
+        i += 3;
       }
       if (c == '<') {
-        builder.replace(i,i+1,"&lt;");
-        i+=3;
+        builder.replace(i, i + 1, "&lt;");
+        i += 3;
       }
       if (!xml && c == '\n') {
-        builder.replace(i,i+1,"<br/>");
-        i+=4;
+        builder.replace(i, i + 1, "<br/>");
+        i += 4;
       }
-      if (!xml && c == '\r' && i+1<builder.length() && builder.charAt(i+1) == '\n') {
-        builder.replace(i,i+2,"<br/>");
-        i+=4;
+      if (!xml && c == '\r' && i + 1 < builder.length() && builder.charAt(i + 1) == '\n') {
+        builder.replace(i, i + 2, "<br/>");
+        i += 4;
       }
       if (!xml && c == ' ') {
-        builder.replace(i,i+1,"&nbsp;");
-        i+=5;
+        builder.replace(i, i + 1, "&nbsp;");
+        i += 5;
       }
       i++;
     }

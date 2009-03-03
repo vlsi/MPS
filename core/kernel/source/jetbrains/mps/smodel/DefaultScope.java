@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 

@@ -17,17 +17,17 @@ package jetbrains.mps.findUsages.caches;
 
 import com.intellij.ide.startup.CacheUpdater;
 import com.intellij.ide.startup.FileContent;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.roots.*;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.openapi.roots.CollectingContentIterator;
+import com.intellij.openapi.roots.ContentIterator;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.HashSet;
+import com.intellij.util.indexing.FileBasedIndex;
+import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.List;
 import java.util.Set;
-
-import jetbrains.mps.smodel.ModelAccess;
 
 public class MPSUnindexedFilesUpdater implements CacheUpdater {
   private final FileBasedIndex myIndex;
@@ -74,8 +74,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
       for (VirtualFile file : root.getChildren()) {
         if (file.isDirectory()) {
           iterateRecursively(file, processor, indicator);
-        }
-        else {
+        } else {
           processor.processFile(file);
         }
       }
@@ -89,4 +88,5 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
 
   public void canceled() {
     myIndex.flushCaches();
-  }}
+  }
+}

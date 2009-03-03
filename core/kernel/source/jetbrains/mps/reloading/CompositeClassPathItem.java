@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import java.net.URL;
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Kostik
@@ -46,7 +44,7 @@ public class CompositeClassPathItem implements IClassPathItem {
   }
 
   public URL getResource(String name) {
-    for (IClassPathItem item : myChildren) {    
+    for (IClassPathItem item : myChildren) {
       if (item.getResource(name) != null) return item.getResource(name);
     }
     return null;

@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.vcs.impl.BasicDefaultVcsRootPolicy;
-import com.intellij.openapi.vcs.changes.VcsDirtyScopeManagerImpl;
-import com.intellij.openapi.vcs.changes.DirtBuilder;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsRoot;
-import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.changes.DirtBuilder;
+import com.intellij.openapi.vcs.impl.BasicDefaultVcsRootPolicy;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.platform.ProjectBaseDirectory;
 

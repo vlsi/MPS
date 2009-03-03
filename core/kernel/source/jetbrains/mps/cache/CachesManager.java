@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.cache;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
-
-import java.util.*;
-
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.*;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
 
 public class CachesManager implements ApplicationComponent {
 

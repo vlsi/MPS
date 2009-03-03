@@ -18,8 +18,8 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
 import java.lang.reflect.InvocationTargetException;

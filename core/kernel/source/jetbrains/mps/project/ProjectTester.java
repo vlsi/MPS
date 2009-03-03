@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -26,9 +27,8 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.ModelAccess;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.search;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Igor Alshannikov

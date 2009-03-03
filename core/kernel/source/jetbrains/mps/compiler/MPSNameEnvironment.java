@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.compiler;
 
-import org.eclipse.jdt.internal.compiler.env.INameEnvironment;
-import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
+import jetbrains.mps.reloading.IClassPathItem;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileReader;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFormatException;
-import jetbrains.mps.reloading.IClassPathItem;
+import org.eclipse.jdt.internal.compiler.env.INameEnvironment;
+import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 
 public abstract class MPSNameEnvironment implements INameEnvironment {
   protected abstract IClassPathItem getClassPathItem();
@@ -55,17 +55,17 @@ public abstract class MPSNameEnvironment implements INameEnvironment {
     pname += new String(packageName);
 
     return getClassPathItem().getAvailableClasses(pname).size() != 0 ||
-            getClassPathItem().getSubpackages(pname).size() != 0;
+      getClassPathItem().getSubpackages(pname).size() != 0;
   }
 
   public void cleanup() {
   }
 
   protected NameEnvironmentAnswer findType(String fqName) {
-    try {       
+    try {
       byte[] aClass = getClassPathItem().getClass(fqName);
       if (aClass == null) return null;
-      return new NameEnvironmentAnswer(new ClassFileReader(aClass, fqName.toCharArray()),  null);
+      return new NameEnvironmentAnswer(new ClassFileReader(aClass, fqName.toCharArray()), null);
     } catch (ClassFormatException e) {
       return null;
     }

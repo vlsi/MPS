@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.nodeEditor.CellSide;
 
 import java.util.List;
 
@@ -48,12 +48,12 @@ public class ModelActions {
    */
   public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, Condition<SNode> filter, IOperationContext context) {
     return ChildSubstituteActionsHelper.createPrimaryChildSubstituteActions(
-            parentNode,
-            currentChild,
-            childConcept,
-            childSetter,
-            filter,
-            context);
+      parentNode,
+      currentChild,
+      childConcept,
+      childSetter,
+      filter,
+      context);
   }
 
   //-------------------

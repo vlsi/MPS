@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class ModelImportChange extends Change {
   private final SModelReference mySModelReference;

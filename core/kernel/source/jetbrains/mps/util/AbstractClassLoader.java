@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.util.NodeNameUtil;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,7 +42,7 @@ public abstract class AbstractClassLoader extends ClassLoader {
       if (!isExcluded(name)) {
         bytes = findClassBytes(name);
       }
-      
+
       if (bytes == null) {
         try {
           c = getParent().loadClass(name);
@@ -74,6 +72,6 @@ public abstract class AbstractClassLoader extends ClassLoader {
       definePackage(pack, null, null, null, null, null, null, null);
     }
   }
-                                
+
 
 }

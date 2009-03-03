@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.util.misc.hash;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.Map;
 
 public class LongHashMap<V> extends AbstractHashMap<Long, V> implements Map<Long, V> {
 

@@ -23,12 +23,12 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 

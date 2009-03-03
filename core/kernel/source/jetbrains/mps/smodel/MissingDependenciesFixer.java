@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.ChooseModuleDialog;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.ArrayList;

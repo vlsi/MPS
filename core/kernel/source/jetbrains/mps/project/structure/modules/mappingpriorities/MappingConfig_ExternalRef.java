@@ -17,7 +17,7 @@ package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import jetbrains.mps.project.structure.modules.GeneratorReference;
 
-public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef{
+public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
   private GeneratorReference myGenerator;
   private MappingConfig_AbstractRef myMappingConfig;
 
@@ -43,14 +43,14 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef{
 
   public MappingConfig_ExternalRef getCopy() {
     MappingConfig_ExternalRef result = new MappingConfig_ExternalRef();
-    result.myGenerator = myGenerator!=null?myGenerator.getCopy():null;
-    result.myMappingConfig = myMappingConfig!=null?myMappingConfig.getCopy():null;
+    result.myGenerator = myGenerator != null ? myGenerator.getCopy() : null;
+    result.myMappingConfig = myMappingConfig != null ? myMappingConfig.getCopy() : null;
     return result;
   }
 
   @Override
   public boolean isIncomplete() {
-    if (myGenerator==null) return false;
+    if (myGenerator == null) return false;
     return myMappingConfig.isIncomplete();
   }
 }

@@ -21,7 +21,7 @@ import java.util.List;
 
 public class EventUtil {
   public static boolean isDetachedOnlyChange(List<SModelEvent> events) {
-    final boolean[] result = { true };
+    final boolean[] result = {true};
 
 
     for (SModelEvent e : events) {
@@ -51,10 +51,10 @@ public class EventUtil {
 
   public static boolean isDramaticalChange(List<SModelEvent> events) {
     for (SModelEvent e : events) {
-       if (e instanceof SModelChildEvent) return true;
-       if (e instanceof SModelRootEvent) return true;
-       if (e instanceof SModelReferenceEvent) return true;
-     }
+      if (e instanceof SModelChildEvent) return true;
+      if (e instanceof SModelRootEvent) return true;
+      if (e instanceof SModelReferenceEvent) return true;
+    }
     return false;
   }
 
@@ -63,13 +63,13 @@ public class EventUtil {
       if (e.isChangeEvent()) {
         return true;
       }
-     }
+    }
     return false;
   }
 
   public static boolean isRootNameChange(List<SModelEvent> events) {
     for (SModelEvent e : events) {
-      if (e instanceof SModelPropertyEvent && ((SModelPropertyEvent)e).getNode().isRoot()) return true;
+      if (e instanceof SModelPropertyEvent && ((SModelPropertyEvent) e).getNode().isRoot()) return true;
     }
     return false;
   }

@@ -15,26 +15,20 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
-import jetbrains.mps.ide.IdeMain;
-import static jetbrains.mps.TestMain.configureMPS;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
-import static jetbrains.mps.vcs.diff.ui.ModelDiffTool.getModelNameAndStereotype;
-import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.ApplicationManager;
-
-import javax.swing.SwingUtilities;
-
+import static jetbrains.mps.TestMain.configureMPS;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.JDOMUtil;
+import static jetbrains.mps.vcs.diff.ui.ModelDiffTool.getModelNameAndStereotype;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 
-import java.io.ByteArrayInputStream;
+import javax.swing.SwingUtilities;
 import java.io.FileInputStream;
 import java.io.IOException;
 

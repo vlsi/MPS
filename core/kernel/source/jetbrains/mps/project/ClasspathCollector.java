@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.reloading.*;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.core.structure.Core_Language;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.Language;
 
 import java.util.*;
 
@@ -51,7 +53,7 @@ public class ClasspathCollector {
     }
 
     if (includeMPS) {
-      result.add(CommonPaths.getMPSPath());           
+      result.add(CommonPaths.getMPSPath());
     }
 
     for (IClassPathItem item : myResult) {
@@ -75,7 +77,7 @@ public class ClasspathCollector {
 
       if (myVisited.contains(current)) {
         return;
-      }                           
+      }
 
       myVisited.add(current);
       addPart(current.getClassPathItem());
@@ -89,7 +91,7 @@ public class ClasspathCollector {
         addPart(l.getLanguageRuntimeClasspath());
         for (IModule runtimeModule : l.getRuntimeDependOnModules()) {
           doCollect(runtimeModule);
-        }        
+        }
         myStack.pop();
       }
 
@@ -110,6 +112,6 @@ public class ClasspathCollector {
       myResult.add(leaf);
       myPaths.put(leaf, new ArrayList<IModule>(myStack));
     }
-    
+
   }
 }                                             

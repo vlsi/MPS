@@ -15,21 +15,23 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.vcs.FilePath;
-import com.intellij.openapi.vcs.AbstractVcs;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
-import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
-import com.intellij.openapi.vcs.actions.VcsContextFactory;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.AbstractVcs;
+import com.intellij.openapi.vcs.FilePath;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.actions.VcsContextFactory;
+import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.logging.Logger;
 
-import java.util.*;
 import java.io.File;
 import java.io.IOException;
-
-import jetbrains.mps.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 class RemoveOperation extends VcsOperation {
   private final List<FilePath> myFilePathsToDelete = new ArrayList<FilePath>(10);

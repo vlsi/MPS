@@ -17,11 +17,6 @@ package com.intellij.testFramework;
 
 import com.intellij.ide.highlighter.HighlighterFactory;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.application.ex.ApplicationManagerEx;
-import com.intellij.openapi.wm.ex.WindowManagerEx;
-import com.intellij.openapi.wm.impl.IdeFrameImpl;
-import com.intellij.openapi.wm.impl.FrameTitleBuilder;
-import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.diagnostic.Logger;
@@ -31,7 +26,6 @@ import com.intellij.openapi.editor.EditorFactory;
 import com.intellij.openapi.editor.LogicalPosition;
 import com.intellij.openapi.editor.ex.EditorEx;
 import com.intellij.openapi.fileEditor.*;
-import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.fileEditor.ex.FileEditorProviderManager;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.fileEditor.impl.*;
@@ -39,22 +33,18 @@ import com.intellij.openapi.fileEditor.impl.text.TextEditorProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.psi.PsiDocumentManager;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.util.containers.HashMap;
-import com.intellij.util.ui.update.Update;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.JComponent;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.io.File;
 
 // My version
 
@@ -385,7 +375,6 @@ public class TestEditorManagerImpl extends FileEditorManagerImpl implements Appl
         LOG.error(e);
       }
     }
-
 
 
     final EditorHistoryManager editorHistoryManager = EditorHistoryManager.getInstance(myProject);

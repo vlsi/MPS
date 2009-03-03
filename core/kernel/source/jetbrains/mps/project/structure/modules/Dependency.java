@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.project.structure.modules;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
-
 public class Dependency {
   public static final String MODULEREF = "moduleRef";
   public static final String REEXPORT = "reexport";

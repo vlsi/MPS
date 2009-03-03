@@ -15,30 +15,32 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.lang.actions.structure.*;
 import jetbrains.mps.lang.actions.behavior.NodeSubstituteActionsBuilder_Behavior;
+import jetbrains.mps.lang.actions.structure.*;
+import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.QueryMethodGenerated;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Igor Alshannikov
@@ -391,13 +393,13 @@ public class ChildSubstituteActionsHelper {
   // --------------------------------
 
   private static boolean satisfiesPrecondition(
-      NodeSubstituteActionsBuilder actionsBuilder,
-      SNode parentNode,
-      AbstractConceptDeclaration concept,
-      SNode link,
-      SNode currentTarget,
-      boolean wrapped,
-      IOperationContext context) {
+    NodeSubstituteActionsBuilder actionsBuilder,
+    SNode parentNode,
+    AbstractConceptDeclaration concept,
+    SNode link,
+    SNode currentTarget,
+    boolean wrapped,
+    IOperationContext context) {
     // try generatred query method
     NodeSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
     // precondition is optional

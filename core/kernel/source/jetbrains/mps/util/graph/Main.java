@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.util.graph;
 
-import javax.swing.*;
-import java.awt.HeadlessException;
-import java.awt.Graphics;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.HeadlessException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,7 +33,7 @@ public class Main extends JFrame {
 
   public Main(IGraph graph) throws HeadlessException {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setSize(600,600);
+    setSize(600, 600);
     getContentPane().add(new MyJComponent(graph));
     new PhysicalGraphLayouter().relayoutPhysicallyCompletely(graph, CENTER, CENTER);
     setVisible(true);
@@ -47,7 +48,7 @@ public class Main extends JFrame {
     IGraphVisualizer myVisualizer;
 
     public MyJComponent(IGraph graph) {
-      setSize(590,590);
+      setSize(590, 590);
       myGraph = graph;
       myVisualizer = new GraphVisualizer();
     }
@@ -55,7 +56,7 @@ public class Main extends JFrame {
 
     public void paint(Graphics g) {
       g.setColor(Color.white);
-      g.fillRect(0,0,getWidth(),getHeight());
+      g.fillRect(0, 0, getWidth(), getHeight());
       myVisualizer.paint(myGraph, g);
     }
   }

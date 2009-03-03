@@ -22,22 +22,23 @@ package jetbrains.mps.datatransfer;
  * Time: 19:29:37
  * To change this template use File | Settings | File Templates.
  */
-import jetbrains.mps.smodel.SModel;
 
-import java.awt.datatransfer.*;
-import java.awt.*;
-import java.io.IOException;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
 
 public class TextPasteUtil {
 
 
-  public static String getStringFromClipboard () {
+  public static String getStringFromClipboard() {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = null;
     try {
-    	content = cb.getContents(null);
+      content = cb.getContents(null);
     }
-    catch (RuntimeException ignored) {}
+    catch (RuntimeException ignored) {
+    }
     if (content == null) return null;
     return getStringFromTransferable(content);
   }
@@ -46,7 +47,7 @@ public class TextPasteUtil {
     String result;
     try {
       result = (String) content.getTransferData(DataFlavor.stringFlavor);
-    } catch(Exception e) {
+    } catch (Exception e) {
       return null;
     }
     return result;

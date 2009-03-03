@@ -17,23 +17,26 @@ package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.vcs.diff.*;
-import jetbrains.mps.vcs.diff.changes.NewNodeChange;
+import jetbrains.mps.vcs.diff.Conflict;
+import jetbrains.mps.vcs.diff.Merger;
+import jetbrains.mps.vcs.diff.Warning;
 import jetbrains.mps.vcs.diff.changes.Change;
-import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.vcs.diff.changes.NewNodeChange;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.project.StandaloneMPSContext;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -41,27 +44,25 @@ import javax.swing.JSplitPane;
 import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
 
-import org.jetbrains.annotations.NotNull;
-
 class MergeResultView extends JPanel {
   private MPSTree myResultTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
       // TODO ?
       return new MySModelTreeNode(myMerger.getResultModel(), "", new StandaloneMPSContext() {
-          @Deprecated
-          public MPSProject getMPSProject() {
-            return null;
-          }
+        @Deprecated
+        public MPSProject getMPSProject() {
+          return null;
+        }
 
-          public IModule getModule() {
-            return null;
-          }
+        public IModule getModule() {
+          return null;
+        }
 
-          @NotNull
-          public IScope getScope() {
-            return GlobalScope.getInstance();
-          }
-        });
+        @NotNull
+        public IScope getScope() {
+          return GlobalScope.getInstance();
+        }
+      });
     }
   };
 
@@ -125,7 +126,7 @@ class MergeResultView extends JPanel {
     return myMerger.getResultModel();
   }
 
-  public boolean isResolved(){
+  public boolean isResolved() {
     return myMerger.isResolved();
   }
 
@@ -251,7 +252,7 @@ class MergeResultView extends JPanel {
           } else {
             myMerger.excludeChange(myChange);
           }
-          myMerger.doRebuild(new Runnable(){
+          myMerger.doRebuild(new Runnable() {
             public void run() {
               updateView();
             }

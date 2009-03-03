@@ -15,19 +15,17 @@
  */
 package jetbrains.mps.vcs.actions;
 
+import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.actions.AbstractVcsAction;
 import com.intellij.openapi.vcs.actions.VcsContext;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VfsUtil;
-import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
-
-import java.util.List;
-import java.util.ArrayList;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 abstract class AbstractShowInFileWiew extends AbstractVcsAction {
 
@@ -44,11 +42,11 @@ abstract class AbstractShowInFileWiew extends AbstractVcsAction {
   @Nullable
   private VirtualFile calculateSelectedFile(VcsContext e) {
     VirtualFile[] selectedFiles = e.getSelectedFiles();
-    if (selectedFiles.length == 0){
+    if (selectedFiles.length == 0) {
       return null;
     }
 
-    if (selectedFiles.length == 1){
+    if (selectedFiles.length == 1) {
       return selectedFiles[0];
     }
 

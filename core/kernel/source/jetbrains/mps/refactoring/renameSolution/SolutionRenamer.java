@@ -34,6 +34,6 @@ public class SolutionRenamer {
     mySolution.setSolutionDescriptor(solutionDescriptor);
     mySolution.save();
 
-    MPSModuleRepository.getInstance().updateReferences();        
+    MPSModuleRepository.getInstance().updateReferences();
   }
 }

@@ -16,8 +16,8 @@
 package com.intellij.idea;
 
 import com.intellij.ide.license.LicenseManager;
-import com.intellij.ide.startupWizard.StartupWizard;
 import com.intellij.ide.plugins.PluginManager;
+import com.intellij.ide.startupWizard.StartupWizard;
 import com.intellij.openapi.application.ApplicationNamesInfo;
 import com.intellij.openapi.application.ConfigImportHelper;
 import com.intellij.openapi.application.PathManager;
@@ -28,8 +28,10 @@ import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.AppUIUtil;
 import org.jetbrains.annotations.NonNls;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import java.awt.EventQueue;
 import java.util.Arrays;
 import java.util.List;
 
@@ -105,8 +107,7 @@ public class MainImpl {
       try {
         if (SystemInfo.isAMD64) {
           System.loadLibrary("focuskiller64");
-        }
-        else {
+        } else {
           System.loadLibrary("focuskiller");
         }
         LOG.info("Using \"FocusKiller\" library to prevent focus stealing.");
@@ -160,10 +161,10 @@ public class MainImpl {
         return false;
       }
       JOptionPane.showMessageDialog(JOptionPane.getRootFrame(),
-                                    "Only one instance of " + ApplicationNamesInfo.getInstance().getProductName() +
-                                    " can be run at a time.",
-                                    "Error",
-                                    JOptionPane.INFORMATION_MESSAGE);
+        "Only one instance of " + ApplicationNamesInfo.getInstance().getProductName() +
+          " can be run at a time.",
+        "Error",
+        JOptionPane.INFORMATION_MESSAGE);
     }
 
     return locked;
@@ -187,17 +188,17 @@ public class MainImpl {
           final Runnable runnable = new Runnable() {
             public void run() {
               JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), "tools.jar is not in " +
-                                                                        ApplicationNamesInfo.getInstance().getProductName() +
-                                                                        " classpath. Please ensure JAVA_HOME points to JDK rather than JRE",
-                                            "Error", JOptionPane.ERROR_MESSAGE);
+                ApplicationNamesInfo.getInstance().getProductName() +
+                " classpath. Please ensure JAVA_HOME points to JDK rather than JRE",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
           };
-          if(EventQueue.isDispatchThread()) {
+          if (EventQueue.isDispatchThread()) {
             runnable.run();
           } else {
             EventQueue.invokeAndWait(runnable);
           }
-        } catch(Exception ex) {
+        } catch (Exception ex) {
           // do nothing
         }
         return false;
@@ -222,10 +223,10 @@ public class MainImpl {
       return;
     }
     JOptionPane.showMessageDialog(JOptionPane.getRootFrame(),
-                                  "The JDK version is " + version + "\n" + ApplicationNamesInfo.getInstance().getProductName() +
-                                  " requires JDK 1.5 or 1.6",
-                                  "Java Version Mismatch",
-                                  JOptionPane.INFORMATION_MESSAGE);
+      "The JDK version is " + version + "\n" + ApplicationNamesInfo.getInstance().getProductName() +
+        " requires JDK 1.5 or 1.6",
+      "Java Version Mismatch",
+      JOptionPane.INFORMATION_MESSAGE);
   }
 
   public static boolean isHeadless() {

@@ -50,7 +50,7 @@ public class IconUtil {
       if (this == o) return true;
       if (!(o instanceof FileIconKey)) return false;
 
-      final FileIconKey that = (FileIconKey)o;
+      final FileIconKey that = (FileIconKey) o;
 
       if (myFlags != that.myFlags) return false;
       if (!myFile.equals(that.myFile)) return false;
@@ -87,7 +87,7 @@ public class IconUtil {
         int flags = key.getFlags();
         Project project = key.getProject();
 
-        if (!file.isValid() ) return null;
+        if (!file.isValid()) return null;
 
         Icon providersIcon = getProvidersIcon(file, flags, project);
         Icon icon = providersIcon == null ? file.getIcon() : providersIcon;

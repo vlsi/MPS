@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.logging.Logger;
+import com.intellij.openapi.application.ApplicationManager;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.intellij.openapi.application.ApplicationManager;
 
 public class MPSProjects {
   public static MPSProjects instance() {

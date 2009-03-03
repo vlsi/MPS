@@ -39,11 +39,6 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.*;
 
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.roots.ContentIterator;
-import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.IndexableFileSet;
-
 /**
  * @author Kostik
  */
@@ -184,7 +179,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
 
   public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
-    ModelPersistence.saveModel(modelDescriptor.getSModel(), modelDescriptor.getModelFile());    
+    ModelPersistence.saveModel(modelDescriptor.getSModel(), modelDescriptor.getModelFile());
   }
 
   private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, IFile dir, SModelRoot modelRoot, ModelOwner owner) {

@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.EmptySearchScope;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -32,13 +32,13 @@ public abstract class BaseNodeReferenceSearchScopeProvider implements INodeRefer
       return new EmptySearchScope();
     }
     if (searchScopeOrListOfNodes instanceof ISearchScope) {
-      return (ISearchScope)searchScopeOrListOfNodes;
+      return (ISearchScope) searchScopeOrListOfNodes;
     }
     if (searchScopeOrListOfNodes instanceof List) {
-      return new SimpleSearchScope((List)searchScopeOrListOfNodes);
+      return new SimpleSearchScope((List) searchScopeOrListOfNodes);
     }
     if (searchScopeOrListOfNodes instanceof Iterable) {
-      return new SimpleSearchScope(CollectionUtil.asList((Iterable)searchScopeOrListOfNodes));
+      return new SimpleSearchScope(CollectionUtil.asList((Iterable) searchScopeOrListOfNodes));
     }
     throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
   }

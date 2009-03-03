@@ -15,39 +15,52 @@
  */
 package jetbrains.mps.plugin;
 
+import java.io.File;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.util.*;
-import java.io.File;
+import java.util.List;
 
 @SuppressWarnings({"RedundantThrows", "UnusedDeclaration"})
 public interface IProjectHandler extends Remote {
   void addSourceRoot(final String path) throws RemoteException;
+
   void addMPSJar(final String mpsHome) throws RemoteException;
 
   void refreshFS() throws RemoteException;
+
   CompilationResult buildModule(final String path) throws RemoteException;
+
   List<String> getAspectMethodIds(final String namespace, final String prefix) throws RemoteException;
+
   List<String> findInheritors(final String fqName) throws RemoteException;
 
   void openClass(final String fqName) throws RemoteException;
+
   void addImport(final String namespace, final String fqName) throws RemoteException;
 
   void openQueryMethod(final String namespace, final String name) throws RemoteException;
+
   String getQueryMethodText(final String namespace, final String name) throws RemoteException;
 
   void openMethod(final String className, final String name, final int parameterCount) throws RemoteException;
+
   void openField(final String className, final String name) throws RemoteException;
+
   void openConstructor(final String className, final int parameterCount) throws RemoteException;
 
   void createAspectMethod(final String path, final String namespace, final String name, final String returnType, final String params) throws RemoteException;
+
   void addLanguageRoot(String path) throws RemoteException;
+
   void createAspectClass(final String path, final String namespace) throws RemoteException;
 
   List<String> getModuleClassPath(final String path) throws RemoteException;
 
   void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
+
   void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException;
+
   void deleteFilesAndRemoveFromVCS(List<File> files) throws RemoteException;
+
   void addFilesToVCS(final List<File> files) throws RemoteException;
 }

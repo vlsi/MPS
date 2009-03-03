@@ -15,20 +15,19 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
-import jetbrains.mps.project.GlobalScope;
 
 public class LanguageHierarchyCache implements ApplicationComponent {
   public static LanguageHierarchyCache getInstance() {
