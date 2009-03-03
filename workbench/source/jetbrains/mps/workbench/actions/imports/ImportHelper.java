@@ -15,40 +15,37 @@
  */
 package jetbrains.mps.workbench.actions.imports;
 
+import com.intellij.ide.DataManager;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import com.intellij.psi.impl.FakePsiElement;
 import com.intellij.psi.PsiElement;
-import com.intellij.navigation.NavigationItem;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
-import com.intellij.ide.DataManager;
-import jetbrains.mps.workbench.choose.models.BaseModelModel;
-import jetbrains.mps.workbench.choose.models.BaseModelItem;
-import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
-import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
-import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.actions.goTo.index.*;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
+import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-
-import java.awt.Frame;
-import java.util.List;
-import java.util.ArrayList;
-
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.actions.goTo.index.*;
+import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
+import jetbrains.mps.workbench.choose.models.BaseModelItem;
+import jetbrains.mps.workbench.choose.models.BaseModelModel;
+import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
+import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
+import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
+import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JOptionPane;
+import java.awt.Frame;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ImportHelper {
   private static boolean myUseCache = true;
@@ -114,7 +111,7 @@ public class ImportHelper {
 
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(mpsProject) {
       public NavigationItem doGetNavigationItem(IModule module) {
-        return new AddLanguageItem((Language)module,contextModule,model);
+        return new AddLanguageItem((Language) module, contextModule, model);
       }
 
       public Language[] find(IScope scope) {
@@ -227,7 +224,7 @@ public class ImportHelper {
               }.navigate(requestFocus);
             }
           };
-        }        
+        }
 
         @Nullable
         public String getPromptText() {
@@ -264,7 +261,7 @@ public class ImportHelper {
 
     public abstract MPSProject getMPSProject();
 
-    public Frame getFrame(){
+    public Frame getFrame() {
       return MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
     }
 

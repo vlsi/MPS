@@ -10,7 +10,7 @@ public class UiLanguage_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("a20a42c8-ea20-45de-bc60-acb92cc25c46(jetbrains.mps.ide.uiLanguage)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 
 }

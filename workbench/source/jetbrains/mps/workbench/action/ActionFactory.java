@@ -48,12 +48,12 @@ public class ActionFactory {
 
   public AnAction acquireRegisteredAction(String actionClassName, String moduleNamespace, Object... params) {
     IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
-    if (module==null) return null;
+    if (module == null) return null;
     Class actionClass = module.getClass(actionClassName);
 
     Method idMethod = null;
-    if (actionClass==null){
-      LOG.warning("Action "+actionClassName+" is not found in module "+moduleNamespace);
+    if (actionClass == null) {
+      LOG.warning("Action " + actionClassName + " is not found in module " + moduleNamespace);
       return null;
     }
 
@@ -76,7 +76,7 @@ public class ActionFactory {
         LOG.error("This can't happen", e);
         return null;
       } catch (InvocationTargetException e) {
-        LOG.error("User's "+BaseAction.getIdMethodName()+"() method failed", e);
+        LOG.error("User's " + BaseAction.getIdMethodName() + "() method failed", e);
         return null;
       }
     }
@@ -105,7 +105,7 @@ public class ActionFactory {
   @Nullable
   public BaseGroup acquireRegisteredGroup(String groupClassName, String moduleNamespace, Object... params) {
     IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
-    if (module==null) return null;
+    if (module == null) return null;
     Class groupClass = module.getClass(groupClassName);
 
     String id = null;
@@ -219,7 +219,7 @@ public class ActionFactory {
     }
 
     if (group instanceof DefaultActionGroup) {
-      for (ActionGroup g : groups){
+      for (ActionGroup g : groups) {
         ((DefaultActionGroup) group).remove(g);
       }
     }

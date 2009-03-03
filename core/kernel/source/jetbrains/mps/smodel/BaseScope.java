@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.DevKit;
 
 public abstract class BaseScope implements IScope {
   public final SModelDescriptor getModelDescriptor(SModelId modelId) {

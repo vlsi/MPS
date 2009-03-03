@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class SConceptReference {
   public SConceptReference fromString(String text) {

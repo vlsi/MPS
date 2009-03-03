@@ -15,11 +15,14 @@
  */
 package jetbrains.mps.ide;
 
+import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.smodel.BaseScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 
 import java.util.ArrayList;
 import java.util.HashSet;

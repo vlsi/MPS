@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
 
 public class ImportLanguageChange extends Change {

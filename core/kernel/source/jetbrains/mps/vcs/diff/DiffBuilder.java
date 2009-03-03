@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.vcs.diff;
 
+import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.vcs.diff.changes.*;
 
 import java.util.*;
@@ -273,7 +273,7 @@ public class DiffBuilder {
     if (tn != null) return tn.getId();
     SNodeId id = ref.getTargetNodeId();
     if (id == null) return null;
-    return id.toString();    
+    return id.toString();
   }
 
   private boolean isToManyCardinality(String fqName, String role) {

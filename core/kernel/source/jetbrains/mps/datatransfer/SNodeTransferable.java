@@ -16,19 +16,19 @@
 package jetbrains.mps.datatransfer;
 
 
-import java.awt.datatransfer.Transferable;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.*;
-
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -89,7 +89,7 @@ public class SNodeTransferable implements Transferable {
     return false;
   }
 
-   public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
+  public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
     if (flavor.equals(flavors[NODE])) {
       return this;
     } else if (flavor.equals(flavors[STRING])) {
@@ -123,16 +123,15 @@ public class SNodeTransferable implements Transferable {
     if (necessaryImports == null) necessaryImports = new HashSet<SModelReference>();
     if (necessaryLanguages == null) necessaryLanguages = new HashSet<ModuleReference>();
     return CopyPasteUtil.createNodeDataOut(mySNodes, sModel, myModelProperties,
-            new HashSet<ModuleReference>(necessaryLanguages),
-            new HashSet<SModelReference>(necessaryImports),
-            new HashSet<ModuleReference>(necessaryDevKits));
+      new HashSet<ModuleReference>(necessaryLanguages),
+      new HashSet<SModelReference>(necessaryImports),
+      new HashSet<ModuleReference>(necessaryDevKits));
   }
 
 
   public boolean containsNodes() {
     return (!mySNodes.isEmpty());
   }
-
 
 
 }

@@ -31,7 +31,7 @@ public class ModelsScope extends BaseScope {
   }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    for (SModelDescriptor model:myModelDescriptors){
+    for (SModelDescriptor model : myModelDescriptors) {
       if (modelReference.equals(model.getSModelReference())) return model;
     }
     return null;

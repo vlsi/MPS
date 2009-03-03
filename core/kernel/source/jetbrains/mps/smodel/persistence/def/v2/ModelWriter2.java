@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.smodel.persistence.def.v2;
 
-import jetbrains.mps.smodel.persistence.def.*;
-import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-
-import java.util.*;
-
+import jetbrains.mps.smodel.persistence.def.*;
+import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
 import org.jdom.Document;
 import org.jdom.Element;
+
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -47,7 +46,7 @@ public class ModelWriter2 implements IModelWriter {
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.NAME, sourceModel.getLongName());
     Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
-    persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion()+"");
+    persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
     rootElement.addContent(persistenceElement);
 
     if (validate) {

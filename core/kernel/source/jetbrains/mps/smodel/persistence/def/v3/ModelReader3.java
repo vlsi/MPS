@@ -15,19 +15,19 @@
  */
 package jetbrains.mps.smodel.persistence.def.v3;
 
-import jetbrains.mps.smodel.persistence.def.*;
-import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import org.jdom.Element;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.*;
+import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
+import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ModelReader3 implements IModelReader {
   private static Logger LOG = Logger.getLogger(ModelReader3.class);
@@ -80,7 +80,7 @@ public class ModelReader3 implements IModelReader {
     model.setLoading(true);
     try {
       Element maxImportIndex = rootElement.getChild(ModelPersistence.MAX_IMPORT_INDEX);
-      if (maxImportIndex == null)  {
+      if (maxImportIndex == null) {
         maxImportIndex = getLegacyMaxImportIndexElement(rootElement); // old manner
       }
       model.setMaxImportIndex(DocUtil.readIntAttributeValue(maxImportIndex, ModelPersistence.VALUE));
@@ -174,7 +174,7 @@ public class ModelReader3 implements IModelReader {
       }
     }
 
-     VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
+    VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
     for (IReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model, visibleModelElements);
     }
@@ -211,10 +211,10 @@ public class ModelReader3 implements IModelReader {
 
   @Nullable
   protected SNode readNode(
-          Element nodeElement,
-          SModel model,
-          boolean useUIDs,
-          VisibleModelElements visibleModelElements) {
+    Element nodeElement,
+    SModel model,
+    boolean useUIDs,
+    VisibleModelElements visibleModelElements) {
     List<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
     SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs);
     for (IReferencePersister referencePersister : referenceDescriptors) {
@@ -224,51 +224,51 @@ public class ModelReader3 implements IModelReader {
   }
 
   @Nullable
-   protected SNode readNode(
-           Element nodeElement,
-           SModel model,
-           List<IReferencePersister> referenceDescriptors,
-           boolean useUIDs
-   ) {
-     String rawFQName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
-     String conceptFqName = processConceptFQName(rawFQName);
-     SNode node = new SNode(model, conceptFqName);
+  protected SNode readNode(
+    Element nodeElement,
+    SModel model,
+    List<IReferencePersister> referenceDescriptors,
+    boolean useUIDs
+  ) {
+    String rawFQName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
+    String conceptFqName = processConceptFQName(rawFQName);
+    SNode node = new SNode(model, conceptFqName);
 
-     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
-     if (idValue != null) {
-       node.setId(SNodeId.fromString(idValue));
-     }
+    String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
+    if (idValue != null) {
+      node.setId(SNodeId.fromString(idValue));
+    }
 
-     List properties = nodeElement.getChildren(ModelPersistence.PROPERTY);
-     for (Object property : properties) {
-       Element propertyElement = (Element) property;
-       String propertyName = propertyElement.getAttributeValue(ModelPersistence.NAME);
-       String propertyValue = propertyElement.getAttributeValue(ModelPersistence.VALUE);
-       if (propertyValue != null) {
-         node.setProperty(propertyName, propertyValue);
-       }
-     }
+    List properties = nodeElement.getChildren(ModelPersistence.PROPERTY);
+    for (Object property : properties) {
+      Element propertyElement = (Element) property;
+      String propertyName = propertyElement.getAttributeValue(ModelPersistence.NAME);
+      String propertyValue = propertyElement.getAttributeValue(ModelPersistence.VALUE);
+      if (propertyValue != null) {
+        node.setProperty(propertyName, propertyValue);
+      }
+    }
 
-     List links = nodeElement.getChildren(ModelPersistence.LINK);
-     for (Object link : links) {
-       Element linkElement = (Element) link;
-       IReferencePersister referencePersister = createReferencePersister();
-       referencePersister.fillFields(linkElement, node, useUIDs);
-       referenceDescriptors.add(referencePersister);
-     }
+    List links = nodeElement.getChildren(ModelPersistence.LINK);
+    for (Object link : links) {
+      Element linkElement = (Element) link;
+      IReferencePersister referencePersister = createReferencePersister();
+      referencePersister.fillFields(linkElement, node, useUIDs);
+      referenceDescriptors.add(referencePersister);
+    }
 
-     List childNodes = nodeElement.getChildren(ModelPersistence.NODE);
-     for (Object childNode1 : childNodes) {
-       Element childNodeElement = (Element) childNode1;
-       String role = childNodeElement.getAttributeValue(ModelPersistence.ROLE);
-       SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs);
-       if (role == null || childNode == null) {
-         LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
-       } else {
-         node.addChild(role, childNode);
-       }
-     }
+    List childNodes = nodeElement.getChildren(ModelPersistence.NODE);
+    for (Object childNode1 : childNodes) {
+      Element childNodeElement = (Element) childNode1;
+      String role = childNodeElement.getAttributeValue(ModelPersistence.ROLE);
+      SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs);
+      if (role == null || childNode == null) {
+        LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
+      } else {
+        node.addChild(role, childNode);
+      }
+    }
 
-     return node;
-   }
+    return node;
+  }
 }

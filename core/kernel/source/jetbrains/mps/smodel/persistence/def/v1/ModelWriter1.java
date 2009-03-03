@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.smodel.persistence.def.v1;
 
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -47,7 +47,7 @@ public class ModelWriter1 implements IModelWriter {
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.NAME, sourceModel.getLongName());
     Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
-    persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion()+"");
+    persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
     rootElement.addContent(persistenceElement);
 
     if (validate) {

@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.datatransfer;
 
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 
-import java.util.List;
-import java.util.Set;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -81,10 +81,10 @@ public class PasteNodeData {
 
   public static PasteNodeData emptyPasteNodeData(SModel model) {
     return new PasteNodeData(new ArrayList<SNode>(),
-            new HashSet<SReference>(),
-            model,
-            new HashSet<ModuleReference>(),
-            new HashSet<SModelReference>(),
-            new HashSet<ModuleReference>());
+      new HashSet<SReference>(),
+      model,
+      new HashSet<ModuleReference>(),
+      new HashSet<SModelReference>(),
+      new HashSet<ModuleReference>());
   }
 }

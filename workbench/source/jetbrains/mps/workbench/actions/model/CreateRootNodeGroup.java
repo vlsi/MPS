@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.workbench.actions.model;
 
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.util.Computable;
-import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -65,9 +65,9 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     DataContext dataContext = DataManager.getInstance().getDataContext();
     TreeNode treeNode = MPSDataKeys.LOGICAL_VIEW_NODE.getData(dataContext);
-    if (!(treeNode instanceof PackageNode)){
+    if (!(treeNode instanceof PackageNode)) {
       myPackage = null;
-    }else{
+    } else {
       final PackageNode node = (PackageNode) treeNode;
       myPackage = node.getPackage();
     }

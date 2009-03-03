@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.project.structure.project.testconfigurations;
 
-import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.IModule;

@@ -15,22 +15,19 @@
  */
 package jetbrains.mps.vcs.diff;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vcs.diff.changes.*;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.Cardinality;
 
 import java.util.*;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.HashSet;
 
 public class Merger {
   private final SModel[] mySourceModels = new SModel[VERSION.values().length];
