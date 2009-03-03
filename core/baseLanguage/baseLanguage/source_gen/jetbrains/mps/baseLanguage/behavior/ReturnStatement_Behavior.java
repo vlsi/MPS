@@ -52,7 +52,7 @@ public class ReturnStatement_Behavior {
   public static SNode call_getReturnJumpTarget_1229351767970(SNode thisNode) {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
     if (IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(container)) {
-      return container;
+      return SLinkOperations.getTarget(container, "body", true);
     }
     return null;
   }

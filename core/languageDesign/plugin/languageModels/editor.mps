@@ -3004,10 +3004,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225441160359">
           <property name="text" value="{" />
-          <link role="styleClass" targetNodeId="17.1215091279307" resolveInfo="LeftBrace" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233928185224">
-            <property name="flag" value="true" />
-          </node>
+          <link role="styleClass" targetNodeId="17.1215010874200" resolveInfo="Brace" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225441160361">
           <property name="flag" value="false" />
@@ -3025,7 +3022,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225441160366">
         <property name="text" value="}" />
-        <link role="styleClass" targetNodeId="17.1215091331565" resolveInfo="RightBrace" />
+        <link role="styleClass" targetNodeId="17.1215010874200" resolveInfo="Brace" />
       </node>
     </node>
   </node>

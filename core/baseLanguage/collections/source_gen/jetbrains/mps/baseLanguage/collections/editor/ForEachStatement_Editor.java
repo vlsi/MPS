@@ -364,7 +364,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7497_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7497_2");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_7497_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -398,7 +398,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7497_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7497_3");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_7497_4(EditorCell editorCell, SNode node, EditorContext context) {

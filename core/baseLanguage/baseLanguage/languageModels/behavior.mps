@@ -8165,7 +8165,7 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229351767970">
       <property name="name" value="getReturnJumpTarget" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1229351806187">
-        <link role="concept" targetNodeId="1.1199653749349" resolveInfo="IStatementListContainer" />
+        <link role="concept" targetNodeId="1.1068580123136" resolveInfo="StatementList" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229351767972">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229351880050">
@@ -8189,8 +8189,16 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1229351917829">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229351917830">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1229351940156">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229351944003">
-                <link role="variableDeclaration" targetNodeId="1229351880051" resolveInfo="container" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236101447934">
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1236101441796">
+                  <link role="concept" targetNodeId="25.1199569711397" resolveInfo="ClosureLiteral" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229351944003">
+                    <link role="variableDeclaration" targetNodeId="1229351880051" resolveInfo="container" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1236101451468">
+                  <link role="link" targetNodeId="25.1199569916463" />
+                </node>
               </node>
             </node>
           </node>

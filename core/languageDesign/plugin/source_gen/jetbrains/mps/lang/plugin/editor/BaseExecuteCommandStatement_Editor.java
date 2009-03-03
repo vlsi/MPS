@@ -163,16 +163,7 @@ public class BaseExecuteCommandStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7356_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7356_0");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_7356_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -197,7 +188,7 @@ public class BaseExecuteCommandStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7356_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7356_1");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_ConceptProperty_7356_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
