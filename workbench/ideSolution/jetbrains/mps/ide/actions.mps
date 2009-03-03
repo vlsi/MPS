@@ -222,12 +222,6 @@
             version="-1"/>
     <import index="150" modelUID="f:java_stub#jetbrains.mps.lang.actions(jetbrains.mps.lang.actions@java_stub)"
             version="-1"/>
-    <import index="152"
-            modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.crejetbrains.mps.workbench.dialogs.projectroject.creation@java_stub)"
-            version="-1"/>
-    <import index="153"
-            modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.projectoptions(jetbrains.mps.workbench.dialogs.projectoptions@java_stub)"
-            version="-1"/>
     <import index="154"
             modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.utildialogs(jetbrains.mps.workbench.dialogs.project.utildialogs@java_stub)"
             version="-1"/>
