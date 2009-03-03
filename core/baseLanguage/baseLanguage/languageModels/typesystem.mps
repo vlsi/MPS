@@ -17018,5 +17018,10 @@
       <link role="concept" targetNodeId="1.1233828326825" resolveInfo="TupleMemberAccessOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule" id="1236084661637">
+    <node role="function" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction" id="1236084661641">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236084661642" />
+    </node>
+  </node>
 </model>
 

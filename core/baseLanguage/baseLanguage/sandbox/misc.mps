@@ -71,6 +71,16 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1235663374760" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235663388147" />
     </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1236001911579">
+      <property name="name" value="myJ" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1236001911580" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1236001911581" />
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1236001911792">
+      <property name="name" value="myK" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1236001911793" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1236001911794" />
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1227257098731">
       <property name="name" value="foo" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227257098732" />
@@ -120,31 +130,31 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257059349" />
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235761022628">
-      <property name="name" value="getMyI" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235761022630" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235761022632" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235761022633">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235761022634">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235761022635">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1235761022638" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1235761022639">
-              <link role="fieldDeclaration" targetNodeId="1235663374759" resolveInfo="myI" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236002000951">
+      <property name="name" value="getMyJ" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236002000953" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1236002000955" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236002000956">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236002000958">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236002000959">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236002000962" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1236002000963">
+              <link role="fieldDeclaration" targetNodeId="1236001911579" resolveInfo="myJ" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235761364578">
-      <property name="name" value="getMyI" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235761364580" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235761364582" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235761364583">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235761364584">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235761364585">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1235761364588" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1235761364589">
-              <link role="fieldDeclaration" targetNodeId="1235663374759" resolveInfo="myI" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236002000965">
+      <property name="name" value="getMyK" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236002000967" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1236002000969" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236002000970">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236002000971">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236002000972">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236002000975" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1236002000976">
+              <link role="fieldDeclaration" targetNodeId="1236001911792" resolveInfo="myK" />
             </node>
           </node>
         </node>
