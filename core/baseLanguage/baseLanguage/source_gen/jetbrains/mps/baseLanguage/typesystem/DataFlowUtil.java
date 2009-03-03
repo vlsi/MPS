@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.dataFlow.DataflowBuilderException;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.DataFlow;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -25,13 +26,17 @@ public class DataFlowUtil {
 
   @CheckingMethod()
   public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, @NotNull() SNode statementList) {
-    checkUnreachable(typeCheckingContext, statementList);
-    checkUninitializedReads(typeCheckingContext, statementList);
-    checkUnusedAssignments(typeCheckingContext, statementList);
-    checkUnusedVariables(typeCheckingContext, statementList);
-    /*
-      checkNullable(typeCheckingContext, statementList);
-    */
+    try {
+      checkUnreachable(typeCheckingContext, statementList);
+      checkUninitializedReads(typeCheckingContext, statementList);
+      checkUnusedAssignments(typeCheckingContext, statementList);
+      checkUnusedVariables(typeCheckingContext, statementList);
+      /*
+        checkNullable(typeCheckingContext, statementList);
+      */
+    } catch (DataflowBuilderException e) {
+      throw new RuntimeException("Building dataflow for node: " + statementList.getId() + " model: " + statementList.getModel(), e);
+    }
   }
 
   @CheckingMethod()
