@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.dialogs.newproject;
+package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.dialogs.newproject.icons.Icons;
+import jetbrains.mps.workbench.dialogs.project.newproject.icons.Icons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,14 +31,14 @@ import java.awt.event.ActionEvent;
 import java.io.File;
 import java.net.URL;
 
-public class LanguageStep extends BaseStep {
+public class SolutionStep extends BaseStep {
   private ProjectOptions myOptions;
 
   private JTextField myNamespace;
   private PathField myPath;
   private JCheckBox myCreate;
 
-  public LanguageStep(ProjectOptions options) {
+  public SolutionStep(ProjectOptions options) {
     super();
     myOptions = options;
   }
@@ -47,22 +46,22 @@ public class LanguageStep extends BaseStep {
   public JComponent createControlComponent() {
     JPanel panel = new JPanel(new GridLayout(5, 1));
 
-    myCreate = new JCheckBox(new AbstractAction("Create new language") {
+    myCreate = new JCheckBox(new AbstractAction("Create new solution") {
       public void actionPerformed(ActionEvent e) {
-        setCreateLanguage(myCreate.isSelected());
+        setCreateSolution(myCreate.isSelected());
       }
     });
     panel.add(myCreate);
 
-    JLabel namespaceLabel = new JLabel();
-    namespaceLabel.setText("Language Namespace:");
-    panel.add(namespaceLabel);
+    JLabel nameLabel = new JLabel();
+    nameLabel.setText("Name:");
+    panel.add(nameLabel);
 
     myNamespace = new JTextField();
     panel.add(myNamespace);
 
     JLabel pathLabel = new JLabel();
-    pathLabel.setText("Language Path:");
+    pathLabel.setText("Solution Path:");
     panel.add(pathLabel);
 
     myPath = new PathField();
@@ -70,7 +69,7 @@ public class LanguageStep extends BaseStep {
 
     myNamespace.addCaretListener(new CaretListener() {
       public void caretUpdate(CaretEvent e) {
-        updateLanguagePath();
+        updateSolutionPath();
       }
     });
 
@@ -83,57 +82,66 @@ public class LanguageStep extends BaseStep {
 
   @NotNull
   public String getImageText() {
-    return "New Language";
+    return "New Solution";
   }
 
   public String getCommentString() {
     return
-      "In MPS, you create new languages and then use them to write code " +
-        "in solutions. An MPS language describes the syntax, editor, generator and other aspects of the " +
-        "new language.";
+      "Solutions are used to store code written in MPS languages. " +
+        "Each solution is a set of models with a name.";
   }
 
   @Nullable
   public String getURL() {
-    return "http://www.jetbrains.net/confluence/display/MPS/MPS+project+structure#MPSprojectstructure-languages";
+    return "http://www.jetbrains.net/confluence/display/MPS/MPS+project+structure#MPSprojectstructure-solutions";
+  }
+
+  private void updateSolutionPath() {
+    String path = FileUtil.getCanonicalPath(myOptions.getProjectPath());
+    String prefix = path + File.separator + "solutions" + File.separator;
+    if (myPath.getPath() == null || myPath.getPath().startsWith(prefix)) {
+      myPath.setPath(prefix + myNamespace.getText());
+    }
   }
 
   public void _init() {
     super._init();
 
-    if (myOptions.getLanguageNamespace() == null) {
-      myOptions.setLanguageNamespace(myOptions.getProjectName());
+    if (myOptions.getSolutionNamespace() == null) {
+      String prefix;
+      if (myOptions.getCreateNewLanguage()) {
+        prefix = myOptions.getLanguageNamespace();
+      } else {
+        prefix = myOptions.getProjectName();
+      }
+      myOptions.setSolutionNamespace(prefix + ".sandbox");
       myCreate.doClick();
     }
 
-    myNamespace.setText(myOptions.getLanguageNamespace());
-    myPath.setPath(myOptions.getLanguagePath());
+    myNamespace.setText(myOptions.getSolutionNamespace());
+    myPath.setPath(myOptions.getSolutionPath());
 
-    updateLanguagePath();
-  }
-
-  private void updateLanguagePath() {
-    String path = FileUtil.getCanonicalPath(myOptions.getProjectPath());
-    String prefix = path + File.separator + "languages" + File.separator;
-    if (myPath.getPath() == null || myPath.getPath().startsWith(prefix)) {
-      myPath.setPath(prefix + NameUtil.shortNameFromLongName(myNamespace.getText()));
-    }
+    updateSolutionPath();
   }
 
   public void _check() throws CommitStepException {
-    if (myOptions.getCreateNewLanguage()) {
-      File dir = new File(myPath.getPath());
-      if (!(dir.isAbsolute())) {
-        throw new CommitStepException("Path should path");
+    if (myOptions.getCreateNewSolution()) {
+      if (myPath.getPath().length() == 0) {
+        throw new CommitStepException("Enter solution directory");
       }
       if (myNamespace.getText().length() == 0) {
-        throw new CommitStepException("Enter namespace");
+        throw new CommitStepException("Enter solution name");
       }
       if (MPSModuleRepository.getInstance().getModuleByUID(myNamespace.getText()) != null) {
-        throw new CommitStepException("Language namespace already exists");
+        throw new CommitStepException("Duplicate solution name");
       }
-      if (NameUtil.shortNameFromLongName(myNamespace.getText()).length() == 0) {
-        throw new CommitStepException("Enter valid namespace");
+      File file = new File(myPath.getPath());
+      if (file.exists()) {
+        throw new CommitStepException("Solution file already exists");
+      }
+      File dir = file.getParentFile();
+      if (!(dir.isAbsolute())) {
+        throw new CommitStepException("Path should be absolute");
       }
     }
   }
@@ -141,12 +149,12 @@ public class LanguageStep extends BaseStep {
   public void _commit(boolean finishChosen) throws CommitStepException {
     super._commit(finishChosen);
 
-    myOptions.setLanguageNamespace(myNamespace.getText());
-    myOptions.setLanguagePath(myPath.getPath());
+    myOptions.setSolutionNamespace(myNamespace.getText());
+    myOptions.setSolutionPath(myPath.getPath());
   }
 
-  private void setCreateLanguage(boolean value) {
-    myOptions.setCreateNewLanguage(value);
+  private void setCreateSolution(boolean value) {
+    myOptions.setCreateNewSolution(value);
     myNamespace.setEnabled(value);
     myPath.setEnabled(value);
   }

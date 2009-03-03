@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.dialogs;
+package jetbrains.mps.workbench.dialogs.project.utildialogs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.datatransfer.CloneModelUtil;
-import jetbrains.mps.ide.dialogs.project.BaseStretchingProjectDialog;
-import jetbrains.mps.ide.dialogs.project.properties.presenters.CloneModelProperties;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.dialogs.project.BaseStretchingProjectDialog;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
 
@@ -48,8 +48,8 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
     initUI();
   }
 
-  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(100, 100, 400, 200);
+  public DialogDimensions getDefaultDimensionSettings() {
+    return new DialogDimensions(100, 100, 400, 200);
   }
 
   private void initUI() {

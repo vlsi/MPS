@@ -17,10 +17,10 @@ package jetbrains.mps.datatransfer;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.IMethodCall;
-import jetbrains.mps.ide.dialogs.project.utildialogs.AddRequiredModelImportsDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.dialogs.project.utildialogs.AddRequiredModelImportsDialog;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.Toolkit;

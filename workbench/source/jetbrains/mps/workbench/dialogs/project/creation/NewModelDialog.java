@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.dialogs.project.creation;
+package jetbrains.mps.workbench.dialogs.project.creation;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.dialogs.ModelPropertiesDialog;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.dialogs.project.properties.model.ModelPropertiesDialog;
 
 import javax.swing.*;
 import java.awt.BorderLayout;

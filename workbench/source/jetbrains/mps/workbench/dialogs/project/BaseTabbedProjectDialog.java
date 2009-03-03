@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.dialogs.project;
+package jetbrains.mps.workbench.dialogs.project;
 
 import jetbrains.mps.smodel.IOperationContext;
 

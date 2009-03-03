@@ -51,7 +51,7 @@
             <implementation-class>jetbrains.mps.vcs.VcsRootsManager</implementation-class>
         </component>
         <component>
-            <implementation-class>jetbrains.mps.workbench.dialogs.projectoptions.ProjectOptionsPerfsPage
+            <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPerfsPage
             </implementation-class>
         </component>
         <component>

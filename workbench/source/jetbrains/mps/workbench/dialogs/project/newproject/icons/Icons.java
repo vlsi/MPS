@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.dialogs.newproject.icons;
+package jetbrains.mps.workbench.dialogs.project.newproject.icons;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
