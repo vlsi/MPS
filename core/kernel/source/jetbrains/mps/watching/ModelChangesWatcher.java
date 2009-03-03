@@ -52,7 +52,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private MessageBusConnection myConnection;
   private BulkFileListener myBusListener = new BulkFileCahngesListener();
 
-  public ModelChangesWatcher(final MessageBus bus, SModelRepository sModelRepository, ProjectManager projectManager) {
+  public ModelChangesWatcher(final MessageBus bus) {
     myBus = bus;
   }
 

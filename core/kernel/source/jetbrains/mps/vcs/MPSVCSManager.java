@@ -222,6 +222,13 @@ public class MPSVCSManager implements ProjectComponent {
 
   private class GenerationWatcher implements GenerationListener {
     public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+      for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
+        SModelDescriptor smodelDescriptor = pair.o1;
+        if (smodelDescriptor != null && smodelDescriptor.needsReloading()) {
+          smodelDescriptor.reloadFromDisk();
+          LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
+        }
+      }
       myTasksQueue.prohibitAccess();
     }
 
