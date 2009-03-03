@@ -47,14 +47,6 @@ public class MPSAdapter implements ApplicationComponent {
 
   public void initComponent() {
     CaretBlinker.getInstance().launch();
-
-
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
-      public void run() {
-        myFileTypeManager.registerFileType(new MPSFileType());
-      }
-    });
-
   }
 
   public void disposeComponent() {
