@@ -55,9 +55,13 @@ class ReloadSession {
 
         public void run(@NotNull final ProgressIndicator progressIndicator) {
           if (!myNewModuleVFiles.isEmpty()) {
-            LOG.info("reloading libraries");
+            LOG.info("Reloading libraries.");
             progressIndicator.setText("Reloading libraries... Please wait.");
-            LibraryManager.getInstance().update();
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                LibraryManager.getInstance().update();
+              }
+            });
           }
 
           preprocess();
