@@ -52,6 +52,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
     @Override
     public void moduleAdded(IModule module) {
+      if (module.isPackaged()) return;
       GlobalClassPathIndex.this.moduleAdded(module);
     }
 
@@ -63,12 +64,14 @@ public class GlobalClassPathIndex implements ApplicationComponent {
 
     @Override
     public void moduleRemoved(IModule module) {
+      if (module.isPackaged()) return;
       GlobalClassPathIndex.this.moduleRemoved(module);
     }
   };
   private final CleanupListener myCleanupListener = new CleanupListener() {
     public void performCleanup() {
       for (IModule module : myModuleRepository.getAllModules()) {
+        if (module.isPackaged()) continue;
         GlobalClassPathIndex.this.moduleInitialized(module);
       }
       if (myIsChanged) {
