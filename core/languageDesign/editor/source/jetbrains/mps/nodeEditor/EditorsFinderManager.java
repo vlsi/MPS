@@ -119,7 +119,7 @@ public class EditorsFinderManager implements ApplicationComponent {
         IScope scope = context.getOperationContext().getScope();
         AbstractConceptDeclaration abstractConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(BaseAdapter.fromAdapter(nodeToEdit.getConceptDeclarationAdapter()));
         if (abstractConcept == null) {
-          LOG.errorWithTrace("error loading editor for node " + nodeToEdit.getDebugText() + "\n" +
+          LOG.error("error loading editor for node " + nodeToEdit.getDebugText() + "\n" +
                   "couldn't find node concept in scope " + scope);
           return null;
         }
