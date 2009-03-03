@@ -25,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.KeyStroke;
+import java.awt.event.KeyEvent;
 import java.util.Set;
 
 public abstract class BaseAction extends AnAction {
@@ -87,10 +88,13 @@ public abstract class BaseAction extends AnAction {
   public final void update(final AnActionEvent e) {
     super.update(e);
     ActionPlace place = MPSDataKeys.PLACE.getData(DataManager.getInstance().getDataContext());
-    if (!getPlaces().contains(null)) {
-      if (!getPlaces().contains(place)) {
-        disable(e.getPresentation());
-        return;
+
+    if (e.getInputEvent() instanceof KeyEvent) {
+      if (!getPlaces().contains(null)) {
+        if (!getPlaces().contains(place)) {
+          disable(e.getPresentation());
+          return;
+        }
       }
     }
 
