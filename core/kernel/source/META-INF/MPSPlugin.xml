@@ -32,7 +32,6 @@
 
         <extensionPoint name="projectExtension" interface="com.intellij.openapi.roots.ProjectExtension"
                         area="IDEA_PROJECT"/>
-
     </extensionPoints>
 
     <extensions defaultExtensionNs="com.intellij">
@@ -86,5 +85,8 @@
         <fileBasedIndex implementation="com.intellij.psi.impl.cache.impl.id.IdIndex"/>
         <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
         <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex"/>
+
+        <fileTypeFactory implementation="jetbrains.mps.vfs.MPSFileTypeFactory" />
+
     </extensions>
 </idea-plugin>

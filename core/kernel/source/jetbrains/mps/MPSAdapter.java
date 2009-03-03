@@ -22,6 +22,7 @@ import com.intellij.openapi.fileTypes.FileNameMatcher;
 import com.intellij.openapi.fileTypes.ex.FileTypeManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.nodeEditor.CaretBlinker;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.MPSFileType;
@@ -32,7 +33,10 @@ import javax.swing.Icon;
 import java.util.Arrays;
 
 public class MPSAdapter implements ApplicationComponent {
-  public MPSAdapter() {
+  private FileTypeManagerEx myFileTypeManager;
+
+  public MPSAdapter(FileTypeManagerEx fileTypeManager) {
+    myFileTypeManager = fileTypeManager;
   }
 
   @NonNls
@@ -45,9 +49,9 @@ public class MPSAdapter implements ApplicationComponent {
     CaretBlinker.getInstance().launch();
 
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
-        FileTypeManagerEx.getInstanceEx().registerFileType(new MPSFileType());
+        myFileTypeManager.registerFileType(new MPSFileType());
       }
     });
 
