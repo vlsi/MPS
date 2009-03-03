@@ -17,7 +17,6 @@ package jetbrains.mps.ide.dialogs;
 
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -103,8 +102,8 @@ public abstract class BaseDialog extends JDialog {
   protected void saveMyDimensionSettings() {
     Point p = getLocation();
     Dimension d = getSize();
-    myDialogDimensions.setTop((int) p.getY()) ;
-    myDialogDimensions.setLeft((int) p.getX()) ;
+    myDialogDimensions.setTop((int) p.getY());
+    myDialogDimensions.setLeft((int) p.getX());
     myDialogDimensions.setWidth((int) d.getWidth());
     myDialogDimensions.setHeight((int) d.getHeight());
     saveDimensionSettings(myDialogDimensions.getLeft(), myDialogDimensions.getTop(), myDialogDimensions.getWidth(), myDialogDimensions.getHeight(), this.getClass());

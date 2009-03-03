@@ -124,7 +124,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
       ContentManager contentManager = getContentManager();
       Content content = contentManager.getContent(index);
       assert content != null;
-      if (!content.isPinned()){
+      if (!content.isPinned()) {
         contentManager.removeContent(content, true);
       }
     }

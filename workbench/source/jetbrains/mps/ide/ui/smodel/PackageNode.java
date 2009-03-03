@@ -16,14 +16,13 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
-import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.ide.actions.PackageActions_ActionGroup;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 
 import java.util.LinkedHashSet;
 import java.util.Set;

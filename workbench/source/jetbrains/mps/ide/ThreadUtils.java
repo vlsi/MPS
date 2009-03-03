@@ -17,7 +17,7 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.logging.Logger;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 
 public class ThreadUtils {
   private static final Logger LOG = Logger.getLogger(ThreadUtils.class);

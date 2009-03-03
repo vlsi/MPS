@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.ide.xml;
 
-import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.lang.xml.XMLLanguage;
+import com.intellij.openapi.fileTypes.LanguageFileType;
+import jetbrains.mps.ide.projectPane.fileSystem.FileIcons;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
-
-import jetbrains.mps.ide.projectPane.fileSystem.FileIcons;
 
 public class XMLFileType extends LanguageFileType {
   private final String myName;

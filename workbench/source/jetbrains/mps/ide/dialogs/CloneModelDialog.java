@@ -30,8 +30,6 @@ import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.GridBagConstraints;
 
 public class CloneModelDialog extends BaseStretchingProjectDialog {
   private CloneModelProperties myModelProperties;
@@ -65,11 +63,11 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
   }
 
   private void createPathField() {
-    addComponent(new JLabel("Path:"), createLabelConstraints(0,0));
+    addComponent(new JLabel("Path:"), createLabelConstraints(0, 0));
 
     JTextField tfPath = new JTextField();
     tfPath.setEditable(false);
-    addComponent(tfPath, createFieldConstraints(1,0));
+    addComponent(tfPath, createFieldConstraints(1, 0));
 
     Property pPath = BeanProperty.create(CloneModelProperties.PROPERTY_PATH);
     Property pPathVar = BeanProperty.create("text");
@@ -90,9 +88,9 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
   }
 
   public void createNamespacePanel() {
-    addComponent(new JLabel("Name:"), createLabelConstraints(0,1));
+    addComponent(new JLabel("Name:"), createLabelConstraints(0, 1));
     JTextField tfNamespace = new JTextField();
-    addComponent(tfNamespace, createFieldConstraints(1,1));
+    addComponent(tfNamespace, createFieldConstraints(1, 1));
 
     Property pNamespace = BeanProperty.create(CloneModelProperties.PROPERTY_NAME);
     Property pNamespaceVar = BeanProperty.create("text");
@@ -100,9 +98,9 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
   }
 
   private void createStereoPanel() {
-    addComponent(new JLabel("Stereotype:"), createLabelConstraints(0,2));
+    addComponent(new JLabel("Stereotype:"), createLabelConstraints(0, 2));
     JComboBox cbStereotype = new JComboBox(SModelStereotype.values);
-    addComponent(cbStereotype, createFieldConstraints(1,2));
+    addComponent(cbStereotype, createFieldConstraints(1, 2));
 
     Property pStereotype = BeanProperty.create(CloneModelProperties.PROPERTY_STEREOTYPE);
     Property pStereotypeVar = BeanProperty.create("selectedItem");
@@ -111,8 +109,8 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
 
   private void createCheckboxPanel() {
     JCheckBox cbLog = new JCheckBox("Use log");
-    addComponent(cbLog, createLabelConstraints(0,3));
-    addComponent(new JPanel(), createFieldConstraints(1,3));
+    addComponent(cbLog, createLabelConstraints(0, 3));
+    addComponent(new JPanel(), createFieldConstraints(1, 3));
 
     Property pLog = BeanProperty.create(CloneModelProperties.PROPERTY_LOG);
     Property pLogVar = BeanProperty.create("selected");

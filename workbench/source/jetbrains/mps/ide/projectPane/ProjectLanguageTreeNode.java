@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -27,8 +28,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 
 import java.util.List;
 import java.util.Set;
-
-import com.intellij.openapi.actionSystem.ActionGroup;
 
 /**
  * Created by IntelliJ IDEA.

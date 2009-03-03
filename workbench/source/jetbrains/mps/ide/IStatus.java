@@ -17,10 +17,10 @@ package jetbrains.mps.ide;
 
 public interface IStatus {
   public static enum Code {
-    OK,ERROR
+    OK, ERROR
   }
 
-  boolean isOk(); 
+  boolean isOk();
 
   boolean isError();
 

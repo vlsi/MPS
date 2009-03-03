@@ -15,25 +15,24 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.GlobalScope;
-
-import java.util.Collection;
-import java.util.List;
-import java.util.LinkedList;
-import java.awt.Frame;
-
+import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
+
+import java.awt.Frame;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 
 public abstract class AbstractFileTreeNode extends MPSTreeNode {
   protected final VirtualFile myFile;
@@ -81,15 +80,15 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
     return myFile;
   }
 
-  public String toString(){
+  public String toString() {
     return myFile.getUrl();
   }
 
   public Collection<? extends AbstractFileTreeNode> getChildren() {
     List<AbstractFileTreeNode> children = new LinkedList<AbstractFileTreeNode>();
-      for (int i = 0; i < getChildCount(); i++){
-        children.add((AbstractFileTreeNode) getChildAt(i));
-      }
+    for (int i = 0; i < getChildCount(); i++) {
+      children.add((AbstractFileTreeNode) getChildAt(i));
+    }
     return children;
   }
 
@@ -98,9 +97,9 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
     }
 
     @Deprecated
-      public MPSProject getMPSProject() {
-          return null;
-        }
+    public MPSProject getMPSProject() {
+      return null;
+    }
 
     public Project getProject() {
       return null;

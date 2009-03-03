@@ -15,19 +15,15 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index;
 
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.*;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
 import com.intellij.util.io.KeyDescriptor;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
 
-import java.io.IOException;
-import java.io.DataOutput;
-import java.io.DataInput;
 import java.util.List;
 
 public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {

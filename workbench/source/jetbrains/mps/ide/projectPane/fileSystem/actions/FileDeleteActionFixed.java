@@ -15,24 +15,22 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem.actions;
 
-import com.intellij.ide.actions.DeleteAction;
 import com.intellij.ide.DeleteProvider;
+import com.intellij.ide.actions.DeleteAction;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.fileChooser.actions.VirtualFileDeleteProvider;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.io.IOException;
-
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.logging.Logger;
 
 public class FileDeleteActionFixed extends DeleteAction {
 

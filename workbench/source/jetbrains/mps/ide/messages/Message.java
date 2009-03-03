@@ -42,7 +42,7 @@ public class Message {
   }
 
   public Message(MessageKind kind, String text) {
-    this(kind,(String)null,text);
+    this(kind, (String) null, text);
   }
 
   public void setHintObject(Object hintObject) {

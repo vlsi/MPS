@@ -17,12 +17,11 @@ package jetbrains.mps.workbench.choose.modules;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.workbench.choose.base.BasePresentation;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.workbench.choose.base.BasePresentation;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
-
-import org.jetbrains.annotations.NotNull;
 
 public class ModulePresentation extends BasePresentation {
   private IModule myModule;
@@ -33,8 +32,8 @@ public class ModulePresentation extends BasePresentation {
 
   @NotNull
   public String doGetPresentableText() {
-    if (myModule instanceof Generator){
-      return ((Generator)myModule).getAlias();
+    if (myModule instanceof Generator) {
+      return ((Generator) myModule).getAlias();
     }
     return myModule.getModuleUID();
   }

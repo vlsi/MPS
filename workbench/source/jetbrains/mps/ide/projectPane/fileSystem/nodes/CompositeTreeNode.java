@@ -15,18 +15,16 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.vfs.VFileSystem;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
-import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.util.io.FileUtil;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.vfs.VFileSystem;
 
-import java.util.Set;
 import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class CompositeTreeNode extends MPSTreeNode {
   private Project myProject;

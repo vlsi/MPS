@@ -33,7 +33,6 @@ import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseSolutionModel;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +77,7 @@ public class GoToSolutionAction extends BaseAction {
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToSolutionModel, new FakePsiContext());
-    
+
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;

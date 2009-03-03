@@ -25,10 +25,10 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
@@ -46,26 +46,26 @@ class ModuleChooserDialog<T> extends BaseDialog {
   private boolean myOkDone = false;
 
   ModuleChooserDialog(Frame owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString) throws HeadlessException {
-    super(owner, "Choose "+entityString);
+    super(owner, "Choose " + entityString);
     doInit(modules, nonProjectModules, NameUtil.capitalize(entityString));
   }
 
   ModuleChooserDialog(Dialog owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString) throws HeadlessException {
-    super(owner, "Choose "+entityString);
-    doInit(modules, nonProjectModules,NameUtil.capitalize(entityString));
+    super(owner, "Choose " + entityString);
+    doInit(modules, nonProjectModules, NameUtil.capitalize(entityString));
   }
 
   private void doInit(final List<T> options, List<T> nonProjectLanguages, final String entityString) {
     setModal(true);
     myModules.addAll(options);
-    if (nonProjectLanguages!=null){
+    if (nonProjectLanguages != null) {
       myNonProjectModules.addAll(nonProjectLanguages);
     }
 
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
-    BaseModuleModel goToModuleModel = new BaseModuleModel(mpsProject,entityString) {
+    BaseModuleModel goToModuleModel = new BaseModuleModel(mpsProject, entityString) {
       public NavigationItem doGetNavigationItem(final IModule module) {
         return new BaseModuleItem(module) {
           public void navigate(boolean requestFocus) {
@@ -74,9 +74,9 @@ class ModuleChooserDialog<T> extends BaseDialog {
       }
 
       public IModule[] find(boolean checkboxState) {
-        if (checkboxState){
+        if (checkboxState) {
           return myNonProjectModules.toArray(new IModule[myNonProjectModules.size()]);
-        }else{
+        } else {
           return myModules.toArray(new IModule[myModules.size()]);
         }
       }
@@ -91,7 +91,7 @@ class ModuleChooserDialog<T> extends BaseDialog {
       }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToModuleModel,!myNonProjectModules.isEmpty());
+    myChooser = new SmartChooseByNamePanel(goToModuleModel, !myNonProjectModules.isEmpty());
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

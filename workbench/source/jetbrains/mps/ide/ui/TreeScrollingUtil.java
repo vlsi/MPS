@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.ide.ui;
 
-import javax.swing.*;
-import javax.swing.tree.TreePath;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
-import java.awt.*;
+import javax.swing.tree.TreePath;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 
 /**
@@ -49,7 +51,7 @@ public class TreeScrollingUtil {
 
   public static void movePageUp(JTree tree) {
     int visible = getVisibleRowCount(tree);
-    if (visible <= 0){
+    if (visible <= 0) {
       moveHome(tree);
       return;
     }
@@ -62,7 +64,7 @@ public class TreeScrollingUtil {
 
   public static void movePageDown(JTree tree) {
     int visible = getVisibleRowCount(tree);
-    if (visible <= 0){
+    if (visible <= 0) {
       moveEnd(tree);
       return;
     }
@@ -88,7 +90,7 @@ public class TreeScrollingUtil {
 
   public static void showRowCentred(JTree tree, int row, boolean centerHorizontally) {
     int visible = getVisibleRowCount(tree);
-    int top = visible > 0 ? row - (visible - 1)/ 2 : row;
+    int top = visible > 0 ? row - (visible - 1) / 2 : row;
     int bottom = visible > 0 ? top + visible - 1 : row;
     showAndSelect(tree, top, bottom, row, centerHorizontally);
   }
@@ -100,10 +102,10 @@ public class TreeScrollingUtil {
       tree.clearSelection();
       return;
     }
-    if (top < 0){
+    if (top < 0) {
       top = 0;
     }
-    if (bottom >= size){
+    if (bottom >= size) {
       bottom = size - 1;
     }
     Rectangle topBounds = tree.getRowBounds(top);
@@ -111,11 +113,9 @@ public class TreeScrollingUtil {
     Rectangle bounds;
     if (topBounds == null) {
       bounds = bottomBounds;
-    }
-    else if (bottomBounds == null) {
+    } else if (bottomBounds == null) {
       bounds = topBounds;
-    }
-    else {
+    } else {
       bounds = topBounds.union(bottomBounds);
     }
     if (bounds != null) {
@@ -144,7 +144,7 @@ public class TreeScrollingUtil {
   private static int getFirstVisibleRow(JTree tree) {
     Rectangle visible = tree.getVisibleRect();
     int row = -1;
-    for (int i=0; i < tree.getRowCount(); i++) {
+    for (int i = 0; i < tree.getRowCount(); i++) {
       Rectangle bounds = tree.getRowBounds(i);
       if (visible.y <= bounds.y && visible.y + visible.height >= bounds.y + bounds.height) {
         row = i;
@@ -157,7 +157,7 @@ public class TreeScrollingUtil {
   private static int getVisibleRowCount(JTree tree) {
     Rectangle visible = tree.getVisibleRect();
     int count = 0;
-    for (int i=0; i < tree.getRowCount(); i++) {
+    for (int i = 0; i < tree.getRowCount(); i++) {
       Rectangle bounds = tree.getRowBounds(i);
       if (visible.y <= bounds.y && visible.y + visible.height >= bounds.y + bounds.height) {
         count++;
@@ -201,7 +201,7 @@ public class TreeScrollingUtil {
       tree.collapseRow(row);
       row--;
     }
-    DefaultMutableTreeNode root = (DefaultMutableTreeNode)tree.getModel().getRoot();
+    DefaultMutableTreeNode root = (DefaultMutableTreeNode) tree.getModel().getRoot();
     tree.expandPath(new TreePath(root));
     if (leadSelectionPath != null) {
       Object[] path = leadSelectionPath.getPath();

@@ -97,7 +97,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
 
   //used via reflection
   public static String getActionId(Object... params) {
-    return GenerateAllModelsInModuleAction.class.getName()+"#"+params[0].toString();
+    return GenerateAllModelsInModuleAction.class.getName() + "#" + params[0].toString();
   }
 
   protected void doExecute(AnActionEvent e) {

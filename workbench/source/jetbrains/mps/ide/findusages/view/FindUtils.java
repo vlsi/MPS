@@ -16,9 +16,9 @@
 package jetbrains.mps.ide.findusages.view;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseLeaf;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseNode;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode;
@@ -47,7 +47,7 @@ public class FindUtils {
       public void run() {
         SearchResults result = new SearchResults();
         for (SNode node : nodes) {
-          if (indicator!=null && indicator.isCanceled()) break;
+          if (indicator != null && indicator.isCanceled()) break;
           SearchResults singleRes = makeProvider(finders).getResults(new SearchQuery(node, scope), indicator);
           result.getSearchedNodes().addAll(singleRes.getSearchedNodes());
           result.getSearchResults().addAll(singleRes.getSearchResults());

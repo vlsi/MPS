@@ -16,11 +16,10 @@
 package jetbrains.mps.ide.projectPane.fileSystem;
 
 import com.intellij.ide.projectView.ProjectView;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
-import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.util.ActionCallback;
 import com.intellij.util.messages.MessageBus;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;

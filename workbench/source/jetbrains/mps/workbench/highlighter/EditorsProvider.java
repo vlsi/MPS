@@ -15,22 +15,17 @@
  */
 package jetbrains.mps.workbench.highlighter;
 
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
+import com.intellij.openapi.fileEditor.FileEditorManagerListener;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 
-import java.util.List;
 import java.util.ArrayList;
-
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.fileEditor.FileEditorManagerListener;
-import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.vfs.VirtualFile;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.

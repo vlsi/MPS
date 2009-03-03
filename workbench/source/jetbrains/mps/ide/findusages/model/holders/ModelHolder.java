@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.ide.findusages.model.holders;
 
-import org.jdom.Element;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import org.jdom.Element;
 
 import javax.swing.Icon;
 

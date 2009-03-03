@@ -15,21 +15,18 @@
  */
 package jetbrains.mps.workbench.search;
 
-import jetbrains.mps.workbench.search.icons.Icons;
-import jetbrains.mps.workbench.search.SearchHistoryComponent;
-import jetbrains.mps.workbench.search.SearchConditions;
+import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.ui.CompletionTextField;
+import jetbrains.mps.workbench.search.icons.Icons;
 
 import javax.swing.*;
-import javax.swing.event.DocumentListener;
 import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-
-import com.intellij.openapi.actionSystem.*;
 
 
 public abstract class AbstractSearchPanel extends JPanel {
@@ -43,9 +40,13 @@ public abstract class AbstractSearchPanel extends JPanel {
   private JComponent myToolbarComponent;
 
   protected abstract SearchHistoryComponent getSearchHistory();
+
   protected abstract void goUp();
+
   protected abstract void goDown();
+
   protected abstract void search();
+
   protected abstract void deactivate();
 
   protected AbstractSearchPanel() {
@@ -171,7 +172,7 @@ public abstract class AbstractSearchPanel extends JPanel {
     }
   }
 
-  protected  void updateSearchReport(int matches) {
+  protected void updateSearchReport(int matches) {
     Font font = myFindResult.getFont().deriveFont(Font.PLAIN);
     String text;
     if (matches > 100) {
@@ -197,7 +198,7 @@ public abstract class AbstractSearchPanel extends JPanel {
     revalidate();
     setVisible(true);
     myText.requestFocus();
-  }  
+  }
 
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);
@@ -242,43 +243,43 @@ public abstract class AbstractSearchPanel extends JPanel {
 
   }
 
-    protected class HistoryCompletionTextField extends CompletionTextField {
+  protected class HistoryCompletionTextField extends CompletionTextField {
 
-      private final int myPossibleValuesLimit = 30;
-      private List<String> myPossibleValues = new ArrayList<String>();
+    private final int myPossibleValuesLimit = 30;
+    private List<String> myPossibleValues = new ArrayList<String>();
 
-      public HistoryCompletionTextField() {
-        super();
-      }
+    public HistoryCompletionTextField() {
+      super();
+    }
 
-      public HistoryCompletionTextField(List<String> possibleValues) {
-        super();
-        myPossibleValues.addAll(possibleValues);
-      }
+    public HistoryCompletionTextField(List<String> possibleValues) {
+      super();
+      myPossibleValues.addAll(possibleValues);
+    }
 
-      public void addValue(String value) {
-        boolean added = myPossibleValues.isEmpty() || !myPossibleValues.get(0).equals(value);
-        if (added && !myPossibleValues.contains(value) && value.length() != 0) {
-          myPossibleValues.add(0, value);
-          if (myPossibleValues.size() > myPossibleValuesLimit) {
-            for (int i = myPossibleValues.size() - 1; i >= myPossibleValuesLimit; i--) {
-              myPossibleValues.remove(i);
-            }
+    public void addValue(String value) {
+      boolean added = myPossibleValues.isEmpty() || !myPossibleValues.get(0).equals(value);
+      if (added && !myPossibleValues.contains(value) && value.length() != 0) {
+        myPossibleValues.add(0, value);
+        if (myPossibleValues.size() > myPossibleValuesLimit) {
+          for (int i = myPossibleValues.size() - 1; i >= myPossibleValuesLimit; i--) {
+            myPossibleValues.remove(i);
           }
         }
       }
+    }
 
-      protected boolean canShowPopupAutomatically() {
-        return getText().length() == 0;
-      }
+    protected boolean canShowPopupAutomatically() {
+      return getText().length() == 0;
+    }
 
-      protected boolean isCanShowCompletionOnRemove() {
-        return false;
-      }
+    protected boolean isCanShowCompletionOnRemove() {
+      return false;
+    }
 
-      public List<String> getProposals(String text) {
-        return myPossibleValues;
-      }
+    public List<String> getProposals(String text) {
+      return myPossibleValues;
+    }
 
   }
 

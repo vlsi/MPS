@@ -18,20 +18,19 @@ package jetbrains.mps.ide.ui;
 import jetbrains.mps.ide.projectPane.Icons;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.ActionEvent;
-import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 /**
  * @author Kostik
  */
 public class HeaderWrapper extends JPanel {
   private JComponent myComponent;
-  private JLabel myLabel  = new JLabel("", JLabel.LEFT) {
+  private JLabel myLabel = new JLabel("", JLabel.LEFT) {
     public Dimension getMinimumSize() {
       return new Dimension(0, 0);
     }
@@ -45,7 +44,7 @@ public class HeaderWrapper extends JPanel {
       updateLabel();
     }
   };
-  
+
   public HeaderWrapper(String text, JComponent component) {
     this(text, component, false, false);
   }
@@ -83,7 +82,7 @@ public class HeaderWrapper extends JPanel {
         setupButton(myMinimizeButton);
         myButtonsPanel.add(myMinimizeButton);
       }
-      
+
       if (showCloseButton) {
         myCloseButton = new JButton(new AbstractAction("", Icons.CLOSE_ICON) {
           public void actionPerformed(ActionEvent e) {

@@ -44,20 +44,20 @@ class ModelChooserDialog extends BaseDialog {
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
 
-  ModelChooserDialog(Frame owner, List<SModelDescriptor> models,@Nullable List<SModelDescriptor> nonProjectModels) throws HeadlessException {
+  ModelChooserDialog(Frame owner, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) throws HeadlessException {
     super(owner, "Choose Model");
-    doInit(models,nonProjectModels);
+    doInit(models, nonProjectModels);
   }
 
-  ModelChooserDialog(Dialog owner, List<SModelDescriptor> models,@Nullable  List<SModelDescriptor> nonProjectModels) throws HeadlessException {
+  ModelChooserDialog(Dialog owner, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) throws HeadlessException {
     super(owner, "Choose Model");
-    doInit(models,nonProjectModels);
+    doInit(models, nonProjectModels);
   }
 
-  private void doInit(final List<SModelDescriptor> options,@Nullable  List<SModelDescriptor> nonProjectModels) {
+  private void doInit(final List<SModelDescriptor> options, @Nullable List<SModelDescriptor> nonProjectModels) {
     setModal(true);
     myModels.addAll(options);
-    if (nonProjectModels!=null){
+    if (nonProjectModels != null) {
       myNonProjectModels.addAll(nonProjectModels);
     }
 
@@ -74,9 +74,9 @@ class ModelChooserDialog extends BaseDialog {
 
       @Override
       public SModelDescriptor[] find(boolean checkboxState) {
-        if (checkboxState){
+        if (checkboxState) {
           return myNonProjectModels.toArray(new SModelDescriptor[myNonProjectModels.size()]);
-        } else{
+        } else {
           return myModels.toArray(new SModelDescriptor[myModels.size()]);
         }
       }
@@ -91,7 +91,7 @@ class ModelChooserDialog extends BaseDialog {
       }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToModelModel,!myNonProjectModels.isEmpty());
+    myChooser = new SmartChooseByNamePanel(goToModelModel, !myNonProjectModels.isEmpty());
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

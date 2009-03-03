@@ -19,6 +19,6 @@ import jetbrains.mps.project.MPSProject;
 
 public abstract class BaseDevkitModel extends BaseModuleModel {
   public BaseDevkitModel(MPSProject project) {
-    super(project,"devkit");
+    super(project, "devkit");
   }
 }

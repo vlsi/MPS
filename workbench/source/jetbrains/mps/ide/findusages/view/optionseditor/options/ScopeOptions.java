@@ -18,12 +18,10 @@ package jetbrains.mps.ide.findusages.view.optionseditor.options;
 import jetbrains.mps.ide.BootstrapScope;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.action.ActionEventData;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -132,7 +130,7 @@ public class ScopeOptions extends BaseOptions<SearchQuery> {
   }
 
   @NotNull
-  public SearchQuery getResult(SNode node, IOperationContext context,SModelDescriptor modelDescriptor) {
+  public SearchQuery getResult(SNode node, IOperationContext context, SModelDescriptor modelDescriptor) {
     return new SearchQuery(node, getScope(context, modelDescriptor));
   }
 

@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index;
 
-import jetbrains.mps.workbench.choose.base.BasePresentation;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;

@@ -16,17 +16,14 @@
 package jetbrains.mps.ide.hierarchy;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.util.containers.HashMap;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDeclaration> {

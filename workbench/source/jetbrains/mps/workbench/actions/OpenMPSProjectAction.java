@@ -16,22 +16,18 @@
 package jetbrains.mps.workbench.actions;
 
 import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.workbench.action.BaseAction;
 
-import javax.swing.ImageIcon;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import java.awt.Frame;
-import java.io.File;
 
 public class OpenMPSProjectAction extends BaseAction {
   private static final Icon OPEN_ICON = new ImageIcon(OpenMPSProjectAction.class.getResource("open.png"));
@@ -41,12 +37,12 @@ public class OpenMPSProjectAction extends BaseAction {
     setExecuteOutsideCommand(true);
     setDisableOnNoProject(false);
 
-    getTemplatePresentation().setIcon(OPEN_ICON_WELCOME_SCREEN);    
+    getTemplatePresentation().setIcon(OPEN_ICON_WELCOME_SCREEN);
   }
 
 
   @Override
-  protected void doUpdate(AnActionEvent e) {        
+  protected void doUpdate(AnActionEvent e) {
     super.doUpdate(e);
 
     if (ActionPlaces.WELCOME_SCREEN.equals(e.getPlace())) {

@@ -16,7 +16,10 @@
 package jetbrains.mps.ide;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 
 /**
@@ -67,7 +70,7 @@ public class MemoryIndicator extends JPanel {
     }, BorderLayout.EAST);
   }
 
-  private void updateMemory() {               
+  private void updateMemory() {
     Runtime runtime = Runtime.getRuntime();
     myTotalMemory = runtime.totalMemory() / MEGABYTE;
     myUsedMemeory = myTotalMemory - runtime.freeMemory() / MEGABYTE;

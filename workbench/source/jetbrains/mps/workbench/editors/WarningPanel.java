@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.workbench.editors;
 
-import com.intellij.ui.LightColors;
 import com.intellij.ui.HyperlinkLabel;
+import com.intellij.ui.LightColors;
 
-import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
-import javax.swing.event.HyperlinkListener;
+import javax.swing.JPanel;
 import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 import java.awt.BorderLayout;
 
 class WarningPanel extends JPanel {

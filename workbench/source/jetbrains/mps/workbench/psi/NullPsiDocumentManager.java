@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.workbench.psi;
 
-import com.intellij.psi.PsiDocumentManager;
-import com.intellij.psi.PsiFile;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.util.Computable;
-import org.jetbrains.annotations.Nullable;
+import com.intellij.psi.PsiDocumentManager;
+import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class NullPsiDocumentManager extends PsiDocumentManager {
   @Nullable

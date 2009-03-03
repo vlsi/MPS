@@ -15,20 +15,20 @@
  */
 package jetbrains.mps.workbench.languagesFs;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.GlobalScope;
-
-import java.util.WeakHashMap;
-import java.io.IOException;
-
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.io.IOException;
+import java.util.WeakHashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -46,12 +46,12 @@ public class MPSLanguagesVirtualFileSystem extends DeprecatedVirtualFileSystem i
   private WeakHashMap<Language, MPSLanguageVirtualFile> myVirtualFiles = new WeakHashMap<Language, MPSLanguageVirtualFile>();
 
   public MPSLanguageVirtualFile getFileFor(@NotNull final Language language) {
-        if (myVirtualFiles.containsKey(language)) {
-          return myVirtualFiles.get(language);
-        }
-        MPSLanguageVirtualFile vf = new MPSLanguageVirtualFile(language);
-        myVirtualFiles.put(language, vf);
-        return vf;
+    if (myVirtualFiles.containsKey(language)) {
+      return myVirtualFiles.get(language);
+    }
+    MPSLanguageVirtualFile vf = new MPSLanguageVirtualFile(language);
+    myVirtualFiles.put(language, vf);
+    return vf;
   }
 
   @NonNls

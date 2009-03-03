@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.ide.hierarchy;
 
-import jetbrains.mps.util.graph.*;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.graph.*;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -83,7 +83,7 @@ public class LanguageDiagramComponent2 extends JComponent implements Scrollable 
     Map<AbstractConceptDeclaration, Vertex> concepts = new HashMap<AbstractConceptDeclaration, Vertex>();
     List<AbstractConceptDeclaration> allConcepts = myLanguage.getStructureModelDescriptor().getSModel().getRootsAdapters(AbstractConceptDeclaration.class);
     for (AbstractConceptDeclaration abstractConcept : allConcepts) {
-      Vertex vertex = new Vertex(0,0, abstractConcept.getName()) {
+      Vertex vertex = new Vertex(0, 0, abstractConcept.getName()) {
         public int getWidth() {
           return getFontMetrics(myFont).stringWidth(getName()) + 2 * HORIZONTAL_PADDING;
         }
@@ -194,7 +194,7 @@ public class LanguageDiagramComponent2 extends JComponent implements Scrollable 
   protected void paintComponent(final Graphics g) {
     for (Graph graph : myGraphComponents) {
       for (IEdge edge : graph.getEdges()) {
-        g.setColor(((LinkKind)edge.getUserObject(LINK_KIND)).getEdgeColor());
+        g.setColor(((LinkKind) edge.getUserObject(LINK_KIND)).getEdgeColor());
         int x1 = (int) Math.round(edge.getFirst().getX());
         int y1 = (int) Math.round(edge.getFirst().getY());
         int x2 = (int) Math.round(edge.getSecond().getX());
@@ -208,11 +208,11 @@ public class LanguageDiagramComponent2 extends JComponent implements Scrollable 
         int width = vertex.getWidth();//g.getFontMetrics().stringWidth(vertexName) + 2* HORIZONTAL_PADDING;
         int height = vertex.getHeight();
         g.setColor(Color.WHITE);
-        g.fillRect(x - width/2, y - height/2, width, height);
+        g.fillRect(x - width / 2, y - height / 2, width, height);
         g.setColor(Color.BLACK);
-        g.drawRect(x - width/2, y - height/2, width, height);
+        g.drawRect(x - width / 2, y - height / 2, width, height);
         g.setFont(myFont);
-        g.drawString(vertexName, x+HORIZONTAL_PADDING - width/2, y+5);
+        g.drawString(vertexName, x + HORIZONTAL_PADDING - width / 2, y + 5);
       }
     }
   }
@@ -254,6 +254,7 @@ public class LanguageDiagramComponent2 extends JComponent implements Scrollable 
       public Color getEdgeColor() {
         return Color.RED;
       }};
+
     public abstract Color getEdgeColor();
   }
 }

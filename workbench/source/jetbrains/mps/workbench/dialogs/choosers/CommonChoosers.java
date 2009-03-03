@@ -28,15 +28,14 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
+import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
@@ -48,7 +47,7 @@ import java.util.List;
 
 public class CommonChoosers {
   public static SNode showDialogNodeChooser(final Component parent, final List<SNode> values) {
-    Window window = parent instanceof Window?(Window)parent:SwingUtilities.getWindowAncestor(parent);
+    Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
     NodeChooserDialog dialog;
     if (window instanceof Frame) {
       dialog = new NodeChooserDialog((Frame) window, values);
@@ -60,7 +59,7 @@ public class CommonChoosers {
   }
 
   public static SModelDescriptor showDialogModelChooser(final Component parent, final List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) {
-    Window window = parent instanceof Window?(Window)parent:SwingUtilities.getWindowAncestor(parent);
+    Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
     ModelChooserDialog dialog;
     if (window instanceof Frame) {
       dialog = new ModelChooserDialog((Frame) window, models, nonProjectModels);
@@ -72,7 +71,7 @@ public class CommonChoosers {
   }
 
   public static <T extends IModule> T showDialogModuleChooser(final Component parent, String entityString, final List<T> modules, @Nullable List<T> nonProjectModules) {
-    Window window = parent instanceof Window?(Window)parent:SwingUtilities.getWindowAncestor(parent);
+    Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
     ModuleChooserDialog<T> dialog;
     if (window instanceof Frame) {
       dialog = new ModuleChooserDialog<T>((Frame) window, modules, nonProjectModules, entityString);
@@ -84,12 +83,12 @@ public class CommonChoosers {
   }
 
   public static String showDialogStringChooser(final Component parent, String entityString, final List<String> values) {
-    Window window = parent instanceof Window?(Window)parent:SwingUtilities.getWindowAncestor(parent);
+    Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
     StringChooserDialog dialog;
     if (window instanceof Frame) {
-      dialog = new StringChooserDialog((Frame) window, values,entityString);
+      dialog = new StringChooserDialog((Frame) window, values, entityString);
     } else {
-      dialog = new StringChooserDialog((Dialog) window, values,  entityString);
+      dialog = new StringChooserDialog((Dialog) window, values, entityString);
     }
     dialog.showDialog();
     return dialog.getResult();
@@ -129,7 +128,7 @@ public class CommonChoosers {
       }
     }, ModalityState.current(), true);
   }
-  
+
   public static void showSimpleModelChooser(final List<SModelDescriptor> models, final ChooserCallback<SModelDescriptor> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
@@ -148,7 +147,7 @@ public class CommonChoosers {
         return models.toArray(new SModelDescriptor[models.size()]);
       }
     };
-    
+
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new FakePsiContext());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
@@ -170,7 +169,7 @@ public class CommonChoosers {
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
     final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
-    BaseMPSChooseModel<T> goToModuleModel = new BaseMPSChooseModel<T>(mpsProject,entityString) {
+    BaseMPSChooseModel<T> goToModuleModel = new BaseMPSChooseModel<T>(mpsProject, entityString) {
       public String doGetFullName(Object element) {
         return ((BaseModuleItem) element).getModule().getModuleUID();
       }

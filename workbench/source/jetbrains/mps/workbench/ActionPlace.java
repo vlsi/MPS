@@ -16,9 +16,9 @@
 package jetbrains.mps.workbench;
 
 public enum ActionPlace {
-  EDITOR ("MPS_Editor"),
+  EDITOR("MPS_Editor"),
 
-  PROJECT_PANE_SNODE ("MPS_ProjectPane_SNode"),
+  PROJECT_PANE_SNODE("MPS_ProjectPane_SNode"),
   PROJECT_PANE_SMODEL("MPS_ProjectPane_SModel"),
   PROJECT_PANE_LANGUAGE("MPS_ProjectPane_Language"),
   PROJECT_PANE_DEVKIT("MPS_ProjectPane_Devkit"),
@@ -30,7 +30,7 @@ public enum ActionPlace {
   PROJECT_PANE_NAMESPACE("MPS_ProjectPane_Namespace"),
   PROJECT_PANE("MPS_ProjectPane");
 
-  private String myId="";
+  private String myId = "";
 
   private ActionPlace(String id) {
     myId = id;

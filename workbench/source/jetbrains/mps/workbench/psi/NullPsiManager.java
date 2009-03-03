@@ -15,33 +15,27 @@
  */
 package jetbrains.mps.workbench.psi;
 
+import com.intellij.openapi.Disposable;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.*;
+import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.PsiTreeChangeEventImpl;
-import com.intellij.psi.impl.search.PsiSearchHelperImpl;
 import com.intellij.psi.impl.cache.CacheManager;
 import com.intellij.psi.impl.file.impl.FileManager;
 import com.intellij.psi.impl.source.resolve.ResolveCache;
-import com.intellij.psi.impl.source.codeStyle.CodeStyleManagerImpl;
-import com.intellij.psi.*;
-import com.intellij.psi.util.PsiModificationTracker;
-import com.intellij.psi.util.CachedValuesManager;
-import com.intellij.psi.codeStyle.CodeStyleManager;
-import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.command.impl.DummyProject;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.Disposable;
-import com.intellij.openapi.util.Computable;
+import com.intellij.psi.util.CachedValuesManager;
+import com.intellij.psi.util.PsiModificationTracker;
 import com.intellij.util.IncorrectOperationException;
 import com.intellij.util.ThrowableRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NonNls;
 
-import java.util.List;
-import java.util.Collections;
 import java.util.ArrayList;
+import java.util.List;
 
 class NullPsiManager extends PsiManagerEx {
   private Project myProject;

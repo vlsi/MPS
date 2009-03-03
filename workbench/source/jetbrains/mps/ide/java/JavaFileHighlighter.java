@@ -15,19 +15,18 @@
  */
 package jetbrains.mps.ide.java;
 
-import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
-import com.intellij.openapi.editor.SyntaxHighlighterColors;
+import com.intellij.lexer.Lexer;
 import com.intellij.openapi.editor.HighlighterColors;
+import com.intellij.openapi.editor.SyntaxHighlighterColors;
+import com.intellij.openapi.editor.colors.TextAttributesKey;
+import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
+import com.intellij.psi.StringEscapesTokenTypes;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.xml.XmlTokenType;
-import com.intellij.psi.StringEscapesTokenTypes;
-import com.intellij.lexer.Lexer;
-
-import java.util.Map;
-import java.util.HashMap;
-
 import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class JavaFileHighlighter extends SyntaxHighlighterBase {
   private static final Map<IElementType, TextAttributesKey> ourMap1;
@@ -86,17 +85,17 @@ public class JavaFileHighlighter extends SyntaxHighlighterBase {
     ourMap2.put(JavaDocTokenType.DOC_TAG_NAME, SyntaxHighlighterColors.DOC_COMMENT_TAG);
 
     IElementType[] javaDocMarkup = new IElementType[]{XmlTokenType.XML_START_TAG_START,
-                                        XmlTokenType.XML_END_TAG_START,
-                                        XmlTokenType.XML_TAG_END,
-                                        XmlTokenType.XML_EMPTY_ELEMENT_END,
-                                        XmlTokenType.TAG_WHITE_SPACE,
-                                        XmlTokenType.XML_TAG_NAME,
-                                        XmlTokenType.XML_NAME,
-                                        XmlTokenType.XML_ATTRIBUTE_VALUE_TOKEN,
-                                        XmlTokenType.XML_ATTRIBUTE_VALUE_START_DELIMITER,
-                                        XmlTokenType.XML_ATTRIBUTE_VALUE_END_DELIMITER,
-                                        XmlTokenType.XML_CHAR_ENTITY_REF,
-                                        XmlTokenType.XML_EQ};
+      XmlTokenType.XML_END_TAG_START,
+      XmlTokenType.XML_TAG_END,
+      XmlTokenType.XML_EMPTY_ELEMENT_END,
+      XmlTokenType.TAG_WHITE_SPACE,
+      XmlTokenType.XML_TAG_NAME,
+      XmlTokenType.XML_NAME,
+      XmlTokenType.XML_ATTRIBUTE_VALUE_TOKEN,
+      XmlTokenType.XML_ATTRIBUTE_VALUE_START_DELIMITER,
+      XmlTokenType.XML_ATTRIBUTE_VALUE_END_DELIMITER,
+      XmlTokenType.XML_CHAR_ENTITY_REF,
+      XmlTokenType.XML_EQ};
 
     for (IElementType idx : javaDocMarkup) {
       ourMap1.put(idx, SyntaxHighlighterColors.DOC_COMMENT);

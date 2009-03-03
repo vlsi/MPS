@@ -33,7 +33,6 @@ import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class GoToLanguageAction extends BaseAction {
   public GoToLanguageAction() {
@@ -69,7 +68,7 @@ public class GoToLanguageAction extends BaseAction {
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, new FakePsiContext());
-    
+
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;

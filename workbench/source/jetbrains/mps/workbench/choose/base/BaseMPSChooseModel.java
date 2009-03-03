@@ -45,7 +45,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   private String myEntityName = "";
 
-  protected BaseMPSChooseModel(MPSProject project,String entityName) {
+  protected BaseMPSChooseModel(MPSProject project, String entityName) {
     myProject = project;
     myEntityName = entityName;
   }
@@ -144,11 +144,11 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   //---------------------INTERFACE STUFF------------------------
 
   public String getCheckBoxName() {
-    return "Include non-project "+ NameUtil.pluralize(myEntityName);
+    return "Include non-project " + NameUtil.pluralize(myEntityName);
   }
 
   public String getNotInMessage() {
-    return "no "+ NameUtil.pluralize(myEntityName)+" found in project";
+    return "no " + NameUtil.pluralize(myEntityName) + " found in project";
   }
 
   public String getNotFoundMessage() {
@@ -157,7 +157,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   @Nullable
   public String getPromptText() {
-    return NameUtil.capitalize(myEntityName)+" name:";
+    return NameUtil.capitalize(myEntityName) + " name:";
   }
 
   @NotNull

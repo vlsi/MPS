@@ -15,32 +15,21 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.*;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationType;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.ide.actions.NewLanguage_Action;
 import jetbrains.mps.ide.actions.NewModel_Action;
 import jetbrains.mps.ide.actions.NewSolution_Action;
-import jetbrains.mps.ide.actions.NewLanguage_Action;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNodeBuilder;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.ActionUtils;
 
-import javax.swing.JOptionPane;
-import javax.swing.tree.TreeNode;
-import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,7 +48,7 @@ public final class NamespaceTextNode extends TextTreeNode {
     }
 
     public boolean isNamespaceNode(MPSTreeNode n) {
-      return n instanceof NamespaceTextNode;      
+      return n instanceof NamespaceTextNode;
     }
   };
 
@@ -96,8 +85,8 @@ public final class NamespaceTextNode extends TextTreeNode {
     DefaultActionGroup newGroup = new DefaultActionGroup("New", true);
 
     if (hasModulesUnder) {
-      newGroup.add(ActionFactory.getInstance().acquireRegisteredAction(NewSolution_Action.class.getName(),"jetbrains.mps.ide",myName));
-      newGroup.add(ActionFactory.getInstance().acquireRegisteredAction(NewLanguage_Action.class.getName(),"jetbrains.mps.ide",myName));
+      newGroup.add(ActionFactory.getInstance().acquireRegisteredAction(NewSolution_Action.class.getName(), "jetbrains.mps.ide", myName));
+      newGroup.add(ActionFactory.getInstance().acquireRegisteredAction(NewLanguage_Action.class.getName(), "jetbrains.mps.ide", myName));
     }
     if (hasModelsUnder && hasModulesUnder) {
       newGroup.addSeparator();
@@ -117,7 +106,7 @@ public final class NamespaceTextNode extends TextTreeNode {
     for (MPSTreeNode child : this) {
       if (child instanceof SModelTreeNode) {
         models.add(((SModelTreeNode) child).getSModelDescriptor());
-      } else if (child instanceof NamespaceTextNode){
+      } else if (child instanceof NamespaceTextNode) {
         models.addAll(((NamespaceTextNode) child).getModelsUnder());
       }
     }
@@ -134,8 +123,8 @@ public final class NamespaceTextNode extends TextTreeNode {
     for (MPSTreeNode child : this) {
       if (child instanceof ProjectModuleTreeNode) {
         modules.add(((ProjectModuleTreeNode) child).getModule());
-      } else if (child instanceof NamespaceTextNode){
-        modules.addAll(((NamespaceTextNode)child).getModulesUnder());
+      } else if (child instanceof NamespaceTextNode) {
+        modules.addAll(((NamespaceTextNode) child).getModulesUnder());
       }
     }
     return modules;

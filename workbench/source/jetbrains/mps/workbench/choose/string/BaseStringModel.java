@@ -16,15 +16,12 @@
 package jetbrains.mps.workbench.choose.string;
 
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
-import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
 public abstract class BaseStringModel extends BaseMPSChooseModel<String> {
   public BaseStringModel(MPSProject project) {
-    super(project,"");
+    super(project, "");
   }
 
   public String doGetFullName(Object element) {

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
@@ -29,8 +30,6 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.awt.Color;
 import java.util.List;
-
-import com.intellij.openapi.actionSystem.ActionGroup;
 
 public class SNodeTreeNode extends MPSTreeNodeEx {
   protected boolean myInitialized = false;
@@ -173,7 +172,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   protected SNodeTreeNode createChildTreeNode(SNode childNode, String role, IOperationContext operationContext) {
     SModelTreeNode sModelTreeNode = getSModelModelTreeNode();
     SNodeTreeNode child = sModelTreeNode == null ? new SNodeTreeNode(childNode, role, operationContext)
-        : sModelTreeNode.createSNodeTreeNode(childNode, role, operationContext);
+      : sModelTreeNode.createSNodeTreeNode(childNode, role, operationContext);
     return child;
   }
 

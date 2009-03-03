@@ -1,8 +1,8 @@
 package jetbrains.mps.ide.ui;
 
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.icons.IconManager;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,7 +12,7 @@ import jetbrains.mps.ide.icons.IconManager;
  * To change this template use File | Settings | File Templates.
  */
 public class SimpleSNodeTreeNode extends MPSTreeNodeEx {
-   private SNode myNode;
+  private SNode myNode;
 
   public SimpleSNodeTreeNode(SNode node, IOperationContext operationContext) {
     super(operationContext);

@@ -17,25 +17,19 @@ package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.ide.ui.customization.CustomActionsSchema;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.vfs.VFileSystem;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-import java.util.LinkedList;
 import java.util.Collections;
 import java.util.Comparator;
-
-import org.jetbrains.annotations.NotNull;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ProjectTreeNode extends AbstractFileTreeNode {
   private final Project myProject;

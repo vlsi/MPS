@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.model;
 
-import jetbrains.mps.smodel.SNode;
-
 public class SearchResult<T> {
   protected T myObject;
   protected String myCategory;

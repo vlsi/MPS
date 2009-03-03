@@ -16,8 +16,6 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
 import jetbrains.mps.ide.findusages.FindersManager;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.smodel.SNode;
@@ -88,7 +86,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
       finderCheckBox.addKeyListener(new KeyAdapter() {
         public void keyPressed(KeyEvent e) {
           if ((e.getKeyCode() == MenuKeyEvent.VK_B) && (e.getID() == MenuKeyEvent.KEY_PRESSED) && (e.isControlDown())) {
-            if (finder.canNavigate()){
+            if (finder.canNavigate()) {
               goToFinder(finder);
               e.consume();
             }
@@ -101,7 +99,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
       goToFinderButton.setToolTipText("Go to finder declaration");
       goToFinderButton.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          if (finder.canNavigate()){
+          if (finder.canNavigate()) {
             goToFinder(finder);
           }
         }

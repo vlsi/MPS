@@ -34,20 +34,27 @@ public interface IEditor {
   JComponent getComponent();
 
   void rebuildEditorContent();
+
   void relayout();
 
   void addCellSelectionListener(CellSelectionListener listener);
+
   void removeCellSelectionListener(CellSelectionListener listener);
 
   void addChangeListener(ChangeListener listener);
+
   void removeChangeListener(ChangeListener listener);
 
   IOperationContext getOperationContext();
+
   EditorContext getEditorContext();
 
   EditorCell getSelectedCell();
+
   EditorCell getRootCell();
+
   SNode getEditedNode();
+
   SNodePointer getEditedNodePointer();
 
   List<SNode> getEditedNodes();
@@ -55,13 +62,17 @@ public interface IEditor {
   void selectNode(SNode node);
 
   void requestFocus();
+
   void dispose();
+
   void repaint();
 
   @Nullable
   EditorComponent getCurrentEditorComponent();
+
   boolean removeFromRecentEditorsOnClose();
 
   MPSEditorState saveState(@NotNull FileEditorStateLevel level);
+
   void loadState(@NotNull MPSEditorState state);
 }

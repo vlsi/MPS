@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.tree.DefaultTreeModel;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class PropertiesTreeNode extends MPSTreeNodeEx {
   private SNode myNode;

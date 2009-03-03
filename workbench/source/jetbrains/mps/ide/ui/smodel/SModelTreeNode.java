@@ -16,9 +16,6 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.ThreadUtils;
@@ -26,9 +23,10 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.SortUtil;
+import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.ErrorState;
+import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.AndCondition;
@@ -36,15 +34,12 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
+import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.Color;
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
 
 public class SModelTreeNode extends MPSTreeNodeEx {
   public static final String PACK = "package";

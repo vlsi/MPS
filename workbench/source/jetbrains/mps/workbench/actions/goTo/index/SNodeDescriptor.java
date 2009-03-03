@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index;
 
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.SModelReference;
 
 import java.util.UUID;
 
@@ -40,8 +40,8 @@ public class SNodeDescriptor {
   }
 
   public static SNodeDescriptor fromModelReference(String nodeName, String fqName, SModelReference ref, Boolean dependOnOtherModel, Boolean invalid, int number) {
-     UUID uuid = UUID.fromString(ref.getSModelId().toString().substring(2));
-     return new SNodeDescriptor(nodeName, fqName, uuid.getMostSignificantBits(), uuid.getLeastSignificantBits(), dependOnOtherModel, invalid, number);
+    UUID uuid = UUID.fromString(ref.getSModelId().toString().substring(2));
+    return new SNodeDescriptor(nodeName, fqName, uuid.getMostSignificantBits(), uuid.getLeastSignificantBits(), dependOnOtherModel, invalid, number);
   }
 
   public String getConceptFqName() {

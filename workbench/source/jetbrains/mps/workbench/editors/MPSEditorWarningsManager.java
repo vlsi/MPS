@@ -15,32 +15,35 @@
  */
 package jetbrains.mps.workbench.editors;
 
-import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.FileEditorManagerListener;
-import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
-import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
+import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.util.misc.hash.HashSet;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.reloading.ReloadAdapter;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
-import jetbrains.mps.generator.*;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -69,7 +72,9 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   }
 
-  @NonNls @NotNull public String getComponentName() {
+  @NonNls
+  @NotNull
+  public String getComponentName() {
     return "MPS Editor Warnings Manager";
   }
 
@@ -115,7 +120,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
         final Set<Language> outdatedLanguages = new HashSet<Language>();
         for (Language l : model.getSModel().getLanguages(GlobalScope.getInstance())) {
-          if (l.getEditorModelDescriptor() != null && 
+          if (l.getEditorModelDescriptor() != null &&
             ModelGenerationStatusManager.getInstance().generationRequired(l.getEditorModelDescriptor())) {
             outdatedLanguages.add(l);
           }
@@ -156,7 +161,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void updateAllWarnings() {
-    if (IdeMain.isTestMode()) return;    
+    if (IdeMain.isTestMode()) return;
 
     for (FileEditor editor : myFileEditorManager.getAllEditors()) {
       if (editor instanceof MPSFileNodeEditor) {

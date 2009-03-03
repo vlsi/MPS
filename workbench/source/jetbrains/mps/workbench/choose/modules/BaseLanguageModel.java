@@ -19,6 +19,6 @@ import jetbrains.mps.project.MPSProject;
 
 public abstract class BaseLanguageModel extends BaseModuleModel {
   public BaseLanguageModel(MPSProject project) {
-    super(project,"language");
+    super(project, "language");
   }
 }

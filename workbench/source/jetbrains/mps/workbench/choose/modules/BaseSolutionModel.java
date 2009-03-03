@@ -19,6 +19,6 @@ import jetbrains.mps.project.MPSProject;
 
 public abstract class BaseSolutionModel extends BaseModuleModel {
   public BaseSolutionModel(MPSProject project) {
-    super(project,"solution");
+    super(project, "solution");
   }
 }

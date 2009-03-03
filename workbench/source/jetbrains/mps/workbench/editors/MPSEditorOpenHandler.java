@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.workbench.editors;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 
 public interface MPSEditorOpenHandler {
   SNode getBaseNode(IOperationContext context, SNode node);

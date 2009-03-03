@@ -16,12 +16,11 @@
 package jetbrains.mps.ide;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.PathUtil;
 import jetbrains.mps.util.PathManager;
 
-import java.util.Properties;
-import java.io.FileInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.util.Properties;
 
 /**
  * @author Kostik

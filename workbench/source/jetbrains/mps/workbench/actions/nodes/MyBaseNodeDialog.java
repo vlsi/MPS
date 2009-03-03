@@ -15,17 +15,17 @@
  */
 package jetbrains.mps.workbench.actions.nodes;
 
-import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
-import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.typesystem.uiActions.SupertypesViewTool;
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.uiActions.SupertypesViewTool;
 import jetbrains.mps.util.JSplitPaneWithoutBorders;
-import jetbrains.mps.logging.Logger;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;

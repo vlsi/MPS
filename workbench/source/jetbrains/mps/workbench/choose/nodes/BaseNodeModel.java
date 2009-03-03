@@ -23,11 +23,11 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
   public BaseNodeModel(MPSProject project) {
-    this(project,"node");
+    this(project, "node");
   }
 
-  public BaseNodeModel(MPSProject project,String entityName) {
-    super(project,entityName);
+  public BaseNodeModel(MPSProject project, String entityName) {
+    super(project, entityName);
   }
 
   public String doGetFullName(Object element) {

@@ -33,12 +33,15 @@ import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
@@ -53,11 +56,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 @State(
   name = "MessagesViewTool",
   storages = {
-  @Storage(
-    id = "other",
-    file = "$WORKSPACE_FILE$"
-  )
-    }
+    @Storage(
+      id = "other",
+      file = "$WORKSPACE_FILE$"
+    )
+  }
 )
 public class MessagesViewTool extends BaseProjectTool implements PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
@@ -320,14 +323,14 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     dialog.setEx(msg.getException());
     dialog.showDialog();
 
-    if (!dialog.isCancelled()){
+    if (!dialog.isCancelled()) {
       Response response = dialog.getResult();
       String message = response.getMessage();
       if (response.isSuccess()) {
         JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
       } else {
         JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
-        LOG.error("Submit failed: "+response.getMessage(),response.getThrowable());
+        LOG.error("Submit failed: " + response.getMessage(), response.getThrowable());
       }
     }
   }

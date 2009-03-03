@@ -18,9 +18,9 @@ package jetbrains.mps.ide.hierarchy;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataProvider;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.hierarchy.icons.Icons;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
@@ -316,7 +316,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSDataKeys.SNODE.getName()))return getSelectedConcept();
+    if (dataId.equals(MPSDataKeys.SNODE.getName())) return getSelectedConcept();
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return myOperationContext;
 
     return null;

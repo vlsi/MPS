@@ -21,8 +21,8 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.model.holders.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule.ModuleScope;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule.ModuleScope;
 import jetbrains.mps.project.MPSProject.ProjectScope;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
@@ -112,7 +112,7 @@ public class SearchQuery implements IExternalizeable {
     } else if (myScope instanceof ModelsScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODELS);
       Element modelsXML = new Element(MODELS);
-      for (SModelDescriptor sModelDescriptor:((ModelsScope) myScope).getModelDescriptors()){
+      for (SModelDescriptor sModelDescriptor : ((ModelsScope) myScope).getModelDescriptors()) {
         Element modelXML = new Element(MODEL);
         if (sModelDescriptor == null) {
           LOG.warning("No model descriptor for model. Maybe the model was deleted");
@@ -157,7 +157,7 @@ public class SearchQuery implements IExternalizeable {
     } else if (scopeType.equals(SCOPE_TYPE_MODELS)) {
       Element modelsXML = scopeXML.getChild(MODELS);
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      for (Element modelXML:(List<Element>)modelsXML.getChildren(MODEL)){
+      for (Element modelXML : (List<Element>) modelsXML.getChildren(MODEL)) {
         String modelUID = modelXML.getAttribute(MODEL_ID).getValue();
         SModelDescriptor sModelDescriptor = project.getScope().getModelDescriptor(SModelReference.fromString(modelUID));
         if (sModelDescriptor == null) {

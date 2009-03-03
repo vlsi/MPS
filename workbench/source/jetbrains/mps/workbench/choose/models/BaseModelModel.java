@@ -22,7 +22,7 @@ import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
 public abstract class BaseModelModel extends BaseMPSChooseModel<SModelDescriptor> {
   public BaseModelModel(MPSProject project) {
-    super(project,"model");
+    super(project, "model");
   }
 
   public String doGetFullName(Object element) {
@@ -38,4 +38,4 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelDescriptor
     boolean javaStub = modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB);
     return modelName + (javaStub ? "@java_stub" : "");
   }
- }
+}

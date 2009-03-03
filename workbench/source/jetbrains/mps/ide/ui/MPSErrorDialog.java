@@ -15,16 +15,17 @@
  */
 package jetbrains.mps.ide.ui;
 
-import jetbrains.mps.util.CollectionUtil;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Frame;
+import java.awt.GridLayout;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -43,13 +44,13 @@ public class MPSErrorDialog extends JDialog {
   private Frame myOwnerFrame;
   private String myErrorString;
   private KeyListener myEscapeListener = new KeyAdapter() {
-      public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-          dispose();
-          e.consume();
-        }
+    public void keyPressed(KeyEvent e) {
+      if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+        dispose();
+        e.consume();
       }
-    };
+    }
+  };
 
   public MPSErrorDialog(Frame frame, String error, String title) {
     this(frame, error, title, true);
@@ -80,13 +81,13 @@ public class MPSErrorDialog extends JDialog {
 
   public void initializeUI() {
     int textWidth = myField.getFontMetrics(myField.getFont()).stringWidth(myErrorString);
-    JPanel panel = new JPanel(new GridLayout(1,myButtons.size()));
+    JPanel panel = new JPanel(new GridLayout(1, myButtons.size()));
     for (JButton jButton : myButtons) {
       panel.add(jButton);
     }
     panel.doLayout();
     int buttonsWidth = (int) panel.getPreferredSize().getWidth();
-    int minPanelWidth = Math.max(2*MIN_SIDE_PADDING + buttonsWidth, 2*MIN_SIDE_PADDING + textWidth);
+    int minPanelWidth = Math.max(2 * MIN_SIDE_PADDING + buttonsWidth, 2 * MIN_SIDE_PADDING + textWidth);
     int calculatedButtonsPadding = (minPanelWidth - buttonsWidth) / 2;
     int calculatedTextPadding = (minPanelWidth - textWidth) / 2;
     panel.setBorder(new EmptyBorder(5, calculatedButtonsPadding, 15, calculatedButtonsPadding));
@@ -95,8 +96,8 @@ public class MPSErrorDialog extends JDialog {
     add(panel, BorderLayout.SOUTH);
     pack();
     setResizable(false);
-    setLocation(myOwnerFrame.getX() + (myOwnerFrame.getWidth() - this.getWidth())/2,
-      myOwnerFrame.getY() + (myOwnerFrame.getHeight() - this.getHeight())/2);
+    setLocation(myOwnerFrame.getX() + (myOwnerFrame.getWidth() - this.getWidth()) / 2,
+      myOwnerFrame.getY() + (myOwnerFrame.getHeight() - this.getHeight()) / 2);
     myIsInitialized = true;
   }
 

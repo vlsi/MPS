@@ -16,8 +16,8 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -25,8 +25,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -88,8 +88,8 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
       if (finderClass != null) {
         try {
           IFinder finder = (IFinder) finderClass.newInstance();
-          if (finder instanceof GeneratedFinder){
-            finder = new ReloadableFinder(l.getModuleReference(),(GeneratedFinder)finder); 
+          if (finder instanceof GeneratedFinder) {
+            finder = new ReloadableFinder(l.getModuleReference(), (GeneratedFinder) finder);
           }
           finders.add(finder);
         } catch (Throwable t) {

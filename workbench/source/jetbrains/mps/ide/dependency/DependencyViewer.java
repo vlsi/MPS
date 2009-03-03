@@ -25,8 +25,8 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;

@@ -24,11 +24,9 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.choose.models.BaseModelItem;
-import jetbrains.mps.workbench.choose.string.BaseStringModel;
 import jetbrains.mps.workbench.choose.string.BaseStringItem;
+import jetbrains.mps.workbench.choose.string.BaseStringModel;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
@@ -44,13 +42,13 @@ class StringChooserDialog extends BaseDialog {
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
 
-  StringChooserDialog(Frame owner, List<String> values,String entity) throws HeadlessException {
-    super(owner, "Choose "+entity);
+  StringChooserDialog(Frame owner, List<String> values, String entity) throws HeadlessException {
+    super(owner, "Choose " + entity);
     doInit(values);
   }
 
-  StringChooserDialog(Dialog owner, List<String> values,String entity) throws HeadlessException {
-    super(owner, "Choose Model"+entity);
+  StringChooserDialog(Dialog owner, List<String> values, String entity) throws HeadlessException {
+    super(owner, "Choose Model" + entity);
     doInit(values);
   }
 

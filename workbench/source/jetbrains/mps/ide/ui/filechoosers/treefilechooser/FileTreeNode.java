@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.ide.ui.filechoosers.treefilechooser;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -26,8 +27,6 @@ import javax.swing.filechooser.FileSystemView;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import com.intellij.openapi.util.io.FileUtil;
 
 public abstract class FileTreeNode extends MPSTreeNode {
   private boolean myInitialized;
@@ -51,17 +50,17 @@ public abstract class FileTreeNode extends MPSTreeNode {
     Icon icon;
     String extension = FileUtil.getExtension(file.getName());
 
-    if (extension.equals(MPSExtentions.MPS_PROJECT)){
+    if (extension.equals(MPSExtentions.MPS_PROJECT)) {
       icon = Icons.PROJECT_ICON;
-    }else if (extension.equals(MPSExtentions.LANGUAGE)){
+    } else if (extension.equals(MPSExtentions.LANGUAGE)) {
       icon = Icons.LANGUAGE_ICON;
-    }else if (extension.equals(MPSExtentions.SOLUTION)){
+    } else if (extension.equals(MPSExtentions.SOLUTION)) {
       icon = Icons.SOLUTION_ICON;
-    }else if (extension.equals(MPSExtentions.DEVKIT)){
+    } else if (extension.equals(MPSExtentions.DEVKIT)) {
       icon = Icons.DEVKIT_ICON;
-    }else if (extension.equals(MPSExtentions.MODEL)){
+    } else if (extension.equals(MPSExtentions.MODEL)) {
       icon = Icons.MODEL_ICON;
-    }else{
+    } else {
       icon = fsView.getSystemIcon(file.toFile());
     }
 

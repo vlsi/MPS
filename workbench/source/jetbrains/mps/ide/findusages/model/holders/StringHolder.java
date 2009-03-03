@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.ide.findusages.model.holders;
 
-import org.jdom.Element;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.project.MPSProject;
+import org.jdom.Element;
 
 import javax.swing.Icon;
 

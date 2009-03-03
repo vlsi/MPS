@@ -15,26 +15,31 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index;
 
+import com.intellij.ide.startup.FileSystemSynchronizer;
+import com.intellij.navigation.NavigationItem;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.util.Processor;
+import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.util.indexing.ID;
+import com.intellij.util.indexing.ScalarIndexExtension;
+import com.intellij.util.indexing.UnindexedFilesUpdater;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.GlobalScope;
-import com.intellij.navigation.NavigationItem;
-import com.intellij.util.indexing.*;
-import com.intellij.util.Processor;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ProjectRootManager;
-import com.intellij.ide.startup.FileSystemSynchronizer;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor> {
   public ScalarIndexExtension<SNodeDescriptor> myIndex;
 
   public MPSChooseSNodeDescriptor(MPSProject project, ScalarIndexExtension<SNodeDescriptor> index) {
-    super(project,"node");
+    super(project, "node");
     myIndex = index;
   }
 
@@ -78,7 +83,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       List<SNode> roots = ((BaseSNodeDescriptorIndexer) myIndex.getIndexer()).getNodes(sm.getSModel());
       for (SNode root : roots) {
         int number = roots.indexOf(root);
-        String nodeName = (root.getName() == null)? "null" : root.getName();
+        String nodeName = (root.getName() == null) ? "null" : root.getName();
         SNodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
           nodeName, root.getConceptFqName(), root.getModel().getSModelReference(), true, false, number);
         if (!keys.contains(nodeDescriptor)) {
@@ -107,7 +112,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     };
   }
 
-  public String doGetObjectName(SNodeDescriptor object) {        
+  public String doGetObjectName(SNodeDescriptor object) {
     return object.getNodeName();
   }
 
@@ -117,7 +122,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     return presentation.getModelName() + "." + presentation.getPresentableText();
   }
 
-  public String getCheckBoxName() {  
+  public String getCheckBoxName() {
     return "Include non-project models";
   }
 

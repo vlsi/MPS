@@ -15,12 +15,8 @@
  */
 package jetbrains.mps.ide.ui;
 
-import jetbrains.mps.ide.ui.TreeSpeedSearch;
-import jetbrains.mps.smodel.SNode;
-
-import javax.swing.*;
+import javax.swing.JTree;
 import javax.swing.tree.TreePath;
-import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
  * @author Kostik

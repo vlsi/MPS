@@ -15,26 +15,25 @@
  */
 package jetbrains.mps.workbench.search;
 
+import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.components.PersistentStateComponent;
+import jetbrains.mps.workbench.search.SearchHistoryComponent.MyState;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
-
-import jetbrains.mps.workbench.search.SearchHistoryComponent.MyState;
+import java.util.List;
 
 @State(
   name = "NodeEditorSearchHistory",
   storages = {
-  @Storage(
-    id = "other",
-    file = "$WORKSPACE_FILE$"
-  )
+    @Storage(
+      id = "other",
+      file = "$WORKSPACE_FILE$"
+    )
   }
 )
 public class SearchHistoryComponent implements ProjectComponent, PersistentStateComponent<MyState> {

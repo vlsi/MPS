@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Comparator;
 
 public class GenParameters {
   private List<SModelDescriptor> myModels = new ArrayList<SModelDescriptor>();

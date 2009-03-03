@@ -33,7 +33,7 @@ public class SmartChooseByNamePanel extends ChooseByNameBase {
   private JPanel myPanel;
   private boolean myCheckboxVisible = false;
 
-  public SmartChooseByNamePanel(ChooseByNameModel model,boolean checkboxVisible) {
+  public SmartChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible) {
     super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, "", new FakePsiContext());
     myCheckboxVisible = checkboxVisible;
   }

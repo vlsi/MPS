@@ -18,17 +18,16 @@ package jetbrains.mps.workbench.actions.generate;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class GenerateModelsAction extends BaseAction {
   private List<SModelDescriptor> myModels;
@@ -66,18 +65,18 @@ public abstract class GenerateModelsAction extends BaseAction {
     if (!super.collectActionData(e)) return false;
     ActionEventData data = new ActionEventData(e);
     MPSProject project = data.getMPSProject();
-    myGenManager =project.getComponentSafe(GeneratorManager.class);
+    myGenManager = project.getComponentSafe(GeneratorManager.class);
     myModels = e.getData(MPSDataKeys.MODELS);
-    if (myModels==null || myModels.isEmpty()){
+    if (myModels == null || myModels.isEmpty()) {
       myModels = new ArrayList<SModelDescriptor>();
       SModelDescriptor model = e.getData(MPSDataKeys.CONTEXT_MODEL);
-      if (model!=null){
+      if (model != null) {
         myModels.add(model);
       }
     }
     if (myModels.isEmpty()) return false;
     myContext = data.getOperationContext();
-    if (myContext==null) return false;
+    if (myContext == null) return false;
     return true;
   }
 }

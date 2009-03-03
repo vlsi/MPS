@@ -17,10 +17,10 @@ package jetbrains.mps.ide.components;
 
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import org.jdom.DataConversionException;
 import org.jdom.Element;

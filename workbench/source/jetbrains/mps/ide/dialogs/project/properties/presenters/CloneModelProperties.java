@@ -41,13 +41,13 @@ public class CloneModelProperties {
   private List<ModuleReference> myImportedLanguages;
   private List<SModelReference> myImportedModels;
   private List<ModuleReference> myImportedDevkits;
-  private List <ModuleReference> myLanguagesInGeneration;
+  private List<ModuleReference> myLanguagesInGeneration;
 
   public CloneModelProperties() {
     myImportedLanguages = new ArrayList<ModuleReference>();
     myImportedModels = new ArrayList<SModelReference>();
     myImportedDevkits = new ArrayList<ModuleReference>();
-    myLanguagesInGeneration = new ArrayList<ModuleReference>(); 
+    myLanguagesInGeneration = new ArrayList<ModuleReference>();
   }
 
   public String getLongName() {

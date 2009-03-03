@@ -33,9 +33,9 @@ import jetbrains.mps.workbench.output.OutputViewTool;
 
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 
 /**
  * Igor Alshannikov
@@ -46,7 +46,7 @@ public class ShowMappingsPartitioningAction extends BaseAction {
   private MPSProject myProject;
   private Frame myFrame;
   private IScope myScope;
-  private Map<MappingPriorityRule,GeneratorDescriptor> myRule2Generator;
+  private Map<MappingPriorityRule, GeneratorDescriptor> myRule2Generator;
 
   public ShowMappingsPartitioningAction() {
     super("Show mappings partitioning");
@@ -61,10 +61,10 @@ public class ShowMappingsPartitioningAction extends BaseAction {
     List<List<MappingConfiguration>> mappingSets = partitioner.createMappingSets(generators);
 
     myRule2Generator = new HashMap<MappingPriorityRule, GeneratorDescriptor>();
-    for (Generator generator:generators){
+    for (Generator generator : generators) {
       GeneratorDescriptor generatorDescriptor = generator.getGeneratorDescriptor();
-      for (MappingPriorityRule rule: generatorDescriptor.getPriorityRules()){
-        myRule2Generator.put(rule,generatorDescriptor);
+      for (MappingPriorityRule rule : generatorDescriptor.getPriorityRules()) {
+        myRule2Generator.put(rule, generatorDescriptor);
       }
     }
 
@@ -84,7 +84,7 @@ public class ShowMappingsPartitioningAction extends BaseAction {
     if (partitioner.hasConflictingPriorityRules()) {
       // message view
       messagesView.openToolLater(true);
-      messagesView.add(new Message(MessageKind.ERROR,ShowMappingsPartitioningAction.class, "Conflicting mapping priority rules encountered:"));
+      messagesView.add(new Message(MessageKind.ERROR, ShowMappingsPartitioningAction.class, "Conflicting mapping priority rules encountered:"));
       List<Pair<MappingPriorityRule, String>> messagesFull = GenerationPartitioningUtil.toStrings(partitioner.getConflictingPriorityRules(), true);
       for (Pair<MappingPriorityRule, String> message : messagesFull) {
         Message msg = new Message(MessageKind.ERROR, ShowMappingsPartitioningAction.class, message.second);

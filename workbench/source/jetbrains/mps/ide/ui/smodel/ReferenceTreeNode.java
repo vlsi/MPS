@@ -15,19 +15,16 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.projectPane.Icons;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.actions.ReferenceNodeActions_ActionGroup;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.workbench.action.ActionFactory;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class ReferenceTreeNode extends TextTreeNode {
   private final SReference myRef;
@@ -55,7 +52,7 @@ public class ReferenceTreeNode extends TextTreeNode {
 
   @Override
   public ActionGroup getActionGroup() {
-    return ActionFactory.getInstance().acquireRegisteredGroup(ReferenceNodeActions_ActionGroup.class.getName(),"jetbrains.mps.ide");
+    return ActionFactory.getInstance().acquireRegisteredGroup(ReferenceNodeActions_ActionGroup.class.getName(), "jetbrains.mps.ide");
   }
 
   public boolean isLeaf() {

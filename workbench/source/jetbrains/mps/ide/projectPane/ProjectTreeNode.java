@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.ErrorState;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.action.ActionUtils;
-
-import com.intellij.openapi.actionSystem.ActionGroup;
 
 class ProjectTreeNode extends MPSTreeNode {
   private MPSProject myProject;

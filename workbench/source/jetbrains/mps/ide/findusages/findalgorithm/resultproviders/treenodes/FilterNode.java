@@ -25,8 +25,8 @@ import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
 
 public class FilterNode extends BaseNode {

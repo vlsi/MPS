@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index;
 
-import com.intellij.navigation.NavigationItem;
 import com.intellij.navigation.ItemPresentation;
+import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.SModelReference;
 
@@ -31,7 +31,7 @@ public class RootNodeElement implements NavigationItem {
     return myNodeResult.getNodeName();
   }
 
- public ItemPresentation getPresentation() {
+  public ItemPresentation getPresentation() {
     return new SNodeDescriptorPresentation(myNodeResult);
   }
 

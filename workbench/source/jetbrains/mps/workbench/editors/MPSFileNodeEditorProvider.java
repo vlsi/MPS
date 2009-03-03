@@ -15,18 +15,19 @@
  */
 package jetbrains.mps.workbench.editors;
 
-import com.intellij.openapi.fileEditor.*;
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.FileEditorPolicy;
+import com.intellij.openapi.fileEditor.FileEditorProvider;
+import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.util.Disposer;
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.ApplicationManager;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
-import org.jdom.Element;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import org.jdom.Element;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 public class MPSFileNodeEditorProvider implements FileEditorProvider {
   private static final Logger LOG = Logger.getLogger(MPSFileNodeEditorProvider.class);
@@ -74,11 +75,12 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider {
 
     MPSEditorStateWrapper wrapper = (MPSEditorStateWrapper) state;
     MPSEditorState editorState = wrapper.getEditorState();
-    targetElement.setAttribute(CLASS, editorState.getClass().getName());    
+    targetElement.setAttribute(CLASS, editorState.getClass().getName());
     editorState.save(targetElement);
   }
 
-  @NotNull @NonNls
+  @NotNull
+  @NonNls
   public String getEditorTypeId() {
     return "MPSFileEditor";
   }

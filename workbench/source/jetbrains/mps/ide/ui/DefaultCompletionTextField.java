@@ -17,8 +17,8 @@ package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.ChooseItemComponent;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class DefaultCompletionTextField extends CompletionTextField {

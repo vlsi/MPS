@@ -19,10 +19,10 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.core.scripts.SafeDelete;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.lang.core.scripts.SafeDelete;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.IOperationContext;
@@ -55,7 +55,7 @@ public class DeleteNodesHelper {
   }
 
   public void deleteNodes(boolean fromProjectPane) {
-    if (myNodes.size() == 0) return;    
+    if (myNodes.size() == 0) return;
 
     ProjectPane projectPane = myContext.getComponent(ProjectPane.class);
     if (myNodes.size() == 1) {

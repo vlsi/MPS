@@ -15,22 +15,19 @@
  */
 package jetbrains.mps.workbench.editors;
 
-import com.intellij.ide.IconProvider;
 import com.intellij.ide.FileIconProvider;
-import com.intellij.psi.PsiElement;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
-
-import javax.swing.Icon;
-
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import javax.swing.Icon;
 
 public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
 

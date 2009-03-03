@@ -21,14 +21,13 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.workbench.action.InternalFlag;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ScopeEditor extends BaseEditor<ScopeOptions> {
   private static final String GLOBAL_SCOPE = "Global scope";

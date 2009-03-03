@@ -15,29 +15,22 @@
  */
 package jetbrains.mps.workbench.editors;
 
-import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.fileEditor.FileEditorState;
-import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import com.intellij.openapi.fileEditor.FileEditorLocation;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.UserDataHolderBase;
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.structureView.StructureViewBuilder;
-import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent;
-import jetbrains.mps.ide.hierarchy.LanguageDiagramComponent2;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.FileEditorLocation;
+import com.intellij.openapi.fileEditor.FileEditorState;
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.UserDataHolderBase;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NonNls;
 
 import javax.swing.JComponent;
 import java.beans.PropertyChangeListener;
@@ -62,7 +55,7 @@ public class MPSLanguageEditor extends UserDataHolderBase implements FileEditor 
   }
 
   private MPSLanguageVirtualFile myFile;
-//  private LanguageDiagramComponent2 myHierarchiesComponent;
+  //  private LanguageDiagramComponent2 myHierarchiesComponent;
   private LanguageHierarchiesComponent myHierarchiesComponent;
 
   @NotNull
@@ -83,15 +76,15 @@ public class MPSLanguageEditor extends UserDataHolderBase implements FileEditor 
 
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
-   return new FileEditorState() {
-     public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
-       return false;
-     }
-   };
+    return new FileEditorState() {
+      public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
+        return false;
+      }
+    };
   }
 
   public void setState(final @NotNull FileEditorState state) {
-  //  myNodeEditor.loadState(state);
+    //  myNodeEditor.loadState(state);
   }
 
   public boolean isModified() {

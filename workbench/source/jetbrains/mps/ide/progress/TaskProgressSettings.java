@@ -15,21 +15,21 @@
  */
 package jetbrains.mps.ide.progress;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.progress.TaskProgressSettings.MyState;
-
-import java.util.*;
-
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import jetbrains.mps.ide.progress.TaskProgressSettings.MyState;
+import jetbrains.mps.logging.Logger;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @State(
   name = "TaskProgressSettings",
   storages = {
     @Storage(
-      id ="other",
+      id = "other",
       file = "$APP_CONFIG$/taskProgressSettings.xml"
     )}
 )

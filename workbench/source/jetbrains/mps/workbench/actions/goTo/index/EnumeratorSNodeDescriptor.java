@@ -17,9 +17,9 @@ package jetbrains.mps.workbench.actions.goTo.index;
 
 import com.intellij.util.io.KeyDescriptor;
 
+import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
-import java.io.DataInput;
 
 class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
   private final byte mySizeOfUUID = 16;
@@ -103,13 +103,13 @@ class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
     off += mySizeOfUUID / 2;
     long leastSignificantBits = getLong(bytes, off);
     off += mySizeOfUUID / 2;
-    int numberInModel = 0xFF & (int)bytes[off];
+    int numberInModel = 0xFF & (int) bytes[off];
     off++;
-    int conceptNameLength = 0xFF & (int)bytes[off];
+    int conceptNameLength = 0xFF & (int) bytes[off];
     off++;
     String conceptFqName = getString(bytes, off, conceptNameLength);
     off += conceptNameLength;
-    int nodeNameLength = 0xFF & (int)bytes[off];
+    int nodeNameLength = 0xFF & (int) bytes[off];
     off++;
     String nodeName = getString(bytes, off, nodeNameLength);
     off += nodeNameLength;
@@ -135,7 +135,7 @@ class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
   }
 
   public SNodeDescriptor read(DataInput in) throws IOException {
-    int len = 0xFF & (int)in.readByte();
+    int len = 0xFF & (int) in.readByte();
     byte[] bytes = new byte[len];
     in.readFully(bytes, 0, len);
     return bytesToNodeDescriptor(bytes);

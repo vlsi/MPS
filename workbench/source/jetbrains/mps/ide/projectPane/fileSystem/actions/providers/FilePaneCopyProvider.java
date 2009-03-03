@@ -21,8 +21,8 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 
-import java.awt.datatransfer.Clipboard;
 import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
 
 public class FilePaneCopyProvider implements CopyProvider, CutProvider {
   public void performCopy(DataContext dataContext) {
@@ -30,7 +30,7 @@ public class FilePaneCopyProvider implements CopyProvider, CutProvider {
   }
 
   public void performCut(DataContext dataContext) {
-    perform(dataContext, true);  
+    perform(dataContext, true);
   }
 
   private void perform(DataContext dataContext, boolean cut) {

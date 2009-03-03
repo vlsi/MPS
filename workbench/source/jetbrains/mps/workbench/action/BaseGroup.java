@@ -15,18 +15,16 @@
  */
 package jetbrains.mps.workbench.action;
 
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Presentation;
-import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.ActionPlace;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
-import java.util.Set;
-
-import org.jetbrains.annotations.Nullable;
 
 public class BaseGroup extends DefaultActionGroup {
   private String myId = "";
@@ -100,14 +98,14 @@ public class BaseGroup extends DefaultActionGroup {
   public void addAnchor(String id) {
     add(new LabelledAnchor(id));
   }
-                                                 
-  public void addPlace(ActionPlace place,@Nullable Condition<BaseAction> condition){
-    for (AnAction child:getChildren(null)){
-      if (child instanceof BaseGroup){
-        ((BaseGroup)child).addPlace(place,condition);
-      }else if (child instanceof BaseAction){
+
+  public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> condition) {
+    for (AnAction child : getChildren(null)) {
+      if (child instanceof BaseGroup) {
+        ((BaseGroup) child).addPlace(place, condition);
+      } else if (child instanceof BaseAction) {
         BaseAction action = (BaseAction) child;
-        if (condition==null || condition.met(action)) {
+        if (condition == null || condition.met(action)) {
           action.addPlace(place);
         }
       }

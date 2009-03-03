@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem;
 
-import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.SelectInContext;
+import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.actionSystem.DataProvider;
@@ -29,6 +29,8 @@ import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.util.ActionCallback;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -38,27 +40,25 @@ import com.intellij.openapi.vcs.changes.ChangeListListener;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vfs.*;
-import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.wm.ToolWindowId;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.ActionCallback;
+import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.AbstractFileTreeNode;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePaneCopyProvider;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePanePasteProvider;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.AbstractFileTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.vcs.GlobalClassPathIndex;
+import jetbrains.mps.vcs.GlobalClassPathIndex.ExclusionChangedListener;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.vcs.GlobalClassPathIndex.ExclusionChangedListener;
-import jetbrains.mps.vcs.GlobalClassPathIndex;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -69,9 +69,9 @@ import javax.swing.Timer;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import java.awt.event.*;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Collection;
 
 public abstract class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
   private static final Logger LOG = Logger.getLogger(FileViewProjectPane.class);
@@ -121,7 +121,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myBus = bus;
     myIdeDocumentHistory = ideDocumentHistory;
     myEditorManager = fileEditorManager;
-    
+
     myTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
         MPSTreeNode node;

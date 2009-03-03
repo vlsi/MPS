@@ -15,28 +15,28 @@
  */
 package jetbrains.mps.workbench.dialogs.newproject;
 
-import com.intellij.ide.wizard.AbstractWizard;
-import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.ide.IdeBundle;
 import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.ide.wizard.AbstractWizard;
+import com.intellij.ide.wizard.CommitStepException;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystemFile;
@@ -47,8 +47,8 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
-import java.io.File;
 import java.awt.Frame;
+import java.io.File;
 
 public class NewProjectWizard extends AbstractWizard<BaseStep> {
   private ProjectStep myProjectStep;
@@ -238,7 +238,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     LanguageAspect.EDITOR.createNew(language, false);
     LanguageAspect.CONSTRAINTS.createNew(language, false);
     LanguageAspect.TYPESYSTEM.createNew(language, false);
-    language.setLanguageDescriptor(languageDescriptor,false);
+    language.setLanguageDescriptor(languageDescriptor, false);
     language.save();
 
     return language;

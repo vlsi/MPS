@@ -44,7 +44,7 @@ public abstract class BaseModelItem implements NavigationItem {
 
   public FileStatus getFileStatus() {
     boolean changed = SModelRepository.getInstance().isChanged(myModelDescriptor);
-    return changed ?FileStatus.MODIFIED:FileStatus.NOT_CHANGED;
+    return changed ? FileStatus.MODIFIED : FileStatus.NOT_CHANGED;
   }
 
   public boolean canNavigate() {

@@ -20,10 +20,9 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
-
-import org.jetbrains.annotations.NotNull;
 
 public class ModelPresentation extends BasePresentation {
   private SModelDescriptor myModelDescriptor;

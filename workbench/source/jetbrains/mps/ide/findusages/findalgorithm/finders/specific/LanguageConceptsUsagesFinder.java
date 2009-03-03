@@ -24,12 +24,12 @@ import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class LanguageConceptsUsagesFinder implements IFinder {
   public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
@@ -43,7 +43,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
     SModelDescriptor structureModel = language.getStructureModelDescriptor();
     if (structureModel == null) return searchResults;
     SModel sModel = structureModel.getSModel();
-    if (sModel==null) return searchResults;
+    if (sModel == null) return searchResults;
     if (sModel.getRoots().isEmpty()) return searchResults;
 
     searchResults.getSearchedNodes().addAll(sModel.getRoots());

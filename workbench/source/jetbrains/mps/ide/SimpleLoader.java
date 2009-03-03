@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.ide;
 
-import javax.swing.JList;
-
 public class SimpleLoader<Item> implements ItemsLoader<Item> {
   private final Item[] myItems;
 
@@ -36,6 +34,6 @@ public class SimpleLoader<Item> implements ItemsLoader<Item> {
     throw new RuntimeException();
   }
 
-  public void interrupt() {    
+  public void interrupt() {
   }
 }

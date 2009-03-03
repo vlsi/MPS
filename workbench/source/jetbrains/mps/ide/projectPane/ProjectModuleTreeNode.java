@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.ide.projectPane;
 
+import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -88,10 +88,10 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   }
 
   private boolean generationRequired(MPSTreeNode node) {
-    if (node instanceof AccessoriesModelTreeNode){
+    if (node instanceof AccessoriesModelTreeNode) {
       return false;
     }
-    
+
     if (node instanceof SModelTreeNode) {
       SModelTreeNode smodelTreeNode = (SModelTreeNode) node;
       return smodelTreeNode.generationRequired();

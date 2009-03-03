@@ -20,7 +20,6 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.MyState;
-import jetbrains.mps.ide.dialogs.BaseDialog;
 
 import java.awt.Dimension;
 import java.util.HashMap;
@@ -29,10 +28,10 @@ import java.util.HashMap;
 @State(
   name = "DialogDimensionsSettings",
   storages = {
-  @Storage(
-    id = "other",
-    file = "$APP_CONFIG$/mpsDialogDimensionSettings.xml"
-  )}
+    @Storage(
+      id = "other",
+      file = "$APP_CONFIG$/mpsDialogDimensionSettings.xml"
+    )}
 )
 @Deprecated
 public class DialogDimensionsSettings implements PersistentStateComponent<MyState> {

@@ -17,13 +17,12 @@ package jetbrains.mps.workbench.editors;
 
 import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.util.Disposer;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
-import org.jdom.Element;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
+import org.jdom.Element;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -39,7 +38,7 @@ public class MPSLanguageEditorProvider implements FileEditorProvider {
 
   @NotNull
   public FileEditor createEditor(@NotNull Project project, @NotNull VirtualFile file) {
-    return new MPSLanguageEditor(project, (MPSLanguageVirtualFile)file);
+    return new MPSLanguageEditor(project, (MPSLanguageVirtualFile) file);
   }
 
   public void disposeEditor(@NotNull FileEditor editor) {
@@ -59,7 +58,8 @@ public class MPSLanguageEditorProvider implements FileEditorProvider {
 
   }
 
-  @NotNull @NonNls
+  @NotNull
+  @NonNls
   public String getEditorTypeId() {
     return "MPSLanguageFileEditor";
   }

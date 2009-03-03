@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.ui.TextTreeNode;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
 
 import java.awt.Color;
-
-import com.intellij.openapi.actionSystem.ActionGroup;
 
 public class SNodeGroupTreeNode extends TextTreeNode {
 
@@ -75,5 +74,5 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     return myAutoDelete;
   }
 
-  
+
 }

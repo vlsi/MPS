@@ -22,7 +22,7 @@ package jetbrains.mps.ide.progress;
  * Time: 18:24:47
  * To change this template use File | Settings | File Templates.
  */
-public class NullAdaptiveProgressMonitor  implements IAdaptiveProgressMonitor {
+public class NullAdaptiveProgressMonitor implements IAdaptiveProgressMonitor {
   public void addText(String text) {
 
   }

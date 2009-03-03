@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.ide.hierarchy;
 
+import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.ui.TreeTextUtil;
 
-import java.util.List;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.awt.Color;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.

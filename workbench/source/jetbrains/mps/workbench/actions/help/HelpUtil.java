@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.workbench.actions.help;
 
+import com.intellij.ide.BrowserUtil;
 import jetbrains.mps.logging.Logger;
 
 import java.io.File;
 import java.net.MalformedURLException;
-
-import com.intellij.ide.BrowserUtil;
 
 /**
  * Created by IntelliJ IDEA.

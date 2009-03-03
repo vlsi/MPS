@@ -36,11 +36,11 @@ import org.jetbrains.annotations.NotNull;
 @State(
   name = "DefaultSearchOptionsComponent",
   storages = {
-  @Storage(
-    id = "other",
-    file = "$WORKSPACE_FILE$"
-  )
-    }
+    @Storage(
+      id = "other",
+      file = "$WORKSPACE_FILE$"
+    )
+  }
 )
 public class DefaultSearchOptionsComponent implements ProjectComponent, PersistentStateComponent<Element> {
   private static final String DEFAULT_SEARCH_OPTIONS = "default_search_options";

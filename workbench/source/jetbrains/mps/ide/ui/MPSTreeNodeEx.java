@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.ide.ui;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
 /**

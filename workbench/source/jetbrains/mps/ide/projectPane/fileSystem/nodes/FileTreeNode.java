@@ -15,16 +15,13 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.AbstractFileTreeNode;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.actions.FileActions_ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.Icon;
-
-import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.actionSystem.ActionGroup;
 
 public class FileTreeNode extends AbstractFileTreeNode {
 

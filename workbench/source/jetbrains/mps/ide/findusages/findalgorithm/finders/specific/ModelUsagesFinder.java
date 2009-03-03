@@ -36,7 +36,7 @@ public class ModelUsagesFinder implements IFinder {
     SModelReference modelReference = model.getSModelReference();
     for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (indicator.isCanceled()) return searchResults;
-      
+
       if (!SModelStereotype.isUserModel(modelDescriptor)) {
         continue;
       }

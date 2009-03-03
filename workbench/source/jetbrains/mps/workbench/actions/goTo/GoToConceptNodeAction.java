@@ -31,7 +31,6 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +53,7 @@ public class GoToConceptNodeAction extends BaseAction {
     //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
-    BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject,"concept") {
+    BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject, "concept") {
       public SNode[] find(IScope scope) {
         final List<SNode> nodes = new ArrayList<SNode>();
         for (Language l : scope.getVisibleLanguages()) {

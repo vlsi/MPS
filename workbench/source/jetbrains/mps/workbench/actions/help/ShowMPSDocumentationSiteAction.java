@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.workbench.actions.help;
 
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import jetbrains.mps.workbench.ActionPlace;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class ShowMPSDocumentationSiteAction extends ShowSiteAction {
   public ShowMPSDocumentationSiteAction() {

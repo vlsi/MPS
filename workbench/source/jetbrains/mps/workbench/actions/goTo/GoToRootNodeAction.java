@@ -23,21 +23,20 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.choose.base.FakePsiContext;
+import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class GoToRootNodeAction extends BaseAction {
   private static boolean myUseCache = true;

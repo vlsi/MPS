@@ -25,14 +25,13 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers.ChooserCallback;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,7 +70,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
   protected abstract AbstractHierarchyTree<T> createHierarchyTree(boolean isParentHierarchy);
 
   public void openNode(SNode node, IOperationContext context) {
-    context.getComponent(MPSEditorOpener.class).openNode(node, context,true,true);
+    context.getComponent(MPSEditorOpener.class).openNode(node, context, true, true);
   }
 
   protected DefaultActionGroup createButtonsGroup() {
@@ -140,7 +139,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
           }
         }
 
-        CommonChoosers.showSimpleNodeChooser(nodes,new ChooserCallback<SNode>() {
+        CommonChoosers.showSimpleNodeChooser(nodes, new ChooserCallback<SNode>() {
           public void execute(SNode node) {
             MPSProject project = getMPSProject();
             if (project != null) {

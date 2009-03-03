@@ -88,7 +88,7 @@ public class Icons {
   public static final Icon DELETE_ICON = new ImageIcon(Icons.class.getResource("other/cancel.png"));
   public static final Icon FIND_ICON = new ImageIcon(Icons.class.getResource("other/find.png"));
 
-  public static final Icon HIERARCHY_ICON = new ImageIcon(Icons.class.getResource("nodes/hierarchyView.png")  );
+  public static final Icon HIERARCHY_ICON = new ImageIcon(Icons.class.getResource("nodes/hierarchyView.png"));
 
   public static final Icon DISCARD_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/discardAll.png"));
   public static final Icon SELECT_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/selectAll.png"));
@@ -97,7 +97,7 @@ public class Icons {
 
   public static final Icon DEVKIT_ICON = new ImageIcon(Icons.class.getResource("nodes/devkit.png"));
 
-  public static final Icon CFG_END_ICON = new ImageIcon(Icons.class.getResource("nodes/cfgEnd.png"));    
+  public static final Icon CFG_END_ICON = new ImageIcon(Icons.class.getResource("nodes/cfgEnd.png"));
 
   public static final Icon JDK_OPENED_FOLDER = new ImageIcon(Icons.class.getResource("nodes/ppJdkOpen.png"));
   public static final Icon JDK_CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("nodes/ppJdkClosed.png"));
@@ -117,7 +117,7 @@ public class Icons {
 
   public static final Icon MODULE_GROUP_CLOSED = new ImageIcon(Icons.class.getResource("nodes/moduleGroupClosed.png"));
   public static final Icon MODULE_GROUP_OPENED = new ImageIcon(Icons.class.getResource("nodes/moduleGroupOpen.png"));
-  
+
   public static final Icon BOOKMARK_0 = new ImageIcon(Icons.class.getResource("other/bookmark0.png"));
   public static final Icon BOOKMARK_1 = new ImageIcon(Icons.class.getResource("other/bookmark1.png"));
   public static final Icon BOOKMARK_2 = new ImageIcon(Icons.class.getResource("other/bookmark2.png"));

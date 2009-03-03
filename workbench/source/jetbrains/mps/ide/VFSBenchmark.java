@@ -15,19 +15,19 @@
  */
 package jetbrains.mps.ide;
 
-import jetbrains.mps.vfs.IFile;
+import com.intellij.openapi.vfs.JarFileSystem;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.util.FileUtil;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.JarFileSystem;
+import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
-import java.util.LinkedList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 public class VFSBenchmark {
@@ -174,14 +174,14 @@ public class VFSBenchmark {
   private static void scan(JarFileClassPathItem pathItem, String namespace, StringBuffer sb) {
     Set<String> subpackages = pathItem.getSubpackages(namespace);
 
-    for (String s : subpackages){
+    for (String s : subpackages) {
       sb.append(s);
       sb.append("\n");
       scan(pathItem, s, sb);
     }
 
     Set<String> classes = pathItem.getAvailableClasses(namespace);
-    for (String clname : classes){
+    for (String clname : classes) {
       sb.append(clname);
       sb.append("\n");
     }

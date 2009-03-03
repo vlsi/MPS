@@ -17,12 +17,11 @@ package jetbrains.mps.ide.hierarchy;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
@@ -52,13 +51,13 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
   protected void updatePresentation() {
     setIcon(IconManager.getIconFor(myNodePointer.getNode()));
-    setNodeIdentifier(calculateNodeIdentifier());                  
+    setNodeIdentifier(calculateNodeIdentifier());
     setAdditionalText(calculateAdditionalText());
     setAutoExpandable(false);
   }
 
   private String calculateAdditionalText() {
-    if (getNode() == null) return "null";    
+    if (getNode() == null) return "null";
     return getNode().getModel().getSModelFqName().toString();
   }
 

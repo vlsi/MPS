@@ -87,7 +87,7 @@ public abstract class BaseAction extends AnAction {
   public final void update(final AnActionEvent e) {
     super.update(e);
     ActionPlace place = MPSDataKeys.PLACE.getData(DataManager.getInstance().getDataContext());
-    if (!getPlaces().contains(null)){
+    if (!getPlaces().contains(null)) {
       if (!getPlaces().contains(place)) {
         disable(e.getPresentation());
         return;
@@ -139,12 +139,12 @@ public abstract class BaseAction extends AnAction {
   }
 
   public void addPlace(ActionPlace place) {
-    if (myPlaces==null) myPlaces = new HashSet<ActionPlace>();
+    if (myPlaces == null) myPlaces = new HashSet<ActionPlace>();
     myPlaces.add(place);
   }
 
   public Set<ActionPlace> getPlaces() {
-    if (myPlaces!=null) return myPlaces;
+    if (myPlaces != null) return myPlaces;
     Set<ActionPlace> result = new HashSet<ActionPlace>();
     result.add(null);
     return result;

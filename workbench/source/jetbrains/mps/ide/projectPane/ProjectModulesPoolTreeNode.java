@@ -16,13 +16,15 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.List;
 
@@ -67,7 +69,7 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
       builder.fillNode(solutions);
       add(solutions);
     }
-    
+
     {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode languages = new TextTreeNode("Languages");
@@ -82,7 +84,7 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode devkits = new TextTreeNode("DevKits");
       for (DevKit devKit : CollectionUtil.filter(DevKit.class, modules)) {
-        builder.addNode(new ProjectDevKitTreeNode(devKit, myProject, true));   
+        builder.addNode(new ProjectDevKitTreeNode(devKit, myProject, true));
       }
       builder.fillNode(devkits);
       add(devkits);

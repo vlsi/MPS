@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.workbench.actions.welcomeScreen;
 
-import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.actions.help.Icons;
-import jetbrains.mps.util.PathManager;
+import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.ide.impl.ProjectUtil;
+import jetbrains.mps.util.PathManager;
+import jetbrains.mps.workbench.actions.help.Icons;
 
 import java.io.File;
 

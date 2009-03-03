@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.dialogs;
 
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.dialogs.BaseDialog;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;

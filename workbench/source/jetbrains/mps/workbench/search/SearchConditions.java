@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.search;
 
 import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 import java.util.regex.PatternSyntaxException;
 
 public class SearchConditions {

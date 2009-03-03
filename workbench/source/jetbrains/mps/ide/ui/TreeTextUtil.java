@@ -17,8 +17,6 @@ package jetbrains.mps.ide.ui;
 
 import org.apache.commons.lang.StringUtils;
 
-import java.util.HashMap;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -64,7 +62,7 @@ public class TreeTextUtil {
     return builder.toString();
   }
 
-  public static void main (String[] args) {
+  public static void main(String[] args) {
     System.out.println(toHtml("<mama>papa<s s s>><<s s s>'''&&"));
   }
 }

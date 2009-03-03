@@ -23,14 +23,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
 
 public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPSTreeNode> {
   private T myRootNamespace;
@@ -145,8 +144,11 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
 
   public static interface NamespaceNodeBuilder<N extends MPSTreeNode> {
     public N createNamespaceNode(String text, IOperationContext context);
+
     public abstract String getName(N node);
+
     public abstract void setName(N node, String name);
+
     public abstract boolean isNamespaceNode(MPSTreeNode n);
   }
 

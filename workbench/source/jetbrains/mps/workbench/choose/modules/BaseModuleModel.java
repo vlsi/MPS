@@ -17,14 +17,13 @@ package jetbrains.mps.workbench.choose.modules;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
 public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
   //---------------------FIND STUFF------------------------
 
-  public BaseModuleModel(MPSProject project,String entityName) {
-    super(project,entityName);
+  public BaseModuleModel(MPSProject project, String entityName) {
+    super(project, entityName);
   }
 
   public String doGetFullName(Object element) {

@@ -16,8 +16,8 @@
 package jetbrains.mps.ide.icons;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;

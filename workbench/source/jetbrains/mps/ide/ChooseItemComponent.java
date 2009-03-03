@@ -18,7 +18,6 @@ package jetbrains.mps.ide;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -35,11 +34,11 @@ import java.util.regex.Pattern;
 
 /**
  * Created by IntelliJ IDEA.
-* User: Cyril.Konopko
-* Date: 11.01.2008
-* Time: 19:03:10
-* To change this template use File | Settings | File Templates.
-*/
+ * User: Cyril.Konopko
+ * Date: 11.01.2008
+ * Time: 19:03:10
+ * To change this template use File | Settings | File Templates.
+ */
 public abstract class ChooseItemComponent<Item> extends JPanel {
   private JTextField myTextField;
   private Map<String, Set<Item>> myItemsMap = new HashMap<String, Set<Item>>();
@@ -144,7 +143,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
   public abstract void doChoose(Item item);
 
   public void setListCellRenderer(ListCellRenderer cellRenderer) {
-     if (cellRenderer != null) {
+    if (cellRenderer != null) {
       myList.setCellRenderer(cellRenderer);
     }
   }

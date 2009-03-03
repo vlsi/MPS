@@ -17,8 +17,6 @@ package jetbrains.mps.ide.findusages.view.optionseditor;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.findusages.FindersManager;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
@@ -31,13 +29,16 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
 
 public class FindUsagesDialog extends BaseDialog {
   private JPanel myPanel;
@@ -133,7 +134,7 @@ public class FindUsagesDialog extends BaseDialog {
 
     public void goToFinder(final ReloadableFinder finder) {
       SNode finderNode = finder.getNodeToNavigate();
-      if (finderNode==null) return;
+      if (finderNode == null) return;
       FindUsagesDialog.this.onCancel();
       myProject.getComponentSafe(MPSEditorOpener.class).openNode(finderNode);
     }

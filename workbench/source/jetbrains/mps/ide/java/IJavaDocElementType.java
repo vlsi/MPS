@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.ide.java;
 
-import com.intellij.psi.tree.IElementType;
 import com.intellij.openapi.fileTypes.StdFileTypes;
+import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NonNls;
 
 public class IJavaDocElementType extends IElementType {

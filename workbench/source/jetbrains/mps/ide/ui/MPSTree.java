@@ -17,6 +17,7 @@ package jetbrains.mps.ide.ui;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.dnd.aware.DnDAwareTree;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -25,7 +26,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
-import com.intellij.openapi.Disposable;
 import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
@@ -225,7 +225,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       focusManager = IdeFocusManagerHeadless.INSTANCE;
     }
 
-    focusManager.requestFocus(this,true);
+    focusManager.requestFocus(this, true);
 
     //workaround for context acquiers
     focusManager.doWhenFocusSettlesDown(new Runnable() {

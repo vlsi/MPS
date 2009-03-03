@@ -82,7 +82,7 @@ public class AspectMethodsFinder implements IFinder {
 
     }
 
-    public AspectMethodsHolder(String modelName,String methodName) {
+    public AspectMethodsHolder(String modelName, String methodName) {
       myData.myModelName = modelName;
       myData.myMethodName = methodName;
     }
@@ -92,7 +92,7 @@ public class AspectMethodsFinder implements IFinder {
     }
 
     public String getCaption() {
-      return myData.myMethodName+" in "+myData.myModelName;
+      return myData.myMethodName + " in " + myData.myModelName;
     }
 
     public Icon getIcon() {
@@ -105,12 +105,12 @@ public class AspectMethodsFinder implements IFinder {
     }
 
     public void write(Element element, MPSProject project) throws CantSaveSomethingException {
-      element.setAttribute(MODEL_NAME,myData.myModelName);
-      element.setAttribute(METHOD_NAME,myData.myMethodName);
+      element.setAttribute(MODEL_NAME, myData.myModelName);
+      element.setAttribute(METHOD_NAME, myData.myMethodName);
     }
   }
 
-  public static class AspectMethodQueryData{
+  public static class AspectMethodQueryData {
     public String myModelName = "";
     public String myMethodName = "";
   }

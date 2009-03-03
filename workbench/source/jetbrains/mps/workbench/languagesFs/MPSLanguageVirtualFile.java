@@ -15,18 +15,18 @@
  */
 package jetbrains.mps.workbench.languagesFs;
 
-import com.intellij.openapi.vfs.DeprecatedVirtualFile;
-import com.intellij.openapi.vfs.VirtualFileSystem;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.vfs.DeprecatedVirtualFile;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
@@ -56,7 +56,8 @@ public class MPSLanguageVirtualFile extends DeprecatedVirtualFile {
     return MPSLanguagesVirtualFileSystem.getInstance();
   }
 
-  @NotNull @NonNls
+  @NotNull
+  @NonNls
   public String getName() {
     return myName;
   }

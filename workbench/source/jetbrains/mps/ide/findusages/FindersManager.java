@@ -18,17 +18,16 @@ package jetbrains.mps.ide.findusages;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.lang.findUsages.structure.FinderDeclaration;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -82,7 +81,7 @@ public class FindersManager implements ApplicationComponent {
                 try {
                   if (finder.isVisible(node)) {
                     if (finder.isApplicable(node)) {
-                      result.add(new ReloadableFinder(getFinderModule(finder),finder));
+                      result.add(new ReloadableFinder(getFinderModule(finder), finder));
                     }
                   }
                 } catch (Throwable t) {
@@ -91,7 +90,7 @@ public class FindersManager implements ApplicationComponent {
               }
             }
           }
-          return (Set<ReloadableFinder>)Collections.unmodifiableSet(result);
+          return (Set<ReloadableFinder>) Collections.unmodifiableSet(result);
         }
       });
   }
@@ -100,7 +99,7 @@ public class FindersManager implements ApplicationComponent {
     for (Set<GeneratedFinder> finders : myFinders.values()) {
       for (GeneratedFinder finder : finders) {
         if (finder.getClass().getName().equals(className)) {
-          return new ReloadableFinder(getFinderModule(finder),finder);
+          return new ReloadableFinder(getFinderModule(finder), finder);
         }
       }
     }

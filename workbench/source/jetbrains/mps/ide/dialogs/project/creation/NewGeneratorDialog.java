@@ -38,7 +38,10 @@ import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -163,9 +166,9 @@ public class NewGeneratorDialog extends BaseDialog {
     dispose();
 
     Project p = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    assert p!=null;
+    assert p != null;
     final Generator[] newGenerator = new Generator[]{null};
-    ProgressManager.getInstance().run(new Modal(p,"Creating...",false) {
+    ProgressManager.getInstance().run(new Modal(p, "Creating...", false) {
       @Override
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);

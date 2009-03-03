@@ -16,8 +16,6 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;

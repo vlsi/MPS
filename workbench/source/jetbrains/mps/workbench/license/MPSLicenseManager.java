@@ -15,22 +15,19 @@
  */
 package jetbrains.mps.workbench.license;
 
-import com.intellij.ide.license.LicenseManager;
 import com.intellij.ide.license.LicenseFactory;
+import com.intellij.ide.license.LicenseManager;
 import com.intellij.ide.license.LicenseMessages;
-import com.intellij.ide.license.ui.LicenseMessagesImpl;
 import com.intellij.ide.license.ui.AgreementDialog;
-
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Calendar;
-import java.util.prefs.Preferences;
-import java.util.prefs.BackingStoreException;
-import java.io.File;
-
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.FileUtil;
+import com.intellij.ide.license.ui.LicenseMessagesImpl;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.PathManager;
+
+import java.io.File;
+import java.util.Date;
+import java.util.prefs.BackingStoreException;
+import java.util.prefs.Preferences;
 
 public class MPSLicenseManager extends LicenseManager {
   private static final String ACCEPTED = "accepted";
@@ -71,7 +68,7 @@ public class MPSLicenseManager extends LicenseManager {
           throw new RuntimeException(e);
         }
         action.proceed();
-      }                  
+      }
     }
   }
 

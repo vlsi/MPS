@@ -37,7 +37,7 @@ public class CopyPasteFilesData {
     return presentation;
   }
 
-  public CopyPasteFilesData(VirtualFile[] files, boolean isCut){
+  public CopyPasteFilesData(VirtualFile[] files, boolean isCut) {
     myFiles = files;
     myIsCut = isCut;
   }
@@ -62,7 +62,7 @@ public class CopyPasteFilesData {
     return myIsCut;
   }
 
-  public boolean hasAnythingToDo(){
+  public boolean hasAnythingToDo() {
     return myFiles.length != 0;
   }
 }

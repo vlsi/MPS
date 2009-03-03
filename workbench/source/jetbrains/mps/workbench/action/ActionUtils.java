@@ -18,8 +18,6 @@ package jetbrains.mps.workbench.action;
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.logging.Logger;
 
-import javax.swing.JPopupMenu;
-
 public class ActionUtils {
   private static final Logger LOG = Logger.getLogger(ActionUtils.class);
 
@@ -50,7 +48,7 @@ public class ActionUtils {
   public static DefaultActionGroup groupFromActions(AnAction... actions) {
     DefaultActionGroup g = new DefaultActionGroup();
     for (AnAction action : actions) {
-      if (action!=null){
+      if (action != null) {
         g.add(action);
       }
     }

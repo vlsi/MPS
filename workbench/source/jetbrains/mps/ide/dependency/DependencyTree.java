@@ -32,9 +32,9 @@ public class DependencyTree extends MPSTree {
   }
 
   protected MPSTreeNode rebuild() {
-    if (myModule==null){
+    if (myModule == null) {
       setRootVisible(false);
-      return new TextMPSTreeNode("No Contents",null);
+      return new TextMPSTreeNode("No Contents", null);
     }
 
     setRootVisible(true);

@@ -26,10 +26,8 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.choose.models.BaseModelItem;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 
 import javax.swing.JComponent;
 import java.awt.Dialog;
@@ -71,7 +69,7 @@ class NodeChooserDialog extends BaseDialog {
 
       @Override
       public SNode[] find(boolean checkboxState) {
-          return myNodes.toArray(new SNode[myNodes.size()]);
+        return myNodes.toArray(new SNode[myNodes.size()]);
       }
 
       public SNode[] find(IScope scope) {
@@ -84,7 +82,7 @@ class NodeChooserDialog extends BaseDialog {
       }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToNodeModel,false);
+    myChooser = new SmartChooseByNamePanel(goToNodeModel, false);
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

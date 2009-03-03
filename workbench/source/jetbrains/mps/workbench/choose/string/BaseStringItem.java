@@ -18,11 +18,9 @@ package jetbrains.mps.workbench.choose.string;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.workbench.choose.models.ModelPresentation;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 

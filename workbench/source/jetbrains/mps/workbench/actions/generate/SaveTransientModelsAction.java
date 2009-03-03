@@ -18,11 +18,7 @@ package jetbrains.mps.workbench.actions.generate;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.ToggleAction;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationSettings;
-import jetbrains.mps.project.MPSProject;
 
 public class SaveTransientModelsAction extends ToggleAction {
   public SaveTransientModelsAction() {

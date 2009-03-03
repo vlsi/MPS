@@ -18,16 +18,15 @@ package jetbrains.mps.workbench.nodesFs;
 import com.intellij.openapi.vfs.DeprecatedVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
-import com.intellij.openapi.util.Computable;
 import com.intellij.util.LocalTimeCounter;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.ref.WeakReference;
 
@@ -66,7 +65,8 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
     return MPSNodesVirtualFileSystem.getInstance();
   }
 
-  @NotNull @NonNls
+  @NotNull
+  @NonNls
   public String getName() {
     return myName;
   }
@@ -92,7 +92,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   public byte[] contentsToByteArray() throws IOException {
     throw new UnsupportedOperationException();
   }
-  
+
   @Nullable
   public VirtualFile getParent() {
     return null;

@@ -18,12 +18,12 @@ package jetbrains.mps.workbench.actions.language;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.MessageDialog;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
