@@ -35,7 +35,7 @@ abstract class TaskQueue<T> {
       LOG.assertLog(myTasks.size() == 0, "Task queue has not processed tasks:\n" + myTasks + "\nThat's weird cause processing is allowed.");
       processTask(Collections.singletonList(task));
     } else {
-      LOG.info("Added task to invoke later " + task + ".");
+//      LOG.info("Added task to invoke later " + task + ".");
       myTasks.add(task);
     }
   }

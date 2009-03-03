@@ -35,8 +35,6 @@ public class BuildScriptRunner extends BaseRunner {
     }
     ProcessBuilder builder = new ProcessBuilder(new ArrayList(parameters));
     builder.directory(file.getParentFile());
-    System.out.println(builder.command());
-    System.out.println(file.getParentFile());
     try {
       Process process = builder.start();
       BaseOutputReader input = new BaseOutputReader(process.getInputStream()) {
@@ -103,10 +101,6 @@ public class BuildScriptRunner extends BaseRunner {
     {
       return javaHome + "java";
     }
-  }
-
-  private String getAntPath() {
-    return "ant";
   }
 
 }
