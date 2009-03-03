@@ -47,6 +47,8 @@ public class RulesManager {
 
   private Set<SModelDescriptor> myModelsWithLoadedRules = new HashSet<SModelDescriptor>();
 
+  private OverloadedOperationsManager myOverloadedOperationsManager = new OverloadedOperationsManager();
+
 
   private static Logger LOG = Logger.getLogger(RulesManager.class);
 
@@ -69,6 +71,7 @@ public class RulesManager {
     myReplacementRules.clear();
     myDependenciesContainer.clear();
     myVariableConverters.clear();
+    myOverloadedOperationsManager.clear();
   }
 
   public boolean hasModelLoadedRules(SModelDescriptor model) {
@@ -110,12 +113,14 @@ public class RulesManager {
         myReplacementRules.addRuleSetItem(helginsDescriptor.getEliminationRules());
         myDependenciesContainer.addDependencies(helginsDescriptor.getDependencies());
         myVariableConverters.addAll(helginsDescriptor.getVariableConverters());
+        myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(helginsDescriptor.getOverloadedOperationsTypesProviders());
         myInferenceRules.makeConsistent();
         myNonTypesystemRules.makeConsistent();
         mySubtypingRules.makeConsistent();
         myComparisonRules.makeConsistent();
         myReplacementRules.makeConsistent();
         myDependenciesContainer.makeConsistent();
+        myOverloadedOperationsManager.makeConsistent();
         return true;
       } else {
         return false;
