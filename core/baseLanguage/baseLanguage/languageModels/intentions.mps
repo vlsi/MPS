@@ -7675,5 +7675,36 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1236187435379">
+    <property name="package" value="method" />
+    <property name="name" value="MakeMethodAbstarct" />
+    <link role="forConcept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1236187435380">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236187435381">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236187505489">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236187505490">
+            <property name="value" value="Make method abstract" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1236187435382">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236187435383">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236187518965">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1236187525413">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1236187526707">
+              <property name="value" value="true" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236187519829">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1236187518966" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1236187524047">
+                <link role="property" targetNodeId="1.1178608670077" resolveInfo="isAbstract" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
