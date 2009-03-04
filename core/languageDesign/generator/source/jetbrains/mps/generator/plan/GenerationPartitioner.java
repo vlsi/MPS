@@ -18,9 +18,9 @@ package jetbrains.mps.generator.plan;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -257,7 +257,7 @@ public class GenerationPartitioner {
     if (mappingRef instanceof MappingConfig_ExternalRef) {
       GeneratorReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
       if (generatorRef != null) {
-        jetbrains.mps.project.structure.modules.ModuleReference genRef = ModuleReference.fromString(generatorRef.getGeneratorUID());
+        ModuleReference genRef = ModuleReference.fromString(generatorRef.getGeneratorUID());
         if (genRef != null) {
           Generator newRefGenerator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
           if (newRefGenerator != null) {
