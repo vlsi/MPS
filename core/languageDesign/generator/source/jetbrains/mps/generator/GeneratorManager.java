@@ -55,7 +55,7 @@ import java.util.*;
   )
     }
 )
-public class GeneratorManager implements SearchableConfigurable {
+public class GeneratorManager {
   public static final int AMOUNT_PER_MODEL = 100;
   public static final int AMOUNT_PER_COMPILATION = 100;
 
@@ -66,7 +66,6 @@ public class GeneratorManager implements SearchableConfigurable {
   private final List<CompilationListener> myCompilationListeners = new ArrayList<CompilationListener>();
 
   private GenerationSettings mySettings;
-  private GenerationSettingsPreferencesPage myPreferences;
   private Project myProject;
   private boolean myGeneratingRequirements;
 
@@ -401,56 +400,5 @@ public class GeneratorManager implements SearchableConfigurable {
 
   public void removeCompilationListener(CompilationListener l) {
     myCompilationListeners.remove(l);
-  }
-
-  private GenerationSettingsPreferencesPage getPreferences() {
-    if (myPreferences == null) {
-      myPreferences = new GenerationSettingsPreferencesPage(mySettings);
-    }
-    return myPreferences;
-  }
-
-  @Nls
-  public String getDisplayName() {
-    return "Generator Settings";
-  }
-
-  @Nullable
-  public Icon getIcon() {
-    return null;
-  }
-
-  @Nullable
-  @NonNls
-  public String getHelpTopic() {
-    return null;
-  }
-
-  public JComponent createComponent() {
-    return getPreferences().getComponent();
-  }
-
-  public boolean isModified() {
-    return getPreferences().isModified();
-  }
-
-  public void apply() throws ConfigurationException {
-    getPreferences().commit();
-  }
-
-  public void reset() {
-
-  }
-
-  public void disposeUIResources() {
-
-  }
-
-  public String getId() {
-    return "generator.manager";  
-  }
-
-  public Runnable enableSearch(String option) {
-    return null;
   }
 }
