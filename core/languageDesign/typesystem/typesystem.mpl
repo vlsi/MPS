@@ -73,4 +73,3 @@
         <extendedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</extendedLanguage>
     </extendedLanguages>
 </language>
-
