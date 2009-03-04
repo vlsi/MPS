@@ -4420,6 +4420,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1213093968558">
     <property name="name" value="ConceptConstraints" />
     <property name="iconPath" value="${language_descriptor}\icons\constraints.png" />
+    <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1213093996982">
       <property name="metaClass" value="reference" />
