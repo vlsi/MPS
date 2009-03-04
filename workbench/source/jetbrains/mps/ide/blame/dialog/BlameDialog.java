@@ -185,14 +185,14 @@ public class BlameDialog extends BaseDialog {
 
     myIsCancelled = false;
     BlameDialogComponent.getInstance().loadState(getState());
-    setVisible(false);
+    dispose();
   }
 
   @Button(position = 1, name = "Cancel")
   public void onCancel() {
     myIsCancelled = true;
     myResult = null;
-    setVisible(false);
+    dispose();
   }
 
   public MyState getState() {

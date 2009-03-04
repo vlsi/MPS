@@ -191,7 +191,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
 
   @Button(position = 1, name = "Cancel")
   public void onCancel() {
-    dispose();
     myResult = false;
+    dispose();
   }
 }
