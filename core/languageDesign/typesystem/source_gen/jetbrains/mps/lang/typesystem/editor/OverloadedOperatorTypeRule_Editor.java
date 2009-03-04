@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
 
@@ -34,6 +35,8 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_2759_5(context, node, " "));
     editorCell.addEditorCell(this.createConstant_2759_6(context, node, "operation type:"));
     editorCell.addEditorCell(this.createRefNode_2759_7(context, node));
+    editorCell.addEditorCell(this.createConstant_2759_7(context, node, "-----------------------------------------------"));
+    editorCell.addEditorCell(this.createConstant_2759_8(context, node, ""));
     return editorCell;
   }
 
@@ -114,6 +117,22 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2759_6(editorCell, node, context);
     setupLabel_Constant_2759_6(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_2759_7(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_2759_7(editorCell, node, context);
+    setupLabel_Constant_2759_7(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_2759_8(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_2759_8(editorCell, node, context);
+    setupLabel_Constant_2759_8(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -334,6 +353,33 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_2759_6");
   }
 
+  private static void setupBasic_Constant_2759_7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2759_7");
+    BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_2759_8(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_2759_8");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_Constant_2759_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -365,6 +411,12 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_2759_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_2759_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_2759_8(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

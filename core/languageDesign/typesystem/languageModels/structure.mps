@@ -2248,7 +2248,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236083041311">
     <property name="name" value="OverloadedOperatorTypeRule" />
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236083095395">
       <property name="metaClass" value="aggregation" />
@@ -2355,6 +2355,20 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236163357879">
       <property name="value" value="operation type(..)" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236165709895">
+    <property name="name" value="OverloadedOpRulesContainer" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236165725858">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="rule" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1236083041311" resolveInfo="OverloadedOperatorTypeRule" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1236165807726">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>
