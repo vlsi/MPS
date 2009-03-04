@@ -193,6 +193,10 @@ public class RulesManager {
     return myDependenciesContainer.getDependencies(node);
   }
 
+  public OverloadedOperationsManager getOverloadedOperationsManager() {
+    return myOverloadedOperationsManager;
+  }
+
   public TypeChecker getTypeChecker() {
     return myTypeChecker;
   }

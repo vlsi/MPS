@@ -3803,5 +3803,38 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1236163256459">
+    <link role="conceptDeclaration" targetNodeId="1.1236163200695" resolveInfo="GetOperationType" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1236163279317">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236163280855">
+        <property name="text" value="operation type" />
+        <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236163295634">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="27.1215088010675" resolveInfo="RightParen" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1236163302577">
+        <link role="relationDeclaration" targetNodeId="1.1236163216864" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236163309416">
+        <property name="text" value="," />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1236163319165">
+        <link role="relationDeclaration" targetNodeId="1.1236163223573" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236163321271">
+        <property name="text" value="," />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1236163327199">
+        <link role="relationDeclaration" targetNodeId="1.1236163223950" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236163330132">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="27.1215087929380" resolveInfo="LeftParen" />
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -28,7 +28,7 @@ public class typeof_rightOperandConcept_parameter_InferenceRule extends Abstract
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.typesystem.structure.RightOperandConcept_parameter";
+    return "jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter";
   }
 
   public boolean isApplicable(SNode argument) {

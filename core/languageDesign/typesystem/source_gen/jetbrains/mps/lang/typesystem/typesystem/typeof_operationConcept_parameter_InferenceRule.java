@@ -28,7 +28,7 @@ public class typeof_operationConcept_parameter_InferenceRule extends AbstractInf
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.typesystem.structure.OperationConcept_parameter";
+    return "jetbrains.mps.lang.typesystem.structure.Operation_parameter";
   }
 
   public boolean isApplicable(SNode argument) {

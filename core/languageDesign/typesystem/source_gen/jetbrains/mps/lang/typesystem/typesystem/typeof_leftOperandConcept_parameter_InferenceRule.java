@@ -28,7 +28,7 @@ public class typeof_leftOperandConcept_parameter_InferenceRule extends AbstractI
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.typesystem.structure.LeftOperandConcept_parameter";
+    return "jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter";
   }
 
   public boolean isApplicable(SNode argument) {

@@ -298,6 +298,10 @@ public class TypeCheckingContext {
       false);
   }
 
+  public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+    return myTypeChecker.getRulesManager().getOverloadedOperationsManager().getOperationType(operation, leftOperandType, rightOperandType);
+  }
+
   //---------------------------- when concrete
 
   public void whenConcrete(SNode argument, final Runnable r, String nodeModel, String nodeId) {
