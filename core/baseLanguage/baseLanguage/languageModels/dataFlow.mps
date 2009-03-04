@@ -2163,5 +2163,31 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1236181246810">
+    <property name="package" value="classifier" />
+    <link role="conceptDeclaration" targetNodeId="1.1070475587102" resolveInfo="SuperConstructorInvocation" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1236181246811">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236181246812">
+        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1236181251208">
+          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1236181251209">
+            <property name="name" value="arg" />
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236181261110">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1236181260259" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1236181262620">
+              <link role="link" targetNodeId="1.1070475587104" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236181251211">
+            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1236181266467">
+              <node role="codeFor" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1236181267879">
+                <link role="variable" targetNodeId="1236181251209" resolveInfo="arg" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
