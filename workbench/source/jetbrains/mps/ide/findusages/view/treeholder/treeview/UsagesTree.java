@@ -582,7 +582,7 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   public void navigateToPreviousResult() {
-    assert getResultsNode().getChildCount() != 0;
+    if (getResultsNode().getChildCount() == 0) return;
 
     UsagesTreeNode currentNode = getCurrentNode();
     UsagesTreeNode next;
