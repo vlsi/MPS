@@ -54,8 +54,11 @@ public class CellAction_CopyNode extends EditorCellAction {
         LOG.debug("    " + aNodeList.getDebugText());
       }
     } else {
-      nodeList.add(editorComponent.getSelectedCell().getSNode());
-      LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
+      SNode sNode = editorComponent.getSelectedCell().getSNode();
+      if (sNode != null) {
+        nodeList.add(sNode);
+        LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
+      }
     }
     List<SNode> copyNodeList = new ArrayList<SNode>();
     Map<SNode, Set<SNode>> nodesAndAttributes = new HashMap<SNode, Set<SNode>>();
