@@ -15,29 +15,26 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCellKeyMap.ActionKey;
+import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.CellFinders;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Pair;
 
-import javax.swing.JPopupMenu;
 import javax.swing.JMenuItem;
-import javax.swing.KeyStroke;
+import javax.swing.JPopupMenu;
 import javax.swing.JViewport;
-import java.util.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.KeyStroke;
 import java.awt.Rectangle;
-
-import com.intellij.openapi.util.Computable;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.util.*;
 
 /**
  * author: Igor Alshannikov
@@ -45,7 +42,7 @@ import com.intellij.openapi.util.Computable;
  */
 public class KeyMapUtil {
   private static Logger LOG = Logger.getLogger(KeyMapUtil.class);
-  
+
   /**
    * @return list of pairs: keymapAction/actionCell
    */
@@ -53,20 +50,21 @@ public class KeyMapUtil {
     return ModelAccess.instance().runReadAction(new Computable<List<Pair<EditorCellKeyMapAction, EditorCell>>>() {
       public List<Pair<EditorCellKeyMapAction, EditorCell>> compute() {
         // need to process key event?
-        if (keyEvent.getID() != KeyEvent.KEY_PRESSED && keyEvent.getID() != KeyEvent.KEY_TYPED) return Collections.emptyList();
+        if (keyEvent.getID() != KeyEvent.KEY_PRESSED && keyEvent.getID() != KeyEvent.KEY_TYPED)
+          return Collections.emptyList();
         int keyCode = keyEvent.getKeyCode();
         if (keyCode == KeyEvent.VK_CONTROL || keyCode == KeyEvent.VK_ALT || keyCode == KeyEvent.VK_SHIFT ||
-                /*keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_RIGHT || */ //TODO why?!
-                keyCode == KeyEvent.VK_PAGE_UP || keyCode == KeyEvent.VK_PAGE_DOWN
-                /* || keyCode == KeyEvent.VK_BACK_SPACE*/) {
+          /*keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_RIGHT || */ //TODO why?!
+          keyCode == KeyEvent.VK_PAGE_UP || keyCode == KeyEvent.VK_PAGE_DOWN
+          /* || keyCode == KeyEvent.VK_BACK_SPACE*/) {
           return Collections.emptyList();
         }
         if ((keyEvent.getModifiers() & (KeyEvent.CTRL_MASK | KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK)) == 0) {
           // no modifiers - ignore letters/digits etc.
           char keyChar = keyEvent.getKeyChar();
           if (Character.isLetterOrDigit(keyChar)
-                  /* || Character.isSpaceChar(keyChar) || Character.isWhitespace(keyChar)
-                    Sorry, I need to handle space manually in textLanguage */) {
+            /* || Character.isSpaceChar(keyChar) || Character.isWhitespace(keyChar)
+   Sorry, I need to handle space manually in textLanguage */) {
             return Collections.emptyList(); //TODO why?!
           }
         }
@@ -101,7 +99,17 @@ public class KeyMapUtil {
     SNode node = editorContext.getNodeEditorComponent().getEditedNode();
     if (node != null) {
       SModel model = node.getModel();
-      for (ModuleReference ref : model.getLanguageRefs(GlobalScope.getInstance())) {
+
+      Set<ModuleReference> importedAndExtendedLanguages = new HashSet<ModuleReference>();
+      for (ModuleReference langRef : model.getLanguageRefs(GlobalScope.getInstance())) {
+        importedAndExtendedLanguages.add(langRef);
+        Language l = MPSModuleRepository.getInstance().getLanguage(langRef);
+        for (Language le : l.getAllExtendedLanguages()) {
+          importedAndExtendedLanguages.add(le.getModuleReference());
+        }
+      }
+
+      for (ModuleReference ref : importedAndExtendedLanguages) {
         List<EditorCellKeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(editorContext.getScope().getLanguage(ref));
         if (keyMapsForNamespace != null) {
           for (EditorCellKeyMap keymap : keyMapsForNamespace) {
@@ -206,7 +214,7 @@ public class KeyMapUtil {
 
   private static boolean isStrictlyFirstCaretPosition(EditorCell cell) {
     if (!(cell instanceof EditorCell_Label)) return false;
-    EditorCell_Label label = (EditorCell_Label) cell;    
+    EditorCell_Label label = (EditorCell_Label) cell;
     return label.isFirstCaretPosition() && label.isFirstPositionAllowed() && cell.getContainingBigCell().getFirstLeaf() == cell;
   }
 
