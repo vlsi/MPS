@@ -4,6 +4,9 @@ package jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
@@ -39,7 +42,6 @@ import jetbrains.mps.util.Pair;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.typesystem.structure.NonTypesystemRule;
 import jetbrains.mps.lang.typesystem.structure.InequationReplacementRule;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -47,7 +49,8 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1175254554283(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return !(ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), null)).isEmpty());
+    SModel model = _context.getInputModel();
+    return (Language.getModelAspect(model.getModelDescriptor()) == LanguageAspect.TYPESYSTEM) && !(ListSequence.fromList(SModelOperations.getRoots(model, null)).isEmpty());
   }
 
   public static boolean baseMappingRule_Condition_1174661049584(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
