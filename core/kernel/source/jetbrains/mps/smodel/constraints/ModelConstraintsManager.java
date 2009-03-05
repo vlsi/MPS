@@ -541,7 +541,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return null;
   }
 
-  public boolean canHaveAChild(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
+  public boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
     IScope scope = context.getScope();
     String fqName = parentNode.getConceptFqName();
     String behaviorClass = constraintsClassByConceptFqName(fqName);
@@ -587,7 +587,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  public boolean isApplicableInContext(String fqName, IOperationContext context, SNode parentNode, SNode link) {
+  public boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
     Method method = getCanBeChildMethod(fqName, context);
     if (method != null) {
       try {
@@ -645,8 +645,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return null;
   }
 
-
-  public boolean canBeARoot(IOperationContext context, String conceptFqName, SModel model) {
+  public boolean canBeRoot(IOperationContext context, String conceptFqName, SModel model) {
     AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, context.getScope());
     if (concept == null) {
       return false;

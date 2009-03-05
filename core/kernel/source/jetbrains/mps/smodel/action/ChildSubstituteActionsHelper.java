@@ -219,7 +219,7 @@ public class ChildSubstituteActionsHelper {
           continue;
         }
 
-        if (!ModelConstraintsManager.getInstance().canHaveAChild(parentNode, conceptNode, settter.myLinkDeclaration.getNode(), context)) {
+        if (!ModelConstraintsManager.getInstance().canBeParent(parentNode, conceptNode, settter.myLinkDeclaration.getNode(), context)) {
           it.remove();
         }
       }
@@ -294,7 +294,7 @@ public class ChildSubstituteActionsHelper {
 
     IScope scope = operationContext.getScope();
 
-    if (!ModelConstraintsManager.getInstance().isApplicableInContext(conceptFqName, operationContext, parentNode, link)) {
+    if (!ModelConstraintsManager.getInstance().canBeChild(conceptFqName, operationContext, parentNode, link)) {
       return new ArrayList<INodeSubstituteAction>();
     }
 

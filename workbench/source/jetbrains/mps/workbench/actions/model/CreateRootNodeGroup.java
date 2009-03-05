@@ -87,7 +87,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       modelLanguages.remove(lang);
 
       for (ConceptDeclaration conceptDeclaration : lang.getConceptDeclarations()) {
-        if (ModelConstraintsManager.getInstance().canBeARoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
+        if (ModelConstraintsManager.getInstance().canBeRoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
           add(newRootNodeAction(new SNodePointer(conceptDeclaration), data.getModelDescriptor()));
         }
       }
@@ -101,7 +101,7 @@ public class CreateRootNodeGroup extends BaseGroup {
     List<Language> languagesWithRoots = new ArrayList<Language>();
     for (final Language language : modelLanguages) {
       for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
-        if (ModelConstraintsManager.getInstance().canBeARoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
+        if (ModelConstraintsManager.getInstance().canBeRoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
           languagesWithRoots.add(language);
           break;
         }
@@ -123,7 +123,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
 
       for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
-        if (ModelConstraintsManager.getInstance().canBeARoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
+        if (ModelConstraintsManager.getInstance().canBeRoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
           langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), data.getModelDescriptor()));
         }
       }
