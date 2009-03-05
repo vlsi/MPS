@@ -22,6 +22,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
@@ -488,12 +489,65 @@ public class ModelConstraintsManager implements ApplicationComponent {
               LOG.error(e);
             }
           } catch (NoSuchMethodException e) {
+            //it's absolutely ok
           }
         }
         myDefaultConceptNames.put(fqName, result);
       }
     }
     return myDefaultConceptNames.get(fqName);
+  }
+
+
+  private Method getCanBeParentMethod(SNode parentNode, IOperationContext context) {
+    IScope scope = context.getScope();
+    String fqName = parentNode.getConceptFqName();
+    String behaviorClass = constraintsClassByConceptFqName(fqName);
+    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
+    Language language = scope.getLanguage(namespace);
+
+    if (language != null) {
+      Class cls = language.getClass(behaviorClass);
+      if (cls != null) {
+        try {
+          Method m;
+          if (myCanBeParentMethods.containsKey(fqName)) {
+            m = myCanBeParentMethods.get(fqName);
+          } else {
+            m = cls.getMethod(BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
+            myCanBeParentMethods.put(fqName, m);
+          }
+
+          return m;
+        } catch (NoSuchMethodException e) {
+          myCanBeParentMethods.put(fqName, null);
+        }
+      }
+    }
+
+    return null;
+  }
+
+
+  public boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
+    Method m = getCanBeParentMethod(parentNode, context);
+    if (m != null) {
+      try {
+        return (Boolean) m.invoke(null, context, new CanBeAParentContext(parentNode, childConcept, link));
+      } catch (IllegalAccessException e) {
+        LOG.error(e);
+      } catch (InvocationTargetException e) {
+        LOG.error(e);
+      }
+    }
+    return true;
+  }
+
+  public SNode getCanBeParentBlock(SNode parentNode, IOperationContext context) {
+    Method m = getCanBeParentMethod(parentNode, context);
+    ConceptConstraints constraints = getClassConstraints(context, m);
+    if (constraints == null) return null;
+    return BaseAdapter.fromAdapter(constraints.getCanBeParent());
   }
 
   private Method getCanBeChildMethod(String conceptFqName, IOperationContext context) {
@@ -541,52 +595,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return null;
   }
 
-  public boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
-    IScope scope = context.getScope();
-    String fqName = parentNode.getConceptFqName();
-    String behaviorClass = constraintsClassByConceptFqName(fqName);
-    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
-    Language language = scope.getLanguage(namespace);
-
-    if (language != null) {
-      Class cls = language.getClass(behaviorClass);
-      if (cls != null) {
-        try {
-          Method m;
-          if (myCanBeParentMethods.containsKey(fqName)) {
-            m = myCanBeParentMethods.get(fqName);
-          } else {
-            m = cls.getMethod(BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
-            myCanBeParentMethods.put(fqName, m);
-          }
-
-          try {
-            if (m != null) {
-              return (Boolean) m.invoke(null, context, new CanBeAParentContext(parentNode, childConcept, link));
-            }
-          } catch (IllegalAccessException e) {
-            LOG.error(e);
-          } catch (InvocationTargetException e) {
-            LOG.error(e);
-          }
-        } catch (NoSuchMethodException e) {
-          myCanBeParentMethods.put(fqName, null);
-        }
-      }
-    }
-
-    return true;
-  }
-
-  private String constraintsClassByConceptFqName(String fqName) {
-    Matcher m = CONCEPT_FQNAME.matcher(fqName);
-    if (m.matches()) {
-      return m.group(1) + ".constraints." + m.group(2) + "_Constraints";
-    } else {
-      throw new RuntimeException();
-    }
-  }
-
   public boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
     Method method = getCanBeChildMethod(fqName, context);
     if (method != null) {
@@ -600,6 +608,13 @@ public class ModelConstraintsManager implements ApplicationComponent {
       }
     }
     return true;
+  }
+
+  public SNode getCanBeChildBlock(IOperationContext context, String conceptFqName) {
+    Method m = getCanBeChildMethod(conceptFqName, context);
+    ConceptConstraints constraints = getClassConstraints(context, m);
+    if (constraints == null) return null;
+    return BaseAdapter.fromAdapter(constraints.getCanBeChild());
   }
 
   private Method getCanBeRootMethod(String conceptFqName, IOperationContext context) {
@@ -645,6 +660,13 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return null;
   }
 
+  public SNode getCanBeRootBlock(IOperationContext context, String conceptFqName) {
+    Method m = getCanBeRootMethod(conceptFqName, context);
+    ConceptConstraints constraints = getClassConstraints(context, m);
+    if (constraints == null) return null;
+    return BaseAdapter.fromAdapter(constraints.getCanBeRoot());
+  }
+
   public boolean canBeRoot(IOperationContext context, String conceptFqName, SModel model) {
     AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, context.getScope());
     if (concept == null) {
@@ -667,5 +689,29 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
 
     return false;
+  }
+
+  private ConceptConstraints getClassConstraints(IOperationContext context, Method m) {
+    Class cls = m.getDeclaringClass();
+    String fqName = cls.getName();
+    String modelName = NameUtil.namespaceFromLongName(fqName);
+    String rootName = NameUtil.shortNameFromLongName(fqName);
+    SModelDescriptor sm = context.getScope().getModelDescriptor(SModelFqName.fromString(modelName));
+    if (sm == null) return null;
+    SNode root = sm.getSModel().getRootByName(rootName);
+    if (root == null) return null;
+    if (root.getAdapter() instanceof ConceptConstraints) {
+      return (ConceptConstraints) root.getAdapter();
+    }
+    return null;
+  }
+
+  private String constraintsClassByConceptFqName(String fqName) {
+    Matcher m = CONCEPT_FQNAME.matcher(fqName);
+    if (m.matches()) {
+      return m.group(1) + ".constraints." + m.group(2) + "_Constraints";
+    } else {
+      throw new RuntimeException();
+    }
   }
 }
