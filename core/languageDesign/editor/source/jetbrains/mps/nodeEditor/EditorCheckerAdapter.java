@@ -42,7 +42,11 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMess
   }
 
   protected HighlighterMessage createHighlighterMessage(SNode node, String message) {
-    return createHighlighterMessage(node, message, null);
+    return createHighlighterMessage(node, message, (IErrorReporter) null);
+  }
+
+  protected HighlighterMessage createHighlighterMessage(SNode node, String message, SNode rule) {
+    return createHighlighterMessage(node, message, new SimpleErrorReporter(node, message, rule.getModel().getSModelReference().toString(), rule.getId()));
   }
 
   private Color getMessageColor(MessageStatus messageStatus) {
