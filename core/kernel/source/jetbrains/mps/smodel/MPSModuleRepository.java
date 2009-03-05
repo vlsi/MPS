@@ -212,6 +212,8 @@ public class MPSModuleRepository implements ApplicationComponent {
     myFqNameToModulesMap.put(module.getModuleFqName(), module);
   }
 
+
+
   public IModule getModule(ModuleReference ref) {
     if (ref.getModuleId() != null) {
       return myIdToModuleMap.get(ref.getModuleId());
@@ -248,6 +250,10 @@ public class MPSModuleRepository implements ApplicationComponent {
     }
     fireRepositoryChanged();
     return (TM) module;
+  }
+
+  public boolean existsModule(ModuleReference ref) {
+    return getModule(ref) != null;    
   }
 
   public boolean existsModule(IModule module, MPSModuleOwner owner) {

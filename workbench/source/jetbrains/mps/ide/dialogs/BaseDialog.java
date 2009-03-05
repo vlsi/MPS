@@ -74,7 +74,7 @@ public abstract class BaseDialog extends JDialog {
   private void doInit(Component mainFrame) {
     //do not remove this code
     //it require to run MPS correctly on system
-    //with many monitors  
+    //with many monitors
     setLocationRelativeTo(mainFrame);
 
     this.addWindowListener(new WindowAdapter() {

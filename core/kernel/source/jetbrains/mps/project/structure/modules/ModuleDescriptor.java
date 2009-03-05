@@ -58,6 +58,10 @@ public class ModuleDescriptor {
     myNamespace = namespace;
   }
 
+  public ModuleReference getModuleReference() {
+    return new ModuleReference(getNamespace(), myUUID);
+  }
+
   public String getTimestamp() {
     return myTimestamp;
   }

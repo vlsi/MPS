@@ -63,8 +63,16 @@ public class Solution extends AbstractModule {
       solutionDescriptor.setUUID(UUID.randomUUID().toString());
     }
     solution.myDescriptorFile = descriptorFile;
+
+    MPSModuleRepository repository = MPSModuleRepository.getInstance();
+    if (repository.existsModule(solutionDescriptor.getModuleReference())) {
+      LOG.error("Loading module " + solutionDescriptor.getNamespace() + " for the second time");
+      return repository.getSolution(solutionDescriptor.getModuleReference());
+    }
+
     solution.setSolutionDescriptor(solutionDescriptor, false);
-    MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
+    repository.addModule(solution, moduleOwner);
+
     return solution;
   }
 

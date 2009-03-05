@@ -79,8 +79,16 @@ public class Language extends AbstractModule {
       languageDescriptor = createNewDescriptor(namespace, descriptorFile);
     }
     language.myDescriptorFile = descriptorFile;
+
+    MPSModuleRepository repository = MPSModuleRepository.getInstance();
+    if (repository.existsModule(languageDescriptor.getModuleReference())) {
+      LOG.error("Loading module " + languageDescriptor.getNamespace() + " for the second time");
+      return repository.getLanguage(languageDescriptor.getModuleReference());
+    }
+
     language.setLanguageDescriptor(languageDescriptor, false);
-    MPSModuleRepository.getInstance().addModule(language, moduleOwner);
+    repository.addModule(language, moduleOwner);
+
     return language;
   }
 
@@ -345,9 +353,8 @@ public class Language extends AbstractModule {
 
   private void revalidateGenerators() {
     myGenerators.clear();
-    Iterator<GeneratorDescriptor> generators = getLanguageDescriptor().getGenerators().iterator();
-    while (generators.hasNext()) {
-      GeneratorDescriptor generatorDescriptor = generators.next();
+    for (GeneratorDescriptor generatorDescriptor1 : getLanguageDescriptor().getGenerators()) {
+      GeneratorDescriptor generatorDescriptor = generatorDescriptor1;
       Generator generator = new Generator(this, generatorDescriptor);
       MPSModuleRepository.getInstance().addModule(generator, this);
       myGenerators.add(generator);
