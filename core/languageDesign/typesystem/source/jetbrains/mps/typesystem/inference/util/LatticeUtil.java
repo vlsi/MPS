@@ -19,6 +19,7 @@ import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.lang.typesystem.structure.MeetType;
 import jetbrains.mps.lang.typesystem.structure.JoinType;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 import java.util.Set;
@@ -33,6 +34,43 @@ import java.util.Iterator;
  * To change this template use File | Settings | File Templates.
  */
 public class LatticeUtil {
+  public static void processMeetsAndJoins(IWrapper type) {
+    if (type instanceof NodeWrapper) {
+      SNode node = type.getNode();
+      if (node == null) {
+        return;
+      }
+      processMeetsAndJoins(node);
+    }
+  }
+
+  private static void processMeetsAndJoins(SNode node) {
+    String conceptFqName = node.getConceptFqName();
+      if (JoinType.concept.equals(conceptFqName)) {
+        for (SNode child : node.getChildren(JoinType.ARGUMENT)) {
+          processMeetsAndJoins(child);
+          if (JoinType.concept.equals(child.getConceptFqName())) {
+            for (SNode grandChild : child.getChildren(JoinType.ARGUMENT)) {
+              child.removeChild(grandChild);
+              node.insertChild(child, JoinType.ARGUMENT, grandChild);
+            }
+            node.removeChild(child);
+          }
+        }
+      } else if (MeetType.concept.equals(conceptFqName)) {
+        for (SNode child : node.getChildren(MeetType.ARGUMENT)) {
+          processMeetsAndJoins(child);
+          if (MeetType.concept.equals(child.getConceptFqName())) {
+            for (SNode grandChild : child.getChildren(MeetType.ARGUMENT)) {
+              child.removeChild(grandChild);
+              node.insertChild(child, MeetType.ARGUMENT, grandChild);
+            }
+            node.removeChild(child);
+          }
+        }
+      }
+  }
+
   public static IWrapper join(IWrapper wrapper1, IWrapper wrapper2) {
     JoinType joinType = JoinType.newInstance(TypeChecker.getInstance().getRuntimeTypesModel());
     if (BaseAdapter.isInstance(wrapper1.getNode(), JoinType.class)) {

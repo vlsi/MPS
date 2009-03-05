@@ -582,9 +582,19 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1209833160130(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode componentType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "componentType", true);
+    if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+      List<SNode> arguments = SLinkOperations.getTargets(componentType, "argument", true);
+      for(SNode arg : arguments) {
+        if (!(SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.VoidType")) && SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.Type")) {
+          componentType = arg;
+          break;
+        }
+      }
+    }
     {
       IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "componentType", true), pattern_0);
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(componentType, pattern_0);
       if (coercedNode_0 != null) {
         return SLinkOperations.getTarget(coercedNode_0, "classifier", false);
       } else

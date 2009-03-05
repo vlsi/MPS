@@ -26,6 +26,7 @@ import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.typesystem.debug.ISlicer;
+import jetbrains.mps.typesystem.inference.util.LatticeUtil;
 
 import java.util.*;
 
@@ -115,6 +116,7 @@ public class EquationManager {
         }
       }
     }
+    LatticeUtil.processMeetsAndJoins(type);
     return type;
   }
 
