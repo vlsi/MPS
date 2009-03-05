@@ -70,6 +70,20 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myMessagesToNodes.clearFirst(m);
   }
 
+  private void mark(EditorMessage message, boolean needRepaint) {
+    for (EditorMessage msg : getMessages()) {
+      if (msg.sameAs(message)) return;
+    }
+
+    synchronized (myMessagesLock) {
+      addMessage(message);
+    }
+    myEditor.getMessagesGutter().add(message);
+    if (needRepaint) {
+      myEditor.updateMessages();
+    }
+  }
+
   public void clear() {
     synchronized (myMessagesLock) {
       for (EditorMessage m : new ArrayList<EditorMessage>(myMessages)) {
@@ -97,16 +111,14 @@ public class NodeHighlightManager implements EditorMessageOwner {
     mark(new DefaultEditorMessage(node, color, messageText, owner));
   }
 
-  public void mark(EditorMessage message) {
-    for (EditorMessage msg : getMessages()) {
-      if (msg.sameAs(message)) return;
+  public void mark(List<EditorMessage> messages) {
+    for (int i = 0; i < messages.size(); i++) {
+      mark(messages.get(i), i == messages.size() - 1);
     }
+  }
 
-    synchronized (myMessagesLock) {
-      addMessage(message);
-    }
-    myEditor.getMessagesGutter().add(message);
-    myEditor.updateMessages();
+  public void mark(EditorMessage message) {
+    mark(message, true);
   }
 
   public Set<EditorMessage> getMessages() {
