@@ -344,5 +344,33 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Annotation" id="1236262274348">
+    <property name="name" value="AnnotFoo" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" id="1236262282885">
+      <property name="isAbstract" value="true" />
+      <property name="name" value="annotBar" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236262282886" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236262282887" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236262282888" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236262274349" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1236262329523">
+    <property name="name" value="TestAnnot" />
+    <property name="abstractClass" value="true" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" id="1236262338609">
+      <property name="isAbstract" value="true" />
+      <property name="name" value="annotBar" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236262338610" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236262338611" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236262338612" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236262329524" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1236262329525">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236262329526" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236262329527" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236262329528" />
+    </node>
+  </node>
 </model>
 

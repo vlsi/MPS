@@ -5,6 +5,7 @@ package jetbrains.mps.lang.typesystem.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.structure.ConceptReference;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -12,8 +13,8 @@ import jetbrains.mps.project.GlobalScope;
 public class OverloadedOperatorTypeRule extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule";
   public static final String OPERATION_CONCEPT = "operationConcept";
-  public static final String LEFT_OPERAND_CONCEPT = "leftOperandConcept";
-  public static final String RIGHT_OPERAND_CONCEPT = "rightOperandConcept";
+  public static final String LEFT_OPERAND_TYPE = "leftOperandType";
+  public static final String RIGHT_OPERAND_TYPE = "rightOperandType";
   public static final String FUNCTION = "function";
 
   public OverloadedOperatorTypeRule(SNode node) {
@@ -28,20 +29,20 @@ public class OverloadedOperatorTypeRule extends BaseConcept {
     super.setChild(OverloadedOperatorTypeRule.OPERATION_CONCEPT, node);
   }
 
-  public ConceptReference getLeftOperandConcept() {
-    return (ConceptReference)this.getChild(ConceptReference.class, OverloadedOperatorTypeRule.LEFT_OPERAND_CONCEPT);
+  public Expression getLeftOperandType() {
+    return (Expression)this.getChild(Expression.class, OverloadedOperatorTypeRule.LEFT_OPERAND_TYPE);
   }
 
-  public void setLeftOperandConcept(ConceptReference node) {
-    super.setChild(OverloadedOperatorTypeRule.LEFT_OPERAND_CONCEPT, node);
+  public void setLeftOperandType(Expression node) {
+    super.setChild(OverloadedOperatorTypeRule.LEFT_OPERAND_TYPE, node);
   }
 
-  public ConceptReference getRightOperandConcept() {
-    return (ConceptReference)this.getChild(ConceptReference.class, OverloadedOperatorTypeRule.RIGHT_OPERAND_CONCEPT);
+  public Expression getRightOperandType() {
+    return (Expression)this.getChild(Expression.class, OverloadedOperatorTypeRule.RIGHT_OPERAND_TYPE);
   }
 
-  public void setRightOperandConcept(ConceptReference node) {
-    super.setChild(OverloadedOperatorTypeRule.RIGHT_OPERAND_CONCEPT, node);
+  public void setRightOperandType(Expression node) {
+    super.setChild(OverloadedOperatorTypeRule.RIGHT_OPERAND_TYPE, node);
   }
 
   public OverloadedOperatorTypeFunction getFunction() {

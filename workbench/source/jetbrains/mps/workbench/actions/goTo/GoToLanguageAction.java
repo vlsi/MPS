@@ -66,6 +66,10 @@ public class GoToLanguageAction extends BaseAction {
       public Language[] find(IScope scope) {
         return scope.getVisibleLanguages().toArray(new Language[0]);
       }
+
+      public String getPromptText() {
+        return "Go to language:";
+      }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, new FakePsiContext());
 

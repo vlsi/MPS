@@ -3772,7 +3772,7 @@
           <property name="flag" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236083631612">
-          <property name="text" value="left operand type concept:" />
+          <property name="text" value="left operand type:" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1236083641457">
           <link role="relationDeclaration" targetNodeId="1.1236083115043" />
@@ -3782,7 +3782,7 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1236083721902" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236083648997">
-          <property name="text" value="right operand type concept:" />
+          <property name="text" value="right operand type:" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1236083659317">
           <link role="relationDeclaration" targetNodeId="1.1236083115200" />

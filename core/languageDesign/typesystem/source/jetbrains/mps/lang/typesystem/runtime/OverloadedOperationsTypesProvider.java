@@ -9,22 +9,23 @@ import jetbrains.mps.smodel.SNode;
  * Time: 16:28:58
  * To change this template use File | Settings | File Templates.
  */
-public abstract class OverloadedOperationsTypesProvider implements IApplicableToConcept, IApplicableTo2Concepts {
-  protected String myLeftOperandTypeConceptFQName;
-  protected String myRightOperandTypeConceptFQName;
+public abstract class OverloadedOperationsTypesProvider implements IApplicableToConcept {
+  protected SNode myLeftOperandType;
+  protected SNode myRightOperandType;
   protected String myOperationConceptFQName;
 
-  public String getApplicableConceptFQName1() {
-    return myLeftOperandTypeConceptFQName;
-  }
-
-  public String getApplicableConceptFQName2() {
-    return myRightOperandTypeConceptFQName;
-  }
 
   public String getApplicableConceptFQName() {
     return myOperationConceptFQName;
   }
   
   public abstract SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType);
+
+  public SNode getRightOperandType() {
+    return myRightOperandType;
+  }
+
+  public SNode getLeftOperandType() {
+    return myLeftOperandType;
+  }
 }

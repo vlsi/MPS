@@ -22,7 +22,7 @@ public class typeof_rightOperandConcept_parameter_InferenceRule extends Abstract
       {
         SNode _nodeToCheck_1029348928467 = concept_parameter;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(concept_parameter, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083329491", true), new _Quotations.QuotationClass_34().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(typeRule, "rightOperandConcept", true), "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083335418", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(concept_parameter, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083329491", true), new _Quotations.QuotationClass_34().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(typeRule, "rightOperandType", true), "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083335418", intentionProvider);
       }
     }
   }

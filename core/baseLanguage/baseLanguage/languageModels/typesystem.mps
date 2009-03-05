@@ -17093,11 +17093,19 @@
       <node role="operationConcept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1236166412693">
         <link role="concept" targetNodeId="1.1068581242875" resolveInfo="PlusExpression" />
       </node>
-      <node role="leftOperandConcept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1236166412694">
-        <link role="concept" targetNodeId="1.1070534370425" resolveInfo="IntegerType" />
+      <node role="leftOperandType" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1236267547093">
+        <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1236267551241">
+          <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1236267551242">
+            <link role="concept" targetNodeId="1.1070534370425" resolveInfo="IntegerType" />
+          </node>
+        </node>
       </node>
-      <node role="rightOperandConcept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1236166412695">
-        <link role="concept" targetNodeId="1.1070534370425" resolveInfo="IntegerType" />
+      <node role="rightOperandType" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1236267559197">
+        <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1236267560757">
+          <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1236267560758">
+            <link role="concept" targetNodeId="1.1070534370425" resolveInfo="IntegerType" />
+          </node>
+        </node>
       </node>
     </node>
   </node>

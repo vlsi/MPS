@@ -2,6 +2,8 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.SubtypingManager;
 
 import java.util.Set;
 
@@ -13,11 +15,16 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class OverloadedOperationsManager {
-  private DoubleRuleSet<OverloadedOperationsTypesProvider> myOperandTypesToTypeProviders =
-    new DoubleRuleSet<OverloadedOperationsTypesProvider>();
+
 
   private RuleSet<OverloadedOperationsTypesProvider> myOperationsToTypeProviders =
     new RuleSet<OverloadedOperationsTypesProvider>();
+
+  private TypeChecker myTypeChecker;
+
+  public OverloadedOperationsManager(TypeChecker typeChecker) {
+    myTypeChecker = typeChecker;
+  }
 
   public void addOverloadedOperationsTypeProvider(OverloadedOperationsTypesProvider provider) {
     Set<OverloadedOperationsTypesProvider> providers = CollectionUtil.set(provider);
@@ -26,26 +33,30 @@ public class OverloadedOperationsManager {
 
   public void addOverloadedOperationsTypeProviders(Set<OverloadedOperationsTypesProvider> providers) {
     myOperationsToTypeProviders.addRuleSetItem(providers);
-    myOperandTypesToTypeProviders.addRuleSetItem(providers);
   }
 
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
     Set<OverloadedOperationsTypesProvider> operationsTypesProviderSet = myOperationsToTypeProviders.getRules(operation);
-    operationsTypesProviderSet.retainAll(myOperandTypesToTypeProviders.getRules(leftOperandType, rightOperandType));
     if (operationsTypesProviderSet.isEmpty()) {
       return null;
     }
-    OverloadedOperationsTypesProvider provider = operationsTypesProviderSet.iterator().next();
-    return provider.getOperationType(operation, leftOperandType, rightOperandType);
+    SubtypingManager subtypingManager = myTypeChecker.getSubtypingManager();
+    for (OverloadedOperationsTypesProvider provider : operationsTypesProviderSet) {
+      if (subtypingManager.isSubtype(rightOperandType, provider.getRightOperandType()) && subtypingManager.isSubtype(leftOperandType, provider.getLeftOperandType())) {
+        SNode result = provider.getOperationType(operation, leftOperandType, rightOperandType);
+        if (result != null) {
+          return result;
+        }
+      }
+    }
+    return null;
   }
 
   public void clear() {
-    myOperandTypesToTypeProviders = new DoubleRuleSet<OverloadedOperationsTypesProvider>();
     myOperationsToTypeProviders = new RuleSet<OverloadedOperationsTypesProvider>();
   }
 
   public void makeConsistent() {
-    myOperandTypesToTypeProviders.makeConsistent();
     myOperationsToTypeProviders.makeConsistent();
   }
 }

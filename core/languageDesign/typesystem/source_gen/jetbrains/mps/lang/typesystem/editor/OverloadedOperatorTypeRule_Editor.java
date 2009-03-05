@@ -46,10 +46,10 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_2759_0(context, node, "left operand type concept:"));
+    editorCell.addEditorCell(this.createConstant_2759_0(context, node, "left operand type:"));
     editorCell.addEditorCell(this.createRefNode_2759_1(context, node));
     editorCell.addEditorCell(this.createConstant_2759_2(context, node, "    "));
-    editorCell.addEditorCell(this.createConstant_2759_1(context, node, "right operand type concept:"));
+    editorCell.addEditorCell(this.createConstant_2759_1(context, node, "right operand type:"));
     editorCell.addEditorCell(this.createRefNode_2759_3(context, node));
     return editorCell;
   }
@@ -151,8 +151,8 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_2759_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("leftOperandConcept");
-    provider.setNoTargetText("<no leftOperandConcept>");
+    provider.setRole("leftOperandType");
+    provider.setNoTargetText("<no leftOperandType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_2759_0_internal(context, node, provider);
@@ -180,8 +180,8 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_2759_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("rightOperandConcept");
-    provider.setNoTargetText("<no rightOperandConcept>");
+    provider.setRole("rightOperandType");
+    provider.setNoTargetText("<no rightOperandType>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_2759_2_internal(context, node, provider);

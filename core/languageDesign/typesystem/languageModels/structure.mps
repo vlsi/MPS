@@ -2258,15 +2258,15 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236083115043">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="leftOperandConcept" />
+      <property name="role" value="leftOperandType" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="5.1154546950173" resolveInfo="ConceptReference" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236083115200">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="rightOperandConcept" />
+      <property name="role" value="rightOperandType" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="5.1154546950173" resolveInfo="ConceptReference" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236083171742">
       <property name="metaClass" value="aggregation" />

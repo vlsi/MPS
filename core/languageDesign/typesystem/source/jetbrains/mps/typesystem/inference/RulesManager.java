@@ -47,13 +47,14 @@ public class RulesManager {
 
   private Set<SModelDescriptor> myModelsWithLoadedRules = new HashSet<SModelDescriptor>();
 
-  private OverloadedOperationsManager myOverloadedOperationsManager = new OverloadedOperationsManager();
+  private OverloadedOperationsManager myOverloadedOperationsManager;
 
 
   private static Logger LOG = Logger.getLogger(RulesManager.class);
 
   public RulesManager(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
+    myOverloadedOperationsManager = new OverloadedOperationsManager(myTypeChecker);
     SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
         myModelsWithLoadedRules.remove(modelDescriptor);
