@@ -78,4 +78,10 @@ public class Set_Test extends Util_Test {
     Assert.assertEquals(5, array.length);
   }
 
+  @Test()
+  public void test_contains() throws Exception {
+    Set<Integer> test = SetSequence.<Integer>fromArray(1, 2, 3, 4, 5);
+    Assert.assertTrue(SetSequence.fromSet(test).contains(3));
+  }
+
 }
