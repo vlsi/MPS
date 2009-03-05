@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.UndoUtil;
 import jetbrains.mps.smodel.SNodeUndoableAction;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
@@ -28,6 +27,7 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.TextPasteUtil;
@@ -100,6 +100,21 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public void setSelected(boolean selected) {
     super.setSelected(selected);
+
+    final String label = getStyle().get(StyleAttributes.MATCHING_LABEL);
+    if (label != null) {
+      EditorCell editorCell = getContainingBigCell().getFirstDescendant(new Condition<EditorCell>() {
+
+        public boolean met(EditorCell cell) {
+          return cell != EditorCell_Label.this && label.equals(cell.getStyle().get(StyleAttributes.MATCHING_LABEL));
+        }
+      });
+      if (editorCell != null) {
+        this.getTextLine().myBraceSelected = selected;
+        ((EditorCell_Label)editorCell).getTextLine().myBraceSelected = selected;
+      }
+    }
+
     if (!selected && !getEditor().selectionStackContains(this)) {
       myTextLine.resetSelection();
     }
@@ -257,7 +272,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public int getRightInset() {
-    return getRenderedTextLine().getPaddingRight() + + myGapRight;
+    return getRenderedTextLine().getPaddingRight() + +myGapRight;
   }
 
   public int getTopInset() {

@@ -15563,6 +15563,12 @@
         <link role="template" targetNodeId="1236001821442" resolveInfo="HorizontalAlignStyleSheetItem" />
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1236266987850">
+      <link role="applicableConcept" targetNodeId="38.1236262245656" resolveInfo="MatchingLabelStyleClassItem" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1236266992996">
+        <link role="template" targetNodeId="1236266815130" resolveInfo="MatchingLabel" />
+      </node>
+    </node>
     <node role="defaultConsequence" type="jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence" id="1230567891550" />
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1186405163329">
@@ -19495,6 +19501,64 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236001947272" />
       </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236001947273">
+        <link role="classifier" targetNodeId="64.~Style" resolveInfo="Style" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1236266815130">
+    <property name="package" value="styleSheet.Switch" />
+    <property name="name" value="MatchingLabel" />
+    <link role="applicableConcept" targetNodeId="38.1236262245656" resolveInfo="MatchingLabelStyleClassItem" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1236266815131">
+      <property name="name" value="ABC" />
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236266815132">
+        <property name="name" value="method" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236266815133" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236266815134" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236266815135">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1236266815136">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236266815137">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236266815138">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236266815139">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236266815140" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236266815141">
+                    <link role="baseMethodDeclaration" targetNodeId="64.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void" resolveInfo="set" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1236266815142">
+                      <link role="classifier" targetNodeId="64.~StyleAttributes" resolveInfo="StyleAttributes" />
+                      <link role="variableDeclaration" targetNodeId="64.~StyleAttributes.MATCHING_LABEL" resolveInfo="MATCHING_LABEL" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236266925366">
+                      <property name="value" value="" />
+                      <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1236266953475">
+                        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1236266953476">
+                          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236266953477">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236266960525">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236266961226">
+                                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1236266960526" />
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1236266961923">
+                                  <link role="property" targetNodeId="38.1236262322952" resolveInfo="label" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1236266815238" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236266815239" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1236266815240">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236266815241" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236266815242" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236266815243" />
+      </node>
+      <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236266815244">
         <link role="classifier" targetNodeId="64.~Style" resolveInfo="Style" />
       </node>
     </node>

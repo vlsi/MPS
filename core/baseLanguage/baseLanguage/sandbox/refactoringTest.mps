@@ -197,7 +197,19 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1233936975101">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1233936975102" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233936975103" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233936975104" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233936975104">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="1236267587905">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1236273711467">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236273712567">
+              <property name="value" value="3" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236273708339">
+              <property name="value" value="2" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236267587907" />
+        </node>
+      </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236186559197">

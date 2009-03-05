@@ -2731,6 +2731,9 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1101210485457">
           <property name="text" value="(" />
           <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1236274225029">
+            <property name="label" value="condition" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1081264296766">
           <link role="relationDeclaration" targetNodeId="17.1076505808688" />
@@ -2738,10 +2741,16 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1081264296767">
           <property name="text" value=")" />
           <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1236274242579">
+            <property name="label" value="condition" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215012301005">
           <property name="text" value="{" />
-          <link role="styleClass" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
+          <link role="styleClass" targetNodeId="1215010874200" resolveInfo="Brace" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1236266073244">
+            <property name="label" value="statement" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310993802">
           <property name="flag" value="false" />
@@ -2764,7 +2773,10 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1081264296787">
           <property name="text" value="}" />
-          <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
+          <link role="styleClass" targetNodeId="1215010874200" resolveInfo="Brace" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1236266082021">
+            <property name="label" value="statement" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994475">
           <property name="flag" value="false" />

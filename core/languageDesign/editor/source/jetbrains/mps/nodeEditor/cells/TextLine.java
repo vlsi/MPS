@@ -54,6 +54,7 @@ public class TextLine {
 
   private boolean myNull;
   private Style myStyle;
+  public boolean myBraceSelected = false;
 
   public TextLine(String text) {
     this(text, new Style(), false);
@@ -213,6 +214,9 @@ public class TextLine {
   public Color getBackgroundColor() {
     if (myShowsErrorColor) {
       return ERROR_COLOR;
+    }
+    if (myBraceSelected) {
+      return new Color(0x99CCFF); 
     }
     return null;
   }
