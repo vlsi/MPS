@@ -16,6 +16,8 @@ import com.intellij.openapi.application.PathMacros;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.application.PathManager;
+import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class BuildScriptRunner extends BaseRunner {
 
@@ -79,28 +81,69 @@ public class BuildScriptRunner extends BaseRunner {
 
   private void addBasicParameters(List<String> parameters, File file) {
     ListSequence.fromList(parameters).addElement(this.getJava());
+    String jdkHome = this.getJdkHome();
+    ListSequence.fromList(parameters).addElement("-Djava.home=" + jdkHome);
     String antHome = PathManager.getHomePath() + File.separator + "lib" + File.separator + "ant-1.7.0";
     ListSequence.fromList(parameters).addElement("-Dant.home=" + antHome);
     ListSequence.fromList(parameters).addElement("-cp");
     String antLib = antHome + File.separator + "lib" + File.separator;
-    ListSequence.fromList(parameters).addElement(antLib + "ant-launcher.jar" + System.getProperty("path.separator") + antLib + "ant.jar");
+    String pathSeparator = System.getProperty("path.separator");
+    String classpath = antLib + "ant-launcher.jar" + pathSeparator + antLib + "ant.jar" + pathSeparator + antLib + "ant-nodeps.jar";
+    classpath += pathSeparator + jdkHome + File.separator + "lib" + File.separator + "tools.jar";
+    ListSequence.fromList(parameters).addElement(classpath);
     ListSequence.fromList(parameters).addElement("org.apache.tools.ant.launch.Launcher");
     ListSequence.fromList(parameters).addElement("-f");
     ListSequence.fromList(parameters).addElement(file.getAbsolutePath());
   }
 
   public String getJava() {
-    String javaHome = System.getProperty("java.home") + File.separator + "bin" + File.separator;
+    String javaBinHome = this.getJdkHome() + File.separator + "bin" + File.separator;
     String osName = System.getProperty("os.name");
     if (osName.startsWith("Mac OS")) {
-      return javaHome + "java";
+      return javaBinHome + "java";
     } else
     if (osName.startsWith("Windows")) {
-      return javaHome + "java.exe";
+      return javaBinHome + "java.exe";
     } else
     {
-      return javaHome + "java";
+      return javaBinHome + "java";
     }
+  }
+
+  public String getJdkHome() {
+    for(String javaHome : ListSequence.fromList(this.getJavaHomes())) {
+      String javaBinHome = javaHome + File.separator + "bin" + File.separator;
+      String osName = System.getProperty("os.name");
+      if (osName.startsWith("Mac OS")) {
+        if (new File(javaBinHome + "javac").exists()) {
+          return javaHome;
+        }
+      } else
+      if (osName.startsWith("Windows")) {
+        if (new File(javaBinHome + "javac.exe").exists()) {
+          return javaHome;
+        }
+      } else
+      {
+        if (new File(javaBinHome + "javac").exists()) {
+          return javaHome;
+        }
+      }
+    }
+    return ListSequence.fromList(this.getJavaHomes()).first();
+  }
+
+  public List<String> getJavaHomes() {
+    String systemJavaHome = System.getProperty("java.home");
+    List<String> homes = ListSequence.fromList(new LinkedList<String>()).addSequence(Sequence.fromArray(systemJavaHome));
+    String systemJdkHome = systemJavaHome.substring(0, systemJavaHome.length() - "/jre".length());
+    if (systemJavaHome.endsWith("jre") && new File(systemJdkHome + File.separator + "bin").exists()) {
+      ListSequence.fromList(homes).addElement(systemJdkHome);
+    }
+    if (StringUtils.isNotEmpty(System.getenv("JAVA_HOME"))) {
+      ListSequence.fromList(homes).addElement(System.getenv("JAVA_HOME"));
+    }
+    return homes;
   }
 
 }
