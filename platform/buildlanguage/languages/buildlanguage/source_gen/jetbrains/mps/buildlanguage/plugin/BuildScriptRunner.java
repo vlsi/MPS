@@ -30,7 +30,7 @@ public class BuildScriptRunner extends BaseRunner {
     this.addBasicParameters(parameters, file);
     this.addMacroValues(parameters);
     if (commandLine != null && StringUtils.isNotEmpty(commandLine)) {
-      List<String> commandLineList = Arrays.asList(commandLine.split("\\s*"));
+      List<String> commandLineList = Arrays.asList(commandLine.split("\\s+"));
       ListSequence.fromList(parameters).addSequence(ListSequence.fromList(commandLineList));
     }
     ProcessBuilder builder = new ProcessBuilder(new ArrayList(parameters));

@@ -146,7 +146,7 @@
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236105891884">
                       <link role="baseMethodDeclaration" targetNodeId="22.~String.split(java.lang.String):java.lang.String[]" resolveInfo="split" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236105891885">
-                        <property name="value" value="\\s*" />
+                        <property name="value" value="\\s+" />
                       </node>
                     </node>
                   </node>
