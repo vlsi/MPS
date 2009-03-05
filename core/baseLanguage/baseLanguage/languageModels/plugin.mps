@@ -32318,14 +32318,9 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225383116754">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225383116755">
-            <property name="name" value="name" />
-            <property name="isFinal" value="true" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226934638122">
-              <link role="classifier" targetNodeId="16.~JComboBox" resolveInfo="JComboBox" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226934716047">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236276012406">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1236276012407">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226934716047">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1226934716048">
                 <link role="baseMethodDeclaration" targetNodeId="16.~JComboBox.&lt;init&gt;(java.lang.Object[])" resolveInfo="JComboBox" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226934728162">
@@ -32336,12 +32331,21 @@
                 </node>
               </node>
             </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236276054271">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1236276054272">
+                <link role="fieldDeclaration" targetNodeId="1236276028681" resolveInfo="name" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236276054273" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226935259420">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226935265050">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226935259421">
-              <link role="variableDeclaration" targetNodeId="1225383116755" resolveInfo="name" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236276056120">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1236276056121">
+                <link role="fieldDeclaration" targetNodeId="1236276028681" resolveInfo="name" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236276056122" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226935273733">
               <link role="baseMethodDeclaration" targetNodeId="16.~JComboBox.setEditable(boolean):void" resolveInfo="setEditable" />
@@ -32358,8 +32362,11 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225383116767">
               <link role="baseMethodDeclaration" targetNodeId="17.~Container.add(java.awt.Component,java.lang.Object):void" resolveInfo="add" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225383116768">
-                <link role="variableDeclaration" targetNodeId="1225383116755" resolveInfo="name" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236276059109">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1236276059110">
+                  <link role="fieldDeclaration" targetNodeId="1236276028681" resolveInfo="name" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236276059111" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225383116769">
                 <link role="variableDeclaration" targetNodeId="1225383116713" resolveInfo="c" />
@@ -32369,8 +32376,11 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225383116770">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225383116772">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225383116773">
-              <link role="variableDeclaration" targetNodeId="1225383116755" resolveInfo="name" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236276060871">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1236276060872">
+                <link role="fieldDeclaration" targetNodeId="1236276028681" resolveInfo="name" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236276060873" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226934907609">
               <link role="baseMethodDeclaration" targetNodeId="16.~JComboBox.addActionListener(java.awt.event.ActionListener):void" resolveInfo="addActionListener" />
@@ -32406,8 +32416,13 @@
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1226934959876">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1226934959877">
                                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226934959878">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226934959879">
-                                      <link role="variableDeclaration" targetNodeId="1225383116755" resolveInfo="name" />
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236276084893">
+                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236276081397">
+                                        <link role="classConcept" targetNodeId="1225382621197" resolveInfo="IntroduceVariableDialog" />
+                                      </node>
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1236276086497">
+                                        <link role="fieldDeclaration" targetNodeId="1236276028681" resolveInfo="name" />
+                                      </node>
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226934959880">
                                       <link role="baseMethodDeclaration" targetNodeId="16.~JComboBox.getSelectedItem():java.lang.Object" resolveInfo="getSelectedItem" />
@@ -32429,8 +32444,11 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226935461582">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226935461583">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226935461584">
-              <link role="variableDeclaration" targetNodeId="1225383116755" resolveInfo="name" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236276089125">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1236276089126">
+                <link role="fieldDeclaration" targetNodeId="1236276028681" resolveInfo="name" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236276089127" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226935461585">
               <link role="baseMethodDeclaration" targetNodeId="16.~JComboBox.setSelectedItem(java.lang.Object):void" resolveInfo="setSelectedItem" />
@@ -32453,8 +32471,11 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1226935853831">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226935853832">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226935853833">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226935853834">
-                      <link role="variableDeclaration" targetNodeId="1225383116755" resolveInfo="name" />
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236276093247">
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1236276093248">
+                        <link role="fieldDeclaration" targetNodeId="1236276028681" resolveInfo="name" />
+                      </node>
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236276093249" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226935853835">
                       <link role="baseMethodDeclaration" targetNodeId="16.~JComboBox.getEditor():javax.swing.ComboBoxEditor" resolveInfo="getEditor" />
@@ -32570,6 +32591,42 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225383374755" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225383374756" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225383374757">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236275938265">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236275938266">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236275938267">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236275938268">
+                <link role="classConcept" targetNodeId="1225382621197" resolveInfo="IntroduceVariableDialog" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236275938269">
+                <link role="baseMethodDeclaration" targetNodeId="1225383137863" resolveInfo="getRefactoring" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236275938270">
+              <link role="baseMethodDeclaration" targetNodeId="1225103189185" resolveInfo="setName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1236275938271">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1236275938272">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236277421030">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236275938273">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236276099747">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1236276099748">
+                          <link role="fieldDeclaration" targetNodeId="1236276028681" resolveInfo="name" />
+                        </node>
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1236276099749" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236277418753">
+                        <link role="baseMethodDeclaration" targetNodeId="16.~JComboBox.getEditor():javax.swing.ComboBoxEditor" resolveInfo="getEditor" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236277430951">
+                      <link role="baseMethodDeclaration" targetNodeId="16.~ComboBoxEditor.getItem():java.lang.Object" resolveInfo="getItem" />
+                    </node>
+                  </node>
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1236275938276" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225383467143">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225383467144">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1225383467145" />
@@ -32654,6 +32711,13 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1225383258855" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225382718319">
         <link role="classifier" targetNodeId="16.~JPanel" resolveInfo="JPanel" />
+      </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1236276028681">
+      <property name="name" value="myName" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1236276028682" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236276038596">
+        <link role="classifier" targetNodeId="16.~JComboBox" resolveInfo="JComboBox" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225382621198" />
