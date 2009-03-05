@@ -9,6 +9,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import java.util.Collections;
 
 public class ControlMethodUtil {
 
@@ -104,15 +105,22 @@ public class ControlMethodUtil {
     }
 
     public List<SNode> getControlClosureTypes() {
-      return this.controlClosures;
+      return this.ensureNotNull(this.controlClosures);
     }
 
     public List<SNode> getInitClosureTypes() {
-      return this.initClosures;
+      return this.ensureNotNull(this.initClosures);
     }
 
     public List<SNode> getFunctionParamTypes() {
-      return this.functionParams;
+      return this.ensureNotNull(this.functionParams);
+    }
+
+    public List<SNode> ensureNotNull(List<SNode> list) {
+      if (list == null) {
+        return Collections.emptyList();
+      }
+      return list;
     }
 
     private void init() {
