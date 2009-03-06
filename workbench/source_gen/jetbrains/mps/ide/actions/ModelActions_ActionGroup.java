@@ -24,7 +24,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.CloneModel_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.CopyModelName_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.model.OptimizeImportsAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.OptimizeImports_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.AddMissingImports_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.model.ShowReferencesToMissingStuffAction", "jetbrains.mps.ide");
       this.addSeparator();
