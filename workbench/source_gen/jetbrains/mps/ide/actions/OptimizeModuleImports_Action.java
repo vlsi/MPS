@@ -70,7 +70,7 @@ public class OptimizeModuleImports_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final Wrappers._T<String> report = new Wrappers._T<String>("");
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
         public void run() {
           if (OptimizeModuleImports_Action.this.module instanceof Solution) {

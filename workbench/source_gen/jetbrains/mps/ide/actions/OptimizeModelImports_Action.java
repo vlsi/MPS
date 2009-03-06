@@ -68,7 +68,7 @@ public class OptimizeModelImports_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final Wrappers._T<String> report = new Wrappers._T<String>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
         public void run() {
           report.value = OptimizeImportsHelper.optimizeModelImports(OptimizeModelImports_Action.this.context, OptimizeModelImports_Action.this.model);
