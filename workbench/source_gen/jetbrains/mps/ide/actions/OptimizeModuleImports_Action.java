@@ -7,8 +7,10 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.MessageDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
@@ -17,17 +19,17 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import java.awt.Frame;
 
-public class OptimizeProjectImports_Action extends GeneratedAction {
-  private static final Logger LOG = Logger.getLogger(OptimizeProjectImports_Action.class);
+public class OptimizeModuleImports_Action extends GeneratedAction {
+  private static final Logger LOG = Logger.getLogger(OptimizeModuleImports_Action.class);
   private static final Icon ICON = null;
 
   public IOperationContext context;
+  public IModule module;
   public Frame frame;
-  public MPSProject project;
 
-  public OptimizeProjectImports_Action() {
+  public OptimizeModuleImports_Action() {
     super("Optimize Imports", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
@@ -40,7 +42,7 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "OptimizeProjectImports", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "OptimizeModuleImports", t);
       this.disable(event.getPresentation());
     }
   }
@@ -54,12 +56,12 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    this.module = event.getData(MPSDataKeys.MODULE);
+    if (this.module == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.project == null) {
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
       return false;
     }
     return true;
@@ -67,17 +69,21 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final Wrappers._T<String> report = new Wrappers._T<String>();
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      final Wrappers._T<String> report = new Wrappers._T<String>("");
+      ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          report.value = OptimizeImportsHelper.optimizeProjectImports(OptimizeProjectImports_Action.this.context, OptimizeProjectImports_Action.this.project);
+          if (OptimizeModuleImports_Action.this.module instanceof Solution) {
+            report.value = OptimizeImportsHelper.optimizeSolutionImports(OptimizeModuleImports_Action.this.context, ((Solution)OptimizeModuleImports_Action.this.module));
+          } else if (OptimizeModuleImports_Action.this.module instanceof Language) {
+            report.value = OptimizeImportsHelper.optimizeLanguageImports(OptimizeModuleImports_Action.this.context, ((Language)OptimizeModuleImports_Action.this.module));
+          }
         }
 
       });
-      new MessageDialog(OptimizeProjectImports_Action.this.frame, report.value).showDialog();
+      new MessageDialog(OptimizeModuleImports_Action.this.frame, report.value).showDialog();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "OptimizeProjectImports", t);
+      LOG.error("User's action execute method failed. Action:" + "OptimizeModuleImports", t);
     }
   }
 

@@ -1,13 +1,53 @@
 package jetbrains.mps.workbench.actions.model;
 
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.actions.solution.OptimizeSolutionImportsAction;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class OptimizeImportsHelper {
-  public static String optimizeImports(IOperationContext context, SModelDescriptor modelDescriptor) {
+  public static String optimizeProjectImports(IOperationContext c, MPSProject p) {
+    StringBuilder sb = new StringBuilder();
+    for(Language l : p.getProjectLanguages()) {
+      sb.append(OptimizeImportsHelper.optimizeLanguageImports(c, l));
+    }
+    for(Solution s : p.getProjectSolutions()) {
+      sb.append(optimizeSolutionImports(c, s));
+    }
+    return sb.toString();
+  }
+
+  public static String optimizeSolutionImports(IOperationContext context, Solution solution) {
+    StringBuilder sb = new StringBuilder();
+    for (SModelDescriptor modelDescriptor : solution.getOwnModelDescriptors()) {
+      if (SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) continue;
+      sb.append(optimizeModelImports(context, modelDescriptor)).append("\n");
+    }
+    return sb.toString();
+  }
+
+  public static String optimizeLanguageImports(IOperationContext context, Language language) {
+    List<SModelDescriptor> modelsToOptimize = new ArrayList<SModelDescriptor>();
+    modelsToOptimize.addAll(language.getOwnModelDescriptors());
+    for (Generator g : language.getGenerators()) {
+      modelsToOptimize.addAll(g.getOwnModelDescriptors());
+    }
+
+    StringBuilder sb = new StringBuilder();
+    for (SModelDescriptor modelDescriptor : modelsToOptimize) {
+      if (SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) continue;
+      sb.append(optimizeModelImports(context, modelDescriptor)).append("\n");
+    }
+    return sb.toString();
+  }
+
+  public static String optimizeModelImports(IOperationContext context, SModelDescriptor modelDescriptor) {
     Set<Language> usedLanguages = new HashSet<Language>();
     Set<SModelReference> usedModels = new HashSet<SModelReference>();
 

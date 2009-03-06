@@ -7,9 +7,9 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.MessageDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
 import org.jetbrains.annotations.NotNull;
@@ -17,17 +17,17 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import java.awt.Frame;
 
-public class OptimizeProjectImports_Action extends GeneratedAction {
-  private static final Logger LOG = Logger.getLogger(OptimizeProjectImports_Action.class);
+public class OptimizeModelImports_Action extends GeneratedAction {
+  private static final Logger LOG = Logger.getLogger(OptimizeModelImports_Action.class);
   private static final Icon ICON = null;
 
   public IOperationContext context;
+  public SModelDescriptor model;
   public Frame frame;
-  public MPSProject project;
 
-  public OptimizeProjectImports_Action() {
+  public OptimizeModelImports_Action() {
     super("Optimize Imports", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
@@ -40,7 +40,7 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "OptimizeProjectImports", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "OptimizeModelImports", t);
       this.disable(event.getPresentation());
     }
   }
@@ -54,12 +54,12 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    this.model = event.getData(MPSDataKeys.MODEL);
+    if (this.model == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.project == null) {
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
       return false;
     }
     return true;
@@ -68,16 +68,16 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final Wrappers._T<String> report = new Wrappers._T<String>();
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          report.value = OptimizeImportsHelper.optimizeProjectImports(OptimizeProjectImports_Action.this.context, OptimizeProjectImports_Action.this.project);
+          report.value = OptimizeImportsHelper.optimizeModelImports(OptimizeModelImports_Action.this.context, OptimizeModelImports_Action.this.model);
         }
 
       });
-      new MessageDialog(OptimizeProjectImports_Action.this.frame, report.value).showDialog();
+      new MessageDialog(OptimizeModelImports_Action.this.frame, report.value).showDialog();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "OptimizeProjectImports", t);
+      LOG.error("User's action execute method failed. Action:" + "OptimizeModelImports", t);
     }
   }
 
