@@ -140,10 +140,20 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       return;
     }
     SNodePointer newBookmark = new SNodePointer(node);
+    boolean bookmarkRemoved = false;
+    for (int i=0; i<10; i++) {
+      if (myBookmarks[i] != null && myBookmarks[i].getNode() == node) {
+        myBookmarks[i] = null;
+        bookmarkRemoved = true;
+        fireBookmarkRemoved(i, node);
+      }
+    }
     if (myUnnumberedBookmarks.contains(newBookmark)) {
       myUnnumberedBookmarks.remove(newBookmark);
+      bookmarkRemoved = true;
       fireBookmarkRemoved(-1, newBookmark.getNode());
-    } else {
+    }
+    if (!bookmarkRemoved) {
       myUnnumberedBookmarks.add(newBookmark);
       fireBookmarkAdded(-1, newBookmark.getNode());
     }
@@ -158,6 +168,19 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       setUnnumberedBookmark(node);
       return;
     }
+
+    SNodePointer newBookmark = new SNodePointer(node);
+    
+    for (int i = 0; i<10; i++) {
+      SNodePointer bookmark = myBookmarks[i];
+      if (i != number && bookmark != null && bookmark.getNode() == node) {
+        return;
+      }
+    }
+    if (getAllUnnumberedBookmarks().contains(newBookmark)) {
+       return;
+    }
+
     SNodePointer oldBookmark = myBookmarks[number];
     SNode oldNode = null;
     myBookmarks[number] = null;
@@ -166,7 +189,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       fireBookmarkRemoved(number, oldNode);
     }
     if (!node.equals(oldNode)) {
-      myBookmarks[number] = new SNodePointer(node);
+      myBookmarks[number] = newBookmark;
       fireBookmarkAdded(number, node);
     }
   }

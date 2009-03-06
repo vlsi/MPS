@@ -44,7 +44,7 @@ public class BookmarksHighlighter extends EditorCheckerAdapter implements Editor
     Set<EditorMessage> result = new HashSet<EditorMessage>();
     List<Pair<SNode,Integer>> bookmarks = myBookmarkManager.getBookmarks(rootNode);
     for (Pair<SNode, Integer> bookmark : bookmarks) {
-      result.add(new DefaultEditorMessage(bookmark.o1, Color.BLACK, "bookmark " + bookmark.o2, this));
+      result.add(new DefaultEditorMessage(bookmark.o1, Color.BLACK, "bookmark " + (bookmark.o2 == -1 ? "" : bookmark.o2), this));
     }
     return result;
   }
