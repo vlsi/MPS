@@ -128,4 +128,5 @@ public class Icons {
   public static final Icon BOOKMARK_7 = new ImageIcon(Icons.class.getResource("other/bookmark7.png"));
   public static final Icon BOOKMARK_8 = new ImageIcon(Icons.class.getResource("other/bookmark8.png"));
   public static final Icon BOOKMARK_9 = new ImageIcon(Icons.class.getResource("other/bookmark9.png"));
+  public static final Icon BOOKMARK_UNNUMBERED = new ImageIcon(Icons.class.getResource("other/check.png"));
 }

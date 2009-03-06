@@ -38,6 +38,7 @@ public class Bookmarks_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.SetBookmark7_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.SetBookmark8_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.SetBookmark9_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.SetBookmarkNoNumber_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

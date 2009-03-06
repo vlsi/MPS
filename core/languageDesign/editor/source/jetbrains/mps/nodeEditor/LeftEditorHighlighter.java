@@ -90,7 +90,11 @@ public class LeftEditorHighlighter {
             }
 
             public void bookmarkRemoved(int number, SNode node) {
-              removeBookmark(number);
+              if (number == -1) {
+                removeUnnumberedBookmark(node);
+              } else {
+                removeBookmark(number);
+              }
             }
           };
           bookmarkManager.addBookmarkListener(myListener);
@@ -192,6 +196,20 @@ public class LeftEditorHighlighter {
   public void removeBookmark(int number) {
     for (CellInfo cellInfo : new HashSet<CellInfo>(myBookmarks.keySet())) {
       if (myBookmarks.get(cellInfo).getNumber() == number) {
+        myBookmarks.remove(cellInfo);
+        break;
+      }
+    }
+  }
+
+  public void removeUnnumberedBookmark(SNode node) {
+    EditorCell nodeCell = myEditorComponent.findNodeCell(node);
+    if (nodeCell == null) {
+   //   LOG.error("can't find a cell for node " + node);
+      return;
+    }
+    for (CellInfo cellInfo : new HashSet<CellInfo>(myBookmarks.keySet())) {
+      if (myBookmarks.get(cellInfo).getNumber() == -1 && cellInfo.findCell(myEditorComponent) == nodeCell) {
         myBookmarks.remove(cellInfo);
         break;
       }

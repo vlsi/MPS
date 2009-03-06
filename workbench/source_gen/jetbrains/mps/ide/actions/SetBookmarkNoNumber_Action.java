@@ -6,40 +6,35 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
 
-public class CopyNodeName_Action extends GeneratedAction {
-  private static final Logger LOG = Logger.getLogger(CopyNodeName_Action.class);
+public class SetBookmarkNoNumber_Action extends GeneratedAction {
+  private static final Logger LOG = Logger.getLogger(SetBookmarkNoNumber_Action.class);
   private static final Icon ICON = null;
 
   public SNode node;
+  public Project project;
 
-  public CopyNodeName_Action() {
-    super("Copy Node FQName", "", ICON);
+  public SetBookmarkNoNumber_Action() {
+    super("Set Bookmark", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
   @NotNull()
   public String getKeyStroke() {
-    return "";
-  }
-
-  public boolean isApplicable(AnActionEvent event) {
-    return CopyNodeName_Action.this.node.isRoot();
+    return " F11";
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
     try {
-      {
-        boolean enabled = this.isApplicable(event);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CopyNodeName", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "SetBookmarkNoNumber", t);
       this.disable(event.getPresentation());
     }
   }
@@ -53,14 +48,19 @@ public class CopyNodeName_Action extends GeneratedAction {
     if (this.node == null) {
       return false;
     }
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      CopyPasteUtil.copyTextToClipboard(CopyNodeName_Action.this.node.getModel().getLongName() + "." + CopyNodeName_Action.this.node.getName());
+      BookmarkManager bookmarkManager = SetBookmarkNoNumber_Action.this.project.getComponent(BookmarkManager.class);
+      bookmarkManager.setUnnumberedBookmark(SetBookmarkNoNumber_Action.this.node);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CopyNodeName", t);
+      LOG.error("User's action execute method failed. Action:" + "SetBookmarkNoNumber", t);
     }
   }
 

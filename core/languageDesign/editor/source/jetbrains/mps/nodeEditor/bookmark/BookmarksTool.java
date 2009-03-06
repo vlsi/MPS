@@ -104,14 +104,24 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
         }
       };
       root.setIcon(Icons.DEFAULT_ICON);
-      List<SNodePointer> nodePointers = myBookmarkManager.getAllBookmarks();
+      List<SNodePointer> nodePointers = myBookmarkManager.getAllNumberedBookmarks();
       boolean hasBookmarks = false;
       for (int i = 0; i < nodePointers.size(); i++) {
         final SNodePointer nodePointer = nodePointers.get(i);
         if (nodePointer != null && nodePointer.getNode() != null) {
           hasBookmarks = true;
-          TextTreeNode textTreeNode = new MyTextTreeNode(i);
+          TextTreeNode textTreeNode = new MyTextTreeNodeNumbered(i);
           textTreeNode.setIcon(BookmarkManager.getIcon(i));
+          textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, getProject().getComponent(MPSProjectHolder.class).getMPSProject().createOperationContext()));
+          root.add(textTreeNode);
+        }
+      }
+      nodePointers = myBookmarkManager.getAllUnnumberedBookmarks();
+      for (SNodePointer nodePointer : nodePointers) {
+        if (nodePointer != null && nodePointer.getNode() != null) {
+          hasBookmarks = true;
+          TextTreeNode textTreeNode = new MyTextTreeNodeUnnumbered(nodePointer);
+          textTreeNode.setIcon(BookmarkManager.getIcon(-1));
           textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, getProject().getComponent(MPSProjectHolder.class).getMPSProject().createOperationContext()));
           root.add(textTreeNode);
         }
@@ -131,21 +141,44 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
     myTreeState = state.myTreeState;
   }
 
-  private class MyTextTreeNode extends TextTreeNode {
+  private class MyTextTreeNodeNumbered extends TextTreeNode {
     int myNumber;
 
-    public MyTextTreeNode(int i) {
+    public MyTextTreeNodeNumbered(int i) {
       super("bookmark " + i);
       myNumber = i;
     }
 
     public ActionGroup getActionGroup() {
-      BaseAction hierarchyAction = new BaseAction("Remove Bookmark") {
+      BaseAction action = new BaseAction("Remove Bookmark") {
         protected void doExecute(AnActionEvent e) {
           myBookmarkManager.removeBookmark(myNumber);
         }
       };
-      return ActionUtils.groupFromActions(hierarchyAction);
+      return ActionUtils.groupFromActions(action);
+    }
+  }
+
+  private class MyTextTreeNodeUnnumbered extends TextTreeNode {
+    SNodePointer myNodePointer;
+
+    public MyTextTreeNodeUnnumbered(SNode node) {
+      super("bookmark");
+      myNodePointer = new SNodePointer(node);
+    }
+
+    public MyTextTreeNodeUnnumbered(SNodePointer nodePointer) {
+      super("bookmark");
+      myNodePointer = nodePointer;
+    }
+
+    public ActionGroup getActionGroup() {
+      BaseAction action = new BaseAction("Remove Bookmark") {
+        protected void doExecute(AnActionEvent e) {
+          myBookmarkManager.removeUnnumberedBookmark(myNodePointer.getNode());
+        }
+      };
+      return ActionUtils.groupFromActions(action);
     }
   }
 
