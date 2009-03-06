@@ -11211,9 +11211,9 @@
       <property name="name" value="context" />
       <link role="key" targetNodeId="107.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
     </node>
-    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1236348470068">
-      <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1236360608964">
+      <property name="name" value="models" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODELS" resolveInfo="MODELS" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1236348473242">
       <property name="name" value="frame" />
@@ -11234,19 +11234,19 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236354541585">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236354546149">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1236354546150">
-                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1236354546151">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~OptimizeImportsHelper.optimizeModelImports(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.smodel.SModelDescriptor):java.lang.String" resolveInfo="optimizeModelImports" />
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1236362955854">
+                    <link role="baseMethodDeclaration" targetNodeId="3.~OptimizeImportsHelper.optimizeModelsImports(jetbrains.mps.smodel.IOperationContext,java.util.List):java.lang.String" resolveInfo="optimizeModelsImports" />
                     <link role="classConcept" targetNodeId="3.~OptimizeImportsHelper" resolveInfo="OptimizeImportsHelper" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236354546152">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1236354546153" />
-                      <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1236354546154">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236362955855">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1236362955856" />
+                      <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1236362955857">
                         <link role="member" targetNodeId="1236348465878" resolveInfo="context" />
                       </node>
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236354546155">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1236354546156" />
-                      <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1236354546157">
-                        <link role="member" targetNodeId="1236348470068" resolveInfo="model" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236362955858">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1236362955859" />
+                      <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1236362958675">
+                        <link role="member" targetNodeId="1236360608964" resolveInfo="models" />
                       </node>
                     </node>
                   </node>
