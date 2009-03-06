@@ -249,6 +249,10 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     return myBookmarkIcons[bookmarkNumber];
   }
 
+  public SNodePointer getBookmark(int number) {
+    return myBookmarks[number];
+  }
+
   public void navigateToBookmark(int number) {
     if (number > 9) return;
     SNodePointer pointer = myBookmarks[number];

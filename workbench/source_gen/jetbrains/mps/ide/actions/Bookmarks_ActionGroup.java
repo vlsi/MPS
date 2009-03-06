@@ -16,6 +16,8 @@ public class Bookmarks_ActionGroup extends GeneratedActionGroup {
     try {
       this.addAction("jetbrains.mps.ide.actions.ShowBookmarks_Action", "jetbrains.mps.ide");
       this.addSeparator();
+      this.addAction("jetbrains.mps.ide.actions.ShowBookmarksDialog_Action", "jetbrains.mps.ide");
+      this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.RemoveAllBookmarks_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.GoToBookmark0_Action", "jetbrains.mps.ide");
