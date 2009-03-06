@@ -4,7 +4,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.actions.solution.OptimizeSolutionImportsAction;
 
 import java.util.ArrayList;
 import java.util.HashSet;
