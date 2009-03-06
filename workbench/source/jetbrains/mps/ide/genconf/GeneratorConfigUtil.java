@@ -23,6 +23,8 @@ import jetbrains.mps.transformation.TemplateLanguageGenerationUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 public class GeneratorConfigUtil {
   public static List<SModelDescriptor> getLanguageModels(Language lang) {
@@ -31,6 +33,14 @@ public class GeneratorConfigUtil {
       SModelDescriptor model = aspect.get(lang);
       if (model != null) {
         inputModels.add(model);
+      }
+    }
+
+
+    Set<SModelDescriptor> ownModels = new HashSet<SModelDescriptor>(lang.getOwnModelDescriptors());
+    for (SModelDescriptor sm : lang.getAccessoryModels()) {
+      if (ownModels.contains(sm)) {
+        inputModels.add(sm);
       }
     }
 
