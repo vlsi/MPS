@@ -313,7 +313,6 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       ModelChangesWatcher.instance().fireMetadataFileCreated(metadataFile);
     }
 
-    System.err.println("saving metadata");
     DefaultMetadataPersistence.save(metadataFile, metadata);
   }
 
