@@ -209,7 +209,7 @@ public class ModuleMaker {
               os.write(cf.getBytes());
               os.close();
             } catch (IOException e) {
-              throw new RuntimeException(e);
+              LOG.error("Can't write to " + output.getAbsolutePath());
             }
           } else {
             output.delete();
