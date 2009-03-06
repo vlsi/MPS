@@ -219,8 +219,8 @@
         <link role="action" targetNodeId="1236183891533" resolveInfo="CopyModelName" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1209381958459" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518717701">
-        <link role="constructorDeclaration" targetNodeId="3.~OptimizeImportsAction.&lt;init&gt;()" resolveInfo="OptimizeImportsAction" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1236354294303">
+        <link role="action" targetNodeId="1236348386008" resolveInfo="OptimizeModelImports" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1215868147906">
         <link role="action" targetNodeId="1215867986486" resolveInfo="AddMissingImports" />

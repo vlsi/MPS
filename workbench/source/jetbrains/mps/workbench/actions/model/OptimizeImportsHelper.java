@@ -1,5 +1,6 @@
 package jetbrains.mps.workbench.actions.model;
 
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -13,10 +14,10 @@ import java.util.Set;
 public class OptimizeImportsHelper {
   public static String optimizeProjectImports(IOperationContext c, MPSProject p) {
     StringBuilder sb = new StringBuilder();
-    for(Language l : p.getProjectLanguages()) {
+    for (Language l : p.getProjectLanguages()) {
       sb.append(OptimizeImportsHelper.optimizeLanguageImports(c, l));
     }
-    for(Solution s : p.getProjectSolutions()) {
+    for (Solution s : p.getProjectSolutions()) {
       sb.append(optimizeSolutionImports(c, s));
     }
     return sb.toString();
@@ -61,14 +62,45 @@ public class OptimizeImportsHelper {
     }
 
     Set<ModuleReference> unusedLanguages = new HashSet<ModuleReference>();
-    for (ModuleReference languageNamespace : modelDescriptor.getSModel().getExplicitlyImportedLanguages()) {
-      Language language = context.getScope().getLanguage(languageNamespace);
+    for (ModuleReference languageRef : modelDescriptor.getSModel().getExplicitlyImportedLanguages()) {
+      Language language = context.getScope().getLanguage(languageRef);
       if (language == null) {
-        unusedLanguages.add(languageNamespace);
+        unusedLanguages.add(languageRef);
       } else if (!usedLanguages.contains(language)) {
         unusedLanguages.add(language.getModuleReference());
       }
     }
+
+    Set<ModuleReference> unusedDevkits = new HashSet<ModuleReference>();
+    for (ModuleReference devkitRef : modelDescriptor.getSModel().getDevKitRefs()) {
+      boolean used = false;
+
+      DevKit dk = (DevKit) MPSModuleRepository.getInstance().getModule(devkitRef);
+      if (dk != null) {
+        for (Language lang : dk.getAllExportedLanguages()) {
+          if (usedLanguages.contains(lang)) {
+            used = true;
+            break;
+          }
+        }
+
+        if (!used){
+          for (Solution solution : dk.getAllExportedSolutions()) {
+            for (SModelDescriptor model:solution.getOwnModelDescriptors()){
+              if (usedModels.contains(model.getSModelReference())) {
+                used = true;
+                break;
+              }
+            }
+          }
+        }
+      }
+
+      if (!used) {
+        unusedDevkits.add(devkitRef);
+      }
+    }
+
 
     Set<SModelReference> unusedModels = new HashSet<SModelReference>();
     for (SModelReference model : modelDescriptor.getSModel().getImportedModelUIDs()) {
@@ -77,17 +109,21 @@ public class OptimizeImportsHelper {
       }
     }
 
-    return removeFromImports(modelDescriptor, unusedModels, unusedLanguages);
+    return removeFromImports(modelDescriptor, unusedModels, unusedLanguages, unusedDevkits);
   }
 
-  private static String removeFromImports(SModelDescriptor modelDescriptor, Set<SModelReference> unusedModels, Set<ModuleReference> unusedLanguages) {
+  private static String removeFromImports(SModelDescriptor modelDescriptor, Set<SModelReference> unusedModels, Set<ModuleReference> unusedLanguages, Set<ModuleReference> unusedDevkits) {
     StringBuilder report = new StringBuilder("Import for model " + modelDescriptor.getSModelReference() + " were optimized \n");
 
-    for (ModuleReference ref : unusedLanguages) {
-      modelDescriptor.getSModel().deleteLanguage(ref);
-      report.append("Language ").append(ref.getModuleFqName()).append(" was removed from imports\n");
+    for (ModuleReference langRef : unusedLanguages) {
+      modelDescriptor.getSModel().deleteLanguage(langRef);
+      report.append("Language ").append(langRef.getModuleFqName()).append(" was removed from imports\n");
     }
 
+    for (ModuleReference dkRef : unusedDevkits) {
+      modelDescriptor.getSModel().deleteDevKit(dkRef);
+      report.append("Devkit ").append(dkRef.getModuleFqName()).append(" was removed from imports\n");
+    }
 
     for (SModelReference model : unusedModels) {
       modelDescriptor.getSModel().deleteImportedModel(model);
