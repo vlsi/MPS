@@ -110,7 +110,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_3813_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-    Styles_StyleSheet.getStyle(editorCell).apply(editorCell);
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_3813_0(EditorCell editorCell, SNode node, EditorContext context) {

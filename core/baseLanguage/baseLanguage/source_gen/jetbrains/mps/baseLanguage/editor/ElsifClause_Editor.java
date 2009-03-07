@@ -204,6 +204,15 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1596_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1596_0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "trueStatement");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     ElseifClause_DeletePrevious.setCellActions(editorCell, node, context);
   }
 
@@ -234,6 +243,15 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1596_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1596_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "trueStatement");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_1596_0(EditorCell editorCell, SNode node, EditorContext context) {

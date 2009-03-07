@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -522,6 +523,25 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1754_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1754_5");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "trueStatement");
+          this.set(StyleAttributes.MATCHING_NODE, new AttributeCalculator <SNode>() {
+
+            public SNode calculate(EditorCell cell) {
+              return IfStatement_Editor.matchingNode1754_1((cell == null ?
+                null :
+                cell.getSNode()
+              ));
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_1754_6(EditorCell editorCell, SNode node, EditorContext context) {
@@ -542,6 +562,15 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1754_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1754_7");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "elseStatement");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     IfStatement_elseBlockStatement_delete.setCellActions(editorCell, node, context);
   }
 
@@ -593,6 +622,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+          this.set(StyleAttributes.MATCHING_LABEL, "elseStatement");
         }
 
       };
@@ -620,6 +650,25 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1754_9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1754_9");
     BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "trueStatement");
+          this.set(StyleAttributes.MATCHING_NODE, new AttributeCalculator <SNode>() {
+
+            public SNode calculate(EditorCell cell) {
+              return IfStatement_Editor.matchingNode1754_0((cell == null ?
+                null :
+                cell.getSNode()
+              ));
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Indent_1754_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -653,6 +702,17 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+          this.set(StyleAttributes.MATCHING_LABEL, "trueStatement");
+          this.set(StyleAttributes.MATCHING_NODE, new AttributeCalculator <SNode>() {
+
+            public SNode calculate(EditorCell cell) {
+              return IfStatement_Editor.matchingNode1754_2((cell == null ?
+                null :
+                cell.getSNode()
+              ));
+            }
+
+          });
         }
 
       };
@@ -736,6 +796,33 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition1754_6(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "ifFalseStatement", true) == null;
+  }
+
+  public static SNode matchingNode1754_0(SNode node) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).count() > 0) {
+      return ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first();
+    } else
+    {
+      return node;
+    }
+  }
+
+  public static SNode matchingNode1754_1(SNode node) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).count() > 0) {
+      return ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).last();
+    } else
+    {
+      return node;
+    }
+  }
+
+  public static SNode matchingNode1754_2(SNode node) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).count() > 0) {
+      return ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).last();
+    } else
+    {
+      return node;
+    }
   }
 
   public static class elsifClausesListHandler_1754_0 extends RefNodeListHandler {

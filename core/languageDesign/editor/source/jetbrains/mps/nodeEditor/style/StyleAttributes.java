@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.style;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.CaretPosition;
 import jetbrains.mps.lang.editor.structure._Enum_Measure;
+import jetbrains.mps.smodel.SNode;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -72,4 +73,5 @@ public class StyleAttributes {
 
   public static final StyleAttribute<CellAlign> HORIZONTAL_ALIGN = new SimpleStyleAttribute<CellAlign>("horizontal-align", CellAlign.LEFT);
   public static final StyleAttribute<String> MATCHING_LABEL = new SimpleStyleAttribute<String>("matching-label", null);
+  public static final StyleAttribute<SNode> MATCHING_NODE = new SimpleStyleAttribute<SNode>("matching-node", null);
 }

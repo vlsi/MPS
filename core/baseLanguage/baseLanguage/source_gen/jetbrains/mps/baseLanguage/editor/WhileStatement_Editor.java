@@ -327,15 +327,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_8658_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8658_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.MATCHING_LABEL, "condition");
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Collection_8658_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -386,15 +377,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_8658_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8658_3");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.MATCHING_LABEL, "condition");
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Collection_8658_4(EditorCell editorCell, SNode node, EditorContext context) {

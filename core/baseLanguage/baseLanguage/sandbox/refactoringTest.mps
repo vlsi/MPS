@@ -209,6 +209,16 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236267587907" />
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1236430368443">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236430368444">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1236430368445" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1236430368446" />
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1236430375190">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1236430375191" />
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236430375192" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />

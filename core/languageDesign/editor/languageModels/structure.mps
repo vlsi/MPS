@@ -4083,5 +4083,19 @@
       <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236426981771">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="MatchingNodeStyleCalssItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236428256565">
+      <property name="value" value="matching-node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236427050944">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="query" />
+      <link role="target" targetNodeId="1236263696991" resolveInfo="QueryFunction_MatchingNode" />
+    </node>
+  </node>
 </model>
 

@@ -676,6 +676,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "label");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1236426340701(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("matchingNode", _context.getNode());
+  }
+
   public static Object referenceMacro_GetReferent_1176478910892(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "componentProvider", true), "jcomponent_query_method");
   }
@@ -1071,6 +1075,14 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1236002025123(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SPropertyOperations.getString_def(_context.getNode(), "align", "LEFT");
+  }
+
+  public static Object referenceMacro_GetReferent_1236427402972(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "query", true), "query_method");
+  }
+
+  public static Object referenceMacro_GetReferent_1236427402982(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return QueriesUtil.getGeneratedClassByAncestor(SLinkOperations.getTarget(_context.getNode(), "query", true), _context);
   }
 
   public static boolean ifMacro_Condition_1168384460946(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1681,6 +1693,10 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
+  public static SNode sourceNodeQuery_1236426340690(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
   public static Iterable sourceNodesQuery_1168628426627(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "item", true);
   }
@@ -1933,6 +1949,10 @@ public class QueriesGenerated {
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1225906168170(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return QueriesUtil.getGeneratedClassByCellContainer(_context.getNode(), _context);
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1236426494460(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return QueriesUtil.getGeneratedClassByAncestor(_context.getNode(), _context);
   }
 
 }
