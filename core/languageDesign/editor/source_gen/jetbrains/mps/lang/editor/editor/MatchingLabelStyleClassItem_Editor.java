@@ -13,7 +13,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
 
 public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
 
@@ -29,7 +37,12 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty_3813_1(context, node));
     editorCell.addEditorCell(this.createConstant_3813_0(context, node, ":"));
-    editorCell.addEditorCell(this.createProperty_3813_1(context, node));
+    if (renderingCondition3813_0(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createProperty_3813_1(context, node));
+    }
+    if (renderingCondition3813_1(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_3813_1(context, node));
+    }
     return editorCell;
   }
 
@@ -79,6 +92,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
       setupLabel_Property_3813_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu0()}));
     return editorCell;
   }
 
@@ -89,6 +103,35 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_3813_0_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createRefNode_3813_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_RefNode_3813_0(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_RefNode_3813_0((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createRefNode_3813_1(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("query");
+    provider.setNoTargetText("<no query>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode_3813_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -115,6 +158,10 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_3813_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_label");
+    BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
+  }
+
+  private static void setupBasic_RefNode_3813_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_3813_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -125,5 +172,31 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_Property_3813_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
+  private static void setupLabel_RefNode_3813_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean renderingCondition3813_0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "query", true) == null;
+  }
+
+  public static boolean renderingCondition3813_1(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "query", true) != null);
+  }
+
+  public static class MatchingLabelStyleClassItem_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
+
+    public MatchingLabelStyleClassItem_generic_cellMenu0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_String");
+    }
+
+    public String getMatchingText() {
+      return "query";
+    }
+
+}
 
 }

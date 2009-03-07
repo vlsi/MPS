@@ -210,16 +210,44 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236267587907" />
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1236430368443">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236430368444">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1236430368445" />
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236430368444" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1236438310312">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236438310636">
+              <property name="value" value="1" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236438309153">
+              <property name="value" value="1" />
+            </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1236430368446" />
-          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1236430375190">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1236430375191" />
-            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236430375192" />
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1236438286606">
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236438286608" />
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1236438314661">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236438314662">
+                <property name="value" value="1" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236438314663">
+                <property name="value" value="1" />
+              </node>
+            </node>
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1236437607295">
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236437607297" />
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1236438316070">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236438316071">
+                <property name="value" value="1" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236438316072">
+                <property name="value" value="1" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1236437866545">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236437866546" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236437866547" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236437866548" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236186559197">

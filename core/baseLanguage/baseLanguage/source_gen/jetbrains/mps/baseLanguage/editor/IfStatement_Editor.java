@@ -522,11 +522,20 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1754_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1754_5");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.MATCHING_LABEL, "trueStatement");
+          this.set(StyleAttributes.MATCHING_LABEL, new AttributeCalculator <String>() {
+
+            public String calculate(EditorCell cell) {
+              return IfStatement_Editor.matchingNode1754_4((cell == null ?
+                null :
+                cell.getSNode()
+              ));
+            }
+
+          });
           this.set(StyleAttributes.MATCHING_NODE, new AttributeCalculator <SNode>() {
 
             public SNode calculate(EditorCell cell) {
@@ -561,7 +570,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1754_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1754_7");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -616,7 +625,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1754_8(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1754_8");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -653,7 +662,16 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.MATCHING_LABEL, "trueStatement");
+          this.set(StyleAttributes.MATCHING_LABEL, new AttributeCalculator <String>() {
+
+            public String calculate(EditorCell cell) {
+              return IfStatement_Editor.matchingNode1754_3((cell == null ?
+                null :
+                cell.getSNode()
+              ));
+            }
+
+          });
           this.set(StyleAttributes.MATCHING_NODE, new AttributeCalculator <SNode>() {
 
             public SNode calculate(EditorCell cell) {
@@ -702,7 +720,16 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-          this.set(StyleAttributes.MATCHING_LABEL, "trueStatement");
+          this.set(StyleAttributes.MATCHING_LABEL, new AttributeCalculator <String>() {
+
+            public String calculate(EditorCell cell) {
+              return IfStatement_Editor.matchingNode1754_5((cell == null ?
+                null :
+                cell.getSNode()
+              ));
+            }
+
+          });
           this.set(StyleAttributes.MATCHING_NODE, new AttributeCalculator <SNode>() {
 
             public SNode calculate(EditorCell cell) {
@@ -822,6 +849,33 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     } else
     {
       return node;
+    }
+  }
+
+  public static String matchingNode1754_3(SNode node) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).count() > 0) {
+      return "trueStatement0";
+    } else
+    {
+      return "trueStatement";
+    }
+  }
+
+  public static String matchingNode1754_4(SNode node) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).count() > 0) {
+      return "trueStatement" + ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).count();
+    } else
+    {
+      return "trueStatement";
+    }
+  }
+
+  public static String matchingNode1754_5(SNode node) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).count() > 0) {
+      return "trueStatement" + ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).count();
+    } else
+    {
+      return "trueStatement";
     }
   }
 

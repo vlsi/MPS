@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class MatchingLabelStyleClassItem extends StyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem";
   public static final String LABEL = "label";
+  public static final String QUERY = "query";
 
   public MatchingLabelStyleClassItem(SNode node) {
     super(node);
@@ -21,6 +22,14 @@ public class MatchingLabelStyleClassItem extends StyleClassItem {
 
   public void setLabel(String value) {
     this.setProperty(MatchingLabelStyleClassItem.LABEL, value);
+  }
+
+  public QueryFunction_String getQuery() {
+    return (QueryFunction_String)this.getChild(QueryFunction_String.class, MatchingLabelStyleClassItem.QUERY);
+  }
+
+  public void setQuery(QueryFunction_String node) {
+    super.setChild(MatchingLabelStyleClassItem.QUERY, node);
   }
 
 

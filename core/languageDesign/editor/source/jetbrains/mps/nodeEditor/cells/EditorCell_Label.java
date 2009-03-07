@@ -109,8 +109,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       } else {
         matchingNode = this.getSNode();
       }
-      EditorCell editorCell = getContainingBigCell().getFirstDescendant(new Condition<EditorCell>() {
-
+      EditorCell editorCell = getEditor().getBigValidCellForNode(matchingNode).getFirstDescendant(new Condition<EditorCell>() {
         public boolean met(EditorCell cell) {
           return cell != EditorCell_Label.this && cell.getSNode() == matchingNode && label.equals(cell.getStyle().get(StyleAttributes.MATCHING_LABEL));
         }

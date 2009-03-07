@@ -4054,6 +4054,11 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="MatchingLabelStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236443321503">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="query" />
+      <link role="target" targetNodeId="1236443640684" resolveInfo="QueryFunction_String" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236263409818">
       <property name="value" value="matching-label" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
@@ -4095,6 +4100,19 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="query" />
       <link role="target" targetNodeId="1236263696991" resolveInfo="QueryFunction_MatchingNode" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236443640684">
+    <property name="package" value="QueryFunction" />
+    <property name="name" value="QueryFunction_String" />
+    <link role="extends" targetNodeId="4.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1236443640685">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="1236443698038" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1236443640687">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
     </node>
   </node>
 </model>

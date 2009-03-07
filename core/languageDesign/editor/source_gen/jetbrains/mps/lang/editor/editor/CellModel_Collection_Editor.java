@@ -775,18 +775,54 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_2102_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "collection");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Component_2102_1(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "collection");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Component_2102_2(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "collection");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Component_2102_3(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "collection");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
