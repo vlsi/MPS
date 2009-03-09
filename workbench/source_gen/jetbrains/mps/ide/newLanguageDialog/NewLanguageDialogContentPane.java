@@ -274,10 +274,10 @@ public class NewLanguageDialogContentPane extends JPanel {
     ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
     languageDescriptor.getUsedDevkits().add(devkitRef);
     languageDescriptor.setCompileInMPS(myThis.getCompileInMPS());
-    LanguageAspect.STRUCTURE.createNew(language);
-    LanguageAspect.EDITOR.createNew(language);
-    LanguageAspect.CONSTRAINTS.createNew(language);
-    LanguageAspect.TYPESYSTEM.createNew(language);
+    LanguageAspect.STRUCTURE.createNew(language, false);
+    LanguageAspect.EDITOR.createNew(language, false);
+    LanguageAspect.CONSTRAINTS.createNew(language, false);
+    LanguageAspect.TYPESYSTEM.createNew(language, false);
     language.setLanguageDescriptor(languageDescriptor);
     myThis.getProject().addProjectLanguage(language);
     language.save();

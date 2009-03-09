@@ -69,7 +69,7 @@ public class Language extends AbstractModule {
   public static Language createLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
     LanguageDescriptor languageDescriptor;
-    if (descriptorFile.exists()) {
+    if (descriptorFile.exists())  {
       languageDescriptor = LanguageDescriptorPersistence.loadLanguageDescriptor(descriptorFile);
       if (languageDescriptor.getUUID() == null) {
         languageDescriptor.setUUID(UUID.randomUUID().toString());

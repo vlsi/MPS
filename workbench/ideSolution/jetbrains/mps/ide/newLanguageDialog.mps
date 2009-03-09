@@ -729,9 +729,12 @@
               <link role="enumClass" targetNodeId="5.~LanguageAspect" resolveInfo="LanguageAspect" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205834599202">
-              <link role="baseMethodDeclaration" targetNodeId="5.~LanguageAspect.createNew(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createNew" />
+              <link role="baseMethodDeclaration" targetNodeId="5.~LanguageAspect.createNew(jetbrains.mps.smodel.Language,boolean):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createNew" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203687142431">
                 <link role="variableDeclaration" targetNodeId="1203687010409" resolveInfo="language" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1236606595140">
+                <property name="value" value="false" />
               </node>
             </node>
           </node>
@@ -743,9 +746,12 @@
               <link role="enumClass" targetNodeId="5.~LanguageAspect" resolveInfo="LanguageAspect" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205834599245">
-              <link role="baseMethodDeclaration" targetNodeId="5.~LanguageAspect.createNew(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createNew" />
+              <link role="baseMethodDeclaration" targetNodeId="5.~LanguageAspect.createNew(jetbrains.mps.smodel.Language,boolean):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createNew" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203687152690">
                 <link role="variableDeclaration" targetNodeId="1203687010409" resolveInfo="language" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1236606597255">
+                <property name="value" value="false" />
               </node>
             </node>
           </node>
@@ -757,9 +763,12 @@
               <link role="enumClass" targetNodeId="5.~LanguageAspect" resolveInfo="LanguageAspect" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205834599231">
-              <link role="baseMethodDeclaration" targetNodeId="5.~LanguageAspect.createNew(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createNew" />
+              <link role="baseMethodDeclaration" targetNodeId="5.~LanguageAspect.createNew(jetbrains.mps.smodel.Language,boolean):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createNew" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203687165574">
                 <link role="variableDeclaration" targetNodeId="1203687010409" resolveInfo="language" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1236606599400">
+                <property name="value" value="false" />
               </node>
             </node>
           </node>
@@ -771,9 +780,12 @@
               <link role="enumConstantDeclaration" targetNodeId="5.~LanguageAspect.TYPESYSTEM" resolveInfo="TYPESYSTEM" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205834599214">
-              <link role="baseMethodDeclaration" targetNodeId="5.~LanguageAspect.createNew(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createNew" />
+              <link role="baseMethodDeclaration" targetNodeId="5.~LanguageAspect.createNew(jetbrains.mps.smodel.Language,boolean):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createNew" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203687177074">
                 <link role="variableDeclaration" targetNodeId="1203687010409" resolveInfo="language" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1236606609192">
+                <property name="value" value="false" />
               </node>
             </node>
           </node>
