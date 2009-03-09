@@ -109,14 +109,17 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       } else {
         matchingNode = this.getSNode();
       }
-      EditorCell editorCell = getEditor().getBigValidCellForNode(matchingNode).getFirstDescendant(new Condition<EditorCell>() {
-        public boolean met(EditorCell cell) {
-          return cell != EditorCell_Label.this && cell.getSNode() == matchingNode && label.equals(cell.getStyle().get(StyleAttributes.MATCHING_LABEL));
+      EditorCell validCellForNode = getEditor().getBigValidCellForNode(matchingNode);
+      if (validCellForNode != null) {
+        EditorCell editorCell = validCellForNode.getFirstDescendant(new Condition<EditorCell>() {
+          public boolean met(EditorCell cell) {
+            return cell != EditorCell_Label.this && cell.getSNode() == matchingNode && label.equals(cell.getStyle().get(StyleAttributes.MATCHING_LABEL));
+          }
+        });
+        if (editorCell != null) {
+          this.getTextLine().myBraceSelected = selected;
+          ((EditorCell_Label)editorCell).getTextLine().myBraceSelected = selected;
         }
-      });
-      if (editorCell != null) {
-        this.getTextLine().myBraceSelected = selected;
-        ((EditorCell_Label)editorCell).getTextLine().myBraceSelected = selected;
       }
     }
 
