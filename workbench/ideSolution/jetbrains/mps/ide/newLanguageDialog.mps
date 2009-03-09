@@ -803,6 +803,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203687350611">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205834599199">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203687350612">
+              <link role="variableDeclaration" targetNodeId="1203687010409" resolveInfo="language" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205834599200">
+              <link role="baseMethodDeclaration" targetNodeId="5.~Language.save():void" resolveInfo="save" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203687299084">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205834599203">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203687310167">
@@ -816,16 +826,6 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203687342733">
                 <link role="variableDeclaration" targetNodeId="1203687010409" resolveInfo="language" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203687350611">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205834599199">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203687350612">
-              <link role="variableDeclaration" targetNodeId="1203687010409" resolveInfo="language" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205834599200">
-              <link role="baseMethodDeclaration" targetNodeId="5.~Language.save():void" resolveInfo="save" />
             </node>
           </node>
         </node>

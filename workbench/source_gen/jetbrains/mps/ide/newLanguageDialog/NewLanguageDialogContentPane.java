@@ -279,8 +279,8 @@ public class NewLanguageDialogContentPane extends JPanel {
     LanguageAspect.CONSTRAINTS.createNew(language, false);
     LanguageAspect.TYPESYSTEM.createNew(language, false);
     language.setLanguageDescriptor(languageDescriptor);
-    myThis.getProject().addProjectLanguage(language);
     language.save();
+    myThis.getProject().addProjectLanguage(language);
     myThis.setResult(language);
     // add to vcs
     ApplicationManager.getApplication().invokeLater(new Runnable() {
