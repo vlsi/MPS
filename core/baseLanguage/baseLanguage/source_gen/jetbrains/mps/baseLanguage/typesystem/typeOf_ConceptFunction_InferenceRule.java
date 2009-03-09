@@ -25,7 +25,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
 
   public void applyRule(final SNode func, final TypeCheckingContext typeCheckingContext) {
     SNode expectedRetType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(func);
-    boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new _Quotations.QuotationClass_71().createNode(typeCheckingContext)));
+    boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new _Quotations.QuotationClass_69().createNode(typeCheckingContext)));
     if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       // function is expected to return value of any type
       expectedRetType = null;

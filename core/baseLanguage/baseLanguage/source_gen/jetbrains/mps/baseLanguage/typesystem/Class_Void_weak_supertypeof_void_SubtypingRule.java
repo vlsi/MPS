@@ -13,7 +13,7 @@ public class Class_Void_weak_supertypeof_void_SubtypingRule extends SubtypingRul
   }
 
   public SNode getSubOrSuperType(SNode voidType) {
-    return new _Quotations.QuotationClass_116().createNode();
+    return new _Quotations.QuotationClass_110().createNode();
   }
 
   public String getApplicableConceptFQName() {

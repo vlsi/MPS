@@ -20,7 +20,7 @@ public class typeof_AnnotationInstanceExpression_InferenceRule extends AbstractI
     {
       SNode _nodeToCheck_1029348928467 = annotationInstanceExpression;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(annotationInstanceExpression, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221584618", true), new _Quotations.QuotationClass_73().createNode(annotation, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221689320", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(annotationInstanceExpression, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221584618", true), new _Quotations.QuotationClass_71().createNode(annotation, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221689320", intentionProvider);
     }
   }
 

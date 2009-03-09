@@ -19,7 +19,7 @@ public class supertypes_of_typeVariableReference_SubtypingRule extends Subtyping
   public List<SNode> getSubOrSuperTypes(SNode typeVariableReference) {
     SNode typeVariableDeclaration = SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false);
     List<SNode> supertypes = new ArrayList<SNode>();
-    ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_98().createNode());
+    ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_92().createNode());
     if ((SLinkOperations.getTarget(typeVariableDeclaration, "bound", true) != null)) {
       ListSequence.fromList(supertypes).addElement(SLinkOperations.getTarget(typeVariableDeclaration, "bound", true));
     }

@@ -13,7 +13,7 @@ public class byte_boxing_SubtypingRule extends SubtypingRule_Runtime implements 
   }
 
   public SNode getSubOrSuperType(SNode byteType) {
-    return new _Quotations.QuotationClass_57().createNode();
+    return new _Quotations.QuotationClass_55().createNode();
   }
 
   public String getApplicableConceptFQName() {

@@ -35,7 +35,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
     {
       SNode _nodeToCheck_1029348928467 = imco;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new _Quotations.QuotationClass_79().createNode(methodClassifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204065906120", true, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new _Quotations.QuotationClass_77().createNode(methodClassifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204065906120", true, 0, intentionProvider);
     }
     // --- following piece of cake is identical for any method call ---
     //  no more when_concrete

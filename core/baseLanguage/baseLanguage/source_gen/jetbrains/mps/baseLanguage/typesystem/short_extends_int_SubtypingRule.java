@@ -13,7 +13,7 @@ public class short_extends_int_SubtypingRule extends SubtypingRule_Runtime imple
   }
 
   public SNode getSubOrSuperType(SNode shortType) {
-    return new _Quotations.QuotationClass_48().createNode();
+    return new _Quotations.QuotationClass_46().createNode();
   }
 
   public String getApplicableConceptFQName() {
