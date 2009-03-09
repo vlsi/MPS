@@ -13,6 +13,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class PostfixDecrementExpression_Editor extends DefaultNodeEditor {
@@ -79,9 +81,19 @@ public class PostfixDecrementExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9386_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9386_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
+    PostfixDecrementActions.setCellActions(editorCell, node, context);
   }
 
   private static void setupLabel_RefNode_9386_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

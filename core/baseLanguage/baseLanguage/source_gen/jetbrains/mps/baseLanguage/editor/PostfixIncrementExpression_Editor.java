@@ -93,6 +93,7 @@ public class PostfixIncrementExpression_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
+    PostfixIncrement_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupLabel_RefNode_2042_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

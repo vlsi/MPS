@@ -13978,6 +13978,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214918929704">
         <property name="text" value="++" />
         <property name="attractsFocus" value="1" />
+        <link role="actionMap" targetNodeId="1236610411912" resolveInfo="PostfixIncrement_Actions" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234443248937">
           <property name="flag" value="true" />
         </node>
@@ -13995,6 +13996,10 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214919144179">
         <property name="text" value="--" />
         <property name="attractsFocus" value="1" />
+        <link role="actionMap" targetNodeId="1236610315254" resolveInfo="PostfixDecrementActions" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1236611958669">
+          <property name="flag" value="true" />
+        </node>
       </node>
     </node>
   </node>
@@ -15283,6 +15288,57 @@
             <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1233834320976">
               <property name="value" value="0.0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="1236610315254">
+    <property name="package" value="prefix/postfix" />
+    <property name="name" value="PostfixDecrementActions" />
+    <link role="applicableConcept" targetNodeId="17.1214918975462" resolveInfo="PostfixDecrementExpression" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="1236610336621">
+      <property name="actionId" value="delete_action_id" />
+      <property name="description" value="Delete decrement" />
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="1236610336622">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236610336623">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236610351894">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236610352450">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1236610351895" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1236610353788">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236610357040">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1236610356502" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1236610401583">
+                    <link role="link" targetNodeId="17.1214918975463" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="1236610411912">
+    <property name="package" value="prefix/postfix" />
+    <property name="name" value="PostfixIncrement_Actions" />
+    <link role="applicableConcept" targetNodeId="17.1214918800624" resolveInfo="PostfixIncrementExpression" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="1236610443257">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="1236610443258">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236610443259">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236610448012">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236610448585">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1236610448013" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1236610449753">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236610453102">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1236610451772" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1236610454728">
+                    <link role="link" targetNodeId="17.1214918834761" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
