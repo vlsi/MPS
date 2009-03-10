@@ -61,10 +61,6 @@ public class BaseMPSTest extends TestCase {
     return TestMain.testProject(project, new String[0]);
   }
 
-  protected String testProject(File project, String message) {
-    return TestMain.testProject(project, message);
-  }
-
   protected boolean testProjectGenerationForLeaks(File project) {
     return TestMain.testProjectGenerationForLeaks(project);
   }

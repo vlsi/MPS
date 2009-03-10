@@ -343,10 +343,6 @@ public class TestMain {
     return testProject(projectFile, (String) null, configurations);
   }
 
-  public static String testProject(File projectFile, String treatThisWarningAsError) {
-    return testProject(projectFile, (String) null, new String[0]);
-  }
-
   /**
    * Null result means no problems, not null result contains error description.
    *
