@@ -146,7 +146,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       if (myCurrentIndex != 0) {
         try {
           myInnerTabbedPane.setSelectedIndex(myCurrentIndex);
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException e) {
         }
       }
       for (Pair<SNode, IOperationContext> loadableNodeAndContext : loadableNodes) {
