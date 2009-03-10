@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
@@ -126,11 +127,11 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     return false;
   }
 
-  public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
+  public boolean processKeyTyped(EditorContext editorContext, final KeyEvent keyEvent) {
     EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
     nodeEditor.hideMessageToolTip();
 
-    EditorCell selectedCell = editorContext.getSelectedCell();
+    final EditorCell selectedCell = editorContext.getSelectedCell();
 
     if (selectedCell != null && selectedCell.processKeyTyped(keyEvent, false)) {
       keyEvent.consume();
@@ -158,8 +159,14 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         }
       }
     }
-    
-    if (selectedCell != null && selectedCell.processKeyTyped(keyEvent, true)) {
+
+    final boolean[] result = new boolean[1];
+    ModelAccess.instance().executeCommand(new Runnable() {
+      public void run() {
+        result[0] = (selectedCell != null && selectedCell.processKeyTyped(keyEvent, true));
+      }
+    });
+    if (result[0]) {
       keyEvent.consume();
       return true;
     }
