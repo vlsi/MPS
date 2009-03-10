@@ -26,7 +26,10 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <all-local-mappings />
+            <generator generatorUID="jetbrains.mps.lang.generator#1167163152317" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <all-mappings />
@@ -36,7 +39,7 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}/core/languageDesign/generator/classes" />
+    <entry path="${mps_home}/core/languageDesign/generator/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
