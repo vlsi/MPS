@@ -1613,6 +1613,17 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="jfcUnit">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/jfcunit/jfcunit.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="file://$PROJECT_DIR$/lib/jfcunit/docs/api" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/jfcunit/src.zip!/src" />
+      </SOURCES>
+    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
