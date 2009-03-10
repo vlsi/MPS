@@ -344,6 +344,11 @@
       <property name="sourceCardinality" value="1..n" />
       <link role="target" targetNodeId="3v.1068431790191" resolveInfo="Expression" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236695243155">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="notNullArg" />
+      <link role="target" targetNodeId="3v.1068431790191" resolveInfo="Expression" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236188139846">
     <property name="package" value="operation.indent" />

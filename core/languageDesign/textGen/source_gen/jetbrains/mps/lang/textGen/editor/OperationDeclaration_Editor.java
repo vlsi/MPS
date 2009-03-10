@@ -336,6 +336,7 @@ public class OperationDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(-1.0, Measure.SPACES));
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
