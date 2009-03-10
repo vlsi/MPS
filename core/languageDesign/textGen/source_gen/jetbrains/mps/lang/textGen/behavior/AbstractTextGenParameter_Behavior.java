@@ -4,6 +4,7 @@ package jetbrains.mps.lang.textGen.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractTextGenParameter_Behavior {
@@ -25,6 +26,14 @@ public class AbstractTextGenParameter_Behavior {
       }
     }
     return builder.toString();
+  }
+
+  public static boolean call_inLangConcept_1236168601263(SNode thisNode) {
+    return SNodeOperations.isInstanceOf((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, false)), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
+  }
+
+  public static boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
+    return false;
   }
 
   public static String call_getGetterName_1234885318469(SNode thisNode) {

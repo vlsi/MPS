@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="Append" conceptFQName="jetbrains.mps.lang.textGen.structure.Append" featureKind="CONCEPT" />
+          <value featureName="AppendOperation" conceptFQName="jetbrains.mps.lang.textGen.structure.AppendOperation" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
@@ -25,6 +36,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
+  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="0" />
   <language-engaged-on-generation namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="9" />
@@ -49,30 +61,12 @@
     </node>
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233681286618">
-    <property name="name" value="AppendOperation" />
-    <property name="package" value="operation.append" />
-    <link role="extends" targetNodeId="1233682543917" resolveInfo="BaseTextGenOperation" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233683371039">
-      <property name="value" value="append" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233681310276">
-    <property name="package" value="operation.append" />
-    <property name="name" value="AppendNodeTextOperation" />
-    <link role="extends" targetNodeId="1233682543917" resolveInfo="BaseTextGenOperation" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233683357554">
-      <property name="value" value="append node text" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233681537006">
     <property name="package" value="operation.append" />
     <property name="name" value="AppendNewLineOperation" />
     <link role="extends" targetNodeId="1233751620748" resolveInfo="SimplestTextGenOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233683349006">
-      <property name="value" value="append new line" />
+      <property name="value" value="new line" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
@@ -81,7 +75,7 @@
     <property name="name" value="AppendWithIndentOperation" />
     <link role="extends" targetNodeId="1233682543917" resolveInfo="BaseTextGenOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233683445090">
-      <property name="value" value="append with indent" />
+      <property name="value" value="with indent" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
@@ -143,7 +137,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233752719417">
     <property name="name" value="IncreaseDepthOperation" />
-    <property name="package" value="operation" />
+    <property name="package" value="operation.indent" />
     <link role="extends" targetNodeId="1233751620748" resolveInfo="SimplestTextGenOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233752750248">
       <property name="value" value="increase depth" />
@@ -152,7 +146,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233752780875">
     <property name="name" value="DecreaseDepthOperation" />
-    <property name="package" value="operation" />
+    <property name="package" value="operation.indent" />
     <link role="extends" targetNodeId="1233751620748" resolveInfo="SimplestTextGenOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233752796345">
       <property name="value" value="decrease depth" />
@@ -160,7 +154,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233920501193">
-    <property name="package" value="operation" />
+    <property name="package" value="operation.indent" />
     <property name="name" value="IndentBufferOperation" />
     <link role="extends" targetNodeId="1233751620748" resolveInfo="SimplestTextGenOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233920522709">
@@ -299,7 +293,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1234794640385">
-    <property name="package" value="operation" />
+    <property name="package" value="operation.error" />
     <property name="name" value="FoundErrorForInfoOperation" />
     <link role="extends" targetNodeId="1233682543917" resolveInfo="BaseTextGenOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1234794668121">
@@ -308,7 +302,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1234794705341">
-    <property name="package" value="operation" />
+    <property name="package" value="operation.error" />
     <property name="name" value="FoundErrorOperation" />
     <link role="extends" targetNodeId="1233751620748" resolveInfo="SimplestTextGenOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1234794750109">
@@ -332,7 +326,50 @@
     <property name="name" value="AppendReferentResolveInfoOrName" />
     <link role="extends" targetNodeId="1233682543917" resolveInfo="BaseTextGenOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235566509329">
-      <property name="value" value="append referent resolve info or name" />
+      <property name="value" value="resolve info or name" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236169207462">
+    <property name="package" value="operation.append" />
+    <property name="name" value="AppendOperation" />
+    <link role="extends" targetNodeId="1233751620748" resolveInfo="SimpleTextGenOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236169292855">
+      <property name="value" value="append" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236169250102">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="arguments" />
+      <property name="sourceCardinality" value="1..n" />
+      <link role="target" targetNodeId="3v.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236188139846">
+    <property name="package" value="operation.indent" />
+    <property name="name" value="WithIndentOperation" />
+    <link role="extends" targetNodeId="3v.1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236189130718">
+      <property name="value" value="with indent block" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236188238861">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="list" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.1068580123136" resolveInfo="StatementList" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236191383765">
+    <property name="package" value="operation" />
+    <property name="name" value="CollectionOperation" />
+    <link role="extends" targetNodeId="1233682543917" resolveInfo="BaseTextGenOperation" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1236192431140">
+      <property name="name" value="separator" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236192637753">
+      <property name="value" value="collection" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
   </node>

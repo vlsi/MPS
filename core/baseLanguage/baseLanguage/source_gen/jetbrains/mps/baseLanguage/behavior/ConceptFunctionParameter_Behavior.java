@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class ConceptFunctionParameter_Behavior {
   private static Class[] PARAMETERS_1213877522908 = {SNode.class};
   private static Class[] PARAMETERS_1213877522926 = {SNode.class};
+  private static Class[] PARAMETERS_1236687728308 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -49,6 +50,10 @@ public class ConceptFunctionParameter_Behavior {
     return SNodeOperations.getConceptDeclaration(thisNode);
   }
 
+  public static boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
+    return true;
+  }
+
   public static boolean call_getFromParameterObject_1213877522908(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908);
   }
@@ -57,12 +62,20 @@ public class ConceptFunctionParameter_Behavior {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926);
   }
 
+  public static boolean call_needConceptFunction_1236687728308(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308);
+  }
+
   public static boolean callSuper_getFromParameterObject_1213877522908(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908);
   }
 
   public static boolean callSuper_isParameterObjectUsed_1213877522926(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926);
+  }
+
+  public static boolean callSuper_needConceptFunction_1236687728308(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308);
   }
 
 }

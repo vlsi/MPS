@@ -8161,11 +8161,21 @@
                   </node>
                 </node>
               </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206572405322">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197313949894">
-                  <link role="variableDeclaration" targetNodeId="1197313898884" resolveInfo="seq" />
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1236687716813">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206572405322">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197313949894">
+                    <link role="variableDeclaration" targetNodeId="1197313898884" resolveInfo="seq" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1197313952802" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1197313952802" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236687827346">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1236687826892">
+                    <link role="applicableNode" targetNodeId="1197313447380" resolveInfo="parameter" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1236687829898">
+                    <link role="baseMethodDeclaration" targetNodeId="37.1236687728308" resolveInfo="needConceptFunction" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

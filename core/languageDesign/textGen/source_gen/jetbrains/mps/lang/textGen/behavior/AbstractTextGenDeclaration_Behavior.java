@@ -4,7 +4,6 @@ package jetbrains.mps.lang.textGen.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractTextGenDeclaration_Behavior {
@@ -12,18 +11,6 @@ public class AbstractTextGenDeclaration_Behavior {
   private static Class[] PARAMETERS_1234781444746 = {SNode.class};
 
   public static void init(SNode thisNode) {
-  }
-
-  public static boolean call_containsAppendNodeTextOperation_1234282217768(SNode thisNode, List<SNode> collection) {
-    for(SNode item : collection) {
-      if (SNodeOperations.isInstanceOf(item, "jetbrains.mps.lang.textGen.structure.AppendNodeTextOperation")) {
-        return true;
-      }
-      if (AbstractTextGenDeclaration_Behavior.call_containsAppendNodeTextOperation_1234282217768(thisNode, SNodeOperations.getChildren(item))) {
-        return true;
-      }
-    }
-    return false;
   }
 
   public static String virtual_getTextGenNode_1234784577703(SNode thisNode) {

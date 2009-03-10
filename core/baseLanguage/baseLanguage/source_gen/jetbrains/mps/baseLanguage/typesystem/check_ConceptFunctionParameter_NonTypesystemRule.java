@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -41,7 +42,7 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
         }
 
       });
-      if (Sequence.fromIterable(seq).isEmpty()) {
+      if (Sequence.fromIterable(seq).isEmpty() && ConceptFunctionParameter_Behavior.call_needConceptFunction_1236687728308(parameter)) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
