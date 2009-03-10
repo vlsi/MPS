@@ -68,6 +68,7 @@
     <orderEntry type="library" exported="" name="XStream" level="project" />
     <orderEntry type="library" exported="" name="YJP" level="project" />
     <orderEntry type="module" module-name="textgen" exported="" />
+    <orderEntry type="library" name="jfcUnit" level="project" />
   </component>
   <component name="copyright">
     <Base>
