@@ -17079,5 +17079,65 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1236695950918">
+    <property name="name" value="typeof_VarVariableReference" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236695950919">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1236697384391">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1236697392332">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1236697392333">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236697395524">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1236697394803">
+                <link role="applicableNode" targetNodeId="1236695950920" resolveInfo="reference" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1236697405179">
+                <link role="link" targetNodeId="1.1236694853810" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1236697384395">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1236697377968">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1236697381957">
+              <link role="applicableNode" targetNodeId="1236695950920" resolveInfo="reference" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1236695950920">
+      <property name="name" value="reference" />
+      <link role="concept" targetNodeId="1.1236694799694" resolveInfo="VarVariableReference" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1236696569510">
+    <property name="name" value="typeof_VarVariableDeclaration" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236696569511">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1236696586241">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1236696598889">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1236696598890">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236696605190">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1236696604621">
+                <link role="applicableNode" targetNodeId="1236696569512" resolveInfo="declaration" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1236696609978">
+                <link role="link" targetNodeId="1.1236693357770" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1236696586260">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1236696576042">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1236696581421">
+              <link role="applicableNode" targetNodeId="1236696569512" resolveInfo="declaration" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1236696569512">
+      <property name="name" value="declaration" />
+      <link role="concept" targetNodeId="1.1236693300889" resolveInfo="VarVariableDeclaration" />
+    </node>
+  </node>
 </model>
 

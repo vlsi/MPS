@@ -275,8 +275,8 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getSemicolon(final EditorCell cell) {
     return new Style(cell) {
       {
+        this.set(StyleAttributes.EDITABLE, false);
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
       }
 
     };

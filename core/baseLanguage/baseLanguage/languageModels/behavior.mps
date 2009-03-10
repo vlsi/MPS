@@ -10382,5 +10382,24 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233925298575" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1236698153937">
+    <link role="concept" targetNodeId="1.1236694799694" resolveInfo="VarVariableReference" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1236698158633">
+      <property name="name" value="isLValue" />
+      <link role="overriddenMethod" targetNodeId="1213877519786" resolveInfo="isLValue" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236698158635">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236698217763">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1236698219703">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1236698214706" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236698242784" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1236698153938">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236698153939" />
+    </node>
+  </node>
 </model>
 

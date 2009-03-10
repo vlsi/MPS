@@ -3199,5 +3199,36 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1233920926773">
     <property name="name" value="TypeAnnotable" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236693300889">
+    <property name="name" value="VarVariableDeclaration" />
+    <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236693357770">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="init" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1236693493939">
+      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236694277169">
+      <property name="value" value="var" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236694298703">
+      <property name="value" value="var definition" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236694799694">
+    <property name="name" value="VarVariableReference" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236694853810">
+      <property name="metaClass" value="reference" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="declaration" />
+      <link role="target" targetNodeId="1236693300889" resolveInfo="VarVariableDeclaration" />
+    </node>
+  </node>
 </model>
 

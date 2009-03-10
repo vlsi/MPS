@@ -10402,10 +10402,10 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215094139260">
       <property name="name" value="Semicolon" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1236692283824" />
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233823839448">
         <property name="flag" value="true" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1215098136621" />
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215096040201">
       <property name="name" value="Dot" />
@@ -15340,6 +15340,45 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1236693382339">
+    <link role="conceptDeclaration" targetNodeId="17.1236693300889" resolveInfo="VarVariableDeclaration" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1236693481635">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236693506282">
+        <property name="text" value="var" />
+        <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1236693525856">
+        <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236693543178">
+        <property name="text" value="=" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1236693579084">
+        <link role="relationDeclaration" targetNodeId="17.1236693357770" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236693596040">
+        <property name="text" value=";" />
+        <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1236694828664">
+    <link role="conceptDeclaration" targetNodeId="17.1236694799694" resolveInfo="VarVariableReference" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1236694996473">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1236694996948">
+        <link role="relationDeclaration" targetNodeId="17.1236694853810" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1236694996949">
+          <link role="conceptDeclaration" targetNodeId="17.1236693300889" resolveInfo="VarVariableDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1236694996950">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
           </node>
         </node>
       </node>
