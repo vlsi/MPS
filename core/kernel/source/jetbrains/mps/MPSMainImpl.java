@@ -23,7 +23,7 @@ import jetbrains.mps.workbench.license.MPSLicenseManager;
 import java.lang.reflect.Method;
 
 public class MPSMainImpl {
-  protected static void start(final String[] args) {
+  public static void start(final String[] args) {
     try {
       LicenseManager.setInstance(new MPSLicenseManager());
 

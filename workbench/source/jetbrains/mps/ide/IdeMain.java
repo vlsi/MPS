@@ -20,8 +20,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class IdeMain {
-
-
+  private static boolean ourUILoaded = false;
   private static boolean ourTestMode = false;
 
   public static Date expirationDate() {
@@ -37,4 +36,11 @@ public class IdeMain {
     ourTestMode = testMode;
   }
 
+  public static void setUILoaded() {
+    ourUILoaded = true;
+  }
+
+  public static boolean isOurUILoaded() {
+    return ourUILoaded;
+  }
 }
