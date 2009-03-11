@@ -33,7 +33,6 @@
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="11" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
   <import index="14" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
@@ -329,47 +328,25 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203610947767">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203610947768">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203611016782">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203611016783">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203611022997">
-                  <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" id="1203611022998">
-                    <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203611024266">
-                      <property name="value" value="Enter correct path" />
-                    </node>
-                  </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1236792631961">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236792631962">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236792631963">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236792631964">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236792631965">
+                  <link role="variableDeclaration" targetNodeId="1203609837751" resolveInfo="dir" />
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203611029487" />
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1203611018020">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203611018225">
-                  <link role="classConcept" targetNodeId="9.~DirectoryUtil" resolveInfo="DirectoryUtil" />
-                  <link role="baseMethodDeclaration" targetNodeId="9.~DirectoryUtil.askToCreateNewDirectory(java.awt.Frame,java.io.File):boolean" resolveInfo="askToCreateNewDirectory" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203611018226">
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203611018227">
-                      <link role="classifier" targetNodeId="11.~Frame" resolveInfo="Frame" />
-                    </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628906243">
-                      <node role="operand" type="jetbrains.mps.ide.uiLanguage.structure.DialogExpression" id="1203611018229" />
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628906244">
-                        <link role="baseMethodDeclaration" targetNodeId="11.~Window.getOwner():java.awt.Window" resolveInfo="getOwner" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203611018230">
-                    <link role="variableDeclaration" targetNodeId="1203609837751" resolveInfo="dir" />
-                  </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236792631966">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~File.mkdirs():boolean" resolveInfo="mkdirs" />
                 </node>
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1203610949005">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628919316">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203610949726">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1236792631967">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236792631968">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236792631969">
                 <link role="variableDeclaration" targetNodeId="1203609837751" resolveInfo="dir" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628919317">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236792631970">
                 <link role="baseMethodDeclaration" targetNodeId="2.~File.exists():boolean" resolveInfo="exists" />
               </node>
             </node>
