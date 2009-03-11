@@ -12,6 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class OverloadedOperatorTypeRule extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule";
+  public static final String LEFT_IS_EXACT = "leftIsExact";
+  public static final String RIGHT_IS_EXACT = "rightIsExact";
   public static final String OPERATION_CONCEPT = "operationConcept";
   public static final String LEFT_OPERAND_TYPE = "leftOperandType";
   public static final String RIGHT_OPERAND_TYPE = "rightOperandType";
@@ -19,6 +21,22 @@ public class OverloadedOperatorTypeRule extends BaseConcept {
 
   public OverloadedOperatorTypeRule(SNode node) {
     super(node);
+  }
+
+  public boolean getLeftIsExact() {
+    return this.getBooleanProperty(OverloadedOperatorTypeRule.LEFT_IS_EXACT);
+  }
+
+  public void setLeftIsExact(boolean value) {
+    this.setBooleanProperty(OverloadedOperatorTypeRule.LEFT_IS_EXACT, value);
+  }
+
+  public boolean getRightIsExact() {
+    return this.getBooleanProperty(OverloadedOperatorTypeRule.RIGHT_IS_EXACT);
+  }
+
+  public void setRightIsExact(boolean value) {
+    this.setBooleanProperty(OverloadedOperatorTypeRule.RIGHT_IS_EXACT, value);
   }
 
   public ConceptReference getOperationConcept() {

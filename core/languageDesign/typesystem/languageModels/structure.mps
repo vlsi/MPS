@@ -2274,6 +2274,14 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1236083146670" resolveInfo="OverloadedOperatorTypeFunction" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1236771579180">
+      <property name="name" value="leftIsExact" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1236771585835">
+      <property name="name" value="rightIsExact" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236083146670">
     <property name="name" value="OverloadedOperatorTypeFunction" />

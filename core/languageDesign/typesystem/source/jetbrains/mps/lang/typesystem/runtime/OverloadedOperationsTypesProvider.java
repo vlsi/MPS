@@ -1,6 +1,8 @@
 package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.typesystem.inference.SubtypingManager;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,6 +15,9 @@ public abstract class OverloadedOperationsTypesProvider implements IApplicableTo
   protected SNode myLeftOperandType;
   protected SNode myRightOperandType;
   protected String myOperationConceptFQName;
+
+  protected boolean myLeftTypeIsExact = false;
+  protected boolean myRightTypeIsExact = false;
 
 
   public String getApplicableConceptFQName() {
@@ -27,5 +32,27 @@ public abstract class OverloadedOperationsTypesProvider implements IApplicableTo
 
   public SNode getLeftOperandType() {
     return myLeftOperandType;
+  }
+
+  public boolean isApplicable(SubtypingManager subtypingManager, SNode leftOperandType, SNode rightOperandType) {
+    if (myLeftTypeIsExact) {
+      if (!MatchingUtil.matchNodes(leftOperandType, myLeftOperandType)) {
+        return false;
+      }
+    } else {
+      if (!subtypingManager.isSubtype(leftOperandType, myLeftOperandType)) {
+        return false;
+      }
+    }
+    if (myRightTypeIsExact) {
+      if (!MatchingUtil.matchNodes(rightOperandType, myRightOperandType)) {
+        return false;
+      }
+    } else {
+      if (!subtypingManager.isSubtype(rightOperandType, myRightOperandType)) {
+        return false;
+      }
+    }
+    return true;
   }
 }
