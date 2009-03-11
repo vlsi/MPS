@@ -113,8 +113,11 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
 
   protected void doOKAction() {
     super.doOKAction();
-    int exitCode = Messages.showDialog(IdeBundle.message("prompt.open.project.in.new.frame"), IdeBundle.message("title.open.project"),
-      new String[]{IdeBundle.message("button.newframe"), IdeBundle.message("button.existingframe")}, 1, Messages.getQuestionIcon());
+    int exitCode = 1;
+    if (myProject != null) {
+      exitCode = Messages.showDialog(IdeBundle.message("prompt.open.project.in.new.frame"), IdeBundle.message("title.open.project"),
+        new String[]{IdeBundle.message("button.newframe"), IdeBundle.message("button.existingframe")}, 1, Messages.getQuestionIcon());
+    }
 
     final String[] error = new String[]{null};
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Creating", false) {
