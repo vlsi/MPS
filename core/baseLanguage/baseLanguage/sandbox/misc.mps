@@ -124,6 +124,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236781591383">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1236781596065">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236781598983">
+              <property name="value" value="3" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236781591384">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236781602741">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1236783761388">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1236783761389" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236781602744">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257059349" />
