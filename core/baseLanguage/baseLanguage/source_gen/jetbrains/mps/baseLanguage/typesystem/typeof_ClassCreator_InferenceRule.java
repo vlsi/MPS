@@ -42,7 +42,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
       }
     }
     // ---
-    SNode constructedType = new _Quotations.QuotationClass_88().createNode(SLinkOperations.getTargets(creator, "typeParameter", true), typeCheckingContext);
+    SNode constructedType = new _Quotations.QuotationClass_88().createNode(SLinkOperations.getTargets(creator, "typeParameter", true), methodClassifier, typeCheckingContext);
     {
       SNode _nodeToCheck_1029348928467 = creator;
       BaseIntentionProvider intentionProvider = null;

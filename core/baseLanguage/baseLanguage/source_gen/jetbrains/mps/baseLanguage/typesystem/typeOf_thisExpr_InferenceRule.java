@@ -44,7 +44,7 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
     {
       SNode _nodeToCheck_1029348928467 = thisExpr;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(thisExpr, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810739", true), new _Quotations.QuotationClass_15().createNode(typeVarRefs, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810737", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(thisExpr, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810739", true), new _Quotations.QuotationClass_15().createNode(typeVarRefs, classifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810737", intentionProvider);
     }
   }
 

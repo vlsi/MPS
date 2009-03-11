@@ -24,7 +24,7 @@ public class ResolveUtil {
       if (ListSequence.fromList(SNodeOperations.getDescendants(parameter, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true)).isNotEmpty()) {
         containsVars = true;
       }
-      ListSequence.fromList(result).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(parameter, "type", true)));
+      result.add(SNodeOperations.copyNode(SLinkOperations.getTarget(parameter, "type", true)));
     }
     if (!(containsVars)) {
       return result;
@@ -40,8 +40,8 @@ public class ResolveUtil {
       for(SNode typeVar : SNodeOperations.getDescendants(paramType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true)) {
         SNode replacement = SNodeOperations.copyNode(ListSequence.fromList(typeParameters).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVar, "typeVariableDeclaration", false))));
         if ((SNodeOperations.getParent(typeVar) == null)) {
-          ListSequence.fromList(result).insertElement(ListSequence.fromList(result).indexOf(typeVar), replacement);
-          ListSequence.fromList(result).removeElement(typeVar);
+          result.add(result.indexOf(typeVar), replacement);
+          result.remove(typeVar);
         } else
         {
           SNodeOperations.replaceWithAnother(typeVar, replacement);

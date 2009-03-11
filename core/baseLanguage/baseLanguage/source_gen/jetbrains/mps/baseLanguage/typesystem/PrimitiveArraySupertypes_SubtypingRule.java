@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -22,7 +22,7 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       return CollectionUtil.list(new _Quotations.QuotationClass_82().createNode(), new _Quotations.QuotationClass_83().createNode(), new _Quotations.QuotationClass_84().createNode());
     }
-    return ListSequence.<SNode>fromArray();
+    return new ArrayList<SNode>();
   }
 
   public String getApplicableConceptFQName() {

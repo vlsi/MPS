@@ -7,9 +7,8 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -19,46 +18,46 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
 
   public List<SNode> getSubOrSuperTypes(SNode clt) {
     SNode classifier = SLinkOperations.getTarget(clt, "classifier", false);
-    List<SNode> result = ListSequence.<SNode>fromArray();
-    List<SNode> supertypes = ListSequence.<SNode>fromArray();
+    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> supertypes = new ArrayList<SNode>();
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode classConcept = classifier;
       if (!((SLinkOperations.getTarget(classConcept, "superclass", true) == null))) {
-        ListSequence.fromList(supertypes).addElement(SLinkOperations.getTarget(classConcept, "superclass", true));
+        supertypes.add(SLinkOperations.getTarget(classConcept, "superclass", true));
       }
-      ListSequence.fromList(supertypes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "implementedInterface", true)));
+      supertypes.addAll(SLinkOperations.getTargets(classConcept, "implementedInterface", true));
     }
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       SNode interfaceConcept = classifier;
-      ListSequence.fromList(supertypes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true)));
+      supertypes.addAll(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true));
     }
-    if (ListSequence.fromList(supertypes).isEmpty()) {
-      ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_4().createNode());
+    if (supertypes.isEmpty()) {
+      result.add(new _Quotations.QuotationClass_4().createNode());
     }
     for(SNode supertype : supertypes) {
       SNode supertypeCopy = SNodeOperations.copyNode(supertype);
       for(SNode typeParam : new ArrayList<SNode>(SLinkOperations.getTargets(supertypeCopy, "parameter", true))) {
         if (SNodeOperations.isInstanceOf(typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           SNode tvr = typeParam;
-          int i = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).indexOf(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false));
+          int i = ((List)SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).indexOf(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false));
           if (i < 0 || i >= SLinkOperations.getCount(clt, "parameter")) {
             ((SNode)supertypeCopy).removeChild(typeParam);
             continue;
           }
-          SNode newNode = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(clt, "parameter", true)).getElement(i));
+          SNode newNode = SNodeOperations.copyNode(((SNode)((List)SLinkOperations.getTargets(clt, "parameter", true)).get(i)));
           supertypeCopy.replaceChild(typeParam, newNode);
         }
       }
-      ListSequence.fromList(result).addElement(supertypeCopy);
+      result.add(supertypeCopy);
     }
-    ListSequence.fromList(supertypes).addElement(clt);
+    supertypes.add(clt);
     for(SNode supertype : supertypes) {
       SNode erasure = SNodeOperations.copyNode(supertype);
       if (SLinkOperations.getCount(erasure, "parameter") > 0) {
         for(SNode parameter : SLinkOperations.getTargets(erasure, "parameter", true)) {
           SNodeOperations.deleteNode(parameter);
         }
-        ListSequence.fromList(result).addElement(erasure);
+        result.add(erasure);
       }
     }
     return result;

@@ -6,9 +6,9 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_R
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -29,7 +29,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
 
         public void run() {
           {
-            _Patterns.Pattern_9 pattern_0 = new _Patterns.Pattern_9();
+            _Patterns.Pattern_9 pattern_0 = new _Patterns.Pattern_9(SLinkOperations.getTarget(supertype, "classifier", false));
             SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(t), pattern_0, typeCheckingContext);
             if (coercedNode_0 != null) {
               {
@@ -85,7 +85,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                 SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
                 {
                   BaseIntentionProvider intentionProvider = null;
-                  intentionProvider = new BaseIntentionProvider("r:9095eee1-b8e6-4029-bacd-db6690a4d836(jetbrains.mps.baseLanguage.typesystem@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+                  intentionProvider = new BaseIntentionProvider("r:8b97b114-9ad5-4768-9af5-bcb4e6ab8b57(jetbrains.mps.baseLanguage.typesystem@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
                   intentionProvider.putArgument("methodCall", methodCall);
                   intentionProvider.putArgument("classifier", classifier);
                   IErrorTarget errorTarget = new NodeErrorTarget();
@@ -112,7 +112,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     {
       final SNode t = subtype;
       {
-        _Patterns.Pattern_9 pattern_1 = new _Patterns.Pattern_9();
+        _Patterns.Pattern_9 pattern_1 = new _Patterns.Pattern_9(SLinkOperations.getTarget(supertype, "classifier", false));
         SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_1);
         if (coercedNode_1 != null) {
           {
