@@ -5,6 +5,7 @@ import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
 import junit.extensions.jfcunit.eventdata.MouseEventData;
 import junit.extensions.jfcunit.finder.AbstractButtonFinder;
 import junit.extensions.jfcunit.finder.DialogFinder;
+import org.junit.Test;
 
 import javax.swing.SwingUtilities;
 import java.awt.Component;
@@ -13,15 +14,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 public class UITests extends NoProjectUITestsBase {
-
-  public UITests() {
-    super();
-  }
-
+  @Test
   public void test1() throws InvocationTargetException, InterruptedException {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        NewProjectWizard wizard = new NewProjectWizard("New Project",getProject());
+        NewProjectWizard wizard = new NewProjectWizard("New Project", getProject());
         wizard.show();
       }
     });
@@ -56,6 +53,6 @@ public class UITests extends NoProjectUITestsBase {
 
     dialogFinder.setTitle(".*Open Project.*");
     dialog = dialogFinder.find();
-    assertNull(dialog);
+    assertNull("No dialog should be shown after wizard has finished",dialog);
   }
 }

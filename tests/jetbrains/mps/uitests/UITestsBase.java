@@ -3,7 +3,6 @@ package jetbrains.mps.uitests;
 import com.intellij.ide.GeneralSettings;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.MPSMainImpl;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
@@ -34,12 +33,6 @@ public abstract class UITestsBase extends JFCTestCase {
 
     GeneralSettings.getInstance().setReopenLastProject(false);
 
-    while (!IdeMain.isUILoaded()) {
-      Thread.sleep(500);
-    }
-
-    flushAWT();
-
     myProject = initProject();
 
     flushAWT();
@@ -51,7 +44,7 @@ public abstract class UITestsBase extends JFCTestCase {
 
   protected void tearDown() throws Exception {
     flushAWT();
-    
+
     doTearDown();
 
     flushAWT();
@@ -77,12 +70,18 @@ public abstract class UITestsBase extends JFCTestCase {
 
   public abstract static class NoProjectUITestsBase extends UITestsBase {
     protected Project initProject() throws Exception {
-      return ProjectManager.getInstance().getDefaultProject();
+      return null;
     }
   }
 
   public abstract static class ProjectUITestsBase extends UITestsBase {
     protected Project initProject() throws InterruptedException {
+      while (!IdeMain.isUILoaded()) {
+        Thread.sleep(500);
+      }
+
+      flushAWT();
+
       final MPSProject[] project = new MPSProject[1];
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
@@ -92,7 +91,7 @@ public abstract class UITestsBase extends JFCTestCase {
 
       flushAWT();
 
-      while (project[0] == null || project[0].getComponent(Project.class)==null) {
+      while (project[0] == null || project[0].getComponent(Project.class) == null) {
         Thread.sleep(500);
       }
 
