@@ -1490,8 +1490,8 @@
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230544626193">
                 <link role="baseMethodDeclaration" targetNodeId="41.~AnalysisResult.get(jetbrains.mps.lang.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230544626194">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230544626195">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression" id="1236791323163">
+                  <node role="list" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230544626195">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230544626196">
                       <link role="variableDeclaration" targetNodeId="1230544270997" resolveInfo="p" />
                     </node>
@@ -1502,11 +1502,8 @@
                       </node>
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230544626199">
-                    <link role="baseMethodDeclaration" targetNodeId="4.~List.get(int):java.lang.Object" resolveInfo="get" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1230544626200">
-                      <property name="value" value="0" />
-                    </node>
+                  <node role="index" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236791323164">
+                    <property name="value" value="0" />
                   </node>
                 </node>
               </node>
@@ -1674,8 +1671,8 @@
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230558243511">
                 <link role="baseMethodDeclaration" targetNodeId="41.~AnalysisResult.get(jetbrains.mps.lang.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230558243512">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230558243513">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression" id="1236791323167">
+                  <node role="list" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230558243513">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230558243514">
                       <link role="variableDeclaration" targetNodeId="1230558243486" resolveInfo="p" />
                     </node>
@@ -1686,11 +1683,8 @@
                       </node>
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230558243517">
-                    <link role="baseMethodDeclaration" targetNodeId="4.~List.get(int):java.lang.Object" resolveInfo="get" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1230558243518">
-                      <property name="value" value="0" />
-                    </node>
+                  <node role="index" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236791323168">
+                    <property name="value" value="0" />
                   </node>
                 </node>
               </node>

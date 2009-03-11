@@ -2204,22 +2204,13 @@
           <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1220440690159">
             <property name="name" value="clt" />
             <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1220440690160">
-              <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220440700179">
-                <link role="classifier" targetNodeId="8.~List" resolveInfo="List" />
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1220441721565">
-                  <node role="asPattern$attribute" type="jetbrains.mps.lang.pattern.structure.ListPattern" id="1220441733756">
+              <node role="patternNode" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1236791321870">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1236791321871">
+                  <node role="asPattern$attribute" type="jetbrains.mps.lang.pattern.structure.ListPattern" id="1236791321872">
                     <property name="varName" value="l" />
                   </node>
-                  <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1220441750229">
+                  <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1236791321873">
                     <property name="varName" value="ignored" />
-                  </node>
-                </node>
-                <node role="referenceAntiquotation$link_attribute$classifier" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1220440715257">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220440719703">
-                    <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1220440719137" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1220440720975">
-                      <link role="link" targetNodeId="1.1107535924139" />
-                    </node>
                   </node>
                 </node>
               </node>
@@ -2238,7 +2229,7 @@
                   </node>
                 </node>
                 <node role="iterable" type="jetbrains.mps.lang.typesystem.structure.PatternVariableReference" id="1220440922782">
-                  <link role="patternVarDecl" targetNodeId="1220441733756" resolveInfo="#l" />
+                  <link role="patternVarDecl" targetNodeId="1236791321872" resolveInfo="#l" />
                 </node>
               </node>
               <node role="loopVariable" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable" id="1220440923911">

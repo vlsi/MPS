@@ -90,7 +90,7 @@ public class ClassifierType_Behavior {
       } while(false);
     }
     {
-      _Patterns.Pattern_1 pattern_0 = new _Patterns.Pattern_1(SLinkOperations.getTarget(thisNode, "classifier", false));
+      _Patterns.Pattern_1 pattern_0 = new _Patterns.Pattern_1();
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_0);
       if (coercedNode_0 != null) {
         {

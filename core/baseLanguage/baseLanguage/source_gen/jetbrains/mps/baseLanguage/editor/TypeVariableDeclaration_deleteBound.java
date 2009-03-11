@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TypeVariableDeclaration_deleteBound {
@@ -28,7 +29,7 @@ public class TypeVariableDeclaration_deleteBound {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.getTargets(node, "auxBounds", true).clear();
+      ListSequence.fromList(SLinkOperations.getTargets(node, "auxBounds", true)).clear();
       SLinkOperations.setTarget(node, "bound", null, true);
     }
 
