@@ -136,7 +136,7 @@ public abstract class UsagesTree extends MPSTree {
     addTreeSelectionListener(new TreeSelectionListener() {
       public void valueChanged(TreeSelectionEvent e) {
         if (myAutoscroll) {
-          openCurrentNodeLink(false, false);
+          openNewlySelectedNodeLink(e,false, false);
         }
       }
     });
@@ -445,6 +445,12 @@ public abstract class UsagesTree extends MPSTree {
     UsagesTreeNode treeNode = getCurrentNode();
     if (treeNode == null) return;
     goByNodeLink(treeNode, inProjectIfPossible, focus);
+  }
+
+  private void openNewlySelectedNodeLink(TreeSelectionEvent e, boolean inProjectIfPossible, boolean focus) {
+    Object treeNode = e.getNewLeadSelectionPath().getLastPathComponent();
+    if (!(treeNode instanceof UsagesTreeNode)) return;
+    goByNodeLink((UsagesTreeNode) treeNode,inProjectIfPossible,focus);
   }
 
   private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible, final boolean focus) {
