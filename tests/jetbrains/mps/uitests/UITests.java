@@ -76,7 +76,10 @@ public class UITests extends JFCTestCase {
 
   protected void tearDown() throws Exception {
     flushAWT();
+
     TestHelper.cleanUp(UITests.this);
+
+    flushAWT();
     super.tearDown();
   }
 
