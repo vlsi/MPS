@@ -1,0 +1,102 @@
+package jetbrains.mps.uitests;
+
+import com.intellij.ide.GeneralSettings;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import jetbrains.mps.MPSMainImpl;
+import jetbrains.mps.TestMain;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.project.MPSProject;
+import junit.extensions.jfcunit.JFCTestCase;
+import junit.extensions.jfcunit.JFCTestHelper;
+import junit.extensions.jfcunit.TestHelper;
+
+import javax.swing.SwingUtilities;
+import java.io.File;
+
+public abstract class UITestsBase extends JFCTestCase {
+  private Project myProject;
+
+  protected void setUp() throws Exception {
+    super.setUp();
+
+    setHelper(new JFCTestHelper());
+
+    System.setProperty("idea.no.jre.check", "true");
+    System.setProperty("idea.platform.prefix", "MPS");
+
+    MPSMainImpl.start(new String[0]);
+
+    ApplicationManagerEx.getApplicationEx();
+
+    flushAWT();
+
+    GeneralSettings.getInstance().setReopenLastProject(false);
+
+    while (!IdeMain.isUILoaded()) {
+      Thread.sleep(500);
+    }
+
+    flushAWT();
+
+    myProject = initProject();
+
+    flushAWT();
+
+    doInit();
+
+    flushAWT();
+  }
+
+  protected void tearDown() throws Exception {
+    flushAWT();
+    
+    doTearDown();
+
+    flushAWT();
+
+    TestHelper.cleanUp(UITestsBase.this);
+
+    flushAWT();
+
+    super.tearDown();
+  }
+
+  protected Project getProject() {
+    return myProject;
+  }
+
+  protected void doInit() {
+  }
+
+  protected void doTearDown() {
+  }
+
+  protected abstract Project initProject() throws Exception;
+
+  public abstract static class NoProjectUITestsBase extends UITestsBase {
+    protected Project initProject() throws Exception {
+      return ProjectManager.getInstance().getDefaultProject();
+    }
+  }
+
+  public abstract static class ProjectUITestsBase extends UITestsBase {
+    protected Project initProject() throws InterruptedException {
+      final MPSProject[] project = new MPSProject[1];
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          project[0] = TestMain.loadProject(new File("../workbench/ideSolution/ide.mpr"));
+        }
+      });
+
+      flushAWT();
+
+      while (project[0] == null || project[0].getComponent(Project.class)==null) {
+        Thread.sleep(500);
+      }
+
+      return project[0].getComponent(Project.class);
+    }
+  }
+}

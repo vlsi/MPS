@@ -1,18 +1,7 @@
 package jetbrains.mps.uitests;
 
-import com.intellij.ide.GeneralSettings;
-import com.intellij.openapi.application.ex.ApplicationEx;
-import com.intellij.openapi.application.ex.ApplicationManagerEx;
-import com.intellij.openapi.application.impl.ApplicationImpl;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSMainImpl;
-import jetbrains.mps.TestMain;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.uitests.UITestsBase.NoProjectUITestsBase;
 import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
-import junit.extensions.jfcunit.JFCTestCase;
-import junit.extensions.jfcunit.JFCTestHelper;
-import junit.extensions.jfcunit.TestHelper;
 import junit.extensions.jfcunit.eventdata.MouseEventData;
 import junit.extensions.jfcunit.finder.AbstractButtonFinder;
 import junit.extensions.jfcunit.finder.DialogFinder;
@@ -20,70 +9,25 @@ import junit.extensions.jfcunit.finder.DialogFinder;
 import javax.swing.SwingUtilities;
 import java.awt.Component;
 import java.awt.Container;
-import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
-public class UITests extends JFCTestCase {
-  private ApplicationImpl myApplication;
-  private volatile MPSProject myProject;
+public class UITests extends NoProjectUITestsBase {
 
   public UITests() {
     super();
   }
 
-  protected void setUp() throws Exception {
-    super.setUp();
-
-    setHelper(new JFCTestHelper());
-
-    System.setProperty("idea.no.jre.check", "true");
-    System.setProperty("idea.platform.prefix", "MPS");
-
-    MPSMainImpl.start(new String[0]);
-
-    ApplicationEx application = ApplicationManagerEx.getApplicationEx();
-    assert application instanceof ApplicationImpl;
-    myApplication = (ApplicationImpl) application;
-
-    flushAWT();
-
-    GeneralSettings.getInstance().setReopenLastProject(false);
-
+  public void test1() throws InvocationTargetException, InterruptedException {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        myProject = TestMain.loadProject(new File("../workbench/ideSolution/ide.mpr"));
-      }
-    });
-
-    flushAWT();
-
-    while (myProject==null || !IdeMain.isUILoaded()) {
-      Thread.sleep(500);
-    }
-
-    flushAWT();
-
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        NewProjectWizard wizard = new NewProjectWizard("New Project", /*ProjectManager.getInstance().getDefaultProject()*/myProject.getComponent(Project.class));
+        NewProjectWizard wizard = new NewProjectWizard("New Project",getProject());
         wizard.show();
       }
     });
 
     flushAWT();
-  }
 
-  protected void tearDown() throws Exception {
-    flushAWT();
-
-    TestHelper.cleanUp(UITests.this);
-
-    flushAWT();
-    super.tearDown();
-  }
-
-  public void test1() throws InvocationTargetException, InterruptedException {
     DialogFinder dialogFinder = new DialogFinder("New Project");
     dialogFinder.setWait(20);
     Component dialog = dialogFinder.find();
@@ -109,5 +53,9 @@ public class UITests extends JFCTestCase {
 
     dialog = dialogFinder.find();
     assertNull("Dialog is not closed", dialog);
+
+    dialogFinder.setTitle(".*Open Project.*");
+    dialog = dialogFinder.find();
+    assertNull(dialog);
   }
 }
