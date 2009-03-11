@@ -21,7 +21,6 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -52,8 +51,8 @@ public class FinderNode extends BaseLeaf {
   }
 
   public String getTaskName() {
-    if (myFinder instanceof GeneratedFinder) {
-      return ((IInterfacedFinder) myFinder).getDescription();
+    if (myFinder instanceof ReloadableFinder) {
+      return ((ReloadableFinder) myFinder).getFinder().getDescription();
     } else {
       return myFinder.getClass().getName();
     }
