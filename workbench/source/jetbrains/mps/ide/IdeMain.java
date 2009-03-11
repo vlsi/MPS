@@ -36,11 +36,11 @@ public class IdeMain {
     ourTestMode = testMode;
   }
 
-  public static void setUILoaded() {
-    ourUILoaded = true;
+  public static void setUILoaded(boolean value) {
+    ourUILoaded = value;
   }
 
-  public static boolean isOurUILoaded() {
+  public static boolean isUILoaded() {
     return ourUILoaded;
   }
 }
