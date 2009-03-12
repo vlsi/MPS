@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.MPSProjectHolder;
 
 /**
@@ -16,18 +17,23 @@ import jetbrains.mps.MPSProjectHolder;
  * Time: 16:45:06
  * To change this template use File | Settings | File Templates.
  */
-public class BookmarksDialog extends JDialog {
+public class BookmarksDialog extends BaseDialog {
   private BookmarkManager myBookmarkManager;
+  private JPanel myMainComponent = new JPanel();
   private Project myProject;
   private BookmarksTree myTree;
 
+
   public BookmarksDialog(Project project, BookmarkManager bookmarkManager) {
+     super(project.getComponent(MPSProjectHolder.class).getMPSProject().createOperationContext().getMainFrame(), 
+       "Editor Bookmarks");
     myBookmarkManager = bookmarkManager;
     myProject = project;
     myTree = new BookmarksTree(project, bookmarkManager);
 
     setTitle("Editor Bookmarks");
-    setLayout(new GridBagLayout());
+
+    myMainComponent.setLayout(new GridBagLayout());
     JScrollPane scrollPane = new JScrollPane(myTree);
     JPanel rightPanel = new JPanel(new GridBagLayout());
     GridBagConstraints constraints = new GridBagConstraints();
@@ -84,19 +90,22 @@ public class BookmarksDialog extends JDialog {
     outerConstraints.gridx = 0;
     outerConstraints.weightx = 1;
     outerConstraints.fill = GridBagConstraints.BOTH;
-    add(scrollPane, outerConstraints);
+    myMainComponent.add(scrollPane, outerConstraints);
 
     outerConstraints.gridx = 1;
     outerConstraints.weightx = 0;
     outerConstraints.anchor = GridBagConstraints.NORTH;
     outerConstraints.fill = GridBagConstraints.NONE;
-    add(rightPanel, outerConstraints);
+    myMainComponent.add(rightPanel, outerConstraints);
 
     myTree.rebuildNow();
-    Frame mainFrame = myProject.getComponent(MPSProjectHolder.class).getMPSProject().createOperationContext().getMainFrame();
+/*    Frame mainFrame = myProject.getComponent(MPSProjectHolder.class).getMPSProject().createOperationContext().getMainFrame();
     setSize(400,400);
     setLocation(mainFrame.getX()+(mainFrame.getWidth() - getWidth())/2, mainFrame.getY()+(mainFrame.getHeight() - getHeight())/2);
-    setModal(true);
+    setModal(true);*/
   }
 
+  protected JComponent getMainComponent() {
+    return myMainComponent;
+  }
 }

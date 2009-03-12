@@ -11436,6 +11436,7 @@
     <property name="package" value="Menu.EditorPopup.Actions" />
     <property name="name" value="ShowBookmarksDialog" />
     <property name="caption" value="Show Bookmarks Dialog" />
+    <property name="outsideCommandExecution" value="true" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1236354516256">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236354516257">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1236354636634">
@@ -11488,10 +11489,7 @@
               <link role="variableDeclaration" targetNodeId="1236354678036" resolveInfo="dialog" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236354718200">
-              <link role="baseMethodDeclaration" targetNodeId="67.~Component.setVisible(boolean):void" resolveInfo="setVisible" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1236354719506">
-                <property name="value" value="true" />
-              </node>
+              <link role="baseMethodDeclaration" targetNodeId="109.~BaseDialog.showDialog():void" resolveInfo="showDialog" />
             </node>
           </node>
         </node>

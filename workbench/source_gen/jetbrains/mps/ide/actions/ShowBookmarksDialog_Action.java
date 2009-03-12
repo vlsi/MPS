@@ -21,7 +21,7 @@ public class ShowBookmarksDialog_Action extends GeneratedAction {
   public ShowBookmarksDialog_Action() {
     super("Show Bookmarks Dialog", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull()
@@ -54,7 +54,7 @@ public class ShowBookmarksDialog_Action extends GeneratedAction {
     try {
       BookmarkManager bookmarkManager = ShowBookmarksDialog_Action.this.project.getComponent(BookmarkManager.class);
       BookmarksDialog dialog = new BookmarksDialog(ShowBookmarksDialog_Action.this.project, bookmarkManager);
-      dialog.setVisible(true);
+      dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowBookmarksDialog", t);
     }

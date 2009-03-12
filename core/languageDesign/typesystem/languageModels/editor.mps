@@ -3762,10 +3762,6 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236083708917">
-        <property name="text" value=" " />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1236083717575" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1236083628488">
         <property name="vertical" value="false" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1236083628489">
@@ -3812,10 +3808,6 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236083741361">
-        <property name="text" value=" " />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1236083745517" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236083765409">
         <property name="text" value="operation type:" />
       </node>
@@ -3826,10 +3818,6 @@
         <property name="text" value="-----------------------------------------------" />
         <link role="styleClass" targetNodeId="27.1198594875276" resolveInfo="Comment" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1236165921788" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236165913801">
-        <property name="text" value="" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1236165916677" />
       </node>
     </node>
   </node>
