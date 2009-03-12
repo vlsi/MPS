@@ -8,10 +8,8 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
-import java.util.LinkedList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class MigrationToCollections_MigrationScript extends BaseMigrationScript {
 
@@ -32,7 +30,19 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~List") || SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~ArrayList") || SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~LinkedList");
+        if (!(SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~List") || SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~ArrayList") || SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~LinkedList"))) {
+          return false;
+        }
+        if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() != 1) {
+          return false;
+        }
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+          return true;
+        }
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+          return true;
+        }
+        return false;
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -61,7 +71,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_15().createNode(), "operation", true), "baseMethodDeclaration", false);
+        return ListMigrationUtil.isApplicabe(node, "size", ListSequence.<SNode>fromArray());
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -88,7 +98,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_16().createNode(), "operation", true), "baseMethodDeclaration", false);
+        return ListMigrationUtil.isApplicabe(node, "get", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -118,8 +128,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        List l;
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_17().createNode(), "operation", true), "baseMethodDeclaration", false);
+        return ListMigrationUtil.isApplicabe(node, "clear", ListSequence.<SNode>fromArray());
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -134,11 +143,11 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
       public String getName() {
-        return "Add first";
+        return "Add element";
       }
 
       public String getAdditionalInfo() {
-        return "Add first";
+        return "Add element";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
@@ -146,8 +155,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        List l;
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_18().createNode(), "operation", true), "baseMethodDeclaration", false);
+        return ListMigrationUtil.isApplicabe(node, "add", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -164,11 +172,11 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
       public String getName() {
-        return "Add element";
+        return "Add element to pos";
       }
 
       public String getAdditionalInfo() {
-        return "Add element";
+        return "Add element to pos";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
@@ -176,8 +184,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        List l;
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_19().createNode(), "operation", true), "baseMethodDeclaration", false);
+        return ListMigrationUtil.isApplicabe(node, "add", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -207,9 +214,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        List l;
-        LinkedList l2;
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_20().createNode(), "operation", true), "baseMethodDeclaration", false) || SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_21().createNode(), "operation", true), "baseMethodDeclaration", false);
+        return ListMigrationUtil.isApplicabe(node, "isEmpty", ListSequence.<SNode>fromArray());
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -236,13 +241,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        List l;
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_22().createNode(), "operation", true), "baseMethodDeclaration", false);
+        return ListMigrationUtil.isApplicabe(node, "set", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", null);
-        SLinkOperations.setTarget(operation, "index", SNodeOperations.copyNode(ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).toListSequence()).getElement(0)), true);
+        SLinkOperations.setTarget(operation, "index", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SLinkOperations.setTarget(operation, "element", SNodeOperations.copyNode(ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).toListSequence()).getElement(1)), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
@@ -267,8 +271,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        List l;
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_23().createNode(), "operation", true), "baseMethodDeclaration", false);
+        return ListMigrationUtil.isApplicabe(node, "remove", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -297,8 +300,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        List l;
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_24().createNode(), "operation", true), "baseMethodDeclaration", false);
+        return ListMigrationUtil.isApplicabe(node, "remove", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -327,132 +329,13 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        List l;
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_25().createNode(), "operation", true), "baseMethodDeclaration", false);
+        return ListMigrationUtil.isApplicabe(node, "remove", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation", null);
         SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
-      public String getName() {
-        return "addAll";
-      }
-
-      public String getAdditionalInfo() {
-        return "addAll";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        List l;
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_26().createNode(), "operation", true), "baseMethodDeclaration", false);
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation", null);
-        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
-        SNodeOperations.replaceWithAnother(node, operation);
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
-      public String getName() {
-        return "addFirst";
-      }
-
-      public String getAdditionalInfo() {
-        return "addFirst";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        LinkedList l;
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_27().createNode(), "operation", true), "baseMethodDeclaration", false);
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation", null);
-        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
-        SNodeOperations.replaceWithAnother(node, operation);
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
-      public String getName() {
-        return "addLast";
-      }
-
-      public String getAdditionalInfo() {
-        return "addLast";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        LinkedList l;
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_28().createNode(), "operation", true), "baseMethodDeclaration", false);
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation", null);
-        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
-        SNodeOperations.replaceWithAnother(node, operation);
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
-      public String getName() {
-        return "removeFirst";
-      }
-
-      public String getAdditionalInfo() {
-        return "removeFirst";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        LinkedList l;
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_29().createNode(), "operation", true), "baseMethodDeclaration", false);
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SNodeOperations.replaceWithAnother(node, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation", null));
       }
 
       public boolean isShowAsIntention() {
