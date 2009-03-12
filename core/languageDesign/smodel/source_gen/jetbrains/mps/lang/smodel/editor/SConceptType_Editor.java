@@ -115,7 +115,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3885_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3885_1");
-    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -141,16 +141,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3885_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3885_2");
-    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_3885_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

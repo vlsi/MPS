@@ -1439,7 +1439,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1180481149413">
         <property name="text" value="&lt;" />
-        <link role="styleClass" targetNodeId="5.1215010871495" resolveInfo="Bracket" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215108071466" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1180481149414">
@@ -1465,10 +1465,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1180481149417">
         <property name="text" value="&gt;" />
-        <link role="styleClass" targetNodeId="5.1215010871495" resolveInfo="Bracket" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996442">
-          <property name="flag" value="false" />
-        </node>
+        <link role="styleClass" targetNodeId="5.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
