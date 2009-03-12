@@ -11,6 +11,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.INodeAdapter;
 
@@ -62,8 +63,8 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
     {
       SNode instanceType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(((SNode)this.getField("methodCall")[0])), "operand", true));
       ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope((Classifier)((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))));
-      List list = scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name"));
-      for(Object object : list) {
+      List<BaseMethodDeclaration> list = scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name"));
+      for(BaseMethodDeclaration object : list) {
         INodeAdapter adapter = (INodeAdapter)object;
         SNode baseMethodDeclaration = ((SNode)adapter.getNode());
         if (SLinkOperations.getCount(baseMethodDeclaration, "parameter") == SLinkOperations.getCount(((SNode)this.getField("methodCall")[0]), "actualArgument")) {

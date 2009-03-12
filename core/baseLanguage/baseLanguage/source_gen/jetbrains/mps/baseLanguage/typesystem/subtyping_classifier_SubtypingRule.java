@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -39,12 +40,12 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
       for(SNode typeParam : new ArrayList<SNode>(SLinkOperations.getTargets(supertypeCopy, "parameter", true))) {
         if (SNodeOperations.isInstanceOf(typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           SNode tvr = typeParam;
-          int i = ((List)SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).indexOf(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false));
+          int i = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).indexOf(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false));
           if (i < 0 || i >= SLinkOperations.getCount(clt, "parameter")) {
             ((SNode)supertypeCopy).removeChild(typeParam);
             continue;
           }
-          SNode newNode = SNodeOperations.copyNode(((SNode)((List)SLinkOperations.getTargets(clt, "parameter", true)).get(i)));
+          SNode newNode = SNodeOperations.copyNode(ListSequence.fromList(((List<SNode>)SLinkOperations.getTargets(clt, "parameter", true))).getElement(i));
           supertypeCopy.replaceChild(typeParam, newNode);
         }
       }
