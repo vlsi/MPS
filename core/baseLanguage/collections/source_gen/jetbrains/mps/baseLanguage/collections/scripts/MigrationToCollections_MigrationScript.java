@@ -343,5 +343,119 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
     });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "addAll";
+      }
+
+      public String getAdditionalInfo() {
+        return "addAll";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicabe(node, "remove", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")));
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation", null);
+        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SNodeOperations.replaceWithAnother(node, operation);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "Add First";
+      }
+
+      public String getAdditionalInfo() {
+        return "Add First";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicabe(node, "addFirst", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation", null);
+        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SNodeOperations.replaceWithAnother(node, operation);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "Add Last";
+      }
+
+      public String getAdditionalInfo() {
+        return "Add Last";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicabe(node, "addLast", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation", null);
+        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SNodeOperations.replaceWithAnother(node, operation);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "Remove first";
+      }
+
+      public String getAdditionalInfo() {
+        return "Remove first";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicabe(node, "removeFirst", ListSequence.<SNode>fromArray());
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNodeOperations.replaceWithAnother(node, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation", null));
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
   }
 }
