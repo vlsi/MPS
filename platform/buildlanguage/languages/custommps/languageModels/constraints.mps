@@ -123,18 +123,44 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233929988248">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233930231557">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233929999392">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233929989207">
-                <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1233929988249" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233929998212">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1236864176027">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1236864176028">
+            <property name="name" value="moduleId" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236864176029">
+              <link role="classifier" targetNodeId="7.~ModuleId" resolveInfo="ModuleId" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236864176030">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236864176031">
+                <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1236864176032" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236864176033">
                   <link role="baseMethodDeclaration" targetNodeId="6.~IOperationContext.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233930217818">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236864176034">
                 <link role="baseMethodDeclaration" targetNodeId="7.~IModule.getModuleId():jetbrains.mps.project.ModuleId" resolveInfo="getModuleId" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1236864182076">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236864182077">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236864189634">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1236864191304">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1236864185355">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1236864186882" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236864183664">
+              <link role="variableDeclaration" targetNodeId="1236864176028" resolveInfo="moduleId" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233929988248">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233930231557">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236864176036">
+              <link role="variableDeclaration" targetNodeId="1236864176028" resolveInfo="moduleId" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1233930235608">
               <link role="baseMethodDeclaration" targetNodeId="7.~ModuleId.equals(java.lang.Object):boolean" resolveInfo="equals" />
