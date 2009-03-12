@@ -570,7 +570,6 @@
                           </node>
                         </node>
                         <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1226514043508" />
-                        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Root" id="1226514043509" />
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226514043510">

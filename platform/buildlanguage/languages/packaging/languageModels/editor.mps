@@ -1432,7 +1432,6 @@
                         </node>
                       </node>
                       <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1226514924192" />
-                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Root" id="1226514924193" />
                     </node>
                     <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="1226514924194" />
                   </node>

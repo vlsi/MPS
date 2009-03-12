@@ -145,7 +145,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            List<String> allMacroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, true), SConceptPropertyOperations.getBoolean(_context.getParentNode(), "canStartFromBasedir"));
+            List<String> allMacroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, false), SConceptPropertyOperations.getBoolean(_context.getParentNode(), "canStartFromBasedir"));
             ListSequence.fromList(allMacroNames).addElement(no_macro);
             return allMacroNames;
           }
