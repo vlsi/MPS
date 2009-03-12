@@ -6632,5 +6632,56 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234972705119" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1236881736606">
+    <property name="package" value="conditions" />
+    <link role="concept" targetNodeId="1.1233159354124" resolveInfo="NotCondition" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1236881744775">
+      <property name="name" value="canCalculateWhileGenerating" />
+      <link role="overriddenMethod" targetNodeId="1233161185181" resolveInfo="canCalculateWhileGenerating" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236881744777">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236881767891">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236881785890">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236881781169">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1236881780571" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1236881784440">
+                <link role="link" targetNodeId="1.1233159365757" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1236881787967">
+              <link role="baseMethodDeclaration" targetNodeId="1233161185181" resolveInfo="canCalculateWhileGenerating" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1236881756443" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236881763153" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1236881792394">
+      <property name="name" value="isTrueWhileGeneration" />
+      <link role="overriddenMethod" targetNodeId="1233161599461" resolveInfo="isTrueWhileGeneration" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236881792396">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236881804507">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1236881807528">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236881813937">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236881809721">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1236881809409" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1236881812919">
+                  <link role="link" targetNodeId="1.1233159365757" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1236881818043">
+                <link role="baseMethodDeclaration" targetNodeId="1233161599461" resolveInfo="isTrueWhileGeneration" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1236881800528" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236881800529" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1236881736607">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236881736608" />
+    </node>
+  </node>
 </model>
 
