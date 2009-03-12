@@ -204,7 +204,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
           mySModel.addWeakSModelListener(listener);
         }
       }
-      myWeakModelListeners.clear();
+
+      //do not use myWeakModelListener.clear() since it can cause ConcurrentModificationException (see code in
+      //WeakList.remove() which can change modCount because it removes collected items
+      myWeakModelListeners = new WeakList<SModelListener>();
 
       for (SModelListener listener : myModelListeners) {
         if (!mySModel.hasModelListener(listener)) {
