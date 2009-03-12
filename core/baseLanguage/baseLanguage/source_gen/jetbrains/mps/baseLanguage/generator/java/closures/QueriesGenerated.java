@@ -163,17 +163,17 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1170347169279(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List list = _QueriesUtil.getList_ContextOwner_VariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    List<SNode> list = _QueriesUtil.getList_ContextOwner_VariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return (List<SNode>)list;
   }
 
   public static Iterable sourceNodesQuery_1170347696338(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return (List<SNode>)list;
   }
 
   public static Iterable sourceNodesQuery_1170347787985(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     return (List<SNode>)list;
   }
 

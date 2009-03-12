@@ -26,11 +26,11 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
       if (!((SLinkOperations.getTarget(classConcept, "superclass", true) == null))) {
         ListSequence.fromList(supertypes).addElement(SLinkOperations.getTarget(classConcept, "superclass", true));
       }
-      supertypes.addAll(SLinkOperations.getTargets(classConcept, "implementedInterface", true));
+      ListSequence.fromList(supertypes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "implementedInterface", true)));
     }
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       SNode interfaceConcept = classifier;
-      supertypes.addAll(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true));
+      ListSequence.fromList(supertypes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true)));
     }
     if (ListSequence.fromList(supertypes).isEmpty()) {
       ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_4().createNode());

@@ -538,8 +538,8 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1170347787987">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1170347787988">
                     <property name="name" value="list" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170347787989">
-                      <link role="classifier" targetNodeId="16.~List" resolveInfo="List" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1236872051805">
+                      <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1236872053646" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170347787990">
                       <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(jetbrains.mps.smodel.SNode,jetbrains.mps.generator.template.ITemplateGenerator):java.util.List" resolveInfo="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
@@ -587,8 +587,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1170347723722">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1170347723723">
                   <property name="name" value="list" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170347723725">
-                    <link role="classifier" targetNodeId="16.~List" resolveInfo="List" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1236872042300">
+                    <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1236872045127" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170347705983">
                     <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(jetbrains.mps.smodel.SNode,jetbrains.mps.generator.template.ITemplateGenerator):java.util.List" resolveInfo="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
@@ -649,27 +649,27 @@
         <link role="mappingLabel" targetNodeId="1215479320910" resolveInfo="variable_closureContext_classField" />
         <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1170347169279">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170347169280">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1170347336878">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1170347336879">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1236872007371">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1236872007372">
                 <property name="name" value="list" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170347336881">
-                  <link role="classifier" targetNodeId="16.~List" resolveInfo="List" />
+                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1236872007373">
+                  <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1236872009776" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170347184409">
-                  <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1236872021503">
                   <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getList_ContextOwner_VariablesUsedInClosure(jetbrains.mps.smodel.SNode,jetbrains.mps.generator.template.ITemplateGenerator):java.util.List" resolveInfo="getList_ContextOwner_VariablesUsedInClosure" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1170347317573" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227746720212">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227746720213">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227746720214">
-                        <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1227746720215" />
-                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227746720216">
-                          <link role="classifier" targetNodeId="2v.~TemplateQueryContext" />
+                  <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1236872021504" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236872021505">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1236872021506">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1236872021507">
+                        <node role="expression" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1236872021508" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236872021509">
+                          <link role="classifier" targetNodeId="2v.~TemplateQueryContext" resolveInfo="TemplateQueryContext" />
                         </node>
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227746720217">
-                      <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236872021510">
+                      <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolveInfo="getGenerator" />
                     </node>
                   </node>
                 </node>
@@ -678,7 +678,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1170347171953">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1170347342759">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170347342760">
-                  <link role="variableDeclaration" targetNodeId="1170347336879" resolveInfo="list" />
+                  <link role="variableDeclaration" targetNodeId="1236872007372" resolveInfo="list" />
                 </node>
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1170347351575">
                   <link role="elementConcept" targetNodeId="2.1068431474542" />
