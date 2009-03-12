@@ -453,6 +453,34 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236877271184">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236877271185">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1236877271186">
+              <link role="variableDeclaration" targetNodeId="1225567254097" resolveInfo="parameters" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1236877271187">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1236877278487">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1236877310659">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236877303489">
+                    <property name="value" value="mps_home" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1236877316814">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236877312610">
+                      <property name="value" value="=" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1236877328324">
+                      <link role="baseMethodDeclaration" targetNodeId="37.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
+                      <link role="classConcept" targetNodeId="37.~PathManager" resolveInfo="PathManager" />
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236877274432">
+                  <property name="value" value="-D" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225567254105">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225567254106">
             <property name="name" value="macroNames" />
@@ -464,8 +492,8 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225567254110">
                 <link role="variableDeclaration" targetNodeId="1225567254102" resolveInfo="pathMacros" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225567254111">
-                <link role="baseMethodDeclaration" targetNodeId="23.~PathMacros.getAllMacroNames():java.util.Set" resolveInfo="getAllMacroNames" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236877210992">
+                <link role="baseMethodDeclaration" targetNodeId="23.~PathMacros.getUserMacroNames():java.util.Set" resolveInfo="getUserMacroNames" />
               </node>
             </node>
           </node>

@@ -13,9 +13,9 @@ import jetbrains.mps.baseLanguage.plugin.BaseOutputReader;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
 import com.intellij.openapi.application.PathMacros;
+import jetbrains.mps.util.PathManager;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import com.intellij.openapi.application.PathManager;
 import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
@@ -73,7 +73,8 @@ public class BuildScriptRunner extends BaseRunner {
 
   private void addMacroValues(List<String> parameters) {
     PathMacros pathMacros = PathMacros.getInstance();
-    Set<String> macroNames = pathMacros.getAllMacroNames();
+    ListSequence.fromList(parameters).addElement("-D" + "mps_home" + "=" + PathManager.getHomePath());
+    Set<String> macroNames = pathMacros.getUserMacroNames();
     for(String macro : SetSequence.fromSet(macroNames)) {
       ListSequence.fromList(parameters).addElement("-D" + macro + "=" + pathMacros.getValue(macro));
     }
@@ -83,7 +84,7 @@ public class BuildScriptRunner extends BaseRunner {
     ListSequence.fromList(parameters).addElement(this.getJava());
     String jdkHome = this.getJdkHome();
     ListSequence.fromList(parameters).addElement("-Djava.home=" + jdkHome);
-    String antHome = PathManager.getHomePath() + File.separator + "lib" + File.separator + "ant-1.7.0";
+    String antHome = com.intellij.openapi.application.PathManager.getHomePath() + File.separator + "lib" + File.separator + "ant-1.7.0";
     ListSequence.fromList(parameters).addElement("-Dant.home=" + antHome);
     ListSequence.fromList(parameters).addElement("-cp");
     String antLib = antHome + File.separator + "lib" + File.separator;
