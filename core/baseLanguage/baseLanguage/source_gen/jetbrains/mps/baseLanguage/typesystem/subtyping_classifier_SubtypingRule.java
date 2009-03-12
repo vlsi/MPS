@@ -24,7 +24,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode classConcept = classifier;
       if (!((SLinkOperations.getTarget(classConcept, "superclass", true) == null))) {
-        supertypes.add(SLinkOperations.getTarget(classConcept, "superclass", true));
+        ListSequence.fromList(supertypes).addElement(SLinkOperations.getTarget(classConcept, "superclass", true));
       }
       supertypes.addAll(SLinkOperations.getTargets(classConcept, "implementedInterface", true));
     }
@@ -32,8 +32,8 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
       SNode interfaceConcept = classifier;
       supertypes.addAll(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true));
     }
-    if (supertypes.isEmpty()) {
-      result.add(new _Quotations.QuotationClass_4().createNode());
+    if (ListSequence.fromList(supertypes).isEmpty()) {
+      ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_4().createNode());
     }
     for(SNode supertype : supertypes) {
       SNode supertypeCopy = SNodeOperations.copyNode(supertype);
@@ -49,16 +49,16 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
           supertypeCopy.replaceChild(typeParam, newNode);
         }
       }
-      result.add(supertypeCopy);
+      ListSequence.fromList(result).addElement(supertypeCopy);
     }
-    supertypes.add(clt);
+    ListSequence.fromList(supertypes).addElement(clt);
     for(SNode supertype : supertypes) {
       SNode erasure = SNodeOperations.copyNode(supertype);
       if (SLinkOperations.getCount(erasure, "parameter") > 0) {
         for(SNode parameter : SLinkOperations.getTargets(erasure, "parameter", true)) {
           SNodeOperations.deleteNode(parameter);
         }
-        result.add(erasure);
+        ListSequence.fromList(result).addElement(erasure);
       }
     }
     return result;
