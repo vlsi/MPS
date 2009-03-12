@@ -14,6 +14,7 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Collections;
 import java.util.Iterator;
 import java.text.Collator;
@@ -64,7 +65,7 @@ public class FunctionTypeUtil {
     List<SNode> cls = SModelOperations.getNodes(sourceModel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     List<SNode> typesList = new ArrayList<SNode>();
     for(SNode cl : cls) {
-      typesList.add(TypeChecker.getInstance().getTypeOf(cl));
+      ListSequence.fromList(typesList).addElement(TypeChecker.getInstance().getTypeOf(cl));
     }
     List<SNode> funTypes = SModelOperations.getNodes(sourceModel, "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
     typesList.addAll(funTypes);
@@ -181,7 +182,7 @@ public class FunctionTypeUtil {
       genContext.putStepObject("all_needs_adapted", allAdaptable);
     }
     if (!(allAdaptable.contains(adaptable))) {
-      allAdaptable.add(adaptable);
+      ListSequence.fromList(allAdaptable).addElement(adaptable);
     }
     List<SNode> trgList = (List<SNode>)genContext.getStepObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false)));
     if (trgList == null) {
@@ -197,7 +198,7 @@ public class FunctionTypeUtil {
     }
     if (!(hasOneAlready)) {
       SNode trg = SNodeOperations.copyNode(target);
-      trgList.add(trg);
+      ListSequence.fromList(trgList).addElement(trg);
       ((SNode)trg).putUserObject("adaptable", adaptable);
     }
   }

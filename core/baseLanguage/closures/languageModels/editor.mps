@@ -786,9 +786,8 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232475813432">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232475813433">
                 <property name="name" value="siblings" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232475828659">
-                  <link role="classifier" targetNodeId="6.~List" resolveInfo="List" />
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1232475831347" />
+                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1236871501399">
+                  <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1236871501400" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232475813435">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1232475813436" />
@@ -810,9 +809,7 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232476091871">
                       <link role="variableDeclaration" targetNodeId="1232475813433" resolveInfo="siblings" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232476091872">
-                      <link role="baseMethodDeclaration" targetNodeId="6.~List.size():int" resolveInfo="size" />
-                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1236871518057" />
                   </node>
                 </node>
               </node>

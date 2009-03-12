@@ -7,6 +7,7 @@ import jetbrains.mps.generator.template.CreateRootRuleContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil;
@@ -46,7 +47,7 @@ public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1216995080029(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     List<SNode> adapters = FunctionTypeUtil.getAllAdaptableClassifierTypes(_context);
-    if (adapters != null && adapters.size() > 0) {
+    if (adapters != null && ListSequence.fromList(adapters).count() > 0) {
       _context.putStepObject("need_weaving_class_for_ClassifierType_adapter", Boolean.TRUE);
       return true;
     }
@@ -371,8 +372,8 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1231415079243(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     List<SNode> args = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "expression", true), "actualArgument", true);
-    for(int idx = args.size() - 1 ; idx >= 0 ; idx-- ) {
-      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(args.get(idx)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
+    for(int idx = ListSequence.fromList(args).count() - 1 ; idx >= 0 ; idx-- ) {
+      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(args).getElement(idx)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
         return true;
       }
     }
@@ -411,7 +412,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1232140845413(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     List<SNode> statements = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "statement", true);
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral") && statements.get(statements.size() - 1) == _context.getNode();
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral") && ListSequence.fromList(statements).getElement(ListSequence.fromList(statements).count() - 1) == _context.getNode();
   }
 
   public static boolean baseMappingRule_Condition_1232140884134(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -661,18 +662,18 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1202752698043(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
-    return SPropertyOperations.getString(mds.get(0), "name");
+    return SPropertyOperations.getString(ListSequence.fromList(mds).getElement(0), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1202752759917(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode adaptable = (SNode)((SNode)_context.getNode()).getUserObject("adaptable");
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(adaptable, "classifier", false), "method", true);
-    return SPropertyOperations.getString(mds.get(0), "name");
+    return SPropertyOperations.getString(ListSequence.fromList(mds).getElement(0), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1202817907518(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
-    return SPropertyOperations.getString(mds.get(0), "name");
+    return SPropertyOperations.getString(ListSequence.fromList(mds).getElement(0), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1203245282594(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -681,8 +682,8 @@ public class QueriesGenerated {
       ct = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(TypeChecker.getInstance().getTypeOf(_context.getNode()));
     }
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
-    if (imds.size() > 0) {
-      return SPropertyOperations.getString(imds.get(0), "name");
+    if (ListSequence.fromList(imds).count() > 0) {
+      return SPropertyOperations.getString(ListSequence.fromList(imds).getElement(0), "name");
     }
     return null;
   }
@@ -693,8 +694,8 @@ public class QueriesGenerated {
       ct = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(TypeChecker.getInstance().getTypeOf(_context.getNode()));
     }
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
-    if (imds.size() > 0) {
-      return SPropertyOperations.getString(imds.get(0), "name");
+    if (ListSequence.fromList(imds).count() > 0) {
+      return SPropertyOperations.getString(ListSequence.fromList(imds).getElement(0), "name");
     }
     return null;
   }
@@ -978,7 +979,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1202817746555(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode cc = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "classifierType_adapter");
     List<SNode> cds = SLinkOperations.getTargets(cc, "constructor", true);
-    return cds.get(0);
+    return ListSequence.fromList(cds).getElement(0);
   }
 
   public static Object referenceMacro_GetReferent_1202817833286(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1021,7 +1022,7 @@ public class QueriesGenerated {
     if ((trg != null)) {
       SNode cc = _context.getOutputNodeByInputNodeAndMappingLabel(trg, "classifierType_adapter");
       List<SNode> cds = SLinkOperations.getTargets(cc, "constructor", true);
-      return cds.get(0);
+      return ListSequence.fromList(cds).getElement(0);
     }
     return null;
   }
@@ -1133,19 +1134,19 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1231423680977(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(siblings.indexOf(_context.getNode())), "type", true);
     return RuntimeUtils.getRuntimeClassifiersMap().get(UnrestrictedFunctionType_Behavior.call_getRuntimeAdapterClassName_1231423631922(type) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(type));
   }
 
   public static Object referenceMacro_GetReferent_1231423781604(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(siblings.indexOf(_context.getNode())), "type", true);
     SNode cls = RuntimeUtils.getRuntimeClassifiersMap().get(UnrestrictedFunctionType_Behavior.call_getRuntimeAdapterClassName_1231423631922(type) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(type));
     if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       List<SNode> ctrs = SLinkOperations.getTargets(cls, "constructor", true);
-      if (ctrs != null && ctrs.size() > 0) {
-        return ctrs.get(0);
+      if (ctrs != null && ListSequence.fromList(ctrs).count() > 0) {
+        return ListSequence.fromList(ctrs).getElement(0);
       }
     }
     return null;
@@ -1430,19 +1431,19 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1232472473855(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() + siblings.indexOf(_context.getNode()) - ListSequence.fromList(siblings).count()), "type", true);
     return RuntimeUtils.getRuntimeClassifiersMap().get(UnrestrictedFunctionType_Behavior.call_getRuntimeAdapterClassName_1231423631922(type) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(type));
   }
 
   public static Object referenceMacro_GetReferent_1232472474063(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() + siblings.indexOf(_context.getNode()) - ListSequence.fromList(siblings).count()), "type", true);
     SNode cls = RuntimeUtils.getRuntimeClassifiersMap().get(UnrestrictedFunctionType_Behavior.call_getRuntimeAdapterClassName_1231423631922(type) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(type));
     if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       List<SNode> ctrs = SLinkOperations.getTargets(cls, "constructor", true);
-      if (ctrs != null && ctrs.size() > 0) {
-        return ctrs.get(0);
+      if (ctrs != null && ListSequence.fromList(ctrs).count() > 0) {
+        return ListSequence.fromList(ctrs).getElement(0);
       }
     }
     return null;
@@ -1470,12 +1471,12 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1201421585183(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> stmts = (List<SNode>)_context.getNode().getUserObject("CHUNK_OF_STATEMENTS");
-    return stmts.size() == 0 || !(SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
+    return ListSequence.fromList(stmts).count() == 0 || !(SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
   }
 
   public static boolean ifMacro_Condition_1201421814921(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> stmts = (List<SNode>)_context.getNode().getUserObject("CHUNK_OF_STATEMENTS");
-    return stmts.size() == 0 || !(SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
+    return ListSequence.fromList(stmts).count() == 0 || !(SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
   }
 
   public static boolean ifMacro_Condition_1203249920933(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1605,14 +1606,14 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1232037009327(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(siblings.indexOf(_context.getNode())), "type", true);
     return (FunctionType_Behavior.call_getTerminateType_1232032188607(type) != null);
   }
 
   public static boolean ifMacro_Condition_1232037034281(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(siblings.indexOf(_context.getNode())), "type", true);
     return (FunctionType_Behavior.call_getResultType_1230475757059(type) != null);
   }
 
@@ -1631,14 +1632,14 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1232140770395(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(siblings.indexOf(_context.getNode())), "type", true);
     return (FunctionType_Behavior.call_getTerminateType_1232032188607(type) != null);
   }
 
   public static boolean ifMacro_Condition_1232140770487(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(siblings.indexOf(_context.getNode())), "type", true);
     return (FunctionType_Behavior.call_getResultType_1230475757059(type) != null);
   }
 
@@ -1665,28 +1666,28 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1232472473678(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() + siblings.indexOf(_context.getNode()) - ListSequence.fromList(siblings).count()), "type", true);
     return (FunctionType_Behavior.call_getTerminateType_1232032188607(type) != null);
   }
 
   public static boolean ifMacro_Condition_1232472473771(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() + siblings.indexOf(_context.getNode()) - ListSequence.fromList(siblings).count()), "type", true);
     return (FunctionType_Behavior.call_getResultType_1230475757059(type) != null);
   }
 
   public static boolean ifMacro_Condition_1232472473887(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() + siblings.indexOf(_context.getNode()) - ListSequence.fromList(siblings).count()), "type", true);
     return (FunctionType_Behavior.call_getTerminateType_1232032188607(type) != null);
   }
 
   public static boolean ifMacro_Condition_1232472473979(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() + siblings.indexOf(_context.getNode()) - ListSequence.fromList(siblings).count()), "type", true);
     return (FunctionType_Behavior.call_getResultType_1230475757059(type) != null);
   }
 
@@ -1700,20 +1701,20 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1232624140224(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
-    return stmts.size() > 0 && SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+    return ListSequence.fromList(stmts).count() > 0 && SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
   }
 
   public static boolean ifMacro_Condition_1235475035904(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(siblings.indexOf(_context.getNode())), "type", true);
     return (FunctionType_Behavior.call_getResultType_1230475757059(type) != null);
   }
 
   public static boolean ifMacro_Condition_1235475070538(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() + siblings.indexOf(_context.getNode()) - ListSequence.fromList(siblings).count()), "type", true);
     return (FunctionType_Behavior.call_getResultType_1230475757059(type) != null);
   }
 
@@ -1721,8 +1722,8 @@ public class QueriesGenerated {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
-      if (imds.size() > 0) {
-        return ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(imds.get(0), "returnType", true), ct);
+      if (ListSequence.fromList(imds).count() > 0) {
+        return ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(ListSequence.fromList(imds).getElement(0), "returnType", true), ct);
       }
     }
     return FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(TypeChecker.getInstance().getTypeOf(_context.getNode())));
@@ -1814,11 +1815,11 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1201781007784(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
-    SNode type = SLinkOperations.getTarget(mds.get(0), "returnType", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(mds).getElement(0), "returnType", true);
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       List<SNode> psib = SNodeOperations.getPrevSiblings(SLinkOperations.getTarget(type, "typeVariableDeclaration", false), false);
       List<SNode> ptypes = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
-      return ClassifierTypeUtil.copyTypeRecursively(ptypes.get(psib.size()));
+      return ClassifierTypeUtil.copyTypeRecursively(ListSequence.fromList(ptypes).getElement(ListSequence.fromList(psib).count()));
     }
     return type;
   }
@@ -1837,7 +1838,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1202817864202(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
-    return SLinkOperations.getTarget(mds.get(0), "returnType", true);
+    return SLinkOperations.getTarget(ListSequence.fromList(mds).getElement(0), "returnType", true);
   }
 
   public static SNode sourceNodeQuery_1202818062914(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1870,8 +1871,8 @@ public class QueriesGenerated {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
-      if (imds.size() > 0) {
-        return ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(imds.get(0), "returnType", true), ct);
+      if (ListSequence.fromList(imds).count() > 0) {
+        return ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(ListSequence.fromList(imds).getElement(0), "returnType", true), ct);
       }
     }
     return null;
@@ -2017,15 +2018,15 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1231414716592(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(siblings.indexOf(_context.getNode())), "type", true);
     return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(type);
   }
 
   public static SNode sourceNodeQuery_1231415233070(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> args = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "expression", true), "actualArgument", true);
-    for(int idx = args.size() - 1 ; idx >= 0 ; idx-- ) {
-      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(args.get(idx)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
-        return args.get(idx);
+    for(int idx = ListSequence.fromList(args).count() - 1 ; idx >= 0 ; idx-- ) {
+      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(args).getElement(idx)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
+        return ListSequence.fromList(args).getElement(idx);
       }
     }
     return null;
@@ -2085,7 +2086,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1232036989078(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(siblings.indexOf(_context.getNode())), "type", true);
     return FunctionType_Behavior.call_getNormalizedTerminateType_1232036646585(type);
   }
 
@@ -2097,14 +2098,14 @@ public class QueriesGenerated {
     FunctionType_Behavior.call_getNormalizedTerminateType_1232036646585(TypeChecker.getInstance().getTypeOf(_context.getNode()));
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(siblings.indexOf(_context.getNode())), "type", true);
     return FunctionType_Behavior.call_getNormalizedTerminateType_1232036646585(type);
   }
 
   public static SNode sourceNodeQuery_1232140770530(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(siblings.indexOf(_context.getNode())), "type", true);
     return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(type);
   }
 
@@ -2152,20 +2153,20 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1232469628886(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> closures = SLinkOperations.getTargets(_context.getNode(), "closure", true);
-    return closures.get(0);
+    return ListSequence.fromList(closures).getElement(0);
   }
 
   public static SNode sourceNodeQuery_1232472473722(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() + siblings.indexOf(_context.getNode()) - ListSequence.fromList(siblings).count()), "type", true);
     return FunctionType_Behavior.call_getNormalizedTerminateType_1232036646585(type);
   }
 
   public static SNode sourceNodeQuery_1232472473814(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() + siblings.indexOf(_context.getNode()) - ListSequence.fromList(siblings).count()), "type", true);
     return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(type);
   }
 
@@ -2176,14 +2177,14 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1232472473930(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() + siblings.indexOf(_context.getNode()) - ListSequence.fromList(siblings).count()), "type", true);
     return FunctionType_Behavior.call_getNormalizedTerminateType_1232036646585(type);
   }
 
   public static SNode sourceNodeQuery_1232472474022(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() + siblings.indexOf(_context.getNode()) - ListSequence.fromList(siblings).count()), "type", true);
     return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(type);
   }
 
@@ -2198,14 +2199,14 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1235475035944(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(siblings.indexOf(_context.getNode())), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(siblings.indexOf(_context.getNode())), "type", true);
     return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(type);
   }
 
   public static SNode sourceNodeQuery_1235475070586(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.getParent(_context.getNode()), "closure", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(parameters.get(parameters.size() + siblings.indexOf(_context.getNode()) - siblings.size()), "type", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() + siblings.indexOf(_context.getNode()) - ListSequence.fromList(siblings).count()), "type", true);
     return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(type);
   }
 
@@ -2224,10 +2225,10 @@ public class QueriesGenerated {
     for(SNode ft : FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(TypeChecker.getInstance().getTypeOf(_context.getNode()))) {
       SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
       SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(FunctionTypeUtil.unmeet(ft)), true);
-      SPropertyOperations.set(pd, "name", SPropertyOperations.getString(paramDecls.get(idx), "name"));
-      SPropertyOperations.set(pd, "isFinal", "" + (SPropertyOperations.getBoolean(paramDecls.get(idx), "isFinal")));
+      SPropertyOperations.set(pd, "name", SPropertyOperations.getString(ListSequence.fromList(paramDecls).getElement(idx), "name"));
+      SPropertyOperations.set(pd, "isFinal", "" + (SPropertyOperations.getBoolean(ListSequence.fromList(paramDecls).getElement(idx), "isFinal")));
       idx = idx + 1;
-      res.add(pd);
+      ListSequence.fromList(res).addElement(pd);
     }
     return res;
   }
@@ -2247,9 +2248,9 @@ public class QueriesGenerated {
     for(SNode ft : FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(TypeChecker.getInstance().getTypeOf(_context.getNode()))) {
       SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
       SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(FunctionTypeUtil.unmeet(ft)), true);
-      SPropertyOperations.set(pd, "name", SPropertyOperations.getString(paramDecls.get(idx), "name"));
+      SPropertyOperations.set(pd, "name", SPropertyOperations.getString(ListSequence.fromList(paramDecls).getElement(idx), "name"));
       SPropertyOperations.set(pd, "isFinal", "" + (true));
-      res.add(pd);
+      ListSequence.fromList(res).addElement(pd);
       idx = idx + 1;
     }
     return res;
@@ -2275,7 +2276,7 @@ public class QueriesGenerated {
           PrepStatementUtil.copyPrepData(stmt, tmp, ((TemplateQueryContext)_context).getGenerator());
           WrappersUtils.copyPrepData(stmt, tmp, ((TemplateQueryContext)_context).getGenerator());
         */
-        chunk.add(stmt);
+        ListSequence.fromList(chunk).addElement(stmt);
         lastStmt = stmt;
       }
       SNode cstmt = null;
@@ -2284,8 +2285,8 @@ public class QueriesGenerated {
       } else
       {
         List<SNode> allstmts = (List<SNode>)SLinkOperations.getTargets(_context.getNode(), "statement", true);
-        cstmt = (allstmts.size() > 0 ?
-          allstmts.get(0) :
+        cstmt = (ListSequence.fromList(allstmts).count() > 0 ?
+          ListSequence.fromList(allstmts).getElement(0) :
           null
         );
       }
@@ -2299,7 +2300,7 @@ public class QueriesGenerated {
         lastStmt = StatementListUtil.nextSibling(cstmt);
         while ((lastStmt != null)) {
           stmts = StatementListUtil.selectStatementsUntilControlStatement(_context.getNode(), lastStmt);
-          if (stmts.size() == 0) {
+          if (ListSequence.fromList(stmts).count() == 0) {
             cstmt = lastStmt;
             lastStmt = StatementListUtil.nextSibling(lastStmt);
           } else
@@ -2313,9 +2314,9 @@ public class QueriesGenerated {
           }
         }
       }
-      results.add(slist);
+      ListSequence.fromList(results).addElement(slist);
       PrepStatementUtil.putPrepData(slist, new Integer[]{beginLabel,endLabel}, ((TemplateQueryContext)_context).getGenerator());
-    } while(stmts != null && stmts.size() > 0);
+    } while(stmts != null && ListSequence.fromList(stmts).count() > 0);
     return results;
   }
 
@@ -2328,19 +2329,19 @@ public class QueriesGenerated {
     int idx = 1;
     List<SNode> ptypes = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
     List<SNode> res = new ArrayList<SNode>();
-    for(SNode pdecl : SLinkOperations.getTargets(mds.get(0), "parameter", true)) {
+    for(SNode pdecl : SLinkOperations.getTargets(ListSequence.fromList(mds).getElement(0), "parameter", true)) {
       SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
       SNode ptype = SLinkOperations.getTarget(pdecl, "type", true);
       if (SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
         List<SNode> psib = SNodeOperations.getPrevSiblings(SLinkOperations.getTarget(ptype, "typeVariableDeclaration", false), false);
-        SLinkOperations.setTarget(pd, "type", ClassifierTypeUtil.copyTypeRecursively(ptypes.get(psib.size())), true);
+        SLinkOperations.setTarget(pd, "type", ClassifierTypeUtil.copyTypeRecursively(ListSequence.fromList(ptypes).getElement(ListSequence.fromList(psib).count())), true);
       } else
       {
         SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(ptype), true);
       }
       SPropertyOperations.set(pd, "name", "param" + idx);
       idx = idx + 1;
-      res.add(pd);
+      ListSequence.fromList(res).addElement(pd);
     }
     return res;
   }
@@ -2349,11 +2350,11 @@ public class QueriesGenerated {
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
     int idx = 1;
     List<SNode> res = new ArrayList<SNode>();
-    for(SNode pdecls : SLinkOperations.getTargets(mds.get(0), "parameter", true)) {
+    for(SNode pdecls : SLinkOperations.getTargets(ListSequence.fromList(mds).getElement(0), "parameter", true)) {
       SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null);
       SPropertyOperations.set(ref, "name", "param" + idx);
       idx = idx + 1;
-      res.add(ref);
+      ListSequence.fromList(res).addElement(ref);
     }
     return res;
   }
@@ -2370,7 +2371,7 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(ft), true);
       SPropertyOperations.set(pd, "name", "param" + idx);
       idx = idx + 1;
-      res.add(pd);
+      ListSequence.fromList(res).addElement(pd);
     }
     return res;
   }
@@ -2386,7 +2387,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1202148923827(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> paramTypes = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(_context.getNode(), "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-      paramTypes.add(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(_context.getNode()));
+      ListSequence.fromList(paramTypes).addElement(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(_context.getNode()));
     }
     paramTypes.addAll(FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(_context.getNode()));
     return paramTypes;
@@ -2396,7 +2397,7 @@ public class QueriesGenerated {
     List<SNode> ptypes = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
     List<SNode> result = new ArrayList<SNode>();
     for(SNode pt : ptypes) {
-      result.add(ClassifierTypeUtil.copyTypeRecursively(pt));
+      ListSequence.fromList(result).addElement(ClassifierTypeUtil.copyTypeRecursively(pt));
     }
     return result;
   }
@@ -2418,19 +2419,19 @@ public class QueriesGenerated {
     SNode cl = (SNode)((SNode)_context.getNode()).getUserObject("literal");
     List<SNode> litParams = SLinkOperations.getTargets(cl, "parameter", true);
     List<SNode> res = new ArrayList<SNode>();
-    for(SNode pdecl : SLinkOperations.getTargets(mds.get(0), "parameter", true)) {
+    for(SNode pdecl : SLinkOperations.getTargets(ListSequence.fromList(mds).getElement(0), "parameter", true)) {
       SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
       SNode ptype = SLinkOperations.getTarget(pdecl, "type", true);
       if (SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
         List<SNode> psib = SNodeOperations.getPrevSiblings(SLinkOperations.getTarget(ptype, "typeVariableDeclaration", false), false);
-        SLinkOperations.setTarget(pd, "type", ClassifierTypeUtil.copyTypeRecursively(ptypes.get(psib.size())), true);
+        SLinkOperations.setTarget(pd, "type", ClassifierTypeUtil.copyTypeRecursively(ListSequence.fromList(ptypes).getElement(ListSequence.fromList(psib).count())), true);
       } else
       {
         SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(ptype), true);
       }
-      SPropertyOperations.set(pd, "name", SPropertyOperations.getString(litParams.get(idx), "name"));
+      SPropertyOperations.set(pd, "name", SPropertyOperations.getString(ListSequence.fromList(litParams).getElement(idx), "name"));
       idx = idx + 1;
-      res.add(pd);
+      ListSequence.fromList(res).addElement(pd);
     }
     return res;
   }
@@ -2439,7 +2440,7 @@ public class QueriesGenerated {
     List<SNode> ptypes = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
     List<SNode> result = new ArrayList<SNode>();
     for(SNode pt : ptypes) {
-      result.add(ClassifierTypeUtil.copyTypeRecursively(pt));
+      ListSequence.fromList(result).addElement(ClassifierTypeUtil.copyTypeRecursively(pt));
     }
     return result;
   }
@@ -2456,7 +2457,7 @@ public class QueriesGenerated {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     List<SNode> res = new ArrayList<SNode>();
     for(SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
-      res.add(pt);
+      ListSequence.fromList(res).addElement(pt);
     }
     return res;
   }
@@ -2465,7 +2466,7 @@ public class QueriesGenerated {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     List<SNode> res = new ArrayList<SNode>();
     for(SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
-      res.add(pt);
+      ListSequence.fromList(res).addElement(pt);
     }
     return res;
   }
@@ -2489,11 +2490,11 @@ public class QueriesGenerated {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
-      if (imds.size() > 0) {
-        SNode imd = imds.get(0);
+      if (ListSequence.fromList(imds).count() > 0) {
+        SNode imd = ListSequence.fromList(imds).getElement(0);
         List<SNode> res = new ArrayList();
         for(SNode tt : SLinkOperations.getTargets(imd, "throwsItem", true)) {
-          res.add(ClassifierTypeUtil.resolveType(tt, ct));
+          ListSequence.fromList(res).addElement(ClassifierTypeUtil.resolveType(tt, ct));
         }
         return res;
       }
@@ -2514,17 +2515,17 @@ public class QueriesGenerated {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
-      if (imds.size() > 0) {
-        SNode imd = imds.get(0);
+      if (ListSequence.fromList(imds).count() > 0) {
+        SNode imd = ListSequence.fromList(imds).getElement(0);
         List<SNode> res = new ArrayList<SNode>();
         int idx = 0;
         for(SNode pd : SLinkOperations.getTargets(imd, "parameter", true)) {
           SNode newpd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
           SLinkOperations.setTarget(newpd, "type", ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pd, "type", true), ct), true);
-          SPropertyOperations.set(newpd, "name", SPropertyOperations.getString(paramDecls.get(idx), "name"));
-          SPropertyOperations.set(newpd, "isFinal", "" + (SPropertyOperations.getBoolean(paramDecls.get(idx), "isFinal")));
+          SPropertyOperations.set(newpd, "name", SPropertyOperations.getString(ListSequence.fromList(paramDecls).getElement(idx), "name"));
+          SPropertyOperations.set(newpd, "isFinal", "" + (SPropertyOperations.getBoolean(ListSequence.fromList(paramDecls).getElement(idx), "isFinal")));
           idx = idx + 1;
-          res.add(newpd);
+          ListSequence.fromList(res).addElement(newpd);
         }
         return res;
       }
@@ -2537,7 +2538,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2549,7 +2550,7 @@ public class QueriesGenerated {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
-        result.add(poi);
+        ListSequence.fromList(result).addElement(poi);
       }
     }
     return result;
@@ -2560,7 +2561,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2570,7 +2571,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2580,7 +2581,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2592,7 +2593,7 @@ public class QueriesGenerated {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
-        result.add(poi);
+        ListSequence.fromList(result).addElement(poi);
       }
     }
     return result;
@@ -2603,7 +2604,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2613,7 +2614,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2623,7 +2624,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2633,7 +2634,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2647,7 +2648,7 @@ public class QueriesGenerated {
     SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "parameter", true);
     for(SNode p : SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "parameter", true)) {
       if (WrappersUtils.getPrepData(p, ((TemplateQueryContext)_context).getGenerator()) != null) {
-        res.add(p);
+        ListSequence.fromList(res).addElement(p);
       }
     }
     return res;
@@ -2662,7 +2663,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2672,7 +2673,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2682,7 +2683,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2692,7 +2693,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2704,7 +2705,7 @@ public class QueriesGenerated {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
-        result.add(poi);
+        ListSequence.fromList(result).addElement(poi);
       }
     }
     return result;
@@ -2717,7 +2718,7 @@ public class QueriesGenerated {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
-        result.add(poi);
+        ListSequence.fromList(result).addElement(poi);
       }
     }
     return result;
@@ -2728,7 +2729,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2738,7 +2739,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2748,7 +2749,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2758,7 +2759,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2768,7 +2769,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2778,7 +2779,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2800,7 +2801,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2810,7 +2811,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2820,7 +2821,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2830,7 +2831,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2842,7 +2843,7 @@ public class QueriesGenerated {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
-        result.add(poi);
+        ListSequence.fromList(result).addElement(poi);
       }
     }
     return result;
@@ -2853,7 +2854,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2863,7 +2864,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2873,7 +2874,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2883,7 +2884,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2895,7 +2896,7 @@ public class QueriesGenerated {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
-        result.add(poi);
+        ListSequence.fromList(result).addElement(poi);
       }
     }
     return result;
@@ -2906,7 +2907,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2916,7 +2917,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2926,7 +2927,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2936,7 +2937,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2948,7 +2949,7 @@ public class QueriesGenerated {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
-        result.add(poi);
+        ListSequence.fromList(result).addElement(poi);
       }
     }
     return result;
@@ -2959,7 +2960,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2969,7 +2970,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2979,7 +2980,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -2989,7 +2990,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3001,7 +3002,7 @@ public class QueriesGenerated {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
-        result.add(poi);
+        ListSequence.fromList(result).addElement(poi);
       }
     }
     return result;
@@ -3012,7 +3013,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3022,7 +3023,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3032,7 +3033,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3042,7 +3043,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3052,7 +3053,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3062,7 +3063,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3074,7 +3075,7 @@ public class QueriesGenerated {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
-        result.add(poi);
+        ListSequence.fromList(result).addElement(poi);
       }
     }
     return result;
@@ -3085,7 +3086,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3095,7 +3096,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3105,7 +3106,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3115,7 +3116,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3125,7 +3126,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3135,7 +3136,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3147,7 +3148,7 @@ public class QueriesGenerated {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
         SPropertyOperations.set(poi, "first", "" + params);
         SPropertyOperations.set(poi, "second", "" + exceps);
-        result.add(poi);
+        ListSequence.fromList(result).addElement(poi);
       }
     }
     return result;
@@ -3158,7 +3159,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3168,7 +3169,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3178,7 +3179,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3188,7 +3189,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3198,7 +3199,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3208,7 +3209,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3218,7 +3219,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3228,7 +3229,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3238,7 +3239,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3248,7 +3249,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3258,7 +3259,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3268,7 +3269,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3278,7 +3279,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3288,7 +3289,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3298,7 +3299,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3308,7 +3309,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3318,7 +3319,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3328,7 +3329,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3338,7 +3339,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3348,7 +3349,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3358,7 +3359,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3368,7 +3369,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3378,7 +3379,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3388,7 +3389,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3398,7 +3399,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3408,7 +3409,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3418,7 +3419,7 @@ public class QueriesGenerated {
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "E" + (e + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3428,7 +3429,7 @@ public class QueriesGenerated {
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
       SPropertyOperations.set(sph, "value", "P" + (p + 1));
-      result.add(sph);
+      ListSequence.fromList(result).addElement(sph);
     }
     return result;
   }
@@ -3452,10 +3453,10 @@ public class QueriesGenerated {
     for(SNode ft : FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(TypeChecker.getInstance().getTypeOf(_context.getNode()))) {
       SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
       SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(FunctionTypeUtil.unmeet(ft)), true);
-      SPropertyOperations.set(pd, "name", SPropertyOperations.getString(((SNode)paramDecls.get(idx)), "name"));
-      SPropertyOperations.set(pd, "isFinal", "" + (SPropertyOperations.getBoolean(((SNode)paramDecls.get(idx)), "isFinal")));
+      SPropertyOperations.set(pd, "name", SPropertyOperations.getString(((SNode)ListSequence.fromList(paramDecls).getElement(idx)), "name"));
+      SPropertyOperations.set(pd, "isFinal", "" + (SPropertyOperations.getBoolean(((SNode)ListSequence.fromList(paramDecls).getElement(idx)), "isFinal")));
       idx = idx + 1;
-      res.add(pd);
+      ListSequence.fromList(res).addElement(pd);
     }
     return res;
   }
@@ -3487,11 +3488,11 @@ public class QueriesGenerated {
     SNode copy = CopyUtil.copyAndPreserveId(_context.getNode());
     List<SNode> args = SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
     List<SNode> copyArgs = SLinkOperations.getTargets(copy, "actualArgument", true);
-    for(int idx = args.size() - 1 ; idx >= 0 ; idx-- ) {
-      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(args.get(idx)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
+    for(int idx = ListSequence.fromList(args).count() - 1 ; idx >= 0 ; idx-- ) {
+      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(args).getElement(idx)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
         SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
         SLinkOperations.setTarget(lvr, "variableDeclaration", SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.ForStatement", false, false), "variable", true), false);
-        SNodeOperations.replaceWithAnother(copyArgs.get(idx), lvr);
+        SNodeOperations.replaceWithAnother(ListSequence.fromList(copyArgs).getElement(idx), lvr);
         break;
       }
     }
@@ -3511,7 +3512,7 @@ public class QueriesGenerated {
         SNode de = SNodeOperations.getParent(desc);
         SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
         List<SNode> stmts = SLinkOperations.getTargets(_context.getParentOutputNode(), "statement", true);
-        SLinkOperations.setTarget(lvr, "variableDeclaration", SLinkOperations.getTarget(stmts.get(0), "localVariableDeclaration", true), false);
+        SLinkOperations.setTarget(lvr, "variableDeclaration", SLinkOperations.getTarget(ListSequence.fromList(stmts).getElement(0), "localVariableDeclaration", true), false);
         SNodeOperations.replaceWithAnother(de, lvr);
         break;
       }
@@ -3605,13 +3606,13 @@ public class QueriesGenerated {
     for(SNode bmc : bmcs) {
       List<SNode> args = SLinkOperations.getTargets(bmc, "actualArgument", true);
       List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false), "parameter", true);
-      if ((SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false) != null) && args.size() != pdecls.size()) {
+      if ((SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
         _context.showInformationMessage(bmc, "Actual arguments count != parameter declarations count");
       }
       int idx = 0;
       for(SNode pdecl : pdecls) {
-        if (idx < args.size()) {
-          SNode arg = args.get(idx);
+        if (idx < ListSequence.fromList(args).count()) {
+          SNode arg = ListSequence.fromList(args).getElement(idx);
           FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(pdecl, "type", true), arg, _context);
         }
         idx = idx + 1;
@@ -3647,13 +3648,13 @@ public class QueriesGenerated {
         SNode imco = SLinkOperations.getTarget(de, "operation", true);
         List<SNode> args = SLinkOperations.getTargets(imco, "actualArgument", true);
         List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "parameter", true);
-        if ((SLinkOperations.getTarget(imco, "baseMethodDeclaration", false) != null) && args.size() != pdecls.size()) {
+        if ((SLinkOperations.getTarget(imco, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
           _context.showInformationMessage(imco, "Actual arguments count != parameter declarations count");
         }
         int idx = 0;
         for(SNode pdecl : pdecls) {
-          if (idx < args.size()) {
-            SNode arg = args.get(idx);
+          if (idx < ListSequence.fromList(args).count()) {
+            SNode arg = ListSequence.fromList(args).getElement(idx);
             SNode pdeclType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pdecl, "type", true), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)));
             FunctionTypeUtil.prepAdaptations(FunctionTypeUtil.unmeet(pdeclType), arg, _context);
           }
@@ -3742,13 +3743,13 @@ public class QueriesGenerated {
     for(SNode cc : ccs) {
       List<SNode> args = SLinkOperations.getTargets(cc, "actualArgument", true);
       List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(cc, "baseMethodDeclaration", false), "parameter", true);
-      if ((SLinkOperations.getTarget(cc, "baseMethodDeclaration", false) != null) && args.size() != pdecls.size()) {
+      if ((SLinkOperations.getTarget(cc, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
         _context.showInformationMessage(cc, "Actual arguments count != parameter declarations count");
       }
       int idx = 0;
       for(SNode pdecl : pdecls) {
-        if (idx < args.size()) {
-          SNode arg = args.get(idx);
+        if (idx < ListSequence.fromList(args).count()) {
+          SNode arg = ListSequence.fromList(args).getElement(idx);
           FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(pdecl, "type", true), arg, _context);
         }
         idx = idx + 1;
@@ -3773,12 +3774,12 @@ public class QueriesGenerated {
           it.remove();
         }
       }
-      switch (allYas.size()) {
+      switch (ListSequence.fromList(allYas).count()) {
         case 0:
           break;
         case 1:
-          if (allYas.get(0) == stmts.get(stmts.size() - 1) && allYs.isEmpty()) {
-            SNode yas = allYas.get(0);
+          if (ListSequence.fromList(allYas).getElement(0) == ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1) && ListSequence.fromList(allYs).isEmpty()) {
+            SNode yas = ListSequence.fromList(allYas).getElement(0);
             SNode rs = SNodeOperations.replaceWithNewChild(yas, "jetbrains.mps.baseLanguage.structure.ReturnStatement");
             SLinkOperations.setTarget(rs, "expression", SNodeOperations.detachNode(SLinkOperations.getTarget(yas, "expression", true)), true);
             break;

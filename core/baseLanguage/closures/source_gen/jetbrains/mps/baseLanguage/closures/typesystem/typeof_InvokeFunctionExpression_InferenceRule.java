@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -20,7 +21,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext) {
     List<SNode> ptypes = new ArrayList<SNode>();
     for(SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
-      ptypes.add(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1225470166988", true));
+      ListSequence.fromList(ptypes).addElement(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236871521012", true));
     }
     final SNode ret_typevar_1225470166995 = typeCheckingContext.createNewRuntimeTypesVariable();
     {

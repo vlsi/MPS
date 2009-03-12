@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -23,11 +24,11 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
     SNode classifier = SLinkOperations.getTarget(ct, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-      if (methods != null && methods.size() == 1) {
-        SNode md = methods.get(0);
+      if (methods != null && ListSequence.fromList(methods).count() == 1) {
+        SNode md = ListSequence.fromList(methods).getElement(0);
         List<SNode> paramTypes = new ArrayList<SNode>();
         for(SNode p : SLinkOperations.getTargets(md, "parameter", true)) {
-          paramTypes.add(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(p, "type", true), ct));
+          ListSequence.fromList(paramTypes).addElement(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(p, "type", true), ct));
         }
         SNode resType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), ct);
         supertypes = Collections.singletonList(new _Quotations.QuotationClass_4().createNode(paramTypes, resType));

@@ -20,6 +20,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ControlClosureLiteral_Editor extends DefaultNodeEditor {
 
@@ -131,7 +132,7 @@ public class ControlClosureLiteral_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition5381_0(SNode node, EditorContext editorContext, IScope scope) {
     List<SNode> siblings = SNodeOperations.getAllSiblings(node, false);
-    return SNodeOperations.getIndexInParent(node) <= siblings.size() - 1;
+    return SNodeOperations.getIndexInParent(node) <= ListSequence.fromList(siblings).count() - 1;
   }
 
 }

@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 
@@ -19,7 +20,7 @@ public class WrappersUtils {
         SNode vd = SLinkOperations.getTarget(desc, "variableDeclaration", false);
         if (closure != SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
           if (!(vdecls.contains(SLinkOperations.getTarget(desc, "variableDeclaration", false)))) {
-            vdecls.add(SLinkOperations.getTarget(desc, "variableDeclaration", false));
+            ListSequence.fromList(vdecls).addElement(SLinkOperations.getTarget(desc, "variableDeclaration", false));
           }
         }
       }
@@ -62,7 +63,7 @@ with_decls:
     List<SNode> fromDescendats = new ArrayList<SNode>(SNodeOperations.getDescendants(from, null, false));
     int idx = 0;
     for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
-      copyPrepDataNoRecursion(fromDesc, toDescendants.get(idx), generator);
+      copyPrepDataNoRecursion(fromDesc, ListSequence.fromList(toDescendants).getElement(idx), generator);
       idx = idx + 1;
     }
   }

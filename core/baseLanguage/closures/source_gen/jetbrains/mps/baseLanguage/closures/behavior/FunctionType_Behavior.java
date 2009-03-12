@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -103,7 +104,7 @@ public class FunctionType_Behavior {
     List<SNode> paramTypes = new ArrayList<SNode>();
     for(SNode c : SNodeOperations.getChildren(t)) {
       if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.Type")) {
-        paramTypes.add(c);
+        ListSequence.fromList(paramTypes).addElement(c);
       }
     }
     String sep = "_of";
@@ -118,7 +119,7 @@ public class FunctionType_Behavior {
     SNode rt = SLinkOperations.getTarget(thisNode, "resultType", true);
     if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       List<SNode> args = SLinkOperations.getTargets(rt, "argument", true);
-      rt = args.get(0);
+      rt = ListSequence.fromList(args).getElement(0);
     }
     return ((rt != null) && !(SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.VoidType")) ?
       rt :
@@ -229,7 +230,7 @@ public class FunctionType_Behavior {
     int idx = 0;
     for(SNode p : paramTypes) {
       SNode pct = ClassifierTypeUtil.getTypeCoercedToClassifierType(p);
-      resList.add(ClassifierTypeUtil.copyTypeRecursively(pct));
+      ListSequence.fromList(resList).addElement(ClassifierTypeUtil.copyTypeRecursively(pct));
       idx = idx + 1;
     }
     return resList;

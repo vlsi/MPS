@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Collections;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StatementListUtil {
@@ -30,7 +31,7 @@ public class StatementListUtil {
           break;
         }
         if (!(isIgnoredStatement(stmt))) {
-          res.add(stmt);
+          ListSequence.fromList(res).addElement(stmt);
         }
       }
     }

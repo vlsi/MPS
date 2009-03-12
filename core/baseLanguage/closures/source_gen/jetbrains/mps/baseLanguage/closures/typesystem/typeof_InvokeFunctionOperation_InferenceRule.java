@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,8 +23,8 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
     List<SNode> ptypes = new ArrayList<SNode>();
     List<SNode> ptypes2 = new ArrayList<SNode>();
     for(SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
-      ptypes.add(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1225797542588", true));
-      ptypes2.add(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1230049165412", true));
+      ListSequence.fromList(ptypes).addElement(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236871521383", true));
+      ListSequence.fromList(ptypes2).addElement(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236871520061", true));
     }
     final SNode ret_typevar_1225797542595 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode ret2_typevar_1230048995510 = typeCheckingContext.createNewRuntimeTypesVariable();
