@@ -409,5 +409,34 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236262329528" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.EnumClass" id="1236882908365">
+    <property name="name" value="SEnum" />
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1236882925387">
+      <property name="name" value="NONE" />
+      <link role="baseMethodDeclaration" targetNodeId="1236882908367" resolveInfo="SEnum" />
+    </node>
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1236882936404">
+      <property name="name" value="FIRST" />
+      <link role="baseMethodDeclaration" targetNodeId="1236882951952" resolveInfo="SEnum" />
+      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236886288373">
+        <property name="value" value="2" />
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236882908366" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1236882908367">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236882908368" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236882908369" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236882908370" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1236882951952">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236882951953" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236882951954" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236882951955" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1236882964279">
+        <property name="name" value="t" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1236882964280" />
+      </node>
+    </node>
+  </node>
 </model>
 

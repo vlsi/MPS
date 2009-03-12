@@ -563,7 +563,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1210838058221(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
-    return SNodeOperations.getModel(quickFix) + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
+    return SNodeOperations.getModel(quickFix).getLongName() + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
 
   public static Object propertyMacro_GetPropertyValue_1210838268824(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -580,7 +580,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1210840022621(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
-    return SNodeOperations.getModel(quickFix) + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
+    return SNodeOperations.getModel(quickFix).getLongName() + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
 
   public static Object propertyMacro_GetPropertyValue_1210840022660(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -723,7 +723,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1216206633084(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
-    return SNodeOperations.getModel(quickFix) + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
+    return SNodeOperations.getModel(quickFix).getLongName() + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
 
   public static Object propertyMacro_GetPropertyValue_1216206633109(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -839,7 +839,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1224761479286(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
-    return SNodeOperations.getModel(quickFix) + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
+    return SNodeOperations.getModel(quickFix).getLongName() + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
 
   public static Object propertyMacro_GetPropertyValue_1224761479325(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -11,13 +11,14 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class EnumConstantDeclaration extends BaseConcept implements IValidIdentifier, IResolveInfo, ClassifierMember {
+public class EnumConstantDeclaration extends BaseConcept implements IValidIdentifier, IResolveInfo, ClassifierMember, IMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RESOLVE_INFO = "resolveInfo";
+  public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String VISIBILITY = "visibility";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
 
@@ -63,6 +64,22 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
 
   public void setResolveInfo(String value) {
     this.setProperty(EnumConstantDeclaration.RESOLVE_INFO, value);
+  }
+
+  public BaseMethodDeclaration getBaseMethodDeclaration() {
+    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, EnumConstantDeclaration.BASE_METHOD_DECLARATION);
+  }
+
+  public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
+    super.setReferent(EnumConstantDeclaration.BASE_METHOD_DECLARATION, node);
+  }
+
+  public ConstructorDeclaration getConstructor() {
+    return this.ensureAdapter(ConstructorDeclaration.class, "baseMethodDeclaration", this.getBaseMethodDeclaration());
+  }
+
+  public void setConstructor(ConstructorDeclaration node) {
+    this.setBaseMethodDeclaration(node);
   }
 
   public Visibility getVisibility() {

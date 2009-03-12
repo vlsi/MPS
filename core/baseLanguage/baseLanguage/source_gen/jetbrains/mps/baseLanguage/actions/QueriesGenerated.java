@@ -455,6 +455,12 @@ __switch__:
     }
   }
 
+  public static void nodeFactory_NodeSetup_EnumConstantDeclaration_1236881765339(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "baseMethodDeclaration", ListSequence.fromList(SLinkOperations.getTargets(_context.getEnclosingNode(), "constructor", true)).first(), false);
+    }
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {

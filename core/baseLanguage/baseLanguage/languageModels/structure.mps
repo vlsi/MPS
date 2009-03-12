@@ -1126,11 +1126,12 @@
     <property name="name" value="EnumConstantDeclaration" />
     <property name="package" value="classifier.enum" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1083245396909">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="actualArgument" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236880967992">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="constructor" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068580123140" resolveInfo="ConstructorDeclaration" />
+      <link role="specializedLink" targetNodeId="1068499141037" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1212170587518">
       <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
@@ -1140,6 +1141,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1189675724652">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1236880963319">
+      <link role="intfc" targetNodeId="1204053956946" resolveInfo="IMethodCall" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1083260308424">
