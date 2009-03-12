@@ -1659,9 +1659,7 @@
         <root url="jar://$PROJECT_DIR$/lib/jfcunit/DnD.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/jfcunit/SwingSet.jar!/" />
       </CLASSES>
-      <JAVADOC>
-        <root url="file://$PROJECT_DIR$/lib/jfcunit/docs/api" />
-      </JAVADOC>
+      <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/jfcunit/src.zip!/src" />
       </SOURCES>
@@ -1670,11 +1668,9 @@
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/jakarta/jakarta-regexp-1.5.jar!/" />
       </CLASSES>
-      <JAVADOC>
-        <root url="file://$PROJECT_DIR$/lib/jakarta/docs" />
-      </JAVADOC>
+      <JAVADOC />
       <SOURCES>
-        <root url="file://$PROJECT_DIR$/lib/jakarta/src/java" />
+        <root url="jar://$PROJECT_DIR$/lib/jakarta/src.zip!/java" />
       </SOURCES>
     </library>
   </component>
