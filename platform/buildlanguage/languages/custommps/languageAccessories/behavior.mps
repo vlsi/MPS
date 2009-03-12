@@ -47,7 +47,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234294616847">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234294639906">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234294642964">
-            <property name="value" value="MPS-buildtools.zip" />
+            <property name="value" value="MPS-buildTools.zip" />
           </node>
         </node>
       </node>
