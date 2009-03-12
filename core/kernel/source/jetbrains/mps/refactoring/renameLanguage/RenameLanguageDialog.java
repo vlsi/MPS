@@ -77,7 +77,11 @@ public class RenameLanguageDialog extends BaseDialog {
     c.gridy = 2;
     c.anchor = GridBagConstraints.FIRST_LINE_START;
     myRegenerateLanguage = new JCheckBox("Regenerate Language");
-    myRegenerateLanguage.getModel().setSelected(!myLanguage.isBootstrap());
+    myRegenerateLanguage.getModel().setSelected(ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return !myLanguage.isBootstrap();
+      }
+    }));
     myMainPanel.add(myRegenerateLanguage, c);
 
 
