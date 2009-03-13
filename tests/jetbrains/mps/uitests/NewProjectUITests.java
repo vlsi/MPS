@@ -35,9 +35,8 @@ public class NewProjectUITests extends NoProjectUITestsBase {
     flushAWT();
 
     Project p = waitProjectLoaded();
-    flushAWT();
-
     checkProject(p);
+    flushAWT();
   }
 
   private void checkProject(Project p) {
@@ -45,6 +44,9 @@ public class NewProjectUITests extends NoProjectUITestsBase {
   }
 
   private Project waitProjectLoaded() {
+    Project[] projects = ProjectManager.getInstance().getOpenProjects();
+    if (projects.length!=0) return projects[0];
+
     final Project[] result = new Project[]{null};
     final ProjectManager manager = ProjectManager.getInstance();
     manager.addProjectManagerListener(new ProjectManagerAdapter() {
@@ -82,10 +84,9 @@ public class NewProjectUITests extends NoProjectUITestsBase {
   }
 
   private void checkDialogDisposed() {
-    Component dialog;
     DialogFinder dialogFinder = new DialogFinder("New Project");
     dialogFinder.setWait(2);
-    dialog = dialogFinder.find();
+    Component dialog = dialogFinder.find();
     assertNull("Dialog is not closed", dialog);
   }
 
