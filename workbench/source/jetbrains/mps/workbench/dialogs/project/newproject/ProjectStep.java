@@ -33,6 +33,10 @@ import java.io.File;
 import java.net.URL;
 
 public class ProjectStep extends BaseStep {
+  //for UI tests
+  public static final String PROJECT_PATH = "Project Path";
+  public static final String PROJECT_NAME = "Project Name";
+
   private ProjectOptions myOptions;
 
   private JTextField myProjectName;
@@ -53,6 +57,7 @@ public class ProjectStep extends BaseStep {
     panel.add(nameLabel);
 
     myProjectName = new JTextField();
+    myProjectName.setName(PROJECT_NAME);
     panel.add(myProjectName);
 
     JLabel pathLabel = new JLabel();
@@ -60,6 +65,7 @@ public class ProjectStep extends BaseStep {
     panel.add(pathLabel);
 
     myProjectPath = new PathField();
+    myProjectPath.setName(PROJECT_PATH);
     panel.add(myProjectPath);
 
     myProjectName.addCaretListener(new CaretListener() {

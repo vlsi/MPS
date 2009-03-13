@@ -6,13 +6,21 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSMainImpl;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import junit.extensions.jfcunit.JFCTestCase;
 import junit.extensions.jfcunit.JFCTestHelper;
-import junit.extensions.jfcunit.TestHelper;
+import junit.extensions.jfcunit.eventdata.MouseEventData;
+import junit.extensions.jfcunit.finder.AbstractButtonFinder;
+import junit.extensions.jfcunit.finder.NamedComponentFinder;
 
+import javax.swing.JCheckBox;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import java.awt.Component;
+import java.awt.Container;
 import java.io.File;
+import java.util.List;
 
 public abstract class UITestsBase extends JFCTestCase {
   private Project myProject;
@@ -49,9 +57,8 @@ public abstract class UITestsBase extends JFCTestCase {
 
     flushAWT();
 
-    TestHelper.cleanUp(UITestsBase.this);
-
-    flushAWT();
+    //TestHelper.cleanUp(UITestsBase.this);
+    //flushAWT();
 
     super.tearDown();
   }
@@ -75,6 +82,12 @@ public abstract class UITestsBase extends JFCTestCase {
   }
 
   public abstract static class ProjectUITestsBase extends UITestsBase {
+    private String myProjectPath;
+
+    protected ProjectUITestsBase(String projectPath) {
+      myProjectPath = projectPath;
+    }
+
     protected Project initProject() throws InterruptedException {
       while (!IdeMain.isUILoaded()) {
         Thread.sleep(500);
@@ -85,7 +98,7 @@ public abstract class UITestsBase extends JFCTestCase {
       final MPSProject[] project = new MPSProject[1];
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          project[0] = TestMain.loadProject(new File("../workbench/ideSolution/ide.mpr"));
+          project[0] = TestMain.loadProject(new File(myProjectPath));
         }
       });
 
@@ -97,5 +110,37 @@ public abstract class UITestsBase extends JFCTestCase {
 
       return project[0].getComponent(Project.class);
     }
+  }
+
+  protected final String checkTextField(String name) {
+    NamedComponentFinder finder = new NamedComponentFinder(JTextField.class, name);
+    JTextField field = (JTextField) finder.find();
+    assertNotNull(name+" field not found",field);
+    String text = field.getText();
+    assertFalse("Initial "+name+" is empty",text.equals(""));
+    return text;
+  }
+
+  protected final String checkPathField(String name) {
+    NamedComponentFinder finder = new NamedComponentFinder(PathField.class, name);
+    PathField field = (PathField) finder.find();
+    assertNotNull(name+" field not found",field);
+    String path = field.getPath();
+    assertFalse("Initial "+name+" is empty",path.equals(""));
+    return path;
+  }
+
+  protected final boolean checkCheckbox(String name){
+    NamedComponentFinder finder = new NamedComponentFinder(JCheckBox.class, name);
+    JCheckBox cb = (JCheckBox) finder.find();
+    assertNotNull(name+" checkbox not found",cb);
+    return cb.isSelected();
+  }
+
+  protected final void pressButton(Component dialog,String caption) {
+    AbstractButtonFinder btnFinder = new AbstractButtonFinder(".*"+caption+".*");
+    List nextBtn = btnFinder.findAll((Container) dialog);
+    assertFalse("\""+caption+"\" not found", nextBtn.isEmpty());
+    getHelper().enterClickAndLeave(new MouseEventData(UITestsBase.this, (Component) nextBtn.get(0)));
   }
 }

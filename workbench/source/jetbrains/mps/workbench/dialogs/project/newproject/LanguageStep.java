@@ -33,6 +33,11 @@ import java.io.File;
 import java.net.URL;
 
 public class LanguageStep extends BaseStep {
+  //for UI tests
+  public static final String LANGUAGE_PATH = "Language Path";
+  public static final String LANGUAGE_NAME = "Language Name";
+  public static final String CREATE_CHECKBOX = "Create Checkbox";
+
   private ProjectOptions myOptions;
 
   private JTextField myNamespace;
@@ -52,6 +57,7 @@ public class LanguageStep extends BaseStep {
         setCreateLanguage(myCreate.isSelected());
       }
     });
+    myCreate.setName(CREATE_CHECKBOX);
     panel.add(myCreate);
 
     JLabel namespaceLabel = new JLabel();
@@ -59,6 +65,7 @@ public class LanguageStep extends BaseStep {
     panel.add(namespaceLabel);
 
     myNamespace = new JTextField();
+    myNamespace.setName(LANGUAGE_NAME);
     panel.add(myNamespace);
 
     JLabel pathLabel = new JLabel();
@@ -66,6 +73,7 @@ public class LanguageStep extends BaseStep {
     panel.add(pathLabel);
 
     myPath = new PathField();
+    myPath.setName(LANGUAGE_PATH);
     panel.add(myPath);
 
     myNamespace.addCaretListener(new CaretListener() {

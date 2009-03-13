@@ -32,6 +32,11 @@ import java.io.File;
 import java.net.URL;
 
 public class SolutionStep extends BaseStep {
+  //for UI tests
+  public static final String SOLUTION_PATH = "Solution Path";
+  public static final String SOLUTION_NAME = "Solution Name";
+  public static final String CREATE_CHECKBOX = "Create Checkbox";
+
   private ProjectOptions myOptions;
 
   private JTextField myNamespace;
@@ -51,6 +56,7 @@ public class SolutionStep extends BaseStep {
         setCreateSolution(myCreate.isSelected());
       }
     });
+    myCreate.setName(CREATE_CHECKBOX);
     panel.add(myCreate);
 
     JLabel nameLabel = new JLabel();
@@ -58,6 +64,7 @@ public class SolutionStep extends BaseStep {
     panel.add(nameLabel);
 
     myNamespace = new JTextField();
+    myNamespace.setName(SOLUTION_NAME);
     panel.add(myNamespace);
 
     JLabel pathLabel = new JLabel();
@@ -65,6 +72,7 @@ public class SolutionStep extends BaseStep {
     panel.add(pathLabel);
 
     myPath = new PathField();
+    myPath.setName(SOLUTION_PATH);
     panel.add(myPath);
 
     myNamespace.addCaretListener(new CaretListener() {
