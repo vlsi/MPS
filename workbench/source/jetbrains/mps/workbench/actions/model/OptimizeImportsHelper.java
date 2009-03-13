@@ -223,7 +223,7 @@ public class OptimizeImportsHelper {
     public List<SModelReference> myUsedModels = new ArrayList<SModelReference>();
 
     public void add(Result addition) {
-      myReport = myReport + addition + "\n";
+      myReport = myReport + addition.myReport + "\n";
       myUsedLanguages.addAll(addition.myUsedLanguages);
       myUsedModels.addAll(addition.myUsedModels);
     }
