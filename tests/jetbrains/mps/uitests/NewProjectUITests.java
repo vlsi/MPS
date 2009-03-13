@@ -3,6 +3,10 @@ package jetbrains.mps.uitests;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.uitests.UITestsBase.NoProjectUITestsBase;
 import jetbrains.mps.workbench.dialogs.project.newproject.LanguageStep;
 import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
@@ -34,30 +38,45 @@ public class NewProjectUITests extends NoProjectUITestsBase {
     checkNoAdditionalDialogs();
     flushAWT();
 
-    Project p = waitProjectLoaded();
+    MPSProject p = waitProjectLoaded();
     checkProject(p);
     flushAWT();
   }
 
-  private void checkProject(Project p) {
-    assertFalse(true);
+  private void checkProject(MPSProject p) {
+    int langNum = p.getProjectLanguages().size();
+    assertEquals("Project languages namber: " + langNum, 1, langNum);
+    int solNum = p.getProjectSolutions().size();
+    assertEquals("Project solutions namber: " + solNum, 1, solNum);
+
+    Solution solution = p.getProjectSolutions().get(0);
+    Language language = p.getProjectLanguages().get(0);
+    assertTrue("Language is not imported into solution",solution.getSolutionDescriptor().getUsedLanguages().contains(language.getModuleReference()));
   }
 
-  private Project waitProjectLoaded() {
+  private MPSProject waitProjectLoaded() {
+    Project ideaProject = null;
     Project[] projects = ProjectManager.getInstance().getOpenProjects();
-    if (projects.length!=0) return projects[0];
 
-    final Project[] result = new Project[]{null};
-    final ProjectManager manager = ProjectManager.getInstance();
-    manager.addProjectManagerListener(new ProjectManagerAdapter() {
-      @Override
-      public void projectOpened(Project project) {
-        manager.removeProjectManagerListener(this);
-        result[0] = project;
-      }
-    });
-    while (result[0] ==null) flushAWT();
-    return result[0];
+    if (projects.length != 0){
+      ideaProject = projects[0];
+    } else{
+      final Project[] project = new Project[]{null};
+      final ProjectManager manager = ProjectManager.getInstance();
+      manager.addProjectManagerListener(new ProjectManagerAdapter() {
+        @Override
+        public void projectOpened(Project p) {
+          manager.removeProjectManagerListener(this);
+          project[0] = p;
+        }
+      });
+      while (project[0] == null) flushAWT();
+      ideaProject =project[0];
+    }
+
+    while (ideaProject.getComponent(MPSProjectHolder.class)==null) flushAWT();
+
+    return ideaProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
   private void checkNoAdditionalDialogs() {
