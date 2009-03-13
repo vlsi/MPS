@@ -4,6 +4,7 @@ package closures.sandbox.control;
 
 import jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Result;
+import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedClosures;
 
 public class ControlStatementDemo {
@@ -11,7 +12,7 @@ public class ControlStatementDemo {
   public ControlStatementDemo() {
   }
 
-  public static void bar(_UnrestrictedFunctionTypes._void_terminate_P0_E0<? extends Integer> cls) {
+  public static void bar(int howMany, _UnrestrictedFunctionTypes._void_terminate_P0_E0<? extends Integer> cls) {
     System.out.println("bar> entering");
     int _tmp_1232368702826 = 0;
     for(Result<? extends Integer, ?> __result__ = cls.invokeUnrestricted() ;  ; ) {
@@ -37,6 +38,9 @@ public class ControlStatementDemo {
   public static void withLock(Object lock, _UnrestrictedFunctionTypes._void_void_P0_E0 block) {
   }
 
+  public static void eachEntry(Map<String, Integer> map, _UnrestrictedFunctionTypes._void_void_P2_E0<? super String, ? super Integer> block) {
+  }
+
   public static int foo() {
     System.out.println("foo> entering");
     for(_UnrestrictedClosures._void_terminate_P0_E0<Integer> __closure__ = new _UnrestrictedClosures._void_terminate_P0_E0<Integer>(new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
@@ -49,7 +53,7 @@ public class ControlStatementDemo {
       }
 
     }) ;  ; ) {
-      bar(__closure__);
+      bar(1, __closure__);
       Result<?, Object> __result__ = __closure__.getAndClearLastResult();
       switch (__result__.getOutcome()) {
         case RETURN_VALUE:
@@ -68,7 +72,7 @@ public class ControlStatementDemo {
       }
 
     }) ;  ; ) {
-      bar(__closure__);
+      bar(1, __closure__);
       Result<?, Object> __result__ = __closure__.getAndClearLastResult();
       switch (__result__.getOutcome()) {
         case RETURN_VALUE:
@@ -80,14 +84,15 @@ public class ControlStatementDemo {
       }
       break;
     }
-    for(_UnrestrictedClosures._void_void_P0_E0 __closure__ = new _UnrestrictedClosures._void_void_P0_E0(new _UnrestrictedFunctionTypes._void_void_P0_E0() {
+    Map<String, Integer> map = null;
+    for(_UnrestrictedClosures._void_void_P2_E0 __closure__ = new _UnrestrictedClosures._void_void_P2_E0(new _UnrestrictedFunctionTypes._void_void_P2_E0 <String, Integer>() {
 
-      public Result<Object, Object> invokeUnrestricted() {
+      public Result<Object, Object> invokeUnrestricted(String bar, Integer foo) {
         return Result.TERMINATE_VOID();
       }
 
     }) ;  ; ) {
-      withLock(null, __closure__);
+      eachEntry(map, __closure__);
       Result<?, Object> __result__ = __closure__.getAndClearLastResult();
       switch (__result__.getOutcome()) {
         case BREAK:

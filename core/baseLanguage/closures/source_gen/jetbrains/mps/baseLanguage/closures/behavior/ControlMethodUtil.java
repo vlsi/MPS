@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -27,25 +26,28 @@ public class ControlMethodUtil {
       int initClosures = 0;
       int controlClosures = 0;
       List<SNode> closureParamTypes = null;
-      for(int idx = ListSequence.fromList(params).count() - 1 ; idx >= 0 ; idx-- ) {
-        SNode p = ListSequence.fromList(params).getElement(idx);
+      for(int idx = params.size() - 1 ; idx >= 0 ; idx-- ) {
+        SNode p = params.get(idx);
         SNode ptype = SLinkOperations.getTarget(p, "type", true);
         if (SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")) {
           if (functionParams > 0) {
             return null;
           }
           if (SNodeOperations.getConceptDeclaration(ptype) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ptype, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
+            if (initClosures > 0) {
+              return null;
+            }
             controlClosures++ ;
             inf.addControlClosureType(SNodeOperations.copyNode(ptype));
             if (closureParamTypes == null) {
               closureParamTypes = new ArrayList<SNode>();
               for(SNode pt : SLinkOperations.getTargets(ptype, "parameterType", true)) {
-                ListSequence.fromList(closureParamTypes).addElement(SNodeOperations.copyNode(pt));
+                closureParamTypes.add(SNodeOperations.copyNode(pt));
               }
-            } else if (closureParamTypes != null && ListSequence.fromList(closureParamTypes).count() == SLinkOperations.getCount(ptype, "parameterType")) {
+            } else if (closureParamTypes != null && closureParamTypes.size() == SLinkOperations.getCount(ptype, "parameterType")) {
               int i = 0;
               for(SNode pt : SLinkOperations.getTargets(ptype, "parameterType", true)) {
-                if (!(MatchingUtil.matchNodes(pt, ListSequence.fromList(closureParamTypes).getElement(i++ )))) {
+                if (!(MatchingUtil.matchNodes(pt, closureParamTypes.get(i++ )))) {
                   return null;
                 }
               }
@@ -54,13 +56,13 @@ public class ControlMethodUtil {
               return null;
             }
           } else if (SLinkOperations.getCount(ptype, "parameterType") == 0 && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ptype, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-            if (controlClosures == 0 || initClosures >= ListSequence.fromList(closureParamTypes).count()) {
+            if (controlClosures == 0 || initClosures >= closureParamTypes.size()) {
               return null;
             }
             initClosures++ ;
             inf.addInitClosureType(SNodeOperations.copyNode(ptype));
             SNode rt = SLinkOperations.getTarget(ptype, "resultType", true);
-            if (!(MatchingUtil.matchNodes(rt, ListSequence.fromList(closureParamTypes).getElement(ListSequence.fromList(closureParamTypes).count() - initClosures)))) {
+            if (!(MatchingUtil.matchNodes(rt, closureParamTypes.get(closureParamTypes.size() - initClosures)))) {
               return null;
             }
           } else
@@ -92,17 +94,17 @@ public class ControlMethodUtil {
 
     public void addControlClosureType(SNode cct) {
       this.init();
-      ListSequence.fromList(this.controlClosures).addElement(cct);
+      this.controlClosures.add(cct);
     }
 
     public void addInitClosureType(SNode ict) {
       this.init();
-      ListSequence.fromList(this.initClosures).addElement(ict);
+      this.initClosures.add(ict);
     }
 
     public void addFunctionParameterType(SNode fpt) {
       this.init();
-      ListSequence.fromList(this.functionParams).addElement(fpt);
+      this.functionParams.add(fpt);
     }
 
     public List<SNode> getControlClosureTypes() {

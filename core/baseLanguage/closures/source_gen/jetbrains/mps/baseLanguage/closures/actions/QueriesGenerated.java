@@ -11,7 +11,6 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.closures.behavior.ControlMethodUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -64,15 +63,23 @@ public class QueriesGenerated {
       }
 
     });
-    return !(ListSequence.fromList(nodes).isEmpty());
+    return !(nodes.isEmpty());
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClosureControlStatement_1232456372775(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SLinkOperations.getCount(_context.getSourceNode(), "parameter") == 0;
+    return SLinkOperations.getCount(_context.getSourceNode(), "actualParameter") == 0 && SLinkOperations.getCount(SLinkOperations.getTarget(_context.getSourceNode(), "controlClosure", true), "parameter") == 0;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1235747455803(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getTypeOf(_context.getSourceNode())) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType");
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1236794030042(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.getIndexInParent(_context.getSourceNode()) == 0 && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement") && SLinkOperations.getCount(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getSourceNode()), "controlClosure", true), "parameter") == 0;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClosureControlStatement_1236960289987(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SLinkOperations.getCount(_context.getSourceNode(), "actualParameter") == 0 && SLinkOperations.getCount(SLinkOperations.getTarget(_context.getSourceNode(), "controlClosure", true), "parameter") > 0;
   }
 
   public static void nodeFactory_NodeSetup_UnrestrictedFunctionType_1232132222405(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -179,7 +186,7 @@ public class QueriesGenerated {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode ccs = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", null);
                 SLinkOperations.setTarget(ccs, "controlMethod", (item), false);
-                SLinkOperations.addNewChild(ccs, "closure", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral");
+                SLinkOperations.setNewChild(ccs, "controlClosure", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral");
                 return ccs;
               }
 
@@ -210,7 +217,7 @@ public class QueriesGenerated {
       result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.addNewChild(_context.getSourceNode(), "parameter", "jetbrains.mps.baseLanguage.structure.Expression");
+          SLinkOperations.addNewChild(_context.getSourceNode(), "actualParameter", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
         }
 
@@ -223,7 +230,7 @@ public class QueriesGenerated {
         }
 
         public String getDescriptionText(String pattern) {
-          return "add parameters";
+          return "add parameter";
         }
 
       });
@@ -251,6 +258,62 @@ public class QueriesGenerated {
 
         public String getDescriptionText(String pattern) {
           return "invoke function";
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1236794002431(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.addNewChild(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getSourceNode()), "controlClosure", true), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return ":";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "add formal parameter";
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ClosureControlStatement_1236960289986(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.addNewChild(_context.getSourceNode(), "actualParameter", "jetbrains.mps.baseLanguage.structure.Expression");
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return ":";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "add parameter";
         }
 
       });

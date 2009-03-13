@@ -6,8 +6,8 @@ import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
 import java.util.Iterator;
-import java.util.List;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,8 +15,8 @@ import jetbrains.mps.project.GlobalScope;
 public class ClosureControlStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement";
   public static final String CONTROL_METHOD = "controlMethod";
-  public static final String CLOSURE = "closure";
-  public static final String PARAMETER = "parameter";
+  public static final String CONTROL_CLOSURE = "controlClosure";
+  public static final String ACTUAL_PARAMETER = "actualParameter";
 
   public ClosureControlStatement(SNode node) {
     super(node);
@@ -30,44 +30,32 @@ public class ClosureControlStatement extends Statement {
     super.setReferent(ClosureControlStatement.CONTROL_METHOD, node);
   }
 
-  public int getClosuresCount() {
-    return this.getChildCount(ClosureControlStatement.CLOSURE);
+  public ControlClosureLiteral getControlClosure() {
+    return (ControlClosureLiteral)this.getChild(ControlClosureLiteral.class, ClosureControlStatement.CONTROL_CLOSURE);
   }
 
-  public Iterator<ControlClosureLiteral> closures() {
-    return this.children(ControlClosureLiteral.class, ClosureControlStatement.CLOSURE);
+  public void setControlClosure(ControlClosureLiteral node) {
+    super.setChild(ClosureControlStatement.CONTROL_CLOSURE, node);
   }
 
-  public List<ControlClosureLiteral> getClosures() {
-    return this.getChildren(ControlClosureLiteral.class, ClosureControlStatement.CLOSURE);
+  public int getActualParametersCount() {
+    return this.getChildCount(ClosureControlStatement.ACTUAL_PARAMETER);
   }
 
-  public void addClosure(ControlClosureLiteral node) {
-    this.addChild(ClosureControlStatement.CLOSURE, node);
+  public Iterator<Expression> actualParameters() {
+    return this.children(Expression.class, ClosureControlStatement.ACTUAL_PARAMETER);
   }
 
-  public void insertClosure(ControlClosureLiteral prev, ControlClosureLiteral node) {
-    this.insertChild(prev, ClosureControlStatement.CLOSURE, node);
+  public List<Expression> getActualParameters() {
+    return this.getChildren(Expression.class, ClosureControlStatement.ACTUAL_PARAMETER);
   }
 
-  public int getParametersCount() {
-    return this.getChildCount(ClosureControlStatement.PARAMETER);
+  public void addActualParameter(Expression node) {
+    this.addChild(ClosureControlStatement.ACTUAL_PARAMETER, node);
   }
 
-  public Iterator<Expression> parameters() {
-    return this.children(Expression.class, ClosureControlStatement.PARAMETER);
-  }
-
-  public List<Expression> getParameters() {
-    return this.getChildren(Expression.class, ClosureControlStatement.PARAMETER);
-  }
-
-  public void addParameter(Expression node) {
-    this.addChild(ClosureControlStatement.PARAMETER, node);
-  }
-
-  public void insertParameter(Expression prev, Expression node) {
-    this.insertChild(prev, ClosureControlStatement.PARAMETER, node);
+  public void insertActualParameter(Expression prev, Expression node) {
+    this.insertChild(prev, ClosureControlStatement.ACTUAL_PARAMETER, node);
   }
 
 
