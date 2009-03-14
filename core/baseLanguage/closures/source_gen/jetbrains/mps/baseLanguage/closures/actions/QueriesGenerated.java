@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.closures.behavior.ControlMethodUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -63,7 +64,7 @@ public class QueriesGenerated {
       }
 
     });
-    return !(nodes.isEmpty());
+    return !(ListSequence.fromList(nodes).isEmpty());
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClosureControlStatement_1232456372775(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {

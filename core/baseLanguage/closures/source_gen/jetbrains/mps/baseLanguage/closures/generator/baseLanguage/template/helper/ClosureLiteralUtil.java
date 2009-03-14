@@ -69,7 +69,7 @@ public class ClosureLiteralUtil {
       if (ListSequence.fromList(imds).count() != 1) {
         genContext.showWarningMessage(literal, "The adaptation target interface has more than one method");
       }
-      SNode method = ListSequence.fromList(imds).getElement(0);
+      SNode method = imds.get(0);
       if ((SLinkOperations.getTarget(method, "returnType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
         /*
           map = matchType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft), map);
@@ -86,7 +86,7 @@ public class ClosureLiteralUtil {
           genContext.showErrorMessage(literal, "Closure parameters count doesn't match method '" + SPropertyOperations.getString(method, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(ctNoParams, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(ctNoParams, "classifier", false), "name")));
           return;
         }
-        map = matchType(SLinkOperations.getTarget(pd, "type", true), ListSequence.fromList(ptypes).getElement(idx), map);
+        map = matchType(SLinkOperations.getTarget(pd, "type", true), ptypes.get(idx), map);
         idx = idx + 1;
       }
     }
@@ -129,7 +129,7 @@ public class ClosureLiteralUtil {
       }
       if (SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
         if (idx < ListSequence.fromList(varDecls).count()) {
-          SNode tvd = ListSequence.fromList(varDecls).getElement(idx);
+          SNode tvd = varDecls.get(idx);
           SLinkOperations.addChild(ctNoParams, "parameter", (map != null ?
             map.get(SPropertyOperations.getString(tvd, "name")) :
             null
@@ -230,7 +230,7 @@ public class ClosureLiteralUtil {
         List<SNode> mptypes = SLinkOperations.getTargets(absType, "parameter", true);
         List<SNode> rptypes = SLinkOperations.getTargets(matched, "parameter", true);
         for(int i = 0 ; i < ListSequence.fromList(mptypes).count() && i < ListSequence.fromList(rptypes).count() ; i = i + 1) {
-          map = matchType(ListSequence.fromList(mptypes).getElement(i), ListSequence.fromList(rptypes).getElement(i), getMap(map));
+          map = matchType(mptypes.get(i), rptypes.get(i), getMap(map));
         }
       }
     }

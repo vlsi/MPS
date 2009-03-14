@@ -23,8 +23,8 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
     List<SNode> ptypes = new ArrayList<SNode>();
     List<SNode> ptypes2 = new ArrayList<SNode>();
     for(SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
-      ListSequence.fromList(ptypes).addElement(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236871521383", true));
-      ListSequence.fromList(ptypes2).addElement(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236871520061", true));
+      ListSequence.fromList(ptypes).addElement(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237042863792", true));
+      ListSequence.fromList(ptypes2).addElement(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237042864597", true));
     }
     final SNode ret_typevar_1225797542595 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode ret2_typevar_1230048995510 = typeCheckingContext.createNewRuntimeTypesVariable();

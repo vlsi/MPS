@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -18,7 +18,7 @@ public class ResolveUtil {
   }
 
   public static List<SNode> parameterTypes(SNode method, SNode instanceType, SNode classifier) {
-    List<SNode> result = ListSequence.fromList(new LinkedList<SNode>());
+    List<SNode> result = new LinkedList<SNode>();
     boolean containsVars = false;
     for(SNode parameter : SLinkOperations.getTargets(method, "parameter", true)) {
       if (ListSequence.fromList(SNodeOperations.getDescendants(parameter, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true)).isNotEmpty()) {
@@ -40,7 +40,7 @@ public class ResolveUtil {
       for(SNode typeVar : SNodeOperations.getDescendants(paramType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true)) {
         SNode replacement = SNodeOperations.copyNode(ListSequence.fromList(typeParameters).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVar, "typeVariableDeclaration", false))));
         if ((SNodeOperations.getParent(typeVar) == null)) {
-          ListSequence.fromList(result).insertElement(ListSequence.fromList(result).indexOf(typeVar), replacement);
+          result.add(result.indexOf(typeVar), replacement);
           ListSequence.fromList(result).removeElement(typeVar);
         } else
         {

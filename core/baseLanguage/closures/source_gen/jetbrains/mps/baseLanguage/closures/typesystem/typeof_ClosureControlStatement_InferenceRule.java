@@ -12,6 +12,7 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -29,7 +30,7 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
     }
     if (info != null) {
       List<SNode> ccts = info.getControlClosureTypes();
-      if (!(ccts.size() > 0)) {
+      if (!(ListSequence.fromList(ccts).count() > 0)) {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         typeCheckingContext.reportTypeError(ccs, "Control method should accept at least one unrestricted closure", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1232454232193", intentionProvider, errorTarget);
@@ -39,16 +40,16 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
         IErrorTarget errorTarget = new NodeErrorTarget();
         typeCheckingContext.reportTypeError(ccs, "Must define a control closure", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1232454314258", intentionProvider, errorTarget);
       }
-      if (ccts.size() > 0) {
+      if (ListSequence.fromList(ccts).count() > 0) {
         {
           SNode _nodeToCheck_1029348928467 = ccs;
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(SLinkOperations.getTarget(ccs, "controlClosure", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533965287", true), ccts.get(ccts.size() - 1), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533962056", false, 0, intentionProvider);
+          typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(SLinkOperations.getTarget(ccs, "controlClosure", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533965287", true), ccts.get(ListSequence.fromList(ccts).count() - 1), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533962056", false, 0, intentionProvider);
         }
       }
       List<SNode> params = SLinkOperations.getTargets(ccs, "actualParameter", true);
       List<SNode> fpts = info.getFunctionParamTypes();
-      if (!(params.size() == fpts.size())) {
+      if (!(ListSequence.fromList(params).count() == ListSequence.fromList(fpts).count())) {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         typeCheckingContext.reportTypeError(ccs, "Incorrect parameters number", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1232455288552", intentionProvider, errorTarget);

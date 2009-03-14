@@ -59,12 +59,12 @@ public class ListMigrationUtil {
         argument = argument_iterator.next();
         param = param_iterator.next();
         if (param == ParameterType.INT) {
-          if (!(SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.IntegerType"))) {
+          if (!(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(argument), "jetbrains.mps.baseLanguage.structure.IntegerType"))) {
             return false;
           }
         }
         if (param != ParameterType.NOT_INT) {
-          if (SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.IntegerType")) {
+          if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(argument), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
             return false;
           }
         }
@@ -84,6 +84,9 @@ public class ListMigrationUtil {
       return true;
     }
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      return true;
+    }
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.CastExpression")) {
       return true;
     }
     return false;

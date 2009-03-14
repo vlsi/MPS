@@ -21,7 +21,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext) {
     List<SNode> ptypes = new ArrayList<SNode>();
     for(SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
-      ListSequence.fromList(ptypes).addElement(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236871520075", true));
+      ListSequence.fromList(ptypes).addElement(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237042863077", true));
     }
     final SNode ret_typevar_1235747337257 = typeCheckingContext.createNewRuntimeTypesVariable();
     {

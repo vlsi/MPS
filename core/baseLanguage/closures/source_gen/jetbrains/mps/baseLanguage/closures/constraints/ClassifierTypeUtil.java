@@ -210,7 +210,7 @@ public class ClassifierTypeUtil {
       int idx = 0;
       for(SNode tvd : vars) {
         if (tvd == SLinkOperations.getTarget(type, "typeVariableDeclaration", false) && idx < ListSequence.fromList(actTypes).count()) {
-          return SNodeOperations.copyNode(getTypeCoercedToClassifierType(ListSequence.fromList(actTypes).getElement(idx)));
+          return SNodeOperations.copyNode(getTypeCoercedToClassifierType(actTypes.get(idx)));
         }
         idx = idx + 1;
       }

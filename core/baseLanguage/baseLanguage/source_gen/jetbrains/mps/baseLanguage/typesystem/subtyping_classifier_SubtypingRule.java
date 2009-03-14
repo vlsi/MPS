@@ -30,7 +30,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     }
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       SNode interfaceConcept = classifier;
-      ListSequence.fromList(supertypes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true)));
+      supertypes.addAll(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true));
     }
     if (ListSequence.fromList(supertypes).isEmpty()) {
       ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_4().createNode());

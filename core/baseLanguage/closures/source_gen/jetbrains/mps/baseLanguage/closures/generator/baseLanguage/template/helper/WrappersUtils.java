@@ -63,7 +63,7 @@ with_decls:
     List<SNode> fromDescendats = new ArrayList<SNode>(SNodeOperations.getDescendants(from, null, false));
     int idx = 0;
     for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
-      copyPrepDataNoRecursion(fromDesc, ListSequence.fromList(toDescendants).getElement(idx), generator);
+      copyPrepDataNoRecursion(fromDesc, toDescendants.get(idx), generator);
       idx = idx + 1;
     }
   }

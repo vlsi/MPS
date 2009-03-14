@@ -166,7 +166,7 @@ public class PrepStatementUtil {
       if ((SLinkOperations.getTarget(scase, "body", true) != null)) {
         List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(scase, "body", true), "statement", true);
         int endCaseLabel = nextCaseLabel;
-        if (ListSequence.fromList(stmts).count() > 0 && SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement")) {
+        if (ListSequence.fromList(stmts).count() > 0 && SNodeOperations.isInstanceOf(stmts.get(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement")) {
           endCaseLabel = nextLabel;
         }
         putPrepData(SLinkOperations.getTarget(scase, "body", true), new Integer[]{caseLabel,endCaseLabel}, this.generator);
@@ -278,7 +278,7 @@ public class PrepStatementUtil {
     List<SNode> toDescendants = new ArrayList<SNode>(SNodeOperations.getDescendants(to, null, false));
     int idx = 0;
     for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
-      copyPrepDataNoRecursion(fromDesc, ListSequence.fromList(toDescendants).getElement(idx), generator);
+      copyPrepDataNoRecursion(fromDesc, toDescendants.get(idx), generator);
       idx = idx + 1;
     }
   }

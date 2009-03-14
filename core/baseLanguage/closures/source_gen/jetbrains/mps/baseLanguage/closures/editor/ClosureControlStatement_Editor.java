@@ -310,6 +310,15 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_3967_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3967_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_3967_3(EditorCell editorCell, SNode node, EditorContext context) {

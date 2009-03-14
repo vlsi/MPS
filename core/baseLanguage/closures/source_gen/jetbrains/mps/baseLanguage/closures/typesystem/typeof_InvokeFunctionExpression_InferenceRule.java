@@ -21,7 +21,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext) {
     List<SNode> ptypes = new ArrayList<SNode>();
     for(SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
-      ListSequence.fromList(ptypes).addElement(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236871521012", true));
+      ListSequence.fromList(ptypes).addElement(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237042865071", true));
     }
     final SNode ret_typevar_1225470166995 = typeCheckingContext.createNewRuntimeTypesVariable();
     {

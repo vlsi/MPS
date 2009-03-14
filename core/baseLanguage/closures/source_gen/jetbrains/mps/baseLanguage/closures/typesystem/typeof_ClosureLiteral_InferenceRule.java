@@ -139,7 +139,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
       case 0:
         break;
       case 1:
-        if (ListSequence.fromList(allYldAlls).getElement(0) == lastStmt && !(yieldsValue)) {
+        if (allYldAlls.get(0) == lastStmt && !(yieldsValue)) {
           returnsValue = true;
           {
             SNode _nodeToCheck_1029348928467 = closure;

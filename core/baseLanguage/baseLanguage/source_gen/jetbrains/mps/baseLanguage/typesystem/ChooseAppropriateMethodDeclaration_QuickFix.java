@@ -25,18 +25,19 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
   }
 
   public void execute(SNode node) {
-    if ((SNodeOperations.isInstanceOf(((SNode)this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.ClassCreator") || SNodeOperations.isInstanceOf(((SNode)this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) && SNodeOperations.isInstanceOf(((SNode)this.getField("classifier")[0]), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+    if (SNodeOperations.isInstanceOf(((SNode)this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.ClassCreator") && SNodeOperations.isInstanceOf(((SNode)this.getField("classifier")[0]), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      SNode constructorCall = ((SNode)this.getField("methodCall")[0]);
       SNode classConcept = ((SNode)this.getField("classifier")[0]);
       List<SNode> list = SLinkOperations.getTargets(classConcept, "constructor", true);
       for(SNode constructorDeclaration : list) {
-        if (SLinkOperations.getCount(constructorDeclaration, "parameter") == SLinkOperations.getCount(((SNode)this.getField("methodCall")[0]), "actualArgument")) {
+        if (SLinkOperations.getCount(constructorDeclaration, "parameter") == SLinkOperations.getCount(constructorCall, "actualArgument")) {
           boolean good = true;
-          List<SNode> parameterTypes = ResolveUtil.parameterTypes(SLinkOperations.getTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", false), TypeChecker.getInstance().getTypeOf(((SNode)this.getField("methodCall")[0])), ((SNode)this.getField("classifier")[0]));
+          List<SNode> parameterTypes = ResolveUtil.parameterTypes(SLinkOperations.getTarget(constructorCall, "baseMethodDeclaration", false), TypeChecker.getInstance().getTypeOf(constructorCall), ((SNode)this.getField("classifier")[0]));
           {
             SNode parameter;
             SNode argument;
             Iterator<SNode> parameter_iterator = parameterTypes.iterator();
-            Iterator<SNode> argument_iterator = SLinkOperations.getTargets(((SNode)this.getField("methodCall")[0]), "actualArgument", true).iterator();
+            Iterator<SNode> argument_iterator = SLinkOperations.getTargets(constructorCall, "actualArgument", true).iterator();
             while (true) {
               if (!(parameter_iterator.hasNext())) {
                 break;
@@ -53,7 +54,7 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
             }
           }
           if (good) {
-            SLinkOperations.setTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", constructorDeclaration, false);
+            SLinkOperations.setTarget(constructorCall, "baseMethodDeclaration", constructorDeclaration, false);
             return;
           }
         }
@@ -63,7 +64,7 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
       SNode instanceType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(((SNode)this.getField("methodCall")[0])), "operand", true));
       ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope((Classifier)((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))));
       List<BaseMethodDeclaration> list = scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name"));
-      for(BaseMethodDeclaration object : list) {
+      for(Object object : list) {
         INodeAdapter adapter = (INodeAdapter)object;
         SNode baseMethodDeclaration = ((SNode)adapter.getNode());
         if (SLinkOperations.getCount(baseMethodDeclaration, "parameter") == SLinkOperations.getCount(((SNode)this.getField("methodCall")[0]), "actualArgument")) {
