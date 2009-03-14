@@ -409,8 +409,8 @@
   </node>
   <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1201275992898">
     <property name="isVisible" value="true" />
-    <property name="name" value="LinkExamples" />
-    <property name="description" value="Find Link Examples" />
+    <property name="name" value="LinkInstances" />
+    <property name="description" value="Link Instances" />
     <link role="forConcept" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
     <node role="isApplicableFunction" type="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock" id="1201275992899">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201275992900">
@@ -664,7 +664,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206463363236">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206463366004">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206463366334">
-            <property name="value" value="Link Examples" />
+            <property name="value" value="Link Instances" />
           </node>
         </node>
       </node>
