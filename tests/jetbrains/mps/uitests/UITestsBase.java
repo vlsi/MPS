@@ -45,7 +45,7 @@ public abstract class UITestsBase extends JFCTestCase {
 
     flushAWT();
 
-    doInit();
+    doSetUp();
 
     flushAWT();
   }
@@ -67,7 +67,7 @@ public abstract class UITestsBase extends JFCTestCase {
     return myProject;
   }
 
-  protected void doInit() {
+  protected void doSetUp() {
   }
 
   protected void doTearDown() {
@@ -113,28 +113,43 @@ public abstract class UITestsBase extends JFCTestCase {
   }
 
   protected final String checkTextField(String name) {
-    NamedComponentFinder finder = new NamedComponentFinder(JTextField.class, name);
-    JTextField field = (JTextField) finder.find();
-    assertNotNull(name+" field not found",field);
+    JTextField field = findTextField(name);
     String text = field.getText();
     assertFalse("Initial "+name+" is empty",text.equals(""));
     return text;
   }
 
-  protected final String checkPathField(String name) {
-    NamedComponentFinder finder = new NamedComponentFinder(PathField.class, name);
-    PathField field = (PathField) finder.find();
+  protected JTextField findTextField(String name) {
+    NamedComponentFinder finder = new NamedComponentFinder(JTextField.class, name);
+    JTextField field = (JTextField) finder.find();
     assertNotNull(name+" field not found",field);
+    return field;
+  }
+
+  protected final String checkPathField(String name) {
+    PathField field = findPathField(name);
     String path = field.getPath();
     assertFalse("Initial "+name+" is empty",path.equals(""));
     return path;
   }
 
+  protected PathField findPathField(String name) {
+    NamedComponentFinder finder = new NamedComponentFinder(PathField.class, name);
+    PathField field = (PathField) finder.find();
+    assertNotNull(name+" field not found",field);
+    return field;
+  }
+
   protected final boolean checkCheckbox(String name){
+    JCheckBox cb = findCheckbox(name);
+    return cb.isSelected();
+  }
+
+  protected JCheckBox findCheckbox(String name) {
     NamedComponentFinder finder = new NamedComponentFinder(JCheckBox.class, name);
     JCheckBox cb = (JCheckBox) finder.find();
     assertNotNull(name+" checkbox not found",cb);
-    return cb.isSelected();
+    return cb;
   }
 
   protected final void pressButton(Component dialog,String caption) {

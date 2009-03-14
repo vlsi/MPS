@@ -15,7 +15,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
@@ -24,7 +24,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <maxImportIndex value="27" />
+  <maxImportIndex value="28" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -41,6 +41,7 @@
   <import index="24" modelUID="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" />
   <import index="25" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="27" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="28" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="1203684597238">
     <property name="name" value="NewLanguageDialog" />
     <node role="root" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialog" id="1203684615537">
@@ -78,6 +79,7 @@
         </node>
         <node role="row" type="jetbrains.mps.uiLanguage.structure.GridRow" id="1203685056752">
           <node role="component" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1203685058175">
+            <property name="name" value="name" />
             <link role="componentDeclaration" targetNodeId="21.1202464198724" resolveInfo="TextField" />
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1203685121515">
               <link role="attribute" targetNodeId="21.1202464208353" resolveInfo="text" />
@@ -105,6 +107,7 @@
         </node>
         <node role="row" type="jetbrains.mps.uiLanguage.structure.GridRow" id="1203685081760">
           <node role="component" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1204294178958">
+            <property name="name" value="path" />
             <link role="componentDeclaration" targetNodeId="13.1203601634745" resolveInfo="PathField" />
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1204294181723">
               <link role="attribute" targetNodeId="13.1203601661865" resolveInfo="path" />
@@ -951,6 +954,32 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224361" />
               <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1203686059122">
                 <link role="member" targetNodeId="1203685104730" resolveInfo="languagePath" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237027856122">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237027874517">
+            <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="1237027856593">
+              <link role="component" targetNodeId="1203685058175" resolveInfo="name" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237027886073">
+              <link role="baseMethodDeclaration" targetNodeId="28.~Component.setName(java.lang.String):void" resolveInfo="setName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237027894926">
+                <property name="value" value="Name" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237027889981">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237027891546">
+            <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="1237027890452">
+              <link role="component" targetNodeId="1204294178958" resolveInfo="path" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237027893254">
+              <link role="baseMethodDeclaration" targetNodeId="28.~Component.setName(java.lang.String):void" resolveInfo="setName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237027915146">
+                <property name="value" value="Path" />
               </node>
             </node>
           </node>

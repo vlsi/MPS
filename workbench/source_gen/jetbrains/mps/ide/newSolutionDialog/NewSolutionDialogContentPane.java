@@ -41,9 +41,9 @@ public class NewSolutionDialogContentPane extends JPanel {
 
   public NewSolutionDialogContentPane myThis;
   private JLabel myComponent0;
-  private JTextField myComponent1;
-  private JLabel myComponent2;
-  private PathField myComponent3;
+  private JTextField myName0;
+  private JLabel myComponent1;
+  private PathField myPath0;
   private String mySolutionName;
   private String mySolutionPath;
   private boolean myCompileInMPS = true;
@@ -72,6 +72,8 @@ public class NewSolutionDialogContentPane extends JPanel {
     this.myEvents.initialize();
     myThis.setSolutionPath("");
     myThis.setSolutionName("NewSolution");
+    myThis.myName0.setName("Name");
+    myThis.myPath0.setName("Path");
   }
 
   public Events getEvents() {
@@ -92,7 +94,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("solutionName");
-      Object targetObject = this.myComponent1;
+      Object targetObject = this.myName0;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -101,7 +103,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("solutionPath");
-      Object targetObject = this.myComponent3;
+      Object targetObject = this.myPath0;
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -126,20 +128,20 @@ public class NewSolutionDialogContentPane extends JPanel {
 
   private JTextField createComponent1() {
     JTextField component = new JTextField();
-    this.myComponent1 = component;
+    this.myName0 = component;
     return component;
   }
 
   private JLabel createComponent2() {
     JLabel component = new JLabel();
-    this.myComponent2 = component;
+    this.myComponent1 = component;
     component.setText("Solution Path:");
     return component;
   }
 
   private PathField createComponent3() {
     PathField component = new PathField();
-    this.myComponent3 = component;
+    this.myPath0 = component;
     return component;
   }
 

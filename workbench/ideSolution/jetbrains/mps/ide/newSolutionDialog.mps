@@ -16,7 +16,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
@@ -25,7 +25,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <maxImportIndex value="22" />
+  <maxImportIndex value="24" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" version="-1" />
@@ -43,6 +43,8 @@
   <import index="20" modelUID="f:java_stub#jetbrains.mps.project.structure.model(jetbrains.mps.project.structure.model@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.project.persistence(jetbrains.mps.project.persistence@java_stub)" version="-1" />
+  <import index="23" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
+  <import index="24" modelUID="r:00000000-0000-4000-0000-011c895904a9(jetbrains.mps.ide.newLanguageDialog)" version="-1" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="1203592850595">
     <property name="name" value="NewSolutionDialog" />
     <node role="root" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialog" id="1203592858466">
@@ -80,6 +82,7 @@
         </node>
         <node role="row" type="jetbrains.mps.uiLanguage.structure.GridRow" id="1203602962695">
           <node role="component" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1203602964681">
+            <property name="name" value="name" />
             <link role="componentDeclaration" targetNodeId="16.1202464198724" resolveInfo="TextField" />
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1203602966057">
               <link role="attribute" targetNodeId="16.1202464208353" resolveInfo="text" />
@@ -107,6 +110,7 @@
         </node>
         <node role="row" type="jetbrains.mps.uiLanguage.structure.GridRow" id="1203603003092">
           <node role="component" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1203603037281">
+            <property name="name" value="path" />
             <link role="componentDeclaration" targetNodeId="3.1203601634745" resolveInfo="PathField" />
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1203603040079">
               <link role="attribute" targetNodeId="3.1203601661865" resolveInfo="path" />
@@ -997,6 +1001,32 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224324" />
               <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1203677559178">
                 <link role="member" targetNodeId="1203602979314" resolveInfo="solutionName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237027937420">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237027937421">
+            <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="1237027955791">
+              <link role="component" targetNodeId="1203602964681" resolveInfo="name" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237027937423">
+              <link role="baseMethodDeclaration" targetNodeId="23.~Component.setName(java.lang.String):void" resolveInfo="setName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237027937424">
+                <property name="value" value="Name" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237027937425">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237027937426">
+            <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="1237027937427">
+              <link role="component" targetNodeId="1203603037281" resolveInfo="path" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237027937428">
+              <link role="baseMethodDeclaration" targetNodeId="23.~Component.setName(java.lang.String):void" resolveInfo="setName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237027937429">
+                <property name="value" value="Path" />
               </node>
             </node>
           </node>

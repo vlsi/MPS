@@ -15,7 +15,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
@@ -24,7 +24,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <maxImportIndex value="20" />
+  <maxImportIndex value="22" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" version="-1" />
@@ -39,6 +39,8 @@
   <import index="18" modelUID="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.project.persistence(jetbrains.mps.project.persistence@java_stub)" version="-1" />
+  <import index="21" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
+  <import index="22" modelUID="r:00000000-0000-4000-0000-011c895904a9(jetbrains.mps.ide.newLanguageDialog)" version="-1" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="1204026592280">
     <property name="name" value="NewDevKitDialog" />
     <node role="root" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialog" id="1204026607298">
@@ -76,6 +78,7 @@
         </node>
         <node role="row" type="jetbrains.mps.uiLanguage.structure.GridRow" id="1204026619523">
           <node role="component" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1204026619524">
+            <property name="name" value="name" />
             <link role="componentDeclaration" targetNodeId="16.1202464198724" resolveInfo="TextField" />
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1204026619525">
               <link role="attribute" targetNodeId="16.1202464208353" resolveInfo="text" />
@@ -103,6 +106,7 @@
         </node>
         <node role="row" type="jetbrains.mps.uiLanguage.structure.GridRow" id="1204026619534">
           <node role="component" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1204026619535">
+            <property name="name" value="path" />
             <link role="componentDeclaration" targetNodeId="6.1203601634745" resolveInfo="PathField" />
             <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1204027152488">
               <link role="attribute" targetNodeId="6.1203601661865" resolveInfo="path" />
@@ -827,6 +831,32 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224142" />
               <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027378496">
                 <link role="member" targetNodeId="1204026664006" resolveInfo="devkitDir" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237027964719">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237027964720">
+            <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="1237027977933">
+              <link role="component" targetNodeId="1204026619524" resolveInfo="name" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237027964722">
+              <link role="baseMethodDeclaration" targetNodeId="21.~Component.setName(java.lang.String):void" resolveInfo="setName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237027964723">
+                <property name="value" value="Name" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237027964724">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237027964725">
+            <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="1237027964726">
+              <link role="component" targetNodeId="1204026619535" resolveInfo="path" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237027964727">
+              <link role="baseMethodDeclaration" targetNodeId="21.~Component.setName(java.lang.String):void" resolveInfo="setName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237027964728">
+                <property name="value" value="Path" />
               </node>
             </node>
           </node>
