@@ -6,10 +6,10 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MigrationToCollections_MigrationScript extends BaseMigrationScript {
 
@@ -30,19 +30,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~List") || SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~ArrayList") || SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~LinkedList"))) {
-          return false;
-        }
-        if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() != 1) {
-          return false;
-        }
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-          return true;
-        }
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-          return true;
-        }
-        return false;
+        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.<SNode>fromArray(SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~List"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~ArrayList"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~LinkedList")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -71,7 +59,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "size", ListSequence.<SNode>fromArray());
+        return ListMigrationUtil.isApplicableForAll(node, "size", ListSequence.<ParameterType>fromArray());
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -98,7 +86,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "get", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType")));
+        return ListMigrationUtil.isApplicableForAll(node, "get", ListSequence.<ParameterType>fromArray(ParameterType.INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -128,7 +116,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "clear", ListSequence.<SNode>fromArray());
+        return ListMigrationUtil.isApplicableForAll(node, "clear", ListSequence.<ParameterType>fromArray());
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -155,7 +143,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "add", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        return ListMigrationUtil.isApplicableForAll(node, "add", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -184,7 +172,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "add", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        return ListMigrationUtil.isApplicableForAll(node, "add", ListSequence.<ParameterType>fromArray(ParameterType.INT, ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -214,7 +202,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "isEmpty", ListSequence.<SNode>fromArray());
+        return ListMigrationUtil.isApplicableForAll(node, "isEmpty", ListSequence.<ParameterType>fromArray());
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -241,7 +229,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "set", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        return ListMigrationUtil.isApplicableForAll(node, "set", ListSequence.<ParameterType>fromArray(ParameterType.INT, ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -271,7 +259,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "remove", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType")));
+        return ListMigrationUtil.isApplicableForAll(node, "remove", ListSequence.<ParameterType>fromArray(ParameterType.INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -300,7 +288,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "remove", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        return ListMigrationUtil.isApplicableForAll(node, "remove", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -329,7 +317,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "remove", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        return ListMigrationUtil.isApplicableForAll(node, "remove", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -358,7 +346,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "remove", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")));
+        return ListMigrationUtil.isApplicableForAll(node, "remove", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -387,7 +375,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "addFirst", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        return ListMigrationUtil.isApplicableForAll(node, "addFirst", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -416,7 +404,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "addLast", ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        return ListMigrationUtil.isApplicableForAll(node, "addLast", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -445,11 +433,70 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicabe(node, "removeFirst", ListSequence.<SNode>fromArray());
+        return ListMigrationUtil.isApplicableForAll(node, "removeFirst", ListSequence.<ParameterType>fromArray());
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithAnother(node, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation", null));
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "Set migration";
+      }
+
+      public String getAdditionalInfo() {
+        return "Set migration";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.<SNode>fromArray(SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~Set"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~HashSet")));
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SetType", null);
+        SLinkOperations.setTarget(result, "elementType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
+        SNodeOperations.replaceWithAnother(node, result);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "Map migration";
+      }
+
+      public String getAdditionalInfo() {
+        return "Map migration";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicableForType(node, 2, ListSequence.<SNode>fromArray(SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~Map"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~HashMap")));
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapType", null);
+        SLinkOperations.setTarget(result, "keyType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
+        SLinkOperations.setTarget(result, "valueType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()), true);
+        SNodeOperations.replaceWithAnother(node, result);
       }
 
       public boolean isShowAsIntention() {
