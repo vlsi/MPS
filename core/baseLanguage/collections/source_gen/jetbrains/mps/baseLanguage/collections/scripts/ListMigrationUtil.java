@@ -17,6 +17,14 @@ public class ListMigrationUtil {
   public ListMigrationUtil() {
   }
 
+  public static boolean isApplicableForLists(SNode node, String name, List<ParameterType> params) {
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(node), "operand", true));
+    if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType"))) {
+      return false;
+    }
+    return ListMigrationUtil.isApplicableMethod(node, name, params);
+  }
+
   public static boolean isApplicableForAll(SNode node, String name, List<ParameterType> params) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(node), "operand", true));
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SetType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SequenceType"))) {
