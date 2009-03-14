@@ -36,6 +36,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseModelDescriptorComponent;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.util.Condition;
 
@@ -274,7 +275,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
             chooseComponent.setPropertyName("targetModel");
             chooseComponent.setCaption("choose target model");
             chooseComponent.initComponent();
-            components.add(chooseComponent);
+            ListOperations.addElement(components, chooseComponent);
           }
         }
 

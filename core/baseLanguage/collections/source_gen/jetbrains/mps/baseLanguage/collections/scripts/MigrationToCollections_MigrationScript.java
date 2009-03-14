@@ -317,11 +317,40 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "remove", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "indexOf", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation", null);
+        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SNodeOperations.replaceWithAnother(node, operation);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "contains";
+      }
+
+      public String getAdditionalInfo() {
+        return "contains";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicableForLists(node, "contains", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ContainsOperation", null);
         SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
@@ -346,7 +375,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "remove", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "addAll", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {

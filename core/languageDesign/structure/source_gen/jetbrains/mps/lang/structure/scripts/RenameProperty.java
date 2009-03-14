@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -154,7 +155,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
             chooseComponent.setCaption("enter new name");
             chooseComponent.initComponent();
             chooseComponent.setInitialValue(RenameProperty.this.newName_initialValue(refactoringContext));
-            components.add(chooseComponent);
+            ListOperations.addElement(components, chooseComponent);
           }
         }
 

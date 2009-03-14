@@ -12,6 +12,7 @@ import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import junit.framework.Assert;
 import java.util.Collections;
+import jetbrains.mps.smodel.SNode;
 
 public class Mapper_Test extends Util_Test {
 
@@ -638,6 +639,52 @@ __switch__:
       }
 
     });
+  }
+
+  @Test()
+  public void test_mps3758() throws Exception {
+    /*
+      Iterable<SNode> snbc = Sequence.fromIterable(Collections.<SNode>emptyList());
+      Sequence.fromIterable(snbc).translate(new ITranslator2 <SNode, SNode>() {
+
+        public Iterable<SNode> translate(final SNode it) {
+          return new Iterable <SNode>() {
+
+            public Iterator<SNode> iterator() {
+              return new YieldingIterator <SNode>() {
+
+                private int __CP__ = 0;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 2:
+                        this.__CP__ = 1;
+                        this.yield(it);
+                        return true;
+                      case 0:
+                        this.__CP__ = 2;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while(true);
+                  return false;
+                }
+
+              };
+            }
+
+          };
+        }
+
+      });
+    */
   }
 
 }

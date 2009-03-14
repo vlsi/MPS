@@ -175,7 +175,7 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1203594547726(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode cc : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+    for(SNode cc : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       if ("_ToRemove".equals(SPropertyOperations.getString(cc, "name"))) {
         SNodeOperations.deleteNode(cc);
       }

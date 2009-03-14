@@ -18,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
@@ -39,6 +38,7 @@ import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
 public class MoveNodes extends AbstractLoggableRefactoring {
@@ -103,7 +103,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).select(new ISelector <SNode, String>() {
 
         public String select(SNode it) {
-          return SModelUtil_new.getGenuineLinkRole((LinkDeclaration)((BaseConcept)SNodeOperations.getAdapter(it)));
+          return SModelUtil_new.getGenuineLinkRole((LinkDeclaration)((LinkDeclaration)SNodeOperations.getAdapter(it)));
         }
 
       });
@@ -194,7 +194,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
     {
-      ArrayList<SNode> result = new ArrayList<SNode>(1);
+      List<SNode> result = new ArrayList<SNode>(1);
       result.add(((SNode)refactoringContext.getParameter("nodeToOpen")));
       return result;
     }
@@ -221,7 +221,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
             chooseComponent.setPropertyName("target");
             chooseComponent.setCaption("choose target");
             chooseComponent.initComponent();
-            components.add(chooseComponent);
+            ListOperations.addElement(components, chooseComponent);
           }
         }
 

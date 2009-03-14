@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class DependenciesCollector {
 
@@ -120,14 +121,14 @@ public class DependenciesCollector {
                       while (SNodeOperations.getParent(nodeStatement) != SNodeOperations.getParent(usageStatement)) {
                         usageStatement = SNodeOperations.getAncestor(usageStatement, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
                       }
-                      List list = CollectionUtil.filter(SNodeOperations.getParent(nodeStatement).getChildren(), new Condition() {
+                      List<SNode> list = CollectionUtil.filter(SNodeOperations.getParent(nodeStatement).getChildren(), new Condition() {
 
                         public boolean met(Object p0) {
                           return SNodeOperations.isInstanceOf(((SNode)p0), "jetbrains.mps.baseLanguage.structure.Statement");
                         }
 
                       });
-                      if (list.indexOf(nodeStatement) <= list.indexOf(usageStatement)) {
+                      if (ListSequence.fromList(list).indexOf(nodeStatement) <= ListSequence.fromList(list).indexOf(usageStatement)) {
                         dependencies.put(reference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_3().createNode()));
                       }
                     }

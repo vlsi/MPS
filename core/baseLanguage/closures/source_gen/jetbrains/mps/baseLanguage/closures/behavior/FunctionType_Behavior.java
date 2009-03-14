@@ -119,7 +119,7 @@ public class FunctionType_Behavior {
     SNode rt = SLinkOperations.getTarget(thisNode, "resultType", true);
     if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       List<SNode> args = SLinkOperations.getTargets(rt, "argument", true);
-      rt = args.get(0);
+      rt = ListSequence.fromList(args).getElement(0);
     }
     return ((rt != null) && !(SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.VoidType")) ?
       rt :

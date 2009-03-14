@@ -2067,9 +2067,8 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1210942093505">
       <property name="name" value="getModelsToUpdate" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210942103651">
-        <link role="classifier" targetNodeId="9.~List" resolveInfo="List" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210942112747">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047773009">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047773010">
           <link role="classifier" targetNodeId="10.~SModel" resolveInfo="SModel" />
         </node>
       </node>
@@ -2216,9 +2215,8 @@
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1213094115402">
       <property name="name" value="getNodesToOpen" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213094115403" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213094115404">
-        <link role="classifier" targetNodeId="9.~List" resolveInfo="List" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213094115405">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047773099">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047773100">
           <link role="classifier" targetNodeId="10.~SNode" resolveInfo="SNode" />
         </node>
       </node>
@@ -2651,9 +2649,8 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1200668668078">
                 <property name="name" value="components" />
                 <property name="isFinal" value="true" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1200668668079">
-                  <link role="classifier" targetNodeId="9.~List" resolveInfo="List" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1200668668080">
+                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047773055">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047773056">
                     <link role="classifier" targetNodeId="3.~IChooseComponent" resolveInfo="IChooseComponent" />
                   </node>
                 </node>
@@ -3207,9 +3204,8 @@
                                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215507182609">
                                       <link role="variableDeclaration" targetNodeId="1200668668078" resolveInfo="components" />
                                     </node>
-                                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215507182610">
-                                      <link role="baseMethodDeclaration" targetNodeId="9.~List.add(java.lang.Object):boolean" resolveInfo="add" />
-                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215507182611">
+                                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1237047787270">
+                                      <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237047787271">
                                         <link role="variableDeclaration" targetNodeId="1215507182368" resolveInfo="chooseComponent" />
                                       </node>
                                     </node>

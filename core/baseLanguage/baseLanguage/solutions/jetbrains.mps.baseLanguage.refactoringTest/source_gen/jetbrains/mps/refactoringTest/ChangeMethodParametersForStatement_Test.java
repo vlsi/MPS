@@ -35,11 +35,11 @@ public class ChangeMethodParametersForStatement_Test extends BaseTransformationT
         SLinkOperations.setTarget(c_ref, "variableDeclaration", this.getNodeById("1230052406612"), false);
         SNodeOperations.replaceWithAnother(this.getNodeById("1230052406630"), c_ref);
         ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(this.getNodeById("1230052406572")));
-        params.getParameters().get(0).setSelected(false);
-        MethodParameter p2 = params.getParameters().get(1);
-        MethodParameter p1 = params.getParameters().get(2);
-        params.getParameters().set(1, p1);
-        params.getParameters().set(2, p2);
+        ListSequence.fromList(params.getParameters()).getElement(0).setSelected(false);
+        MethodParameter p2 = ListSequence.fromList(params.getParameters()).getElement(1);
+        MethodParameter p1 = ListSequence.fromList(params.getParameters()).getElement(2);
+        ListSequence.fromList(params.getParameters()).setElement(1, p1);
+        ListSequence.fromList(params.getParameters()).setElement(2, p2);
         p1.setName("p1");
         p2.setName("p2");
         params.setName("foo");

@@ -28,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -159,7 +160,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
             chooseComponent.setCaption("new concept name");
             chooseComponent.initComponent();
             chooseComponent.setInitialValue(RenameConcept.this.newName_initialValue(refactoringContext));
-            components.add(chooseComponent);
+            ListOperations.addElement(components, chooseComponent);
           }
         }
 

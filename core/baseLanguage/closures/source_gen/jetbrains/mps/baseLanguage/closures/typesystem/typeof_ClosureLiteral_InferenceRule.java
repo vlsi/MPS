@@ -128,8 +128,8 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
       }
     }
     List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(closure, "body", true), "statement", true);
-    SNode lastStmt = (stmts != null && stmts.size() > 0 ?
-      stmts.get(stmts.size() - 1) :
+    SNode lastStmt = (stmts != null && ListSequence.fromList(stmts).count() > 0 ?
+      ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1) :
       null
     );
     boolean returnsValue = !(ListSequence.fromList(allRets).isEmpty());
@@ -139,7 +139,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
       case 0:
         break;
       case 1:
-        if (allYldAlls.get(0) == lastStmt && !(yieldsValue)) {
+        if (ListSequence.fromList(allYldAlls).getElement(0) == lastStmt && !(yieldsValue)) {
           returnsValue = true;
           {
             SNode _nodeToCheck_1029348928467 = closure;

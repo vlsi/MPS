@@ -877,7 +877,7 @@ public final class SNode {
     return nodes;
   }
 
-  public List<SNode> getChildren(boolean includeAttributes) {
+  public List<SNode>getChildren(boolean includeAttributes) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();

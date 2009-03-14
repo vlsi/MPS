@@ -489,9 +489,8 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235136357248">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235136357249">
           <property name="name" value="extendedLanguages" />
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235136357250">
-            <link role="classifier" targetNodeId="14.~List" resolveInfo="List" />
-            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235136357251">
+          <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047901358">
+            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047901359">
               <link role="classifier" targetNodeId="12.~Language" resolveInfo="Language" />
             </node>
           </node>
@@ -591,13 +590,12 @@
                 </node>
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1235136495316">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235136495317">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237048089028">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235136495318">
                     <link role="variableDeclaration" targetNodeId="1235136357249" resolveInfo="extendedLanguages" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235136495319">
-                    <link role="baseMethodDeclaration" targetNodeId="14.~List.contains(java.lang.Object):boolean" resolveInfo="contains" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235136495320">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" id="1237048090600">
+                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237048095496">
                       <link role="variableDeclaration" targetNodeId="1235136450724" resolveInfo="conceptLanguage" />
                     </node>
                   </node>

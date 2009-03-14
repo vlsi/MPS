@@ -31,6 +31,7 @@ import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -176,7 +177,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
             chooseComponent.setPropertyName("targetConcept");
             chooseComponent.setCaption("chooseTargetConcept");
             chooseComponent.initComponent();
-            components.add(chooseComponent);
+            ListOperations.addElement(components, chooseComponent);
           }
         }
 

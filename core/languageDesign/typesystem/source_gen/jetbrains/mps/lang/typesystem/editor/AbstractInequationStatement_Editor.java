@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
@@ -284,6 +285,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9248_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9248_0");
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_NonEmptyProperty_9248_0(EditorCell editorCell, SNode node, EditorContext context) {

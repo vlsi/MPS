@@ -63,7 +63,7 @@ public class ListMigrationUtil {
             return false;
           }
         }
-        if (param != ParameterType.NOT_INT) {
+        if (param == ParameterType.NOT_INT) {
           if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(argument), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
             return false;
           }

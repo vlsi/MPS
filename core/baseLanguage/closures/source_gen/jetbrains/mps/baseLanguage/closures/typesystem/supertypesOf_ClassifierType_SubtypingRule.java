@@ -25,7 +25,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
       if (methods != null && ListSequence.fromList(methods).count() == 1) {
-        SNode md = methods.get(0);
+        SNode md = ListSequence.fromList(methods).getElement(0);
         List<SNode> paramTypes = new ArrayList<SNode>();
         for(SNode p : SLinkOperations.getTargets(md, "parameter", true)) {
           ListSequence.fromList(paramTypes).addElement(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(p, "type", true), ct));

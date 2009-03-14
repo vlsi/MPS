@@ -603,9 +603,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1226075402807">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226075402808">
             <property name="name" value="el" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226075402809">
-              <link role="classifier" targetNodeId="1.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable" id="1226075402810">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237046331412">
+              <node role="elementType" type="jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable" id="1237046331413">
                 <property name="name" value="p" />
               </node>
             </node>
@@ -618,9 +617,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1188952448412">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1188952448413">
             <property name="name" value="list" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1188952448414">
-              <link role="classifier" targetNodeId="1.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196674515" />
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237046331253">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237046331254" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226075402812">
               <link role="variableDeclaration" targetNodeId="1226075402808" resolveInfo="el" />

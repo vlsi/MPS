@@ -162,9 +162,8 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199553331594">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199553331595">
                 <property name="name" value="linkDeclarations" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199553331596">
-                  <link role="classifier" targetNodeId="7.~List" resolveInfo="List" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199553331597">
+                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047119324">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047119325">
                     <link role="classifier" targetNodeId="37.~LinkDeclaration" resolveInfo="LinkDeclaration" />
                   </node>
                 </node>
@@ -748,9 +747,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213099253017">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213099253018">
             <property name="name" value="result" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213099253019">
-              <link role="classifier" targetNodeId="7.~ArrayList" resolveInfo="ArrayList" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213099262414">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047119257">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047119258">
                 <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
               </node>
             </node>

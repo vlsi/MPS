@@ -204,9 +204,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228404592175" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1228404645583">
         <property name="name" value="tList" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228404645584">
-          <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1228404653555">
+        <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237045437170">
+          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1237045437171">
             <link role="typeVariableDeclaration" targetNodeId="1228322942095" resolveInfo="T" />
           </node>
         </node>
@@ -354,9 +353,8 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228404842715" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1228404842716">
         <property name="name" value="tList" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228404842717">
-          <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1228404842718">
+        <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237045437039">
+          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1237045437040">
             <link role="typeVariableDeclaration" targetNodeId="1228404680578" resolveInfo="W" />
           </node>
         </node>

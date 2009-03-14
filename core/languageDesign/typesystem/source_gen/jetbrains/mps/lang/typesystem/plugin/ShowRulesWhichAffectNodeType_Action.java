@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.typesystem.uiActions.MyMenu;
 
@@ -108,12 +109,12 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
         }
         SNode rule = modelDescriptor.getSModel().getNodeById(ruleId.o2);
         if (rule != null) {
-          rules.add(rule);
+          ListSequence.fromList(rules).addElement(rule);
         }
       }
       // single rule
-      if (rules.size() == 1) {
-        ShowRulesWhichAffectNodeType_Action.this.operationContext.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
+      if (ListSequence.fromList(rules).count() == 1) {
+        ShowRulesWhichAffectNodeType_Action.this.operationContext.getComponent(MPSEditorOpener.class).openNode(ListSequence.fromList(rules).getElement(0));
         return;
       }
       // multiple rules

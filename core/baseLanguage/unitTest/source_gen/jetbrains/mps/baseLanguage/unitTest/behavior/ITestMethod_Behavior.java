@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ITestMethod_Behavior {
@@ -15,9 +16,9 @@ public class ITestMethod_Behavior {
   }
 
   public static List<String> virtual_getParametersPart_1215620460293(SNode thisNode) {
-    ArrayList<String> params = new ArrayList<String>();
-    params.add("-m");
-    params.add(ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(thisNode)) + "." + ITestMethod_Behavior.call_getTestName_1216136419751(thisNode));
+    List<String> params = new ArrayList<String>();
+    ListSequence.fromList(params).addElement("-m");
+    ListSequence.fromList(params).addElement(ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(thisNode)) + "." + ITestMethod_Behavior.call_getTestName_1216136419751(thisNode));
     return params;
   }
 

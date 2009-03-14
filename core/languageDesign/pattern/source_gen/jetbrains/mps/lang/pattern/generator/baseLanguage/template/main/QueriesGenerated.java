@@ -275,7 +275,7 @@ public class QueriesGenerated {
     String childRole_ = _context.getNode().getProperty("childRole");
     SNode mainNode = _context.getNode().getReferent("mainNode");
     List<SNode> children = mainNode.getChildren(childRole_);
-    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)children.get(0).getAdapter()));
+    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)ListSequence.fromList(children).getElement(0).getAdapter()));
     return !(BaseAdapter.isInstance(attribute, ListPattern.class));
   }
 
@@ -296,7 +296,7 @@ public class QueriesGenerated {
     String childRole_ = _context.getNode().getProperty("childRole");
     SNode mainNode = _context.getNode().getReferent("mainNode");
     List<SNode> children = mainNode.getChildren(childRole_);
-    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)children.get(0).getAdapter()));
+    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)ListSequence.fromList(children).getElement(0).getAdapter()));
     return BaseAdapter.isInstance(attribute, ListPattern.class);
   }
 
@@ -354,7 +354,7 @@ public class QueriesGenerated {
       SNode propertyNode = BaseConcept.newInstance(model).getNode();
       propertyNode.setProperty("propertyName", propertyName);
       propertyNode.setProperty("propertyValue", propertyValue);
-      result.add(propertyNode);
+      ListSequence.fromList(result).addElement(propertyNode);
     }
     return result;
   }
@@ -367,7 +367,7 @@ public class QueriesGenerated {
         SNode propertyNode = BaseConcept.newInstance(model).getNode();
         propertyNode.setProperty("propertyName", propertyName);
         propertyNode.setReferent("mainNode", _context.getNode());
-        result.add(propertyNode);
+        ListSequence.fromList(result).addElement(propertyNode);
       }
     }
     return result;
@@ -386,7 +386,7 @@ public class QueriesGenerated {
       referenceNode.setProperty("referentModel", referent.getModel().getSModelReference().toString());
       referenceNode.setProperty("referentId", referent.getId());
       referenceNode.setReferent("mainNode", _context.getNode());
-      result.add(referenceNode);
+      ListSequence.fromList(result).addElement(referenceNode);
     }
     return result;
   }
@@ -399,7 +399,7 @@ public class QueriesGenerated {
         SNode linkNode = BaseConcept.newInstance(model).getNode();
         linkNode.setProperty("referentRole", referentRole);
         linkNode.setReferent("mainNode", _context.getNode());
-        result.add(linkNode);
+        ListSequence.fromList(result).addElement(linkNode);
       }
     }
     return result;
@@ -415,7 +415,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     SNode mainNode = _context.getNode().getReferent("mainNode");
     String role = _context.getNode().getProperty("childRole");
-    result.add(mainNode.getChildren(role).get(0));
+    ListSequence.fromList(result).addElement(mainNode.getChildren(role).get(0));
     return result;
   }
 
@@ -427,7 +427,7 @@ public class QueriesGenerated {
       childRoleNode.setProperty("childRole", childRole);
       childRoleNode.setReferent("childLinkDeclaration", AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(_context.getNode()), childRole));
       childRoleNode.setReferent("mainNode", _context.getNode());
-      result.add(childRoleNode);
+      ListSequence.fromList(result).addElement(childRoleNode);
     }
     return result;
   }
@@ -440,7 +440,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
-        result.add(SLinkOperations.getTarget(child, "expression", true));
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(child, "expression", true));
       }
     }
     return result;
@@ -450,7 +450,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
-        result.add(SLinkOperations.getTarget(child, "expression", true));
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(child, "expression", true));
       }
     }
     return result;
@@ -458,9 +458,9 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1224175601101(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    result.addAll(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false));
-    result.addAll(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false));
-    result.addAll(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false)));
     return result;
   }
 
@@ -468,7 +468,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
-        result.add(SLinkOperations.getTarget(child, "expression", true));
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(child, "expression", true));
       }
     }
     return result;
@@ -476,17 +476,17 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1224175601284(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    result.addAll(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false));
-    result.addAll(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false));
-    result.addAll(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false)));
     return result;
   }
 
   public static Iterable sourceNodesQuery_1224175601361(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    result.addAll(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false));
-    result.addAll(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false));
-    result.addAll(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false)));
     return result;
   }
 

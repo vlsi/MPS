@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class UnrestrictedFunctionType_Behavior {
 
@@ -55,7 +56,7 @@ public class UnrestrictedFunctionType_Behavior {
     SNode tt = SLinkOperations.getTarget(thisNode, "terminateType", true);
     if (SNodeOperations.isInstanceOf(tt, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       List<SNode> args = SLinkOperations.getTargets(tt, "argument", true);
-      tt = args.get(0);
+      tt = ListSequence.fromList(args).getElement(0);
     }
     return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.VoidType")) ?
       tt :

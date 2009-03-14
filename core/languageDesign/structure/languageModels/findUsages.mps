@@ -53,9 +53,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197634574462">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197634574463">
             <property name="name" value="resNodes" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197634574464">
-              <link role="classifier" targetNodeId="6.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197634602013">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047900932">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047900933">
                 <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
               </node>
             </node>
@@ -681,9 +680,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1211301915938">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1211301915939">
             <property name="name" value="resNodes" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211301915940">
-              <link role="classifier" targetNodeId="6.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211301915941">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047900789">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047900790">
                 <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
               </node>
             </node>

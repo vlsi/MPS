@@ -3432,9 +3432,8 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227315323680">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227315323681">
                 <property name="name" value="ownMappings" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227315323682">
-                  <link role="classifier" targetNodeId="33.~List" resolveInfo="List" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227315323683">
+                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047237730">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047237731">
                     <link role="classifier" targetNodeId="25.~MappingConfiguration" resolveInfo="MappingConfiguration" />
                   </node>
                 </node>

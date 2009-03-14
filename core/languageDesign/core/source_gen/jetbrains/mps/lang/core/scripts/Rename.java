@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -128,7 +129,7 @@ public class Rename extends AbstractLoggableRefactoring {
             chooseComponent.setCaption("new name:");
             chooseComponent.initComponent();
             chooseComponent.setInitialValue(Rename.this.newName_initialValue(refactoringContext));
-            components.add(chooseComponent);
+            ListOperations.addElement(components, chooseComponent);
           }
         }
 

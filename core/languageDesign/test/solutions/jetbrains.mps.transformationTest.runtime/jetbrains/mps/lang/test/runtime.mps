@@ -648,9 +648,8 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215615533526">
                       <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215615533527">
                         <property name="name" value="instructions" />
-                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215615533528">
-                          <link role="classifier" targetNodeId="8.~List" resolveInfo="List" />
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215615533529">
+                        <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237048603745">
+                          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237048603746">
                             <link role="classifier" targetNodeId="6.~Instruction" resolveInfo="Instruction" />
                           </node>
                         </node>
@@ -704,9 +703,7 @@
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215615533554">
                             <link role="variableDeclaration" targetNodeId="1215615533527" resolveInfo="instructions" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215615533555">
-                            <link role="baseMethodDeclaration" targetNodeId="8.~List.size():int" resolveInfo="size" />
-                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1237048611682" />
                         </node>
                       </node>
                       <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1215615663872">
@@ -2356,9 +2353,8 @@
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1221570130356">
       <property name="name" value="myCopyes" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221570130357">
-        <link role="classifier" targetNodeId="8.~ArrayList" resolveInfo="ArrayList" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221570130358">
+      <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237048603685">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237048603686">
           <link role="classifier" targetNodeId="17.~SNode" resolveInfo="SNode" />
         </node>
       </node>
@@ -2482,9 +2478,8 @@
                       <link role="classConcept" targetNodeId="1221569991485" resolveInfo="BaseTestBody" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228145369686">
-                    <link role="baseMethodDeclaration" targetNodeId="8.~ArrayList.add(java.lang.Object):boolean" resolveInfo="add" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228145369687">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1237048611686">
+                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237048611687">
                       <link role="variableDeclaration" targetNodeId="1228145369652" resolveInfo="copy" />
                     </node>
                   </node>

@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
@@ -17,7 +18,7 @@ public class BaseTestBody {
   public SModelDescriptor myModel;
   public MPSProject myProject;
   public HashMap<SNode, SNode> myMap;
-  public ArrayList<SNode> myCopyes;
+  public List<SNode> myCopyes;
 
   public BaseTestBody() {
     this.myMap = new HashMap<SNode, SNode>();
@@ -34,7 +35,7 @@ public class BaseTestBody {
           SNodeOperations.deleteNode(a);
         }
         BaseTestBody.this.myModel.getSModel().addRoot(copy);
-        BaseTestBody.this.myCopyes.add(copy);
+        ListSequence.fromList(BaseTestBody.this.myCopyes).addElement(copy);
       }
 
     });

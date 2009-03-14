@@ -805,9 +805,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1188522188367">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1188522188368">
             <property name="name" value="list" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1188522188369">
-              <link role="classifier" targetNodeId="12.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223473332036">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047901170">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047901171">
                 <link role="classifier" targetNodeId="17.~AbstractConceptDeclaration" resolveInfo="AbstractConceptDeclaration" />
               </node>
             </node>

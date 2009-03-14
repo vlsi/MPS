@@ -53,7 +53,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
                 }
               }
 
-            }, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145326892", false);
+            }, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145326892", false, false);
           }
         }
       } else

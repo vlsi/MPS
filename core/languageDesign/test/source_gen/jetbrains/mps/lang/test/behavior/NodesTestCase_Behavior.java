@@ -39,13 +39,13 @@ public class NodesTestCase_Behavior {
   }
 
   public static List<String> getIdeaClassPath_1217424542979() {
-    ArrayList<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<String>();
     ClassLoader classLoader = UrlClassLoader.class.getClassLoader();
     Class cls = classLoader.getClass();
     try {
       List<URL> urls = ((List<URL>)cls.getMethod("getUrls", new Class[0]).invoke(classLoader, new Object[0]));
       for(URL url : urls) {
-        result.add(url.getFile());
+        ListSequence.fromList(result).addElement(url.getFile());
       }
     } catch (Throwable e) {
     }
@@ -56,7 +56,7 @@ public class NodesTestCase_Behavior {
     TestRunParameters result = new TestRunParameters();
     result.setClassPath(NodesTestCase_Behavior.getIdeaClassPath_1217424542979());
     List<String> vmParams = new ArrayList<String>();
-    vmParams.add("-Xmx1024m");
+    ListSequence.fromList(vmParams).addElement("-Xmx1024m");
     result.setVmParameters(vmParams);
     result.setTestRunner(TransformationTestRuner.class.getName());
     return result;

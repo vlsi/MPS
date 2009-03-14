@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -29,7 +30,7 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
     List<Language> extendedLanguages = language.getAllExtendedLanguages();
     for(SNode superConcept : superConcepts) {
       Language conceptLanguage = SModelUtil_new.getDeclaringLanguage(((AbstractConceptDeclaration)SNodeOperations.getAdapter(superConcept)), GlobalScope.getInstance());
-      if (conceptLanguage != language && !(extendedLanguages.contains(conceptLanguage))) {
+      if (conceptLanguage != language && !(ListSequence.fromList(extendedLanguages).contains(conceptLanguage))) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();

@@ -2216,9 +2216,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877394483">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877394484">
             <property name="name" value="links" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877394485">
-              <link role="classifier" targetNodeId="14.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877394486">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047900993">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047900994">
                 <link role="classifier" targetNodeId="17.~LinkDeclaration" resolveInfo="LinkDeclaration" />
               </node>
             </node>
@@ -2381,9 +2380,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877394549">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877394550">
             <property name="name" value="properties" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877394551">
-              <link role="classifier" targetNodeId="14.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877394552">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047900271">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047900272">
                 <link role="classifier" targetNodeId="17.~PropertyDeclaration" resolveInfo="PropertyDeclaration" />
               </node>
             </node>
@@ -2468,9 +2466,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877394565">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877394566">
             <property name="name" value="list" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877394567">
-              <link role="classifier" targetNodeId="14.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877394568">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047901098">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047901099">
                 <link role="classifier" targetNodeId="17.~ConceptPropertyDeclaration" resolveInfo="ConceptPropertyDeclaration" />
               </node>
             </node>
@@ -2511,9 +2508,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877394581">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877394582">
             <property name="name" value="list" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877394583">
-              <link role="classifier" targetNodeId="14.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877394584">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047900874">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047900875">
                 <link role="classifier" targetNodeId="17.~ConceptLinkDeclaration" resolveInfo="ConceptLinkDeclaration" />
               </node>
             </node>
