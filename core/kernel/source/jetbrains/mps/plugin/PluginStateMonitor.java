@@ -84,7 +84,14 @@ public class PluginStateMonitor implements ProjectComponent {
   }
 
   private void tick() {
-    if (myState == State.DISCONNECTED || (myState == State.CONNECTED && isConnected())) return;
+    if (myState == State.CONNECTED && isConnected()) return;
+
+    if (myState == State.DISCONNECTED){
+      if (MPSPlugin.getInstance().checkIsConnected()){
+        setNewState(State.CONNECTED);
+        myTimer.setNewDelay(INITIAL_DELAY);
+      }
+    }
 
     if (myState == State.CONNECTED) {
       //isConnected = false

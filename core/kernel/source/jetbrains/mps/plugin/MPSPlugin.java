@@ -78,6 +78,18 @@ public class MPSPlugin {
     }
   }
 
+  public boolean checkIsConnected(){
+    if (myPlugin != null) {
+      try {
+        myPlugin.getProjectCreator().ping();
+      } catch (RemoteException e) {
+        myPlugin = null;
+      }
+    }
+
+    return myPlugin!=null;
+  }
+
   public boolean isIDEAPresent() {
     try {
       IIDEAHandler ideaHandler = getIDEAHandler();
