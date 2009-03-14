@@ -10853,7 +10853,7 @@
     <property name="name" value="ModelProperties" />
     <property name="caption" value="Model Properties" />
     <property name="outsideCommandExecution" value="true" />
-    <property name="iconPath" value="${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/modelProperties.png" />
+    <property name="iconPath" value="${solution_descriptor}/icons/modelProperties.png" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1235219887264">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235219887265">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235220233126">
@@ -10929,7 +10929,7 @@
     <property name="name" value="ModelPropertiesWOShortcut" />
     <property name="caption" value="Model Properties" />
     <property name="outsideCommandExecution" value="true" />
-    <property name="iconPath" value="${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/modelProperties.png" />
+    <property name="iconPath" value="${solution_descriptor}/icons/modelProperties.png" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1235248353147">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235248353148">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235248353149">
