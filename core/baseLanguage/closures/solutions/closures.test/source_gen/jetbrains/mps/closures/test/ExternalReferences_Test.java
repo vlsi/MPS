@@ -166,4 +166,18 @@ __switch__:
     Assert.assertEquals("Done: 4321", wrk.doWork(4321));
   }
 
+  @Test()
+  public void test_mps4102() throws Exception {
+    int a;
+    for(final Wrappers._int i = new Wrappers._int(0) ; i.value < 10 ; i.value++ ) {
+      a = new _FunctionTypes._return_P0_E0 <Integer>() {
+
+        public Integer invoke() {
+          return i.value;
+        }
+
+      }.invoke();
+    }
+  }
+
 }

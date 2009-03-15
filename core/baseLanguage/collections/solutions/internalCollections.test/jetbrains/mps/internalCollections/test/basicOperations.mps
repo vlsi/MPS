@@ -4689,7 +4689,7 @@
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1237103378414">
-        <property name="methodName" value="mps-4050" />
+        <property name="methodName" value="mps4050" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237103378415" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237103378416">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1237103967374">
