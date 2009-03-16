@@ -5,12 +5,10 @@ package jetbrains.mps.ypath.treepaths;
 import jetbrains.mps.ypath.runtime.TreePath;
 import java.io.File;
 import jetbrains.mps.ypath.runtime.IFilter;
-import jetbrains.mps.ypath.treepaths.FileTreePath.FILE_relativeName_Property;
-import jetbrains.mps.ypath.treepaths.FileTreePath.FILE_extension_Property;
 
 public class FileTreePath extends TreePath<File> {
 
-  public  FileTreePath() {
+  public FileTreePath() {
   }
 
   public File parent(File node) {
@@ -26,7 +24,7 @@ public class FileTreePath extends TreePath<File> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Parent(Object enclosingClass, Object closureContext) {
+    public Parent(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -41,7 +39,7 @@ public class FileTreePath extends TreePath<File> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Children(Object enclosingClass, Object closureContext) {
+    public Children(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -52,54 +50,54 @@ public class FileTreePath extends TreePath<File> {
 
 }
   public static class DIR_NodeKindTrigger implements IFilter<File> {
-    public static FileTreePath.DIR_NodeKindTrigger instance;
+    private static FileTreePath.DIR_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  DIR_NodeKindTrigger() {
+    private DIR_NodeKindTrigger() {
     }
-    public  DIR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public DIR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
-
-    public static IFilter<File> getInstance() {
-      if (FileTreePath.DIR_NodeKindTrigger.instance == null) {
-        FileTreePath.DIR_NodeKindTrigger.instance = new FileTreePath.DIR_NodeKindTrigger();
-      }
-      return FileTreePath.DIR_NodeKindTrigger.instance;
-    }
-
 
     public boolean accept(File node) {
       return node.isDirectory();
     }
 
+
+    public static IFilter<File> getInstance() {
+      if (instance == null) {
+        instance = new FileTreePath.DIR_NodeKindTrigger();
+      }
+      return instance;
+    }
+
 }
   public static class FILE_NodeKindTrigger implements IFilter<File> {
-    public static FileTreePath.FILE_NodeKindTrigger instance;
+    private static FileTreePath.FILE_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  FILE_NodeKindTrigger() {
+    private FILE_NodeKindTrigger() {
     }
-    public  FILE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public FILE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
 
-    public static IFilter<File> getInstance() {
-      if (FileTreePath.FILE_NodeKindTrigger.instance == null) {
-        FileTreePath.FILE_NodeKindTrigger.instance = new FileTreePath.FILE_NodeKindTrigger();
-      }
-      return FileTreePath.FILE_NodeKindTrigger.instance;
+    public boolean accept(File node) {
+      return node.isFile();
     }
 
 
-    public boolean accept(File node) {
-      return node.isFile();
+    public static IFilter<File> getInstance() {
+      if (instance == null) {
+        instance = new FileTreePath.FILE_NodeKindTrigger();
+      }
+      return instance;
     }
 
 }
@@ -137,7 +135,7 @@ public class FileTreePath extends TreePath<File> {
       /* package */Object _enclosingClass;
       /* package */Object _closureContext;
 
-      public  Getter(Object enclosingClass, Object closureContext) {
+      public Getter(Object enclosingClass, Object closureContext) {
         this._enclosingClass = enclosingClass;
         this._closureContext = (Object)closureContext;
       }
@@ -183,7 +181,7 @@ public class FileTreePath extends TreePath<File> {
       /* package */Object _enclosingClass;
       /* package */Object _closureContext;
 
-      public  Getter(Object enclosingClass, Object closureContext) {
+      public Getter(Object enclosingClass, Object closureContext) {
         this._enclosingClass = enclosingClass;
         this._closureContext = (Object)closureContext;
       }

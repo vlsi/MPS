@@ -34,7 +34,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.typesystem.structure.InferenceRule;
 import jetbrains.mps.lang.typesystem.structure.SubtypingRule;
-import java.util.ArrayList;
 import jetbrains.mps.lang.typesystem.structure.ComparisonRule;
 import jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector;
 import java.util.Map;
@@ -42,6 +41,7 @@ import jetbrains.mps.util.Pair;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.ArrayList;
 import jetbrains.mps.lang.typesystem.structure.NonTypesystemRule;
 import jetbrains.mps.lang.typesystem.structure.InequationReplacementRule;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -2312,7 +2312,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1176816586186(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListSequence.<SNode>fromArray();
     for(SNode child : SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "pattern", true), "pattern", true), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(child, "expression", true));
@@ -2326,7 +2326,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1178876429101(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListSequence.<SNode>fromArray();
     for(SNode child : SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "pattern", true), "pattern", true), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(child, "expression", true));
@@ -2380,7 +2380,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1206451286909(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListSequence.<SNode>fromArray();
     for(SNode child : SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "condition", true), "pattern", true), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(child, "expression", true));

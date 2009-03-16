@@ -1068,9 +1068,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213727717558">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213727717560">
-                <link role="baseMethodDeclaration" targetNodeId="7.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206184371238">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237215174323">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206184371238">
                   <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
                 </node>
               </node>

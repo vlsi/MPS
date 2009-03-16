@@ -4168,9 +4168,8 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179317609593">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179317609594">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216934019589">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216934019591">
-                  <link role="baseMethodDeclaration" targetNodeId="45.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1179319518742">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237215211248">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1179319518742">
                     <link role="classifier" targetNodeId="3.~Object" resolveInfo="Object" />
                   </node>
                 </node>

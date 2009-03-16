@@ -19,12 +19,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.util.Pair;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.typesystem.uiActions.MyMenu;
 
@@ -101,7 +100,7 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
       if (rulesIds == null) {
         return;
       }
-      List<SNode> rules = new ArrayList<SNode>();
+      List<SNode> rules = ListSequence.<SNode>fromArray();
       for(Pair<String, String> ruleId : SetSequence.fromSet(rulesIds)) {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ruleId.o1));
         if (modelDescriptor == null) {

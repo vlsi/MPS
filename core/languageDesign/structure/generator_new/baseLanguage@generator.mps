@@ -1736,10 +1736,9 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1095942442016">
               <link role="variableDeclaration" targetNodeId="1095942437296" resolveInfo="list" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740459434">
-              <link role="baseMethodDeclaration" targetNodeId="3.~List.add(java.lang.Object):boolean" resolveInfo="add" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1095942455144">
-                <link role="enumConstantDeclaration" targetNodeId="1095942414630" resolveInfo="_constant_name" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1237214219885">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1237214219886">
+                <link role="enumConstantDeclaration" targetNodeId="1095942414630" resolveInfo="_constant_name_" />
                 <link role="enumClass" targetNodeId="1095695120718" resolveInfo="class_EnumerationDataTypeDeclaration_Enum" />
               </node>
             </node>

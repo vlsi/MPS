@@ -21,7 +21,7 @@ import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
@@ -99,16 +99,16 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
       if (((Language)refactoringContext.getParameter("sourceLanguage")) == null) {
         return result;
       }
-      List<SModel> list = new ArrayList<SModel>();
+      List<SModel> list = ListSequence.<SModel>fromArray();
       result.put(((Language)refactoringContext.getParameter("sourceLanguage")), list);
-      list.add(((Language)refactoringContext.getParameter("sourceLanguage")).getStructureModelDescriptor().getSModel());
+      ListSequence.fromList(list).addElement(((Language)refactoringContext.getParameter("sourceLanguage")).getStructureModelDescriptor().getSModel());
       SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
       if (editorModelDescriptor != null) {
-        list.add(editorModelDescriptor.getSModel());
+        ListSequence.fromList(list).addElement(editorModelDescriptor.getSModel());
       }
       SModelDescriptor constraintsModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getConstraintsModelDescriptor();
       if (constraintsModelDescriptor != null) {
-        list.add(constraintsModelDescriptor.getSModel());
+        ListSequence.fromList(list).addElement(constraintsModelDescriptor.getSModel());
       }
       return result;
     }

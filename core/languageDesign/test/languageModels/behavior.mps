@@ -421,9 +421,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217424542985">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217424542986">
-                <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217424542987">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237215096047">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217424542987">
                   <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
                 </node>
               </node>
@@ -621,9 +620,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217424543064">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217424543065">
-                <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217424543066">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237215096109">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217424543066">
                   <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
                 </node>
               </node>

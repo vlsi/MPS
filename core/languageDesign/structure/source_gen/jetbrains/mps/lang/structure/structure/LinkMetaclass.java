@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum LinkMetaclass {
   reference("reference", "reference"),
@@ -19,8 +20,8 @@ public enum LinkMetaclass {
 
   public static List<LinkMetaclass> getConstants() {
     List<LinkMetaclass> list = new LinkedList<LinkMetaclass>();
-    list.add(LinkMetaclass.reference);
-    list.add(LinkMetaclass.aggregation);
+    ListOperations.addElement(list, LinkMetaclass.reference);
+    ListOperations.addElement(list, LinkMetaclass.aggregation);
     return list;
   }
 

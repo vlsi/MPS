@@ -4,6 +4,7 @@ package jetbrains.mps.ypath.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum TraversalAxis {
   DESCENDANTS("DESCENDANTS", "DESCENDANTS"),
@@ -26,15 +27,15 @@ public enum TraversalAxis {
 
   public static List<TraversalAxis> getConstants() {
     List<TraversalAxis> list = new LinkedList<TraversalAxis>();
-    list.add(TraversalAxis.DESCENDANTS);
-    list.add(TraversalAxis.SELF_DESCENDANTS);
-    list.add(TraversalAxis.CHILDREN);
-    list.add(TraversalAxis.ANCESTORS);
-    list.add(TraversalAxis.SELF_ANCESTORS);
-    list.add(TraversalAxis.FOLLOWING_SIBLINGS);
-    list.add(TraversalAxis.SELF_FOLLOWING_SIBLINGS);
-    list.add(TraversalAxis.PRECEDING_SIBLINGS);
-    list.add(TraversalAxis.PRECEDING_SIBLINGS_SELF);
+    ListOperations.addElement(list, TraversalAxis.DESCENDANTS);
+    ListOperations.addElement(list, TraversalAxis.SELF_DESCENDANTS);
+    ListOperations.addElement(list, TraversalAxis.CHILDREN);
+    ListOperations.addElement(list, TraversalAxis.ANCESTORS);
+    ListOperations.addElement(list, TraversalAxis.SELF_ANCESTORS);
+    ListOperations.addElement(list, TraversalAxis.FOLLOWING_SIBLINGS);
+    ListOperations.addElement(list, TraversalAxis.SELF_FOLLOWING_SIBLINGS);
+    ListOperations.addElement(list, TraversalAxis.PRECEDING_SIBLINGS);
+    ListOperations.addElement(list, TraversalAxis.PRECEDING_SIBLINGS_SELF);
     return list;
   }
 

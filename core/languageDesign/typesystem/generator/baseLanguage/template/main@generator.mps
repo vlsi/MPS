@@ -7127,9 +7127,8 @@
                               </node>
                             </node>
                             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930471666">
-                              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930471668">
-                                <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202131772031">
+                              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237215174151">
+                                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202131772031">
                                   <link role="classifier" targetNodeId="4.~SNode" resolveInfo="SNode" />
                                 </node>
                               </node>
@@ -8111,9 +8110,8 @@
                                   </node>
                                 </node>
                                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930473101">
-                                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930473103">
-                                    <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                                    <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206451286916">
+                                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237215174408">
+                                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206451286916">
                                       <link role="classifier" targetNodeId="4.~SNode" resolveInfo="SNode" />
                                     </node>
                                   </node>
@@ -9127,9 +9125,8 @@
                           </node>
                         </node>
                         <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930472219">
-                          <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930472221">
-                            <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                            <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178876449890">
+                          <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237215174079">
+                            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178876449890">
                               <link role="classifier" targetNodeId="4.~SNode" resolveInfo="SNode" />
                             </node>
                           </node>
@@ -13778,9 +13775,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930473033">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930473035">
-                <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224016766059">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237215174221">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224016766059">
                   <link role="classifier" targetNodeId="6.~TypeCheckingContext$NodeInfo" resolveInfo="TypeCheckingContext.NodeInfo" />
                 </node>
               </node>

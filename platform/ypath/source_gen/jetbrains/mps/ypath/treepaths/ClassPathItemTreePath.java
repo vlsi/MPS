@@ -5,14 +5,14 @@ package jetbrains.mps.ypath.treepaths;
 import jetbrains.mps.ypath.runtime.TreePath;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ypath.runtime.IFilter;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 
 public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
 
-  public  ClassPathItemTreePath() {
+  public ClassPathItemTreePath() {
   }
 
   public IClassPathItem parent(IClassPathItem node) {
@@ -28,7 +28,7 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Parent(Object enclosingClass, Object closureContext) {
+    public Parent(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -43,7 +43,7 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    public  Children(Object enclosingClass, Object closureContext) {
+    public Children(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
@@ -53,86 +53,86 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
         return ((CompositeClassPathItem)node).getChildren();
       } else
       {
-        return ListOperations.<IClassPathItem>createList();
+        return ListSequence.<IClassPathItem>fromArray();
       }
     }
 
 }
   public static class COMPOSITE_NodeKindTrigger implements IFilter<IClassPathItem> {
-    public static ClassPathItemTreePath.COMPOSITE_NodeKindTrigger instance;
+    private static ClassPathItemTreePath.COMPOSITE_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  COMPOSITE_NodeKindTrigger() {
+    private COMPOSITE_NodeKindTrigger() {
     }
-    public  COMPOSITE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public COMPOSITE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
-
-    public static IFilter<IClassPathItem> getInstance() {
-      if (ClassPathItemTreePath.COMPOSITE_NodeKindTrigger.instance == null) {
-        ClassPathItemTreePath.COMPOSITE_NodeKindTrigger.instance = new ClassPathItemTreePath.COMPOSITE_NodeKindTrigger();
-      }
-      return ClassPathItemTreePath.COMPOSITE_NodeKindTrigger.instance;
-    }
-
 
     public boolean accept(IClassPathItem node) {
       return node instanceof CompositeClassPathItem;
     }
 
+
+    public static IFilter<IClassPathItem> getInstance() {
+      if (instance == null) {
+        instance = new ClassPathItemTreePath.COMPOSITE_NodeKindTrigger();
+      }
+      return instance;
+    }
+
 }
   public static class FILE_NodeKindTrigger implements IFilter<IClassPathItem> {
-    public static ClassPathItemTreePath.FILE_NodeKindTrigger instance;
+    private static ClassPathItemTreePath.FILE_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  FILE_NodeKindTrigger() {
+    private FILE_NodeKindTrigger() {
     }
-    public  FILE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public FILE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
-
-    public static IFilter<IClassPathItem> getInstance() {
-      if (ClassPathItemTreePath.FILE_NodeKindTrigger.instance == null) {
-        ClassPathItemTreePath.FILE_NodeKindTrigger.instance = new ClassPathItemTreePath.FILE_NodeKindTrigger();
-      }
-      return ClassPathItemTreePath.FILE_NodeKindTrigger.instance;
-    }
-
 
     public boolean accept(IClassPathItem node) {
       return node instanceof FileClassPathItem;
     }
 
+
+    public static IFilter<IClassPathItem> getInstance() {
+      if (instance == null) {
+        instance = new ClassPathItemTreePath.FILE_NodeKindTrigger();
+      }
+      return instance;
+    }
+
 }
   public static class JAR_NodeKindTrigger implements IFilter<IClassPathItem> {
-    public static ClassPathItemTreePath.JAR_NodeKindTrigger instance;
+    private static ClassPathItemTreePath.JAR_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
 
-    private  JAR_NodeKindTrigger() {
+    private JAR_NodeKindTrigger() {
     }
-    public  JAR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+    public JAR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
       this._enclosingClass = enclosingClass;
       this._closureContext = (Object)closureContext;
     }
 
-    public static IFilter<IClassPathItem> getInstance() {
-      if (ClassPathItemTreePath.JAR_NodeKindTrigger.instance == null) {
-        ClassPathItemTreePath.JAR_NodeKindTrigger.instance = new ClassPathItemTreePath.JAR_NodeKindTrigger();
-      }
-      return ClassPathItemTreePath.JAR_NodeKindTrigger.instance;
+    public boolean accept(IClassPathItem node) {
+      return node instanceof JarFileClassPathItem;
     }
 
 
-    public boolean accept(IClassPathItem node) {
-      return node instanceof JarFileClassPathItem;
+    public static IFilter<IClassPathItem> getInstance() {
+      if (instance == null) {
+        instance = new ClassPathItemTreePath.JAR_NodeKindTrigger();
+      }
+      return instance;
     }
 
 }

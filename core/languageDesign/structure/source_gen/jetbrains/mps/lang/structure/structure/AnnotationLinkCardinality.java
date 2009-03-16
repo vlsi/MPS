@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum AnnotationLinkCardinality {
   _0__1("1", "0..1"),
@@ -19,8 +20,8 @@ public enum AnnotationLinkCardinality {
 
   public static List<AnnotationLinkCardinality> getConstants() {
     List<AnnotationLinkCardinality> list = new LinkedList<AnnotationLinkCardinality>();
-    list.add(AnnotationLinkCardinality._0__1);
-    list.add(AnnotationLinkCardinality._0__n);
+    ListOperations.addElement(list, AnnotationLinkCardinality._0__1);
+    ListOperations.addElement(list, AnnotationLinkCardinality._0__n);
     return list;
   }
 

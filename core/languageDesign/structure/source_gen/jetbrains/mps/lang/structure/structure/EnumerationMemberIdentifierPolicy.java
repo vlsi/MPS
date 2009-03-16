@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum EnumerationMemberIdentifierPolicy {
   derive_from_presentation("derive from presentation", "derive_from_presentation"),
@@ -20,9 +21,9 @@ public enum EnumerationMemberIdentifierPolicy {
 
   public static List<EnumerationMemberIdentifierPolicy> getConstants() {
     List<EnumerationMemberIdentifierPolicy> list = new LinkedList<EnumerationMemberIdentifierPolicy>();
-    list.add(EnumerationMemberIdentifierPolicy.derive_from_presentation);
-    list.add(EnumerationMemberIdentifierPolicy.derive_from_internal_value);
-    list.add(EnumerationMemberIdentifierPolicy.custom);
+    ListOperations.addElement(list, EnumerationMemberIdentifierPolicy.derive_from_presentation);
+    ListOperations.addElement(list, EnumerationMemberIdentifierPolicy.derive_from_internal_value);
+    ListOperations.addElement(list, EnumerationMemberIdentifierPolicy.custom);
     return list;
   }
 

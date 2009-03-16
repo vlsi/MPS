@@ -4,6 +4,7 @@ package jetbrains.mps.ypath.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum FragmentTypeEnum {
   replace_single("replace single", "REPLACE_SINGLE"),
@@ -27,16 +28,16 @@ public enum FragmentTypeEnum {
 
   public static List<FragmentTypeEnum> getConstants() {
     List<FragmentTypeEnum> list = new LinkedList<FragmentTypeEnum>();
-    list.add(FragmentTypeEnum.replace_single);
-    list.add(FragmentTypeEnum.replace_selection);
-    list.add(FragmentTypeEnum.replace_all);
-    list.add(FragmentTypeEnum.remove_single);
-    list.add(FragmentTypeEnum.remove_selection);
-    list.add(FragmentTypeEnum.remove_all);
-    list.add(FragmentTypeEnum.insert_at_start);
-    list.add(FragmentTypeEnum.insert_at_end);
-    list.add(FragmentTypeEnum.insert_before);
-    list.add(FragmentTypeEnum.insert_after);
+    ListOperations.addElement(list, FragmentTypeEnum.replace_single);
+    ListOperations.addElement(list, FragmentTypeEnum.replace_selection);
+    ListOperations.addElement(list, FragmentTypeEnum.replace_all);
+    ListOperations.addElement(list, FragmentTypeEnum.remove_single);
+    ListOperations.addElement(list, FragmentTypeEnum.remove_selection);
+    ListOperations.addElement(list, FragmentTypeEnum.remove_all);
+    ListOperations.addElement(list, FragmentTypeEnum.insert_at_start);
+    ListOperations.addElement(list, FragmentTypeEnum.insert_at_end);
+    ListOperations.addElement(list, FragmentTypeEnum.insert_before);
+    ListOperations.addElement(list, FragmentTypeEnum.insert_after);
     return list;
   }
 

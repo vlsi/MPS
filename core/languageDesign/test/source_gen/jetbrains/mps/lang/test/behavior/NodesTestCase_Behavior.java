@@ -39,7 +39,7 @@ public class NodesTestCase_Behavior {
   }
 
   public static List<String> getIdeaClassPath_1217424542979() {
-    List<String> result = new ArrayList<String>();
+    List<String> result = ListSequence.<String>fromArray();
     ClassLoader classLoader = UrlClassLoader.class.getClassLoader();
     Class cls = classLoader.getClass();
     try {
@@ -55,7 +55,7 @@ public class NodesTestCase_Behavior {
   public static TestRunParameters getTestRunParameters_1217424543047() {
     TestRunParameters result = new TestRunParameters();
     result.setClassPath(NodesTestCase_Behavior.getIdeaClassPath_1217424542979());
-    List<String> vmParams = new ArrayList<String>();
+    List<String> vmParams = ListSequence.<String>fromArray();
     ListSequence.fromList(vmParams).addElement("-Xmx1024m");
     result.setVmParameters(vmParams);
     result.setTestRunner(TransformationTestRuner.class.getName());

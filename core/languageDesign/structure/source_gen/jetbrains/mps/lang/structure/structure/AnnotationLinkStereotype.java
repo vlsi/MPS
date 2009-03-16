@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum AnnotationLinkStereotype {
   node("node", "node"),
@@ -20,9 +21,9 @@ public enum AnnotationLinkStereotype {
 
   public static List<AnnotationLinkStereotype> getConstants() {
     List<AnnotationLinkStereotype> list = new LinkedList<AnnotationLinkStereotype>();
-    list.add(AnnotationLinkStereotype.node);
-    list.add(AnnotationLinkStereotype.link);
-    list.add(AnnotationLinkStereotype.property);
+    ListOperations.addElement(list, AnnotationLinkStereotype.node);
+    ListOperations.addElement(list, AnnotationLinkStereotype.link);
+    ListOperations.addElement(list, AnnotationLinkStereotype.property);
     return list;
   }
 

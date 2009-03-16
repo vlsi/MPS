@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum Cardinality {
   _0__1("0..1", "0..1"),
@@ -21,10 +22,10 @@ public enum Cardinality {
 
   public static List<Cardinality> getConstants() {
     List<Cardinality> list = new LinkedList<Cardinality>();
-    list.add(Cardinality._0__1);
-    list.add(Cardinality._1);
-    list.add(Cardinality._0__n);
-    list.add(Cardinality._1__n);
+    ListOperations.addElement(list, Cardinality._0__1);
+    ListOperations.addElement(list, Cardinality._1);
+    ListOperations.addElement(list, Cardinality._0__n);
+    ListOperations.addElement(list, Cardinality._1__n);
     return list;
   }
 
