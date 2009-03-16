@@ -1072,6 +1072,10 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void validateLanguagesAndImports() {
+    validateLanguagesAndImports(false);
+  }
+
+  public void validateLanguagesAndImports(boolean respectModulesScopes) {
     GlobalScope scope = GlobalScope.getInstance();
     Set<ModuleReference> usedLanguages = new HashSet<ModuleReference>(getLanguageRefs(scope));
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
@@ -1087,6 +1091,14 @@ public class SModel implements Iterable<SNode> {
       }
       ModuleReference ref = lang.getModuleReference();
       if (!usedLanguages.contains(ref)) {
+
+        if (respectModulesScopes) {
+          IModule module = this.getModelDescriptor().getModule();
+          if (!module.getAllUsedLanguages().contains(lang)) {
+            module.addUsedLangauge(ref);
+          }
+        }
+
         usedLanguages.add(ref);
         addLanguage(ref);
       }

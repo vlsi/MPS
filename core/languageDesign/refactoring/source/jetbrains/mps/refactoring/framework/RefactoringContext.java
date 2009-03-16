@@ -424,6 +424,7 @@ public class RefactoringContext {
         }
       }
     }
+    model.validateLanguagesAndImports(true);
   }
 
   public void setUpMembersAccessModifier(RefactoringNodeMembersAccessModifier modifier) {
