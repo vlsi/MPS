@@ -171,7 +171,7 @@ public class CommonChoosers {
 
     BaseMPSChooseModel<T> goToModuleModel = new BaseMPSChooseModel<T>(mpsProject, entityString) {
       public String doGetFullName(Object element) {
-        return ((BaseModuleItem) element).getModule().getModuleUID();
+        return ((BaseModuleItem) element).getModule().getModuleFqName();
       }
 
       public String doGetObjectName(T module) {

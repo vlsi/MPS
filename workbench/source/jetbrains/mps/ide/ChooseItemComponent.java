@@ -131,13 +131,17 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
 
 
   private void doComplete() {
-    final Item selectedItem = (Item) myList.getSelectedValue();
+    final Item selectedItem = getSelectedItem();
     if (selectedItem == null) return;
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         doChoose(selectedItem);
       }
     });
+  }
+
+  public Item getSelectedItem() {
+    return (Item) myList.getSelectedValue();
   }
 
   public abstract void doChoose(Item item);
@@ -191,7 +195,6 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
   public Map<String, Set<Item>> getItemsMap() {
     return myItemsMap;
   }
-
 
   public void putItem(String name, Item item) {
     if (!myItemsMap.containsKey(name)) {
@@ -254,7 +257,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
       myTextField.setBackground(new Color(255, 220, 220));
     }
 
-    Item oldSelection = (Item) myList.getSelectedValue();
+    Item oldSelection = getSelectedItem();
     if ((oldSelection == null || !model.contains(oldSelection)) && model.size() > 0) {
       oldSelection = (Item) model.getElementAt(0);
     }

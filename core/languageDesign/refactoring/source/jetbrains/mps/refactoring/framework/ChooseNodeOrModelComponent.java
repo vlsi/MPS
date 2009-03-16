@@ -156,6 +156,11 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
 
   public Object submit() throws InvalidInputValueException {
     if (myTree.getSelectionPath() == null) {
+
+      if (myChooseItemComponent.getSelectedItem() != null && myMayBeModel) {
+        return myChooseItemComponent.getSelectedItem();
+      }
+
       throw new InvalidInputValueException(myCaption + ": nothing is selected");
     }
 
