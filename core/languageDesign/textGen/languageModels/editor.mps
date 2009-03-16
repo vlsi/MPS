@@ -165,6 +165,7 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1234202059402">
           <property name="value" value="-1.0" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1236705745910" />
       </node>
     </node>
   </node>
@@ -182,6 +183,7 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1234201913708">
           <property name="value" value="-1.0" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1236705683042" />
       </node>
     </node>
   </node>
@@ -475,6 +477,7 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1234201567894">
           <property name="flag" value="false" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1236705719654" />
         <node role="focusPolicyApplicable" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1234256126716">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234256126717">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234256138771">
@@ -536,6 +539,7 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1234256565188">
           <property name="value" value="-1.0" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1236705726813" />
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1234256554877">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234256554878">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234256557148">
@@ -910,6 +914,7 @@
           <property name="value" value="-1.0" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1236170528680" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1236705764850" />
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1236695258688">
@@ -1017,6 +1022,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236192853528">
         <property name="text" value=";" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1236705737080" />
       </node>
     </node>
   </node>

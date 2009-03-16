@@ -15,6 +15,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new ConceptTextGenDeclaration_name_PropertyConstraint());
     this.myConstraints.add(new OperationDeclaration_operationName_PropertyConstraint());
     this.myConstraints.add(new OperationDeclaration_DefaultSearchScope());
+    this.myConstraints.add(new PrivateMethodDeclaration_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

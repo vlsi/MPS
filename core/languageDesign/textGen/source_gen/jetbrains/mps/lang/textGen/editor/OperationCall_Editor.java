@@ -139,6 +139,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
           this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
         }
 
       };
@@ -157,6 +158,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
           this.set(StyleAttributes.PADDING_LEFT, new Padding(-1.0, Measure.SPACES));
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
         }
 
       };
