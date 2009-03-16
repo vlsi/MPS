@@ -463,7 +463,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   private void setRootNode(MPSTreeNode root) {
     if (getModel().getRoot() instanceof MPSTreeNode) {
-      (getRootNode()).removeThisAndChildren();
+      getRootNode().removeThisAndChildren();
+      getRootNode().setTree(null);      
     }
 
     root.setTree(this);
