@@ -259,15 +259,13 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236701919210">
-                  <node role="expression" type="jetbrains.mps.lang.textGen.structure.PrivateMethodCall" id="1236701919211">
-                    <link role="function" targetNodeId="2v.1236686501608" resolveInfo="appendClsName" />
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236701920743">
-                      <link role="variableDeclaration" targetNodeId="1236701848942" resolveInfo="pack" />
-                    </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236701922386">
-                      <link role="variableDeclaration" targetNodeId="1236701895526" resolveInfo="name" />
-                    </node>
+                <node role="statement" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1237226483901">
+                  <link role="function" targetNodeId="2v.1237206237893" resolveInfo="clsName" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237226486074">
+                    <link role="variableDeclaration" targetNodeId="1236701848942" resolveInfo="pack" />
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237226488451">
+                    <link role="variableDeclaration" targetNodeId="1236701895526" resolveInfo="name" />
                   </node>
                 </node>
               </node>
@@ -283,7 +281,15 @@
               </node>
               <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1236701926981">
                 <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236701926982">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1236702398954" />
+                  <node role="statement" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1237226440598">
+                    <link role="function" targetNodeId="2v.1234802562412" resolveInfo="classifierName" />
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237226447131">
+                      <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1237226445599" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237226462005">
+                        <link role="link" targetNodeId="1.1174478663778" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
