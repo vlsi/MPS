@@ -99,7 +99,7 @@ public class ScopeOptions extends BaseOptions<SearchQuery> {
       scope = operationContext.getMPSProject().getScope();
     } else if (myScopeType.equals(MODULE_SCOPE)) {
       if (myModule.equals(DEFAULT_VALUE)) {
-        scope = operationContext.getModule().getScope();
+        scope = new OnlyModuleScope(operationContext.getModule());
       } else {
         IModule module = MPSModuleRepository.getInstance().getModuleByUID(myModule);
         if (module == null) {
@@ -107,7 +107,7 @@ public class ScopeOptions extends BaseOptions<SearchQuery> {
           module = MPSModuleRepository.getInstance().getModuleByUID(myModule);
           LOG.error("Module is not found for " + myModule + ". Using current module.");
         }
-        scope = module.getScope();
+        scope = new OnlyModuleScope(module);
       }
     } else if (myScopeType.equals(MODEL_SCOPE)) {
       if (myModel.equals(DEFAULT_VALUE)) {
