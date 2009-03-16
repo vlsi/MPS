@@ -13,7 +13,6 @@ import java.util.List;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Collections;
 import java.util.Iterator;
@@ -63,12 +62,12 @@ public class FunctionTypeUtil {
 
   public static List<SNode> getAllFunctionTypes(SModel sourceModel) {
     List<SNode> cls = SModelOperations.getNodes(sourceModel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
-    List<SNode> typesList = new ArrayList<SNode>();
+    List<SNode> typesList = ListSequence.<SNode>fromArray();
     for(SNode cl : cls) {
       ListSequence.fromList(typesList).addElement(TypeChecker.getInstance().getTypeOf(cl));
     }
     List<SNode> funTypes = SModelOperations.getNodes(sourceModel, "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
-    typesList.addAll(funTypes);
+    ListSequence.fromList(typesList).addSequence(ListSequence.fromList(funTypes));
     Collections.sort(typesList, new FunctionTypeUtil.FunctionTypeComparator());
     SNode prev = null;
     for(Iterator it = typesList.iterator() ; it.hasNext() ; ) {
@@ -178,15 +177,15 @@ public class FunctionTypeUtil {
   public static void addAdaptableClassifierTypeTarget(SNode adaptable, SNode target, TemplateQueryContext genContext) {
     List<SNode> allAdaptable = getAllAdaptableClassifierTypes(genContext);
     if (allAdaptable == null) {
-      allAdaptable = new ArrayList<SNode>();
+      allAdaptable = ListSequence.<SNode>fromArray();
       genContext.putStepObject("all_needs_adapted", allAdaptable);
     }
-    if (!(allAdaptable.contains(adaptable))) {
+    if (!(ListSequence.fromList(allAdaptable).contains(adaptable))) {
       ListSequence.fromList(allAdaptable).addElement(adaptable);
     }
     List<SNode> trgList = (List<SNode>)genContext.getStepObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false)));
     if (trgList == null) {
-      trgList = new ArrayList<SNode>();
+      trgList = ListSequence.<SNode>fromArray();
       genContext.putStepObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false)), trgList);
     }
     boolean hasOneAlready = false;

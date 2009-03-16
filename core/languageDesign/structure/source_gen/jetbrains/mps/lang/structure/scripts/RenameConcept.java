@@ -24,11 +24,11 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -123,7 +123,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   }
 
   public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return new ArrayList<SModel>();
+    return ListOperations.<SModel>createList();
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
@@ -131,7 +131,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
+    return ListOperations.<SNode>createList();
   }
 
   public boolean doesUpdateModel() {
@@ -149,7 +149,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   public boolean askForInfo(final RefactoringContext refactoringContext) {
     {
       boolean result = false;
-      final List<IChooseComponent> components = new ArrayList<IChooseComponent>();
+      final List<IChooseComponent> components = ListOperations.<IChooseComponent>createList();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {

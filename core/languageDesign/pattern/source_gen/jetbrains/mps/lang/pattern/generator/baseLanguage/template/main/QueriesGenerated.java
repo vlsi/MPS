@@ -412,7 +412,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931377952(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListSequence.<SNode>fromArray();
     SNode mainNode = _context.getNode().getReferent("mainNode");
     String role = _context.getNode().getProperty("childRole");
     ListSequence.fromList(result).addElement(mainNode.getChildren(role).get(0));
@@ -420,7 +420,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931378020(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListSequence.<SNode>fromArray();
     SModel model = _context.getOutputModel();
     for(String childRole : _context.getNode().getChildRoles()) {
       SNode childRoleNode = BaseConcept.newInstance(model).getNode();
@@ -437,7 +437,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1224175601014(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListSequence.<SNode>fromArray();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(child, "expression", true));
@@ -447,7 +447,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1224175601059(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListSequence.<SNode>fromArray();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(child, "expression", true));
@@ -465,7 +465,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1224175601150(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListSequence.<SNode>fromArray();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(child, "expression", true));

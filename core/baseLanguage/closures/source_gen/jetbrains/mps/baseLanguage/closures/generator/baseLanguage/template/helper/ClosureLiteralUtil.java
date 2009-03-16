@@ -5,10 +5,9 @@ package jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.help
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -35,7 +34,7 @@ public class ClosureLiteralUtil {
   }
 
   public static List<SNode> collectNonFinalVariableDeclarations(SNode cl) {
-    List<SNode> vrefs = new ArrayList<SNode>();
+    List<SNode> vrefs = ListSequence.<SNode>fromArray();
     for(SNode desc : SNodeOperations.getDescendants(cl, null, false)) {
       if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference") && cl == SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
         SNode vd = SLinkOperations.getTarget(desc, "variableDeclaration", false);
@@ -69,7 +68,7 @@ public class ClosureLiteralUtil {
       if (ListSequence.fromList(imds).count() != 1) {
         genContext.showWarningMessage(literal, "The adaptation target interface has more than one method");
       }
-      SNode method = imds.get(0);
+      SNode method = ListSequence.fromList(imds).getElement(0);
       if ((SLinkOperations.getTarget(method, "returnType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
         /*
           map = matchType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft), map);
@@ -86,7 +85,7 @@ public class ClosureLiteralUtil {
           genContext.showErrorMessage(literal, "Closure parameters count doesn't match method '" + SPropertyOperations.getString(method, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(ctNoParams, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(ctNoParams, "classifier", false), "name")));
           return;
         }
-        map = matchType(SLinkOperations.getTarget(pd, "type", true), ptypes.get(idx), map);
+        map = matchType(SLinkOperations.getTarget(pd, "type", true), ListSequence.fromList(ptypes).getElement(idx), map);
         idx = idx + 1;
       }
     }
@@ -129,7 +128,7 @@ public class ClosureLiteralUtil {
       }
       if (SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
         if (idx < ListSequence.fromList(varDecls).count()) {
-          SNode tvd = varDecls.get(idx);
+          SNode tvd = ListSequence.fromList(varDecls).getElement(idx);
           SLinkOperations.addChild(ctNoParams, "parameter", (map != null ?
             map.get(SPropertyOperations.getString(tvd, "name")) :
             null
@@ -145,7 +144,7 @@ public class ClosureLiteralUtil {
 
   public static Map<String, SNode> matchReturnType(SNode absType, SNode realType, Map<String, SNode> map) {
     Set<String> visited = new HashSet<String>();
-    List<SNode> queue = new LinkedList<SNode>();
+    List<SNode> queue = ListSequence.fromList(new LinkedList<SNode>());
     if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       for(SNode arg : SLinkOperations.getTargets(realType, "argument", true)) {
         ListSequence.fromList(queue).addElement(arg);
@@ -230,7 +229,7 @@ public class ClosureLiteralUtil {
         List<SNode> mptypes = SLinkOperations.getTargets(absType, "parameter", true);
         List<SNode> rptypes = SLinkOperations.getTargets(matched, "parameter", true);
         for(int i = 0 ; i < ListSequence.fromList(mptypes).count() && i < ListSequence.fromList(rptypes).count() ; i = i + 1) {
-          map = matchType(mptypes.get(i), rptypes.get(i), getMap(map));
+          map = matchType(ListSequence.fromList(mptypes).getElement(i), ListSequence.fromList(rptypes).getElement(i), getMap(map));
         }
       }
     }

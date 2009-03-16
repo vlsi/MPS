@@ -7,11 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -26,7 +25,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
   }
 
   public void applyRule(final SNode closure, final TypeCheckingContext typeCheckingContext) {
-    List<SNode> paramTypes = new ArrayList<SNode>();
+    List<SNode> paramTypes = ListSequence.<SNode>fromArray();
     for(SNode param : SLinkOperations.getTargets(closure, "parameter", true)) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
         final SNode pt_typevar_1221579075465 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -40,11 +39,11 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
         ListSequence.fromList(paramTypes).addElement(SLinkOperations.getTarget(param, "type", true));
       }
     }
-    List<SNode> allRets = new ArrayList<SNode>();
-    List<SNode> allYlds = new ArrayList<SNode>();
-    List<SNode> allYldAlls = new ArrayList<SNode>();
-    List<SNode> allStmts = new LinkedList<SNode>();
-    List<SNode> allThrows = new ArrayList<SNode>();
+    List<SNode> allRets = ListSequence.<SNode>fromArray();
+    List<SNode> allYlds = ListSequence.<SNode>fromArray();
+    List<SNode> allYldAlls = ListSequence.<SNode>fromArray();
+    List<SNode> allStmts = ListSequence.fromList(new LinkedList<SNode>());
+    List<SNode> allThrows = ListSequence.<SNode>fromArray();
     for(SNode c : SNodeOperations.getChildren(SLinkOperations.getTarget(closure, "body", true))) {
       if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
         ListSequence.fromList(allRets).addElement(c);
@@ -209,7 +208,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
         typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(RESULT_typevar_1221579592331), typeCheckingContext.getEquationManager().getRepresentator(RLCS_typevar_1221579075692), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221663751995", intentionProvider);
       }
     }
-    List<SNode> realThrows = new ArrayList<SNode>();
+    List<SNode> realThrows = ListSequence.<SNode>fromArray();
 with_allThrows:
     for(SNode another : allThrows) {
       for(SNode one : realThrows) {

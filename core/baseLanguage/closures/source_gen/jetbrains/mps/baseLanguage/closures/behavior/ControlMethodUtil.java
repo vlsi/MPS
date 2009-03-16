@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import java.util.Collections;
 
@@ -41,7 +40,7 @@ public class ControlMethodUtil {
             controlClosures++ ;
             inf.addControlClosureType(SNodeOperations.copyNode(ptype));
             if (closureParamTypes == null) {
-              closureParamTypes = new ArrayList<SNode>();
+              closureParamTypes = ListSequence.<SNode>fromArray();
               for(SNode pt : SLinkOperations.getTargets(ptype, "parameterType", true)) {
                 ListSequence.fromList(closureParamTypes).addElement(SNodeOperations.copyNode(pt));
               }
@@ -129,9 +128,9 @@ public class ControlMethodUtil {
 
     private void init() {
       if (!(this.initialized)) {
-        this.controlClosures = new ArrayList<SNode>();
-        this.initClosures = new ArrayList<SNode>();
-        this.functionParams = new ArrayList<SNode>();
+        this.controlClosures = ListSequence.<SNode>fromArray();
+        this.initClosures = ListSequence.<SNode>fromArray();
+        this.functionParams = ListSequence.<SNode>fromArray();
         this.initialized = true;
       }
     }

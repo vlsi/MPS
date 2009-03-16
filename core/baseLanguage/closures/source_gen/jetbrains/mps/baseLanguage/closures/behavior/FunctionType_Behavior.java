@@ -11,7 +11,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -101,7 +100,7 @@ public class FunctionType_Behavior {
       buf.append(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(t), "name"));
     }
     // TODO: sort children by role
-    List<SNode> paramTypes = new ArrayList<SNode>();
+    List<SNode> paramTypes = ListSequence.<SNode>fromArray();
     for(SNode c : SNodeOperations.getChildren(t)) {
       if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.Type")) {
         ListSequence.fromList(paramTypes).addElement(c);
@@ -225,7 +224,7 @@ public class FunctionType_Behavior {
   }
 
   public static List<SNode> call_getNormalizedParameterTypes_1213877405276(SNode thisNode) {
-    List<SNode> resList = new ArrayList<SNode>();
+    List<SNode> resList = ListSequence.<SNode>fromArray();
     List<SNode> paramTypes = SLinkOperations.getTargets(thisNode, "parameterType", true);
     int idx = 0;
     for(SNode p : paramTypes) {

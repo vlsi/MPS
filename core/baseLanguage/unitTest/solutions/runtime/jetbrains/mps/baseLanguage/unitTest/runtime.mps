@@ -2468,9 +2468,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216639774365">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1216640978675">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216640979975">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216640979976">
-                <link role="baseMethodDeclaration" targetNodeId="8.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195960834" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237206610197">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195960834" />
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216639774366">
@@ -2484,9 +2483,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216639821502">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1216640986447">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216640986919">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216640986920">
-                <link role="baseMethodDeclaration" targetNodeId="8.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195955228" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237206610149">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195955228" />
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216639821817">

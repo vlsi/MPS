@@ -7,9 +7,9 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -19,8 +19,8 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
 
   public List<SNode> getSubOrSuperTypes(SNode clt) {
     SNode classifier = SLinkOperations.getTarget(clt, "classifier", false);
-    List<SNode> result = new ArrayList<SNode>();
-    List<SNode> supertypes = new ArrayList<SNode>();
+    List<SNode> result = ListSequence.<SNode>fromArray();
+    List<SNode> supertypes = ListSequence.<SNode>fromArray();
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode classConcept = classifier;
       if (!((SLinkOperations.getTarget(classConcept, "superclass", true) == null))) {
@@ -30,7 +30,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     }
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       SNode interfaceConcept = classifier;
-      supertypes.addAll(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true));
+      ListSequence.fromList(supertypes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true)));
     }
     if (ListSequence.fromList(supertypes).isEmpty()) {
       ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_4().createNode());

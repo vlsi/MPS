@@ -15,10 +15,10 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
 import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -198,7 +198,7 @@ __switch__:
   @InferenceMethod()
   public static void inference_matchConcreteTypesWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap) {
     if ((genericClassifier != null) && mmap != null && !(mmap.isEmpty())) {
-      List<SNode> params = new ArrayList<SNode>();
+      List<SNode> params = ListSequence.<SNode>fromArray();
       for(SNode tvd : SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true)) {
         List<SNode> nodes = mmap.get(tvd);
         final SNode p_typevar_1228174472023 = typeCheckingContext.createNewRuntimeTypesVariable();

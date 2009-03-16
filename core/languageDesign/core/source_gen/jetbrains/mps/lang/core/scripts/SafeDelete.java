@@ -19,7 +19,7 @@ import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -98,14 +98,14 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return new ArrayList<SModel>();
+    return ListOperations.<SModel>createList();
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
+    return ListOperations.<SNode>createList();
   }
 
   public boolean doesUpdateModel() {

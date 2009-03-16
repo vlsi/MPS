@@ -753,12 +753,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213099253020">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213099253021">
-                <link role="baseMethodDeclaration" targetNodeId="7.~ArrayList.&lt;init&gt;(int)" resolveInfo="ArrayList" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1213099253022">
-                  <property name="value" value="1" />
-                </node>
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213099267665">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237206717650">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237206721080">
                   <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
                 </node>
               </node>
@@ -770,9 +766,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213099295523">
               <link role="variableDeclaration" targetNodeId="1213099253018" resolveInfo="result" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213099300651">
-              <link role="baseMethodDeclaration" targetNodeId="7.~ArrayList.add(java.lang.Object):boolean" resolveInfo="add" />
-              <node role="actualArgument" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1213099304417">
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1237206689527">
+              <node role="argument" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1237206689528">
                 <link role="argument" targetNodeId="1213099173577" resolveInfo="nodeToOpen" />
               </node>
             </node>

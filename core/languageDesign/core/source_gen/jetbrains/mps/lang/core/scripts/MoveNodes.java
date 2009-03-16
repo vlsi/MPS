@@ -34,11 +34,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
 public class MoveNodes extends AbstractLoggableRefactoring {
@@ -185,7 +184,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return new ArrayList<SModel>();
+    return ListOperations.<SModel>createList();
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
@@ -194,8 +193,8 @@ public class MoveNodes extends AbstractLoggableRefactoring {
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
     {
-      List<SNode> result = new ArrayList<SNode>(1);
-      result.add(((SNode)refactoringContext.getParameter("nodeToOpen")));
+      List<SNode> result = ListSequence.<SNode>fromArray();
+      ListSequence.fromList(result).addElement(((SNode)refactoringContext.getParameter("nodeToOpen")));
       return result;
     }
   }
@@ -211,7 +210,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   public boolean askForInfo(final RefactoringContext refactoringContext) {
     {
       boolean result = false;
-      final List<IChooseComponent> components = new ArrayList<IChooseComponent>();
+      final List<IChooseComponent> components = ListOperations.<IChooseComponent>createList();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {

@@ -24,11 +24,11 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -140,7 +140,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   }
 
   public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return new ArrayList<SModel>();
+    return ListOperations.<SModel>createList();
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
@@ -148,7 +148,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
+    return ListOperations.<SNode>createList();
   }
 
   public boolean doesUpdateModel() {
@@ -164,7 +164,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   public boolean askForInfo(final RefactoringContext refactoringContext) {
     {
       boolean result = false;
-      final List<IChooseComponent> components = new ArrayList<IChooseComponent>();
+      final List<IChooseComponent> components = ListOperations.<IChooseComponent>createList();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {

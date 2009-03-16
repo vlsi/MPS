@@ -4,22 +4,22 @@ package jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.help
 
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import java.util.ArrayList;
 
 public class WrappersUtils {
 
   public static List<SNode> collectVariableDeclarationsToWrap(SNode closure) {
-    List<SNode> vdecls = new ArrayList<SNode>();
+    List<SNode> vdecls = ListSequence.<SNode>fromArray();
     for(SNode desc : SNodeOperations.getDescendants(closure, null, false)) {
       if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.ParameterReference")) && closure == SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
         SNode vd = SLinkOperations.getTarget(desc, "variableDeclaration", false);
         if (closure != SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
-          if (!(vdecls.contains(SLinkOperations.getTarget(desc, "variableDeclaration", false)))) {
+          if (!(ListSequence.fromList(vdecls).contains(SLinkOperations.getTarget(desc, "variableDeclaration", false)))) {
             ListSequence.fromList(vdecls).addElement(SLinkOperations.getTarget(desc, "variableDeclaration", false));
           }
         }
@@ -65,7 +65,7 @@ with_decls:
     List<SNode> fromDescendats = new ArrayList<SNode>(SNodeOperations.getDescendants(from, null, false));
     int idx = 0;
     for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
-      copyPrepDataNoRecursion(fromDesc, toDescendants.get(idx), generator);
+      copyPrepDataNoRecursion(fromDesc, ListSequence.fromList(toDescendants).getElement(idx), generator);
       idx = idx + 1;
     }
   }

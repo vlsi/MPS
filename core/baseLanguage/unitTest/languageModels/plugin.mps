@@ -3557,9 +3557,8 @@
                         </node>
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216648430022">
-                      <link role="baseMethodDeclaration" targetNodeId="24.~ArrayList.add(java.lang.Object):boolean" resolveInfo="add" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1216648433291">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1237206523540">
+                      <node role="argument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1237206523541">
                         <link role="variable" targetNodeId="1216648199786" resolveInfo="test" />
                       </node>
                     </node>
@@ -3577,9 +3576,8 @@
                         </node>
                       </node>
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216648468829">
-                        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216648468830">
-                          <link role="baseMethodDeclaration" targetNodeId="24.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                          <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1216648468831">
+                        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237206523760">
+                          <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1216648468831">
                             <link role="concept" targetNodeId="1.1215620452633" resolveInfo="ITestable" />
                           </node>
                         </node>

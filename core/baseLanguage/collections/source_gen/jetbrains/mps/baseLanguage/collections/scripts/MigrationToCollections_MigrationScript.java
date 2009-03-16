@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MigrationToCollections_MigrationScript extends BaseMigrationScript {
 
@@ -467,6 +469,64 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
 
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithAnother(node, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation", null));
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "ArrayList";
+      }
+
+      public String getAdditionalInfo() {
+        return "ArrayList";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassCreator";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "name"), "ArrayList") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null);
+        SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
+        SNodeOperations.replaceWithAnother(node, result);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "LinkedList";
+      }
+
+      public String getAdditionalInfo() {
+        return "LinkedList";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassCreator";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "name"), "LinkedList") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", null);
+        SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
+        SNodeOperations.replaceWithAnother(node, result);
       }
 
       public boolean isShowAsIntention() {
