@@ -105,7 +105,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     if (label != null) {
       final SNode matchingNode;
       if (getStyle().get(StyleAttributes.MATCHING_NODE) != null) {
-        matchingNode = getStyle().get(StyleAttributes.MATCHING_NODE); 
+        matchingNode = getStyle().get(StyleAttributes.MATCHING_NODE);
       } else {
         matchingNode = this.getSNode();
       }
@@ -118,7 +118,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         });
         if (editorCell != null) {
           this.getTextLine().myBraceSelected = selected;
-          ((EditorCell_Label)editorCell).getTextLine().myBraceSelected = selected;
+          ((EditorCell_Label) editorCell).getTextLine().myBraceSelected = selected;
         }
       }
     }
@@ -425,8 +425,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   protected boolean doProcessKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
-    int wasPosition = getCaretPosition();
-    CellSide side;
+    final int wasPosition = getCaretPosition();
+    final CellSide side;
     if (wasPosition == 0) {
       side = CellSide.LEFT;
     } else {
@@ -440,23 +440,25 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       final boolean result[] = new boolean[1];
       getEditorContext().executeCommand(new Runnable() {
         public void run() {
-          result[0] = processMutableKeyTyped(keyEvent, allowErrors);
+          if (processMutableKeyTyped(keyEvent, allowErrors)) {
+            getEditorContext().flushEvents();
+
+            getEditor().relayout();
+
+            if (isErrorState()) {
+              if (allowsIntelligentInputKeyStroke(keyEvent)) {
+                String pattern = getRenderedText();
+                IntelligentInputUtil.processCell(EditorCell_Label.this, getEditorContext(), pattern, side);
+              }
+            }
+
+            result[0] = true;
+          } else if (isErrorState() && wasPosition == 0 && keyEvent.getKeyChar() == ' ') {
+            result[0] = true;
+          }
         }
       });
       if (result[0]) {
-        getEditorContext().flushEvents();
-
-        getEditor().relayout();
-
-        if (isErrorState()) {
-          if (allowsIntelligentInputKeyStroke(keyEvent)) {
-            String pattern = this.getRenderedText();
-            IntelligentInputUtil.processCell(this, getEditorContext(), pattern, side);
-          }
-        }
-
-        return true;
-      } else if (isErrorState() && wasPosition == 0 && keyEvent.getKeyChar() == ' ') {
         return true;
       }
     }

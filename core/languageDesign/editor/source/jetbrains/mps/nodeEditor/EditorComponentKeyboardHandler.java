@@ -159,14 +159,8 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         }
       }
     }
-
-    final boolean[] result = new boolean[1];
-    ModelAccess.instance().executeCommand(new Runnable() {
-      public void run() {
-        result[0] = (selectedCell != null && selectedCell.processKeyTyped(keyEvent, true));
-      }
-    });
-    if (result[0]) {
+    
+    if (selectedCell != null && selectedCell.processKeyTyped(keyEvent, true)) {
       keyEvent.consume();
       return true;
     }
