@@ -107,11 +107,13 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
 
   @Nullable
   private AbstractVcs getVcsForFile(VirtualFile f, Project project) {
+    if (project.isDisposed()) return null;
     return ProjectLevelVcsManager.getInstance(project).getVcsFor(f);
   }
 
   @Nullable
   private AbstractVcs getVcsForFile(FilePath f, Project project) {
+    if (project.isDisposed()) return null;
     return ProjectLevelVcsManager.getInstance(project).getVcsFor(f);
   }
 
