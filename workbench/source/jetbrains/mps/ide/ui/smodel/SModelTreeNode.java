@@ -128,7 +128,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       setNodeIdentifier("");
     }
 
-    if (myModelDescriptor != null && myModelDescriptor.isInitialized()) {
+    if (checkForErrors() && myModelDescriptor != null && myModelDescriptor.isInitialized()) {
       IScope scope = getOperationContext().getScope();
       setErrorState(getSModelDescriptor().isValid(scope) ? ErrorState.NONE : ErrorState.ERROR);
       List<String> errors = getSModelDescriptor().validate(scope);
@@ -144,6 +144,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     setText(calculateText());
+  }
+
+  protected boolean checkForErrors() {
+    return true;
   }
 
   DependencyRecorder<SNodeTreeNode> getDependencyRecorder() {
