@@ -9,20 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyPart extends LinePart {
   public static final String concept = "jetbrains.mpslite.structure.PropertyPart";
-  public static final String GETTER_FUNCTION = "getterFunction";
 
   public PropertyPart(SNode node) {
     super(node);
   }
-
-  public Getter_ConceptFunction getGetterFunction() {
-    return (Getter_ConceptFunction)this.getChild(Getter_ConceptFunction.class, PropertyPart.GETTER_FUNCTION);
-  }
-
-  public void setGetterFunction(Getter_ConceptFunction node) {
-    super.setChild(PropertyPart.GETTER_FUNCTION, node);
-  }
-
 
   public static PropertyPart newInstance(SModel sm, boolean init) {
     return (PropertyPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.PropertyPart", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -2,166 +2,70 @@
 <model modelUID="r:00000000-0000-4000-0000-011c895905e2(jetbrains.mpslite.sandbox)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="0452c5e6-046a-41b1-a1c2-bfa47ef3ae0b(jetbrains.mps.nanoj)" />
+  <language namespace="3fe6ec39-7405-4314-abfd-5964c9c40e6b(jetbrains.mpslite)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905dc(jetbrains.mps.nanoj.constraints)" version="45" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905d0(jetbrains.mpslite.constraints)" version="27" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
   <maxImportIndex value="1" />
-  <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1197634682459">
-    <property name="name" value="ABCDEF" />
-    <node role="constructor" type="jetbrains.mps.nanoj.structure.Constructor" id="1197634682460">
-      <node role="type" type="jetbrains.mps.nanoj.structure.VoidType" id="1197634682461" />
-      <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1197634682462">
-        <node role="statement" type="jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement" id="1197634686153">
-          <node role="declaration" type="jetbrains.mps.nanoj.structure.LocalVariableDeclaration" id="1197634686154">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1197634686155" />
-            <node role="initializer" type="jetbrains.mps.nanoj.structure.StringLiteralExpression" id="1197634687721">
-              <property name="text" value="sab" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement" id="1197635098230">
-          <node role="declaration" type="jetbrains.mps.nanoj.structure.LocalVariableDeclaration" id="1197635098231">
-            <property name="name" value="a" />
-            <node role="type" type="jetbrains.mps.nanoj.structure.FloatType" id="1197635098232" />
-            <node role="initializer" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197635100485">
-              <property name="number" value="3" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197635103737">
-          <node role="expr" type="jetbrains.mps.nanoj.structure.EqualsExpression" id="1197635105536">
-            <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197635107243">
-              <property name="number" value="2" />
-            </node>
-            <node role="leftPart" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197635103738">
-              <link role="variable" targetNodeId="1197635098231" resolveInfo="a" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement" id="1197634695070">
-          <node role="declaration" type="jetbrains.mps.nanoj.structure.LocalVariableDeclaration" id="1197634695071">
-            <property name="name" value="b" />
-            <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1197634695072" />
-            <node role="initializer" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197634697186">
-              <node role="rightPart" type="jetbrains.mps.nanoj.structure.StringLiteralExpression" id="1197634699913">
-                <property name="text" value="zzz" />
-              </node>
-              <node role="leftPart" type="jetbrains.mps.nanoj.structure.DivExpression" id="1197638536333">
-                <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197634697169">
-                  <property name="number" value="3" />
-                </node>
-                <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197635119781">
-                  <property name="number" value="3" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197634923791">
-          <node role="expr" type="jetbrains.mps.nanoj.structure.EqualsExpression" id="1197634929108">
-            <node role="rightPart" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197635968649">
-              <node role="rightPart" type="jetbrains.mps.nanoj.structure.AssignmentExpression" id="1197635970903">
-                <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197635971687">
-                  <property name="number" value="23" />
-                </node>
-                <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197635969511">
-                  <property name="number" value="23" />
-                </node>
-              </node>
-              <node role="leftPart" type="jetbrains.mps.nanoj.structure.StringLiteralExpression" id="1197634934067">
-                <property name="text" value="AAA" />
-              </node>
-            </node>
-            <node role="leftPart" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197634923792">
-              <link role="variable" targetNodeId="1197634686154" resolveInfo="i" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197635628538">
-          <node role="expr" type="jetbrains.mps.nanoj.structure.AssignmentExpression" id="1197635629962">
-            <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197635631044">
-              <property name="number" value="239" />
-            </node>
-            <node role="leftPart" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197635628539">
-              <link role="variable" targetNodeId="1197634686154" resolveInfo="i" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197635633030">
-          <node role="expr" type="jetbrains.mps.nanoj.structure.AssignmentExpression" id="1197635635407">
-            <node role="rightPart" type="jetbrains.mps.nanoj.structure.StringLiteralExpression" id="1197635656303">
-              <property name="text" value="aaa" />
-            </node>
-            <node role="leftPart" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197635633031">
-              <link role="variable" targetNodeId="1197634686154" resolveInfo="i" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197635660727">
-          <node role="expr" type="jetbrains.mps.nanoj.structure.AssignmentExpression" id="1197635662667">
-            <node role="rightPart" type="jetbrains.mps.nanoj.structure.StringLiteralExpression" id="1197635664467">
-              <property name="text" value="zzzz" />
-            </node>
-            <node role="leftPart" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197635660728">
-              <link role="variable" targetNodeId="1197634686154" resolveInfo="i" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.nanoj.structure.IfStatement" id="1197637013499">
-          <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1197637013501" />
-          <node role="condition" type="jetbrains.mps.nanoj.structure.EqualsExpression" id="1197637353835">
-            <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637354666">
-              <property name="number" value="3" />
-            </node>
-            <node role="leftPart" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197637176503">
-              <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637352771">
-                <property name="number" value="2" />
-              </node>
-              <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637039858">
-                <property name="number" value="2" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197637556897">
-          <node role="expr" type="jetbrains.mps.nanoj.structure.EqualsExpression" id="1197637561876">
-            <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637563441">
-              <property name="number" value="2" />
-            </node>
-            <node role="leftPart" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197637556899">
-              <node role="rightPart" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197637559418">
-                <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637560609">
-                  <property name="number" value="3" />
-                </node>
-                <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637558089">
-                  <property name="number" value="32" />
-                </node>
-              </node>
-              <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637556898">
-                <property name="number" value="2" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197637531603">
-          <node role="expr" type="jetbrains.mps.nanoj.structure.AssignmentExpression" id="1197637533890">
-            <node role="rightPart" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197637541440">
-              <link role="variable" targetNodeId="1197635098231" resolveInfo="a" />
-            </node>
-            <node role="leftPart" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197637532355">
-              <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637532998">
-                <property name="number" value="2" />
-              </node>
-              <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637531604">
-                <property name="number" value="2" />
-              </node>
-            </node>
-          </node>
-        </node>
+  <node type="jetbrains.mpslite.structure.MPSLiteConceptDeclaration" id="1237212930326">
+    <property name="name" value="AConcept" />
+    <node role="line" type="jetbrains.mpslite.structure.Line" id="1237212990910">
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237213004723">
+        <property name="text" value="fdd" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237220739305">
+        <property name="text" value="df" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237220740197">
+        <property name="text" value="dfdf" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237220741246">
+        <property name="text" value="fdf" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConcreteChildPart" id="1237213581632" />
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237213069932">
+        <property name="text" value="then" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237220742998">
+        <property name="text" value="df" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237220745172">
+        <property name="text" value="dfdfsw" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237220767049">
+        <property name="text" value="df" />
+      </node>
+    </node>
+    <node role="line" type="jetbrains.mpslite.structure.Line" id="1237213075606">
+      <node role="linePart" type="jetbrains.mpslite.structure.IndentLinePart" id="1237213092561" />
+      <node role="linePart" type="jetbrains.mpslite.structure.ConcreteChildPart" id="1237213589508">
+        <property name="name" value="body" />
+        <link role="target" targetNodeId="1237213158626" resolveInfo="Block" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mpslite.structure.MPSLiteConceptDeclaration" id="1237213158626">
+    <property name="name" value="Block" />
+    <node role="line" type="jetbrains.mpslite.structure.Line" id="1237213166736">
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237213190785">
+        <property name="text" value="begin" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237220299721">
+        <property name="text" value="df" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237220301317">
+        <property name="text" value="df" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConcreteChildPart" id="1237220308678">
+        <property name="right_transfrom_hint" value="true" />
       </node>
     </node>
   </node>

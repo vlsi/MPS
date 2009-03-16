@@ -26,26 +26,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mpslite(jetbrains.mpslite@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
-  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1214592591668">
-    <property name="name" value="ProjectPaneModelAddition" />
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.BuildGroupBlock" id="1214592624171">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214592624172">
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1214592627067">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214592628756">
-            <node role="creator" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1228327383763">
-              <link role="constructorDeclaration" targetNodeId="2.~GenerateLanguageAction.&lt;init&gt;()" resolveInfo="GenerateLanguageAction" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1214592669290">
-      <link role="modifiedGroup" targetNodeId="3.1204991218714" resolveInfo="ProjectPaneModelActions" />
-    </node>
-  </node>
 </model>
 

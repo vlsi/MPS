@@ -10,6 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 public class ChildPart extends LinePart {
   public static final String concept = "jetbrains.mpslite.structure.ChildPart";
   public static final String SEPARATOR = "separator";
+  public static final String MULTIPLE = "multiple";
+  public static final String VERTICAL = "vertical";
 
   public ChildPart(SNode node) {
     super(node);
@@ -21,6 +23,22 @@ public class ChildPart extends LinePart {
 
   public void setSeparator(String value) {
     this.setProperty(ChildPart.SEPARATOR, value);
+  }
+
+  public boolean getMultiple() {
+    return this.getBooleanProperty(ChildPart.MULTIPLE);
+  }
+
+  public void setMultiple(boolean value) {
+    this.setBooleanProperty(ChildPart.MULTIPLE, value);
+  }
+
+  public boolean getVertical() {
+    return this.getBooleanProperty(ChildPart.VERTICAL);
+  }
+
+  public void setVertical(boolean value) {
+    this.setBooleanProperty(ChildPart.VERTICAL, value);
   }
 
 

@@ -19,24 +19,27 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${mps_home}\core\languageDesign\mps-lite\solutions\mpslite.sandbox\mpslite.sandbox.msd" />
-      <solutionPath path="${mps_home}\core\languageDesign\mps-lite\outputModels\outputModels.msd" />
+      <solutionPath path="${project}/solutions/mpslite.sandbox/mpslite.sandbox.msd" />
+      <solutionPath path="${project}/outputModels/outputModels.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${mps_home}\core\languageDesign\mps-lite\languages\mpslite\mpslite.mpl" />
-      <languagePath path="${mps_home}\core\languageDesign\mps-lite\languages\nanoj\nanoj.mpl" />
+      <languagePath path="${project}/languages/mpslite/mpslite.mpl" />
+      <languagePath path="${project}/languages/nanoj/nanoj.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
-      <genConfLanguage name="mpslite" language="jetbrains.mpslite" />
+      <genConfModule name="mpslite" moduleRef="jetbrains.mpslite" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="mps-lite.mpr" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="Shalom">
     <subPane>
       <PATH>
@@ -48,10 +51,12 @@
     </subPane>
   </component>
   <component name="SvnBranchConfigurationManager">
-    <option name="myVersion" value="123" />
+    <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
   <component name="masterDetails">
     <option name="states">
