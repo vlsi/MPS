@@ -755,13 +755,19 @@ public class Language extends AbstractModule {
     languageDescriptor.setNamespace(languageNamespace);
     languageDescriptor.setUUID(UUID.randomUUID().toString());
 
+    File languageModels = new File(descriptorFile.getParent().toFile(), LANGUAGE_MODELS);
+    File languageAccessories = new File(descriptorFile.getParent().toFile(), LANGUAGE_ACCESSORIES);
+    if (languageModels.exists() || languageAccessories.exists()) {
+      throw new IllegalStateException("Trying to create a language in an existing language's directory");
+    }
+
     // default descriptorModel roots
     ModelRoot modelRoot = new ModelRoot();
-    modelRoot.setPath(new File(descriptorFile.getParent().toFile(), LANGUAGE_MODELS).getAbsolutePath());
+    modelRoot.setPath(languageModels.getAbsolutePath());
     modelRoot.setPrefix(languageNamespace);
     languageDescriptor.getModelRoots().add(modelRoot);
     modelRoot = new ModelRoot();
-    modelRoot.setPath(new File(descriptorFile.getParent().toFile(), LANGUAGE_ACCESSORIES).getAbsolutePath());
+    modelRoot.setPath(languageAccessories.getAbsolutePath());
     modelRoot.setPrefix(languageNamespace);
     languageDescriptor.getModelRoots().add(modelRoot);
     return languageDescriptor;
