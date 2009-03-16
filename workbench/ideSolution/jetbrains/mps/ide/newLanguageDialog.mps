@@ -161,7 +161,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203688013545">
               <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" id="1203688013546">
                 <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203688014438">
-                  <property name="value" value="Path should path" />
+                  <property name="value" value="Path should be absolute" />
                 </node>
               </node>
             </node>
@@ -175,6 +175,26 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205834599233">
                 <link role="baseMethodDeclaration" targetNodeId="4.~File.isAbsolute():boolean" resolveInfo="isAbsolute" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237217829608">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237217829609">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237217835430">
+              <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" id="1237217835431">
+                <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237217836058">
+                  <property name="value" value="Language directory already exists" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237217846342" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237217832816">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237217832159">
+              <link role="variableDeclaration" targetNodeId="1203687991307" resolveInfo="dir" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237217833476">
+              <link role="baseMethodDeclaration" targetNodeId="4.~File.exists():boolean" resolveInfo="exists" />
             </node>
           </node>
         </node>

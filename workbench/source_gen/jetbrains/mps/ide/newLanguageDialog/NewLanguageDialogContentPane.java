@@ -210,7 +210,11 @@ public class NewLanguageDialogContentPane extends JPanel {
   /* package */void onOk() {
     File dir = new File(myThis.getLanguagePath());
     if (!(dir.isAbsolute())) {
-      myThis.getDialog().setErrorText("Path should path");
+      myThis.getDialog().setErrorText("Path should be absolute");
+      return;
+    }
+    if (dir.exists()) {
+      myThis.getDialog().setErrorText("Language directory already exists");
       return;
     }
     if (myThis.getLanguageNamespace().length() == 0) {
