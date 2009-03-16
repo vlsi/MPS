@@ -448,22 +448,6 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1235133131950">
     <property name="name" value="check_ExtendedConceptsAreInExtendedLanguages" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235133131951">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235136330931">
-        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235136330932">
-          <property name="name" value="superConcepts" />
-          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1235136330933">
-            <link role="elementConcept" targetNodeId="5.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-          </node>
-          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235136330934">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235136330935">
-              <link role="applicableNode" targetNodeId="1235133155414" resolveInfo="cd" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1235136330936">
-              <link role="baseMethodDeclaration" targetNodeId="7.1222430305282" resolveInfo="getImmediateSuperconcepts" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235136293835">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235136293836">
           <property name="name" value="language" />
@@ -482,6 +466,33 @@
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235136293842">
               <link role="baseMethodDeclaration" targetNodeId="13.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
               <link role="classConcept" targetNodeId="13.~GlobalScope" resolveInfo="GlobalScope" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237222084073">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237222084074">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237222095942" />
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1237222090360">
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1237222091785" />
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237222085546">
+            <link role="variableDeclaration" targetNodeId="1235136293836" resolveInfo="language" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235136330931">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235136330932">
+          <property name="name" value="superConcepts" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1235136330933">
+            <link role="elementConcept" targetNodeId="5.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235136330934">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235136330935">
+              <link role="applicableNode" targetNodeId="1235133155414" resolveInfo="cd" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1235136330936">
+              <link role="baseMethodDeclaration" targetNodeId="7.1222430305282" resolveInfo="getImmediateSuperconcepts" />
             </node>
           </node>
         </node>
