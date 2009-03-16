@@ -138,7 +138,11 @@ public class VFileSystem {
     return getJarEntryFile(jfef.getJarFile(), entryPath);
   }
 
-  public static void refreshFileSynchronously(IFile modelFile) {
-    LocalFileSystem.getInstance().refreshAndFindFileByIoFile(modelFile.toFile());
+  public static VirtualFile refreshFileSynchronously(IFile modelFile) {
+    VirtualFile file = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(modelFile.toFile());
+    if (file != null) {
+      file.refresh(true, false);
+    }
+    return file;
   }
 }
