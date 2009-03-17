@@ -389,7 +389,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="templateConcept" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="6.1237223882520" resolveInfo="MPSLiteConceptDeclaration" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="MPSLiteConceptDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237212436109">
       <property name="metaClass" value="aggregation" />
