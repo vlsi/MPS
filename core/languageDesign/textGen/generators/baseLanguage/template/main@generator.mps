@@ -1277,6 +1277,7 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1237225759171" />
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1234783054331">
           <property name="name" value="textGen" />

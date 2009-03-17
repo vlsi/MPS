@@ -12,6 +12,11 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.textGen.structure.OperationCall", new OperationCall_DataFlow());
     manager.register("jetbrains.mps.lang.textGen.structure.BaseTextGenOperation", new BaseTextGenOperation_DataFlow());
     manager.register("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", new ConceptTextGenDeclaration_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.AppendOperation", new AppendOperation_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.WithIndentOperation", new WithIndentOperation_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", new AbstractTextGenParameter_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.PrivateMethodCall", new PrivateMethodCall_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.PrivateMethodDeclaration", new PrivateMethodDeclaration_DataFlow());
   }
 
 }
