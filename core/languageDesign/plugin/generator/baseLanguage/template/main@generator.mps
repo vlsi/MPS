@@ -5574,12 +5574,6 @@
         <link role="template" targetNodeId="1227013480960" resolveInfo="reduce_Separator" />
       </node>
     </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1206106553257">
-      <link role="applicableConcept" targetNodeId="1.1206106212999" resolveInfo="Log" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1206106591027">
-        <link role="template" targetNodeId="1206106574790" resolveInfo="redulce_Log" />
-      </node>
-    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1207145921889">
       <link role="applicableConcept" targetNodeId="1.1207145475354" resolveInfo="AddActionStatement" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1207145939707">
@@ -6462,12 +6456,6 @@
       <link role="applicableConcept" targetNodeId="38.1213999088275" resolveInfo="DefaultClassifierFieldDeclaration" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1215277553380">
         <link role="template" targetNodeId="45.1213999885532" resolveInfo="reduce_DefaultClassifierFieldDeclaration" />
-      </node>
-    </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1206119499336">
-      <link role="applicableConcept" targetNodeId="1.1206106212999" resolveInfo="Log" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1206119499337">
-        <link role="template" targetNodeId="1206106574790" resolveInfo="redulce_Log" />
       </node>
     </node>
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1206118279212">
