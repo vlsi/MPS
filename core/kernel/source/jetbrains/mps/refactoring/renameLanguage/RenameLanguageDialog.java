@@ -32,10 +32,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
-import java.awt.Frame;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.HeadlessException;
+import java.awt.*;
 
 public class RenameLanguageDialog extends BaseDialog {
   private JPanel myMainPanel;
@@ -55,42 +52,23 @@ public class RenameLanguageDialog extends BaseDialog {
 
     myMainPanel = new JPanel(new GridBagLayout());
 
-    GridBagConstraints c;
-
-    c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 0;
-    c.anchor = GridBagConstraints.FIRST_LINE_START;
-    myMainPanel.add(new JLabel("Language name:"), c);
+    GridBagConstraints cLabel = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+    myMainPanel.add(new JLabel("Language name"), cLabel);
 
 
-    c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 1;
-    c.anchor = GridBagConstraints.FIRST_LINE_START;
+    GridBagConstraints cNameField = new GridBagConstraints(1, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
     myLanguageNameField = new JTextField(myLanguage.getModuleFqName(), 30);
-    myMainPanel.add(myLanguageNameField, c);
+    myMainPanel.add(myLanguageNameField, cNameField);
 
 
-    c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 2;
-    c.anchor = GridBagConstraints.FIRST_LINE_START;
+    GridBagConstraints cCheckbox = new GridBagConstraints(0, 1, 2, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
     myRegenerateLanguage = new JCheckBox("Regenerate Language");
     myRegenerateLanguage.getModel().setSelected(ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         return !myLanguage.isBootstrap();
       }
     }));
-    myMainPanel.add(myRegenerateLanguage, c);
-
-
-    c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 3;
-    c.weighty = 1.0;
-    c.weightx = 1.0;
-    myMainPanel.add(new JPanel(), c);
+    myMainPanel.add(myRegenerateLanguage, cCheckbox);
   }
 
   protected JComponent getMainComponent() {

@@ -44,7 +44,7 @@ public class RenameModelDialog extends BaseDialog {
     myMainPanel = new JPanel(new GridBagLayout());
 
     GridBagConstraints cLabel = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
-    myMainPanel.add(new JLabel("Model Name:"), cLabel);
+    myMainPanel.add(new JLabel("Model Name"), cLabel);
 
     GridBagConstraints cNameField = new GridBagConstraints(1, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
     myModelNameField = new JTextField(myModelDescriptor.getSModelFqName().toString(), 30);

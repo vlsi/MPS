@@ -26,10 +26,7 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.awt.Frame;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.HeadlessException;
+import java.awt.*;
 
 public class RenameSolutionDialog extends BaseDialog {
   private JPanel myMainPanel;
@@ -46,34 +43,15 @@ public class RenameSolutionDialog extends BaseDialog {
 
     myMainPanel = new JPanel(new GridBagLayout());
 
-    GridBagConstraints c;
+    GridBagConstraints cLabel = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+    myMainPanel.add(new JLabel("Solution name"), cLabel);
 
-    c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 0;
-    c.anchor = GridBagConstraints.FIRST_LINE_START;
-    myMainPanel.add(new JLabel("Solution name:"), c);
-
-
-    c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 1;
-    c.anchor = GridBagConstraints.FIRST_LINE_START;
+    GridBagConstraints cTextField = new GridBagConstraints(1, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
     myLanguageNameField = new JTextField(mySolution.getModuleFqName(), 30);
-    myMainPanel.add(myLanguageNameField, c);
+    myMainPanel.add(myLanguageNameField, cTextField);
 
-
-    c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 2;
-    c.anchor = GridBagConstraints.FIRST_LINE_START;
-
-    c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 3;
-    c.weighty = 1.0;
-    c.weightx = 1.0;
-    myMainPanel.add(new JPanel(), c);
+    GridBagConstraints cFiller = new GridBagConstraints(0, 1, 2, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+    myMainPanel.add(new JPanel(), cFiller);
   }
 
   protected JComponent getMainComponent() {
