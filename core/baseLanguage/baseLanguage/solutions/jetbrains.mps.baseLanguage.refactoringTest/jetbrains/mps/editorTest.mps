@@ -1991,68 +1991,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1233066580332">
-    <property name="package" value="bugTest" />
-    <property name="name" value="LogClassProblem" />
-    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1233066600302">
-      <property name="name" value="Test" />
-      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1233066762885">
-        <property name="name" value="method" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1233066762886" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233066762887" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233066762888">
-          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1234460480338">
-            <property name="isLastPosition" value="true" />
-            <property name="cellId" value="Constant_6577_0" />
-          </node>
-        </node>
-      </node>
-      <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1233066625362">
-        <property name="name" value="LOG" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1233066625363" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1233066754744">
-          <link role="classifier" targetNodeId="16.~Log" resolveInfo="Log" />
-        </node>
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233066600303" />
-    </node>
-    <node role="result" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1233066618153">
-      <property name="name" value="Test" />
-      <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1233066799018">
-        <property name="name" value="LOG" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1233066799019" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1233066799020">
-          <link role="classifier" targetNodeId="16.~Log" resolveInfo="Log" />
-        </node>
-      </node>
-      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1233066777686">
-        <property name="name" value="method" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1233066777687" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233066777688" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233066777689">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233066803083">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233066818704">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1233066803084">
-                <link role="variableDeclaration" targetNodeId="1233066799018" resolveInfo="LOG" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.AbstractOperation" id="1233066818707">
-                <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1233066821036">
-                  <property name="isLastPosition" value="true" />
-                  <property name="cellId" value="Custom_3927_0" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233066618154" />
-    </node>
-    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233066826537">
-      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1233066826538">
-        <property name="keys" value="LOG." />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1233333241782">
     <property name="package" value="bugTest" />
     <property name="name" value="BracesTest" />
