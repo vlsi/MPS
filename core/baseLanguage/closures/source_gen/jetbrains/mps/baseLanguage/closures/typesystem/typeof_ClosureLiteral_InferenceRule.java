@@ -82,13 +82,19 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
             ListSequence.fromList(allThrows).addElement(SNodeOperations.copyNode(thr));
           }
         }
-        for(SNode c : SNodeOperations.getChildren(stmt)) {
+        List<SNode> allChildren = ListSequence.fromList(new LinkedList<SNode>());
+        ListSequence.fromList(allChildren).addSequence(ListSequence.fromList(SNodeOperations.getChildren(stmt)));
+        while (ListSequence.fromList(allChildren).isNotEmpty()) {
+          SNode c = ListSequence.fromList(allChildren).removeElementAt(0);
           if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.StatementList")) {
             for(SNode cstmt : SLinkOperations.getTargets(c, "statement", true)) {
               if (!(SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock")) && !(SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
                 ListSequence.fromList(allStmts).addElement(cstmt);
               }
             }
+          } else
+          {
+            ListSequence.fromList(allChildren).addSequence(ListSequence.fromList(SNodeOperations.getChildren(c)));
           }
         }
       }
