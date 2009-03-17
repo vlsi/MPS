@@ -393,7 +393,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1236702671326" />
+        <node role="statement" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1237295741800">
+          <link role="function" targetNodeId="2v.1234796367381" resolveInfo="arguments" />
+          <node role="parameter" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1237295744895" />
+        </node>
       </node>
     </node>
   </node>
@@ -617,7 +620,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1236703140411" />
+        <node role="statement" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1237295775646">
+          <link role="function" targetNodeId="2v.1234796367381" resolveInfo="arguments" />
+          <node role="parameter" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1237295779038" />
+        </node>
       </node>
     </node>
   </node>
