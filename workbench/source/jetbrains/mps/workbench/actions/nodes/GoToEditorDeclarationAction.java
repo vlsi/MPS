@@ -32,6 +32,7 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 /**
  * @author Kostik
@@ -58,8 +59,9 @@ public class GoToEditorDeclarationAction extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent e) {
-    Language language = ModelAccess.instance().runReadAction(new Computable<Language>() {
+    final Language language = ModelAccess.instance().runReadAction(new Computable<Language>() {
       public Language compute() {
+/* todo why do we need it?
         if (myModule instanceof Language) {
           Language contextLanguage = (Language) myModule;
           SModelDescriptor testStructureModel = contextLanguage.getStructureModelDescriptor();
@@ -67,6 +69,7 @@ public class GoToEditorDeclarationAction extends BaseAction {
             return contextLanguage;
           }
         }
+*/
         return SModelUtil_new.getDeclaringLanguage(myConcept, myScope);
       }
     });
@@ -76,54 +79,69 @@ public class GoToEditorDeclarationAction extends BaseAction {
       return;
     }
 
-    final ModuleContext languageContext = new ModuleContext(language, myProject);
-    final SModelDescriptor languageEditor = language.getEditorModelDescriptor();
-    ConceptEditorDeclaration editorDeclaration;
-    if (languageEditor != null) {
-      editorDeclaration = ModelAccess.instance().runReadAction(new Computable<ConceptEditorDeclaration>() {
-        public ConceptEditorDeclaration compute() {
-          return SModelUtil_new.findEditorDeclaration(languageEditor.getSModel(), myConcept);
-        }
-      });
-      if (editorDeclaration != null) {
-        navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, myEditor);
-        return;
-      }
-    }
+    final SModelDescriptor languageEditor = getOrCreateEditorAspect(language);
+    if (languageEditor == null) return;
 
-    String message;
-    if (languageEditor == null) {
-      message = "Language \"" + language.getModuleUID() + "\" has no editor model.\n" +
-        "Create new editor model?";
-    } else {
-      message = "Concept \"" + NameUtil.nodeFQName(myNode) + "\" has no editor.\n" +
-        "Create new editor?";
-    }
+    final ConceptEditorDeclaration editorDeclaration = getOrCreateEditorForConcept(language, languageEditor);
+    if (editorDeclaration == null) return;
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        navigateToEditorDeclaration(editorDeclaration.getNode(), new ModuleContext(language, myProject), myEditor);
+      }
+    });
+  }
+
+  private ConceptEditorDeclaration getOrCreateEditorForConcept(Language language, final SModelDescriptor languageEditor) {
+    ConceptEditorDeclaration editorDeclaration = ModelAccess.instance().runReadAction(new Computable<ConceptEditorDeclaration>() {
+      public ConceptEditorDeclaration compute() {
+        return SModelUtil_new.findEditorDeclaration(languageEditor.getSModel(), myConcept);
+      }
+    });
+    if (editorDeclaration != null) return editorDeclaration;
+
+    String message = ModelAccess.instance().runReadAction(new Computable<String>() {
+      public String compute() {
+        return "Concept \"" + NameUtil.nodeFQName(myNode) + "\" has no editor.\n" +
+          "Create new editor?";
+      }
+    });
     int option = JOptionPane.showConfirmDialog(null, message, "Editor not found",
       JOptionPane.YES_NO_OPTION,
       JOptionPane.QUESTION_MESSAGE);
     if (option != JOptionPane.YES_OPTION) {
-      return;
+      return null;
+    }
+
+    return ModelAccess.instance().runWriteActionInCommand(new Computable<ConceptEditorDeclaration>() {
+      public ConceptEditorDeclaration compute() {
+        return createEditorDeclaration(myConcept, languageEditor, myScope);
+      }
+    });
+  }
+
+  private SModelDescriptor getOrCreateEditorAspect(final Language language) {
+    final SModelDescriptor languageEditor = language.getEditorModelDescriptor();
+    if (languageEditor != null) return languageEditor;
+
+    //ask...
+    String message = "Language \"" + language.getModuleUID() + "\" has no editor model.\n" + "Create new editor model?";
+    int option = JOptionPane.showConfirmDialog(null, message, "Editor not found",
+      JOptionPane.YES_NO_OPTION,
+      JOptionPane.QUESTION_MESSAGE);
+    if (option != JOptionPane.YES_OPTION) {
+      return null;
     }
 
     // create ...
-    final Language languageFinal = language;
-    final SModelDescriptor languageEditorFinal = languageEditor;
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        if (languageEditorFinal == null) {
-          LanguageAspect.EDITOR.createNew(languageFinal);
-          createEditorDeclaration(myConcept, languageFinal.getEditorModelDescriptor(), myScope);
-        } else {
-          createEditorDeclaration(myConcept, languageEditorFinal, myScope);
-        }
+        LanguageAspect.EDITOR.createNew(language);
+        createEditorDeclaration(myConcept, language.getEditorModelDescriptor(), myScope);
       }
     });
 
-    SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
-    assert editorModelDescriptor != null;
-    editorDeclaration = SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), (ConceptDeclaration) myNode.getAdapter());
-    navigateToEditorDeclaration(editorDeclaration.getNode(), languageContext, myEditor);
+    return language.getEditorModelDescriptor();
   }
 
   protected boolean collectActionData(AnActionEvent e) {
