@@ -266,14 +266,14 @@
               <node role="componentProvider" type="jetbrains.mps.lang.editor.structure.QueryFunction_JComponent" id="1218984772578">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218984772579">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218984772580">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218984772581">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237298878205">
+                      <link role="baseMethodDeclaration" targetNodeId="28.~EditorUtil.createSelectIconButton(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.nodeEditor.EditorContext):javax.swing.JComponent" resolveInfo="createSelectIconButton" />
                       <link role="classConcept" targetNodeId="28.~EditorUtil" resolveInfo="EditorUtil" />
-                      <link role="baseMethodDeclaration" targetNodeId="28.~EditorUtil.createSelectIconButton(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext):javax.swing.JComponent" resolveInfo="createSelectIconButton" />
-                      <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1218984772582" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1218984772583">
+                      <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237298878206" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237298878207">
                         <property name="value" value="iconPath" />
                       </node>
-                      <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1218984772584" />
+                      <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1237298878208" />
                     </node>
                   </node>
                 </node>
@@ -1332,13 +1332,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1206106872556">
-    <property name="package" value="Shared" />
-    <link role="conceptDeclaration" targetNodeId="1.1206106212999" resolveInfo="Log" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206106884609">
-      <property name="text" value="LOG" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1206110277118">
