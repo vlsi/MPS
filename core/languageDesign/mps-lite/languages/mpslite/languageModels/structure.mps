@@ -275,7 +275,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1182845809628">
       <property name="role" value="target" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="6.1237223882520" resolveInfo="NodeTypeDeclaration" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="MPSLiteConceptDeclaration" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1182845701266">
       <property name="value" value="&lt;" />

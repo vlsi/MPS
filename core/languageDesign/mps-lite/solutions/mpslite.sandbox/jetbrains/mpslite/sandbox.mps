@@ -24,6 +24,36 @@
   </node>
   <node type="jetbrains.mpslite.structure.MPSLiteConceptDeclaration" id="1237224236484">
     <property name="name" value="SSSSS" />
+    <node role="line" type="jetbrains.mpslite.structure.Line" id="1237302329899">
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237302331877">
+        <property name="text" value="if" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237302337774">
+        <property name="text" value="a" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237302341012">
+        <property name="text" value="=" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237302342210">
+        <property name="text" value="34" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237302343335">
+        <property name="text" value="then" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237302351582">
+        <property name="text" value="ius" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237302352235">
+        <property name="text" value="iuhds" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237302353307">
+        <property name="text" value="sudh" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237302354348">
+        <property name="text" value="hd" />
+      </node>
+      <node role="linePart" type="jetbrains.mpslite.structure.ConcreteChildPart" id="1237302359357" />
+    </node>
   </node>
 </model>
 
