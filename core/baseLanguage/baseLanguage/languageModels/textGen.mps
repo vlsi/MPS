@@ -991,6 +991,35 @@
         </node>
       </node>
     </node>
+    <node role="operation" type="jetbrains.mps.lang.textGen.structure.OperationDeclaration" id="1237310744896">
+      <property name="name" value="clsName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237310744897" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237310744898">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237310761482">
+          <node role="expression" type="jetbrains.mps.lang.textGen.structure.PrivateMethodCall" id="1237310761483">
+            <link role="function" targetNodeId="1236686501608" resolveInfo="appendClsName" />
+            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1237310782833">
+              <link role="variableDeclaration" targetNodeId="1237310766734" resolveInfo="pack" />
+            </node>
+            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1237310785178">
+              <link role="variableDeclaration" targetNodeId="1237310768908" resolveInfo="className" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1237310766734">
+        <property name="name" value="pack" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237310766735">
+          <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1237310768908">
+        <property name="name" value="className" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237310771160">
+          <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="1234803609335">
     <link role="conceptDeclaration" targetNodeId="1.1080120340718" resolveInfo="AndExpression" />
