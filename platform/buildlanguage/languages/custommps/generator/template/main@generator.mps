@@ -2853,20 +2853,20 @@
     </node>
     <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1234967229679">
       <property name="name" value="add.final.touches" />
-      <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1234967281628">
-        <link role="declaration" targetNodeId="6v.1199644187988" resolveInfo="move" />
-        <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1234967320409">
-          <link role="declaration" targetNodeId="6v.1199644185188" resolveInfo="path" />
-          <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1234967323167">
-            <link role="attributeDeclaration" targetNodeId="6v.1209892381778" resolveInfo="location" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1234967325858">
+      <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1237305165070">
+        <link role="declaration" targetNodeId="6v.1199644186266" resolveInfo="copy" />
+        <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1237305196190">
+          <link role="declaration" targetNodeId="6v.1199644187604" resolveInfo="fileset" />
+          <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1237305198868">
+            <link role="attributeDeclaration" targetNodeId="6v.1199644187633" resolveInfo="dir" />
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1237305201270">
               <link role="propertyDeclaration" targetNodeId="1233673101173" resolveInfo="input.dir" />
             </node>
           </node>
         </node>
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1234967302189">
+        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1237305188007">
           <link role="attributeDeclaration" targetNodeId="6v.1199644186328" resolveInfo="todir" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1234967304976">
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1237305189545">
             <link role="propertyDeclaration" targetNodeId="1233673111665" resolveInfo="output.dir" />
           </node>
         </node>
