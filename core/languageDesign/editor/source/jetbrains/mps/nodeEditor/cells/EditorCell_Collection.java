@@ -20,10 +20,7 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Flow;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
@@ -83,6 +80,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   public static EditorCell_Collection createHorizontal(EditorContext editorContext, SNode node) {
     return new EditorCell_Collection(editorContext, node, new CellLayout_Horizontal(), null);
+  }
+
+  public static EditorCell_Collection createIndent2(EditorContext editorContext, SNode node) {
+    return new EditorCell_Collection(editorContext, node, new CellLayout_Indent2(), null);
   }
 
   @SuppressWarnings({"UnusedDeclaration"})

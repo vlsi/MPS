@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum _Colors_Enum {
   none("none", null),
@@ -35,24 +36,24 @@ public enum _Colors_Enum {
 
   public static List<_Colors_Enum> getConstants() {
     List<_Colors_Enum> list = new LinkedList<_Colors_Enum>();
-    list.add(_Colors_Enum.none);
-    list.add(_Colors_Enum.red);
-    list.add(_Colors_Enum.pink);
-    list.add(_Colors_Enum.orange);
-    list.add(_Colors_Enum.yellow);
-    list.add(_Colors_Enum.green);
-    list.add(_Colors_Enum.darkGreen);
-    list.add(_Colors_Enum.magenta);
-    list.add(_Colors_Enum.darkMagenta);
-    list.add(_Colors_Enum.cyan);
-    list.add(_Colors_Enum.blue);
-    list.add(_Colors_Enum.lightBlue);
-    list.add(_Colors_Enum.darkBlue);
-    list.add(_Colors_Enum.gray);
-    list.add(_Colors_Enum.lightGray);
-    list.add(_Colors_Enum.darkGray);
-    list.add(_Colors_Enum.white);
-    list.add(_Colors_Enum.query);
+    ListOperations.addElement(list, _Colors_Enum.none);
+    ListOperations.addElement(list, _Colors_Enum.red);
+    ListOperations.addElement(list, _Colors_Enum.pink);
+    ListOperations.addElement(list, _Colors_Enum.orange);
+    ListOperations.addElement(list, _Colors_Enum.yellow);
+    ListOperations.addElement(list, _Colors_Enum.green);
+    ListOperations.addElement(list, _Colors_Enum.darkGreen);
+    ListOperations.addElement(list, _Colors_Enum.magenta);
+    ListOperations.addElement(list, _Colors_Enum.darkMagenta);
+    ListOperations.addElement(list, _Colors_Enum.cyan);
+    ListOperations.addElement(list, _Colors_Enum.blue);
+    ListOperations.addElement(list, _Colors_Enum.lightBlue);
+    ListOperations.addElement(list, _Colors_Enum.darkBlue);
+    ListOperations.addElement(list, _Colors_Enum.gray);
+    ListOperations.addElement(list, _Colors_Enum.lightGray);
+    ListOperations.addElement(list, _Colors_Enum.darkGray);
+    ListOperations.addElement(list, _Colors_Enum.white);
+    ListOperations.addElement(list, _Colors_Enum.query);
     return list;
   }
 

@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum _LeftRight_Enum {
   left("left", true),
@@ -19,8 +20,8 @@ public enum _LeftRight_Enum {
 
   public static List<_LeftRight_Enum> getConstants() {
     List<_LeftRight_Enum> list = new LinkedList<_LeftRight_Enum>();
-    list.add(_LeftRight_Enum.left);
-    list.add(_LeftRight_Enum.right);
+    ListOperations.addElement(list, _LeftRight_Enum.left);
+    ListOperations.addElement(list, _LeftRight_Enum.right);
     return list;
   }
 

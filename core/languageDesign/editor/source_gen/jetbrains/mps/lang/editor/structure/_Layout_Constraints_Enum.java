@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum _Layout_Constraints_Enum {
   punctuation("punctuation", "punctuation"),
@@ -20,9 +21,9 @@ public enum _Layout_Constraints_Enum {
 
   public static List<_Layout_Constraints_Enum> getConstants() {
     List<_Layout_Constraints_Enum> list = new LinkedList<_Layout_Constraints_Enum>();
-    list.add(_Layout_Constraints_Enum.punctuation);
-    list.add(_Layout_Constraints_Enum.noflow);
-    list.add(_Layout_Constraints_Enum.none);
+    ListOperations.addElement(list, _Layout_Constraints_Enum.punctuation);
+    ListOperations.addElement(list, _Layout_Constraints_Enum.noflow);
+    ListOperations.addElement(list, _Layout_Constraints_Enum.none);
     return list;
   }
 

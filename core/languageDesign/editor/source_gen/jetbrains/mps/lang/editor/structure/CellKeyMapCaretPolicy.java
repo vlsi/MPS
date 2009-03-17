@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum CellKeyMapCaretPolicy {
   ANY_POSITION("ANY_POSITION", null),
@@ -21,10 +22,10 @@ public enum CellKeyMapCaretPolicy {
 
   public static List<CellKeyMapCaretPolicy> getConstants() {
     List<CellKeyMapCaretPolicy> list = new LinkedList<CellKeyMapCaretPolicy>();
-    list.add(CellKeyMapCaretPolicy.ANY_POSITION);
-    list.add(CellKeyMapCaretPolicy.FIRST_POSITION);
-    list.add(CellKeyMapCaretPolicy.LAST_POSITION);
-    list.add(CellKeyMapCaretPolicy.INTERMEDIATE_POSITION);
+    ListOperations.addElement(list, CellKeyMapCaretPolicy.ANY_POSITION);
+    ListOperations.addElement(list, CellKeyMapCaretPolicy.FIRST_POSITION);
+    ListOperations.addElement(list, CellKeyMapCaretPolicy.LAST_POSITION);
+    ListOperations.addElement(list, CellKeyMapCaretPolicy.INTERMEDIATE_POSITION);
     return list;
   }
 

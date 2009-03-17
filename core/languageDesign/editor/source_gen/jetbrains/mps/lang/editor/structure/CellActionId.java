@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum CellActionId {
   RIGHT_TRANSFORM("RIGHT_TRANSFORM", "right_transform_action_id"),
@@ -19,8 +20,8 @@ public enum CellActionId {
 
   public static List<CellActionId> getConstants() {
     List<CellActionId> list = new LinkedList<CellActionId>();
-    list.add(CellActionId.RIGHT_TRANSFORM);
-    list.add(CellActionId.DELETE);
+    ListOperations.addElement(list, CellActionId.RIGHT_TRANSFORM);
+    ListOperations.addElement(list, CellActionId.DELETE);
     return list;
   }
 

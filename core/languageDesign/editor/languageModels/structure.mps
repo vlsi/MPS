@@ -4115,5 +4115,14 @@
       <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237303669825">
+    <property name="package" value="CellLayout" />
+    <property name="name" value="CellLayout_Indent2" />
+    <link role="extends" targetNodeId="1106270491082" resolveInfo="CellLayout" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237303669826">
+      <property name="value" value="indent2" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

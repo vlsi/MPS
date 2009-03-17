@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum FocusPolicy {
   noAttraction("noAttraction", 0),
@@ -21,10 +22,10 @@ public enum FocusPolicy {
 
   public static List<FocusPolicy> getConstants() {
     List<FocusPolicy> list = new LinkedList<FocusPolicy>();
-    list.add(FocusPolicy.noAttraction);
-    list.add(FocusPolicy.attractsFocus);
-    list.add(FocusPolicy.firstEditableCell);
-    list.add(FocusPolicy.attractsRecursively);
+    ListOperations.addElement(list, FocusPolicy.noAttraction);
+    ListOperations.addElement(list, FocusPolicy.attractsFocus);
+    ListOperations.addElement(list, FocusPolicy.firstEditableCell);
+    ListOperations.addElement(list, FocusPolicy.attractsRecursively);
     return list;
   }
 

@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum RightTransformAnchorTag {
   none("none", null),
@@ -24,13 +25,13 @@ public enum RightTransformAnchorTag {
 
   public static List<RightTransformAnchorTag> getConstants() {
     List<RightTransformAnchorTag> list = new LinkedList<RightTransformAnchorTag>();
-    list.add(RightTransformAnchorTag.none);
-    list.add(RightTransformAnchorTag.default_);
-    list.add(RightTransformAnchorTag.ext_1);
-    list.add(RightTransformAnchorTag.ext_2);
-    list.add(RightTransformAnchorTag.ext_3);
-    list.add(RightTransformAnchorTag.ext_4);
-    list.add(RightTransformAnchorTag.ext_5);
+    ListOperations.addElement(list, RightTransformAnchorTag.none);
+    ListOperations.addElement(list, RightTransformAnchorTag.default_);
+    ListOperations.addElement(list, RightTransformAnchorTag.ext_1);
+    ListOperations.addElement(list, RightTransformAnchorTag.ext_2);
+    ListOperations.addElement(list, RightTransformAnchorTag.ext_3);
+    ListOperations.addElement(list, RightTransformAnchorTag.ext_4);
+    ListOperations.addElement(list, RightTransformAnchorTag.ext_5);
     return list;
   }
 

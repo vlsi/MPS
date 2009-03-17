@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum _ImageAlignment_Enum {
   alignmentJustify("alignmentJustify", "justify"),
@@ -20,9 +21,9 @@ public enum _ImageAlignment_Enum {
 
   public static List<_ImageAlignment_Enum> getConstants() {
     List<_ImageAlignment_Enum> list = new LinkedList<_ImageAlignment_Enum>();
-    list.add(_ImageAlignment_Enum.alignmentJustify);
-    list.add(_ImageAlignment_Enum.alignmentCenter);
-    list.add(_ImageAlignment_Enum.alignmentTile);
+    ListOperations.addElement(list, _ImageAlignment_Enum.alignmentJustify);
+    ListOperations.addElement(list, _ImageAlignment_Enum.alignmentCenter);
+    ListOperations.addElement(list, _ImageAlignment_Enum.alignmentTile);
     return list;
   }
 

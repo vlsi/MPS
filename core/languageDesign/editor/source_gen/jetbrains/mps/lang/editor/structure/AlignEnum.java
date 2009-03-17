@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum AlignEnum {
   left("left", "LEFT"),
@@ -20,9 +21,9 @@ public enum AlignEnum {
 
   public static List<AlignEnum> getConstants() {
     List<AlignEnum> list = new LinkedList<AlignEnum>();
-    list.add(AlignEnum.left);
-    list.add(AlignEnum.rigth);
-    list.add(AlignEnum.center);
+    ListOperations.addElement(list, AlignEnum.left);
+    ListOperations.addElement(list, AlignEnum.rigth);
+    ListOperations.addElement(list, AlignEnum.center);
     return list;
   }
 

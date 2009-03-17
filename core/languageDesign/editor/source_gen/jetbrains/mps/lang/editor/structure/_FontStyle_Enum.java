@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum _FontStyle_Enum {
   none("none", null),
@@ -23,12 +24,12 @@ public enum _FontStyle_Enum {
 
   public static List<_FontStyle_Enum> getConstants() {
     List<_FontStyle_Enum> list = new LinkedList<_FontStyle_Enum>();
-    list.add(_FontStyle_Enum.none);
-    list.add(_FontStyle_Enum.bold);
-    list.add(_FontStyle_Enum.italic);
-    list.add(_FontStyle_Enum.boldItalic);
-    list.add(_FontStyle_Enum.plain);
-    list.add(_FontStyle_Enum.query);
+    ListOperations.addElement(list, _FontStyle_Enum.none);
+    ListOperations.addElement(list, _FontStyle_Enum.bold);
+    ListOperations.addElement(list, _FontStyle_Enum.italic);
+    ListOperations.addElement(list, _FontStyle_Enum.boldItalic);
+    ListOperations.addElement(list, _FontStyle_Enum.plain);
+    ListOperations.addElement(list, _FontStyle_Enum.query);
     return list;
   }
 

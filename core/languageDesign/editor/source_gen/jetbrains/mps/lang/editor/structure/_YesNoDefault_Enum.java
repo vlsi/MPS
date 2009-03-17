@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum _YesNoDefault_Enum {
   yes("yes", "true"),
@@ -20,9 +21,9 @@ public enum _YesNoDefault_Enum {
 
   public static List<_YesNoDefault_Enum> getConstants() {
     List<_YesNoDefault_Enum> list = new LinkedList<_YesNoDefault_Enum>();
-    list.add(_YesNoDefault_Enum.yes);
-    list.add(_YesNoDefault_Enum.no);
-    list.add(_YesNoDefault_Enum.none);
+    ListOperations.addElement(list, _YesNoDefault_Enum.yes);
+    ListOperations.addElement(list, _YesNoDefault_Enum.no);
+    ListOperations.addElement(list, _YesNoDefault_Enum.none);
     return list;
   }
 

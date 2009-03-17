@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum _Enum_Measure {
   pixels("pixels", "PIXELS"),
@@ -19,8 +20,8 @@ public enum _Enum_Measure {
 
   public static List<_Enum_Measure> getConstants() {
     List<_Enum_Measure> list = new LinkedList<_Enum_Measure>();
-    list.add(_Enum_Measure.pixels);
-    list.add(_Enum_Measure.spaces);
+    ListOperations.addElement(list, _Enum_Measure.pixels);
+    ListOperations.addElement(list, _Enum_Measure.spaces);
     return list;
   }
 

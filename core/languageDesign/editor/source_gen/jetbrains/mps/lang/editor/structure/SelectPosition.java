@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum SelectPosition {
   before("before", "before"),
@@ -19,8 +20,8 @@ public enum SelectPosition {
 
   public static List<SelectPosition> getConstants() {
     List<SelectPosition> list = new LinkedList<SelectPosition>();
-    list.add(SelectPosition.before);
-    list.add(SelectPosition.after);
+    ListOperations.addElement(list, SelectPosition.before);
+    ListOperations.addElement(list, SelectPosition.after);
     return list;
   }
 

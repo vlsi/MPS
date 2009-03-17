@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum _NextLine_Enum {
   right("right", null),
@@ -20,9 +21,9 @@ public enum _NextLine_Enum {
 
   public static List<_NextLine_Enum> getConstants() {
     List<_NextLine_Enum> list = new LinkedList<_NextLine_Enum>();
-    list.add(_NextLine_Enum.right);
-    list.add(_NextLine_Enum.next_line);
-    list.add(_NextLine_Enum.indented);
+    ListOperations.addElement(list, _NextLine_Enum.right);
+    ListOperations.addElement(list, _NextLine_Enum.next_line);
+    ListOperations.addElement(list, _NextLine_Enum.indented);
     return list;
   }
 

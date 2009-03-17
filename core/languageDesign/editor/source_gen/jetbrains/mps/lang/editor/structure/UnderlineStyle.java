@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum UnderlineStyle {
   as_is("as_is", 0),
@@ -20,9 +21,9 @@ public enum UnderlineStyle {
 
   public static List<UnderlineStyle> getConstants() {
     List<UnderlineStyle> list = new LinkedList<UnderlineStyle>();
-    list.add(UnderlineStyle.as_is);
-    list.add(UnderlineStyle.not_underlined);
-    list.add(UnderlineStyle.underlined);
+    ListOperations.addElement(list, UnderlineStyle.as_is);
+    ListOperations.addElement(list, UnderlineStyle.not_underlined);
+    ListOperations.addElement(list, UnderlineStyle.underlined);
     return list;
   }
 

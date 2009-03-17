@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum _CaretPosition_Enum {
   none("none", "NONE"),
@@ -20,9 +21,9 @@ public enum _CaretPosition_Enum {
 
   public static List<_CaretPosition_Enum> getConstants() {
     List<_CaretPosition_Enum> list = new LinkedList<_CaretPosition_Enum>();
-    list.add(_CaretPosition_Enum.none);
-    list.add(_CaretPosition_Enum.first);
-    list.add(_CaretPosition_Enum.last);
+    ListOperations.addElement(list, _CaretPosition_Enum.none);
+    ListOperations.addElement(list, _CaretPosition_Enum.first);
+    ListOperations.addElement(list, _CaretPosition_Enum.last);
     return list;
   }
 
