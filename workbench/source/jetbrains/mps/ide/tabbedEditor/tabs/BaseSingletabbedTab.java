@@ -49,18 +49,20 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     myBaseNode = new SNodePointer(baseNode);
     myClass = adapterClass;
     myListener = new SModelAdapter() {
+      @Override
       public void rootRemoved(SModelRootEvent event) {
         if (myBaseNode.getNode() == null) return;
         if (myBaseNode.getNode() == event.getRoot()) return;
 
         if ((getLoadableNode() == null) || (getLoadableNode() == event.getRoot())) {
-          myTabbedEditor.getTabbedPane().removeTab(BaseSingletabbedTab.this);
-          myComponent = null;
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              myTabbedEditor.getTabbedPane().initTab(BaseSingletabbedTab.this);
-            }
-          });
+          reinit();
+        }
+      }
+
+      @Override
+      public void rootAdded(SModelRootEvent event) {
+        if (getLoadableNode() == null && tryToLoadNode() == event.getRoot()) {
+          reinit();
         }
       }
 
@@ -69,12 +71,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
         INodeAdapter sourceNode = BaseAdapter.fromNode(reference.getSourceNode());
         if (myClass.isInstance(sourceNode.getContainingRoot()) &&
           reference.getTargetNode() == getBaseNode()) {
-          myTabbedEditor.getTabbedPane().removeTab(BaseSingletabbedTab.this);
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              myTabbedEditor.getTabbedPane().initTab(BaseSingletabbedTab.this);
-            }
-          });
+          reinit();
         }
       }
     };
@@ -96,6 +93,16 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
       };
       SModelRepository.getInstance().addWeakModelRepositoryListener(myWeakSModelRepositoryListener);
     }
+  }
+
+  private void reinit() {
+    myTabbedEditor.getTabbedPane().removeTab(this);
+    myComponent = null;
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        myTabbedEditor.getTabbedPane().initTab(BaseSingletabbedTab.this);
+      }
+    });
   }
 
   protected abstract SNode tryToLoadNode();

@@ -54,22 +54,25 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myBaseNode = new SNodePointer(baseNode);
     myClass = adapterClass;
     myListener = new SModelAdapter() {
+      @Override
       public void rootRemoved(SModelRootEvent event) {
         if (myBaseNode.getNode() == null) return;
         if (myBaseNode.getNode() == event.getRoot()) return;
 
         if (getLoadableNodes().contains(event.getRoot()) || getLoadableNodes().isEmpty()) {
-          myTabbedEditor.getTabbedPane().removeTab(BaseMultitabbedTab.this);
-          myInnerTabbedPane = null;
-          myComponent = null;
-          myLoadableNodes.clear();
-          myLoadableNodesList.clear();
-          myEditors.clear();
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              myTabbedEditor.getTabbedPane().initTab(BaseMultitabbedTab.this);
+          reinit();
+        }
+      }
+
+      @Override
+      public void rootAdded(SModelRootEvent event) {
+        if (!getLoadableNodes().contains(event.getRoot())) {
+          for (Pair<SNode,IOperationContext> p:tryToLoadNodes()){
+            if (p.o1==event.getRoot()){
+              reinit();
+              break;
             }
-          });
+          }
         }
       }
 
@@ -78,17 +81,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
         INodeAdapter sourceNode = BaseAdapter.fromNode(reference.getSourceNode());
         if (myClass.isInstance(sourceNode.getContainingRoot()) &&
           reference.getTargetNode() == getBaseNode()) {
-          myTabbedEditor.getTabbedPane().removeTab(BaseMultitabbedTab.this);
-          myInnerTabbedPane = null;
-          myComponent = null;
-          myLoadableNodes.clear();
-          myLoadableNodesList.clear();
-          myEditors.clear();
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              myTabbedEditor.getTabbedPane().initTab(BaseMultitabbedTab.this);
-            }
-          });
+          reinit();
         }
       }
 
@@ -100,6 +93,20 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
         }
       }
     };
+  }
+
+  private void reinit() {
+    myTabbedEditor.getTabbedPane().removeTab(this);
+    myInnerTabbedPane = null;
+    myComponent = null;
+    myLoadableNodes.clear();
+    myLoadableNodesList.clear();
+    myEditors.clear();
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        myTabbedEditor.getTabbedPane().initTab(BaseMultitabbedTab.this);
+      }
+    });
   }
 
   protected abstract List<Pair<SNode, IOperationContext>> tryToLoadNodes();
