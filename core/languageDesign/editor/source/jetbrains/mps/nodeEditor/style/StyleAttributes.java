@@ -74,4 +74,7 @@ public class StyleAttributes {
   public static final StyleAttribute<CellAlign> HORIZONTAL_ALIGN = new SimpleStyleAttribute<CellAlign>("horizontal-align", CellAlign.LEFT);
   public static final StyleAttribute<String> MATCHING_LABEL = new SimpleStyleAttribute<String>("matching-label", null);
   public static final StyleAttribute<SNode> MATCHING_NODE = new SimpleStyleAttribute<SNode>("matching-node", null);
+
+  public static final StyleAttribute<Boolean> INDENT_LAYOUYT_INDENT = new SimpleStyleAttribute<Boolean>("indent-layout-indented", false);
+  public static final StyleAttribute<Boolean> INDENT_LAYOUYT_NEW_LINE = new SimpleStyleAttribute<Boolean>("indent-layout-new-line", false);
 }
