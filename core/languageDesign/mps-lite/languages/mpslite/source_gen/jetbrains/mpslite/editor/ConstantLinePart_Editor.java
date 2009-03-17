@@ -65,7 +65,7 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_7743_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_text");
-    _LinePart_RT.setCellActions(editorCell, node, context);
+    editorCell.addKeyMap(new LinePart_Actions());
   }
 
   private static void setupLabel_Property_7743_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

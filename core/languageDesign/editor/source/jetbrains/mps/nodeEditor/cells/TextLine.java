@@ -82,6 +82,14 @@ public class TextLine {
     myEndTextSelectionPosition = myCaretPosition;
   }
 
+  public String getTextBeforeCaret() {
+    return myText.substring(0, myCaretPosition);
+  }
+
+  public String getTextAfterCaret() {
+    return myText.substring(myCaretPosition, myText.length());
+  }
+
   public int getWidth() {
     return myWidth;
   }

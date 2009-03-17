@@ -136,6 +136,7 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_4338_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4338_0");
+    editorCell.addKeyMap(new LinePart_Actions());
   }
 
   private static void setupBasic_Constant_4338_0(EditorCell editorCell, SNode node, EditorContext context) {

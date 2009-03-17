@@ -14,12 +14,6 @@ import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 
 public class QueriesGenerated {
 
@@ -51,58 +45,6 @@ public class QueriesGenerated {
 
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
-          }
-
-        });
-      }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_LinePart_1237215510294(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mpslite.structure.LinePart");
-      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
-      concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
-      for(final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          continue;
-        }
-        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
-          continue;
-        }
-        result.add(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
-
-          public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            return result;
-          }
-
-        });
-      }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_LinePart_1237215537718(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mpslite.structure.LinePart");
-      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
-      concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
-      for(final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          continue;
-        }
-        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
-          continue;
-        }
-        result.add(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
-
-          public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            return result;
           }
 
         });

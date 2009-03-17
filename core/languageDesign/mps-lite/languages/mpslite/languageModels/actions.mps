@@ -48,36 +48,6 @@
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" version="-1" />
-  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1237215340791">
-    <property name="name" value="LinePart_SideTransform" />
-    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1237215510294">
-      <link role="applicableConcept" targetNodeId="1.1182511214735" resolveInfo="LinePart" />
-      <node role="part" type="jetbrains.mps.lang.actions.structure.ConceptRightTransformPart" id="1237215627100">
-        <link role="concept" targetNodeId="1.1182511214735" resolveInfo="LinePart" />
-        <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler" id="1237215627101">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237215627102">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237215627103">
-              <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1237215627104" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1237215537718">
-      <property name="side" value="left" />
-      <link role="applicableConcept" targetNodeId="1.1182511214735" resolveInfo="LinePart" />
-      <node role="part" type="jetbrains.mps.lang.actions.structure.ConceptRightTransformPart" id="1237215582958">
-        <link role="concept" targetNodeId="1.1182511214735" resolveInfo="LinePart" />
-        <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler" id="1237215582959">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237215582960">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237215615752">
-              <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1237215617786" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="1237217075863">
     <property name="name" value="Substitute_ConstantText" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1237218108602">

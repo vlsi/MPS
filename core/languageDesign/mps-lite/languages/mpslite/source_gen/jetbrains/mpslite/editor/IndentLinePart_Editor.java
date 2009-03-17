@@ -53,7 +53,7 @@ public class IndentLinePart_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-    _LinePart_RT.setCellActions(editorCell, node, context);
+    editorCell.addKeyMap(new LinePart_Actions());
   }
 
   private static void setupLabel_Constant_9913_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

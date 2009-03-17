@@ -739,6 +739,14 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return getRenderedTextLine().charWidth();
   }
 
+  public String getTextBeforeCaret() {
+    return myTextLine.getTextBeforeCaret();
+  }
+
+  public String getTextAfterCaret() {
+    return myTextLine.getTextAfterCaret();
+  }
+
   private static class MySNodeUndoableAction extends SNodeUndoableAction {
     private final CellInfo myCellInfo;
     private final WeakReference<EditorComponent> myEditor;
