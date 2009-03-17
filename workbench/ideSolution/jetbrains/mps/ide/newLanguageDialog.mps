@@ -288,26 +288,40 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203688124466">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203688124467">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236792591771">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236792593575">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236792591772">
-                  <link role="variableDeclaration" targetNodeId="1203687991307" resolveInfo="dir" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236792595820">
-                  <link role="baseMethodDeclaration" targetNodeId="4.~File.mkdirs():boolean" resolveInfo="mkdirs" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237288647468">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237288647469">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237288672048">
+              <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" id="1237288672049">
+                <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237288722569">
+                  <property name="value" value="The selected folder is not empty. Please select an empty folder to create language" />
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237288672051" />
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1203688126251">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205834599264">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203688127972">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1237288662726">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237288652211">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237288649285">
                 <link role="variableDeclaration" targetNodeId="1203687991307" resolveInfo="dir" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205834599265">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237288653980">
                 <link role="baseMethodDeclaration" targetNodeId="4.~File.exists():boolean" resolveInfo="exists" />
+              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1237288663526">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1237288663527">
+                <property name="value" value="0" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237288663528">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237288663529">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237288663530">
+                    <link role="variableDeclaration" targetNodeId="1203687991307" resolveInfo="dir" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237288663531">
+                    <link role="baseMethodDeclaration" targetNodeId="4.~File.list():java.lang.String[]" resolveInfo="list" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="1237288663532" />
               </node>
             </node>
           </node>
