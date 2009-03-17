@@ -340,7 +340,7 @@
       <property name="metaClass" value="reference" />
       <property name="role" value="target" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="6.1237223882520" resolveInfo="MPSLiteConceptDeclaration" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="MPSLiteConceptDeclaration" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237212294470">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
