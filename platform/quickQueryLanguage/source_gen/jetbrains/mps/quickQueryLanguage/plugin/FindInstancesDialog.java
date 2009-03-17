@@ -130,7 +130,7 @@ public class FindInstancesDialog extends BaseDialog {
 
     });
     UsagesViewTool tool = project.getComponent(UsagesViewTool.class);
-    tool.findUsages(FindUtils.makeProvider(new QueryFinder(query)), searchQuery.value, false, false, false, "No usages for that node");
+    tool.findUsages(FindUtils.makeProvider(new QueryFinder(query)), searchQuery.value, true, false, false, "No usages for that node");
   }
 
 }
