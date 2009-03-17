@@ -472,7 +472,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1237213355081">
         <link role="relationDeclaration" targetNodeId="1.1237213332218" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1237213355082">
-          <link role="conceptDeclaration" targetNodeId="11.1237223882520" resolveInfo="MPSLiteConceptDeclaration" />
+          <link role="conceptDeclaration" targetNodeId="1.1182510906722" resolveInfo="MPSLiteConceptDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1237213372725">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
