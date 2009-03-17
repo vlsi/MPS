@@ -11,7 +11,7 @@ public class UnrestrictedClosureLiteral_Behavior {
   }
 
   public static SNode virtual_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
-    return new _Quotations.QuotationClass_7().createNode(paramTypes, termType, returnType, throwsTypes);
+    return new _Quotations.QuotationClass_8().createNode(paramTypes, termType, returnType, throwsTypes);
   }
 
 }

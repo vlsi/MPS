@@ -116,14 +116,35 @@ public class FunctionType_Behavior {
 
   public static SNode virtual_getResultType_1230475757059(SNode thisNode) {
     SNode rt = SLinkOperations.getTarget(thisNode, "resultType", true);
-    if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      List<SNode> args = SLinkOperations.getTargets(rt, "argument", true);
-      rt = ListSequence.fromList(args).getElement(0);
-    }
+    rt = FunctionType_Behavior.call_unmeet_1237318764946(thisNode, rt);
     return ((rt != null) && !(SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.VoidType")) ?
       rt :
       null
     );
+  }
+
+  public static SNode call_unmeet_1237318764946(SNode thisNode, SNode possiblyMeet) {
+    SNode tmp = possiblyMeet;
+with_meet:
+    while (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+      for(SNode arg : SLinkOperations.getTargets(tmp, "argument", true)) {
+        if (!(SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+          tmp = arg;
+          continue with_meet;
+        }
+      }
+      return new _Quotations.QuotationClass_2().createNode();
+    }
+    if (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+      List<SNode> params = SLinkOperations.getTargets(tmp, "parameter", true);
+      for(SNode p : params) {
+        SNode up = FunctionType_Behavior.call_unmeet_1237318764946(thisNode, p);
+        if (up != p) {
+          SNodeOperations.replaceWithAnother(p, up);
+        }
+      }
+    }
+    return tmp;
   }
 
   public static SNode virtual_getTerminateType_1232032188607(SNode thisNode) {
@@ -136,7 +157,7 @@ public class FunctionType_Behavior {
     if (ice == null) {
       return null;
     }
-    SNode ct = new _Quotations.QuotationClass_2().createNode(ice);
+    SNode ct = new _Quotations.QuotationClass_3().createNode(ice);
     if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
       SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode)), true));
     }
@@ -158,7 +179,7 @@ public class FunctionType_Behavior {
     if (ice == null) {
       return null;
     }
-    SNode ct = new _Quotations.QuotationClass_3().createNode(ice);
+    SNode ct = new _Quotations.QuotationClass_4().createNode(ice);
     if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
       SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode))));
     }
@@ -180,7 +201,7 @@ public class FunctionType_Behavior {
     if (ice == null) {
       return null;
     }
-    SNode ct = new _Quotations.QuotationClass_4().createNode(ice);
+    SNode ct = new _Quotations.QuotationClass_5().createNode(ice);
     if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
       SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode))));
     }
@@ -199,14 +220,14 @@ public class FunctionType_Behavior {
   public static SNode call_getNormalizedReturnType_1213877405252(SNode thisNode) {
     return ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null) ?
       ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode)) :
-      new _Quotations.QuotationClass_5().createNode()
+      new _Quotations.QuotationClass_6().createNode()
     );
   }
 
   public static SNode call_getNormalizedTerminateType_1232036646585(SNode thisNode) {
     return ((FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode) != null) ?
       ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode)) :
-      new _Quotations.QuotationClass_6().createNode()
+      new _Quotations.QuotationClass_7().createNode()
     );
   }
 

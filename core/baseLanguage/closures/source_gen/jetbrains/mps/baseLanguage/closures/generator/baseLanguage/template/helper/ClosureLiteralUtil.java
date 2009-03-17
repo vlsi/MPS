@@ -93,8 +93,8 @@ public class ClosureLiteralUtil {
     if ((absRetCT != null)) {
       SNode ftResCT = FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft));
       /*
-        if (SLinkOperations.getTarget(ftResCT, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false)) {
-          SLinkOperations.setTarget(ftResCT, "classifier", SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false), false);
+        if (SLinkOperations.getTarget(ftResCT, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "classifier", false)) {
+          SLinkOperations.setTarget(ftResCT, "classifier", SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), false);
         }
       */
       String adapterName = JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(absRetCT, "classifier", false), "name")) + JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(ftResCT, "classifier", false), "name")) + "Adapter";

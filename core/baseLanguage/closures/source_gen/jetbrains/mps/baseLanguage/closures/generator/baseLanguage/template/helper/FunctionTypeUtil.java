@@ -84,23 +84,19 @@ public class FunctionTypeUtil {
   }
 
   public static SNode unmeet(SNode possiblyMeet) {
-    if (SNodeOperations.isInstanceOf(possiblyMeet, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      SNode last = null;
-      for(SNode arg : SLinkOperations.getTargets(possiblyMeet, "argument", true)) {
+    SNode tmp = possiblyMeet;
+with_meet:
+    while (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+      for(SNode arg : SLinkOperations.getTargets(tmp, "argument", true)) {
         if (!(SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-          for(SNode dsc : SNodeOperations.getDescendants(arg, null, false)) {
-            if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-              return unmeetRecursively(SNodeOperations.copyNode(arg));
-            }
-          }
-          return arg;
+          tmp = arg;
+          continue with_meet;
         }
-        last = arg;
       }
-      return last;
+      return new _Quotations.QuotationClass_0().createNode();
     }
-    if (SNodeOperations.isInstanceOf(possiblyMeet, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      List<SNode> params = SLinkOperations.getTargets(possiblyMeet, "parameter", true);
+    if (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+      List<SNode> params = SLinkOperations.getTargets(tmp, "parameter", true);
       for(SNode p : params) {
         SNode up = unmeet(p);
         if (up != p) {
@@ -108,7 +104,7 @@ public class FunctionTypeUtil {
         }
       }
     }
-    return possiblyMeet;
+    return tmp;
   }
 
   public static SNode unmeetRecursively(SNode nodeWithMeetDescendants) {
