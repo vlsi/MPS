@@ -85,7 +85,7 @@ public class NullSetSequence<T> extends NullSequence<T> implements ISetSequence<
 		return null;
 	}
 
-	public ISetSequence<T> addSequence(ISequence<T> seq) {
+	public ISetSequence<T> addSequence(ISequence<? extends T> seq) {
 		return this;
 	}
 
@@ -93,7 +93,7 @@ public class NullSetSequence<T> extends NullSequence<T> implements ISetSequence<
 		return null;
 	}
 
-	public ISetSequence<T> removeSequence(ISequence<T> seq) {
+	public ISetSequence<T> removeSequence(ISequence<? extends T> seq) {
 		return this;
 	}
 

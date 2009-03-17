@@ -1755,9 +1755,6 @@
             <property name="name" value="expIt" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204129289585">
               <link role="classifier" targetNodeId="1.~Iterator" resolveInfo="Iterator" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1204129289586">
-                <link role="typeVariableDeclaration" targetNodeId="1204129289619" resolveInfo="T" />
-              </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628891272">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204129289588">
@@ -1774,9 +1771,6 @@
             <property name="name" value="testIt" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204129289591">
               <link role="classifier" targetNodeId="1.~Iterator" resolveInfo="Iterator" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1204129289592">
-                <link role="typeVariableDeclaration" targetNodeId="1204129289619" resolveInfo="T" />
-              </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628852375">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204129289594">
@@ -1853,22 +1847,13 @@
         <property name="name" value="exp" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204129289614">
           <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1204129289615">
-            <link role="typeVariableDeclaration" targetNodeId="1204129289619" resolveInfo="T" />
-          </node>
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204129289616">
         <property name="name" value="test" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204129289617">
           <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1204129289618">
-            <link role="typeVariableDeclaration" targetNodeId="1204129289619" resolveInfo="T" />
-          </node>
         </node>
-      </node>
-      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1204129289619">
-        <property name="name" value="T" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1205510239182">
@@ -1881,16 +1866,10 @@
             <property name="name" value="expSet" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205510293183">
               <link role="classifier" targetNodeId="1.~HashSet" resolveInfo="HashSet" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510300746">
-                <link role="typeVariableDeclaration" targetNodeId="1205510266049" resolveInfo="T" />
-              </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888381892">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888381895">
                 <link role="baseMethodDeclaration" targetNodeId="1.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510305358">
-                  <link role="typeVariableDeclaration" targetNodeId="1205510266049" resolveInfo="T" />
-                </node>
               </node>
             </node>
           </node>
@@ -1916,8 +1895,8 @@
           </node>
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205510374417">
             <property name="name" value="e" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510378532">
-              <link role="typeVariableDeclaration" targetNodeId="1205510266049" resolveInfo="T" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237297022532">
+              <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
             </node>
           </node>
         </node>
@@ -1926,9 +1905,6 @@
             <property name="name" value="testIt" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205510415092">
               <link role="classifier" targetNodeId="1.~Iterator" resolveInfo="Iterator" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510415093">
-                <link role="typeVariableDeclaration" targetNodeId="1205510266049" resolveInfo="T" />
-              </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628855954">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205510415095">
@@ -1995,22 +1971,13 @@
         <property name="name" value="exp" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205510258590">
           <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510271079">
-            <link role="typeVariableDeclaration" targetNodeId="1205510266049" resolveInfo="T" />
-          </node>
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1205510273505">
         <property name="name" value="test" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205510275274">
           <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510276823">
-            <link role="typeVariableDeclaration" targetNodeId="1205510266049" resolveInfo="T" />
-          </node>
         </node>
-      </node>
-      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1205510266049">
-        <property name="name" value="T" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1205510696455">
@@ -2023,8 +1990,8 @@
             <property name="name" value="cardMap" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205510696461">
               <link role="classifier" targetNodeId="1.~HashMap" resolveInfo="HashMap" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510696462">
-                <link role="typeVariableDeclaration" targetNodeId="1205510696507" resolveInfo="T" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237297055872">
+                <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205510714047">
                 <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
@@ -2033,8 +2000,8 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888397025">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888397029">
                 <link role="baseMethodDeclaration" targetNodeId="1.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510696464">
-                  <link role="typeVariableDeclaration" targetNodeId="1205510696507" resolveInfo="T" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237297060412">
+                  <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
                 </node>
                 <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205510726420">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
@@ -2102,8 +2069,8 @@
           </node>
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205510696473">
             <property name="name" value="e" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510696474">
-              <link role="typeVariableDeclaration" targetNodeId="1205510696507" resolveInfo="T" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237297063845">
+              <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
             </node>
           </node>
         </node>
@@ -2112,9 +2079,6 @@
             <property name="name" value="testIt" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205510696477">
               <link role="classifier" targetNodeId="1.~Iterator" resolveInfo="Iterator" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510696478">
-                <link role="typeVariableDeclaration" targetNodeId="1205510696507" resolveInfo="T" />
-              </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628908635">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205510696480">
@@ -2139,8 +2103,8 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205510825325">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205510825326">
                 <property name="name" value="next" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510825327">
-                  <link role="typeVariableDeclaration" targetNodeId="1205510696507" resolveInfo="T" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237297069450">
+                  <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205510825328">
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205510825329">
@@ -2239,22 +2203,13 @@
         <property name="name" value="exp" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205510696502">
           <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510696503">
-            <link role="typeVariableDeclaration" targetNodeId="1205510696507" resolveInfo="T" />
-          </node>
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1205510696504">
         <property name="name" value="test" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205510696505">
           <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1205510696506">
-            <link role="typeVariableDeclaration" targetNodeId="1205510696507" resolveInfo="T" />
-          </node>
         </node>
-      </node>
-      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1205510696507">
-        <property name="name" value="T" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204991762959">

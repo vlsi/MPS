@@ -298,7 +298,7 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     	return set (idx, t);
     }
     
-    public IListSequence<T> addSequence (ISequence<T> seq) {
+    public IListSequence<T> addSequence (ISequence<? extends T> seq) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (seq == null) {
                 return this;
@@ -315,7 +315,7 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
         return this;
     }
     
-    public IListSequence<T> removeSequence (ISequence<T> seq) {
+    public IListSequence<T> removeSequence (ISequence<? extends T> seq) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (seq == null) {
                 return this;

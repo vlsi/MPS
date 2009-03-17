@@ -200,7 +200,7 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
         return t;
 	}
 
-	public ISetSequence<T> addSequence(ISequence<T> seq) {
+	public ISetSequence<T> addSequence(ISequence<? extends T> seq) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (seq == null) {
                 return this;
@@ -224,7 +224,7 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
         return null;
 	}
 
-	public ISetSequence<T> removeSequence(ISequence<T> seq) {
+	public ISetSequence<T> removeSequence(ISequence<? extends T> seq) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (seq == null) {
                 return this;

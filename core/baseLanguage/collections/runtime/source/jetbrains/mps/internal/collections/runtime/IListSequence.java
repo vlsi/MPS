@@ -36,9 +36,9 @@ public interface IListSequence<T> extends ISequence<T>, List<T> {
 
     T setElement (int idx, T t);
 
-    IListSequence<T> addSequence(ISequence<T> seq);
+    IListSequence<T> addSequence(ISequence<? extends T> seq);
 
-    IListSequence<T> removeSequence(ISequence<T> seq);
+    IListSequence<T> removeSequence(ISequence<? extends T> seq);
 
     IListSequence<T> reversedList ();
 

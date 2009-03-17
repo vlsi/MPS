@@ -38,6 +38,9 @@ public class List_Test extends Util_Test {
     List<Integer> test = ListSequence.<Integer>fromArray();
     ListSequence.fromList(test).addSequence(Sequence.fromIterable(this.input5()));
     this.assertIterableEquals(this.expect5(), test);
+    List<Number> nlist = ListSequence.<Number>fromArray();
+    ListSequence.fromList(nlist).addSequence(ListSequence.fromList(test));
+    this.assertIterableEquals(this.expect5(), nlist);
   }
 
   @Test()

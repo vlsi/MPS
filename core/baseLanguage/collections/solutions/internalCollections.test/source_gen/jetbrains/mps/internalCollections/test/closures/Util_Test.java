@@ -17,9 +17,9 @@ public class Util_Test extends TestCase {
   public void test_dummy() throws Exception {
   }
 
-  public  <T>void assertIterableEquals(Iterable<T> exp, Iterable<T> test) {
-    Iterator<T> expIt = exp.iterator();
-    Iterator<T> testIt = test.iterator();
+  public void assertIterableEquals(Iterable exp, Iterable test) {
+    Iterator expIt = exp.iterator();
+    Iterator testIt = test.iterator();
     while (expIt.hasNext() && testIt.hasNext()) {
       Assert.assertEquals(expIt.next(), testIt.next());
     }
@@ -27,12 +27,12 @@ public class Util_Test extends TestCase {
     Assert.assertFalse(testIt.hasNext());
   }
 
-  public  <T>void assertIterableEqualsAsSet(Iterable<T> exp, Iterable<T> test) {
-    HashSet<T> expSet = new HashSet<T>();
-    for(T e : exp) {
+  public void assertIterableEqualsAsSet(Iterable exp, Iterable test) {
+    HashSet expSet = new HashSet();
+    for(Object e : exp) {
       Assert.assertTrue(expSet.add(e));
     }
-    Iterator<T> testIt = test.iterator();
+    Iterator testIt = test.iterator();
     while (testIt.hasNext()) {
       Assert.assertTrue(expSet.remove(testIt.next()));
     }
@@ -40,18 +40,18 @@ public class Util_Test extends TestCase {
     Assert.assertFalse(testIt.hasNext());
   }
 
-  public  <T>void assertIterableEqualsIgnoreOrder(Iterable<T> exp, Iterable<T> test) {
-    HashMap<T, Integer> cardMap = new HashMap<T, Integer>();
-    for(T e : exp) {
+  public void assertIterableEqualsIgnoreOrder(Iterable exp, Iterable test) {
+    HashMap<Object, Integer> cardMap = new HashMap<Object, Integer>();
+    for(Object e : exp) {
       Integer card = cardMap.get(e);
       cardMap.put(e, (card != null ?
         card + 1 :
         1
       ));
     }
-    Iterator<T> testIt = test.iterator();
+    Iterator testIt = test.iterator();
     while (testIt.hasNext()) {
-      T next = testIt.next();
+      Object next = testIt.next();
       Integer card = cardMap.remove(next);
       Assert.assertFalse(card == null);
       if (card > 1) {

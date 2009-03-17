@@ -152,7 +152,7 @@ public class NullListSequence<T> extends NullSequence<T> implements IListSequenc
     	return null;
     }
     
-    public IListSequence<T> addSequence (ISequence<T> seq) {
+    public IListSequence<T> addSequence (ISequence<? extends T> seq) {
     	return this;
     }
 
@@ -160,7 +160,7 @@ public class NullListSequence<T> extends NullSequence<T> implements IListSequenc
         return this;
     }
 
-    public IListSequence<T> removeSequence(ISequence<T> seq) {
+    public IListSequence<T> removeSequence(ISequence<? extends T> seq) {
     	return this;
     }
     
