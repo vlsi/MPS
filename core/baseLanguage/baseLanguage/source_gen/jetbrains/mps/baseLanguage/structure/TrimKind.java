@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum TrimKind {
   both("both", "both"),
@@ -20,9 +21,9 @@ public enum TrimKind {
 
   public static List<TrimKind> getConstants() {
     List<TrimKind> list = new LinkedList<TrimKind>();
-    list.add(TrimKind.both);
-    list.add(TrimKind.leading);
-    list.add(TrimKind.trailing);
+    ListOperations.addElement(list, TrimKind.both);
+    ListOperations.addElement(list, TrimKind.leading);
+    ListOperations.addElement(list, TrimKind.trailing);
     return list;
   }
 

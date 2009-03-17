@@ -7,10 +7,9 @@ import jetbrains.mps.project.MPSProject;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BaseTestBody {
@@ -22,7 +21,7 @@ public class BaseTestBody {
 
   public BaseTestBody() {
     this.myMap = new HashMap<SNode, SNode>();
-    this.myCopyes = new ArrayList<SNode>();
+    this.myCopyes = ListSequence.<SNode>fromArray();
   }
 
   public void addNodeById(final String id) throws Exception {

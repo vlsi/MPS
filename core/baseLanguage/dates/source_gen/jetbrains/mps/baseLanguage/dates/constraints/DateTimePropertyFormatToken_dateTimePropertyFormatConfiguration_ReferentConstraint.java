@@ -22,7 +22,7 @@ public class DateTimePropertyFormatToken_dateTimePropertyFormatConfiguration_Ref
     manager.unRegisterNodeReferentSetEventHandler("jetbrains.mps.baseLanguage.dates.structure.DateTimePropertyFormatToken", "dateTimePropertyFormatConfiguration");
   }
 
-  public void processReferentSetEvent(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
+  public void processReferentSetEvent(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
     if (newReferentNode != oldReferentNode) {
       SLinkOperations.setTarget(referenceNode, "dateTimePropertyFormatType", DateTimePropertFormatTokenUtil.getDefaultFormatType(referenceNode), false);
     }

@@ -14,9 +14,9 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.progress.ProgressManager;
@@ -48,11 +48,11 @@ public class ReplacementView {
     this.myButton.addActionListener(new ActionListener() {
 
       public void actionPerformed(ActionEvent event) {
+        final List<SNode> replaceNodes = ReplacementView.this.getExecuteResult(ReplacementView.this.myUsagesView.getIncludedResultNodes());
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
           public void run() {
             try {
-              List<SNode> replaceNodes = ReplacementView.this.getExecuteResult(ReplacementView.this.myUsagesView.getIncludedResultNodes());
               for(SNode node : replaceNodes) {
                 query.doReplace(node);
               }

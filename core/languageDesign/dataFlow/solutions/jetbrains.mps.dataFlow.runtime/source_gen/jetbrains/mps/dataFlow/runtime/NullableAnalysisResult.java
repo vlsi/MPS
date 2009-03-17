@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
@@ -18,7 +18,7 @@ public class NullableAnalysisResult {
   @NotNull()
   private Map<SNode, NullableVariableState> myResult;
   @NotNull()
-  private List<SNode> myCheckResults = new ArrayList<SNode>();
+  private List<SNode> myCheckResults = ListOperations.<SNode>createList();
 
   public NullableAnalysisResult(@NotNull() SNode statementList) {
     this.myResult = NullableUtil.getVariableReferenceStates(statementList);

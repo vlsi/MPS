@@ -35,6 +35,7 @@ import jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.Set;
 import java.util.LinkedHashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
@@ -1728,16 +1729,16 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1176797187498(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     Set<SNode> classes = new LinkedHashSet<SNode>();
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      classes.add(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "classifier", false));
+      SetSequence.fromSet(classes).addElement(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "classifier", false));
     }
     for(SNode pd : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(pd, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-        classes.add(SLinkOperations.getTarget(SLinkOperations.getTarget(pd, "type", true), "classifier", false));
+        SetSequence.fromSet(classes).addElement(SLinkOperations.getTarget(SLinkOperations.getTarget(pd, "type", true), "classifier", false));
       }
     }
     for(SNode t : SLinkOperations.getTargets(_context.getNode(), "additionalImport", true)) {
       if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-        classes.add(SLinkOperations.getTarget(t, "classifier", false));
+        SetSequence.fromSet(classes).addElement(SLinkOperations.getTarget(t, "classifier", false));
       }
     }
     return new ArrayList<SNode>(classes);

@@ -6,16 +6,12 @@ import jetbrains.mps.textGen.SNodeTextGen;
 
 public abstract class StringTextGen {
 
-  public void abc() {
-  }
-
-
   public static void appendCompilableString(String s, final SNodeTextGen textGen) {
     String result = s;
     if (s.indexOf('"') >= 0 || s.indexOf('\n') >= 0 || s.indexOf('\r') >= 0) {
       boolean needsEscaping = false;
       for(int i = 0 ; i < s.length() ; i++ ) {
-        if (isBadDoubleQuote(s, i, textGen) || result.charAt(i) == '\r' || result.charAt(i) == '\n') {
+        if (StringTextGen.isBadDoubleQuote(s, i, textGen) || result.charAt(i) == '\r' || result.charAt(i) == '\n') {
           needsEscaping = true;
           break;
         }
@@ -23,7 +19,7 @@ public abstract class StringTextGen {
       if (needsEscaping) {
         StringBuilder stringBuilder = new StringBuilder();
         for(int i = 0 ; i < s.length() ; i++ ) {
-          if (isBadDoubleQuote(s, i, textGen)) {
+          if (StringTextGen.isBadDoubleQuote(s, i, textGen)) {
             stringBuilder.append("\\\"");
           } else if (result.charAt(i) == '\r') {
             stringBuilder.append("\\r");
@@ -37,7 +33,7 @@ public abstract class StringTextGen {
         result = stringBuilder.toString();
       }
     }
-    textGen.append(replaceNonAsciiSymbolsWithUnicodeSymbols(s, textGen));
+    textGen.append(StringTextGen.replaceNonAsciiSymbolsWithUnicodeSymbols(s, textGen));
   }
 
   protected static boolean isBadDoubleQuote(String s, int i, final SNodeTextGen textGen) {
@@ -51,7 +47,7 @@ public abstract class StringTextGen {
         result.append(s.charAt(i));
       } else
       {
-        result.append("\\u").append(paddedHex(s.charAt(i), textGen));
+        result.append("\\u").append(StringTextGen.paddedHex(s.charAt(i), textGen));
       }
     }
     return result.toString();

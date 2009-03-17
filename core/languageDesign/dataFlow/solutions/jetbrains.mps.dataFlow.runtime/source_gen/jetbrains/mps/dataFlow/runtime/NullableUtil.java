@@ -48,7 +48,6 @@ public class NullableUtil {
   public static List<SNode> getBadNullableProblems(SNode node) {
     NullableAnalysisResult analizysResult = new NullableAnalysisResult(node);
     return analizysResult.checkNodes(node);
-    
   }
 
 }

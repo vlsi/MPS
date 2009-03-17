@@ -166,13 +166,12 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1230466520795">
         <property name="name" value="values" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230466520796">
-          <link role="classifier" targetNodeId="3.~Set" resolveInfo="Set" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1230492610737">
-            <node role="keyType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1230542116437">
+        <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237221502631">
+          <node role="elementType" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1237221502632">
+            <node role="keyType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1237221502633">
               <link role="typeVariableDeclaration" targetNodeId="1230541617901" resolveInfo="T" />
             </node>
-            <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230492610739">
+            <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237221502634">
               <link role="classifier" targetNodeId="1230466569958" resolveInfo="NullableVariableState" />
             </node>
           </node>

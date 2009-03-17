@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.logging.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum Severity {
   fatal("fatal", "fatal"),
@@ -23,12 +24,12 @@ public enum Severity {
 
   public static List<Severity> getConstants() {
     List<Severity> list = new LinkedList<Severity>();
-    list.add(Severity.fatal);
-    list.add(Severity.error);
-    list.add(Severity.warn);
-    list.add(Severity.debug);
-    list.add(Severity.info);
-    list.add(Severity.trace);
+    ListOperations.addElement(list, Severity.fatal);
+    ListOperations.addElement(list, Severity.error);
+    ListOperations.addElement(list, Severity.warn);
+    ListOperations.addElement(list, Severity.debug);
+    ListOperations.addElement(list, Severity.info);
+    ListOperations.addElement(list, Severity.trace);
     return list;
   }
 
