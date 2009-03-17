@@ -44,22 +44,18 @@ public class RenameLanguageDialog extends BaseDialog {
 
   public RenameLanguageDialog(Frame frame, Project project, Language language) throws HeadlessException {
     super(frame);
-
-    setTitle("Rename Language");
-
     myLanguage = language;
     myProject = project;
 
+    setTitle("Rename Language");
     myMainPanel = new JPanel(new GridBagLayout());
 
     GridBagConstraints cLabel = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
     myMainPanel.add(new JLabel("Language name"), cLabel);
 
-
     GridBagConstraints cNameField = new GridBagConstraints(1, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
     myLanguageNameField = new JTextField(myLanguage.getModuleFqName(), 30);
     myMainPanel.add(myLanguageNameField, cNameField);
-
 
     GridBagConstraints cCheckbox = new GridBagConstraints(0, 1, 2, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
     myRegenerateLanguage = new JCheckBox("Regenerate Language");

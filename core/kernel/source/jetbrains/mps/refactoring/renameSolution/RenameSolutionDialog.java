@@ -36,11 +36,9 @@ public class RenameSolutionDialog extends BaseDialog {
 
   public RenameSolutionDialog(Frame frame, Solution solution) throws HeadlessException {
     super(frame);
-
-    setTitle("Rename Solution");
-
     mySolution = solution;
 
+    setTitle("Rename Solution");
     myMainPanel = new JPanel(new GridBagLayout());
 
     GridBagConstraints cLabel = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
@@ -57,7 +55,6 @@ public class RenameSolutionDialog extends BaseDialog {
   protected JComponent getMainComponent() {
     return myMainPanel;
   }
-
 
   public DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensions(300, 300, 400, 200);
@@ -85,7 +82,6 @@ public class RenameSolutionDialog extends BaseDialog {
 
     dispose();
   }
-
 
   @BaseDialog.Button(position = 1, name = "Cancel")
   public void buttonCancel() {

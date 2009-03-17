@@ -35,12 +35,10 @@ public class RenameModelDialog extends BaseDialog {
 
   public RenameModelDialog(Frame frame, SModelRoot root, SModelDescriptor sm) throws HeadlessException {
     super(frame);
-
-    setTitle("Rename Model");
-
     myModelDescriptor = sm;
     myModelRoot = root;
 
+    setTitle("Rename Model");
     myMainPanel = new JPanel(new GridBagLayout());
 
     GridBagConstraints cLabel = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
