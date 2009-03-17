@@ -91,6 +91,7 @@ public class PluginStateMonitor implements ProjectComponent {
         setNewState(State.CONNECTED);
         myTimer.setNewDelay(INITIAL_DELAY);
       }
+      return;
     }
 
     if (myState == State.CONNECTED) {
