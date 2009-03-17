@@ -13,9 +13,6 @@
       <external-templates>
         <generator generatorUID="ab777ef3-cd35-47a2-8db1-108b4d67986f(jetbrains.mps.build.packaging###1203014923802)" />
       </external-templates>
-      <dependencies>
-        <dependency reexport="false">b126f74b-c145-4de1-ab16-0245ebfcf04a(jetbrains.mps.build.classpath)</dependency>
-      </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.gtext</usedLanguages>
         <usedLanguages>jetbrains.mps.xml.deprecated</usedLanguages>

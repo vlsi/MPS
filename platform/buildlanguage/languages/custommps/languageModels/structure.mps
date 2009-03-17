@@ -50,7 +50,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234290845440">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="pathToBuildToolsZip" />
-      <property name="sourceCardinality" value="0..1" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2v.1220973916698" resolveInfo="Path" />
     </node>
   </node>

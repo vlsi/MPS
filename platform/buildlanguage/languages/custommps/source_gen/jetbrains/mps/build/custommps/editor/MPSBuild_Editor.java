@@ -22,6 +22,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MPSBuild_Editor extends DefaultNodeEditor {
 
@@ -69,7 +71,9 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection_2334_3(context, node));
+    if (renderingCondition2334_0(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_2334_3(context, node));
+    }
     editorCell.addEditorCell(this.createComponent_2334_1(context, node));
     editorCell.addEditorCell(this.createComponent_2334_2(context, node));
     return editorCell;
@@ -304,6 +308,10 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_RefNode_2334_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean renderingCondition2334_0(SNode node, EditorContext editorContext, IScope scope) {
+    return MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.packaging").isPackaged();
   }
 
 }
