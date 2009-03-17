@@ -819,13 +819,6 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724230" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877421337">
-    <property name="package" value="Shared" />
-    <link role="concept" targetNodeId="1.1206106212999" resolveInfo="Log" />
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877421338">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877421339" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877425710">
     <property name="package" value="Tool" />
     <link role="concept" targetNodeId="1.1203071677434" resolveInfo="Tool" />

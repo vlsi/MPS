@@ -442,31 +442,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213107437671">
-    <link role="concept" targetNodeId="7.1206106212999" resolveInfo="Log" />
-    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1213107437672">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107437673">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107437674">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1213107437675">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1213107437676" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107437677">
-              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1213107437678" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1213107437679">
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="1213107437680">
-                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1213107437681">
-                    <link role="concept" targetNodeId="7.1203071646776" resolveInfo="ActionDeclaration" />
-                  </node>
-                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1213107437682">
-                    <link role="concept" targetNodeId="7.1206110063106" resolveInfo="CustomPluginDeclaration" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213107437767">
     <link role="concept" targetNodeId="7.1209909558075" resolveInfo="ProjectOperation" />
     <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1213107437768">

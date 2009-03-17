@@ -11,6 +11,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -42,6 +43,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <maxImportIndex value="85" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -167,21 +169,6 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1203086899006">
     <property name="name" value="GeneratedAction" />
     <property name="package" value="Actions.Action" />
-    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1206106418450">
-      <property name="name" value="LOG" />
-      <property name="isFinal" value="true" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1206106418451" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206106433204">
-        <link role="classifier" targetNodeId="42.~Logger" resolveInfo="Logger" />
-      </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206106443566">
-        <link role="baseMethodDeclaration" targetNodeId="42.~Logger.getLogger(java.lang.Class):jetbrains.mps.logging.Logger" resolveInfo="getLogger" />
-        <link role="classConcept" targetNodeId="42.~Logger" resolveInfo="Logger" />
-        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1206106485787">
-          <link role="classifier" targetNodeId="1203086899006" resolveInfo="GeneratedActio" />
-        </node>
-      </node>
-    </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1205857751486">
       <property name="isFinal" value="true" />
       <property name="name" value="ICON" />
@@ -813,38 +800,32 @@
               </node>
             </node>
             <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206542291287">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206542291288">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206542291289">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1206542291290">
-                    <link role="variableDeclaration" targetNodeId="1206106418450" resolveInfo="LOG" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206542291291">
-                    <link role="baseMethodDeclaration" targetNodeId="42.~Logger.error(java.lang.String,java.lang.Throwable):void" resolveInfo="error" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1206542291292">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206542291293">
-                        <property name="value" value="" />
-                        <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1206542291294">
-                          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1206542291295">
-                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206542291296">
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206542291297">
-                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206542291298">
-                                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1206542291299" />
-                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1206542291300">
-                                    <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
-                                  </node>
-                                </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1237293485836">
+                <property name="severity" value="error" />
+                <property name="hasException" value="true" />
+                <node role="exception" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237293485838">
+                  <link role="variableDeclaration" targetNodeId="1206542291285" resolveInfo="t" />
+                </node>
+                <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237293495886">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237293495887">
+                    <property name="value" value="" />
+                    <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1237293495888">
+                      <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1237293495889">
+                        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237293495890">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237293495891">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237293495892">
+                              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1237293495893" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237293495894">
+                                <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
                               </node>
                             </node>
                           </node>
                         </node>
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206542291301">
-                        <property name="value" value="User's action doUpdate method failed. Action:" />
-                      </node>
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206542291302">
-                      <link role="variableDeclaration" targetNodeId="1206542291285" resolveInfo="t" />
-                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237293495895">
+                    <property name="value" value="User's action doUpdate method failed. Action:" />
                   </node>
                 </node>
               </node>
@@ -1342,38 +1323,32 @@
               </node>
             </node>
             <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206542477653">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206542477654">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206542477655">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1206542477656">
-                    <link role="variableDeclaration" targetNodeId="1206106418450" resolveInfo="LOG" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206542477657">
-                    <link role="baseMethodDeclaration" targetNodeId="42.~Logger.error(java.lang.String,java.lang.Throwable):void" resolveInfo="error" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1206542477658">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206542477659">
-                        <property name="value" value="" />
-                        <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1206542477660">
-                          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1206542477661">
-                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206542477662">
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206542477663">
-                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206542477664">
-                                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1206542477665" />
-                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1206542477666">
-                                    <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
-                                  </node>
-                                </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1237293512244">
+                <property name="severity" value="error" />
+                <property name="hasException" value="true" />
+                <node role="exception" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237293512246">
+                  <link role="variableDeclaration" targetNodeId="1206542477651" resolveInfo="t" />
+                </node>
+                <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237293521903">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237293521904">
+                    <property name="value" value="" />
+                    <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1237293521905">
+                      <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1237293521906">
+                        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237293521907">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237293521908">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237293521909">
+                              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1237293521910" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237293521911">
+                                <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
                               </node>
                             </node>
                           </node>
                         </node>
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206542477667">
-                        <property name="value" value="User's action execute method failed. Action:" />
-                      </node>
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206542477668">
-                      <link role="variableDeclaration" targetNodeId="1206542477651" resolveInfo="t" />
-                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237293521912">
+                    <property name="value" value="User's action execute method failed. Action:" />
                   </node>
                 </node>
               </node>
@@ -6424,37 +6399,6 @@
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1206099429752" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206099429753" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1206106574790">
-    <property name="package" value="Actions.Action" />
-    <property name="name" value="redulce_Log" />
-    <link role="applicableConcept" targetNodeId="1.1206106212999" resolveInfo="Log" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1206106621388">
-      <property name="name" value="GeneratedAction" />
-      <property name="package" value="Actions.Action" />
-      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206106621389">
-        <property name="name" value="abc" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206106621390" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206106621391">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206106656298">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1206106656299">
-              <link role="variableDeclaration" targetNodeId="1206106633058" resolveInfo="LOG" />
-              <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1206106663003" />
-            </node>
-          </node>
-        </node>
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215268594703" />
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206106621415" />
-      <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1206106633058">
-        <property name="name" value="LOG" />
-        <property name="isFinal" value="true" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1206106633059" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206106638186">
-          <link role="classifier" targetNodeId="42.~Logger" resolveInfo="Logger" />
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1206116514430">

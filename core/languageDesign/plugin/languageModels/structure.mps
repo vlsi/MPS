@@ -1220,18 +1220,6 @@
       <link role="specializedLink" targetNodeId="14.1205756909548" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1206106212999">
-    <property name="package" value="Shared" />
-    <property name="name" value="Log" />
-    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1206106226156">
-      <property name="value" value="LOG" />
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1206110434025">
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1206110063106">
     <property name="name" value="ProjectPluginDeclaration" />
     <property name="package" value="Custom.ProjectPlugin" />

@@ -258,32 +258,6 @@
       <link role="concept" targetNodeId="4.1206092561075" resolveInfo="ActionParameterReferenceOperation" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1206106238407">
-    <property name="name" value="typeof_Log" />
-    <property name="package" value="Shared" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206106238408">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1206106252570">
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206106257871">
-          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1206106257872">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206106376355">
-              <link role="classifier" targetNodeId="13.~Logger" resolveInfo="Logger" />
-            </node>
-          </node>
-        </node>
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206106252573">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1206106242271">
-            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1206106246648">
-              <link role="applicableNode" targetNodeId="1206106238409" resolveInfo="nodeToCheck" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1206106238409">
-      <property name="name" value="log" />
-      <link role="concept" targetNodeId="4.1206106212999" resolveInfo="Log" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1206190254217">
     <property name="package" value="Custom" />
     <property name="name" value="Typeof_ProjectPluginType" />
