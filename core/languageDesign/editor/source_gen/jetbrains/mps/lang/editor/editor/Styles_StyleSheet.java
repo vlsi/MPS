@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class Styles_StyleSheet {
@@ -135,14 +136,23 @@ public class Styles_StyleSheet {
   }
 
   public static boolean _StyleParameter_QueryFunction_1237383984781(SNode node, EditorContext editorContext) {
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+      return false;
+    }
     return EditorCellModel_Behavior.call_isIndent_1237383418148(node);
   }
 
   public static boolean _StyleParameter_QueryFunction_1237384018255(SNode node, EditorContext editorContext) {
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+      return false;
+    }
     return EditorCellModel_Behavior.call_isNewLine_1237383076236(node) || EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(node);
   }
 
   public static boolean _StyleParameter_QueryFunction_1237385537795(SNode node, EditorContext editorContext) {
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+      return false;
+    }
     return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(node);
   }
 

@@ -91,15 +91,6 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_2949_0(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
     editorCell.addKeyMap(new EditorCellModel_KeyMap());
   }
 
