@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CellModel_Collection_Behavior {
 
@@ -11,8 +13,10 @@ public class CellModel_Collection_Behavior {
   }
 
   public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    if (SPropertyOperations.getBoolean(thisNode, "vertical")) {
+    if (CellModel_Collection_Behavior.call_isVertical_1237380214915(thisNode)) {
       return "[/";
+    } else if (CellModel_Collection_Behavior.call_isIndent_1237380273398(thisNode)) {
+      return "[-";
     } else
     {
       return "[>";
@@ -20,12 +24,26 @@ public class CellModel_Collection_Behavior {
   }
 
   public static String virtual_getClosingText_1220339738643(SNode thisNode) {
-    if (SPropertyOperations.getBoolean(thisNode, "vertical")) {
+    if (CellModel_Collection_Behavior.call_isVertical_1237380214915(thisNode)) {
       return "/]";
+    } else if (CellModel_Collection_Behavior.call_isIndent_1237380273398(thisNode)) {
+      return "-]";
     } else
     {
       return "<]";
     }
+  }
+
+  public static boolean call_isVertical_1237380214915(SNode thisNode) {
+    return SPropertyOperations.getBoolean(thisNode, "vertical") && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null);
+  }
+
+  public static boolean call_isHorizontal_1237380252717(SNode thisNode) {
+    return !(SPropertyOperations.getBoolean(thisNode, "vertical")) && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null);
+  }
+
+  public static boolean call_isIndent_1237380273398(SNode thisNode) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent2");
   }
 
 }

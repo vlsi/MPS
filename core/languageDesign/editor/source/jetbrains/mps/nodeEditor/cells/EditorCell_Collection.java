@@ -261,8 +261,16 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     return myAscent;
   }
 
+  public void setAscent(int newAscent) {
+    myAscent = newAscent;
+  }
+
   public int getDescent() {
     return myDescent;
+  }
+
+  public void setDescent(int newDescent) {
+    myDescent = newDescent;
   }
   
   public Iterable<EditorCell> contentCells() {
@@ -393,6 +401,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     myAscent = myCellLayout.getAscent(this);
     myDescent = myCellLayout.getDescent(this);
   }
+
+
 
   public void fold() {
     fold(false);

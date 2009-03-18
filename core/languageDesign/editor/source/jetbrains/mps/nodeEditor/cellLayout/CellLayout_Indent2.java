@@ -29,6 +29,10 @@ import java.awt.Font;
 public class CellLayout_Indent2 extends AbstractCellLayout {
 
   public void doLayout(EditorCell_Collection editorCells) {
+    if (editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent2) {
+      return;
+    }
+
     new CellLayouter(editorCells).layout();
   }
 
@@ -106,6 +110,11 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
         collection.setY(y0);
         collection.setWidth(x1 - x0);
         collection.setHeight(y1 - y0);
+
+        if (collection != myCell) {
+          collection.setAscent(getAscent(collection));
+          collection.setDescent(getDescent(collection));
+        }
       }
     }
 
