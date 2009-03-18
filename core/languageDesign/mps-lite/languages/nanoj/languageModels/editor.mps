@@ -45,7 +45,6 @@
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" version="-1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" version="0" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
-  <import index="11" modelUID="r:00000000-0000-4000-0000-011c895905d1(jetbrains.mpslite.editor)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1197638404816">
     <property name="package" value="Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1197638404544" resolveInfo="ClassConcept" />

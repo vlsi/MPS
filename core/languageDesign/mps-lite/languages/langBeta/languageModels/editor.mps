@@ -28,16 +28,14 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="r:8ed9ad5d-86a5-496f-b126-fcb4264fafe7(jetbrains.mps.langBeta.structure)" version="-1" />
-  <import index="2" modelUID="r:6b926507-e9bb-4f54-bed4-4a41762e56af(jetbrains.mps.langAlpha.structure)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237225647473">
     <link role="conceptDeclaration" targetNodeId="1.1237225647456" resolveInfo="AlphaConcept" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237225647474">
       <property name="text" value="alpha concept" />
     </node>
   </node>
-  <visible index="2" modelUID="r:8ed9ad5d-86a5-496f-b126-fcb4264fafe7(jetbrains.mps.langBeta.structure)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237226783303">
-    <link role="conceptDeclaration" targetNodeId="2v.1237226783270" resolveInfo="GammaConcept" />
+    <link role="conceptDeclaration" targetNodeId="1.1237226783270" resolveInfo="GammaConcept" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237226783304">
       <property name="text" value="gammaConcept" />
     </node>

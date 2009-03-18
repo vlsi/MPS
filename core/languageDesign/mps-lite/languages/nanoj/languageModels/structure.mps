@@ -41,7 +41,6 @@
   <import index="38" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="39" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="40" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="42" modelUID="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" version="0" />
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="1197638404527">
     <property name="package" value="Structure" />
     <property name="name" value="_Identifier_String" />
