@@ -140,5 +140,32 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1237383837726">
+    <link role="concept" targetNodeId="1.1237383690770" resolveInfo="PropertyPlaceholderReference" />
+    <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1237383839416">
+      <link role="applicableLink" targetNodeId="1.1237383740507" />
+      <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1237383844525">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237383844526">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237383850742">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237383857842">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237383851261">
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1237383850743" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1237383852732">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1237383852733">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237383856522">
+                      <link role="conceptDeclaration" targetNodeId="1.1237212367450" resolveInfo="MPSLiteConceptTemplate" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1237383910151">
+                <link role="link" targetNodeId="1.1237383862743" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

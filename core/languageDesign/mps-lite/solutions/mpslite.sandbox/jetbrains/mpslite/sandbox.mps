@@ -43,5 +43,36 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mpslite.structure.MPSLiteConceptTemplate" id="1237384324136">
+    <property name="name" value="Variable" />
+    <node role="propertyPlaceholder" type="jetbrains.mpslite.structure.PropertyPlaceholder" id="1237384396620">
+      <property name="name" value="varName" />
+    </node>
+    <node role="constantPlaceholder" type="jetbrains.mpslite.structure.ConstantTextPlaceholder" id="1237384374573">
+      <property name="name" value="keyword" />
+    </node>
+    <node role="childPlaceholder" type="jetbrains.mpslite.structure.ChildPlaceholder" id="1237384345710">
+      <property name="name" value="type" />
+    </node>
+    <node role="childPlaceholder" type="jetbrains.mpslite.structure.ChildPlaceholder" id="1237384350307">
+      <property name="name" value="initializer" />
+    </node>
+    <node role="lineList" type="jetbrains.mpslite.structure.LineList" id="1237384324137">
+      <node role="line" type="jetbrains.mpslite.structure.Line" id="1237384404639">
+        <node role="linePart" type="jetbrains.mpslite.structure.ConstantPlaceholderReference" id="1237384411065">
+          <link role="placeholder" targetNodeId="1237384374573" resolveInfo="keyword" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.structure.PropertyPlaceholderReference" id="1237384495161">
+          <link role="placeholder" targetNodeId="1237384396620" resolveInfo="varName" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237384452124">
+          <property name="text" value=":" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.structure.ChildPlaceholderReference" id="1237384477061">
+          <link role="placeholder" targetNodeId="1237384345710" resolveInfo="type" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
