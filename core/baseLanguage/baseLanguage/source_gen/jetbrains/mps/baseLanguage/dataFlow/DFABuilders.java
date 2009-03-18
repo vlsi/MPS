@@ -68,6 +68,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.BitwiseNotExpression", new BitwiseNotExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", new CommentedStatementsBlock_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", new SuperConstructorInvocation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.TupleExpression", new TupleExpression_DataFlow());
   }
 
 }

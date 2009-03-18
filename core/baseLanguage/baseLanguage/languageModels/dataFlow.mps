@@ -2188,5 +2188,31 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1237402838834">
+    <property name="package" value="tuples" />
+    <link role="conceptDeclaration" targetNodeId="1.1233829069870" resolveInfo="TupleExpression" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1237402838835">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237402838836">
+        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1237402850003">
+          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1237402850004">
+            <property name="name" value="item" />
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237402858851">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1237402858253" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1237402862592">
+              <link role="link" targetNodeId="1.1233829084761" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237402850006">
+            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1237402866927">
+              <node role="codeFor" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1237402868270">
+                <link role="variable" targetNodeId="1237402850004" resolveInfo="item" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
