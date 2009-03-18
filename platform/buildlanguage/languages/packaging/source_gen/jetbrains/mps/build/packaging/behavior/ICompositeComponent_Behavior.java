@@ -5,10 +5,8 @@ package jetbrains.mps.build.packaging.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ICompositeComponent_Behavior {
-  private static Class[] PARAMETERS_1213877279370 = {SNode.class};
 
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "excludes", "");
@@ -38,14 +36,6 @@ public class ICompositeComponent_Behavior {
       (SPropertyOperations.getString(thisNode, "includes")) :
       ""
     );
-  }
-
-  public static String call_getChildrenTargetDir_1213877279370(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getChildrenTargetDir_1213877279370", PARAMETERS_1213877279370);
-  }
-
-  public static String callSuper_getChildrenTargetDir_1213877279370(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getChildrenTargetDir_1213877279370", PARAMETERS_1213877279370);
   }
 
 }

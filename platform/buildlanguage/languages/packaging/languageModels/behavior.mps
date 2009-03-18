@@ -1263,8 +1263,8 @@
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1213877251342" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1213877251343">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1213877251344">
-                <link role="conceptDeclaration" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237389642797">
+                <link role="conceptDeclaration" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
               </node>
             </node>
           </node>
@@ -1281,12 +1281,12 @@
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1226937784643" />
                         </node>
                         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1226937784644">
-                          <link role="concept" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+                          <link role="concept" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
                         </node>
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226937784645">
-                      <link role="baseMethodDeclaration" targetNodeId="1213877279370" resolveInfo="getChildrenTargetDir" />
+                      <link role="baseMethodDeclaration" targetNodeId="1237389224202" resolveInfo="getChildrenTargetDir" />
                     </node>
                   </node>
                 </node>
@@ -1762,15 +1762,6 @@
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877279369">
     <property name="package" value="projectComponents" />
     <link role="concept" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877279370">
-      <property name="name" value="getChildrenTargetDir" />
-      <property name="isVirtual" value="true" />
-      <property name="isAbstract" value="true" />
-      <property name="isPrivate" value="false" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1213877279371" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877279372" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723970" />
-    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877279373">
       <property name="name" value="getExcludes" />
       <property name="isPrivate" value="false" />
@@ -2056,7 +2047,7 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877286233">
       <property name="name" value="getChildrenTargetDir" />
       <property name="isPrivate" value="false" />
-      <link role="overriddenMethod" targetNodeId="1213877279370" resolveInfo="getChildrenTargetDir" />
+      <link role="overriddenMethod" targetNodeId="1237389224202" resolveInfo="getChildrenTargetDir" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877286234">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877286235">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877286236">
@@ -2065,8 +2056,8 @@
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1213877286239" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1213877286240">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1213877286241">
-                <link role="conceptDeclaration" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237389401873">
+                <link role="conceptDeclaration" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
               </node>
             </node>
           </node>
@@ -2093,12 +2084,12 @@
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1213877286255" />
                       </node>
                       <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877286256">
-                        <link role="concept" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+                        <link role="concept" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
                       </node>
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877286257">
-                    <link role="baseMethodDeclaration" targetNodeId="1213877279370" resolveInfo="getChildrenTargetDir" />
+                    <link role="baseMethodDeclaration" targetNodeId="1237389224202" resolveInfo="getChildrenTargetDir" />
                   </node>
                 </node>
               </node>
@@ -2168,8 +2159,8 @@
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1213877286289" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1213877286290">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1213877286291">
-                <link role="conceptDeclaration" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237389630544">
+                <link role="conceptDeclaration" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
               </node>
             </node>
           </node>
@@ -2183,12 +2174,12 @@
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1213877286299" />
                     </node>
                     <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877286300">
-                      <link role="concept" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+                      <link role="concept" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
                     </node>
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877286301">
-                  <link role="baseMethodDeclaration" targetNodeId="1213877279370" resolveInfo="getChildrenTargetDir" />
+                  <link role="baseMethodDeclaration" targetNodeId="1237389224202" resolveInfo="getChildrenTargetDir" />
                 </node>
               </node>
             </node>
@@ -2308,8 +2299,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1233752711288">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233752711289">
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1233752711293">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1233752711294">
-                <link role="conceptDeclaration" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237389611701">
+                <link role="conceptDeclaration" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
               </node>
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1233752715858">
@@ -2338,7 +2329,7 @@
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1233752711306">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1233752711307">
                           <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1233752711311">
-                            <link role="concept" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+                            <link role="concept" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
                           </node>
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1233752720819">
                             <link role="variableDeclaration" targetNodeId="1233752680897" resolveInfo="parentNode" />
@@ -2346,7 +2337,7 @@
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1233752711312">
-                        <link role="baseMethodDeclaration" targetNodeId="1213877279370" resolveInfo="getChildrenTargetDir" />
+                        <link role="baseMethodDeclaration" targetNodeId="1237389224202" resolveInfo="getChildrenTargetDir" />
                       </node>
                     </node>
                   </node>
@@ -2713,7 +2704,7 @@
       <property name="name" value="getChildrenTargetDir" />
       <property name="isVirtual" value="false" />
       <property name="isPrivate" value="false" />
-      <link role="overriddenMethod" targetNodeId="1213877279370" resolveInfo="getChildrenTargetDir" />
+      <link role="overriddenMethod" targetNodeId="1237389224202" resolveInfo="getChildrenTargetDir" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877370068">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877370069">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226935408030">
@@ -2852,7 +2843,7 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877485668">
       <property name="name" value="getChildrenTargetDir" />
       <property name="isPrivate" value="false" />
-      <link role="overriddenMethod" targetNodeId="1213877279370" resolveInfo="getChildrenTargetDir" />
+      <link role="overriddenMethod" targetNodeId="1237389224202" resolveInfo="getChildrenTargetDir" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877485669">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877485670">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877485671">
@@ -2861,8 +2852,8 @@
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1213877485674" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1213877485675">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1213877485676">
-                <link role="conceptDeclaration" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237389672456">
+                <link role="conceptDeclaration" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
               </node>
             </node>
           </node>
@@ -2889,12 +2880,12 @@
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1213877485690" />
                       </node>
                       <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877485691">
-                        <link role="concept" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+                        <link role="concept" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
                       </node>
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877485692">
-                    <link role="baseMethodDeclaration" targetNodeId="1213877279370" resolveInfo="getChildrenTargetDir" />
+                    <link role="baseMethodDeclaration" targetNodeId="1237389224202" resolveInfo="getChildrenTargetDir" />
                   </node>
                 </node>
               </node>
@@ -3904,8 +3895,8 @@
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1213877514977" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1213877514978">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1213877514979">
-                <link role="conceptDeclaration" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237389684803">
+                <link role="conceptDeclaration" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
               </node>
             </node>
           </node>
@@ -3932,12 +3923,12 @@
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1213877514993" />
                       </node>
                       <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877514994">
-                        <link role="concept" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+                        <link role="concept" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
                       </node>
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877514995">
-                    <link role="baseMethodDeclaration" targetNodeId="1213877279370" resolveInfo="getChildrenTargetDir" />
+                    <link role="baseMethodDeclaration" targetNodeId="1237389224202" resolveInfo="getChildrenTargetDir" />
                   </node>
                 </node>
               </node>
@@ -6118,7 +6109,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233161182353">
-    <property name="package" value="conditions" />
+    <property name="package" value="projectComponents.conditions" />
     <link role="concept" targetNodeId="1.1233159299625" resolveInfo="ICondition" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233161185181">
       <property name="name" value="canCalculateWhileGenerating" />
@@ -6141,7 +6132,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233161890003">
-    <property name="package" value="conditions" />
+    <property name="package" value="projectComponents.conditions" />
     <link role="concept" targetNodeId="1.1233159325466" resolveInfo="FileExistsCondition" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233161939740">
       <property name="name" value="canCalculateWhileGenerating" />
@@ -6277,8 +6268,54 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233751573892">
-    <property name="package" value="conditions" />
+    <property name="package" value="projectComponents.conditions" />
     <link role="concept" targetNodeId="1.1233159190548" resolveInfo="IfProjectComponent" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237389348153">
+      <property name="name" value="getChildrenTargetDir" />
+      <link role="overriddenMethod" targetNodeId="1237389224202" resolveInfo="getChildrenTargetDir" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237389348155">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237389436902">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237389436903">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237389436904">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1237389436905" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1237389436906" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237389436907">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237389436908">
+                <link role="conceptDeclaration" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
+              </node>
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237389436909">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237389436910">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237389436917">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1237389436918">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1237389436919">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237389436920">
+                      <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1237389436921" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1237389436922" />
+                    </node>
+                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237389436923">
+                      <link role="concept" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237389436924">
+                  <link role="baseMethodDeclaration" targetNodeId="1237389224202" resolveInfo="getChildrenTargetDir" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237389464429">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237389465552">
+            <property name="value" value="" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237389371553" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237389378335" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1233751573893">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233751573894" />
     </node>
@@ -6633,7 +6670,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1236881736606">
-    <property name="package" value="conditions" />
+    <property name="package" value="projectComponents.conditions" />
     <link role="concept" targetNodeId="1.1233159354124" resolveInfo="NotCondition" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1236881744775">
       <property name="name" value="canCalculateWhileGenerating" />
@@ -6681,6 +6718,22 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1236881736607">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236881736608" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1237389207313">
+    <property name="package" value="projectComponents" />
+    <link role="concept" targetNodeId="1.1237389142373" resolveInfo="IAbstractCompositeComponent" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237389224202">
+      <property name="name" value="getChildrenTargetDir" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <property name="isPrivate" value="false" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237389224203" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237389224204" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237389224205" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1237389207314">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237389207315" />
     </node>
   </node>
 </model>

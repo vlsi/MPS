@@ -17,9 +17,9 @@ public class Antcall_Behavior {
     SLinkOperations.setTarget(thisNode, "delete", SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Delete", null), true);
   }
 
-  public static String virtual_getChildrenTargetDir_1213877279370(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-      return ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(((SNode)SNodeOperations.getParent(thisNode))) + File.separator + Antcall_Behavior.call_getName_1213877286263(thisNode);
+  public static String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
+      return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(((SNode)SNodeOperations.getParent(thisNode))) + File.separator + Antcall_Behavior.call_getName_1213877286263(thisNode);
     }
     return Antcall_Behavior.call_getName_1213877286263(thisNode);
   }
@@ -29,8 +29,8 @@ public class Antcall_Behavior {
   }
 
   public static String call_getOutput_1213877286282(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-      return ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(((SNode)SNodeOperations.getParent(thisNode)));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
+      return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(((SNode)SNodeOperations.getParent(thisNode)));
     }
     return "";
   }

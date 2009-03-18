@@ -26,8 +26,8 @@ public class AbstractProjectComponent_Behavior {
   }
 
   public static File call_getPath_1233752667763(SNode thisNode, SNode parentNode) {
-    if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-      return new File(ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(((SNode)parentNode)) + File.separator + SPropertyOperations.getString(thisNode, "name"));
+    if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
+      return new File(IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(((SNode)parentNode)) + File.separator + SPropertyOperations.getString(thisNode, "name"));
     } else if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.packaging.structure.IfProjectComponent")) {
       return AbstractProjectComponent_Behavior.call_getPath_1233752667763(thisNode, SNodeOperations.getParent(parentNode));
     }

@@ -21,9 +21,9 @@ public class Jar_Behavior {
     return SPropertyOperations.getString(thisNode, "name") + ".tmp";
   }
 
-  public static String virtual_getChildrenTargetDir_1213877279370(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-      return ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(((SNode)SNodeOperations.getParent(thisNode))) + File.separator + Jar_Behavior.call_getTemporalDir_1213877485659(thisNode);
+  public static String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
+      return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(((SNode)SNodeOperations.getParent(thisNode))) + File.separator + Jar_Behavior.call_getTemporalDir_1213877485659(thisNode);
     }
     return Jar_Behavior.call_getTemporalDir_1213877485659(thisNode);
   }

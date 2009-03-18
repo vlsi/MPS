@@ -1565,7 +1565,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1233159437087">
-    <property name="package" value="conditions" />
+    <property name="package" value="projectComponents.conditions" />
     <link role="conceptDeclaration" targetNodeId="1.1233159190548" resolveInfo="IfProjectComponent" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233159451547">
       <property name="vertical" value="false" />
@@ -1614,7 +1614,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1233159610851">
-    <property name="package" value="conditions" />
+    <property name="package" value="projectComponents.conditions" />
     <link role="conceptDeclaration" targetNodeId="1.1233159325466" resolveInfo="FileExistsCondition" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233159636329">
       <property name="vertical" value="false" />
@@ -1628,7 +1628,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1233159652970">
-    <property name="package" value="conditions" />
+    <property name="package" value="projectComponents.conditions" />
     <link role="conceptDeclaration" targetNodeId="1.1233159354124" resolveInfo="NotCondition" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233159766966">
       <property name="vertical" value="false" />

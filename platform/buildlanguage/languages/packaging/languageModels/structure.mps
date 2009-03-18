@@ -663,8 +663,8 @@
       <property name="name" value="includes" />
       <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
     </node>
-    <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1204706613165">
-      <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
+    <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237389233638">
+      <link role="intfc" targetNodeId="1237389142373" resolveInfo="IAbstractCompositeComponent" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1204015075559">
@@ -1035,7 +1035,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233159190548">
     <property name="name" value="IfProjectComponent" />
-    <property name="package" value="conditions" />
+    <property name="package" value="projectComponents.conditions" />
     <link role="extends" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233159308698">
       <property name="metaClass" value="aggregation" />
@@ -1062,13 +1062,16 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1233309321847">
       <link role="conceptPropertyDeclaration" targetNodeId="1233309050521" resolveInfo="acceptFiles" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237389339515">
+      <link role="intfc" targetNodeId="1237389142373" resolveInfo="IAbstractCompositeComponent" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1233159299625">
-    <property name="package" value="conditions" />
+    <property name="package" value="projectComponents.conditions" />
     <property name="name" value="ICondition" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233159325466">
-    <property name="package" value="conditions" />
+    <property name="package" value="projectComponents.conditions" />
     <property name="name" value="FileExistsCondition" />
     <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233159347850">
@@ -1090,7 +1093,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233159354124">
-    <property name="package" value="conditions" />
+    <property name="package" value="projectComponents.conditions" />
     <property name="name" value="NotCondition" />
     <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233159365757">
@@ -1163,6 +1166,13 @@
       <property name="role" value="macro" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1219228952036" resolveInfo="Macro" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1237389142373">
+    <property name="package" value="projectComponents" />
+    <property name="name" value="IAbstractCompositeComponent" />
+    <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237389160321">
+      <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>

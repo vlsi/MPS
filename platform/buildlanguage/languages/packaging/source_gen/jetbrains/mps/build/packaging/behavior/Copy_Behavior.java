@@ -20,8 +20,8 @@ public class Copy_Behavior {
   }
 
   public static File virtual_getPath_1213877333777(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-      return new File(ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(((SNode)SNodeOperations.getParent(thisNode))));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
+      return new File(IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(((SNode)SNodeOperations.getParent(thisNode))));
     }
     return new File("");
   }

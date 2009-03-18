@@ -10,10 +10,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util;
-import jetbrains.mps.build.packaging.behavior.ICompositeComponent_Behavior;
+import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import java.io.File;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.build.packaging.behavior.Copy_Behavior;
+import jetbrains.mps.build.packaging.behavior.ICompositeComponent_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.build.packaging.behavior.Antcall_Behavior;
@@ -32,10 +33,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
 import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.Map;
@@ -63,11 +64,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1203614993869(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(_context.getNode()).replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(_context.getNode()).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1203620045650(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(_context.getNode()).replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(_context.getNode()).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1203622327849(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -83,7 +84,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1203622819102(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(_context.getNode()).replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(_context.getNode()).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1203622940784(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -119,7 +120,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1204122982909(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(((SNode)SNodeOperations.getParent(_context.getNode()))).replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(((SNode)SNodeOperations.getParent(_context.getNode()))).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1205332632356(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -139,7 +140,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1209893088423(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(_context.getNode()).replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(_context.getNode()).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1209893108623(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -199,7 +200,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1210846061742(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + ICompositeComponent_Behavior.call_getChildrenTargetDir_1213877279370(_context.getNode()).replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(_context.getNode()).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1210846095008(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -567,7 +568,13 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1203613712380(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.build.packaging.structure.ICompositeComponent");
+    return ListSequence.fromList(MPSLayout_Behavior.call_getTopologicalSortedComponents_1213877228296(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), _context.getNode())).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.ICompositeComponent");
+      }
+
+    });
   }
 
   public static Iterable sourceNodesQuery_1203619895801(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
