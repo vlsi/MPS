@@ -5,8 +5,6 @@ package jetbrains.mpslite.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
-import java.util.Iterator;
-import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,7 +18,7 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements INamedConc
   public static final String ROOT = "root";
   public static final String ABSTRACT = "abstract";
   public static final String EXTENDS = "extends";
-  public static final String LINE = "line";
+  public static final String LINE_LIST = "lineList";
 
   public MPSLiteConceptDeclaration(SNode node) {
     super(node);
@@ -82,24 +80,12 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements INamedConc
     super.setReferent(MPSLiteConceptDeclaration.EXTENDS, node);
   }
 
-  public int getLinesCount() {
-    return this.getChildCount(MPSLiteConceptDeclaration.LINE);
+  public LineList getLineList() {
+    return (LineList)this.getChild(LineList.class, MPSLiteConceptDeclaration.LINE_LIST);
   }
 
-  public Iterator<Line> lines() {
-    return this.children(Line.class, MPSLiteConceptDeclaration.LINE);
-  }
-
-  public List<Line> getLines() {
-    return this.getChildren(Line.class, MPSLiteConceptDeclaration.LINE);
-  }
-
-  public void addLine(Line node) {
-    this.addChild(MPSLiteConceptDeclaration.LINE, node);
-  }
-
-  public void insertLine(Line prev, Line node) {
-    this.insertChild(prev, MPSLiteConceptDeclaration.LINE, node);
+  public void setLineList(LineList node) {
+    super.setChild(MPSLiteConceptDeclaration.LINE_LIST, node);
   }
 
 

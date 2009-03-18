@@ -18,107 +18,30 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" version="0" />
   <maxImportIndex value="2" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895905e1(jetbrains.mpslite.nanoj)" version="-1" />
-  <node type="jetbrains.mpslite.structure.MPSLiteConceptDeclaration" id="1237224470961">
-    <property name="name" value="DDDDd" />
-    <link role="extends" targetNodeId="1237224236484" resolveInfo="SSSSS" />
-  </node>
-  <node type="jetbrains.mpslite.structure.MPSLiteConceptDeclaration" id="1237224236484">
-    <property name="name" value="SSSSS" />
-    <node role="line" type="jetbrains.mpslite.structure.Line" id="1237302329899">
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237302331877">
-        <property name="text" value="if" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237317060646">
-        <property name="text" value="df" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237317067686">
-        <property name="text" value="df" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237302337774">
-        <property name="text" value="a" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237315170989">
-        <property name="text" value="sd" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237315173103">
-        <property name="text" value="dfdf" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237318654340">
-        <property name="text" value="dfdf" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237318657361">
-        <property name="text" value="df" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237315176967">
-        <property name="text" value="df" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237315178083">
-        <property name="text" value="df" />
+  <node type="jetbrains.mpslite.structure.MPSLiteConceptTemplate" id="1237380763528">
+    <property name="name" value="PlusExpression" />
+    <node role="constantPlaceholder" type="jetbrains.mpslite.structure.ConstantTextPlaceholder" id="1237382014867">
+      <property name="name" value="+" />
+    </node>
+    <node role="childPlaceholder" type="jetbrains.mpslite.structure.ChildPlaceholder" id="1237380772587">
+      <property name="name" value="left" />
+    </node>
+    <node role="childPlaceholder" type="jetbrains.mpslite.structure.ChildPlaceholder" id="1237380775736">
+      <property name="name" value="right" />
+    </node>
+    <node role="lineList" type="jetbrains.mpslite.structure.LineList" id="1237380763529">
+      <node role="line" type="jetbrains.mpslite.structure.Line" id="1237380841288">
+        <node role="linePart" type="jetbrains.mpslite.structure.ChildPlaceholderReference" id="1237380871906">
+          <link role="placeholder" targetNodeId="1237380772587" resolveInfo="left" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.structure.ConstantPlaceholderReference" id="1237382026021">
+          <link role="placeholder" targetNodeId="1237382014867" resolveInfo="+" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.structure.ChildPlaceholderReference" id="1237380883333">
+          <link role="placeholder" targetNodeId="1237380775736" resolveInfo="right" />
+        </node>
       </node>
     </node>
-    <node role="line" type="jetbrains.mpslite.structure.Line" id="1237318611192">
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237315174099">
-        <property name="text" value="sddfdf" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237302353307">
-        <property name="text" value="s" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.LinePart" id="1237322429874" />
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237322421073">
-        <property name="text" value="u" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237322435030">
-        <property name="text" value="d" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237323490974">
-        <property name="text" value="h" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237325781470">
-        <property name="text" value="d" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237325782863">
-        <property name="text" value="ddsd" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237325785167">
-        <property name="text" value="sdsd" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237325793954">
-        <property name="text" value="sd" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237325795423">
-        <property name="text" value="ssdfdff" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237325796907">
-        <property name="text" value="dfdfs" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237325797976">
-        <property name="text" value="fsd" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237325807171">
-        <property name="text" value="f" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237325800649">
-        <property name="text" value="ssd" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237325798875">
-        <property name="text" value="sdf" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConcreteChildPart" id="1237302359357" />
-    </node>
-    <node role="line" type="jetbrains.mpslite.structure.Line" id="1237318661415">
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237320691379">
-        <property name="text" value="if" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237320693947">
-        <property name="text" value="d" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237320706408">
-        <property name="text" value="f" />
-      </node>
-      <node role="linePart" type="jetbrains.mpslite.structure.LinePart" id="1237320706428" />
-    </node>
-    <node role="line" type="jetbrains.mpslite.structure.Line" id="1237317052816" />
-    <node role="line" type="jetbrains.mpslite.structure.Line" id="1237317051009" />
   </node>
 </model>
 
