@@ -56,7 +56,6 @@
   <import index="6" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.lang.smodel.structure(jetbrains.mps.lang.smodel.structure@java_stub)" version="-1" />
-  <import index="10" modelUID="r:00000000-0000-4000-0000-011c895904e4(jetbrains.mps.build.main)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
   <visible index="3" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" />
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
@@ -1611,6 +1610,10 @@
               <property name="modulelUID" value="jetbrains.mps.closures" />
               <property name="id" value="fd392034-7849-419d-9071-12563d152375" />
             </node>
+            <node role="entry" type="jetbrains.mps.build.packaging.structure.Module" id="1237387342139">
+              <property name="id" value="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb" />
+              <property name="name" value="closures.runtime" />
+            </node>
             <node role="entry" type="jetbrains.mps.build.packaging.structure.Module" id="1234971270475">
               <property name="file" value="true" />
               <property name="modulelUID" value="jetbrains.mps.baseLanguage.ext.collections.lang" />
@@ -1812,6 +1815,10 @@
               <property name="file" value="true" />
               <property name="modulelUID" value="jetbrains.mps.transformationTest.runtime" />
               <property name="id" value="707c4fde-f79a-44b5-b3d7-b5cef8844ccf" />
+            </node>
+            <node role="entry" type="jetbrains.mps.build.packaging.structure.Module" id="1237394695459">
+              <property name="id" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+              <property name="name" value="jetbrains.mps.lang.textGen" />
             </node>
             <node role="entry" type="jetbrains.mps.build.packaging.structure.Module" id="1234971270516">
               <property name="file" value="true" />
@@ -3945,12 +3952,18 @@
         <property name="path" value="lib/mps.jar" />
       </node>
       <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1234780786038">
+        <property name="path" value="core/languageDesign/jetbrains.mps.lang.actions.mpsarch.jar" />
+      </node>
+      <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1237393773053">
         <property name="path" value="core/languageDesign/jetbrains.mps.lang.annotations.mpsarch.jar" />
       </node>
       <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1234780786039">
         <property name="path" value="core/languageDesign/jetbrains.mps.lang.behavior.mpsarch.jar" />
       </node>
       <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1234780786040">
+        <property name="path" value="core/languageDesign/jetbrains.mps.lang.constraints.mpsarch.jar" />
+      </node>
+      <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1237393211503">
         <property name="path" value="core/languageDesign/jetbrains.mps.lang.core.mpsarch.jar" />
       </node>
       <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1234780786041">
