@@ -25,7 +25,7 @@ public class DotRegexp_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_9914_0(context, node));
+    editorCell.addEditorCell(this.createConstant_9914_0(context, node, "."));
     return editorCell;
   }
 

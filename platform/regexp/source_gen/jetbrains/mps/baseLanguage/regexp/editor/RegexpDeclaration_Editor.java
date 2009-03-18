@@ -36,7 +36,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_4843_1(context, node));
     editorCell.addEditorCell(this.createCollection_4843_3(context, node));
     editorCell.addEditorCell(this.createCollection_4843_2(context, node));
-    editorCell.addEditorCell(this.createConstant_4843_2(context, node));
+    editorCell.addEditorCell(this.createConstant_4843_2(context, node, "}"));
     return editorCell;
   }
 
@@ -46,9 +46,9 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_4843_0(context, node));
+    editorCell.addEditorCell(this.createConstant_4843_0(context, node, "regexp"));
     editorCell.addEditorCell(this.createProperty_4843_1(context, node));
-    editorCell.addEditorCell(this.createConstant_4843_1(context, node));
+    editorCell.addEditorCell(this.createConstant_4843_1(context, node, "{"));
     return editorCell;
   }
 
@@ -58,7 +58,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_4843_3(context, node));
+    editorCell.addEditorCell(this.createConstant_4843_3(context, node, "  "));
     editorCell.addEditorCell(this.createRefNode_4843_1(context, node));
     return editorCell;
   }
@@ -69,8 +69,8 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_4843_4(context, node));
-    editorCell.addEditorCell(this.createConstant_4843_5(context, node));
+    editorCell.addEditorCell(this.createConstant_4843_4(context, node, "  "));
+    editorCell.addEditorCell(this.createConstant_4843_5(context, node, "//"));
     editorCell.addEditorCell(this.createProperty_4843_3(context, node));
     return editorCell;
   }

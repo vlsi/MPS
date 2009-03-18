@@ -31,11 +31,11 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_7845_1(context, node));
-    editorCell.addEditorCell(this.createConstant_7845_0(context, node));
+    editorCell.addEditorCell(this.createConstant_7845_0(context, node, "{"));
     editorCell.addEditorCell(this.createProperty_7845_1(context, node));
-    editorCell.addEditorCell(this.createConstant_7845_1(context, node));
+    editorCell.addEditorCell(this.createConstant_7845_1(context, node, ","));
     editorCell.addEditorCell(this.createProperty_7845_3(context, node));
-    editorCell.addEditorCell(this.createConstant_7845_2(context, node));
+    editorCell.addEditorCell(this.createConstant_7845_2(context, node, "}"));
     return editorCell;
   }
 

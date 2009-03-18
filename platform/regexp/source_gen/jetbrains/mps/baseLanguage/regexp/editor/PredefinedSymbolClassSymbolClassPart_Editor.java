@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEditor {
@@ -123,6 +124,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
       {
         Style inlineStyle = new Style(editorCell) {
           {
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
           }
 

@@ -34,7 +34,7 @@ public class FindMatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_2791_1(context, node));
     editorCell.addEditorCell(this.createCollection_2791_2(context, node));
-    editorCell.addEditorCell(this.createConstant_2791_5(context, node));
+    editorCell.addEditorCell(this.createConstant_2791_5(context, node, "}"));
     return editorCell;
   }
 
@@ -44,13 +44,13 @@ public class FindMatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_2791_0(context, node));
-    editorCell.addEditorCell(this.createConstant_2791_1(context, node));
+    editorCell.addEditorCell(this.createConstant_2791_0(context, node, "if"));
+    editorCell.addEditorCell(this.createConstant_2791_1(context, node, "("));
     editorCell.addEditorCell(this.createRefNode_2791_1(context, node));
-    editorCell.addEditorCell(this.createConstant_2791_2(context, node));
+    editorCell.addEditorCell(this.createConstant_2791_2(context, node, "contains match for"));
     editorCell.addEditorCell(this.createRefNode_2791_3(context, node));
-    editorCell.addEditorCell(this.createConstant_2791_3(context, node));
-    editorCell.addEditorCell(this.createConstant_2791_4(context, node));
+    editorCell.addEditorCell(this.createConstant_2791_3(context, node, ")"));
+    editorCell.addEditorCell(this.createConstant_2791_4(context, node, "{"));
     return editorCell;
   }
 

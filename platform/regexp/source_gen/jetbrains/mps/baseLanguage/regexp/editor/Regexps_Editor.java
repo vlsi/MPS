@@ -44,7 +44,7 @@ public class Regexps_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_2642_1(context, node));
     editorCell.addEditorCell(this.createCollection_2642_2(context, node));
-    editorCell.addEditorCell(this.createConstant_2642_2(context, node));
+    editorCell.addEditorCell(this.createConstant_2642_2(context, node, "}"));
     return editorCell;
   }
 
@@ -54,9 +54,9 @@ public class Regexps_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_2642_0(context, node));
+    editorCell.addEditorCell(this.createConstant_2642_0(context, node, "regexps"));
     editorCell.addEditorCell(this.createProperty_2642_1(context, node));
-    editorCell.addEditorCell(this.createConstant_2642_1(context, node));
+    editorCell.addEditorCell(this.createConstant_2642_1(context, node, "{"));
     return editorCell;
   }
 
@@ -66,7 +66,7 @@ public class Regexps_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_2642_3(context, node));
+    editorCell.addEditorCell(this.createConstant_2642_3(context, node, "  "));
     editorCell.addEditorCell(this.createRefNodeList_2642_0(context, node));
     return editorCell;
   }

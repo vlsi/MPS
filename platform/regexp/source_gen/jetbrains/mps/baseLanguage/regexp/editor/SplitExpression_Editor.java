@@ -32,7 +32,7 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_1914_1(context, node));
-    editorCell.addEditorCell(this.createConstant_1914_0(context, node));
+    editorCell.addEditorCell(this.createConstant_1914_0(context, node, "split with"));
     editorCell.addEditorCell(this.createRefNode_1914_3(context, node));
     return editorCell;
   }

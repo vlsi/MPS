@@ -32,7 +32,7 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty_1020_1(context, node));
     editorCell.addEditorCell(this.createRefNode_1020_1(context, node));
-    editorCell.addEditorCell(this.createConstant_1020_0(context, node));
+    editorCell.addEditorCell(this.createConstant_1020_0(context, node, ")"));
     return editorCell;
   }
 

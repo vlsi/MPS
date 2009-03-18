@@ -32,7 +32,7 @@ public class MatchRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_6214_1(context, node));
-    editorCell.addEditorCell(this.createConstant_6214_0(context, node));
+    editorCell.addEditorCell(this.createConstant_6214_0(context, node, "matches"));
     editorCell.addEditorCell(this.createRefNode_6214_3(context, node));
     return editorCell;
   }

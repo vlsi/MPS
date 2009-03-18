@@ -37,7 +37,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_0524_2(context, node));
     editorCell.addEditorCell(this.createCollection_0524_1(context, node));
-    editorCell.addEditorCell(this.createConstant_0524_2(context, node));
+    editorCell.addEditorCell(this.createConstant_0524_2(context, node, "}"));
     return editorCell;
   }
 
@@ -47,7 +47,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_0524_3(context, node));
+    editorCell.addEditorCell(this.createConstant_0524_3(context, node, "  "));
     editorCell.addEditorCell(this.createRefNodeList_0524_0(context, node));
     return editorCell;
   }
@@ -58,8 +58,8 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_0524_0(context, node));
-    editorCell.addEditorCell(this.createConstant_0524_1(context, node));
+    editorCell.addEditorCell(this.createConstant_0524_0(context, node, "predefined symbol classes"));
+    editorCell.addEditorCell(this.createConstant_0524_1(context, node, "{"));
     return editorCell;
   }
 

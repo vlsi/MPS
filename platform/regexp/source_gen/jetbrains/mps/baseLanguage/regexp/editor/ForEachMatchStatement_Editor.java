@@ -35,7 +35,7 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_2168_1(context, node));
     editorCell.addEditorCell(this.createCollection_2168_2(context, node));
-    editorCell.addEditorCell(this.createConstant_2168_6(context, node));
+    editorCell.addEditorCell(this.createConstant_2168_6(context, node, "}"));
     return editorCell;
   }
 
@@ -45,14 +45,14 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_2168_0(context, node));
-    editorCell.addEditorCell(this.createConstant_2168_1(context, node));
-    editorCell.addEditorCell(this.createConstant_2168_2(context, node));
+    editorCell.addEditorCell(this.createConstant_2168_0(context, node, "for"));
+    editorCell.addEditorCell(this.createConstant_2168_1(context, node, "("));
+    editorCell.addEditorCell(this.createConstant_2168_2(context, node, "each match of"));
     editorCell.addEditorCell(this.createRefNode_2168_1(context, node));
-    editorCell.addEditorCell(this.createConstant_2168_3(context, node));
+    editorCell.addEditorCell(this.createConstant_2168_3(context, node, "in"));
     editorCell.addEditorCell(this.createRefNode_2168_3(context, node));
-    editorCell.addEditorCell(this.createConstant_2168_4(context, node));
-    editorCell.addEditorCell(this.createConstant_2168_5(context, node));
+    editorCell.addEditorCell(this.createConstant_2168_4(context, node, ")"));
+    editorCell.addEditorCell(this.createConstant_2168_5(context, node, "{"));
     return editorCell;
   }
 

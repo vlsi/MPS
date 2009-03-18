@@ -31,9 +31,9 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_3253_1(context, node));
-    editorCell.addEditorCell(this.createConstant_3253_0(context, node));
+    editorCell.addEditorCell(this.createConstant_3253_0(context, node, "{"));
     editorCell.addEditorCell(this.createProperty_3253_1(context, node));
-    editorCell.addEditorCell(this.createConstant_3253_1(context, node));
+    editorCell.addEditorCell(this.createConstant_3253_1(context, node, "}"));
     return editorCell;
   }
 

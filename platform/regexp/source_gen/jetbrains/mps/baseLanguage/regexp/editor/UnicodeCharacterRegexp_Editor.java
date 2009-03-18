@@ -14,6 +14,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
 
@@ -27,7 +28,7 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_5321_0(context, node));
+    editorCell.addEditorCell(this.createConstant_5321_0(context, node, "\\u"));
     editorCell.addEditorCell(this.createProperty_5321_1(context, node));
     return editorCell;
   }
@@ -83,6 +84,7 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
 
       };

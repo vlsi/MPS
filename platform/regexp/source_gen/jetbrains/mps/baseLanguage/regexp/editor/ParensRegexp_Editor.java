@@ -29,9 +29,9 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_9798_0(context, node));
+    editorCell.addEditorCell(this.createConstant_9798_0(context, node, "("));
     editorCell.addEditorCell(this.createRefNode_9798_1(context, node));
-    editorCell.addEditorCell(this.createConstant_9798_1(context, node));
+    editorCell.addEditorCell(this.createConstant_9798_1(context, node, ")"));
     return editorCell;
   }
 

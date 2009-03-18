@@ -35,9 +35,9 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_9912_0(context, node));
+    editorCell.addEditorCell(this.createConstant_9912_0(context, node, "[^"));
     editorCell.addEditorCell(this.createRefNodeList_9912_0(context, node));
-    editorCell.addEditorCell(this.createConstant_9912_1(context, node));
+    editorCell.addEditorCell(this.createConstant_9912_1(context, node, "]"));
     return editorCell;
   }
 
