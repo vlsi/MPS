@@ -49,9 +49,8 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     EditorCell[] cells = editorCells.getCells();
 
 
-    for (int i = 0; i < cells.length; i++) {
-      EditorCell editorCell = cells[i];
-      addGaps(editorCells, i);
+    for (EditorCell editorCell : cells) {
+      PunctuationUtil.addGaps(editorCells, editorCell);
 
       editorCell.setX(x + width);
       editorCell.relayout();
@@ -71,92 +70,6 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
 
     for (EditorCell editorCell : cells) {
       editorCell.setBaseline(baseline);
-    }
-  }
-
-  private void addGaps(EditorCell_Collection editorCells, int i) {
-    int gap = getHorizontalGap(editorCells);
-    EditorCell currentCell = editorCells.getCells()[i];
-
-    if (currentCell instanceof EditorCell_Collection &&
-          (((EditorCell_Collection)currentCell).getCellLayout() instanceof CellLayout_Horizontal || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))) {      
-      return;
-    }
-
-    if ((!leftCellHasPunctuationRight(currentCell) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
-          && !hasPunctuationLeft(currentCell)) {
-      currentCell.setLeftGap(gap / 2);
-    } else {
-      currentCell.setLeftGap(0);
-    }
-
-    if ((!rightCellHasPunctuationLeft(currentCell) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
-          && !hasPunctuationRight(currentCell)) {
-      currentCell.setRightGap(gap / 2);
-    } else {
-      currentCell.setRightGap(0);
-    }
-       
-  }
-
-  private boolean leftCellHasPunctuationRight(EditorCell currentCell) {
-    EditorCell_Collection parent = currentCell.getParent();
-    if (parent != null && parent.getCellLayout() instanceof CellLayout_Horizontal) {
-      int index = parent.getCellNumber(currentCell);
-      if (index > 0) {
-        EditorCell leftCell = parent.getChildAt(index - 1);
-        if (leftCell.getLastLeaf() instanceof EditorCell_Collection) {
-          return leftCellHasPunctuationRight(leftCell);
-        } else {
-          return hasPunctuationRight(leftCell);
-        }
-      } else {
-        return leftCellHasPunctuationRight(parent);
-      }
-    }
-    return true;
-  }
-
-  private boolean rightCellHasPunctuationLeft(EditorCell currentCell) {
-    EditorCell_Collection parent = currentCell.getParent();
-    if (parent != null && parent.getCellLayout() instanceof CellLayout_Horizontal) {
-      int index = parent.getCellNumber(currentCell);
-      if (index < parent.getChildCount() - 1) {
-        EditorCell leftCell = parent.getChildAt(index + 1);
-        if (leftCell.getLastLeaf() instanceof EditorCell_Collection) {
-          return rightCellHasPunctuationLeft(leftCell);
-        } else {
-          return hasPunctuationLeft(leftCell);
-        }       
-      } else {
-        return rightCellHasPunctuationLeft(parent);
-      }
-    }
-    return true;
-  }
-
-  private Boolean hasPunctuationRight(EditorCell cell) {
-    if (cell == null) {
-      return true;
-    }
-    return cell.getLastLeaf().getStyle().get(StyleAttributes.PUNCTUATION_RIGTH);
-  }
-
-  private Boolean hasPunctuationLeft(EditorCell cell) {
-    if (cell == null) {
-      return true;
-    }
-    return cell.getFirstLeaf().getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
-  }
-
-  private int getHorizontalGap(EditorCell_Collection editorCells) {
-    Padding padding = editorCells.getStyle().get(StyleAttributes.HORIZONTAL_GAP);
-    if (padding.getType() == Measure.PIXELS) {
-      return (int)padding.getValue();
-    } else {
-      Font f = EditorSettings.getInstance().getDefaultEditorFont();
-      FontMetrics m = Toolkit.getDefaultToolkit().getFontMetrics(f);
-      return (int)(padding.getValue() * m.charWidth(' '));
     }
   }
 

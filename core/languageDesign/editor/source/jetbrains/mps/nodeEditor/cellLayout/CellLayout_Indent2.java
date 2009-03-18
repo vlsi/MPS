@@ -110,9 +110,9 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
       if (myLineEmpty) {
         myLineWidth += getIndent(cell) * getIndentWidth(); 
         myLineEmpty = false;
-      } else {
-        cell.setLeftGap(getSpacesWidth(1));
       }
+
+      PunctuationUtil.addGaps(cell.getParent(), cell);
 
       cell.setX(myX + myLineWidth);
       cell.setY(myY + myHeight);
