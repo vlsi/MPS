@@ -284,17 +284,16 @@
                 <link role="fieldDeclaration" targetNodeId="1201176251472" resolveInfo="myTransientParameters" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213086574501">
-              <link role="baseMethodDeclaration" targetNodeId="9.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201177815291">
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" id="1237404079929">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237404079930">
                 <property name="value" value="parameterName" />
-                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1201178032542">
-                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1201178032543">
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201178032544">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201178037701">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227912278">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1201178037702" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1201178039675">
+                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1237404079931">
+                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1237404079932">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237404079933">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237404079934">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237404079935">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1237404079936" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237404079937">
                             <link role="property" targetNodeId="6.1169194664001" resolveInfo="name" />
                           </node>
                         </node>
@@ -417,14 +416,12 @@
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1201176251472">
       <property name="name" value="myTransientParameters" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1201176251473" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201176298102">
-        <link role="classifier" targetNodeId="9.~Set" resolveInfo="Set" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192951538" />
+      <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237404074116">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237404074117" />
       </node>
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213085156734">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213085156736">
-          <link role="baseMethodDeclaration" targetNodeId="9.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-          <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192947944" />
+        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1237404074189">
+          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192947944" />
         </node>
       </node>
     </node>
@@ -1237,9 +1234,8 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1201176844932">
       <property name="name" value="getTransientParameters" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201176849905">
-        <link role="classifier" targetNodeId="9.~Set" resolveInfo="Set" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192948368" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237404074140">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237404074141" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201176844934" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201176844935">
@@ -1973,9 +1969,8 @@
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356677412">
           <link role="classifier" targetNodeId="19.~IModule" resolveInfo="IModule" />
         </node>
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356709306">
-          <link role="classifier" targetNodeId="9.~List" resolveInfo="List" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356720245">
+        <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237404074048">
+          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237404074049">
             <link role="classifier" targetNodeId="10.~SModel" resolveInfo="SModel" />
           </node>
         </node>

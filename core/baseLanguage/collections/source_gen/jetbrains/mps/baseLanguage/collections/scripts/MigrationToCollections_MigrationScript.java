@@ -737,5 +737,34 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
     });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "HashSet migration";
+      }
+
+      public String getAdditionalInfo() {
+        return "HashSet migration";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassCreator";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "name"), "HashSet") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", null);
+        SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
+        SNodeOperations.replaceWithAnother(node, result);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
   }
 }
