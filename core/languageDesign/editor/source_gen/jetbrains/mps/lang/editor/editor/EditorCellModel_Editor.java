@@ -80,15 +80,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Error_1982_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Error_1982_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1982_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

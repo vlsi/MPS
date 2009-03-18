@@ -168,15 +168,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_8637_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_8637_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_8637_1(EditorCell editorCell, SNode node, EditorContext context) {

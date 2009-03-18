@@ -84,15 +84,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_5840_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_5840_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_5840_0(EditorCell editorCell, SNode node, EditorContext context) {

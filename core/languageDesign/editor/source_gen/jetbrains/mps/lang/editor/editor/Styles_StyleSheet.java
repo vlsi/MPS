@@ -5,10 +5,48 @@ package jetbrains.mps.lang.editor.editor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class Styles_StyleSheet {
+
+  public static Style getBaseCellModelStyle(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return Styles_StyleSheet._StyleParameter_QueryFunction_1237383984781((cell == null ?
+              null :
+              cell.getSNode()
+            ), (cell == null ?
+              null :
+              cell.getEditorContext()
+            ));
+          }
+
+        });
+        this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return Styles_StyleSheet._StyleParameter_QueryFunction_1237384018255((cell == null ?
+              null :
+              cell.getSNode()
+            ), (cell == null ?
+              null :
+              cell.getEditorContext()
+            ));
+          }
+
+        });
+      }
+
+    };
+  }
 
   public static Style getStyle(final EditorCell cell) {
     return new Style(cell) {
@@ -66,6 +104,7 @@ public class Styles_StyleSheet {
   public static Style getBordered(final EditorCell cell) {
     return new Style(cell) {
       {
+        this.putAll(Styles_StyleSheet.getBaseCellModelStyle(null));
         this.set(StyleAttributes.DRAW_BORDER, true);
       }
 
@@ -75,10 +114,19 @@ public class Styles_StyleSheet {
   public static Style getBorderedCollection(final EditorCell cell) {
     return new Style(cell) {
       {
+        this.putAll(Styles_StyleSheet.getBaseCellModelStyle(null));
         this.set(StyleAttributes.DRAW_BORDER, true);
       }
 
     };
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1237383984781(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isIndent_1237383418148(node);
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1237384018255(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isNewLine_1237383076236(node) || EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(node);
   }
 
 }

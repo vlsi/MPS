@@ -80,10 +80,10 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_1215_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_openBrace");
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           this.set(StyleAttributes.NULL_TEXT_COLOR, MPSColors.blue);
         }

@@ -250,15 +250,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5161_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5161_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_5161_0(EditorCell editorCell, SNode node, EditorContext context) {

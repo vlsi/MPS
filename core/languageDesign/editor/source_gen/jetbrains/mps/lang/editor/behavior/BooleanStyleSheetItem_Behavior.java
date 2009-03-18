@@ -12,7 +12,7 @@ public class BooleanStyleSheetItem_Behavior {
   }
 
   public static boolean virtual_useQuery_1223387362946(SNode thisNode) {
-    return false;
+    return true;
   }
 
   public static boolean call_useQuery_1223387362946(SNode thisNode) {

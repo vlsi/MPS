@@ -104,11 +104,7 @@ public class EditorCellModel_Behavior {
   }
 
   public static boolean call_isStrikeOut_1223390694337(SNode thisNode) {
-    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"))).first();
-    if ((firstItem == null)) {
-      return false;
-    }
-    return SPropertyOperations.getBoolean(firstItem, "flag");
+    return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"), false);
   }
 
   public static int call_getFontSize_1221216397365(SNode thisNode) {
@@ -182,6 +178,26 @@ public class EditorCellModel_Behavior {
 
   public static boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return false;
+  }
+
+  public static boolean call_getBooleanStyleValue_1237383442523(SNode thisNode, SNode styleItem, boolean defaultValue) {
+    SNode item = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, styleItem)).first();
+    if ((item == null)) {
+      return defaultValue;
+    }
+    return SPropertyOperations.getBoolean(item, "flag");
+  }
+
+  public static boolean call_isNewLine_1237383076236(SNode thisNode) {
+    return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"), false);
+  }
+
+  public static boolean call_isIndent_1237383418148(SNode thisNode) {
+    return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"), false);
+  }
+
+  public static boolean call_isNewLineChildren_1237383562600(SNode thisNode) {
+    return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"), false);
   }
 
   public static String call_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {

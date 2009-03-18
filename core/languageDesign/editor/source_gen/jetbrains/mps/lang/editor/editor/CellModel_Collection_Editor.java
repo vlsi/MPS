@@ -536,15 +536,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_2102_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2102_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_2102_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -898,7 +890,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -925,6 +916,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.MATCHING_LABEL, "collection");
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -938,6 +930,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.MATCHING_LABEL, "collection");
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };

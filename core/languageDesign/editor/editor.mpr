@@ -17,8 +17,11 @@
     <option name="warnings" value="true" />
   </component>
   <component name="MPSProject">
-    <projectSolutions />
+    <projectSolutions>
+      <solutionPath path="C:/Documents and Settings/kostik/MPSProjects/IndentDemo/solutions/IndentDemo.sandbox/IndentDemo.sandbox.msd" />
+    </projectSolutions>
     <projectLanguages>
+      <languagePath path="C:/Documents and Settings/kostik/MPSProjects/IndentDemo/languages/IndentDemo/IndentDemo.mpl" />
       <languagePath path="${project}/editor.mpl" />
     </projectLanguages>
     <projectDevkits />

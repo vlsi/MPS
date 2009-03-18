@@ -293,15 +293,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_3190_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_3190_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefCell_3190_0(EditorCell editorCell, SNode node, EditorContext context) {

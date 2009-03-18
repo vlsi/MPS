@@ -223,15 +223,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_0649_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_0649_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_0649_1(EditorCell editorCell, SNode node, EditorContext context) {
