@@ -224,22 +224,22 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public INodePropertyGetter getNodePropertyGetter(SNode node, String propertyName) {
-    return (INodePropertyGetter) getNodePropertyGetterOrSetter(node.getAdapter(), propertyName, false);
+    return (INodePropertyGetter) getNodePropertyGetterOrSetter(node, propertyName, false);
   }
 
   public INodePropertySetter getNodePropertySetter(SNode node, String propertyName) {
-    return (INodePropertySetter) getNodePropertyGetterOrSetter(node.getAdapter(), propertyName, true);
+    return (INodePropertySetter) getNodePropertyGetterOrSetter(node, propertyName, true);
   }
 
-  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull final INodeAdapter node, @NotNull final String propertyName, final boolean isSetter) {
-    String namespace = node.getNode().getLanguageNamespace();
+  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull final SNode node, @NotNull final String propertyName, final boolean isSetter) {
+    String namespace = node.getLanguageNamespace();
 
     // 'bootstrap' properties
     if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(INamedConcept.NAME)
-      && !node.getConceptFQName().equals("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration")) {
+      && !node.getConceptFqName().equals("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration")) {
       return null;
     }
-    if (node instanceof RuntimeTypeVariable) {
+    if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
       // helgins ku-ku!
       return null;
     }
@@ -251,7 +251,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
       final String prefixedPropertyName = builder.toString();
       builder.setLength(0);
 
-      final String nodeConceptFqName = node.getConceptFQName();
+      final String nodeConceptFqName = node.getConceptFqName();
       builder.append(nodeConceptFqName);
       builder.append(prefixedPropertyName);
       final String originalKey = builder.toString();
