@@ -45,7 +45,8 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     final int y = editorCells.getY();
     int ascent = 0;
     int descent = 0;
-    int topInset = 0, bottomInset = 0;
+    int topInset = 0;
+    int bottomInset = 0;
     EditorCell[] cells = editorCells.getCells();
 
 
