@@ -40,26 +40,29 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
     private EditorCell_Collection myCell;
 
     private int myX;
-    private int myY;
     private int myWidth;
     private int myHeight;
+
     private int myLineWidth;
-    private int myLineHeight;
-    private boolean myLineEmpty;
+    private int myLineAscent;
+    private int myLineDescent;
+    private int myTopInset;
+    private int myBottomInset;
+    private List<EditorCell> myLineContent = new ArrayList<EditorCell>();
 
     private CellLayouter(EditorCell_Collection cell) {
       myCell = cell;
 
       myX = myCell.getX();
-      myY = myCell.getY();
 
       myWidth = 0;
       myHeight = 0;
 
       myLineWidth = 0;
-      myLineHeight = 0;
-
-      myLineEmpty = true;
+      myLineAscent = 0;
+      myLineDescent  = 0;
+      myTopInset = 0;
+      myBottomInset = 0;
     }
 
     public void layout() {
@@ -107,29 +110,42 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
     }
 
     private void appendCell(EditorCell cell) {      
-      if (myLineEmpty) {
+      if (myLineContent.isEmpty()) {
         myLineWidth += getIndent(cell) * getIndentWidth(); 
-        myLineEmpty = false;
       }
 
       PunctuationUtil.addGaps(cell.getParent(), cell);
 
       cell.setX(myX + myLineWidth);
-      cell.setY(myY + myHeight);
       cell.relayout();
 
-      myLineHeight = Math.max(myLineHeight, cell.getHeight());
+      myLineAscent = Math.max(myLineAscent, cell.getAscent());
+      myLineDescent = Math.max(myLineDescent, cell.getDescent());
+      myTopInset = Math.max(myTopInset, cell.getTopInset());
+      myBottomInset = Math.max(myBottomInset, cell.getBottomInset());
+
       myLineWidth += cell.getWidth();
+
+      myLineContent.add(cell);
     }
 
     private void newLine() {
+      int baseLine = myCell.getY() + myHeight + myTopInset + myLineAscent;
+
+      for (EditorCell cell : myLineContent) {
+        cell.setBaseline(baseLine);
+      }
+
       myWidth = Math.max(myWidth, myLineWidth);
-      myHeight += myLineHeight;
+      myHeight += myTopInset + myBottomInset + myLineAscent + myLineDescent;
 
       myLineWidth = 0;
-      myLineHeight = 0;
-
-      myLineEmpty = true;
+      myLineWidth = 0;
+      myLineAscent = 0;
+      myLineDescent  = 0;
+      myTopInset = 0;
+      myBottomInset = 0;
+      myLineContent.clear();
     }
 
     private boolean isNewLineAfter(EditorCell cell) {
