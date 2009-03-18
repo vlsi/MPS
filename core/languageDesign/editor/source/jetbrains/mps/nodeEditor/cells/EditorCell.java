@@ -68,7 +68,7 @@ public interface EditorCell extends Cloneable {
   Rectangle getBounds();
 
   void moveTo(int x, int y);
-
+  
   void paint(Graphics g);
   void paintSelection(Graphics g, Color c);
 

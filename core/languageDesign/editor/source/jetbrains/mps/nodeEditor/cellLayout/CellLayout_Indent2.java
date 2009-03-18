@@ -17,42 +17,179 @@ package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.TextLine;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.EditorSettings;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.awt.Font;
 
 public class CellLayout_Indent2 extends AbstractCellLayout {
 
   public void doLayout(EditorCell_Collection editorCells) {
-    List<EditorCell> frontier = new ArrayList<EditorCell>();
-    collectFrontier(editorCells, frontier);
-
-    int lineHeight = 0;
-    int lineWidth = 0;
-    int indent = 0;
-    for (EditorCell cell : frontier) {
-      
-    }
-  }
-
-  private void collectFrontier(EditorCell_Collection current, List<EditorCell> frontier) {
-    for (EditorCell child : current) {
-      if (child instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection) child;
-        if (collection.getCellLayout() instanceof CellLayout_Indent2) {
-          collectFrontier(collection, frontier);
-        } else {
-          frontier.add(child);
-        }
-      } else {
-        frontier.add(child);
-      }
-    }
+    new CellLayouter(editorCells).layout();
   }
 
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     return TextBuilder.getEmptyTextBuilder();
   }
 
+  private class CellLayouter {
+    private EditorCell_Collection myCell;
+
+    private int myX;
+    private int myY;
+    private int myWidth;
+    private int myHeight;
+    private int myLineWidth;
+    private int myLineHeight;
+    private boolean myLineEmpty;
+
+    private CellLayouter(EditorCell_Collection cell) {
+      myCell = cell;
+
+      myX = myCell.getX();
+      myY = myCell.getY();
+
+      myWidth = 0;
+      myHeight = 0;
+
+      myLineWidth = 0;
+      myLineHeight = 0;
+
+      myLineEmpty = true;
+    }
+
+    public void layout() {
+      layoutLeafs();
+      fixupCollections();
+    }
+
+    private void layoutLeafs() {
+      List<EditorCell> frontier = new ArrayList<EditorCell>();
+      collectFrontier(myCell, frontier);
+      for (EditorCell cell : frontier) {
+        appendCell(cell);
+
+        if (isNewLineAfter(cell)) {
+          newLine();
+        }
+      }
+      newLine();
+    }
+
+    private void fixupCollections() {
+      List<EditorCell_Collection> collections = new ArrayList<EditorCell_Collection>();
+      collectCollections(myCell, collections);
+
+      for (EditorCell_Collection collection : collections) {
+
+        if (collection.getChildCount() == 0) {
+          //todo hack
+          continue;
+        }
+
+        EditorCell firstChild = collection.getChildAt(0);
+
+        int x0 = firstChild.getX();
+        int y0 = firstChild.getY();
+        int x1 = firstChild.getX() + firstChild.getWidth();
+        int y1 = firstChild.getY() + firstChild.getHeight();
+
+        for (EditorCell child : collection) {
+          x0 = Math.min(x0, child.getX());
+          y0 = Math.min(y0, child.getY());
+          x1 = Math.max(x1, child.getX() + child.getWidth());
+          y1 = Math.max(y1, child.getY() + child.getHeight());
+        }
+
+        collection.setX(x0);
+        collection.setY(y0);
+        collection.setWidth(x1 - x0);
+        collection.setHeight(y1 - y0);
+      }
+    }
+
+    private void appendCell(EditorCell cell) {      
+      if (myLineEmpty) {
+        myLineWidth += getIndent(cell) * getIndentWidth(); 
+        myLineEmpty = false;
+      }
+
+      cell.setX(myX + myLineWidth);
+      cell.setY(myY + myHeight);
+      cell.relayout();
+
+      myLineHeight = Math.max(myLineHeight, cell.getHeight());
+      myLineWidth += cell.getWidth();
+    }
+
+    private void newLine() {
+      myWidth = Math.max(myWidth, myLineWidth);
+      myHeight += myLineHeight;
+
+      myLineWidth = 0;
+      myLineHeight = 0;
+
+      myLineEmpty = true;
+    }
+
+    private boolean isNewLineAfter(EditorCell cell) {
+      return cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE);
+    }
+
+    private int getIndentWidth() {
+      String indentText = "";
+      for (int i = 0; i < EditorSettings.getInstance().getIndentSize(); i++) {
+        indentText += " ";
+      }
+      TextLine textLine = new TextLine(indentText);
+      textLine.relayout();
+      return textLine.getWidth();
+    }
+
+    private int getIndent(EditorCell cell) {
+      int result = 0;
+
+      while (cell != myCell) {
+        if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
+          result++;
+        }
+
+        cell = cell.getParent();
+      }
+
+      return result;
+    }
+
+    private void collectFrontier(EditorCell_Collection current, List<EditorCell> frontier) {
+      for (EditorCell child : current) {
+        if (child instanceof EditorCell_Collection) {
+          EditorCell_Collection collection = (EditorCell_Collection) child;
+          if (collection.getCellLayout() instanceof CellLayout_Indent2) {
+            collectFrontier(collection, frontier);
+          } else {
+            frontier.add(child);
+          }
+        } else {
+          frontier.add(child);
+        }
+      }
+    }
+
+    private void collectCollections(EditorCell_Collection current, List<EditorCell_Collection> result) {
+      for (EditorCell child : current) {
+        if (child instanceof EditorCell_Collection) {
+          EditorCell_Collection collection = (EditorCell_Collection) child;
+          if (collection.getCellLayout() instanceof CellLayout_Indent2) {
+            collectCollections(collection, result);
+          } 
+        } 
+      }
+
+      result.add(current);
+    }
+  }
 }

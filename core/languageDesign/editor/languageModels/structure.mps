@@ -4132,7 +4132,7 @@
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1237308006696">
         <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.INDENT_LAYOUYT_INDENT" resolveInfo="INDENT_LAYOUYT_INDENT" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.INDENT_LAYOUT_INDENT" resolveInfo="INDENT_LAYOUT_INDENT" />
       </node>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237307999225">
@@ -4148,7 +4148,7 @@
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1237308012277">
         <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.INDENT_LAYOUYT_NEW_LINE" resolveInfo="INDENT_LAYOUYT_NEW_LINE" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.INDENT_LAYOUT_NEW_LINE" resolveInfo="INDENT_LAYOUT_NEW_LINE" />
       </node>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237308012278">
