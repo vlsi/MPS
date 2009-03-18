@@ -78,6 +78,10 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
       List<EditorCell> frontier = new ArrayList<EditorCell>();
       collectFrontier(myCell, frontier);
       for (EditorCell cell : frontier) {
+        if (isOnNewLine(cell)) {
+          newLine();
+        }
+
         appendCell(cell);
 
         if (isNewLineAfter(cell)) {
@@ -167,6 +171,22 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
           current.getParent().getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) return true;
 
         if (current.isLastChild()) {
+          current = current.getParent();
+        } else {
+          return false;
+        }
+      }
+
+      return false;
+    }
+
+    private boolean isOnNewLine(EditorCell cell) {
+      EditorCell current = cell;
+
+      while (current != myCell) {
+        if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) return true;
+
+        if (current.isFirstChild()) {
           current = current.getParent();
         } else {
           return false;

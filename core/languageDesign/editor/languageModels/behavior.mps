@@ -2613,6 +2613,27 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237383079131" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237385424172">
+      <property name="name" value="isOnNewLine" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1237385424173" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237385424174">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237385424175">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237385424176">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1237385424177" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237385424178">
+              <link role="baseMethodDeclaration" targetNodeId="1237383442523" resolveInfo="getBooleanStyleValue" />
+              <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1237385424179">
+                <link role="conceptDeclaration" targetNodeId="1.1237385578942" resolveInfo="IndentLayoutOnNewLineStyleClassItem" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237385424180">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237385424181" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237383418148">
       <property name="name" value="isIndent" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1237383418149" />

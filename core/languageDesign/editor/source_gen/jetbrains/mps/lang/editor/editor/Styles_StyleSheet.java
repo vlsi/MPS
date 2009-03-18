@@ -43,6 +43,19 @@ public class Styles_StyleSheet {
           }
 
         });
+        this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return Styles_StyleSheet._StyleParameter_QueryFunction_1237385537795((cell == null ?
+              null :
+              cell.getSNode()
+            ), (cell == null ?
+              null :
+              cell.getEditorContext()
+            ));
+          }
+
+        });
       }
 
     };
@@ -127,6 +140,10 @@ public class Styles_StyleSheet {
 
   public static boolean _StyleParameter_QueryFunction_1237384018255(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isNewLine_1237383076236(node) || EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(node);
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1237385537795(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(node);
   }
 
 }

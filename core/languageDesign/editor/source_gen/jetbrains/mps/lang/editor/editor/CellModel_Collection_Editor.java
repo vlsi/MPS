@@ -930,6 +930,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.MATCHING_LABEL, "collection");
+          this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
