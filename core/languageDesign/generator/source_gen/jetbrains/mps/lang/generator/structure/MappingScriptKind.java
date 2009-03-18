@@ -4,6 +4,7 @@ package jetbrains.mps.lang.generator.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum MappingScriptKind {
   pre_process_input_model("pre-process input model", "pre_processing"),
@@ -19,8 +20,8 @@ public enum MappingScriptKind {
 
   public static List<MappingScriptKind> getConstants() {
     List<MappingScriptKind> list = new LinkedList<MappingScriptKind>();
-    list.add(MappingScriptKind.pre_process_input_model);
-    list.add(MappingScriptKind.post_process_output_model);
+    ListOperations.addElement(list, MappingScriptKind.pre_process_input_model);
+    ListOperations.addElement(list, MappingScriptKind.post_process_output_model);
     return list;
   }
 

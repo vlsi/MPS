@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.ArrayList;
 
 public class ResolveUtil {
@@ -30,7 +31,7 @@ public class ResolveUtil {
       return result;
     }
     Set<SNode> frontier = new HashSet<SNode>();
-    frontier.add(instanceType);
+    SetSequence.fromSet(frontier).addElement(instanceType);
     SNode concreteMethodClassifierType = ResolveUtil.getConcreteSuperClassifierType(frontier, classifier);
     if (concreteMethodClassifierType == null) {
       return result;
@@ -65,7 +66,7 @@ public class ResolveUtil {
     SNode concreteMethodClassifierType = null;
     Set<SNode> newFrontier = new HashSet<SNode>();
 outer:
-    while (!(frontier.isEmpty())) {
+    while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for(SNode currentType : frontier) {
         SNode currentClassifier = SLinkOperations.getTarget(currentType, "classifier", false);
         if (currentClassifier == classifier) {
@@ -76,16 +77,16 @@ outer:
           SNode classConcept = currentClassifier;
           SNode superclass = SLinkOperations.getTarget(classConcept, "superclass", true);
           if ((superclass != null)) {
-            newFrontier.add(getConcreteClassifierType(superclass, currentType));
+            SetSequence.fromSet(newFrontier).addElement(getConcreteClassifierType(superclass, currentType));
           }
           for(SNode intfc : SLinkOperations.getTargets(classConcept, "implementedInterface", true)) {
-            newFrontier.add(getConcreteClassifierType(intfc, currentType));
+            SetSequence.fromSet(newFrontier).addElement(getConcreteClassifierType(intfc, currentType));
           }
         }
         if (SNodeOperations.isInstanceOf(currentClassifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
           SNode interfaceConcept = currentClassifier;
           for(SNode intfc : SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true)) {
-            newFrontier.add(getConcreteClassifierType(intfc, currentType));
+            SetSequence.fromSet(newFrontier).addElement(getConcreteClassifierType(intfc, currentType));
           }
         }
       }
@@ -103,23 +104,23 @@ outer:
       SNode classConcept = enclosingClassifier;
       SNode superclass = SLinkOperations.getTarget(classConcept, "superclass", true);
       if ((superclass != null)) {
-        initialClassifierTypes.add(superclass);
+        SetSequence.fromSet(initialClassifierTypes).addElement(superclass);
       }
       for(SNode intfc : SLinkOperations.getTargets(classConcept, "implementedInterface", true)) {
-        initialClassifierTypes.add(intfc);
+        SetSequence.fromSet(initialClassifierTypes).addElement(intfc);
       }
     }
     if (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       SNode interfaceConcept = enclosingClassifier;
       for(SNode intfc : SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true)) {
-        initialClassifierTypes.add(intfc);
+        SetSequence.fromSet(initialClassifierTypes).addElement(intfc);
       }
     }
     SNode concreteSuperClassifierType = getConcreteSuperClassifierType(initialClassifierTypes, declaringClassifier);
     Set<SNode> types = new HashSet<SNode>();
-    types.add(SLinkOperations.getTarget(result, "returnType", true));
+    SetSequence.fromSet(types).addElement(SLinkOperations.getTarget(result, "returnType", true));
     for(SNode param : SLinkOperations.getTargets(result, "parameter", true)) {
-      types.add(SLinkOperations.getTarget(param, "type", true));
+      SetSequence.fromSet(types).addElement(SLinkOperations.getTarget(param, "type", true));
     }
     List<SNode> params = SLinkOperations.getTargets(concreteSuperClassifierType, "parameter", true);
     for(SNode typeToModify : types) {

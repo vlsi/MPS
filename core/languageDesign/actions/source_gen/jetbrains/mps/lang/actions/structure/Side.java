@@ -4,6 +4,7 @@ package jetbrains.mps.lang.actions.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum Side {
   right("right", null),
@@ -19,8 +20,8 @@ public enum Side {
 
   public static List<Side> getConstants() {
     List<Side> list = new LinkedList<Side>();
-    list.add(Side.right);
-    list.add(Side.left);
+    ListOperations.addElement(list, Side.right);
+    ListOperations.addElement(list, Side.left);
     return list;
   }
 

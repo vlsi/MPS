@@ -2415,9 +2415,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214501228158">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214501228159">
             <property name="name" value="declarations" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1214501228160">
-              <link role="classifier" targetNodeId="8.~HashSet" resolveInfo="HashSet" />
-              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1214501228161">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237386036373">
+              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237386036374">
                 <link role="concept" targetNodeId="1.1068431474542" resolveInfo="VariableDeclaration" />
               </node>
             </node>
@@ -2434,9 +2433,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1222757250215">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1222757250216">
             <property name="name" value="reference" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222757250217">
-              <link role="classifier" targetNodeId="8.~HashSet" resolveInfo="HashSet" />
-              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1222757258548">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237386036059">
+              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237386036060">
                 <link role="concept" targetNodeId="1.1068498886296" resolveInfo="VariableReference" />
               </node>
             </node>
@@ -2556,13 +2554,12 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214501228202">
                       <link role="variableDeclaration" targetNodeId="1214501228159" resolveInfo="declarations" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214501228203">
-                      <link role="baseMethodDeclaration" targetNodeId="8.~HashSet.add(java.lang.Object):boolean" resolveInfo="add" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214501228204">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214501228205">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" id="1237386078764">
+                      <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237386078765">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237386078766">
                           <link role="variableDeclaration" targetNodeId="1214501228171" resolveInfo="ref" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1222754350640">
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237386078767">
                           <link role="link" targetNodeId="1.1068581517664" />
                         </node>
                       </node>
@@ -2587,9 +2584,8 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1214501215141">
-        <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
-        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1214501215142">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237386036824">
+        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237386036825">
           <link role="concept" targetNodeId="1.1068431474542" resolveInfo="VariableDeclaration" />
         </node>
       </node>

@@ -47,7 +47,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     // 
     Set<SNode> implementorsAndAncestorsNodes = new HashSet<SNode>();
     for(SNode implementorOrAncestor : ListSequence.fromList(implementorsAndAncestorsList)) {
-      implementorsAndAncestorsNodes.add(implementorOrAncestor);
+      SetSequence.fromSet(implementorsAndAncestorsNodes).addElement(implementorOrAncestor);
     }
     // 
     for(SNode classNode : SetSequence.fromSet(implementorsAndAncestorsNodes)) {

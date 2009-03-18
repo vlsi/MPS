@@ -4,6 +4,7 @@ package jetbrains.mps.lang.typesystem.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum EquationDirection_Enum {
   none("none", "none"),
@@ -20,9 +21,9 @@ public enum EquationDirection_Enum {
 
   public static List<EquationDirection_Enum> getConstants() {
     List<EquationDirection_Enum> list = new LinkedList<EquationDirection_Enum>();
-    list.add(EquationDirection_Enum.none);
-    list.add(EquationDirection_Enum.left);
-    list.add(EquationDirection_Enum.right);
+    ListOperations.addElement(list, EquationDirection_Enum.none);
+    ListOperations.addElement(list, EquationDirection_Enum.left);
+    ListOperations.addElement(list, EquationDirection_Enum.right);
     return list;
   }
 

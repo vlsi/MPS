@@ -76,7 +76,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
       }
       for(SNode classMethod : ListSequence.fromList(classMethods)) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(classMethod, method)) {
-          results.add(classMethod);
+          SetSequence.fromSet(results).addElement(classMethod);
         }
       }
     }

@@ -4,6 +4,7 @@ package jetbrains.mps.lang.sharedConcepts.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum NodePresentationOptions {
   default_("default", null),
@@ -20,9 +21,9 @@ public enum NodePresentationOptions {
 
   public static List<NodePresentationOptions> getConstants() {
     List<NodePresentationOptions> list = new LinkedList<NodePresentationOptions>();
-    list.add(NodePresentationOptions.default_);
-    list.add(NodePresentationOptions.referent_);
-    list.add(NodePresentationOptions.custom_);
+    ListOperations.addElement(list, NodePresentationOptions.default_);
+    ListOperations.addElement(list, NodePresentationOptions.referent_);
+    ListOperations.addElement(list, NodePresentationOptions.custom_);
     return list;
   }
 

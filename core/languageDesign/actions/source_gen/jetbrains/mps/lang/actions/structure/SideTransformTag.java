@@ -4,6 +4,7 @@ package jetbrains.mps.lang.actions.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum SideTransformTag {
   default_("default_", "default_RTransform"),
@@ -23,12 +24,12 @@ public enum SideTransformTag {
 
   public static List<SideTransformTag> getConstants() {
     List<SideTransformTag> list = new LinkedList<SideTransformTag>();
-    list.add(SideTransformTag.default_);
-    list.add(SideTransformTag.ext_1);
-    list.add(SideTransformTag.ext_2);
-    list.add(SideTransformTag.ext_3);
-    list.add(SideTransformTag.ext_4);
-    list.add(SideTransformTag.ext_5);
+    ListOperations.addElement(list, SideTransformTag.default_);
+    ListOperations.addElement(list, SideTransformTag.ext_1);
+    ListOperations.addElement(list, SideTransformTag.ext_2);
+    ListOperations.addElement(list, SideTransformTag.ext_3);
+    ListOperations.addElement(list, SideTransformTag.ext_4);
+    ListOperations.addElement(list, SideTransformTag.ext_5);
     return list;
   }
 

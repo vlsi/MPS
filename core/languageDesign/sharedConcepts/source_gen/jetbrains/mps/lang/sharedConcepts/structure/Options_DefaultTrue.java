@@ -4,6 +4,7 @@ package jetbrains.mps.lang.sharedConcepts.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum Options_DefaultTrue {
   default_("default", null),
@@ -19,8 +20,8 @@ public enum Options_DefaultTrue {
 
   public static List<Options_DefaultTrue> getConstants() {
     List<Options_DefaultTrue> list = new LinkedList<Options_DefaultTrue>();
-    list.add(Options_DefaultTrue.default_);
-    list.add(Options_DefaultTrue.true_);
+    ListOperations.addElement(list, Options_DefaultTrue.default_);
+    ListOperations.addElement(list, Options_DefaultTrue.true_);
     return list;
   }
 

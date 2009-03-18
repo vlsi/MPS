@@ -52,6 +52,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -1070,7 +1071,7 @@ __switch__:
             ListSequence.fromList(new LocalVariablesScope(_context.getParentNode()).getNodes()).visitAll(new IVisitor <SNode>() {
 
               public void visit(SNode it) {
-                localNames.add(SPropertyOperations.getString(it, "name"));
+                SetSequence.fromSet(localNames).addElement(SPropertyOperations.getString(it, "name"));
               }
 
             });
@@ -1078,7 +1079,7 @@ __switch__:
               ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).visitAll(new IVisitor <SNode>() {
 
                 public void visit(SNode it) {
-                  localNames.add(SPropertyOperations.getString(it, "name"));
+                  SetSequence.fromSet(localNames).addElement(SPropertyOperations.getString(it, "name"));
                 }
 
               });
@@ -1086,7 +1087,7 @@ __switch__:
             return ListSequence.fromList(fieldDeclarations).where(new IWhereFilter <SNode>() {
 
               public boolean accept(SNode it) {
-                return !(localNames.contains(SPropertyOperations.getString(it, "name")));
+                return !(SetSequence.fromSet(localNames).contains(SPropertyOperations.getString(it, "name")));
               }
 
             }).toListSequence();

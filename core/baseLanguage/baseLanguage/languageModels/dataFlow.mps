@@ -1725,9 +1725,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214502174629">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214502174630">
             <property name="name" value="vars" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1214502174631">
-              <link role="classifier" targetNodeId="5.~HashSet" resolveInfo="HashSet" />
-              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1214502201738">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237386037385">
+              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237386037386">
                 <link role="concept" targetNodeId="1.1068431474542" resolveInfo="VariableDeclaration" />
               </node>
             </node>

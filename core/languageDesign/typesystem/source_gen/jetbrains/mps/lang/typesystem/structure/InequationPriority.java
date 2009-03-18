@@ -4,6 +4,7 @@ package jetbrains.mps.lang.typesystem.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum InequationPriority {
   _0("0", 0),
@@ -22,11 +23,11 @@ public enum InequationPriority {
 
   public static List<InequationPriority> getConstants() {
     List<InequationPriority> list = new LinkedList<InequationPriority>();
-    list.add(InequationPriority._0);
-    list.add(InequationPriority._1);
-    list.add(InequationPriority._2);
-    list.add(InequationPriority._3);
-    list.add(InequationPriority.inf);
+    ListOperations.addElement(list, InequationPriority._0);
+    ListOperations.addElement(list, InequationPriority._1);
+    ListOperations.addElement(list, InequationPriority._2);
+    ListOperations.addElement(list, InequationPriority._3);
+    ListOperations.addElement(list, InequationPriority.inf);
     return list;
   }
 

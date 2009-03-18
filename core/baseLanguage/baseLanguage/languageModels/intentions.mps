@@ -7260,9 +7260,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224171259848">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224171259849">
             <property name="name" value="unusedAssignments" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224171259850">
-              <link role="classifier" targetNodeId="31.~Set" resolveInfo="Set" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224171259851">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237386037595">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237386037596">
                 <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
               </node>
             </node>
@@ -7293,9 +7292,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224171269435">
               <link role="variableDeclaration" targetNodeId="1224171259849" resolveInfo="unusedAssignments" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224171269436">
-              <link role="baseMethodDeclaration" targetNodeId="31.~Set.contains(java.lang.Object):boolean" resolveInfo="contains" />
-              <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1224171269437" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" id="1237386078130">
+              <node role="argument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1237386078131" />
             </node>
           </node>
         </node>

@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
@@ -480,10 +481,10 @@ __switch__:
   /* package */static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode) {
     for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_29().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_28().createNode(typeCheckingContext))) {
-        throwables.remove(livingThrowable);
+        SetSequence.fromSet(throwables).removeElement(livingThrowable);
       }
     }
-    if (throwables.isEmpty()) {
+    if (SetSequence.fromSet(throwables).isEmpty()) {
       return;
     }
     List<SNode> statementLists = SNodeOperations.getAncestors(mainNode, "jetbrains.mps.baseLanguage.structure.StatementList", false);
@@ -495,12 +496,12 @@ __switch__:
           SNode throwableType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
           for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
-              throwables.remove(livingThrowable);
+              SetSequence.fromSet(throwables).removeElement(livingThrowable);
             }
           }
         }
       }
-      if (throwables.isEmpty()) {
+      if (SetSequence.fromSet(throwables).isEmpty()) {
         return;
       }
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement") && SLinkOperations.getTarget(parent, "body", true) == statementList) {
@@ -509,12 +510,12 @@ __switch__:
           SNode throwableType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
           for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
-              throwables.remove(livingThrowable);
+              SetSequence.fromSet(throwables).removeElement(livingThrowable);
             }
           }
         }
       }
-      if (throwables.isEmpty()) {
+      if (SetSequence.fromSet(throwables).isEmpty()) {
         return;
       }
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && SLinkOperations.getTarget(parent, "body", true) == statementList) {
@@ -522,11 +523,11 @@ __switch__:
         for(SNode throwableType : SLinkOperations.getTargets(baseMethodDeclaration, "throwsItem", true)) {
           for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
-              throwables.remove(livingThrowable);
+              SetSequence.fromSet(throwables).removeElement(livingThrowable);
             }
           }
         }
-        if (!(throwables.isEmpty())) {
+        if (!(SetSequence.fromSet(throwables).isEmpty())) {
           String errorString = "uncaught exceptions:";
           for(SNode exc : throwables) {
             errorString = errorString + " " + exc;

@@ -4,6 +4,7 @@ package jetbrains.mps.lang.typesystem.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum RestrictionKind {
   equals(":==:", "equals"),
@@ -19,8 +20,8 @@ public enum RestrictionKind {
 
   public static List<RestrictionKind> getConstants() {
     List<RestrictionKind> list = new LinkedList<RestrictionKind>();
-    list.add(RestrictionKind.equals);
-    list.add(RestrictionKind.subtype);
+    ListOperations.addElement(list, RestrictionKind.equals);
+    ListOperations.addElement(list, RestrictionKind.subtype);
     return list;
   }
 

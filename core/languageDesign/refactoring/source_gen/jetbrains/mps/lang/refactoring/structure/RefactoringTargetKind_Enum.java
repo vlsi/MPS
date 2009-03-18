@@ -4,6 +4,7 @@ package jetbrains.mps.lang.refactoring.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum RefactoringTargetKind_Enum {
   node("node", null),
@@ -22,11 +23,11 @@ public enum RefactoringTargetKind_Enum {
 
   public static List<RefactoringTargetKind_Enum> getConstants() {
     List<RefactoringTargetKind_Enum> list = new LinkedList<RefactoringTargetKind_Enum>();
-    list.add(RefactoringTargetKind_Enum.node);
-    list.add(RefactoringTargetKind_Enum.model);
-    list.add(RefactoringTargetKind_Enum.language);
-    list.add(RefactoringTargetKind_Enum.solution);
-    list.add(RefactoringTargetKind_Enum.devkit);
+    ListOperations.addElement(list, RefactoringTargetKind_Enum.node);
+    ListOperations.addElement(list, RefactoringTargetKind_Enum.model);
+    ListOperations.addElement(list, RefactoringTargetKind_Enum.language);
+    ListOperations.addElement(list, RefactoringTargetKind_Enum.solution);
+    ListOperations.addElement(list, RefactoringTargetKind_Enum.devkit);
     return list;
   }
 

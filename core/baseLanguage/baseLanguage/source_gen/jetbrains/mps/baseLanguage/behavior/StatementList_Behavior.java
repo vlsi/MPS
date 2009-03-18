@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class StatementList_Behavior {
 
@@ -14,8 +15,8 @@ public class StatementList_Behavior {
   }
 
   public static Set<SNode> call_getExternalVariablesDeclarations_1214501165480(SNode thisNode) {
-    HashSet<SNode> declarations = new HashSet<SNode>();
-    HashSet<SNode> reference = new HashSet<SNode>();
+    Set<SNode> declarations = new HashSet<SNode>();
+    Set<SNode> reference = new HashSet<SNode>();
     reference.addAll(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false));
     reference.addAll(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterReference", false));
     for(SNode ref : reference) {
@@ -26,7 +27,7 @@ public class StatementList_Behavior {
         }
       }
       if (!(statementsContainsVar)) {
-        declarations.add(SLinkOperations.getTarget(ref, "variableDeclaration", false));
+        SetSequence.fromSet(declarations).addElement(SLinkOperations.getTarget(ref, "variableDeclaration", false));
       }
     }
     return declarations;

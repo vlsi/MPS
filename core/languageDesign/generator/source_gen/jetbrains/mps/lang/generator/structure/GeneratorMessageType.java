@@ -4,6 +4,7 @@ package jetbrains.mps.lang.generator.structure;
 
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public enum GeneratorMessageType {
   info("info", "info"),
@@ -20,9 +21,9 @@ public enum GeneratorMessageType {
 
   public static List<GeneratorMessageType> getConstants() {
     List<GeneratorMessageType> list = new LinkedList<GeneratorMessageType>();
-    list.add(GeneratorMessageType.info);
-    list.add(GeneratorMessageType.warning);
-    list.add(GeneratorMessageType.error);
+    ListOperations.addElement(list, GeneratorMessageType.info);
+    ListOperations.addElement(list, GeneratorMessageType.warning);
+    ListOperations.addElement(list, GeneratorMessageType.error);
     return list;
   }
 

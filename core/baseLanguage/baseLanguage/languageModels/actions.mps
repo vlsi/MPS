@@ -1873,9 +1873,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1219230289059">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1219230289060">
                   <property name="name" value="localNames" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219230289061">
-                    <link role="classifier" targetNodeId="48.~Set" resolveInfo="Set" />
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190456775" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237386036588">
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237386036589" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1219230301115">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1219230326466">
@@ -1910,16 +1909,15 @@
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227876791020">
                               <link role="variableDeclaration" targetNodeId="1219230289060" resolveInfo="localNames" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227876791021">
-                              <link role="baseMethodDeclaration" targetNodeId="48.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876791022">
-                                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1227876791023">
+                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" id="1237386078259">
+                              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237386078260">
+                                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1237386078261">
                                   <link role="concept" targetNodeId="1.1068581242863" resolveInfo="LocalVariableDeclaration" />
-                                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876816503">
+                                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1237386078262">
                                     <link role="variableDeclaration" targetNodeId="1227876791015" resolveInfo="it" />
                                   </node>
                                 </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227876791025">
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237386078263">
                                   <link role="property" targetNodeId="4.1169194664001" resolveInfo="name" />
                                 </node>
                               </node>
@@ -1958,13 +1956,12 @@
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227876790760">
                                   <link role="variableDeclaration" targetNodeId="1219230289060" resolveInfo="localNames" />
                                 </node>
-                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227876790761">
-                                  <link role="baseMethodDeclaration" targetNodeId="48.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876790762">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876816115">
+                                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" id="1237386078226">
+                                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237386078227">
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1237386078228">
                                       <link role="variableDeclaration" targetNodeId="1227876790755" resolveInfo="it" />
                                     </node>
-                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227876790764">
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237386078229">
                                       <link role="property" targetNodeId="4.1169194664001" resolveInfo="name" />
                                     </node>
                                   </node>
@@ -2008,13 +2005,12 @@
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227876795938">
                                   <link role="variableDeclaration" targetNodeId="1219230289060" resolveInfo="localNames" />
                                 </node>
-                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227876795939">
-                                  <link role="baseMethodDeclaration" targetNodeId="48.~Set.contains(java.lang.Object):boolean" resolveInfo="contains" />
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876795940">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876816678">
+                                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" id="1237386078099">
+                                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237386078100">
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1237386078101">
                                       <link role="variableDeclaration" targetNodeId="1227876795932" resolveInfo="it" />
                                     </node>
-                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227876795942">
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237386078102">
                                       <link role="property" targetNodeId="4.1169194664001" resolveInfo="name" />
                                     </node>
                                   </node>
