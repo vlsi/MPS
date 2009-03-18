@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Shape;
 
 public class CellLayout_Indent2 extends AbstractCellLayout {
   public void doLayout(EditorCell_Collection editorCells) {
@@ -44,13 +45,19 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
   @Override
   public void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c) {
     g.setColor(c);
+    
     for (EditorCell leaf : getIndentLeafs(editorCells)) {
       g.fillRect(leaf.getX(), leaf.getY(), leaf.getWidth(), leaf.getHeight());
+    }
+
+    g.setColor(c.darker());
+    for (EditorCell leaf : getIndentLeafs(editorCells)) {
+      g.drawRect(leaf.getX(), leaf.getY(), leaf.getWidth(), leaf.getHeight());
     }
   }
 
   private List<EditorCell> getIndentLeafs(EditorCell_Collection current) {
-    List<EditorCell> result = new ArrayList<EditorCell>();
+    List<EditorCell> result = new ArrayList<EditorCell>();            
     collectFrontier(current, result);
     return result;
   }
