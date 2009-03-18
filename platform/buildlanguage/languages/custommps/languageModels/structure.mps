@@ -47,6 +47,9 @@
       <property name="value" value="mps-build" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1237394818532">
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1233309050521" resolveInfo="acceptFiles" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234290845440">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="pathToBuildToolsZip" />
