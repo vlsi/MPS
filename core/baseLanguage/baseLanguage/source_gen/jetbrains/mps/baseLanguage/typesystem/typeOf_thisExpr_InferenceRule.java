@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -37,7 +37,7 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
       }
       classifier = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     }
-    List<SNode> typeVarRefs = new ArrayList<SNode>();
+    List<SNode> typeVarRefs = ListOperations.<SNode>createList();
     for(SNode typeVariableDeclaration : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
       ListSequence.fromList(typeVarRefs).addElement(new _Quotations.QuotationClass_14().createNode(typeVariableDeclaration, typeCheckingContext));
     }

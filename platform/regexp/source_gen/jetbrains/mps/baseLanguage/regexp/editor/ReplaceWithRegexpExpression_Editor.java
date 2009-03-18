@@ -40,9 +40,9 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_9889_0(context, node, "replaceAll"));
+    editorCell.addEditorCell(this.createConstant_9889_0(context, node));
     editorCell.addEditorCell(this.createRefNode_9889_1(context, node));
-    editorCell.addEditorCell(this.createConstant_9889_1(context, node, "in"));
+    editorCell.addEditorCell(this.createConstant_9889_1(context, node));
     editorCell.addEditorCell(this.createRefNode_9889_3(context, node));
     return editorCell;
   }
@@ -53,8 +53,8 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_9889_2(context, node, "  "));
-    editorCell.addEditorCell(this.createConstant_9889_3(context, node, "with"));
+    editorCell.addEditorCell(this.createConstant_9889_2(context, node));
+    editorCell.addEditorCell(this.createConstant_9889_3(context, node));
     editorCell.addEditorCell(this.createRefNode_9889_5(context, node));
     return editorCell;
   }

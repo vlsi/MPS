@@ -30,7 +30,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createProperty_1602_1(context, node));
-    editorCell.addEditorCell(this.createConstant_1602_0(context, node, "-"));
+    editorCell.addEditorCell(this.createConstant_1602_0(context, node));
     editorCell.addEditorCell(this.createProperty_1602_3(context, node));
     return editorCell;
   }

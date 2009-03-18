@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ConceptDeclaration_Behavior {
@@ -36,7 +36,7 @@ public class ConceptDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListOperations.<SNode>createList();
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "extends", false));
     for(SNode interfaceConceptReference : SLinkOperations.getTargets(thisNode, "implements", true)) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));

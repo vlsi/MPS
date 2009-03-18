@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,7 +15,7 @@ public class Closure_Behavior {
   }
 
   public static List<SNode> call_getVariablesReferencedInClosure_1223989736803(SNode thisNode) {
-    List<SNode> referencedInClosures = new ArrayList<SNode>();
+    List<SNode> referencedInClosures = ListOperations.<SNode>createList();
     for(SNode varRef : SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.VariableReference", false)) {
       SNode closure = SNodeOperations.getAncestor(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.Closure", false, false);
       if ((closure == null) || closure != SNodeOperations.getParent(thisNode)) {

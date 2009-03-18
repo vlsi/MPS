@@ -35,9 +35,9 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_1580_0(context, node, "["));
+    editorCell.addEditorCell(this.createConstant_1580_0(context, node));
     editorCell.addEditorCell(this.createRefNodeList_1580_0(context, node));
-    editorCell.addEditorCell(this.createConstant_1580_1(context, node, "]"));
+    editorCell.addEditorCell(this.createConstant_1580_1(context, node));
     return editorCell;
   }
 

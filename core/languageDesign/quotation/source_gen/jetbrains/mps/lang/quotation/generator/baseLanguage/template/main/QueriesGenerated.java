@@ -28,6 +28,7 @@ import jetbrains.mps.lang.quotation.structure.PropertyAntiquotation_AnnotationLi
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation_AnnotationLink;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class QueriesGenerated {
 
@@ -371,11 +372,11 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1224163399227(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode root = SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
-    List<SNode> result = new ArrayList<SNode>();
-    List<SNode> frontier = new ArrayList<SNode>();
+    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> frontier = ListOperations.<SNode>createList();
     ListSequence.fromList(result).addElement(root);
     ListSequence.fromList(frontier).addElement(root);
-    List<SNode> newFrontier = new ArrayList<SNode>();
+    List<SNode> newFrontier = ListOperations.<SNode>createList();
     while (ListSequence.fromList(frontier).isNotEmpty()) {
       for(SNode node : frontier) {
         for(SNode child : SNodeOperations.getChildren(node)) {
@@ -386,18 +387,18 @@ public class QueriesGenerated {
         }
       }
       frontier = newFrontier;
-      newFrontier = new ArrayList<SNode>();
+      newFrontier = ListOperations.<SNode>createList();
     }
     return result;
   }
 
   public static Iterable sourceNodesQuery_1224163399362(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode root = SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
-    List<SNode> result = new ArrayList<SNode>();
-    List<SNode> frontier = new ArrayList<SNode>();
+    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> frontier = ListOperations.<SNode>createList();
     SModel model = _context.getOutputModel();
     ListSequence.fromList(frontier).addElement(root);
-    List<SNode> newFrontier = new ArrayList<SNode>();
+    List<SNode> newFrontier = ListOperations.<SNode>createList();
     while (ListSequence.fromList(frontier).isNotEmpty()) {
       for(SNode node : frontier) {
         for(SNode child : SNodeOperations.getChildren(node)) {
@@ -420,7 +421,7 @@ public class QueriesGenerated {
         }
       }
       frontier = newFrontier;
-      newFrontier = new ArrayList<SNode>();
+      newFrontier = ListOperations.<SNode>createList();
     }
     return result;
   }

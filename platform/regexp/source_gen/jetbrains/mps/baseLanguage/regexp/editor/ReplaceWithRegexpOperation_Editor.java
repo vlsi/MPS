@@ -40,7 +40,7 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_0936_0(context, node, "replaceAll"));
+    editorCell.addEditorCell(this.createConstant_0936_0(context, node));
     editorCell.addEditorCell(this.createRefNode_0936_1(context, node));
     return editorCell;
   }
@@ -51,8 +51,8 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_0936_1(context, node, "  "));
-    editorCell.addEditorCell(this.createConstant_0936_2(context, node, "with"));
+    editorCell.addEditorCell(this.createConstant_0936_1(context, node));
+    editorCell.addEditorCell(this.createConstant_0936_2(context, node));
     editorCell.addEditorCell(this.createRefNode_0936_3(context, node));
     return editorCell;
   }

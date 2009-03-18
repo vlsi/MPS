@@ -708,5 +708,34 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
     });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "RetatinAll elements";
+      }
+
+      public String getAdditionalInfo() {
+        return "RetatinAll elements";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicableForSet(node, "retainAll", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.IntersectOperation", null);
+        SLinkOperations.setTarget(opration, "rightExpression", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SNodeOperations.replaceWithAnother(node, opration);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+
+    });
   }
 }

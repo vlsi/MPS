@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -19,7 +19,7 @@ public class NodesTestCase_Behavior {
   }
 
   public static List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListOperations.<SNode>createList();
     for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true))) {
       ListSequence.fromList(result).addElement(method);
     }

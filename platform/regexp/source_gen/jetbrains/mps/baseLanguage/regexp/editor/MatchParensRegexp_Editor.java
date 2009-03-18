@@ -17,7 +17,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class MatchParensRegexp_Editor extends DefaultNodeEditor {
 
@@ -31,10 +30,10 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_4405_0(context, node, "("));
+    editorCell.addEditorCell(this.createConstant_4405_0(context, node));
     editorCell.addEditorCell(this.createProperty_4405_1(context, node));
     editorCell.addEditorCell(this.createRefNode_4405_1(context, node));
-    editorCell.addEditorCell(this.createConstant_4405_1(context, node, ")"));
+    editorCell.addEditorCell(this.createConstant_4405_1(context, node));
     return editorCell;
   }
 
@@ -123,7 +122,6 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
 
       };
@@ -137,7 +135,6 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
 
       };
@@ -150,7 +147,6 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
 

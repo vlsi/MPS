@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class PreferencesComponentDeclaration_Behavior {
@@ -26,7 +26,7 @@ public class PreferencesComponentDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877528124(SNode thisNode) {
-    List<SNode> members = new ArrayList<SNode>();
+    List<SNode> members = ListOperations.<SNode>createList();
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "persistenPropertyDeclaration", true)));
     return members;
   }

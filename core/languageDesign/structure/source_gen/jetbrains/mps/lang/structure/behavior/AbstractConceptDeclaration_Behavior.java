@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
@@ -95,7 +95,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static List<SNode> call_getAvailableConceptMethods_1213877394200(SNode thisNode, SNode context, IScope scope) {
-    List<SNode> methods = new ArrayList<SNode>();
+    List<SNode> methods = ListOperations.<SNode>createList();
     if (thisNode == null) {
       return methods;
     }
@@ -132,7 +132,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static List<SNode> call_getVirtualConceptMethods_1213877394290(SNode thisNode, IScope scope) {
-    List<SNode> methods = new ArrayList<SNode>();
+    List<SNode> methods = ListOperations.<SNode>createList();
     for(SNode concept : SConceptOperations.getAllSuperConcepts(thisNode, false)) {
       SNode behaviour = AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(concept, scope);
       if (behaviour != null) {
@@ -147,8 +147,8 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static List<SNode> call_getNotImplementedConceptMethods_1213877394339(SNode thisNode, IScope scope) {
-    List<SNode> abstractMethods = new ArrayList<SNode>();
-    List<SNode> implementedMethods = new ArrayList<SNode>();
+    List<SNode> abstractMethods = ListOperations.<SNode>createList();
+    List<SNode> implementedMethods = ListOperations.<SNode>createList();
     List<SNode> concepts = SConceptOperations.getAllSuperConcepts(thisNode, false);
     ListSequence.fromList(concepts).addElement(thisNode);
     for(SNode concept : concepts) {

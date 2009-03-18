@@ -21,7 +21,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 import javax.swing.tree.TreePath;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class SmartActions_Generated {
@@ -89,7 +89,7 @@ public class SmartActions_Generated {
             public void fillActionContext() {
               TreePath[] paths = this.myTree.getSelectionPaths();
               if (paths != null) {
-                (getSmartActionContext()).get("fields")[0] = new ArrayList<SNode>();
+                (getSmartActionContext()).get("fields")[0] = ListOperations.<SNode>createList();
                 for(TreePath path : paths) {
                   MPSTreeNode node = (MPSTreeNode)path.getLastPathComponent();
                   if (node instanceof MPSTreeNodeEx) {

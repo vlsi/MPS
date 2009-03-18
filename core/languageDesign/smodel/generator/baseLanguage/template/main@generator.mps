@@ -216,9 +216,8 @@
       </node>
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1177115187254">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888400211">
-          <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888400213">
-            <link role="baseMethodDeclaration" targetNodeId="5.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-            <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1177115203302">
+          <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237395375853">
+            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1177115203302">
               <link role="classifier" targetNodeId="1.~SNode" resolveInfo="SNode" />
             </node>
           </node>

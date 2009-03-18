@@ -31,7 +31,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_9156_1(context, node));
     editorCell.addEditorCell(this.createCollection_9156_2(context, node));
-    editorCell.addEditorCell(this.createConstant_9156_3(context, node, "}"));
+    editorCell.addEditorCell(this.createConstant_9156_3(context, node));
     return editorCell;
   }
 
@@ -41,9 +41,9 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_9156_0(context, node, "symbol class"));
+    editorCell.addEditorCell(this.createConstant_9156_0(context, node));
     editorCell.addEditorCell(this.createProperty_9156_1(context, node));
-    editorCell.addEditorCell(this.createConstant_9156_2(context, node, "{"));
+    editorCell.addEditorCell(this.createConstant_9156_2(context, node));
     return editorCell;
   }
 
@@ -53,8 +53,8 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_9156_1(context, node, "  "));
-    editorCell.addEditorCell(this.createConstant_9156_4(context, node, "description:"));
+    editorCell.addEditorCell(this.createConstant_9156_1(context, node));
+    editorCell.addEditorCell(this.createConstant_9156_4(context, node));
     editorCell.addEditorCell(this.createProperty_9156_3(context, node));
     return editorCell;
   }

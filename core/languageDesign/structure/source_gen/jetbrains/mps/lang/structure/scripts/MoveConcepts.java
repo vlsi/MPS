@@ -19,7 +19,7 @@ import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
@@ -32,8 +32,8 @@ import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.HashMap;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseModelDescriptorComponent;
@@ -117,10 +117,10 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       refactoringContext.setParameter("sourceModel", model.getModelDescriptor());
       Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
       Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
-      List<SNode> editors = new ArrayList<SNode>();
-      List<SNode> behaviors = new ArrayList<SNode>();
-      List<SNode> constraints = new ArrayList<SNode>();
-      List<SNode> dataFlows = new ArrayList<SNode>();
+      List<SNode> editors = ListOperations.<SNode>createList();
+      List<SNode> behaviors = ListOperations.<SNode>createList();
+      List<SNode> constraints = ListOperations.<SNode>createList();
+      List<SNode> dataFlows = ListOperations.<SNode>createList();
       // collecting editors:
       SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
       if (editorModelDescriptor != null) {

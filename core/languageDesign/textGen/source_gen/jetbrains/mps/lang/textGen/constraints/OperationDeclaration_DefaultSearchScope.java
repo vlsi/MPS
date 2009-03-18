@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -30,7 +30,7 @@ public class OperationDeclaration_DefaultSearchScope implements INodeReferentSea
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListOperations.<SNode>createList();
     List<SNode> tgList = SModelOperations.getRootsIncludingImported(_context.getModel(), GlobalScope.getInstance(), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
     for(SNode tg : tgList) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(tg, "operation", true)));

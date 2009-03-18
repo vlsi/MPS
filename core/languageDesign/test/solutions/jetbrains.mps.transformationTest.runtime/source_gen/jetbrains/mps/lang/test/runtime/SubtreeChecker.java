@@ -19,6 +19,7 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.test.behavior.NodeOperation_Behavior;
 
 public class SubtreeChecker {
@@ -79,23 +80,23 @@ public class SubtreeChecker {
             continue;
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeReachable")) {
-            Assert.assertFalse(unreachable.contains(instruction));
+            Assert.assertFalse(SetSequence.fromSet(unreachable).contains(instruction));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeUnreachable")) {
-            Assert.assertTrue(unreachable.contains(instruction));
+            Assert.assertTrue(SetSequence.fromSet(unreachable).contains(instruction));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeUnreachable")) {
-            Assert.assertTrue(unreachable.contains(instruction));
+            Assert.assertTrue(SetSequence.fromSet(unreachable).contains(instruction));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.VariableInialized")) {
-            Set vars = initialyzed.get(instruction);
+            Set<Object> vars = initialyzed.get(instruction);
             SNode var = SLinkOperations.getTarget(((SNode)property), "var", true);
-            Assert.assertTrue(vars.contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
+            Assert.assertTrue(SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.VariableLive")) {
-            Set vars = live.get(instruction);
+            Set<Object> vars = live.get(instruction);
             SNode var = SLinkOperations.getTarget(((SNode)property), "var", true);
-            Assert.assertTrue(vars.contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
+            Assert.assertTrue(SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
           }
         }
       }

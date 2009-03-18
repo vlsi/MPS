@@ -17,7 +17,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -39,13 +38,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_6834_1(context, node));
     if (renderingCondition6834_1(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6834_13(context, node, "CASE_INSENSITIVE"));
+      editorCell.addEditorCell(this.createConstant_6834_13(context, node));
     }
     if (renderingCondition6834_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6834_12(context, node, "DOTALL"));
+      editorCell.addEditorCell(this.createConstant_6834_12(context, node));
     }
     if (renderingCondition6834_2(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6834_14(context, node, "MULTILINE"));
+      editorCell.addEditorCell(this.createConstant_6834_14(context, node));
     }
     return editorCell;
   }
@@ -56,12 +55,12 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_6834_0(context, node, "Options:"));
+    editorCell.addEditorCell(this.createConstant_6834_0(context, node));
     editorCell.addEditorCell(this.createCollection_6834_7(context, node));
-    editorCell.addEditorCell(this.createConstant_6834_10(context, node, ""));
+    editorCell.addEditorCell(this.createConstant_6834_10(context, node));
     editorCell.addEditorCell(this.createCollection_6834_2(context, node));
     editorCell.addEditorCell(this.createCollection_6834_3(context, node));
-    editorCell.addEditorCell(this.createConstant_6834_4(context, node, ""));
+    editorCell.addEditorCell(this.createConstant_6834_4(context, node));
     editorCell.addEditorCell(this.createCollection_6834_4(context, node));
     editorCell.addEditorCell(this.createCollection_6834_5(context, node));
     editorCell.addEditorCell(this.createCollection_6834_6(context, node));
@@ -74,7 +73,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_6834_1(context, node, "Dot all : "));
+    editorCell.addEditorCell(this.createConstant_6834_1(context, node));
     editorCell.addEditorCell(this.createProperty_6834_1(context, node));
     return editorCell;
   }
@@ -85,8 +84,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_6834_2(context, node, "  "));
-    editorCell.addEditorCell(this.createConstant_6834_3(context, node, "If dot all mode is enabled, the . symbol class will include new line characters"));
+    editorCell.addEditorCell(this.createConstant_6834_2(context, node));
+    editorCell.addEditorCell(this.createConstant_6834_3(context, node));
     return editorCell;
   }
 
@@ -96,7 +95,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_6834_5(context, node, "Multiline mode : "));
+    editorCell.addEditorCell(this.createConstant_6834_5(context, node));
     editorCell.addEditorCell(this.createProperty_6834_3(context, node));
     return editorCell;
   }
@@ -107,8 +106,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_6834_6(context, node, "  "));
-    editorCell.addEditorCell(this.createConstant_6834_7(context, node, "If multiline mode is enabled, the $ and ^ will work not only in the start and"));
+    editorCell.addEditorCell(this.createConstant_6834_6(context, node));
+    editorCell.addEditorCell(this.createConstant_6834_7(context, node));
     return editorCell;
   }
 
@@ -118,8 +117,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_6834_8(context, node, "  "));
-    editorCell.addEditorCell(this.createConstant_6834_9(context, node, "the end of the text but on starts and ends of lines separated by new line characters"));
+    editorCell.addEditorCell(this.createConstant_6834_8(context, node));
+    editorCell.addEditorCell(this.createConstant_6834_9(context, node));
     return editorCell;
   }
 
@@ -129,7 +128,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_6834_11(context, node, "Case insensitive :"));
+    editorCell.addEditorCell(this.createConstant_6834_11(context, node));
     editorCell.addEditorCell(this.createProperty_6834_5(context, node));
     return editorCell;
   }
@@ -448,7 +447,6 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         }
 
       };
@@ -512,7 +510,6 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         }
 
       };
@@ -551,7 +548,6 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         }
 
       };

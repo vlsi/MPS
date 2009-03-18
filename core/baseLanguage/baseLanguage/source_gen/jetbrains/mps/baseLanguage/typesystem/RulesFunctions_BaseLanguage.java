@@ -19,6 +19,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -440,7 +441,7 @@ __switch__:
   private static void putTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {
     List<SNode> nodes = mmap.get(tvd);
     if (nodes == null) {
-      nodes = new ArrayList<SNode>();
+      nodes = ListOperations.<SNode>createList();
       mmap.put(tvd, nodes);
     }
     ListSequence.fromList(nodes).addElement(tvar);

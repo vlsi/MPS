@@ -48,7 +48,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <maxImportIndex value="38" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -1110,9 +1110,8 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221567898691">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221567898692">
                       <property name="name" value="set" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221567898693">
-                        <link role="classifier" targetNodeId="10.~HashSet" resolveInfo="HashSet" />
-                        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221567898694">
+                      <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237396581291">
+                        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237396581292">
                           <link role="concept" targetNodeId="1.1210673684636" resolveInfo="TestNodeAnnotation" />
                         </node>
                       </node>
@@ -1136,13 +1135,12 @@
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221567898703">
                             <link role="variableDeclaration" targetNodeId="1221567898692" resolveInfo="set" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221567898704">
-                            <link role="baseMethodDeclaration" targetNodeId="10.~HashSet.add(java.lang.Object):boolean" resolveInfo="add" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221567898705">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1221567898706">
+                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" id="1237396591115">
+                            <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237396591116">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1237396591117">
                                 <link role="variable" targetNodeId="1221567898699" resolveInfo="ref" />
                               </node>
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1221567898707">
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237396591118">
                                 <link role="link" targetNodeId="1.1210674534086" />
                               </node>
                             </node>

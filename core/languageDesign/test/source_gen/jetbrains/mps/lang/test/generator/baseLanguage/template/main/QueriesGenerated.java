@@ -21,11 +21,13 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import java.util.HashSet;
+import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.ArrayList;
 import java.util.List;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class QueriesGenerated {
 
@@ -223,9 +225,9 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1221567898689(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    HashSet<SNode> set = new LinkedHashSet<SNode>();
+    Set<SNode> set = new LinkedHashSet<SNode>();
     for(SNode ref : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "body", true), "jetbrains.mps.lang.test.structure.TestNodeReference", false))) {
-      set.add(SLinkOperations.getTarget(ref, "declaration", false));
+      SetSequence.fromSet(set).addElement(SLinkOperations.getTarget(ref, "declaration", false));
     }
     return new ArrayList<SNode>(set);
   }
@@ -251,7 +253,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1225976113129(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> nodes = new ArrayList<SNode>();
+    List<SNode> nodes = ListOperations.<SNode>createList();
     for(SNode nodeTocheck : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", false, false), "nodesToCheck", true))) {
       ListSequence.fromList(nodes).addElement(((SNode)nodeTocheck));
     }

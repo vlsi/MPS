@@ -357,9 +357,8 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224594815632">
             <property name="name" value="tests" />
             <property name="isFinal" value="true" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224594815633">
-              <link role="classifier" targetNodeId="3.~Set" resolveInfo="Set" />
-              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1224594859902">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237396581282">
+              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237396581283">
                 <link role="concept" targetNodeId="3v.1216134482493" resolveInfo="ITestMethod" />
               </node>
             </node>
@@ -378,24 +377,23 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224598402919">
               <link role="variableDeclaration" targetNodeId="1224594815632" resolveInfo="tests" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224598402920">
-              <link role="baseMethodDeclaration" targetNodeId="3.~Set.addAll(java.util.Collection):boolean" resolveInfo="addAll" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224598402921">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224598402922">
-                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1224598424924">
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation" id="1237396591253">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237396591254">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237396591255">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1237396591256">
                     <link role="concept" targetNodeId="1.1216913645126" resolveInfo="NodesTestCase" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224598420044">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1224598420045" />
-                      <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1224598420046">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237396591257">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1237396591258" />
+                      <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1237396591259">
                         <link role="member" targetNodeId="1224598348272" resolveInfo="node" />
                       </node>
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224598402924">
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237396591260">
                     <link role="baseMethodDeclaration" targetNodeId="4.1216130724401" resolveInfo="getTestSet" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" id="1224598402925" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" id="1237396591261" />
               </node>
             </node>
           </node>

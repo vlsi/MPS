@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -31,7 +31,7 @@ public class ModificationStatement_point_ReferentConstraint extends BaseNodeRefe
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode contents = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "modifiedGroup", false), "contents", true);
     if (SNodeOperations.isInstanceOf(contents, "jetbrains.mps.lang.plugin.structure.BuildGroupBlock")) {
-      return new SimpleSearchScope(new ArrayList<SNode>());
+      return new SimpleSearchScope(ListOperations.<SNode>createList());
     }
     return new SimpleSearchScope(ListSequence.fromList(SLinkOperations.getTargets(contents, "reference", true)).where(new IWhereFilter <SNode>() {
 
