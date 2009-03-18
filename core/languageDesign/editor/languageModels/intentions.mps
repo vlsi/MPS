@@ -2020,7 +2020,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1237395176004">
-    <property name="package" value="CellModel" />
+    <property name="package" value="CellModel.Indent" />
     <property name="name" value="AddNewLine" />
     <link role="forConcept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1237395176005">
@@ -2142,7 +2142,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1237395366590">
-    <property name="package" value="CellModel" />
+    <property name="package" value="CellModel.Indent" />
     <property name="name" value="AddIndent" />
     <link role="forConcept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1237395366591">
@@ -2264,7 +2264,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1237395444116">
-    <property name="package" value="CellModel" />
+    <property name="package" value="CellModel.Indent" />
     <property name="name" value="AddOnNewLine" />
     <link role="forConcept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1237395444117">
@@ -2379,6 +2379,147 @@
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1237395444171" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1237395444172" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1237403857170">
+    <property name="package" value="CellModel.Indent" />
+    <property name="name" value="RemoveIndent" />
+    <link role="forConcept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1237403857171">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237403857172">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237403874931">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237403874932">
+            <property name="value" value="Remove Indent" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1237403857173">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237403857174">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237403929477">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237403986851">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237403983126">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237403929573">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1237403929478" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237403935327">
+                  <link role="baseMethodDeclaration" targetNodeId="4.1219419901278" resolveInfo="getClassItems" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1237403972625">
+                    <link role="conceptDeclaration" targetNodeId="1.1237307900041" resolveInfo="IndentLayoutIndentStyleClassItem" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1237403986052" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" id="1237403987950" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1237403878589">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237403878590">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237403880107">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237403901602">
+            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1237403880108" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237403904668">
+              <link role="baseMethodDeclaration" targetNodeId="4.1237383418148" resolveInfo="isIndent" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1237403993138">
+    <property name="package" value="CellModel.Indent" />
+    <property name="name" value="RemoveNewLine" />
+    <link role="forConcept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1237403993139">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237403993140">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237403993141">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237403993142">
+            <property name="value" value="Remove New Line" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1237403993143">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237403993144">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237403993145">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237403993146">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237403993147">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237403993148">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1237403993149" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237403993150">
+                  <link role="baseMethodDeclaration" targetNodeId="4.1219419901278" resolveInfo="getClassItems" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1237403993151">
+                    <link role="conceptDeclaration" targetNodeId="1.1237308012275" resolveInfo="IndentLayoutNewLineStyleClassItem" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1237403993152" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" id="1237403993153" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1237403993154">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237403993155">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237403993156">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237403993157">
+            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1237403993158" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237404007099">
+              <link role="baseMethodDeclaration" targetNodeId="4.1237383076236" resolveInfo="isNewLine" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1237404019413">
+    <property name="package" value="CellModel.Indent" />
+    <property name="name" value="RemoveOnNewLine" />
+    <link role="forConcept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1237404019414">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237404019415">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237404019416">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237404019417">
+            <property name="value" value="Remove On New Line" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1237404019418">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237404019419">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237404019420">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237404019421">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237404019422">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237404019423">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1237404019424" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237404019425">
+                  <link role="baseMethodDeclaration" targetNodeId="4.1219419901278" resolveInfo="getClassItems" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1237404019426">
+                    <link role="conceptDeclaration" targetNodeId="1.1237385578942" resolveInfo="IndentLayoutOnNewLineStyleClassItem" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1237404019427" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" id="1237404019428" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1237404019429">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237404019430">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237404019431">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237404019432">
+            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1237404019433" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237404033499">
+              <link role="baseMethodDeclaration" targetNodeId="4.1237385424172" resolveInfo="isOnNewLine" />
             </node>
           </node>
         </node>
