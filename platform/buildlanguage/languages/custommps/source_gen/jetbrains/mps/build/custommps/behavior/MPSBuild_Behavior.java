@@ -15,7 +15,7 @@ public class MPSBuild_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static String virtual_getChildrenTargetDir_1213877279370(SNode thisNode) {
+  public static String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
     return AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode).getPath();
   }
 

@@ -58,7 +58,7 @@
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233155913966">
       <property name="name" value="getChildrenTargetDir" />
-      <link role="overriddenMethod" targetNodeId="2v.1213877279370" resolveInfo="getChildrenTargetDir" />
+      <link role="overriddenMethod" targetNodeId="2v.1237389224202" resolveInfo="getChildrenTargetDir" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233155913968">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233155998228">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233156009461">
