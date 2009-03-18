@@ -16,10 +16,7 @@
   </target>
   <target name="folders.create" depends="clean.before">
     <mkdir dir="${deploy.dir}" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/bin" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/beansbinding" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/alloy" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/ant-1.7.0" />
@@ -48,26 +45,29 @@
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/yjp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/httpclient" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/idea-patch.jar.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp/idea" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp/build-helpers.repack.sources" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp/build-helpers.repack.sources/core" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp/build-helpers.repack.sources/platform" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp/build-helpers.repack.sources/plugin" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp/build-helpers.repack.sources/resources" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp/build-helpers.repack.sources/workbench" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp/build-helpers.repack.sources" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib/MPS-src.zip.tmp" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/lib" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/license" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/plugins" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/samples" />
-    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/baseLanguage" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/platform" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/plugin" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/workbench" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/build-helpers.append.idea.version" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS" />
+    <mkdir dir="${deploy.dir}/build-helpers.distrib" />
     <mkdir dir="${deploy.dir}/debug" />
     <mkdir dir="${deploy.dir}/build-helpers.pack.mps.src" />
   </target>
@@ -279,6 +279,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.textGen0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationContext0" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/languageDesign" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core" />
