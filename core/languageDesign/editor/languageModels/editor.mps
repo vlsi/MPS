@@ -431,6 +431,18 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237385191476">
             <property name="flag" value="true" />
+            <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean" id="1237394667554">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237394667555">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237394707151">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237394708684">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237394707152" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237394710672">
+                      <link role="property" targetNodeId="2.1073389446425" resolveInfo="vertical" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1237380444287">
@@ -452,9 +464,33 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem" id="1237385843238">
             <property name="flag" value="true" />
+            <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean" id="1237394736502">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237394736503">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237394737957">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237394738100">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237394737958" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237394738916">
+                      <link role="property" targetNodeId="2.1073389446425" resolveInfo="vertical" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237384850217">
             <property name="flag" value="true" />
+            <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean" id="1237394740933">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237394740934">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237394742216">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237394742671">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237394742217" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237394744081">
+                      <link role="property" targetNodeId="2.1073389446425" resolveInfo="vertical" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237380372854">

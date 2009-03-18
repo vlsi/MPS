@@ -1192,6 +1192,28 @@
       <property name="name" value="getOpeningText" />
       <link role="overriddenMethod" targetNodeId="1220339714057" resolveInfo="getOpeningText" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220340017253">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237394379051">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237394379052">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237394393850">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237394394617">
+                <property name="value" value="(-" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237394388405">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237394385963">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1237394385337" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237394387529">
+                <link role="link" targetNodeId="1.1140524464360" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237394390097">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237394392849">
+                <link role="conceptDeclaration" targetNodeId="1.1237303669825" resolveInfo="CellLayout_Indent2" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1220340019726">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220340020087">
             <property name="value" value="(&gt;" />
@@ -1207,6 +1229,28 @@
       <property name="name" value="getClosingText" />
       <link role="overriddenMethod" targetNodeId="1220339738643" resolveInfo="getClosingText" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220340023200">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237394398604">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237394398605">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237394398606">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237394398607">
+                <property name="value" value="-)" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237394398608">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237394398609">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1237394398610" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237394398611">
+                <link role="link" targetNodeId="1.1140524464360" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237394398612">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237394398613">
+                <link role="conceptDeclaration" targetNodeId="1.1237303669825" resolveInfo="CellLayout_Indent2" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1220340025907">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220340026269">
             <property name="value" value="&lt;)" />

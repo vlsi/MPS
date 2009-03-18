@@ -27,6 +27,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -916,7 +917,19 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.MATCHING_LABEL, "collection");
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Collection_Editor._StyleParameter_QueryFunction_1237394667554((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
+            }
+
+          });
         }
 
       };
@@ -930,8 +943,32 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.MATCHING_LABEL, "collection");
-          this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Collection_Editor._StyleParameter_QueryFunction_1237394736502((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
+            }
+
+          });
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Collection_Editor._StyleParameter_QueryFunction_1237394740933((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
+            }
+
+          });
         }
 
       };
@@ -1002,6 +1039,18 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   public static Color _StyleParameter_QueryFunction_1214396913654(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1237394667554(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getBoolean(node, "vertical");
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1237394736502(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getBoolean(node, "vertical");
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1237394740933(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getBoolean(node, "vertical");
   }
 
   public static class childCellModelListHandler_2102_0 extends RefNodeListHandler {
