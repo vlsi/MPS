@@ -3380,6 +3380,42 @@
                                 </node>
                               </node>
                             </node>
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237374186659">
+                              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237374186660">
+                                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237374197921">
+                                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237374202939">
+                                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1237374202940">
+                                      <link role="concept" targetNodeId="10.1212685548494" resolveInfo="ClassCreator" />
+                                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237374202941">
+                                        <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1237374202942">
+                                          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237374202943">
+                                            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1237374208212">
+                                              <link role="baseMethodDeclaration" targetNodeId="66.~CellLayout_Indent2.&lt;init&gt;()" resolveInfo="CellLayout_Indent2" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237374202945">
+                                          <link role="link" targetNodeId="10.1145553007750" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237374202946">
+                                      <link role="link" targetNodeId="10.1212686240295" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237374190273">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237374188069">
+                                  <link role="variableDeclaration" targetNodeId="1197580159994" resolveInfo="cellLayout" />
+                                </node>
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237374193449">
+                                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237374196248">
+                                    <link role="conceptDeclaration" targetNodeId="38.1237303669825" resolveInfo="CellLayout_Indent2" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1197580527203">
                               <property name="value" value="error" />
                             </node>

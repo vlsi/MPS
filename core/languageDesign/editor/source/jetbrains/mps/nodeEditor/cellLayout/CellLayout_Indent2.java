@@ -138,6 +138,9 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
       while (current != myCell) {
         if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) return true;
 
+        if (current.getParent() != null &&
+          current.getParent().getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) return true;
+
         if (current.isLastChild()) {
           current = current.getParent();
         } else {
