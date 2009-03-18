@@ -24,10 +24,11 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Color;
-import java.awt.Shape;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
+import java.awt.image.WritableRaster;
+import java.awt.geom.Rectangle2D;
 
 public class CellLayout_Indent2 extends AbstractCellLayout {
   public void doLayout(EditorCell_Collection editorCells) {
@@ -44,16 +45,41 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
 
   @Override
   public void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c) {
-    g.setColor(c);
-    
-    for (EditorCell leaf : getIndentLeafs(editorCells)) {
-      g.fillRect(leaf.getX(), leaf.getY(), leaf.getWidth(), leaf.getHeight());
+    BufferedImage image = new BufferedImage(editorCells.getWidth() + 2, editorCells.getHeight() + 2, BufferedImage.TYPE_INT_ARGB);
+    Graphics gr = image.getGraphics();
+    gr.setColor(new Color(255, 255, 255, 0));
+
+    int x0 = editorCells.getX();
+    int y0 = editorCells.getY();
+
+    gr.setColor(c);
+    List<EditorCell> indentLeafs = getIndentLeafs(editorCells);
+    for (EditorCell leaf : indentLeafs) {
+      gr.fillRect(leaf.getX() - x0 + 1, leaf.getY() - y0 + 1, leaf.getWidth(), leaf.getHeight());
     }
 
-    g.setColor(c.darker());
-    for (EditorCell leaf : getIndentLeafs(editorCells)) {
-      g.drawRect(leaf.getX(), leaf.getY(), leaf.getWidth(), leaf.getHeight());
+    Color darkerColor = c.darker();
+    gr.setColor(darkerColor);
+    int[] color = { darkerColor.getRed(),  darkerColor.getGreen(), darkerColor.getBlue(), 255};
+    for (int x = 1; x < image.getWidth() - 1; x++) {
+      for (int y = 1; y < image.getHeight() - 1; y++) {
+        WritableRaster raster = image.getRaster();
+        int[] curPix = raster.getPixel(x, y, (int[]) null);
+
+        if (curPix[3] == 0) continue;
+
+        int[] upPix = raster.getPixel(x, y - 1, (int[]) null);
+        int[] downPix = raster.getPixel(x, y + 1, (int[]) null);
+        int[] leftPix = raster.getPixel(x - 1, y, (int[]) null);
+        int[] rightPix = raster.getPixel(x + 1, y, (int[]) null);
+
+        if (upPix[3] == 0 || downPix[3] == 0 || leftPix[3] == 0 || rightPix[3] == 0) {
+          raster.setPixel(x, y, color);
+        }        
+      }
     }
+
+    g.drawImage(image, x0 - 1, y0 - 1, null);    
   }
 
   private List<EditorCell> getIndentLeafs(EditorCell_Collection current) {
