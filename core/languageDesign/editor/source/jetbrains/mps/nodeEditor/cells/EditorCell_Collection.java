@@ -682,6 +682,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public void onRemove() {
+    if (myLastCellSelectionListener != null) {
+      removeBraces();
+    }
     for (EditorCell child : myEditorCells) {
       ((EditorCell_Basic) child).onRemove();
     }

@@ -917,6 +917,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myNodeSubstituteChooser != null) {
       myNodeSubstituteChooser.dispose();
     }
+    ((EditorCell_Basic)myRootCell).onRemove();
   }
 
   private void addOurListeners(SModelDescriptor sm) {
