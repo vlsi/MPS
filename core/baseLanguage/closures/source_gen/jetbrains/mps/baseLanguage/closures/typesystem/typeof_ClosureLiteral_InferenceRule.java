@@ -92,8 +92,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
                 ListSequence.fromList(allStmts).addElement(cstmt);
               }
             }
-          } else
-          {
+          } else if (!(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
             ListSequence.fromList(allChildren).addSequence(ListSequence.fromList(SNodeOperations.getChildren(c)));
           }
         }
