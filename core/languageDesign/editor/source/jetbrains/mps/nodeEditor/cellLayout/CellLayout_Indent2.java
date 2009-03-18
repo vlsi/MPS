@@ -85,12 +85,6 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
       collectCollections(myCell, collections);
 
       for (EditorCell_Collection collection : collections) {
-
-        if (collection.getChildCount() == 0) {
-          //todo hack
-          continue;
-        }
-
         EditorCell firstChild = collection.getChildAt(0);
 
         int x0 = firstChild.getX();
@@ -116,6 +110,8 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
       if (myLineEmpty) {
         myLineWidth += getIndent(cell) * getIndentWidth(); 
         myLineEmpty = false;
+      } else {
+        cell.setLeftGap(getSpacesWidth(1));
       }
 
       cell.setX(myX + myLineWidth);
@@ -137,17 +133,33 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
     }
 
     private boolean isNewLineAfter(EditorCell cell) {
-      return cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE);
+      EditorCell current = cell;
+
+      while (current != myCell) {
+        if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) return true;
+
+        if (current.isLastChild()) {
+          current = current.getParent();
+        } else {
+          return false;
+        }
+      }
+
+      return false;
     }
 
-    private int getIndentWidth() {
+    private int getSpacesWidth(int size) {
       String indentText = "";
-      for (int i = 0; i < EditorSettings.getInstance().getIndentSize(); i++) {
+      for (int i = 0; i < size; i++) {
         indentText += " ";
       }
       TextLine textLine = new TextLine(indentText);
       textLine.relayout();
       return textLine.getWidth();
+    }
+
+    private int getIndentWidth() {
+      return getSpacesWidth(EditorSettings.getInstance().getIndentSize());
     }
 
     private int getIndent(EditorCell cell) {
@@ -168,7 +180,7 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
       for (EditorCell child : current) {
         if (child instanceof EditorCell_Collection) {
           EditorCell_Collection collection = (EditorCell_Collection) child;
-          if (collection.getCellLayout() instanceof CellLayout_Indent2) {
+          if (isIndentCollection(collection)) {
             collectFrontier(collection, frontier);
           } else {
             frontier.add(child);
@@ -183,13 +195,17 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
       for (EditorCell child : current) {
         if (child instanceof EditorCell_Collection) {
           EditorCell_Collection collection = (EditorCell_Collection) child;
-          if (collection.getCellLayout() instanceof CellLayout_Indent2) {
+          if (isIndentCollection(collection)) {
             collectCollections(collection, result);
           } 
         } 
       }
 
       result.add(current);
+    }
+
+    private boolean isIndentCollection(EditorCell_Collection collection) {
+      return collection.getCellLayout() instanceof CellLayout_Indent2 && collection.getChildCount() > 0;
     }
   }
 }

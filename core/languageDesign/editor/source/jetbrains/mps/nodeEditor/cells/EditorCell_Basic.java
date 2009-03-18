@@ -930,6 +930,14 @@ public abstract class EditorCell_Basic implements EditorCell {
     return false;
   }
 
+  public boolean isLastChild() {
+    return getNextSibling() == null && getParent() != null;
+  }
+
+  public boolean isFirstChild() {
+    return getPrevSibling() == null && getParent() != null;
+  }
+
   public boolean isOnLeftBoundary() {
     return getPrevLeaf() == null || getPrevLeaf().getSNode() != getSNode();
   }
