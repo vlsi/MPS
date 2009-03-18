@@ -27,6 +27,49 @@ import java.util.ArrayList;
 import java.awt.Font;
 
 public class CellLayout_Indent2 extends AbstractCellLayout {
+  public List<EditorCell> getIndentLeafs(EditorCell_Collection current) {
+    List<EditorCell> result = new ArrayList<EditorCell>();
+    collectFrontier(current, result);    
+    return result;
+  }
+
+  public List<EditorCell_Collection> getInternalIndentCollections(EditorCell_Collection current) {
+    List<EditorCell_Collection> result = new ArrayList<EditorCell_Collection>();
+    collectCollections(current, result);
+    return result;
+  }
+
+  private static void collectFrontier(EditorCell_Collection current, List<EditorCell> frontier) {
+    for (EditorCell child : current) {
+      if (child instanceof EditorCell_Collection) {
+        EditorCell_Collection collection = (EditorCell_Collection) child;
+        if (isIndentCollection(collection)) {
+          collectFrontier(collection, frontier);
+        } else {
+          frontier.add(child);
+        }
+      } else {
+        frontier.add(child);
+      }
+    }
+  }
+
+  private void collectCollections(EditorCell_Collection current, List<EditorCell_Collection> result) {
+    for (EditorCell child : current) {
+      if (child instanceof EditorCell_Collection) {
+        EditorCell_Collection collection = (EditorCell_Collection) child;
+        if (isIndentCollection(collection)) {
+          collectCollections(collection, result);
+        }
+      }
+    }
+
+    result.add(current);
+  }
+
+  private static boolean isIndentCollection(EditorCell_Collection collection) {
+    return collection.getCellLayout() instanceof CellLayout_Indent2 && collection.getChildCount() > 0;
+  }
 
   public void doLayout(EditorCell_Collection editorCells) {
     if (editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent2) {
@@ -75,8 +118,7 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
     }
 
     private void layoutLeafs() {
-      List<EditorCell> frontier = new ArrayList<EditorCell>();
-      collectFrontier(myCell, frontier);
+      List<EditorCell> frontier = getIndentLeafs(myCell);
       for (EditorCell cell : frontier) {
         if (isOnNewLine(cell)) {
           newLine();
@@ -92,8 +134,7 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
     }
 
     private void fixupCollections() {
-      List<EditorCell_Collection> collections = new ArrayList<EditorCell_Collection>();
-      collectCollections(myCell, collections);
+      List<EditorCell_Collection> collections = getInternalIndentCollections(myCell);
 
       for (EditorCell_Collection collection : collections) {
         EditorCell firstChild = collection.getChildAt(0);
@@ -222,38 +263,6 @@ public class CellLayout_Indent2 extends AbstractCellLayout {
       }
 
       return result;
-    }
-
-    private void collectFrontier(EditorCell_Collection current, List<EditorCell> frontier) {
-      for (EditorCell child : current) {
-        if (child instanceof EditorCell_Collection) {
-          EditorCell_Collection collection = (EditorCell_Collection) child;
-          if (isIndentCollection(collection)) {
-            collectFrontier(collection, frontier);
-          } else {
-            frontier.add(child);
-          }
-        } else {
-          frontier.add(child);
-        }
-      }
-    }
-
-    private void collectCollections(EditorCell_Collection current, List<EditorCell_Collection> result) {
-      for (EditorCell child : current) {
-        if (child instanceof EditorCell_Collection) {
-          EditorCell_Collection collection = (EditorCell_Collection) child;
-          if (isIndentCollection(collection)) {
-            collectCollections(collection, result);
-          } 
-        } 
-      }
-
-      result.add(current);
-    }
-
-    private boolean isIndentCollection(EditorCell_Collection collection) {
-      return collection.getCellLayout() instanceof CellLayout_Indent2 && collection.getChildCount() > 0;
     }
   }
 }
