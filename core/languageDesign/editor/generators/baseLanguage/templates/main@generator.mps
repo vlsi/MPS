@@ -22,7 +22,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
@@ -57,7 +57,7 @@
   <import index="25" modelUID="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" version="-1" />
   <import index="28" modelUID="f:java_stub#jetbrains.mps.smodel.action(jetbrains.mps.smodel.action@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
-  <import index="38" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="30" />
+  <import index="38" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <import index="45" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="46" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="47" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
@@ -3389,8 +3389,8 @@
                                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237374202941">
                                         <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1237374202942">
                                           <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237374202943">
-                                            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1237374208212">
-                                              <link role="baseMethodDeclaration" targetNodeId="66.~CellLayout_Indent2.&lt;init&gt;()" resolveInfo="CellLayout_Indent2" />
+                                            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1237396177800">
+                                              <link role="baseMethodDeclaration" targetNodeId="66.~CellLayout_Indent.&lt;init&gt;()" resolveInfo="CellLayout_Indent" />
                                             </node>
                                           </node>
                                         </node>

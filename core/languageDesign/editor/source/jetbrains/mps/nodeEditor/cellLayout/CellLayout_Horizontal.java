@@ -19,14 +19,6 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.nodeEditor.EditorSettings;
-
-import java.awt.FontMetrics;
-import java.awt.Toolkit;
-import java.awt.Font;
 
 /**
  * User: Sergey Dmitriev
@@ -35,8 +27,8 @@ import java.awt.Font;
 public class CellLayout_Horizontal extends AbstractCellLayout {
 
   public void doLayout(EditorCell_Collection editorCells) {
-    if (CellLayout_Indent.DO_INDENT_EVERYWHERE) {
-      CellLayout_Indent._doLayout(editorCells);
+    if (CellLayout_Indent_Old.DO_INDENT_EVERYWHERE) {
+      CellLayout_Indent_Old._doLayout(editorCells);
       return;
     }
 

@@ -30,7 +30,7 @@ public class AddIndent_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return (SNodeOperations.getParent(node) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.getParent(node), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent2") && !(EditorCellModel_Behavior.call_isIndent_1237383418148(node));
+    return (SNodeOperations.getParent(node) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.getParent(node), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent") && !(EditorCellModel_Behavior.call_isIndent_1237383418148(node));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

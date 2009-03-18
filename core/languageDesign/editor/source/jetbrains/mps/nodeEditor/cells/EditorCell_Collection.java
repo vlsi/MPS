@@ -83,7 +83,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public static EditorCell_Collection createIndent2(EditorContext editorContext, SNode node) {
-    return new EditorCell_Collection(editorContext, node, new CellLayout_Indent2(), null);
+    return new EditorCell_Collection(editorContext, node, new CellLayout_Indent(), null);
   }
 
   @SuppressWarnings({"UnusedDeclaration"})

@@ -43,7 +43,7 @@ public class CellModel_Collection_Behavior {
   }
 
   public static boolean call_isIndent_1237380273398(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent2");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
   }
 
 }

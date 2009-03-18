@@ -42,8 +42,8 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   }
 
   public void doLayout(EditorCell_Collection editorCells) {
-    if(CellLayout_Indent.DO_INDENT_EVERYWHERE) {
-      CellLayout_Indent._doLayout(editorCells);
+    if(CellLayout_Indent_Old.DO_INDENT_EVERYWHERE) {
+      CellLayout_Indent_Old._doLayout(editorCells);
       return;
     }
 

@@ -18,14 +18,14 @@ public class CellModel_RefNodeList_Behavior {
   }
 
   public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent2")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) {
       return "(-";
     }
     return "(>";
   }
 
   public static String virtual_getClosingText_1220339738643(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent2")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) {
       return "-)";
     }
     return "<)";

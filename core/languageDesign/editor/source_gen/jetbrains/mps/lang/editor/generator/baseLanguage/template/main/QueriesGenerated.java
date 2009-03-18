@@ -882,7 +882,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Flow")) {
       return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_8().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
-    if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Indent2")) {
+    if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) {
       return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_9().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
     // error
@@ -1064,7 +1064,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Flow")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_14().createNode(), "baseMethodDeclaration", false);
     }
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent2")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_15().createNode(), "baseMethodDeclaration", false);
     }
     // default

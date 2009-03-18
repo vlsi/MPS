@@ -113,6 +113,6 @@ class PunctuationUtil {
   }
 
   private static boolean hasPunctuableLayout(EditorCell_Collection collection) {
-    return collection.getCellLayout() instanceof CellLayout_Horizontal || collection.getCellLayout() instanceof CellLayout_Indent2;
+    return collection.getCellLayout() instanceof CellLayout_Horizontal || collection.getCellLayout() instanceof CellLayout_Indent;
   }
 }
