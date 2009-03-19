@@ -29,6 +29,23 @@ import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
 
 public class CellLayout_Indent extends AbstractCellLayout {
+  static boolean isOnNewLine(EditorCell cell, EditorCell layoutedCell) {
+    EditorCell current = cell;
+
+    while (current != layoutedCell) {
+      if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) return true;
+
+      if (current.isFirstChild()) {
+        current = current.getParent();
+      } else {
+        return false;
+      }
+    }
+
+    return false;
+  }
+
+
   public void doLayout(EditorCell_Collection editorCells) {
     if (editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent) {
       return;
@@ -228,7 +245,6 @@ public class CellLayout_Indent extends AbstractCellLayout {
       return false;
     }
 
-
     private int getSpacesWidth(int size) {
       String indentText = "";
       for (int i = 0; i < size; i++) {
@@ -256,21 +272,5 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
       return result;
     }
-  }
-
-  static public boolean isOnNewLine(EditorCell cell, EditorCell layoutedCell) {
-    EditorCell current = cell;
-
-    while (current != layoutedCell) {
-      if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) return true;
-
-      if (current.isFirstChild()) {
-        current = current.getParent();
-      } else {
-        return false;
-      }
-    }
-
-    return false;
   }
 }
