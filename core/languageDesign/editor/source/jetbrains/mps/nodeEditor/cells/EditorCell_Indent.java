@@ -31,6 +31,8 @@ public class EditorCell_Indent extends EditorCell_Label {
 
     getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
     getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
+    getStyle().set(StyleAttributes.PUNCTUATION_RIGTH, true);
+    getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
   }
 
   private static String getIndentText() {
