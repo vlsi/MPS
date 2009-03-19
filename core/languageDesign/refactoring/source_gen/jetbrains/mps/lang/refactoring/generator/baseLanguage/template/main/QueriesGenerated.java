@@ -128,6 +128,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "affectedNodesClause", true) != null);
   }
 
+  public static Object propertyMacro_GetPropertyValue_1201178032543(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1210941980901(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "refactorImmediatelyIfNoUsages");
   }
@@ -160,10 +164,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1217265953059(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "argument", false), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1237404079932(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object referenceMacro_GetReferent_1200935757745(final IOperationContext operationContext, final ReferenceMacroContext _context) {
