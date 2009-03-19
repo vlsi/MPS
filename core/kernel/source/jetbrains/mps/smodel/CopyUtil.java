@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -128,7 +131,12 @@ public final class CopyUtil {
               staticReference.getResolveInfo()));
           }
         } else if (mapping.containsKey(inputTargetNode)) {
-          outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode), false);
+          LinkDeclaration linkDeclaration = new ConceptAndSuperConceptsScope(inputNode.getConceptDeclarationAdapter()).getLinkDeclarationByRole(ref.getRole());
+          if (linkDeclaration != null && linkDeclaration.getOuter()) {
+            outputNode.setReferent(ref.getRole(), inputTargetNode, false);
+          } else {
+            outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode), false);
+          }
         } else {
           outputNode.setReferent(ref.getRole(), inputTargetNode, false);
         }

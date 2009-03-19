@@ -5,6 +5,7 @@
   <language namespace="3fe6ec39-7405-4314-abfd-5964c9c40e6b(jetbrains.mpslite)" />
   <language namespace="0452c5e6-046a-41b1-a1c2-bfa47ef3ae0b(jetbrains.mps.nanoj)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905dc(jetbrains.mps.nanoj.constraints)" version="45" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -17,6 +18,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <maxImportIndex value="3" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895905e1(jetbrains.mpslite.nanoj)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895905e2(jetbrains.mpslite.sandbox)" version="-1" />
@@ -135,13 +140,78 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237467860506">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237467860507">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.TupleType" id="1237467860508">
+              <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237467866381">
+                <link role="declaration" targetNodeId="1237467866381" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1237467866382" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237462029853">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237465985262">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237462029854">
               <link role="variableDeclaration" targetNodeId="1237461993882" resolveInfo="d" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation" id="1237465996039">
-              <link role="member" targetNodeId="3.1237465851435" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation" id="1237468977163">
+              <link role="member" targetNodeId="1237462012767" resolveInfo="isntgr" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237468991519">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237468991520">
+            <property name="name" value="seq" />
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1237468991521">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.TupleType" id="1237468994308">
+                <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237468996311">
+                  <property name="name" value="st1" />
+                  <link role="declaration" targetNodeId="1237468996311" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237468998991" />
+                </node>
+                <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237469003594">
+                  <property name="name" value="int1" />
+                  <link role="declaration" targetNodeId="1237469003594" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1237469004708" />
+                </node>
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237469017850">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" id="1237469017851">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.TupleType" id="1237469017852">
+                  <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237469017853">
+                    <property name="name" value="st1" />
+                    <link role="declaration" targetNodeId="1237468996311" resolveInfo="st1" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237469017854" />
+                  </node>
+                  <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237469017855">
+                    <property name="name" value="int1" />
+                    <link role="declaration" targetNodeId="1237469003594" resolveInfo="int1" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1237469017856" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1237469046183">
+          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1237469046184">
+            <property name="name" value="el" />
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237469052242">
+            <link role="variableDeclaration" targetNodeId="1237468991520" resolveInfo="seq" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237469046186">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237469053668">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237469054017">
+                <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1237469053669">
+                  <link role="variable" targetNodeId="1237469046184" resolveInfo="el" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation" id="1237469056835">
+                  <link role="member" targetNodeId="1237469003594" resolveInfo="int1" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
