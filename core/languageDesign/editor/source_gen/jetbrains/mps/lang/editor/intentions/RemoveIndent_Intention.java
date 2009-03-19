@@ -30,7 +30,7 @@ public class RemoveIndent_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_isIndent_1237383418148(node);
+    return EditorCellModel_Behavior.call_isIndented_1237383418148(node);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

@@ -15,7 +15,7 @@ public class CellModel_Collection_Behavior {
   public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
     if (CellModel_Collection_Behavior.call_isVertical_1237380214915(thisNode)) {
       return "[/";
-    } else if (CellModel_Collection_Behavior.call_isIndent_1237380273398(thisNode)) {
+    } else if (CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(thisNode)) {
       return "[-";
     } else
     {
@@ -26,7 +26,7 @@ public class CellModel_Collection_Behavior {
   public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     if (CellModel_Collection_Behavior.call_isVertical_1237380214915(thisNode)) {
       return "/]";
-    } else if (CellModel_Collection_Behavior.call_isIndent_1237380273398(thisNode)) {
+    } else if (CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(thisNode)) {
       return "-]";
     } else
     {
@@ -42,8 +42,23 @@ public class CellModel_Collection_Behavior {
     return !(SPropertyOperations.getBoolean(thisNode, "vertical")) && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null);
   }
 
-  public static boolean call_isIndent_1237380273398(SNode thisNode) {
+  public static boolean call_isIndentLayout_1237380273398(SNode thisNode) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
+  }
+
+  public static boolean call_isVerticalIndent_1237451001939(SNode thisNode) {
+    if (!(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(thisNode))) {
+      return false;
+    }
+    for(SNode model : SLinkOperations.getTargets(thisNode, "childCellModel", true)) {
+      if (EditorCellModel_Behavior.call_isNewLine_1237383076236(model) || EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(model) || EditorCellModel_Behavior.call_isOnNewLine_1237385424172(model)) {
+        return true;
+      }
+      if (SNodeOperations.isInstanceOf(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection") && CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(model)) {
+        return true;
+      }
+    }
+    return false;
   }
 
 }

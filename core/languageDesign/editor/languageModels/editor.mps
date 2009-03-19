@@ -436,8 +436,8 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237394707151">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237394708684">
                     <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237394707152" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237394710672">
-                      <link role="property" targetNodeId="2.1073389446425" resolveInfo="vertical" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237451211633">
+                      <link role="baseMethodDeclaration" targetNodeId="30.1237451001939" resolveInfo="isVerticalIndent" />
                     </node>
                   </node>
                 </node>
@@ -484,8 +484,8 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237394742216">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237394742671">
                     <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237394742217" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237394744081">
-                      <link role="property" targetNodeId="2.1073389446425" resolveInfo="vertical" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237451217306">
+                      <link role="baseMethodDeclaration" targetNodeId="30.1237451001939" resolveInfo="isVerticalIndent" />
                     </node>
                   </node>
                 </node>

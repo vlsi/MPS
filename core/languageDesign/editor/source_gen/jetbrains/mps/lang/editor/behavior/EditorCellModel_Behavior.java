@@ -196,7 +196,7 @@ public class EditorCellModel_Behavior {
     return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem"), false);
   }
 
-  public static boolean call_isIndent_1237383418148(SNode thisNode) {
+  public static boolean call_isIndented_1237383418148(SNode thisNode) {
     return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"), false);
   }
 

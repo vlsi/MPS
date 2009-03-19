@@ -139,7 +139,7 @@ public class Styles_StyleSheet {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
-    return EditorCellModel_Behavior.call_isIndent_1237383418148(node);
+    return EditorCellModel_Behavior.call_isIndented_1237383418148(node);
   }
 
   public static boolean _StyleParameter_QueryFunction_1237384018255(SNode node, EditorContext editorContext) {

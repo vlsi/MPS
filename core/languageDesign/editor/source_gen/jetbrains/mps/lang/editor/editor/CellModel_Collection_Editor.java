@@ -1030,11 +1030,11 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition2102_1(SNode node, EditorContext editorContext, IScope scope) {
-    return !(CellModel_Collection_Behavior.call_isVertical_1237380214915(node)) && !(CellModel_Collection_Behavior.call_isIndent_1237380273398(node));
+    return !(CellModel_Collection_Behavior.call_isVertical_1237380214915(node)) && !(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(node));
   }
 
   public static boolean renderingCondition2102_2(SNode node, EditorContext editorContext, IScope scope) {
-    return CellModel_Collection_Behavior.call_isIndent_1237380273398(node);
+    return CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(node);
   }
 
   public static Color _StyleParameter_QueryFunction_1214396913654(SNode node, EditorContext editorContext) {
@@ -1042,7 +1042,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _StyleParameter_QueryFunction_1237394667554(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "vertical");
+    return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
   }
 
   public static boolean _StyleParameter_QueryFunction_1237394736502(SNode node, EditorContext editorContext) {
@@ -1050,7 +1050,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _StyleParameter_QueryFunction_1237394740933(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "vertical");
+    return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
   }
 
   public static class childCellModelListHandler_2102_0 extends RefNodeListHandler {
