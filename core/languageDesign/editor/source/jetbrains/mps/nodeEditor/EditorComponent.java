@@ -1495,7 +1495,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (newSelectedCell == null || !newSelectedCell.isSelectable()) {
       newSelectedCell = myRootCell.findCellWeak(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
     }
-    if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || !getSelectedCell().isAncestorOf(newSelectedCell))) {
+
+    EditorCell selectedCell = getSelectedCell();
+    if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || selectedCell == null || !selectedCell.isAncestorOf(newSelectedCell))) {
       changeSelection(newSelectedCell, true, false);
       mySelectedCell.processMousePressed(mouseEvent);
       revalidateAndRepaint(false);
