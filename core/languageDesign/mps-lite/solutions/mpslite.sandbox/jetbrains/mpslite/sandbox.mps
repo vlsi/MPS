@@ -17,8 +17,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" version="0" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895905e1(jetbrains.mpslite.nanoj)" version="-1" />
+  <import index="3" modelUID="r:00000000-0000-4000-0000-011c895905e2(jetbrains.mpslite.sandbox)" version="-1" />
   <node type="jetbrains.mpslite.structure.MPSLiteConceptTemplate" id="1237380763528">
     <property name="name" value="PlusExpression" />
     <node role="constantPlaceholder" type="jetbrains.mpslite.structure.ConstantTextPlaceholder" id="1237382014867">
@@ -106,18 +107,42 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.TupleType" id="1237461993883">
               <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237461997439">
                 <property name="name" value="str" />
+                <link role="declaration" targetNodeId="1237461997439" resolveInfo="str" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237462003235" />
               </node>
               <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237462012767">
-                <property name="name" value="intgr" />
+                <property name="name" value="isntgr" />
+                <link role="declaration" targetNodeId="1237462012767" resolveInfo="intgr" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1237462021887" />
               </node>
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237465873522">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237465873523">
+            <property name="name" value="ddd" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.TupleType" id="1237465873524">
+              <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237465911805">
+                <property name="name" value="ert" />
+                <link role="declaration" targetNodeId="1237465911805" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237465914226" />
+              </node>
+              <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237465917891">
+                <property name="name" value="ssdf" />
+                <link role="declaration" targetNodeId="1237465917891" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1237465920320" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237462029853">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237462029854">
-            <link role="variableDeclaration" targetNodeId="1237461993882" resolveInfo="d" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237465985262">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237462029854">
+              <link role="variableDeclaration" targetNodeId="1237461993882" resolveInfo="d" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation" id="1237465996039">
+              <link role="member" targetNodeId="3.1237465851435" />
+            </node>
           </node>
         </node>
       </node>

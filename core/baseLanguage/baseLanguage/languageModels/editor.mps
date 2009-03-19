@@ -15211,6 +15211,46 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1233824930842">
         <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237463638388">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237463638389">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237463752651">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1237463756500">
+                <node role="rightExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237463758995" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237463754141">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237463752652" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237463754489">
+                    <link role="link" targetNodeId="17.1237463591095" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1237463764117">
+        <link role="relationDeclaration" targetNodeId="17.1237463591095" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1237463764118">
+          <link role="conceptDeclaration" targetNodeId="17.1233824771431" resolveInfo="TupleMember" />
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1237463767534">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237463772376">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237463772377">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237463773727">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1237463776630">
+                <node role="rightExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237463779050" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237463773832">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237463773728" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237463775459">
+                    <link role="link" targetNodeId="17.1237463591095" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

@@ -17057,5 +17057,87 @@
       <link role="concept" targetNodeId="1.1236693300889" resolveInfo="VarVariableDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1237464941866">
+    <property name="package" value="tuples" />
+    <property name="name" value="check_TupleMemberHasDeclaration" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237464941867">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237465005116">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237465015126">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237465008041">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1237465006873">
+              <link role="applicableNode" targetNodeId="1237464963105" resolveInfo="tupleMember" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237465008773">
+              <link role="link" targetNodeId="1.1237463591095" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1237465017582" />
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237465005118">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1237465024194">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237465033499">
+              <property name="value" value="tuple member has no declaration" />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1237465063866">
+              <link role="applicableNode" targetNodeId="1237464963105" resolveInfo="tupleMember" />
+            </node>
+            <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1237465169132">
+              <link role="quickFix" targetNodeId="1237465079929" resolveInfo="SetReflexiveDeclarationForTupleMemeber" />
+              <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1237465171490">
+                <link role="quickFixArgument" targetNodeId="1237465101365" resolveInfo="tupleMember" />
+                <node role="value" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1237465176705">
+                  <link role="applicableNode" targetNodeId="1237464963105" resolveInfo="tupleMember" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1237464963105">
+      <property name="name" value="tupleMember" />
+      <link role="concept" targetNodeId="1.1233824771431" resolveInfo="TupleMember" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.HelginsQuickFix" id="1237465079929">
+    <property name="package" value="tuples" />
+    <property name="name" value="SetReflexiveDeclarationForTupleMemeber" />
+    <node role="quickFixArgument" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument" id="1237465101365">
+      <property name="name" value="tupleMember" />
+      <node role="argumentType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237465105040">
+        <link role="concept" targetNodeId="1.1233824771431" resolveInfo="TupleMember" />
+      </node>
+    </node>
+    <node role="executeBlock" type="jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock" id="1237465079930">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237465079931">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237465154856">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237465158407">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237465155775">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference" id="1237465154857">
+                <link role="quickFixArgument" targetNodeId="1237465101365" resolveInfo="tupleMember" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237465156722">
+                <link role="link" targetNodeId="1.1237463591095" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1237465159652">
+              <node role="linkTarget" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference" id="1237465162033">
+                <link role="quickFixArgument" targetNodeId="1237465101365" resolveInfo="tupleMember" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="descriptionBlock" type="jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock" id="1237465119362">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237465119363">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237465120614">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237465120615">
+            <property name="value" value="Set this tuple member as its declaration" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

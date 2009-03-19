@@ -1167,6 +1167,39 @@
         </node>
       </node>
     </node>
+    <node role="nodeFactory" type="jetbrains.mps.lang.actions.structure.NodeFactory" id="1237464783515">
+      <link role="applicableConcept" targetNodeId="1.1233824771431" resolveInfo="TupleMember" />
+      <node role="setupFunction" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction" id="1237464783516">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237464783517">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237464878996">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1237464888234">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1237464889508" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237464882673">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode" id="1237464880991" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237464887233">
+                  <link role="link" targetNodeId="1.1237463591095" />
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237464878998">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237464893066">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237464896065">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237464894146">
+                    <node role="operand" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode" id="1237464893067" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237464895122">
+                      <link role="link" targetNodeId="1.1237463591095" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1237464896454">
+                    <node role="linkTarget" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode" id="1237464899150" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1158872173903">
     <property name="name" value="ExpectedType_FactoryUtil" />

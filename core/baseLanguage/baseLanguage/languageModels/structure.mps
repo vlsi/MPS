@@ -3157,6 +3157,13 @@
     <property name="package" value="tuples" />
     <property name="name" value="TupleMember" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237463591095">
+      <property name="metaClass" value="reference" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="declaration" />
+      <property name="outer" value="true" />
+      <link role="target" targetNodeId="1233824771431" resolveInfo="TupleMember" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233824783104">
       <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
     </node>
