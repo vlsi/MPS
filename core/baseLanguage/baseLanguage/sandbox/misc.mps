@@ -81,6 +81,12 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1236001911793" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1236001911794" />
     </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1237385313865">
+      <property name="name" value="v" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237385313866" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237385313867" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237385313868" />
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1227257098731">
       <property name="name" value="foo" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227257098732" />
@@ -139,6 +145,19 @@
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1236783761389" />
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236781602744">
               <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237385299286">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1237385300652">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237385304838">
+              <property name="value" value="" />
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1237385333993">
+              <link role="baseMethodDeclaration" targetNodeId="1237385313865" resolveInfo="v" />
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237385299287">
+              <property name="value" value="true" />
             </node>
           </node>
         </node>

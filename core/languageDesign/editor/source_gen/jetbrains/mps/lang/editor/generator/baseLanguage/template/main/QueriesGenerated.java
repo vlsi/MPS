@@ -590,7 +590,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1216382671690(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context);
+    return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context) + "_internal";
   }
 
   public static Object propertyMacro_GetPropertyValue_1216382671770(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -683,6 +683,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1236443229834(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "label");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1237452593754(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "property", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1237452593897(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context);
   }
 
   public static Object referenceMacro_GetReferent_1176478910892(final IOperationContext operationContext, final ReferenceMacroContext _context) {
