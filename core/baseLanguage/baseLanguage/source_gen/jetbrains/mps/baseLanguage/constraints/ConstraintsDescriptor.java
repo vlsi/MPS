@@ -44,6 +44,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new FieldReferenceOperation_fieldDeclaration_ReferentConstraint());
     this.myConstraints.add(new TupleMemberAccessOperation_member_ReferentConstraint());
     this.myConstraints.add(new VarVariableReference_declaration_ReferentConstraint());
+    this.myConstraints.add(new TupleMember_declaration_ReferentConstraint());
     this.myConstraints.add(new Annotation_DefaultSearchScope());
     this.myConstraints.add(new Classifier_DefaultSearchScope());
     this.myConstraints.add(new Interface_DefaultSearchScope());

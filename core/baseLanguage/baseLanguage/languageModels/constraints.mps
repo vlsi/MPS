@@ -2267,5 +2267,60 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1237466604817">
+    <property name="package" value="tuples" />
+    <link role="concept" targetNodeId="1.1233824771431" resolveInfo="TupleMember" />
+    <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1237466611275">
+      <link role="applicableLink" targetNodeId="1.1237463591095" />
+      <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1237466613144">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237466613145">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237466622521">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237466622522">
+              <property name="name" value="result" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1237466622523" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237466630586">
+                <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="1237466630587">
+                  <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1237466630588" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237466636964">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237466636965">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237466654097">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237466655191">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237466654098">
+                    <link role="variableDeclaration" targetNodeId="1237466622522" resolveInfo="result" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1237466656668">
+                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237466658761">
+                      <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" id="1237466658301" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237466659515">
+                        <link role="link" targetNodeId="1.1237463591095" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237466646547">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237466644802">
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" id="1237466641458" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237466645773">
+                  <link role="link" targetNodeId="1.1237463591095" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1237466648373" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237466665023">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237466666318">
+              <link role="variableDeclaration" targetNodeId="1237466622522" resolveInfo="result" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
