@@ -145,7 +145,13 @@ public class Styles_StyleSheet {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
-    return EditorCellModel_Behavior.call_isNewLine_1237383076236(node) || EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(node);
+    if (EditorCellModel_Behavior.call_isNewLine_1237383076236(node)) {
+      return true;
+    }
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
+      return EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(SNodeOperations.getParent(node));
+    }
+    return false;
   }
 
   public static boolean _StyleParameter_QueryFunction_1237385537795(SNode node, EditorContext editorContext) {

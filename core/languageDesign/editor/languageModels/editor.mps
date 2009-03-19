@@ -6737,26 +6737,56 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237480693865">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237480693866">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237480703453">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237480704735">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237480700291">
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1237480700292">
+                  <link role="concept" targetNodeId="2.1073389214265" resolveInfo="EditorCellModel" />
+                  <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237480700293" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237480700294">
+                  <link role="baseMethodDeclaration" targetNodeId="30.1237383076236" resolveInfo="isNewLine" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237480916248">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237480916249">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237480937457">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237480944953">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1237480944954">
+                      <link role="concept" targetNodeId="2.1073389214265" resolveInfo="EditorCellModel" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237480947925">
+                        <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237480944955" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1237480948610" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237480960486">
+                      <link role="baseMethodDeclaration" targetNodeId="30.1237383562600" resolveInfo="isNewLineChildren" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237480922419">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237480929620">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237480921907" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1237480930791" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237480926056">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237480934703">
+                    <link role="conceptDeclaration" targetNodeId="2.1073389214265" resolveInfo="EditorCellModel" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237384020320">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1237384052165">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237384056592">
-                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1237384054606">
-                    <link role="concept" targetNodeId="2.1073389214265" resolveInfo="EditorCellModel" />
-                    <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237384053621" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237384079965">
-                    <link role="baseMethodDeclaration" targetNodeId="30.1237383562600" resolveInfo="isNewLineChildren" />
-                  </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237384027189">
-                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1237384024484">
-                    <link role="concept" targetNodeId="2.1073389214265" resolveInfo="EditorCellModel" />
-                    <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237384023499" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237384029193">
-                    <link role="baseMethodDeclaration" targetNodeId="30.1237383076236" resolveInfo="isNewLine" />
-                  </node>
-                </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237480951964">
+                <property name="value" value="false" />
               </node>
             </node>
           </node>

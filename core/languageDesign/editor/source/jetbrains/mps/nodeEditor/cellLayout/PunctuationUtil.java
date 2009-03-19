@@ -67,7 +67,6 @@ class PunctuationUtil {
       if (index > 0) {
         EditorCell leftCell = parent.getChildAt(index - 1);
         if (parent.getCellLayout() instanceof CellLayout_Indent && CellLayout_Indent.isNewLineAfter(parent, leftCell)) {
-          System.out.println(leftCell.getCellId());
           return true;
         }
         if (leftCell.getLastLeaf() instanceof EditorCell_Collection) {

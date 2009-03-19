@@ -4178,6 +4178,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237481317844">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237481317845">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237481324619">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237481325423">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237481320253">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1237481319886" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237481323417">
+              <link role="baseMethodDeclaration" targetNodeId="1237383562600" resolveInfo="isNewLineChildren" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1237451108062">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237451108063">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237451148741">

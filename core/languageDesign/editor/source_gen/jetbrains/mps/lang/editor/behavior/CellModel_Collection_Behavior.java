@@ -50,6 +50,9 @@ public class CellModel_Collection_Behavior {
     if (!(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(thisNode))) {
       return false;
     }
+    if (EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(thisNode)) {
+      return true;
+    }
     for(SNode model : SLinkOperations.getTargets(thisNode, "childCellModel", true)) {
       if (EditorCellModel_Behavior.call_isNewLine_1237383076236(model) || EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(model) || EditorCellModel_Behavior.call_isOnNewLine_1237385424172(model)) {
         return true;
