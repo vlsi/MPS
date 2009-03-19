@@ -19,20 +19,16 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1191933883593" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1191933883594" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1191933883595">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224574507647">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" id="1224581271267">
-            <link role="enumClass" targetNodeId="1224574178631" resolveInfo="ABCDEF" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237469234289">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237469234290" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237469235153">
+            <property name="value" value="true" />
           </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224575613066">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumValueOfExpression" id="1224581266796">
-            <link role="enumClass" targetNodeId="1224574178631" resolveInfo="ABCDEF" />
-            <node role="value" type="jetbrains.mps.baseLanguage.structure.Expression" id="1224581266797" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224577704182">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" id="1224577726328">
-            <link role="enumClass" targetNodeId="1224574178631" resolveInfo="ABCDEF" />
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1237470161855">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237470164171">
+              <property name="value" value="true" />
+            </node>
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237470161857" />
           </node>
         </node>
       </node>
@@ -43,24 +39,6 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1224573028548" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224575284928">
         <link role="classifier" targetNodeId="1.~AbstractMethodError" resolveInfo="AbstractMethodError" />
-      </node>
-    </node>
-    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.EnumClass" id="1224574178631">
-      <property name="name" value="ABCDEF" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224574178632" />
-      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1224574178648">
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224574178649" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224574178650" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224574178651" />
-      </node>
-      <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1224577688019">
-        <property name="name" value="A" />
-      </node>
-      <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1224577696365">
-        <property name="name" value="aaa" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224577696366" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224577696367" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224577696368" />
       </node>
     </node>
   </node>
@@ -166,6 +144,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224581626487">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" id="1224581628410">
             <link role="enumClass" targetNodeId="1224580427854" resolveInfo="CDE" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="1237463026793">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237463026794">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1237463026795" />
+          </node>
+          <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1237463026796">
+            <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237463026797">
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1237463026798" />
+            </node>
+            <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237463026799" />
           </node>
         </node>
       </node>

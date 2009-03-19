@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -36,39 +35,18 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_1596_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1596_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection_1596_1(context, node));
-    editorCell.addEditorCell(this.createCollection_1596_2(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_1596_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_1596_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_1596_0(context, node, "}"));
-    editorCell.addEditorCell(this.createConstant_1596_1(context, node, "else if"));
-    editorCell.addEditorCell(this.createConstant_1596_2(context, node, "("));
+    editorCell.addEditorCell(this.createConstant_1596_0(context, node, "else if"));
+    editorCell.addEditorCell(this.createConstant_1596_1(context, node, "("));
     editorCell.addEditorCell(this.createRefNode_1596_1(context, node));
-    editorCell.addEditorCell(this.createConstant_1596_3(context, node, ")"));
-    editorCell.addEditorCell(this.createConstant_1596_4(context, node, "{"));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_1596_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_1596_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell1596_0(context, node));
+    editorCell.addEditorCell(this.createConstant_1596_2(context, node, ")"));
+    editorCell.addEditorCell(this.createConstant_1596_3(context, node, "{"));
     editorCell.addEditorCell(this.createRefNode_1596_3(context, node));
+    editorCell.addEditorCell(this.createConstant_1596_4(context, node, "}"));
     return editorCell;
   }
 
@@ -77,6 +55,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     setupBasic_Constant_1596_0(editorCell, node, context);
     setupLabel_Constant_1596_0(editorCell, node, context);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu0()}));
     return editorCell;
   }
 
@@ -85,7 +64,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     setupBasic_Constant_1596_1(editorCell, node, context);
     setupLabel_Constant_1596_1(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu0()}));
     return editorCell;
   }
 
@@ -111,11 +89,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     setupLabel_Constant_1596_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-
-  public EditorCell createIndentCell1596_0(EditorContext context, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(context, node);
-    return result;
   }
 
   public EditorCell createRefNode_1596_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -190,12 +163,13 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_1596_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1596_1");
+  private static void setupBasic_Constant_1596_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1596_0");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -203,8 +177,18 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_1596_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1596_0");
+  private static void setupBasic_Constant_1596_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1596_1");
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+  }
+
+  private static void setupBasic_Constant_1596_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1596_2");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+  }
+
+  private static void setupBasic_Constant_1596_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1596_3");
     BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -212,7 +196,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.MATCHING_LABEL, new AttributeCalculator <String>() {
 
             public String calculate(EditorCell cell) {
-              return ElsifClause_Editor.matchingNode1596_2((cell == null ?
+              return ElsifClause_Editor.matchingNode1596_1((cell == null ?
                 null :
                 cell.getSNode()
               ));
@@ -229,64 +213,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
             }
 
           });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-    ElseifClause_DeletePrevious.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_Constant_1596_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1596_1");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Constant_1596_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1596_2");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_1596_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1596_3");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_1596_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1596_4");
-    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.MATCHING_LABEL, new AttributeCalculator <String>() {
-
-            public String calculate(EditorCell cell) {
-              return ElsifClause_Editor.matchingNode1596_3((cell == null ?
-                null :
-                cell.getSNode()
-              ));
-            }
-
-          });
-          this.set(StyleAttributes.MATCHING_NODE, new AttributeCalculator <SNode>() {
-
-            public SNode calculate(EditorCell cell) {
-              return ElsifClause_Editor.matchingNode1596_1((cell == null ?
-                null :
-                cell.getSNode()
-              ));
-            }
-
-          });
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -297,34 +224,33 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNode_1596_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Collection_1596_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1596_2");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.POSITION, "indented");
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Indent_1596_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Indent_1596_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_RefNode_1596_1(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_1596_4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1596_4");
+    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+    IfStatement_LastBrace.setCellActions(editorCell, node, context);
   }
 
   private static void setupLabel_Constant_1596_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -339,26 +265,16 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1596_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1596_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_RefNode_1596_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_RefNode_1596_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static SNode matchingNode1596_0(SNode node) {
-    int index = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(node), "elsifClauses", true)).indexOf(node);
-    if (index == 0) {
-      return SNodeOperations.getParent(node);
-    } else
-    {
-      return ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(node), "elsifClauses", true)).toListSequence()).getElement(index - 1);
-    }
+  private static void setupLabel_Constant_1596_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static SNode matchingNode1596_1(SNode node) {
+  public static SNode matchingNode1596_0(SNode node) {
     int index = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(node), "elsifClauses", true)).indexOf(node);
     if (index == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(node), "elsifClauses", true)).count() - 1) {
       return SNodeOperations.getParent(node);
@@ -368,12 +284,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static String matchingNode1596_2(SNode node) {
-    int index = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(node), "elsifClauses", true)).indexOf(node);
-    return "trueStatement" + index;
-  }
-
-  public static String matchingNode1596_3(SNode node) {
+  public static String matchingNode1596_1(SNode node) {
     int index = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(node), "elsifClauses", true)).indexOf(node);
     return "trueStatement" + (index + 1);
   }

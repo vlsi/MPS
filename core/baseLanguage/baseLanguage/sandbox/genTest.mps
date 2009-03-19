@@ -130,6 +130,12 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237458893388">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237458893389">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1237458893390" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1237458893391" />
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="1237458152228">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237458152229">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1237458152230" />
@@ -227,6 +233,15 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1237458909892">
+    <property name="name" value="ABC" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237458909893" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1237458909894">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237458909895" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237458909896" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237459575875" />
     </node>
   </node>
 </model>
