@@ -172,6 +172,10 @@
       <property name="propertyType" value="string" />
       <link role="dataType" targetNodeId="1084199179703" resolveInfo="LinkMetaclass" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1237463881835">
+      <property name="name" value="outer" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1071599893252">
       <property name="name" value="sourceCardinality" />
       <property name="propertyType" value="string" />
