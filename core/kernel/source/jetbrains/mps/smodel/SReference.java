@@ -65,9 +65,6 @@ public abstract class SReference {
 
   public final SNode getTargetNode() {
     SNode targetNode = getTargetNode_internal();
-    if (targetNode != null) {
-      NodeReadEventsCaster.fireNodeReferentReadAccess(mySourceNode, myRole, targetNode);
-    }
     return targetNode;
   }
 

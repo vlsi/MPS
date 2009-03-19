@@ -1154,7 +1154,11 @@ public final class SNode {
 
   public SNode getReferent(String role) {
     SReference reference = getReference(role);
-    return reference == null ? null : reference.getTargetNode();
+    SNode result = reference == null ? null : reference.getTargetNode();
+    if (result != null) {
+      NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, result);
+    }
+    return result;
   }
 
   public SReference getReference(String role) {
@@ -1179,7 +1183,7 @@ public final class SNode {
     }
 
     // moved to getTargetNode() in SReference
-//    NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, result == null ? null : result.getTargetNode());
+    NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, null);
     return result;
   }
 
