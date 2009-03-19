@@ -17,10 +17,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.build.custommps.behavior.MPSModule_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
@@ -214,6 +215,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "pathToBuildToolsZip", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1237471365276(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(MPSModule_Behavior.call_isPackaged_1237471386679(_context.getNode()));
+  }
+
   public static SNode sourceNodeQuery_1233749686668(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "create", true);
   }
@@ -224,6 +229,19 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1236885059370(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "pathToBuildToolsZip", true);
+  }
+
+  public static SNode sourceNodeQuery_1237471483870(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode module = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Module", null);
+    SPropertyOperations.set(module, "id", SPropertyOperations.getString(_context.getNode(), "id"));
+    for(SNode config : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "configuration", true))) {
+      SLinkOperations.addChild(module, "configuration", config);
+    }
+    return module;
+  }
+
+  public static SNode sourceNodeQuery_1237472433031(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return MPSModule_Behavior.call_createPathFromMPSHome_1237471745588(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1233670839960(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

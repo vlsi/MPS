@@ -107,5 +107,13 @@
       <link role="dataType" targetNodeId="3v.1082983041843" resolveInfo="string" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237468395076">
+    <property name="name" value="MPSModule" />
+    <link role="extends" targetNodeId="2v.1203599702327" resolveInfo="Module" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237471788419">
+      <property name="value" value="mspmodule" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
