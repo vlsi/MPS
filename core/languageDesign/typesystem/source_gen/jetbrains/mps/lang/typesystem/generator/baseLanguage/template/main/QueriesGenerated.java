@@ -41,7 +41,7 @@ import jetbrains.mps.util.Pair;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.typesystem.structure.NonTypesystemRule;
 import jetbrains.mps.lang.typesystem.structure.InequationReplacementRule;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -2354,7 +2354,7 @@ public class QueriesGenerated {
     for(SNode inferenceRule : SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.InferenceRule")) {
       dependenciesCollector.collectDependencies(inferenceRule, dependencies, leaves);
     }
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListOperations.<SNode>createList();
     SModel targetModel = _context.getOutputModel();
     for(SNode leaf : leaves) {
       SNode composite = SModelOperations.createNewNode(targetModel, "jetbrains.mps.lang.core.structure.BaseConcept", null);

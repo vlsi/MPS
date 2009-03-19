@@ -197,37 +197,7 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1233936975101">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1233936975102" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233936975103" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233936975104">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237393552867">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237393552868">
-            <property name="name" value="set" />
-            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237393552869">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237393556721">
-                <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237393564930">
-              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1237393564931">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237393564932">
-                  <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237393561325">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237393573519">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237393561326">
-              <link role="variableDeclaration" targetNodeId="1237393552868" resolveInfo="set" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" id="1237393575790">
-              <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237393579389">
-                <property name="value" value="Str" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233936975104" />
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1236437866545">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236437866546" />

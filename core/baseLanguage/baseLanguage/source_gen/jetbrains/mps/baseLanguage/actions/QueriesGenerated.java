@@ -3184,6 +3184,30 @@ __switch__:
     return result;
   }
 
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ElsifClause_1237484037312(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BlockStatement");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.setTarget(SNodeOperations.getParent(_context.getSourceNode()), "ifFalseStatement", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null), true);
+          return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getSourceNode()), "ifFalseStatement", true);
+        }
+
+        public String getMatchingText(String pattern) {
+          return "else {";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+      });
+    }
+    return result;
+  }
+
   public static void removeSideTransformActionsByCondition_1228923203001(final IOperationContext operationContext, final RemoveSideTransformActionByConditionContext _context) {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while (actions.hasNext()) {
