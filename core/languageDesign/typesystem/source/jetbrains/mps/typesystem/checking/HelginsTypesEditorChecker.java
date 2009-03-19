@@ -96,6 +96,9 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
           }
         }
       } else {
+        if (intentionProvider != null) {
+          intentionProvider.setIsError(status == MessageStatus.ERROR);
+        }
         message.setIntentionProvider(intentionProvider);
       }
       messages.add(message);

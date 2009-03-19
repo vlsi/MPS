@@ -301,7 +301,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   @Nullable
   public SNode getNodeByIntention(Intention intention) {
-    return myNodesByIntentions.get(intention);
+    SNode sNode = myNodesByIntentions.get(intention);
+    if (sNode == null) {
+      return intention.getNodeByIntention();
+    }
+    return sNode;
   }
 
   public MyState getState() {

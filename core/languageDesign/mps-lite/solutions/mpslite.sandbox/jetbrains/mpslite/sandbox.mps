@@ -129,7 +129,6 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.TupleType" id="1237465873524">
               <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237465911805">
                 <property name="name" value="ert" />
-                <link role="declaration" targetNodeId="1237465911805" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237465914226" />
               </node>
               <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237465917891">

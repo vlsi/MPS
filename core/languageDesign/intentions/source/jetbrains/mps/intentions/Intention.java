@@ -32,4 +32,6 @@ public interface Intention {
   IntentionType getType();
 
   String getLocationString();
+
+  SNode getNodeByIntention();
 }

@@ -18,10 +18,9 @@ package jetbrains.mps.intentions;
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -42,6 +41,8 @@ public class BaseIntentionProvider implements IntentionProvider {
   private boolean myExecuteImmediately = false;
   private Map<String, Object> myMap = new HashMap<String, Object>();
 
+  private boolean myIsError = false;
+
   public BaseIntentionProvider(String classFQName) {
     myClassFQName = SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName)).getLongName() +
       "." + NameUtil.shortNameFromLongName(classFQName);
@@ -52,6 +53,10 @@ public class BaseIntentionProvider implements IntentionProvider {
   public BaseIntentionProvider(String classFQName, boolean executeImmediately) {
     this(classFQName);
     myExecuteImmediately = executeImmediately;
+  }
+
+  public void setIsError(boolean isError) {
+    myIsError = isError;
   }
 
   public void putArgument(String key, Object argument) {
@@ -89,7 +94,8 @@ public class BaseIntentionProvider implements IntentionProvider {
       }
 
       public IntentionType getType() {
-        return IntentionType.QUICKFIX;
+        return myIsError ? IntentionType.ERROR : IntentionType.NORMAL;
+        //return IntentionType.QUICKFIX;
       }
 
       public void putArgument(String key, Object argument) {
@@ -97,6 +103,21 @@ public class BaseIntentionProvider implements IntentionProvider {
 
       public String getLocationString() {
         return null;  //todo?
+      }
+
+      public SNode getNodeByIntention() {
+        SModelReference reference = SModelReference.fromString(NameUtil.namespaceFromLongName(myClassFQName));
+        SModelDescriptor sModelDescriptor = GlobalScope.getInstance().getModelDescriptor(reference);
+        if (sModelDescriptor != null) {
+          SModel model = sModelDescriptor.getSModel();
+          if (model != null) {
+            String shortName = NameUtil.shortNameFromLongName(myClassFQName);
+            String rootName = shortName.substring(0, shortName.length() - "_QuickFix".length());
+            SNode node = model.getRootByName(rootName);
+            return node;
+          }
+        }
+        return null;
       }
     };
   }

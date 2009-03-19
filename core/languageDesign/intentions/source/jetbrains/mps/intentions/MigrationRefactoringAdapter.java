@@ -57,4 +57,8 @@ public class MigrationRefactoringAdapter implements Intention {
   public String getLocationString() {
     return myMigrationScript.getModel().getLongName();
   }
+
+  public SNode getNodeByIntention() {
+    return null;
+  }
 }

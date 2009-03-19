@@ -28,4 +28,6 @@ public interface IntentionProvider {
   public Intention getIntention();
   public QuickFix_Runtime getQuickFix();
   public boolean isExecutedImmediately();
+
+  void setIsError(boolean isError);
 }

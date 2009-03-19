@@ -45,4 +45,8 @@ public abstract class BaseIntention implements Intention {
   public IntentionType getType() {
     return isErrorIntention() ? IntentionType.ERROR : IntentionType.NORMAL;
   }
+
+  public SNode getNodeByIntention() {
+    return null;
+  }
 }
