@@ -469,8 +469,8 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237394737957">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237394738100">
                     <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237394737958" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237394738916">
-                      <link role="property" targetNodeId="2.1073389446425" resolveInfo="vertical" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237467323094">
+                      <link role="baseMethodDeclaration" targetNodeId="30.1237451001939" resolveInfo="isVerticalIndent" />
                     </node>
                   </node>
                 </node>

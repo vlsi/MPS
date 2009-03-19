@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -1046,7 +1045,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _StyleParameter_QueryFunction_1237394736502(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "vertical");
+    return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
   }
 
   public static boolean _StyleParameter_QueryFunction_1237394740933(SNode node, EditorContext editorContext) {
