@@ -45,6 +45,25 @@ public class CellLayout_Indent extends AbstractCellLayout {
     return false;
   }
 
+  static boolean isNewLineAfter(EditorCell root, EditorCell cell) {
+    EditorCell current = cell;
+
+    while (current != root) {
+      if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) return true;
+
+      if (current.getParent() != null &&
+        current.getParent().getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) return true;
+
+      if (current.isLastChild()) {
+        current = current.getParent();
+      } else {
+        return false;
+      }
+    }
+
+    return false;
+  }
+
 
   public void doLayout(EditorCell_Collection editorCells) {
     if (editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent) {
@@ -154,7 +173,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
         appendCell(cell);
 
-        if (isNewLineAfter(cell)) {
+        if (isNewLineAfter(myCell, cell)) {
           newLine();
         }
       }
@@ -226,24 +245,6 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myLineContent.clear();
     }
 
-    private boolean isNewLineAfter(EditorCell cell) {
-      EditorCell current = cell;
-
-      while (current != myCell) {
-        if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) return true;
-
-        if (current.getParent() != null &&
-          current.getParent().getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) return true;
-
-        if (current.isLastChild()) {
-          current = current.getParent();
-        } else {
-          return false;
-        }
-      }
-
-      return false;
-    }
 
     private int getSpacesWidth(int size) {
       String indentText = "";
