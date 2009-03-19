@@ -26,7 +26,8 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.awt.*;
+import java.awt.Rectangle;
+import java.util.List;
 
 /**
  * User: Sergey Dmitriev
@@ -289,11 +290,13 @@ public class CellLayout_Flow extends AbstractCellLayout {
 
   } //--FlowLayouter
  
-  public void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c) {
+  public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
     LOG.assertLog(getFlowLayout(editorCells) == this);
+    List<Rectangle> result = new ArrayList<Rectangle>();
     for (EditorCell cell : editorCells) {
-      cell.paintSelection(g, c);
+      result.add(cell.getBounds());
     }
+    return result;
   }
 
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {

@@ -19,7 +19,10 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
-import java.awt.*;
+
+import java.awt.Rectangle;
+import java.util.Arrays;
+import java.util.List;
 
 public abstract class AbstractCellLayout implements CellLayout {
   public int getAscent(EditorCell_Collection editorCells) {
@@ -34,8 +37,8 @@ public abstract class AbstractCellLayout implements CellLayout {
     return editorCells.getHeight() - getAscent(editorCells);
   }
 
-  public void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c) {
-    editorCells.paintSelectionAsIfNotCollection(g, c);
+  public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
+    return Arrays.asList(editorCells.getBounds());
   }
 
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {

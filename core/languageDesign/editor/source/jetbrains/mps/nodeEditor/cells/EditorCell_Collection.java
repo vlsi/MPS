@@ -29,13 +29,13 @@ import jetbrains.mps.util.ArrayWrapper;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.WritableRaster;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.*;
+import java.util.List;
 
 /**
  * Author: Sergey Dmitriev
@@ -518,7 +518,41 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public void paintSelection(Graphics g, Color c) {
-    myCellLayout.paintSelection(g, this, c);
+    List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
+
+    BufferedImage image = new BufferedImage(getWidth() + 2, getHeight() + 2, BufferedImage.TYPE_INT_ARGB);
+    Graphics gr = image.getGraphics();
+
+    int x0 = getX();
+    int y0 = getY();
+
+    gr.setColor(c);
+    for (Rectangle part : selection) {
+      gr.fillRect(part.x - x0 + 1, part.y - y0 + 1, part.width, part.height);
+    }
+
+    Color darkerColor = c.darker();
+    gr.setColor(darkerColor);
+    int[] color = { darkerColor.getRed(),  darkerColor.getGreen(), darkerColor.getBlue(), 255};
+    for (int x = 1; x < image.getWidth() - 1; x++) {
+      for (int y = 1; y < image.getHeight() - 1; y++) {
+        WritableRaster raster = image.getRaster();
+        int[] curPix = raster.getPixel(x, y, (int[]) null);
+
+        if (curPix[3] == 0) continue;
+
+        int[] upPix = raster.getPixel(x, y - 1, (int[]) null);
+        int[] downPix = raster.getPixel(x, y + 1, (int[]) null);
+        int[] leftPix = raster.getPixel(x - 1, y, (int[]) null);
+        int[] rightPix = raster.getPixel(x + 1, y, (int[]) null);
+
+        if (upPix[3] == 0 || downPix[3] == 0 || leftPix[3] == 0 || rightPix[3] == 0) {
+          raster.setPixel(x, y, color);
+        }
+      }
+    }
+
+    g.drawImage(image, x0 - 1, y0 - 1, null);
   }
 
   public void paintSelectionAsIfNotCollection(Graphics g, Color c) {

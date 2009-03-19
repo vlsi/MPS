@@ -42,41 +42,13 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   @Override
-  public void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c) {
-    BufferedImage image = new BufferedImage(editorCells.getWidth() + 2, editorCells.getHeight() + 2, BufferedImage.TYPE_INT_ARGB);
-    Graphics gr = image.getGraphics();
-
-    int x0 = editorCells.getX();
-    int y0 = editorCells.getY();
-
-    gr.setColor(c);
+  public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
+    List<Rectangle> result = new ArrayList<Rectangle>();
     List<EditorCell> indentLeafs = getIndentLeafs(editorCells);
     for (EditorCell leaf : indentLeafs) {
-      gr.fillRect(leaf.getX() - x0 + 1, leaf.getY() - y0 + 1, leaf.getWidth(), leaf.getHeight());
+      result.add(leaf.getBounds());
     }
-
-    Color darkerColor = c.darker();
-    gr.setColor(darkerColor);
-    int[] color = { darkerColor.getRed(),  darkerColor.getGreen(), darkerColor.getBlue(), 255};
-    for (int x = 1; x < image.getWidth() - 1; x++) {
-      for (int y = 1; y < image.getHeight() - 1; y++) {
-        WritableRaster raster = image.getRaster();
-        int[] curPix = raster.getPixel(x, y, (int[]) null);
-
-        if (curPix[3] == 0) continue;
-
-        int[] upPix = raster.getPixel(x, y - 1, (int[]) null);
-        int[] downPix = raster.getPixel(x, y + 1, (int[]) null);
-        int[] leftPix = raster.getPixel(x - 1, y, (int[]) null);
-        int[] rightPix = raster.getPixel(x + 1, y, (int[]) null);
-
-        if (upPix[3] == 0 || downPix[3] == 0 || leftPix[3] == 0 || rightPix[3] == 0) {
-          raster.setPixel(x, y, color);
-        }        
-      }
-    }
-
-    g.drawImage(image, x0 - 1, y0 - 1, null);    
+    return result;
   }
 
   private List<EditorCell> getIndentLeafs(EditorCell_Collection current) {

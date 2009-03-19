@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.*;
+import java.util.List;
 
 public interface CellLayout {
 
@@ -30,7 +31,7 @@ public interface CellLayout {
   int getAscent(EditorCell_Collection editorCells);
   int getDescent(EditorCell_Collection editorCell_collection);
 
-  void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c);
+  List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells);
 
   boolean canBeFolded();
 }
