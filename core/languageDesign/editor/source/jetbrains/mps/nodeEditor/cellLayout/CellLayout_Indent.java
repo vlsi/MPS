@@ -25,14 +25,12 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import java.util.List;
 import java.util.ArrayList;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.WritableRaster;
 
 public class CellLayout_Indent extends AbstractCellLayout {
-  static boolean isOnNewLine(EditorCell cell, EditorCell layoutedCell) {
+  static boolean isOnNewLine(EditorCell root, EditorCell cell) {
     EditorCell current = cell;
 
-    while (current != layoutedCell) {
+    while (current != root) {
       if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) return true;
 
       if (current.isFirstChild()) {
@@ -167,7 +165,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
     private void layoutLeafs() {
       for (EditorCell cell : getIndentLeafs(myCell)) {
-        if (isOnNewLine(cell, myCell)) {
+        if (isOnNewLine(myCell, cell)) {
           newLine();
         }
 
