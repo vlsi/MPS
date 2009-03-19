@@ -395,7 +395,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_8529_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_8529_0");
-    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
+    Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_8529_1(EditorCell editorCell, SNode node, EditorContext context) {

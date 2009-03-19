@@ -97,7 +97,7 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3375_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3375_0");
-    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
+    Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_3375_1(EditorCell editorCell, SNode node, EditorContext context) {

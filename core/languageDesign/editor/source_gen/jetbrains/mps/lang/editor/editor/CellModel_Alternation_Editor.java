@@ -433,7 +433,16 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_4233_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4233_0");
-    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
+    Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.DRAW_BORDER, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Collection_4233_1(EditorCell editorCell, SNode node, EditorContext context) {

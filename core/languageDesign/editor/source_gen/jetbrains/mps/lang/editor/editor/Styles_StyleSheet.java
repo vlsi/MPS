@@ -15,7 +15,7 @@ import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class Styles_StyleSheet {
 
-  public static Style getBaseCellModelStyle(final EditorCell cell) {
+  public static Style getRootCellModelStyle(final EditorCell cell) {
     return new Style(cell) {
       {
         this.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator <Boolean>() {
@@ -57,6 +57,7 @@ public class Styles_StyleSheet {
           }
 
         });
+        this.set(StyleAttributes.DRAW_BORDER, true);
       }
 
     };
@@ -118,7 +119,6 @@ public class Styles_StyleSheet {
   public static Style getBordered(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.putAll(Styles_StyleSheet.getBaseCellModelStyle(null));
         this.set(StyleAttributes.DRAW_BORDER, true);
       }
 
@@ -128,7 +128,6 @@ public class Styles_StyleSheet {
   public static Style getBorderedCollection(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.putAll(Styles_StyleSheet.getBaseCellModelStyle(null));
         this.set(StyleAttributes.DRAW_BORDER, true);
       }
 

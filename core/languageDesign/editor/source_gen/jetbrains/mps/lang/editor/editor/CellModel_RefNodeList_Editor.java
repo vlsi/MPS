@@ -1082,7 +1082,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_6321_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6321_0");
-    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
+    Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Component_6321_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -112,7 +112,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_6025_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6025_0");
-    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
+    Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
     editorCell.addKeyMap(new CellModel_Component_KeyMap());
   }
 

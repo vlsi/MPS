@@ -248,7 +248,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_6752_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6752_0");
-    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
+    Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_6752_0(EditorCell editorCell, SNode node, EditorContext context) {
