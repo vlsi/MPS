@@ -27,7 +27,13 @@ import java.awt.FontMetrics;
 import java.awt.Toolkit;
 
 class PunctuationUtil {
+
+
   static void addGaps(EditorCell_Collection editorCells, EditorCell currentCell) {
+    addGaps(editorCells, currentCell, false);
+  }
+  
+  static void addGaps(EditorCell_Collection editorCells, EditorCell currentCell, boolean firstOnLine) {
     int gap = getHorizontalGap(editorCells);
 
     if (currentCell instanceof EditorCell_Collection &&
@@ -36,7 +42,7 @@ class PunctuationUtil {
     }
 
     if ((!leftCellHasPunctuationRight(currentCell) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
-          && !hasPunctuationLeft(currentCell)) {
+          && !hasPunctuationLeft(currentCell) && !firstOnLine) {
       currentCell.setLeftGap(gap / 2);
     } else {
       currentCell.setLeftGap(0);
