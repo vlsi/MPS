@@ -133,28 +133,14 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224580698123" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224580698124" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224580698125">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224581620543">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumValueOfExpression" id="1224581621686">
-            <link role="enumClass" targetNodeId="1224580427854" resolveInfo="CDE" />
-            <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224581622547">
-              <property name="value" value="a" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237477717726">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237477718712">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1237477718809">
+              <property name="value" value="2" />
             </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224581626487">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" id="1224581628410">
-            <link role="enumClass" targetNodeId="1224580427854" resolveInfo="CDE" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="1237463026793">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237463026794">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1237463026795" />
-          </node>
-          <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1237463026796">
-            <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237463026797">
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1237463026798" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1237477717727">
+              <property name="value" value="1" />
             </node>
-            <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237463026799" />
           </node>
         </node>
       </node>

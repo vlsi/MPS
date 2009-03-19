@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -74,7 +74,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     if (this.myListHandler_4497_0 == null) {
       this.myListHandler_4497_0 = new IMethodCall_actualArguments.actualArgumentListHandler_4497_0(node, "actualArgument", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_4497_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_4497_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_4497_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);

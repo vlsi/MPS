@@ -8215,6 +8215,7 @@
             </node>
           </node>
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237478466538" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1173990956441">
         <property name="text" value=")" />
@@ -12074,6 +12075,7 @@
         <link role="relationDeclaration" targetNodeId="17.1197027833540" />
         <link role="actionMap" targetNodeId="1197028249488" resolveInfo="OperationExpression_Actions_DeleteOperation" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237478095445" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="1197028249488">
@@ -12909,6 +12911,7 @@
           <property name="flag" value="true" />
         </node>
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237477734110" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1206060906745">
