@@ -776,5 +776,64 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1237472541096">
+    <property name="migrationFromBuild" value="1193" />
+    <property name="name" value="FindNonIndentLayouts" />
+    <property name="title" value="find non indent layouts" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1237472555297">
+      <property name="description" value="find non indent collections" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1237472555298">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237472555299" />
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1237472572315">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237472572316">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237472575194">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1237472601878">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237472601879">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237472601880">
+                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1237472601881" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237472601882">
+                    <link role="link" targetNodeId="1.1106270802874" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237472601883">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237472601884">
+                    <link role="conceptDeclaration" targetNodeId="1.1237303669825" resolveInfo="CellLayout_Indent" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1237472603902">
+      <property name="description" value="find non indent lists with roles" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1140524381322" resolveInfo="CellModel_ListWithRole" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1237472603903">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237472603904" />
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1237472390449">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237472390450">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237472392779">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237472420104">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237472393188">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1237472392780" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237472419462">
+                  <link role="link" targetNodeId="1.1140524464360" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237472420936">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237472423955">
+                  <link role="conceptDeclaration" targetNodeId="1.1237303669825" resolveInfo="CellLayout_Indent" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

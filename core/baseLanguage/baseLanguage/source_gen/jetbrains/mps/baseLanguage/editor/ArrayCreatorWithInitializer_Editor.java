@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -35,7 +35,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_0557_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0557_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -76,7 +76,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     if (this.myListHandler_0557_0 == null) {
       this.myListHandler_0557_0 = new ArrayCreatorWithInitializer_Editor.initValueListHandler_0557_0(node, "initValue", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_0557_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_0557_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_0557_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
