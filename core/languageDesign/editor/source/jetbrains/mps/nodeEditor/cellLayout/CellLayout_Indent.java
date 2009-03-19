@@ -45,7 +45,6 @@ public class CellLayout_Indent extends AbstractCellLayout {
   public void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c) {
     BufferedImage image = new BufferedImage(editorCells.getWidth() + 2, editorCells.getHeight() + 2, BufferedImage.TYPE_INT_ARGB);
     Graphics gr = image.getGraphics();
-    gr.setColor(new Color(255, 255, 255, 0));
 
     int x0 = editorCells.getX();
     int y0 = editorCells.getY();
@@ -175,12 +174,10 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
     private void fixupCollections() {
       for (EditorCell_Collection collection : getInternalIndentCollections(myCell)) {
-        EditorCell firstChild = collection.getChildAt(0);
-
-        int x0 = firstChild.getX();
-        int y0 = firstChild.getY();
-        int x1 = firstChild.getX() + firstChild.getWidth();
-        int y1 = firstChild.getY() + firstChild.getHeight();
+        int x0 = Integer.MAX_VALUE;
+        int y0 = Integer.MAX_VALUE;
+        int x1 = Integer.MIN_VALUE;
+        int y1 = Integer.MIN_VALUE;
 
         for (EditorCell child : collection) {
           x0 = Math.min(x0, child.getX());
