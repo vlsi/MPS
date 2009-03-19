@@ -4,6 +4,7 @@
   <refactoringHistory />
   <language namespace="3fe6ec39-7405-4314-abfd-5964c9c40e6b(jetbrains.mpslite)" />
   <language namespace="0452c5e6-046a-41b1-a1c2-bfa47ef3ae0b(jetbrains.mps.nanoj)" />
+  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905dc(jetbrains.mps.nanoj.constraints)" version="45" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -91,6 +92,36 @@
   <node type="jetbrains.mpslite.structure.MPSLiteConceptDeclaration" id="1237459042860">
     <property name="name" value="Expression" />
     <node role="lineList" type="jetbrains.mpslite.structure.LineList" id="1237459042861" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1237461981718">
+    <property name="name" value="Tuples" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237461981719" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1237461981721">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237461981722" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237461981723" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237461981724">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237461993881">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237461993882">
+            <property name="name" value="d" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.TupleType" id="1237461993883">
+              <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237461997439">
+                <property name="name" value="str" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237462003235" />
+              </node>
+              <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1237462012767">
+                <property name="name" value="intgr" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1237462021887" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237462029853">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237462029854">
+            <link role="variableDeclaration" targetNodeId="1237461993882" resolveInfo="d" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
