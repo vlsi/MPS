@@ -19,7 +19,7 @@ import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
@@ -96,14 +96,14 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListOperations.<SModel>createList();
+    return ListSequence.<SModel>fromArray();
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return ListOperations.<SNode>createList();
+    return ListSequence.<SNode>fromArray();
   }
 
   public boolean doesUpdateModel() {
@@ -117,7 +117,7 @@ public class Rename extends AbstractLoggableRefactoring {
   public boolean askForInfo(final RefactoringContext refactoringContext) {
     {
       boolean result = false;
-      final List<IChooseComponent> components = ListOperations.<IChooseComponent>createList();
+      final List<IChooseComponent> components = ListSequence.<IChooseComponent>fromArray();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
@@ -128,7 +128,7 @@ public class Rename extends AbstractLoggableRefactoring {
             chooseComponent.setCaption("new name:");
             chooseComponent.initComponent();
             chooseComponent.setInitialValue(Rename.this.newName_initialValue(refactoringContext));
-            ListOperations.addElement(components, chooseComponent);
+            ListSequence.fromList(components).addElement(chooseComponent);
           }
         }
 
