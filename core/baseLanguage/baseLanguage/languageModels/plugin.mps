@@ -6627,12 +6627,13 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220371037942">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220371047037">
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IntersectOperation" id="1237389042046">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237389042047">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237389042048" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237389042049">
-                  <link role="baseMethodDeclaration" targetNodeId="1220371055432" resolveInfo="getModificationsReachingExitPoints" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237389042050">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220371049197">
+              <link role="baseMethodDeclaration" targetNodeId="4.~Set.retainAll(java.util.Collection):boolean" resolveInfo="retainAll" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220371814229">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1220371814231" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220371814230">
+                  <link role="baseMethodDeclaration" targetNodeId="1220371055432" resolveInfo="getModifacationsReachingExitPoints" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1221220871458">
                     <property name="value" value="true" />
                   </node>
                 </node>
@@ -7016,10 +7017,11 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220371319415">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220371320215">
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IntersectOperation" id="1237389041944">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237389041945">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237389041946" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237389041947">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220371323046">
+              <link role="baseMethodDeclaration" targetNodeId="4.~Set.retainAll(java.util.Collection):boolean" resolveInfo="retainAll" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220371337909">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1220371337911" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220371337910">
                   <link role="baseMethodDeclaration" targetNodeId="1220359435119" resolveInfo="getInstructions" />
                 </node>
               </node>
