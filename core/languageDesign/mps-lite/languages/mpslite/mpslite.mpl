@@ -8,7 +8,18 @@
     <model modelUID="r:00000000-0000-4000-0000-011c895905d7(jetbrains.mpslite.common)" />
     <model modelUID="r:00000000-0000-4000-0000-011c895905d6(jetbrains.mpslite.treeAspect)" />
   </accessoryModels>
-  <generators />
+  <generators>
+    <generator name="" generatorUID="jetbrains.mpslite#1237409422567" uuid="5873eca3-8d9f-4d11-8ccd-c8b23f469216">
+      <models>
+        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mpslite.generator.template" />
+      </models>
+      <external-templates />
+      <usedDevKits>
+        <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
+      </usedDevKits>
+      <mapping-priorities />
+    </generator>
+  </generators>
   <classPath>
     <entry path="${mps_home}/core/languageDesign/mps-lite/classes" include="false" />
   </classPath>

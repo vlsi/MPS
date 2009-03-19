@@ -9,10 +9,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ReferencePart extends LinePart {
   public static final String concept = "jetbrains.mpslite.structure.ReferencePart";
+  public static final String OPTIONAL = "optional";
 
   public ReferencePart(SNode node) {
     super(node);
   }
+
+  public boolean getOptional() {
+    return this.getBooleanProperty(ReferencePart.OPTIONAL);
+  }
+
+  public void setOptional(boolean value) {
+    this.setBooleanProperty(ReferencePart.OPTIONAL, value);
+  }
+
 
   public static ReferencePart newInstance(SModel sm, boolean init) {
     return (ReferencePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ReferencePart", sm, GlobalScope.getInstance(), init).getAdapter();

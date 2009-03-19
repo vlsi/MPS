@@ -74,5 +74,23 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mpslite.structure.MPSLiteConceptDeclaration" id="1237458974423">
+    <property name="name" value="UnaryMinus" />
+    <node role="lineList" type="jetbrains.mpslite.structure.LineList" id="1237458974424">
+      <node role="line" type="jetbrains.mpslite.structure.Line" id="1237459007623">
+        <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237459012584">
+          <property name="text" value="-" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.structure.ConcreteChildPart" id="1237459020917">
+          <property name="name" value="exp" />
+          <link role="target" targetNodeId="1237459042860" resolveInfo="Expression" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mpslite.structure.MPSLiteConceptDeclaration" id="1237459042860">
+    <property name="name" value="Expression" />
+    <node role="lineList" type="jetbrains.mpslite.structure.LineList" id="1237459042861" />
+  </node>
 </model>
 

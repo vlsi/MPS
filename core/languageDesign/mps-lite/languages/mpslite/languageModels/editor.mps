@@ -397,6 +397,31 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1182845733435">
         <property name="text" value="&gt;" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237457228408">
+        <property name="text" value="?" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237457231040">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237457231041">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237457232749">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237457232793">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237457232750" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237457233190">
+                  <link role="property" targetNodeId="1.1237457103518" resolveInfo="optional" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237457126257">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237457127460">
+        <property name="text" value="optional:" />
+        <link role="styleClass" targetNodeId="6.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1237457132200">
+        <link role="relationDeclaration" targetNodeId="1.1237457103518" resolveInfo="optional" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.StyleSheet" id="1196956318452">
@@ -979,6 +1004,31 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237379153458">
         <property name="text" value="&gt;" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237457196058">
+        <property name="text" value="?" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237457207933">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237457207934">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237457213582">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237457213662">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237457213583" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237457214666">
+                  <link role="property" targetNodeId="1.1237457103518" resolveInfo="optional" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237457164389">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237457165427">
+        <property name="text" value="optional:" />
+        <link role="styleClass" targetNodeId="6.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1237457168842">
+        <link role="relationDeclaration" targetNodeId="1.1237457103518" resolveInfo="optional" />
       </node>
     </node>
   </node>

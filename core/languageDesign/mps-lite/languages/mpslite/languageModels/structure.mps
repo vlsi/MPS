@@ -346,6 +346,10 @@
     <property name="package" value="Parts" />
     <property name="name" value="ReferencePart" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1237457103518">
+      <property name="name" value="optional" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1237207386601">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>
