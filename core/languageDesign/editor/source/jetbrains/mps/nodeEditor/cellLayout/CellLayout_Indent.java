@@ -52,7 +52,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   private List<EditorCell> getIndentLeafs(EditorCell_Collection current) {
-    List<EditorCell> result = new ArrayList<EditorCell>();            
+    List<EditorCell> result = new ArrayList<EditorCell>();
     collectFrontier(current, result);
     return result;
   }
@@ -119,7 +119,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
       myLineWidth = 0;
       myLineAscent = 0;
-      myLineDescent  = 0;
+      myLineDescent = 0;
       myTopInset = 0;
       myBottomInset = 0;
     }
@@ -131,7 +131,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
     private void layoutLeafs() {
       for (EditorCell cell : getIndentLeafs(myCell)) {
-        if (isOnNewLine(cell)) {
+        if (isOnNewLine(cell, myCell)) {
           newLine();
         }
 
@@ -170,7 +170,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       }
     }
 
-    private void appendCell(EditorCell cell) {      
+    private void appendCell(EditorCell cell) {
       if (myLineContent.isEmpty()) {
         myLineWidth += getIndent(cell) * getIndentWidth();
       }
@@ -203,7 +203,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myLineWidth = 0;
       myLineWidth = 0;
       myLineAscent = 0;
-      myLineDescent  = 0;
+      myLineDescent = 0;
       myTopInset = 0;
       myBottomInset = 0;
       myLineContent.clear();
@@ -228,21 +228,6 @@ public class CellLayout_Indent extends AbstractCellLayout {
       return false;
     }
 
-    private boolean isOnNewLine(EditorCell cell) {
-      EditorCell current = cell;
-
-      while (current != myCell) {
-        if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) return true;
-
-        if (current.isFirstChild()) {
-          current = current.getParent();
-        } else {
-          return false;
-        }
-      }
-
-      return false;
-    }
 
     private int getSpacesWidth(int size) {
       String indentText = "";
@@ -271,5 +256,21 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
       return result;
     }
+  }
+
+  static public boolean isOnNewLine(EditorCell cell, EditorCell layoutedCell) {
+    EditorCell current = cell;
+
+    while (current != layoutedCell) {
+      if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) return true;
+
+      if (current.isFirstChild()) {
+        current = current.getParent();
+      } else {
+        return false;
+      }
+    }
+
+    return false;
   }
 }

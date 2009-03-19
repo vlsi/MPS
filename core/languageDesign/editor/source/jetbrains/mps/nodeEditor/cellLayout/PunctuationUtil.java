@@ -59,7 +59,9 @@ class PunctuationUtil {
 
   private static boolean leftCellHasPunctuationRight(EditorCell currentCell) {
     EditorCell_Collection parent = currentCell.getParent();
-    if (parent != null && hasPunctuableLayout(parent)) {
+    if (parent != null && parent.getCellLayout() instanceof CellLayout_Indent) {
+      return !(CellLayout_Indent.isOnNewLine(currentCell, parent));
+    } else if (parent != null && hasPunctuableLayout(parent)) {
       int index = parent.getCellNumber(currentCell);
       if (index > 0) {
         EditorCell leftCell = parent.getChildAt(index - 1);
