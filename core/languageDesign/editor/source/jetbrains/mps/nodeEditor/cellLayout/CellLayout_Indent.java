@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.TextLine;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -135,6 +134,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     private int myX;
     private int myWidth;
     private int myHeight;
+    private int myMaxWidth;
 
     private int myLineWidth;
     private int myLineAscent;
@@ -156,6 +156,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myLineDescent = 0;
       myTopInset = 0;
       myBottomInset = 0;
+
+      EditorSettings settings = EditorSettings.getInstance();
+      myMaxWidth = cell.getRootParent().getX() + settings.getVerticalBoundWith(); 
     }
 
     public void layout() {

@@ -107,6 +107,10 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     return myVerticalBound;
   }
 
+  public int getVerticalBoundWith() {
+    return getSpacesWidth(getVerticalBound());
+  }
+
   public boolean isUseAntialiasing() {
     return myState.myUseAntialiasing;
   }
