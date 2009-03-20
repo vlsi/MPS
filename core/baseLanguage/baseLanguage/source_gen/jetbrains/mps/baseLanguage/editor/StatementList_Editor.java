@@ -94,7 +94,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.POSITION_CHILDREN, "next-line");
           this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         }
 

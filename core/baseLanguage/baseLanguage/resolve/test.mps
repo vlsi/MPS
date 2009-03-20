@@ -22,5 +22,23 @@
   <import index="233" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="234" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="235" modelUID="r:00000000-0000-4000-0000-011c89590391(jetbrains.mps.baseLanguage.resolve.test)" version="-1" />
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1237574003938">
+    <property name="name" value="ABC" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237574003939" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1237574003940">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237574003941" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237574003942" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237574003943">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237574097431">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237574097433">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237574101044" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237574238625">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
