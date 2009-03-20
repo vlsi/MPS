@@ -240,7 +240,7 @@ public class QueriesGenerated {
     return module;
   }
 
-  public static SNode sourceNodeQuery_1237472433031(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1237563071849(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return MPSModule_Behavior.call_createPathFromMPSHome_1237471745588(_context.getNode());
   }
 

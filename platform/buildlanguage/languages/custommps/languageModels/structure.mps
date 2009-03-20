@@ -111,7 +111,7 @@
     <property name="name" value="MPSModule" />
     <link role="extends" targetNodeId="2v.1203599702327" resolveInfo="Module" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237471788419">
-      <property name="value" value="mspmodule" />
+      <property name="value" value="mpsmodule" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
   </node>

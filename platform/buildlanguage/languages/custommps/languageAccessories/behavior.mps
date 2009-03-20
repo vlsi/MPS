@@ -321,12 +321,22 @@
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237472212779">
                 <link role="baseMethodDeclaration" targetNodeId="4.~Macros.shrinkPath(java.lang.String,java.io.File):java.lang.String" resolveInfo="shrinkPath" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237472212780">
-                  <link role="baseMethodDeclaration" targetNodeId="4.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
-                  <link role="classConcept" targetNodeId="4.~PathManager" resolveInfo="PathManager" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237562409515">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237562392334">
+                    <link role="variableDeclaration" targetNodeId="1237472102473" resolveInfo="moduleHome" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237562418831">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~File.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
+                  </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237472212781">
-                  <link role="variableDeclaration" targetNodeId="1237472102473" resolveInfo="moduleHome" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237562425624">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1237562432141">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237562432789">
+                      <link role="baseMethodDeclaration" targetNodeId="4.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
+                      <link role="classConcept" targetNodeId="4.~PathManager" resolveInfo="PathManager" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -391,6 +401,23 @@
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1237472340093">
               <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237472342405">
                 <link role="variableDeclaration" targetNodeId="1237472212775" resolveInfo="relativePath" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237561255104">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237561260191">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237561256471">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237561255105">
+                <link role="variableDeclaration" targetNodeId="1237471871271" resolveInfo="compositePath" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1237561258866">
+                <link role="link" targetNodeId="3v.1220978161990" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1237561261266">
+              <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237561262968">
+                <link role="variableDeclaration" targetNodeId="1237472326729" resolveInfo="pathComponent" />
               </node>
             </node>
           </node>

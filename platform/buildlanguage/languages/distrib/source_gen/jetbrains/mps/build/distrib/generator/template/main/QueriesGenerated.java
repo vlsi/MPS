@@ -32,7 +32,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.LinkedList;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -704,7 +704,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1231694345955(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     String[] options = SPropertyOperations.getString(_context.getNode(), "defaultVMOptions").split("\\s");
-    List<SNode> lines = new ArrayList<SNode>();
+    List<SNode> lines = ListOperations.<SNode>createList();
     for(String option : options) {
       SNode line = SConceptOperations.createNewNode("jetbrains.mps.gtext.structure.GLine", null);
       SNode text = SConceptOperations.createNewNode("jetbrains.mps.gtext.structure.GText", null);
