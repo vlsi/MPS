@@ -61,9 +61,9 @@ public abstract class UITestsBase extends JFCTestCase {
     flushAWT();
 
     final ApplicationEx application = ApplicationManagerEx.getApplicationEx();
-    application.saveAll();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
+        application.saveAll();
         Disposer.dispose(application);
       }
     });
