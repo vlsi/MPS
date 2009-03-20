@@ -26,6 +26,8 @@ import java.util.ArrayList;
 import java.awt.*;
 
 public class CellLayout_Indent extends AbstractCellLayout {
+  private static final boolean OVERFLOW_ENABLED = false;
+
   static boolean isOnNewLine(EditorCell root, EditorCell cell) {
     EditorCell current = cell;
 
@@ -136,15 +138,22 @@ public class CellLayout_Indent extends AbstractCellLayout {
     private int myHeight;
     private int myMaxWidth;
 
+    private List<EditorCell> myCells = new ArrayList<EditorCell>();
+    private int myPosition;
+
     private int myLineWidth;
     private int myLineAscent;
     private int myLineDescent;
     private int myTopInset;
     private int myBottomInset;
+    private boolean myOverflow;
     private List<EditorCell> myLineContent = new ArrayList<EditorCell>();
 
     private CellLayouter(EditorCell_Collection cell) {
       myCell = cell;
+
+      myCells = getIndentLeafs(myCell);
+      myPosition = 0;
 
       myX = myCell.getX();
 
@@ -166,17 +175,31 @@ public class CellLayout_Indent extends AbstractCellLayout {
       fixupCollections();
     }
 
+    private boolean hasMoreCells() {
+      return myPosition < myCells.size();
+    }
+
+    private void nextCell() {
+      myPosition++;
+    }
+
+    private EditorCell current() {
+      return myCells.get(myPosition);
+    }
+
     private void layoutLeafs() {
-      for (EditorCell cell : getIndentLeafs(myCell)) {
-        if (isOnNewLine(myCell, cell)) {
+      while (hasMoreCells()) {
+        if (isOnNewLine(myCell, current())) {
           newLine();
         }
 
-        appendCell(cell);
+        appendCell(current());
 
-        if (isNewLineAfter(myCell, cell)) {
+        if (isNewLineAfter(myCell, current())) {
           newLine();
         }
+
+        nextCell();
       }
       newLine();
     }
@@ -217,6 +240,12 @@ public class CellLayout_Indent extends AbstractCellLayout {
       cell.setX(myX + myLineWidth);
       cell.relayout();
 
+      if (OVERFLOW_ENABLED && myX + cell.getWidth() + myLineWidth > myMaxWidth && !myLineContent.isEmpty()) {
+        newLine(true);
+        appendCell(cell);
+        return;
+      }
+
       myLineAscent = Math.max(myLineAscent, cell.getAscent());
       myLineDescent = Math.max(myLineDescent, cell.getDescent());
       myTopInset = Math.max(myTopInset, cell.getTopInset());
@@ -228,6 +257,11 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     private void newLine() {
+      newLine(false);
+    }
+
+    private void newLine(boolean overflow) {
+
       int baseLine = myCell.getY() + myHeight + myTopInset + myLineAscent;
 
       for (EditorCell cell : myLineContent) {
@@ -236,6 +270,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
       myWidth = Math.max(myWidth, myLineWidth);
       myHeight += myTopInset + myBottomInset + myLineAscent + myLineDescent;
+      myOverflow = overflow;
 
       myLineWidth = 0;
       myLineWidth = 0;
@@ -253,6 +288,10 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
     private int getIndent(EditorCell cell) {
       int result = 0;
+
+      if (myOverflow) {
+        result++;
+      }
 
       while (cell != myCell) {
         if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
