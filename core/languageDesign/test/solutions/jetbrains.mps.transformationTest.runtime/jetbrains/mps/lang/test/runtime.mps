@@ -1195,11 +1195,12 @@
                         <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1223217167467">
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223217167468">
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223217174025">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223217174026">
-                                <link role="baseMethodDeclaration" targetNodeId="13.~IdeMain.setTestMode(boolean):void" resolveInfo="setTestMode" />
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237577048067">
+                                <link role="baseMethodDeclaration" targetNodeId="13.~IdeMain.setTestMode(jetbrains.mps.ide.IdeMain$TestMode):void" resolveInfo="setTestMode" />
                                 <link role="classConcept" targetNodeId="13.~IdeMain" resolveInfo="IdeMain" />
-                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1223217174027">
-                                  <property name="value" value="true" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1237577065338">
+                                  <link role="enumConstantDeclaration" targetNodeId="13.~IdeMain$TestMode.CORE_TEST" resolveInfo="CORE_TEST" />
+                                  <link role="enumClass" targetNodeId="13.~IdeMain$TestMode" resolveInfo="IdeMain.TestMode" />
                                 </node>
                               </node>
                             </node>
@@ -2033,9 +2034,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215702411267">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215702411268">
             <link role="classConcept" targetNodeId="13.~IdeMain" resolveInfo="IdeMain" />
-            <link role="baseMethodDeclaration" targetNodeId="13.~IdeMain.setTestMode(boolean):void" resolveInfo="setTestMode" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1215702411269">
-              <property name="value" value="true" />
+            <link role="baseMethodDeclaration" targetNodeId="13.~IdeMain.setTestMode(jetbrains.mps.ide.IdeMain$TestMode):void" resolveInfo="setTestMode" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1237577093784">
+              <link role="enumConstantDeclaration" targetNodeId="13.~IdeMain$TestMode.CORE_TEST" resolveInfo="CORE_TEST" />
+              <link role="enumClass" targetNodeId="13.~IdeMain$TestMode" resolveInfo="IdeMain.TestMode" />
             </node>
           </node>
         </node>
