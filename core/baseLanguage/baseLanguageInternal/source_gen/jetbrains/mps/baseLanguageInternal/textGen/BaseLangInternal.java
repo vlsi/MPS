@@ -23,7 +23,7 @@ public abstract class BaseLangInternal extends BaseLanguageTextGen {
       packageName = JavaNameUtil.packageName(fqClassName);
       className = JavaNameUtil.shortName(fqClassName);
     }
-    BaseLanguageTextGen.appendClsName(packageName, className, textGen);
+    BaseLanguageTextGen.appendClsName(packageName, className, new Object(), textGen);
   }
 
 }
