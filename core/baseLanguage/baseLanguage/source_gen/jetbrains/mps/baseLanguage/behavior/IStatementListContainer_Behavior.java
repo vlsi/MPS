@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IStatementListContainer_Behavior {
   private static Class[] PARAMETERS_1230212745736 = {SNode.class};
+  private static Class[] PARAMETERS_1237538691707 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -15,12 +16,24 @@ public class IStatementListContainer_Behavior {
     return false;
   }
 
+  public static boolean virtual_isStatementListCompactable_1237538691707(SNode thisNode) {
+    return false;
+  }
+
   public static boolean call_isExecuteSynchronous_1230212745736(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isExecuteSynchronous_1230212745736", PARAMETERS_1230212745736);
   }
 
+  public static boolean call_isStatementListCompactable_1237538691707(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isStatementListCompactable_1237538691707", PARAMETERS_1237538691707);
+  }
+
   public static boolean callSuper_isExecuteSynchronous_1230212745736(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isExecuteSynchronous_1230212745736", PARAMETERS_1230212745736);
+  }
+
+  public static boolean callSuper_isStatementListCompactable_1237538691707(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isStatementListCompactable_1237538691707", PARAMETERS_1237538691707);
   }
 
 }

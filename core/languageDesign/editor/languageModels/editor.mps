@@ -356,9 +356,6 @@
               </node>
             </node>
           </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1237473996316">
-            <property name="flag" value="false" />
-          </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1237473996317">
             <property name="flag" value="true" />
           </node>
@@ -437,9 +434,6 @@
       <node role="ifFalseCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237474002626">
         <property name="vertical" value="true" />
         <link role="styleClass" targetNodeId="1237383973576" resolveInfo="rootCellModelStyle" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1237474002627">
-          <property name="flag" value="false" />
-        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1237474002628">
           <property name="name" value="open_tag_1" />
           <link role="editorComponent" targetNodeId="1176716781495" resolveInfo="_OpenTag" />

@@ -755,7 +755,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
@@ -901,15 +900,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_2102_13(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2102_13");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Component_2102_5(EditorCell editorCell, SNode node, EditorContext context) {

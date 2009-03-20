@@ -251,6 +251,19 @@
         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1232126556706" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237540575568">
+      <property name="name" value="isStatementListCompactable" />
+      <link role="overriddenMethod" targetNodeId="9.1237538691707" resolveInfo="isStatementListCompactable" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237540575570">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237540583054">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237540583806">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1237540579915" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237540579916" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877338556">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877338557" />
     </node>
@@ -3953,6 +3966,19 @@
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1232127348343">
         <link role="concept" targetNodeId="8.1068431790189" resolveInfo="Type" />
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237540678662">
+      <property name="name" value="isStatementListCompactable" />
+      <link role="overriddenMethod" targetNodeId="9.1237538691707" resolveInfo="isStatementListCompactable" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237540678663">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237540678664">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237540678665">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1237540678666" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237540678667" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1229718424143">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229718424144" />

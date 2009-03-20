@@ -32,6 +32,10 @@ public class ClosureLiteral_Behavior {
     return new _Quotations.QuotationClass_0().createNode(paramTypes, resultType, throwsTypes);
   }
 
+  public static boolean virtual_isStatementListCompactable_1237538691707(SNode thisNode) {
+    return true;
+  }
+
   public static SNode call_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getType_1229718192182", PARAMETERS_1229718192182, paramTypes, resultType, returnType, termType, throwsTypes);
   }

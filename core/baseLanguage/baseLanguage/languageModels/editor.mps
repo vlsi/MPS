@@ -105,6 +105,56 @@
           <property name="flag" value="true" />
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237394349881" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237538908884">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237538908885">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237538970037">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1237538970038">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237538971307">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237538971009" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237538972264">
+                    <link role="baseMethodDeclaration" targetNodeId="75.1237538811451" resolveInfo="isCompact" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1237538980593">
+        <property name="usesFolding" value="true" />
+        <property name="vertical" value="true" />
+        <link role="relationDeclaration" targetNodeId="17.1068581517665" />
+        <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237538980594">
+          <property name="nullText" value="&lt;no statements&gt;" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1237538980595">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1237538980596">
+            <property name="style" value="ITALIC" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1237538980597">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1237538980598">
+            <property name="color" value="darkGray" />
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1237538980599">
+          <property name="flag" value="false" />
+        </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237538980602" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237538980603">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237538980604">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237538980605">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237538980607">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237538980608" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237538980609">
+                  <link role="baseMethodDeclaration" targetNodeId="75.1237538811451" resolveInfo="isCompact" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1232615336070" />
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237394347880" />

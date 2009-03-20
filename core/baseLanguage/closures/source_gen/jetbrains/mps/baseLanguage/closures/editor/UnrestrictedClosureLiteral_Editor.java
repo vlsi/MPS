@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -18,9 +18,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -28,6 +29,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 
 public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
 
@@ -38,7 +41,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_1012_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1012_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -79,7 +82,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     if (this.myListHandler_1012_0 == null) {
       this.myListHandler_1012_0 = new UnrestrictedClosureLiteral_Editor.parameterListHandler_1012_0(node, "parameter", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_1012_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1012_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_1012_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -124,16 +127,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1012_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1012_0");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_1012_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -146,8 +140,20 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return UnrestrictedClosureLiteral_Editor._StyleParameter_QueryFunction_1237540662346((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
+            }
+
+          });
         }
 
       };
@@ -159,7 +165,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BRACKETS, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
         }
 
       };
@@ -172,16 +178,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1012_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1012_3");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1012_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -197,6 +194,10 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1012_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1237540662346(SNode node, EditorContext editorContext) {
+    return !(StatementList_Behavior.call_isCompact_1237538811451(SLinkOperations.getTarget(node, "body", true)));
   }
 
   public static class parameterListHandler_1012_0 extends RefNodeListHandler {
