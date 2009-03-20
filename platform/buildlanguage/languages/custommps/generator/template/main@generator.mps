@@ -4500,6 +4500,27 @@
           </node>
         </node>
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1236881175677" />
+        <node role="ifFaulse" type="jetbrains.mps.build.packaging.structure.Antcall" id="1237565469057">
+          <link role="project" targetNodeId="1233668931882" resolveInfo="help-build" />
+          <link role="targetDeclaration" targetNodeId="1236884572189" resolveInfo="unpack.buildtools.zip" />
+          <node role="delete" type="jetbrains.mps.build.packaging.structure.Delete" id="1237565469058" />
+          <node role="targetReference" type="jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference" id="1237565469059" />
+          <node role="referenceMacro$link_attribute$targetDeclaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1237565469060">
+            <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1237565469061">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237565469062">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237565469063">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237565469064">
+                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1237565469065" />
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1237565469066">
+                      <link role="label" targetNodeId="1237295614240" resolveInfo="CustomMPSBuildToUnpackZipAntcall" />
+                      <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1237565469067" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="configuration" type="jetbrains.mps.build.packaging.structure.Configuration" id="1236881042718">
         <property name="name" value="default" />

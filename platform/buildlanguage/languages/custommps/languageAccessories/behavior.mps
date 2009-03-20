@@ -354,19 +354,25 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237472277464">
                 <link role="baseMethodDeclaration" targetNodeId="5.~String.substring(int):java.lang.String" resolveInfo="substring" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237472301485">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1237472301525">
-                    <property name="value" value="1" />
-                  </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237472277465">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237472277466">
                       <link role="variableDeclaration" targetNodeId="1237472212775" resolveInfo="relativePath" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237472277467">
                       <link role="baseMethodDeclaration" targetNodeId="5.~String.indexOf(java.lang.String):int" resolveInfo="indexOf" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237472277468">
-                        <property name="value" value="}/" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237564456177">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237472277468">
+                          <property name="value" value="}" />
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1237564466882">
+                          <link role="classifier" targetNodeId="4.~Macros" resolveInfo="Macros" />
+                          <link role="variableDeclaration" targetNodeId="4.~Macros.SEPARATOR_CHAR" resolveInfo="SEPARATOR_CHAR" />
+                        </node>
                       </node>
                     </node>
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1237564487896">
+                    <property name="value" value="2" />
                   </node>
                 </node>
               </node>
