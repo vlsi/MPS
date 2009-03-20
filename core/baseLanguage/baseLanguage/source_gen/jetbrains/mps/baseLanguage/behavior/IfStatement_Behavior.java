@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class IfStatement_Behavior {
 
@@ -23,6 +24,17 @@ public class IfStatement_Behavior {
     }
     SNodeOperations.detachNode(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true));
     SLinkOperations.addChild(thisNode, "elsifClauses", result);
+  }
+
+  public static boolean call_isGuardIf_1237547453258(SNode thisNode) {
+    if ((SLinkOperations.getTarget(thisNode, "ifFalseStatement", true) != null) || ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true)).isNotEmpty()) {
+      return false;
+    }
+    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).count() != 1) {
+      return false;
+    }
+    SNode onlyStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).first();
+    return Statement_Behavior.call_isJumpStatement_1237547327995(onlyStatement);
   }
 
 }
