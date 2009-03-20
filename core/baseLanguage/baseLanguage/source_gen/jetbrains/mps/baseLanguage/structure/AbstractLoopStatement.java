@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AbstractLoopStatement extends Statement implements IContainer {
+public class AbstractLoopStatement extends Statement implements IContainer, IStatementListContainer {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement";
   public static final String LABEL = "label";
   public static final String SHORT_DESCRIPTION = "shortDescription";

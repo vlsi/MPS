@@ -1547,6 +1547,7 @@
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="15.1215088010675" resolveInfo="RightParen" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237541070339" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1209728118074">

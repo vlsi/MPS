@@ -158,9 +158,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199569964240">
         <property name="text" value="=&gt;" />
         <link role="styleClass" targetNodeId="3.1215010940130" resolveInfo="Operator" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233925590835">
-          <property name="flag" value="true" />
-        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237538340521">
           <property name="flag" value="true" />
           <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean" id="1237539509375">
@@ -984,9 +981,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237540662343">
         <property name="text" value="==&gt;" />
         <link role="styleClass" targetNodeId="3.1215010940130" resolveInfo="Operator" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1237540662344">
-          <property name="flag" value="true" />
-        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237540662345">
           <property name="flag" value="true" />
           <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean" id="1237540662346">
