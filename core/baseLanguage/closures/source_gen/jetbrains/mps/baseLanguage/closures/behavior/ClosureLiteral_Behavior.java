@@ -32,7 +32,7 @@ public class ClosureLiteral_Behavior {
     return new _Quotations.QuotationClass_0().createNode(paramTypes, resultType, throwsTypes);
   }
 
-  public static boolean virtual_isStatementListCompactable_1237538691707(SNode thisNode) {
+  public static boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
     return true;
   }
 

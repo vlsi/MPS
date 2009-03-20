@@ -165,6 +165,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1199653975315">
       <link role="intfc" targetNodeId="2.1199653749349" resolveInfo="IStatementListContainer" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237546034993">
+      <link role="intfc" targetNodeId="2.1237545921771" resolveInfo="IContainsStatementList" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1199711271002">
     <property name="name" value="InvokeExpression" />

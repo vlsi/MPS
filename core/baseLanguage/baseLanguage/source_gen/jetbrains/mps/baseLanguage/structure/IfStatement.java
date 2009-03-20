@@ -9,8 +9,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IfStatement extends Statement {
+public class IfStatement extends Statement implements IContainsStatementList {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.IfStatement";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONDITION = "condition";
   public static final String IF_FALSE_STATEMENT = "ifFalseStatement";
   public static final String IF_TRUE = "ifTrue";
@@ -18,6 +21,30 @@ public class IfStatement extends Statement {
 
   public IfStatement(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(IfStatement.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(IfStatement.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(IfStatement.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(IfStatement.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(IfStatement.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(IfStatement.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getCondition() {

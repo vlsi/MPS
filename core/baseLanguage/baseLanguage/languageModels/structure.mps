@@ -428,6 +428,9 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1206060495898" resolveInfo="ElsIfClause" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237546138606">
+      <link role="intfc" targetNodeId="1237545921771" resolveInfo="IContainsStatementList" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123165">
     <property name="name" value="InstanceMethodDeclaration" />
@@ -1688,6 +1691,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233160450472">
       <link role="intfc" targetNodeId="4.1233160296597" resolveInfo="IContainer" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237546128683">
+      <link role="intfc" targetNodeId="1237545921771" resolveInfo="IContainsStatementList" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1154542696413">
@@ -3240,6 +3246,9 @@
       <property name="role" value="declaration" />
       <link role="target" targetNodeId="1236693300889" resolveInfo="VarVariableDeclaration" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1237545921771">
+    <property name="name" value="IContainsStatementList" />
   </node>
 </model>
 
