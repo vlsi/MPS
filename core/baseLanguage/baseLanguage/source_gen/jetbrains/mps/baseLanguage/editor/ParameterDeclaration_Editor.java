@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -67,7 +68,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_4085_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_4085_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -77,7 +78,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_4085_3(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_4085_3(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -104,7 +105,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_4085_5(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_4085_5(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -163,7 +164,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_4085_1 == null) {
       this.myListHandler_4085_1 = new ParameterDeclaration_Editor.annotationListHandler_4085_1(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_4085_1.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_4085_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_4085_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
