@@ -927,6 +927,16 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237579950116">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237579950117">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237579950118">
+                    <link role="variableDeclaration" targetNodeId="1200407961325" resolveInfo="methodDeclarations" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1237579950119">
+                    <node role="argument" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1237579950120" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
