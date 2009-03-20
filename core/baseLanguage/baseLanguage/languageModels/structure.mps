@@ -1689,9 +1689,6 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233160450472">
       <link role="intfc" targetNodeId="4.1233160296597" resolveInfo="IContainer" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237541393054">
-      <link role="intfc" targetNodeId="1199653749349" resolveInfo="IStatementListContainer" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1154542696413">
     <property name="name" value="ArrayCreatorWithInitializer" />
