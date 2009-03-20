@@ -11595,8 +11595,8 @@
     <node role="fieldDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1226429676215">
       <property name="name" value="myResultPanel" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1226429676216" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226429676217">
-        <link role="classifier" targetNodeId="37.~JComponent" resolveInfo="JComponent" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237562218601">
+        <link role="classifier" targetNodeId="73.1225567254164" resolveInfo="BuildScriptRunnerComponent" />
       </node>
     </node>
     <node role="initBlock" type="jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock" id="1226429676218">
@@ -11619,6 +11619,23 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="disposeBlock" type="jetbrains.mps.lang.plugin.structure.ProjectPluginDisposeBlock" id="1237562153560">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237562153561">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237562198155">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237562202659">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237562198156">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1237562198157" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1237562198158">
+                <link role="member" targetNodeId="1226429676215" resolveInfo="myResultPanel" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237562223369">
+              <link role="baseMethodDeclaration" targetNodeId="73.1233565519515" resolveInfo="dispose" />
             </node>
           </node>
         </node>
