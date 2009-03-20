@@ -111,8 +111,8 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1237538970038">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237538971307">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237538971009" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237538972264">
-                    <link role="baseMethodDeclaration" targetNodeId="75.1237538811451" resolveInfo="isCompact" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237546804414">
+                    <link role="baseMethodDeclaration" targetNodeId="75.1237546596168" resolveInfo="isCompact" />
                   </node>
                 </node>
               </node>
@@ -148,8 +148,8 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237538980605">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237538980607">
                 <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237538980608" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237538980609">
-                  <link role="baseMethodDeclaration" targetNodeId="75.1237538811451" resolveInfo="isCompact" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237546808525">
+                  <link role="baseMethodDeclaration" targetNodeId="75.1237546596168" resolveInfo="isCompact" />
                 </node>
               </node>
             </node>

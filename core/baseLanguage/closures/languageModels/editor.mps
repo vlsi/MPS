@@ -171,8 +171,8 @@
                         <link role="link" targetNodeId="1.1199569916463" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237539529644">
-                      <link role="baseMethodDeclaration" targetNodeId="7.1237538811451" resolveInfo="isCompact" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237546825854">
+                      <link role="baseMethodDeclaration" targetNodeId="7.1237546596168" resolveInfo="isCompact" />
                     </node>
                   </node>
                 </node>
@@ -994,8 +994,8 @@
                         <link role="link" targetNodeId="1.1199569916463" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237540662354">
-                      <link role="baseMethodDeclaration" targetNodeId="7.1237538811451" resolveInfo="isCompact" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237546845418">
+                      <link role="baseMethodDeclaration" targetNodeId="7.1237546596168" resolveInfo="isCompact" />
                     </node>
                   </node>
                 </node>

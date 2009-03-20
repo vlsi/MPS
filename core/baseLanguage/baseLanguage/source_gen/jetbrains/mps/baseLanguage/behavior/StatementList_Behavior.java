@@ -34,7 +34,7 @@ public class StatementList_Behavior {
     return declarations;
   }
 
-  public static boolean call_isCompact_1237538811451(SNode thisNode) {
+  public static boolean call_isCompact_1237546596168(SNode thisNode) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"))) {
       return false;
     }
@@ -42,6 +42,10 @@ public class StatementList_Behavior {
     if (!(IContainsStatementList_Behavior.call_isStatementListCompactable_1237546012856(parent))) {
       return false;
     }
+    return IContainsStatementList_Behavior.call_isStatementListCompact_1237546693016(parent);
+  }
+
+  public static boolean call_isOneLiner_1237538811451(SNode thisNode) {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() > 1) {
       return false;
     }

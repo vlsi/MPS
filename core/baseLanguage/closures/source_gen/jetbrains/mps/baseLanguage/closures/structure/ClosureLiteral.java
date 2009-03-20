@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.closures.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.IStatementListContainer;
+import jetbrains.mps.baseLanguage.structure.IContainsStatementList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import java.util.Iterator;
@@ -13,7 +14,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ClosureLiteral extends Expression implements IStatementListContainer {
+public class ClosureLiteral extends Expression implements IStatementListContainer, IContainsStatementList {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

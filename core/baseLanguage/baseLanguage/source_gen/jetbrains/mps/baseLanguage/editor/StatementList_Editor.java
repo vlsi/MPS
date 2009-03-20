@@ -123,11 +123,11 @@ public class StatementList_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition6577_0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(StatementList_Behavior.call_isCompact_1237538811451(node));
+    return !(StatementList_Behavior.call_isCompact_1237546596168(node));
   }
 
   public static boolean renderingCondition6577_1(SNode node, EditorContext editorContext, IScope scope) {
-    return StatementList_Behavior.call_isCompact_1237538811451(node);
+    return StatementList_Behavior.call_isCompact_1237546596168(node);
   }
 
   public static class statementListHandler_6577_0 extends RefNodeListHandler {

@@ -196,7 +196,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _StyleParameter_QueryFunction_1237539509375(SNode node, EditorContext editorContext) {
-    return !(StatementList_Behavior.call_isCompact_1237538811451(SLinkOperations.getTarget(node, "body", true)));
+    return !(StatementList_Behavior.call_isCompact_1237546596168(SLinkOperations.getTarget(node, "body", true)));
   }
 
   public static class parameterListHandler_2648_0 extends RefNodeListHandler {
