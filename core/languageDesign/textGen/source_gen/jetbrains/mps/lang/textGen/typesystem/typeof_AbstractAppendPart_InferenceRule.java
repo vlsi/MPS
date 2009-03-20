@@ -12,21 +12,21 @@ import jetbrains.mps.lang.textGen.typesystem._Quotations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeof_SimplestTextGenOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
+public class typeof_AbstractAppendPart_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
 
-  public typeof_SimplestTextGenOperation_InferenceRule(){
+  public typeof_AbstractAppendPart_InferenceRule(){
   }
 
-  public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode part, final TypeCheckingContext typeCheckingContext) {
     {
-      SNode _nodeToCheck_1029348928467 = operation;
+      SNode _nodeToCheck_1029348928467 = part;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(operation, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1234267902929", true), new _Quotations.QuotationClass_1().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1234267908354", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(part, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1237483038485", true), new _Quotations.QuotationClass_4().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1237483038480", intentionProvider);
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation";
+    return "jetbrains.mps.lang.textGen.structure.AbstractAppendPart";
   }
 
   public boolean isApplicable(SNode argument) {

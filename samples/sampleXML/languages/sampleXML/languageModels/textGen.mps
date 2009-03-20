@@ -391,11 +391,12 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1236701016436">
-              <node role="arguments" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236701048799">
-                <link role="variableDeclaration" targetNodeId="1236700987315" resolveInfo="output" />
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.Append" id="1237463992006">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NodePart" id="1237463992008">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236701048799">
+                  <link role="variableDeclaration" targetNodeId="1236700987315" resolveInfo="output" />
+                </node>
               </node>
-              <node role="notNullArg" type="jetbrains.mps.baseLanguage.structure.Expression" id="1236701025829" />
             </node>
           </node>
           <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1236700827379">

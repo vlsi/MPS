@@ -10,13 +10,21 @@ public class DFABuilders extends DataFlowBuilders {
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.lang.textGen.structure.OperationDeclaration", new OperationDeclaration_DataFlow());
     manager.register("jetbrains.mps.lang.textGen.structure.OperationCall", new OperationCall_DataFlow());
-    manager.register("jetbrains.mps.lang.textGen.structure.BaseTextGenOperation", new BaseTextGenOperation_DataFlow());
     manager.register("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", new ConceptTextGenDeclaration_DataFlow());
-    manager.register("jetbrains.mps.lang.textGen.structure.AppendOperation", new AppendOperation_DataFlow());
     manager.register("jetbrains.mps.lang.textGen.structure.WithIndentOperation", new WithIndentOperation_DataFlow());
-    manager.register("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", new AbstractTextGenParameter_DataFlow());
     manager.register("jetbrains.mps.lang.textGen.structure.PrivateMethodCall", new PrivateMethodCall_DataFlow());
     manager.register("jetbrains.mps.lang.textGen.structure.PrivateMethodDeclaration", new PrivateMethodDeclaration_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.FoundErrorOperation", new FoundErrorOperation_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.Append", new Append_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.CollectionPart", new CollectionPart_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.ConstantStringPart", new ConstantStringPart_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.InfoPart", new InfoPart_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.NewLinePart", new NewLinePart_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.NodePart", new NodePart_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation", new DecreaseDepthOperation_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation", new IncreaseDepthOperation_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.IndentBufferOperation", new IndentBufferOperation_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", new LanguageTextGenDeclaration_DataFlow());
   }
 
 }
