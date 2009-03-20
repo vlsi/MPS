@@ -8,6 +8,7 @@ import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.MPSMainImpl;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
@@ -35,6 +36,8 @@ public abstract class UITestsBase extends JFCTestCase {
 
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.platform.prefix", "MPS");
+
+    IdeMain.setTestMode(TestMode.UI_TEST);
 
     MPSMainImpl.start(new String[0]);
 
@@ -67,8 +70,6 @@ public abstract class UITestsBase extends JFCTestCase {
         Disposer.dispose(application);
       }
     });
-
-    //TestHelper.cleanUp(UITestsBase.this,10000);
 
     flushAWT();
 

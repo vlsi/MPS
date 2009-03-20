@@ -26,6 +26,8 @@ import com.intellij.openapi.application.impl.ApplicationInfoImpl;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.AppUIUtil;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import org.jetbrains.annotations.NonNls;
 
 import javax.swing.JOptionPane;
@@ -117,15 +119,19 @@ public class MainImpl {
       }
     }
 
-    LicenseManager.getInstance().startUp(new LicenseManager.StartupAction() {
-      public void proceed() {
-        startApplication(args);
-      }
+    if (IdeMain.getTestMode() == TestMode.NO_TEST) {
+      LicenseManager.getInstance().startUp(new LicenseManager.StartupAction() {
+        public void proceed() {
+          startApplication(args);
+        }
 
-      public void cancel() {
-        System.exit(-1);
-      }
-    });
+        public void cancel() {
+          System.exit(-1);
+        }
+      });
+    }else {
+      startApplication(args);
+    }
   }
 
   private static void startApplication(final String[] args) {
