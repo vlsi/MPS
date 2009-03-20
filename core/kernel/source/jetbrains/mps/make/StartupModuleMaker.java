@@ -22,6 +22,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -33,7 +34,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
   public StartupModuleMaker(Project project) {
     super(project);
 
-    if (IdeMain.isTestMode()) return;
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
     StartupManagerEx.getInstanceEx(myProject).registerPreStartupActivity(new Runnable() {
       public void run() {

@@ -15,27 +15,29 @@
  */
 package jetbrains.mps;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
+import jetbrains.mps.logging.ILoggingHandler;
+import jetbrains.mps.logging.LogEntry;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.logging.*;
-import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.*;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
-
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import java.util.List;
 
 public class ReferencesTest extends BaseMPSTest {
   private static Logger LOG = Logger.getLogger(ReferencesTest.class);
 
   public void testBrokenReferences() {
-    IdeMain.setTestMode(true);
+    IdeMain.setTestMode(TestMode.CORE_TEST) ;
     TestMain.configureMPS();
 
     ModelAccess.instance().runReadAction(new Runnable() {

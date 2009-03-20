@@ -21,6 +21,7 @@ import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -92,7 +93,7 @@ public class ModelRepositoryComponent {
             }
           };
 
-          if (IdeMain.isTestMode()) return;
+          if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
           for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getModelDescriptors())) {
             root[0].add(new ModelTreeNode(modelDescriptor));

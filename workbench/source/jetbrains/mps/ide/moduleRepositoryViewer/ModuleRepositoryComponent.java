@@ -22,6 +22,7 @@ import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.CommandProcessorEx;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -91,7 +92,7 @@ public class ModuleRepositoryComponent {
 
           };
 
-          if (IdeMain.isTestMode()) return;
+          if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
           for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
             root[0].add(new LanguageTreeNode(module));

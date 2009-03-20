@@ -15,30 +15,32 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.ide.*;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.nodeEditor.IEditorChecker;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-
-import java.util.*;
-import java.lang.reflect.InvocationTargetException;
-
-import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.command.CommandProcessor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Logger LOG = Logger.getLogger(Highlighter.class);
@@ -131,7 +133,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   public void addChecker(IEditorChecker checker) {
-    if (IdeMain.isTestMode()) return;
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
     if (checker != null) {
       synchronized (CHECKERS_LOCK) {
@@ -141,7 +143,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   public void removeChecker(IEditorChecker checker) {
-    if (IdeMain.isTestMode()) return;
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
     if (checker != null) {
       synchronized (CHECKERS_LOCK) {
@@ -353,7 +355,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
 
     public void run() {
-      if (IdeMain.isTestMode()) return;
+      if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
       CommandProcessor commandProcessor = CommandProcessor.getInstance();
       while (true) {

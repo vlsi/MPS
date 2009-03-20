@@ -19,6 +19,7 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.MPSDataKeys;
 
@@ -34,7 +35,7 @@ public abstract class StandaloneMPSContext implements IOperationContext {
   }
 
   public boolean isTestMode() {
-    return IdeMain.isTestMode();
+    return IdeMain.getTestMode() == TestMode.CORE_TEST;
   }
 
   public <T> T getComponent(Class<T> clazz) {

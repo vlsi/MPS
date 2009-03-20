@@ -23,6 +23,7 @@ import jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
@@ -58,7 +59,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void projectOpened() {
-    if (IdeMain.isTestMode()) return;
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
     myMPSProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     try {
@@ -73,7 +74,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void projectClosed() {
-    if (IdeMain.isTestMode()) return;
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
     IProjectHandler handler = myMPSProject.getProjectHandler();
     if (handler != null) {

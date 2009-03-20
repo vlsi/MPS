@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
@@ -65,7 +66,7 @@ public class TestMain {
 
 
   public static void testProject(File projectFile, ProjectRunnable pr) {
-    IdeMain.setTestMode(true);
+    IdeMain.setTestMode(TestMode.CORE_TEST) ;
     TestMain.configureMPS();
     final MPSProject project = loadProject(projectFile);
     pr.execute(project);
@@ -114,7 +115,7 @@ public class TestMain {
   }
 
   public static boolean testProjectGenerationForLeaks(File projectFile, int leakThreshold) {
-    IdeMain.setTestMode(true);
+    IdeMain.setTestMode(TestMode.CORE_TEST) ;
 
     TestMain.configureMPS();
 
@@ -127,7 +128,7 @@ public class TestMain {
   }
 
   public static boolean testRefactoringTestEnvironment(File projectDirectory) {
-    IdeMain.setTestMode(true);
+    IdeMain.setTestMode(TestMode.CORE_TEST) ;
     TestMain.configureMPS();
     File projectFile = new File(projectDirectory, "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT);
     final MPSProject project = loadProject(projectFile);
@@ -178,7 +179,7 @@ public class TestMain {
   }
 
   public static boolean testRefactoringOnProject(final File projectDirectory, final IRefactoringTester refactoringTester) {
-    IdeMain.setTestMode(true);
+    IdeMain.setTestMode(TestMode.CORE_TEST) ;
     TestMain.configureMPS();
     final boolean[] b = new boolean[]{true};
 
@@ -275,7 +276,7 @@ public class TestMain {
   }
 
   public static boolean testProjectReloadForLeaks(final File projectFile) {
-    IdeMain.setTestMode(true);
+    IdeMain.setTestMode(TestMode.CORE_TEST) ;
 
     return testProjectReloadForLeaks(projectFile, 1000);
   }
@@ -351,7 +352,7 @@ public class TestMain {
    * @return
    */
   public static String testProject(File projectFile, String treatThisWarningAsError, String[] configurations) {
-    IdeMain.setTestMode(true);
+    IdeMain.setTestMode(TestMode.CORE_TEST) ;
     long start = System.currentTimeMillis();
     configureMPS();
 

@@ -15,21 +15,20 @@
  */
 package jetbrains.mps.lang.test.matcher;
 
-import org.junit.Test;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.util.Macros;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.project.MPSProject;
-
-import java.io.File;
-import java.util.Arrays;
-import java.lang.reflect.InvocationTargetException;
-
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Macros;
+import jetbrains.mps.vfs.IFile;
 import junit.framework.Assert;
+import org.junit.Test;
 
 import javax.swing.SwingUtilities;
+import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
@@ -136,7 +135,7 @@ public class TransformationTests {
 
   public SModel getModel() {
     TestMain.configureMPS();
-    IdeMain.setTestMode(true);
+    IdeMain.setTestMode(TestMode.CORE_TEST) ;
     final SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString("jetbrains.mps.transformationTest.test"));
     return sm.getSModel();
   }

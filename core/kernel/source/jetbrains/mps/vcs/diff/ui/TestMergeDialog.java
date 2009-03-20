@@ -18,6 +18,7 @@ package jetbrains.mps.vcs.diff.ui;
 import com.intellij.openapi.util.Computable;
 import static jetbrains.mps.TestMain.configureMPS;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -34,7 +35,7 @@ import java.io.IOException;
 
 public class TestMergeDialog {
   public static void main(final String[] args) throws JDOMException, IOException {
-    IdeMain.setTestMode(false);
+    IdeMain.setTestMode(TestMode.NO_TEST);
     configureMPS();
 
     final SModel baseModel = readModel(args[0]);

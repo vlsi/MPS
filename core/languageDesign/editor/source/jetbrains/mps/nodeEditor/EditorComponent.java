@@ -24,6 +24,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
@@ -895,7 +896,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void dispose() {
-    if (!IdeMain.isTestMode()) {
+    if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
       hideMessageToolTip();
     }
 

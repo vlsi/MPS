@@ -24,6 +24,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
@@ -388,7 +389,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   public void add(final Message message) {
-    if (IdeMain.isTestMode()) {
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
       return;
     }
 

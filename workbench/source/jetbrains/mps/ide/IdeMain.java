@@ -21,18 +21,18 @@ import java.util.GregorianCalendar;
 
 public class IdeMain {
   private static boolean ourUILoaded = false;
-  private static boolean ourTestMode = false;
+  private static TestMode ourTestMode = TestMode.NO_TEST;
 
   public static Date expirationDate() {
     GregorianCalendar calendar = new GregorianCalendar(2008, Calendar.OCTOBER, 31);
     return new Date(calendar.getTimeInMillis());
   }
 
-  public static boolean isTestMode() {
+  public static TestMode getTestMode() {
     return ourTestMode;
   }
 
-  public static void setTestMode(boolean testMode) {
+  public static void setTestMode(TestMode testMode) {
     ourTestMode = testMode;
   }
 
@@ -42,5 +42,9 @@ public class IdeMain {
 
   public static boolean isUILoaded() {
     return ourUILoaded;
+  }
+
+  public enum TestMode{
+    NO_TEST, CORE_TEST, UI_TEST
   }
 }

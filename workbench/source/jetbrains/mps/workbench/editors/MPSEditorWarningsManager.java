@@ -29,6 +29,7 @@ import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
@@ -161,7 +162,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void updateAllWarnings() {
-    if (IdeMain.isTestMode()) return;
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
     for (FileEditor editor : myFileEditorManager.getAllEditors()) {
       if (editor instanceof MPSFileNodeEditor) {

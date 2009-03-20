@@ -43,6 +43,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
@@ -207,7 +208,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public void initComponent() {
     addListeners();
 
-    if (!IdeMain.isTestMode()) {
+    if (IdeMain.getTestMode()!= TestMode.CORE_TEST) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
           rebuildTree();

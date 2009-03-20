@@ -21,6 +21,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.plugin.IProjectHandler;
@@ -407,7 +408,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     //todo hack
     if (getComponent(Project.class) != null) {
       Project project = getComponentSafe(Project.class);
-      if (IdeMain.isTestMode()) {
+      if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
 //        com.intellij.openapi.command.undo.UndoManager.getGlobalInstance().dropHistory();
         ProjectUtil.closeProject(project);
       }

@@ -12783,9 +12783,15 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229200270249">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1229200333752" />
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1229200332064">
-            <link role="baseMethodDeclaration" targetNodeId="81.~IdeMain.isTestMode():boolean" resolveInfo="isTestMode" />
-            <link role="classConcept" targetNodeId="81.~IdeMain" resolveInfo="IdeMain" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1237564210513">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237564207371">
+              <link role="baseMethodDeclaration" targetNodeId="81.~IdeMain.getTestMode():jetbrains.mps.ide.IdeMain$TestMode" resolveInfo="getTestMode" />
+              <link role="classConcept" targetNodeId="81.~IdeMain" resolveInfo="IdeMain" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1237564253608">
+              <link role="enumConstantDeclaration" targetNodeId="81.~IdeMain$TestMode.CORE_TEST" resolveInfo="CORE_TEST" />
+              <link role="enumClass" targetNodeId="81.~IdeMain$TestMode" resolveInfo="IdeMain.TestMode" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1229174569352">

@@ -18,6 +18,7 @@ package jetbrains.mps;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 
 import javax.swing.SwingUtilities;
 import java.io.File;
@@ -30,7 +31,7 @@ public class Converter {
   private static void convert(final File mprFile) throws Exception {
 
     TestMain.configureMPS();
-    IdeMain.setTestMode(true);
+    IdeMain.setTestMode(TestMode.CORE_TEST) ;
 
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {

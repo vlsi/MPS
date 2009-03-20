@@ -18,8 +18,8 @@ package jetbrains.mps.generator;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.template.Statistics;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -35,6 +35,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.TimePresentationUtil;
@@ -361,7 +362,7 @@ public class GenerationController {
   }
 
   private boolean isIDEAPresent() {
-    return !IdeMain.isTestMode() && getProjectHandler() != null;
+    return IdeMain.getTestMode() != TestMode.CORE_TEST && getProjectHandler() != null;
   }
 
   private IOperationContext getFirstContext() {

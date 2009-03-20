@@ -15,28 +15,29 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.WindowsUtil;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 import javax.swing.*;
 import javax.swing.event.ListDataListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
-
-import com.intellij.openapi.util.Computable;
 
 /**
  * Author: Sergey Dmitriev.
@@ -129,7 +130,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (myChooserActivated != b) {
       if (b) {
         myEditorComponent.pushKeyboardHandler(this);
-        if (!(IdeMain.isTestMode())) {
+        if (!(IdeMain.getTestMode() == TestMode.CORE_TEST)) {
           getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
           myNodeSubstituteInfo.invalidateActions();
           rebuildMenuEntries();
@@ -139,7 +140,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         }
         myPopupActivated = true;
       } else {
-        if (!(IdeMain.isTestMode())) {
+        if (!(IdeMain.getTestMode() == TestMode.CORE_TEST)) {
           getPopupWindow().setVisible(false);
           getPatternEditor().done();
           getPopupWindow().setRelativeCell(null);
