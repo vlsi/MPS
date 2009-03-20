@@ -2325,6 +2325,20 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237468055002">
           <property name="flag" value="true" />
         </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237547458388">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237547458389">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237547549323">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1237547551919">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237547553047">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237547552827" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237547553957">
+                    <link role="baseMethodDeclaration" targetNodeId="75.1237547453258" resolveInfo="isGuardIf" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1237468081895">
         <link role="relationDeclaration" targetNodeId="17.1068580123161" />
@@ -2344,6 +2358,20 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="1237468109931">
           <property name="tag" value="ext_1_RTransform" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237547557458">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237547557459">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237547558351">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1237547559681">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237547560653">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237547560574" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237547562360">
+                    <link role="baseMethodDeclaration" targetNodeId="75.1237547453258" resolveInfo="isGuardIf" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1206063692153">

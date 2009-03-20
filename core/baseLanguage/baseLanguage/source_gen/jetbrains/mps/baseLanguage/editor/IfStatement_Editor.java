@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -32,7 +33,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior;
 
 public class IfStatement_Editor extends DefaultNodeEditor {
 
@@ -52,9 +52,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1754_1(context, node, "("));
     editorCell.addEditorCell(this.createRefNode_1754_1(context, node));
     editorCell.addEditorCell(this.createConstant_1754_2(context, node, ")"));
-    editorCell.addEditorCell(this.createConstant_1754_3(context, node, "{"));
+    if (renderingCondition1754_2(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_1754_3(context, node, "{"));
+    }
     editorCell.addEditorCell(this.createRefNode_1754_3(context, node));
-    editorCell.addEditorCell(this.createConstant_1754_4(context, node, "}"));
+    if (renderingCondition1754_3(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_1754_4(context, node, "}"));
+    }
     if (renderingCondition1754_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNodeList_1754_0(context, node));
     }
@@ -381,6 +385,14 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition1754_1(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "ifFalseStatement", true) != null);
+  }
+
+  public static boolean renderingCondition1754_2(SNode node, EditorContext editorContext, IScope scope) {
+    return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
+  }
+
+  public static boolean renderingCondition1754_3(SNode node, EditorContext editorContext, IScope scope) {
+    return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
   }
 
   public static SNode matchingNode1754_0(SNode node) {

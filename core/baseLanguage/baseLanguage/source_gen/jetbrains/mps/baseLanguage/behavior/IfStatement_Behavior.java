@@ -34,7 +34,11 @@ public class IfStatement_Behavior {
       return false;
     }
     SNode onlyStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).first();
-    return Statement_Behavior.call_isJumpStatement_1237547327995(onlyStatement);
+    return Statement_Behavior.call_isGuardClauseStatement_1237547327995(onlyStatement);
+  }
+
+  public static boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
+    return IfStatement_Behavior.call_isGuardIf_1237547453258(thisNode);
   }
 
 }

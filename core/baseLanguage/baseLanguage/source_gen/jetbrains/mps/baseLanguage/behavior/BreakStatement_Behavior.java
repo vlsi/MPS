@@ -49,4 +49,8 @@ public class BreakStatement_Behavior {
     return null;
   }
 
+  public static boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
+    return true;
+  }
+
 }

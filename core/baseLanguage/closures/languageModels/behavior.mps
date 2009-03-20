@@ -4164,5 +4164,43 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231426116481" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1237548240741">
+    <link role="concept" targetNodeId="1.1228997946467" resolveInfo="YieldAllStatement" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1237548240742">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237548240743" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237548242057">
+      <property name="name" value="isGuardClauseStatement" />
+      <link role="overriddenMethod" targetNodeId="9.1237547327995" resolveInfo="isGuardClauseStatement" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237548242059">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237548246261">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237548247466">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1237548440305" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237548440306" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1237548257796">
+    <link role="concept" targetNodeId="1.1200830824066" resolveInfo="YieldStatement" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1237548257797">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237548257798" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237548259220">
+      <property name="name" value="isGuardClauseStatement" />
+      <link role="overriddenMethod" targetNodeId="9.1237547327995" resolveInfo="isGuardClauseStatement" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237548259222">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237548261819">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237548262337">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1237548443713" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237548443714" />
+    </node>
+  </node>
 </model>
 

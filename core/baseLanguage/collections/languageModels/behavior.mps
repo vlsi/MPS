@@ -965,5 +965,25 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226515539542" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1237548270025">
+    <property name="package" value="internal" />
+    <link role="concept" targetNodeId="1.1224446583770" resolveInfo="SkipStatement" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1237548270026">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237548270027" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237548271216">
+      <property name="name" value="isGuardClauseStatement" />
+      <link role="overriddenMethod" targetNodeId="7.1237547327995" resolveInfo="isGuardClauseStatement" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237548271218">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237548277088">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237548277293">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1237548447621" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237548447622" />
+    </node>
+  </node>
 </model>
 

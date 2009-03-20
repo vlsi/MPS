@@ -11,16 +11,16 @@ public class Statement_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static boolean virtual_isJumpStatement_1237547327995(SNode thisNode) {
+  public static boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return false;
   }
 
-  public static boolean call_isJumpStatement_1237547327995(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isJumpStatement_1237547327995", PARAMETERS_1237547327995);
+  public static boolean call_isGuardClauseStatement_1237547327995(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995);
   }
 
-  public static boolean callSuper_isJumpStatement_1237547327995(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isJumpStatement_1237547327995", PARAMETERS_1237547327995);
+  public static boolean callSuper_isGuardClauseStatement_1237547327995(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995);
   }
 
 }
