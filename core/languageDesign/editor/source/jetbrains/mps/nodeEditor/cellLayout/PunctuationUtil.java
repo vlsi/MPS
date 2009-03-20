@@ -28,12 +28,8 @@ import java.awt.Toolkit;
 
 class PunctuationUtil {
 
-
-  static void addGaps(EditorCell_Collection editorCells, EditorCell currentCell) {
-    addGaps(editorCells, currentCell, false);
-  }
   
-  static void addGaps(EditorCell_Collection editorCells, EditorCell currentCell, boolean firstOnLine) {
+  static void addGaps(EditorCell_Collection editorCells, EditorCell currentCell) {
     int gap = getHorizontalGap(editorCells);
 
     if (currentCell instanceof EditorCell_Collection &&
@@ -42,7 +38,7 @@ class PunctuationUtil {
     }
 
     if ((!leftCellHasPunctuationRight(currentCell) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
-          && !hasPunctuationLeft(currentCell) && !firstOnLine) {
+          && !hasPunctuationLeft(currentCell)) {
       currentCell.setLeftGap(gap / 2);
     } else {
       currentCell.setLeftGap(0);
@@ -60,7 +56,7 @@ class PunctuationUtil {
   private static boolean leftCellHasPunctuationRight(EditorCell currentCell) {
     EditorCell_Collection parent = currentCell.getParent();
     if (parent != null && hasPunctuableLayout(parent)) {
-      if (parent.getCellLayout() instanceof CellLayout_Indent && CellLayout_Indent.isOnNewLine(parent, currentCell)) {
+      if (parent.getCellLayout() instanceof CellLayout_Indent && CellLayout_Indent.isOnNewLine(parent, currentCell)) {        
         return true;
       }
       int index = parent.getCellNumber(currentCell);

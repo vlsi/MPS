@@ -194,15 +194,11 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224153941792">
     <property name="name" value="Test" />
     <property name="abstractClass" value="true" />
-    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1233936975101">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1233936975102" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233936975103" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233936975104" />
-    </node>
-    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1236437866545">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236437866546" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236437866547" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236437866548" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1237542356466">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237542356467" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237542356468" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237542356469" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236186559197">
