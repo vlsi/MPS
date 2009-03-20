@@ -50,15 +50,6 @@ public class NodeEditorComponent extends EditorComponent {
     super(operationContext, false);
 
 
-    final KeyboardFocusManager fm = KeyboardFocusManager.getCurrentKeyboardFocusManager();
-    fm.addPropertyChangeListener("focusOwner", new PropertyChangeListener() {
-      public void propertyChange(PropertyChangeEvent evt) {
-        System.out.println("was " + evt.getOldValue());
-        System.out.println("now " + evt.getNewValue());
-        System.out.println("");
-      }
-    });
-
     myExternalComponent = new JPanel(new BorderLayout());
     myExternalComponent.add(super.getExternalComponent(), BorderLayout.CENTER);
     myExternalComponent.add(getMessagesGutter(), BorderLayout.EAST);
