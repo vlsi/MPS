@@ -10,6 +10,7 @@ import jetbrains.mps.workbench.dialogs.project.newproject.SolutionStep;
 import junit.extensions.jfcunit.finder.DialogFinder;
 
 import java.awt.Component;
+import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 
 public class NewProjectUITests extends NoProjectUITestsBase {
@@ -36,7 +37,14 @@ public class NewProjectUITests extends NoProjectUITestsBase {
     checkProject(p);
     flushAWT();
 
-    TestUtil.deleteProject(this,p);
+    File projectFile = p.getProjectFile();
+    TestUtil.closeProject(p);
+
+    flushAWT();
+
+    TestUtil.deleteProject(this, projectFile);
+
+    flushAWT();
   }
 
   private void checkProject(MPSProject p) {

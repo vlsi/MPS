@@ -1,11 +1,14 @@
 package jetbrains.mps.uitests;
 
 import com.intellij.ide.GeneralSettings;
+import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.MPSMainImpl;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import junit.extensions.jfcunit.JFCTestCase;
@@ -57,8 +60,17 @@ public abstract class UITestsBase extends JFCTestCase {
 
     flushAWT();
 
-    //TestHelper.cleanUp(UITestsBase.this);
-    //flushAWT();
+    final ApplicationEx application = ApplicationManagerEx.getApplicationEx();
+    application.saveAll();
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        Disposer.dispose(application);
+      }
+    });
+
+    //TestHelper.cleanUp(UITestsBase.this,10000);
+
+    flushAWT();
 
     super.tearDown();
   }
@@ -115,32 +127,32 @@ public abstract class UITestsBase extends JFCTestCase {
   protected final String checkTextField(String name) {
     JTextField field = findTextField(name);
     String text = field.getText();
-    assertFalse("Initial "+name+" is empty",text.equals(""));
+    assertFalse("Initial " + name + " is empty", text.equals(""));
     return text;
   }
 
   protected JTextField findTextField(String name) {
     NamedComponentFinder finder = new NamedComponentFinder(JTextField.class, name);
     JTextField field = (JTextField) finder.find();
-    assertNotNull(name+" field not found",field);
+    assertNotNull(name + " field not found", field);
     return field;
   }
 
   protected final String checkPathField(String name) {
     PathField field = findPathField(name);
     String path = field.getPath();
-    assertFalse("Initial "+name+" is empty",path.equals(""));
+    assertFalse("Initial " + name + " is empty", path.equals(""));
     return path;
   }
 
   protected PathField findPathField(String name) {
     NamedComponentFinder finder = new NamedComponentFinder(PathField.class, name);
     PathField field = (PathField) finder.find();
-    assertNotNull(name+" field not found",field);
+    assertNotNull(name + " field not found", field);
     return field;
   }
 
-  protected final boolean checkCheckbox(String name){
+  protected final boolean checkCheckbox(String name) {
     JCheckBox cb = findCheckbox(name);
     return cb.isSelected();
   }
@@ -148,14 +160,14 @@ public abstract class UITestsBase extends JFCTestCase {
   protected JCheckBox findCheckbox(String name) {
     NamedComponentFinder finder = new NamedComponentFinder(JCheckBox.class, name);
     JCheckBox cb = (JCheckBox) finder.find();
-    assertNotNull(name+" checkbox not found",cb);
+    assertNotNull(name + " checkbox not found", cb);
     return cb;
   }
 
-  protected final void pressButton(Component dialog,String caption) {
-    AbstractButtonFinder btnFinder = new AbstractButtonFinder(".*"+caption+".*");
+  protected final void pressButton(Component dialog, String caption) {
+    AbstractButtonFinder btnFinder = new AbstractButtonFinder(".*" + caption + ".*");
     List nextBtn = btnFinder.findAll((Container) dialog);
-    assertFalse("\""+caption+"\" not found", nextBtn.isEmpty());
+    assertFalse("\"" + caption + "\" not found", nextBtn.isEmpty());
     getHelper().enterClickAndLeave(new MouseEventData(UITestsBase.this, (Component) nextBtn.get(0)));
   }
 }

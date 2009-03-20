@@ -32,7 +32,13 @@ public class NewDialogsUITests extends NoProjectUITestsBase {
 
   @Override
   protected void doTearDown() {
-    TestUtil.deleteProject(this, myCreatedProject);
+    TestUtil.closeProject(myCreatedProject);
+
+    flushAWT();
+
+    TestUtil.deleteProject(this, myCreatedProject.getProjectFile());
+    
+    flushAWT();
     super.doTearDown();
   }
 

@@ -5,12 +5,14 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
 import junit.extensions.jfcunit.finder.DialogFinder;
 
 import javax.swing.SwingUtilities;
 import java.awt.Component;
+import java.io.File;
 
 public class TestUtil {
   public static MPSProject createNewProject(final UITestsBase test) {
@@ -79,7 +81,7 @@ public class TestUtil {
 
     while (!loaded[0]) test.flushAWT();
     test.flushAWT();
-    
+
     DialogFinder finder = new DialogFinder(".*Tip of the Day.*", true);
     finder.setWait(10);
     Component dialog = finder.find();
@@ -90,7 +92,28 @@ public class TestUtil {
     return ideaProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
-  public static void deleteProject(UITestsBase tests, MPSProject project) {
-    //todo 
+  public static void deleteProject(UITestsBase tests, File projectFile) {
+    deleteDirectory(projectFile.getParentFile());
+  }
+
+  static public boolean deleteDirectory(File file) {
+    if (file.exists()) {
+      for (File f : file.listFiles()) {
+        if (f.isDirectory()) {
+          deleteDirectory(f);
+        } else {
+          f.delete();
+        }
+      }
+    }
+    return (file.delete());
+  }
+
+  public static void closeProject(final MPSProject createdProject) {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        ProjectManager.getInstance().closeProject(createdProject.getComponent(Project.class));
+      }
+    });
   }
 }
