@@ -47,9 +47,12 @@
   <import index="13" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="1203607556930">
-    <property name="name" value="ChooseLanguage" />
+    <property name="name" value="ChooseModule" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1203607567791">
       <link role="applicableConcept" targetNodeId="1.1203599702327" resolveInfo="Module" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.RemovePart" id="1237543560483">
+        <link role="conceptToRemove" targetNodeId="1.1203599702327" resolveInfo="Module" />
+      </node>
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1203607611171">
         <link role="concept" targetNodeId="1.1203599702327" resolveInfo="Module" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart" id="1203607624312">
@@ -130,6 +133,15 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203607890595">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203607894066">
                   <link role="variableDeclaration" targetNodeId="1203607851824" resolveInfo="newNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String" id="1237543411168">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237543411169">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237543413197">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237543413198">
+                  <property name="value" value="mps module" />
                 </node>
               </node>
             </node>

@@ -55,6 +55,10 @@ public class QueriesGenerated {
                 return newNode;
               }
 
+              public String getDescriptionText(String pattern) {
+                return "mps module";
+              }
+
             });
           }
         }
