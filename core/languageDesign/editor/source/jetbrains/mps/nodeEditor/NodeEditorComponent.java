@@ -29,11 +29,14 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 import java.awt.BorderLayout;
+import java.awt.KeyboardFocusManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.util.List;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -45,6 +48,16 @@ public class NodeEditorComponent extends EditorComponent {
 
   public NodeEditorComponent(IOperationContext operationContext) {
     super(operationContext, false);
+
+
+    final KeyboardFocusManager fm = KeyboardFocusManager.getCurrentKeyboardFocusManager();
+    fm.addPropertyChangeListener("focusOwner", new PropertyChangeListener() {
+      public void propertyChange(PropertyChangeEvent evt) {
+        System.out.println("was " + evt.getOldValue());
+        System.out.println("now " + evt.getNewValue());
+        System.out.println("");
+      }
+    });
 
     myExternalComponent = new JPanel(new BorderLayout());
     myExternalComponent.add(super.getExternalComponent(), BorderLayout.CENTER);
