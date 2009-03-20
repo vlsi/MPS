@@ -1499,6 +1499,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     EditorCell selectedCell = getSelectedCell();
     if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || selectedCell == null || !selectedCell.isAncestorOf(newSelectedCell))) {
       changeSelection(newSelectedCell, true, false);
+      assert mySelectedCell != null;
       mySelectedCell.processMousePressed(mouseEvent);
       revalidateAndRepaint(false);
     }
@@ -1724,6 +1725,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         deepestCell.getWidth() - label.getLeftInset() - label.getRightInset(),
         deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
     }
+
+
+    EditorSettings setting = EditorSettings.getInstance();
+    g.setColor(Color.LIGHT_GRAY);                                      
+    int boundPosition = myRootCell.getX() + setting.getSpacesWidth(setting.getVerticalBound());      
+    g.drawLine(boundPosition, 0, boundPosition, getHeight());
 
     myLeftHighlighter.paint(g);
     if (myRootCell != null) {

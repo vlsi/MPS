@@ -243,19 +243,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myLineContent.clear();
     }
 
-
-    private int getSpacesWidth(int size) {
-      String indentText = "";
-      for (int i = 0; i < size; i++) {
-        indentText += " ";
-      }
-      TextLine textLine = new TextLine(indentText);
-      textLine.relayout();
-      return textLine.getWidth();
-    }
-
     private int getIndentWidth() {
-      return getSpacesWidth(EditorSettings.getInstance().getIndentSize());
+      EditorSettings settings = EditorSettings.getInstance();
+      return settings.getSpacesWidth(settings.getIndentSize());
     }
 
     private int getIndent(EditorCell cell) {

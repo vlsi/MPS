@@ -63,6 +63,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
   private List<EditorSettingsListener> myListeners = new ArrayList<EditorSettingsListener>();
 
   private int myIndentSize = 2;
+  private int myVerticalBound = 120;
 
   private MyState myState = new MyState();
   private Font myDefaultEditorFont;
@@ -102,6 +103,10 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     return myIndentSize;
   }
 
+  public int getVerticalBound() {
+    return myVerticalBound;
+  }
+
   public boolean isUseAntialiasing() {
     return myState.myUseAntialiasing;
   }
@@ -137,6 +142,17 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
   public Color getRangeSelectionForegroundColor() {
     return getSelectionBackgroundColor();
   }
+
+  public int getSpacesWidth(int size) {
+    String indentText = "";
+    for (int i = 0; i < size; i++) {
+      indentText += " ";
+    }
+    TextLine textLine = new TextLine(indentText);
+    textLine.relayout();
+    return textLine.getWidth();
+  }
+
 
   public void addEditorSettingsListener(EditorSettingsListener l) {
     myListeners.add(l);
