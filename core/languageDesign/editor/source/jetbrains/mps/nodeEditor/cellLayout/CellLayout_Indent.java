@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.awt.*;
 
 public class CellLayout_Indent extends AbstractCellLayout {
-  private static final boolean OVERFLOW_ENABLED = true;
+  private static final boolean OVERFLOW_ENABLED = false;
 
   static boolean isOnNewLine(EditorCell root, EditorCell cell) {
     EditorCell current = cell;
@@ -195,9 +195,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
         appendCell(current());
 
-//        if (myX + current().getWidth() + myLineWidth > myMaxWidth && myLineContent.size() > 1) {
-//          splitLineAt(current());
-//        }
+        if (haveToSplit()) {
+          splitLineAt(findSplitPoint());
+        }
 
         if (isNewLineAfter(myCell, current())) {
           newLine();
@@ -283,6 +283,49 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myLineContent.clear();
     }
 
+    private boolean haveToSplit() {
+      return myX + myLineWidth > myMaxWidth && myLineContent.size() > 1;
+    }
+
+    private boolean isOverflowEnabled() {
+      return OVERFLOW_ENABLED;
+    }
+
+    private EditorCell findSplitPoint() {      
+      EditorCell result = myLineContent.get(myLineContent.size() - 1);
+
+      if (!isOverflowEnabled()) return result;
+
+      EditorCell current = result;
+
+      while (true) {
+        if (!isIndentCollection(current.getParent())) break;
+
+        EditorCell indentLeaf = getFirstIndentLeaf(current.getParent());
+        if (myLineContent.contains(indentLeaf) &&
+          indentLeaf.getX() + indentLeaf.getWidth() - myX > myMaxWidth / 2) {
+
+          result = indentLeaf;
+          current = current.getParent();
+        } else {
+          break;
+        }
+      }
+
+      return result;
+    }
+
+    private EditorCell getFirstIndentLeaf(EditorCell_Collection collection) {
+      if (!isIndentCollection(collection)) return collection;
+
+      EditorCell firstChild = collection.getFirstChild();
+      if (firstChild instanceof EditorCell_Collection) {
+        return getFirstIndentLeaf((EditorCell_Collection) firstChild);
+      }
+
+      return firstChild;
+    }
+
     private void splitLineAt(EditorCell splitAt) {
       int index = myLineContent.indexOf(splitAt);
       if (index == -1) throw new IllegalStateException();
@@ -291,6 +334,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       List<EditorCell> newLine = new ArrayList<EditorCell>(myLineContent.subList(index, myLineContent.size()));
 
       resetLine();
+
       for (EditorCell cell : oldLine) {
         appendCell(cell);        
       }

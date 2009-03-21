@@ -236,7 +236,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1237458909892">
-    <property name="name" value="ABC" />
+    <property name="name" value="ABC1" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237458909893" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1237458909894">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237458909895" />
@@ -283,7 +283,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1237561820390">
-    <property name="name" value="ABC" />
+    <property name="name" value="ABC2" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237561820391" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1237561820392">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237561820393" />
