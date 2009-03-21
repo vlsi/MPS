@@ -52,9 +52,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1754_1(context, node, "("));
     editorCell.addEditorCell(this.createRefNode_1754_1(context, node));
     editorCell.addEditorCell(this.createConstant_1754_2(context, node, ")"));
-    editorCell.addEditorCell(this.createConstant_1754_3(context, node, "{"));
-    editorCell.addEditorCell(this.createCollection_1754_2(context, node));
-    editorCell.addEditorCell(this.createConstant_1754_4(context, node, "}"));
+    editorCell.addEditorCell(this.createCollection_1754_3(context, node));
     if (renderingCondition1754_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNodeList_1754_0(context, node));
     }
@@ -82,6 +80,18 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_1754_5(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection_1754_3(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+    setupBasic_Collection_1754_3(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant_1754_3(context, node, "{"));
+    editorCell.addEditorCell(this.createCollection_1754_2(context, node));
+    editorCell.addEditorCell(this.createConstant_1754_4(context, node, "}"));
     return editorCell;
   }
 
@@ -394,6 +404,20 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_1754_2(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_Collection_1754_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1754_3");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_RefNodeList_1754_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
