@@ -136,9 +136,6 @@ public class CellLayout_Indent extends AbstractCellLayout {
     private int myHeight;
     private int myMaxWidth;
 
-    private List<EditorCell> myCells = new ArrayList<EditorCell>();
-    private int myPosition;
-
     private int myLineWidth;
     private int myLineAscent;
     private int myLineDescent;
@@ -149,9 +146,6 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
     private CellLayouter(EditorCell_Collection cell) {
       myCell = cell;
-
-      myCells = getIndentLeafs(myCell);
-      myPosition = 0;
 
       myX = myCell.getX();
 
@@ -173,35 +167,22 @@ public class CellLayout_Indent extends AbstractCellLayout {
       fixupCollections();
     }
 
-    private boolean hasMoreCells() {
-      return myPosition < myCells.size();
-    }
-
-    private void nextCell() {
-      myPosition++;
-    }
-
-    private EditorCell current() {
-      return myCells.get(myPosition);
-    }
-
     private void layoutLeafs() {
-      while (hasMoreCells()) {
-        if (isOnNewLine(myCell, current())) {
+
+      for (EditorCell current : getIndentLeafs(myCell)) {
+        if (isOnNewLine(myCell, current)) {
           newLine();
         }
 
-        appendCell(current());
+        appendCell(current);
 
         if (haveToSplit()) {
           splitLineAt(findSplitPoint());
         }
 
-        if (isNewLineAfter(myCell, current())) {
+        if (isNewLineAfter(myCell, current)) {
           newLine();
         }
-
-        nextCell();
       }
       newLine();
     }
@@ -257,7 +238,6 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     private void newLine(boolean overflow) {
-
       int baseLine = myCell.getY() + myHeight + myTopInset + myLineAscent;
 
       for (EditorCell cell : myLineContent) {
