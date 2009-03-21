@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -29,7 +29,7 @@ public class QuickFixArgumentReference_quickFixArgument_ReferentConstraint exten
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> nodes = new ArrayList<SNode>();
+    List<SNode> nodes = ListOperations.<SNode>createList();
     SNode quickFix = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.HelginsQuickFix", false, false);
     if ((quickFix != null)) {
       ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(quickFix, "quickFixArgument", true)));

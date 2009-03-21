@@ -1899,6 +1899,7 @@
         <property name="text" value=";" />
         <link role="styleClass" targetNodeId="27.1215094139260" resolveInfo="Semicolon" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237637630694" />
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1193663110445">
       <property name="vertical" value="true" />

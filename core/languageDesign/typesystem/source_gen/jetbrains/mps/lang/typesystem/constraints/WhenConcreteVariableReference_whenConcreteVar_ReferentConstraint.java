@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
@@ -30,7 +30,7 @@ public class WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint ex
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> whenConcreteStatements = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", false);
-    List<SNode> declarations = new ArrayList<SNode>();
+    List<SNode> declarations = ListOperations.<SNode>createList();
     for(SNode whenConcreteStatement : whenConcreteStatements) {
       ListSequence.fromList(declarations).addElement(SLinkOperations.getTarget(whenConcreteStatement, "argumentRepresentator", true));
     }
