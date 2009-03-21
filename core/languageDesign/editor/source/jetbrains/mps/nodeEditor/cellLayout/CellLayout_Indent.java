@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.awt.*;
 
 public class CellLayout_Indent extends AbstractCellLayout {
-  private static final boolean OVERFLOW_ENABLED = false;
+  private static final boolean OVERFLOW_ENABLED = true;
 
   static boolean isOnNewLine(EditorCell root, EditorCell cell) {
     EditorCell current = cell;
@@ -195,6 +195,10 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
         appendCell(current());
 
+//        if (myX + current().getWidth() + myLineWidth > myMaxWidth && myLineContent.size() > 1) {
+//          splitLineAt(current());
+//        }
+
         if (isNewLineAfter(myCell, current())) {
           newLine();
         }
@@ -240,12 +244,6 @@ public class CellLayout_Indent extends AbstractCellLayout {
       cell.setX(myX + myLineWidth);
       cell.relayout();
 
-      if (OVERFLOW_ENABLED && myX + cell.getWidth() + myLineWidth > myMaxWidth && !myLineContent.isEmpty()) {
-        newLine(true);
-        appendCell(cell);
-        return;
-      }
-
       myLineAscent = Math.max(myLineAscent, cell.getAscent());
       myLineDescent = Math.max(myLineDescent, cell.getDescent());
       myTopInset = Math.max(myTopInset, cell.getTopInset());
@@ -272,6 +270,10 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myHeight += myTopInset + myBottomInset + myLineAscent + myLineDescent;
       myOverflow = overflow;
 
+      resetLine();
+    }
+
+    private void resetLine() {
       myLineWidth = 0;
       myLineWidth = 0;
       myLineAscent = 0;
@@ -279,6 +281,25 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myTopInset = 0;
       myBottomInset = 0;
       myLineContent.clear();
+    }
+
+    private void splitLineAt(EditorCell splitAt) {
+      int index = myLineContent.indexOf(splitAt);
+      if (index == -1) throw new IllegalStateException();
+
+      List<EditorCell> oldLine = new ArrayList<EditorCell>(myLineContent.subList(0, index));
+      List<EditorCell> newLine = new ArrayList<EditorCell>(myLineContent.subList(index, myLineContent.size()));
+
+      resetLine();
+      for (EditorCell cell : oldLine) {
+        appendCell(cell);        
+      }
+
+      newLine(true);
+
+      for (EditorCell cell : newLine) {
+        appendCell(cell);
+      }
     }
 
     private int getIndentWidth() {

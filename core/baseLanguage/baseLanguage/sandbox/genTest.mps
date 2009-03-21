@@ -241,7 +241,45 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1237458909894">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237458909895" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237458909896" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237459575875" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237459575875">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237634384554">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1237634395190">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1237634397461">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237634398605">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237634398606">
+                  <link role="baseMethodDeclaration" targetNodeId="1237634370565" resolveInfo="methodWithVeryVeryVeryVeryVeryVeryLongName" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237634398607" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237634396349">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237634396350">
+                  <link role="baseMethodDeclaration" targetNodeId="1237634370565" resolveInfo="methodWithVeryVeryVeryVeryVeryVeryLongName" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237634396351" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237634393796">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237634393797">
+                <link role="baseMethodDeclaration" targetNodeId="1237634370565" resolveInfo="methodWithVeryVeryVeryVeryVeryVeryLongName" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237634393798" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237634384556" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1237634370565">
+      <property name="name" value="methodWithVeryVeryVeryVeryVeryVeryLongName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1237634387604" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237634370567" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237634370568">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237634391246">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237634391811">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1237561820390">
