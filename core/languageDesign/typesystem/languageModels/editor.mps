@@ -1666,6 +1666,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1185788737962">
         <link role="relationDeclaration" targetNodeId="1.1185788644032" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237668604146" />
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1185802004578">
       <property name="text" value="NORMAL TYPE CLAUSE" />

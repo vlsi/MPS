@@ -274,8 +274,8 @@ public class CellLayout_Indent extends AbstractCellLayout {
         if (!isIndentCollection(current.getParent())) break;
 
         EditorCell indentLeaf = getFirstIndentLeaf(current.getParent());
-        if (myLineContent.contains(indentLeaf) &&
-          indentLeaf.getX() + indentLeaf.getWidth() - myX > myMaxWidth / 2) {
+        if (myLineContent.contains(indentLeaf) && isOnRightSide(indentLeaf) &&
+          cellRangeFitsOnOneLine(indentLeaf, lastCell)) {
 
           result = indentLeaf;
           current = current.getParent();
@@ -285,6 +285,15 @@ public class CellLayout_Indent extends AbstractCellLayout {
       }
 
       return result;
+    }
+
+    private boolean cellRangeFitsOnOneLine(EditorCell firstCell, EditorCell lastCell) {
+      return lastCell.getX() + lastCell.getWidth() - firstCell.getX() <
+          myMaxWidth - myX - (getIndent(firstCell) + 1) * getIndentWidth();
+    }
+
+    private boolean isOnRightSide(EditorCell cell) {
+      return cell.getX() + cell.getWidth() - myX > myMaxWidth / 2;
     }
 
     private EditorCell getFirstIndentLeaf(EditorCell_Collection collection) {
