@@ -63,7 +63,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
   private List<EditorSettingsListener> myListeners = new ArrayList<EditorSettingsListener>();
 
   private int myIndentSize = 2;
-  private int myVerticalBound = 80;
+  private int myVerticalBound = 120;
 
   private MyState myState = new MyState();
   private Font myDefaultEditorFont;
