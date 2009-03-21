@@ -283,15 +283,25 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213104856180">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104856181">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104856182">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221142859009">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221142850340">
-                    <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1213104856184" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1221142852810">
-                      <link role="link" targetNodeId="15.1220981955937" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237650845643">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237650831140">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1237650840585">
+                      <link role="baseMethodDeclaration" targetNodeId="22.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237650841365">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237650841366">
+                          <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1237650841367" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237650841368">
+                            <link role="link" targetNodeId="15.1220981955937" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237650841369">
+                          <link role="baseMethodDeclaration" targetNodeId="18.1221141245424" resolveInfo="getName" />
+                        </node>
+                      </node>
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1221142862257">
-                    <link role="baseMethodDeclaration" targetNodeId="18.1221141245424" resolveInfo="getName" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237650850878">
+                    <link role="baseMethodDeclaration" targetNodeId="22.~File.getName():java.lang.String" resolveInfo="getName" />
                   </node>
                 </node>
               </node>

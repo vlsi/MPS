@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.io.File;
 import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 
@@ -26,7 +27,7 @@ public class File_name_PropertyConstraint implements IModelConstraints, INodePro
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     if ((SLinkOperations.getTarget(node, "sourcePath", true) != null) && ((SLinkOperations.getTarget(node, "title", true) == null))) {
-      return Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(node, "sourcePath", true));
+      return new File(Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(node, "sourcePath", true))).getName();
     }
     if ((SLinkOperations.getTarget(node, "title", true) == null)) {
       return "";

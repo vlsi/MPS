@@ -12,7 +12,7 @@ import jetbrains.mps.vfs.MPSExtentions;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -94,7 +94,7 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getPathHolders_1213877515000(SNode thisNode, List<String> classpath, boolean onlyUnderProjectBasedir) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListOperations.<SNode>createList();
     String projectBasedir = "";
     // search for project if needed
     if (onlyUnderProjectBasedir) {
@@ -128,7 +128,7 @@ public class Module_Behavior {
     if (module instanceof Language) {
       return ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ((Language)module).getLanguageRuntimeClassPathItems(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(thisNode))).toListSequence();
     }
-    return new ArrayList<SNode>();
+    return ListOperations.<SNode>createList();
   }
 
   public static String call_getRuntimeJarPath_1213877515126(SNode thisNode) {
