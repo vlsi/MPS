@@ -168,7 +168,6 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     private void layoutLeafs() {
-
       for (EditorCell current : getIndentLeafs(myCell)) {
         if (isOnNewLine(myCell, current)) {
           newLine();
