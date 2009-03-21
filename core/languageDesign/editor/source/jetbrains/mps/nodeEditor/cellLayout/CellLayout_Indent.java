@@ -26,8 +26,6 @@ import java.util.ArrayList;
 import java.awt.*;
 
 public class CellLayout_Indent extends AbstractCellLayout {
-  private static final boolean OVERFLOW_ENABLED = false;
-
   static boolean isOnNewLine(EditorCell root, EditorCell cell) {
     EditorCell current = cell;
 
@@ -287,14 +285,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
       return myX + myLineWidth > myMaxWidth && myLineContent.size() > 1;
     }
 
-    private boolean isOverflowEnabled() {
-      return OVERFLOW_ENABLED;
-    }
-
-    private EditorCell findSplitPoint() {      
-      EditorCell result = myLineContent.get(myLineContent.size() - 1);
-
-      if (!isOverflowEnabled()) return result;
+    private EditorCell findSplitPoint() {
+      EditorCell lastCell = myLineContent.get(myLineContent.size() - 1);
+      EditorCell result = lastCell;
 
       EditorCell current = result;
 
