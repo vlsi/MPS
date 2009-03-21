@@ -22,6 +22,7 @@ import java.util.Comparator;
 import jetbrains.mps.internal.collections.runtime.impl.BasicSequence;
 import jetbrains.mps.internal.collections.runtime.impl.ComparingSequence;
 import jetbrains.mps.internal.collections.runtime.impl.ConcatingSequence;
+import jetbrains.mps.internal.collections.runtime.impl.EnumeratorIterator;
 import jetbrains.mps.internal.collections.runtime.impl.FilteringSequence;
 import jetbrains.mps.internal.collections.runtime.impl.LimitedCardinalitySequence;
 import jetbrains.mps.internal.collections.runtime.impl.NegateWhereFilter;
@@ -258,6 +259,10 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
         return ListSequence.fromIterable(toIterable());
     }
     
+    public IEnumerator<T> enumerator() {
+    	return EnumeratorIterator.fromIterator(toIterable().iterator());
+    }
+    
     @Override
     public String toString() {
     	Iterable<T> iterable = toIterable();
@@ -272,6 +277,5 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     	}
     	sb.append("]");
     	return sb.toString();
-    	
     }
 }

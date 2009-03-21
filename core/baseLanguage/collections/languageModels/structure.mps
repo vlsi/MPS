@@ -1984,5 +1984,101 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237467461002">
+    <property name="name" value="GetIteratorOperation" />
+    <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237467653962">
+      <property name="value" value="iterator" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237467705688">
+    <property name="name" value="IteratorType" />
+    <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237467730343">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="elementType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237467810459">
+      <property name="value" value="iterator" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237470736245">
+    <property name="name" value="AbstractIteratorOperation" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1237470827652">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237482351492">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237470895604">
+    <property name="name" value="HasNextOperation" />
+    <link role="extends" targetNodeId="1237470736245" resolveInfo="AbstractIteratorOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237470909869">
+      <property name="value" value="hasNext" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237471031357">
+    <property name="name" value="GetNextOperation" />
+    <link role="extends" targetNodeId="1237470736245" resolveInfo="AbstractIteratorOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237471040849">
+      <property name="value" value="next" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237471080820">
+    <property name="name" value="GetCurrentOperation" />
+    <link role="extends" targetNodeId="1237497044713" resolveInfo="AbstractEnumeratorOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237471094865">
+      <property name="value" value="current" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237471163346">
+    <property name="name" value="MoveNextOperation" />
+    <link role="extends" targetNodeId="1237497044713" resolveInfo="AbstractEnumeratorOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237471179576">
+      <property name="value" value="moveNext" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237496250641">
+    <property name="name" value="EnumeratorType" />
+    <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237496250642">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="elementType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237496250643">
+      <property name="value" value="enumerator" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237497044713">
+    <property name="name" value="AbstractEnumeratorOperation" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237497053118">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1237497057798">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237549269949">
+    <property name="name" value="GetEnumeratorOperation" />
+    <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237549289142">
+      <property name="value" value="enumerator" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

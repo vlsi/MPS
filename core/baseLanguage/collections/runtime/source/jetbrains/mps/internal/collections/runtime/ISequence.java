@@ -20,7 +20,7 @@ import java.util.Comparator;
 /**
  * @author fyodor
  */
-public interface ISequence<T> extends Iterable<T> {
+public interface ISequence<T> extends Iterable<T>, IEnumerable<T> {
 
     ISequence<T> where(IWhereFilter<T> filter);
 
