@@ -60,18 +60,8 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_8658_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8658_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection_8658_3(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_8658_3(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_8658_3(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -347,19 +337,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_8658_2");
   }
 
-  private static void setupBasic_Collection_8658_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_8658_3");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_Constant_8658_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8658_5");
     {
@@ -389,6 +366,15 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_8658_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_label_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_8658_7(EditorCell editorCell, SNode node, EditorContext context) {

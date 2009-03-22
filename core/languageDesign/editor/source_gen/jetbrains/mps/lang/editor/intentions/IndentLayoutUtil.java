@@ -7,10 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class IndentLayoutUtil {
 
@@ -20,7 +20,7 @@ public class IndentLayoutUtil {
   public static List<SNode> moveToIndentLayoutChildren(SNode node, boolean isLast) {
     List<SNode> result = ListOperations.<SNode>createList();
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
-      if (SLinkOperations.getTarget(node, "renderingCondition", true) != null) {
+      if (SLinkOperations.getTarget(node, "renderingCondition", true) != null || EditorCellModel_Behavior.call_isIndented_1237383418148(node)) {
         moveToIndentLayout(node);
         if (isLast) {
           SNode classItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", null);
@@ -32,9 +32,6 @@ public class IndentLayoutUtil {
       {
         List<SNode> children = SLinkOperations.getTargets(node, "childCellModel", true);
         for(int i = 0 ; i < ListSequence.fromList(children).count() ; i++ ) {
-          if (EditorCellModel_Behavior.call_isIndented_1237383418148(node)) {
-            IndentLayoutUtil.makeIndent(ListSequence.fromList(children).getElement(i));
-          }
           ListSequence.fromList(result).addSequence(ListSequence.fromList(moveToIndentLayoutChildren(ListSequence.fromList(children).getElement(i), isLast && (i == ListSequence.fromList(children).count() - 1))));
         }
       }

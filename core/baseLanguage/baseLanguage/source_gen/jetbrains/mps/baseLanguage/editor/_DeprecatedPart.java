@@ -29,7 +29,7 @@ public class _DeprecatedPart extends AbstractCellProvider {
   }
 
   public EditorCell createCollection_0235_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0235_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -41,7 +41,7 @@ public class _DeprecatedPart extends AbstractCellProvider {
   }
 
   public EditorCell createCollection_0235_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0235_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -49,19 +49,9 @@ public class _DeprecatedPart extends AbstractCellProvider {
     if (renderingCondition0235_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_0235_0(context, node, "/**"));
     }
-    editorCell.addEditorCell(this.createCollection_0235_2(context, node));
-    editorCell.addEditorCell(this.createConstant_0235_1(context, node, " */"));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_0235_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_0235_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_0235_2(context, node, " * "));
     editorCell.addEditorCell(this.createConstant_0235_3(context, node, "@deprecated"));
+    editorCell.addEditorCell(this.createConstant_0235_1(context, node, " */"));
     return editorCell;
   }
 
@@ -118,6 +108,8 @@ public class _DeprecatedPart extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -128,20 +120,24 @@ public class _DeprecatedPart extends AbstractCellProvider {
   private static void setupBasic_Constant_0235_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0235_0");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_0235_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0235_1");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Collection_0235_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0235_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -157,6 +153,15 @@ public class _DeprecatedPart extends AbstractCellProvider {
   private static void setupBasic_Constant_0235_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0235_3");
     BaseLanguageStyle_StyleSheet.getJavaDoc(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_0235_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
