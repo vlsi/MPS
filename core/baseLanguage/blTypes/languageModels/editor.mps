@@ -49,6 +49,7 @@
         <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="1.1159268590032" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237724646579" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1159268661793">
@@ -70,6 +71,7 @@
           </node>
         </node>
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237724651773" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1159276917821">
@@ -94,6 +96,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1159276917828">
         <link role="relationDeclaration" targetNodeId="1.1159276917522" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237724641962" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1161696750123">
@@ -115,6 +118,7 @@
           <property name="color" value="DARK_BLUE" />
         </node>
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237724627515" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1162556281717">
@@ -127,6 +131,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1209476419691">
         <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237724632249" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1209476308551">
@@ -152,6 +157,7 @@
           <property name="style" value="BOLD_ITALIC" />
         </node>
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237724637385" />
     </node>
   </node>
 </model>
