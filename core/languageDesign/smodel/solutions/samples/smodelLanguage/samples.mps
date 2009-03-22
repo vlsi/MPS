@@ -3739,37 +3739,6 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472682761" />
   </node>
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170385738897">
-    <property name="name" value="NodeAdapterClass" />
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170385750351">
-      <property name="name" value="getAdapter" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1170385750352" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170385750353">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1170386370725">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1170386370726">
-            <property name="name" value="adapter" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170386370728">
-              <link role="classifier" targetNodeId="13.~IfStatement" resolveInfo="IfStatement" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721449">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1170385769685">
-                <link role="variableDeclaration" targetNodeId="1170385759464" resolveInfo="node" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1170385773547" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1170385759464">
-        <property name="name" value="node" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1170385759465">
-          <link role="concept" targetNodeId="1.1068580123159" />
-        </node>
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679162" />
-    </node>
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472682741" />
-  </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1171313827134">
     <property name="name" value="Model" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1212009456494">
@@ -4204,20 +4173,6 @@
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206735456929">
-                <link role="variableDeclaration" targetNodeId="1173133388685" resolveInfo="concept1" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206733455869">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206733455870">
-            <property name="name" value="adapter" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206733455871">
-              <link role="classifier" targetNodeId="34.~AbstractConceptDeclaration" resolveInfo="AbstractConceptDeclaration" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206733455872">
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1206733455873" />
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206733455874">
                 <link role="variableDeclaration" targetNodeId="1173133388685" resolveInfo="concept1" />
               </node>
             </node>

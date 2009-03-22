@@ -1157,21 +1157,19 @@
             <node role="filter" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter" id="1182234081146">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182234081147">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1182234103709">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1182234160829">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1188230327315">
-                      <link role="enumClass" targetNodeId="35.~LinkMetaclass" resolveInfo="LinkMetaclass" />
-                      <link role="enumConstantDeclaration" targetNodeId="35.~LinkMetaclass.aggregation" resolveInfo="aggregation" />
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202151">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805123">
-                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1182234140775">
-                          <link role="concept" targetNodeId="1.1071489288298" />
-                          <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode" id="1182234121464" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1182234149633" />
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237732122902">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805123">
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1182234140775">
+                        <link role="concept" targetNodeId="1.1071489288298" />
+                        <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode" id="1182234121464" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740202152">
-                        <link role="baseMethodDeclaration" targetNodeId="35.~LinkDeclaration.getMetaClass():jetbrains.mps.lang.structure.structure.LinkMetaclass" resolveInfo="getMetaClass" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237732075135">
+                        <link role="property" targetNodeId="1.1071599937831" resolveInfo="metaClass" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1237732130578">
+                      <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1237732130579">
+                        <link role="enumMember" targetNodeId="1.1084199179705" resolveInfo="aggregation" />
                       </node>
                     </node>
                   </node>
@@ -1198,18 +1196,18 @@
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182234438111">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740201572">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237732275512">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805202">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182234438112">
                         <link role="variableDeclaration" targetNodeId="1182234409420" resolveInfo="result" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1182234440499" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237732274683">
+                        <link role="property" targetNodeId="1.1071599937831" resolveInfo="metaClass" />
+                      </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740201573">
-                      <link role="baseMethodDeclaration" targetNodeId="35.~LinkDeclaration.setMetaClass(jetbrains.mps.lang.structure.structure.LinkMetaclass):void" resolveInfo="setMetaClass" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1188230308973">
-                        <link role="enumClass" targetNodeId="35.~LinkMetaclass" resolveInfo="LinkMetaclass" />
-                        <link role="enumConstantDeclaration" targetNodeId="35.~LinkMetaclass.aggregation" resolveInfo="aggregation" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1237732275985">
+                      <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1237732278487">
+                        <link role="enumMember" targetNodeId="1.1084199179705" resolveInfo="aggregation" />
                       </node>
                     </node>
                   </node>
@@ -1244,18 +1242,18 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193064011210">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740201786">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237732288067">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805245">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193064011214">
                             <link role="variableDeclaration" targetNodeId="1193064011203" resolveInfo="result" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1193064011213" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237732287331">
+                            <link role="property" targetNodeId="1.1071599937831" resolveInfo="metaClass" />
+                          </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740201787">
-                          <link role="baseMethodDeclaration" targetNodeId="35.~LinkDeclaration.setMetaClass(jetbrains.mps.lang.structure.structure.LinkMetaclass):void" resolveInfo="setMetaClass" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193064011215">
-                            <link role="enumClass" targetNodeId="35.~LinkMetaclass" resolveInfo="LinkMetaclass" />
-                            <link role="enumConstantDeclaration" targetNodeId="35.~LinkMetaclass.aggregation" resolveInfo="aggregation" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1237732289243">
+                          <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1237732291292">
+                            <link role="enumMember" targetNodeId="1.1084199179705" resolveInfo="aggregation" />
                           </node>
                         </node>
                       </node>
@@ -1296,21 +1294,19 @@
             <node role="filter" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter" id="1182234553571">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182234553572">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1182234553573">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1182234553574">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1188230033390">
-                      <link role="enumClass" targetNodeId="35.~LinkMetaclass" resolveInfo="LinkMetaclass" />
-                      <link role="enumConstantDeclaration" targetNodeId="35.~LinkMetaclass.reference" resolveInfo="reference" />
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740201979">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805172">
-                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1182234553579">
-                          <link role="concept" targetNodeId="1.1071489288298" />
-                          <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode" id="1182234553580" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1182234553578" />
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740201979">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805172">
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1182234553579">
+                        <link role="concept" targetNodeId="1.1071489288298" />
+                        <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode" id="1182234553580" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740201980">
-                        <link role="baseMethodDeclaration" targetNodeId="35.~LinkDeclaration.getMetaClass():jetbrains.mps.lang.structure.structure.LinkMetaclass" resolveInfo="getMetaClass" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237732145892">
+                        <link role="property" targetNodeId="1.1071599937831" resolveInfo="metaClass" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1237732149409">
+                      <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1237732149410">
+                        <link role="enumMember" targetNodeId="1.1084199179704" resolveInfo="reference" />
                       </node>
                     </node>
                   </node>
@@ -1337,18 +1333,18 @@
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182234595782">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202369">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237732261566">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805249">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182234595786">
                         <link role="variableDeclaration" targetNodeId="1182234553584" resolveInfo="result" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1182234595785" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237732259425">
+                        <link role="property" targetNodeId="1.1071599937831" resolveInfo="metaClass" />
+                      </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740202370">
-                      <link role="baseMethodDeclaration" targetNodeId="35.~LinkDeclaration.setMetaClass(jetbrains.mps.lang.structure.structure.LinkMetaclass):void" resolveInfo="setMetaClass" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1188230455032">
-                        <link role="enumClass" targetNodeId="35.~LinkMetaclass" resolveInfo="LinkMetaclass" />
-                        <link role="enumConstantDeclaration" targetNodeId="35.~LinkMetaclass.reference" resolveInfo="reference" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1237732262773">
+                      <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1237732264291">
+                        <link role="enumMember" targetNodeId="1.1084199179704" resolveInfo="reference" />
                       </node>
                     </node>
                   </node>
@@ -1383,18 +1379,18 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193064081525">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202288">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237732166850">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805247">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193064081529">
                             <link role="variableDeclaration" targetNodeId="1193064081518" resolveInfo="result" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1193064081528" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237732165364">
+                            <link role="property" targetNodeId="1.1071599937831" resolveInfo="metaClass" />
+                          </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740202289">
-                          <link role="baseMethodDeclaration" targetNodeId="35.~LinkDeclaration.setMetaClass(jetbrains.mps.lang.structure.structure.LinkMetaclass):void" resolveInfo="setMetaClass" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193064081530">
-                            <link role="enumClass" targetNodeId="35.~LinkMetaclass" resolveInfo="LinkMetaclass" />
-                            <link role="enumConstantDeclaration" targetNodeId="35.~LinkMetaclass.reference" resolveInfo="reference" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1237732167385">
+                          <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1237732212767">
+                            <link role="enumMember" targetNodeId="1.1084199179704" resolveInfo="reference" />
                           </node>
                         </node>
                       </node>
@@ -2308,21 +2304,19 @@
             <node role="filter" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter" id="1193064095868">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193064095869">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193064095870">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1193064095871">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193064095872">
-                      <link role="enumClass" targetNodeId="35.~LinkMetaclass" resolveInfo="LinkMetaclass" />
-                      <link role="enumConstantDeclaration" targetNodeId="35.~LinkMetaclass.aggregation" resolveInfo="aggregation" />
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202415">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805168">
-                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1193064095876">
-                          <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
-                          <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode" id="1193064095877" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1193064095875" />
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237732325958">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805168">
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1193064095876">
+                        <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+                        <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode" id="1193064095877" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740202416">
-                        <link role="baseMethodDeclaration" targetNodeId="35.~LinkDeclaration.getMetaClass():jetbrains.mps.lang.structure.structure.LinkMetaclass" resolveInfo="getMetaClass" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237732324754">
+                        <link role="property" targetNodeId="1.1071599937831" resolveInfo="metaClass" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1237732327447">
+                      <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1237732327448">
+                        <link role="enumMember" targetNodeId="1.1084199179705" resolveInfo="aggregation" />
                       </node>
                     </node>
                   </node>
@@ -2349,18 +2343,18 @@
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193064095888">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202411">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237732423269">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805121">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193064095892">
                         <link role="variableDeclaration" targetNodeId="1193064095881" resolveInfo="result" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1193064095891" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237732422174">
+                        <link role="property" targetNodeId="1.1071599937831" resolveInfo="metaClass" />
+                      </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740202412">
-                      <link role="baseMethodDeclaration" targetNodeId="35.~LinkDeclaration.setMetaClass(jetbrains.mps.lang.structure.structure.LinkMetaclass):void" resolveInfo="setMetaClass" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193064095893">
-                        <link role="enumClass" targetNodeId="35.~LinkMetaclass" resolveInfo="LinkMetaclass" />
-                        <link role="enumConstantDeclaration" targetNodeId="35.~LinkMetaclass.aggregation" resolveInfo="aggregation" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1237732423758">
+                      <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1237732425885">
+                        <link role="enumMember" targetNodeId="1.1084199179705" resolveInfo="aggregation" />
                       </node>
                     </node>
                   </node>
@@ -2395,18 +2389,18 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193064095908">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202586">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237732362597">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805198">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193064095912">
                             <link role="variableDeclaration" targetNodeId="1193064095901" resolveInfo="result" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1193064095911" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237732341715">
+                            <link role="property" targetNodeId="1.1071599937831" resolveInfo="metaClass" />
+                          </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740202587">
-                          <link role="baseMethodDeclaration" targetNodeId="35.~LinkDeclaration.setMetaClass(jetbrains.mps.lang.structure.structure.LinkMetaclass):void" resolveInfo="setMetaClass" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193064095913">
-                            <link role="enumClass" targetNodeId="35.~LinkMetaclass" resolveInfo="LinkMetaclass" />
-                            <link role="enumConstantDeclaration" targetNodeId="35.~LinkMetaclass.aggregation" resolveInfo="aggregation" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1237732363195">
+                          <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1237732365790">
+                            <link role="enumMember" targetNodeId="1.1084199179705" resolveInfo="aggregation" />
                           </node>
                         </node>
                       </node>
@@ -2447,21 +2441,19 @@
             <node role="filter" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter" id="1193064095924">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193064095925">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193064095926">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1193064095927">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193064095928">
-                      <link role="enumClass" targetNodeId="35.~LinkMetaclass" resolveInfo="LinkMetaclass" />
-                      <link role="enumConstantDeclaration" targetNodeId="35.~LinkMetaclass.reference" resolveInfo="reference" />
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740201956">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805147">
-                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1193064095932">
-                          <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
-                          <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode" id="1193064095933" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1193064095931" />
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237732406278">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805147">
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1193064095932">
+                        <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+                        <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode" id="1193064095933" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740201957">
-                        <link role="baseMethodDeclaration" targetNodeId="35.~LinkDeclaration.getMetaClass():jetbrains.mps.lang.structure.structure.LinkMetaclass" resolveInfo="getMetaClass" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237732404105">
+                        <link role="property" targetNodeId="1.1071599937831" resolveInfo="metaClass" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1237732407563">
+                      <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1237732407564">
+                        <link role="enumMember" targetNodeId="1.1084199179704" resolveInfo="reference" />
                       </node>
                     </node>
                   </node>
@@ -2488,18 +2480,18 @@
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193064095944">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202578">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237732391316">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805227">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193064095948">
                         <link role="variableDeclaration" targetNodeId="1193064095937" resolveInfo="result" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1193064095947" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237732389550">
+                        <link role="property" targetNodeId="1.1071599937831" resolveInfo="metaClass" />
+                      </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740202579">
-                      <link role="baseMethodDeclaration" targetNodeId="35.~LinkDeclaration.setMetaClass(jetbrains.mps.lang.structure.structure.LinkMetaclass):void" resolveInfo="setMetaClass" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193064095949">
-                        <link role="enumClass" targetNodeId="35.~LinkMetaclass" resolveInfo="LinkMetaclass" />
-                        <link role="enumConstantDeclaration" targetNodeId="35.~LinkMetaclass.reference" resolveInfo="reference" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1237732393492">
+                      <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1237732395400">
+                        <link role="enumMember" targetNodeId="1.1084199179704" resolveInfo="reference" />
                       </node>
                     </node>
                   </node>
@@ -2534,18 +2526,18 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193064095964">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740201936">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237732375855">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668805221">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193064095968">
                             <link role="variableDeclaration" targetNodeId="1193064095957" resolveInfo="result" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1193064095967" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237732375291">
+                            <link role="property" targetNodeId="1.1071599937831" resolveInfo="metaClass" />
+                          </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740201937">
-                          <link role="baseMethodDeclaration" targetNodeId="35.~LinkDeclaration.setMetaClass(jetbrains.mps.lang.structure.structure.LinkMetaclass):void" resolveInfo="setMetaClass" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193064095969">
-                            <link role="enumClass" targetNodeId="35.~LinkMetaclass" resolveInfo="LinkMetaclass" />
-                            <link role="enumConstantDeclaration" targetNodeId="35.~LinkMetaclass.reference" resolveInfo="reference" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1237732377672">
+                          <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1237732379689">
+                            <link role="enumMember" targetNodeId="1.1084199179704" resolveInfo="reference" />
                           </node>
                         </node>
                       </node>

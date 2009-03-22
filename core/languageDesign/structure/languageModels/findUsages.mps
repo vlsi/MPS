@@ -733,7 +733,7 @@
             <node role="statement" type="jetbrains.mps.lang.findUsages.structure.ResultStatement" id="1211301915958">
               <node role="foundResult" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888359360">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888359362">
-                  <link role="baseMethodDeclaration" targetNodeId="11.~SearchResult.&lt;init&gt;()" resolveInfo="SearchResult" />
+                  <link role="baseMethodDeclaration" targetNodeId="11.~SearchResult.&lt;init&gt;(java.lang.Object,java.lang.String)" resolveInfo="SearchResult" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888370596">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888370598">
                       <link role="baseMethodDeclaration" targetNodeId="7.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
