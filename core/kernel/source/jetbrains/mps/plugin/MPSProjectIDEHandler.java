@@ -20,18 +20,20 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder;
+import jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder;
+import jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder.AspectMethodsHolder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -158,7 +160,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         }
         FrameUtil.activateFrame(getMainFrame());
 
-        findUsages(cls.getNode(), GlobalScope.getInstance(), new NodeUsages_Finder());
+        findUsages(cls.getNode(), GlobalScope.getInstance(), new ClassUsages_Finder());
       }
     });
   }
@@ -185,7 +187,20 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         }
         FrameUtil.activateFrame(getMainFrame());
 
-        findUsages(m.getNode(), GlobalScope.getInstance(), new BaseMethodUsages_Finder());
+        SNode node = m.getNode();
+
+
+        GeneratedFinder finder = new ConstructorUsages_Finder();
+        if (!finder.isApplicable(node)) finder = null;
+
+        if (finder==null){
+          finder = new BaseMethodUsages_Finder();
+          if (!finder.isApplicable(node)) finder = null;
+        }
+
+        assert finder!=null : "method type not supported (supported: instance/static/constructor)";
+
+        findUsages(node, GlobalScope.getInstance(), finder);
       }
     });
   }
