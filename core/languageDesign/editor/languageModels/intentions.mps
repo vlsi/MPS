@@ -2666,12 +2666,25 @@
                   </node>
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1237720658889" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237720658891">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1237720658892">
-                    <link role="variableDeclaration" targetNodeId="1237486228132" resolveInfo="node" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1237726805254">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237726862970">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1237726849825">
+                      <link role="concept" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1237726816830">
+                        <link role="variableDeclaration" targetNodeId="1237486228132" resolveInfo="node" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237726870275">
+                      <link role="property" targetNodeId="1.1073389446425" resolveInfo="vertical" />
+                    </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237720658893">
-                    <link role="baseMethodDeclaration" targetNodeId="4.1237383418148" resolveInfo="isIndented" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237720658891">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1237720658892">
+                      <link role="variableDeclaration" targetNodeId="1237486228132" resolveInfo="node" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237720658893">
+                      <link role="baseMethodDeclaration" targetNodeId="4.1237383418148" resolveInfo="isIndented" />
+                    </node>
                   </node>
                 </node>
               </node>

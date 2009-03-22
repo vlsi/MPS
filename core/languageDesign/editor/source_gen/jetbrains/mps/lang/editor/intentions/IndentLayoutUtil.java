@@ -8,8 +8,8 @@ import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class IndentLayoutUtil {
@@ -20,7 +20,7 @@ public class IndentLayoutUtil {
   public static List<SNode> moveToIndentLayoutChildren(SNode node, boolean isLast) {
     List<SNode> result = ListOperations.<SNode>createList();
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
-      if (SLinkOperations.getTarget(node, "renderingCondition", true) != null || EditorCellModel_Behavior.call_isIndented_1237383418148(node)) {
+      if (SLinkOperations.getTarget(node, "renderingCondition", true) != null || EditorCellModel_Behavior.call_isIndented_1237383418148(node) || SPropertyOperations.getBoolean(node, "vertical")) {
         moveToIndentLayout(node);
         if (isLast) {
           SNode classItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", null);

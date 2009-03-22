@@ -31,13 +31,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <import index="7" modelUID="r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)" version="-1" />
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1215082758571">
     <property name="migrationFromBuild" value="727" />
     <property name="name" value="test_script" />
@@ -828,6 +829,46 @@
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237473222949">
                   <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237473222950">
                     <link role="conceptDeclaration" targetNodeId="1.1237303669825" resolveInfo="CellLayout_Indent" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1237726848485">
+    <property name="migrationFromBuild" value="1193" />
+    <property name="name" value="MigrationToIndentLayout" />
+    <property name="category" value="editor language" />
+    <property name="title" value="Mgration to Indent Layout" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1237726877650">
+      <property name="description" value="MoveEditor to indent Layout" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1237726877651">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237726877652">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237727562828">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237727562829">
+              <link role="classConcept" targetNodeId="7.1237486188245" resolveInfo="IndentLayoutUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="7.1237486498929" resolveInfo="moveToIndentLayout" />
+              <node role="actualArgument" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1237727562832" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1237727161093">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237727161094">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237727164119">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1237727636234">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237727636235">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237727636236">
+                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1237727636237" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1237727636238" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237727636239">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237727636240">
+                    <link role="conceptDeclaration" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
                   </node>
                 </node>
               </node>
