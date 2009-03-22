@@ -18,6 +18,7 @@ import junit.extensions.jfcunit.eventdata.StringEventData;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
+import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 
 public class NewDialogsUITests extends NoProjectUITestsBase {
@@ -32,11 +33,12 @@ public class NewDialogsUITests extends NoProjectUITestsBase {
 
   @Override
   protected void doTearDown() {
+    File projectFile = myCreatedProject.getProjectFile();
     TestUtil.closeProject(myCreatedProject);
 
     flushAWT();
 
-    TestUtil.deleteProject(this, myCreatedProject.getProjectFile());
+    TestUtil.deleteProject(this, projectFile);
     
     flushAWT();
     super.doTearDown();
