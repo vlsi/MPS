@@ -33,6 +33,13 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
         }
       }
     }
+    if ((SLinkOperations.getTarget(creator, "copyFrom", true) != null)) {
+      {
+        SNode _nodeToCheck_1029348928467 = creator;
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(creator, "copyFrom", true), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237732500184", true), new _Quotations.QuotationClass_142().createNode(SLinkOperations.getTarget(creator, "elementType", true), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237732500182", false, 0, intentionProvider);
+      }
+    }
     {
       SNode _nodeToCheck_1029348928467 = creator;
       BaseIntentionProvider intentionProvider = null;

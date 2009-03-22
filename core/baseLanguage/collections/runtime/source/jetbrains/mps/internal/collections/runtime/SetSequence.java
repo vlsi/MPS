@@ -17,6 +17,7 @@ package jetbrains.mps.internal.collections.runtime;
 
 import java.io.Serializable;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
@@ -24,6 +25,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import jetbrains.mps.internal.collections.runtime.impl.NullListSequence;
 import jetbrains.mps.internal.collections.runtime.impl.NullSetSequence;
 
 public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<T>, Serializable {
@@ -83,7 +85,28 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
         }
         return new SetSequence<U> (set);
     }
-
+    
+    public static <U> ISetSequence<U> fromSetWithValues (Set<U> set, Iterable<U> it) {
+        Set<U> tmp = set;
+    	if (Sequence.USE_NULL_SEQUENCE) {
+            if (set == null && it == null) {
+                return NullSetSequence.instance();
+            }
+            else if (set == null) {
+            	tmp = new HashSet<U> ();
+            }
+            else if (it == null) {
+            	return fromSet (set);
+            }
+        }
+    	for (U u: it) {
+    		tmp.add(u);
+    	}
+    	if (tmp instanceof ISetSequence) {
+    		return (ISetSequence<U>) tmp;
+    	}
+    	return new SetSequence<U> (tmp);
+    }
 	
 	// Set
 

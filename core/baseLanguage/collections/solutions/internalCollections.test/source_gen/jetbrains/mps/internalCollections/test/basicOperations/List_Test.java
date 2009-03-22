@@ -7,13 +7,13 @@ import org.junit.Test;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.LinkedList;
 import java.util.Arrays;
 import junit.framework.Assert;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
-import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 
 public class List_Test extends Util_Test {
@@ -41,6 +41,21 @@ public class List_Test extends Util_Test {
     List<Number> nlist = ListSequence.<Number>fromArray();
     ListSequence.fromList(nlist).addSequence(ListSequence.fromList(test));
     this.assertIterableEquals(this.expect5(), nlist);
+  }
+
+  @Test()
+  public void test_copy() throws Exception {
+    List<Integer> test = ListSequence.<Integer>fromArray(1, 2, 3, 4, 5);
+    List<Integer> copy = ListSequence.fromList(ListSequence.<Integer>fromArray()).addSequence(ListSequence.fromList(test));
+    this.assertIterableEquals(this.input5(), copy);
+    ListSequence.fromList(copy).addSequence(ListSequence.fromList(ListSequence.<Integer>fromArray(6, 7, 8, 9, 10)));
+    this.assertIterableEquals(this.input10(), copy);
+    this.assertIterableEquals(this.input5(), test);
+    List<Integer> copy2 = ListSequence.fromList(ListSequence.fromList(new LinkedList<Integer>())).addSequence(ListSequence.fromList(copy));
+    this.assertIterableEquals(this.input10(), copy2);
+    ListSequence.fromList(copy2).removeSequence(ListSequence.fromList(ListSequence.<Integer>fromArray(10, 9, 8, 7, 6)));
+    this.assertIterableEquals(this.input5(), copy2);
+    this.assertIterableEquals(this.input10(), copy);
   }
 
   @Test()

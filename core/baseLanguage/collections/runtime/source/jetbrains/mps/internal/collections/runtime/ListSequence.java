@@ -92,6 +92,28 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
         return new ListSequence<U> (list);
     }
     
+    public static <U> IListSequence<U> fromListWithValues (List<U> list, Iterable<U> it) {
+        List<U> tmp = list;
+    	if (Sequence.USE_NULL_SEQUENCE) {
+            if (list == null && it == null) {
+                return NullListSequence.instance();
+            }
+            else if (list == null) {
+            	tmp = new ArrayList<U> ();
+            }
+            else if (it == null) {
+            	return fromList (list);
+            }
+        }
+    	for (U u: it) {
+    		tmp.add(u);
+    	}
+    	if (tmp instanceof IListSequence) {
+    		return (IListSequence<U>) tmp;
+    	}
+    	return new ListSequence<U> (tmp);
+    }
+    
     // Delegated methods
     
     public void add(int index, T element) {

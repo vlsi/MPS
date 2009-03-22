@@ -2059,6 +2059,11 @@
       <property name="role" value="initValue" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237731803878">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="copyFrom" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1237721421221">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>

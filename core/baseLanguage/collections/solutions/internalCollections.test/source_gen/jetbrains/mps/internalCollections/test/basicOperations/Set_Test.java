@@ -8,6 +8,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 
 public class Set_Test extends Util_Test {
@@ -52,6 +53,16 @@ public class Set_Test extends Util_Test {
     this.assertIterableEqualsIgnoreOrder(this.inputABC(), test);
     SetSequence.fromSet(test).addSequence(Sequence.fromIterable(this.inputABCDEF()));
     this.assertIterableEqualsIgnoreOrder(this.inputABCDEF(), test);
+  }
+
+  @Test()
+  public void test_copy() throws Exception {
+    Set<Integer> test = SetSequence.<Integer>fromArray(1, 2, 3, 4, 5);
+    Set<Integer> copy = SetSequence.fromSet(SetSequence.<Integer>fromArray()).addSequence(SetSequence.fromSet(test));
+    this.assertIterableEqualsIgnoreOrder(this.input5(), copy);
+    SetSequence.fromSet(copy).addSequence(ListSequence.fromList(ListSequence.<Integer>fromArray(6, 7, 8, 9, 10)));
+    this.assertIterableEqualsIgnoreOrder(this.input10(), copy);
+    this.assertIterableEqualsIgnoreOrder(this.input5(), test);
   }
 
   @Test()

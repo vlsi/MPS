@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.collections.structure;
 import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
-import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -15,6 +15,7 @@ import jetbrains.mps.project.GlobalScope;
 public class AbstractContainerCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
   public static final String ELEMENT_TYPE = "elementType";
+  public static final String COPY_FROM = "copyFrom";
   public static final String INIT_VALUE = "initValue";
 
   public AbstractContainerCreator(SNode node) {
@@ -27,6 +28,14 @@ public class AbstractContainerCreator extends AbstractCreator {
 
   public void setElementType(Type node) {
     super.setChild(AbstractContainerCreator.ELEMENT_TYPE, node);
+  }
+
+  public Expression getCopyFrom() {
+    return (Expression)this.getChild(Expression.class, AbstractContainerCreator.COPY_FROM);
+  }
+
+  public void setCopyFrom(Expression node) {
+    super.setChild(AbstractContainerCreator.COPY_FROM, node);
   }
 
   public int getInitValuesCount() {

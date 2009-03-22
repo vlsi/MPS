@@ -29,7 +29,7 @@ public class EnumeratorIterator<T> implements IEnumerator.Iterator<T>{
 	public static <U> IEnumerator.Iterator<U> fromIterator (java.util.Iterator<U> itr) {
 		if (Sequence.IGNORE_NULL_VALUES) {
 			if (itr == null) {
-				return Empty.getInstance();
+				return Empty.instance();
 			}
 		}
 		if (itr instanceof IEnumerator.Iterator) {
@@ -84,7 +84,7 @@ public class EnumeratorIterator<T> implements IEnumerator.Iterator<T>{
 		private static Empty<Object> INSTANCE = new Empty<Object> ();
 		
 		@SuppressWarnings("unchecked")
-		public static <V> Empty<V> getInstance() {
+		public static <V> Empty<V> instance() {
 			return (Empty<V>) INSTANCE;
 		}
 
