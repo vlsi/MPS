@@ -622,5 +622,35 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1237667178963">
+    <property name="name" value="ABC3" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237667178964" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1237667178965">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237667178966" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237667178967" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237667178968">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237667190598">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237667190599">
+            <property name="name" value="veryVeryVeryVeryVeryVeryVeryVeryVeryVery1" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1237667190600" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237667297351">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237667297352">
+            <property name="name" value="veryVeryVeryVeryVeryVeryVeryVeryVeryVery2" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1237667297353" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237667306575">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237667307578">
+                <link role="variableDeclaration" targetNodeId="1237667190599" resolveInfo="veryVeryVeryVeryVeryVeryVeryVeryVeryVery1" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237667300792">
+                <link role="variableDeclaration" targetNodeId="1237667190599" resolveInfo="veryVeryVeryVeryVeryVeryVeryVeryVeryVery1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

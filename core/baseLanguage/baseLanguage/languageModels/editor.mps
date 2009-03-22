@@ -1153,6 +1153,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1178609271729">
         <property name="text" value="{" />
         <link role="styleClass" targetNodeId="1215010874200" resolveInfo="Brace" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237734939213">
+          <property name="flag" value="true" />
+        </node>
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1178609275710">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178609275711">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178609277767">

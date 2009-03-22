@@ -4,11 +4,10 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
+import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
-
-import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
