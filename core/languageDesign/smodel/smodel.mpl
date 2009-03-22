@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.smodel" uuid="7866978e-a0f0-4cc7-81bc-4d213d9375e1" generatorOutputPath="${language_descriptor}\source_gen" java-stubs-enabled="true" compileInMPS="false">
+<language namespace="jetbrains.mps.lang.smodel" uuid="7866978e-a0f0-4cc7-81bc-4d213d9375e1" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="true" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.lang.smodel" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.lang.smodel" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.smodel" />
+    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.lang.smodel" />
   </models>
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="jetbrains.mps.lang.smodel.util" />
+  </accessoryModels>
   <generators>
     <generator name="BL" generatorUID="jetbrains.mps.lang.smodel#1139186730696" uuid="2bdcefec-ba49-4b32-ab50-ebc7a41d5090">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage" namespacePrefix="jetbrains.mps.lang.smodel.generator.baseLanguage" />
+        <modelRoot path="${language_descriptor}/generator/baseLanguage" namespacePrefix="jetbrains.mps.lang.smodel.generator.baseLanguage" />
       </models>
       <external-templates>
         <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
@@ -27,10 +29,10 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}\classes" />
+    <entry path="${language_descriptor}/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${language_descriptor}\classes" />
+    <entry path="${language_descriptor}/classes" />
   </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>

@@ -1591,25 +1591,18 @@
       </node>
       <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="1182951006985">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182951006986">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182951714864">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1182951721555">
-              <link role="classConcept" targetNodeId="33.~HelginsJudgement_AnnotationLink" resolveInfo="HelginsJudgement_AnnotationLink" />
-              <link role="baseMethodDeclaration" targetNodeId="33.~HelginsJudgement_AnnotationLink.setHelginsJudgement(jetbrains.mps.lang.core.structure.BaseConcept,jetbrains.mps.lang.typesystem.structure.HelginsJudgement):void" resolveInfo="setHelginsJudgement" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721325">
-                <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1182951726246" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1182951782146" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721784">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227908812">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227837968">
-                    <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1182951744006" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1182951745910" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="1182951751319">
-                    <link role="concept" targetNodeId="1.1182937366968" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237754669621">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237754677896">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237754669904">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1237754669622" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1237754671002">
+                  <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="1237754673598">
+                    <link role="annotationLink" targetNodeId="1.1182950852687" resolveInfo="helginsJudgement" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1182951773714" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="1237754681743">
+                <link role="concept" targetNodeId="1.1182937366968" resolveInfo="HelginsJudgement" />
               </node>
             </node>
           </node>

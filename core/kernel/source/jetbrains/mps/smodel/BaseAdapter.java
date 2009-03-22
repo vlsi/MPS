@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.lang.smodel.util.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptLink;
 import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
@@ -592,9 +593,9 @@ public abstract class BaseAdapter implements INodeAdapter {
     List<SNode> result = new ArrayList<SNode>();
     List<ConceptLink> conceptLinks = getConceptLinks(linkName, lookupHierarchy);
     for (ConceptLink conceptLink : conceptLinks) {
-      INodeAdapter target = SModelUtil_new.getConceptLinkTarget(conceptLink);
+      SNode target = SModelUtil.getConceptLinkTarget(conceptLink.getNode());
       if (target != null) {
-        result.add(target.getNode());
+        result.add(target);
       }
     }
     return result;

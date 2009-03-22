@@ -877,7 +877,7 @@ public final class SNode {
     return nodes;
   }
 
-  public List<SNode>getChildren(boolean includeAttributes) {
+  public List<SNode> getChildren(boolean includeAttributes) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
@@ -1532,7 +1532,6 @@ public final class SNode {
     AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
     if (concept == null) {
       LOG.error("couldn't find concept declaration '" + conceptFQName + "' for node " + getId() + " in model " + getModel().getSModelFqName(), this);
-      SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
     }
     return concept;
   }
