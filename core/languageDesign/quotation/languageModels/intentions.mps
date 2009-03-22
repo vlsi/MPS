@@ -532,20 +532,26 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227886738033">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227886738034">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ReferenceAntiquotation_AnnotationLink.setReferenceAntiquotation(jetbrains.mps.lang.core.structure.BaseConcept,java.lang.String,jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation):void" resolveInfo="setReferenceAntiquotation" />
-                <link role="classConcept" targetNodeId="2.~ReferenceAntiquotation_AnnotationLink" resolveInfo="ReferenceAntiquotation_AnnotationLink" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227886738035">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227886738036">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237748021123">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237748023500">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237748064710">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237748048115">
                     <link role="variableDeclaration" targetNodeId="1227886738023" resolveInfo="attributedNode" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1227886738037" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1237748067057">
+                    <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier" id="1237748071794">
+                      <link role="annotationLink" targetNodeId="1.1196350785121" resolveInfo="referenceAntiquotation" />
+                      <node role="linkQualifier" type="jetbrains.mps.lang.smodel.structure.PoundExpression" id="1237748075796">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237748078626">
+                          <link role="variableDeclaration" targetNodeId="1227886738015" resolveInfo="role" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227886738038">
-                  <link role="variableDeclaration" targetNodeId="1227886738015" resolveInfo="role" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1237748662362">
+                  <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1237748664381" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227886738039" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227886738040">
@@ -595,19 +601,25 @@
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227886738065">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227886738066">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227886738067">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ReferenceAntiquotation_AnnotationLink.setReferenceAntiquotation(jetbrains.mps.lang.core.structure.BaseConcept,java.lang.String,jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation):void" resolveInfo="setReferenceAntiquotation" />
-                <link role="classConcept" targetNodeId="2.~ReferenceAntiquotation_AnnotationLink" resolveInfo="ReferenceAntiquotation_AnnotationLink" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227886738068">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227886738069">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237748678586">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237748678587">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237748686299">
                     <link role="variableDeclaration" targetNodeId="1227886737972" resolveInfo="contextNode" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1227886738070" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1237748678589">
+                    <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier" id="1237748678590">
+                      <link role="annotationLink" targetNodeId="1.1196350785121" resolveInfo="referenceAntiquotation" />
+                      <node role="linkQualifier" type="jetbrains.mps.lang.smodel.structure.PoundExpression" id="1237748678591">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237748678592">
+                          <link role="variableDeclaration" targetNodeId="1227886738015" resolveInfo="role" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227886738071">
-                  <link role="variableDeclaration" targetNodeId="1227886738015" resolveInfo="role" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1237748678593">
+                  <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1237748678594" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227886738072" />
               </node>
             </node>
           </node>
@@ -926,20 +938,26 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227886869185">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227886869186">
-                <link role="baseMethodDeclaration" targetNodeId="2.~PropertyAntiquotation_AnnotationLink.setPropertyAntiquotation(jetbrains.mps.lang.core.structure.BaseConcept,java.lang.String,jetbrains.mps.lang.quotation.structure.PropertyAntiquotation):void" resolveInfo="setPropertyAntiquotation" />
-                <link role="classConcept" targetNodeId="2.~PropertyAntiquotation_AnnotationLink" resolveInfo="PropertyAntiquotation_AnnotationLink" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227886869187">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227886869188">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237748780944">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237748780945">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237748780946">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237748780947">
                     <link role="variableDeclaration" targetNodeId="1227886869175" resolveInfo="attributedNode" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1227886869189" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1237748780948">
+                    <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier" id="1237748794817">
+                      <link role="annotationLink" targetNodeId="1.1196866560540" resolveInfo="propertyAntiquotation" />
+                      <node role="propertyQualifier" type="jetbrains.mps.lang.smodel.structure.PoundExpression" id="1237748799461">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237748802307">
+                          <link role="variableDeclaration" targetNodeId="1227886869162" resolveInfo="propertyName" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227886869190">
-                  <link role="variableDeclaration" targetNodeId="1227886869162" resolveInfo="propertyName" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1237748780952">
+                  <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1237748780953" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227886869191" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227886869192">
@@ -971,35 +989,43 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227886869209">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1227886869210">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227886869211" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227886869212">
-              <link role="classConcept" targetNodeId="2.~PropertyAntiquotation_AnnotationLink" resolveInfo="PropertyAntiquotation_AnnotationLink" />
-              <link role="baseMethodDeclaration" targetNodeId="2.~PropertyAntiquotation_AnnotationLink.getPropertyAntiquotation(jetbrains.mps.lang.core.structure.BaseConcept,java.lang.String):jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" resolveInfo="getPropertyAntiquotation" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227886869213">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227886869214">
-                  <link role="variableDeclaration" targetNodeId="1227886869135" resolveInfo="contextNode" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1227886869215" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237748839164">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237748845236">
+                <link role="variableDeclaration" targetNodeId="1227886869135" resolveInfo="contextNode" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227886869216">
-                <link role="variableDeclaration" targetNodeId="1227886869162" resolveInfo="propertyName" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1237748839166">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier" id="1237748839167">
+                  <link role="annotationLink" targetNodeId="1.1196866560540" resolveInfo="propertyAntiquotation" />
+                  <node role="propertyQualifier" type="jetbrains.mps.lang.smodel.structure.PoundExpression" id="1237748839168">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237748839169">
+                      <link role="variableDeclaration" targetNodeId="1227886869162" resolveInfo="propertyName" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227886869217">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227886869218">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227886869219">
-                <link role="classConcept" targetNodeId="2.~PropertyAntiquotation_AnnotationLink" resolveInfo="PropertyAntiquotation_AnnotationLink" />
-                <link role="baseMethodDeclaration" targetNodeId="2.~PropertyAntiquotation_AnnotationLink.setPropertyAntiquotation(jetbrains.mps.lang.core.structure.BaseConcept,java.lang.String,jetbrains.mps.lang.quotation.structure.PropertyAntiquotation):void" resolveInfo="setPropertyAntiquotation" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227886869220">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227886869221">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237748823697">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237748823698">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237748823699">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237748830708">
                     <link role="variableDeclaration" targetNodeId="1227886869135" resolveInfo="contextNode" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1227886869222" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1237748823701">
+                    <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier" id="1237748823702">
+                      <link role="annotationLink" targetNodeId="1.1196866560540" resolveInfo="propertyAntiquotation" />
+                      <node role="propertyQualifier" type="jetbrains.mps.lang.smodel.structure.PoundExpression" id="1237748823703">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237748823704">
+                          <link role="variableDeclaration" targetNodeId="1227886869162" resolveInfo="propertyName" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227886869223">
-                  <link role="variableDeclaration" targetNodeId="1227886869162" resolveInfo="propertyName" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1237748823705">
+                  <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1237748823706" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1227886869224" />
               </node>
             </node>
           </node>
