@@ -186,8 +186,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1190931377920(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(_context.getNode()))));
-    return _context.getOutputNodeByInputNodeAndMappingLabel(attribute, "patternVarField");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), true), "patternVarField");
   }
 
   public static Object referenceMacro_GetReferent_1190931377941(final IOperationContext operationContext, final ReferenceMacroContext _context) {
