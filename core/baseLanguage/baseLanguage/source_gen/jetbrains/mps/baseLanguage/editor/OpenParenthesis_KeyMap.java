@@ -4,13 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
-import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
+
+import java.awt.event.KeyEvent;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.ParenthesizedExpression;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
 
@@ -57,7 +56,7 @@ public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      ParenthesisUtil.moveParenthesisToTheLeft(((ParenthesizedExpression)SNodeOperations.getAdapter(node)), editorContext);
+      ParenthesisUtil.moveParenthesisToTheRightOrLeft(node, editorContext, false);
     }
 
     public String getKeyStroke() {
@@ -100,7 +99,7 @@ public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      ParenthesisUtil.moveParenthesisToTheRightInside(((ParenthesizedExpression)SNodeOperations.getAdapter(node)), editorContext);
+      ParenthesisUtil.moveParenthesisToTheLeftOrRightInside(node, editorContext, true);
     }
 
     public String getKeyStroke() {

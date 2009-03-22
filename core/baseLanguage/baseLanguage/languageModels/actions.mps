@@ -10066,20 +10066,12 @@
           <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="1235993978260">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235993978261">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235993987445">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235993987446">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235993987447">
-                    <link role="baseMethodDeclaration" targetNodeId="32.~ParenthesisUtil.createParenthesis(jetbrains.mps.baseLanguage.structure.Expression,boolean):jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" resolveInfo="createParenthesis" />
-                    <link role="classConcept" targetNodeId="32.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235993987448">
-                      <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1235993987449" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1235993987450" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1235993987451">
-                      <property name="value" value="false" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235993987452">
-                    <link role="baseMethodDeclaration" targetNodeId="19.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235993987447">
+                  <link role="classConcept" targetNodeId="32.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="32.~ParenthesisUtil.createParenthesis(jetbrains.mps.smodel.SNode,boolean):jetbrains.mps.smodel.SNode" resolveInfo="createParenthesis" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1235993987449" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1235993987451">
+                    <property name="value" value="false" />
                   </node>
                 </node>
               </node>
@@ -10100,20 +10092,12 @@
           <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="1235991384133">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235991384134">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235991785447">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235991788316">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235991788317">
-                    <link role="classConcept" targetNodeId="32.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="32.~ParenthesisUtil.createParenthesis(jetbrains.mps.baseLanguage.structure.Expression,boolean):jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" resolveInfo="createParenthesis" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235991788318">
-                      <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1235991788319" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1235991788320" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1235991788321">
-                      <property name="value" value="true" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235991788322">
-                    <link role="baseMethodDeclaration" targetNodeId="19.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237571115160">
+                  <link role="classConcept" targetNodeId="32.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="32.~ParenthesisUtil.createParenthesis(jetbrains.mps.smodel.SNode,boolean):jetbrains.mps.smodel.SNode" resolveInfo="createParenthesis" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1237571115161" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237571115162">
+                    <property name="value" value="true" />
                   </node>
                 </node>
               </node>
