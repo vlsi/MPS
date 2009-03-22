@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class IndentLayoutUtil {
 
@@ -18,9 +19,7 @@ public class IndentLayoutUtil {
 
   public static List<SNode> moveToIndentLayoutChildren(SNode node, boolean isLast) {
     List<SNode> result = ListOperations.<SNode>createList();
-    System.out.println("Node " + node.getId());
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
-      System.out.println("Collections");
       if (SLinkOperations.getTarget(node, "renderingCondition", true) != null) {
         moveToIndentLayout(node);
         if (isLast) {
@@ -33,17 +32,16 @@ public class IndentLayoutUtil {
       {
         List<SNode> children = SLinkOperations.getTargets(node, "childCellModel", true);
         for(int i = 0 ; i < ListSequence.fromList(children).count() ; i++ ) {
+          if (EditorCellModel_Behavior.call_isIndented_1237383418148(node)) {
+            IndentLayoutUtil.makeIndent(ListSequence.fromList(children).getElement(i));
+          }
           ListSequence.fromList(result).addSequence(ListSequence.fromList(moveToIndentLayoutChildren(ListSequence.fromList(children).getElement(i), isLast && (i == ListSequence.fromList(children).count() - 1))));
         }
       }
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_Indent")) {
-      System.out.println("Indent");
-      SNode classItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem", null);
-      SPropertyOperations.set(classItem, "flag", "" + true);
-      SLinkOperations.addChild(SNodeOperations.getNextSibling(node), "styleItem", classItem);
+      IndentLayoutUtil.makeIndent(SNodeOperations.getNextSibling(node));
     } else
     {
-      System.out.println("Node");
       ListSequence.fromList(result).addElement(node);
       if (isLast) {
         SNode classItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", null);
@@ -64,6 +62,12 @@ public class IndentLayoutUtil {
       SLinkOperations.addAll(node, "childCellModel", children);
       SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
     }
+  }
+
+  private static void makeIndent(SNode cellModel) {
+    SNode classItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem", null);
+    SPropertyOperations.set(classItem, "flag", "" + true);
+    SLinkOperations.addChild(cellModel, "styleItem", classItem);
   }
 
 }
