@@ -2688,7 +2688,6 @@
     <property name="isVisible" value="true" />
     <property name="name" value="BaseMethod" />
     <property name="description" value="Base Methods" />
-    <property name="package" value="working" />
     <link role="forConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="isApplicableFunction" type="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock" id="1204898641596">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204898641597">
@@ -3265,7 +3264,6 @@
     <property name="name" value="BaseMethodUsages" />
     <property name="description" value="Base Method Usages" />
     <property name="longDescription" value="Usages of all base methods" />
-    <property name="package" value="working" />
     <link role="forConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="findFunction" type="jetbrains.mps.lang.findUsages.structure.FindBlock" id="1216385454404">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216385454405">
@@ -3445,7 +3443,6 @@
   </node>
   <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1216392046439">
     <property name="isVisible" value="true" />
-    <property name="package" value="working" />
     <property name="name" value="ImplementedInterfaces" />
     <property name="description" value="Implemented Interfaces" />
     <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
@@ -3692,6 +3689,96 @@
                 <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1228131146371">
                   <link role="conceptDeclaration" targetNodeId="1.1081236700938" resolveInfo="StaticMethodDeclaration" />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1237738696198">
+    <property name="name" value="ClassUsages" />
+    <property name="description" value="Class Usages" />
+    <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+    <node role="findFunction" type="jetbrains.mps.lang.findUsages.structure.FindBlock" id="1237738696199">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237738696200">
+        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1237738774628">
+          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1237738774629">
+            <property name="name" value="result" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237738774631">
+            <node role="statement" type="jetbrains.mps.lang.findUsages.structure.ResultStatement" id="1237738784324">
+              <node role="foundNode" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1237738786279">
+                <link role="variable" targetNodeId="1237738774629" resolveInfo="result" />
+              </node>
+            </node>
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression" id="1237738775430">
+            <link role="finder" targetNodeId="5.1197636141662" resolveInfo="NodeUsages" />
+            <node role="queryNode" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1237738775431" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1237742023494">
+          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1237742023495">
+            <property name="name" value="constructor" />
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237742037329">
+            <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1237742036890" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1237742040052">
+              <link role="link" targetNodeId="1.1068390468201" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237742023497">
+            <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1237742045352">
+              <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1237742045353">
+                <property name="name" value="result" />
+              </node>
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237742045354">
+                <node role="statement" type="jetbrains.mps.lang.findUsages.structure.ResultStatement" id="1237742045355">
+                  <node role="foundNode" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1237742045356">
+                    <link role="variable" targetNodeId="1237742045353" resolveInfo="result" />
+                  </node>
+                </node>
+              </node>
+              <node role="inputSequence" type="jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression" id="1237742045357">
+                <link role="finder" targetNodeId="1204121124763" resolveInfo="ConstructorUsages" />
+                <node role="queryNode" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1237742061158">
+                  <link role="variable" targetNodeId="1237742023495" resolveInfo="constructor" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="categorizeBlock" type="jetbrains.mps.lang.findUsages.structure.CategorizeBlock" id="1237742072285">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237742072286">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237742218299">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237742218300">
+            <property name="value" value="Class Usages" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="searchedNodesBlock" type="jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock" id="1237742080788">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237742080789">
+        <node role="statement" type="jetbrains.mps.lang.findUsages.structure.NodeStatement" id="1237742084618">
+          <node role="foundNode" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1237742089760" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1237742095137">
+          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1237742095138">
+            <property name="name" value="constructor" />
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237742097534">
+            <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1237742097393" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1237742155230">
+              <link role="link" targetNodeId="1.1068390468201" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237742095140">
+            <node role="statement" type="jetbrains.mps.lang.findUsages.structure.NodeStatement" id="1237742163139">
+              <node role="foundNode" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1237742165875">
+                <link role="variable" targetNodeId="1237742095138" resolveInfo="constructor" />
               </node>
             </node>
           </node>
