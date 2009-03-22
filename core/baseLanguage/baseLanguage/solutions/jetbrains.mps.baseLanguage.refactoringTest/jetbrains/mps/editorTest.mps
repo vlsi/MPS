@@ -2288,17 +2288,17 @@
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1236090550302" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236090550303" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236090550304">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1236090559940">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236090559942" />
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1236090577715">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236090577850">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237736743899">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1237736752254">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1237736752481">
                 <property name="value" value="0" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1236090570024">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1237736746494">
                 <link role="variableDeclaration" targetNodeId="1236090565605" resolveInfo="t" />
               </node>
             </node>
-            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1237481907257">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237736743901" />
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1237736758195">
               <property name="isLastPosition" value="true" />
               <property name="cellId" value="Constant_1754_4" />
             </node>
@@ -2350,11 +2350,6 @@
       </node>
       <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236090664947">
         <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236090664948">
-          <property name="keycode" value="VK_DOWN" />
-        </node>
-      </node>
-      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236090672431">
-        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236090672432">
           <property name="keycode" value="VK_DOWN" />
         </node>
       </node>

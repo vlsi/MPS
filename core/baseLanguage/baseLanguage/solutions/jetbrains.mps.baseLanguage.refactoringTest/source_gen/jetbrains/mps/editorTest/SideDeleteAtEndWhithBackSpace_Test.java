@@ -25,7 +25,6 @@ public class SideDeleteAtEndWhithBackSpace_Test extends BaseTransformationTest {
       BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" DOWN"));
       BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" DOWN"));
       BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" DOWN"));
-      BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" DOWN"));
       BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" BACK_SPACE"));
       this.finishTest();
     }
