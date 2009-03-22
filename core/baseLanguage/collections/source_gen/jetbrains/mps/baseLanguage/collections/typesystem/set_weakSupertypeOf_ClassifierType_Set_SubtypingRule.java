@@ -14,7 +14,7 @@ public class set_weakSupertypeOf_ClassifierType_Set_SubtypingRule extends Subtyp
   }
 
   public SNode getSubOrSuperType(SNode set) {
-    return new _Quotations.QuotationClass_109().createNode(this.myMatchingPattern.PatternVar4);
+    return new _Quotations.QuotationClass_107().createNode(this.myMatchingPattern.PatternVar4);
   }
 
   public String getApplicableConceptFQName() {

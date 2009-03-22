@@ -18,12 +18,12 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
 
   public List<SNode> getSubOrSuperTypes(SNode ct) {
     List<SNode> res = Collections.emptyList();
-    if (SLinkOperations.getTarget(new _Quotations.QuotationClass_74().createNode(), "classifier", false) == SLinkOperations.getTarget(ct, "classifier", false)) {
+    if (SLinkOperations.getTarget(new _Quotations.QuotationClass_73().createNode(), "classifier", false) == SLinkOperations.getTarget(ct, "classifier", false)) {
       res = new ArrayList<SNode>();
       List<SNode> ptypes = SLinkOperations.getTargets(ct, "parameter", true);
       if (ptypes.size() > 0) {
         SNode elType = ptypes.get(0);
-        res.add(new _Quotations.QuotationClass_73().createNode(elType));
+        res.add(new _Quotations.QuotationClass_72().createNode(elType));
       }
     }
     return res;

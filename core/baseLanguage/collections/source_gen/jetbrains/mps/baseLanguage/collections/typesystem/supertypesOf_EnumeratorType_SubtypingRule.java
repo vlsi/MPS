@@ -14,7 +14,7 @@ public class supertypesOf_EnumeratorType_SubtypingRule extends SubtypingRule_Run
   }
 
   public SNode getSubOrSuperType(SNode enumeratorType) {
-    return new _Quotations.QuotationClass_140().createNode(SLinkOperations.getTarget(enumeratorType, "elementType", true));
+    return new _Quotations.QuotationClass_137().createNode(SLinkOperations.getTarget(enumeratorType, "elementType", true));
   }
 
   public String getApplicableConceptFQName() {

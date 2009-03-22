@@ -646,19 +646,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1160600644654">
     <property name="name" value="ListCreatorWithInit" />
     <property name="package" value="list" />
-    <link role="extends" targetNodeId="2.1145552809883" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1160602447121">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="elementType" />
-      <link role="target" targetNodeId="2.1068431790189" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1160600765292">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="initValue" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
+    <link role="extends" targetNodeId="1237721394592" resolveInfo="AbstractContainerCreator" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1160600692093">
       <property name="value" value="arraylist" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -1663,7 +1651,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226516258405">
     <property name="name" value="HashSetCreator" />
     <property name="package" value="set" />
-    <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator" />
+    <link role="extends" targetNodeId="1237721394592" resolveInfo="AbstractContainerCreator" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1226516297912">
       <property name="value" value="hashset" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -1671,18 +1659,6 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1226516297913">
       <property name="value" value="create new hashset" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1226516282445">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="elementType" />
-      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1226516282446">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="initValue" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226566831166">
@@ -1785,7 +1761,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227008614712">
     <property name="package" value="list" />
     <property name="name" value="LinkedListCreator" />
-    <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator" />
+    <link role="extends" targetNodeId="1237721394592" resolveInfo="AbstractContainerCreator" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227008652843">
       <property name="value" value="linkedlist" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -1793,18 +1769,6 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227008652845">
       <property name="value" value="create new linked list" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227008641545">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="elementType" />
-      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227008641547">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="initValue" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227022159410">
@@ -2078,6 +2042,25 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237549289142">
       <property name="value" value="enumerator" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237721394592">
+    <property name="name" value="AbstractContainerCreator" />
+    <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237721435807">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="elementType" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237721435808">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="initValue" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1237721421221">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
 </model>

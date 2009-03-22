@@ -14,7 +14,7 @@ public class supertypesOf_IteratorType_SubtypingRule extends SubtypingRule_Runti
   }
 
   public SNode getSubOrSuperType(SNode iteratorType) {
-    return new _Quotations.QuotationClass_130().createNode(SLinkOperations.getTarget(iteratorType, "elementType", true));
+    return new _Quotations.QuotationClass_127().createNode(SLinkOperations.getTarget(iteratorType, "elementType", true));
   }
 
   public String getApplicableConceptFQName() {

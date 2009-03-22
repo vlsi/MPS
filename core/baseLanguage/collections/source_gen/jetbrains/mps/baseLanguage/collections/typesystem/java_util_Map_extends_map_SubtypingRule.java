@@ -14,7 +14,7 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
   }
 
   public SNode getSubOrSuperType(SNode mapType) {
-    return new _Quotations.QuotationClass_55().createNode(this.myMatchingPattern.PatternVar2, this.myMatchingPattern.PatternVar3);
+    return new _Quotations.QuotationClass_54().createNode(this.myMatchingPattern.PatternVar2, this.myMatchingPattern.PatternVar3);
   }
 
   public String getApplicableConceptFQName() {
