@@ -18,9 +18,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
+import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
+import jetbrains.mps.quickQueryLanguage.plugin.QueryExecutor;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.project.Project;
@@ -28,6 +30,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.quickQueryLanguage.plugin.QueryFinder;
 
 public class FindInstancesDialog extends BaseDialog {
 
@@ -53,10 +56,8 @@ public class FindInstancesDialog extends BaseDialog {
         SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
         SLinkOperations.addChild(statementList, "statement", expressionStatement);
         SLinkOperations.setTarget(SLinkOperations.getTarget(FindInstancesDialog.this.myNode, "condition", true), "body", statementList, true);
-        FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {
-        }, FindInstancesDialog.this.myNode);
+        FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {        }, FindInstancesDialog.this.myNode);
       }
-
     });
     final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -64,12 +65,12 @@ public class FindInstancesDialog extends BaseDialog {
       public void run() {
         languageList.value = language.getAllExtendedLanguages();
       }
-
     });
     for(Language extendedLanguage : languageList.value) {
       this.myEditor.addLanguageStructureModel(extendedLanguage);
     }
     this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.CENTER);
+    this.myEditor.addLanguageStructureModel(Collections_Language.get());
     this.myEditor.addLanguageStructureModel(language);
     ModelAccess.instance().runReadAction(new Runnable() {
 
@@ -77,7 +78,6 @@ public class FindInstancesDialog extends BaseDialog {
         FindInstancesDialog.this.myScope = new ScopeEditor(new ScopeOptions());
         FindInstancesDialog.this.myPanel.add(FindInstancesDialog.this.myScope.getComponent(), BorderLayout.SOUTH);
       }
-
     });
   }
 
@@ -91,7 +91,6 @@ public class FindInstancesDialog extends BaseDialog {
       public void run() {
         SLinkOperations.setTarget(FindInstancesDialog.this.myNode, "conceptDeclaration", declaration, false);
       }
-
     });
   }
 
@@ -127,7 +126,6 @@ public class FindInstancesDialog extends BaseDialog {
           searchQuery.value = new SearchQuery(scope);
         }
       }
-
     });
     UsagesViewTool tool = project.getComponent(UsagesViewTool.class);
     tool.findUsages(FindUtils.makeProvider(new QueryFinder(query)), searchQuery.value, true, false, false, "No usages for that node");

@@ -35,7 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="50" />
+  <maxImportIndex value="52" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590510(jetbrains.mps.quickQueryLanguage.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
@@ -81,6 +81,8 @@
   <import index="47" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="48" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="50" modelUID="f:java_stub#jetbrains.mps.lang.structure.findUsages(jetbrains.mps.lang.structure.findUsages@java_stub)" version="-1" />
+  <import index="51" modelUID="f:java_stub#jetbrains.mps.lang.smodel.structure(jetbrains.mps.lang.smodel.structure@java_stub)" version="-1" />
+  <import index="52" modelUID="f:java_stub#jetbrains.mps.baseLanguage.collections.structure(jetbrains.mps.baseLanguage.collections.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1219056224639">
     <property name="name" value="QueryExecutor" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1235926499683">
@@ -1357,6 +1359,23 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237824639789">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237824639790">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237824639791">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1237824639792">
+                <link role="fieldDeclaration" targetNodeId="1219417199963" resolveInfo="myEditor" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237824639793" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237824639794">
+              <link role="baseMethodDeclaration" targetNodeId="35.1219418281320" resolveInfo="addLanguageStructureModel" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237824639795">
+                <link role="baseMethodDeclaration" targetNodeId="51.~Smodel_Language.get():jetbrains.mps.smodel.Language" resolveInfo="get" />
+                <link role="classConcept" targetNodeId="52.~Collections_Language" resolveInfo="Collections_Language" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219418377247">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219418378142">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219418377248">
@@ -2253,6 +2272,23 @@
           </node>
           <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220271103509">
             <link role="variableDeclaration" targetNodeId="1220271011315" resolveInfo="languageList" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237824889882">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237824889883">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237824889884">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1237824889885">
+                <link role="fieldDeclaration" targetNodeId="1219746458485" resolveInfo="myEditor" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237824889886" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237824889887">
+              <link role="baseMethodDeclaration" targetNodeId="35.1219418281320" resolveInfo="addLanguageStructureModel" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237824889888">
+                <link role="baseMethodDeclaration" targetNodeId="52.~Collections_Language.get():jetbrains.mps.smodel.Language" resolveInfo="get" />
+                <link role="classConcept" targetNodeId="52.~Collections_Language" resolveInfo="Collections_Language" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219746505955">

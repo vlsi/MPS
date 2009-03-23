@@ -88,32 +88,54 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1219583399615">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1219583399616">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237823681369">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237823681370">
             <property name="name" value="manager" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219583399617">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237823681371">
               <link role="classifier" targetNodeId="11.~GeneratorManager" resolveInfo="GeneratorManager" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219583399618">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219583399619">
-                <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1219583399620">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237823687123">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1237823694078">
+                <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1237823694079">
                   <link role="classifier" targetNodeId="11.~GeneratorManager" resolveInfo="GeneratorManager" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237823694080" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237823726200">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237823724150">
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1237823724151">
+                        <link role="fieldDeclaration" targetNodeId="1219408662419" resolveInfo="myContext" />
+                      </node>
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237823724152" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237823729485">
+                      <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237823879155">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1237823903655">
+                      <link role="baseMethodDeclaration" targetNodeId="11.~GenerationSettings.&lt;init&gt;()" resolveInfo="GenerationSettings" />
+                    </node>
+                  </node>
+                  <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1237823926907">
+                    <property name="name" value="generateRequirements" />
+                    <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1237823979603" />
+                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1237823946523" />
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237823926910">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237823989166">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237823991684">
+                          <property name="value" value="false" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219583419506">
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1219583419507">
-                  <link role="fieldDeclaration" targetNodeId="1219408662419" resolveInfo="myContext" />
-                </node>
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1219583419508" />
               </node>
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219583399622">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219583399623">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219583399624">
-              <link role="variableDeclaration" targetNodeId="1219583399616" resolveInfo="manager" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237823936755">
+              <link role="variableDeclaration" targetNodeId="1237823681370" resolveInfo="manager" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219583399625">
               <link role="baseMethodDeclaration" targetNodeId="11.~GeneratorManager.generateModelsWithProgressWindow(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.IGenerationType,boolean):boolean" resolveInfo="generateModelsWithProgressWindow" />
