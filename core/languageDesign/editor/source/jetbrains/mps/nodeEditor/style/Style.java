@@ -56,8 +56,9 @@ public class Style {
   }
 
   public <T> T get(StyleAttribute<T> attribute) {
-    if (myCachedAttributeValues.containsKey(attribute)) {
-      return (T) myCachedAttributeValues.get(attribute);
+    Object value = myCachedAttributeValues.get(attribute);
+    if (value != null) {
+      return (T) value;
     } else {
       return attribute.combine(null, null);
     }
