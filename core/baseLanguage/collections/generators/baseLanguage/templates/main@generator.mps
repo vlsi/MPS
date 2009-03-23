@@ -6558,6 +6558,15 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1237786265146">
+      <link role="applicableConcept" targetNodeId="8.1237783176940" resolveInfo="AllConstant" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1237786275127">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1237786288133">
+          <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+          <link role="variableDeclaration" targetNodeId="2.~Integer.MAX_VALUE" resolveInfo="MAX_VALUE" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1202904627607">
     <property name="name" value="convertclosures" />

@@ -1373,5 +1373,26 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237724603558" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1237783270701">
+    <link role="concept" targetNodeId="1.1237783176940" resolveInfo="AllConstant" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1237783270702">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237783270703">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237783279164">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1237783282929">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237783279359">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1237783279165" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237783281255">
+                <link role="property" targetNodeId="8.1068580320021" resolveInfo="value" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1237783286410">
+              <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+              <link role="variableDeclaration" targetNodeId="2.~Integer.MAX_VALUE" resolveInfo="MAX_VALUE" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

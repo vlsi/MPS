@@ -764,5 +764,22 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1237783213865">
+    <link role="concept" targetNodeId="1.1237783176940" resolveInfo="AllConstant" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1237783220429">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237783220430">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237783253668">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237783254730">
+            <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1237783253669" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237783256527">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237783259433">
+                <link role="conceptDeclaration" targetNodeId="1.1172664342967" resolveInfo="TakeOperation" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -7,6 +7,10 @@ import org.junit.Test;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import junit.framework.Assert;
 
 public class Chunks_Test extends Util_Test {
 
@@ -38,6 +42,67 @@ public class Chunks_Test extends Util_Test {
     int from = 3;
     int to = 8;
     this.assertIterableEquals(Arrays.asList(5, 6, 7), Sequence.fromIterable(input).page((from = from + 1), (to = to - 1)));
+  }
+
+  @Test()
+  public void test_takeAll() throws Exception {
+    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure <Integer>() {
+
+      public Iterable<Integer> iterable() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _2_i;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_i = 0;
+                    case 3:
+                      if (!(this._2_i < 100)) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._2_i++ ;
+                      this.__CP__ = 3;
+                      break;
+                    case 6:
+                      this.__CP__ = 5;
+                      this.yield(this._2_i);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 6;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    Assert.assertSame(100, Sequence.fromIterable(test).take(Integer.MAX_VALUE).count());
   }
 
 }

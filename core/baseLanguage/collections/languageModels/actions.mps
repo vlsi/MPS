@@ -2435,5 +2435,28 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="1237785971510">
+    <property name="name" value="subs_AllConstant" />
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1237785975244">
+      <link role="applicableConcept" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="1237785981936">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237785981937">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237786002856">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237786003637">
+              <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1237786002857" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237786026114">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237786030557">
+                  <link role="conceptDeclaration" targetNodeId="1.1172664342967" resolveInfo="TakeOperation" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.lang.actions.structure.ConceptSubstitutePart" id="1237786032991">
+        <link role="concept" targetNodeId="1.1237783176940" resolveInfo="AllConstant" />
+      </node>
+    </node>
+  </node>
 </model>
 
