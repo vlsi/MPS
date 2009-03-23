@@ -42,39 +42,29 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_8866_0(context, node, "weaving rule"));
     editorCell.addEditorCell(this.createConstant_8866_1(context, node, ""));
-    editorCell.addEditorCell(this.createCollection_8866_6(context, node));
+    editorCell.addEditorCell(this.createCollection_8866_5(context, node));
     return editorCell;
   }
 
   public EditorCell createCollection_8866_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8866_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_8866_2(context, node));
+    editorCell.addEditorCell(this.createConstant_8866_2(context, node, "-->"));
+    if (renderingCondition8866_0(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_8866_6(context, node));
+    }
+    editorCell.addEditorCell(this.createCollection_8866_3(context, node));
     editorCell.addEditorCell(this.createConstant_8866_3(context, node, ""));
     return editorCell;
   }
 
   public EditorCell createCollection_8866_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_8866_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection_8866_3(context, node));
-    editorCell.addEditorCell(this.createConstant_8866_2(context, node, "-->"));
-    if (renderingCondition8866_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_8866_7(context, node));
-    }
-    editorCell.addEditorCell(this.createCollection_8866_4(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_8866_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_8866_3(editorCell, node, context);
+    setupBasic_Collection_8866_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -82,20 +72,20 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8866_4(EditorContext context, SNode node) {
+  public EditorCell createCollection_8866_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_8866_4(editorCell, node, context);
+    setupBasic_Collection_8866_3(editorCell, node, context);
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_8866_1(context, node));
-    editorCell.addEditorCell(this.createCollection_8866_5(context, node));
+    editorCell.addEditorCell(this.createCollection_8866_4(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection_8866_5(EditorContext context, SNode node) {
+  public EditorCell createCollection_8866_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_8866_5(editorCell, node, context);
+    setupBasic_Collection_8866_4(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -105,9 +95,9 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8866_6(EditorContext context, SNode node) {
+  public EditorCell createCollection_8866_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_8866_6(editorCell, node, context);
+    setupBasic_Collection_8866_5(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -116,9 +106,9 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8866_7(EditorContext context, SNode node) {
+  public EditorCell createCollection_8866_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_8866_7(editorCell, node, context);
+    setupBasic_Collection_8866_6(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -375,19 +365,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_8866_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_8866_3");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_Component_8866_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
@@ -404,8 +381,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_8866_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_8866_4");
+  private static void setupBasic_Collection_8866_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_8866_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -428,6 +405,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
         }
 
       };
@@ -435,8 +413,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_8866_5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_8866_5");
+  private static void setupBasic_Collection_8866_4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_8866_4");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -470,8 +448,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_8866_6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_8866_6");
+  private static void setupBasic_Collection_8866_5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_8866_5");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -490,8 +468,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefCell_8866_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Collection_8866_7(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_8866_7");
+  private static void setupBasic_Collection_8866_6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_8866_6");
     {
       Style inlineStyle = new Style(editorCell) {
         {

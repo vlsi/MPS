@@ -31,21 +31,22 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection_1377_2(context, node);
+    return this.createCollection_1377_1(context, node);
   }
 
   public EditorCell createCollection_1377_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1377_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection_1377_1(context, node));
+    editorCell.addEditorCell(this.createCollection_1377_2(context, node));
     editorCell.addEditorCell(this.createConstant_1377_1(context, node, "-->"));
     if (renderingCondition1377_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_1377_9(context, node));
+      editorCell.addEditorCell(this.createCollection_1377_8(context, node));
     }
     editorCell.addEditorCell(this.createRefCell_1377_1(context, node));
+    editorCell.addEditorCell(this.createConstant_1377_0(context, node, ""));
     return editorCell;
   }
 
@@ -55,33 +56,33 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection_1377_3(context, node));
-    editorCell.addEditorCell(this.createConstant_1377_0(context, node, ""));
+    editorCell.addEditorCell(this.createConstant_1377_2(context, node, "root mapping rule"));
+    editorCell.addEditorCell(this.createConstant_1377_3(context, node, ""));
+    editorCell.addEditorCell(this.createCollection_1377_7(context, node));
     return editorCell;
   }
 
   public EditorCell createCollection_1377_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_1377_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
+    editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_1377_2(context, node, "root mapping rule"));
-    editorCell.addEditorCell(this.createConstant_1377_3(context, node, ""));
-    editorCell.addEditorCell(this.createCollection_1377_8(context, node));
+    editorCell.addEditorCell(this.createCollection_1377_3(context, node));
+    editorCell.addEditorCell(this.createCollection_1377_4(context, node));
+    editorCell.addEditorCell(this.createCollection_1377_5(context, node));
+    editorCell.addEditorCell(this.createCollection_1377_6(context, node));
     return editorCell;
   }
 
   public EditorCell createCollection_1377_3(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_1377_3(editorCell, node, context);
-    editorCell.setGridLayout(true);
+    editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection_1377_4(context, node));
-    editorCell.addEditorCell(this.createCollection_1377_5(context, node));
-    editorCell.addEditorCell(this.createCollection_1377_6(context, node));
-    editorCell.addEditorCell(this.createCollection_1377_7(context, node));
+    editorCell.addEditorCell(this.createConstant_1377_4(context, node, "concept"));
+    editorCell.addEditorCell(this.createRefCell_1377_3(context, node));
     return editorCell;
   }
 
@@ -91,8 +92,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_1377_4(context, node, "concept"));
-    editorCell.addEditorCell(this.createRefCell_1377_3(context, node));
+    editorCell.addEditorCell(this.createConstant_1377_5(context, node, "inheritors"));
+    editorCell.addEditorCell(this.createProperty_1377_5(context, node));
     return editorCell;
   }
 
@@ -102,8 +103,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_1377_5(context, node, "inheritors"));
-    editorCell.addEditorCell(this.createProperty_1377_5(context, node));
+    editorCell.addEditorCell(this.createConstant_1377_6(context, node, "condition"));
+    editorCell.addEditorCell(this.createRefNode_1377_1(context, node));
     return editorCell;
   }
 
@@ -113,8 +114,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_1377_6(context, node, "condition"));
-    editorCell.addEditorCell(this.createRefNode_1377_1(context, node));
+    editorCell.addEditorCell(this.createConstant_1377_7(context, node, "keep input root"));
+    editorCell.addEditorCell(this.createProperty_1377_7(context, node));
     return editorCell;
   }
 
@@ -124,25 +125,14 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_1377_7(context, node, "keep input root"));
-    editorCell.addEditorCell(this.createProperty_1377_7(context, node));
+    editorCell.addEditorCell(this.createConstant_1377_8(context, node, "mapping label"));
+    editorCell.addEditorCell(this.createRefCell_1377_5(context, node));
     return editorCell;
   }
 
   public EditorCell createCollection_1377_8(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_1377_8(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_1377_8(context, node, "mapping label"));
-    editorCell.addEditorCell(this.createRefCell_1377_5(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_1377_9(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_1377_9(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -439,25 +429,13 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1377_0");
   }
 
-  private static void setupBasic_Collection_1377_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1377_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_Constant_1377_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1377_0");
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
         }
 
       };
@@ -481,8 +459,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefCell_1377_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Collection_1377_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1377_2");
+  private static void setupBasic_Collection_1377_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1377_1");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -522,8 +500,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_1377_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1377_3");
+  private static void setupBasic_Collection_1377_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1377_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -537,8 +515,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_1377_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1377_4");
+  private static void setupBasic_Collection_1377_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1377_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -570,8 +548,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_1377_5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1377_5");
+  private static void setupBasic_Collection_1377_4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1377_4");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -601,8 +579,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_applyToConceptInheritors");
   }
 
-  private static void setupBasic_Collection_1377_6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1377_6");
+  private static void setupBasic_Collection_1377_5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1377_5");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -631,8 +609,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNode_1377_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Collection_1377_7(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1377_7");
+  private static void setupBasic_Collection_1377_6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1377_6");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -662,8 +640,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_keepSourceRoot");
   }
 
-  private static void setupBasic_Collection_1377_8(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1377_8");
+  private static void setupBasic_Collection_1377_7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1377_7");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -682,8 +660,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefCell_1377_2(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Collection_1377_9(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1377_9");
+  private static void setupBasic_Collection_1377_8(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1377_8");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -42,40 +42,43 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_9102_0(context, node, "reduction rule"));
     editorCell.addEditorCell(this.createConstant_9102_1(context, node, ""));
-    editorCell.addEditorCell(this.createCollection_9102_5(context, node));
+    editorCell.addEditorCell(this.createCollection_9102_4(context, node));
     return editorCell;
   }
 
   public EditorCell createCollection_9102_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_9102_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_9102_2(context, node));
-    editorCell.addEditorCell(this.createConstant_9102_4(context, node, ""));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_9102_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_9102_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_9102_3(context, node));
-    editorCell.addEditorCell(this.createCollection_9102_4(context, node));
     editorCell.addEditorCell(this.createConstant_9102_3(context, node, ""));
     return editorCell;
   }
 
-  public EditorCell createCollection_9102_3(EditorContext context, SNode node) {
+  public EditorCell createCollection_9102_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_9102_3(editorCell, node, context);
+    setupBasic_Collection_9102_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent_9102_0(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection_9102_3(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_9102_3(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant_9102_2(context, node, "-->"));
+    if (renderingCondition9102_0(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_9102_5(context, node));
+    }
+    editorCell.addEditorCell(this.createRefNode_9102_1(context, node));
     return editorCell;
   }
 
@@ -85,11 +88,8 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_9102_2(context, node, "-->"));
-    if (renderingCondition9102_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_9102_6(context, node));
-    }
-    editorCell.addEditorCell(this.createRefNode_9102_1(context, node));
+    editorCell.addEditorCell(this.createConstant_9102_4(context, node, "mapping label"));
+    editorCell.addEditorCell(this.createRefCell_9102_1(context, node));
     return editorCell;
   }
 
@@ -99,19 +99,8 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_9102_5(context, node, "mapping label"));
-    editorCell.addEditorCell(this.createRefCell_9102_1(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_9102_6(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_9102_6(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell_9102_3(context, node));
-    editorCell.addEditorCell(this.createConstant_9102_6(context, node, ":"));
+    editorCell.addEditorCell(this.createConstant_9102_5(context, node, ":"));
     return editorCell;
   }
 
@@ -168,14 +157,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9102_5(editorCell, node, context);
     setupLabel_Constant_9102_5(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant_9102_6(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9102_6(editorCell, node, context);
-    setupLabel_Constant_9102_6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -326,24 +307,11 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_9102_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9102_3");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_Component_9102_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Collection_9102_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9102_4");
+  private static void setupBasic_Collection_9102_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_9102_3");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -376,6 +344,20 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Collection_9102_4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_9102_4");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
           this.set(StyleAttributes.SELECTABLE, false);
         }
 
@@ -386,15 +368,9 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9102_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9102_4");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, true);
-        }
+  }
 
-      };
-      inlineStyle.apply(editorCell);
-    }
+  private static void setupBasic_RefCell_9102_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Collection_9102_5(EditorCell editorCell, SNode node, EditorContext context) {
@@ -410,31 +386,11 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_9102_5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9102_5");
-  }
-
-  private static void setupBasic_RefCell_9102_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Collection_9102_6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9102_6");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_RefCell_9102_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Constant_9102_6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9102_6");
+  private static void setupBasic_Constant_9102_5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_9102_5");
   }
 
   private static void setupLabel_Constant_9102_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -455,16 +411,13 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_9102_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_9102_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_RefCell_9102_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_RefCell_9102_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_9102_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_9102_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition9102_0(SNode node, EditorContext editorContext, IScope scope) {
