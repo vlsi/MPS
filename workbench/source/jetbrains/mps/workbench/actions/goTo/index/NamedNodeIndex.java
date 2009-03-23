@@ -23,6 +23,7 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NonNls;
 
 import java.util.List;
@@ -42,7 +43,12 @@ public class NamedNodeIndex extends ScalarIndexExtension<SNodeDescriptor> {
       public List<SNode> getNodes(SModel model) {
         return model.allNodes(new Condition<SNode>() {
           public boolean met(SNode node) {
-            String name = node.getName();
+            String name = null;
+            try {
+              name = node.getName();
+            } catch (Throwable t) {
+              Logger.getLogger(NamedNodeIndex.class);
+            }
             if (name == null) return false;
             return name.length() > 0;
           }
