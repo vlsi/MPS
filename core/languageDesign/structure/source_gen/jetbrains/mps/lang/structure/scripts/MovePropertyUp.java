@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
@@ -140,7 +139,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   }
 
   public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListOperations.<SModel>createList();
+    return ListSequence.<SModel>fromArray();
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
@@ -148,7 +147,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return ListOperations.<SNode>createList();
+    return ListSequence.<SNode>fromArray();
   }
 
   public boolean doesUpdateModel() {
@@ -164,7 +163,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   public boolean askForInfo(final RefactoringContext refactoringContext) {
     {
       boolean result = false;
-      final List<IChooseComponent> components = ListOperations.<IChooseComponent>createList();
+      final List<IChooseComponent> components = ListSequence.<IChooseComponent>fromArray();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
@@ -174,7 +173,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
             chooseComponent.setPropertyName("targetConcept");
             chooseComponent.setCaption("chooseTargetConcept");
             chooseComponent.initComponent();
-            ListOperations.addElement(components, chooseComponent);
+            ListSequence.fromList(components).addElement(chooseComponent);
           }
         }
 

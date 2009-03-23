@@ -246,7 +246,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   }
 
   public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListOperations.<SModel>createList();
+    return ListSequence.<SModel>fromArray();
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
@@ -254,7 +254,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return ListOperations.<SNode>createList();
+    return ListSequence.<SNode>fromArray();
   }
 
   public boolean doesUpdateModel() {
@@ -264,7 +264,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   public boolean askForInfo(final RefactoringContext refactoringContext) {
     {
       boolean result = false;
-      final List<IChooseComponent> components = ListOperations.<IChooseComponent>createList();
+      final List<IChooseComponent> components = ListSequence.<IChooseComponent>fromArray();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
@@ -275,7 +275,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
             chooseComponent.setPropertyName("targetModel");
             chooseComponent.setCaption("choose target model");
             chooseComponent.initComponent();
-            ListOperations.addElement(components, chooseComponent);
+            ListSequence.fromList(components).addElement(chooseComponent);
           }
         }
 
