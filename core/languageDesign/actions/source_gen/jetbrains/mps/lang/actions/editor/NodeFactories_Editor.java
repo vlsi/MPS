@@ -34,14 +34,34 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_5274_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_5274_0(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createCollection_5274_1(context, node));
+    editorCell.addEditorCell(this.createConstant_5274_1(context, node, ""));
+    editorCell.addEditorCell(this.createCollection_5274_2(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection_5274_1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_5274_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_5274_0(context, node, "node factories"));
     editorCell.addEditorCell(this.createProperty_5274_1(context, node));
-    editorCell.addEditorCell(this.createConstant_5274_1(context, node, ""));
+    return editorCell;
+  }
+
+  public EditorCell createCollection_5274_2(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_5274_2(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNodeList_5274_0(context, node));
     return editorCell;
   }
@@ -109,6 +129,19 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_5274_0");
   }
 
+  private static void setupBasic_Collection_5274_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_5274_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupBasic_Constant_5274_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5274_0");
   }
@@ -119,7 +152,6 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -133,7 +165,19 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Collection_5274_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_5274_2");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -147,7 +191,6 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
