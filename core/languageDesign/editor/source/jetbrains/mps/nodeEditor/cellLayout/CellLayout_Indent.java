@@ -274,11 +274,34 @@ public class CellLayout_Indent extends AbstractCellLayout {
         if (!isIndentCollection(current.getParent())) break;
 
         EditorCell indentLeaf = getFirstIndentLeaf(current.getParent());
-        if (myLineContent.contains(indentLeaf) && isOnRightSide(indentLeaf) &&
-          cellRangeFitsOnOneLine(indentLeaf, lastCell)) {
+        EditorCell unitStart = expandToUnitStart(indentLeaf);
+
+        if (myLineContent.contains(unitStart) && isOnRightSide(unitStart) &&
+          cellRangeFitsOnOneLine(unitStart, lastCell)) {
 
           result = indentLeaf;
           current = current.getParent();
+        } else {
+          break;
+        }
+      }
+
+      return expandToUnitStart(result);
+    }
+
+    private EditorCell expandToUnitStart(EditorCell cell) {
+      EditorCell result = cell;
+
+      while (true) {
+        EditorCell prevLeaf = result.getPrevLeaf();
+
+        if (!myCell.isAncestorOf(prevLeaf)) break;
+        if (!myLineContent.contains(prevLeaf)) break;
+
+        if (result.getStyle().get(StyleAttributes.PUNCTUATION_LEFT) ||
+          prevLeaf.getStyle().get(StyleAttributes.PUNCTUATION_RIGTH)) {
+          
+          result = prevLeaf;
         } else {
           break;
         }

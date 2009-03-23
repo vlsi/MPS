@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
@@ -32,7 +32,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_8994_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8994_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -63,7 +63,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     if (this.myListHandler_8994_0 == null) {
       this.myListHandler_8994_0 = new OperationParm_ConceptList_Editor.conceptListHandler_8994_0(node, "concept", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_8994_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_8994_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8994_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
