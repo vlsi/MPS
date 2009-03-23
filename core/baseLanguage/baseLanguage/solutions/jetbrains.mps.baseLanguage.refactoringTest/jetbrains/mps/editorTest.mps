@@ -2353,6 +2353,11 @@
           <property name="keycode" value="VK_DOWN" />
         </node>
       </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1237739771103">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1237739771104">
+          <property name="keycode" value="VK_DOWN" />
+        </node>
+      </node>
       <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1236090706857">
         <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1236090706858">
           <property name="keycode" value="VK_BACK_SPACE" />
