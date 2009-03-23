@@ -19,7 +19,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.logging.Logger;
@@ -67,6 +66,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
   private MyState myState = new MyState();
   private Font myDefaultEditorFont;
+  private int mySpaceWidth = -1;
 
   private MyPreferencesPage myPreferencesPage;
 
@@ -75,7 +75,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
   public EditorSettings(CaretBlinker caretBlinker) {
     myCaretBlinker = caretBlinker;
 
-    updateCachedFont();
+    updateCachedValue();
   }
 
   public double getLineSpacing() {
@@ -148,13 +148,13 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
   }
 
   public int getSpacesWidth(int size) {
-    String indentText = "";
-    for (int i = 0; i < size; i++) {
-      indentText += " ";
+    if (mySpaceWidth == -1) {
+      TextLine textLine = new TextLine(" ");
+      textLine.relayout();
+      mySpaceWidth = textLine.getWidth();
     }
-    TextLine textLine = new TextLine(indentText);
-    textLine.relayout();
-    return textLine.getWidth();
+
+    return mySpaceWidth * size;
   }
 
 
@@ -319,11 +319,12 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
   public void loadState(MyState state) {
     myState = state;
-    updateCachedFont();
+    updateCachedValue();
   }
 
-  private void updateCachedFont() {
+  private void updateCachedValue() {
     myDefaultEditorFont = new Font(myState.myFontFamily, 0, myState.myFontSize);
+    mySpaceWidth = -1;
   }
 
   private class MyPreferencesPage {
@@ -513,7 +514,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
           fireEditorSettingsChanged();
 
-          updateCachedFont();
+          updateCachedValue();
         }
       });
     }
