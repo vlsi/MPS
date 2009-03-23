@@ -40,7 +40,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_4702_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_4702_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -50,21 +50,11 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_4702_2(context, node, "]"));
     editorCell.addEditorCell(this.createProperty_4702_3(context, node));
     editorCell.addEditorCell(this.createConstant_4702_0(context, node, "."));
-    editorCell.addEditorCell(this.createCollection_4702_1(context, node));
-    editorCell.addEditorCell(this.createProperty_4702_1(context, node));
-    editorCell.addEditorCell(this.createComponent_4702_0(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_4702_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_4702_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_4702_3(context, node, "<"));
     editorCell.addEditorCell(this.createRefNodeList_4702_0(context, node));
     editorCell.addEditorCell(this.createConstant_4702_4(context, node, ">"));
+    editorCell.addEditorCell(this.createProperty_4702_1(context, node));
+    editorCell.addEditorCell(this.createComponent_4702_0(context, node));
     return editorCell;
   }
 
@@ -270,19 +260,6 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_4702_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Collection_4702_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4702_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_4702_3(EditorCell editorCell, SNode node, EditorContext context) {

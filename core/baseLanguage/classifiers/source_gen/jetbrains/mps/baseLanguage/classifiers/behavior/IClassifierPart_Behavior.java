@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -16,7 +16,7 @@ public class IClassifierPart_Behavior {
   }
 
   public static List<SNode> call_getMembers_1213877255431(SNode thisNode) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListOperations.<SNode>createList();
     for(SNode child : SNodeOperations.getChildren(thisNode)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
         ListSequence.fromList(result).addElement(child);

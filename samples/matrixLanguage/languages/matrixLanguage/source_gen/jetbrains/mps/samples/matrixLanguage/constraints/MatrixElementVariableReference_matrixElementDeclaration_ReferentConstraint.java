@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
@@ -30,7 +30,7 @@ public class MatrixElementVariableReference_matrixElementDeclaration_ReferentCon
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getEnclosingNode(), null, false);
-    List<SNode> vars = new ArrayList<SNode>();
+    List<SNode> vars = ListOperations.<SNode>createList();
     for(SNode node : nodes) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement")) {
         ListSequence.fromList(vars).addElement(SLinkOperations.getTarget(((SNode)node), "element", true));

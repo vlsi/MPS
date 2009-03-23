@@ -27,7 +27,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class QueriesGenerated {
@@ -2008,7 +2008,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1179331802560(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> kindBlocks = new ArrayList<SNode>();
+    List<SNode> kindBlocks = ListOperations.<SNode>createList();
     for(SNode nodeKind : SLinkOperations.getTargets(_context.getNode(), "nodeKinds", true)) {
       ListSequence.fromList(kindBlocks).addElement(SLinkOperations.getTarget(nodeKind, "trigger", true));
     }
@@ -2016,7 +2016,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1179398279574(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> properties = new ArrayList<SNode>();
+    List<SNode> properties = ListOperations.<SNode>createList();
     for(SNode nodeKind : SLinkOperations.getTargets(_context.getNode(), "nodeKinds", true)) {
       for(SNode property : SLinkOperations.getTargets(nodeKind, "properties", true)) {
         ListSequence.fromList(properties).addElement(property);

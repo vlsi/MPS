@@ -5,7 +5,7 @@ package jetbrains.mps.ypath.actions;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.collections.typesystem.TypeUtil_Collections;
@@ -21,7 +21,7 @@ import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 public class TreePathAspectUtil {
 
   public static List<SNode> getTreePathAspects(SNode expression, IScope scope) {
-    List<SNode> treePathAspects = new ArrayList<SNode>();
+    List<SNode> treePathAspects = ListOperations.<SNode>createList();
     final Wrappers._T<SNode> expType = new Wrappers._T<SNode>(TypeChecker.getInstance().getTypeOf(expression));
     if ((expType.value != null)) {
       SNode sequencetype = TypeUtil_Collections.coerceTo_SequenceType(expType.value);

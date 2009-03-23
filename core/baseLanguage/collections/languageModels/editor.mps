@@ -2433,6 +2433,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1237785291057">
         <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237813181285" />
     </node>
   </node>
 </model>

@@ -13,11 +13,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class QueriesGenerated {
 
@@ -199,8 +198,8 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1210160088643(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> possibleScalarTypes = new ArrayList<SNode>();
-    for(SNode root : Sequence.fromIterable(SModelOperations.getRoots(_context.getInputModel(), null))) {
+    List<SNode> possibleScalarTypes = ListOperations.<SNode>createList();
+    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), null))) {
       for(SNode t : SNodeOperations.getDescendants(root, "jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral", false)) {
         ListSequence.fromList(possibleScalarTypes).addElement(SLinkOperations.getTarget(t, "scalarType", true));
       }
