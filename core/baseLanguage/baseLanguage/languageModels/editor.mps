@@ -773,6 +773,7 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237722521684">
             <property name="flag" value="true" />
           </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237816261157" />
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237722521687" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237722521688">
@@ -830,6 +831,7 @@
             <property name="flag" value="true" />
           </node>
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237816236748" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1075140096043">
         <property name="text" value=")" />
@@ -875,6 +877,7 @@
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1165410808126">
             <property name="separatorText" value="," />
             <link role="relationDeclaration" targetNodeId="17.1164879685961" />
+            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237816254577" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1165410808127">
             <property name="text" value="{" />
@@ -15028,6 +15031,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1233829213480">
         <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="17.1233829084761" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237815521920" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233829225703">
         <property name="text" value=")" />
